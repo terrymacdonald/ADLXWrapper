@@ -1,17 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net48</TargetFramework>
-    
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ADLXWrapper\ADLXWrapper.csproj" />
   </ItemGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-	<Exec Command="xcopy &quot;$(SolutionDir)x64\$(Configuration)\ADLXBindings.dll&quot; &quot;$(TargetDir)&quot; /Y" />
+    <Exec Command="xcopy &quot;$(SolutionDir)x64\$(Configuration)\ADLXBindings.dll&quot; &quot;$(TargetDir)&quot; /Y" />
   </Target>
-
 </Project>
