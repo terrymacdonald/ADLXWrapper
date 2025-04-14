@@ -145,7 +145,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;ADLXCSHARPBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -157,23 +157,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ADLXCSharpBind.i.old">
-      <FileType>Document</FileType>
-    </None>
     <CustomBuild Include="ADLXCSharpBind.i">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Dbug|x64'">%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
-    <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ADLXCSharpBind.h" />
+    <ClInclude Include="..\ADLX\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.h" />
+    <ClInclude Include="ADLXCSharpBind_wrap.h" />
+    <!--<ClInclude Include="ADLXCSharpBind.h" />-->
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ADLXCSharpBind.cpp" />
+    <ClCompile Include="..\ADLX\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.cpp" />
+    <ClCompile Include="..\ADLX\SDK\Platform\Windows\WinAPIs.cpp" />
+    <ClCompile Include="ADLXCSharpBind_wrap.cxx" />
+    <!--<ClCompile Include="ADLXCSharpBind.cpp" />-->
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -181,6 +184,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cs_struct.i" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
