@@ -11,6 +11,16 @@
 #include "../ADLX/SDK/Include/IDisplays.h"
 #include "../ADLX/SDK/Include/ISystem.h"
 #include "../ADLX/SDK/Include/ILog.h"
+#include "../ADLX/SDK/Include/IGPUTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualFanTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualGFXTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualPowerTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualVRAMTuning.h"
+#include "../ADLX/SDK/Include/IGPUPresetTuning.h"
+#include "../ADLX/SDK/Include/IGPUTuning.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring1.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring2.h"
 #include "../ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 
 typedef     int64_t             adlx_int64;
@@ -100,18 +110,56 @@ typedef WCHAR TCHAR;
 %include "../ADLX/SDK/Include/IDisplays.h"
 %include "../ADLX/SDK/Include/ISystem.h"
 %include "../ADLX/SDK/Include/ILog.h"
+%include "../ADLX/SDK/Include/IGPUTuning.h"
+%include "../ADLX/SDK/Include/IGPUManualFanTuning.h"
+%include "../ADLX/SDK/Include/IGPUManualGFXTuning.h"
+%include "../ADLX/SDK/Include/IGPUManualPowerTuning.h"
+%include "../ADLX/SDK/Include/IGPUManualVRAMTuning.h"
+%include "../ADLX/SDK/Include/IGPUPresetTuning.h"
+%include "../ADLX/SDK/Include/IGPUTuning.h"
+%include "../ADLX/SDK/Include/IPerformanceMonitoring.h"
+%include "../ADLX/SDK/Include/IPerformanceMonitoring1.h"
+%include "../ADLX/SDK/Include/IPerformanceMonitoring2.h"
 %include "../ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 using namespace adlx;
 
 // T* pointer
 %include cpointer.i
+
 %pointer_functions(adlx_int, intP);
 %pointer_functions(double, doubleP);
+%pointer_functions(bool, boolP);
+%pointer_functions(WCHAR, wcharP);
 %pointer_functions(adlx_uint, uintP);
 %pointer_functions(ADLX_DISPLAY_TYPE, displayTypeP);
 %pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, disConnectTypeP);
 %pointer_functions(ADLX_DISPLAY_SCAN_TYPE, disScanTypeP);
 %pointer_functions(adlx_size, adlx_sizeP);
+%pointer_functions(ADLX_IntRange, adlx_intRangeP);
+%pointer_functions(ADLX_GPU_TYPE, gpuTypeP);
+
+// T** pointers
+%pointer_functions(IADLXDisplayServices*, displaySerP_Ptr);
+%pointer_functions(IADLXDisplayList*, displayListP_Ptr);
+%pointer_functions(IADLXDisplay*, displayP_Ptr);
+%pointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
+%pointer_functions(IADLXGPU*, gpuP_Ptr);
+%pointer_functions(IADLXGPUList*, gpuListP_Ptr);
+%pointer_functions(IADLXList*, adlxListP_Ptr);
+%pointer_functions(IADLXInterface*, adlxInterfaceP_Ptr);
+%pointer_functions(IADLXGPUTuningServices*, gpuTuningP_Ptr);
+%pointer_functions(IADLXManualFanTuning*, manualFanTuningP_Ptr);
+%pointer_functions(IADLXManualPowerTuning*, manualPowerTuningP_Ptr);
+%pointer_functions(IADLXPerformanceMonitoringServices*, performanceP_Ptr);
+%pointer_functions(IADLXManualFanTuningStateList*, fanTuningStateListP_Ptr);
+%pointer_functions(IADLXManualFanTuningState*, fanTuningStateP_Ptr);
+%pointer_functions(IADLXGPUMetrics*, metricsP_Ptr);
+%pointer_functions(IADLXGPUMetrics1*, metrics1P_Ptr);
+%pointer_functions(IADLXGPUMetricsSupport*, metricsSupportP_Ptr);
+%pointer_functions(IADLXGPUMetricsSupport1*, metricsSupport1P_Ptr);
+//%pointer_functions(adlx_string, stringP_Ptr);
+%pointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
+%pointer_functions(char*, charP_Ptr);
 
 // T** ppointer
 %define %ppointer_functions(TYPE,NAME)
@@ -152,8 +200,9 @@ TYPE2 NAME(TYPE1 x) {
 }
 %}
 %enddef
-%ppointer_functions(IADLXDisplayServices*, displaySerP_Ptr);
-%ppointer_functions(IADLXDisplayList*, displayListP_Ptr);
-%ppointer_functions(IADLXDisplay*, displayP_Ptr);
-%ppointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
-%ppointer_functions(char*, charP_Ptr);
+
+/* %pointer_cast(IADLXManualFanTuning**, void**, CastManualFanTuningVoidPtr);
+%pointer_cast(IADLXManualPowerTuning**, void**, CastManualPowerTuningVoidPtr);
+
+%pointer_cast(IADLXGPUMetrics**, IADLXGPUMetrics1**, CastGPUMetricsToGPUMetrics1);
+%pointer_cast(IADLXGPUMetricsSupport**, IADLXGPUMetricsSupport1**, CastGPUMetricsSupportToGPUMetricsSupport1); */

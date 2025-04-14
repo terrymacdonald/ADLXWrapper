@@ -425,6 +425,16 @@ template <typename T> T SwigValueInit() {
 #include "../ADLX/SDK/Include/IDisplays.h"
 #include "../ADLX/SDK/Include/ISystem.h"
 #include "../ADLX/SDK/Include/ILog.h"
+#include "../ADLX/SDK/Include/IGPUTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualFanTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualGFXTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualPowerTuning.h"
+#include "../ADLX/SDK/Include/IGPUManualVRAMTuning.h"
+#include "../ADLX/SDK/Include/IGPUPresetTuning.h"
+#include "../ADLX/SDK/Include/IGPUTuning.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring1.h"
+#include "../ADLX/SDK/Include/IPerformanceMonitoring2.h"
 #include "../ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
 
 typedef     int64_t             adlx_int64;
@@ -506,6 +516,48 @@ static void doubleP_assign(double *obj, double value) {
 }
 
 static double doubleP_value(double *obj) {
+  return *obj;
+}
+
+
+static bool *new_boolP(void) { 
+  return new bool(); 
+}
+
+static bool *copy_boolP(bool value) { 
+  return new bool(value); 
+}
+
+static void delete_boolP(bool *obj) { 
+  delete obj; 
+}
+
+static void boolP_assign(bool *obj, bool value) {
+  *obj = value;
+}
+
+static bool boolP_value(bool *obj) {
+  return *obj;
+}
+
+
+static WCHAR *new_wcharP(void) { 
+  return new WCHAR(); 
+}
+
+static WCHAR *copy_wcharP(WCHAR value) { 
+  return new WCHAR(value); 
+}
+
+static void delete_wcharP(WCHAR *obj) { 
+  delete obj; 
+}
+
+static void wcharP_assign(WCHAR *obj, WCHAR value) {
+  *obj = value;
+}
+
+static WCHAR wcharP_value(WCHAR *obj) {
   return *obj;
 }
 
@@ -615,7 +667,49 @@ static adlx_size adlx_sizeP_value(adlx_size *obj) {
 }
 
 
-static IADLXDisplayServices* *new_displaySerP_Ptr() { 
+static ADLX_IntRange *new_adlx_intRangeP(void) { 
+  return new ADLX_IntRange(); 
+}
+
+static ADLX_IntRange *copy_adlx_intRangeP(ADLX_IntRange value) { 
+  return new ADLX_IntRange(value); 
+}
+
+static void delete_adlx_intRangeP(ADLX_IntRange *obj) { 
+  delete obj; 
+}
+
+static void adlx_intRangeP_assign(ADLX_IntRange *obj, ADLX_IntRange value) {
+  *obj = value;
+}
+
+static ADLX_IntRange adlx_intRangeP_value(ADLX_IntRange *obj) {
+  return *obj;
+}
+
+
+static ADLX_GPU_TYPE *new_gpuTypeP(void) { 
+  return new ADLX_GPU_TYPE(); 
+}
+
+static ADLX_GPU_TYPE *copy_gpuTypeP(ADLX_GPU_TYPE value) { 
+  return new ADLX_GPU_TYPE(value); 
+}
+
+static void delete_gpuTypeP(ADLX_GPU_TYPE *obj) { 
+  delete obj; 
+}
+
+static void gpuTypeP_assign(ADLX_GPU_TYPE *obj, ADLX_GPU_TYPE value) {
+  *obj = value;
+}
+
+static ADLX_GPU_TYPE gpuTypeP_value(ADLX_GPU_TYPE *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayServices* *new_displaySerP_Ptr(void) { 
   return new IADLXDisplayServices*(); 
 }
 
@@ -624,7 +718,7 @@ static IADLXDisplayServices* *copy_displaySerP_Ptr(IADLXDisplayServices* value) 
 }
 
 static void delete_displaySerP_Ptr(IADLXDisplayServices* *obj) { 
-  if (*obj) delete *obj; 
+  delete obj; 
 }
 
 static void displaySerP_Ptr_assign(IADLXDisplayServices* *obj, IADLXDisplayServices* value) {
@@ -636,7 +730,7 @@ static IADLXDisplayServices* displaySerP_Ptr_value(IADLXDisplayServices* *obj) {
 }
 
 
-static IADLXDisplayList* *new_displayListP_Ptr() { 
+static IADLXDisplayList* *new_displayListP_Ptr(void) { 
   return new IADLXDisplayList*(); 
 }
 
@@ -645,7 +739,7 @@ static IADLXDisplayList* *copy_displayListP_Ptr(IADLXDisplayList* value) {
 }
 
 static void delete_displayListP_Ptr(IADLXDisplayList* *obj) { 
-  if (*obj) delete *obj; 
+  delete obj; 
 }
 
 static void displayListP_Ptr_assign(IADLXDisplayList* *obj, IADLXDisplayList* value) {
@@ -657,7 +751,7 @@ static IADLXDisplayList* displayListP_Ptr_value(IADLXDisplayList* *obj) {
 }
 
 
-static IADLXDisplay* *new_displayP_Ptr() { 
+static IADLXDisplay* *new_displayP_Ptr(void) { 
   return new IADLXDisplay*(); 
 }
 
@@ -666,7 +760,7 @@ static IADLXDisplay* *copy_displayP_Ptr(IADLXDisplay* value) {
 }
 
 static void delete_displayP_Ptr(IADLXDisplay* *obj) { 
-  if (*obj) delete *obj; 
+  delete obj; 
 }
 
 static void displayP_Ptr_assign(IADLXDisplay* *obj, IADLXDisplay* value) {
@@ -678,7 +772,7 @@ static IADLXDisplay* displayP_Ptr_value(IADLXDisplay* *obj) {
 }
 
 
-static IADLXDisplayChangedHandling* *new_displayChangeHandlP_Ptr() { 
+static IADLXDisplayChangedHandling* *new_displayChangeHandlP_Ptr(void) { 
   return new IADLXDisplayChangedHandling*(); 
 }
 
@@ -687,7 +781,7 @@ static IADLXDisplayChangedHandling* *copy_displayChangeHandlP_Ptr(IADLXDisplayCh
 }
 
 static void delete_displayChangeHandlP_Ptr(IADLXDisplayChangedHandling* *obj) { 
-  if (*obj) delete *obj; 
+  delete obj; 
 }
 
 static void displayChangeHandlP_Ptr_assign(IADLXDisplayChangedHandling* *obj, IADLXDisplayChangedHandling* value) {
@@ -699,7 +793,322 @@ static IADLXDisplayChangedHandling* displayChangeHandlP_Ptr_value(IADLXDisplayCh
 }
 
 
-static char* *new_charP_Ptr() { 
+static IADLXGPU* *new_gpuP_Ptr(void) { 
+  return new IADLXGPU*(); 
+}
+
+static IADLXGPU* *copy_gpuP_Ptr(IADLXGPU* value) { 
+  return new IADLXGPU*(value); 
+}
+
+static void delete_gpuP_Ptr(IADLXGPU* *obj) { 
+  delete obj; 
+}
+
+static void gpuP_Ptr_assign(IADLXGPU* *obj, IADLXGPU* value) {
+  *obj = value;
+}
+
+static IADLXGPU* gpuP_Ptr_value(IADLXGPU* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUList* *new_gpuListP_Ptr(void) { 
+  return new IADLXGPUList*(); 
+}
+
+static IADLXGPUList* *copy_gpuListP_Ptr(IADLXGPUList* value) { 
+  return new IADLXGPUList*(value); 
+}
+
+static void delete_gpuListP_Ptr(IADLXGPUList* *obj) { 
+  delete obj; 
+}
+
+static void gpuListP_Ptr_assign(IADLXGPUList* *obj, IADLXGPUList* value) {
+  *obj = value;
+}
+
+static IADLXGPUList* gpuListP_Ptr_value(IADLXGPUList* *obj) {
+  return *obj;
+}
+
+
+static IADLXList* *new_adlxListP_Ptr(void) { 
+  return new IADLXList*(); 
+}
+
+static IADLXList* *copy_adlxListP_Ptr(IADLXList* value) { 
+  return new IADLXList*(value); 
+}
+
+static void delete_adlxListP_Ptr(IADLXList* *obj) { 
+  delete obj; 
+}
+
+static void adlxListP_Ptr_assign(IADLXList* *obj, IADLXList* value) {
+  *obj = value;
+}
+
+static IADLXList* adlxListP_Ptr_value(IADLXList* *obj) {
+  return *obj;
+}
+
+
+static IADLXInterface* *new_adlxInterfaceP_Ptr(void) { 
+  return new IADLXInterface*(); 
+}
+
+static IADLXInterface* *copy_adlxInterfaceP_Ptr(IADLXInterface* value) { 
+  return new IADLXInterface*(value); 
+}
+
+static void delete_adlxInterfaceP_Ptr(IADLXInterface* *obj) { 
+  delete obj; 
+}
+
+static void adlxInterfaceP_Ptr_assign(IADLXInterface* *obj, IADLXInterface* value) {
+  *obj = value;
+}
+
+static IADLXInterface* adlxInterfaceP_Ptr_value(IADLXInterface* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUTuningServices* *new_gpuTuningP_Ptr(void) { 
+  return new IADLXGPUTuningServices*(); 
+}
+
+static IADLXGPUTuningServices* *copy_gpuTuningP_Ptr(IADLXGPUTuningServices* value) { 
+  return new IADLXGPUTuningServices*(value); 
+}
+
+static void delete_gpuTuningP_Ptr(IADLXGPUTuningServices* *obj) { 
+  delete obj; 
+}
+
+static void gpuTuningP_Ptr_assign(IADLXGPUTuningServices* *obj, IADLXGPUTuningServices* value) {
+  *obj = value;
+}
+
+static IADLXGPUTuningServices* gpuTuningP_Ptr_value(IADLXGPUTuningServices* *obj) {
+  return *obj;
+}
+
+
+static IADLXManualFanTuning* *new_manualFanTuningP_Ptr(void) { 
+  return new IADLXManualFanTuning*(); 
+}
+
+static IADLXManualFanTuning* *copy_manualFanTuningP_Ptr(IADLXManualFanTuning* value) { 
+  return new IADLXManualFanTuning*(value); 
+}
+
+static void delete_manualFanTuningP_Ptr(IADLXManualFanTuning* *obj) { 
+  delete obj; 
+}
+
+static void manualFanTuningP_Ptr_assign(IADLXManualFanTuning* *obj, IADLXManualFanTuning* value) {
+  *obj = value;
+}
+
+static IADLXManualFanTuning* manualFanTuningP_Ptr_value(IADLXManualFanTuning* *obj) {
+  return *obj;
+}
+
+
+static IADLXManualPowerTuning* *new_manualPowerTuningP_Ptr(void) { 
+  return new IADLXManualPowerTuning*(); 
+}
+
+static IADLXManualPowerTuning* *copy_manualPowerTuningP_Ptr(IADLXManualPowerTuning* value) { 
+  return new IADLXManualPowerTuning*(value); 
+}
+
+static void delete_manualPowerTuningP_Ptr(IADLXManualPowerTuning* *obj) { 
+  delete obj; 
+}
+
+static void manualPowerTuningP_Ptr_assign(IADLXManualPowerTuning* *obj, IADLXManualPowerTuning* value) {
+  *obj = value;
+}
+
+static IADLXManualPowerTuning* manualPowerTuningP_Ptr_value(IADLXManualPowerTuning* *obj) {
+  return *obj;
+}
+
+
+static IADLXPerformanceMonitoringServices* *new_performanceP_Ptr(void) { 
+  return new IADLXPerformanceMonitoringServices*(); 
+}
+
+static IADLXPerformanceMonitoringServices* *copy_performanceP_Ptr(IADLXPerformanceMonitoringServices* value) { 
+  return new IADLXPerformanceMonitoringServices*(value); 
+}
+
+static void delete_performanceP_Ptr(IADLXPerformanceMonitoringServices* *obj) { 
+  delete obj; 
+}
+
+static void performanceP_Ptr_assign(IADLXPerformanceMonitoringServices* *obj, IADLXPerformanceMonitoringServices* value) {
+  *obj = value;
+}
+
+static IADLXPerformanceMonitoringServices* performanceP_Ptr_value(IADLXPerformanceMonitoringServices* *obj) {
+  return *obj;
+}
+
+
+static IADLXManualFanTuningStateList* *new_fanTuningStateListP_Ptr(void) { 
+  return new IADLXManualFanTuningStateList*(); 
+}
+
+static IADLXManualFanTuningStateList* *copy_fanTuningStateListP_Ptr(IADLXManualFanTuningStateList* value) { 
+  return new IADLXManualFanTuningStateList*(value); 
+}
+
+static void delete_fanTuningStateListP_Ptr(IADLXManualFanTuningStateList* *obj) { 
+  delete obj; 
+}
+
+static void fanTuningStateListP_Ptr_assign(IADLXManualFanTuningStateList* *obj, IADLXManualFanTuningStateList* value) {
+  *obj = value;
+}
+
+static IADLXManualFanTuningStateList* fanTuningStateListP_Ptr_value(IADLXManualFanTuningStateList* *obj) {
+  return *obj;
+}
+
+
+static IADLXManualFanTuningState* *new_fanTuningStateP_Ptr(void) { 
+  return new IADLXManualFanTuningState*(); 
+}
+
+static IADLXManualFanTuningState* *copy_fanTuningStateP_Ptr(IADLXManualFanTuningState* value) { 
+  return new IADLXManualFanTuningState*(value); 
+}
+
+static void delete_fanTuningStateP_Ptr(IADLXManualFanTuningState* *obj) { 
+  delete obj; 
+}
+
+static void fanTuningStateP_Ptr_assign(IADLXManualFanTuningState* *obj, IADLXManualFanTuningState* value) {
+  *obj = value;
+}
+
+static IADLXManualFanTuningState* fanTuningStateP_Ptr_value(IADLXManualFanTuningState* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUMetrics* *new_metricsP_Ptr(void) { 
+  return new IADLXGPUMetrics*(); 
+}
+
+static IADLXGPUMetrics* *copy_metricsP_Ptr(IADLXGPUMetrics* value) { 
+  return new IADLXGPUMetrics*(value); 
+}
+
+static void delete_metricsP_Ptr(IADLXGPUMetrics* *obj) { 
+  delete obj; 
+}
+
+static void metricsP_Ptr_assign(IADLXGPUMetrics* *obj, IADLXGPUMetrics* value) {
+  *obj = value;
+}
+
+static IADLXGPUMetrics* metricsP_Ptr_value(IADLXGPUMetrics* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUMetrics1* *new_metrics1P_Ptr(void) { 
+  return new IADLXGPUMetrics1*(); 
+}
+
+static IADLXGPUMetrics1* *copy_metrics1P_Ptr(IADLXGPUMetrics1* value) { 
+  return new IADLXGPUMetrics1*(value); 
+}
+
+static void delete_metrics1P_Ptr(IADLXGPUMetrics1* *obj) { 
+  delete obj; 
+}
+
+static void metrics1P_Ptr_assign(IADLXGPUMetrics1* *obj, IADLXGPUMetrics1* value) {
+  *obj = value;
+}
+
+static IADLXGPUMetrics1* metrics1P_Ptr_value(IADLXGPUMetrics1* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUMetricsSupport* *new_metricsSupportP_Ptr(void) { 
+  return new IADLXGPUMetricsSupport*(); 
+}
+
+static IADLXGPUMetricsSupport* *copy_metricsSupportP_Ptr(IADLXGPUMetricsSupport* value) { 
+  return new IADLXGPUMetricsSupport*(value); 
+}
+
+static void delete_metricsSupportP_Ptr(IADLXGPUMetricsSupport* *obj) { 
+  delete obj; 
+}
+
+static void metricsSupportP_Ptr_assign(IADLXGPUMetricsSupport* *obj, IADLXGPUMetricsSupport* value) {
+  *obj = value;
+}
+
+static IADLXGPUMetricsSupport* metricsSupportP_Ptr_value(IADLXGPUMetricsSupport* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUMetricsSupport1* *new_metricsSupport1P_Ptr(void) { 
+  return new IADLXGPUMetricsSupport1*(); 
+}
+
+static IADLXGPUMetricsSupport1* *copy_metricsSupport1P_Ptr(IADLXGPUMetricsSupport1* value) { 
+  return new IADLXGPUMetricsSupport1*(value); 
+}
+
+static void delete_metricsSupport1P_Ptr(IADLXGPUMetricsSupport1* *obj) { 
+  delete obj; 
+}
+
+static void metricsSupport1P_Ptr_assign(IADLXGPUMetricsSupport1* *obj, IADLXGPUMetricsSupport1* value) {
+  *obj = value;
+}
+
+static IADLXGPUMetricsSupport1* metricsSupport1P_Ptr_value(IADLXGPUMetricsSupport1* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPUMetricsList* *new_gpuMetricsListP_Ptr(void) { 
+  return new IADLXGPUMetricsList*(); 
+}
+
+static IADLXGPUMetricsList* *copy_gpuMetricsListP_Ptr(IADLXGPUMetricsList* value) { 
+  return new IADLXGPUMetricsList*(value); 
+}
+
+static void delete_gpuMetricsListP_Ptr(IADLXGPUMetricsList* *obj) { 
+  delete obj; 
+}
+
+static void gpuMetricsListP_Ptr_assign(IADLXGPUMetricsList* *obj, IADLXGPUMetricsList* value) {
+  *obj = value;
+}
+
+static IADLXGPUMetricsList* gpuMetricsListP_Ptr_value(IADLXGPUMetricsList* *obj) {
+  return *obj;
+}
+
+
+static char* *new_charP_Ptr(void) { 
   return new char*(); 
 }
 
@@ -708,7 +1117,7 @@ static char* *copy_charP_Ptr(char* value) {
 }
 
 static void delete_charP_Ptr(char* *obj) { 
-  if (*obj) delete *obj; 
+  delete obj; 
 }
 
 static void charP_Ptr_assign(char* *obj, char* value) {
@@ -2981,6 +3390,3772 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXLog(void * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningState_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualTuningState::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningState *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetFrequency(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningState *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetVoltage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningState *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetVoltage(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningState *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningState(void * jarg1) {
+  adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
+  
+  arg1 = (adlx::IADLXManualTuningState *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXMemoryTimingDescription::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_GetDescription(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXMemoryTimingDescription *arg1 = (adlx::IADLXMemoryTimingDescription *) 0 ;
+  ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXMemoryTimingDescription *)jarg1; 
+  arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetDescription(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescription(void * jarg1) {
+  adlx::IADLXMemoryTimingDescription *arg1 = (adlx::IADLXMemoryTimingDescription *) 0 ;
+  
+  arg1 = (adlx::IADLXMemoryTimingDescription *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualTuningStateList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualTuningStateList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXManualTuningState **arg3 = (adlx::IADLXManualTuningState **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningStateList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXManualTuningState **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
+  adlx::IADLXManualTuningState *arg2 = (adlx::IADLXManualTuningState *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualTuningStateList *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningState *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningStateList(void * jarg1) {
+  adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
+  
+  arg1 = (adlx::IADLXManualTuningStateList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXMemoryTimingDescriptionList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXMemoryTimingDescriptionList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXMemoryTimingDescription **arg3 = (adlx::IADLXMemoryTimingDescription **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXMemoryTimingDescriptionList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXMemoryTimingDescription **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
+  adlx::IADLXMemoryTimingDescription *arg2 = (adlx::IADLXMemoryTimingDescription *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXMemoryTimingDescriptionList *)jarg1; 
+  arg2 = (adlx::IADLXMemoryTimingDescription *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescriptionList(void * jarg1) {
+  adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
+  
+  arg1 = (adlx::IADLXMemoryTimingDescriptionList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUTuningChangedEvent::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_GetGPU(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx::IADLXGPU **arg2 = (adlx::IADLXGPU **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  arg2 = (adlx::IADLXGPU **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPU(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsAutomaticTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsAutomaticTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsPresetTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsPresetTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualGPUCLKTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsManualGPUCLKTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualVRAMTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsManualVRAMTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualFanTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsManualFanTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualPowerTuningChanged(void * jarg1) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  result = (adlx_bool)(arg1)->IsManualPowerTuningChanged();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedEvent(void * jarg1) {
+  adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedListener_OnGPUTuningChanged(void * jarg1, void * jarg2) {
+  unsigned int jresult ;
+  adlx::IADLXGPUTuningChangedListener *arg1 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
+  adlx::IADLXGPUTuningChangedEvent *arg2 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedListener *)jarg1; 
+  arg2 = (adlx::IADLXGPUTuningChangedEvent *)jarg2; 
+  result = (adlx_bool)(arg1)->OnGPUTuningChanged(arg2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedListener(void * jarg1) {
+  adlx::IADLXGPUTuningChangedListener *arg1 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedListener *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUTuningChangedHandling::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_AddGPUTuningEventListener(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
+  adlx::IADLXGPUTuningChangedListener *arg2 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedHandling *)jarg1; 
+  arg2 = (adlx::IADLXGPUTuningChangedListener *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->AddGPUTuningEventListener(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_RemoveGPUTuningEventListener(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
+  adlx::IADLXGPUTuningChangedListener *arg2 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedHandling *)jarg1; 
+  arg2 = (adlx::IADLXGPUTuningChangedListener *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->RemoveGPUTuningEventListener(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedHandling(void * jarg1) {
+  adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningChangedHandling *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningServices_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUTuningServices::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetGPUTuningChangedHandling(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPUTuningChangedHandling **arg2 = (adlx::IADLXGPUTuningChangedHandling **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPUTuningChangedHandling **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUTuningChangedHandling(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsAtFactory(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsAtFactory(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_ResetToFactory(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->ResetToFactory(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedAutoTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedPresetTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedManualGFXTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedManualVRAMTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedManualFanTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_bool *arg3 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_bool *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedManualPowerTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetAutoTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetPresetTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetManualGFXTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetManualVRAMTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetManualFanTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXInterface **arg3 = (adlx::IADLXInterface **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXInterface **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetManualPowerTuning(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningServices(void * jarg1) {
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningState_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualFanTuningState::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetFanSpeed(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetTemperature(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningState(void * jarg1) {
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualFanTuningStateList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualFanTuningStateList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXManualFanTuningState **arg3 = (adlx::IADLXManualFanTuningState **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXManualFanTuningState **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  adlx::IADLXManualFanTuningState *arg2 = (adlx::IADLXManualFanTuningState *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningState *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningStateList(void * jarg1) {
+  adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualFanTuning::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_IntRange *arg3 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  arg3 = (ADLX_IntRange *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetFanTuningRanges(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetFanTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetEmptyFanTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetEmptyFanTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsValidFanTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsValidFanTuningStates(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetFanTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetFanTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedZeroRPM(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedZeroRPM(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetZeroRPMState(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetZeroRPMState(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetZeroRPMState(void * jarg1, unsigned int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  result = (ADLX_RESULT)(arg1)->SetZeroRPMState(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinAcousticLimit(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedMinAcousticLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimitRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinAcousticLimitRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimit(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinAcousticLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinAcousticLimit(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMinAcousticLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedMinFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeedRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinFanSpeedRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinFanSpeed(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMinFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedTargetFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedTargetFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeedRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTargetFanSpeedRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTargetFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetTargetFanSpeed(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetTargetFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning(void * jarg1) {
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualFanTuning1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultFanTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetDefaultFanTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinAcousticLimitDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinAcousticLimitDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinFanSpeedDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMinFanSpeedDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetTargetFanSpeedDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTargetFanSpeedDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultZeroRPMState(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetDefaultZeroRPMState(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning1(void * jarg1) {
+  adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualGraphicsTuning1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_IntRange *arg3 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  arg3 = (ADLX_IntRange *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUTuningRanges(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetEmptyGPUTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetEmptyGPUTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IsValidGPUTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsValidGPUTuningStates(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_SetGPUTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetGPUTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning1(void * jarg1) {
+  adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualGraphicsTuning2::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequencyRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMinFrequencyRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMinFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMinFrequency(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetGPUMinFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequencyRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMaxFrequencyRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMaxFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMaxFrequency(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetGPUMaxFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltageRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVoltageRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUVoltage(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetGPUVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2(void * jarg1) {
+  adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualGraphicsTuning2_1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMinFrequencyDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2_1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMinFrequencyDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMaxFrequencyDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2_1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMaxFrequencyDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUVoltageDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2_1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVoltageDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2_1(void * jarg1) {
+  adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualGraphicsTuning2_1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualPowerTuning::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimitRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetPowerLimitRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimit(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetPowerLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetPowerLimit(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetPowerLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_IsSupportedTDCLimit(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedTDCLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimitRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTDCLimitRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimit(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTDCLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetTDCLimit(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetTDCLimit(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning(void * jarg1) {
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualPowerTuning1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetPowerLimitDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetPowerLimitDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetTDCLimitDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualPowerTuning1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetTDCLimitDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning1(void * jarg1) {
+  adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualVRAMTuning1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedMemoryTiming(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx::IADLXMemoryTimingDescriptionList **arg2 = (adlx::IADLXMemoryTimingDescriptionList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXMemoryTimingDescriptionList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSupportedMemoryTimingDescriptionList(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMemoryTimingDescription(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetMemoryTimingDescription(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  ADLX_MEMORYTIMING_DESCRIPTION arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (ADLX_MEMORYTIMING_DESCRIPTION)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMemoryTimingDescription(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_IntRange *arg3 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  arg3 = (ADLX_IntRange *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetVRAMTuningRanges(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetVRAMTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetEmptyVRAMTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetEmptyVRAMTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsValidVRAMTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->IsValidVRAMTuningStates(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetVRAMTuningStates(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  arg2 = (adlx::IADLXManualTuningStateList *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetVRAMTuningStates(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning1(void * jarg1) {
+  adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualVRAMTuning2::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedMemoryTiming(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  adlx::IADLXMemoryTimingDescriptionList **arg2 = (adlx::IADLXMemoryTimingDescriptionList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (adlx::IADLXMemoryTimingDescriptionList **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSupportedMemoryTimingDescriptionList(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMemoryTimingDescription(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMemoryTimingDescription(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  ADLX_MEMORYTIMING_DESCRIPTION arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (ADLX_MEMORYTIMING_DESCRIPTION)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMemoryTimingDescription(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequencyRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMaxVRAMFrequencyRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMaxVRAMFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMaxVRAMFrequency(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMaxVRAMFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2(void * jarg1) {
+  adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXManualVRAMTuning2_1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_GetMaxVRAMFrequencyDefault(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXManualVRAMTuning2_1 *arg1 = (adlx::IADLXManualVRAMTuning2_1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2_1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMaxVRAMFrequencyDefault(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2_1(void * jarg1) {
+  adlx::IADLXManualVRAMTuning2_1 *arg1 = (adlx::IADLXManualVRAMTuning2_1 *) 0 ;
+  
+  arg1 = (adlx::IADLXManualVRAMTuning2_1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUPresetTuning::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedPowerSaver(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedPowerSaver(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedQuiet(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedQuiet(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedBalanced(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedBalanced(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedTurbo(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedTurbo(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedRage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedRage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentPowerSaver(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsCurrentPowerSaver(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentQuiet(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsCurrentQuiet(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentBalanced(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsCurrentBalanced(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentTurbo(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsCurrentTurbo(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentRage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsCurrentRage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetPowerSaver(void * jarg1) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->SetPowerSaver();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetQuiet(void * jarg1) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->SetQuiet();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetBalanced(void * jarg1) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->SetBalanced();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetTurbo(void * jarg1) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->SetTurbo();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetRage(void * jarg1) {
+  int jresult ;
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->SetRage();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUPresetTuning(void * jarg1) {
+  adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetricsSupport::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUUsage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUUsage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUClockSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUClockSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAMClockSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUVRAMClockSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUHotspotTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUHotspotTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUPower(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUPower(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTotalBoardPower(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUTotalBoardPower(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAM(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUVRAM(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVoltage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUUsageRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUClockSpeedRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVRAMClockSpeedRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUTemperatureRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUHotspotTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUHotspotTemperatureRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUPowerRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUPowerRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUFanSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUFanSpeedRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVRAMRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVoltageRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUVoltageRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTotalBoardPowerRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUTotalBoardPowerRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUIntakeTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUIntakeTemperatureRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUIntakeTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUIntakeTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport(void * jarg1) {
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetricsSupport::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedCPUUsage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedCPUUsage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSystemRAM(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedSystemRAM(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSmartShift(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedSmartShift(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetCPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetCPUUsageRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSystemRAMRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetSystemRAMRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSmartShiftRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetSmartShiftRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport(void * jarg1) {
+  adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetrics::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_TimeStamp(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int64 *arg2 = (adlx_int64 *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int64 *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->TimeStamp(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUUsage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUUsage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUClockSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUClockSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAMClockSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUVRAMClockSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUHotspotTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUHotspotTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUPower(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUPower(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTotalBoardPower(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUTotalBoardPower(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUFanSpeed(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUFanSpeed(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAM(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUVRAM(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVoltage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUVoltage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUIntakeTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUIntakeTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics(void * jarg1) {
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetricsList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetricsList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXGPUMetrics **arg3 = (adlx::IADLXGPUMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXGPUMetrics **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
+  adlx::IADLXGPUMetrics *arg2 = (adlx::IADLXGPUMetrics *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsList *)jarg1; 
+  arg2 = (adlx::IADLXGPUMetrics *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsList(void * jarg1) {
+  adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetrics::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_TimeStamp(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
+  adlx_int64 *arg2 = (adlx_int64 *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
+  arg2 = (adlx_int64 *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->TimeStamp(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_CPUUsage(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->CPUUsage(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SystemRAM(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SystemRAM(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SmartShift(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SmartShift(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics(void * jarg1) {
+  adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
+  
+  arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetricsList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetricsList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXSystemMetrics **arg3 = (adlx::IADLXSystemMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXSystemMetrics **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
+  adlx::IADLXSystemMetrics *arg2 = (adlx::IADLXSystemMetrics *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsList *)jarg1; 
+  arg2 = (adlx::IADLXSystemMetrics *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsList(void * jarg1) {
+  adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
+  
+  arg1 = (adlx::IADLXSystemMetricsList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPS_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXFPS::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_TimeStamp(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
+  adlx_int64 *arg2 = (adlx_int64 *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXFPS *)jarg1; 
+  arg2 = (adlx_int64 *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->TimeStamp(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_FPS(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXFPS *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->FPS(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPS(void * jarg1) {
+  adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
+  
+  arg1 = (adlx::IADLXFPS *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXFPSList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXFPSList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXFPS **arg3 = (adlx::IADLXFPS **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXFPSList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXFPS **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
+  adlx::IADLXFPS *arg2 = (adlx::IADLXFPS *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXFPSList *)jarg1; 
+  arg2 = (adlx::IADLXFPS *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPSList(void * jarg1) {
+  adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
+  
+  arg1 = (adlx::IADLXFPSList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetrics_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXAllMetrics::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_TimeStamp(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
+  adlx_int64 *arg2 = (adlx_int64 *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetrics *)jarg1; 
+  arg2 = (adlx_int64 *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->TimeStamp(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetSystemMetrics(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
+  adlx::IADLXSystemMetrics **arg2 = (adlx::IADLXSystemMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetrics *)jarg1; 
+  arg2 = (adlx::IADLXSystemMetrics **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSystemMetrics(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetFPS(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
+  adlx::IADLXFPS **arg2 = (adlx::IADLXFPS **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetrics *)jarg1; 
+  arg2 = (adlx::IADLXFPS **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetFPS(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXGPUMetrics **arg3 = (adlx::IADLXGPUMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetrics *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXGPUMetrics **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMetrics(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetrics(void * jarg1) {
+  adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
+  
+  arg1 = (adlx::IADLXAllMetrics *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXAllMetricsList::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_ITEM_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXAllMetricsList::ITEM_IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
+  adlx_uint arg2 ;
+  adlx::IADLXAllMetrics **arg3 = (adlx::IADLXAllMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetricsList *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  arg3 = (adlx::IADLXAllMetrics **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->At(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_Add_Back(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
+  adlx::IADLXAllMetrics *arg2 = (adlx::IADLXAllMetrics *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXAllMetricsList *)jarg1; 
+  arg2 = (adlx::IADLXAllMetrics *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->Add_Back(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetricsList(void * jarg1) {
+  adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
+  
+  arg1 = (adlx::IADLXAllMetricsList *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXPerformanceMonitoringServices::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSamplingIntervalRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSamplingIntervalRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetSamplingInterval(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetSamplingInterval(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSamplingInterval(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSamplingInterval(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySizeRange(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (ADLX_IntRange *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMaxPerformanceMetricsHistorySizeRange(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetMaxPerformanceMetricsHistorySize(void * jarg1, int jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int arg2 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  result = (ADLX_RESULT)(arg1)->SetMaxPerformanceMetricsHistorySize(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetMaxPerformanceMetricsHistorySize(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_ClearPerformanceMetricsHistory(void * jarg1) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->ClearPerformanceMetricsHistory();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetCurrentPerformanceMetricsHistorySize(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StartPerformanceMetricsTracking(void * jarg1) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->StartPerformanceMetricsTracking();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StopPerformanceMetricsTracking(void * jarg1) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->StopPerformanceMetricsTracking();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetAllMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int arg2 ;
+  adlx_int arg3 ;
+  adlx::IADLXAllMetricsList **arg4 = (adlx::IADLXAllMetricsList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  arg3 = (adlx_int)jarg3; 
+  arg4 = (adlx::IADLXAllMetricsList **)jarg4; 
+  result = (ADLX_RESULT)(arg1)->GetAllMetricsHistory(arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetGPUMetricsHistory(void * jarg1, void * jarg2, int jarg3, int jarg4, void * jarg5) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx_int arg3 ;
+  adlx_int arg4 ;
+  adlx::IADLXGPUMetricsList **arg5 = (adlx::IADLXGPUMetricsList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx_int)jarg3; 
+  arg4 = (adlx_int)jarg4; 
+  arg5 = (adlx::IADLXGPUMetricsList **)jarg5; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMetricsHistory(arg2,arg3,arg4,arg5);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSystemMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int arg2 ;
+  adlx_int arg3 ;
+  adlx::IADLXSystemMetricsList **arg4 = (adlx::IADLXSystemMetricsList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  arg3 = (adlx_int)jarg3; 
+  arg4 = (adlx::IADLXSystemMetricsList **)jarg4; 
+  result = (ADLX_RESULT)(arg1)->GetSystemMetricsHistory(arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetFPSHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx_int arg2 ;
+  adlx_int arg3 ;
+  adlx::IADLXFPSList **arg4 = (adlx::IADLXFPSList **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx_int)jarg2; 
+  arg3 = (adlx_int)jarg3; 
+  arg4 = (adlx::IADLXFPSList **)jarg4; 
+  result = (ADLX_RESULT)(arg1)->GetFPSHistory(arg2,arg3,arg4);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentAllMetrics(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXAllMetrics **arg2 = (adlx::IADLXAllMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXAllMetrics **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetCurrentAllMetrics(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXGPUMetrics **arg3 = (adlx::IADLXGPUMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXGPUMetrics **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetCurrentGPUMetrics(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentSystemMetrics(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXSystemMetrics **arg2 = (adlx::IADLXSystemMetrics **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXSystemMetrics **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetCurrentSystemMetrics(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentFPS(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXFPS **arg2 = (adlx::IADLXFPS **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXFPS **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetCurrentFPS(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupportedGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXGPUMetricsSupport **arg3 = (adlx::IADLXGPUMetricsSupport **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  arg3 = (adlx::IADLXGPUMetricsSupport **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetSupportedGPUMetrics(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupportedSystemMetrics(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXSystemMetricsSupport **arg2 = (adlx::IADLXSystemMetricsSupport **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  arg2 = (adlx::IADLXSystemMetricsSupport **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GetSupportedSystemMetrics(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPerformanceMonitoringServices(void * jarg1) {
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetricsSupport1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IsSupportedPowerDistribution(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXSystemMetricsSupport1 *arg1 = (adlx::IADLXSystemMetricsSupport1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedPowerDistribution(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport1(void * jarg1) {
+  adlx::IADLXSystemMetricsSupport1 *arg1 = (adlx::IADLXSystemMetricsSupport1 *) 0 ;
+  
+  arg1 = (adlx::IADLXSystemMetricsSupport1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXSystemMetrics1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics1_PowerDistribution(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6) {
+  int jresult ;
+  adlx::IADLXSystemMetrics1 *arg1 = (adlx::IADLXSystemMetrics1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  adlx_int *arg4 = (adlx_int *) 0 ;
+  adlx_int *arg5 = (adlx_int *) 0 ;
+  adlx_int *arg6 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXSystemMetrics1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  arg4 = (adlx_int *)jarg4; 
+  arg5 = (adlx_int *)jarg5; 
+  arg6 = (adlx_int *)jarg6; 
+  result = (ADLX_RESULT)(arg1)->PowerDistribution(arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics1(void * jarg1) {
+  adlx::IADLXSystemMetrics1 *arg1 = (adlx::IADLXSystemMetrics1 *) 0 ;
+  
+  arg1 = (adlx::IADLXSystemMetrics1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetricsSupport1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedGPUMemoryTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedGPUMemoryTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetGPUMemoryTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetGPUMemoryTemperatureRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedNPUFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUFrequencyRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetNPUFrequencyRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUActivityLevel(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_bool *arg2 = (adlx_bool *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_bool *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->IsSupportedNPUActivityLevel(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUActivityLevelRange(void * jarg1, void * jarg2, void * jarg3) {
+  int jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  adlx_int *arg3 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  arg3 = (adlx_int *)jarg3; 
+  result = (ADLX_RESULT)(arg1)->GetNPUActivityLevelRange(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport1(void * jarg1) {
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics1_IID() {
+  void * jresult ;
+  wchar_t *result = 0 ;
+  
+  result = (wchar_t *)adlx::IADLXGPUMetrics1::IID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_GPUMemoryTemperature(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  adlx_double *arg2 = (adlx_double *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
+  arg2 = (adlx_double *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->GPUMemoryTemperature(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUFrequency(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->NPUFrequency(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUActivityLevel(void * jarg1, void * jarg2) {
+  int jresult ;
+  adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  adlx_int *arg2 = (adlx_int *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
+  arg2 = (adlx_int *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->NPUActivityLevel(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics1(void * jarg1) {
+  adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLXHelper() {
   void * jresult ;
   ADLXHelper *result = 0 ;
@@ -3223,6 +7398,122 @@ SWIGEXPORT double SWIGSTDCALL CSharp_doubleP_value(void * jarg1) {
   arg1 = (double *)jarg1; 
   result = (double)doubleP_value(arg1);
   jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_boolP() {
+  void * jresult ;
+  bool *result = 0 ;
+  
+  result = (bool *)new_boolP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_boolP(unsigned int jarg1) {
+  void * jresult ;
+  bool arg1 ;
+  bool *result = 0 ;
+  
+  arg1 = jarg1 ? true : false; 
+  result = (bool *)copy_boolP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_boolP(void * jarg1) {
+  bool *arg1 = (bool *) 0 ;
+  
+  arg1 = (bool *)jarg1; 
+  delete_boolP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_boolP_assign(void * jarg1, unsigned int jarg2) {
+  bool *arg1 = (bool *) 0 ;
+  bool arg2 ;
+  
+  arg1 = (bool *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  boolP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_boolP_value(void * jarg1) {
+  unsigned int jresult ;
+  bool *arg1 = (bool *) 0 ;
+  bool result;
+  
+  arg1 = (bool *)jarg1; 
+  result = (bool)boolP_value(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_wcharP() {
+  void * jresult ;
+  WCHAR *result = 0 ;
+  
+  result = (WCHAR *)new_wcharP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_wcharP(void * jarg1) {
+  void * jresult ;
+  WCHAR arg1 ;
+  WCHAR *argp1 ;
+  WCHAR *result = 0 ;
+  
+  argp1 = (WCHAR *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null WCHAR", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  result = (WCHAR *)copy_wcharP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_wcharP(void * jarg1) {
+  WCHAR *arg1 = (WCHAR *) 0 ;
+  
+  arg1 = (WCHAR *)jarg1; 
+  delete_wcharP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_wcharP_assign(void * jarg1, void * jarg2) {
+  WCHAR *arg1 = (WCHAR *) 0 ;
+  WCHAR arg2 ;
+  WCHAR *argp2 ;
+  
+  arg1 = (WCHAR *)jarg1; 
+  argp2 = (WCHAR *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null WCHAR", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  wcharP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_wcharP_value(void * jarg1) {
+  void * jresult ;
+  WCHAR *arg1 = (WCHAR *) 0 ;
+  WCHAR result;
+  
+  arg1 = (WCHAR *)jarg1; 
+  result = (WCHAR)wcharP_value(arg1);
+  jresult = new WCHAR(result); 
   return jresult;
 }
 
@@ -3487,6 +7778,122 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_sizeP_value(void * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_intRangeP() {
+  void * jresult ;
+  ADLX_IntRange *result = 0 ;
+  
+  result = (ADLX_IntRange *)new_adlx_intRangeP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_intRangeP(void * jarg1) {
+  void * jresult ;
+  ADLX_IntRange arg1 ;
+  ADLX_IntRange *argp1 ;
+  ADLX_IntRange *result = 0 ;
+  
+  argp1 = (ADLX_IntRange *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ADLX_IntRange", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  result = (ADLX_IntRange *)copy_adlx_intRangeP(SWIG_STD_MOVE(arg1));
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_intRangeP(void * jarg1) {
+  ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
+  
+  arg1 = (ADLX_IntRange *)jarg1; 
+  delete_adlx_intRangeP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_adlx_intRangeP_assign(void * jarg1, void * jarg2) {
+  ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
+  ADLX_IntRange arg2 ;
+  ADLX_IntRange *argp2 ;
+  
+  arg1 = (ADLX_IntRange *)jarg1; 
+  argp2 = (ADLX_IntRange *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ADLX_IntRange", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  adlx_intRangeP_assign(arg1,SWIG_STD_MOVE(arg2));
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_intRangeP_value(void * jarg1) {
+  void * jresult ;
+  ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
+  ADLX_IntRange result;
+  
+  arg1 = (ADLX_IntRange *)jarg1; 
+  result = adlx_intRangeP_value(arg1);
+  jresult = new ADLX_IntRange(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuTypeP() {
+  void * jresult ;
+  ADLX_GPU_TYPE *result = 0 ;
+  
+  result = (ADLX_GPU_TYPE *)new_gpuTypeP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuTypeP(int jarg1) {
+  void * jresult ;
+  ADLX_GPU_TYPE arg1 ;
+  ADLX_GPU_TYPE *result = 0 ;
+  
+  arg1 = (ADLX_GPU_TYPE)jarg1; 
+  result = (ADLX_GPU_TYPE *)copy_gpuTypeP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuTypeP(void * jarg1) {
+  ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
+  
+  arg1 = (ADLX_GPU_TYPE *)jarg1; 
+  delete_gpuTypeP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpuTypeP_assign(void * jarg1, int jarg2) {
+  ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
+  ADLX_GPU_TYPE arg2 ;
+  
+  arg1 = (ADLX_GPU_TYPE *)jarg1; 
+  arg2 = (ADLX_GPU_TYPE)jarg2; 
+  gpuTypeP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_gpuTypeP_value(void * jarg1) {
+  int jresult ;
+  ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
+  ADLX_GPU_TYPE result;
+  
+  arg1 = (ADLX_GPU_TYPE *)jarg1; 
+  result = (ADLX_GPU_TYPE)gpuTypeP_value(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySerP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices **result = 0 ;
@@ -3695,6 +8102,786 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_value(void * jarg1)
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPU **result = 0 ;
+  
+  result = (adlx::IADLXGPU **)new_gpuP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
+  adlx::IADLXGPU **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU *)jarg1; 
+  result = (adlx::IADLXGPU **)copy_gpuP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuP_Ptr(void * jarg1) {
+  adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
+  
+  arg1 = (adlx::IADLXGPU **)jarg1; 
+  delete_gpuP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpuP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
+  adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
+  
+  arg1 = (adlx::IADLXGPU **)jarg1; 
+  arg2 = (adlx::IADLXGPU *)jarg2; 
+  gpuP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpuP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
+  adlx::IADLXGPU *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU **)jarg1; 
+  result = (adlx::IADLXGPU *)gpuP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuListP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUList **result = 0 ;
+  
+  result = (adlx::IADLXGPUList **)new_gpuListP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuListP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUList *arg1 = (adlx::IADLXGPUList *) 0 ;
+  adlx::IADLXGPUList **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUList *)jarg1; 
+  result = (adlx::IADLXGPUList **)copy_gpuListP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuListP_Ptr(void * jarg1) {
+  adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUList **)jarg1; 
+  delete_gpuListP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpuListP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
+  adlx::IADLXGPUList *arg2 = (adlx::IADLXGPUList *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUList **)jarg1; 
+  arg2 = (adlx::IADLXGPUList *)jarg2; 
+  gpuListP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpuListP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
+  adlx::IADLXGPUList *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUList **)jarg1; 
+  result = (adlx::IADLXGPUList *)gpuListP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxListP_Ptr() {
+  void * jresult ;
+  adlx::IADLXList **result = 0 ;
+  
+  result = (adlx::IADLXList **)new_adlxListP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxListP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
+  adlx::IADLXList **result = 0 ;
+  
+  arg1 = (adlx::IADLXList *)jarg1; 
+  result = (adlx::IADLXList **)copy_adlxListP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxListP_Ptr(void * jarg1) {
+  adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
+  
+  arg1 = (adlx::IADLXList **)jarg1; 
+  delete_adlxListP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_adlxListP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
+  adlx::IADLXList *arg2 = (adlx::IADLXList *) 0 ;
+  
+  arg1 = (adlx::IADLXList **)jarg1; 
+  arg2 = (adlx::IADLXList *)jarg2; 
+  adlxListP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_adlxListP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
+  adlx::IADLXList *result = 0 ;
+  
+  arg1 = (adlx::IADLXList **)jarg1; 
+  result = (adlx::IADLXList *)adlxListP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxInterfaceP_Ptr() {
+  void * jresult ;
+  adlx::IADLXInterface **result = 0 ;
+  
+  result = (adlx::IADLXInterface **)new_adlxInterfaceP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxInterfaceP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
+  adlx::IADLXInterface **result = 0 ;
+  
+  arg1 = (adlx::IADLXInterface *)jarg1; 
+  result = (adlx::IADLXInterface **)copy_adlxInterfaceP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxInterfaceP_Ptr(void * jarg1) {
+  adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
+  
+  arg1 = (adlx::IADLXInterface **)jarg1; 
+  delete_adlxInterfaceP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
+  adlx::IADLXInterface *arg2 = (adlx::IADLXInterface *) 0 ;
+  
+  arg1 = (adlx::IADLXInterface **)jarg1; 
+  arg2 = (adlx::IADLXInterface *)jarg2; 
+  adlxInterfaceP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
+  adlx::IADLXInterface *result = 0 ;
+  
+  arg1 = (adlx::IADLXInterface **)jarg1; 
+  result = (adlx::IADLXInterface *)adlxInterfaceP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuTuningP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUTuningServices **result = 0 ;
+  
+  result = (adlx::IADLXGPUTuningServices **)new_gpuTuningP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuTuningP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
+  adlx::IADLXGPUTuningServices **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
+  result = (adlx::IADLXGPUTuningServices **)copy_gpuTuningP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuTuningP_Ptr(void * jarg1) {
+  adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningServices **)jarg1; 
+  delete_gpuTuningP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpuTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
+  adlx::IADLXGPUTuningServices *arg2 = (adlx::IADLXGPUTuningServices *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningServices **)jarg1; 
+  arg2 = (adlx::IADLXGPUTuningServices *)jarg2; 
+  gpuTuningP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpuTuningP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
+  adlx::IADLXGPUTuningServices *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUTuningServices **)jarg1; 
+  result = (adlx::IADLXGPUTuningServices *)gpuTuningP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualFanTuningP_Ptr() {
+  void * jresult ;
+  adlx::IADLXManualFanTuning **result = 0 ;
+  
+  result = (adlx::IADLXManualFanTuning **)new_manualFanTuningP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualFanTuningP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
+  adlx::IADLXManualFanTuning **result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
+  result = (adlx::IADLXManualFanTuning **)copy_manualFanTuningP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualFanTuningP_Ptr(void * jarg1) {
+  adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning **)jarg1; 
+  delete_manualFanTuningP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_manualFanTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
+  adlx::IADLXManualFanTuning *arg2 = (adlx::IADLXManualFanTuning *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning **)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuning *)jarg2; 
+  manualFanTuningP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_manualFanTuningP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
+  adlx::IADLXManualFanTuning *result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuning **)jarg1; 
+  result = (adlx::IADLXManualFanTuning *)manualFanTuningP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualPowerTuningP_Ptr() {
+  void * jresult ;
+  adlx::IADLXManualPowerTuning **result = 0 ;
+  
+  result = (adlx::IADLXManualPowerTuning **)new_manualPowerTuningP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualPowerTuningP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
+  adlx::IADLXManualPowerTuning **result = 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
+  result = (adlx::IADLXManualPowerTuning **)copy_manualPowerTuningP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualPowerTuningP_Ptr(void * jarg1) {
+  adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning **)jarg1; 
+  delete_manualPowerTuningP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
+  adlx::IADLXManualPowerTuning *arg2 = (adlx::IADLXManualPowerTuning *) 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning **)jarg1; 
+  arg2 = (adlx::IADLXManualPowerTuning *)jarg2; 
+  manualPowerTuningP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
+  adlx::IADLXManualPowerTuning *result = 0 ;
+  
+  arg1 = (adlx::IADLXManualPowerTuning **)jarg1; 
+  result = (adlx::IADLXManualPowerTuning *)manualPowerTuningP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_performanceP_Ptr() {
+  void * jresult ;
+  adlx::IADLXPerformanceMonitoringServices **result = 0 ;
+  
+  result = (adlx::IADLXPerformanceMonitoringServices **)new_performanceP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_performanceP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  adlx::IADLXPerformanceMonitoringServices **result = 0 ;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
+  result = (adlx::IADLXPerformanceMonitoringServices **)copy_performanceP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_performanceP_Ptr(void * jarg1) {
+  adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices **)jarg1; 
+  delete_performanceP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_performanceP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
+  adlx::IADLXPerformanceMonitoringServices *arg2 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices **)jarg1; 
+  arg2 = (adlx::IADLXPerformanceMonitoringServices *)jarg2; 
+  performanceP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_performanceP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
+  adlx::IADLXPerformanceMonitoringServices *result = 0 ;
+  
+  arg1 = (adlx::IADLXPerformanceMonitoringServices **)jarg1; 
+  result = (adlx::IADLXPerformanceMonitoringServices *)performanceP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateListP_Ptr() {
+  void * jresult ;
+  adlx::IADLXManualFanTuningStateList **result = 0 ;
+  
+  result = (adlx::IADLXManualFanTuningStateList **)new_fanTuningStateListP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateListP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  adlx::IADLXManualFanTuningStateList **result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList *)jarg1; 
+  result = (adlx::IADLXManualFanTuningStateList **)copy_fanTuningStateListP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateListP_Ptr(void * jarg1) {
+  adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList **)jarg1; 
+  delete_fanTuningStateListP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList **)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningStateList *)jarg2; 
+  fanTuningStateListP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
+  adlx::IADLXManualFanTuningStateList *result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningStateList **)jarg1; 
+  result = (adlx::IADLXManualFanTuningStateList *)fanTuningStateListP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateP_Ptr() {
+  void * jresult ;
+  adlx::IADLXManualFanTuningState **result = 0 ;
+  
+  result = (adlx::IADLXManualFanTuningState **)new_fanTuningStateP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
+  adlx::IADLXManualFanTuningState **result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
+  result = (adlx::IADLXManualFanTuningState **)copy_fanTuningStateP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateP_Ptr(void * jarg1) {
+  adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningState **)jarg1; 
+  delete_fanTuningStateP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
+  adlx::IADLXManualFanTuningState *arg2 = (adlx::IADLXManualFanTuningState *) 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningState **)jarg1; 
+  arg2 = (adlx::IADLXManualFanTuningState *)jarg2; 
+  fanTuningStateP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
+  adlx::IADLXManualFanTuningState *result = 0 ;
+  
+  arg1 = (adlx::IADLXManualFanTuningState **)jarg1; 
+  result = (adlx::IADLXManualFanTuningState *)fanTuningStateP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUMetrics **result = 0 ;
+  
+  result = (adlx::IADLXGPUMetrics **)new_metricsP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
+  adlx::IADLXGPUMetrics **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
+  result = (adlx::IADLXGPUMetrics **)copy_metricsP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsP_Ptr(void * jarg1) {
+  adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics **)jarg1; 
+  delete_metricsP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_metricsP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
+  adlx::IADLXGPUMetrics *arg2 = (adlx::IADLXGPUMetrics *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics **)jarg1; 
+  arg2 = (adlx::IADLXGPUMetrics *)jarg2; 
+  metricsP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_metricsP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
+  adlx::IADLXGPUMetrics *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics **)jarg1; 
+  result = (adlx::IADLXGPUMetrics *)metricsP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_metrics1P_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUMetrics1 **result = 0 ;
+  
+  result = (adlx::IADLXGPUMetrics1 **)new_metrics1P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metrics1P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  adlx::IADLXGPUMetrics1 **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
+  result = (adlx::IADLXGPUMetrics1 **)copy_metrics1P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_metrics1P_Ptr(void * jarg1) {
+  adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 **)jarg1; 
+  delete_metrics1P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_metrics1P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
+  adlx::IADLXGPUMetrics1 *arg2 = (adlx::IADLXGPUMetrics1 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 **)jarg1; 
+  arg2 = (adlx::IADLXGPUMetrics1 *)jarg2; 
+  metrics1P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_metrics1P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
+  adlx::IADLXGPUMetrics1 *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetrics1 **)jarg1; 
+  result = (adlx::IADLXGPUMetrics1 *)metrics1P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupportP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport **result = 0 ;
+  
+  result = (adlx::IADLXGPUMetricsSupport **)new_metricsSupportP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupportP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  adlx::IADLXGPUMetricsSupport **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
+  result = (adlx::IADLXGPUMetricsSupport **)copy_metricsSupportP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupportP_Ptr(void * jarg1) {
+  adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport **)jarg1; 
+  delete_metricsSupportP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupportP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
+  adlx::IADLXGPUMetricsSupport *arg2 = (adlx::IADLXGPUMetricsSupport *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport **)jarg1; 
+  arg2 = (adlx::IADLXGPUMetricsSupport *)jarg2; 
+  metricsSupportP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupportP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
+  adlx::IADLXGPUMetricsSupport *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport **)jarg1; 
+  result = (adlx::IADLXGPUMetricsSupport *)metricsSupportP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupport1P_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport1 **result = 0 ;
+  
+  result = (adlx::IADLXGPUMetricsSupport1 **)new_metricsSupport1P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupport1P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  adlx::IADLXGPUMetricsSupport1 **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
+  result = (adlx::IADLXGPUMetricsSupport1 **)copy_metricsSupport1P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupport1P_Ptr(void * jarg1) {
+  adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 **)jarg1; 
+  delete_metricsSupport1P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupport1P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
+  adlx::IADLXGPUMetricsSupport1 *arg2 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 **)jarg1; 
+  arg2 = (adlx::IADLXGPUMetricsSupport1 *)jarg2; 
+  metricsSupport1P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupport1P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
+  adlx::IADLXGPUMetricsSupport1 *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsSupport1 **)jarg1; 
+  result = (adlx::IADLXGPUMetricsSupport1 *)metricsSupport1P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuMetricsListP_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPUMetricsList **result = 0 ;
+  
+  result = (adlx::IADLXGPUMetricsList **)new_gpuMetricsListP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuMetricsListP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
+  adlx::IADLXGPUMetricsList **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsList *)jarg1; 
+  result = (adlx::IADLXGPUMetricsList **)copy_gpuMetricsListP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuMetricsListP_Ptr(void * jarg1) {
+  adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsList **)jarg1; 
+  delete_gpuMetricsListP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
+  adlx::IADLXGPUMetricsList *arg2 = (adlx::IADLXGPUMetricsList *) 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsList **)jarg1; 
+  arg2 = (adlx::IADLXGPUMetricsList *)jarg2; 
+  gpuMetricsListP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
+  adlx::IADLXGPUMetricsList *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPUMetricsList **)jarg1; 
+  result = (adlx::IADLXGPUMetricsList *)gpuMetricsListP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_charP_Ptr() {
   void * jresult ;
   char **result = 0 ;
@@ -3777,6 +8964,142 @@ SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXGPUList_SWIGUpcast(adlx::IA
 
 SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_SWIGUpcast(adlx::IADLXGPUsChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualTuningState_SWIGUpcast(adlx::IADLXManualTuningState *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_SWIGUpcast(adlx::IADLXMemoryTimingDescription *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXManualTuningStateList_SWIGUpcast(adlx::IADLXManualTuningStateList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_SWIGUpcast(adlx::IADLXMemoryTimingDescriptionList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_SWIGUpcast(adlx::IADLXGPUTuningChangedHandling *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUTuningServices_SWIGUpcast(adlx::IADLXGPUTuningServices *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualFanTuningState_SWIGUpcast(adlx::IADLXManualFanTuningState *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_SWIGUpcast(adlx::IADLXManualFanTuningStateList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualFanTuning_SWIGUpcast(adlx::IADLXManualFanTuning *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXManualFanTuning * SWIGSTDCALL CSharp_IADLXManualFanTuning1_SWIGUpcast(adlx::IADLXManualFanTuning1 *jarg1) {
+    return (adlx::IADLXManualFanTuning *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_SWIGUpcast(adlx::IADLXManualGraphicsTuning1 *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SWIGUpcast(adlx::IADLXManualGraphicsTuning2 *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXManualGraphicsTuning2 * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_SWIGUpcast(adlx::IADLXManualGraphicsTuning2_1 *jarg1) {
+    return (adlx::IADLXManualGraphicsTuning2 *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualPowerTuning_SWIGUpcast(adlx::IADLXManualPowerTuning *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXManualPowerTuning * SWIGSTDCALL CSharp_IADLXManualPowerTuning1_SWIGUpcast(adlx::IADLXManualPowerTuning1 *jarg1) {
+    return (adlx::IADLXManualPowerTuning *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SWIGUpcast(adlx::IADLXManualVRAMTuning1 *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SWIGUpcast(adlx::IADLXManualVRAMTuning2 *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXManualVRAMTuning2 * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_SWIGUpcast(adlx::IADLXManualVRAMTuning2_1 *jarg1) {
+    return (adlx::IADLXManualVRAMTuning2 *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SWIGUpcast(adlx::IADLXGPUPresetTuning *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_SWIGUpcast(adlx::IADLXGPUMetricsSupport *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_SWIGUpcast(adlx::IADLXSystemMetricsSupport *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUMetrics_SWIGUpcast(adlx::IADLXGPUMetrics *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXGPUMetricsList_SWIGUpcast(adlx::IADLXGPUMetricsList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSystemMetrics_SWIGUpcast(adlx::IADLXSystemMetrics *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXSystemMetricsList_SWIGUpcast(adlx::IADLXSystemMetricsList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXFPS_SWIGUpcast(adlx::IADLXFPS *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXFPSList_SWIGUpcast(adlx::IADLXFPSList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXAllMetrics_SWIGUpcast(adlx::IADLXAllMetrics *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXAllMetricsList_SWIGUpcast(adlx::IADLXAllMetricsList *jarg1) {
+    return (adlx::IADLXList *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SWIGUpcast(adlx::IADLXPerformanceMonitoringServices *jarg1) {
+    return (adlx::IADLXInterface *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXSystemMetricsSupport * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_SWIGUpcast(adlx::IADLXSystemMetricsSupport1 *jarg1) {
+    return (adlx::IADLXSystemMetricsSupport *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXSystemMetrics * SWIGSTDCALL CSharp_IADLXSystemMetrics1_SWIGUpcast(adlx::IADLXSystemMetrics1 *jarg1) {
+    return (adlx::IADLXSystemMetrics *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXGPUMetricsSupport * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_SWIGUpcast(adlx::IADLXGPUMetricsSupport1 *jarg1) {
+    return (adlx::IADLXGPUMetricsSupport *)jarg1;
+}
+
+SWIGEXPORT adlx::IADLXGPUMetrics * SWIGSTDCALL CSharp_IADLXGPUMetrics1_SWIGUpcast(adlx::IADLXGPUMetrics1 *jarg1) {
+    return (adlx::IADLXGPUMetrics *)jarg1;
 }
 
 #ifdef __cplusplus
