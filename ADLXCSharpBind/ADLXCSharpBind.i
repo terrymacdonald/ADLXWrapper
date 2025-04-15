@@ -191,7 +191,9 @@ using namespace adlx;
 %pointer_functions(ADLX_IntRange, adlx_intRangeP);
 %pointer_functions(ADLX_GPU_TYPE, gpuTypeP);
 %pointer_functions(ADLX_ORIENTATION, orientationP);
-%pointer_functions(ADLX_Point, pointP);
+%pointer_functions(ADLX_Point, adlx_pointP);
+%pointer_functions(ADLX_DESKTOP_TYPE, desktopTypeP);
+
 
 
 // T** pointers

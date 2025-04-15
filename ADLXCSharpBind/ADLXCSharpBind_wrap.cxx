@@ -776,23 +776,44 @@ static ADLX_ORIENTATION orientationP_value(ADLX_ORIENTATION *obj) {
 }
 
 
-static ADLX_Point *new_pointP(void) { 
+static ADLX_Point *new_adlx_pointP(void) { 
   return new ADLX_Point(); 
 }
 
-static ADLX_Point *copy_pointP(ADLX_Point value) { 
+static ADLX_Point *copy_adlx_pointP(ADLX_Point value) { 
   return new ADLX_Point(value); 
 }
 
-static void delete_pointP(ADLX_Point *obj) { 
+static void delete_adlx_pointP(ADLX_Point *obj) { 
   delete obj; 
 }
 
-static void pointP_assign(ADLX_Point *obj, ADLX_Point value) {
+static void adlx_pointP_assign(ADLX_Point *obj, ADLX_Point value) {
   *obj = value;
 }
 
-static ADLX_Point pointP_value(ADLX_Point *obj) {
+static ADLX_Point adlx_pointP_value(ADLX_Point *obj) {
+  return *obj;
+}
+
+
+static ADLX_DESKTOP_TYPE *new_desktopTypeP(void) { 
+  return new ADLX_DESKTOP_TYPE(); 
+}
+
+static ADLX_DESKTOP_TYPE *copy_desktopTypeP(ADLX_DESKTOP_TYPE value) { 
+  return new ADLX_DESKTOP_TYPE(value); 
+}
+
+static void delete_desktopTypeP(ADLX_DESKTOP_TYPE *obj) { 
+  delete obj; 
+}
+
+static void desktopTypeP_assign(ADLX_DESKTOP_TYPE *obj, ADLX_DESKTOP_TYPE value) {
+  *obj = value;
+}
+
+static ADLX_DESKTOP_TYPE desktopTypeP_value(ADLX_DESKTOP_TYPE *obj) {
   return *obj;
 }
 
@@ -17182,17 +17203,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_orientationP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_pointP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pointP() {
   void * jresult ;
   ADLX_Point *result = 0 ;
   
-  result = (ADLX_Point *)new_pointP();
+  result = (ADLX_Point *)new_adlx_pointP();
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_pointP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pointP(void * jarg1) {
   void * jresult ;
   ADLX_Point arg1 ;
   ADLX_Point *argp1 ;
@@ -17204,21 +17225,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_pointP(void * jarg1) {
     return 0;
   }
   arg1 = *argp1; 
-  result = (ADLX_Point *)copy_pointP(SWIG_STD_MOVE(arg1));
+  result = (ADLX_Point *)copy_adlx_pointP(SWIG_STD_MOVE(arg1));
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_pointP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pointP(void * jarg1) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   
   arg1 = (ADLX_Point *)jarg1; 
-  delete_pointP(arg1);
+  delete_adlx_pointP(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_pointP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pointP_assign(void * jarg1, void * jarg2) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point arg2 ;
   ADLX_Point *argp2 ;
@@ -17230,18 +17251,70 @@ SWIGEXPORT void SWIGSTDCALL CSharp_pointP_assign(void * jarg1, void * jarg2) {
     return ;
   }
   arg2 = *argp2; 
-  pointP_assign(arg1,SWIG_STD_MOVE(arg2));
+  adlx_pointP_assign(arg1,SWIG_STD_MOVE(arg2));
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_pointP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_pointP_value(void * jarg1) {
   void * jresult ;
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point result;
   
   arg1 = (ADLX_Point *)jarg1; 
-  result = pointP_value(arg1);
+  result = adlx_pointP_value(arg1);
   jresult = new ADLX_Point(result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopTypeP() {
+  void * jresult ;
+  ADLX_DESKTOP_TYPE *result = 0 ;
+  
+  result = (ADLX_DESKTOP_TYPE *)new_desktopTypeP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopTypeP(int jarg1) {
+  void * jresult ;
+  ADLX_DESKTOP_TYPE arg1 ;
+  ADLX_DESKTOP_TYPE *result = 0 ;
+  
+  arg1 = (ADLX_DESKTOP_TYPE)jarg1; 
+  result = (ADLX_DESKTOP_TYPE *)copy_desktopTypeP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopTypeP(void * jarg1) {
+  ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
+  
+  arg1 = (ADLX_DESKTOP_TYPE *)jarg1; 
+  delete_desktopTypeP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_desktopTypeP_assign(void * jarg1, int jarg2) {
+  ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
+  ADLX_DESKTOP_TYPE arg2 ;
+  
+  arg1 = (ADLX_DESKTOP_TYPE *)jarg1; 
+  arg2 = (ADLX_DESKTOP_TYPE)jarg2; 
+  desktopTypeP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_desktopTypeP_value(void * jarg1) {
+  int jresult ;
+  ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
+  ADLX_DESKTOP_TYPE result;
+  
+  arg1 = (ADLX_DESKTOP_TYPE *)jarg1; 
+  result = (ADLX_DESKTOP_TYPE)desktopTypeP_value(arg1);
+  jresult = (int)result; 
   return jresult;
 }
 
