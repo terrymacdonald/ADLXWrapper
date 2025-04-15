@@ -524,6 +524,48 @@ static adlx_int intP_value(adlx_int *obj) {
 }
 
 
+static adlx_uint *new_uintP(void) { 
+  return new adlx_uint(); 
+}
+
+static adlx_uint *copy_uintP(adlx_uint value) { 
+  return new adlx_uint(value); 
+}
+
+static void delete_uintP(adlx_uint *obj) { 
+  delete obj; 
+}
+
+static void uintP_assign(adlx_uint *obj, adlx_uint value) {
+  *obj = value;
+}
+
+static adlx_uint uintP_value(adlx_uint *obj) {
+  return *obj;
+}
+
+
+static adlx_bool *new_adlxBoolP(void) { 
+  return new adlx_bool(); 
+}
+
+static adlx_bool *copy_adlxBoolP(adlx_bool value) { 
+  return new adlx_bool(value); 
+}
+
+static void delete_adlxBoolP(adlx_bool *obj) { 
+  delete obj; 
+}
+
+static void adlxBoolP_assign(adlx_bool *obj, adlx_bool value) {
+  *obj = value;
+}
+
+static adlx_bool adlxBoolP_value(adlx_bool *obj) {
+  return *obj;
+}
+
+
 static double *new_doubleP(void) { 
   return new double(); 
 }
@@ -583,27 +625,6 @@ static void wcharP_assign(WCHAR *obj, WCHAR value) {
 }
 
 static WCHAR wcharP_value(WCHAR *obj) {
-  return *obj;
-}
-
-
-static adlx_uint *new_uintP(void) { 
-  return new adlx_uint(); 
-}
-
-static adlx_uint *copy_uintP(adlx_uint value) { 
-  return new adlx_uint(value); 
-}
-
-static void delete_uintP(adlx_uint *obj) { 
-  delete obj; 
-}
-
-static void uintP_assign(adlx_uint *obj, adlx_uint value) {
-  *obj = value;
-}
-
-static adlx_uint uintP_value(adlx_uint *obj) {
   return *obj;
 }
 
@@ -734,6 +755,48 @@ static ADLX_GPU_TYPE gpuTypeP_value(ADLX_GPU_TYPE *obj) {
 }
 
 
+static ADLX_ORIENTATION *new_orientationP(void) { 
+  return new ADLX_ORIENTATION(); 
+}
+
+static ADLX_ORIENTATION *copy_orientationP(ADLX_ORIENTATION value) { 
+  return new ADLX_ORIENTATION(value); 
+}
+
+static void delete_orientationP(ADLX_ORIENTATION *obj) { 
+  delete obj; 
+}
+
+static void orientationP_assign(ADLX_ORIENTATION *obj, ADLX_ORIENTATION value) {
+  *obj = value;
+}
+
+static ADLX_ORIENTATION orientationP_value(ADLX_ORIENTATION *obj) {
+  return *obj;
+}
+
+
+static ADLX_Point *new_pointP(void) { 
+  return new ADLX_Point(); 
+}
+
+static ADLX_Point *copy_pointP(ADLX_Point value) { 
+  return new ADLX_Point(value); 
+}
+
+static void delete_pointP(ADLX_Point *obj) { 
+  delete obj; 
+}
+
+static void pointP_assign(ADLX_Point *obj, ADLX_Point value) {
+  *obj = value;
+}
+
+static ADLX_Point pointP_value(ADLX_Point *obj) {
+  return *obj;
+}
+
+
 static IADLXDisplayServices* *new_displaySerP_Ptr(void) { 
   return new IADLXDisplayServices*(); 
 }
@@ -814,6 +877,132 @@ static void displayChangeHandlP_Ptr_assign(IADLXDisplayChangedHandling* *obj, IA
 }
 
 static IADLXDisplayChangedHandling* displayChangeHandlP_Ptr_value(IADLXDisplayChangedHandling* *obj) {
+  return *obj;
+}
+
+
+static IADLXDesktopServices* *new_desktopSerP_Ptr(void) { 
+  return new IADLXDesktopServices*(); 
+}
+
+static IADLXDesktopServices* *copy_desktopSerP_Ptr(IADLXDesktopServices* value) { 
+  return new IADLXDesktopServices*(value); 
+}
+
+static void delete_desktopSerP_Ptr(IADLXDesktopServices* *obj) { 
+  delete obj; 
+}
+
+static void desktopSerP_Ptr_assign(IADLXDesktopServices* *obj, IADLXDesktopServices* value) {
+  *obj = value;
+}
+
+static IADLXDesktopServices* desktopSerP_Ptr_value(IADLXDesktopServices* *obj) {
+  return *obj;
+}
+
+
+static IADLXDesktopList* *new_desktopListP_Ptr(void) { 
+  return new IADLXDesktopList*(); 
+}
+
+static IADLXDesktopList* *copy_desktopListP_Ptr(IADLXDesktopList* value) { 
+  return new IADLXDesktopList*(value); 
+}
+
+static void delete_desktopListP_Ptr(IADLXDesktopList* *obj) { 
+  delete obj; 
+}
+
+static void desktopListP_Ptr_assign(IADLXDesktopList* *obj, IADLXDesktopList* value) {
+  *obj = value;
+}
+
+static IADLXDesktopList* desktopListP_Ptr_value(IADLXDesktopList* *obj) {
+  return *obj;
+}
+
+
+static IADLXDesktop* *new_desktopP_Ptr(void) { 
+  return new IADLXDesktop*(); 
+}
+
+static IADLXDesktop* *copy_desktopP_Ptr(IADLXDesktop* value) { 
+  return new IADLXDesktop*(value); 
+}
+
+static void delete_desktopP_Ptr(IADLXDesktop* *obj) { 
+  delete obj; 
+}
+
+static void desktopP_Ptr_assign(IADLXDesktop* *obj, IADLXDesktop* value) {
+  *obj = value;
+}
+
+static IADLXDesktop* desktopP_Ptr_value(IADLXDesktop* *obj) {
+  return *obj;
+}
+
+
+static IADLXDesktopChangedHandling* *new_desktopChangeHandlP_Ptr(void) { 
+  return new IADLXDesktopChangedHandling*(); 
+}
+
+static IADLXDesktopChangedHandling* *copy_desktopChangeHandlP_Ptr(IADLXDesktopChangedHandling* value) { 
+  return new IADLXDesktopChangedHandling*(value); 
+}
+
+static void delete_desktopChangeHandlP_Ptr(IADLXDesktopChangedHandling* *obj) { 
+  delete obj; 
+}
+
+static void desktopChangeHandlP_Ptr_assign(IADLXDesktopChangedHandling* *obj, IADLXDesktopChangedHandling* value) {
+  *obj = value;
+}
+
+static IADLXDesktopChangedHandling* desktopChangeHandlP_Ptr_value(IADLXDesktopChangedHandling* *obj) {
+  return *obj;
+}
+
+
+static IADLXEyefinityDesktop* *new_eyefinityDesktopP_Ptr(void) { 
+  return new IADLXEyefinityDesktop*(); 
+}
+
+static IADLXEyefinityDesktop* *copy_eyefinityDesktopP_Ptr(IADLXEyefinityDesktop* value) { 
+  return new IADLXEyefinityDesktop*(value); 
+}
+
+static void delete_eyefinityDesktopP_Ptr(IADLXEyefinityDesktop* *obj) { 
+  delete obj; 
+}
+
+static void eyefinityDesktopP_Ptr_assign(IADLXEyefinityDesktop* *obj, IADLXEyefinityDesktop* value) {
+  *obj = value;
+}
+
+static IADLXEyefinityDesktop* eyefinityDesktopP_Ptr_value(IADLXEyefinityDesktop* *obj) {
+  return *obj;
+}
+
+
+static IADLXSimpleEyefinity* *new_simpleEyefinityP_Ptr(void) { 
+  return new IADLXSimpleEyefinity*(); 
+}
+
+static IADLXSimpleEyefinity* *copy_simpleEyefinityP_Ptr(IADLXSimpleEyefinity* value) { 
+  return new IADLXSimpleEyefinity*(value); 
+}
+
+static void delete_simpleEyefinityP_Ptr(IADLXSimpleEyefinity* *obj) { 
+  delete obj; 
+}
+
+static void simpleEyefinityP_Ptr_assign(IADLXSimpleEyefinity* *obj, IADLXSimpleEyefinity* value) {
+  *obj = value;
+}
+
+static IADLXSimpleEyefinity* simpleEyefinityP_Ptr_value(IADLXSimpleEyefinity* *obj) {
   return *obj;
 }
 
@@ -16345,6 +16534,110 @@ SWIGEXPORT int SWIGSTDCALL CSharp_intP_value(void * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_uintP() {
+  void * jresult ;
+  adlx_uint *result = 0 ;
+  
+  result = (adlx_uint *)new_uintP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_uintP(unsigned int jarg1) {
+  void * jresult ;
+  adlx_uint arg1 ;
+  adlx_uint *result = 0 ;
+  
+  arg1 = (adlx_uint)jarg1; 
+  result = (adlx_uint *)copy_uintP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_uintP(void * jarg1) {
+  adlx_uint *arg1 = (adlx_uint *) 0 ;
+  
+  arg1 = (adlx_uint *)jarg1; 
+  delete_uintP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_uintP_assign(void * jarg1, unsigned int jarg2) {
+  adlx_uint *arg1 = (adlx_uint *) 0 ;
+  adlx_uint arg2 ;
+  
+  arg1 = (adlx_uint *)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  uintP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_uintP_value(void * jarg1) {
+  unsigned int jresult ;
+  adlx_uint *arg1 = (adlx_uint *) 0 ;
+  adlx_uint result;
+  
+  arg1 = (adlx_uint *)jarg1; 
+  result = (adlx_uint)uintP_value(arg1);
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxBoolP() {
+  void * jresult ;
+  adlx_bool *result = 0 ;
+  
+  result = (adlx_bool *)new_adlxBoolP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxBoolP(unsigned int jarg1) {
+  void * jresult ;
+  adlx_bool arg1 ;
+  adlx_bool *result = 0 ;
+  
+  arg1 = jarg1 ? true : false; 
+  result = (adlx_bool *)copy_adlxBoolP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxBoolP(void * jarg1) {
+  adlx_bool *arg1 = (adlx_bool *) 0 ;
+  
+  arg1 = (adlx_bool *)jarg1; 
+  delete_adlxBoolP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_adlxBoolP_assign(void * jarg1, unsigned int jarg2) {
+  adlx_bool *arg1 = (adlx_bool *) 0 ;
+  adlx_bool arg2 ;
+  
+  arg1 = (adlx_bool *)jarg1; 
+  arg2 = jarg2 ? true : false; 
+  adlxBoolP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlxBoolP_value(void * jarg1) {
+  unsigned int jresult ;
+  adlx_bool *arg1 = (adlx_bool *) 0 ;
+  adlx_bool result;
+  
+  arg1 = (adlx_bool *)jarg1; 
+  result = (adlx_bool)adlxBoolP_value(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_doubleP() {
   void * jresult ;
   double *result = 0 ;
@@ -16509,58 +16802,6 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_wcharP_value(void * jarg1) {
   arg1 = (WCHAR *)jarg1; 
   result = (WCHAR)wcharP_value(arg1);
   jresult = new WCHAR(result); 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_uintP() {
-  void * jresult ;
-  adlx_uint *result = 0 ;
-  
-  result = (adlx_uint *)new_uintP();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_uintP(unsigned int jarg1) {
-  void * jresult ;
-  adlx_uint arg1 ;
-  adlx_uint *result = 0 ;
-  
-  arg1 = (adlx_uint)jarg1; 
-  result = (adlx_uint *)copy_uintP(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_uintP(void * jarg1) {
-  adlx_uint *arg1 = (adlx_uint *) 0 ;
-  
-  arg1 = (adlx_uint *)jarg1; 
-  delete_uintP(arg1);
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_uintP_assign(void * jarg1, unsigned int jarg2) {
-  adlx_uint *arg1 = (adlx_uint *) 0 ;
-  adlx_uint arg2 ;
-  
-  arg1 = (adlx_uint *)jarg1; 
-  arg2 = (adlx_uint)jarg2; 
-  uintP_assign(arg1,arg2);
-}
-
-
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_uintP_value(void * jarg1) {
-  unsigned int jresult ;
-  adlx_uint *arg1 = (adlx_uint *) 0 ;
-  adlx_uint result;
-  
-  arg1 = (adlx_uint *)jarg1; 
-  result = (adlx_uint)uintP_value(arg1);
-  jresult = (unsigned int)result; 
   return jresult;
 }
 
@@ -16889,6 +17130,122 @@ SWIGEXPORT int SWIGSTDCALL CSharp_gpuTypeP_value(void * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_orientationP() {
+  void * jresult ;
+  ADLX_ORIENTATION *result = 0 ;
+  
+  result = (ADLX_ORIENTATION *)new_orientationP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_orientationP(int jarg1) {
+  void * jresult ;
+  ADLX_ORIENTATION arg1 ;
+  ADLX_ORIENTATION *result = 0 ;
+  
+  arg1 = (ADLX_ORIENTATION)jarg1; 
+  result = (ADLX_ORIENTATION *)copy_orientationP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_orientationP(void * jarg1) {
+  ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
+  
+  arg1 = (ADLX_ORIENTATION *)jarg1; 
+  delete_orientationP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_orientationP_assign(void * jarg1, int jarg2) {
+  ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
+  ADLX_ORIENTATION arg2 ;
+  
+  arg1 = (ADLX_ORIENTATION *)jarg1; 
+  arg2 = (ADLX_ORIENTATION)jarg2; 
+  orientationP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_orientationP_value(void * jarg1) {
+  int jresult ;
+  ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
+  ADLX_ORIENTATION result;
+  
+  arg1 = (ADLX_ORIENTATION *)jarg1; 
+  result = (ADLX_ORIENTATION)orientationP_value(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_pointP() {
+  void * jresult ;
+  ADLX_Point *result = 0 ;
+  
+  result = (ADLX_Point *)new_pointP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_pointP(void * jarg1) {
+  void * jresult ;
+  ADLX_Point arg1 ;
+  ADLX_Point *argp1 ;
+  ADLX_Point *result = 0 ;
+  
+  argp1 = (ADLX_Point *)jarg1; 
+  if (!argp1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ADLX_Point", 0);
+    return 0;
+  }
+  arg1 = *argp1; 
+  result = (ADLX_Point *)copy_pointP(SWIG_STD_MOVE(arg1));
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_pointP(void * jarg1) {
+  ADLX_Point *arg1 = (ADLX_Point *) 0 ;
+  
+  arg1 = (ADLX_Point *)jarg1; 
+  delete_pointP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_pointP_assign(void * jarg1, void * jarg2) {
+  ADLX_Point *arg1 = (ADLX_Point *) 0 ;
+  ADLX_Point arg2 ;
+  ADLX_Point *argp2 ;
+  
+  arg1 = (ADLX_Point *)jarg1; 
+  argp2 = (ADLX_Point *)jarg2; 
+  if (!argp2) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "Attempt to dereference null ADLX_Point", 0);
+    return ;
+  }
+  arg2 = *argp2; 
+  pointP_assign(arg1,SWIG_STD_MOVE(arg2));
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_pointP_value(void * jarg1) {
+  void * jresult ;
+  ADLX_Point *arg1 = (ADLX_Point *) 0 ;
+  ADLX_Point result;
+  
+  arg1 = (ADLX_Point *)jarg1; 
+  result = pointP_value(arg1);
+  jresult = new ADLX_Point(result); 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySerP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices **result = 0 ;
@@ -17092,6 +17449,318 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_value(void * jarg1)
   
   arg1 = (adlx::IADLXDisplayChangedHandling **)jarg1; 
   result = (adlx::IADLXDisplayChangedHandling *)displayChangeHandlP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopSerP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDesktopServices **result = 0 ;
+  
+  result = (adlx::IADLXDesktopServices **)new_desktopSerP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopSerP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
+  adlx::IADLXDesktopServices **result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopServices *)jarg1; 
+  result = (adlx::IADLXDesktopServices **)copy_desktopSerP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopSerP_Ptr(void * jarg1) {
+  adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopServices **)jarg1; 
+  delete_desktopSerP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_desktopSerP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
+  adlx::IADLXDesktopServices *arg2 = (adlx::IADLXDesktopServices *) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopServices **)jarg1; 
+  arg2 = (adlx::IADLXDesktopServices *)jarg2; 
+  desktopSerP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_desktopSerP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
+  adlx::IADLXDesktopServices *result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopServices **)jarg1; 
+  result = (adlx::IADLXDesktopServices *)desktopSerP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopListP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDesktopList **result = 0 ;
+  
+  result = (adlx::IADLXDesktopList **)new_desktopListP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopListP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopList *arg1 = (adlx::IADLXDesktopList *) 0 ;
+  adlx::IADLXDesktopList **result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopList *)jarg1; 
+  result = (adlx::IADLXDesktopList **)copy_desktopListP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopListP_Ptr(void * jarg1) {
+  adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopList **)jarg1; 
+  delete_desktopListP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_desktopListP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
+  adlx::IADLXDesktopList *arg2 = (adlx::IADLXDesktopList *) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopList **)jarg1; 
+  arg2 = (adlx::IADLXDesktopList *)jarg2; 
+  desktopListP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_desktopListP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
+  adlx::IADLXDesktopList *result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopList **)jarg1; 
+  result = (adlx::IADLXDesktopList *)desktopListP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDesktop **result = 0 ;
+  
+  result = (adlx::IADLXDesktop **)new_desktopP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
+  adlx::IADLXDesktop **result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktop *)jarg1; 
+  result = (adlx::IADLXDesktop **)copy_desktopP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopP_Ptr(void * jarg1) {
+  adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
+  
+  arg1 = (adlx::IADLXDesktop **)jarg1; 
+  delete_desktopP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_desktopP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
+  adlx::IADLXDesktop *arg2 = (adlx::IADLXDesktop *) 0 ;
+  
+  arg1 = (adlx::IADLXDesktop **)jarg1; 
+  arg2 = (adlx::IADLXDesktop *)jarg2; 
+  desktopP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_desktopP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
+  adlx::IADLXDesktop *result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktop **)jarg1; 
+  result = (adlx::IADLXDesktop *)desktopP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopChangeHandlP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDesktopChangedHandling **result = 0 ;
+  
+  result = (adlx::IADLXDesktopChangedHandling **)new_desktopChangeHandlP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopChangeHandlP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopChangedHandling *arg1 = (adlx::IADLXDesktopChangedHandling *) 0 ;
+  adlx::IADLXDesktopChangedHandling **result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopChangedHandling *)jarg1; 
+  result = (adlx::IADLXDesktopChangedHandling **)copy_desktopChangeHandlP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopChangeHandlP_Ptr(void * jarg1) {
+  adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopChangedHandling **)jarg1; 
+  delete_desktopChangeHandlP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
+  adlx::IADLXDesktopChangedHandling *arg2 = (adlx::IADLXDesktopChangedHandling *) 0 ;
+  
+  arg1 = (adlx::IADLXDesktopChangedHandling **)jarg1; 
+  arg2 = (adlx::IADLXDesktopChangedHandling *)jarg2; 
+  desktopChangeHandlP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
+  adlx::IADLXDesktopChangedHandling *result = 0 ;
+  
+  arg1 = (adlx::IADLXDesktopChangedHandling **)jarg1; 
+  result = (adlx::IADLXDesktopChangedHandling *)desktopChangeHandlP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_eyefinityDesktopP_Ptr() {
+  void * jresult ;
+  adlx::IADLXEyefinityDesktop **result = 0 ;
+  
+  result = (adlx::IADLXEyefinityDesktop **)new_eyefinityDesktopP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_eyefinityDesktopP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
+  adlx::IADLXEyefinityDesktop **result = 0 ;
+  
+  arg1 = (adlx::IADLXEyefinityDesktop *)jarg1; 
+  result = (adlx::IADLXEyefinityDesktop **)copy_eyefinityDesktopP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_eyefinityDesktopP_Ptr(void * jarg1) {
+  adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
+  
+  arg1 = (adlx::IADLXEyefinityDesktop **)jarg1; 
+  delete_eyefinityDesktopP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
+  adlx::IADLXEyefinityDesktop *arg2 = (adlx::IADLXEyefinityDesktop *) 0 ;
+  
+  arg1 = (adlx::IADLXEyefinityDesktop **)jarg1; 
+  arg2 = (adlx::IADLXEyefinityDesktop *)jarg2; 
+  eyefinityDesktopP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
+  adlx::IADLXEyefinityDesktop *result = 0 ;
+  
+  arg1 = (adlx::IADLXEyefinityDesktop **)jarg1; 
+  result = (adlx::IADLXEyefinityDesktop *)eyefinityDesktopP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_simpleEyefinityP_Ptr() {
+  void * jresult ;
+  adlx::IADLXSimpleEyefinity **result = 0 ;
+  
+  result = (adlx::IADLXSimpleEyefinity **)new_simpleEyefinityP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_simpleEyefinityP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
+  adlx::IADLXSimpleEyefinity **result = 0 ;
+  
+  arg1 = (adlx::IADLXSimpleEyefinity *)jarg1; 
+  result = (adlx::IADLXSimpleEyefinity **)copy_simpleEyefinityP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_simpleEyefinityP_Ptr(void * jarg1) {
+  adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
+  
+  arg1 = (adlx::IADLXSimpleEyefinity **)jarg1; 
+  delete_simpleEyefinityP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
+  adlx::IADLXSimpleEyefinity *arg2 = (adlx::IADLXSimpleEyefinity *) 0 ;
+  
+  arg1 = (adlx::IADLXSimpleEyefinity **)jarg1; 
+  arg2 = (adlx::IADLXSimpleEyefinity *)jarg2; 
+  simpleEyefinityP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
+  adlx::IADLXSimpleEyefinity *result = 0 ;
+  
+  arg1 = (adlx::IADLXSimpleEyefinity **)jarg1; 
+  result = (adlx::IADLXSimpleEyefinity *)simpleEyefinityP_Ptr_value(arg1);
   jresult = (void *)result; 
   return jresult;
 }

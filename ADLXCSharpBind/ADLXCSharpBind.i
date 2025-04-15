@@ -179,22 +179,32 @@ using namespace adlx;
 %include cpointer.i
 
 %pointer_functions(adlx_int, intP);
+%pointer_functions(adlx_uint, uintP);
+%pointer_functions(adlx_bool, adlxBoolP);
 %pointer_functions(double, doubleP);
 %pointer_functions(bool, boolP);
 %pointer_functions(WCHAR, wcharP);
-%pointer_functions(adlx_uint, uintP);
 %pointer_functions(ADLX_DISPLAY_TYPE, displayTypeP);
 %pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, disConnectTypeP);
 %pointer_functions(ADLX_DISPLAY_SCAN_TYPE, disScanTypeP);
 %pointer_functions(adlx_size, adlx_sizeP);
 %pointer_functions(ADLX_IntRange, adlx_intRangeP);
 %pointer_functions(ADLX_GPU_TYPE, gpuTypeP);
+%pointer_functions(ADLX_ORIENTATION, orientationP);
+%pointer_functions(ADLX_Point, pointP);
+
 
 // T** pointers
 %pointer_functions(IADLXDisplayServices*, displaySerP_Ptr);
 %pointer_functions(IADLXDisplayList*, displayListP_Ptr);
 %pointer_functions(IADLXDisplay*, displayP_Ptr);
 %pointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
+%pointer_functions(IADLXDesktopServices*, desktopSerP_Ptr);
+%pointer_functions(IADLXDesktopList*, desktopListP_Ptr);
+%pointer_functions(IADLXDesktop*, desktopP_Ptr);
+%pointer_functions(IADLXDesktopChangedHandling*, desktopChangeHandlP_Ptr);
+%pointer_functions(IADLXEyefinityDesktop*, eyefinityDesktopP_Ptr);
+%pointer_functions(IADLXSimpleEyefinity*, simpleEyefinityP_Ptr);
 %pointer_functions(IADLXGPU*, gpuP_Ptr);
 %pointer_functions(IADLXGPUList*, gpuListP_Ptr);
 %pointer_functions(IADLXList*, adlxListP_Ptr);
