@@ -776,23 +776,23 @@ static ADLX_ORIENTATION orientationP_value(ADLX_ORIENTATION *obj) {
 }
 
 
-static ADLX_Point *new_adlx_pointP(void) { 
+static ADLX_Point *new_pointP(void) { 
   return new ADLX_Point(); 
 }
 
-static ADLX_Point *copy_adlx_pointP(ADLX_Point value) { 
+static ADLX_Point *copy_pointP(ADLX_Point value) { 
   return new ADLX_Point(value); 
 }
 
-static void delete_adlx_pointP(ADLX_Point *obj) { 
+static void delete_pointP(ADLX_Point *obj) { 
   delete obj; 
 }
 
-static void adlx_pointP_assign(ADLX_Point *obj, ADLX_Point value) {
+static void pointP_assign(ADLX_Point *obj, ADLX_Point value) {
   *obj = value;
 }
 
-static ADLX_Point adlx_pointP_value(ADLX_Point *obj) {
+static ADLX_Point pointP_value(ADLX_Point *obj) {
   return *obj;
 }
 
@@ -835,6 +835,69 @@ static void displaySerP_Ptr_assign(IADLXDisplayServices* *obj, IADLXDisplayServi
 }
 
 static IADLXDisplayServices* displaySerP_Ptr_value(IADLXDisplayServices* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayServices1* *new_displaySer1P_Ptr(void) { 
+  return new IADLXDisplayServices1*(); 
+}
+
+static IADLXDisplayServices1* *copy_displaySer1P_Ptr(IADLXDisplayServices1* value) { 
+  return new IADLXDisplayServices1*(value); 
+}
+
+static void delete_displaySer1P_Ptr(IADLXDisplayServices1* *obj) { 
+  delete obj; 
+}
+
+static void displaySer1P_Ptr_assign(IADLXDisplayServices1* *obj, IADLXDisplayServices1* value) {
+  *obj = value;
+}
+
+static IADLXDisplayServices1* displaySer1P_Ptr_value(IADLXDisplayServices1* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayServices2* *new_displaySer2P_Ptr(void) { 
+  return new IADLXDisplayServices2*(); 
+}
+
+static IADLXDisplayServices2* *copy_displaySer2P_Ptr(IADLXDisplayServices2* value) { 
+  return new IADLXDisplayServices2*(value); 
+}
+
+static void delete_displaySer2P_Ptr(IADLXDisplayServices2* *obj) { 
+  delete obj; 
+}
+
+static void displaySer2P_Ptr_assign(IADLXDisplayServices2* *obj, IADLXDisplayServices2* value) {
+  *obj = value;
+}
+
+static IADLXDisplayServices2* displaySer2P_Ptr_value(IADLXDisplayServices2* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayServices3* *new_displaySer3P_Ptr(void) { 
+  return new IADLXDisplayServices3*(); 
+}
+
+static IADLXDisplayServices3* *copy_displaySer3P_Ptr(IADLXDisplayServices3* value) { 
+  return new IADLXDisplayServices3*(value); 
+}
+
+static void delete_displaySer3P_Ptr(IADLXDisplayServices3* *obj) { 
+  delete obj; 
+}
+
+static void displaySer3P_Ptr_assign(IADLXDisplayServices3* *obj, IADLXDisplayServices3* value) {
+  *obj = value;
+}
+
+static IADLXDisplayServices3* displaySer3P_Ptr_value(IADLXDisplayServices3* *obj) {
   return *obj;
 }
 
@@ -1045,6 +1108,48 @@ static void gpuP_Ptr_assign(IADLXGPU* *obj, IADLXGPU* value) {
 }
 
 static IADLXGPU* gpuP_Ptr_value(IADLXGPU* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPU1* *new_gpu1P_Ptr(void) { 
+  return new IADLXGPU1*(); 
+}
+
+static IADLXGPU1* *copy_gpu1P_Ptr(IADLXGPU1* value) { 
+  return new IADLXGPU1*(value); 
+}
+
+static void delete_gpu1P_Ptr(IADLXGPU1* *obj) { 
+  delete obj; 
+}
+
+static void gpu1P_Ptr_assign(IADLXGPU1* *obj, IADLXGPU1* value) {
+  *obj = value;
+}
+
+static IADLXGPU1* gpu1P_Ptr_value(IADLXGPU1* *obj) {
+  return *obj;
+}
+
+
+static IADLXGPU2* *new_gpu2P_Ptr(void) { 
+  return new IADLXGPU2*(); 
+}
+
+static IADLXGPU2* *copy_gpu2P_Ptr(IADLXGPU2* value) { 
+  return new IADLXGPU2*(value); 
+}
+
+static void delete_gpu2P_Ptr(IADLXGPU2* *obj) { 
+  delete obj; 
+}
+
+static void gpu2P_Ptr_assign(IADLXGPU2* *obj, IADLXGPU2* value) {
+  *obj = value;
+}
+
+static IADLXGPU2* gpu2P_Ptr_value(IADLXGPU2* *obj) {
   return *obj;
 }
 
@@ -1360,6 +1465,405 @@ static void charP_Ptr_assign(char* *obj, char* value) {
 }
 
 static char* charP_Ptr_value(char* *obj) {
+  return *obj;
+}
+
+
+static void* *new_voidP_Ptr(void) { 
+  return new void*(); 
+}
+
+static void* *copy_voidP_Ptr(void* value) { 
+  return new void*(value); 
+}
+
+static void delete_voidP_Ptr(void* *obj) { 
+  delete obj; 
+}
+
+static void voidP_Ptr_assign(void* *obj, void* value) {
+  *obj = value;
+}
+
+static void* voidP_Ptr_value(void* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplay3DLUT* *new_display3DLUTP_Ptr(void) { 
+  return new IADLXDisplay3DLUT*(); 
+}
+
+static IADLXDisplay3DLUT* *copy_display3DLUTP_Ptr(IADLXDisplay3DLUT* value) { 
+  return new IADLXDisplay3DLUT*(value); 
+}
+
+static void delete_display3DLUTP_Ptr(IADLXDisplay3DLUT* *obj) { 
+  delete obj; 
+}
+
+static void display3DLUTP_Ptr_assign(IADLXDisplay3DLUT* *obj, IADLXDisplay3DLUT* value) {
+  *obj = value;
+}
+
+static IADLXDisplay3DLUT* display3DLUTP_Ptr_value(IADLXDisplay3DLUT* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayColorDepth* *new_displayColorDepthP_Ptr(void) { 
+  return new IADLXDisplayColorDepth*(); 
+}
+
+static IADLXDisplayColorDepth* *copy_displayColorDepthP_Ptr(IADLXDisplayColorDepth* value) { 
+  return new IADLXDisplayColorDepth*(value); 
+}
+
+static void delete_displayColorDepthP_Ptr(IADLXDisplayColorDepth* *obj) { 
+  delete obj; 
+}
+
+static void displayColorDepthP_Ptr_assign(IADLXDisplayColorDepth* *obj, IADLXDisplayColorDepth* value) {
+  *obj = value;
+}
+
+static IADLXDisplayColorDepth* displayColorDepthP_Ptr_value(IADLXDisplayColorDepth* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayCustomColor* *new_displayCustomColorP_Ptr(void) { 
+  return new IADLXDisplayCustomColor*(); 
+}
+
+static IADLXDisplayCustomColor* *copy_displayCustomColorP_Ptr(IADLXDisplayCustomColor* value) { 
+  return new IADLXDisplayCustomColor*(value); 
+}
+
+static void delete_displayCustomColorP_Ptr(IADLXDisplayCustomColor* *obj) { 
+  delete obj; 
+}
+
+static void displayCustomColorP_Ptr_assign(IADLXDisplayCustomColor* *obj, IADLXDisplayCustomColor* value) {
+  *obj = value;
+}
+
+static IADLXDisplayCustomColor* displayCustomColorP_Ptr_value(IADLXDisplayCustomColor* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayCustomResolution* *new_displayCustomResolutionP_Ptr(void) { 
+  return new IADLXDisplayCustomResolution*(); 
+}
+
+static IADLXDisplayCustomResolution* *copy_displayCustomResolutionP_Ptr(IADLXDisplayCustomResolution* value) { 
+  return new IADLXDisplayCustomResolution*(value); 
+}
+
+static void delete_displayCustomResolutionP_Ptr(IADLXDisplayCustomResolution* *obj) { 
+  delete obj; 
+}
+
+static void displayCustomResolutionP_Ptr_assign(IADLXDisplayCustomResolution* *obj, IADLXDisplayCustomResolution* value) {
+  *obj = value;
+}
+
+static IADLXDisplayCustomResolution* displayCustomResolutionP_Ptr_value(IADLXDisplayCustomResolution* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayFreeSync* *new_displayFreeSyncP_Ptr(void) { 
+  return new IADLXDisplayFreeSync*(); 
+}
+
+static IADLXDisplayFreeSync* *copy_displayFreeSyncP_Ptr(IADLXDisplayFreeSync* value) { 
+  return new IADLXDisplayFreeSync*(value); 
+}
+
+static void delete_displayFreeSyncP_Ptr(IADLXDisplayFreeSync* *obj) { 
+  delete obj; 
+}
+
+static void displayFreeSyncP_Ptr_assign(IADLXDisplayFreeSync* *obj, IADLXDisplayFreeSync* value) {
+  *obj = value;
+}
+
+static IADLXDisplayFreeSync* displayFreeSyncP_Ptr_value(IADLXDisplayFreeSync* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayGPUScaling* *new_displayGPUScalingP_Ptr(void) { 
+  return new IADLXDisplayGPUScaling*(); 
+}
+
+static IADLXDisplayGPUScaling* *copy_displayGPUScalingP_Ptr(IADLXDisplayGPUScaling* value) { 
+  return new IADLXDisplayGPUScaling*(value); 
+}
+
+static void delete_displayGPUScalingP_Ptr(IADLXDisplayGPUScaling* *obj) { 
+  delete obj; 
+}
+
+static void displayGPUScalingP_Ptr_assign(IADLXDisplayGPUScaling* *obj, IADLXDisplayGPUScaling* value) {
+  *obj = value;
+}
+
+static IADLXDisplayGPUScaling* displayGPUScalingP_Ptr_value(IADLXDisplayGPUScaling* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayGamma* *new_displayGammaP_Ptr(void) { 
+  return new IADLXDisplayGamma*(); 
+}
+
+static IADLXDisplayGamma* *copy_displayGammaP_Ptr(IADLXDisplayGamma* value) { 
+  return new IADLXDisplayGamma*(value); 
+}
+
+static void delete_displayGammaP_Ptr(IADLXDisplayGamma* *obj) { 
+  delete obj; 
+}
+
+static void displayGammaP_Ptr_assign(IADLXDisplayGamma* *obj, IADLXDisplayGamma* value) {
+  *obj = value;
+}
+
+static IADLXDisplayGamma* displayGammaP_Ptr_value(IADLXDisplayGamma* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayGamut* *new_displayGamutP_Ptr(void) { 
+  return new IADLXDisplayGamut*(); 
+}
+
+static IADLXDisplayGamut* *copy_displayGamutP_Ptr(IADLXDisplayGamut* value) { 
+  return new IADLXDisplayGamut*(value); 
+}
+
+static void delete_displayGamutP_Ptr(IADLXDisplayGamut* *obj) { 
+  delete obj; 
+}
+
+static void displayGamutP_Ptr_assign(IADLXDisplayGamut* *obj, IADLXDisplayGamut* value) {
+  *obj = value;
+}
+
+static IADLXDisplayGamut* displayGamutP_Ptr_value(IADLXDisplayGamut* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayHDCP* *new_displayHDCPP_Ptr(void) { 
+  return new IADLXDisplayHDCP*(); 
+}
+
+static IADLXDisplayHDCP* *copy_displayHDCPP_Ptr(IADLXDisplayHDCP* value) { 
+  return new IADLXDisplayHDCP*(value); 
+}
+
+static void delete_displayHDCPP_Ptr(IADLXDisplayHDCP* *obj) { 
+  delete obj; 
+}
+
+static void displayHDCPP_Ptr_assign(IADLXDisplayHDCP* *obj, IADLXDisplayHDCP* value) {
+  *obj = value;
+}
+
+static IADLXDisplayHDCP* displayHDCPP_Ptr_value(IADLXDisplayHDCP* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayIntegerScaling* *new_displayIntegerScalingP_Ptr(void) { 
+  return new IADLXDisplayIntegerScaling*(); 
+}
+
+static IADLXDisplayIntegerScaling* *copy_displayIntegerScalingP_Ptr(IADLXDisplayIntegerScaling* value) { 
+  return new IADLXDisplayIntegerScaling*(value); 
+}
+
+static void delete_displayIntegerScalingP_Ptr(IADLXDisplayIntegerScaling* *obj) { 
+  delete obj; 
+}
+
+static void displayIntegerScalingP_Ptr_assign(IADLXDisplayIntegerScaling* *obj, IADLXDisplayIntegerScaling* value) {
+  *obj = value;
+}
+
+static IADLXDisplayIntegerScaling* displayIntegerScalingP_Ptr_value(IADLXDisplayIntegerScaling* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayPixelFormat* *new_displayPixelFormatP_Ptr(void) { 
+  return new IADLXDisplayPixelFormat*(); 
+}
+
+static IADLXDisplayPixelFormat* *copy_displayPixelFormatP_Ptr(IADLXDisplayPixelFormat* value) { 
+  return new IADLXDisplayPixelFormat*(value); 
+}
+
+static void delete_displayPixelFormatP_Ptr(IADLXDisplayPixelFormat* *obj) { 
+  delete obj; 
+}
+
+static void displayPixelFormatP_Ptr_assign(IADLXDisplayPixelFormat* *obj, IADLXDisplayPixelFormat* value) {
+  *obj = value;
+}
+
+static IADLXDisplayPixelFormat* displayPixelFormatP_Ptr_value(IADLXDisplayPixelFormat* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayScalingMode* *new_displayScalingModeP_Ptr(void) { 
+  return new IADLXDisplayScalingMode*(); 
+}
+
+static IADLXDisplayScalingMode* *copy_displayScalingModeP_Ptr(IADLXDisplayScalingMode* value) { 
+  return new IADLXDisplayScalingMode*(value); 
+}
+
+static void delete_displayScalingModeP_Ptr(IADLXDisplayScalingMode* *obj) { 
+  delete obj; 
+}
+
+static void displayScalingModeP_Ptr_assign(IADLXDisplayScalingMode* *obj, IADLXDisplayScalingMode* value) {
+  *obj = value;
+}
+
+static IADLXDisplayScalingMode* displayScalingModeP_Ptr_value(IADLXDisplayScalingMode* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayVariBright* *new_displayVariBrightP_Ptr(void) { 
+  return new IADLXDisplayVariBright*(); 
+}
+
+static IADLXDisplayVariBright* *copy_displayVariBrightP_Ptr(IADLXDisplayVariBright* value) { 
+  return new IADLXDisplayVariBright*(value); 
+}
+
+static void delete_displayVariBrightP_Ptr(IADLXDisplayVariBright* *obj) { 
+  delete obj; 
+}
+
+static void displayVariBrightP_Ptr_assign(IADLXDisplayVariBright* *obj, IADLXDisplayVariBright* value) {
+  *obj = value;
+}
+
+static IADLXDisplayVariBright* displayVariBrightP_Ptr_value(IADLXDisplayVariBright* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayVSR* *new_displayVSRP_Ptr(void) { 
+  return new IADLXDisplayVSR*(); 
+}
+
+static IADLXDisplayVSR* *copy_displayVSRP_Ptr(IADLXDisplayVSR* value) { 
+  return new IADLXDisplayVSR*(value); 
+}
+
+static void delete_displayVSRP_Ptr(IADLXDisplayVSR* *obj) { 
+  delete obj; 
+}
+
+static void displayVSRP_Ptr_assign(IADLXDisplayVSR* *obj, IADLXDisplayVSR* value) {
+  *obj = value;
+}
+
+static IADLXDisplayVSR* displayVSRP_Ptr_value(IADLXDisplayVSR* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayBlanking* *new_displayDisplayBlankingP_Ptr(void) { 
+  return new IADLXDisplayBlanking*(); 
+}
+
+static IADLXDisplayBlanking* *copy_displayDisplayBlankingP_Ptr(IADLXDisplayBlanking* value) { 
+  return new IADLXDisplayBlanking*(value); 
+}
+
+static void delete_displayDisplayBlankingP_Ptr(IADLXDisplayBlanking* *obj) { 
+  delete obj; 
+}
+
+static void displayDisplayBlankingP_Ptr_assign(IADLXDisplayBlanking* *obj, IADLXDisplayBlanking* value) {
+  *obj = value;
+}
+
+static IADLXDisplayBlanking* displayDisplayBlankingP_Ptr_value(IADLXDisplayBlanking* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayConnectivityExperience* *new_displayConnectivityExperienceP_Ptr(void) { 
+  return new IADLXDisplayConnectivityExperience*(); 
+}
+
+static IADLXDisplayConnectivityExperience* *copy_displayConnectivityExperienceP_Ptr(IADLXDisplayConnectivityExperience* value) { 
+  return new IADLXDisplayConnectivityExperience*(value); 
+}
+
+static void delete_displayConnectivityExperienceP_Ptr(IADLXDisplayConnectivityExperience* *obj) { 
+  delete obj; 
+}
+
+static void displayConnectivityExperienceP_Ptr_assign(IADLXDisplayConnectivityExperience* *obj, IADLXDisplayConnectivityExperience* value) {
+  *obj = value;
+}
+
+static IADLXDisplayConnectivityExperience* displayConnectivityExperienceP_Ptr_value(IADLXDisplayConnectivityExperience* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayDynamicRefreshRateControl* *new_displayDynamicRefreshRateControlP_Ptr(void) { 
+  return new IADLXDisplayDynamicRefreshRateControl*(); 
+}
+
+static IADLXDisplayDynamicRefreshRateControl* *copy_displayDynamicRefreshRateControlP_Ptr(IADLXDisplayDynamicRefreshRateControl* value) { 
+  return new IADLXDisplayDynamicRefreshRateControl*(value); 
+}
+
+static void delete_displayDynamicRefreshRateControlP_Ptr(IADLXDisplayDynamicRefreshRateControl* *obj) { 
+  delete obj; 
+}
+
+static void displayDynamicRefreshRateControlP_Ptr_assign(IADLXDisplayDynamicRefreshRateControl* *obj, IADLXDisplayDynamicRefreshRateControl* value) {
+  *obj = value;
+}
+
+static IADLXDisplayDynamicRefreshRateControl* displayDynamicRefreshRateControlP_Ptr_value(IADLXDisplayDynamicRefreshRateControl* *obj) {
+  return *obj;
+}
+
+
+static IADLXDisplayFreeSyncColorAccuracy* *new_displayCFreeSyncColorAccuracyP_Ptr(void) { 
+  return new IADLXDisplayFreeSyncColorAccuracy*(); 
+}
+
+static IADLXDisplayFreeSyncColorAccuracy* *copy_displayCFreeSyncColorAccuracyP_Ptr(IADLXDisplayFreeSyncColorAccuracy* value) { 
+  return new IADLXDisplayFreeSyncColorAccuracy*(value); 
+}
+
+static void delete_displayCFreeSyncColorAccuracyP_Ptr(IADLXDisplayFreeSyncColorAccuracy* *obj) { 
+  delete obj; 
+}
+
+static void displayCFreeSyncColorAccuracyP_Ptr_assign(IADLXDisplayFreeSyncColorAccuracy* *obj, IADLXDisplayFreeSyncColorAccuracy* value) {
+  *obj = value;
+}
+
+static IADLXDisplayFreeSyncColorAccuracy* displayCFreeSyncColorAccuracyP_Ptr_value(IADLXDisplayFreeSyncColorAccuracy* *obj) {
   return *obj;
 }
 
@@ -17203,17 +17707,17 @@ SWIGEXPORT int SWIGSTDCALL CSharp_orientationP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pointP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_pointP() {
   void * jresult ;
   ADLX_Point *result = 0 ;
   
-  result = (ADLX_Point *)new_adlx_pointP();
+  result = (ADLX_Point *)new_pointP();
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pointP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_pointP(void * jarg1) {
   void * jresult ;
   ADLX_Point arg1 ;
   ADLX_Point *argp1 ;
@@ -17225,21 +17729,21 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pointP(void * jarg1) {
     return 0;
   }
   arg1 = *argp1; 
-  result = (ADLX_Point *)copy_adlx_pointP(SWIG_STD_MOVE(arg1));
+  result = (ADLX_Point *)copy_pointP(SWIG_STD_MOVE(arg1));
   jresult = (void *)result; 
   return jresult;
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pointP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_pointP(void * jarg1) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   
   arg1 = (ADLX_Point *)jarg1; 
-  delete_adlx_pointP(arg1);
+  delete_pointP(arg1);
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pointP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_pointP_assign(void * jarg1, void * jarg2) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point arg2 ;
   ADLX_Point *argp2 ;
@@ -17251,17 +17755,17 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pointP_assign(void * jarg1, void * jarg2
     return ;
   }
   arg2 = *argp2; 
-  adlx_pointP_assign(arg1,SWIG_STD_MOVE(arg2));
+  pointP_assign(arg1,SWIG_STD_MOVE(arg2));
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_pointP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_pointP_value(void * jarg1) {
   void * jresult ;
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point result;
   
   arg1 = (ADLX_Point *)jarg1; 
-  result = adlx_pointP_value(arg1);
+  result = pointP_value(arg1);
   jresult = new ADLX_Point(result); 
   return jresult;
 }
@@ -17366,6 +17870,162 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displaySerP_Ptr_value(void * jarg1) {
   
   arg1 = (adlx::IADLXDisplayServices **)jarg1; 
   result = (adlx::IADLXDisplayServices *)displaySerP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer1P_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayServices1 **result = 0 ;
+  
+  result = (adlx::IADLXDisplayServices1 **)new_displaySer1P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer1P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices1 *arg1 = (adlx::IADLXDisplayServices1 *) 0 ;
+  adlx::IADLXDisplayServices1 **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices1 *)jarg1; 
+  result = (adlx::IADLXDisplayServices1 **)copy_displaySer1P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer1P_Ptr(void * jarg1) {
+  adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices1 **)jarg1; 
+  delete_displaySer1P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displaySer1P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
+  adlx::IADLXDisplayServices1 *arg2 = (adlx::IADLXDisplayServices1 *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices1 **)jarg1; 
+  arg2 = (adlx::IADLXDisplayServices1 *)jarg2; 
+  displaySer1P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer1P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
+  adlx::IADLXDisplayServices1 *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices1 **)jarg1; 
+  result = (adlx::IADLXDisplayServices1 *)displaySer1P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer2P_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayServices2 **result = 0 ;
+  
+  result = (adlx::IADLXDisplayServices2 **)new_displaySer2P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer2P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices2 *arg1 = (adlx::IADLXDisplayServices2 *) 0 ;
+  adlx::IADLXDisplayServices2 **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices2 *)jarg1; 
+  result = (adlx::IADLXDisplayServices2 **)copy_displaySer2P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer2P_Ptr(void * jarg1) {
+  adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices2 **)jarg1; 
+  delete_displaySer2P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displaySer2P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
+  adlx::IADLXDisplayServices2 *arg2 = (adlx::IADLXDisplayServices2 *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices2 **)jarg1; 
+  arg2 = (adlx::IADLXDisplayServices2 *)jarg2; 
+  displaySer2P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer2P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
+  adlx::IADLXDisplayServices2 *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices2 **)jarg1; 
+  result = (adlx::IADLXDisplayServices2 *)displaySer2P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer3P_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayServices3 **result = 0 ;
+  
+  result = (adlx::IADLXDisplayServices3 **)new_displaySer3P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer3P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices3 *arg1 = (adlx::IADLXDisplayServices3 *) 0 ;
+  adlx::IADLXDisplayServices3 **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices3 *)jarg1; 
+  result = (adlx::IADLXDisplayServices3 **)copy_displaySer3P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer3P_Ptr(void * jarg1) {
+  adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices3 **)jarg1; 
+  delete_displaySer3P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displaySer3P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
+  adlx::IADLXDisplayServices3 *arg2 = (adlx::IADLXDisplayServices3 *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices3 **)jarg1; 
+  arg2 = (adlx::IADLXDisplayServices3 *)jarg2; 
+  displaySer3P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer3P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
+  adlx::IADLXDisplayServices3 *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayServices3 **)jarg1; 
+  result = (adlx::IADLXDisplayServices3 *)displaySer3P_Ptr_value(arg1);
   jresult = (void *)result; 
   return jresult;
 }
@@ -17886,6 +18546,110 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpuP_Ptr_value(void * jarg1) {
   
   arg1 = (adlx::IADLXGPU **)jarg1; 
   result = (adlx::IADLXGPU *)gpuP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu1P_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPU1 **result = 0 ;
+  
+  result = (adlx::IADLXGPU1 **)new_gpu1P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu1P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
+  adlx::IADLXGPU1 **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU1 *)jarg1; 
+  result = (adlx::IADLXGPU1 **)copy_gpu1P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu1P_Ptr(void * jarg1) {
+  adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
+  
+  arg1 = (adlx::IADLXGPU1 **)jarg1; 
+  delete_gpu1P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpu1P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
+  adlx::IADLXGPU1 *arg2 = (adlx::IADLXGPU1 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPU1 **)jarg1; 
+  arg2 = (adlx::IADLXGPU1 *)jarg2; 
+  gpu1P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpu1P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
+  adlx::IADLXGPU1 *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU1 **)jarg1; 
+  result = (adlx::IADLXGPU1 *)gpu1P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu2P_Ptr() {
+  void * jresult ;
+  adlx::IADLXGPU2 **result = 0 ;
+  
+  result = (adlx::IADLXGPU2 **)new_gpu2P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu2P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
+  adlx::IADLXGPU2 **result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU2 *)jarg1; 
+  result = (adlx::IADLXGPU2 **)copy_gpu2P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu2P_Ptr(void * jarg1) {
+  adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
+  
+  arg1 = (adlx::IADLXGPU2 **)jarg1; 
+  delete_gpu2P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_gpu2P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
+  adlx::IADLXGPU2 *arg2 = (adlx::IADLXGPU2 *) 0 ;
+  
+  arg1 = (adlx::IADLXGPU2 **)jarg1; 
+  arg2 = (adlx::IADLXGPU2 *)jarg2; 
+  gpu2P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_gpu2P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
+  adlx::IADLXGPU2 *result = 0 ;
+  
+  arg1 = (adlx::IADLXGPU2 **)jarg1; 
+  result = (adlx::IADLXGPU2 *)gpu2P_Ptr_value(arg1);
   jresult = (void *)result; 
   return jresult;
 }
@@ -18667,6 +19431,994 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_charP_Ptr_value(void * jarg1) {
   arg1 = (char **)jarg1; 
   result = (char *)charP_Ptr_value(arg1);
   jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_voidP_Ptr() {
+  void * jresult ;
+  void **result = 0 ;
+  
+  result = (void **)new_voidP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_voidP_Ptr(void * jarg1) {
+  void * jresult ;
+  void *arg1 = (void *) 0 ;
+  void **result = 0 ;
+  
+  arg1 = (void *)jarg1; 
+  result = (void **)copy_voidP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_voidP_Ptr(void * jarg1) {
+  void **arg1 = (void **) 0 ;
+  
+  arg1 = (void **)jarg1; 
+  delete_voidP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_voidP_Ptr_assign(void * jarg1, void * jarg2) {
+  void **arg1 = (void **) 0 ;
+  void *arg2 = (void *) 0 ;
+  
+  arg1 = (void **)jarg1; 
+  arg2 = (void *)jarg2; 
+  voidP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_voidP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  void **arg1 = (void **) 0 ;
+  void *result = 0 ;
+  
+  arg1 = (void **)jarg1; 
+  result = (void *)voidP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_display3DLUTP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplay3DLUT **result = 0 ;
+  
+  result = (adlx::IADLXDisplay3DLUT **)new_display3DLUTP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_display3DLUTP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
+  adlx::IADLXDisplay3DLUT **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplay3DLUT *)jarg1; 
+  result = (adlx::IADLXDisplay3DLUT **)copy_display3DLUTP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_display3DLUTP_Ptr(void * jarg1) {
+  adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplay3DLUT **)jarg1; 
+  delete_display3DLUTP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_display3DLUTP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
+  adlx::IADLXDisplay3DLUT *arg2 = (adlx::IADLXDisplay3DLUT *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplay3DLUT **)jarg1; 
+  arg2 = (adlx::IADLXDisplay3DLUT *)jarg2; 
+  display3DLUTP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_display3DLUTP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
+  adlx::IADLXDisplay3DLUT *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplay3DLUT **)jarg1; 
+  result = (adlx::IADLXDisplay3DLUT *)display3DLUTP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayColorDepthP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayColorDepth **result = 0 ;
+  
+  result = (adlx::IADLXDisplayColorDepth **)new_displayColorDepthP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayColorDepthP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
+  adlx::IADLXDisplayColorDepth **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayColorDepth *)jarg1; 
+  result = (adlx::IADLXDisplayColorDepth **)copy_displayColorDepthP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayColorDepthP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayColorDepth **)jarg1; 
+  delete_displayColorDepthP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayColorDepthP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
+  adlx::IADLXDisplayColorDepth *arg2 = (adlx::IADLXDisplayColorDepth *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayColorDepth **)jarg1; 
+  arg2 = (adlx::IADLXDisplayColorDepth *)jarg2; 
+  displayColorDepthP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayColorDepthP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
+  adlx::IADLXDisplayColorDepth *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayColorDepth **)jarg1; 
+  result = (adlx::IADLXDisplayColorDepth *)displayColorDepthP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomColorP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayCustomColor **result = 0 ;
+  
+  result = (adlx::IADLXDisplayCustomColor **)new_displayCustomColorP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomColorP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
+  adlx::IADLXDisplayCustomColor **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomColor *)jarg1; 
+  result = (adlx::IADLXDisplayCustomColor **)copy_displayCustomColorP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomColorP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomColor **)jarg1; 
+  delete_displayCustomColorP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomColorP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
+  adlx::IADLXDisplayCustomColor *arg2 = (adlx::IADLXDisplayCustomColor *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomColor **)jarg1; 
+  arg2 = (adlx::IADLXDisplayCustomColor *)jarg2; 
+  displayCustomColorP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomColorP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
+  adlx::IADLXDisplayCustomColor *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomColor **)jarg1; 
+  result = (adlx::IADLXDisplayCustomColor *)displayCustomColorP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomResolutionP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayCustomResolution **result = 0 ;
+  
+  result = (adlx::IADLXDisplayCustomResolution **)new_displayCustomResolutionP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomResolutionP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
+  adlx::IADLXDisplayCustomResolution **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomResolution *)jarg1; 
+  result = (adlx::IADLXDisplayCustomResolution **)copy_displayCustomResolutionP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomResolutionP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomResolution **)jarg1; 
+  delete_displayCustomResolutionP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
+  adlx::IADLXDisplayCustomResolution *arg2 = (adlx::IADLXDisplayCustomResolution *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomResolution **)jarg1; 
+  arg2 = (adlx::IADLXDisplayCustomResolution *)jarg2; 
+  displayCustomResolutionP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
+  adlx::IADLXDisplayCustomResolution *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayCustomResolution **)jarg1; 
+  result = (adlx::IADLXDisplayCustomResolution *)displayCustomResolutionP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayFreeSyncP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSync **result = 0 ;
+  
+  result = (adlx::IADLXDisplayFreeSync **)new_displayFreeSyncP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayFreeSyncP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
+  adlx::IADLXDisplayFreeSync **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSync *)jarg1; 
+  result = (adlx::IADLXDisplayFreeSync **)copy_displayFreeSyncP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayFreeSyncP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSync **)jarg1; 
+  delete_displayFreeSyncP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
+  adlx::IADLXDisplayFreeSync *arg2 = (adlx::IADLXDisplayFreeSync *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSync **)jarg1; 
+  arg2 = (adlx::IADLXDisplayFreeSync *)jarg2; 
+  displayFreeSyncP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
+  adlx::IADLXDisplayFreeSync *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSync **)jarg1; 
+  result = (adlx::IADLXDisplayFreeSync *)displayFreeSyncP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGPUScalingP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayGPUScaling **result = 0 ;
+  
+  result = (adlx::IADLXDisplayGPUScaling **)new_displayGPUScalingP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGPUScalingP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
+  adlx::IADLXDisplayGPUScaling **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGPUScaling *)jarg1; 
+  result = (adlx::IADLXDisplayGPUScaling **)copy_displayGPUScalingP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGPUScalingP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGPUScaling **)jarg1; 
+  delete_displayGPUScalingP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
+  adlx::IADLXDisplayGPUScaling *arg2 = (adlx::IADLXDisplayGPUScaling *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGPUScaling **)jarg1; 
+  arg2 = (adlx::IADLXDisplayGPUScaling *)jarg2; 
+  displayGPUScalingP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
+  adlx::IADLXDisplayGPUScaling *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGPUScaling **)jarg1; 
+  result = (adlx::IADLXDisplayGPUScaling *)displayGPUScalingP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGammaP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayGamma **result = 0 ;
+  
+  result = (adlx::IADLXDisplayGamma **)new_displayGammaP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGammaP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
+  adlx::IADLXDisplayGamma **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamma *)jarg1; 
+  result = (adlx::IADLXDisplayGamma **)copy_displayGammaP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGammaP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamma **)jarg1; 
+  delete_displayGammaP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayGammaP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
+  adlx::IADLXDisplayGamma *arg2 = (adlx::IADLXDisplayGamma *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamma **)jarg1; 
+  arg2 = (adlx::IADLXDisplayGamma *)jarg2; 
+  displayGammaP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayGammaP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
+  adlx::IADLXDisplayGamma *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamma **)jarg1; 
+  result = (adlx::IADLXDisplayGamma *)displayGammaP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGamutP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayGamut **result = 0 ;
+  
+  result = (adlx::IADLXDisplayGamut **)new_displayGamutP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGamutP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
+  adlx::IADLXDisplayGamut **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamut *)jarg1; 
+  result = (adlx::IADLXDisplayGamut **)copy_displayGamutP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGamutP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamut **)jarg1; 
+  delete_displayGamutP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayGamutP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
+  adlx::IADLXDisplayGamut *arg2 = (adlx::IADLXDisplayGamut *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamut **)jarg1; 
+  arg2 = (adlx::IADLXDisplayGamut *)jarg2; 
+  displayGamutP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayGamutP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
+  adlx::IADLXDisplayGamut *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayGamut **)jarg1; 
+  result = (adlx::IADLXDisplayGamut *)displayGamutP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayHDCPP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayHDCP **result = 0 ;
+  
+  result = (adlx::IADLXDisplayHDCP **)new_displayHDCPP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayHDCPP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
+  adlx::IADLXDisplayHDCP **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayHDCP *)jarg1; 
+  result = (adlx::IADLXDisplayHDCP **)copy_displayHDCPP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayHDCPP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayHDCP **)jarg1; 
+  delete_displayHDCPP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayHDCPP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
+  adlx::IADLXDisplayHDCP *arg2 = (adlx::IADLXDisplayHDCP *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayHDCP **)jarg1; 
+  arg2 = (adlx::IADLXDisplayHDCP *)jarg2; 
+  displayHDCPP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayHDCPP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
+  adlx::IADLXDisplayHDCP *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayHDCP **)jarg1; 
+  result = (adlx::IADLXDisplayHDCP *)displayHDCPP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayIntegerScalingP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayIntegerScaling **result = 0 ;
+  
+  result = (adlx::IADLXDisplayIntegerScaling **)new_displayIntegerScalingP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayIntegerScalingP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
+  adlx::IADLXDisplayIntegerScaling **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayIntegerScaling *)jarg1; 
+  result = (adlx::IADLXDisplayIntegerScaling **)copy_displayIntegerScalingP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayIntegerScalingP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayIntegerScaling **)jarg1; 
+  delete_displayIntegerScalingP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
+  adlx::IADLXDisplayIntegerScaling *arg2 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayIntegerScaling **)jarg1; 
+  arg2 = (adlx::IADLXDisplayIntegerScaling *)jarg2; 
+  displayIntegerScalingP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
+  adlx::IADLXDisplayIntegerScaling *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayIntegerScaling **)jarg1; 
+  result = (adlx::IADLXDisplayIntegerScaling *)displayIntegerScalingP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayPixelFormatP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayPixelFormat **result = 0 ;
+  
+  result = (adlx::IADLXDisplayPixelFormat **)new_displayPixelFormatP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayPixelFormatP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
+  adlx::IADLXDisplayPixelFormat **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayPixelFormat *)jarg1; 
+  result = (adlx::IADLXDisplayPixelFormat **)copy_displayPixelFormatP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayPixelFormatP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayPixelFormat **)jarg1; 
+  delete_displayPixelFormatP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
+  adlx::IADLXDisplayPixelFormat *arg2 = (adlx::IADLXDisplayPixelFormat *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayPixelFormat **)jarg1; 
+  arg2 = (adlx::IADLXDisplayPixelFormat *)jarg2; 
+  displayPixelFormatP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
+  adlx::IADLXDisplayPixelFormat *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayPixelFormat **)jarg1; 
+  result = (adlx::IADLXDisplayPixelFormat *)displayPixelFormatP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayScalingModeP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayScalingMode **result = 0 ;
+  
+  result = (adlx::IADLXDisplayScalingMode **)new_displayScalingModeP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayScalingModeP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
+  adlx::IADLXDisplayScalingMode **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayScalingMode *)jarg1; 
+  result = (adlx::IADLXDisplayScalingMode **)copy_displayScalingModeP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayScalingModeP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayScalingMode **)jarg1; 
+  delete_displayScalingModeP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayScalingModeP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
+  adlx::IADLXDisplayScalingMode *arg2 = (adlx::IADLXDisplayScalingMode *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayScalingMode **)jarg1; 
+  arg2 = (adlx::IADLXDisplayScalingMode *)jarg2; 
+  displayScalingModeP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayScalingModeP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
+  adlx::IADLXDisplayScalingMode *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayScalingMode **)jarg1; 
+  result = (adlx::IADLXDisplayScalingMode *)displayScalingModeP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVariBrightP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayVariBright **result = 0 ;
+  
+  result = (adlx::IADLXDisplayVariBright **)new_displayVariBrightP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVariBrightP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
+  adlx::IADLXDisplayVariBright **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVariBright *)jarg1; 
+  result = (adlx::IADLXDisplayVariBright **)copy_displayVariBrightP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVariBrightP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVariBright **)jarg1; 
+  delete_displayVariBrightP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayVariBrightP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
+  adlx::IADLXDisplayVariBright *arg2 = (adlx::IADLXDisplayVariBright *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVariBright **)jarg1; 
+  arg2 = (adlx::IADLXDisplayVariBright *)jarg2; 
+  displayVariBrightP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayVariBrightP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
+  adlx::IADLXDisplayVariBright *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVariBright **)jarg1; 
+  result = (adlx::IADLXDisplayVariBright *)displayVariBrightP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVSRP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayVSR **result = 0 ;
+  
+  result = (adlx::IADLXDisplayVSR **)new_displayVSRP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVSRP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
+  adlx::IADLXDisplayVSR **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVSR *)jarg1; 
+  result = (adlx::IADLXDisplayVSR **)copy_displayVSRP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVSRP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVSR **)jarg1; 
+  delete_displayVSRP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayVSRP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
+  adlx::IADLXDisplayVSR *arg2 = (adlx::IADLXDisplayVSR *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVSR **)jarg1; 
+  arg2 = (adlx::IADLXDisplayVSR *)jarg2; 
+  displayVSRP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayVSRP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
+  adlx::IADLXDisplayVSR *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayVSR **)jarg1; 
+  result = (adlx::IADLXDisplayVSR *)displayVSRP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDisplayBlankingP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayBlanking **result = 0 ;
+  
+  result = (adlx::IADLXDisplayBlanking **)new_displayDisplayBlankingP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDisplayBlankingP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
+  adlx::IADLXDisplayBlanking **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayBlanking *)jarg1; 
+  result = (adlx::IADLXDisplayBlanking **)copy_displayDisplayBlankingP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDisplayBlankingP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayBlanking **)jarg1; 
+  delete_displayDisplayBlankingP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
+  adlx::IADLXDisplayBlanking *arg2 = (adlx::IADLXDisplayBlanking *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayBlanking **)jarg1; 
+  arg2 = (adlx::IADLXDisplayBlanking *)jarg2; 
+  displayDisplayBlankingP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
+  adlx::IADLXDisplayBlanking *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayBlanking **)jarg1; 
+  result = (adlx::IADLXDisplayBlanking *)displayDisplayBlankingP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayConnectivityExperienceP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayConnectivityExperience **result = 0 ;
+  
+  result = (adlx::IADLXDisplayConnectivityExperience **)new_displayConnectivityExperienceP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayConnectivityExperienceP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
+  adlx::IADLXDisplayConnectivityExperience **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayConnectivityExperience *)jarg1; 
+  result = (adlx::IADLXDisplayConnectivityExperience **)copy_displayConnectivityExperienceP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayConnectivityExperienceP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayConnectivityExperience **)jarg1; 
+  delete_displayConnectivityExperienceP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
+  adlx::IADLXDisplayConnectivityExperience *arg2 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayConnectivityExperience **)jarg1; 
+  arg2 = (adlx::IADLXDisplayConnectivityExperience *)jarg2; 
+  displayConnectivityExperienceP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
+  adlx::IADLXDisplayConnectivityExperience *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayConnectivityExperience **)jarg1; 
+  result = (adlx::IADLXDisplayConnectivityExperience *)displayConnectivityExperienceP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDynamicRefreshRateControlP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayDynamicRefreshRateControl **result = 0 ;
+  
+  result = (adlx::IADLXDisplayDynamicRefreshRateControl **)new_displayDynamicRefreshRateControlP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
+  adlx::IADLXDisplayDynamicRefreshRateControl **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *)jarg1; 
+  result = (adlx::IADLXDisplayDynamicRefreshRateControl **)copy_displayDynamicRefreshRateControlP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **)jarg1; 
+  delete_displayDynamicRefreshRateControlP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
+  adlx::IADLXDisplayDynamicRefreshRateControl *arg2 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **)jarg1; 
+  arg2 = (adlx::IADLXDisplayDynamicRefreshRateControl *)jarg2; 
+  displayDynamicRefreshRateControlP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
+  adlx::IADLXDisplayDynamicRefreshRateControl *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **)jarg1; 
+  result = (adlx::IADLXDisplayDynamicRefreshRateControl *)displayDynamicRefreshRateControlP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCFreeSyncColorAccuracyP_Ptr() {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy **result = 0 ;
+  
+  result = (adlx::IADLXDisplayFreeSyncColorAccuracy **)new_displayCFreeSyncColorAccuracyP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy **result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *)jarg1; 
+  result = (adlx::IADLXDisplayFreeSyncColorAccuracy **)copy_displayCFreeSyncColorAccuracyP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
+  adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **)jarg1; 
+  delete_displayCFreeSyncColorAccuracyP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy *arg2 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **)jarg1; 
+  arg2 = (adlx::IADLXDisplayFreeSyncColorAccuracy *)jarg2; 
+  displayCFreeSyncColorAccuracyP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
+  adlx::IADLXDisplayFreeSyncColorAccuracy *result = 0 ;
+  
+  arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **)jarg1; 
+  result = (adlx::IADLXDisplayFreeSyncColorAccuracy *)displayCFreeSyncColorAccuracyP_Ptr_value(arg1);
+  jresult = (void *)result; 
   return jresult;
 }
 

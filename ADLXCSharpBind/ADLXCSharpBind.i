@@ -125,6 +125,9 @@ typedef WCHAR TCHAR;
 /* Callback to turn on director wrapping */
 %feature("director") IADLXDisplayListChangedListener;
 
+// Create a speciual pointer for us to use to get a IADLXEyefinityDesktop reference from an IADLXDesktop reference.
+%apply void *VOID_INT_PTR { void * };
+
 %include stdint.i
 %include carrays.i
 %include windows.i
@@ -181,6 +184,7 @@ using namespace adlx;
 %pointer_functions(adlx_int, intP);
 %pointer_functions(adlx_uint, uintP);
 %pointer_functions(adlx_bool, adlxBoolP);
+//%pointer_functions(adlx_string, adlxStringP);
 %pointer_functions(double, doubleP);
 %pointer_functions(bool, boolP);
 %pointer_functions(WCHAR, wcharP);
@@ -191,13 +195,16 @@ using namespace adlx;
 %pointer_functions(ADLX_IntRange, adlx_intRangeP);
 %pointer_functions(ADLX_GPU_TYPE, gpuTypeP);
 %pointer_functions(ADLX_ORIENTATION, orientationP);
-%pointer_functions(ADLX_Point, adlx_pointP);
+%pointer_functions(ADLX_Point, pointP);
 %pointer_functions(ADLX_DESKTOP_TYPE, desktopTypeP);
 
 
 
 // T** pointers
 %pointer_functions(IADLXDisplayServices*, displaySerP_Ptr);
+%pointer_functions(IADLXDisplayServices1*, displaySer1P_Ptr);
+%pointer_functions(IADLXDisplayServices2*, displaySer2P_Ptr);
+%pointer_functions(IADLXDisplayServices3*, displaySer3P_Ptr);
 %pointer_functions(IADLXDisplayList*, displayListP_Ptr);
 %pointer_functions(IADLXDisplay*, displayP_Ptr);
 %pointer_functions(IADLXDisplayChangedHandling*, displayChangeHandlP_Ptr);
@@ -208,6 +215,8 @@ using namespace adlx;
 %pointer_functions(IADLXEyefinityDesktop*, eyefinityDesktopP_Ptr);
 %pointer_functions(IADLXSimpleEyefinity*, simpleEyefinityP_Ptr);
 %pointer_functions(IADLXGPU*, gpuP_Ptr);
+%pointer_functions(IADLXGPU1*, gpu1P_Ptr);
+%pointer_functions(IADLXGPU2*, gpu2P_Ptr);
 %pointer_functions(IADLXGPUList*, gpuListP_Ptr);
 %pointer_functions(IADLXList*, adlxListP_Ptr);
 %pointer_functions(IADLXInterface*, adlxInterfaceP_Ptr);
@@ -221,9 +230,29 @@ using namespace adlx;
 %pointer_functions(IADLXGPUMetrics1*, metrics1P_Ptr);
 %pointer_functions(IADLXGPUMetricsSupport*, metricsSupportP_Ptr);
 %pointer_functions(IADLXGPUMetricsSupport1*, metricsSupport1P_Ptr);
-//%pointer_functions(adlx_string, stringP_Ptr);
+//%pointer_functions(adlx_string*, stringP_Ptr);
 %pointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
 %pointer_functions(char*, charP_Ptr);
+%pointer_functions(void*, voidP_Ptr);
+%pointer_functions( IADLXDisplay3DLUT*, display3DLUTP_Ptr);
+%pointer_functions( IADLXDisplayColorDepth*, displayColorDepthP_Ptr);
+%pointer_functions( IADLXDisplayCustomColor*, displayCustomColorP_Ptr);
+%pointer_functions( IADLXDisplayCustomResolution*, displayCustomResolutionP_Ptr);
+%pointer_functions( IADLXDisplayFreeSync*, displayFreeSyncP_Ptr);
+%pointer_functions( IADLXDisplayGPUScaling*, displayGPUScalingP_Ptr);
+%pointer_functions( IADLXDisplayGamma*, displayGammaP_Ptr);
+%pointer_functions( IADLXDisplayGamut*, displayGamutP_Ptr);
+%pointer_functions( IADLXDisplayHDCP*, displayHDCPP_Ptr);
+%pointer_functions( IADLXDisplayIntegerScaling*, displayIntegerScalingP_Ptr);
+%pointer_functions( IADLXDisplayPixelFormat*, displayPixelFormatP_Ptr);
+%pointer_functions( IADLXDisplayScalingMode*, displayScalingModeP_Ptr);
+%pointer_functions( IADLXDisplayVariBright*, displayVariBrightP_Ptr);
+%pointer_functions( IADLXDisplayVSR*, displayVSRP_Ptr);
+%pointer_functions( IADLXDisplayBlanking*, displayDisplayBlankingP_Ptr);
+%pointer_functions( IADLXDisplayConnectivityExperience*, displayConnectivityExperienceP_Ptr);
+%pointer_functions( IADLXDisplayDynamicRefreshRateControl*, displayDynamicRefreshRateControlP_Ptr);
+%pointer_functions( IADLXDisplayFreeSyncColorAccuracy*, displayCFreeSyncColorAccuracyP_Ptr);
+
 
 // T** ppointer
 %define %ppointer_functions(TYPE,NAME)
