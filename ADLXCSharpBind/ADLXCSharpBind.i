@@ -181,22 +181,30 @@ using namespace adlx;
 // T* pointer
 %include cpointer.i
 
-%pointer_functions(adlx_int, intP);
-%pointer_functions(adlx_uint, uintP);
-%pointer_functions(adlx_bool, adlxBoolP);
-//%pointer_functions(adlx_string, adlxStringP);
+%pointer_functions(adlx_int, adlx_intP);
+%pointer_functions(adlx_uint, adlx_uintP);
+%pointer_functions(adlx_bool, adlx_BoolP);
+//%pointer_functions(adlx_string, adlx_stringP);
 %pointer_functions(double, doubleP);
 %pointer_functions(bool, boolP);
 %pointer_functions(WCHAR, wcharP);
-%pointer_functions(ADLX_DISPLAY_TYPE, displayTypeP);
-%pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, disConnectTypeP);
-%pointer_functions(ADLX_DISPLAY_SCAN_TYPE, disScanTypeP);
+%pointer_functions(ADLX_DISPLAY_TYPE, adlx_displayTypeP);
+%pointer_functions(ADLX_DISPLAY_CONNECTOR_TYPE, adlx_displayConnectTypeP);
+%pointer_functions(ADLX_DISPLAY_SCAN_TYPE, adlx_displayScanTypeP);
 %pointer_functions(adlx_size, adlx_sizeP);
 %pointer_functions(ADLX_IntRange, adlx_intRangeP);
-%pointer_functions(ADLX_GPU_TYPE, gpuTypeP);
-%pointer_functions(ADLX_ORIENTATION, orientationP);
-%pointer_functions(ADLX_Point, pointP);
-%pointer_functions(ADLX_DESKTOP_TYPE, desktopTypeP);
+%pointer_functions(ADLX_GPU_TYPE, adlx_gpuTypeP);
+%pointer_functions(ADLX_ORIENTATION, adlx_orientationP);
+%pointer_functions(ADLX_Point, adlx_pointP);
+%pointer_functions(ADLX_3DLUT_Data, adlx_3dlutP);
+%pointer_functions(ADLX_CustomResolution, adlx_customResolutionP);
+%pointer_functions(ADLX_GammaRamp, adlx_gamaRampP);
+%pointer_functions(ADLX_GamutColorSpace, adlx_gamutColorSpaceP);
+%pointer_functions(ADLX_LUID, adlx_luidP);
+%pointer_functions(ADLX_RGB, adlx_rgbP);
+%pointer_functions(ADLX_RegammaCoeff, adlx_regammaCoeffP);
+%pointer_functions(ADLX_TimingInfo, adlx_timingInfoP);
+%pointer_functions(ADLX_UINT16_RGB, adlx_uint16RgbP);
 
 
 
