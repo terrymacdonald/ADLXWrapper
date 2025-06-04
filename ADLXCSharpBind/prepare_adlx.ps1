@@ -5,8 +5,11 @@ $destinationFolder = ".\ADLX"
 $tempExtractFolder = ".\ADLX-main"
 $outFolder = ".\out"
 
+# Change to the parent Solution Folder (as that is where we want the folders)
+Set-Location ..
+
 # Download the zip file
-Write-Host "Downloading the latest version of ADLX..."
+Write-Host "Downloading the latest version of ADLX... (may take a while)"
 try {
     Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath -ErrorAction Stop
     Write-Host "Download succeeded."
@@ -22,7 +25,7 @@ if (Test-Path -Path $destinationFolder) {
 }
 
 # Unzip the downloaded file into a temporary folder
-Write-Host "Extracting the contents of the zip file..."
+Write-Host "Extracting the contents of the zip file... (may take a while)"
 Expand-Archive -Path $zipFilePath -DestinationPath . -Force
 
 # Rename the ADLX-main folder to ADLX

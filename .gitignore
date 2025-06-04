@@ -365,3 +365,4 @@ FodyWeavers.xsd
 # Specifics for this build
 out/
 ADLX/
+swigwin/

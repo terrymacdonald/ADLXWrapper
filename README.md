@@ -1,9 +1,15 @@
 # ADLXCBindings
-
 ADLX C# wrapper DLL and bindings for [ADLX](https://github.com/GPUOpen-LibrariesAndSDKs/ADLX).
 <br/><br/>
 https://gpuopen.com/adlx/
 
+# Prerequisites
+You MUST install Swig v4 in order to generate the C# bindings that will let you access the functions in the DLL that you generate.
+You can run the `install_swigwin.ps1` powershell script to download and install the windows version of swig. This will place it where the build scripts can get it and use it.
+
+If you want to do things manually, you can download the windows version of [Swig from here](https://www.swig.org/download.html). Be sure to download the Swigwin ZIP file to the Solution directory, and unzip the ZIP file in the base SOlution Directory. Then rename the `swigwin-4.3.1` folder to just `swigwin`. Swig will now work with the build scripts. 
+
+# How to use
 The project is set up so that the following happens when you build the project:
 - The pre-build powershell script downloads the latest version of the ADLX code from the AMD website. It also prepares the file structure for the build process to use.
 - The main custom build process then runs. This generates the Bindings using [Swig](https://www.swig.org/download.html).
