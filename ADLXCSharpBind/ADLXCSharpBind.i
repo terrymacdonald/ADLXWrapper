@@ -68,7 +68,7 @@ typedef     unsigned long       adlx_ulong;
 typedef     adlx_uint32         adlx_uint;
 typedef     bool                adlx_bool;
 typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
-typedef WCHAR TCHAR;
+// TCHAR will be defined by windows.i
 
 // Microsoft
 #define ADLX_CORE_LINK          __declspec(dllexport)
@@ -106,7 +106,7 @@ typedef     unsigned long       adlx_ulong;
 typedef     adlx_uint32         adlx_uint;
 typedef     bool                adlx_bool;
 typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
-typedef WCHAR TCHAR;
+// TCHAR will be defined by windows.i
 
 // Microsoft
 #define ADLX_CORE_LINK          __declspec(dllexport)
@@ -133,8 +133,14 @@ typedef WCHAR TCHAR;
 
 %include stdint.i
 %include carrays.i
-%include windows.i
 %include typemaps.i
+
+// Define TCHAR before including windows.i to avoid redefinition warning
+#ifndef TCHAR
+typedef wchar_t TCHAR;
+#endif
+
+%include windows.i
 
 // ADLX Runtime Detection and Validation Functions
 bool IsADLXRuntimeAvailable();
@@ -169,16 +175,17 @@ public:
 };
 
 
+// Include base classes first to avoid undefined base class warnings
 %include "../ADLX/SDK/Include/ADLX.h"
 %include "../ADLX/SDK/Include/ADLXDefines.h"
 %include "../ADLX/SDK/Include/ADLXStructures.h"
 %include "../ADLX/SDK/Include/ADLXVersion.h"
+%include "../ADLX/SDK/Include/IChangedEvent.h"
+%include "../ADLX/SDK/Include/ICollections.h"
 %include "../ADLX/SDK/Include/I3DSettings.h"
 %include "../ADLX/SDK/Include/I3DSettings1.h"
 %include "../ADLX/SDK/Include/I3DSettings2.h"
 %include "../ADLX/SDK/Include/IApplications.h"
-%include "../ADLX/SDK/Include/IChangedEvent.h"
-%include "../ADLX/SDK/Include/ICollections.h"
 %include "../ADLX/SDK/Include/IDesktops.h"
 %include "../ADLX/SDK/Include/IDisplay3DLUT.h"
 %include "../ADLX/SDK/Include/IDisplayGamma.h"

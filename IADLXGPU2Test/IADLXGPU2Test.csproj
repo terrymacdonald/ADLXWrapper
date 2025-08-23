@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WorkingTest.cs" />
+    <Compile Include="ComprehensiveTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="*.cs" Exclude="WorkingTest.cs;SimpleProgram.cs;Program.cs;Properties\AssemblyInfo.cs" />
+    <Compile Include="*.cs" Exclude="ComprehensiveTest.cs;WorkingTest.cs;DebugTest.cs;SimpleProgram.cs;Program.cs;Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

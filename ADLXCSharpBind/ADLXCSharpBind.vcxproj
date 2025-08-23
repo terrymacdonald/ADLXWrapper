@@ -184,12 +184,12 @@
   <ItemGroup>
     <CustomBuild Include="ADLXCSharpBind.i">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">swig -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">swig -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">swig -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">swig -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
     <None Include="cs_struct.i" />
