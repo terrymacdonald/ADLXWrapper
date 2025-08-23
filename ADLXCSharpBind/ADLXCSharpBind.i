@@ -47,6 +47,7 @@
 #include "../ADLX/SDK/Include/ISystem1.h"
 #include "../ADLX/SDK/Include/ISystem2.h"
 #include "../ADLX/SDK/ADLXHelper/Windows/Cpp/ADLXHelper.h"
+#include "ADLXQueryInterface.h"
 
 typedef     int64_t             adlx_int64;
 typedef     int32_t             adlx_int32;
@@ -124,14 +125,48 @@ typedef WCHAR TCHAR;
 
 /* Callback to turn on director wrapping */
 %feature("director") IADLXDisplayListChangedListener;
+%feature("director") IADLXGPUConnectChangedListener;
+%feature("director") IADLXGPUAppsListChangedListener;
 
-// Create a speciual pointer for us to use to get a IADLXEyefinityDesktop reference from an IADLXDesktop reference.
+// Create a special pointer for us to use to get interface references
 %apply void *VOID_INT_PTR { void * };
 
 %include stdint.i
 %include carrays.i
 %include windows.i
 %include typemaps.i
+
+// ADLX Runtime Detection and Validation Functions
+bool IsADLXRuntimeAvailable();
+ADLX_RESULT ValidateADLXInstallation();
+const char* GetADLXErrorDescription(ADLX_RESULT result);
+
+// QueryInterface Helper Functions for IADLXGPU2 Access
+IADLXGPU1* QueryGPU1Interface(IADLXGPU* pGPU);
+IADLXGPU2* QueryGPU2Interface(IADLXGPU* pGPU);
+IADLXGPU2* QueryGPU2InterfaceFromGPU1(IADLXGPU1* pGPU1);
+
+// System Interface QueryInterface Helpers
+IADLXSystem1* QuerySystem1Interface(IADLXSystem* pSystem);
+IADLXSystem2* QuerySystem2Interface(IADLXSystem* pSystem);
+IADLXSystem2* QuerySystem2InterfaceFromSystem1(IADLXSystem1* pSystem1);
+
+// Interface Capability Detection
+bool SupportsGPU1Interface(IADLXGPU* pGPU);
+bool SupportsGPU2Interface(IADLXGPU* pGPU);
+bool SupportsSystem1Interface(IADLXSystem* pSystem);
+bool SupportsSystem2Interface(IADLXSystem* pSystem);
+
+// Enhanced ADLX Helper Class
+class EnhancedADLXHelper {
+public:
+    EnhancedADLXHelper();
+    ADLX_RESULT Initialize();
+    ADLX_RESULT Terminate();
+    IADLXSystem* GetSystemServices();
+    bool IsInitialized() const;
+    ~EnhancedADLXHelper();
+};
 
 
 %include "../ADLX/SDK/Include/ADLX.h"
