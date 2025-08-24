@@ -44,6 +44,12 @@ bool SupportsGPU2Interface(IADLXGPU* pGPU);
 bool SupportsSystem1Interface(IADLXSystem* pSystem);
 bool SupportsSystem2Interface(IADLXSystem* pSystem);
 
+// Gamma Ramp Data Access Helper Functions
+ADLX_RESULT GetGammaRampData(ADLX_GammaRamp* pGammaRamp, adlx_uint16* pRedData, adlx_uint16* pGreenData, adlx_uint16* pBlueData, adlx_size dataSize);
+ADLX_RESULT SetGammaRampData(ADLX_GammaRamp* pGammaRamp, const adlx_uint16* pRedData, const adlx_uint16* pGreenData, const adlx_uint16* pBlueData, adlx_size dataSize);
+adlx_size GetGammaRampSize();
+bool ValidateGammaRampData(const adlx_uint16* pData, adlx_size dataSize);
+
 // Enhanced ADLX Helper Class with Runtime Validation
 class EnhancedADLXHelper {
 private:

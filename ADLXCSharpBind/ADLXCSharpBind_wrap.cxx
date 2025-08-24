@@ -546,6 +546,27 @@ static adlx_uint adlx_uintP_value(adlx_uint *obj) {
 }
 
 
+static adlx_uint16 *new_adlx_uint16P(void) { 
+  return new adlx_uint16(); 
+}
+
+static adlx_uint16 *copy_adlx_uint16P(adlx_uint16 value) { 
+  return new adlx_uint16(value); 
+}
+
+static void delete_adlx_uint16P(adlx_uint16 *obj) { 
+  delete obj; 
+}
+
+static void adlx_uint16P_assign(adlx_uint16 *obj, adlx_uint16 value) {
+  *obj = value;
+}
+
+static adlx_uint16 adlx_uint16P_value(adlx_uint16 *obj) {
+  return *obj;
+}
+
+
 static adlx_bool *new_adlx_boolP(void) { 
   return new adlx_bool(); 
 }
@@ -2924,6 +2945,70 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsSystem2Interface(void * jarg1
   
   arg1 = (IADLXSystem *)jarg1; 
   result = (bool)SupportsSystem2Interface(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_GetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
+  int jresult ;
+  ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
+  adlx_uint16 *arg2 = (adlx_uint16 *) 0 ;
+  adlx_uint16 *arg3 = (adlx_uint16 *) 0 ;
+  adlx_uint16 *arg4 = (adlx_uint16 *) 0 ;
+  adlx_size arg5 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLX_GammaRamp *)jarg1; 
+  arg2 = (adlx_uint16 *)jarg2; 
+  arg3 = (adlx_uint16 *)jarg3; 
+  arg4 = (adlx_uint16 *)jarg4; 
+  arg5 = (adlx_size)jarg5; 
+  result = (ADLX_RESULT)GetGammaRampData(arg1,arg2,arg3,arg4,SWIG_STD_MOVE(arg5));
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_SetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
+  int jresult ;
+  ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
+  adlx_uint16 *arg2 = (adlx_uint16 *) 0 ;
+  adlx_uint16 *arg3 = (adlx_uint16 *) 0 ;
+  adlx_uint16 *arg4 = (adlx_uint16 *) 0 ;
+  adlx_size arg5 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLX_GammaRamp *)jarg1; 
+  arg2 = (adlx_uint16 *)jarg2; 
+  arg3 = (adlx_uint16 *)jarg3; 
+  arg4 = (adlx_uint16 *)jarg4; 
+  arg5 = (adlx_size)jarg5; 
+  result = (ADLX_RESULT)SetGammaRampData(arg1,(unsigned short const *)arg2,(unsigned short const *)arg3,(unsigned short const *)arg4,SWIG_STD_MOVE(arg5));
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GetGammaRampSize() {
+  unsigned int jresult ;
+  adlx_size result;
+  
+  result = GetGammaRampSize();
+  jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ValidateGammaRampData(void * jarg1, unsigned int jarg2) {
+  unsigned int jresult ;
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  adlx_size arg2 ;
+  bool result;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  arg2 = (adlx_size)jarg2; 
+  result = (bool)ValidateGammaRampData((unsigned short const *)arg1,SWIG_STD_MOVE(arg2));
   jresult = result; 
   return jresult;
 }
@@ -18211,6 +18296,58 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_uintP_value(void * jarg1) {
   arg1 = (adlx_uint *)jarg1; 
   result = (adlx_uint)adlx_uintP_value(arg1);
   jresult = (unsigned int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_uint16P() {
+  void * jresult ;
+  adlx_uint16 *result = 0 ;
+  
+  result = (adlx_uint16 *)new_adlx_uint16P();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_uint16P(unsigned short jarg1) {
+  void * jresult ;
+  adlx_uint16 arg1 ;
+  adlx_uint16 *result = 0 ;
+  
+  arg1 = (adlx_uint16)jarg1; 
+  result = (adlx_uint16 *)copy_adlx_uint16P(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_uint16P(void * jarg1) {
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  delete_adlx_uint16P(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_adlx_uint16P_assign(void * jarg1, unsigned short jarg2) {
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  adlx_uint16 arg2 ;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  arg2 = (adlx_uint16)jarg2; 
+  adlx_uint16P_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_adlx_uint16P_value(void * jarg1) {
+  unsigned short jresult ;
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  adlx_uint16 result;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  result = (adlx_uint16)adlx_uint16P_value(arg1);
+  jresult = result; 
   return jresult;
 }
 

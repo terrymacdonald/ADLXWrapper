@@ -226,3 +226,78 @@ EnhancedADLXHelper::~EnhancedADLXHelper() {
         Terminate();
     }
 }
+
+// Gamma Ramp Data Access Helper Functions Implementation
+ADLX_RESULT GetGammaRampData(ADLX_GammaRamp* pGammaRamp, adlx_uint16* pRedData, adlx_uint16* pGreenData, adlx_uint16* pBlueData, adlx_size dataSize) {
+    if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+        return ADLX_INVALID_ARGS;
+    }
+    
+    if (dataSize != 256) {
+        return ADLX_INVALID_ARGS;
+    }
+    
+    // Get the gamma pointer from the ADLX_GammaRamp structure
+    adlx_uint16* gammaPtr = pGammaRamp->gamma;
+    if (!gammaPtr) {
+        return ADLX_INVALID_OBJECT;
+    }
+    
+    // Copy the gamma data: 256 red values, then 256 green values, then 256 blue values
+    // The gamma array is organized as [R0, R1, ..., R255, G0, G1, ..., G255, B0, B1, ..., B255]
+    memcpy(pRedData, &gammaPtr[0], 256 * sizeof(adlx_uint16));      // Red channel
+    memcpy(pGreenData, &gammaPtr[256], 256 * sizeof(adlx_uint16));  // Green channel
+    memcpy(pBlueData, &gammaPtr[512], 256 * sizeof(adlx_uint16));   // Blue channel
+    
+    return ADLX_OK;
+}
+
+ADLX_RESULT SetGammaRampData(ADLX_GammaRamp* pGammaRamp, const adlx_uint16* pRedData, const adlx_uint16* pGreenData, const adlx_uint16* pBlueData, adlx_size dataSize) {
+    if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+        return ADLX_INVALID_ARGS;
+    }
+    
+    if (dataSize != 256) {
+        return ADLX_INVALID_ARGS;
+    }
+    
+    // Validate gamma data ranges (0-65535 for 16-bit values)
+    if (!ValidateGammaRampData(pRedData, dataSize) || 
+        !ValidateGammaRampData(pGreenData, dataSize) || 
+        !ValidateGammaRampData(pBlueData, dataSize)) {
+        return ADLX_INVALID_ARGS;
+    }
+    
+    // Get the gamma pointer from the ADLX_GammaRamp structure
+    adlx_uint16* gammaPtr = pGammaRamp->gamma;
+    if (!gammaPtr) {
+        return ADLX_INVALID_OBJECT;
+    }
+    
+    // Set the gamma data: 256 red values, then 256 green values, then 256 blue values
+    memcpy(&gammaPtr[0], pRedData, 256 * sizeof(adlx_uint16));      // Red channel
+    memcpy(&gammaPtr[256], pGreenData, 256 * sizeof(adlx_uint16));  // Green channel
+    memcpy(&gammaPtr[512], pBlueData, 256 * sizeof(adlx_uint16));   // Blue channel
+    
+    return ADLX_OK;
+}
+
+adlx_size GetGammaRampSize() {
+    return 256; // Each color channel has 256 values
+}
+
+bool ValidateGammaRampData(const adlx_uint16* pData, adlx_size dataSize) {
+    if (!pData || dataSize != 256) {
+        return false;
+    }
+    
+    // Validate that all values are within the valid 16-bit range
+    // Note: For gamma ramps, values typically range from 0 to 65535
+    for (adlx_size i = 0; i < dataSize; ++i) {
+        // All 16-bit values are valid for gamma ramps
+        // Additional validation could be added here if needed
+        // (e.g., monotonic increasing values, specific ranges, etc.)
+    }
+    
+    return true;
+}
