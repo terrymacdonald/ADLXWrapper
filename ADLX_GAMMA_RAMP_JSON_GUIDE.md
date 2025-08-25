@@ -45,11 +45,11 @@ Ensure these files are in your project:
 - `SerializableGammaRamp.cs`
 - `GammaRampExtensions.cs` 
 - `NewtonsoftJsonUtility.cs`
-- `ADLXCSharpBind.dll` (SWIG-generated bindings)
+- `ADLXWrapper.dll` (SWIG-generated bindings)
 
 ### 3. Using Statements
 ```csharp
-using ADLXCSharpBind;
+using ADLXWrapper;
 using Newtonsoft.Json;
 ```
 
@@ -192,7 +192,7 @@ catch (ArgumentException ex)
 ```csharp
 using System;
 using System.Threading.Tasks;
-using ADLXCSharpBind;
+using ADLXWrapper;
 
 class Program
 {
@@ -279,10 +279,10 @@ The serialized JSON has this structure:
 
 1. **"ADLX_GammaRamp does not contain a definition for 'ToSerializable'"**
    - Ensure `GammaRampExtensions.cs` is included in your project
-   - Add `using ADLXCSharpBind;`
+   - Add `using ADLXWrapper;`
 
-2. **"Could not load file or assembly 'ADLXCSharpBind.dll'"**
-   - Ensure `ADLXCSharpBind.dll` is in your output directory
+2. **"Could not load file or assembly 'ADLXWrapper.dll'"**
+   - Ensure `ADLXWrapper.dll` is in your output directory
    - Set "Copy to Output Directory" to "Copy always"
 
 3. **JSON deserialization returns null**
@@ -294,7 +294,7 @@ The serialized JSON has this structure:
 If you encounter issues:
 1. Check that all required files are included
 2. Verify Newtonsoft.Json package is installed
-3. Ensure ADLXCSharpBind.dll is accessible
+3. Ensure ADLXWrapper.dll is accessible
 4. Test with the provided example code
 
 ## Migration from Previous Versions

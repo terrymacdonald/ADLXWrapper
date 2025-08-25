@@ -11,7 +11,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace ADLXCSharpBind
+namespace ADLXWrapper
 {
     /// <summary>
     /// Extension methods for ADLX_GammaRamp conversion and manipulation

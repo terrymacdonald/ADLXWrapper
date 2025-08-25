@@ -10,7 +10,7 @@
 
 using System;
 
-namespace ADLXCSharpBind
+namespace ADLXWrapper
 {
     /// <summary>
     /// JSON-serializable representation of gamma ramp data

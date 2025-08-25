@@ -2735,7 +2735,7 @@ static IADLXDisplayFreeSyncColorAccuracy* displayCFreeSyncColorAccuracyP_Ptr_val
  * C++ director class methods
  * --------------------------------------------------- */
 
-#include "ADLXCSharpBind_wrap.h"
+#include "ADLXWrapper_wrap.h"
 
 SwigDirector_IADLXDisplayListChangedListener::SwigDirector_IADLXDisplayListChangedListener() : adlx::IADLXDisplayListChangedListener(), Swig::Director() {
   swig_init_callbacks();

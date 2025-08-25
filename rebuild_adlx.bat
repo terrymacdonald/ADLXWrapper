@@ -9,7 +9,7 @@ if errorlevel 1 (
 
 REM Rebuild the project
 echo Building native DLL...
-msbuild ADLXCSharpBind\ADLXCSharpBind.vcxproj /p:Configuration=Debug /p:Platform=x64 /t:Rebuild /v:minimal
+msbuild ADLXWrapper\ADLXWrapper.vcxproj /p:Configuration=Debug /p:Platform=x64 /t:Rebuild /v:minimal
 
 if errorlevel 1 (
     echo Build failed!
@@ -19,6 +19,6 @@ if errorlevel 1 (
 
 echo Build completed successfully!
 echo Copying DLL to test directory...
-copy x64\Debug\ADLXCSharpBind.dll IADLXGPU2Test\bin\Debug\ >nul
+powershell -Command "Copy-Item ADLXWrapper\x64\Debug\ADLXWrapper.dll IADLXGPU2Test\"
 
 echo Done!

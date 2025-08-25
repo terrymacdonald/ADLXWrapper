@@ -2,15 +2,15 @@
 
 ## Overview
 
-The ADLXCSharpBind project provides a comprehensive C# wrapper for the AMD Display Library eXtended (ADLX) SDK using SWIG. This wrapper enables full access to ADLX functionality from C# applications, including GPU management, display control, performance monitoring, and tuning capabilities.
+The ADLXWrapper project provides a comprehensive C# wrapper for the AMD Display Library eXtended (ADLX) SDK using SWIG. This wrapper enables full access to ADLX functionality from C# applications, including GPU management, display control, performance monitoring, and tuning capabilities.
 
 ## Project Structure
 
 ```
-ADLXCSharpBind/
-├── ADLXCSharpBind/              # Native C++ wrapper DLL project
-│   ├── ADLXCSharpBind.i         # SWIG interface definition
-│   ├── ADLXCSharpBind.vcxproj   # Visual Studio project file
+ADLXWrapper/
+├── ADLXWrapper/                 # Native C++ wrapper DLL project
+│   ├── ADLXWrapper.i            # SWIG interface definition
+│   ├── ADLXWrapper.vcxproj      # Visual Studio project file
 │   ├── ADLXQueryInterface.h/cpp # QueryInterface helper functions
 │   └── x64/                     # Build output directory
 ├── IADLXGPU2Test/              # C# test project
@@ -45,7 +45,7 @@ This script:
 
 ### Option 2: Using Visual Studio
 
-1. Open `ADLXCSharpBind.sln` in Visual Studio
+1. Open `ADLXWrapper.sln` in Visual Studio
 2. Build the solution (Ctrl+Shift+B)
 3. Run the test project
 

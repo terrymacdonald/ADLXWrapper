@@ -10,7 +10,7 @@
 
 using Newtonsoft.Json;
 
-namespace ADLXCSharpBind;
+namespace ADLXWrapper;
 
 /// <summary>
 /// Modern .NET 8.0 test program for gamma ramp JSON serialization
