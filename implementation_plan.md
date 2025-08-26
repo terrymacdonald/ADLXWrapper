@@ -21,9 +21,9 @@ Define new data structures and extend existing SWIG interface declarations.
 Modify existing SWIG interface and add new C# utility classes.
 
 **Modified Files:**
-- `ADLXCSharpBind/ADLXCSharpBind.i` - Add helper function declarations following existing pattern
-- `ADLXCSharpBind/ADLXQueryInterface.h` - Add function prototypes for new helper functions
-- `ADLXCSharpBind/ADLXQueryInterface.cpp` - Implement helper functions for gamma data access
+- `ADLXWrapper/ADLXWrapper.i` - Add helper function declarations following existing pattern
+- `ADLXWrapper/ADLXQueryInterface.h` - Add function prototypes for new helper functions
+- `ADLXWrapper/ADLXQueryInterface.cpp` - Implement helper functions for gamma data access
 
 **New Files:**
 - `IADLXGPU2Test/SerializableGammaRamp.cs` - JSON-friendly data structure
@@ -85,7 +85,7 @@ Create comprehensive tests for gamma ramp serialization and data integrity.
 ## Implementation Order
 Sequential implementation steps to minimize conflicts and ensure successful integration.
 
-1. **Add SWIG Interface Declarations** - Extend ADLXCSharpBind.i with new helper function declarations
+1. **Add SWIG Interface Declarations** - Extend ADLXWrapper.i with new helper function declarations
 2. **Implement C++ Helper Functions** - Add implementations to ADLXQueryInterface.cpp and ADLXQueryInterface.h
 3. **Rebuild SWIG Bindings** - Regenerate C# bindings to include new helper functions
 4. **Create SerializableGammaRamp Class** - Implement JSON-friendly data structure

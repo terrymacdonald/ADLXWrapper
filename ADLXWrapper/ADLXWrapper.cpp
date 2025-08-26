@@ -1,22 +1,22 @@
-// ADLXCSharpBind.cpp : Defines the exported functions for the DLL.
+// ADLXWrapper.cpp : Defines the exported functions for the DLL.
 //
 
 #include "pch.h"
 #include "framework.h"
-#include "ADLXCSharpBind.h"
+#include "ADLXWrapper.h"
 
 
 // This is an example of an exported variable
-ADLXCSHARPBIND_API int nADLXCSharpBind=0;
+ADLXWrapper_API int nADLXWrapper=0;
 
 // This is an example of an exported function.
-ADLXCSHARPBIND_API int fnADLXCSharpBind(void)
+ADLXWrapper_API int fnADLXWrapper(void)
 {
     return 0;
 }
 
 // This is the constructor of a class that has been exported.
-CADLXCSharpBind::CADLXCSharpBind()
+CADLXWrapper::CADLXWrapper()
 {
     return;
 }

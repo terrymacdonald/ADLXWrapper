@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{bbc7d129-1a0b-459c-9272-a5d801c39345}</ProjectGuid>
-    <RootNamespace>ADLXCSharpBind</RootNamespace>
+    <RootNamespace>ADLXWrapper</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,22 +71,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>ADLXCSharpBind</TargetName>
+    <TargetName>ADLXWrapper</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <TargetName>ADLXCSharpBind</TargetName>
+    <TargetName>ADLXWrapper</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <TargetName>ADLXCSharpBind</TargetName>
+    <TargetName>ADLXWrapper</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>ADLXCSharpBind</TargetName>
+    <TargetName>ADLXWrapper</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;ADLXCSHARPBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ADLXWrapper_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -103,7 +103,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;ADLXCSHARPBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ADLXWrapper_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -120,7 +120,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;ADLXCSHARPBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ADLXWrapper_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -131,7 +131,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <CustomBuild>
-      <Command>..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "..\out" .\ADLXCSharpBind.i</Command>
+      <Command>..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "..\out" .\ADLXWrapper.i</Command>
     </CustomBuild>
     <CustomBuild>
       <Outputs>%(Filename)_wrap.cxx</Outputs>
@@ -146,7 +146,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;ADLXCSHARPBIND_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ADLXWrapper_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -161,18 +161,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\ADLX\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.h" />
-    <ClInclude Include="ADLXCSharpBind_wrap.h" />
+    <ClInclude Include="ADLXWrapper_wrap.h" />
     <ClInclude Include="ADLXQueryInterface.h" />
-    <!--<ClInclude Include="ADLXCSharpBind.h" />-->
+    <!--<ClInclude Include="ADLXWrapper.h" />-->
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ADLX\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.cpp" />
     <ClCompile Include="..\ADLX\SDK\Platform\Windows\WinAPIs.cpp" />
-    <ClCompile Include="ADLXCSharpBind_wrap.cxx" />
+    <ClCompile Include="ADLXWrapper_wrap.cxx" />
     <ClCompile Include="ADLXQueryInterface.cpp" />
-    <!--<ClCompile Include="ADLXCSharpBind.cpp" />-->
+    <!--<ClCompile Include="ADLXWrapper.cpp" />-->
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -182,14 +182,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="ADLXCSharpBind.i">
+    <CustomBuild Include="ADLXWrapper.i">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "../out" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "../out" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXCSharpBind -outdir "../out" ADLXCSharpBind.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "../out" ADLXWrapper.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "../out" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
     <None Include="cs_struct.i" />

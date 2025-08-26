@@ -1,0 +1,2 @@
+#define ADLXWrapper_API __declspec(dllexport)
+#define ADLXWrapper_API __declspec(dllimport)

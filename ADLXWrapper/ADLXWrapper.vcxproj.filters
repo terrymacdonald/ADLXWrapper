@@ -27,7 +27,7 @@
     <ClInclude Include="..\ADLX\SDK\ADLXHelper\Windows\Cpp\ADLXHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ADLXCSharpBind_wrap.h">
+    <ClInclude Include="ADLXWrapper_wrap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,11 +44,11 @@
     <ClCompile Include="..\ADLX\SDK\Platform\Windows\WinAPIs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ADLXCSharpBind_wrap.cxx">
+    <ClCompile Include="ADLXWrapper_wrap.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="ADLXCSharpBind.i" />
+    <CustomBuild Include="ADLXWrapper.i" />
   </ItemGroup>
 </Project>

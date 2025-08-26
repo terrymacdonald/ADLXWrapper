@@ -1,2 +1,0 @@
-#define ADLXCSHARPBIND_API __declspec(dllexport)
-#define ADLXCSHARPBIND_API __declspec(dllimport)

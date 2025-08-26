@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "ipowertuning1.h": "c"
-    }
+    },
+    "dotnet.preferCSharpExtension": true
 }

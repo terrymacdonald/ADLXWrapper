@@ -11,7 +11,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace ADLXCSharpBind;
+namespace ADLXWrapper;
 
 /// <summary>
 /// Modern JSON utility for SerializableGammaRamp using Newtonsoft.Json

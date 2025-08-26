@@ -1,5 +1,5 @@
 using System;
-using ADLXCSharpBind;
+using ADLXWrapper;
 
 namespace IADLXGPU2Test
 {
