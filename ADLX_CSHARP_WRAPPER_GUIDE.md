@@ -40,8 +40,10 @@ ADLXWrapper/
 - Windows 10/11
 - Visual Studio 2022 Community (or higher)
 - AMD graphics drivers with ADLX support
-- SWIG 4.3.1 (automatically installed via `install_swig.ps1`)
+- Internet connection (for automatic dependency downloads)
 - .NET Framework 4.8 and/or .NET 8.0
+
+**Note:** SWIG 4.3.1 and ADLX SDK are automatically downloaded and installed during the build process.
 
 ## Build Scripts Reference
 

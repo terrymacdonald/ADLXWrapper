@@ -1,64 +1,96 @@
 # Implementation Plan
 
-## Overview
-Update the ADLX_CSHARP_WRAPPER_GUIDE.md file to accurately reflect the current project structure, build processes, and available batch files, then update README.md to provide proper navigation links to all documentation files in the repository.
+## [Overview]
+Integrate SWIG installation functionality from install_swig.ps1 into prepare_adlx.ps1 to create a unified pre-build script that handles both ADLX SDK and SWIG dependencies automatically.
 
-The current documentation contains outdated information about DLL names, .NET versions, and build processes. Additionally, the README.md lacks proper links to the comprehensive documentation available in the repository. This implementation will create accurate, comprehensive documentation that reflects the actual project structure and provides clear guidance for users.
+The current build process requires users to manually run install_swig.ps1 before building the project, which can lead to build failures if SWIG is not installed. By integrating SWIG installation into the existing prepare_adlx.ps1 script that is already called during the pre-build process, we can ensure all dependencies are automatically available. This integration will maintain the existing robust error handling and validation patterns already established in prepare_adlx.ps1 while adding SWIG detection and installation capabilities.
 
-## Types
-No new type definitions required for this documentation update task.
+## [Types]
+No new type definitions required for this PowerShell script integration.
 
-This is purely a documentation update that will not modify any code structures, interfaces, or data types. All existing types and interfaces will remain unchanged.
+All functionality will be implemented using existing PowerShell built-in types (strings, booleans, arrays) and standard cmdlets. The integration will follow the same patterns as the existing ADLX validation functions.
 
-## Files
-Update existing documentation files to provide accurate and comprehensive information.
+## [Files]
+Modify existing PowerShell script to include SWIG installation functionality.
 
 **Files to be modified:**
-- `ADLX_CSHARP_WRAPPER_GUIDE.md` - Complete rewrite to reflect actual project structure, correct DLL names, accurate .NET version support, and comprehensive batch file documentation
-- `README.md` - Add navigation links to all .md files, batch file reference section, and improved getting started instructions
+- `ADLXWrapper/prepare_adlx.ps1` - Add SWIG detection, validation, and installation functions integrated with existing ADLX preparation workflow
+- `README.md` - Update installation instructions to reflect that SWIG is now automatically handled
+- `ADLX_CSHARP_WRAPPER_GUIDE.md` - Update build process documentation to remove manual SWIG installation step
+
+**Files that can be removed after integration:**
+- `install_swig.ps1` - Functionality will be integrated into prepare_adlx.ps1
 
 **Files referenced but not modified:**
-- `ADLX_GAMMA_RAMP_JSON_GUIDE.md` - Will be linked from updated README.md
-- All batch files (7 total) - Will be documented in the updated guide
-- Project files - Will be accurately referenced in documentation
+- `ADLXWrapper/ADLXWrapper.vcxproj` - Already calls prepare_adlx.ps1 in pre-build event
+- All batch files - Will continue to work without changes
 
-## Functions
-No function modifications required for this documentation update task.
+## [Functions]
+Add SWIG-related functions to the existing prepare_adlx.ps1 script structure.
 
-This implementation focuses solely on updating documentation content. No code functions, methods, or procedures will be modified, added, or removed.
+**New functions to be added:**
+- `Test-SwigInstallation` - Check if SWIG is installed and validate version (similar to Test-ADLXSDKCompleteness pattern)
+- `Install-SwigWindows` - Download and install SWIG for Windows (adapted from install_swig.ps1 logic)
+- `Test-SwigExecutable` - Validate that swig.exe is functional and accessible
 
-## Classes
-No class modifications required for this documentation update task.
+**Modified functions:**
+- Main script flow - Add SWIG validation and installation before ADLX processing
+- Error handling sections - Include SWIG-related error scenarios
 
-All existing classes and their documentation will remain unchanged. The updated documentation will accurately reference existing classes and their usage patterns.
+**Function integration pattern:**
+- Follow existing validation-first approach used for ADLX SDK
+- Maintain consistent error handling and cleanup patterns
+- Use same progress reporting and colored output style
 
-## Dependencies
-No dependency modifications required for this documentation update task.
+## [Classes]
+No class modifications required for this PowerShell script integration.
 
-The documentation updates will accurately reflect existing dependencies including Newtonsoft.Json, SWIG, Visual Studio requirements, and .NET Framework/.NET 8.0 support without changing any actual dependencies.
+All functionality will be implemented using PowerShell functions and existing cmdlet patterns consistent with the current prepare_adlx.ps1 structure.
 
-## Testing
-Verify documentation accuracy through manual review and cross-referencing with actual project files.
+## [Dependencies]
+No new external dependencies required for this integration.
+
+The integration will use existing PowerShell capabilities already utilized in prepare_adlx.ps1: Invoke-WebRequest, Expand-Archive, Test-Path, and standard file system operations. SWIG download URL and version information will be embedded in the script following the same pattern as the ADLX SDK URL.
+
+## [Testing]
+Validate integration through build process testing and manual verification scenarios.
+
+**Test scenarios:**
+- Clean environment (no SWIG, no ADLX) - should download and install both
+- SWIG present, ADLX missing - should skip SWIG, install ADLX
+- Both present and valid - should skip both installations
+- Corrupted SWIG installation - should detect and reinstall
+- Network connectivity issues - should provide clear error messages
+- Build process integration - verify pre-build event continues to work correctly
 
 **Validation approach:**
-- Cross-reference all batch file descriptions with actual file contents
-- Verify all file paths and names mentioned in documentation exist
-- Ensure all .NET version references match actual project configurations
-- Validate that all links in README.md point to existing files
-- Review build instructions against actual project structure
+- Test prepare_adlx.ps1 execution in isolation
+- Test full build process via rebuild_adlx.bat
+- Verify SWIG functionality by checking generated C# bindings
 
-## Implementation Order
-Sequential documentation updates to ensure consistency and accuracy.
+## [Implementation Order]
+Sequential integration maintaining backward compatibility and minimizing disruption.
 
-**Step 1:** Update ADLX_CSHARP_WRAPPER_GUIDE.md with comprehensive project information
-- Correct project structure documentation
-- Accurate DLL naming and build process information
-- Complete batch file reference with descriptions
-- Updated .NET version support information
-- Corrected build instructions and examples
+**Step 1:** Create SWIG validation and installation functions in prepare_adlx.ps1
+- Add Test-SwigInstallation function with version checking
+- Add Install-SwigWindows function adapted from install_swig.ps1
+- Add Test-SwigExecutable function for post-installation validation
 
-**Step 2:** Update README.md with navigation and reference information
-- Add links to all documentation files
-- Create batch file quick reference section
-- Improve getting started instructions
-- Add proper project overview and navigation structure
+**Step 2:** Integrate SWIG processing into main script flow
+- Add SWIG check and installation before ADLX processing
+- Maintain existing error handling patterns and exit codes
+- Ensure consistent progress reporting and user feedback
+
+**Step 3:** Update documentation to reflect integrated workflow
+- Update README.md installation instructions
+- Update ADLX_CSHARP_WRAPPER_GUIDE.md build process documentation
+- Remove references to manual install_swig.ps1 execution
+
+**Step 4:** Test and validate integration
+- Test all scenarios (clean install, partial install, full install)
+- Verify build process continues to work correctly
+- Validate error handling and recovery scenarios
+
+**Step 5:** Clean up obsolete files
+- Remove install_swig.ps1 after confirming integration works correctly
+- Update any remaining documentation references

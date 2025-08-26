@@ -1,12 +1,19 @@
-# Enhanced ADLX Preparation Script with Improved Error Handling
+# Enhanced ADLX Preparation Script with Improved Error Handling and SWIG Integration
 # Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 
-# Define the URL for the latest zip file and the destination folder
+# Define SWIG-related variables
+$swigZipUrl = "https://cytranet-dal.dl.sourceforge.net/project/swig/swigwin/swigwin-4.3.1/swigwin-4.3.1.zip?viasf=1"
+$swigZipFilePath = ".\swigwin.zip"
+$swigDestinationFolder = ".\swigwin"
+$swigTempExtractFolder = ".\swigwin-4.3.1"
+$swigExecutablePath = ".\swigwin\swig.exe"
+
+# Define ADLX-related variables
 $zipUrl = "https://github.com/GPUOpen-LibrariesAndSDKs/ADLX/archive/refs/heads/main.zip"
 $zipFilePath = ".\main.zip"
 $destinationFolder = ".\ADLX"
 $tempExtractFolder = ".\ADLX-main"
-$outFolder = ".\out"
+$outFolder = ".\ADLXWrapper\cs_bindings"
 
 # Function to validate ADLX SDK completeness
 function Test-ADLXSDKCompleteness {
@@ -51,19 +58,174 @@ function Test-InternetConnection {
     }
 }
 
+# Function to validate SWIG installation
+function Test-SwigInstallation {
+    param([string]$swigPath)
+    
+    # Check if SWIG executable exists
+    if (-not (Test-Path -Path $swigPath)) {
+        Write-Host "SWIG executable not found at: $swigPath" -ForegroundColor Yellow
+        return $false
+    }
+    
+    # Test SWIG functionality by checking version
+    try {
+        $swigVersion = & $swigPath -version 2>&1
+        if ($LASTEXITCODE -eq 0 -and $swigVersion -match "SWIG Version") {
+            Write-Host "SWIG validation passed - executable is functional." -ForegroundColor Green
+            return $true
+        } else {
+            Write-Host "SWIG executable exists but is not functional." -ForegroundColor Yellow
+            return $false
+        }
+    } catch {
+        Write-Host "Failed to execute SWIG: $_" -ForegroundColor Yellow
+        return $false
+    }
+}
+
+# Function to install SWIG for Windows
+function Install-SwigWindows {
+    Write-Host "Downloading SWIG v4.3.1 for Windows... (may take a while)"
+    
+    try {
+        # Add progress tracking for downloads and handle redirects
+        $ProgressPreference = 'Continue'
+        Invoke-WebRequest -Uri $swigZipUrl -OutFile $swigZipFilePath -MaximumRedirection 10 -ErrorAction Stop
+        Write-Host "SWIG download succeeded." -ForegroundColor Green
+        
+        # Validate downloaded file
+        if (-not (Test-Path -Path $swigZipFilePath)) {
+            throw "Downloaded SWIG file not found"
+        }
+        
+        $fileSize = (Get-Item $swigZipFilePath).Length
+        # SWIG 4.3.1 zip file should be around 10-15MB, so anything less than 5MB is likely an error page
+        if ($fileSize -lt 5MB) {
+            throw "Downloaded SWIG file appears to be too small ($fileSize bytes) - likely a redirect page or error"
+        }
+        
+        Write-Host "Downloaded SWIG file validated ($([math]::Round($fileSize/1MB, 2)) MB)." -ForegroundColor Green
+        
+    } catch {
+        Write-Host "ERROR: Failed to download SWIG: $_" -ForegroundColor Red
+        # Clean up partial download
+        if (Test-Path -Path $swigZipFilePath) {
+            Remove-Item -Path $swigZipFilePath -Force
+        }
+        return $false
+    }
+    
+    # Remove existing SWIG folder if it exists
+    if (Test-Path -Path $swigDestinationFolder) {
+        Write-Host "Removing existing SWIG folder..."
+        try {
+            Remove-Item -Path $swigDestinationFolder -Recurse -Force -ErrorAction Stop
+            Write-Host "Removed existing SWIG folder." -ForegroundColor Green
+        } catch {
+            Write-Host "ERROR: Failed to remove existing SWIG folder: $_" -ForegroundColor Red
+            # Clean up
+            if (Test-Path -Path $swigZipFilePath) {
+                Remove-Item -Path $swigZipFilePath -Force
+            }
+            return $false
+        }
+    }
+    
+    # Extract SWIG
+    Write-Host "Extracting SWIG contents... (may take a while)"
+    try {
+        Expand-Archive -Path $swigZipFilePath -DestinationPath . -Force -ErrorAction Stop
+        Write-Host "SWIG extraction completed successfully." -ForegroundColor Green
+    } catch {
+        Write-Host "ERROR: Failed to extract SWIG: $_" -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $swigZipFilePath) {
+            Remove-Item -Path $swigZipFilePath -Force
+        }
+        return $false
+    }
+    
+    # Validate extracted folder exists
+    if (-not (Test-Path -Path $swigTempExtractFolder)) {
+        Write-Host "ERROR: Extracted SWIG folder '$swigTempExtractFolder' not found." -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $swigZipFilePath) {
+            Remove-Item -Path $swigZipFilePath -Force
+        }
+        return $false
+    }
+    
+    # Rename the extracted folder
+    Write-Host "Renaming SWIG folder..."
+    try {
+        Rename-Item -Path $swigTempExtractFolder -NewName $swigDestinationFolder -ErrorAction Stop
+        Write-Host "SWIG folder renamed successfully." -ForegroundColor Green
+    } catch {
+        Write-Host "ERROR: Failed to rename SWIG folder: $_" -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $swigZipFilePath) {
+            Remove-Item -Path $swigZipFilePath -Force
+        }
+        if (Test-Path -Path $swigTempExtractFolder) {
+            Remove-Item -Path $swigTempExtractFolder -Recurse -Force
+        }
+        return $false
+    }
+    
+    # Clean up zip file
+    Write-Host "Cleaning up SWIG download files..."
+    try {
+        Remove-Item -Path $swigZipFilePath -Force -ErrorAction Stop
+        Write-Host "SWIG cleanup completed." -ForegroundColor Green
+    } catch {
+        Write-Host "WARNING: Failed to remove SWIG zip file: $_" -ForegroundColor Yellow
+        # This is not critical, continue
+    }
+    
+    # Validate SWIG installation
+    if (Test-SwigInstallation -swigPath $swigExecutablePath) {
+        Write-Host "SWIG installation completed successfully." -ForegroundColor Green
+        return $true
+    } else {
+        Write-Host "ERROR: SWIG installation validation failed." -ForegroundColor Red
+        return $false
+    }
+}
+
 # Change to the parent Solution Folder (as that is where we want the folders)
 Set-Location ..
 
-Write-Host "=== Enhanced ADLX Preparation Script ===" -ForegroundColor Cyan
-Write-Host "Preparing ADLX SDK for IADLXGPU2 support..." -ForegroundColor Cyan
+Write-Host "=== Enhanced ADLX Preparation Script with SWIG Integration ===" -ForegroundColor Cyan
+Write-Host "Preparing SWIG and ADLX SDK for IADLXGPU2 support..." -ForegroundColor Cyan
 
 # Check internet connectivity
 Write-Host "Checking internet connectivity..."
 if (-not (Test-InternetConnection)) {
-    Write-Host "ERROR: No internet connection available. Cannot download ADLX SDK." -ForegroundColor Red
+    Write-Host "ERROR: No internet connection available. Cannot download dependencies." -ForegroundColor Red
     exit 1
 }
 Write-Host "Internet connectivity confirmed." -ForegroundColor Green
+
+# === SWIG PROCESSING ===
+Write-Host ""
+Write-Host "=== SWIG Dependency Check ===" -ForegroundColor Cyan
+
+# Check if SWIG is already installed and functional
+if (Test-SwigInstallation -swigPath $swigExecutablePath) {
+    Write-Host "Existing SWIG installation is valid. Skipping download." -ForegroundColor Green
+} else {
+    Write-Host "SWIG not found or not functional. Installing SWIG..." -ForegroundColor Yellow
+    
+    if (-not (Install-SwigWindows)) {
+        Write-Host "ERROR: Failed to install SWIG. Cannot proceed with build." -ForegroundColor Red
+        exit 1
+    }
+}
+
+# === ADLX PROCESSING ===
+Write-Host ""
+Write-Host "=== ADLX SDK Dependency Check ===" -ForegroundColor Cyan
 
 # Check if ADLX folder already exists and is complete
 if (Test-Path -Path $destinationFolder) {
@@ -187,17 +349,17 @@ try {
 
 # Create the out folder if it doesn't exist
 if (-not (Test-Path -Path $outFolder)) {
-    Write-Host "Creating the out folder..."
+    Write-Host "Creating the output folder (cs_bindings)..."
     try {
         New-Item -ItemType Directory -Path $outFolder -ErrorAction Stop | Out-Null
-        Write-Host "Out folder created successfully." -ForegroundColor Green
+        Write-Host "Output folder cs_bindings created successfully." -ForegroundColor Green
     } catch {
-        Write-Host "ERROR: Failed to create out folder: $_" -ForegroundColor Red
+        Write-Host "ERROR: Failed to create output folder: $_" -ForegroundColor Red
         exit 1
     }
 } else {
-    Write-Host "Out folder already exists." -ForegroundColor Green
+    Write-Host "Output folder already exists." -ForegroundColor Green
 }
 
 Write-Host "=== Project pre-build tasks completed successfully ===" -ForegroundColor Green
-Write-Host "ADLX SDK is ready for IADLXGPU2 support compilation." -ForegroundColor Green
+Write-Host "SWIG and ADLX SDK are ready for IADLXGPU2 support compilation." -ForegroundColor Green

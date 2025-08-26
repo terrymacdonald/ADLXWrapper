@@ -18,15 +18,15 @@ This repository contains comprehensive documentation to help you get started:
 - Windows 10/11
 - Visual Studio 2022 Community (or higher)
 - AMD graphics drivers with ADLX support
-- SWIG 4.3.1 (auto-installed via `install_swig.ps1`)
+- Internet connection (for automatic dependency downloads)
 
 ### Installation
-1. **Install SWIG:** Run `install_swig.ps1` PowerShell script, or manually download [SWIG](https://www.swig.org/download.html) and extract to `swigwin/` folder
-2. **Build the wrapper:** Run `rebuild_adlx.bat` to build the C++ wrapper DLL
-3. **Test the wrapper:** Run `test_csharp.bat` to build and test the C# bindings
+1. **Build the wrapper:** Run `rebuild_adlx.bat` to build the C++ wrapper DLL
+2. **Test the wrapper:** Run `test_csharp_netframework48.bat` or `test_csharp_net8.bat` to build and test the C# bindings
 
 ### Build Process
 The project automatically handles the following when you build:
+- Downloads and installs SWIG 4.3.1 if not present
 - Downloads the latest ADLX SDK from AMD
 - Generates C# bindings using SWIG
 - Builds a C++ `ADLXWrapper.dll` and associated `.cs` files to make the AMD ADLX library available in C#.
