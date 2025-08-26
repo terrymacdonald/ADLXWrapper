@@ -13,12 +13,25 @@ ADLXWrapper/
 │   ├── ADLXWrapper.vcxproj   # Visual Studio project file
 │   ├── ADLXQueryInterface.h/cpp # QueryInterface helper functions
 │   └── x64/                     # Build output directory
-├── IADLXGPU2Test/              # C# test project
-│   ├── ComprehensiveTest.cs     # Full functionality validation
-│   ├── SimpleExample.cs         # Basic usage example
+├── IADLXGPU2Test/              # C# test projects
+│   ├── IADLXGPU2Test.csproj     # .NET Framework 4.8 project
+│   ├── IADLXGPU2Test_Net8.csproj # .NET 8.0 project
+│   ├── bin/Debug/               # Build outputs
+│   │   ├── ADLXCSharpBind.dll   # .NET Framework 4.8 output
+│   │   └── net8.0/              # .NET 8.0 outputs
+│   │       └── IADLXGPU2Test_Net8.dll
 │   └── *.cs                     # Generated SWIG wrapper classes
+├── ADLXNativeTest/             # Native C test applications
+│   ├── build.bat               # Direct compiler path method
+│   ├── build_amd.bat           # AMD vcvars64.bat method
+│   ├── build_fixed.bat         # Dynamic compiler detection
+│   ├── build_simple.bat        # Simplified AMD official method
+│   ├── build_vscode.bat        # VSCode-optimized method
+│   └── main.c / main_amd_simple.c # Test source files
 ├── ADLX/                       # AMD ADLX SDK
-└── test_csharp.bat             # VSCode-compatible build script
+├── rebuild_adlx.bat            # Main C++ wrapper build script
+├── test_csharp.bat             # C# test build and run script
+└── swigwin/                    # SWIG installation directory
 ```
 
 ## Prerequisites
@@ -26,28 +39,118 @@ ADLXWrapper/
 - Windows 10/11
 - Visual Studio 2022 Community (or higher)
 - AMD graphics drivers with ADLX support
-- SWIG 4.3.1 (automatically installed via install_swig.ps1)
-- .NET Framework 4.8
+- SWIG 4.3.1 (automatically installed via `install_swig.ps1`)
+- .NET Framework 4.8 and/or .NET 8.0
+
+## Build Scripts Reference
+
+### Main Build Scripts
+
+#### `rebuild_adlx.bat`
+**Purpose:** Builds the main C++ wrapper DLL (ADLXWrapper.dll)
+- Sets up Visual Studio environment using VsDevCmd.bat
+- Builds ADLXWrapper.vcxproj using MSBuild
+- Copies output DLL to test directory
+- **Output:** `x64\Debug\ADLXWrapper.dll`
+
+#### `test_csharp.bat`
+**Purpose:** Builds and runs the C# test application (.NET Framework 4.8)
+- Sets up Visual Studio environment using vcvars64.bat
+- Builds IADLXGPU2Test.csproj using MSBuild
+- Runs the compiled test executable
+- **Output:** `IADLXGPU2Test\bin\Debug\IADLXGPU2Test.exe`
+
+### Native C Test Scripts (ADLXNativeTest/)
+
+#### `build.bat`
+**Purpose:** Direct compiler path method
+- Uses hardcoded Visual Studio 2022 compiler path
+- Compiles main.c with ADLX helper files
+- **Best for:** Systems with known VS2022 installation paths
+
+#### `build_amd.bat`
+**Purpose:** AMD vcvars64.bat method
+- Uses vcvars64.bat to set up build environment
+- Follows AMD's recommended build approach
+- **Best for:** Standard AMD development workflow
+
+#### `build_fixed.bat`
+**Purpose:** Dynamic compiler detection method
+- Automatically finds latest MSVC compiler version
+- Most robust method for different VS installations
+- **Best for:** Systems with varying VS versions
+
+#### `build_simple.bat`
+**Purpose:** Simplified AMD official method
+- Uses main_amd_simple.c for basic testing
+- Minimal ADLX functionality test
+- **Best for:** Diagnosing interface issues
+
+#### `build_vscode.bat`
+**Purpose:** VSCode-optimized method
+- Designed for VSCode terminal compatibility
+- Uses vcvars64.bat with enhanced error checking
+- **Best for:** VSCode development environment
 
 ## Building the Wrapper
 
-### Option 1: Using the Build Script (Recommended for VSCode)
+### Option 1: Quick Start (Recommended)
 
 ```batch
+# Build the C++ wrapper DLL
+.\rebuild_adlx.bat
+
+# Build and test C# wrapper (.NET Framework 4.8)
 .\test_csharp.bat
 ```
 
-This script:
-- Sets up the Visual Studio environment using vcvars64.bat
-- Builds the C++ wrapper DLL
-- Compiles the C# test project
-- Runs the comprehensive functionality test
+### Option 2: .NET 8.0 Build
 
-### Option 2: Using Visual Studio
+```batch
+# Build the C++ wrapper DLL first
+.\rebuild_adlx.bat
+
+# Navigate to test directory and build .NET 8.0 version
+cd IADLXGPU2Test
+dotnet build IADLXGPU2Test_Net8.csproj -c Debug -p:Platform=x64
+dotnet run --project IADLXGPU2Test_Net8.csproj -c Debug
+```
+
+### Option 3: Using Visual Studio
 
 1. Open `ADLXWrapper.sln` in Visual Studio
 2. Build the solution (Ctrl+Shift+B)
-3. Run the test project
+3. Run the desired test project
+
+### Option 4: Native C Testing
+
+```batch
+# Test different build methods
+cd ADLXNativeTest
+
+# Try the most robust method first
+.\build_fixed.bat
+
+# Or use VSCode-optimized method
+.\build_vscode.bat
+
+# For AMD standard approach
+.\build_amd.bat
+```
+
+## .NET Version Support
+
+### .NET Framework 4.8
+- **Project:** `IADLXGPU2Test.csproj`
+- **Output:** `IADLXGPU2Test.exe`
+- **Build Script:** `test_csharp.bat`
+- **DLL Name:** `ADLXCSharpBind.dll`
+
+### .NET 8.0
+- **Project:** `IADLXGPU2Test_Net8.csproj`
+- **Output:** `IADLXGPU2Test_Net8.dll` / `IADLXGPU2Test_Net8.exe`
+- **Build Method:** `dotnet build` / `dotnet run`
+- **Dependencies:** Newtonsoft.Json 13.0.3
 
 ## Key Features
 
@@ -206,26 +309,38 @@ The wrapper provides access to all ADLX features:
 - Event handling and notifications
 - I2C communication
 
+## Advanced Features
+
+### Gamma Ramp JSON Serialization (.NET 8.0)
+For .NET 8.0 projects, comprehensive gamma ramp JSON serialization is available. See [ADLX_GAMMA_RAMP_JSON_GUIDE.md](ADLX_GAMMA_RAMP_JSON_GUIDE.md) for detailed usage instructions.
+
+```csharp
+// Convert ADLX gamma ramp to JSON
+var serializable = gammaRamp.ToSerializable("My Profile");
+string json = NewtonsoftJsonUtility.ToJson(serializable);
+
+// Load from JSON
+var loaded = NewtonsoftJsonUtility.FromJson(jsonString);
+var restored = loaded.ToADLX();
+```
+
 ## Testing
 
-### Comprehensive Test
-Run `ComprehensiveTest.cs` to validate all wrapper functionality:
+### Comprehensive Test (.NET Framework 4.8)
 ```batch
 .\test_csharp.bat
 ```
 
-### Simple Example
-The `SimpleExample.cs` provides a basic usage demonstration. To run it, call:
-```csharp
-SimpleExample.RunExample();
+### .NET 8.0 Test
+```batch
+cd IADLXGPU2Test
+dotnet run --project IADLXGPU2Test_Net8.csproj
 ```
 
-Or modify `ComprehensiveTest.cs` to call it:
-```csharp
-static void Main(string[] args)
-{
-    SimpleExample.RunExample();
-}
+### Native C Tests
+```batch
+cd ADLXNativeTest
+.\build_fixed.bat    # Recommended method
 ```
 
 ## Troubleshooting
@@ -238,11 +353,25 @@ static void Main(string[] args)
 
 2. **Build Errors**
    - Ensure Visual Studio 2022 is installed
-   - Run from Developer Command Prompt or use test_csharp.bat
+   - Try different build scripts in ADLXNativeTest/
+   - Use `build_fixed.bat` for most robust compilation
 
 3. **Access Violations**
    - Always check return values before using pointers
    - Ensure proper cleanup of allocated resources
+
+4. **Wrong DLL Referenced**
+   - .NET Framework 4.8 uses `ADLXCSharpBind.dll`
+   - .NET 8.0 uses `ADLXWrapper.dll`
+   - Ensure correct DLL is in output directory
+
+### Build Script Selection Guide
+
+- **Most Systems:** Use `build_fixed.bat` (dynamic compiler detection)
+- **VSCode Users:** Use `build_vscode.bat` (terminal optimized)
+- **AMD Standard:** Use `build_amd.bat` (official AMD method)
+- **Known VS Path:** Use `build.bat` (direct compiler path)
+- **Troubleshooting:** Use `build_simple.bat` (minimal test)
 
 ### Debug Information
 
@@ -259,8 +388,16 @@ var validationResult = ADLX.ValidateADLXInstallation();
 
 - SWIG Version: 4.3.1
 - ADLX SDK Version: 1.4.0.110
-- Target Framework: .NET Framework 4.8
+- Target Frameworks: .NET Framework 4.8, .NET 8.0
 - Platform: x64
+- Visual Studio: 2022 Community (recommended)
+
+## Related Documentation
+
+- [ADLX_GAMMA_RAMP_JSON_GUIDE.md](ADLX_GAMMA_RAMP_JSON_GUIDE.md) - Comprehensive gamma ramp JSON serialization for .NET 8.0
+- [README.md](README.md) - Project overview and quick start guide
+- [AMD ADLX Documentation](https://gpuopen.com/manuals/adlx/) - Official ADLX SDK documentation
+- [AMD ADLX C# Samples](https://gpuopen.com/manuals/adlx/adlx-page_sample_cs/) - Official C# usage examples
 
 ## License
 
