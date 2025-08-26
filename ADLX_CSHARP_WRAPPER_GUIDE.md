@@ -30,7 +30,8 @@ ADLXWrapper/
 │   └── main.c / main_amd_simple.c # Test source files
 ├── ADLX/                       # AMD ADLX SDK
 ├── rebuild_adlx.bat            # Main C++ wrapper build script
-├── test_csharp.bat             # C# test build and run script
+├── test_csharp_netframework48.bat # C# test build and run script (.NET Framework 4.8)
+├── test_csharp_net8.bat        # C# test build and run script (.NET 8.0)
 └── swigwin/                    # SWIG installation directory
 ```
 
@@ -53,12 +54,20 @@ ADLXWrapper/
 - Copies output DLL to test directory
 - **Output:** `x64\Debug\ADLXWrapper.dll`
 
-#### `test_csharp.bat`
+#### `test_csharp_netframework48.bat`
 **Purpose:** Builds and runs the C# test application (.NET Framework 4.8)
 - Sets up Visual Studio environment using vcvars64.bat
 - Builds IADLXGPU2Test.csproj using MSBuild
 - Runs the compiled test executable
 - **Output:** `IADLXGPU2Test\bin\Debug\IADLXGPU2Test.exe`
+
+#### `test_csharp_net8.bat`
+**Purpose:** Builds and runs the C# test application (.NET 8.0)
+- Uses dotnet CLI for .NET 8.0 build and execution
+- Verifies .NET 8.0 SDK availability
+- Builds IADLXGPU2Test_Net8.csproj using dotnet build
+- Runs the compiled test executable using dotnet run
+- **Output:** `IADLXGPU2Test\bin\Debug\net8.0\IADLXGPU2Test_Net8.exe`
 
 ### Native C Test Scripts (ADLXNativeTest/)
 
@@ -94,14 +103,14 @@ ADLXWrapper/
 
 ## Building the Wrapper
 
-### Option 1: Quick Start (Recommended)
+### Option 1: Quick Start (.NET Framework 4.8)
 
 ```batch
 # Build the C++ wrapper DLL
 .\rebuild_adlx.bat
 
 # Build and test C# wrapper (.NET Framework 4.8)
-.\test_csharp.bat
+.\test_csharp_netframework48.bat
 ```
 
 ### Option 2: .NET 8.0 Build
@@ -110,10 +119,8 @@ ADLXWrapper/
 # Build the C++ wrapper DLL first
 .\rebuild_adlx.bat
 
-# Navigate to test directory and build .NET 8.0 version
-cd IADLXGPU2Test
-dotnet build IADLXGPU2Test_Net8.csproj -c Debug -p:Platform=x64
-dotnet run --project IADLXGPU2Test_Net8.csproj -c Debug
+# Build and test C# wrapper (.NET 8.0)
+.\test_csharp_net8.bat
 ```
 
 ### Option 3: Using Visual Studio
@@ -143,7 +150,7 @@ cd ADLXNativeTest
 ### .NET Framework 4.8
 - **Project:** `IADLXGPU2Test.csproj`
 - **Output:** `IADLXGPU2Test.exe`
-- **Build Script:** `test_csharp.bat`
+- **Build Script:** `test_csharp_netframework48.bat`
 - **DLL Name:** `ADLXCSharpBind.dll`
 
 ### .NET 8.0
@@ -328,13 +335,12 @@ var restored = loaded.ToADLX();
 
 ### Comprehensive Test (.NET Framework 4.8)
 ```batch
-.\test_csharp.bat
+.\test_csharp_netframework48.bat
 ```
 
 ### .NET 8.0 Test
 ```batch
-cd IADLXGPU2Test
-dotnet run --project IADLXGPU2Test_Net8.csproj
+.\test_csharp_net8.bat
 ```
 
 ### Native C Tests

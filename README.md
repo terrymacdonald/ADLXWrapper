@@ -29,7 +29,7 @@ This repository contains comprehensive documentation to help you get started:
 The project automatically handles the following when you build:
 - Downloads the latest ADLX SDK from AMD
 - Generates C# bindings using SWIG
-- Builds `ADLXWrapper.dll` and associated `.cs` files
+- Builds a C++ `ADLXWrapper.dll` and associated `.cs` files to make the AMD ADLX library available in C#.
 - Creates test applications for both .NET Framework 4.8 and .NET 8.0
 
 ## 🛠️ Build Scripts Reference
@@ -38,7 +38,8 @@ The project automatically handles the following when you build:
 | Script | Purpose | Output |
 |--------|---------|--------|
 | `rebuild_adlx.bat` | Build C++ wrapper DLL | `ADLXWrapper.dll` |
-| `test_csharp.bat` | Build & run C# test (.NET Framework 4.8) | `IADLXGPU2Test.exe` |
+| `test_csharp_netframework48.bat` | Build & run C# test (.NET Framework 4.8) | `IADLXGPU2Test.exe` |
+| `test_csharp_net8.bat` | Build & run C# test (.NET 8.0) | `IADLXGPU2Test_Net8.exe` |
 
 ### Native C Test Scripts (`ADLXNativeTest/`)
 | Script | Method | Best For |
@@ -54,15 +55,13 @@ The project automatically handles the following when you build:
 ### .NET Framework 4.8
 ```batch
 .\rebuild_adlx.bat
-.\test_csharp.bat
+.\test_csharp_netframework48.bat
 ```
 
 ### .NET 8.0
 ```batch
 .\rebuild_adlx.bat
-cd IADLXGPU2Test
-dotnet build IADLXGPU2Test_Net8.csproj -c Debug -p:Platform=x64
-dotnet run --project IADLXGPU2Test_Net8.csproj -c Debug
+.\test_csharp_net8.bat
 ```
 
 ## 📁 Project Structure
@@ -74,7 +73,8 @@ ADLXWrapper/
 ├── 📄 ADLX_GAMMA_RAMP_JSON_GUIDE.md      # Gamma ramp JSON guide
 ├── 📄 implementation_plan.md              # Development plan
 ├── 🔧 rebuild_adlx.bat                    # Main build script
-├── 🔧 test_csharp.bat                     # C# test script
+├── 🔧 test_csharp_netframework48.bat      # C# test script (.NET Framework 4.8)
+├── 🔧 test_csharp_net8.bat               # C# test script (.NET 8.0)
 ├── 📁 ADLXWrapper/                        # C++ wrapper project
 ├── 📁 IADLXGPU2Test/                      # C# test projects
 ├── 📁 ADLXNativeTest/                     # Native C tests
