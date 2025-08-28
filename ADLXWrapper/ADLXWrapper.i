@@ -226,6 +226,78 @@ public:
 
 using namespace adlx;
 
+// Array helper for gamma ramp data manipulation
+%array_functions(adlx_uint16, uint16Array);
+
+// Inline gamma helper functions for ADLX_GammaRamp manipulation
+%inline %{
+    #include <cstring>
+    
+    adlx_size GetGammaRampSize() {
+        return 256; // Each color channel has 256 values
+    }
+
+    bool ValidateGammaRampData(const adlx_uint16* pData, adlx_size dataSize) {
+        if (!pData || dataSize != 256) {
+            return false;
+        }
+        return true;
+    }
+
+    ADLX_RESULT GetGammaRampData(ADLX_GammaRamp* pGammaRamp, adlx_uint16* pRedData, adlx_uint16* pGreenData, adlx_uint16* pBlueData, adlx_size dataSize) {
+        if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        if (dataSize != 256) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Get the gamma pointer from the ADLX_GammaRamp structure
+        adlx_uint16* gammaPtr = pGammaRamp->gamma;
+        if (!gammaPtr) {
+            return ADLX_INVALID_OBJECT;
+        }
+        
+        // Copy the gamma data: 256 red values, then 256 green values, then 256 blue values
+        std::memcpy(pRedData, &gammaPtr[0], 256 * sizeof(adlx_uint16));      // Red channel
+        std::memcpy(pGreenData, &gammaPtr[256], 256 * sizeof(adlx_uint16));  // Green channel
+        std::memcpy(pBlueData, &gammaPtr[512], 256 * sizeof(adlx_uint16));   // Blue channel
+        
+        return ADLX_OK;
+    }
+
+    ADLX_RESULT SetGammaRampData(ADLX_GammaRamp* pGammaRamp, const adlx_uint16* pRedData, const adlx_uint16* pGreenData, const adlx_uint16* pBlueData, adlx_size dataSize) {
+        if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        if (dataSize != 256) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Validate gamma data ranges
+        if (!ValidateGammaRampData(pRedData, dataSize) || 
+            !ValidateGammaRampData(pGreenData, dataSize) || 
+            !ValidateGammaRampData(pBlueData, dataSize)) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Get the gamma pointer from the ADLX_GammaRamp structure
+        adlx_uint16* gammaPtr = pGammaRamp->gamma;
+        if (!gammaPtr) {
+            return ADLX_INVALID_OBJECT;
+        }
+        
+        // Set the gamma data: 256 red values, then 256 green values, then 256 blue values
+        std::memcpy(&gammaPtr[0], pRedData, 256 * sizeof(adlx_uint16));      // Red channel
+        std::memcpy(&gammaPtr[256], pGreenData, 256 * sizeof(adlx_uint16));  // Green channel
+        std::memcpy(&gammaPtr[512], pBlueData, 256 * sizeof(adlx_uint16));   // Blue channel
+        
+        return ADLX_OK;
+    }
+%}
+
 // T* pointer
 %include cpointer.i
 

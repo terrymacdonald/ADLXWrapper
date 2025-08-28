@@ -33,29 +33,40 @@ namespace ADLXWrapper
 
             var serializable = new SerializableGammaRamp(description ?? "ADLX Gamma Ramp");
 
-            // For now, we'll extract the gamma data directly from the gamma property
-            // This is a temporary solution until the SWIG helper functions are working
             try
             {
-                // Access the gamma property which contains the raw gamma data
-                var gammaPtr = gammaRamp.gamma;
+                // Get the gamma ramp size from SWIG helper function
+                uint gammaSize = ADLX.GetGammaRampSize();
                 
-                if (gammaPtr != null)
+                // Create arrays to hold the extracted gamma data
+                var redArray = ADLX.new_uint16Array(gammaSize);
+                var greenArray = ADLX.new_uint16Array(gammaSize);
+                var blueArray = ADLX.new_uint16Array(gammaSize);
+
+                try
                 {
-                    // The gamma data is stored as 768 consecutive uint16 values (256 RGB triplets)
-                    // We need to extract this data safely
-                    // For now, we'll create a linear gamma ramp as a placeholder
-                    for (int i = 0; i < 256; i++)
+                    // Extract gamma data using SWIG helper function
+                    ADLX_RESULT result = ADLX.GetGammaRampData(gammaRamp, redArray, greenArray, blueArray, gammaSize);
+                    
+                    if (result != ADLX_RESULT.ADLX_OK)
                     {
-                        ushort value = (ushort)(i * 257); // Linear ramp from 0 to 65535
-                        serializable.Red[i] = value;
-                        serializable.Green[i] = value;
-                        serializable.Blue[i] = value;
+                        throw new InvalidOperationException($"Failed to extract gamma ramp data. ADLX result: {result}");
+                    }
+
+                    // Copy the data from SWIG arrays to our serializable arrays
+                    for (uint i = 0; i < gammaSize; i++)
+                    {
+                        serializable.Red[i] = ADLX.uint16Array_getitem(redArray, i);
+                        serializable.Green[i] = ADLX.uint16Array_getitem(greenArray, i);
+                        serializable.Blue[i] = ADLX.uint16Array_getitem(blueArray, i);
                     }
                 }
-                else
+                finally
                 {
-                    throw new InvalidOperationException("Gamma ramp data is null");
+                    // Clean up SWIG arrays
+                    ADLX.delete_uint16Array(redArray);
+                    ADLX.delete_uint16Array(greenArray);
+                    ADLX.delete_uint16Array(blueArray);
                 }
             }
             catch (Exception ex)
@@ -84,16 +95,41 @@ namespace ADLXWrapper
 
             var gammaRamp = new ADLX_GammaRamp();
 
-            // For now, we'll create a basic gamma ramp structure
-            // This is a temporary solution until the SWIG helper functions are working
             try
             {
-                // The gamma ramp has been created, but we can't set the data yet
-                // without the proper SWIG helper functions
-                // This will be a placeholder that can be used for JSON serialization testing
+                // Get the gamma ramp size from SWIG helper function
+                uint gammaSize = ADLX.GetGammaRampSize();
                 
-                // Note: The actual gamma data setting will need to be implemented
-                // once the SWIG helper functions are properly generated
+                // Create arrays to hold the gamma data for setting
+                var redArray = ADLX.new_uint16Array(gammaSize);
+                var greenArray = ADLX.new_uint16Array(gammaSize);
+                var blueArray = ADLX.new_uint16Array(gammaSize);
+
+                try
+                {
+                    // Copy data from serializable arrays to SWIG arrays
+                    for (uint i = 0; i < gammaSize; i++)
+                    {
+                        ADLX.uint16Array_setitem(redArray, i, serializable.Red[i]);
+                        ADLX.uint16Array_setitem(greenArray, i, serializable.Green[i]);
+                        ADLX.uint16Array_setitem(blueArray, i, serializable.Blue[i]);
+                    }
+
+                    // Set gamma data using SWIG helper function
+                    ADLX_RESULT result = ADLX.SetGammaRampData(gammaRamp, redArray, greenArray, blueArray, gammaSize);
+                    
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        throw new InvalidOperationException($"Failed to set gamma ramp data. ADLX result: {result}");
+                    }
+                }
+                finally
+                {
+                    // Clean up SWIG arrays
+                    ADLX.delete_uint16Array(redArray);
+                    ADLX.delete_uint16Array(greenArray);
+                    ADLX.delete_uint16Array(blueArray);
+                }
                 
                 return gammaRamp;
             }

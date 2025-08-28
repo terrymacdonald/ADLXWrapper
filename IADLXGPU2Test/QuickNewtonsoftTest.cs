@@ -5,7 +5,7 @@ namespace IADLXGPU2Test
 {
     class QuickNewtonsoftTest
     {
-        static void Main(string[] args)
+    static void Main(string[] args)
         {
             Console.WriteLine("Quick Newtonsoft.Json Test for ADLX_GammaRamp Serialization");
             Console.WriteLine("=============================================================");

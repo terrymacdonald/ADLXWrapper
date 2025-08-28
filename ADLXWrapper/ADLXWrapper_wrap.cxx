@@ -504,6 +504,89 @@ using namespace adlx;
 #include <stdint.h>		// Use the C99 official header
 
 
+static adlx_uint16 *new_uint16Array(size_t nelements) { 
+  return new adlx_uint16[nelements](); 
+}
+
+static void delete_uint16Array(adlx_uint16 *ary) { 
+  delete [] ary; 
+}
+
+static adlx_uint16 uint16Array_getitem(adlx_uint16 *ary, size_t index) {
+    return ary[index];
+}
+static void uint16Array_setitem(adlx_uint16 *ary, size_t index, adlx_uint16 value) {
+    ary[index] = value;
+}
+
+
+    #include <cstring>
+    
+    adlx_size GetGammaRampSize() {
+        return 256; // Each color channel has 256 values
+    }
+
+    bool ValidateGammaRampData(const adlx_uint16* pData, adlx_size dataSize) {
+        if (!pData || dataSize != 256) {
+            return false;
+        }
+        return true;
+    }
+
+    ADLX_RESULT GetGammaRampData(ADLX_GammaRamp* pGammaRamp, adlx_uint16* pRedData, adlx_uint16* pGreenData, adlx_uint16* pBlueData, adlx_size dataSize) {
+        if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        if (dataSize != 256) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Get the gamma pointer from the ADLX_GammaRamp structure
+        adlx_uint16* gammaPtr = pGammaRamp->gamma;
+        if (!gammaPtr) {
+            return ADLX_INVALID_OBJECT;
+        }
+        
+        // Copy the gamma data: 256 red values, then 256 green values, then 256 blue values
+        std::memcpy(pRedData, &gammaPtr[0], 256 * sizeof(adlx_uint16));      // Red channel
+        std::memcpy(pGreenData, &gammaPtr[256], 256 * sizeof(adlx_uint16));  // Green channel
+        std::memcpy(pBlueData, &gammaPtr[512], 256 * sizeof(adlx_uint16));   // Blue channel
+        
+        return ADLX_OK;
+    }
+
+    ADLX_RESULT SetGammaRampData(ADLX_GammaRamp* pGammaRamp, const adlx_uint16* pRedData, const adlx_uint16* pGreenData, const adlx_uint16* pBlueData, adlx_size dataSize) {
+        if (!pGammaRamp || !pRedData || !pGreenData || !pBlueData) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        if (dataSize != 256) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Validate gamma data ranges
+        if (!ValidateGammaRampData(pRedData, dataSize) || 
+            !ValidateGammaRampData(pGreenData, dataSize) || 
+            !ValidateGammaRampData(pBlueData, dataSize)) {
+            return ADLX_INVALID_ARGS;
+        }
+        
+        // Get the gamma pointer from the ADLX_GammaRamp structure
+        adlx_uint16* gammaPtr = pGammaRamp->gamma;
+        if (!gammaPtr) {
+            return ADLX_INVALID_OBJECT;
+        }
+        
+        // Set the gamma data: 256 red values, then 256 green values, then 256 blue values
+        std::memcpy(&gammaPtr[0], pRedData, 256 * sizeof(adlx_uint16));      // Red channel
+        std::memcpy(&gammaPtr[256], pGreenData, 256 * sizeof(adlx_uint16));  // Green channel
+        std::memcpy(&gammaPtr[512], pBlueData, 256 * sizeof(adlx_uint16));   // Blue channel
+        
+        return ADLX_OK;
+    }
+
+
 static adlx_int *new_adlx_intP(void) { 
   return new adlx_int(); 
 }
@@ -18193,6 +18276,52 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_g_ADLX_get() {
   result = (::ADLXHelper *)&g_ADLX;
   jresult = (void *)result; 
   return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_uint16Array(unsigned int jarg1) {
+  void * jresult ;
+  size_t arg1 ;
+  adlx_uint16 *result = 0 ;
+  
+  arg1 = (size_t)jarg1; 
+  result = (adlx_uint16 *)new_uint16Array(SWIG_STD_MOVE(arg1));
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_uint16Array(void * jarg1) {
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  delete_uint16Array(arg1);
+}
+
+
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_uint16Array_getitem(void * jarg1, unsigned int jarg2) {
+  unsigned short jresult ;
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  size_t arg2 ;
+  adlx_uint16 result;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  arg2 = (size_t)jarg2; 
+  result = (adlx_uint16)uint16Array_getitem(arg1,SWIG_STD_MOVE(arg2));
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_uint16Array_setitem(void * jarg1, unsigned int jarg2, unsigned short jarg3) {
+  adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
+  size_t arg2 ;
+  adlx_uint16 arg3 ;
+  
+  arg1 = (adlx_uint16 *)jarg1; 
+  arg2 = (size_t)jarg2; 
+  arg3 = (adlx_uint16)jarg3; 
+  uint16Array_setitem(arg1,SWIG_STD_MOVE(arg2),arg3);
 }
 
 

@@ -9,18 +9,20 @@
 //------------------------------------------------------------------------------
 
 
-public class IADLXDisplayFreeSync : IADLXInterface {
+public class EnhancedADLXHelper : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
+  protected bool swigCMemOwn;
 
-  internal IADLXDisplayFreeSync(global::System.IntPtr cPtr, bool cMemoryOwn) : base(ADLXPINVOKE.IADLXDisplayFreeSync_SWIGUpcast(cPtr), cMemoryOwn) {
+  internal EnhancedADLXHelper(global::System.IntPtr cPtr, bool cMemoryOwn) {
+    swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(IADLXDisplayFreeSync obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(EnhancedADLXHelper obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(IADLXDisplayFreeSync obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef swigRelease(EnhancedADLXHelper obj) {
     if (obj != null) {
       if (!obj.swigCMemOwn)
         throw new global::System.ApplicationException("Cannot release ownership as memory is not owned");
@@ -33,37 +35,48 @@ public class IADLXDisplayFreeSync : IADLXInterface {
     }
   }
 
-  protected override void Dispose(bool disposing) {
+  ~EnhancedADLXHelper() {
+    Dispose(false);
+  }
+
+  public void Dispose() {
+    Dispose(true);
+    global::System.GC.SuppressFinalize(this);
+  }
+
+  protected virtual void Dispose(bool disposing) {
     lock(this) {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          ADLXPINVOKE.delete_IADLXDisplayFreeSync(swigCPtr);
+          ADLXPINVOKE.delete_EnhancedADLXHelper(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
-      base.Dispose(disposing);
     }
   }
 
-  public new static SWIGTYPE_p_wchar_t IID() {
-    global::System.IntPtr cPtr = ADLXPINVOKE.IADLXDisplayFreeSync_IID();
-    SWIGTYPE_p_wchar_t ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_wchar_t(cPtr, false);
+  public EnhancedADLXHelper() : this(ADLXPINVOKE.new_EnhancedADLXHelper(), true) {
+  }
+
+  public ADLX_RESULT Initialize() {
+    ADLX_RESULT ret = (ADLX_RESULT)ADLXPINVOKE.EnhancedADLXHelper_Initialize(swigCPtr);
     return ret;
   }
 
-  public virtual ADLX_RESULT IsSupported(SWIGTYPE_p_bool supported) {
-    ADLX_RESULT ret = (ADLX_RESULT)ADLXPINVOKE.IADLXDisplayFreeSync_IsSupported(swigCPtr, SWIGTYPE_p_bool.getCPtr(supported));
+  public ADLX_RESULT Terminate() {
+    ADLX_RESULT ret = (ADLX_RESULT)ADLXPINVOKE.EnhancedADLXHelper_Terminate(swigCPtr);
     return ret;
   }
 
-  public virtual ADLX_RESULT IsEnabled(SWIGTYPE_p_bool enabled) {
-    ADLX_RESULT ret = (ADLX_RESULT)ADLXPINVOKE.IADLXDisplayFreeSync_IsEnabled(swigCPtr, SWIGTYPE_p_bool.getCPtr(enabled));
+  public IADLXSystem GetSystemServices() {
+    global::System.IntPtr cPtr = ADLXPINVOKE.EnhancedADLXHelper_GetSystemServices(swigCPtr);
+    IADLXSystem ret = (cPtr == global::System.IntPtr.Zero) ? null : new IADLXSystem(cPtr, false);
     return ret;
   }
 
-  public virtual ADLX_RESULT SetEnabled(bool enabled) {
-    ADLX_RESULT ret = (ADLX_RESULT)ADLXPINVOKE.IADLXDisplayFreeSync_SetEnabled(swigCPtr, enabled);
+  public bool IsInitialized() {
+    bool ret = ADLXPINVOKE.EnhancedADLXHelper_IsInitialized(swigCPtr);
     return ret;
   }
 

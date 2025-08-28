@@ -137,6 +137,25 @@ public class ADLX {
     } 
   }
 
+  public static SWIGTYPE_p_unsigned_short new_uint16Array(uint nelements) {
+    global::System.IntPtr cPtr = ADLXPINVOKE.new_uint16Array(nelements);
+    SWIGTYPE_p_unsigned_short ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_unsigned_short(cPtr, false);
+    return ret;
+  }
+
+  public static void delete_uint16Array(SWIGTYPE_p_unsigned_short ary) {
+    ADLXPINVOKE.delete_uint16Array(SWIGTYPE_p_unsigned_short.getCPtr(ary));
+  }
+
+  public static ushort uint16Array_getitem(SWIGTYPE_p_unsigned_short ary, uint index) {
+    ushort ret = ADLXPINVOKE.uint16Array_getitem(SWIGTYPE_p_unsigned_short.getCPtr(ary), index);
+    return ret;
+  }
+
+  public static void uint16Array_setitem(SWIGTYPE_p_unsigned_short ary, uint index, ushort value) {
+    ADLXPINVOKE.uint16Array_setitem(SWIGTYPE_p_unsigned_short.getCPtr(ary), index, value);
+  }
+
   public static SWIGTYPE_p_int new_adlx_intP() {
     global::System.IntPtr cPtr = ADLXPINVOKE.new_adlx_intP();
     SWIGTYPE_p_int ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_int(cPtr, false);

@@ -3896,6 +3896,18 @@ class ADLXPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_g_ADLX_get")]
   public static extern global::System.IntPtr g_ADLX_get();
 
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_new_uint16Array")]
+  public static extern global::System.IntPtr new_uint16Array(uint jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_delete_uint16Array")]
+  public static extern void delete_uint16Array(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_uint16Array_getitem")]
+  public static extern ushort uint16Array_getitem(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_uint16Array_setitem")]
+  public static extern void uint16Array_setitem(global::System.Runtime.InteropServices.HandleRef jarg1, uint jarg2, ushort jarg3);
+
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_new_adlx_intP")]
   public static extern global::System.IntPtr new_adlx_intP();
 
