@@ -47,10 +47,5 @@
     <Compile Remove="SimpleExample.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="ADLXWrapper.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
 </Project>
