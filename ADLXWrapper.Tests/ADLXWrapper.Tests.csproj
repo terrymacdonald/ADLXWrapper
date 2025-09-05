@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IADLXGPU2Test\IADLXGPU2Test_Net8.csproj" />
+    <ProjectReference Include="..\ADLXWrapper\ADLXWrapper.Bindings\ADLXWrapper.Bindings.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 using Xunit;
 using Newtonsoft.Json;
-using ADLXWrapper;
+using ADLXWrapper.Bindings; // Use the new bindings project
 using System.Collections.Generic;
 
 namespace ADLXWrapper.Tests
@@ -8,58 +8,102 @@ namespace ADLXWrapper.Tests
     public class SerializationTests
     {
         [Fact]
-        public void ADLX_GPU_Serialization_ShouldWork()
+        public void ADLX_Point_DTO_Serialization_ShouldWork()
         {
-            // This test assumes a mock or actual ADLX GPU object can be created.
-            // For now, we'll create a dummy object that mimics the structure for serialization.
-            // In a real scenario, you would initialize ADLX and retrieve an actual IADLXGPU.
+            ADLX_Point originalPoint = new ADLX_Point { x = 10, y = 20 };
+            ADLX_Point_DTO originalDto = new ADLX_Point_DTO(originalPoint);
 
-            // Dummy data for serialization
-            var dummyGpu = new
-            {
-                Name = "Dummy AMD Radeon RX 6900 XT",
-                VendorId = 1002,
-                DeviceId = 0x73AF,
-                // Add other relevant properties that would be exposed by IADLXGPU
-            };
-
-            string json = JsonConvert.SerializeObject(dummyGpu, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(originalDto, Formatting.Indented);
             Assert.False(string.IsNullOrEmpty(json));
 
-            // Deserialize back to a dynamic object or a custom class if available
-            dynamic deserializedGpu = JsonConvert.DeserializeObject(json);
-            Assert.NotNull(deserializedGpu);
-            Assert.Equal("Dummy AMD Radeon RX 6900 XT", deserializedGpu.Name.ToString());
-            Assert.Equal(1002, (int)deserializedGpu.VendorId);
+            ADLX_Point_DTO deserializedDto = JsonConvert.DeserializeObject<ADLX_Point_DTO>(json);
+            Assert.NotNull(deserializedDto);
+            Assert.Equal(originalDto.x, deserializedDto.x);
+            Assert.Equal(originalDto.y, deserializedDto.y);
+
+            ADLX_Point deserializedPoint = deserializedDto.ToADLX_Point();
+            Assert.Equal(originalPoint.x, deserializedPoint.x);
+            Assert.Equal(originalPoint.y, deserializedPoint.y);
         }
 
         [Fact]
-        public void ADLX_Display_Serialization_ShouldWork()
+        public void ADLX_RGB_DTO_Serialization_ShouldWork()
         {
-            // Dummy data for serialization
-            var dummyDisplay = new
-            {
-                Name = "Dummy Monitor",
-                Manufacturer = "DummyCorp",
-                RefreshRate = 144,
-                UniqueId = "12345-ABCDE-67890",
-                // Add other relevant properties that would be exposed by IADLXDisplay
-            };
+            ADLX_RGB originalRgb = new ADLX_RGB { red = 255, green = 128, blue = 0 };
+            ADLX_RGB_DTO originalDto = new ADLX_RGB_DTO(originalRgb);
 
-            string json = JsonConvert.SerializeObject(dummyDisplay, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(originalDto, Formatting.Indented);
             Assert.False(string.IsNullOrEmpty(json));
 
-            // Deserialize back
-            dynamic deserializedDisplay = JsonConvert.DeserializeObject(json);
-            Assert.NotNull(deserializedDisplay);
-            Assert.Equal("Dummy Monitor", deserializedDisplay.Name.ToString());
-            Assert.Equal("DummyCorp", deserializedDisplay.Manufacturer.ToString());
-            Assert.Equal(144, (int)deserializedDisplay.RefreshRate);
+            ADLX_RGB_DTO deserializedDto = JsonConvert.DeserializeObject<ADLX_RGB_DTO>(json);
+            Assert.NotNull(deserializedDto);
+            Assert.Equal(originalDto.red, deserializedDto.red);
+            Assert.Equal(originalDto.green, deserializedDto.green);
+            Assert.Equal(originalDto.blue, deserializedDto.blue);
+
+            ADLX_RGB deserializedRgb = deserializedDto.ToADLX_RGB();
+            Assert.Equal(originalRgb.red, deserializedRgb.red);
+            Assert.Equal(originalRgb.green, deserializedRgb.green);
+            Assert.Equal(originalRgb.blue, deserializedRgb.blue);
         }
 
-        // Note: For actual ADLX objects, you would need to implement custom JsonConverters
-        // or ensure the ADLXWrapper objects have public properties/fields that Newtonsoft.Json can access.
-        // The current ADLXWrapper interfaces are COM-based, so direct serialization might require
-        // a wrapper class or DTOs for proper JSON serialization.
+        [Fact]
+        public void ADLX_TimingInfo_DTO_Serialization_ShouldWork()
+        {
+            ADLX_TimingInfo originalTimingInfo = new ADLX_TimingInfo
+            {
+                mode = 1,
+                refreshRate = 60,
+                horizontalTotal = 1920,
+                horizontalAddressable = 1920,
+                horizontalSyncWidth = 100,
+                horizontalSyncStart = 50,
+                verticalTotal = 1080,
+                verticalAddressable = 1080,
+                verticalSyncWidth = 5,
+                verticalSyncStart = 2,
+                scanType = 0, // Progressive
+                pixelClock = 148500,
+                colorDepth = 8,
+                stereoMode = 0
+            };
+            ADLX_TimingInfo_DTO originalDto = new ADLX_TimingInfo_DTO(originalTimingInfo);
+
+            string json = JsonConvert.SerializeObject(originalDto, Formatting.Indented);
+            Assert.False(string.IsNullOrEmpty(json));
+
+            ADLX_TimingInfo_DTO deserializedDto = JsonConvert.DeserializeObject<ADLX_TimingInfo_DTO>(json);
+            Assert.NotNull(deserializedDto);
+            Assert.Equal(originalDto.mode, deserializedDto.mode);
+            Assert.Equal(originalDto.refreshRate, deserializedDto.refreshRate);
+            Assert.Equal(originalDto.horizontalTotal, deserializedDto.horizontalTotal);
+            Assert.Equal(originalDto.horizontalAddressable, deserializedDto.horizontalAddressable);
+            Assert.Equal(originalDto.horizontalSyncWidth, deserializedDto.horizontalSyncWidth);
+            Assert.Equal(originalDto.horizontalSyncStart, deserializedDto.horizontalSyncStart);
+            Assert.Equal(originalDto.verticalTotal, deserializedDto.verticalTotal);
+            Assert.Equal(originalDto.verticalAddressable, deserializedDto.verticalAddressable);
+            Assert.Equal(originalDto.verticalSyncWidth, deserializedDto.verticalSyncWidth);
+            Assert.Equal(originalDto.verticalSyncStart, deserializedDto.verticalSyncStart);
+            Assert.Equal(originalDto.scanType, deserializedDto.scanType);
+            Assert.Equal(originalDto.pixelClock, deserializedDto.pixelClock);
+            Assert.Equal(originalDto.colorDepth, deserializedDto.colorDepth);
+            Assert.Equal(originalDto.stereoMode, deserializedDto.stereoMode);
+
+            ADLX_TimingInfo deserializedTimingInfo = deserializedDto.ToADLX_TimingInfo();
+            Assert.Equal(originalTimingInfo.mode, deserializedTimingInfo.mode);
+            Assert.Equal(originalTimingInfo.refreshRate, deserializedTimingInfo.refreshRate);
+            Assert.Equal(originalTimingInfo.horizontalTotal, deserializedTimingInfo.horizontalTotal);
+            Assert.Equal(originalTimingInfo.horizontalAddressable, deserializedTimingInfo.horizontalAddressable);
+            Assert.Equal(originalTimingInfo.horizontalSyncWidth, deserializedTimingInfo.horizontalSyncWidth);
+            Assert.Equal(originalTimingInfo.horizontalSyncStart, deserializedTimingInfo.horizontalSyncStart);
+            Assert.Equal(originalTimingInfo.verticalTotal, deserializedTimingInfo.verticalTotal);
+            Assert.Equal(originalTimingInfo.verticalAddressable, deserializedTimingInfo.verticalAddressable);
+            Assert.Equal(originalTimingInfo.verticalSyncWidth, deserializedTimingInfo.verticalSyncWidth);
+            Assert.Equal(originalTimingInfo.verticalSyncStart, deserializedTimingInfo.verticalSyncStart);
+            Assert.Equal(originalTimingInfo.scanType, deserializedTimingInfo.scanType);
+            Assert.Equal(originalTimingInfo.pixelClock, deserializedTimingInfo.pixelClock);
+            Assert.Equal(originalTimingInfo.colorDepth, deserializedTimingInfo.colorDepth);
+            Assert.Equal(originalTimingInfo.stereoMode, deserializedTimingInfo.stereoMode);
+        }
     }
 }

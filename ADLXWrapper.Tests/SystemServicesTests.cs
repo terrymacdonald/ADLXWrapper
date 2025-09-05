@@ -1,62 +1,76 @@
 using Xunit;
 using System;
 using System.Threading;
+using ADLXWrapper.Bindings; // Use the new bindings project
 
 namespace ADLXWrapper.Tests
 {
     public class SystemServicesTests
     {
         [Fact]
-        public void ADLX_Initialize_ShouldReturnOK()
+        public void InitializeAndTerminateADLX_ShouldReturnSuccess()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            global::ADLX.ADLXTerminate();
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            res = ADLXHelper.Terminate();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
         }
 
         [Fact]
-        public void ADLX_InitializeAndTerminate_ShouldReturnOK()
+        public void QuerySystemServices_ShouldReturnValidInterface()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            res = global::ADLX.ADLXTerminate();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-        }
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-        [Fact]
-        public void ADLX_GetSystemServices_ShouldReturnNotNull()
-        {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
         }
 
         [Fact]
-        public void ADLX_GetGPUs_ShouldReturnNotNull()
+        public void QuerySystem1Interface_ShouldReturnValidInterface()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
-            global::ADLXWrapper.IADLXGPUList gpus = null;
-            res = sys.GetGPUs(ref gpus);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.NotNull(gpus);
+            IADLXSystem1 sys1 = null;
+            res = sys.QueryInterface(out sys1);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys1);
 
-            gpus.Release();
+            sys1.Release();
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
+        }
+
+        [Fact]
+        public void QuerySystem2Interface_ShouldReturnValidInterface()
+        {
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys);
+
+            IADLXSystem2 sys2 = null;
+            res = sys.QueryInterface(out sys2);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys2);
+
+            sys2.Release();
+            sys.Release();
+            ADLXHelper.Terminate();
         }
     }
 }

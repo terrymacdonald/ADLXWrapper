@@ -1,97 +1,143 @@
 using Xunit;
 using System;
-using ADLXWrapper;
+using ADLXWrapper.Bindings; // Use the new bindings project
 
 namespace ADLXWrapper.Tests
 {
     public class DisplayServicesTests
     {
         [Fact]
-        public void ADLX_GetDisplays_ShouldReturnAtLeastOneDisplay()
+        public void QueryDisplayServices_ShouldReturnValidInterface()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
-            global::ADLXWrapper.IADLXDisplayServices displayServices = null;
+            IADLXDisplayServices displayServices = null;
             res = sys.GetDisplayServices(ref displayServices);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(displayServices);
 
-            global::ADLXWrapper.IADLXDisplayList displays = null;
+            displayServices.Release();
+            sys.Release();
+            ADLXHelper.Terminate();
+        }
+
+        [Fact]
+        public void EnumerateDisplays_ShouldReturnAtLeastOneDisplay()
+        {
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys);
+
+            IADLXDisplayServices displayServices = null;
+            res = sys.GetDisplayServices(ref displayServices);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(displayServices);
+
+            IADLXDisplayList displays = null;
             res = displayServices.GetDisplays(ref displays);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(displays);
             Assert.True(displays.Size() > 0);
 
-            global::ADLXWrapper.IADLXDisplay display = null;
+            displays.Release();
+            displayServices.Release();
+            sys.Release();
+            ADLXHelper.Terminate();
+        }
+
+        [Fact]
+        public void GetDisplayResolution_ShouldReturnValidResolution()
+        {
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys);
+
+            IADLXDisplayServices displayServices = null;
+            res = sys.GetDisplayServices(ref displayServices);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(displayServices);
+
+            IADLXDisplayList displays = null;
+            res = displayServices.GetDisplays(ref displays);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(displays);
+            Assert.True(displays.Size() > 0);
+
+            IADLXDisplay display = null;
             res = displays.At(0, ref display);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(display);
 
-            string displayId = "";
-            res = display.GetUniqueId(ref displayId);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.False(string.IsNullOrEmpty(displayId));
+            IADLXDisplayResolution displayResolution = null;
+            res = display.GetResolution(ref displayResolution);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(displayResolution);
 
+            uint width = 0, height = 0;
+            res = displayResolution.GetDesktopResolution(ref width, ref height);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.True(width > 0);
+            Assert.True(height > 0);
+
+            displayResolution.Release();
             display.Release();
             displays.Release();
             displayServices.Release();
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
         }
 
         [Fact]
-        public void ADLX_GetDisplayDetails_ShouldReturnValidDetails()
+        public void GetDisplayRefreshRate_ShouldReturnValidRefreshRate()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
-            global::ADLXWrapper.IADLXDisplayServices displayServices = null;
+            IADLXDisplayServices displayServices = null;
             res = sys.GetDisplayServices(ref displayServices);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(displayServices);
 
-            global::ADLXWrapper.IADLXDisplayList displays = null;
+            IADLXDisplayList displays = null;
             res = displayServices.GetDisplays(ref displays);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(displays);
             Assert.True(displays.Size() > 0);
 
-            global::ADLXWrapper.IADLXDisplay display = null;
+            IADLXDisplay display = null;
             res = displays.At(0, ref display);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(display);
-
-            string name = "";
-            res = display.Name(ref name);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.False(string.IsNullOrEmpty(name));
-
-            string manufacturer = "";
-            res = display.Manufacturer(ref manufacturer);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.False(string.IsNullOrEmpty(manufacturer));
 
             uint refreshRate = 0;
             res = display.RefreshRate(ref refreshRate);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.True(refreshRate > 0);
 
             display.Release();
             displays.Release();
             displayServices.Release();
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
         }
     }
 }

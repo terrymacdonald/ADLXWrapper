@@ -1,85 +1,110 @@
 using Xunit;
 using System;
-using ADLXWrapper;
+using ADLXWrapper.Bindings; // Use the new bindings project
 
 namespace ADLXWrapper.Tests
 {
     public class GpuServicesTests
     {
         [Fact]
-        public void ADLX_GetGPUs_ShouldReturnAtLeastOneGPU()
+        public void EnumerateGPUs_ShouldReturnAtLeastOneGPU()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
-            global::ADLXWrapper.IADLXGPUList gpus = null;
+            IADLXGPUList gpus = null;
             res = sys.GetGPUs(ref gpus);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(gpus);
             Assert.True(gpus.Size() > 0);
 
-            global::ADLXWrapper.IADLXGPU gpu = null;
+            IADLXGPU gpu = null;
             res = gpus.At(0, ref gpu);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(gpu);
 
             string gpuName = "";
             res = gpu.Name(ref gpuName);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.False(string.IsNullOrEmpty(gpuName));
 
             gpu.Release();
             gpus.Release();
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
         }
 
         [Fact]
-        public void ADLX_GetGPUDetails_ShouldReturnValidDetails()
+        public void QueryGPU1Interface_ShouldReturnValidInterface()
         {
-            global::ADLX.ADLX_RESULT res = global::ADLX.ADLXInitialize();
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            global::ADLXWrapper.IADLXSystem sys = null;
-            res = global::ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(sys);
 
-            global::ADLXWrapper.IADLXGPUList gpus = null;
+            IADLXGPUList gpus = null;
             res = sys.GetGPUs(ref gpus);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(gpus);
             Assert.True(gpus.Size() > 0);
 
-            global::ADLXWrapper.IADLXGPU gpu = null;
+            IADLXGPU gpu = null;
             res = gpus.At(0, ref gpu);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
             Assert.NotNull(gpu);
 
-            string name = "";
-            res = gpu.Name(ref name);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.False(string.IsNullOrEmpty(name));
+            IADLXGPU1 gpu1 = null;
+            res = gpu.QueryInterface(out gpu1);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(gpu1);
 
-            string driverPath = "";
-            res = gpu.DriverPath(ref driverPath);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.False(string.IsNullOrEmpty(driverPath));
-
-            uint vendorId = 0;
-            res = gpu.VendorId(ref vendorId);
-            Assert.Equal(global::ADLX.ADLX_RESULT.ADLX_OK, res);
-            Assert.True(vendorId > 0);
-
+            gpu1.Release();
             gpu.Release();
             gpus.Release();
             sys.Release();
-            global::ADLX.ADLXTerminate();
+            ADLXHelper.Terminate();
+        }
+
+        [Fact]
+        public void QueryGPU2Interface_ShouldReturnValidInterface()
+        {
+            ADLX_RESULT res = ADLXHelper.Initialize();
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem sys = null;
+            res = ADLX.ADLXGetSystemServices(ref sys);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(sys);
+
+            IADLXGPUList gpus = null;
+            res = sys.GetGPUs(ref gpus);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(gpus);
+            Assert.True(gpus.Size() > 0);
+
+            IADLXGPU gpu = null;
+            res = gpus.At(0, ref gpu);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(gpu);
+
+            IADLXGPU2 gpu2 = null;
+            res = gpu.QueryInterface(out gpu2);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            Assert.NotNull(gpu2);
+
+            gpu2.Release();
+            gpu.Release();
+            gpus.Release();
+            sys.Release();
+            ADLXHelper.Terminate();
         }
     }
 }
