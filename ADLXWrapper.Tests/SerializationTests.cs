@@ -29,7 +29,7 @@ namespace ADLXWrapper.Tests
         [Fact]
         public void ADLX_RGB_DTO_Serialization_ShouldWork()
         {
-            ADLX_RGB originalRgb = new ADLX_RGB { red = 255, green = 128, blue = 0 };
+            ADLX_RGB originalRgb = new ADLX_RGB { gamutR = 255, gamutG = 128, gamutB = 0 };
             ADLX_RGB_DTO originalDto = new ADLX_RGB_DTO(originalRgb);
 
             string json = JsonConvert.SerializeObject(originalDto, Formatting.Indented);
@@ -42,9 +42,9 @@ namespace ADLXWrapper.Tests
             Assert.Equal(originalDto.blue, deserializedDto.blue);
 
             ADLX_RGB deserializedRgb = deserializedDto.ToADLX_RGB();
-            Assert.Equal(originalRgb.red, deserializedRgb.red);
-            Assert.Equal(originalRgb.green, deserializedRgb.green);
-            Assert.Equal(originalRgb.blue, deserializedRgb.blue);
+            Assert.Equal(originalRgb.gamutR, deserializedRgb.gamutR);
+            Assert.Equal(originalRgb.gamutG, deserializedRgb.gamutG);
+            Assert.Equal(originalRgb.gamutB, deserializedRgb.gamutB);
         }
 
         [Fact]
@@ -52,20 +52,17 @@ namespace ADLXWrapper.Tests
         {
             ADLX_TimingInfo originalTimingInfo = new ADLX_TimingInfo
             {
-                mode = 1,
-                refreshRate = 60,
-                horizontalTotal = 1920,
-                horizontalAddressable = 1920,
-                horizontalSyncWidth = 100,
-                horizontalSyncStart = 50,
-                verticalTotal = 1080,
-                verticalAddressable = 1080,
-                verticalSyncWidth = 5,
-                verticalSyncStart = 2,
-                scanType = 0, // Progressive
-                pixelClock = 148500,
-                colorDepth = 8,
-                stereoMode = 0
+                timingFlags = 1,
+                hTotal = 1920,
+                vTotal = 1080,
+                hDisplay = 1920,
+                vDisplay = 1080,
+                hFrontPorch = 100,
+                vFrontPorch = 5,
+                hSyncWidth = 50,
+                vSyncWidth = 2,
+                hPolarity = 0,
+                vPolarity = 0
             };
             ADLX_TimingInfo_DTO originalDto = new ADLX_TimingInfo_DTO(originalTimingInfo);
 
@@ -74,36 +71,30 @@ namespace ADLXWrapper.Tests
 
             ADLX_TimingInfo_DTO deserializedDto = JsonConvert.DeserializeObject<ADLX_TimingInfo_DTO>(json);
             Assert.NotNull(deserializedDto);
-            Assert.Equal(originalDto.mode, deserializedDto.mode);
-            Assert.Equal(originalDto.refreshRate, deserializedDto.refreshRate);
-            Assert.Equal(originalDto.horizontalTotal, deserializedDto.horizontalTotal);
-            Assert.Equal(originalDto.horizontalAddressable, deserializedDto.horizontalAddressable);
-            Assert.Equal(originalDto.horizontalSyncWidth, deserializedDto.horizontalSyncWidth);
-            Assert.Equal(originalDto.horizontalSyncStart, deserializedDto.horizontalSyncStart);
-            Assert.Equal(originalDto.verticalTotal, deserializedDto.verticalTotal);
-            Assert.Equal(originalDto.verticalAddressable, deserializedDto.verticalAddressable);
-            Assert.Equal(originalDto.verticalSyncWidth, deserializedDto.verticalSyncWidth);
-            Assert.Equal(originalDto.verticalSyncStart, deserializedDto.verticalSyncStart);
-            Assert.Equal(originalDto.scanType, deserializedDto.scanType);
-            Assert.Equal(originalDto.pixelClock, deserializedDto.pixelClock);
-            Assert.Equal(originalDto.colorDepth, deserializedDto.colorDepth);
-            Assert.Equal(originalDto.stereoMode, deserializedDto.stereoMode);
+            Assert.Equal(originalDto.timingFlags, deserializedDto.timingFlags);
+            Assert.Equal(originalDto.hTotal, deserializedDto.hTotal);
+            Assert.Equal(originalDto.vTotal, deserializedDto.vTotal);
+            Assert.Equal(originalDto.hDisplay, deserializedDto.hDisplay);
+            Assert.Equal(originalDto.vDisplay, deserializedDto.vDisplay);
+            Assert.Equal(originalDto.hFrontPorch, deserializedDto.hFrontPorch);
+            Assert.Equal(originalDto.vFrontPorch, deserializedDto.vFrontPorch);
+            Assert.Equal(originalDto.hSyncWidth, deserializedDto.hSyncWidth);
+            Assert.Equal(originalDto.vSyncWidth, deserializedDto.vSyncWidth);
+            Assert.Equal(originalDto.hPolarity, deserializedDto.hPolarity);
+            Assert.Equal(originalDto.vPolarity, deserializedDto.vPolarity);
 
             ADLX_TimingInfo deserializedTimingInfo = deserializedDto.ToADLX_TimingInfo();
-            Assert.Equal(originalTimingInfo.mode, deserializedTimingInfo.mode);
-            Assert.Equal(originalTimingInfo.refreshRate, deserializedTimingInfo.refreshRate);
-            Assert.Equal(originalTimingInfo.horizontalTotal, deserializedTimingInfo.horizontalTotal);
-            Assert.Equal(originalTimingInfo.horizontalAddressable, deserializedTimingInfo.horizontalAddressable);
-            Assert.Equal(originalTimingInfo.horizontalSyncWidth, deserializedTimingInfo.horizontalSyncWidth);
-            Assert.Equal(originalTimingInfo.horizontalSyncStart, deserializedTimingInfo.horizontalSyncStart);
-            Assert.Equal(originalTimingInfo.verticalTotal, deserializedTimingInfo.verticalTotal);
-            Assert.Equal(originalTimingInfo.verticalAddressable, deserializedTimingInfo.verticalAddressable);
-            Assert.Equal(originalTimingInfo.verticalSyncWidth, deserializedTimingInfo.verticalSyncWidth);
-            Assert.Equal(originalTimingInfo.verticalSyncStart, deserializedTimingInfo.verticalSyncStart);
-            Assert.Equal(originalTimingInfo.scanType, deserializedTimingInfo.scanType);
-            Assert.Equal(originalTimingInfo.pixelClock, deserializedTimingInfo.pixelClock);
-            Assert.Equal(originalTimingInfo.colorDepth, deserializedTimingInfo.colorDepth);
-            Assert.Equal(originalTimingInfo.stereoMode, deserializedTimingInfo.stereoMode);
+            Assert.Equal(originalTimingInfo.timingFlags, deserializedTimingInfo.timingFlags);
+            Assert.Equal(originalTimingInfo.hTotal, deserializedTimingInfo.hTotal);
+            Assert.Equal(originalTimingInfo.vTotal, deserializedTimingInfo.vTotal);
+            Assert.Equal(originalTimingInfo.hDisplay, deserializedTimingInfo.hDisplay);
+            Assert.Equal(originalTimingInfo.vDisplay, deserializedTimingInfo.vDisplay);
+            Assert.Equal(originalTimingInfo.hFrontPorch, deserializedTimingInfo.hFrontPorch);
+            Assert.Equal(originalTimingInfo.vFrontPorch, deserializedTimingInfo.vFrontPorch);
+            Assert.Equal(originalTimingInfo.hSyncWidth, deserializedTimingInfo.hSyncWidth);
+            Assert.Equal(originalTimingInfo.vSyncWidth, deserializedTimingInfo.vSyncWidth);
+            Assert.Equal(originalTimingInfo.hPolarity, deserializedTimingInfo.hPolarity);
+            Assert.Equal(originalTimingInfo.vPolarity, deserializedTimingInfo.vPolarity);
         }
     }
 }

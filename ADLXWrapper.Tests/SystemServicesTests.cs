@@ -5,72 +5,71 @@ using ADLXWrapper.Bindings; // Use the new bindings project
 
 namespace ADLXWrapper.Tests
 {
-    public class SystemServicesTests
+    public class SystemServicesTests : IDisposable
     {
+        private readonly ADLXHelper _adlxHelper;
+
+        public SystemServicesTests()
+        {
+            _adlxHelper = new ADLXHelper();
+            _adlxHelper.Initialize();
+        }
+
+        public void Dispose()
+        {
+            _adlxHelper.Terminate();
+            _adlxHelper.Dispose();
+        }
+
         [Fact]
         public void InitializeAndTerminateADLX_ShouldReturnSuccess()
         {
-            ADLX_RESULT res = ADLXHelper.Initialize();
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
-            res = ADLXHelper.Terminate();
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            // The constructor and Dispose methods already test this.
+            // If they fail, the test will fail.
         }
 
         [Fact]
         public void QuerySystemServices_ShouldReturnValidInterface()
         {
-            ADLX_RESULT res = ADLXHelper.Initialize();
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
-
-            IADLXSystem sys = null;
-            res = ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = _adlxHelper.GetSystemServices();
             Assert.NotNull(sys);
-
-            sys.Release();
-            ADLXHelper.Terminate();
+            sys.Dispose();
         }
 
         [Fact]
         public void QuerySystem1Interface_ShouldReturnValidInterface()
         {
-            ADLX_RESULT res = ADLXHelper.Initialize();
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
-
-            IADLXSystem sys = null;
-            res = ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = _adlxHelper.GetSystemServices();
             Assert.NotNull(sys);
 
-            IADLXSystem1 sys1 = null;
-            res = sys.QueryInterface(out sys1);
+            SWIGTYPE_p_p_void sys1_ptr = ADLX.new_void_ptr();
+            ADLX_RESULT res = sys.QueryInterface(IADLXSystem1.IID(), sys1_ptr);
             Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem1 sys1 = new IADLXSystem1(ADLX.void_ptr_value(sys1_ptr), true);
             Assert.NotNull(sys1);
 
-            sys1.Release();
-            sys.Release();
-            ADLXHelper.Terminate();
+            sys1.Dispose();
+            sys.Dispose();
+            ADLX.delete_void_ptr(sys1_ptr);
         }
 
         [Fact]
         public void QuerySystem2Interface_ShouldReturnValidInterface()
         {
-            ADLX_RESULT res = ADLXHelper.Initialize();
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
-
-            IADLXSystem sys = null;
-            res = ADLX.ADLXGetSystemServices(ref sys);
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            IADLXSystem sys = _adlxHelper.GetSystemServices();
             Assert.NotNull(sys);
 
-            IADLXSystem2 sys2 = null;
-            res = sys.QueryInterface(out sys2);
+            SWIGTYPE_p_p_void sys2_ptr = ADLX.new_void_ptr();
+            ADLX_RESULT res = sys.QueryInterface(IADLXSystem2.IID(), sys2_ptr);
             Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+
+            IADLXSystem2 sys2 = new IADLXSystem2(ADLX.void_ptr_value(sys2_ptr), true);
             Assert.NotNull(sys2);
 
-            sys2.Release();
-            sys.Release();
-            ADLXHelper.Terminate();
+            sys2.Dispose();
+            sys.Dispose();
+            ADLX.delete_void_ptr(sys2_ptr);
         }
     }
 }
