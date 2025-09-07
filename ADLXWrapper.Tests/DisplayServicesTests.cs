@@ -7,21 +7,24 @@ namespace ADLXWrapper.Tests
     public class DisplayServicesTests : IDisposable
     {
         private readonly ADLXHelper _adlxHelper;
-        private readonly IADLXSystem _sys;
+        private readonly IADLXSystem _system;
         private readonly IADLXDisplayServices _displayServices;
 
         public DisplayServicesTests()
         {
             _adlxHelper = new ADLXHelper();
             _adlxHelper.Initialize();
-            _sys = _adlxHelper.GetSystemServices();
-            _displayServices = _sys.GetDisplayServices();
+            _system = _adlxHelper.GetSystemServices();
+
+            SWIGTYPE_p_p_adlx__IADLXDisplayServices s = ADLX.new_displaySerP_Ptr();
+            _system.GetDisplaysServices(s);
+            _displayServices = ADLX.displaySerP_Ptr_value(s);
         }
 
         public void Dispose()
         {
             _displayServices.Dispose();
-            _sys.Dispose();
+            _system.Dispose();
             _adlxHelper.Terminate();
             _adlxHelper.Dispose();
         }
@@ -35,15 +38,14 @@ namespace ADLXWrapper.Tests
         [Fact]
         public void EnumerateDisplays_ShouldReturnAtLeastOneDisplay()
         {
-            SWIGTYPE_p_p_adlx__IADLXDisplayList displays_ptr = ADLX.new_display_list_ptr();
+            SWIGTYPE_p_p_adlx__IADLXDisplayList displays_ptr = ADLX.new_displayListP_Ptr();
             ADLX_RESULT res = _displayServices.GetDisplays(displays_ptr);
             Assert.Equal(ADLX_RESULT.ADLX_OK, res);
 
-            IADLXDisplayList displays = new IADLXDisplayList(ADLX.display_list_ptr_value(displays_ptr), true);
+            IADLXDisplayList displays = ADLX.displayListP_Ptr_value(displays_ptr);
             Assert.NotNull(displays);
             Assert.True(displays.Size() > 0);
-            displays.Dispose();
-            ADLX.delete_display_list_ptr(displays_ptr);
+            displays.Release();            
         }
 
         [Fact]

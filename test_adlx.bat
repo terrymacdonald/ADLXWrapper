@@ -34,9 +34,14 @@ if %ERRORLEVEL% NEQ 0 (
 echo .NET 8.0 SDK found successfully
 echo.
 
-REM Build the .NET 8.0 C# project
-echo Building .NET 8.0 C# project...
-dotnet build IADLXGPU2Test_Net8.csproj -c Debug -p:Platform=x64 --nologo
+REM Build and run unit tests
+echo Building and running unit tests...
+dotnet test ADLXWrapper.Tests\ADLXWrapper.Tests.csproj -c Debug -f net8.0
+if errorlevel 1 (
+    echo Unit tests failed!
+    pause
+    exit /b 1
+)
 
 if %ERRORLEVEL% EQU 0 (
     echo.

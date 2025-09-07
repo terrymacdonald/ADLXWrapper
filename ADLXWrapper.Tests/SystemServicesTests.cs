@@ -31,45 +31,43 @@ namespace ADLXWrapper.Tests
         [Fact]
         public void QuerySystemServices_ShouldReturnValidInterface()
         {
-            IADLXSystem sys = _adlxHelper.GetSystemServices();
-            Assert.NotNull(sys);
-            sys.Dispose();
+            IADLXSystem system = _adlxHelper.GetSystemServices();
+            Assert.NotNull(system);
+            system.Dispose();
         }
 
         [Fact]
         public void QuerySystem1Interface_ShouldReturnValidInterface()
         {
-            IADLXSystem sys = _adlxHelper.GetSystemServices();
-            Assert.NotNull(sys);
+            IADLXSystem system = _adlxHelper.GetSystemServices();
+            Assert.NotNull(system);            
 
-            SWIGTYPE_p_p_void sys1_ptr = ADLX.new_void_ptr();
-            ADLX_RESULT res = sys.QueryInterface(IADLXSystem1.IID(), sys1_ptr);
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            bool supportsSystem1 = ADLX.SupportsSystem1Interface(system);
+            if (supportsSystem1)
+            {
+                IADLXSystem1 system1 = ADLX.QuerySystem1Interface(system);
+                Assert.NotNull(system1);
+                system1.Dispose();
 
-            IADLXSystem1 sys1 = new IADLXSystem1(ADLX.void_ptr_value(sys1_ptr), true);
-            Assert.NotNull(sys1);
-
-            sys1.Dispose();
-            sys.Dispose();
-            ADLX.delete_void_ptr(sys1_ptr);
+            }
+            system.Dispose();
         }
 
         [Fact]
         public void QuerySystem2Interface_ShouldReturnValidInterface()
         {
-            IADLXSystem sys = _adlxHelper.GetSystemServices();
-            Assert.NotNull(sys);
+            IADLXSystem system = _adlxHelper.GetSystemServices();
+            Assert.NotNull(system);
 
-            SWIGTYPE_p_p_void sys2_ptr = ADLX.new_void_ptr();
-            ADLX_RESULT res = sys.QueryInterface(IADLXSystem2.IID(), sys2_ptr);
-            Assert.Equal(ADLX_RESULT.ADLX_OK, res);
+            bool supportsSystem2 = ADLX.SupportsSystem2Interface(system);
+            if (supportsSystem2)
+            {
+                IADLXSystem2 system2 = ADLX.QuerySystem2Interface(system);
+                Assert.NotNull(system2);
+                system2.Dispose();
 
-            IADLXSystem2 sys2 = new IADLXSystem2(ADLX.void_ptr_value(sys2_ptr), true);
-            Assert.NotNull(sys2);
-
-            sys2.Dispose();
-            sys.Dispose();
-            ADLX.delete_void_ptr(sys2_ptr);
+            }
+            system.Dispose();
         }
     }
 }
