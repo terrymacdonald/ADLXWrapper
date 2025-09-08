@@ -18,26 +18,38 @@ if errorlevel 1 (
 echo Native C++ build completed successfully!
 
 REM Ensure the target directories exist for copying
-if not exist "ADLXWrapper\ADLXWrapper.Bindings\bin\Debug\net8.0\" mkdir "ADLXWrapper\ADLXWrapper.Bindings\bin\Debug\net8.0\"
+if not exist "ADLXWrapper.Bindings\bin\Debug\net8.0\" mkdir "ADLXWrapper.Bindings\bin\Debug\net8.0\"
 if not exist "ADLXWrapper.Tests\bin\Debug\net8.0\" mkdir "ADLXWrapper.Tests\bin\Debug\net8.0\"
 
-REM Copy generated C# binding files to ADLXWrapper.Bindings project
+REM Copy generated C# binding files to ADLXWrapper.Bindings and ADLXWrapper.Tests projects
 echo Copying C# binding files...
-xcopy /Y ADLXWrapper\cs_bindings\*.cs ADLXWrapper\ADLXWrapper.Bindings\ >nul
+xcopy /Y ADLXWrapper\cs_bindings\*.cs ADLXWrapper.Bindings\cs_bindings\ >nul
 if errorlevel 1 (
     echo Failed to copy C# binding files!
     pause
     exit /b 1
 )
 
-REM Copy compiled ADLXWrapper.dll to the Bindings and Tests projects' output directories
+
+echo Copying C# binding files...
+xcopy /Y ADLXWrapper\cs_bindings\*.cs ADLXWrapper.Tests\cs_bindings\ >nul
+if errorlevel 1 (
+    echo Failed to copy C# binding files!
+    pause
+    exit /b 1
+)
+
+
+
+REM Copy compiled ADLXWrapper.dll to ADLXWrapper.Bindings and ADLXWrapper.Tests projects
 echo Copying ADLXWrapper.dll...
-copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper\ADLXWrapper.Bindings\bin\Debug\net8.0\ >nul
+copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper.Bindings\bin\Debug\net8.0\ >nul
 if errorlevel 1 (
     echo Failed to copy ADLXWrapper.dll to Bindings project!
     pause
     exit /b 1
 )
+
 copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper.Tests\bin\Debug\net8.0\ >nul
 if errorlevel 1 (
     echo Failed to copy ADLXWrapper.dll to Tests project!
@@ -47,7 +59,7 @@ if errorlevel 1 (
 
 REM Build the ADLXWrapper.Bindings project
 echo Building ADLXWrapper.Bindings project...
-dotnet build ADLXWrapper\ADLXWrapper.Bindings\ADLXWrapper.Bindings.csproj -c Debug -f net8.0
+dotnet build ADLXWrapper.Bindings\ADLXWrapper.Bindings.csproj -c Debug -f net8.0
 if errorlevel 1 (
     echo ADLXWrapper.Bindings build failed!
     pause

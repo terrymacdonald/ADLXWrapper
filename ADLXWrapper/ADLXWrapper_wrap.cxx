@@ -2798,7 +2798,7 @@ void SwigDirector_IADLXGPUConnectChangedListener::swig_init_callbacks() {
 extern "C" {
 #endif
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IsADLXRuntimeAvailable() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IsADLXRuntimeAvailable() {
   unsigned int jresult ;
   bool result;
   
@@ -2808,7 +2808,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IsADLXRuntimeAvailable() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ValidateADLXInstallation() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ValidateADLXInstallation() {
   int jresult ;
   ADLX_RESULT result;
   
@@ -2818,7 +2818,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ValidateADLXInstallation() {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_GetADLXErrorDescription(int jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_GetADLXErrorDescription(int jarg1) {
   char * jresult ;
   ADLX_RESULT arg1 ;
   char *result = 0 ;
@@ -2830,7 +2830,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_GetADLXErrorDescription(int jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU1Interface(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QueryGPU1Interface(void * jarg1) {
   void * jresult ;
   IADLXGPU *arg1 = (IADLXGPU *) 0 ;
   IADLXGPU1 *result = 0 ;
@@ -2842,7 +2842,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU1Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU2Interface(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QueryGPU2Interface(void * jarg1) {
   void * jresult ;
   IADLXGPU *arg1 = (IADLXGPU *) 0 ;
   IADLXGPU2 *result = 0 ;
@@ -2854,7 +2854,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU2Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU2InterfaceFromGPU1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QueryGPU2InterfaceFromGPU1(void * jarg1) {
   void * jresult ;
   IADLXGPU1 *arg1 = (IADLXGPU1 *) 0 ;
   IADLXGPU2 *result = 0 ;
@@ -2866,7 +2866,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QueryGPU2InterfaceFromGPU1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem1Interface(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QuerySystem1Interface(void * jarg1) {
   void * jresult ;
   IADLXSystem *arg1 = (IADLXSystem *) 0 ;
   IADLXSystem1 *result = 0 ;
@@ -2878,7 +2878,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem1Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem2Interface(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QuerySystem2Interface(void * jarg1) {
   void * jresult ;
   IADLXSystem *arg1 = (IADLXSystem *) 0 ;
   IADLXSystem2 *result = 0 ;
@@ -2890,7 +2890,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem2Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem2InterfaceFromSystem1(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_QuerySystem2InterfaceFromSystem1(void * jarg1) {
   void * jresult ;
   IADLXSystem1 *arg1 = (IADLXSystem1 *) 0 ;
   IADLXSystem2 *result = 0 ;
@@ -2902,7 +2902,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_QuerySystem2InterfaceFromSystem1(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsGPU1Interface(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_SupportsGPU1Interface(void * jarg1) {
   unsigned int jresult ;
   IADLXGPU *arg1 = (IADLXGPU *) 0 ;
   bool result;
@@ -2914,7 +2914,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsGPU1Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsGPU2Interface(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_SupportsGPU2Interface(void * jarg1) {
   unsigned int jresult ;
   IADLXGPU *arg1 = (IADLXGPU *) 0 ;
   bool result;
@@ -2926,7 +2926,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsGPU2Interface(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsSystem1Interface(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_SupportsSystem1Interface(void * jarg1) {
   unsigned int jresult ;
   IADLXSystem *arg1 = (IADLXSystem *) 0 ;
   bool result;
@@ -2938,7 +2938,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsSystem1Interface(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsSystem2Interface(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_SupportsSystem2Interface(void * jarg1) {
   unsigned int jresult ;
   IADLXSystem *arg1 = (IADLXSystem *) 0 ;
   bool result;
@@ -2950,7 +2950,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_SupportsSystem2Interface(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_GetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_GetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
   int jresult ;
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   adlx_uint16 *arg2 = (adlx_uint16 *) 0 ;
@@ -2970,7 +2970,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_GetGammaRampData(void * jarg1, void * jarg2, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_SetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_SetGammaRampData(void * jarg1, void * jarg2, void * jarg3, void * jarg4, unsigned int jarg5) {
   int jresult ;
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   adlx_uint16 *arg2 = (adlx_uint16 *) 0 ;
@@ -2990,7 +2990,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_SetGammaRampData(void * jarg1, void * jarg2, v
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GetGammaRampSize() {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_GetGammaRampSize() {
   unsigned int jresult ;
   adlx_size result;
   
@@ -3000,7 +3000,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_GetGammaRampSize() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ValidateGammaRampData(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_ValidateGammaRampData(void * jarg1, unsigned int jarg2) {
   unsigned int jresult ;
   adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
   adlx_size arg2 ;
@@ -3014,7 +3014,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ValidateGammaRampData(void * jarg1, u
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_EnhancedADLXHelper() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_EnhancedADLXHelper() {
   void * jresult ;
   EnhancedADLXHelper *result = 0 ;
   
@@ -3024,7 +3024,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_EnhancedADLXHelper() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_EnhancedADLXHelper_Initialize(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_EnhancedADLXHelper_Initialize(void * jarg1) {
   int jresult ;
   EnhancedADLXHelper *arg1 = (EnhancedADLXHelper *) 0 ;
   ADLX_RESULT result;
@@ -3036,7 +3036,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_EnhancedADLXHelper_Initialize(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_EnhancedADLXHelper_Terminate(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_EnhancedADLXHelper_Terminate(void * jarg1) {
   int jresult ;
   EnhancedADLXHelper *arg1 = (EnhancedADLXHelper *) 0 ;
   ADLX_RESULT result;
@@ -3048,7 +3048,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_EnhancedADLXHelper_Terminate(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_EnhancedADLXHelper_GetSystemServices(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_EnhancedADLXHelper_GetSystemServices(void * jarg1) {
   void * jresult ;
   EnhancedADLXHelper *arg1 = (EnhancedADLXHelper *) 0 ;
   IADLXSystem *result = 0 ;
@@ -3060,7 +3060,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_EnhancedADLXHelper_GetSystemServices(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_EnhancedADLXHelper_IsInitialized(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_EnhancedADLXHelper_IsInitialized(void * jarg1) {
   unsigned int jresult ;
   EnhancedADLXHelper *arg1 = (EnhancedADLXHelper *) 0 ;
   bool result;
@@ -3072,7 +3072,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_EnhancedADLXHelper_IsInitialized(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_EnhancedADLXHelper(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_EnhancedADLXHelper(void * jarg1) {
   EnhancedADLXHelper *arg1 = (EnhancedADLXHelper *) 0 ;
   
   arg1 = (EnhancedADLXHelper *)jarg1; 
@@ -3080,7 +3080,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_EnhancedADLXHelper(void * jarg1) {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_QUERY_FULL_VERSION_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_QUERY_FULL_VERSION_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3090,7 +3090,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_QUERY_FULL_VERSION_FUNCTION_NAME_get()
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_QUERY_VERSION_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_QUERY_VERSION_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3100,7 +3100,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_QUERY_VERSION_FUNCTION_NAME_get() {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3110,7 +3110,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_FUNCTION_NAME_get() {
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3120,7 +3120,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3130,7 +3130,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME_get
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_TERMINATE_FUNCTION_NAME_get() {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TERMINATE_FUNCTION_NAME_get() {
   char * jresult ;
   char *result = 0 ;
   
@@ -3140,7 +3140,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLX_TERMINATE_FUNCTION_NAME_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_atomic_inc(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_atomic_inc(void * jarg1) {
   int jresult ;
   adlx_long *arg1 = (adlx_long *) 0 ;
   adlx_long result;
@@ -3152,7 +3152,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_atomic_inc(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_atomic_dec(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_atomic_dec(void * jarg1) {
   int jresult ;
   adlx_long *arg1 = (adlx_long *) 0 ;
   adlx_long result;
@@ -3164,7 +3164,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_atomic_dec(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_load_library(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_load_library(void * jarg1) {
   void * jresult ;
   TCHAR *arg1 = (TCHAR *) 0 ;
   adlx_handle result;
@@ -3176,7 +3176,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_load_library(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_free_library(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_free_library(void * jarg1) {
   int jresult ;
   adlx_handle arg1 = (adlx_handle) 0 ;
   int result;
@@ -3188,7 +3188,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_free_library(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_get_proc_address(void * jarg1, char * jarg2) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_get_proc_address(void * jarg1, char * jarg2) {
   void * jresult ;
   adlx_handle arg1 = (adlx_handle) 0 ;
   char *arg2 = (char *) 0 ;
@@ -3202,7 +3202,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_get_proc_address(void * jarg1, char * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_MAX_USER_3DLUT_NUM_POINTS_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_MAX_USER_3DLUT_NUM_POINTS_get() {
   int jresult ;
   int result;
   
@@ -3212,7 +3212,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_MAX_USER_3DLUT_NUM_POINTS_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXInterface_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXInterface_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -3222,7 +3222,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXInterface_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_Acquire(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXInterface_Acquire(void * jarg1) {
   int jresult ;
   adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
   adlx_long result;
@@ -3234,7 +3234,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_Acquire(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_Release(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXInterface_Release(void * jarg1) {
   int jresult ;
   adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
   adlx_long result;
@@ -3246,7 +3246,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_Release(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_QueryInterface(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXInterface_QueryInterface(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
   wchar_t *arg2 = (wchar_t *) 0 ;
@@ -3262,7 +3262,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXInterface_QueryInterface(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXInterface(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXInterface(void * jarg1) {
   adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
   
   arg1 = (adlx::IADLXInterface *)jarg1; 
@@ -3270,7 +3270,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXInterface(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutR_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutR_set(void * jarg1, double jarg2) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double arg2 ;
   
@@ -3280,7 +3280,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutR_set(void * jarg1, double jarg
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutR_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutR_get(void * jarg1) {
   double jresult ;
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double result;
@@ -3292,7 +3292,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutR_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutG_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutG_set(void * jarg1, double jarg2) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double arg2 ;
   
@@ -3302,7 +3302,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutG_set(void * jarg1, double jarg
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutG_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutG_get(void * jarg1) {
   double jresult ;
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double result;
@@ -3314,7 +3314,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutG_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutB_set(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutB_set(void * jarg1, double jarg2) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double arg2 ;
   
@@ -3324,7 +3324,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RGB_gamutB_set(void * jarg1, double jarg
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutB_get(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RGB_gamutB_get(void * jarg1) {
   double jresult ;
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   adlx_double result;
@@ -3336,7 +3336,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_ADLX_RGB_gamutB_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_RGB() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_RGB() {
   void * jresult ;
   ADLX_RGB *result = 0 ;
   
@@ -3346,7 +3346,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_RGB() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_RGB(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_RGB(void * jarg1) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   
   arg1 = (ADLX_RGB *)jarg1; 
@@ -3354,7 +3354,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_RGB(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_Point_x_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_Point_x_set(void * jarg1, int jarg2) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   adlx_int arg2 ;
   
@@ -3364,7 +3364,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_Point_x_set(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_Point_x_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_Point_x_get(void * jarg1) {
   int jresult ;
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   adlx_int result;
@@ -3376,7 +3376,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_Point_x_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_Point_y_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_Point_y_set(void * jarg1, int jarg2) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   adlx_int arg2 ;
   
@@ -3386,7 +3386,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_Point_y_set(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_Point_y_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_Point_y_get(void * jarg1) {
   int jresult ;
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   adlx_int result;
@@ -3398,7 +3398,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_Point_y_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_Point() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_Point() {
   void * jresult ;
   ADLX_Point *result = 0 ;
   
@@ -3408,7 +3408,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_Point() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_Point(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_Point(void * jarg1) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   
   arg1 = (ADLX_Point *)jarg1; 
@@ -3416,7 +3416,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_Point(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_red_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_red_set(void * jarg1, void * jarg2) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *arg2 = (ADLX_Point *) 0 ;
   
@@ -3426,7 +3426,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_red_set(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_red_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_red_get(void * jarg1) {
   void * jresult ;
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *result = 0 ;
@@ -3438,7 +3438,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_red_get(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_green_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_green_set(void * jarg1, void * jarg2) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *arg2 = (ADLX_Point *) 0 ;
   
@@ -3448,7 +3448,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_green_set(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_green_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_green_get(void * jarg1) {
   void * jresult ;
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *result = 0 ;
@@ -3460,7 +3460,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_green_get(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_blue_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_blue_set(void * jarg1, void * jarg2) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *arg2 = (ADLX_Point *) 0 ;
   
@@ -3470,7 +3470,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GamutColorSpace_blue_set(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_blue_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GamutColorSpace_blue_get(void * jarg1) {
   void * jresult ;
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_Point *result = 0 ;
@@ -3482,7 +3482,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GamutColorSpace_blue_get(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_GamutColorSpace() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_GamutColorSpace() {
   void * jresult ;
   ADLX_GamutColorSpace *result = 0 ;
   
@@ -3492,7 +3492,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_GamutColorSpace() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_GamutColorSpace(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_GamutColorSpace(void * jarg1) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   
   arg1 = (ADLX_GamutColorSpace *)jarg1; 
@@ -3500,7 +3500,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_GamutColorSpace(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GammaRamp_gamma_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GammaRamp_gamma_set(void * jarg1, void * jarg2) {
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   adlx_uint16 *arg2 = (adlx_uint16 *) (adlx_uint16 *)0 ;
   
@@ -3514,7 +3514,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_GammaRamp_gamma_set(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GammaRamp_gamma_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_GammaRamp_gamma_get(void * jarg1) {
   void * jresult ;
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   adlx_uint16 *result = 0 ;
@@ -3526,7 +3526,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_GammaRamp_gamma_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_GammaRamp() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_GammaRamp() {
   void * jresult ;
   ADLX_GammaRamp *result = 0 ;
   
@@ -3536,7 +3536,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_GammaRamp() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_GammaRamp(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_GammaRamp(void * jarg1) {
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   
   arg1 = (ADLX_GammaRamp *)jarg1; 
@@ -3544,7 +3544,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_GammaRamp(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA0_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA0_set(void * jarg1, int jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int arg2 ;
   
@@ -3554,7 +3554,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA0_set(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA0_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA0_get(void * jarg1) {
   int jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int result;
@@ -3566,7 +3566,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA0_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA1_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA1_set(void * jarg1, int jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int arg2 ;
   
@@ -3576,7 +3576,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA1_set(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA1_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA1_get(void * jarg1) {
   int jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int result;
@@ -3588,7 +3588,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA1_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA2_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA2_set(void * jarg1, int jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int arg2 ;
   
@@ -3598,7 +3598,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA2_set(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA2_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA2_get(void * jarg1) {
   int jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int result;
@@ -3610,7 +3610,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA2_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA3_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA3_set(void * jarg1, int jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int arg2 ;
   
@@ -3620,7 +3620,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA3_set(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA3_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_coefficientA3_get(void * jarg1) {
   int jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int result;
@@ -3632,7 +3632,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_coefficientA3_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_gamma_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_gamma_set(void * jarg1, int jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int arg2 ;
   
@@ -3642,7 +3642,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_RegammaCoeff_gamma_set(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_gamma_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_RegammaCoeff_gamma_get(void * jarg1) {
   int jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   adlx_int result;
@@ -3654,7 +3654,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_RegammaCoeff_gamma_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_RegammaCoeff() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_RegammaCoeff() {
   void * jresult ;
   ADLX_RegammaCoeff *result = 0 ;
   
@@ -3664,7 +3664,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_RegammaCoeff() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_RegammaCoeff(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_RegammaCoeff(void * jarg1) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   
   arg1 = (ADLX_RegammaCoeff *)jarg1; 
@@ -3672,7 +3672,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_RegammaCoeff(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_timingFlags_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_timingFlags_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3682,7 +3682,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_timingFlags_set(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_timingFlags_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_timingFlags_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3694,7 +3694,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_timingFlags_get(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hTotal_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hTotal_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3704,7 +3704,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hTotal_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hTotal_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hTotal_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3716,7 +3716,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hTotal_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vTotal_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vTotal_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3726,7 +3726,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vTotal_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vTotal_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vTotal_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3738,7 +3738,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vTotal_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hDisplay_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hDisplay_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3748,7 +3748,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hDisplay_set(void * jarg1, in
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hDisplay_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hDisplay_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3760,7 +3760,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hDisplay_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vDisplay_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vDisplay_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3770,7 +3770,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vDisplay_set(void * jarg1, in
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vDisplay_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vDisplay_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3782,7 +3782,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vDisplay_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hFrontPorch_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hFrontPorch_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3792,7 +3792,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hFrontPorch_set(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hFrontPorch_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hFrontPorch_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3804,7 +3804,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hFrontPorch_get(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vFrontPorch_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vFrontPorch_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3814,7 +3814,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vFrontPorch_set(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vFrontPorch_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vFrontPorch_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3826,7 +3826,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vFrontPorch_get(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hSyncWidth_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hSyncWidth_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3836,7 +3836,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hSyncWidth_set(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hSyncWidth_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hSyncWidth_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3848,7 +3848,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hSyncWidth_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vSyncWidth_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vSyncWidth_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3858,7 +3858,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vSyncWidth_set(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vSyncWidth_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vSyncWidth_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3870,7 +3870,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vSyncWidth_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hPolarity_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hPolarity_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3880,7 +3880,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_hPolarity_set(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hPolarity_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_hPolarity_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3892,7 +3892,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_hPolarity_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vPolarity_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vPolarity_set(void * jarg1, int jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int arg2 ;
   
@@ -3902,7 +3902,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_TimingInfo_vPolarity_set(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vPolarity_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TimingInfo_vPolarity_get(void * jarg1) {
   int jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   adlx_int result;
@@ -3914,7 +3914,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_TimingInfo_vPolarity_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_TimingInfo() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_TimingInfo() {
   void * jresult ;
   ADLX_TimingInfo *result = 0 ;
   
@@ -3924,7 +3924,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_TimingInfo() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_TimingInfo(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_TimingInfo(void * jarg1) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   
   arg1 = (ADLX_TimingInfo *)jarg1; 
@@ -3932,7 +3932,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_TimingInfo(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_resWidth_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_resWidth_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int arg2 ;
   
@@ -3942,7 +3942,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_resWidth_set(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_resWidth_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_resWidth_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int result;
@@ -3954,7 +3954,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_resWidth_get(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_resHeight_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_resHeight_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int arg2 ;
   
@@ -3964,7 +3964,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_resHeight_set(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_resHeight_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_resHeight_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int result;
@@ -3976,7 +3976,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_resHeight_get(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_refreshRate_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_refreshRate_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int arg2 ;
   
@@ -3986,7 +3986,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_refreshRate_set(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_refreshRate_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_refreshRate_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_int result;
@@ -3998,7 +3998,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_refreshRate_get(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_presentation_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_presentation_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_DISPLAY_SCAN_TYPE arg2 ;
   
@@ -4008,7 +4008,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_presentation_set(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_presentation_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_presentation_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_DISPLAY_SCAN_TYPE result;
@@ -4020,7 +4020,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_presentation_get(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_timingStandard_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_timingStandard_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_TIMING_STANDARD arg2 ;
   
@@ -4030,7 +4030,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_timingStandard_set(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_timingStandard_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_timingStandard_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_TIMING_STANDARD result;
@@ -4042,7 +4042,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_timingStandard_get(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_GPixelClock_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_GPixelClock_set(void * jarg1, int jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_long arg2 ;
   
@@ -4052,7 +4052,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_GPixelClock_set(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_GPixelClock_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_GPixelClock_get(void * jarg1) {
   int jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   adlx_long result;
@@ -4064,7 +4064,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_CustomResolution_GPixelClock_get(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_detailedTiming_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_detailedTiming_set(void * jarg1, void * jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_TimingInfo *arg2 = (ADLX_TimingInfo *) 0 ;
   
@@ -4074,7 +4074,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_CustomResolution_detailedTiming_set(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_CustomResolution_detailedTiming_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_CustomResolution_detailedTiming_get(void * jarg1) {
   void * jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_TimingInfo *result = 0 ;
@@ -4086,7 +4086,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_CustomResolution_detailedTiming_get(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_CustomResolution() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_CustomResolution() {
   void * jresult ;
   ADLX_CustomResolution *result = 0 ;
   
@@ -4096,7 +4096,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_CustomResolution() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_CustomResolution(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_CustomResolution(void * jarg1) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   
   arg1 = (ADLX_CustomResolution *)jarg1; 
@@ -4104,7 +4104,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_CustomResolution(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_minValue_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_minValue_set(void * jarg1, int jarg2) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int arg2 ;
   
@@ -4114,7 +4114,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_minValue_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_minValue_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_minValue_get(void * jarg1) {
   int jresult ;
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int result;
@@ -4126,7 +4126,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_minValue_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_maxValue_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_maxValue_set(void * jarg1, int jarg2) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int arg2 ;
   
@@ -4136,7 +4136,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_maxValue_set(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_maxValue_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_maxValue_get(void * jarg1) {
   int jresult ;
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int result;
@@ -4148,7 +4148,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_maxValue_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_step_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_step_set(void * jarg1, int jarg2) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int arg2 ;
   
@@ -4158,7 +4158,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_IntRange_step_set(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_step_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_IntRange_step_get(void * jarg1) {
   int jresult ;
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   adlx_int result;
@@ -4170,7 +4170,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_IntRange_step_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_IntRange() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_IntRange() {
   void * jresult ;
   ADLX_IntRange *result = 0 ;
   
@@ -4180,7 +4180,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_IntRange() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_IntRange(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_IntRange(void * jarg1) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   
   arg1 = (ADLX_IntRange *)jarg1; 
@@ -4188,7 +4188,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_IntRange(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_red_set(void * jarg1, unsigned short jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_red_set(void * jarg1, unsigned short jarg2) {
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 arg2 ;
   
@@ -4198,7 +4198,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_red_set(void * jarg1, unsigne
 }
 
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_red_get(void * jarg1) {
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_red_get(void * jarg1) {
   unsigned short jresult ;
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 result;
@@ -4210,7 +4210,7 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_red_get(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_green_set(void * jarg1, unsigned short jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_green_set(void * jarg1, unsigned short jarg2) {
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 arg2 ;
   
@@ -4220,7 +4220,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_green_set(void * jarg1, unsig
 }
 
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_green_get(void * jarg1) {
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_green_get(void * jarg1) {
   unsigned short jresult ;
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 result;
@@ -4232,7 +4232,7 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_green_get(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_blue_set(void * jarg1, unsigned short jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_blue_set(void * jarg1, unsigned short jarg2) {
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 arg2 ;
   
@@ -4242,7 +4242,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_UINT16_RGB_blue_set(void * jarg1, unsign
 }
 
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_blue_get(void * jarg1) {
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLXWrapper_ADLX_UINT16_RGB_blue_get(void * jarg1) {
   unsigned short jresult ;
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   adlx_uint16 result;
@@ -4254,7 +4254,7 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLX_UINT16_RGB_blue_get(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_UINT16_RGB() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_UINT16_RGB() {
   void * jresult ;
   ADLX_UINT16_RGB *result = 0 ;
   
@@ -4264,7 +4264,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_UINT16_RGB() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_UINT16_RGB(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_UINT16_RGB(void * jarg1) {
   ADLX_UINT16_RGB *arg1 = (ADLX_UINT16_RGB *) 0 ;
   
   arg1 = (ADLX_UINT16_RGB *)jarg1; 
@@ -4272,7 +4272,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_UINT16_RGB(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_3DLUT_Data_data_set(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_3DLUT_Data_data_set(void * jarg1, void * jarg2) {
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   ADLX_UINT16_RGB *arg2 = (ADLX_UINT16_RGB *) (ADLX_UINT16_RGB *)0 ;
   
@@ -4286,7 +4286,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_3DLUT_Data_data_set(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_3DLUT_Data_data_get(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_3DLUT_Data_data_get(void * jarg1) {
   void * jresult ;
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   ADLX_UINT16_RGB *result = 0 ;
@@ -4298,7 +4298,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLX_3DLUT_Data_data_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_3DLUT_Data() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_3DLUT_Data() {
   void * jresult ;
   ADLX_3DLUT_Data *result = 0 ;
   
@@ -4308,7 +4308,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_3DLUT_Data() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_3DLUT_Data(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_3DLUT_Data(void * jarg1) {
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   
   arg1 = (ADLX_3DLUT_Data *)jarg1; 
@@ -4316,7 +4316,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_3DLUT_Data(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_LUID_lowPart_set(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_LUID_lowPart_set(void * jarg1, unsigned int jarg2) {
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   adlx_ulong arg2 ;
   
@@ -4326,7 +4326,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_LUID_lowPart_set(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLX_LUID_lowPart_get(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_LUID_lowPart_get(void * jarg1) {
   unsigned int jresult ;
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   adlx_ulong result;
@@ -4338,7 +4338,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLX_LUID_lowPart_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_LUID_highPart_set(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLX_LUID_highPart_set(void * jarg1, int jarg2) {
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   adlx_long arg2 ;
   
@@ -4348,7 +4348,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ADLX_LUID_highPart_set(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_LUID_highPart_get(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_LUID_highPart_get(void * jarg1) {
   int jresult ;
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   adlx_long result;
@@ -4360,7 +4360,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_LUID_highPart_get(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_LUID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLX_LUID() {
   void * jresult ;
   ADLX_LUID *result = 0 ;
   
@@ -4370,7 +4370,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLX_LUID() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_LUID(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLX_LUID(void * jarg1) {
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   
   arg1 = (ADLX_LUID *)jarg1; 
@@ -4378,7 +4378,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLX_LUID(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_MAJOR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_VER_MAJOR_get() {
   int jresult ;
   int result;
   
@@ -4388,7 +4388,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_MAJOR_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_MINOR_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_VER_MINOR_get() {
   int jresult ;
   int result;
   
@@ -4398,7 +4398,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_MINOR_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_RELEASE_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_VER_RELEASE_get() {
   int jresult ;
   int result;
   
@@ -4408,7 +4408,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_RELEASE_get() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_BUILD_NUM_get() {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLX_VER_BUILD_NUM_get() {
   int jresult ;
   int result;
   
@@ -4418,7 +4418,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLX_VER_BUILD_NUM_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4428,7 +4428,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXChangedEvent_GetOrigin(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXChangedEvent_GetOrigin(void * jarg1) {
   int jresult ;
   adlx::IADLXChangedEvent *arg1 = (adlx::IADLXChangedEvent *) 0 ;
   ADLX_SYNC_ORIGIN result;
@@ -4440,7 +4440,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXChangedEvent_GetOrigin(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXChangedEvent(void * jarg1) {
   adlx::IADLXChangedEvent *arg1 = (adlx::IADLXChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXChangedEvent *)jarg1; 
@@ -4448,7 +4448,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXChangedEvent(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4458,7 +4458,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4468,7 +4468,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXList_ITEM_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Size(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Size(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx_uint result;
@@ -4480,7 +4480,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Size(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Empty(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Empty(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx_bool result;
@@ -4492,7 +4492,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Empty(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Begin(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Begin(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx_uint result;
@@ -4504,7 +4504,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_Begin(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_End(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_End(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx_uint result;
@@ -4516,7 +4516,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXList_End(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx_uint arg2 ;
@@ -4532,7 +4532,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_At(void * jarg1, unsigned int jarg2,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Clear(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Clear(void * jarg1) {
   int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   ADLX_RESULT result;
@@ -4544,7 +4544,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Clear(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Remove_Back(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Remove_Back(void * jarg1) {
   int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   ADLX_RESULT result;
@@ -4556,7 +4556,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Remove_Back(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx::IADLXInterface *arg2 = (adlx::IADLXInterface *) 0 ;
@@ -4570,7 +4570,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXList_Add_Back(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXList(void * jarg1) {
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   
   arg1 = (adlx::IADLXList *)jarg1; 
@@ -4578,7 +4578,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiLag_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4588,7 +4588,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiLag_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiLag *arg1 = (adlx::IADLX3DAntiLag *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4602,7 +4602,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_IsSupported(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiLag *arg1 = (adlx::IADLX3DAntiLag *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4616,7 +4616,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_IsEnabled(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DAntiLag *arg1 = (adlx::IADLX3DAntiLag *) 0 ;
   adlx_bool arg2 ;
@@ -4630,7 +4630,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag_SetEnabled(void * jarg1, unsign
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiLag(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DAntiLag(void * jarg1) {
   adlx::IADLX3DAntiLag *arg1 = (adlx::IADLX3DAntiLag *) 0 ;
   
   arg1 = (adlx::IADLX3DAntiLag *)jarg1; 
@@ -4638,7 +4638,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiLag(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiLag1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4648,7 +4648,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiLag1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag1_GetLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag1_GetLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiLag1 *arg1 = (adlx::IADLX3DAntiLag1 *) 0 ;
   ADLX_ANTILAG_STATE *arg2 = (ADLX_ANTILAG_STATE *) 0 ;
@@ -4662,7 +4662,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag1_GetLevel(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag1_SetLevel(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag1_SetLevel(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DAntiLag1 *arg1 = (adlx::IADLX3DAntiLag1 *) 0 ;
   ADLX_ANTILAG_STATE arg2 ;
@@ -4676,7 +4676,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiLag1_SetLevel(void * jarg1, int jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiLag1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DAntiLag1(void * jarg1) {
   adlx::IADLX3DAntiLag1 *arg1 = (adlx::IADLX3DAntiLag1 *) 0 ;
   
   arg1 = (adlx::IADLX3DAntiLag1 *)jarg1; 
@@ -4684,7 +4684,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiLag1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DChill_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4694,7 +4694,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DChill_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4708,7 +4708,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_IsSupported(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4722,7 +4722,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_IsEnabled(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetFPSRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_GetFPSRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -4736,7 +4736,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetFPSRange(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetMinFPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_GetMinFPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -4750,7 +4750,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetMinFPS(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetMaxFPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_GetMaxFPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -4764,7 +4764,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_GetMaxFPS(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_bool arg2 ;
@@ -4778,7 +4778,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetEnabled(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetMinFPS(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_SetMinFPS(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_int arg2 ;
@@ -4792,7 +4792,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetMinFPS(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetMaxFPS(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_SetMaxFPS(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   adlx_int arg2 ;
@@ -4806,7 +4806,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DChill_SetMaxFPS(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DChill(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DChill(void * jarg1) {
   adlx::IADLX3DChill *arg1 = (adlx::IADLX3DChill *) 0 ;
   
   arg1 = (adlx::IADLX3DChill *)jarg1; 
@@ -4814,7 +4814,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DChill(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DBoost_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4824,7 +4824,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DBoost_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4838,7 +4838,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_IsSupported(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4852,7 +4852,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_IsEnabled(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_GetResolutionRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_GetResolutionRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -4866,7 +4866,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_GetResolutionRange(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_GetResolution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_GetResolution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -4880,7 +4880,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_GetResolution(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   adlx_bool arg2 ;
@@ -4894,7 +4894,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_SetEnabled(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_SetResolution(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_SetResolution(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   adlx_int arg2 ;
@@ -4908,7 +4908,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DBoost_SetResolution(void * jarg1, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DBoost(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DBoost(void * jarg1) {
   adlx::IADLX3DBoost *arg1 = (adlx::IADLX3DBoost *) 0 ;
   
   arg1 = (adlx::IADLX3DBoost *)jarg1; 
@@ -4916,7 +4916,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DBoost(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DImageSharpening_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -4926,7 +4926,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DImageSharpening_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4940,7 +4940,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_IsSupported(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -4954,7 +4954,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_IsEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_GetSharpnessRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_GetSharpnessRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -4968,7 +4968,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_GetSharpnessRange(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_GetSharpness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_GetSharpness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -4982,7 +4982,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_GetSharpness(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   adlx_bool arg2 ;
@@ -4996,7 +4996,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_SetEnabled(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_SetSharpness(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_SetSharpness(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   adlx_int arg2 ;
@@ -5010,7 +5010,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpening_SetSharpness(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DImageSharpening(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DImageSharpening(void * jarg1) {
   adlx::IADLX3DImageSharpening *arg1 = (adlx::IADLX3DImageSharpening *) 0 ;
   
   arg1 = (adlx::IADLX3DImageSharpening *)jarg1; 
@@ -5018,7 +5018,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DImageSharpening(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DEnhancedSync_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5028,7 +5028,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DEnhancedSync_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DEnhancedSync *arg1 = (adlx::IADLX3DEnhancedSync *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5042,7 +5042,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IsSupported(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DEnhancedSync_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DEnhancedSync *arg1 = (adlx::IADLX3DEnhancedSync *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5056,7 +5056,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_IsEnabled(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DEnhancedSync_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DEnhancedSync *arg1 = (adlx::IADLX3DEnhancedSync *) 0 ;
   adlx_bool arg2 ;
@@ -5070,7 +5070,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DEnhancedSync_SetEnabled(void * jarg1, u
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DEnhancedSync(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DEnhancedSync(void * jarg1) {
   adlx::IADLX3DEnhancedSync *arg1 = (adlx::IADLX3DEnhancedSync *) 0 ;
   
   arg1 = (adlx::IADLX3DEnhancedSync *)jarg1; 
@@ -5078,7 +5078,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DEnhancedSync(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5088,7 +5088,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DWaitForVerticalRefresh *arg1 = (adlx::IADLX3DWaitForVerticalRefresh *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5102,7 +5102,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IsSupported(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DWaitForVerticalRefresh *arg1 = (adlx::IADLX3DWaitForVerticalRefresh *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5116,7 +5116,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_IsEnabled(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_GetMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_GetMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DWaitForVerticalRefresh *arg1 = (adlx::IADLX3DWaitForVerticalRefresh *) 0 ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *arg2 = (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *) 0 ;
@@ -5130,7 +5130,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_GetMode(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_SetMode(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_SetMode(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DWaitForVerticalRefresh *arg1 = (adlx::IADLX3DWaitForVerticalRefresh *) 0 ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE arg2 ;
@@ -5144,7 +5144,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_SetMode(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DWaitForVerticalRefresh(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DWaitForVerticalRefresh(void * jarg1) {
   adlx::IADLX3DWaitForVerticalRefresh *arg1 = (adlx::IADLX3DWaitForVerticalRefresh *) 0 ;
   
   arg1 = (adlx::IADLX3DWaitForVerticalRefresh *)jarg1; 
@@ -5152,7 +5152,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DWaitForVerticalRefresh(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5162,7 +5162,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5176,7 +5176,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IsSupported(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5190,7 +5190,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_IsEnabled(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_GetFPSRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_GetFPSRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -5204,7 +5204,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_GetFPSRange(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_GetFPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_GetFPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -5218,7 +5218,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_GetFPS(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   adlx_bool arg2 ;
@@ -5232,7 +5232,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_SetEnabled(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_SetFPS(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_SetFPS(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   adlx_int arg2 ;
@@ -5246,7 +5246,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_SetFPS(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DFrameRateTargetControl(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DFrameRateTargetControl(void * jarg1) {
   adlx::IADLX3DFrameRateTargetControl *arg1 = (adlx::IADLX3DFrameRateTargetControl *) 0 ;
   
   arg1 = (adlx::IADLX3DFrameRateTargetControl *)jarg1; 
@@ -5254,7 +5254,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DFrameRateTargetControl(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiAliasing_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5264,7 +5264,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAntiAliasing_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5278,7 +5278,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_IsSupported(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_GetMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_MODE *arg2 = (ADLX_ANTI_ALIASING_MODE *) 0 ;
@@ -5292,7 +5292,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetMode(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_GetLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_LEVEL *arg2 = (ADLX_ANTI_ALIASING_LEVEL *) 0 ;
@@ -5306,7 +5306,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetLevel(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetMethod(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_GetMethod(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_METHOD *arg2 = (ADLX_ANTI_ALIASING_METHOD *) 0 ;
@@ -5320,7 +5320,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_GetMethod(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetMode(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_SetMode(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_MODE arg2 ;
@@ -5334,7 +5334,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetMode(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetLevel(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_SetLevel(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_LEVEL arg2 ;
@@ -5348,7 +5348,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetLevel(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetMethod(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_SetMethod(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   ADLX_ANTI_ALIASING_METHOD arg2 ;
@@ -5362,7 +5362,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SetMethod(void * jarg1, in
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiAliasing(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DAntiAliasing(void * jarg1) {
   adlx::IADLX3DAntiAliasing *arg1 = (adlx::IADLX3DAntiAliasing *) 0 ;
   
   arg1 = (adlx::IADLX3DAntiAliasing *)jarg1; 
@@ -5370,7 +5370,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAntiAliasing(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DMorphologicalAntiAliasing_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5380,7 +5380,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DMorphologicalAntiAliasing_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DMorphologicalAntiAliasing *arg1 = (adlx::IADLX3DMorphologicalAntiAliasing *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5394,7 +5394,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IsSupported(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DMorphologicalAntiAliasing_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DMorphologicalAntiAliasing *arg1 = (adlx::IADLX3DMorphologicalAntiAliasing *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5408,7 +5408,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_IsEnabled(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DMorphologicalAntiAliasing_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DMorphologicalAntiAliasing *arg1 = (adlx::IADLX3DMorphologicalAntiAliasing *) 0 ;
   adlx_bool arg2 ;
@@ -5422,7 +5422,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_SetEnabled(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DMorphologicalAntiAliasing(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DMorphologicalAntiAliasing(void * jarg1) {
   adlx::IADLX3DMorphologicalAntiAliasing *arg1 = (adlx::IADLX3DMorphologicalAntiAliasing *) 0 ;
   
   arg1 = (adlx::IADLX3DMorphologicalAntiAliasing *)jarg1; 
@@ -5430,7 +5430,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DMorphologicalAntiAliasing(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5440,7 +5440,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5454,7 +5454,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IsSupported(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5468,7 +5468,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_IsEnabled(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_GetLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_GetLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL *arg2 = (ADLX_ANISOTROPIC_FILTERING_LEVEL *) 0 ;
@@ -5482,7 +5482,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_GetLevel(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   adlx_bool arg2 ;
@@ -5496,7 +5496,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_SetEnabled(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_SetLevel(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_SetLevel(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL arg2 ;
@@ -5510,7 +5510,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_SetLevel(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAnisotropicFiltering(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DAnisotropicFiltering(void * jarg1) {
   adlx::IADLX3DAnisotropicFiltering *arg1 = (adlx::IADLX3DAnisotropicFiltering *) 0 ;
   
   arg1 = (adlx::IADLX3DAnisotropicFiltering *)jarg1; 
@@ -5518,7 +5518,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAnisotropicFiltering(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DTessellation_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5528,7 +5528,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DTessellation_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5542,7 +5542,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_IsSupported(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_GetMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_GetMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   ADLX_TESSELLATION_MODE *arg2 = (ADLX_TESSELLATION_MODE *) 0 ;
@@ -5556,7 +5556,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_GetMode(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_GetLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_GetLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   ADLX_TESSELLATION_LEVEL *arg2 = (ADLX_TESSELLATION_LEVEL *) 0 ;
@@ -5570,7 +5570,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_GetLevel(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_SetMode(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_SetMode(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   ADLX_TESSELLATION_MODE arg2 ;
@@ -5584,7 +5584,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_SetMode(void * jarg1, int 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_SetLevel(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_SetLevel(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   ADLX_TESSELLATION_LEVEL arg2 ;
@@ -5598,7 +5598,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DTessellation_SetLevel(void * jarg1, int
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DTessellation(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DTessellation(void * jarg1) {
   adlx::IADLX3DTessellation *arg1 = (adlx::IADLX3DTessellation *) 0 ;
   
   arg1 = (adlx::IADLX3DTessellation *)jarg1; 
@@ -5606,7 +5606,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DTessellation(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5616,7 +5616,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5630,7 +5630,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IsSupported(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5644,7 +5644,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_IsEnabled(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   adlx_bool arg2 ;
@@ -5658,7 +5658,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_SetEnabled(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_GetSharpnessRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_GetSharpnessRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -5672,7 +5672,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_GetSharpnessRange
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_GetSharpness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_GetSharpness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -5686,7 +5686,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_GetSharpness(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_SetSharpness(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_SetSharpness(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   adlx_int arg2 ;
@@ -5700,7 +5700,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_SetSharpness(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DRadeonSuperResolution(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DRadeonSuperResolution(void * jarg1) {
   adlx::IADLX3DRadeonSuperResolution *arg1 = (adlx::IADLX3DRadeonSuperResolution *) 0 ;
   
   arg1 = (adlx::IADLX3DRadeonSuperResolution *)jarg1; 
@@ -5708,7 +5708,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DRadeonSuperResolution(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DResetShaderCache_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DResetShaderCache_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5718,7 +5718,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DResetShaderCache_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DResetShaderCache_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DResetShaderCache_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DResetShaderCache *arg1 = (adlx::IADLX3DResetShaderCache *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -5732,7 +5732,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DResetShaderCache_IsSupported(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DResetShaderCache_ResetShaderCache(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DResetShaderCache_ResetShaderCache(void * jarg1) {
   int jresult ;
   adlx::IADLX3DResetShaderCache *arg1 = (adlx::IADLX3DResetShaderCache *) 0 ;
   ADLX_RESULT result;
@@ -5744,7 +5744,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DResetShaderCache_ResetShaderCache(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DResetShaderCache(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DResetShaderCache(void * jarg1) {
   adlx::IADLX3DResetShaderCache *arg1 = (adlx::IADLX3DResetShaderCache *) 0 ;
   
   arg1 = (adlx::IADLX3DResetShaderCache *)jarg1; 
@@ -5752,7 +5752,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DResetShaderCache(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5762,7 +5762,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_GetGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_GetGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx::IADLXGPU **arg2 = (adlx::IADLXGPU **) 0 ;
@@ -5776,7 +5776,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_GetGPU(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAntiLagChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsAntiLagChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5788,7 +5788,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAntiLag
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsChillChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsChillChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5800,7 +5800,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsChillCh
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsBoostChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsBoostChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5812,7 +5812,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsBoostCh
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsImageSharpeningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsImageSharpeningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5824,7 +5824,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsImageSh
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsEnhancedSyncChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsEnhancedSyncChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5836,7 +5836,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsEnhance
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsWaitForVerticalRefreshChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsWaitForVerticalRefreshChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5848,7 +5848,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsWaitFor
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsFrameRateTargetControlChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsFrameRateTargetControlChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5860,7 +5860,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsFrameRa
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAntiAliasingChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsAntiAliasingChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5872,7 +5872,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAntiAli
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsMorphologicalAntiAliasingChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsMorphologicalAntiAliasingChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5884,7 +5884,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsMorphol
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAnisotropicFilteringChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsAnisotropicFilteringChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5896,7 +5896,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsAnisotr
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsTessellationModeChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsTessellationModeChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5908,7 +5908,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsTessell
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsRadeonSuperResolutionChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsRadeonSuperResolutionChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5920,7 +5920,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsRadeonS
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsResetShaderCache(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_IsResetShaderCache(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -5932,7 +5932,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_IsResetSh
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsChangedEvent(void * jarg1) {
   adlx::IADLX3DSettingsChangedEvent *arg1 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsChangedEvent *)jarg1; 
@@ -5940,7 +5940,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedListener_On3DSettingsChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedListener_On3DSettingsChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedListener *arg1 = (adlx::IADLX3DSettingsChangedListener *) 0 ;
   adlx::IADLX3DSettingsChangedEvent *arg2 = (adlx::IADLX3DSettingsChangedEvent *) 0 ;
@@ -5954,7 +5954,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedListener_On3DSe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsChangedListener(void * jarg1) {
   adlx::IADLX3DSettingsChangedListener *arg1 = (adlx::IADLX3DSettingsChangedListener *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsChangedListener *)jarg1; 
@@ -5962,7 +5962,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedListener(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -5972,7 +5972,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_Add3DSettingsEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedHandling_Add3DSettingsEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsChangedHandling *arg1 = (adlx::IADLX3DSettingsChangedHandling *) 0 ;
   adlx::IADLX3DSettingsChangedListener *arg2 = (adlx::IADLX3DSettingsChangedListener *) 0 ;
@@ -5986,7 +5986,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_Add3DSettingsEv
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_Remove3DSettingsEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedHandling_Remove3DSettingsEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsChangedHandling *arg1 = (adlx::IADLX3DSettingsChangedHandling *) 0 ;
   adlx::IADLX3DSettingsChangedListener *arg2 = (adlx::IADLX3DSettingsChangedListener *) 0 ;
@@ -6000,7 +6000,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_Remove3DSetting
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsChangedHandling(void * jarg1) {
   adlx::IADLX3DSettingsChangedHandling *arg1 = (adlx::IADLX3DSettingsChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsChangedHandling *)jarg1; 
@@ -6008,7 +6008,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedHandling(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6018,7 +6018,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAntiLag(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetAntiLag(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6034,7 +6034,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAntiLag(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetChill(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetChill(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6050,7 +6050,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetChill(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetBoost(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetBoost(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6066,7 +6066,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetBoost(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetImageSharpening(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetImageSharpening(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6082,7 +6082,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetImageSharpening(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetEnhancedSync(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetEnhancedSync(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6098,7 +6098,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetEnhancedSync(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetWaitForVerticalRefresh(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetWaitForVerticalRefresh(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6114,7 +6114,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetWaitForVerticalRefr
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetFrameRateTargetControl(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetFrameRateTargetControl(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6130,7 +6130,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetFrameRateTargetCont
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAntiAliasing(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetAntiAliasing(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6146,7 +6146,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAntiAliasing(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetMorphologicalAntiAliasing(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetMorphologicalAntiAliasing(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6162,7 +6162,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetMorphologicalAntiAl
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAnisotropicFiltering(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetAnisotropicFiltering(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6178,7 +6178,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetAnisotropicFilterin
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetTessellation(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetTessellation(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6194,7 +6194,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetTessellation(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetRadeonSuperResolution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetRadeonSuperResolution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLX3DRadeonSuperResolution **arg2 = (adlx::IADLX3DRadeonSuperResolution **) 0 ;
@@ -6208,7 +6208,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetRadeonSuperResoluti
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetResetShaderCache(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_GetResetShaderCache(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6224,7 +6224,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_GetResetShaderCache(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_Get3DSettingsChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_Get3DSettingsChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   adlx::IADLX3DSettingsChangedHandling **arg2 = (adlx::IADLX3DSettingsChangedHandling **) 0 ;
@@ -6238,7 +6238,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices_Get3DSettingsChangedHa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsServices(void * jarg1) {
   adlx::IADLX3DSettingsServices *arg1 = (adlx::IADLX3DSettingsServices *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsServices *)jarg1; 
@@ -6246,7 +6246,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAMDFluidMotionFrames_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6256,7 +6256,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAMDFluidMotionFrames_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAMDFluidMotionFrames *arg1 = (adlx::IADLX3DAMDFluidMotionFrames *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -6270,7 +6270,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IsSupported(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAMDFluidMotionFrames_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DAMDFluidMotionFrames *arg1 = (adlx::IADLX3DAMDFluidMotionFrames *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -6284,7 +6284,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_IsEnabled(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAMDFluidMotionFrames_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DAMDFluidMotionFrames *arg1 = (adlx::IADLX3DAMDFluidMotionFrames *) 0 ;
   adlx_bool arg2 ;
@@ -6298,7 +6298,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_SetEnabled(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAMDFluidMotionFrames(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DAMDFluidMotionFrames(void * jarg1) {
   adlx::IADLX3DAMDFluidMotionFrames *arg1 = (adlx::IADLX3DAMDFluidMotionFrames *) 0 ;
   
   arg1 = (adlx::IADLX3DAMDFluidMotionFrames *)jarg1; 
@@ -6306,7 +6306,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DAMDFluidMotionFrames(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6316,7 +6316,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices1_GetAMDFluidMotionFrames(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices1_GetAMDFluidMotionFrames(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DSettingsServices1 *arg1 = (adlx::IADLX3DSettingsServices1 *) 0 ;
   adlx::IADLX3DAMDFluidMotionFrames **arg2 = (adlx::IADLX3DAMDFluidMotionFrames **) 0 ;
@@ -6330,7 +6330,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices1_GetAMDFluidMotionFram
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsServices1(void * jarg1) {
   adlx::IADLX3DSettingsServices1 *arg1 = (adlx::IADLX3DSettingsServices1 *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsServices1 *)jarg1; 
@@ -6338,7 +6338,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices1(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6348,7 +6348,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent1_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent1_IsAMDFluidMotionFramesChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent1_IsAMDFluidMotionFramesChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent1 *arg1 = (adlx::IADLX3DSettingsChangedEvent1 *) 0 ;
   adlx_bool result;
@@ -6360,7 +6360,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent1_IsAMDFlu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsChangedEvent1(void * jarg1) {
   adlx::IADLX3DSettingsChangedEvent1 *arg1 = (adlx::IADLX3DSettingsChangedEvent1 *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsChangedEvent1 *)jarg1; 
@@ -6368,7 +6368,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent1(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpenDesktop_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6378,7 +6378,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpenDesktop_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpenDesktop *arg1 = (adlx::IADLX3DImageSharpenDesktop *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -6392,7 +6392,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IsSupported(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpenDesktop_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpenDesktop *arg1 = (adlx::IADLX3DImageSharpenDesktop *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -6406,7 +6406,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_IsEnabled(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpenDesktop_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLX3DImageSharpenDesktop *arg1 = (adlx::IADLX3DImageSharpenDesktop *) 0 ;
   adlx_bool arg2 ;
@@ -6420,7 +6420,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_SetEnabled(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DImageSharpenDesktop(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DImageSharpenDesktop(void * jarg1) {
   adlx::IADLX3DImageSharpenDesktop *arg1 = (adlx::IADLX3DImageSharpenDesktop *) 0 ;
   
   arg1 = (adlx::IADLX3DImageSharpenDesktop *)jarg1; 
@@ -6428,7 +6428,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DImageSharpenDesktop(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6438,7 +6438,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsServices2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices2_GetImageSharpenDesktop(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices2_GetImageSharpenDesktop(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLX3DSettingsServices2 *arg1 = (adlx::IADLX3DSettingsServices2 *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -6454,7 +6454,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLX3DSettingsServices2_GetImageSharpenDeskto
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsServices2(void * jarg1) {
   adlx::IADLX3DSettingsServices2 *arg1 = (adlx::IADLX3DSettingsServices2 *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsServices2 *)jarg1; 
@@ -6462,7 +6462,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsServices2(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6472,7 +6472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent2_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent2_IsImageSharpenDesktopChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent2_IsImageSharpenDesktopChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLX3DSettingsChangedEvent2 *arg1 = (adlx::IADLX3DSettingsChangedEvent2 *) 0 ;
   adlx_bool result;
@@ -6484,7 +6484,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent2_IsImageS
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLX3DSettingsChangedEvent2(void * jarg1) {
   adlx::IADLX3DSettingsChangedEvent2 *arg1 = (adlx::IADLX3DSettingsChangedEvent2 *) 0 ;
   
   arg1 = (adlx::IADLX3DSettingsChangedEvent2 *)jarg1; 
@@ -6492,7 +6492,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLX3DSettingsChangedEvent2(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplication_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6502,7 +6502,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplication_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_ProcessID(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_ProcessID(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXApplication *arg1 = (adlx::IADLXApplication *) 0 ;
   adlx_ulong *arg2 = (adlx_ulong *) 0 ;
@@ -6516,7 +6516,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_ProcessID(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_Name(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_Name(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXApplication *arg1 = (adlx::IADLXApplication *) 0 ;
   wchar_t **arg2 = (wchar_t **) 0 ;
@@ -6530,7 +6530,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_Name(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_FullPath(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_FullPath(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXApplication *arg1 = (adlx::IADLXApplication *) 0 ;
   wchar_t **arg2 = (wchar_t **) 0 ;
@@ -6544,7 +6544,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_FullPath(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_GPUDependencyType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_GPUDependencyType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXApplication *arg1 = (adlx::IADLXApplication *) 0 ;
   ADLX_APP_GPU_DEPENDENCY *arg2 = (ADLX_APP_GPU_DEPENDENCY *) 0 ;
@@ -6558,7 +6558,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplication_GPUDependencyType(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXApplication(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXApplication(void * jarg1) {
   adlx::IADLXApplication *arg1 = (adlx::IADLXApplication *) 0 ;
   
   arg1 = (adlx::IADLXApplication *)jarg1; 
@@ -6566,7 +6566,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXApplication(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplicationList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplicationList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6576,7 +6576,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplicationList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplicationList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplicationList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6586,7 +6586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXApplicationList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplicationList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplicationList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXApplicationList *arg1 = (adlx::IADLXApplicationList *) 0 ;
   adlx_uint arg2 ;
@@ -6602,7 +6602,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplicationList_At(void * jarg1, unsigned
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplicationList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplicationList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXApplicationList *arg1 = (adlx::IADLXApplicationList *) 0 ;
   adlx::IADLXApplication *arg2 = (adlx::IADLXApplication *) 0 ;
@@ -6616,7 +6616,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXApplicationList_Add_Back(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXApplicationList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXApplicationList(void * jarg1) {
   adlx::IADLXApplicationList *arg1 = (adlx::IADLXApplicationList *) 0 ;
   
   arg1 = (adlx::IADLXApplicationList *)jarg1; 
@@ -6624,7 +6624,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXApplicationList(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAppsListEventListener_OnGPUAppsListChanged(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListEventListener_OnGPUAppsListChanged(void * jarg1, void * jarg2, void * jarg3) {
   unsigned int jresult ;
   adlx::IADLXGPUAppsListEventListener *arg1 = (adlx::IADLXGPUAppsListEventListener *) 0 ;
   adlx::IADLXGPU2 *arg2 = (adlx::IADLXGPU2 *) 0 ;
@@ -6640,7 +6640,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAppsListEventListener_OnGPUAp
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAppsListEventListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAppsListEventListener(void * jarg1) {
   adlx::IADLXGPUAppsListEventListener *arg1 = (adlx::IADLXGPUAppsListEventListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUAppsListEventListener *)jarg1; 
@@ -6648,7 +6648,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAppsListEventListener(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6658,7 +6658,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_AddGPUAppsListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListChangedHandling_AddGPUAppsListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAppsListChangedHandling *arg1 = (adlx::IADLXGPUAppsListChangedHandling *) 0 ;
   adlx::IADLXGPUAppsListEventListener *arg2 = (adlx::IADLXGPUAppsListEventListener *) 0 ;
@@ -6672,7 +6672,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_AddGPUAppsList
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_RemoveGPUAppsListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListChangedHandling_RemoveGPUAppsListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAppsListChangedHandling *arg1 = (adlx::IADLXGPUAppsListChangedHandling *) 0 ;
   adlx::IADLXGPUAppsListEventListener *arg2 = (adlx::IADLXGPUAppsListEventListener *) 0 ;
@@ -6686,7 +6686,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_RemoveGPUAppsL
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAppsListChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAppsListChangedHandling(void * jarg1) {
   adlx::IADLXGPUAppsListChangedHandling *arg1 = (adlx::IADLXGPUAppsListChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXGPUAppsListChangedHandling *)jarg1; 
@@ -6694,7 +6694,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAppsListChangedHandling(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktop_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6704,7 +6704,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktop_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Orientation(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_Orientation(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   ADLX_ORIENTATION *arg2 = (ADLX_ORIENTATION *) 0 ;
@@ -6718,7 +6718,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Orientation(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Size(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_Size(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -6734,7 +6734,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Size(void * jarg1, void * jarg2, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_TopLeft(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_TopLeft(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   ADLX_Point *arg2 = (ADLX_Point *) 0 ;
@@ -6748,7 +6748,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_TopLeft(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Type(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_Type(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   ADLX_DESKTOP_TYPE *arg2 = (ADLX_DESKTOP_TYPE *) 0 ;
@@ -6762,7 +6762,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_Type(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_GetNumberOfDisplays(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_GetNumberOfDisplays(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -6776,7 +6776,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_GetNumberOfDisplays(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_GetDisplays(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_GetDisplays(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   adlx::IADLXDisplayList **arg2 = (adlx::IADLXDisplayList **) 0 ;
@@ -6790,7 +6790,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktop_GetDisplays(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktop(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDesktop(void * jarg1) {
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   
   arg1 = (adlx::IADLXDesktop *)jarg1; 
@@ -6798,7 +6798,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktop(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXEyefinityDesktop_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6808,7 +6808,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXEyefinityDesktop_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_GridSize(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_GridSize(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -6824,7 +6824,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_GridSize(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_GetDisplay(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_GetDisplay(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx_uint arg2 ;
@@ -6842,7 +6842,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_GetDisplay(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplayOrientation(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_DisplayOrientation(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx_uint arg2 ;
@@ -6860,7 +6860,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplayOrientation(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplaySize(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_DisplaySize(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx_uint arg2 ;
@@ -6880,7 +6880,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplaySize(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplayTopLeft(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_DisplayTopLeft(void * jarg1, unsigned int jarg2, unsigned int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx_uint arg2 ;
@@ -6898,7 +6898,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXEyefinityDesktop_DisplayTopLeft(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXEyefinityDesktop(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXEyefinityDesktop(void * jarg1) {
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   
   arg1 = (adlx::IADLXEyefinityDesktop *)jarg1; 
@@ -6906,7 +6906,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXEyefinityDesktop(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6916,7 +6916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6926,7 +6926,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDesktopList *arg1 = (adlx::IADLXDesktopList *) 0 ;
   adlx_uint arg2 ;
@@ -6942,7 +6942,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopList_At(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopList *arg1 = (adlx::IADLXDesktopList *) 0 ;
   adlx::IADLXDesktop *arg2 = (adlx::IADLXDesktop *) 0 ;
@@ -6956,7 +6956,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopList_Add_Back(void * jarg1, void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDesktopList(void * jarg1) {
   adlx::IADLXDesktopList *arg1 = (adlx::IADLXDesktopList *) 0 ;
   
   arg1 = (adlx::IADLXDesktopList *)jarg1; 
@@ -6964,7 +6964,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopList(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDesktopListChangedListener_OnDesktopListChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopListChangedListener_OnDesktopListChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDesktopListChangedListener *arg1 = (adlx::IADLXDesktopListChangedListener *) 0 ;
   adlx::IADLXDesktopList *arg2 = (adlx::IADLXDesktopList *) 0 ;
@@ -6978,7 +6978,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDesktopListChangedListener_OnDes
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopListChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDesktopListChangedListener(void * jarg1) {
   adlx::IADLXDesktopListChangedListener *arg1 = (adlx::IADLXDesktopListChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDesktopListChangedListener *)jarg1; 
@@ -6986,7 +6986,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopListChangedListener(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -6996,7 +6996,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_AddDesktopListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopChangedHandling_AddDesktopListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopChangedHandling *arg1 = (adlx::IADLXDesktopChangedHandling *) 0 ;
   adlx::IADLXDesktopListChangedListener *arg2 = (adlx::IADLXDesktopListChangedListener *) 0 ;
@@ -7010,7 +7010,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_AddDesktopListEven
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_RemoveDesktopListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopChangedHandling_RemoveDesktopListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopChangedHandling *arg1 = (adlx::IADLXDesktopChangedHandling *) 0 ;
   adlx::IADLXDesktopListChangedListener *arg2 = (adlx::IADLXDesktopListChangedListener *) 0 ;
@@ -7024,7 +7024,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_RemoveDesktopListE
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDesktopChangedHandling(void * jarg1) {
   adlx::IADLXDesktopChangedHandling *arg1 = (adlx::IADLXDesktopChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXDesktopChangedHandling *)jarg1; 
@@ -7032,7 +7032,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopChangedHandling(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSimpleEyefinity_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -7042,7 +7042,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSimpleEyefinity_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7056,7 +7056,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_IsSupported(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_Create(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_Create(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   adlx::IADLXEyefinityDesktop **arg2 = (adlx::IADLXEyefinityDesktop **) 0 ;
@@ -7070,7 +7070,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_Create(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_DestroyAll(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_DestroyAll(void * jarg1) {
   int jresult ;
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   ADLX_RESULT result;
@@ -7082,7 +7082,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_DestroyAll(void * jarg1) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_Destroy(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_Destroy(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   adlx::IADLXEyefinityDesktop *arg2 = (adlx::IADLXEyefinityDesktop *) 0 ;
@@ -7096,7 +7096,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSimpleEyefinity_Destroy(void * jarg1, voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSimpleEyefinity(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSimpleEyefinity(void * jarg1) {
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   
   arg1 = (adlx::IADLXSimpleEyefinity *)jarg1; 
@@ -7104,7 +7104,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSimpleEyefinity(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -7114,7 +7114,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDesktopServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetNumberOfDesktops(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_GetNumberOfDesktops(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -7128,7 +7128,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetNumberOfDesktops(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetDesktops(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_GetDesktops(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   adlx::IADLXDesktopList **arg2 = (adlx::IADLXDesktopList **) 0 ;
@@ -7142,7 +7142,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetDesktops(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetDesktopChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_GetDesktopChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   adlx::IADLXDesktopChangedHandling **arg2 = (adlx::IADLXDesktopChangedHandling **) 0 ;
@@ -7156,7 +7156,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetDesktopChangedHandling
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetSimpleEyefinity(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_GetSimpleEyefinity(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   adlx::IADLXSimpleEyefinity **arg2 = (adlx::IADLXSimpleEyefinity **) 0 ;
@@ -7170,7 +7170,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDesktopServices_GetSimpleEyefinity(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDesktopServices(void * jarg1) {
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   
   arg1 = (adlx::IADLXDesktopServices *)jarg1; 
@@ -7178,7 +7178,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDesktopServices(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -7188,7 +7188,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCE(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsSupportedSCE(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7202,7 +7202,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCE(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCEVividGaming(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsSupportedSCEVividGaming(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7216,7 +7216,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCEVividGaming(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEDisabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsCurrentSCEDisabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7230,7 +7230,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEDisabled(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEVividGaming(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsCurrentSCEVividGaming(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7244,7 +7244,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEVividGaming(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEDisabled(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetSCEDisabled(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_RESULT result;
@@ -7256,7 +7256,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEDisabled(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEVividGaming(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetSCEVividGaming(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_RESULT result;
@@ -7268,7 +7268,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEVividGaming(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCEDynamicContrast(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsSupportedSCEDynamicContrast(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7282,7 +7282,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedSCEDynamicContras
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEDynamicContrast(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsCurrentSCEDynamicContrast(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7296,7 +7296,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsCurrentSCEDynamicContrast(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSCEDynamicContrastRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetSCEDynamicContrastRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -7310,7 +7310,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSCEDynamicContrastRange(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSCEDynamicContrast(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetSCEDynamicContrast(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -7324,7 +7324,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSCEDynamicContrast(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEDynamicContrast(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetSCEDynamicContrast(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_int arg2 ;
@@ -7338,7 +7338,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSCEDynamicContrast(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedUser3DLUT(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_IsSupportedUser3DLUT(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7352,7 +7352,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_IsSupportedUser3DLUT(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_ClearUser3DLUT(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_ClearUser3DLUT(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_RESULT result;
@@ -7364,7 +7364,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_ClearUser3DLUT(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSDRUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetSDRUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION *arg2 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
@@ -7384,7 +7384,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetSDRUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSDRUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetSDRUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION arg2 ;
@@ -7404,7 +7404,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetSDRUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetHDRUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetHDRUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION *arg2 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
@@ -7424,7 +7424,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetHDRUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetHDRUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetHDRUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION arg2 ;
@@ -7444,7 +7444,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetHDRUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetAllUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetAllUser3DLUT(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION *arg2 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
@@ -7464,7 +7464,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetAllUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetAllUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SetAllUser3DLUT(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION arg2 ;
@@ -7484,7 +7484,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SetAllUser3DLUT(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetUser3DLUTIndex(void * jarg1, int jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_GetUser3DLUTIndex(void * jarg1, int jarg2, void * jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx_int arg2 ;
@@ -7502,7 +7502,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUT_GetUser3DLUTIndex(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUT(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplay3DLUT(void * jarg1) {
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   
   arg1 = (adlx::IADLXDisplay3DLUT *)jarg1; 
@@ -7510,7 +7510,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUT(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamma_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -7520,7 +7520,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamma_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaRamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGammaRamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7534,7 +7534,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaRamp(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentDeGammaRamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentDeGammaRamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7548,7 +7548,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentDeGammaRamp(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentRegammaCoefficient(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentRegammaCoefficient(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7562,7 +7562,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentRegammaCoefficient(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_GetGammaRamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_GetGammaRamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_GammaRamp *arg2 = (ADLX_GammaRamp *) 0 ;
@@ -7576,7 +7576,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_GetGammaRamp(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_GetGammaCoefficient(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_GetGammaCoefficient(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RegammaCoeff *arg2 = (ADLX_RegammaCoeff *) 0 ;
@@ -7590,7 +7590,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_GetGammaCoefficient(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaSRGB(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsSupportedReGammaSRGB(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7604,7 +7604,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaSRGB(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaBT709(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsSupportedReGammaBT709(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7618,7 +7618,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaBT709(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaPQ(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsSupportedReGammaPQ(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7632,7 +7632,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaPQ(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaPQ2084Interim(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsSupportedReGammaPQ2084Interim(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7646,7 +7646,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGammaPQ2084Inte
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGamma36(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsSupportedReGamma36(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7660,7 +7660,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsSupportedReGamma36(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaSRGB(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGammaSRGB(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7674,7 +7674,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaSRGB(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaBT709(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGammaBT709(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7688,7 +7688,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaBT709(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaPQ(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGammaPQ(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7702,7 +7702,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaPQ(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaPQ2084Interim(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGammaPQ2084Interim(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7716,7 +7716,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGammaPQ2084Interi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGamma36(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_IsCurrentReGamma36(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7730,7 +7730,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_IsCurrentReGamma36(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaSRGB(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaSRGB(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7742,7 +7742,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaSRGB(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaBT709(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaBT709(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7754,7 +7754,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaBT709(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaPQ(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaPQ(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7766,7 +7766,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaPQ(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaPQ2084Interim(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaPQ2084Interim(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7778,7 +7778,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaPQ2084Interim(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGamma36(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGamma36(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7790,7 +7790,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGamma36(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaCoefficient(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaCoefficient(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RegammaCoeff arg2 ;
@@ -7810,7 +7810,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaCoefficient(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetDeGammaRamp__SWIG_0(void * jarg1, char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetDeGammaRamp__SWIG_0(void * jarg1, char * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -7824,7 +7824,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetDeGammaRamp__SWIG_0(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetDeGammaRamp__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetDeGammaRamp__SWIG_1(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_GammaRamp arg2 ;
@@ -7844,7 +7844,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetDeGammaRamp__SWIG_1(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaRamp__SWIG_0(void * jarg1, char * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaRamp__SWIG_0(void * jarg1, char * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -7858,7 +7858,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaRamp__SWIG_0(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaRamp__SWIG_1(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SetReGammaRamp__SWIG_1(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_GammaRamp arg2 ;
@@ -7878,7 +7878,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_SetReGammaRamp__SWIG_1(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_ResetGammaRamp(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_ResetGammaRamp(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   ADLX_RESULT result;
@@ -7890,7 +7890,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamma_ResetGammaRamp(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamma(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGamma(void * jarg1) {
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamma *)jarg1; 
@@ -7898,7 +7898,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamma(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamut_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -7908,7 +7908,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamut_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR709ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCCIR709ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7922,7 +7922,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR709ColorSpace
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR601ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCCIR601ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7936,7 +7936,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR601ColorSpace
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedAdobeRgbColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedAdobeRgbColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7950,7 +7950,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedAdobeRgbColorSpac
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCIERgbColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCIERgbColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7964,7 +7964,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCIERgbColorSpace(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR2020ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCCIR2020ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7978,7 +7978,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCCIR2020ColorSpac
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCustomColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCustomColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -7992,7 +7992,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCustomColorSpace(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported5000kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupported5000kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8006,7 +8006,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported5000kWhitePoint(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported6500kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupported6500kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8020,7 +8020,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported6500kWhitePoint(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported7500kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupported7500kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8034,7 +8034,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported7500kWhitePoint(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported9300kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupported9300kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8048,7 +8048,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupported9300kWhitePoint(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCustomWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsSupportedCustomWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8062,7 +8062,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsSupportedCustomWhitePoint(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent5000kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrent5000kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8076,7 +8076,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent5000kWhitePoint(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent6500kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrent6500kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8090,7 +8090,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent6500kWhitePoint(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent7500kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrent7500kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8104,7 +8104,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent7500kWhitePoint(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent9300kWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrent9300kWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8118,7 +8118,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrent9300kWhitePoint(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCustomWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCustomWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8132,7 +8132,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCustomWhitePoint(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_GetWhitePoint(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_GetWhitePoint(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_Point *arg2 = (ADLX_Point *) 0 ;
@@ -8146,7 +8146,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_GetWhitePoint(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR709ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCCIR709ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8160,7 +8160,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR709ColorSpace(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR601ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCCIR601ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8174,7 +8174,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR601ColorSpace(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentAdobeRgbColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentAdobeRgbColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8188,7 +8188,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentAdobeRgbColorSpace(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCIERgbColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCIERgbColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8202,7 +8202,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCIERgbColorSpace(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR2020ColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCCIR2020ColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8216,7 +8216,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCCIR2020ColorSpace(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCustomColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_IsCurrentCustomColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -8230,7 +8230,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_IsCurrentCustomColorSpace(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_GetGamutColorSpace(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_GetGamutColorSpace(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_GamutColorSpace *arg2 = (ADLX_GamutColorSpace *) 0 ;
@@ -8244,7 +8244,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_GetGamutColorSpace(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_0(void * jarg1, int jarg2, int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_SetGamut__SWIG_0(void * jarg1, int jarg2, int jarg3) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_WHITE_POINT arg2 ;
@@ -8260,7 +8260,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_0(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_1(void * jarg1, void * jarg2, int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_SetGamut__SWIG_1(void * jarg1, void * jarg2, int jarg3) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_RGB arg2 ;
@@ -8282,7 +8282,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_1(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_2(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_SetGamut__SWIG_2(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_WHITE_POINT arg2 ;
@@ -8304,7 +8304,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_2(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_3(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_SetGamut__SWIG_3(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   ADLX_RGB arg2 ;
@@ -8332,7 +8332,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamut_SetGamut__SWIG_3(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamut(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGamut(void * jarg1) {
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamut *)jarg1; 
@@ -8340,7 +8340,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamut(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8350,7 +8350,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ManufacturerID(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_ManufacturerID(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -8364,7 +8364,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ManufacturerID(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_DisplayType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_DisplayType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   ADLX_DISPLAY_TYPE *arg2 = (ADLX_DISPLAY_TYPE *) 0 ;
@@ -8378,7 +8378,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_DisplayType(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ConnectorType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_ConnectorType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   ADLX_DISPLAY_CONNECTOR_TYPE *arg2 = (ADLX_DISPLAY_CONNECTOR_TYPE *) 0 ;
@@ -8392,7 +8392,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ConnectorType(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_Name(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_Name(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -8406,7 +8406,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_Name(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_EDID(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_EDID(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -8420,7 +8420,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_EDID(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_NativeResolution(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_NativeResolution(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -8436,7 +8436,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_NativeResolution(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_RefreshRate(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_RefreshRate(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -8450,7 +8450,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_RefreshRate(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_PixelClock(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_PixelClock(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -8464,7 +8464,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_PixelClock(void * jarg1, void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ScanType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_ScanType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   ADLX_DISPLAY_SCAN_TYPE *arg2 = (ADLX_DISPLAY_SCAN_TYPE *) 0 ;
@@ -8478,7 +8478,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_ScanType(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_GetGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_GetGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx::IADLXGPU **arg2 = (adlx::IADLXGPU **) 0 ;
@@ -8492,7 +8492,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_GetGPU(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_UniqueId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_UniqueId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx_size *arg2 = (adlx_size *) 0 ;
@@ -8506,7 +8506,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay_UniqueId(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplay(void * jarg1) {
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   
   arg1 = (adlx::IADLXDisplay *)jarg1; 
@@ -8514,7 +8514,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8524,7 +8524,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8534,7 +8534,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayList *arg1 = (adlx::IADLXDisplayList *) 0 ;
   adlx_uint arg2 ;
@@ -8550,7 +8550,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayList_At(void * jarg1, unsigned int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayList *arg1 = (adlx::IADLXDisplayList *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -8564,7 +8564,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayList_Add_Back(void * jarg1, void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayList(void * jarg1) {
   adlx::IADLXDisplayList *arg1 = (adlx::IADLXDisplayList *) 0 ;
   
   arg1 = (adlx::IADLXDisplayList *)jarg1; 
@@ -8572,7 +8572,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayList(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayListChangedListener_OnDisplayListChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayListChangedListener_OnDisplayListChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDisplayListChangedListener *arg1 = (adlx::IADLXDisplayListChangedListener *) 0 ;
   adlx::IADLXDisplayList *arg2 = (adlx::IADLXDisplayList *) 0 ;
@@ -8586,7 +8586,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayListChangedListener_OnDis
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_IADLXDisplayListChangedListener() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_IADLXDisplayListChangedListener() {
   void * jresult ;
   adlx::IADLXDisplayListChangedListener *result = 0 ;
   
@@ -8596,7 +8596,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IADLXDisplayListChangedListener() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayListChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayListChangedListener(void * jarg1) {
   adlx::IADLXDisplayListChangedListener *arg1 = (adlx::IADLXDisplayListChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDisplayListChangedListener *)jarg1; 
@@ -8604,14 +8604,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayListChangedListener(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IADLXDisplayListChangedListener_director_connect(void *objarg, SwigDirector_IADLXDisplayListChangedListener::SWIG_Callback0_t callback0) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayListChangedListener_director_connect(void *objarg, SwigDirector_IADLXDisplayListChangedListener::SWIG_Callback0_t callback0) {
   adlx::IADLXDisplayListChangedListener *obj = (adlx::IADLXDisplayListChangedListener *)objarg;
   SwigDirector_IADLXDisplayListChangedListener *director = static_cast<SwigDirector_IADLXDisplayListChangedListener *>(obj);
   director->swig_connect_director(callback0);
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8621,7 +8621,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGamutChangedEvent *arg1 = (adlx::IADLXDisplayGamutChangedEvent *) 0 ;
   adlx::IADLXDisplay **arg2 = (adlx::IADLXDisplay **) 0 ;
@@ -8635,7 +8635,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_GetDisplay(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IsWhitePointChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedEvent_IsWhitePointChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGamutChangedEvent *arg1 = (adlx::IADLXDisplayGamutChangedEvent *) 0 ;
   adlx_bool result;
@@ -8647,7 +8647,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IsWhite
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IsColorSpaceChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedEvent_IsColorSpaceChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGamutChangedEvent *arg1 = (adlx::IADLXDisplayGamutChangedEvent *) 0 ;
   adlx_bool result;
@@ -8659,7 +8659,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_IsColor
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamutChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGamutChangedEvent(void * jarg1) {
   adlx::IADLXDisplayGamutChangedEvent *arg1 = (adlx::IADLXDisplayGamutChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamutChangedEvent *)jarg1; 
@@ -8667,7 +8667,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamutChangedEvent(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedListener_OnDisplayGamutChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedListener_OnDisplayGamutChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDisplayGamutChangedListener *arg1 = (adlx::IADLXDisplayGamutChangedListener *) 0 ;
   adlx::IADLXDisplayGamutChangedEvent *arg2 = (adlx::IADLXDisplayGamutChangedEvent *) 0 ;
@@ -8681,7 +8681,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGamutChangedListener_OnDi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamutChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGamutChangedListener(void * jarg1) {
   adlx::IADLXDisplayGamutChangedListener *arg1 = (adlx::IADLXDisplayGamutChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamutChangedListener *)jarg1; 
@@ -8689,7 +8689,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGamutChangedListener(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8699,7 +8699,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   adlx::IADLXDisplay **arg2 = (adlx::IADLXDisplay **) 0 ;
@@ -8713,7 +8713,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_GetDisplay(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsGammaRampChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_IsGammaRampChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   adlx_bool result;
@@ -8725,7 +8725,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsGamma
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsGammaCoefficientChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_IsGammaCoefficientChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   adlx_bool result;
@@ -8737,7 +8737,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsGamma
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsReGammaChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_IsReGammaChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   adlx_bool result;
@@ -8749,7 +8749,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsReGam
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsDeGammaChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_IsDeGammaChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   adlx_bool result;
@@ -8761,7 +8761,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_IsDeGam
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGammaChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGammaChangedEvent(void * jarg1) {
   adlx::IADLXDisplayGammaChangedEvent *arg1 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGammaChangedEvent *)jarg1; 
@@ -8769,7 +8769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGammaChangedEvent(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedListener_OnDisplayGammaChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedListener_OnDisplayGammaChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDisplayGammaChangedListener *arg1 = (adlx::IADLXDisplayGammaChangedListener *) 0 ;
   adlx::IADLXDisplayGammaChangedEvent *arg2 = (adlx::IADLXDisplayGammaChangedEvent *) 0 ;
@@ -8783,7 +8783,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplayGammaChangedListener_OnDi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGammaChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGammaChangedListener(void * jarg1) {
   adlx::IADLXDisplayGammaChangedListener *arg1 = (adlx::IADLXDisplayGammaChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGammaChangedListener *)jarg1; 
@@ -8791,7 +8791,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGammaChangedListener(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8801,7 +8801,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplay3DLUTChangedEvent *arg1 = (adlx::IADLXDisplay3DLUTChangedEvent *) 0 ;
   adlx::IADLXDisplay **arg2 = (adlx::IADLXDisplay **) 0 ;
@@ -8815,7 +8815,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_GetDisplay(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IsSCEChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedEvent_IsSCEChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplay3DLUTChangedEvent *arg1 = (adlx::IADLXDisplay3DLUTChangedEvent *) 0 ;
   adlx_bool result;
@@ -8827,7 +8827,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IsSCECh
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IsCustom3DLUTChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedEvent_IsCustom3DLUTChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplay3DLUTChangedEvent *arg1 = (adlx::IADLXDisplay3DLUTChangedEvent *) 0 ;
   adlx_bool result;
@@ -8839,7 +8839,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_IsCusto
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUTChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplay3DLUTChangedEvent(void * jarg1) {
   adlx::IADLXDisplay3DLUTChangedEvent *arg1 = (adlx::IADLXDisplay3DLUTChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXDisplay3DLUTChangedEvent *)jarg1; 
@@ -8847,7 +8847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUTChangedEvent(void * j
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedListener_OnDisplay3DLUTChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedListener_OnDisplay3DLUTChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDisplay3DLUTChangedListener *arg1 = (adlx::IADLXDisplay3DLUTChangedListener *) 0 ;
   adlx::IADLXDisplay3DLUTChangedEvent *arg2 = (adlx::IADLXDisplay3DLUTChangedEvent *) 0 ;
@@ -8861,7 +8861,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedListener_OnDi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUTChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplay3DLUTChangedListener(void * jarg1) {
   adlx::IADLXDisplay3DLUTChangedListener *arg1 = (adlx::IADLXDisplay3DLUTChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDisplay3DLUTChangedListener *)jarg1; 
@@ -8869,7 +8869,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplay3DLUTChangedListener(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -8879,7 +8879,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_GetDisplay(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx::IADLXDisplay **arg2 = (adlx::IADLXDisplay **) 0 ;
@@ -8893,7 +8893,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_GetDisplay(vo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsFreeSyncChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsFreeSyncChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8905,7 +8905,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsFr
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsVSRChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsVSRChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8917,7 +8917,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsVS
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsGPUScalingChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsGPUScalingChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8929,7 +8929,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsGP
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsScalingModeChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsScalingModeChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8941,7 +8941,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsSc
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsIntegerScalingChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsIntegerScalingChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8953,7 +8953,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsIn
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsColorDepthChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsColorDepthChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8965,7 +8965,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCo
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsPixelFormatChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsPixelFormatChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8977,7 +8977,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsPi
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsHDCPChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsHDCPChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -8989,7 +8989,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsHD
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomColorHueChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomColorHueChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9001,7 +9001,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomColorSaturationChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomColorSaturationChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9013,7 +9013,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomColorBrightnessChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomColorBrightnessChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9025,7 +9025,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomColorTemperatureChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomColorTemperatureChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9037,7 +9037,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomColorContrastChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomColorContrastChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9049,7 +9049,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCustomResolutionChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsCustomResolutionChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9061,7 +9061,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsCu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsVariBrightChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_IsVariBrightChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   adlx_bool result;
@@ -9073,7 +9073,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_IsVa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplaySettingsChangedEvent(void * jarg1) {
   adlx::IADLXDisplaySettingsChangedEvent *arg1 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXDisplaySettingsChangedEvent *)jarg1; 
@@ -9081,7 +9081,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent(void 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedListener_OnDisplaySettingsChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedListener_OnDisplaySettingsChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedListener *arg1 = (adlx::IADLXDisplaySettingsChangedListener *) 0 ;
   adlx::IADLXDisplaySettingsChangedEvent *arg2 = (adlx::IADLXDisplaySettingsChangedEvent *) 0 ;
@@ -9095,7 +9095,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedListener_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplaySettingsChangedListener(void * jarg1) {
   adlx::IADLXDisplaySettingsChangedListener *arg1 = (adlx::IADLXDisplaySettingsChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXDisplaySettingsChangedListener *)jarg1; 
@@ -9103,7 +9103,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedListener(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9113,7 +9113,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_AddDisplayListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayListChangedListener *arg2 = (adlx::IADLXDisplayListChangedListener *) 0 ;
@@ -9127,7 +9127,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayListEven
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_RemoveDisplayListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayListChangedListener *arg2 = (adlx::IADLXDisplayListChangedListener *) 0 ;
@@ -9141,7 +9141,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayListE
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayGamutEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_AddDisplayGamutEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayGamutChangedListener *arg2 = (adlx::IADLXDisplayGamutChangedListener *) 0 ;
@@ -9155,7 +9155,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayGamutEve
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayGamutEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_RemoveDisplayGamutEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayGamutChangedListener *arg2 = (adlx::IADLXDisplayGamutChangedListener *) 0 ;
@@ -9169,7 +9169,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayGamut
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayGammaEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_AddDisplayGammaEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayGammaChangedListener *arg2 = (adlx::IADLXDisplayGammaChangedListener *) 0 ;
@@ -9183,7 +9183,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplayGammaEve
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayGammaEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_RemoveDisplayGammaEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayGammaChangedListener *arg2 = (adlx::IADLXDisplayGammaChangedListener *) 0 ;
@@ -9197,7 +9197,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplayGamma
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplay3DLUTEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_AddDisplay3DLUTEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplay3DLUTChangedListener *arg2 = (adlx::IADLXDisplay3DLUTChangedListener *) 0 ;
@@ -9211,7 +9211,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplay3DLUTEve
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplay3DLUTEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_RemoveDisplay3DLUTEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplay3DLUTChangedListener *arg2 = (adlx::IADLXDisplay3DLUTChangedListener *) 0 ;
@@ -9225,7 +9225,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplay3DLUT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplaySettingsEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_AddDisplaySettingsEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplaySettingsChangedListener *arg2 = (adlx::IADLXDisplaySettingsChangedListener *) 0 ;
@@ -9239,7 +9239,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_AddDisplaySettings
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplaySettingsEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_RemoveDisplaySettingsEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplaySettingsChangedListener *arg2 = (adlx::IADLXDisplaySettingsChangedListener *) 0 ;
@@ -9253,7 +9253,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_RemoveDisplaySetti
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayChangedHandling(void * jarg1) {
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXDisplayChangedHandling *)jarg1; 
@@ -9261,7 +9261,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayChangedHandling(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9271,7 +9271,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetNumberOfDisplays(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetNumberOfDisplays(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -9285,7 +9285,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetNumberOfDisplays(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetDisplays(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetDisplays(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplayList **arg2 = (adlx::IADLXDisplayList **) 0 ;
@@ -9299,7 +9299,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetDisplays(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_Get3DLUT(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_Get3DLUT(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9315,7 +9315,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_Get3DLUT(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGamut(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetGamut(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9331,7 +9331,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGamut(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGamma(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetGamma(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9347,7 +9347,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGamma(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetDisplayChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetDisplayChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplayChangedHandling **arg2 = (adlx::IADLXDisplayChangedHandling **) 0 ;
@@ -9361,7 +9361,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetDisplayChangedHandling
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetFreeSync(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetFreeSync(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9377,7 +9377,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetFreeSync(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetVirtualSuperResolution(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetVirtualSuperResolution(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9393,7 +9393,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetVirtualSuperResolution
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGPUScaling(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetGPUScaling(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9409,7 +9409,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetGPUScaling(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetScalingMode(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetScalingMode(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9425,7 +9425,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetScalingMode(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetIntegerScaling(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetIntegerScaling(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9441,7 +9441,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetIntegerScaling(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetColorDepth(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetColorDepth(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9457,7 +9457,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetColorDepth(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetPixelFormat(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetPixelFormat(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9473,7 +9473,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetPixelFormat(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetCustomColor(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetCustomColor(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9489,7 +9489,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetCustomColor(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetHDCP(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetHDCP(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9505,7 +9505,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetHDCP(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetCustomResolution(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetCustomResolution(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9521,7 +9521,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetCustomResolution(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetVariBright(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_GetVariBright(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9537,7 +9537,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices_GetVariBright(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayServices(void * jarg1) {
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices *)jarg1; 
@@ -9545,7 +9545,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9555,7 +9555,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices1_GetDisplayBlanking(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices1_GetDisplayBlanking(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices1 *arg1 = (adlx::IADLXDisplayServices1 *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9571,7 +9571,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices1_GetDisplayBlanking(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayServices1(void * jarg1) {
   adlx::IADLXDisplayServices1 *arg1 = (adlx::IADLXDisplayServices1 *) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices1 *)jarg1; 
@@ -9579,7 +9579,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9589,7 +9589,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent1_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent1_IsDisplayBlankingChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent1_IsDisplayBlankingChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent1 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent1 *) 0 ;
   adlx_bool result;
@@ -9601,7 +9601,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent1_IsD
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplaySettingsChangedEvent1(void * jarg1) {
   adlx::IADLXDisplaySettingsChangedEvent1 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent1 *) 0 ;
   
   arg1 = (adlx::IADLXDisplaySettingsChangedEvent1 *)jarg1; 
@@ -9609,7 +9609,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent1(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9619,7 +9619,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices2_GetDisplayConnectivityExperience(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices2_GetDisplayConnectivityExperience(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices2 *arg1 = (adlx::IADLXDisplayServices2 *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9635,7 +9635,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices2_GetDisplayConnectivityEx
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayServices2(void * jarg1) {
   adlx::IADLXDisplayServices2 *arg1 = (adlx::IADLXDisplayServices2 *) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices2 *)jarg1; 
@@ -9643,7 +9643,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9653,7 +9653,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent2_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent2_IsDisplayConnectivityExperienceChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent2_IsDisplayConnectivityExperienceChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent2 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent2 *) 0 ;
   adlx_bool result;
@@ -9665,7 +9665,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent2_IsD
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplaySettingsChangedEvent2(void * jarg1) {
   adlx::IADLXDisplaySettingsChangedEvent2 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent2 *) 0 ;
   
   arg1 = (adlx::IADLXDisplaySettingsChangedEvent2 *)jarg1; 
@@ -9673,7 +9673,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent2(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices3_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices3_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9683,7 +9683,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayServices3_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices3_GetDynamicRefreshRateControl(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices3_GetDynamicRefreshRateControl(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices3 *arg1 = (adlx::IADLXDisplayServices3 *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9699,7 +9699,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices3_GetDynamicRefreshRateCon
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices3_GetFreeSyncColorAccuracy(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices3_GetFreeSyncColorAccuracy(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayServices3 *arg1 = (adlx::IADLXDisplayServices3 *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -9715,7 +9715,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayServices3_GetFreeSyncColorAccuracy
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices3(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayServices3(void * jarg1) {
   adlx::IADLXDisplayServices3 *arg1 = (adlx::IADLXDisplayServices3 *) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices3 *)jarg1; 
@@ -9723,7 +9723,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayServices3(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent3_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9733,7 +9733,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IsDisplayDynamicRefreshRateControlChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent3_IsDisplayDynamicRefreshRateControlChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent3 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent3 *) 0 ;
   adlx_bool result;
@@ -9745,7 +9745,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IsD
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IsFreeSyncColorAccuracyChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent3_IsFreeSyncColorAccuracyChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXDisplaySettingsChangedEvent3 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent3 *) 0 ;
   adlx_bool result;
@@ -9757,7 +9757,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_IsF
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent3(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplaySettingsChangedEvent3(void * jarg1) {
   adlx::IADLXDisplaySettingsChangedEvent3 *arg1 = (adlx::IADLXDisplaySettingsChangedEvent3 *) 0 ;
   
   arg1 = (adlx::IADLXDisplaySettingsChangedEvent3 *)jarg1; 
@@ -9765,7 +9765,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplaySettingsChangedEvent3(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSync_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9775,7 +9775,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSync_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9789,7 +9789,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IsSupported(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSync_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9803,7 +9803,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_IsEnabled(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSync_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
   adlx_bool arg2 ;
@@ -9817,7 +9817,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSync_SetEnabled(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayFreeSync(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayFreeSync(void * jarg1) {
   adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
   
   arg1 = (adlx::IADLXDisplayFreeSync *)jarg1; 
@@ -9825,7 +9825,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayFreeSync(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVSR_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVSR_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9835,7 +9835,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVSR_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVSR_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9849,7 +9849,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_IsSupported(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVSR_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9863,7 +9863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_IsEnabled(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVSR_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
   adlx_bool arg2 ;
@@ -9877,7 +9877,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVSR_SetEnabled(void * jarg1, unsig
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVSR(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayVSR(void * jarg1) {
   adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
   
   arg1 = (adlx::IADLXDisplayVSR *)jarg1; 
@@ -9885,7 +9885,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVSR(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGPUScaling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9895,7 +9895,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGPUScaling_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9909,7 +9909,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IsSupported(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGPUScaling_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9923,7 +9923,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_IsEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGPUScaling_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   adlx_bool arg2 ;
@@ -9937,7 +9937,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_SetEnabled(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGPUScaling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayGPUScaling(void * jarg1) {
   adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   
   arg1 = (adlx::IADLXDisplayGPUScaling *)jarg1; 
@@ -9945,7 +9945,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayGPUScaling(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayScalingMode_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayScalingMode_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -9955,7 +9955,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayScalingMode_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayScalingMode_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -9969,7 +9969,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_IsSupported(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_GetMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayScalingMode_GetMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
   ADLX_SCALE_MODE *arg2 = (ADLX_SCALE_MODE *) 0 ;
@@ -9983,7 +9983,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_GetMode(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_SetMode(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayScalingMode_SetMode(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
   ADLX_SCALE_MODE arg2 ;
@@ -9997,7 +9997,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayScalingMode_SetMode(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayScalingMode(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayScalingMode(void * jarg1) {
   adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
   
   arg1 = (adlx::IADLXDisplayScalingMode *)jarg1; 
@@ -10005,7 +10005,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayScalingMode(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayIntegerScaling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10015,7 +10015,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayIntegerScaling_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10029,7 +10029,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IsSupported(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayIntegerScaling_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10043,7 +10043,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_IsEnabled(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayIntegerScaling_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   adlx_bool arg2 ;
@@ -10057,7 +10057,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_SetEnabled(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayIntegerScaling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayIntegerScaling(void * jarg1) {
   adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   
   arg1 = (adlx::IADLXDisplayIntegerScaling *)jarg1; 
@@ -10065,7 +10065,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayIntegerScaling(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10075,7 +10075,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10089,7 +10089,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupported(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_GetValue(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_GetValue(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   ADLX_COLOR_DEPTH *arg2 = (ADLX_COLOR_DEPTH *) 0 ;
@@ -10103,7 +10103,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_GetValue(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_SetValue(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_SetValue(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   ADLX_COLOR_DEPTH arg2 ;
@@ -10117,7 +10117,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_SetValue(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedColorDepth(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedColorDepth(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   ADLX_COLOR_DEPTH arg2 ;
@@ -10133,7 +10133,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedColorDepth(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_6(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_6(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10147,7 +10147,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_6(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_8(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_8(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10161,7 +10161,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_8(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_10(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_10(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10175,7 +10175,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_10(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_12(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_12(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10189,7 +10189,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_12(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_14(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_14(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10203,7 +10203,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_14(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_16(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_IsSupportedBPC_16(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10217,7 +10217,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayColorDepth_IsSupportedBPC_16(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayColorDepth(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayColorDepth(void * jarg1) {
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   
   arg1 = (adlx::IADLXDisplayColorDepth *)jarg1; 
@@ -10225,7 +10225,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayColorDepth(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10235,7 +10235,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10249,7 +10249,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupported(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_GetValue(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_GetValue(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   ADLX_PIXEL_FORMAT *arg2 = (ADLX_PIXEL_FORMAT *) 0 ;
@@ -10263,7 +10263,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_GetValue(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_SetValue(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_SetValue(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   ADLX_PIXEL_FORMAT arg2 ;
@@ -10277,7 +10277,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_SetValue(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedPixelFormat(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedPixelFormat(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   ADLX_PIXEL_FORMAT arg2 ;
@@ -10293,7 +10293,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedPixelFormat
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedRGB444Full(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedRGB444Full(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10307,7 +10307,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedRGB444Full(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr444(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedYCbCr444(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10321,7 +10321,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr444(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr422(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedYCbCr422(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10335,7 +10335,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr422(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedRGB444Limited(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedRGB444Limited(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10349,7 +10349,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedRGB444Limit
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr420(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_IsSupportedYCbCr420(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10363,7 +10363,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_IsSupportedYCbCr420(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayPixelFormat(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayPixelFormat(void * jarg1) {
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   
   arg1 = (adlx::IADLXDisplayPixelFormat *)jarg1; 
@@ -10371,7 +10371,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayPixelFormat(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10381,7 +10381,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsHueSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IsHueSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10395,7 +10395,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsHueSupported(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetHueRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetHueRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -10409,7 +10409,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetHueRange(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetHue(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetHue(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -10423,7 +10423,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetHue(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetHue(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SetHue(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int arg2 ;
@@ -10437,7 +10437,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetHue(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsSaturationSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IsSaturationSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10451,7 +10451,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsSaturationSupported(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetSaturationRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetSaturationRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -10465,7 +10465,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetSaturationRange(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetSaturation(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetSaturation(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -10479,7 +10479,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetSaturation(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetSaturation(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SetSaturation(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int arg2 ;
@@ -10493,7 +10493,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetSaturation(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsBrightnessSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IsBrightnessSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10507,7 +10507,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsBrightnessSupported(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetBrightnessRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetBrightnessRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -10521,7 +10521,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetBrightnessRange(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetBrightness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetBrightness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -10535,7 +10535,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetBrightness(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetBrightness(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SetBrightness(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int arg2 ;
@@ -10549,7 +10549,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetBrightness(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsContrastSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IsContrastSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10563,7 +10563,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsContrastSupported(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetContrastRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetContrastRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -10577,7 +10577,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetContrastRange(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetContrast(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetContrast(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -10591,7 +10591,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetContrast(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetContrast(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SetContrast(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int arg2 ;
@@ -10605,7 +10605,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetContrast(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsTemperatureSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_IsTemperatureSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10619,7 +10619,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_IsTemperatureSupported
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetTemperatureRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetTemperatureRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -10633,7 +10633,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetTemperatureRange(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_GetTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -10647,7 +10647,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_GetTemperature(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetTemperature(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SetTemperature(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx_int arg2 ;
@@ -10661,7 +10661,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SetTemperature(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayCustomColor(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayCustomColor(void * jarg1) {
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   
   arg1 = (adlx::IADLXDisplayCustomColor *)jarg1; 
@@ -10669,7 +10669,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayCustomColor(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayHDCP_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayHDCP_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10679,7 +10679,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayHDCP_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayHDCP_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10693,7 +10693,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_IsSupported(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayHDCP_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10707,7 +10707,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_IsEnabled(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayHDCP_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
   adlx_bool arg2 ;
@@ -10721,7 +10721,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayHDCP_SetEnabled(void * jarg1, unsi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayHDCP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayHDCP(void * jarg1) {
   adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
   
   arg1 = (adlx::IADLXDisplayHDCP *)jarg1; 
@@ -10729,7 +10729,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayHDCP(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolution_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolution_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10739,7 +10739,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolution_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolution_GetValue(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolution_GetValue(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayResolution *arg1 = (adlx::IADLXDisplayResolution *) 0 ;
   ADLX_CustomResolution *arg2 = (ADLX_CustomResolution *) 0 ;
@@ -10753,7 +10753,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolution_GetValue(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolution_SetValue(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolution_SetValue(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayResolution *arg1 = (adlx::IADLXDisplayResolution *) 0 ;
   ADLX_CustomResolution arg2 ;
@@ -10773,7 +10773,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolution_SetValue(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayResolution(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayResolution(void * jarg1) {
   adlx::IADLXDisplayResolution *arg1 = (adlx::IADLXDisplayResolution *) 0 ;
   
   arg1 = (adlx::IADLXDisplayResolution *)jarg1; 
@@ -10781,7 +10781,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayResolution(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolutionList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolutionList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10791,7 +10791,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolutionList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolutionList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolutionList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10801,7 +10801,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayResolutionList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolutionList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolutionList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXDisplayResolutionList *arg1 = (adlx::IADLXDisplayResolutionList *) 0 ;
   adlx_uint arg2 ;
@@ -10817,7 +10817,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolutionList_At(void * jarg1, un
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolutionList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolutionList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayResolutionList *arg1 = (adlx::IADLXDisplayResolutionList *) 0 ;
   adlx::IADLXDisplayResolution *arg2 = (adlx::IADLXDisplayResolution *) 0 ;
@@ -10831,7 +10831,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayResolutionList_Add_Back(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayResolutionList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayResolutionList(void * jarg1) {
   adlx::IADLXDisplayResolutionList *arg1 = (adlx::IADLXDisplayResolutionList *) 0 ;
   
   arg1 = (adlx::IADLXDisplayResolutionList *)jarg1; 
@@ -10839,7 +10839,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayResolutionList(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10849,7 +10849,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10863,7 +10863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_IsSupported(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_GetResolutionList(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_GetResolutionList(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx::IADLXDisplayResolutionList **arg2 = (adlx::IADLXDisplayResolutionList **) 0 ;
@@ -10877,7 +10877,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_GetResolutionList
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_GetCurrentAppliedResolution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_GetCurrentAppliedResolution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx::IADLXDisplayResolution **arg2 = (adlx::IADLXDisplayResolution **) 0 ;
@@ -10891,7 +10891,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_GetCurrentApplied
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_CreateNewResolution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_CreateNewResolution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx::IADLXDisplayResolution *arg2 = (adlx::IADLXDisplayResolution *) 0 ;
@@ -10905,7 +10905,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_CreateNewResoluti
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_DeleteResolution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_DeleteResolution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx::IADLXDisplayResolution *arg2 = (adlx::IADLXDisplayResolution *) 0 ;
@@ -10919,7 +10919,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_DeleteResolution(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayCustomResolution(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayCustomResolution(void * jarg1) {
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   
   arg1 = (adlx::IADLXDisplayCustomResolution *)jarg1; 
@@ -10927,7 +10927,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayCustomResolution(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVariBright_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -10937,7 +10937,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVariBright_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10951,7 +10951,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsSupported(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10965,7 +10965,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool arg2 ;
@@ -10979,7 +10979,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetEnabled(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentMaximizeBrightness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsCurrentMaximizeBrightness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -10993,7 +10993,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentMaximizeBright
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentOptimizeBrightness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsCurrentOptimizeBrightness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11007,7 +11007,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentOptimizeBright
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentBalanced(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsCurrentBalanced(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11021,7 +11021,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentBalanced(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentOptimizeBattery(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsCurrentOptimizeBattery(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11035,7 +11035,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentOptimizeBatter
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentMaximizeBattery(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_IsCurrentMaximizeBattery(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11049,7 +11049,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_IsCurrentMaximizeBatter
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetMaximizeBrightness(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetMaximizeBrightness(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   ADLX_RESULT result;
@@ -11061,7 +11061,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetMaximizeBrightness(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetOptimizeBrightness(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetOptimizeBrightness(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   ADLX_RESULT result;
@@ -11073,7 +11073,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetOptimizeBrightness(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetBalanced(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetBalanced(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   ADLX_RESULT result;
@@ -11085,7 +11085,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetBalanced(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetOptimizeBattery(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetOptimizeBattery(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   ADLX_RESULT result;
@@ -11097,7 +11097,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetOptimizeBattery(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetMaximizeBattery(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SetMaximizeBattery(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   ADLX_RESULT result;
@@ -11109,7 +11109,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright_SetMaximizeBattery(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVariBright(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayVariBright(void * jarg1) {
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   
   arg1 = (adlx::IADLXDisplayVariBright *)jarg1; 
@@ -11117,7 +11117,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVariBright(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11127,7 +11127,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBacklightAdaptiveSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsBacklightAdaptiveSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11141,7 +11141,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBacklightAdaptiveSup
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBacklightAdaptiveEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsBacklightAdaptiveEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11155,7 +11155,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBacklightAdaptiveEna
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetBacklightAdaptiveEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_SetBacklightAdaptiveEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool arg2 ;
@@ -11169,7 +11169,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetBacklightAdaptiveEn
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBatteryLifeSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsBatteryLifeSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11183,7 +11183,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBatteryLifeSupported
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBatteryLifeEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsBatteryLifeEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11197,7 +11197,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsBatteryLifeEnabled(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetBatteryLifeEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_SetBatteryLifeEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool arg2 ;
@@ -11211,7 +11211,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetBatteryLifeEnabled(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsWindowsPowerModeSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsWindowsPowerModeSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11225,7 +11225,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsWindowsPowerModeSupp
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsWindowsPowerModeEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsWindowsPowerModeEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11239,7 +11239,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsWindowsPowerModeEnab
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetWindowsPowerModeEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_SetWindowsPowerModeEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool arg2 ;
@@ -11253,7 +11253,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetWindowsPowerModeEna
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsFullScreenVideoSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsFullScreenVideoSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11267,7 +11267,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsFullScreenVideoSuppo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsFullScreenVideoEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_IsFullScreenVideoEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11281,7 +11281,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_IsFullScreenVideoEnabl
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetFullScreenVideoEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_SetFullScreenVideoEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   adlx_bool arg2 ;
@@ -11295,7 +11295,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SetFullScreenVideoEnab
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVariBright1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayVariBright1(void * jarg1) {
   adlx::IADLXDisplayVariBright1 *arg1 = (adlx::IADLXDisplayVariBright1 *) 0 ;
   
   arg1 = (adlx::IADLXDisplayVariBright1 *)jarg1; 
@@ -11303,7 +11303,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayVariBright1(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11313,7 +11313,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsSupportedHDMIQualityDetection(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_IsSupportedHDMIQualityDetection(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11327,7 +11327,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsSupported
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsSupportedDPLink(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_IsSupportedDPLink(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11341,7 +11341,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsSupported
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsEnabledHDMIQualityDetection(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_IsEnabledHDMIQualityDetection(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11355,7 +11355,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsEnabledHD
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetEnabledHDMIQualityDetection(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_SetEnabledHDMIQualityDetection(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_bool arg2 ;
@@ -11369,7 +11369,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetEnabledH
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetDPLinkRate(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_GetDPLinkRate(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   ADLX_DP_LINK_RATE *arg2 = (ADLX_DP_LINK_RATE *) 0 ;
@@ -11383,7 +11383,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetDPLinkRa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetNumberOfActiveLanes(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_GetNumberOfActiveLanes(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -11397,7 +11397,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetNumberOf
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetNumberOfTotalLanes(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_GetNumberOfTotalLanes(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -11411,7 +11411,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetNumberOf
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetRelativePreEmphasis(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_GetRelativePreEmphasis(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -11425,7 +11425,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetRelative
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetRelativePreEmphasis(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_SetRelativePreEmphasis(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_int arg2 ;
@@ -11439,7 +11439,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetRelative
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetRelativeVoltageSwing(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_GetRelativeVoltageSwing(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -11453,7 +11453,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_GetRelative
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetRelativeVoltageSwing(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_SetRelativeVoltageSwing(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_int arg2 ;
@@ -11467,7 +11467,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SetRelative
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsEnabledLinkProtection(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_IsEnabledLinkProtection(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11481,7 +11481,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_IsEnabledLi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayConnectivityExperience(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayConnectivityExperience(void * jarg1) {
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   
   arg1 = (adlx::IADLXDisplayConnectivityExperience *)jarg1; 
@@ -11489,7 +11489,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayConnectivityExperience(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayBlanking_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11499,7 +11499,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayBlanking_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11513,7 +11513,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsSupported(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsCurrentBlanked(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_IsCurrentBlanked(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11527,7 +11527,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsCurrentBlanked(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsCurrentUnblanked(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_IsCurrentUnblanked(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11541,7 +11541,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_IsCurrentUnblanked(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_SetBlanked(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_SetBlanked(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   ADLX_RESULT result;
@@ -11553,7 +11553,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_SetBlanked(void * jarg1) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_SetUnblanked(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_SetUnblanked(void * jarg1) {
   int jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   ADLX_RESULT result;
@@ -11565,7 +11565,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayBlanking_SetUnblanked(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayBlanking(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayBlanking(void * jarg1) {
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   
   arg1 = (adlx::IADLXDisplayBlanking *)jarg1; 
@@ -11573,7 +11573,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayBlanking(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayDynamicRefreshRateControl_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11583,7 +11583,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IID()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayDynamicRefreshRateControl_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11597,7 +11597,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IsSuppor
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayDynamicRefreshRateControl_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11611,7 +11611,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_IsEnable
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayDynamicRefreshRateControl_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   adlx_bool arg2 ;
@@ -11625,7 +11625,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_SetEnabl
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayDynamicRefreshRateControl(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayDynamicRefreshRateControl(void * jarg1) {
   adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   
   arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *)jarg1; 
@@ -11633,7 +11633,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayDynamicRefreshRateControl(
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSyncColorAccuracy_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11643,7 +11643,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSyncColorAccuracy_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11657,7 +11657,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IsSupported(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSyncColorAccuracy_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11671,7 +11671,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_IsEnabled(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSyncColorAccuracy_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   adlx_bool arg2 ;
@@ -11685,7 +11685,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_SetEnabled(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayFreeSyncColorAccuracy(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXDisplayFreeSyncColorAccuracy(void * jarg1) {
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   
   arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *)jarg1; 
@@ -11693,7 +11693,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXDisplayFreeSyncColorAccuracy(void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11703,7 +11703,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsUndervoltGPUCompleted(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteEvent_IsUndervoltGPUCompleted(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUAutoTuningCompleteEvent *arg1 = (adlx::IADLXGPUAutoTuningCompleteEvent *) 0 ;
   adlx_bool result;
@@ -11715,7 +11715,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsUnd
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsOverclockGPUCompleted(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteEvent_IsOverclockGPUCompleted(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUAutoTuningCompleteEvent *arg1 = (adlx::IADLXGPUAutoTuningCompleteEvent *) 0 ;
   adlx_bool result;
@@ -11727,7 +11727,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsOve
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsOverclockVRAMCompleted(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteEvent_IsOverclockVRAMCompleted(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUAutoTuningCompleteEvent *arg1 = (adlx::IADLXGPUAutoTuningCompleteEvent *) 0 ;
   adlx_bool result;
@@ -11739,7 +11739,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_IsOve
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuningCompleteEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAutoTuningCompleteEvent(void * jarg1) {
   adlx::IADLXGPUAutoTuningCompleteEvent *arg1 = (adlx::IADLXGPUAutoTuningCompleteEvent *) 0 ;
   
   arg1 = (adlx::IADLXGPUAutoTuningCompleteEvent *)jarg1; 
@@ -11747,7 +11747,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuningCompleteEvent(void *
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteListener_OnGPUAutoTuningComplete(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteListener_OnGPUAutoTuningComplete(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXGPUAutoTuningCompleteListener *arg1 = (adlx::IADLXGPUAutoTuningCompleteListener *) 0 ;
   adlx::IADLXGPUAutoTuningCompleteEvent *arg2 = (adlx::IADLXGPUAutoTuningCompleteEvent *) 0 ;
@@ -11761,7 +11761,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteListener_On
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuningCompleteListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAutoTuningCompleteListener(void * jarg1) {
   adlx::IADLXGPUAutoTuningCompleteListener *arg1 = (adlx::IADLXGPUAutoTuningCompleteListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUAutoTuningCompleteListener *)jarg1; 
@@ -11769,7 +11769,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuningCompleteListener(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11779,7 +11779,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedUndervoltGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsSupportedUndervoltGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11793,7 +11793,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedUndervoltGPU(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedOverclockGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsSupportedOverclockGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11807,7 +11807,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedOverclockGPU(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedOverclockVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsSupportedOverclockVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11821,7 +11821,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsSupportedOverclockVRAM(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentUndervoltGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsCurrentUndervoltGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11835,7 +11835,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentUndervoltGPU(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentOverclockGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsCurrentOverclockGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11849,7 +11849,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentOverclockGPU(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentOverclockVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_IsCurrentOverclockVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -11863,7 +11863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_IsCurrentOverclockVRAM(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartUndervoltGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_StartUndervoltGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx::IADLXGPUAutoTuningCompleteListener *arg2 = (adlx::IADLXGPUAutoTuningCompleteListener *) 0 ;
@@ -11877,7 +11877,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartUndervoltGPU(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartOverclockGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_StartOverclockGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx::IADLXGPUAutoTuningCompleteListener *arg2 = (adlx::IADLXGPUAutoTuningCompleteListener *) 0 ;
@@ -11891,7 +11891,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartOverclockGPU(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartOverclockVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_StartOverclockVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   adlx::IADLXGPUAutoTuningCompleteListener *arg2 = (adlx::IADLXGPUAutoTuningCompleteListener *) 0 ;
@@ -11905,7 +11905,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUAutoTuning_StartOverclockVRAM(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuning(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAutoTuning(void * jarg1) {
   adlx::IADLXGPUAutoTuning *arg1 = (adlx::IADLXGPUAutoTuning *) 0 ;
   
   arg1 = (adlx::IADLXGPUAutoTuning *)jarg1; 
@@ -11913,7 +11913,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUAutoTuning(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningState_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11923,7 +11923,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningState_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_GetFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -11937,7 +11937,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetFanSpeed(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetFanSpeed(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_SetFanSpeed(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   adlx_int arg2 ;
@@ -11951,7 +11951,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetFanSpeed(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_GetTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -11965,7 +11965,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_GetTemperature(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetTemperature(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_SetTemperature(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   adlx_int arg2 ;
@@ -11979,7 +11979,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningState_SetTemperature(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningState(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualFanTuningState(void * jarg1) {
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuningState *)jarg1; 
@@ -11987,7 +11987,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningState(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningStateList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -11997,7 +11997,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningStateList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12007,7 +12007,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
   adlx_uint arg2 ;
@@ -12023,7 +12023,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_At(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningStateList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
   adlx::IADLXManualFanTuningState *arg2 = (adlx::IADLXManualFanTuningState *) 0 ;
@@ -12037,7 +12037,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_Add_Back(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningStateList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualFanTuningStateList(void * jarg1) {
   adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuningStateList *)jarg1; 
@@ -12045,7 +12045,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuningStateList(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12055,7 +12055,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetFanTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12071,7 +12071,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningRanges(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetFanTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
@@ -12085,7 +12085,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetFanTuningStates(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetEmptyFanTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetEmptyFanTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
@@ -12099,7 +12099,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetEmptyFanTuningStates(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsValidFanTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IsValidFanTuningStates(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
@@ -12115,7 +12115,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsValidFanTuningStates(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetFanTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SetFanTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
@@ -12129,7 +12129,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetFanTuningStates(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedZeroRPM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IsSupportedZeroRPM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12143,7 +12143,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedZeroRPM(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetZeroRPMState(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetZeroRPMState(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12157,7 +12157,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetZeroRPMState(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetZeroRPMState(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SetZeroRPMState(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool arg2 ;
@@ -12171,7 +12171,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetZeroRPMState(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinAcousticLimit(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IsSupportedMinAcousticLimit(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12185,7 +12185,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinAcousticLim
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimitRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetMinAcousticLimitRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12199,7 +12199,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimitRange(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimit(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetMinAcousticLimit(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12213,7 +12213,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinAcousticLimit(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinAcousticLimit(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SetMinAcousticLimit(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int arg2 ;
@@ -12227,7 +12227,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinAcousticLimit(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IsSupportedMinFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12241,7 +12241,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedMinFanSpeed(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeedRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetMinFanSpeedRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12255,7 +12255,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeedRange(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetMinFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12269,7 +12269,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetMinFanSpeed(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinFanSpeed(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SetMinFanSpeed(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int arg2 ;
@@ -12283,7 +12283,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetMinFanSpeed(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedTargetFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_IsSupportedTargetFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12297,7 +12297,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_IsSupportedTargetFanSpeed
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeedRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetTargetFanSpeedRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12311,7 +12311,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeedRange(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_GetTargetFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12325,7 +12325,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_GetTargetFanSpeed(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetTargetFanSpeed(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SetTargetFanSpeed(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx_int arg2 ;
@@ -12339,7 +12339,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning_SetTargetFanSpeed(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualFanTuning(void * jarg1) {
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuning *)jarg1; 
@@ -12347,7 +12347,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12357,7 +12357,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualFanTuning1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultFanTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_GetDefaultFanTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   adlx::IADLXManualFanTuningStateList **arg2 = (adlx::IADLXManualFanTuningStateList **) 0 ;
@@ -12371,7 +12371,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultFanTuningState
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinAcousticLimitDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_GetMinAcousticLimitDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12385,7 +12385,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinAcousticLimitDefau
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinFanSpeedDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_GetMinFanSpeedDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12399,7 +12399,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetMinFanSpeedDefault(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetTargetFanSpeedDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_GetTargetFanSpeedDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12413,7 +12413,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetTargetFanSpeedDefault
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultZeroRPMState(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_GetDefaultZeroRPMState(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12427,7 +12427,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualFanTuning1_GetDefaultZeroRPMState(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualFanTuning1(void * jarg1) {
   adlx::IADLXManualFanTuning1 *arg1 = (adlx::IADLXManualFanTuning1 *) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuning1 *)jarg1; 
@@ -12435,7 +12435,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualFanTuning1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12445,7 +12445,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_GetGPUTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12461,7 +12461,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningRanges(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_GetGPUTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
@@ -12475,7 +12475,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetGPUTuningStates(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetEmptyGPUTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_GetEmptyGPUTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
@@ -12489,7 +12489,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_GetEmptyGPUTuningSt
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IsValidGPUTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_IsValidGPUTuningStates(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
@@ -12505,7 +12505,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_IsValidGPUTuningSta
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_SetGPUTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_SetGPUTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
@@ -12519,7 +12519,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_SetGPUTuningStates(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualGraphicsTuning1(void * jarg1) {
   adlx::IADLXManualGraphicsTuning1 *arg1 = (adlx::IADLXManualGraphicsTuning1 *) 0 ;
   
   arg1 = (adlx::IADLXManualGraphicsTuning1 *)jarg1; 
@@ -12527,7 +12527,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning1(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12537,7 +12537,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequencyRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUMinFrequencyRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12551,7 +12551,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequencyR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUMinFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12565,7 +12565,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMinFrequency(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMinFrequency(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_SetGPUMinFrequency(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int arg2 ;
@@ -12579,7 +12579,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMinFrequency(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequencyRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUMaxFrequencyRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12593,7 +12593,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequencyR
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUMaxFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12607,7 +12607,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUMaxFrequency(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMaxFrequency(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_SetGPUMaxFrequency(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int arg2 ;
@@ -12621,7 +12621,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUMaxFrequency(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltageRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUVoltageRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12635,7 +12635,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltageRange(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_GetGPUVoltage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12649,7 +12649,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_GetGPUVoltage(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUVoltage(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_SetGPUVoltage(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   adlx_int arg2 ;
@@ -12663,7 +12663,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SetGPUVoltage(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualGraphicsTuning2(void * jarg1) {
   adlx::IADLXManualGraphicsTuning2 *arg1 = (adlx::IADLXManualGraphicsTuning2 *) 0 ;
   
   arg1 = (adlx::IADLXManualGraphicsTuning2 *)jarg1; 
@@ -12671,7 +12671,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12681,7 +12681,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMinFrequencyDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_1_GetGPUMinFrequencyDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12695,7 +12695,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMinFrequenc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMaxFrequencyDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_1_GetGPUMaxFrequencyDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12709,7 +12709,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUMaxFrequenc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUVoltageDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_1_GetGPUVoltageDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12723,7 +12723,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_GetGPUVoltageDefa
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2_1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualGraphicsTuning2_1(void * jarg1) {
   adlx::IADLXManualGraphicsTuning2_1 *arg1 = (adlx::IADLXManualGraphicsTuning2_1 *) 0 ;
   
   arg1 = (adlx::IADLXManualGraphicsTuning2_1 *)jarg1; 
@@ -12731,7 +12731,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualGraphicsTuning2_1(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12741,7 +12741,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimitRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_GetPowerLimitRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12755,7 +12755,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimitRange(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimit(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_GetPowerLimit(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12769,7 +12769,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetPowerLimit(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetPowerLimit(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_SetPowerLimit(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx_int arg2 ;
@@ -12783,7 +12783,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetPowerLimit(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_IsSupportedTDCLimit(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_IsSupportedTDCLimit(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12797,7 +12797,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_IsSupportedTDCLimit(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimitRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_GetTDCLimitRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12811,7 +12811,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimitRange(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimit(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_GetTDCLimit(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12825,7 +12825,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_GetTDCLimit(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetTDCLimit(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_SetTDCLimit(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx_int arg2 ;
@@ -12839,7 +12839,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning_SetTDCLimit(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualPowerTuning(void * jarg1) {
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   
   arg1 = (adlx::IADLXManualPowerTuning *)jarg1; 
@@ -12847,7 +12847,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12857,7 +12857,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualPowerTuning1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetPowerLimitDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning1_GetPowerLimitDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12871,7 +12871,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetPowerLimitDefault(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetTDCLimitDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning1_GetTDCLimitDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -12885,7 +12885,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualPowerTuning1_GetTDCLimitDefault(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualPowerTuning1(void * jarg1) {
   adlx::IADLXManualPowerTuning1 *arg1 = (adlx::IADLXManualPowerTuning1 *) 0 ;
   
   arg1 = (adlx::IADLXManualPowerTuning1 *)jarg1; 
@@ -12893,7 +12893,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualPowerTuning1(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -12903,7 +12903,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -12917,7 +12917,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsSupportedMemoryTiming
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx::IADLXMemoryTimingDescriptionList **arg2 = (adlx::IADLXMemoryTimingDescriptionList **) 0 ;
@@ -12931,7 +12931,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetSupportedMemoryTimin
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
@@ -12945,7 +12945,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetMemoryTimingDescript
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetMemoryTimingDescription(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_SetMemoryTimingDescription(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION arg2 ;
@@ -12959,7 +12959,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetMemoryTimingDescript
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_GetVRAMTuningRanges(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -12975,7 +12975,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningRanges(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_GetVRAMTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
@@ -12989,7 +12989,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetVRAMTuningStates(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetEmptyVRAMTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_GetEmptyVRAMTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList **arg2 = (adlx::IADLXManualTuningStateList **) 0 ;
@@ -13003,7 +13003,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_GetEmptyVRAMTuningState
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsValidVRAMTuningStates(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_IsValidVRAMTuningStates(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
@@ -13019,7 +13019,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_IsValidVRAMTuningStates
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetVRAMTuningStates(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_SetVRAMTuningStates(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   adlx::IADLXManualTuningStateList *arg2 = (adlx::IADLXManualTuningStateList *) 0 ;
@@ -13033,7 +13033,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SetVRAMTuningStates(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualVRAMTuning1(void * jarg1) {
   adlx::IADLXManualVRAMTuning1 *arg1 = (adlx::IADLXManualVRAMTuning1 *) 0 ;
   
   arg1 = (adlx::IADLXManualVRAMTuning1 *)jarg1; 
@@ -13041,7 +13041,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13051,7 +13051,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_IsSupportedMemoryTiming(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13065,7 +13065,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_IsSupportedMemoryTiming
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_GetSupportedMemoryTimingDescriptionList(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   adlx::IADLXMemoryTimingDescriptionList **arg2 = (adlx::IADLXMemoryTimingDescriptionList **) 0 ;
@@ -13079,7 +13079,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetSupportedMemoryTimin
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_GetMemoryTimingDescription(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
@@ -13093,7 +13093,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMemoryTimingDescript
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMemoryTimingDescription(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_SetMemoryTimingDescription(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION arg2 ;
@@ -13107,7 +13107,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMemoryTimingDescript
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequencyRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_GetMaxVRAMFrequencyRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -13121,7 +13121,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequencyRang
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_GetMaxVRAMFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -13135,7 +13135,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_GetMaxVRAMFrequency(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMaxVRAMFrequency(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_SetMaxVRAMFrequency(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   adlx_int arg2 ;
@@ -13149,7 +13149,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SetMaxVRAMFrequency(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualVRAMTuning2(void * jarg1) {
   adlx::IADLXManualVRAMTuning2 *arg1 = (adlx::IADLXManualVRAMTuning2 *) 0 ;
   
   arg1 = (adlx::IADLXManualVRAMTuning2 *)jarg1; 
@@ -13157,7 +13157,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13167,7 +13167,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_GetMaxVRAMFrequencyDefault(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_1_GetMaxVRAMFrequencyDefault(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualVRAMTuning2_1 *arg1 = (adlx::IADLXManualVRAMTuning2_1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -13181,7 +13181,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_GetMaxVRAMFrequencyDe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2_1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualVRAMTuning2_1(void * jarg1) {
   adlx::IADLXManualVRAMTuning2_1 *arg1 = (adlx::IADLXManualVRAMTuning2_1 *) 0 ;
   
   arg1 = (adlx::IADLXManualVRAMTuning2_1 *)jarg1; 
@@ -13189,7 +13189,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualVRAMTuning2_1(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13199,7 +13199,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedPowerSaver(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsSupportedPowerSaver(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13213,7 +13213,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedPowerSaver(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedQuiet(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsSupportedQuiet(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13227,7 +13227,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedQuiet(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedBalanced(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsSupportedBalanced(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13241,7 +13241,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedBalanced(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedTurbo(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsSupportedTurbo(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13255,7 +13255,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedTurbo(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedRage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsSupportedRage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13269,7 +13269,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsSupportedRage(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentPowerSaver(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsCurrentPowerSaver(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13283,7 +13283,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentPowerSaver(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentQuiet(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsCurrentQuiet(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13297,7 +13297,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentQuiet(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentBalanced(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsCurrentBalanced(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13311,7 +13311,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentBalanced(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentTurbo(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsCurrentTurbo(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13325,7 +13325,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentTurbo(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentRage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_IsCurrentRage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -13339,7 +13339,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_IsCurrentRage(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetPowerSaver(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SetPowerSaver(void * jarg1) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   ADLX_RESULT result;
@@ -13351,7 +13351,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetPowerSaver(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetQuiet(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SetQuiet(void * jarg1) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   ADLX_RESULT result;
@@ -13363,7 +13363,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetQuiet(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetBalanced(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SetBalanced(void * jarg1) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   ADLX_RESULT result;
@@ -13375,7 +13375,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetBalanced(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetTurbo(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SetTurbo(void * jarg1) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   ADLX_RESULT result;
@@ -13387,7 +13387,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetTurbo(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetRage(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SetRage(void * jarg1) {
   int jresult ;
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   ADLX_RESULT result;
@@ -13399,7 +13399,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SetRage(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUPresetTuning(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUPresetTuning(void * jarg1) {
   adlx::IADLXGPUPresetTuning *arg1 = (adlx::IADLXGPUPresetTuning *) 0 ;
   
   arg1 = (adlx::IADLXGPUPresetTuning *)jarg1; 
@@ -13407,7 +13407,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUPresetTuning(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningState_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13417,7 +13417,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningState_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_GetFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -13431,7 +13431,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetFrequency(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetFrequency(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_SetFrequency(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
   adlx_int arg2 ;
@@ -13445,7 +13445,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetFrequency(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetVoltage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_GetVoltage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -13459,7 +13459,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_GetVoltage(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetVoltage(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_SetVoltage(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
   adlx_int arg2 ;
@@ -13473,7 +13473,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningState_SetVoltage(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningState(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualTuningState(void * jarg1) {
   adlx::IADLXManualTuningState *arg1 = (adlx::IADLXManualTuningState *) 0 ;
   
   arg1 = (adlx::IADLXManualTuningState *)jarg1; 
@@ -13481,7 +13481,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningState(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescription_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13491,7 +13491,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_GetDescription(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescription_GetDescription(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMemoryTimingDescription *arg1 = (adlx::IADLXMemoryTimingDescription *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION *arg2 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
@@ -13505,7 +13505,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_GetDescription(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescription(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMemoryTimingDescription(void * jarg1) {
   adlx::IADLXMemoryTimingDescription *arg1 = (adlx::IADLXMemoryTimingDescription *) 0 ;
   
   arg1 = (adlx::IADLXMemoryTimingDescription *)jarg1; 
@@ -13513,7 +13513,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescription(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningStateList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13523,7 +13523,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningStateList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13533,7 +13533,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXManualTuningStateList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningStateList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
   adlx_uint arg2 ;
@@ -13549,7 +13549,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_At(void * jarg1, un
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningStateList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
   adlx::IADLXManualTuningState *arg2 = (adlx::IADLXManualTuningState *) 0 ;
@@ -13563,7 +13563,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXManualTuningStateList_Add_Back(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningStateList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXManualTuningStateList(void * jarg1) {
   adlx::IADLXManualTuningStateList *arg1 = (adlx::IADLXManualTuningStateList *) 0 ;
   
   arg1 = (adlx::IADLXManualTuningStateList *)jarg1; 
@@ -13571,7 +13571,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXManualTuningStateList(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescriptionList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13581,7 +13581,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescriptionList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13591,7 +13591,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_ITEM_IID()
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescriptionList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
   adlx_uint arg2 ;
@@ -13607,7 +13607,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_At(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescriptionList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
   adlx::IADLXMemoryTimingDescription *arg2 = (adlx::IADLXMemoryTimingDescription *) 0 ;
@@ -13621,7 +13621,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_Add_Back(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescriptionList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMemoryTimingDescriptionList(void * jarg1) {
   adlx::IADLXMemoryTimingDescriptionList *arg1 = (adlx::IADLXMemoryTimingDescriptionList *) 0 ;
   
   arg1 = (adlx::IADLXMemoryTimingDescriptionList *)jarg1; 
@@ -13629,7 +13629,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMemoryTimingDescriptionList(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13639,7 +13639,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_GetGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_GetGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx::IADLXGPU **arg2 = (adlx::IADLXGPU **) 0 ;
@@ -13653,7 +13653,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_GetGPU(void * jarg1
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsAutomaticTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsAutomaticTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13665,7 +13665,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsAutomati
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsPresetTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsPresetTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13677,7 +13677,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsPresetTu
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualGPUCLKTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsManualGPUCLKTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13689,7 +13689,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualGP
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualVRAMTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsManualVRAMTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13701,7 +13701,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualVR
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualFanTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsManualFanTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13713,7 +13713,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualFa
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualPowerTuningChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_IsManualPowerTuningChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -13725,7 +13725,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_IsManualPo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningChangedEvent(void * jarg1) {
   adlx::IADLXGPUTuningChangedEvent *arg1 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningChangedEvent *)jarg1; 
@@ -13733,7 +13733,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedEvent(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedListener_OnGPUTuningChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedListener_OnGPUTuningChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedListener *arg1 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
   adlx::IADLXGPUTuningChangedEvent *arg2 = (adlx::IADLXGPUTuningChangedEvent *) 0 ;
@@ -13747,7 +13747,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedListener_OnGPUTu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningChangedListener(void * jarg1) {
   adlx::IADLXGPUTuningChangedListener *arg1 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningChangedListener *)jarg1; 
@@ -13755,7 +13755,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedListener(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13765,7 +13765,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_AddGPUTuningEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedHandling_AddGPUTuningEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
   adlx::IADLXGPUTuningChangedListener *arg2 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
@@ -13779,7 +13779,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_AddGPUTuningEven
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_RemoveGPUTuningEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedHandling_RemoveGPUTuningEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
   adlx::IADLXGPUTuningChangedListener *arg2 = (adlx::IADLXGPUTuningChangedListener *) 0 ;
@@ -13793,7 +13793,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_RemoveGPUTuningE
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningChangedHandling(void * jarg1) {
   adlx::IADLXGPUTuningChangedHandling *arg1 = (adlx::IADLXGPUTuningChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningChangedHandling *)jarg1; 
@@ -13801,7 +13801,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedHandling(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -13811,7 +13811,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetGPUTuningChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetGPUTuningChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPUTuningChangedHandling **arg2 = (adlx::IADLXGPUTuningChangedHandling **) 0 ;
@@ -13825,7 +13825,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetGPUTuningChangedHand
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsAtFactory(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsAtFactory(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13841,7 +13841,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsAtFactory(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_ResetToFactory(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_ResetToFactory(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13855,7 +13855,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_ResetToFactory(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13871,7 +13871,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedAutoTuning(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13887,7 +13887,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedPresetTuning
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13903,7 +13903,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualGFXTun
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13919,7 +13919,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualVRAMTu
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13935,7 +13935,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualFanTun
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_IsSupportedManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13951,7 +13951,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_IsSupportedManualPowerT
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetAutoTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13967,7 +13967,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetAutoTuning(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetPresetTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13983,7 +13983,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetPresetTuning(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetManualGFXTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -13999,7 +13999,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualGFXTuning(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetManualVRAMTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14015,7 +14015,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualVRAMTuning(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetManualFanTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14031,7 +14031,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualFanTuning(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_GetManualPowerTuning(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14047,7 +14047,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices_GetManualPowerTuning(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningServices(void * jarg1) {
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningServices *)jarg1; 
@@ -14055,7 +14055,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningServices(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningServices1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14065,7 +14065,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningServices1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices1_GetSmartAccessMemory(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices1_GetSmartAccessMemory(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningServices1 *arg1 = (adlx::IADLXGPUTuningServices1 *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14081,7 +14081,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningServices1_GetSmartAccessMemory(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningServices1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningServices1(void * jarg1) {
   adlx::IADLXGPUTuningServices1 *arg1 = (adlx::IADLXGPUTuningServices1 *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningServices1 *)jarg1; 
@@ -14089,7 +14089,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningServices1(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14099,7 +14099,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_IsSmartAccessMemoryChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent1_IsSmartAccessMemoryChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUTuningChangedEvent1 *arg1 = (adlx::IADLXGPUTuningChangedEvent1 *) 0 ;
   adlx_bool result;
@@ -14111,7 +14111,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_IsSmartAc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_GetSmartAccessMemoryStatus(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent1_GetSmartAccessMemoryStatus(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUTuningChangedEvent1 *arg1 = (adlx::IADLXGPUTuningChangedEvent1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14127,7 +14127,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_GetSmartAccessMemo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedEvent1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUTuningChangedEvent1(void * jarg1) {
   adlx::IADLXGPUTuningChangedEvent1 *arg1 = (adlx::IADLXGPUTuningChangedEvent1 *) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningChangedEvent1 *)jarg1; 
@@ -14135,7 +14135,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUTuningChangedEvent1(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXI2C_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14145,7 +14145,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXI2C_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Version(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_Version(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14161,7 +14161,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Version(void * jarg1, void * jarg2, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_IsSupported(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_IsSupported(void * jarg1, int jarg2, int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   ADLX_I2C_LINE arg2 ;
@@ -14179,7 +14179,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_IsSupported(void * jarg1, int jarg2, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Read(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_Read(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   ADLX_I2C_LINE arg2 ;
@@ -14203,7 +14203,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Read(void * jarg1, int jarg2, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_RepeatedStartRead(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_RepeatedStartRead(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   ADLX_I2C_LINE arg2 ;
@@ -14227,7 +14227,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_RepeatedStartRead(void * jarg1, int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Write(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_Write(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   ADLX_I2C_LINE arg2 ;
@@ -14251,7 +14251,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXI2C_Write(void * jarg1, int jarg2, int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXI2C(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXI2C(void * jarg1) {
   adlx::IADLXI2C *arg1 = (adlx::IADLXI2C *) 0 ;
   
   arg1 = (adlx::IADLXI2C *)jarg1; 
@@ -14259,7 +14259,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXI2C(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXLog_WriteLog(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXLog_WriteLog(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXLog *arg1 = (adlx::IADLXLog *) 0 ;
   wchar_t *arg2 = (wchar_t *) 0 ;
@@ -14273,7 +14273,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXLog_WriteLog(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXLog(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXLog(void * jarg1) {
   adlx::IADLXLog *arg1 = (adlx::IADLXLog *) 0 ;
   
   arg1 = (adlx::IADLXLog *)jarg1; 
@@ -14281,7 +14281,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXLog(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXVideoUpscale_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14291,7 +14291,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXVideoUpscale_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14305,7 +14305,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_IsSupported(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14319,7 +14319,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_IsEnabled(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_GetSharpnessRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_GetSharpnessRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -14333,7 +14333,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_GetSharpnessRange(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_GetSharpness(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_GetSharpness(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14347,7 +14347,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_GetSharpness(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   adlx_bool arg2 ;
@@ -14361,7 +14361,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_SetEnabled(void * jarg1, uns
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_SetSharpness(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_SetSharpness(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   adlx_int arg2 ;
@@ -14375,7 +14375,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoUpscale_SetSharpness(void * jarg1, i
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXVideoUpscale(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXVideoUpscale(void * jarg1) {
   adlx::IADLXVideoUpscale *arg1 = (adlx::IADLXVideoUpscale *) 0 ;
   
   arg1 = (adlx::IADLXVideoUpscale *)jarg1; 
@@ -14383,7 +14383,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXVideoUpscale(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoSuperResolution_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14393,7 +14393,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoSuperResolution_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoSuperResolution *arg1 = (adlx::IADLXVideoSuperResolution *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14407,7 +14407,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IsSupported(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoSuperResolution_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXVideoSuperResolution *arg1 = (adlx::IADLXVideoSuperResolution *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14421,7 +14421,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_IsEnabled(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoSuperResolution_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXVideoSuperResolution *arg1 = (adlx::IADLXVideoSuperResolution *) 0 ;
   adlx_bool arg2 ;
@@ -14435,7 +14435,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXVideoSuperResolution_SetEnabled(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXVideoSuperResolution(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXVideoSuperResolution(void * jarg1) {
   adlx::IADLXVideoSuperResolution *arg1 = (adlx::IADLXVideoSuperResolution *) 0 ;
   
   arg1 = (adlx::IADLXVideoSuperResolution *)jarg1; 
@@ -14443,7 +14443,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXVideoSuperResolution(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14453,7 +14453,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_GetGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEvent_GetGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMultimediaChangedEvent *arg1 = (adlx::IADLXMultimediaChangedEvent *) 0 ;
   adlx::IADLXGPU **arg2 = (adlx::IADLXGPU **) 0 ;
@@ -14467,7 +14467,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_GetGPU(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IsVideoUpscaleChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEvent_IsVideoUpscaleChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXMultimediaChangedEvent *arg1 = (adlx::IADLXMultimediaChangedEvent *) 0 ;
   adlx_bool result;
@@ -14479,7 +14479,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IsVideoUp
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IsVideoSuperResolutionChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEvent_IsVideoSuperResolutionChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXMultimediaChangedEvent *arg1 = (adlx::IADLXMultimediaChangedEvent *) 0 ;
   adlx_bool result;
@@ -14491,7 +14491,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_IsVideoSu
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMultimediaChangedEvent(void * jarg1) {
   adlx::IADLXMultimediaChangedEvent *arg1 = (adlx::IADLXMultimediaChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXMultimediaChangedEvent *)jarg1; 
@@ -14499,7 +14499,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedEvent(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEventListener_OnMultimediaChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEventListener_OnMultimediaChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXMultimediaChangedEventListener *arg1 = (adlx::IADLXMultimediaChangedEventListener *) 0 ;
   adlx::IADLXMultimediaChangedEvent *arg2 = (adlx::IADLXMultimediaChangedEvent *) 0 ;
@@ -14513,7 +14513,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXMultimediaChangedEventListener_O
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedEventListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMultimediaChangedEventListener(void * jarg1) {
   adlx::IADLXMultimediaChangedEventListener *arg1 = (adlx::IADLXMultimediaChangedEventListener *) 0 ;
   
   arg1 = (adlx::IADLXMultimediaChangedEventListener *)jarg1; 
@@ -14521,7 +14521,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedEventListener(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14531,7 +14531,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_AddMultimediaEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedHandling_AddMultimediaEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMultimediaChangedHandling *arg1 = (adlx::IADLXMultimediaChangedHandling *) 0 ;
   adlx::IADLXMultimediaChangedEventListener *arg2 = (adlx::IADLXMultimediaChangedEventListener *) 0 ;
@@ -14545,7 +14545,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_AddMultimediaEv
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_RemoveMultimediaEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedHandling_RemoveMultimediaEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMultimediaChangedHandling *arg1 = (adlx::IADLXMultimediaChangedHandling *) 0 ;
   adlx::IADLXMultimediaChangedEventListener *arg2 = (adlx::IADLXMultimediaChangedEventListener *) 0 ;
@@ -14559,7 +14559,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_RemoveMultimedi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMultimediaChangedHandling(void * jarg1) {
   adlx::IADLXMultimediaChangedHandling *arg1 = (adlx::IADLXMultimediaChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXMultimediaChangedHandling *)jarg1; 
@@ -14567,7 +14567,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaChangedHandling(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14577,7 +14577,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXMultimediaServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetMultimediaChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaServices_GetMultimediaChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXMultimediaServices *arg1 = (adlx::IADLXMultimediaServices *) 0 ;
   adlx::IADLXMultimediaChangedHandling **arg2 = (adlx::IADLXMultimediaChangedHandling **) 0 ;
@@ -14591,7 +14591,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetMultimediaChangedHa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetVideoUpscale(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaServices_GetVideoUpscale(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXMultimediaServices *arg1 = (adlx::IADLXMultimediaServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14607,7 +14607,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetVideoUpscale(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetVideoSuperResolution(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaServices_GetVideoSuperResolution(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXMultimediaServices *arg1 = (adlx::IADLXMultimediaServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -14623,7 +14623,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXMultimediaServices_GetVideoSuperResolutio
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXMultimediaServices(void * jarg1) {
   adlx::IADLXMultimediaServices *arg1 = (adlx::IADLXMultimediaServices *) 0 ;
   
   arg1 = (adlx::IADLXMultimediaServices *)jarg1; 
@@ -14631,7 +14631,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXMultimediaServices(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14641,7 +14641,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUUsage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUUsage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14655,7 +14655,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUUsage(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUClockSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUClockSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14669,7 +14669,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUClockSpee
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAMClockSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUVRAMClockSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14683,7 +14683,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAMClock
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14697,7 +14697,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTemperatu
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUHotspotTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUHotspotTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14711,7 +14711,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUHotspotTe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUPower(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUPower(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14725,7 +14725,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUPower(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTotalBoardPower(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUTotalBoardPower(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14739,7 +14739,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUTotalBoar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14753,7 +14753,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUFanSpeed(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14767,7 +14767,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVRAM(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVoltage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUVoltage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14781,7 +14781,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUVoltage(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14797,7 +14797,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUUsageRange(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14813,7 +14813,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUClockSpeedRange(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUVRAMClockSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14829,7 +14829,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMClockSpeedRan
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14845,7 +14845,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTemperatureRange(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUHotspotTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUHotspotTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14861,7 +14861,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUHotspotTemperatur
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUPowerRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUPowerRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14877,7 +14877,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUPowerRange(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUFanSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUFanSpeedRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14893,7 +14893,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUFanSpeedRange(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUVRAMRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14909,7 +14909,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVRAMRange(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVoltageRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUVoltageRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14925,7 +14925,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUVoltageRange(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTotalBoardPowerRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUTotalBoardPowerRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14941,7 +14941,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUTotalBoardPowerRa
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUIntakeTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_GetGPUIntakeTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -14957,7 +14957,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_GetGPUIntakeTemperature
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUIntakeTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_IsSupportedGPUIntakeTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -14971,7 +14971,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_IsSupportedGPUIntakeTem
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetricsSupport(void * jarg1) {
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsSupport *)jarg1; 
@@ -14979,7 +14979,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -14989,7 +14989,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedCPUUsage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_IsSupportedCPUUsage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -15003,7 +15003,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedCPUUsage(
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSystemRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_IsSupportedSystemRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -15017,7 +15017,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSystemRAM
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSmartShift(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_IsSupportedSmartShift(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -15031,7 +15031,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_IsSupportedSmartShif
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetCPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_GetCPUUsageRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15047,7 +15047,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetCPUUsageRange(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSystemRAMRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_GetSystemRAMRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15063,7 +15063,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSystemRAMRange(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSmartShiftRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_GetSmartShiftRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15079,7 +15079,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_GetSmartShiftRange(v
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystemMetricsSupport(void * jarg1) {
   adlx::IADLXSystemMetricsSupport *arg1 = (adlx::IADLXSystemMetricsSupport *) 0 ;
   
   arg1 = (adlx::IADLXSystemMetricsSupport *)jarg1; 
@@ -15087,7 +15087,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15097,7 +15097,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_TimeStamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_TimeStamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int64 *arg2 = (adlx_int64 *) 0 ;
@@ -15111,7 +15111,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_TimeStamp(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUUsage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUUsage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15125,7 +15125,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUUsage(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUClockSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUClockSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15139,7 +15139,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUClockSpeed(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAMClockSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUVRAMClockSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15153,7 +15153,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAMClockSpeed(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15167,7 +15167,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTemperature(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUHotspotTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUHotspotTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15181,7 +15181,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUHotspotTemperature(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUPower(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUPower(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15195,7 +15195,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUPower(void * jarg1, void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTotalBoardPower(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUTotalBoardPower(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15209,7 +15209,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUTotalBoardPower(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUFanSpeed(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUFanSpeed(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15223,7 +15223,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUFanSpeed(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15237,7 +15237,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVRAM(void * jarg1, void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVoltage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUVoltage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15251,7 +15251,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUVoltage(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUIntakeTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_GPUIntakeTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15265,7 +15265,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics_GPUIntakeTemperature(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetrics(void * jarg1) {
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetrics *)jarg1; 
@@ -15273,7 +15273,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15283,7 +15283,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15293,7 +15293,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
   adlx_uint arg2 ;
@@ -15309,7 +15309,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_At(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
   adlx::IADLXGPUMetrics *arg2 = (adlx::IADLXGPUMetrics *) 0 ;
@@ -15323,7 +15323,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsList_Add_Back(void * jarg1, voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetricsList(void * jarg1) {
   adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsList *)jarg1; 
@@ -15331,7 +15331,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15341,7 +15341,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_TimeStamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_TimeStamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
   adlx_int64 *arg2 = (adlx_int64 *) 0 ;
@@ -15355,7 +15355,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_TimeStamp(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_CPUUsage(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_CPUUsage(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -15369,7 +15369,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_CPUUsage(void * jarg1, void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SystemRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_SystemRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15383,7 +15383,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SystemRAM(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SmartShift(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_SmartShift(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15397,7 +15397,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics_SmartShift(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystemMetrics(void * jarg1) {
   adlx::IADLXSystemMetrics *arg1 = (adlx::IADLXSystemMetrics *) 0 ;
   
   arg1 = (adlx::IADLXSystemMetrics *)jarg1; 
@@ -15405,7 +15405,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15415,7 +15415,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15425,7 +15425,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
   adlx_uint arg2 ;
@@ -15441,7 +15441,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_At(void * jarg1, unsign
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
   adlx::IADLXSystemMetrics *arg2 = (adlx::IADLXSystemMetrics *) 0 ;
@@ -15455,7 +15455,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsList_Add_Back(void * jarg1, 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystemMetricsList(void * jarg1) {
   adlx::IADLXSystemMetricsList *arg1 = (adlx::IADLXSystemMetricsList *) 0 ;
   
   arg1 = (adlx::IADLXSystemMetricsList *)jarg1; 
@@ -15463,7 +15463,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPS_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPS_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15473,7 +15473,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPS_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_TimeStamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPS_TimeStamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
   adlx_int64 *arg2 = (adlx_int64 *) 0 ;
@@ -15487,7 +15487,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_TimeStamp(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_FPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPS_FPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15501,7 +15501,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPS_FPS(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPS(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXFPS(void * jarg1) {
   adlx::IADLXFPS *arg1 = (adlx::IADLXFPS *) 0 ;
   
   arg1 = (adlx::IADLXFPS *)jarg1; 
@@ -15509,7 +15509,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPS(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPSList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15519,7 +15519,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPSList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15529,7 +15529,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXFPSList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPSList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
   adlx_uint arg2 ;
@@ -15545,7 +15545,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_At(void * jarg1, unsigned int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPSList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
   adlx::IADLXFPS *arg2 = (adlx::IADLXFPS *) 0 ;
@@ -15559,7 +15559,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXFPSList_Add_Back(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPSList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXFPSList(void * jarg1) {
   adlx::IADLXFPSList *arg1 = (adlx::IADLXFPSList *) 0 ;
   
   arg1 = (adlx::IADLXFPSList *)jarg1; 
@@ -15567,7 +15567,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXFPSList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetrics_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15577,7 +15577,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetrics_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_TimeStamp(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_TimeStamp(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
   adlx_int64 *arg2 = (adlx_int64 *) 0 ;
@@ -15591,7 +15591,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_TimeStamp(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetSystemMetrics(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_GetSystemMetrics(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
   adlx::IADLXSystemMetrics **arg2 = (adlx::IADLXSystemMetrics **) 0 ;
@@ -15605,7 +15605,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetSystemMetrics(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetFPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_GetFPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
   adlx::IADLXFPS **arg2 = (adlx::IADLXFPS **) 0 ;
@@ -15619,7 +15619,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetFPS(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_GetGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -15635,7 +15635,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetrics_GetGPUMetrics(void * jarg1, vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetrics(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXAllMetrics(void * jarg1) {
   adlx::IADLXAllMetrics *arg1 = (adlx::IADLXAllMetrics *) 0 ;
   
   arg1 = (adlx::IADLXAllMetrics *)jarg1; 
@@ -15643,7 +15643,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetrics(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetricsList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15653,7 +15653,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetricsList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15663,7 +15663,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXAllMetricsList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetricsList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
   adlx_uint arg2 ;
@@ -15679,7 +15679,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_At(void * jarg1, unsigned 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetricsList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
   adlx::IADLXAllMetrics *arg2 = (adlx::IADLXAllMetrics *) 0 ;
@@ -15693,7 +15693,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXAllMetricsList_Add_Back(void * jarg1, voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetricsList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXAllMetricsList(void * jarg1) {
   adlx::IADLXAllMetricsList *arg1 = (adlx::IADLXAllMetricsList *) 0 ;
   
   arg1 = (adlx::IADLXAllMetricsList *)jarg1; 
@@ -15701,7 +15701,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXAllMetricsList(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -15711,7 +15711,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSamplingIntervalRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetSamplingIntervalRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -15725,7 +15725,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSampling
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetSamplingInterval(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_SetSamplingInterval(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int arg2 ;
@@ -15739,7 +15739,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetSampling
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSamplingInterval(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetSamplingInterval(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15753,7 +15753,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSampling
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySizeRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySizeRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -15767,7 +15767,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerfo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetMaxPerformanceMetricsHistorySize(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_SetMaxPerformanceMetricsHistorySize(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int arg2 ;
@@ -15781,7 +15781,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SetMaxPerfo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetMaxPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15795,7 +15795,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetMaxPerfo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_ClearPerformanceMetricsHistory(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_ClearPerformanceMetricsHistory(void * jarg1) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   ADLX_RESULT result;
@@ -15807,7 +15807,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_ClearPerfor
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetCurrentPerformanceMetricsHistorySize(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -15821,7 +15821,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentP
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StartPerformanceMetricsTracking(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_StartPerformanceMetricsTracking(void * jarg1) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   ADLX_RESULT result;
@@ -15833,7 +15833,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StartPerfor
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StopPerformanceMetricsTracking(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_StopPerformanceMetricsTracking(void * jarg1) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   ADLX_RESULT result;
@@ -15845,7 +15845,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_StopPerform
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetAllMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetAllMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int arg2 ;
@@ -15863,7 +15863,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetAllMetri
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetGPUMetricsHistory(void * jarg1, void * jarg2, int jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetGPUMetricsHistory(void * jarg1, void * jarg2, int jarg3, int jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -15883,7 +15883,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetGPUMetri
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSystemMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetSystemMetricsHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int arg2 ;
@@ -15901,7 +15901,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSystemMe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetFPSHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetFPSHistory(void * jarg1, int jarg2, int jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx_int arg2 ;
@@ -15919,7 +15919,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetFPSHisto
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentAllMetrics(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetCurrentAllMetrics(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXAllMetrics **arg2 = (adlx::IADLXAllMetrics **) 0 ;
@@ -15933,7 +15933,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentA
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetCurrentGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -15949,7 +15949,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentG
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentSystemMetrics(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetCurrentSystemMetrics(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXSystemMetrics **arg2 = (adlx::IADLXSystemMetrics **) 0 ;
@@ -15963,7 +15963,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentS
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentFPS(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetCurrentFPS(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXFPS **arg2 = (adlx::IADLXFPS **) 0 ;
@@ -15977,7 +15977,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetCurrentF
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupportedGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetSupportedGPUMetrics(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -15993,7 +15993,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupporte
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupportedSystemMetrics(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_GetSupportedSystemMetrics(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXSystemMetricsSupport **arg2 = (adlx::IADLXSystemMetricsSupport **) 0 ;
@@ -16007,7 +16007,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_GetSupporte
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPerformanceMonitoringServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPerformanceMonitoringServices(void * jarg1) {
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   
   arg1 = (adlx::IADLXPerformanceMonitoringServices *)jarg1; 
@@ -16015,7 +16015,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPerformanceMonitoringServices(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16025,7 +16025,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IsSupportedPowerDistribution(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport1_IsSupportedPowerDistribution(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystemMetricsSupport1 *arg1 = (adlx::IADLXSystemMetricsSupport1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16039,7 +16039,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_IsSupportedPowerDis
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystemMetricsSupport1(void * jarg1) {
   adlx::IADLXSystemMetricsSupport1 *arg1 = (adlx::IADLXSystemMetricsSupport1 *) 0 ;
   
   arg1 = (adlx::IADLXSystemMetricsSupport1 *)jarg1; 
@@ -16047,7 +16047,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetricsSupport1(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16057,7 +16057,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystemMetrics1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics1_PowerDistribution(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics1_PowerDistribution(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6) {
   int jresult ;
   adlx::IADLXSystemMetrics1 *arg1 = (adlx::IADLXSystemMetrics1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16079,7 +16079,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystemMetrics1_PowerDistribution(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystemMetrics1(void * jarg1) {
   adlx::IADLXSystemMetrics1 *arg1 = (adlx::IADLXSystemMetrics1 *) 0 ;
   
   arg1 = (adlx::IADLXSystemMetrics1 *)jarg1; 
@@ -16087,7 +16087,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystemMetrics1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16097,7 +16097,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedGPUMemoryTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_IsSupportedGPUMemoryTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16111,7 +16111,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedGPUMemoryTe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetGPUMemoryTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_GetGPUMemoryTemperatureRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16127,7 +16127,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetGPUMemoryTemperatur
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_IsSupportedNPUFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16141,7 +16141,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUFrequenc
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUFrequencyRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_GetNPUFrequencyRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16157,7 +16157,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUFrequencyRange(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUActivityLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_IsSupportedNPUActivityLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16171,7 +16171,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_IsSupportedNPUActivity
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUActivityLevelRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_GetNPUActivityLevelRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16187,7 +16187,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_GetNPUActivityLevelRan
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetricsSupport1(void * jarg1) {
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsSupport1 *)jarg1; 
@@ -16195,7 +16195,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport1(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16205,7 +16205,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_GPUMemoryTemperature(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics1_GPUMemoryTemperature(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
   adlx_double *arg2 = (adlx_double *) 0 ;
@@ -16219,7 +16219,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_GPUMemoryTemperature(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUFrequency(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics1_NPUFrequency(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16233,7 +16233,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUFrequency(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUActivityLevel(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics1_NPUActivityLevel(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16247,7 +16247,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics1_NPUActivityLevel(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetrics1(void * jarg1) {
   adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetrics1 *)jarg1; 
@@ -16255,7 +16255,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16265,7 +16265,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_IsSupportedGPUSharedMemory(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport2_IsSupportedGPUSharedMemory(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport2 *arg1 = (adlx::IADLXGPUMetricsSupport2 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16279,7 +16279,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_IsSupportedGPUSharedMe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_GetGPUSharedMemoryRange(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport2_GetGPUSharedMemoryRange(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUMetricsSupport2 *arg1 = (adlx::IADLXGPUMetricsSupport2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16295,7 +16295,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_GetGPUSharedMemoryRang
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetricsSupport2(void * jarg1) {
   adlx::IADLXGPUMetricsSupport2 *arg1 = (adlx::IADLXGPUMetricsSupport2 *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsSupport2 *)jarg1; 
@@ -16303,7 +16303,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetricsSupport2(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16313,7 +16313,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUMetrics2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics2_GPUSharedMemory(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics2_GPUSharedMemory(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUMetrics2 *arg1 = (adlx::IADLXGPUMetrics2 *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16327,7 +16327,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUMetrics2_GPUSharedMemory(void * jarg1,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUMetrics2(void * jarg1) {
   adlx::IADLXGPUMetrics2 *arg1 = (adlx::IADLXGPUMetrics2 *) 0 ;
   
   arg1 = (adlx::IADLXGPUMetrics2 *)jarg1; 
@@ -16335,7 +16335,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUMetrics2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartShiftMax_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16345,7 +16345,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartShiftMax_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16359,7 +16359,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_IsSupported(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBiasMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_GetBiasMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   ADLX_SSM_BIAS_MODE *arg2 = (ADLX_SSM_BIAS_MODE *) 0 ;
@@ -16373,7 +16373,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBiasMode(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_SetBiasMode(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_SetBiasMode(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   ADLX_SSM_BIAS_MODE arg2 ;
@@ -16387,7 +16387,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_SetBiasMode(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBiasRange(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_GetBiasRange(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   ADLX_IntRange *arg2 = (ADLX_IntRange *) 0 ;
@@ -16401,7 +16401,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBiasRange(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBias(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_GetBias(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -16415,7 +16415,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_GetBias(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_SetBias(void * jarg1, int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_SetBias(void * jarg1, int jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   adlx_int arg2 ;
@@ -16429,7 +16429,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftMax_SetBias(void * jarg1, int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartShiftMax(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSmartShiftMax(void * jarg1) {
   adlx::IADLXSmartShiftMax *arg1 = (adlx::IADLXSmartShiftMax *) 0 ;
   
   arg1 = (adlx::IADLXSmartShiftMax *)jarg1; 
@@ -16437,7 +16437,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartShiftMax(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16447,7 +16447,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent_IsSmartShiftMaxChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent_IsSmartShiftMaxChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXPowerTuningChangedEvent *arg1 = (adlx::IADLXPowerTuningChangedEvent *) 0 ;
   adlx_bool result;
@@ -16459,7 +16459,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent_IsSmartS
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningChangedEvent(void * jarg1) {
   adlx::IADLXPowerTuningChangedEvent *arg1 = (adlx::IADLXPowerTuningChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningChangedEvent *)jarg1; 
@@ -16467,7 +16467,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedEvent(void * ja
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedListener_OnPowerTuningChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedListener_OnPowerTuningChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXPowerTuningChangedListener *arg1 = (adlx::IADLXPowerTuningChangedListener *) 0 ;
   adlx::IADLXPowerTuningChangedEvent *arg2 = (adlx::IADLXPowerTuningChangedEvent *) 0 ;
@@ -16481,7 +16481,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedListener_OnPow
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningChangedListener(void * jarg1) {
   adlx::IADLXPowerTuningChangedListener *arg1 = (adlx::IADLXPowerTuningChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningChangedListener *)jarg1; 
@@ -16489,7 +16489,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedListener(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16499,7 +16499,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_AddPowerTuningEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedHandling_AddPowerTuningEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningChangedHandling *arg1 = (adlx::IADLXPowerTuningChangedHandling *) 0 ;
   adlx::IADLXPowerTuningChangedListener *arg2 = (adlx::IADLXPowerTuningChangedListener *) 0 ;
@@ -16513,7 +16513,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_AddPowerTuning
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_RemovePowerTuningEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedHandling_RemovePowerTuningEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningChangedHandling *arg1 = (adlx::IADLXPowerTuningChangedHandling *) 0 ;
   adlx::IADLXPowerTuningChangedListener *arg2 = (adlx::IADLXPowerTuningChangedListener *) 0 ;
@@ -16527,7 +16527,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_RemovePowerTun
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningChangedHandling(void * jarg1) {
   adlx::IADLXPowerTuningChangedHandling *arg1 = (adlx::IADLXPowerTuningChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningChangedHandling *)jarg1; 
@@ -16535,7 +16535,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedHandling(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningServices_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16545,7 +16545,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningServices_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices_GetPowerTuningChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices_GetPowerTuningChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningServices *arg1 = (adlx::IADLXPowerTuningServices *) 0 ;
   adlx::IADLXPowerTuningChangedHandling **arg2 = (adlx::IADLXPowerTuningChangedHandling **) 0 ;
@@ -16559,7 +16559,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices_GetPowerTuningChanged
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices_GetSmartShiftMax(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices_GetSmartShiftMax(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningServices *arg1 = (adlx::IADLXPowerTuningServices *) 0 ;
   adlx::IADLXSmartShiftMax **arg2 = (adlx::IADLXSmartShiftMax **) 0 ;
@@ -16573,7 +16573,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices_GetSmartShiftMax(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningServices(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningServices(void * jarg1) {
   adlx::IADLXPowerTuningServices *arg1 = (adlx::IADLXPowerTuningServices *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningServices *)jarg1; 
@@ -16581,7 +16581,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningServices(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartShiftEco_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16591,7 +16591,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartShiftEco_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16605,7 +16605,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsSupported(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16619,7 +16619,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsEnabled(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   adlx_bool arg2 ;
@@ -16633,7 +16633,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_SetEnabled(void * jarg1, un
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsInactive(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_IsInactive(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16647,7 +16647,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_IsInactive(void * jarg1, vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_GetInactiveReason(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_GetInactiveReason(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *arg2 = (ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *) 0 ;
@@ -16661,7 +16661,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartShiftEco_GetInactiveReason(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartShiftEco(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSmartShiftEco(void * jarg1) {
   adlx::IADLXSmartShiftEco *arg1 = (adlx::IADLXSmartShiftEco *) 0 ;
   
   arg1 = (adlx::IADLXSmartShiftEco *)jarg1; 
@@ -16669,7 +16669,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartShiftEco(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16679,7 +16679,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_GetGPU(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_GetGPU(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUConnectChangedEvent *arg1 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
   adlx::IADLXGPU2 **arg2 = (adlx::IADLXGPU2 **) 0 ;
@@ -16693,7 +16693,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_GetGPU(void * jarg
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUAppsListChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_IsGPUAppsListChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUConnectChangedEvent *arg1 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
   adlx_bool result;
@@ -16705,7 +16705,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUApps
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUPowerChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_IsGPUPowerChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXGPUConnectChangedEvent *arg1 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
   adlx_bool result;
@@ -16717,7 +16717,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUPowe
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUPowerChangeError(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_IsGPUPowerChangeError(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXGPUConnectChangedEvent *arg1 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
   ADLX_RESULT *arg2 = (ADLX_RESULT *) 0 ;
@@ -16731,7 +16731,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_IsGPUPowe
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUConnectChangedEvent(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUConnectChangedEvent(void * jarg1) {
   adlx::IADLXGPUConnectChangedEvent *arg1 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
   
   arg1 = (adlx::IADLXGPUConnectChangedEvent *)jarg1; 
@@ -16739,7 +16739,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUConnectChangedEvent(void * jar
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedListener_OnGPUConnectChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedListener_OnGPUConnectChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXGPUConnectChangedListener *arg1 = (adlx::IADLXGPUConnectChangedListener *) 0 ;
   adlx::IADLXGPUConnectChangedEvent *arg2 = (adlx::IADLXGPUConnectChangedEvent *) 0 ;
@@ -16753,7 +16753,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUConnectChangedListener_OnGPUC
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_IADLXGPUConnectChangedListener() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_IADLXGPUConnectChangedListener() {
   void * jresult ;
   adlx::IADLXGPUConnectChangedListener *result = 0 ;
   
@@ -16763,7 +16763,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_IADLXGPUConnectChangedListener() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUConnectChangedListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUConnectChangedListener(void * jarg1) {
   adlx::IADLXGPUConnectChangedListener *arg1 = (adlx::IADLXGPUConnectChangedListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUConnectChangedListener *)jarg1; 
@@ -16771,14 +16771,14 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUConnectChangedListener(void * 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_IADLXGPUConnectChangedListener_director_connect(void *objarg, SwigDirector_IADLXGPUConnectChangedListener::SWIG_Callback0_t callback0) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedListener_director_connect(void *objarg, SwigDirector_IADLXGPUConnectChangedListener::SWIG_Callback0_t callback0) {
   adlx::IADLXGPUConnectChangedListener *obj = (adlx::IADLXGPUConnectChangedListener *)objarg;
   SwigDirector_IADLXGPUConnectChangedListener *director = static_cast<SwigDirector_IADLXGPUConnectChangedListener *>(obj);
   director->swig_connect_director(callback0);
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16788,7 +16788,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent1_IID() {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent1_IsSmartShiftEcoChanged(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent1_IsSmartShiftEcoChanged(void * jarg1) {
   unsigned int jresult ;
   adlx::IADLXPowerTuningChangedEvent1 *arg1 = (adlx::IADLXPowerTuningChangedEvent1 *) 0 ;
   adlx_bool result;
@@ -16800,7 +16800,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent1_IsSmart
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedEvent1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningChangedEvent1(void * jarg1) {
   adlx::IADLXPowerTuningChangedEvent1 *arg1 = (adlx::IADLXPowerTuningChangedEvent1 *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningChangedEvent1 *)jarg1; 
@@ -16808,7 +16808,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningChangedEvent1(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningServices1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16818,7 +16818,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXPowerTuningServices1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_GetSmartShiftEco(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices1_GetSmartShiftEco(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningServices1 *arg1 = (adlx::IADLXPowerTuningServices1 *) 0 ;
   adlx::IADLXSmartShiftEco **arg2 = (adlx::IADLXSmartShiftEco **) 0 ;
@@ -16832,7 +16832,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_GetSmartShiftEco(voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_IsGPUConnectSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices1_IsGPUConnectSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningServices1 *arg1 = (adlx::IADLXPowerTuningServices1 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16846,7 +16846,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_IsGPUConnectSupporte
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_GetGPUConnectGPUs(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices1_GetGPUConnectGPUs(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXPowerTuningServices1 *arg1 = (adlx::IADLXPowerTuningServices1 *) 0 ;
   adlx::IADLXGPU2List **arg2 = (adlx::IADLXGPU2List **) 0 ;
@@ -16860,7 +16860,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXPowerTuningServices1_GetGPUConnectGPUs(vo
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningServices1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXPowerTuningServices1(void * jarg1) {
   adlx::IADLXPowerTuningServices1 *arg1 = (adlx::IADLXPowerTuningServices1 *) 0 ;
   
   arg1 = (adlx::IADLXPowerTuningServices1 *)jarg1; 
@@ -16868,7 +16868,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXPowerTuningServices1(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartAccessMemory_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16878,7 +16878,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IsSupported(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartAccessMemory_IsSupported(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartAccessMemory *arg1 = (adlx::IADLXSmartAccessMemory *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16892,7 +16892,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IsSupported(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IsEnabled(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartAccessMemory_IsEnabled(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSmartAccessMemory *arg1 = (adlx::IADLXSmartAccessMemory *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16906,7 +16906,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_IsEnabled(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_SetEnabled(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartAccessMemory_SetEnabled(void * jarg1, unsigned int jarg2) {
   int jresult ;
   adlx::IADLXSmartAccessMemory *arg1 = (adlx::IADLXSmartAccessMemory *) 0 ;
   adlx_bool arg2 ;
@@ -16920,7 +16920,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSmartAccessMemory_SetEnabled(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartAccessMemory(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSmartAccessMemory(void * jarg1) {
   adlx::IADLXSmartAccessMemory *arg1 = (adlx::IADLXSmartAccessMemory *) 0 ;
   
   arg1 = (adlx::IADLXSmartAccessMemory *)jarg1; 
@@ -16928,7 +16928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSmartAccessMemory(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -16938,7 +16938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_VendorId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_VendorId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -16952,7 +16952,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_VendorId(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_ASICFamilyType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_ASICFamilyType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   ADLX_ASIC_FAMILY_TYPE *arg2 = (ADLX_ASIC_FAMILY_TYPE *) 0 ;
@@ -16966,7 +16966,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_ASICFamilyType(void * jarg1, void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_Type(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_Type(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   ADLX_GPU_TYPE *arg2 = (ADLX_GPU_TYPE *) 0 ;
@@ -16980,7 +16980,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_Type(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_IsExternal(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_IsExternal(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -16994,7 +16994,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_IsExternal(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_Name(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_Name(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17008,7 +17008,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_Name(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_DriverPath(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_DriverPath(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17022,7 +17022,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_DriverPath(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_PNPString(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_PNPString(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17036,7 +17036,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_PNPString(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_HasDesktops(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_HasDesktops(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -17050,7 +17050,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_HasDesktops(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_TotalVRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_TotalVRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -17064,7 +17064,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_TotalVRAM(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_VRAMType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_VRAMType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17078,7 +17078,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_VRAMType(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_BIOSInfo(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_BIOSInfo(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17096,7 +17096,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_BIOSInfo(void * jarg1, void * jarg2, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_DeviceId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_DeviceId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17110,7 +17110,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_DeviceId(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_RevisionId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_RevisionId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17124,7 +17124,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_RevisionId(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_SubSystemId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_SubSystemId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17138,7 +17138,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_SubSystemId(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_SubSystemVendorId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_SubSystemVendorId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17152,7 +17152,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_SubSystemVendorId(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_UniqueId(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_UniqueId(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   adlx_int *arg2 = (adlx_int *) 0 ;
@@ -17166,7 +17166,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU_UniqueId(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPU(void * jarg1) {
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   
   arg1 = (adlx::IADLXGPU *)jarg1; 
@@ -17174,7 +17174,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUList_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUList_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17184,7 +17184,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUList_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUList_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUList_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17194,7 +17194,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUList_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUList_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPUList *arg1 = (adlx::IADLXGPUList *) 0 ;
   adlx_uint arg2 ;
@@ -17210,7 +17210,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUList_At(void * jarg1, unsigned int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUList_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUList_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUList *arg1 = (adlx::IADLXGPUList *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -17224,7 +17224,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUList_Add_Back(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUList(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUList(void * jarg1) {
   adlx::IADLXGPUList *arg1 = (adlx::IADLXGPUList *) 0 ;
   
   arg1 = (adlx::IADLXGPUList *)jarg1; 
@@ -17232,7 +17232,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUList(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUsEventListener_OnGPUListChanged(void * jarg1, void * jarg2) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUsEventListener_OnGPUListChanged(void * jarg1, void * jarg2) {
   unsigned int jresult ;
   adlx::IADLXGPUsEventListener *arg1 = (adlx::IADLXGPUsEventListener *) 0 ;
   adlx::IADLXGPUList *arg2 = (adlx::IADLXGPUList *) 0 ;
@@ -17246,7 +17246,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_IADLXGPUsEventListener_OnGPUListChang
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUsEventListener(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUsEventListener(void * jarg1) {
   adlx::IADLXGPUsEventListener *arg1 = (adlx::IADLXGPUsEventListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUsEventListener *)jarg1; 
@@ -17254,7 +17254,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUsEventListener(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUsChangedHandling_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17264,7 +17264,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_AddGPUsListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUsChangedHandling_AddGPUsListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUsChangedHandling *arg1 = (adlx::IADLXGPUsChangedHandling *) 0 ;
   adlx::IADLXGPUsEventListener *arg2 = (adlx::IADLXGPUsEventListener *) 0 ;
@@ -17278,7 +17278,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_AddGPUsListEventListe
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_RemoveGPUsListEventListener(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUsChangedHandling_RemoveGPUsListEventListener(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPUsChangedHandling *arg1 = (adlx::IADLXGPUsChangedHandling *) 0 ;
   adlx::IADLXGPUsEventListener *arg2 = (adlx::IADLXGPUsEventListener *) 0 ;
@@ -17292,7 +17292,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_RemoveGPUsListEventLi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUsChangedHandling(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUsChangedHandling(void * jarg1) {
   adlx::IADLXGPUsChangedHandling *arg1 = (adlx::IADLXGPUsChangedHandling *) 0 ;
   
   arg1 = (adlx::IADLXGPUsChangedHandling *)jarg1; 
@@ -17300,7 +17300,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPUsChangedHandling(void * jarg1)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_HybridGraphicsType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_HybridGraphicsType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   ADLX_HG_TYPE *arg2 = (ADLX_HG_TYPE *) 0 ;
@@ -17314,7 +17314,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_HybridGraphicsType(void * jarg1, v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUs(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetGPUs(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXGPUList **arg2 = (adlx::IADLXGPUList **) 0 ;
@@ -17328,7 +17328,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUs(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_QueryInterface(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_QueryInterface(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   wchar_t *arg2 = (wchar_t *) 0 ;
@@ -17344,7 +17344,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_QueryInterface(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetDisplaysServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetDisplaysServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXDisplayServices **arg2 = (adlx::IADLXDisplayServices **) 0 ;
@@ -17358,7 +17358,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetDisplaysServices(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetDesktopsServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetDesktopsServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXDesktopServices **arg2 = (adlx::IADLXDesktopServices **) 0 ;
@@ -17372,7 +17372,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetDesktopsServices(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUsChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetGPUsChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXGPUsChangedHandling **arg2 = (adlx::IADLXGPUsChangedHandling **) 0 ;
@@ -17386,7 +17386,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUsChangedHandling(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_EnableLog(void * jarg1, int jarg2, int jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_EnableLog(void * jarg1, int jarg2, int jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   ADLX_LOG_DESTINATION arg2 ;
@@ -17406,7 +17406,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_EnableLog(void * jarg1, int jarg2,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_Get3DSettingsServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_Get3DSettingsServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLX3DSettingsServices **arg2 = (adlx::IADLX3DSettingsServices **) 0 ;
@@ -17420,7 +17420,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_Get3DSettingsServices(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUTuningServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetGPUTuningServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXGPUTuningServices **arg2 = (adlx::IADLXGPUTuningServices **) 0 ;
@@ -17434,7 +17434,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetGPUTuningServices(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetPerformanceMonitoringServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetPerformanceMonitoringServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXPerformanceMonitoringServices **arg2 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
@@ -17448,7 +17448,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetPerformanceMonitoringServices(v
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_TotalSystemRAM(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_TotalSystemRAM(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -17462,7 +17462,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_TotalSystemRAM(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetI2C(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem_GetI2C(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -17478,7 +17478,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem_GetI2C(void * jarg1, void * jarg2,
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystem(void * jarg1) {
   adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
   
   arg1 = (adlx::IADLXSystem *)jarg1; 
@@ -17486,7 +17486,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXGPUFromBdf(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_GetADLXGPUFromBdf(void * jarg1, int jarg2, int jarg3, int jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx_int arg2 ;
@@ -17506,7 +17506,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXGPUFromBdf(void * jarg1, in
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXGPUFromAdlAdapterIndex(void * jarg1, int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_GetADLXGPUFromAdlAdapterIndex(void * jarg1, int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx_int arg2 ;
@@ -17522,7 +17522,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXGPUFromAdlAdapterIndex(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_BdfFromADLXGPU(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_BdfFromADLXGPU(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -17542,7 +17542,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_BdfFromADLXGPU(void * jarg1, void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_AdlAdapterIndexFromADLXGPU(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_AdlAdapterIndexFromADLXGPU(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
@@ -17558,7 +17558,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_AdlAdapterIndexFromADLXGPU(void * 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXDisplayFromADLIds(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_GetADLXDisplayFromADLIds(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx_int arg2 ;
@@ -17582,7 +17582,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXDisplayFromADLIds(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_ADLIdsFromADLXDisplay(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_ADLIdsFromADLXDisplay(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
@@ -17606,7 +17606,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_ADLIdsFromADLXDisplay(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXDesktopFromADLIds(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_GetADLXDesktopFromADLIds(void * jarg1, int jarg2, int jarg3, int jarg4, int jarg5, int jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx_int arg2 ;
@@ -17630,7 +17630,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_GetADLXDesktopFromADLIds(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_ADLIdsFromADLXDesktop(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6, void * jarg7) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLMapping_ADLIdsFromADLXDesktop(void * jarg1, void * jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6, void * jarg7) {
   int jresult ;
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   adlx::IADLXDesktop *arg2 = (adlx::IADLXDesktop *) 0 ;
@@ -17654,7 +17654,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLMapping_ADLIdsFromADLXDesktop(void * jarg1
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLMapping(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLMapping(void * jarg1) {
   adlx::IADLMapping *arg1 = (adlx::IADLMapping *) 0 ;
   
   arg1 = (adlx::IADLMapping *)jarg1; 
@@ -17662,7 +17662,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLMapping(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17672,7 +17672,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_PCIBusType(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_PCIBusType(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   ADLX_PCI_BUS_TYPE *arg2 = (ADLX_PCI_BUS_TYPE *) 0 ;
@@ -17686,7 +17686,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_PCIBusType(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_PCIBusLaneWidth(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_PCIBusLaneWidth(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -17700,7 +17700,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_PCIBusLaneWidth(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_MultiGPUMode(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_MultiGPUMode(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   ADLX_MGPU_MODE *arg2 = (ADLX_MGPU_MODE *) 0 ;
@@ -17714,7 +17714,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_MultiGPUMode(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_ProductName(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_ProductName(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17728,7 +17728,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU1_ProductName(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPU1(void * jarg1) {
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   
   arg1 = (adlx::IADLXGPU1 *)jarg1; 
@@ -17736,7 +17736,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystem1_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem1_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17746,7 +17746,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystem1_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem1_GetPowerTuningServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem1_GetPowerTuningServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem1 *arg1 = (adlx::IADLXSystem1 *) 0 ;
   adlx::IADLXPowerTuningServices **arg2 = (adlx::IADLXPowerTuningServices **) 0 ;
@@ -17760,7 +17760,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem1_GetPowerTuningServices(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem1(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystem1(void * jarg1) {
   adlx::IADLXSystem1 *arg1 = (adlx::IADLXSystem1 *) 0 ;
   
   arg1 = (adlx::IADLXSystem1 *)jarg1; 
@@ -17768,7 +17768,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem1(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17778,7 +17778,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_IsPowerOff(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_IsPowerOff(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -17792,7 +17792,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_IsPowerOff(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_PowerOn(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_PowerOn(void * jarg1) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   ADLX_RESULT result;
@@ -17804,7 +17804,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_PowerOn(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_StartPowerOff(void * jarg1, void * jarg2, int jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_StartPowerOff(void * jarg1, void * jarg2, int jarg3) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx::IADLXGPUConnectChangedListener *arg2 = (adlx::IADLXGPUConnectChangedListener *) 0 ;
@@ -17820,7 +17820,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_StartPowerOff(void * jarg1, void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AbortPowerOff(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_AbortPowerOff(void * jarg1) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   ADLX_RESULT result;
@@ -17832,7 +17832,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AbortPowerOff(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_IsSupportedApplicationList(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_IsSupportedApplicationList(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx_bool *arg2 = (adlx_bool *) 0 ;
@@ -17846,7 +17846,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_IsSupportedApplicationList(void * ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_GetApplications(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_GetApplications(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx::IADLXApplicationList **arg2 = (adlx::IADLXApplicationList **) 0 ;
@@ -17860,7 +17860,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_GetApplications(void * jarg1, void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareReleaseDate(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_AMDSoftwareReleaseDate(void * jarg1, void * jarg2, void * jarg3, void * jarg4) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx_uint *arg2 = (adlx_uint *) 0 ;
@@ -17878,7 +17878,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareReleaseDate(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareEdition(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_AMDSoftwareEdition(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17892,7 +17892,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareEdition(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareVersion(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_AMDSoftwareVersion(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17906,7 +17906,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDSoftwareVersion(void * jarg1, voi
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_DriverVersion(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_DriverVersion(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17920,7 +17920,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_DriverVersion(void * jarg1, void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDWindowsDriverVersion(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_AMDWindowsDriverVersion(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   char **arg2 = (char **) 0 ;
@@ -17934,7 +17934,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_AMDWindowsDriverVersion(void * jarg1
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_LUID(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_LUID(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   ADLX_LUID *arg2 = (ADLX_LUID *) 0 ;
@@ -17948,7 +17948,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2_LUID(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPU2(void * jarg1) {
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   
   arg1 = (adlx::IADLXGPU2 *)jarg1; 
@@ -17956,7 +17956,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2List_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2List_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17966,7 +17966,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2List_IID() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2List_ITEM_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2List_ITEM_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -17976,7 +17976,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXGPU2List_ITEM_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2List_At(void * jarg1, unsigned int jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2List_At(void * jarg1, unsigned int jarg2, void * jarg3) {
   int jresult ;
   adlx::IADLXGPU2List *arg1 = (adlx::IADLXGPU2List *) 0 ;
   adlx_uint arg2 ;
@@ -17992,7 +17992,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2List_At(void * jarg1, unsigned int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2List_Add_Back(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2List_Add_Back(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXGPU2List *arg1 = (adlx::IADLXGPU2List *) 0 ;
   adlx::IADLXGPU2 *arg2 = (adlx::IADLXGPU2 *) 0 ;
@@ -18006,7 +18006,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXGPU2List_Add_Back(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU2List(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPU2List(void * jarg1) {
   adlx::IADLXGPU2List *arg1 = (adlx::IADLXGPU2List *) 0 ;
   
   arg1 = (adlx::IADLXGPU2List *)jarg1; 
@@ -18014,7 +18014,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXGPU2List(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystem2_IID() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem2_IID() {
   void * jresult ;
   wchar_t *result = 0 ;
   
@@ -18024,7 +18024,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_IADLXSystem2_IID() {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem2_GetMultimediaServices(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem2_GetMultimediaServices(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem2 *arg1 = (adlx::IADLXSystem2 *) 0 ;
   adlx::IADLXMultimediaServices **arg2 = (adlx::IADLXMultimediaServices **) 0 ;
@@ -18038,7 +18038,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem2_GetMultimediaServices(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem2_GetGPUAppsListChangedHandling(void * jarg1, void * jarg2) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem2_GetGPUAppsListChangedHandling(void * jarg1, void * jarg2) {
   int jresult ;
   adlx::IADLXSystem2 *arg1 = (adlx::IADLXSystem2 *) 0 ;
   adlx::IADLXGPUAppsListChangedHandling **arg2 = (adlx::IADLXGPUAppsListChangedHandling **) 0 ;
@@ -18052,7 +18052,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_IADLXSystem2_GetGPUAppsListChangedHandling(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem2(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXSystem2(void * jarg1) {
   adlx::IADLXSystem2 *arg1 = (adlx::IADLXSystem2 *) 0 ;
   
   arg1 = (adlx::IADLXSystem2 *)jarg1; 
@@ -18060,7 +18060,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_IADLXSystem2(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLXHelper() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLXHelper() {
   void * jresult ;
   ADLXHelper *result = 0 ;
   
@@ -18070,7 +18070,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_ADLXHelper() {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLXHelper(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLXHelper(void * jarg1) {
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   
   arg1 = (ADLXHelper *)jarg1; 
@@ -18078,7 +18078,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ADLXHelper(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_InitializeWithCallerAdl(void * jarg1, void * jarg2, void * jarg3) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_InitializeWithCallerAdl(void * jarg1, void * jarg2, void * jarg3) {
   int jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   adlx_handle arg2 = (adlx_handle) 0 ;
@@ -18094,7 +18094,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_InitializeWithCallerAdl(void * jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_Initialize(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_Initialize(void * jarg1) {
   int jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   ADLX_RESULT result;
@@ -18106,7 +18106,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_Initialize(void * jarg1) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_InitializeWithIncompatibleDriver(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_InitializeWithIncompatibleDriver(void * jarg1) {
   int jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   ADLX_RESULT result;
@@ -18118,7 +18118,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_InitializeWithIncompatibleDriver(vo
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_Terminate(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_Terminate(void * jarg1) {
   int jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   ADLX_RESULT result;
@@ -18130,7 +18130,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLXHelper_Terminate(void * jarg1) {
 }
 
 
-SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_ADLXHelper_QueryFullVersion(void * jarg1) {
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_QueryFullVersion(void * jarg1) {
   unsigned long long jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   adlx_uint64 result;
@@ -18142,7 +18142,7 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_ADLXHelper_QueryFullVersion(voi
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXHelper_QueryVersion(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_QueryVersion(void * jarg1) {
   char * jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   char *result = 0 ;
@@ -18154,7 +18154,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXHelper_QueryVersion(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXHelper_GetSystemServices(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_GetSystemServices(void * jarg1) {
   void * jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   adlx::IADLXSystem *result = 0 ;
@@ -18166,7 +18166,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXHelper_GetSystemServices(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXHelper_GetAdlMapping(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLXHelper_GetAdlMapping(void * jarg1) {
   void * jresult ;
   ADLXHelper *arg1 = (ADLXHelper *) 0 ;
   adlx::IADLMapping *result = 0 ;
@@ -18178,7 +18178,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXHelper_GetAdlMapping(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_g_ADLX_set(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_g_ADLX_set(void * jarg1) {
   ::ADLXHelper *arg1 = (::ADLXHelper *) 0 ;
   
   arg1 = (::ADLXHelper *)jarg1; 
@@ -18186,7 +18186,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_g_ADLX_set(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_g_ADLX_get() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_g_ADLX_get() {
   void * jresult ;
   ::ADLXHelper *result = 0 ;
   
@@ -18196,7 +18196,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_g_ADLX_get() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_intP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_intP() {
   void * jresult ;
   adlx_int *result = 0 ;
   
@@ -18206,7 +18206,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_intP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_intP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_intP(int jarg1) {
   void * jresult ;
   adlx_int arg1 ;
   adlx_int *result = 0 ;
@@ -18218,7 +18218,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_intP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_intP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_intP(void * jarg1) {
   adlx_int *arg1 = (adlx_int *) 0 ;
   
   arg1 = (adlx_int *)jarg1; 
@@ -18226,7 +18226,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_intP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_intP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_intP_assign(void * jarg1, int jarg2) {
   adlx_int *arg1 = (adlx_int *) 0 ;
   adlx_int arg2 ;
   
@@ -18236,7 +18236,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_intP_assign(void * jarg1, int jarg2) {
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_intP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_intP_value(void * jarg1) {
   int jresult ;
   adlx_int *arg1 = (adlx_int *) 0 ;
   adlx_int result;
@@ -18248,7 +18248,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_intP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_uintP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_uintP() {
   void * jresult ;
   adlx_uint *result = 0 ;
   
@@ -18258,7 +18258,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_uintP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_uintP(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_uintP(unsigned int jarg1) {
   void * jresult ;
   adlx_uint arg1 ;
   adlx_uint *result = 0 ;
@@ -18270,7 +18270,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_uintP(unsigned int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_uintP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_uintP(void * jarg1) {
   adlx_uint *arg1 = (adlx_uint *) 0 ;
   
   arg1 = (adlx_uint *)jarg1; 
@@ -18278,7 +18278,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_uintP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_uintP_assign(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_uintP_assign(void * jarg1, unsigned int jarg2) {
   adlx_uint *arg1 = (adlx_uint *) 0 ;
   adlx_uint arg2 ;
   
@@ -18288,7 +18288,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_uintP_assign(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_uintP_value(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_adlx_uintP_value(void * jarg1) {
   unsigned int jresult ;
   adlx_uint *arg1 = (adlx_uint *) 0 ;
   adlx_uint result;
@@ -18300,7 +18300,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_uintP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_uint16P() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_uint16P() {
   void * jresult ;
   adlx_uint16 *result = 0 ;
   
@@ -18310,7 +18310,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_uint16P() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_uint16P(unsigned short jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_uint16P(unsigned short jarg1) {
   void * jresult ;
   adlx_uint16 arg1 ;
   adlx_uint16 *result = 0 ;
@@ -18322,7 +18322,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_uint16P(unsigned short jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_uint16P(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_uint16P(void * jarg1) {
   adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
   
   arg1 = (adlx_uint16 *)jarg1; 
@@ -18330,7 +18330,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_uint16P(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_uint16P_assign(void * jarg1, unsigned short jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_uint16P_assign(void * jarg1, unsigned short jarg2) {
   adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
   adlx_uint16 arg2 ;
   
@@ -18340,7 +18340,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_uint16P_assign(void * jarg1, unsigned sh
 }
 
 
-SWIGEXPORT unsigned short SWIGSTDCALL CSharp_adlx_uint16P_value(void * jarg1) {
+SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLXWrapper_adlx_uint16P_value(void * jarg1) {
   unsigned short jresult ;
   adlx_uint16 *arg1 = (adlx_uint16 *) 0 ;
   adlx_uint16 result;
@@ -18352,7 +18352,7 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_adlx_uint16P_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_boolP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_boolP() {
   void * jresult ;
   adlx_bool *result = 0 ;
   
@@ -18362,7 +18362,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_boolP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_boolP(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_boolP(unsigned int jarg1) {
   void * jresult ;
   adlx_bool arg1 ;
   adlx_bool *result = 0 ;
@@ -18374,7 +18374,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_boolP(unsigned int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_boolP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_boolP(void * jarg1) {
   adlx_bool *arg1 = (adlx_bool *) 0 ;
   
   arg1 = (adlx_bool *)jarg1; 
@@ -18382,7 +18382,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_boolP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_boolP_assign(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_boolP_assign(void * jarg1, unsigned int jarg2) {
   adlx_bool *arg1 = (adlx_bool *) 0 ;
   adlx_bool arg2 ;
   
@@ -18392,7 +18392,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_boolP_assign(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_boolP_value(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_adlx_boolP_value(void * jarg1) {
   unsigned int jresult ;
   adlx_bool *arg1 = (adlx_bool *) 0 ;
   adlx_bool result;
@@ -18404,7 +18404,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_boolP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_doubleP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_doubleP() {
   void * jresult ;
   double *result = 0 ;
   
@@ -18414,7 +18414,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_doubleP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_doubleP(double jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_doubleP(double jarg1) {
   void * jresult ;
   double arg1 ;
   double *result = 0 ;
@@ -18426,7 +18426,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_doubleP(double jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_doubleP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_doubleP(void * jarg1) {
   double *arg1 = (double *) 0 ;
   
   arg1 = (double *)jarg1; 
@@ -18434,7 +18434,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_doubleP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_doubleP_assign(void * jarg1, double jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_doubleP_assign(void * jarg1, double jarg2) {
   double *arg1 = (double *) 0 ;
   double arg2 ;
   
@@ -18444,7 +18444,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_doubleP_assign(void * jarg1, double jarg2) {
 }
 
 
-SWIGEXPORT double SWIGSTDCALL CSharp_doubleP_value(void * jarg1) {
+SWIGEXPORT double SWIGSTDCALL CSharp_ADLXWrapper_doubleP_value(void * jarg1) {
   double jresult ;
   double *arg1 = (double *) 0 ;
   double result;
@@ -18456,7 +18456,7 @@ SWIGEXPORT double SWIGSTDCALL CSharp_doubleP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_boolP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_boolP() {
   void * jresult ;
   bool *result = 0 ;
   
@@ -18466,7 +18466,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_boolP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_boolP(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_boolP(unsigned int jarg1) {
   void * jresult ;
   bool arg1 ;
   bool *result = 0 ;
@@ -18478,7 +18478,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_boolP(unsigned int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_boolP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_boolP(void * jarg1) {
   bool *arg1 = (bool *) 0 ;
   
   arg1 = (bool *)jarg1; 
@@ -18486,7 +18486,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_boolP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_boolP_assign(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_boolP_assign(void * jarg1, unsigned int jarg2) {
   bool *arg1 = (bool *) 0 ;
   bool arg2 ;
   
@@ -18496,7 +18496,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_boolP_assign(void * jarg1, unsigned int jarg2
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_boolP_value(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_boolP_value(void * jarg1) {
   unsigned int jresult ;
   bool *arg1 = (bool *) 0 ;
   bool result;
@@ -18508,7 +18508,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_boolP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_wcharP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_wcharP() {
   void * jresult ;
   WCHAR *result = 0 ;
   
@@ -18518,7 +18518,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_wcharP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_wcharP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_wcharP(void * jarg1) {
   void * jresult ;
   WCHAR arg1 ;
   WCHAR *argp1 ;
@@ -18536,7 +18536,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_wcharP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_wcharP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_wcharP(void * jarg1) {
   WCHAR *arg1 = (WCHAR *) 0 ;
   
   arg1 = (WCHAR *)jarg1; 
@@ -18544,7 +18544,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_wcharP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_wcharP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_wcharP_assign(void * jarg1, void * jarg2) {
   WCHAR *arg1 = (WCHAR *) 0 ;
   WCHAR arg2 ;
   WCHAR *argp2 ;
@@ -18560,7 +18560,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_wcharP_assign(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_wcharP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_wcharP_value(void * jarg1) {
   void * jresult ;
   WCHAR *arg1 = (WCHAR *) 0 ;
   WCHAR result;
@@ -18572,7 +18572,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_wcharP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_displayTypeP() {
   void * jresult ;
   ADLX_DISPLAY_TYPE *result = 0 ;
   
@@ -18582,7 +18582,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_displayTypeP(int jarg1) {
   void * jresult ;
   ADLX_DISPLAY_TYPE arg1 ;
   ADLX_DISPLAY_TYPE *result = 0 ;
@@ -18594,7 +18594,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_displayTypeP(void * jarg1) {
   ADLX_DISPLAY_TYPE *arg1 = (ADLX_DISPLAY_TYPE *) 0 ;
   
   arg1 = (ADLX_DISPLAY_TYPE *)jarg1; 
@@ -18602,7 +18602,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTypeP_assign(void * jarg1, int jarg2) {
   ADLX_DISPLAY_TYPE *arg1 = (ADLX_DISPLAY_TYPE *) 0 ;
   ADLX_DISPLAY_TYPE arg2 ;
   
@@ -18612,7 +18612,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTypeP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_DISPLAY_TYPE *arg1 = (ADLX_DISPLAY_TYPE *) 0 ;
   ADLX_DISPLAY_TYPE result;
@@ -18624,7 +18624,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayConnectTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_displayConnectTypeP() {
   void * jresult ;
   ADLX_DISPLAY_CONNECTOR_TYPE *result = 0 ;
   
@@ -18634,7 +18634,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayConnectTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayConnectTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_displayConnectTypeP(int jarg1) {
   void * jresult ;
   ADLX_DISPLAY_CONNECTOR_TYPE arg1 ;
   ADLX_DISPLAY_CONNECTOR_TYPE *result = 0 ;
@@ -18646,7 +18646,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayConnectTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayConnectTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_displayConnectTypeP(void * jarg1) {
   ADLX_DISPLAY_CONNECTOR_TYPE *arg1 = (ADLX_DISPLAY_CONNECTOR_TYPE *) 0 ;
   
   arg1 = (ADLX_DISPLAY_CONNECTOR_TYPE *)jarg1; 
@@ -18654,7 +18654,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayConnectTypeP(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayConnectTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayConnectTypeP_assign(void * jarg1, int jarg2) {
   ADLX_DISPLAY_CONNECTOR_TYPE *arg1 = (ADLX_DISPLAY_CONNECTOR_TYPE *) 0 ;
   ADLX_DISPLAY_CONNECTOR_TYPE arg2 ;
   
@@ -18664,7 +18664,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayConnectTypeP_assign(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayConnectTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayConnectTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_DISPLAY_CONNECTOR_TYPE *arg1 = (ADLX_DISPLAY_CONNECTOR_TYPE *) 0 ;
   ADLX_DISPLAY_CONNECTOR_TYPE result;
@@ -18676,7 +18676,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayConnectTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayScanTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_displayScanTypeP() {
   void * jresult ;
   ADLX_DISPLAY_SCAN_TYPE *result = 0 ;
   
@@ -18686,7 +18686,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayScanTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayScanTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_displayScanTypeP(int jarg1) {
   void * jresult ;
   ADLX_DISPLAY_SCAN_TYPE arg1 ;
   ADLX_DISPLAY_SCAN_TYPE *result = 0 ;
@@ -18698,7 +18698,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayScanTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayScanTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_displayScanTypeP(void * jarg1) {
   ADLX_DISPLAY_SCAN_TYPE *arg1 = (ADLX_DISPLAY_SCAN_TYPE *) 0 ;
   
   arg1 = (ADLX_DISPLAY_SCAN_TYPE *)jarg1; 
@@ -18706,7 +18706,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayScanTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayScanTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayScanTypeP_assign(void * jarg1, int jarg2) {
   ADLX_DISPLAY_SCAN_TYPE *arg1 = (ADLX_DISPLAY_SCAN_TYPE *) 0 ;
   ADLX_DISPLAY_SCAN_TYPE arg2 ;
   
@@ -18716,7 +18716,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayScanTypeP_assign(void * jarg1, in
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayScanTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayScanTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_DISPLAY_SCAN_TYPE *arg1 = (ADLX_DISPLAY_SCAN_TYPE *) 0 ;
   ADLX_DISPLAY_SCAN_TYPE result;
@@ -18728,7 +18728,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayScanTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_sizeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_sizeP() {
   void * jresult ;
   adlx_size *result = 0 ;
   
@@ -18738,7 +18738,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_sizeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_sizeP(unsigned int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_sizeP(unsigned int jarg1) {
   void * jresult ;
   adlx_size arg1 ;
   adlx_size *result = 0 ;
@@ -18750,7 +18750,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_sizeP(unsigned int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_sizeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_sizeP(void * jarg1) {
   adlx_size *arg1 = (adlx_size *) 0 ;
   
   arg1 = (adlx_size *)jarg1; 
@@ -18758,7 +18758,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_sizeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_sizeP_assign(void * jarg1, unsigned int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_sizeP_assign(void * jarg1, unsigned int jarg2) {
   adlx_size *arg1 = (adlx_size *) 0 ;
   adlx_size arg2 ;
   
@@ -18768,7 +18768,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_sizeP_assign(void * jarg1, unsigned int 
 }
 
 
-SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_sizeP_value(void * jarg1) {
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_adlx_sizeP_value(void * jarg1) {
   unsigned int jresult ;
   adlx_size *arg1 = (adlx_size *) 0 ;
   adlx_size result;
@@ -18780,7 +18780,7 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_adlx_sizeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_intRangeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_intRangeP() {
   void * jresult ;
   ADLX_IntRange *result = 0 ;
   
@@ -18790,7 +18790,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_intRangeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_intRangeP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_intRangeP(void * jarg1) {
   void * jresult ;
   ADLX_IntRange arg1 ;
   ADLX_IntRange *argp1 ;
@@ -18808,7 +18808,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_intRangeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_intRangeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_intRangeP(void * jarg1) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   
   arg1 = (ADLX_IntRange *)jarg1; 
@@ -18816,7 +18816,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_intRangeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_intRangeP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_intRangeP_assign(void * jarg1, void * jarg2) {
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   ADLX_IntRange arg2 ;
   ADLX_IntRange *argp2 ;
@@ -18832,7 +18832,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_intRangeP_assign(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_intRangeP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_intRangeP_value(void * jarg1) {
   void * jresult ;
   ADLX_IntRange *arg1 = (ADLX_IntRange *) 0 ;
   ADLX_IntRange result;
@@ -18844,7 +18844,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_intRangeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_orientationP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_orientationP() {
   void * jresult ;
   ADLX_ORIENTATION *result = 0 ;
   
@@ -18854,7 +18854,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_orientationP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_orientationP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_orientationP(int jarg1) {
   void * jresult ;
   ADLX_ORIENTATION arg1 ;
   ADLX_ORIENTATION *result = 0 ;
@@ -18866,7 +18866,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_orientationP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_orientationP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_orientationP(void * jarg1) {
   ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
   
   arg1 = (ADLX_ORIENTATION *)jarg1; 
@@ -18874,7 +18874,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_orientationP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_orientationP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_orientationP_assign(void * jarg1, int jarg2) {
   ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
   ADLX_ORIENTATION arg2 ;
   
@@ -18884,7 +18884,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_orientationP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_orientationP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_orientationP_value(void * jarg1) {
   int jresult ;
   ADLX_ORIENTATION *arg1 = (ADLX_ORIENTATION *) 0 ;
   ADLX_ORIENTATION result;
@@ -18896,7 +18896,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_orientationP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pointP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_pointP() {
   void * jresult ;
   ADLX_Point *result = 0 ;
   
@@ -18906,7 +18906,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pointP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pointP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_pointP(void * jarg1) {
   void * jresult ;
   ADLX_Point arg1 ;
   ADLX_Point *argp1 ;
@@ -18924,7 +18924,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pointP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pointP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_pointP(void * jarg1) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   
   arg1 = (ADLX_Point *)jarg1; 
@@ -18932,7 +18932,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pointP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pointP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_pointP_assign(void * jarg1, void * jarg2) {
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point arg2 ;
   ADLX_Point *argp2 ;
@@ -18948,7 +18948,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pointP_assign(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_pointP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_pointP_value(void * jarg1) {
   void * jresult ;
   ADLX_Point *arg1 = (ADLX_Point *) 0 ;
   ADLX_Point result;
@@ -18960,7 +18960,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_pointP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_3dlutP() {
   void * jresult ;
   ADLX_3DLUT_Data *result = 0 ;
   
@@ -18970,7 +18970,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_3dlutP(void * jarg1) {
   void * jresult ;
   ADLX_3DLUT_Data arg1 ;
   ADLX_3DLUT_Data *argp1 ;
@@ -18988,7 +18988,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_3dlutP(void * jarg1) {
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   
   arg1 = (ADLX_3DLUT_Data *)jarg1; 
@@ -18996,7 +18996,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutP_assign(void * jarg1, void * jarg2) {
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   ADLX_3DLUT_Data arg2 ;
   ADLX_3DLUT_Data *argp2 ;
@@ -19012,7 +19012,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutP_assign(void * jarg1, void * jarg2
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_3dlutP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutP_value(void * jarg1) {
   void * jresult ;
   ADLX_3DLUT_Data *arg1 = (ADLX_3DLUT_Data *) 0 ;
   ADLX_3DLUT_Data result;
@@ -19024,7 +19024,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_3dlutP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_customResolutionP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_customResolutionP() {
   void * jresult ;
   ADLX_CustomResolution *result = 0 ;
   
@@ -19034,7 +19034,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_customResolutionP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_customResolutionP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_customResolutionP(void * jarg1) {
   void * jresult ;
   ADLX_CustomResolution arg1 ;
   ADLX_CustomResolution *argp1 ;
@@ -19052,7 +19052,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_customResolutionP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_customResolutionP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_customResolutionP(void * jarg1) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   
   arg1 = (ADLX_CustomResolution *)jarg1; 
@@ -19060,7 +19060,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_customResolutionP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_customResolutionP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_customResolutionP_assign(void * jarg1, void * jarg2) {
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_CustomResolution arg2 ;
   ADLX_CustomResolution *argp2 ;
@@ -19076,7 +19076,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_customResolutionP_assign(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_customResolutionP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_customResolutionP_value(void * jarg1) {
   void * jresult ;
   ADLX_CustomResolution *arg1 = (ADLX_CustomResolution *) 0 ;
   ADLX_CustomResolution result;
@@ -19088,7 +19088,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_customResolutionP_value(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gamaRampP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_gamaRampP() {
   void * jresult ;
   ADLX_GammaRamp *result = 0 ;
   
@@ -19098,7 +19098,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gamaRampP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gamaRampP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_gamaRampP(void * jarg1) {
   void * jresult ;
   ADLX_GammaRamp arg1 ;
   ADLX_GammaRamp *argp1 ;
@@ -19116,7 +19116,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gamaRampP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gamaRampP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_gamaRampP(void * jarg1) {
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   
   arg1 = (ADLX_GammaRamp *)jarg1; 
@@ -19124,7 +19124,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gamaRampP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gamaRampP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_gamaRampP_assign(void * jarg1, void * jarg2) {
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   ADLX_GammaRamp arg2 ;
   ADLX_GammaRamp *argp2 ;
@@ -19140,7 +19140,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gamaRampP_assign(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_gamaRampP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_gamaRampP_value(void * jarg1) {
   void * jresult ;
   ADLX_GammaRamp *arg1 = (ADLX_GammaRamp *) 0 ;
   ADLX_GammaRamp result;
@@ -19152,7 +19152,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_gamaRampP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gamutColorSpaceP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_gamutColorSpaceP() {
   void * jresult ;
   ADLX_GamutColorSpace *result = 0 ;
   
@@ -19162,7 +19162,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gamutColorSpaceP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gamutColorSpaceP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_gamutColorSpaceP(void * jarg1) {
   void * jresult ;
   ADLX_GamutColorSpace arg1 ;
   ADLX_GamutColorSpace *argp1 ;
@@ -19180,7 +19180,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gamutColorSpaceP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gamutColorSpaceP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_gamutColorSpaceP(void * jarg1) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   
   arg1 = (ADLX_GamutColorSpace *)jarg1; 
@@ -19188,7 +19188,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gamutColorSpaceP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gamutColorSpaceP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_gamutColorSpaceP_assign(void * jarg1, void * jarg2) {
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_GamutColorSpace arg2 ;
   ADLX_GamutColorSpace *argp2 ;
@@ -19204,7 +19204,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gamutColorSpaceP_assign(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_gamutColorSpaceP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_gamutColorSpaceP_value(void * jarg1) {
   void * jresult ;
   ADLX_GamutColorSpace *arg1 = (ADLX_GamutColorSpace *) 0 ;
   ADLX_GamutColorSpace result;
@@ -19216,7 +19216,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_gamutColorSpaceP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_luidP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_luidP() {
   void * jresult ;
   ADLX_LUID *result = 0 ;
   
@@ -19226,7 +19226,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_luidP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_luidP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_luidP(void * jarg1) {
   void * jresult ;
   ADLX_LUID arg1 ;
   ADLX_LUID *argp1 ;
@@ -19244,7 +19244,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_luidP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_luidP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_luidP(void * jarg1) {
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   
   arg1 = (ADLX_LUID *)jarg1; 
@@ -19252,7 +19252,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_luidP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_luidP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_luidP_assign(void * jarg1, void * jarg2) {
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   ADLX_LUID arg2 ;
   ADLX_LUID *argp2 ;
@@ -19268,7 +19268,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_luidP_assign(void * jarg1, void * jarg2)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_luidP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_luidP_value(void * jarg1) {
   void * jresult ;
   ADLX_LUID *arg1 = (ADLX_LUID *) 0 ;
   ADLX_LUID result;
@@ -19280,7 +19280,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_luidP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_rgbP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_rgbP() {
   void * jresult ;
   ADLX_RGB *result = 0 ;
   
@@ -19290,7 +19290,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_rgbP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_rgbP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_rgbP(void * jarg1) {
   void * jresult ;
   ADLX_RGB arg1 ;
   ADLX_RGB *argp1 ;
@@ -19308,7 +19308,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_rgbP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_rgbP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_rgbP(void * jarg1) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   
   arg1 = (ADLX_RGB *)jarg1; 
@@ -19316,7 +19316,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_rgbP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_rgbP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_rgbP_assign(void * jarg1, void * jarg2) {
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   ADLX_RGB arg2 ;
   ADLX_RGB *argp2 ;
@@ -19332,7 +19332,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_rgbP_assign(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_rgbP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_rgbP_value(void * jarg1) {
   void * jresult ;
   ADLX_RGB *arg1 = (ADLX_RGB *) 0 ;
   ADLX_RGB result;
@@ -19344,7 +19344,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_rgbP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_regammaCoeffP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_regammaCoeffP() {
   void * jresult ;
   ADLX_RegammaCoeff *result = 0 ;
   
@@ -19354,7 +19354,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_regammaCoeffP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_regammaCoeffP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_regammaCoeffP(void * jarg1) {
   void * jresult ;
   ADLX_RegammaCoeff arg1 ;
   ADLX_RegammaCoeff *argp1 ;
@@ -19372,7 +19372,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_regammaCoeffP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_regammaCoeffP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_regammaCoeffP(void * jarg1) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   
   arg1 = (ADLX_RegammaCoeff *)jarg1; 
@@ -19380,7 +19380,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_regammaCoeffP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_regammaCoeffP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_regammaCoeffP_assign(void * jarg1, void * jarg2) {
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   ADLX_RegammaCoeff arg2 ;
   ADLX_RegammaCoeff *argp2 ;
@@ -19396,7 +19396,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_regammaCoeffP_assign(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_regammaCoeffP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_regammaCoeffP_value(void * jarg1) {
   void * jresult ;
   ADLX_RegammaCoeff *arg1 = (ADLX_RegammaCoeff *) 0 ;
   ADLX_RegammaCoeff result;
@@ -19408,7 +19408,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_regammaCoeffP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_timingInfoP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_timingInfoP() {
   void * jresult ;
   ADLX_TimingInfo *result = 0 ;
   
@@ -19418,7 +19418,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_timingInfoP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_timingInfoP(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_timingInfoP(void * jarg1) {
   void * jresult ;
   ADLX_TimingInfo arg1 ;
   ADLX_TimingInfo *argp1 ;
@@ -19436,7 +19436,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_timingInfoP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_timingInfoP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_timingInfoP(void * jarg1) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   
   arg1 = (ADLX_TimingInfo *)jarg1; 
@@ -19444,7 +19444,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_timingInfoP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_timingInfoP_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_timingInfoP_assign(void * jarg1, void * jarg2) {
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   ADLX_TimingInfo arg2 ;
   ADLX_TimingInfo *argp2 ;
@@ -19460,7 +19460,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_timingInfoP_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_timingInfoP_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlx_timingInfoP_value(void * jarg1) {
   void * jresult ;
   ADLX_TimingInfo *arg1 = (ADLX_TimingInfo *) 0 ;
   ADLX_TimingInfo result;
@@ -19472,7 +19472,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlx_timingInfoP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutColorSpaceP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_3dlutColorSpaceP() {
   void * jresult ;
   ADLX_3DLUT_COLORSPACE *result = 0 ;
   
@@ -19482,7 +19482,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutColorSpaceP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutColorSpaceP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_3dlutColorSpaceP(int jarg1) {
   void * jresult ;
   ADLX_3DLUT_COLORSPACE arg1 ;
   ADLX_3DLUT_COLORSPACE *result = 0 ;
@@ -19494,7 +19494,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutColorSpaceP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutColorSpaceP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_3dlutColorSpaceP(void * jarg1) {
   ADLX_3DLUT_COLORSPACE *arg1 = (ADLX_3DLUT_COLORSPACE *) 0 ;
   
   arg1 = (ADLX_3DLUT_COLORSPACE *)jarg1; 
@@ -19502,7 +19502,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutColorSpaceP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutColorSpaceP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutColorSpaceP_assign(void * jarg1, int jarg2) {
   ADLX_3DLUT_COLORSPACE *arg1 = (ADLX_3DLUT_COLORSPACE *) 0 ;
   ADLX_3DLUT_COLORSPACE arg2 ;
   
@@ -19512,7 +19512,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutColorSpaceP_assign(void * jarg1, in
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_3dlutColorSpaceP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutColorSpaceP_value(void * jarg1) {
   int jresult ;
   ADLX_3DLUT_COLORSPACE *arg1 = (ADLX_3DLUT_COLORSPACE *) 0 ;
   ADLX_3DLUT_COLORSPACE result;
@@ -19524,7 +19524,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_3dlutColorSpaceP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutTransferFunctionP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_3dlutTransferFunctionP() {
   void * jresult ;
   ADLX_3DLUT_TRANSFER_FUNCTION *result = 0 ;
   
@@ -19534,7 +19534,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_3dlutTransferFunctionP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutTransferFunctionP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_3dlutTransferFunctionP(int jarg1) {
   void * jresult ;
   ADLX_3DLUT_TRANSFER_FUNCTION arg1 ;
   ADLX_3DLUT_TRANSFER_FUNCTION *result = 0 ;
@@ -19546,7 +19546,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_3dlutTransferFunctionP(int jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutTransferFunctionP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_3dlutTransferFunctionP(void * jarg1) {
   ADLX_3DLUT_TRANSFER_FUNCTION *arg1 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
   
   arg1 = (ADLX_3DLUT_TRANSFER_FUNCTION *)jarg1; 
@@ -19554,7 +19554,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_3dlutTransferFunctionP(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutTransferFunctionP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutTransferFunctionP_assign(void * jarg1, int jarg2) {
   ADLX_3DLUT_TRANSFER_FUNCTION *arg1 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION arg2 ;
   
@@ -19564,7 +19564,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_3dlutTransferFunctionP_assign(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_3dlutTransferFunctionP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_3dlutTransferFunctionP_value(void * jarg1) {
   int jresult ;
   ADLX_3DLUT_TRANSFER_FUNCTION *arg1 = (ADLX_3DLUT_TRANSFER_FUNCTION *) 0 ;
   ADLX_3DLUT_TRANSFER_FUNCTION result;
@@ -19576,7 +19576,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_3dlutTransferFunctionP_value(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_anisotropicFilteringLevelP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_anisotropicFilteringLevelP() {
   void * jresult ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL *result = 0 ;
   
@@ -19586,7 +19586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_anisotropicFilteringLevelP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_anisotropicFilteringLevelP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_anisotropicFilteringLevelP(int jarg1) {
   void * jresult ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL arg1 ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL *result = 0 ;
@@ -19598,7 +19598,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_anisotropicFilteringLevelP(int ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_anisotropicFilteringLevelP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_anisotropicFilteringLevelP(void * jarg1) {
   ADLX_ANISOTROPIC_FILTERING_LEVEL *arg1 = (ADLX_ANISOTROPIC_FILTERING_LEVEL *) 0 ;
   
   arg1 = (ADLX_ANISOTROPIC_FILTERING_LEVEL *)jarg1; 
@@ -19606,7 +19606,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_anisotropicFilteringLevelP(void *
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_anisotropicFilteringLevelP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_anisotropicFilteringLevelP_assign(void * jarg1, int jarg2) {
   ADLX_ANISOTROPIC_FILTERING_LEVEL *arg1 = (ADLX_ANISOTROPIC_FILTERING_LEVEL *) 0 ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL arg2 ;
   
@@ -19616,7 +19616,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_anisotropicFilteringLevelP_assign(void *
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_anisotropicFilteringLevelP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_anisotropicFilteringLevelP_value(void * jarg1) {
   int jresult ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL *arg1 = (ADLX_ANISOTROPIC_FILTERING_LEVEL *) 0 ;
   ADLX_ANISOTROPIC_FILTERING_LEVEL result;
@@ -19628,7 +19628,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_anisotropicFilteringLevelP_value(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antilagStateP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_antilagStateP() {
   void * jresult ;
   ADLX_ANTILAG_STATE *result = 0 ;
   
@@ -19638,7 +19638,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antilagStateP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antilagStateP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_antilagStateP(int jarg1) {
   void * jresult ;
   ADLX_ANTILAG_STATE arg1 ;
   ADLX_ANTILAG_STATE *result = 0 ;
@@ -19650,7 +19650,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antilagStateP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antilagStateP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_antilagStateP(void * jarg1) {
   ADLX_ANTILAG_STATE *arg1 = (ADLX_ANTILAG_STATE *) 0 ;
   
   arg1 = (ADLX_ANTILAG_STATE *)jarg1; 
@@ -19658,7 +19658,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antilagStateP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antilagStateP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_antilagStateP_assign(void * jarg1, int jarg2) {
   ADLX_ANTILAG_STATE *arg1 = (ADLX_ANTILAG_STATE *) 0 ;
   ADLX_ANTILAG_STATE arg2 ;
   
@@ -19668,7 +19668,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antilagStateP_assign(void * jarg1, int j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antilagStateP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_antilagStateP_value(void * jarg1) {
   int jresult ;
   ADLX_ANTILAG_STATE *arg1 = (ADLX_ANTILAG_STATE *) 0 ;
   ADLX_ANTILAG_STATE result;
@@ -19680,7 +19680,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antilagStateP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingLevelP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_antiAliasingLevelP() {
   void * jresult ;
   ADLX_ANTI_ALIASING_LEVEL *result = 0 ;
   
@@ -19690,7 +19690,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingLevelP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingLevelP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_antiAliasingLevelP(int jarg1) {
   void * jresult ;
   ADLX_ANTI_ALIASING_LEVEL arg1 ;
   ADLX_ANTI_ALIASING_LEVEL *result = 0 ;
@@ -19702,7 +19702,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingLevelP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingLevelP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_antiAliasingLevelP(void * jarg1) {
   ADLX_ANTI_ALIASING_LEVEL *arg1 = (ADLX_ANTI_ALIASING_LEVEL *) 0 ;
   
   arg1 = (ADLX_ANTI_ALIASING_LEVEL *)jarg1; 
@@ -19710,7 +19710,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingLevelP(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingLevelP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingLevelP_assign(void * jarg1, int jarg2) {
   ADLX_ANTI_ALIASING_LEVEL *arg1 = (ADLX_ANTI_ALIASING_LEVEL *) 0 ;
   ADLX_ANTI_ALIASING_LEVEL arg2 ;
   
@@ -19720,7 +19720,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingLevelP_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingLevelP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingLevelP_value(void * jarg1) {
   int jresult ;
   ADLX_ANTI_ALIASING_LEVEL *arg1 = (ADLX_ANTI_ALIASING_LEVEL *) 0 ;
   ADLX_ANTI_ALIASING_LEVEL result;
@@ -19732,7 +19732,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingLevelP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingMethodP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_antiAliasingMethodP() {
   void * jresult ;
   ADLX_ANTI_ALIASING_METHOD *result = 0 ;
   
@@ -19742,7 +19742,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingMethodP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingMethodP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_antiAliasingMethodP(int jarg1) {
   void * jresult ;
   ADLX_ANTI_ALIASING_METHOD arg1 ;
   ADLX_ANTI_ALIASING_METHOD *result = 0 ;
@@ -19754,7 +19754,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingMethodP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingMethodP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_antiAliasingMethodP(void * jarg1) {
   ADLX_ANTI_ALIASING_METHOD *arg1 = (ADLX_ANTI_ALIASING_METHOD *) 0 ;
   
   arg1 = (ADLX_ANTI_ALIASING_METHOD *)jarg1; 
@@ -19762,7 +19762,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingMethodP(void * jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingMethodP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingMethodP_assign(void * jarg1, int jarg2) {
   ADLX_ANTI_ALIASING_METHOD *arg1 = (ADLX_ANTI_ALIASING_METHOD *) 0 ;
   ADLX_ANTI_ALIASING_METHOD arg2 ;
   
@@ -19772,7 +19772,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingMethodP_assign(void * jarg1,
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingMethodP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingMethodP_value(void * jarg1) {
   int jresult ;
   ADLX_ANTI_ALIASING_METHOD *arg1 = (ADLX_ANTI_ALIASING_METHOD *) 0 ;
   ADLX_ANTI_ALIASING_METHOD result;
@@ -19784,7 +19784,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingMethodP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_antiAliasingModeP() {
   void * jresult ;
   ADLX_ANTI_ALIASING_MODE *result = 0 ;
   
@@ -19794,7 +19794,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_antiAliasingModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_antiAliasingModeP(int jarg1) {
   void * jresult ;
   ADLX_ANTI_ALIASING_MODE arg1 ;
   ADLX_ANTI_ALIASING_MODE *result = 0 ;
@@ -19806,7 +19806,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_antiAliasingModeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_antiAliasingModeP(void * jarg1) {
   ADLX_ANTI_ALIASING_MODE *arg1 = (ADLX_ANTI_ALIASING_MODE *) 0 ;
   
   arg1 = (ADLX_ANTI_ALIASING_MODE *)jarg1; 
@@ -19814,7 +19814,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_antiAliasingModeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingModeP_assign(void * jarg1, int jarg2) {
   ADLX_ANTI_ALIASING_MODE *arg1 = (ADLX_ANTI_ALIASING_MODE *) 0 ;
   ADLX_ANTI_ALIASING_MODE arg2 ;
   
@@ -19824,7 +19824,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_antiAliasingModeP_assign(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingModeP_value(void * jarg1) {
   int jresult ;
   ADLX_ANTI_ALIASING_MODE *arg1 = (ADLX_ANTI_ALIASING_MODE *) 0 ;
   ADLX_ANTI_ALIASING_MODE result;
@@ -19836,7 +19836,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_antiAliasingModeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_colorDepthP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_colorDepthP() {
   void * jresult ;
   ADLX_COLOR_DEPTH *result = 0 ;
   
@@ -19846,7 +19846,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_colorDepthP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_colorDepthP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_colorDepthP(int jarg1) {
   void * jresult ;
   ADLX_COLOR_DEPTH arg1 ;
   ADLX_COLOR_DEPTH *result = 0 ;
@@ -19858,7 +19858,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_colorDepthP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_colorDepthP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_colorDepthP(void * jarg1) {
   ADLX_COLOR_DEPTH *arg1 = (ADLX_COLOR_DEPTH *) 0 ;
   
   arg1 = (ADLX_COLOR_DEPTH *)jarg1; 
@@ -19866,7 +19866,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_colorDepthP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_colorDepthP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_colorDepthP_assign(void * jarg1, int jarg2) {
   ADLX_COLOR_DEPTH *arg1 = (ADLX_COLOR_DEPTH *) 0 ;
   ADLX_COLOR_DEPTH arg2 ;
   
@@ -19876,7 +19876,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_colorDepthP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_colorDepthP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_colorDepthP_value(void * jarg1) {
   int jresult ;
   ADLX_COLOR_DEPTH *arg1 = (ADLX_COLOR_DEPTH *) 0 ;
   ADLX_COLOR_DEPTH result;
@@ -19888,7 +19888,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_colorDepthP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_desktopTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_desktopTypeP() {
   void * jresult ;
   ADLX_DESKTOP_TYPE *result = 0 ;
   
@@ -19898,7 +19898,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_desktopTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_desktopTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_desktopTypeP(int jarg1) {
   void * jresult ;
   ADLX_DESKTOP_TYPE arg1 ;
   ADLX_DESKTOP_TYPE *result = 0 ;
@@ -19910,7 +19910,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_desktopTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_desktopTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_desktopTypeP(void * jarg1) {
   ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
   
   arg1 = (ADLX_DESKTOP_TYPE *)jarg1; 
@@ -19918,7 +19918,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_desktopTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_desktopTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_desktopTypeP_assign(void * jarg1, int jarg2) {
   ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
   ADLX_DESKTOP_TYPE arg2 ;
   
@@ -19928,7 +19928,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_desktopTypeP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_desktopTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_desktopTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_DESKTOP_TYPE *arg1 = (ADLX_DESKTOP_TYPE *) 0 ;
   ADLX_DESKTOP_TYPE result;
@@ -19940,7 +19940,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_desktopTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTimingLimitationP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_displayTimingLimitationP() {
   void * jresult ;
   ADLX_DISPLAY_TIMING_LIMITATION *result = 0 ;
   
@@ -19950,7 +19950,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTimingLimitationP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTimingLimitationP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_displayTimingLimitationP(int jarg1) {
   void * jresult ;
   ADLX_DISPLAY_TIMING_LIMITATION arg1 ;
   ADLX_DISPLAY_TIMING_LIMITATION *result = 0 ;
@@ -19962,7 +19962,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTimingLimitationP(int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTimingLimitationP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_displayTimingLimitationP(void * jarg1) {
   ADLX_DISPLAY_TIMING_LIMITATION *arg1 = (ADLX_DISPLAY_TIMING_LIMITATION *) 0 ;
   
   arg1 = (ADLX_DISPLAY_TIMING_LIMITATION *)jarg1; 
@@ -19970,7 +19970,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTimingLimitationP(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTimingLimitationP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTimingLimitationP_assign(void * jarg1, int jarg2) {
   ADLX_DISPLAY_TIMING_LIMITATION *arg1 = (ADLX_DISPLAY_TIMING_LIMITATION *) 0 ;
   ADLX_DISPLAY_TIMING_LIMITATION arg2 ;
   
@@ -19980,7 +19980,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTimingLimitationP_assign(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTimingLimitationP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTimingLimitationP_value(void * jarg1) {
   int jresult ;
   ADLX_DISPLAY_TIMING_LIMITATION *arg1 = (ADLX_DISPLAY_TIMING_LIMITATION *) 0 ;
   ADLX_DISPLAY_TIMING_LIMITATION result;
@@ -19992,7 +19992,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTimingLimitationP_value(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTimingPolarityP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_displayTimingPolarityP() {
   void * jresult ;
   ADLX_DISPLAY_TIMING_POLARITY *result = 0 ;
   
@@ -20002,7 +20002,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_displayTimingPolarityP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTimingPolarityP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_displayTimingPolarityP(int jarg1) {
   void * jresult ;
   ADLX_DISPLAY_TIMING_POLARITY arg1 ;
   ADLX_DISPLAY_TIMING_POLARITY *result = 0 ;
@@ -20014,7 +20014,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_displayTimingPolarityP(int jarg1)
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTimingPolarityP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_displayTimingPolarityP(void * jarg1) {
   ADLX_DISPLAY_TIMING_POLARITY *arg1 = (ADLX_DISPLAY_TIMING_POLARITY *) 0 ;
   
   arg1 = (ADLX_DISPLAY_TIMING_POLARITY *)jarg1; 
@@ -20022,7 +20022,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_displayTimingPolarityP(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTimingPolarityP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTimingPolarityP_assign(void * jarg1, int jarg2) {
   ADLX_DISPLAY_TIMING_POLARITY *arg1 = (ADLX_DISPLAY_TIMING_POLARITY *) 0 ;
   ADLX_DISPLAY_TIMING_POLARITY arg2 ;
   
@@ -20032,7 +20032,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_displayTimingPolarityP_assign(void * jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTimingPolarityP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_displayTimingPolarityP_value(void * jarg1) {
   int jresult ;
   ADLX_DISPLAY_TIMING_POLARITY *arg1 = (ADLX_DISPLAY_TIMING_POLARITY *) 0 ;
   ADLX_DISPLAY_TIMING_POLARITY result;
@@ -20044,7 +20044,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_displayTimingPolarityP_value(void * jarg1
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_dpLinkRateP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_dpLinkRateP() {
   void * jresult ;
   ADLX_DP_LINK_RATE *result = 0 ;
   
@@ -20054,7 +20054,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_dpLinkRateP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_dpLinkRateP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_dpLinkRateP(int jarg1) {
   void * jresult ;
   ADLX_DP_LINK_RATE arg1 ;
   ADLX_DP_LINK_RATE *result = 0 ;
@@ -20066,7 +20066,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_dpLinkRateP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_dpLinkRateP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_dpLinkRateP(void * jarg1) {
   ADLX_DP_LINK_RATE *arg1 = (ADLX_DP_LINK_RATE *) 0 ;
   
   arg1 = (ADLX_DP_LINK_RATE *)jarg1; 
@@ -20074,7 +20074,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_dpLinkRateP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_dpLinkRateP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_dpLinkRateP_assign(void * jarg1, int jarg2) {
   ADLX_DP_LINK_RATE *arg1 = (ADLX_DP_LINK_RATE *) 0 ;
   ADLX_DP_LINK_RATE arg2 ;
   
@@ -20084,7 +20084,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_dpLinkRateP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_dpLinkRateP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_dpLinkRateP_value(void * jarg1) {
   int jresult ;
   ADLX_DP_LINK_RATE *arg1 = (ADLX_DP_LINK_RATE *) 0 ;
   ADLX_DP_LINK_RATE result;
@@ -20096,7 +20096,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_dpLinkRateP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_GammaTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_GammaTypeP() {
   void * jresult ;
   ADLX_GAMMA_TYPE *result = 0 ;
   
@@ -20106,7 +20106,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_GammaTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_GammaTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_GammaTypeP(int jarg1) {
   void * jresult ;
   ADLX_GAMMA_TYPE arg1 ;
   ADLX_GAMMA_TYPE *result = 0 ;
@@ -20118,7 +20118,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_GammaTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_GammaTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_GammaTypeP(void * jarg1) {
   ADLX_GAMMA_TYPE *arg1 = (ADLX_GAMMA_TYPE *) 0 ;
   
   arg1 = (ADLX_GAMMA_TYPE *)jarg1; 
@@ -20126,7 +20126,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_GammaTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_GammaTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_GammaTypeP_assign(void * jarg1, int jarg2) {
   ADLX_GAMMA_TYPE *arg1 = (ADLX_GAMMA_TYPE *) 0 ;
   ADLX_GAMMA_TYPE arg2 ;
   
@@ -20136,7 +20136,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_GammaTypeP_assign(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_GammaTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_GammaTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_GAMMA_TYPE *arg1 = (ADLX_GAMMA_TYPE *) 0 ;
   ADLX_GAMMA_TYPE result;
@@ -20148,7 +20148,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_GammaTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_GamutSpaceP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_GamutSpaceP() {
   void * jresult ;
   ADLX_GAMUT_SPACE *result = 0 ;
   
@@ -20158,7 +20158,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_GamutSpaceP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_GamutSpaceP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_GamutSpaceP(int jarg1) {
   void * jresult ;
   ADLX_GAMUT_SPACE arg1 ;
   ADLX_GAMUT_SPACE *result = 0 ;
@@ -20170,7 +20170,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_GamutSpaceP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_GamutSpaceP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_GamutSpaceP(void * jarg1) {
   ADLX_GAMUT_SPACE *arg1 = (ADLX_GAMUT_SPACE *) 0 ;
   
   arg1 = (ADLX_GAMUT_SPACE *)jarg1; 
@@ -20178,7 +20178,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_GamutSpaceP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_GamutSpaceP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_GamutSpaceP_assign(void * jarg1, int jarg2) {
   ADLX_GAMUT_SPACE *arg1 = (ADLX_GAMUT_SPACE *) 0 ;
   ADLX_GAMUT_SPACE arg2 ;
   
@@ -20188,7 +20188,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_GamutSpaceP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_GamutSpaceP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_GamutSpaceP_value(void * jarg1) {
   int jresult ;
   ADLX_GAMUT_SPACE *arg1 = (ADLX_GAMUT_SPACE *) 0 ;
   ADLX_GAMUT_SPACE result;
@@ -20200,7 +20200,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_GamutSpaceP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gpuTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_gpuTypeP() {
   void * jresult ;
   ADLX_GPU_TYPE *result = 0 ;
   
@@ -20210,7 +20210,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_gpuTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gpuTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_gpuTypeP(int jarg1) {
   void * jresult ;
   ADLX_GPU_TYPE arg1 ;
   ADLX_GPU_TYPE *result = 0 ;
@@ -20222,7 +20222,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_gpuTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gpuTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_gpuTypeP(void * jarg1) {
   ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
   
   arg1 = (ADLX_GPU_TYPE *)jarg1; 
@@ -20230,7 +20230,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_gpuTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gpuTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_gpuTypeP_assign(void * jarg1, int jarg2) {
   ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
   ADLX_GPU_TYPE arg2 ;
   
@@ -20240,7 +20240,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_gpuTypeP_assign(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_gpuTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_gpuTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_GPU_TYPE *arg1 = (ADLX_GPU_TYPE *) 0 ;
   ADLX_GPU_TYPE result;
@@ -20252,7 +20252,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_gpuTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_hgTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_hgTypeP() {
   void * jresult ;
   ADLX_HG_TYPE *result = 0 ;
   
@@ -20262,7 +20262,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_hgTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_hgTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_hgTypeP(int jarg1) {
   void * jresult ;
   ADLX_HG_TYPE arg1 ;
   ADLX_HG_TYPE *result = 0 ;
@@ -20274,7 +20274,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_hgTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_hgTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_hgTypeP(void * jarg1) {
   ADLX_HG_TYPE *arg1 = (ADLX_HG_TYPE *) 0 ;
   
   arg1 = (ADLX_HG_TYPE *)jarg1; 
@@ -20282,7 +20282,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_hgTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_hgTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_hgTypeP_assign(void * jarg1, int jarg2) {
   ADLX_HG_TYPE *arg1 = (ADLX_HG_TYPE *) 0 ;
   ADLX_HG_TYPE arg2 ;
   
@@ -20292,7 +20292,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_hgTypeP_assign(void * jarg1, int jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_hgTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_hgTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_HG_TYPE *arg1 = (ADLX_HG_TYPE *) 0 ;
   ADLX_HG_TYPE result;
@@ -20304,7 +20304,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_hgTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_i2cLineP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_i2cLineP() {
   void * jresult ;
   ADLX_I2C_LINE *result = 0 ;
   
@@ -20314,7 +20314,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_i2cLineP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_i2cLineP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_i2cLineP(int jarg1) {
   void * jresult ;
   ADLX_I2C_LINE arg1 ;
   ADLX_I2C_LINE *result = 0 ;
@@ -20326,7 +20326,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_i2cLineP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_i2cLineP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_i2cLineP(void * jarg1) {
   ADLX_I2C_LINE *arg1 = (ADLX_I2C_LINE *) 0 ;
   
   arg1 = (ADLX_I2C_LINE *)jarg1; 
@@ -20334,7 +20334,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_i2cLineP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_i2cLineP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_i2cLineP_assign(void * jarg1, int jarg2) {
   ADLX_I2C_LINE *arg1 = (ADLX_I2C_LINE *) 0 ;
   ADLX_I2C_LINE arg2 ;
   
@@ -20344,7 +20344,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_i2cLineP_assign(void * jarg1, int jarg2)
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_i2cLineP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_i2cLineP_value(void * jarg1) {
   int jresult ;
   ADLX_I2C_LINE *arg1 = (ADLX_I2C_LINE *) 0 ;
   ADLX_I2C_LINE result;
@@ -20356,7 +20356,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_i2cLineP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_memoryTimingDescriptionP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_memoryTimingDescriptionP() {
   void * jresult ;
   ADLX_MEMORYTIMING_DESCRIPTION *result = 0 ;
   
@@ -20366,7 +20366,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_memoryTimingDescriptionP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_memoryTimingDescriptionP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_memoryTimingDescriptionP(int jarg1) {
   void * jresult ;
   ADLX_MEMORYTIMING_DESCRIPTION arg1 ;
   ADLX_MEMORYTIMING_DESCRIPTION *result = 0 ;
@@ -20378,7 +20378,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_memoryTimingDescriptionP(int jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_memoryTimingDescriptionP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_memoryTimingDescriptionP(void * jarg1) {
   ADLX_MEMORYTIMING_DESCRIPTION *arg1 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
   
   arg1 = (ADLX_MEMORYTIMING_DESCRIPTION *)jarg1; 
@@ -20386,7 +20386,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_memoryTimingDescriptionP(void * j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_memoryTimingDescriptionP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_memoryTimingDescriptionP_assign(void * jarg1, int jarg2) {
   ADLX_MEMORYTIMING_DESCRIPTION *arg1 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION arg2 ;
   
@@ -20396,7 +20396,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_memoryTimingDescriptionP_assign(void * j
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_memoryTimingDescriptionP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_memoryTimingDescriptionP_value(void * jarg1) {
   int jresult ;
   ADLX_MEMORYTIMING_DESCRIPTION *arg1 = (ADLX_MEMORYTIMING_DESCRIPTION *) 0 ;
   ADLX_MEMORYTIMING_DESCRIPTION result;
@@ -20408,7 +20408,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_memoryTimingDescriptionP_value(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_mgpuModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_mgpuModeP() {
   void * jresult ;
   ADLX_MGPU_MODE *result = 0 ;
   
@@ -20418,7 +20418,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_mgpuModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_mgpuModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_mgpuModeP(int jarg1) {
   void * jresult ;
   ADLX_MGPU_MODE arg1 ;
   ADLX_MGPU_MODE *result = 0 ;
@@ -20430,7 +20430,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_mgpuModeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_mgpuModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_mgpuModeP(void * jarg1) {
   ADLX_MGPU_MODE *arg1 = (ADLX_MGPU_MODE *) 0 ;
   
   arg1 = (ADLX_MGPU_MODE *)jarg1; 
@@ -20438,7 +20438,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_mgpuModeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_mgpuModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_mgpuModeP_assign(void * jarg1, int jarg2) {
   ADLX_MGPU_MODE *arg1 = (ADLX_MGPU_MODE *) 0 ;
   ADLX_MGPU_MODE arg2 ;
   
@@ -20448,7 +20448,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_mgpuModeP_assign(void * jarg1, int jarg2
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_mgpuModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_mgpuModeP_value(void * jarg1) {
   int jresult ;
   ADLX_MGPU_MODE *arg1 = (ADLX_MGPU_MODE *) 0 ;
   ADLX_MGPU_MODE result;
@@ -20460,7 +20460,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_mgpuModeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pciBusTypeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_pciBusTypeP() {
   void * jresult ;
   ADLX_PCI_BUS_TYPE *result = 0 ;
   
@@ -20470,7 +20470,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pciBusTypeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pciBusTypeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_pciBusTypeP(int jarg1) {
   void * jresult ;
   ADLX_PCI_BUS_TYPE arg1 ;
   ADLX_PCI_BUS_TYPE *result = 0 ;
@@ -20482,7 +20482,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pciBusTypeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pciBusTypeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_pciBusTypeP(void * jarg1) {
   ADLX_PCI_BUS_TYPE *arg1 = (ADLX_PCI_BUS_TYPE *) 0 ;
   
   arg1 = (ADLX_PCI_BUS_TYPE *)jarg1; 
@@ -20490,7 +20490,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pciBusTypeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pciBusTypeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_pciBusTypeP_assign(void * jarg1, int jarg2) {
   ADLX_PCI_BUS_TYPE *arg1 = (ADLX_PCI_BUS_TYPE *) 0 ;
   ADLX_PCI_BUS_TYPE arg2 ;
   
@@ -20500,7 +20500,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pciBusTypeP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_pciBusTypeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_pciBusTypeP_value(void * jarg1) {
   int jresult ;
   ADLX_PCI_BUS_TYPE *arg1 = (ADLX_PCI_BUS_TYPE *) 0 ;
   ADLX_PCI_BUS_TYPE result;
@@ -20512,7 +20512,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_pciBusTypeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pixelFormatP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_pixelFormatP() {
   void * jresult ;
   ADLX_PIXEL_FORMAT *result = 0 ;
   
@@ -20522,7 +20522,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_pixelFormatP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pixelFormatP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_pixelFormatP(int jarg1) {
   void * jresult ;
   ADLX_PIXEL_FORMAT arg1 ;
   ADLX_PIXEL_FORMAT *result = 0 ;
@@ -20534,7 +20534,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_pixelFormatP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pixelFormatP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_pixelFormatP(void * jarg1) {
   ADLX_PIXEL_FORMAT *arg1 = (ADLX_PIXEL_FORMAT *) 0 ;
   
   arg1 = (ADLX_PIXEL_FORMAT *)jarg1; 
@@ -20542,7 +20542,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_pixelFormatP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pixelFormatP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_pixelFormatP_assign(void * jarg1, int jarg2) {
   ADLX_PIXEL_FORMAT *arg1 = (ADLX_PIXEL_FORMAT *) 0 ;
   ADLX_PIXEL_FORMAT arg2 ;
   
@@ -20552,7 +20552,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_pixelFormatP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_pixelFormatP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_pixelFormatP_value(void * jarg1) {
   int jresult ;
   ADLX_PIXEL_FORMAT *arg1 = (ADLX_PIXEL_FORMAT *) 0 ;
   ADLX_PIXEL_FORMAT result;
@@ -20564,7 +20564,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_pixelFormatP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_resultP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_resultP() {
   void * jresult ;
   ADLX_RESULT *result = 0 ;
   
@@ -20574,7 +20574,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_resultP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_resultP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_resultP(int jarg1) {
   void * jresult ;
   ADLX_RESULT arg1 ;
   ADLX_RESULT *result = 0 ;
@@ -20586,7 +20586,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_resultP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_resultP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_resultP(void * jarg1) {
   ADLX_RESULT *arg1 = (ADLX_RESULT *) 0 ;
   
   arg1 = (ADLX_RESULT *)jarg1; 
@@ -20594,7 +20594,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_resultP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_resultP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_resultP_assign(void * jarg1, int jarg2) {
   ADLX_RESULT *arg1 = (ADLX_RESULT *) 0 ;
   ADLX_RESULT arg2 ;
   
@@ -20604,7 +20604,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_resultP_assign(void * jarg1, int jarg2) 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_resultP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_resultP_value(void * jarg1) {
   int jresult ;
   ADLX_RESULT *arg1 = (ADLX_RESULT *) 0 ;
   ADLX_RESULT result;
@@ -20616,7 +20616,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_resultP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_scaleModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_scaleModeP() {
   void * jresult ;
   ADLX_SCALE_MODE *result = 0 ;
   
@@ -20626,7 +20626,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_scaleModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_scaleModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_scaleModeP(int jarg1) {
   void * jresult ;
   ADLX_SCALE_MODE arg1 ;
   ADLX_SCALE_MODE *result = 0 ;
@@ -20638,7 +20638,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_scaleModeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_scaleModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_scaleModeP(void * jarg1) {
   ADLX_SCALE_MODE *arg1 = (ADLX_SCALE_MODE *) 0 ;
   
   arg1 = (ADLX_SCALE_MODE *)jarg1; 
@@ -20646,7 +20646,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_scaleModeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_scaleModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_scaleModeP_assign(void * jarg1, int jarg2) {
   ADLX_SCALE_MODE *arg1 = (ADLX_SCALE_MODE *) 0 ;
   ADLX_SCALE_MODE arg2 ;
   
@@ -20656,7 +20656,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_scaleModeP_assign(void * jarg1, int jarg
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_scaleModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_scaleModeP_value(void * jarg1) {
   int jresult ;
   ADLX_SCALE_MODE *arg1 = (ADLX_SCALE_MODE *) 0 ;
   ADLX_SCALE_MODE result;
@@ -20668,7 +20668,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_scaleModeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_smartshiftEcoInactiveReasonP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_smartshiftEcoInactiveReasonP() {
   void * jresult ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *result = 0 ;
   
@@ -20678,7 +20678,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_smartshiftEcoInactiveReasonP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_smartshiftEcoInactiveReasonP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_smartshiftEcoInactiveReasonP(int jarg1) {
   void * jresult ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON arg1 ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *result = 0 ;
@@ -20690,7 +20690,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_smartshiftEcoInactiveReasonP(int 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_smartshiftEcoInactiveReasonP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_smartshiftEcoInactiveReasonP(void * jarg1) {
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *arg1 = (ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *) 0 ;
   
   arg1 = (ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *)jarg1; 
@@ -20698,7 +20698,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_smartshiftEcoInactiveReasonP(void
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_smartshiftEcoInactiveReasonP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_smartshiftEcoInactiveReasonP_assign(void * jarg1, int jarg2) {
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *arg1 = (ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *) 0 ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON arg2 ;
   
@@ -20708,7 +20708,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_smartshiftEcoInactiveReasonP_assign(void
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_smartshiftEcoInactiveReasonP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_smartshiftEcoInactiveReasonP_value(void * jarg1) {
   int jresult ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *arg1 = (ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *) 0 ;
   ADLX_SMARTSHIFT_ECO_INACTIVE_REASON result;
@@ -20720,7 +20720,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_smartshiftEcoInactiveReasonP_value(void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_ssmBiasModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_ssmBiasModeP() {
   void * jresult ;
   ADLX_SSM_BIAS_MODE *result = 0 ;
   
@@ -20730,7 +20730,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_ssmBiasModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_ssmBiasModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_ssmBiasModeP(int jarg1) {
   void * jresult ;
   ADLX_SSM_BIAS_MODE arg1 ;
   ADLX_SSM_BIAS_MODE *result = 0 ;
@@ -20742,7 +20742,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_ssmBiasModeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_ssmBiasModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_ssmBiasModeP(void * jarg1) {
   ADLX_SSM_BIAS_MODE *arg1 = (ADLX_SSM_BIAS_MODE *) 0 ;
   
   arg1 = (ADLX_SSM_BIAS_MODE *)jarg1; 
@@ -20750,7 +20750,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_ssmBiasModeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_ssmBiasModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_ssmBiasModeP_assign(void * jarg1, int jarg2) {
   ADLX_SSM_BIAS_MODE *arg1 = (ADLX_SSM_BIAS_MODE *) 0 ;
   ADLX_SSM_BIAS_MODE arg2 ;
   
@@ -20760,7 +20760,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_ssmBiasModeP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_ssmBiasModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_ssmBiasModeP_value(void * jarg1) {
   int jresult ;
   ADLX_SSM_BIAS_MODE *arg1 = (ADLX_SSM_BIAS_MODE *) 0 ;
   ADLX_SSM_BIAS_MODE result;
@@ -20772,7 +20772,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_ssmBiasModeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_syncOriginP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_syncOriginP() {
   void * jresult ;
   ADLX_SYNC_ORIGIN *result = 0 ;
   
@@ -20782,7 +20782,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_syncOriginP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_syncOriginP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_syncOriginP(int jarg1) {
   void * jresult ;
   ADLX_SYNC_ORIGIN arg1 ;
   ADLX_SYNC_ORIGIN *result = 0 ;
@@ -20794,7 +20794,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_syncOriginP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_syncOriginP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_syncOriginP(void * jarg1) {
   ADLX_SYNC_ORIGIN *arg1 = (ADLX_SYNC_ORIGIN *) 0 ;
   
   arg1 = (ADLX_SYNC_ORIGIN *)jarg1; 
@@ -20802,7 +20802,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_syncOriginP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_syncOriginP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_syncOriginP_assign(void * jarg1, int jarg2) {
   ADLX_SYNC_ORIGIN *arg1 = (ADLX_SYNC_ORIGIN *) 0 ;
   ADLX_SYNC_ORIGIN arg2 ;
   
@@ -20812,7 +20812,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_syncOriginP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_syncOriginP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_syncOriginP_value(void * jarg1) {
   int jresult ;
   ADLX_SYNC_ORIGIN *arg1 = (ADLX_SYNC_ORIGIN *) 0 ;
   ADLX_SYNC_ORIGIN result;
@@ -20824,7 +20824,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_syncOriginP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_tessellationLevelP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_tessellationLevelP() {
   void * jresult ;
   ADLX_TESSELLATION_LEVEL *result = 0 ;
   
@@ -20834,7 +20834,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_tessellationLevelP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_tessellationLevelP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_tessellationLevelP(int jarg1) {
   void * jresult ;
   ADLX_TESSELLATION_LEVEL arg1 ;
   ADLX_TESSELLATION_LEVEL *result = 0 ;
@@ -20846,7 +20846,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_tessellationLevelP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_tessellationLevelP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_tessellationLevelP(void * jarg1) {
   ADLX_TESSELLATION_LEVEL *arg1 = (ADLX_TESSELLATION_LEVEL *) 0 ;
   
   arg1 = (ADLX_TESSELLATION_LEVEL *)jarg1; 
@@ -20854,7 +20854,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_tessellationLevelP(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_tessellationLevelP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_tessellationLevelP_assign(void * jarg1, int jarg2) {
   ADLX_TESSELLATION_LEVEL *arg1 = (ADLX_TESSELLATION_LEVEL *) 0 ;
   ADLX_TESSELLATION_LEVEL arg2 ;
   
@@ -20864,7 +20864,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_tessellationLevelP_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_tessellationLevelP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_tessellationLevelP_value(void * jarg1) {
   int jresult ;
   ADLX_TESSELLATION_LEVEL *arg1 = (ADLX_TESSELLATION_LEVEL *) 0 ;
   ADLX_TESSELLATION_LEVEL result;
@@ -20876,7 +20876,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_tessellationLevelP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_tessellationModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_tessellationModeP() {
   void * jresult ;
   ADLX_TESSELLATION_MODE *result = 0 ;
   
@@ -20886,7 +20886,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_tessellationModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_tessellationModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_tessellationModeP(int jarg1) {
   void * jresult ;
   ADLX_TESSELLATION_MODE arg1 ;
   ADLX_TESSELLATION_MODE *result = 0 ;
@@ -20898,7 +20898,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_tessellationModeP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_tessellationModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_tessellationModeP(void * jarg1) {
   ADLX_TESSELLATION_MODE *arg1 = (ADLX_TESSELLATION_MODE *) 0 ;
   
   arg1 = (ADLX_TESSELLATION_MODE *)jarg1; 
@@ -20906,7 +20906,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_tessellationModeP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_tessellationModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_tessellationModeP_assign(void * jarg1, int jarg2) {
   ADLX_TESSELLATION_MODE *arg1 = (ADLX_TESSELLATION_MODE *) 0 ;
   ADLX_TESSELLATION_MODE arg2 ;
   
@@ -20916,7 +20916,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_tessellationModeP_assign(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_tessellationModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_tessellationModeP_value(void * jarg1) {
   int jresult ;
   ADLX_TESSELLATION_MODE *arg1 = (ADLX_TESSELLATION_MODE *) 0 ;
   ADLX_TESSELLATION_MODE result;
@@ -20928,7 +20928,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_tessellationModeP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_timingStandardP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_timingStandardP() {
   void * jresult ;
   ADLX_TIMING_STANDARD *result = 0 ;
   
@@ -20938,7 +20938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_timingStandardP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_timingStandardP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_timingStandardP(int jarg1) {
   void * jresult ;
   ADLX_TIMING_STANDARD arg1 ;
   ADLX_TIMING_STANDARD *result = 0 ;
@@ -20950,7 +20950,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_timingStandardP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_timingStandardP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_timingStandardP(void * jarg1) {
   ADLX_TIMING_STANDARD *arg1 = (ADLX_TIMING_STANDARD *) 0 ;
   
   arg1 = (ADLX_TIMING_STANDARD *)jarg1; 
@@ -20958,7 +20958,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_timingStandardP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_timingStandardP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_timingStandardP_assign(void * jarg1, int jarg2) {
   ADLX_TIMING_STANDARD *arg1 = (ADLX_TIMING_STANDARD *) 0 ;
   ADLX_TIMING_STANDARD arg2 ;
   
@@ -20968,7 +20968,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_timingStandardP_assign(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_timingStandardP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_timingStandardP_value(void * jarg1) {
   int jresult ;
   ADLX_TIMING_STANDARD *arg1 = (ADLX_TIMING_STANDARD *) 0 ;
   ADLX_TIMING_STANDARD result;
@@ -20980,7 +20980,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_timingStandardP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_waitForVerticalRefreshModeP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_waitForVerticalRefreshModeP() {
   void * jresult ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *result = 0 ;
   
@@ -20990,7 +20990,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_waitForVerticalRefreshModeP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_waitForVerticalRefreshModeP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_waitForVerticalRefreshModeP(int jarg1) {
   void * jresult ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE arg1 ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *result = 0 ;
@@ -21002,7 +21002,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_waitForVerticalRefreshModeP(int j
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_waitForVerticalRefreshModeP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_waitForVerticalRefreshModeP(void * jarg1) {
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *arg1 = (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *) 0 ;
   
   arg1 = (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *)jarg1; 
@@ -21010,7 +21010,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_waitForVerticalRefreshModeP(void 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_waitForVerticalRefreshModeP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_waitForVerticalRefreshModeP_assign(void * jarg1, int jarg2) {
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *arg1 = (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *) 0 ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE arg2 ;
   
@@ -21020,7 +21020,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_waitForVerticalRefreshModeP_assign(void 
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_waitForVerticalRefreshModeP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_waitForVerticalRefreshModeP_value(void * jarg1) {
   int jresult ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *arg1 = (ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *) 0 ;
   ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE result;
@@ -21032,7 +21032,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_waitForVerticalRefreshModeP_value(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_whitePointP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_whitePointP() {
   void * jresult ;
   ADLX_WHITE_POINT *result = 0 ;
   
@@ -21042,7 +21042,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_whitePointP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_whitePointP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_whitePointP(int jarg1) {
   void * jresult ;
   ADLX_WHITE_POINT arg1 ;
   ADLX_WHITE_POINT *result = 0 ;
@@ -21054,7 +21054,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_whitePointP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_whitePointP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_whitePointP(void * jarg1) {
   ADLX_WHITE_POINT *arg1 = (ADLX_WHITE_POINT *) 0 ;
   
   arg1 = (ADLX_WHITE_POINT *)jarg1; 
@@ -21062,7 +21062,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_whitePointP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_whitePointP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_whitePointP_assign(void * jarg1, int jarg2) {
   ADLX_WHITE_POINT *arg1 = (ADLX_WHITE_POINT *) 0 ;
   ADLX_WHITE_POINT arg2 ;
   
@@ -21072,7 +21072,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_whitePointP_assign(void * jarg1, int jar
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_whitePointP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_whitePointP_value(void * jarg1) {
   int jresult ;
   ADLX_WHITE_POINT *arg1 = (ADLX_WHITE_POINT *) 0 ;
   ADLX_WHITE_POINT result;
@@ -21084,7 +21084,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_whitePointP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_logDestinationP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_logDestinationP() {
   void * jresult ;
   ADLX_LOG_DESTINATION *result = 0 ;
   
@@ -21094,7 +21094,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_logDestinationP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_logDestinationP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_logDestinationP(int jarg1) {
   void * jresult ;
   ADLX_LOG_DESTINATION arg1 ;
   ADLX_LOG_DESTINATION *result = 0 ;
@@ -21106,7 +21106,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_logDestinationP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_logDestinationP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_logDestinationP(void * jarg1) {
   ADLX_LOG_DESTINATION *arg1 = (ADLX_LOG_DESTINATION *) 0 ;
   
   arg1 = (ADLX_LOG_DESTINATION *)jarg1; 
@@ -21114,7 +21114,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_logDestinationP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_logDestinationP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_logDestinationP_assign(void * jarg1, int jarg2) {
   ADLX_LOG_DESTINATION *arg1 = (ADLX_LOG_DESTINATION *) 0 ;
   ADLX_LOG_DESTINATION arg2 ;
   
@@ -21124,7 +21124,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_logDestinationP_assign(void * jarg1, int
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_logDestinationP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_logDestinationP_value(void * jarg1) {
   int jresult ;
   ADLX_LOG_DESTINATION *arg1 = (ADLX_LOG_DESTINATION *) 0 ;
   ADLX_LOG_DESTINATION result;
@@ -21136,7 +21136,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_logDestinationP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_logSeverityP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_logSeverityP() {
   void * jresult ;
   ADLX_LOG_SEVERITY *result = 0 ;
   
@@ -21146,7 +21146,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_logSeverityP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_logSeverityP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_logSeverityP(int jarg1) {
   void * jresult ;
   ADLX_LOG_SEVERITY arg1 ;
   ADLX_LOG_SEVERITY *result = 0 ;
@@ -21158,7 +21158,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_logSeverityP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_logSeverityP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_logSeverityP(void * jarg1) {
   ADLX_LOG_SEVERITY *arg1 = (ADLX_LOG_SEVERITY *) 0 ;
   
   arg1 = (ADLX_LOG_SEVERITY *)jarg1; 
@@ -21166,7 +21166,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_logSeverityP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_logSeverityP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_logSeverityP_assign(void * jarg1, int jarg2) {
   ADLX_LOG_SEVERITY *arg1 = (ADLX_LOG_SEVERITY *) 0 ;
   ADLX_LOG_SEVERITY arg2 ;
   
@@ -21176,7 +21176,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_logSeverityP_assign(void * jarg1, int ja
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_logSeverityP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_logSeverityP_value(void * jarg1) {
   int jresult ;
   ADLX_LOG_SEVERITY *arg1 = (ADLX_LOG_SEVERITY *) 0 ;
   ADLX_LOG_SEVERITY result;
@@ -21188,7 +21188,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_logSeverityP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_appGpuDependencyP() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_appGpuDependencyP() {
   void * jresult ;
   ADLX_APP_GPU_DEPENDENCY *result = 0 ;
   
@@ -21198,7 +21198,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlx_appGpuDependencyP() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_appGpuDependencyP(int jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_appGpuDependencyP(int jarg1) {
   void * jresult ;
   ADLX_APP_GPU_DEPENDENCY arg1 ;
   ADLX_APP_GPU_DEPENDENCY *result = 0 ;
@@ -21210,7 +21210,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlx_appGpuDependencyP(int jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_appGpuDependencyP(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_appGpuDependencyP(void * jarg1) {
   ADLX_APP_GPU_DEPENDENCY *arg1 = (ADLX_APP_GPU_DEPENDENCY *) 0 ;
   
   arg1 = (ADLX_APP_GPU_DEPENDENCY *)jarg1; 
@@ -21218,7 +21218,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlx_appGpuDependencyP(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlx_appGpuDependencyP_assign(void * jarg1, int jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_appGpuDependencyP_assign(void * jarg1, int jarg2) {
   ADLX_APP_GPU_DEPENDENCY *arg1 = (ADLX_APP_GPU_DEPENDENCY *) 0 ;
   ADLX_APP_GPU_DEPENDENCY arg2 ;
   
@@ -21228,7 +21228,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlx_appGpuDependencyP_assign(void * jarg1, i
 }
 
 
-SWIGEXPORT int SWIGSTDCALL CSharp_adlx_appGpuDependencyP_value(void * jarg1) {
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_appGpuDependencyP_value(void * jarg1) {
   int jresult ;
   ADLX_APP_GPU_DEPENDENCY *arg1 = (ADLX_APP_GPU_DEPENDENCY *) 0 ;
   ADLX_APP_GPU_DEPENDENCY result;
@@ -21240,7 +21240,7 @@ SWIGEXPORT int SWIGSTDCALL CSharp_adlx_appGpuDependencyP_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySerP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displaySerP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices **result = 0 ;
   
@@ -21250,7 +21250,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySerP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySerP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displaySerP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices *arg1 = (adlx::IADLXDisplayServices *) 0 ;
   adlx::IADLXDisplayServices **result = 0 ;
@@ -21262,7 +21262,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySerP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySerP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displaySerP_Ptr(void * jarg1) {
   adlx::IADLXDisplayServices **arg1 = (adlx::IADLXDisplayServices **) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices **)jarg1; 
@@ -21270,7 +21270,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySerP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displaySerP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displaySerP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayServices **arg1 = (adlx::IADLXDisplayServices **) 0 ;
   adlx::IADLXDisplayServices *arg2 = (adlx::IADLXDisplayServices *) 0 ;
   
@@ -21280,7 +21280,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displaySerP_Ptr_assign(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displaySerP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displaySerP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices **arg1 = (adlx::IADLXDisplayServices **) 0 ;
   adlx::IADLXDisplayServices *result = 0 ;
@@ -21292,7 +21292,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displaySerP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer1P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displaySer1P_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices1 **result = 0 ;
   
@@ -21302,7 +21302,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer1P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer1P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displaySer1P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices1 *arg1 = (adlx::IADLXDisplayServices1 *) 0 ;
   adlx::IADLXDisplayServices1 **result = 0 ;
@@ -21314,7 +21314,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer1P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displaySer1P_Ptr(void * jarg1) {
   adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices1 **)jarg1; 
@@ -21322,7 +21322,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displaySer1P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displaySer1P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
   adlx::IADLXDisplayServices1 *arg2 = (adlx::IADLXDisplayServices1 *) 0 ;
   
@@ -21332,7 +21332,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displaySer1P_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer1P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displaySer1P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices1 **arg1 = (adlx::IADLXDisplayServices1 **) 0 ;
   adlx::IADLXDisplayServices1 *result = 0 ;
@@ -21344,7 +21344,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer1P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer2P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displaySer2P_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices2 **result = 0 ;
   
@@ -21354,7 +21354,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer2P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer2P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displaySer2P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices2 *arg1 = (adlx::IADLXDisplayServices2 *) 0 ;
   adlx::IADLXDisplayServices2 **result = 0 ;
@@ -21366,7 +21366,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer2P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer2P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displaySer2P_Ptr(void * jarg1) {
   adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices2 **)jarg1; 
@@ -21374,7 +21374,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer2P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displaySer2P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displaySer2P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
   adlx::IADLXDisplayServices2 *arg2 = (adlx::IADLXDisplayServices2 *) 0 ;
   
@@ -21384,7 +21384,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displaySer2P_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer2P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displaySer2P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices2 **arg1 = (adlx::IADLXDisplayServices2 **) 0 ;
   adlx::IADLXDisplayServices2 *result = 0 ;
@@ -21396,7 +21396,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer2P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer3P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displaySer3P_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayServices3 **result = 0 ;
   
@@ -21406,7 +21406,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displaySer3P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer3P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displaySer3P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices3 *arg1 = (adlx::IADLXDisplayServices3 *) 0 ;
   adlx::IADLXDisplayServices3 **result = 0 ;
@@ -21418,7 +21418,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displaySer3P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer3P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displaySer3P_Ptr(void * jarg1) {
   adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
   
   arg1 = (adlx::IADLXDisplayServices3 **)jarg1; 
@@ -21426,7 +21426,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displaySer3P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displaySer3P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displaySer3P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
   adlx::IADLXDisplayServices3 *arg2 = (adlx::IADLXDisplayServices3 *) 0 ;
   
@@ -21436,7 +21436,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displaySer3P_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer3P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displaySer3P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayServices3 **arg1 = (adlx::IADLXDisplayServices3 **) 0 ;
   adlx::IADLXDisplayServices3 *result = 0 ;
@@ -21448,7 +21448,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displaySer3P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayListP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayList **result = 0 ;
   
@@ -21458,7 +21458,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayList *arg1 = (adlx::IADLXDisplayList *) 0 ;
   adlx::IADLXDisplayList **result = 0 ;
@@ -21470,7 +21470,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayListP_Ptr(void * jarg1) {
   adlx::IADLXDisplayList **arg1 = (adlx::IADLXDisplayList **) 0 ;
   
   arg1 = (adlx::IADLXDisplayList **)jarg1; 
@@ -21478,7 +21478,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayList **arg1 = (adlx::IADLXDisplayList **) 0 ;
   adlx::IADLXDisplayList *arg2 = (adlx::IADLXDisplayList *) 0 ;
   
@@ -21488,7 +21488,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayListP_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayList **arg1 = (adlx::IADLXDisplayList **) 0 ;
   adlx::IADLXDisplayList *result = 0 ;
@@ -21500,7 +21500,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayListP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplay **result = 0 ;
   
@@ -21510,7 +21510,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplay *arg1 = (adlx::IADLXDisplay *) 0 ;
   adlx::IADLXDisplay **result = 0 ;
@@ -21522,7 +21522,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayP_Ptr(void * jarg1) {
   adlx::IADLXDisplay **arg1 = (adlx::IADLXDisplay **) 0 ;
   
   arg1 = (adlx::IADLXDisplay **)jarg1; 
@@ -21530,7 +21530,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplay **arg1 = (adlx::IADLXDisplay **) 0 ;
   adlx::IADLXDisplay *arg2 = (adlx::IADLXDisplay *) 0 ;
   
@@ -21540,7 +21540,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayP_Ptr_assign(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplay **arg1 = (adlx::IADLXDisplay **) 0 ;
   adlx::IADLXDisplay *result = 0 ;
@@ -21552,7 +21552,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayChangeHandlP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayChangeHandlP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayChangedHandling **result = 0 ;
   
@@ -21562,7 +21562,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayChangeHandlP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayChangeHandlP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayChangeHandlP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayChangedHandling *arg1 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   adlx::IADLXDisplayChangedHandling **result = 0 ;
@@ -21574,7 +21574,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayChangeHandlP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayChangeHandlP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayChangeHandlP_Ptr(void * jarg1) {
   adlx::IADLXDisplayChangedHandling **arg1 = (adlx::IADLXDisplayChangedHandling **) 0 ;
   
   arg1 = (adlx::IADLXDisplayChangedHandling **)jarg1; 
@@ -21582,7 +21582,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayChangeHandlP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayChangeHandlP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayChangedHandling **arg1 = (adlx::IADLXDisplayChangedHandling **) 0 ;
   adlx::IADLXDisplayChangedHandling *arg2 = (adlx::IADLXDisplayChangedHandling *) 0 ;
   
@@ -21592,7 +21592,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayChangeHandlP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayChangedHandling **arg1 = (adlx::IADLXDisplayChangedHandling **) 0 ;
   adlx::IADLXDisplayChangedHandling *result = 0 ;
@@ -21604,7 +21604,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayChangeHandlP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopSerP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_desktopSerP_Ptr() {
   void * jresult ;
   adlx::IADLXDesktopServices **result = 0 ;
   
@@ -21614,7 +21614,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopSerP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopSerP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_desktopSerP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopServices *arg1 = (adlx::IADLXDesktopServices *) 0 ;
   adlx::IADLXDesktopServices **result = 0 ;
@@ -21626,7 +21626,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopSerP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopSerP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_desktopSerP_Ptr(void * jarg1) {
   adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
   
   arg1 = (adlx::IADLXDesktopServices **)jarg1; 
@@ -21634,7 +21634,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopSerP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_desktopSerP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_desktopSerP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
   adlx::IADLXDesktopServices *arg2 = (adlx::IADLXDesktopServices *) 0 ;
   
@@ -21644,7 +21644,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_desktopSerP_Ptr_assign(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_desktopSerP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_desktopSerP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopServices **arg1 = (adlx::IADLXDesktopServices **) 0 ;
   adlx::IADLXDesktopServices *result = 0 ;
@@ -21656,7 +21656,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_desktopSerP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_desktopListP_Ptr() {
   void * jresult ;
   adlx::IADLXDesktopList **result = 0 ;
   
@@ -21666,7 +21666,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_desktopListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopList *arg1 = (adlx::IADLXDesktopList *) 0 ;
   adlx::IADLXDesktopList **result = 0 ;
@@ -21678,7 +21678,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_desktopListP_Ptr(void * jarg1) {
   adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
   
   arg1 = (adlx::IADLXDesktopList **)jarg1; 
@@ -21686,7 +21686,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_desktopListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_desktopListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
   adlx::IADLXDesktopList *arg2 = (adlx::IADLXDesktopList *) 0 ;
   
@@ -21696,7 +21696,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_desktopListP_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_desktopListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_desktopListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopList **arg1 = (adlx::IADLXDesktopList **) 0 ;
   adlx::IADLXDesktopList *result = 0 ;
@@ -21708,7 +21708,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_desktopListP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_desktopP_Ptr() {
   void * jresult ;
   adlx::IADLXDesktop **result = 0 ;
   
@@ -21718,7 +21718,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_desktopP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktop *arg1 = (adlx::IADLXDesktop *) 0 ;
   adlx::IADLXDesktop **result = 0 ;
@@ -21730,7 +21730,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_desktopP_Ptr(void * jarg1) {
   adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
   
   arg1 = (adlx::IADLXDesktop **)jarg1; 
@@ -21738,7 +21738,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_desktopP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_desktopP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
   adlx::IADLXDesktop *arg2 = (adlx::IADLXDesktop *) 0 ;
   
@@ -21748,7 +21748,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_desktopP_Ptr_assign(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_desktopP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_desktopP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktop **arg1 = (adlx::IADLXDesktop **) 0 ;
   adlx::IADLXDesktop *result = 0 ;
@@ -21760,7 +21760,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_desktopP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopChangeHandlP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_desktopChangeHandlP_Ptr() {
   void * jresult ;
   adlx::IADLXDesktopChangedHandling **result = 0 ;
   
@@ -21770,7 +21770,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_desktopChangeHandlP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopChangeHandlP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_desktopChangeHandlP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopChangedHandling *arg1 = (adlx::IADLXDesktopChangedHandling *) 0 ;
   adlx::IADLXDesktopChangedHandling **result = 0 ;
@@ -21782,7 +21782,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_desktopChangeHandlP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopChangeHandlP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_desktopChangeHandlP_Ptr(void * jarg1) {
   adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
   
   arg1 = (adlx::IADLXDesktopChangedHandling **)jarg1; 
@@ -21790,7 +21790,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_desktopChangeHandlP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_desktopChangeHandlP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
   adlx::IADLXDesktopChangedHandling *arg2 = (adlx::IADLXDesktopChangedHandling *) 0 ;
   
@@ -21800,7 +21800,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_desktopChangeHandlP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDesktopChangedHandling **arg1 = (adlx::IADLXDesktopChangedHandling **) 0 ;
   adlx::IADLXDesktopChangedHandling *result = 0 ;
@@ -21812,7 +21812,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_desktopChangeHandlP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_eyefinityDesktopP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_eyefinityDesktopP_Ptr() {
   void * jresult ;
   adlx::IADLXEyefinityDesktop **result = 0 ;
   
@@ -21822,7 +21822,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_eyefinityDesktopP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_eyefinityDesktopP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_eyefinityDesktopP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXEyefinityDesktop *arg1 = (adlx::IADLXEyefinityDesktop *) 0 ;
   adlx::IADLXEyefinityDesktop **result = 0 ;
@@ -21834,7 +21834,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_eyefinityDesktopP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_eyefinityDesktopP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_eyefinityDesktopP_Ptr(void * jarg1) {
   adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
   
   arg1 = (adlx::IADLXEyefinityDesktop **)jarg1; 
@@ -21842,7 +21842,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_eyefinityDesktopP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_eyefinityDesktopP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
   adlx::IADLXEyefinityDesktop *arg2 = (adlx::IADLXEyefinityDesktop *) 0 ;
   
@@ -21852,7 +21852,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_assign(void * jarg1, vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_eyefinityDesktopP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXEyefinityDesktop **arg1 = (adlx::IADLXEyefinityDesktop **) 0 ;
   adlx::IADLXEyefinityDesktop *result = 0 ;
@@ -21864,7 +21864,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_eyefinityDesktopP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_simpleEyefinityP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_simpleEyefinityP_Ptr() {
   void * jresult ;
   adlx::IADLXSimpleEyefinity **result = 0 ;
   
@@ -21874,7 +21874,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_simpleEyefinityP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_simpleEyefinityP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_simpleEyefinityP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXSimpleEyefinity *arg1 = (adlx::IADLXSimpleEyefinity *) 0 ;
   adlx::IADLXSimpleEyefinity **result = 0 ;
@@ -21886,7 +21886,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_simpleEyefinityP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_simpleEyefinityP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_simpleEyefinityP_Ptr(void * jarg1) {
   adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
   
   arg1 = (adlx::IADLXSimpleEyefinity **)jarg1; 
@@ -21894,7 +21894,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_simpleEyefinityP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_simpleEyefinityP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
   adlx::IADLXSimpleEyefinity *arg2 = (adlx::IADLXSimpleEyefinity *) 0 ;
   
@@ -21904,7 +21904,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_assign(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_simpleEyefinityP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXSimpleEyefinity **arg1 = (adlx::IADLXSimpleEyefinity **) 0 ;
   adlx::IADLXSimpleEyefinity *result = 0 ;
@@ -21916,7 +21916,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_simpleEyefinityP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpuP_Ptr() {
   void * jresult ;
   adlx::IADLXGPU **result = 0 ;
   
@@ -21926,7 +21926,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpuP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU *arg1 = (adlx::IADLXGPU *) 0 ;
   adlx::IADLXGPU **result = 0 ;
@@ -21938,7 +21938,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpuP_Ptr(void * jarg1) {
   adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
   
   arg1 = (adlx::IADLXGPU **)jarg1; 
@@ -21946,7 +21946,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpuP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpuP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
   adlx::IADLXGPU *arg2 = (adlx::IADLXGPU *) 0 ;
   
@@ -21956,7 +21956,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpuP_Ptr_assign(void * jarg1, void * jarg2) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpuP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpuP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU **arg1 = (adlx::IADLXGPU **) 0 ;
   adlx::IADLXGPU *result = 0 ;
@@ -21968,7 +21968,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpuP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu1P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpu1P_Ptr() {
   void * jresult ;
   adlx::IADLXGPU1 **result = 0 ;
   
@@ -21978,7 +21978,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu1P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu1P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpu1P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU1 *arg1 = (adlx::IADLXGPU1 *) 0 ;
   adlx::IADLXGPU1 **result = 0 ;
@@ -21990,7 +21990,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu1P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpu1P_Ptr(void * jarg1) {
   adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
   
   arg1 = (adlx::IADLXGPU1 **)jarg1; 
@@ -21998,7 +21998,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpu1P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpu1P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
   adlx::IADLXGPU1 *arg2 = (adlx::IADLXGPU1 *) 0 ;
   
@@ -22008,7 +22008,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpu1P_Ptr_assign(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpu1P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpu1P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU1 **arg1 = (adlx::IADLXGPU1 **) 0 ;
   adlx::IADLXGPU1 *result = 0 ;
@@ -22020,7 +22020,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpu1P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu2P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpu2P_Ptr() {
   void * jresult ;
   adlx::IADLXGPU2 **result = 0 ;
   
@@ -22030,7 +22030,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpu2P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu2P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpu2P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU2 *arg1 = (adlx::IADLXGPU2 *) 0 ;
   adlx::IADLXGPU2 **result = 0 ;
@@ -22042,7 +22042,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpu2P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu2P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpu2P_Ptr(void * jarg1) {
   adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
   
   arg1 = (adlx::IADLXGPU2 **)jarg1; 
@@ -22050,7 +22050,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpu2P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpu2P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpu2P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
   adlx::IADLXGPU2 *arg2 = (adlx::IADLXGPU2 *) 0 ;
   
@@ -22060,7 +22060,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpu2P_Ptr_assign(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpu2P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpu2P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPU2 **arg1 = (adlx::IADLXGPU2 **) 0 ;
   adlx::IADLXGPU2 *result = 0 ;
@@ -22072,7 +22072,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpu2P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpuListP_Ptr() {
   void * jresult ;
   adlx::IADLXGPUList **result = 0 ;
   
@@ -22082,7 +22082,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpuListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUList *arg1 = (adlx::IADLXGPUList *) 0 ;
   adlx::IADLXGPUList **result = 0 ;
@@ -22094,7 +22094,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpuListP_Ptr(void * jarg1) {
   adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
   
   arg1 = (adlx::IADLXGPUList **)jarg1; 
@@ -22102,7 +22102,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpuListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpuListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
   adlx::IADLXGPUList *arg2 = (adlx::IADLXGPUList *) 0 ;
   
@@ -22112,7 +22112,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpuListP_Ptr_assign(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpuListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpuListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUList **arg1 = (adlx::IADLXGPUList **) 0 ;
   adlx::IADLXGPUList *result = 0 ;
@@ -22124,7 +22124,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpuListP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlxListP_Ptr() {
   void * jresult ;
   adlx::IADLXList **result = 0 ;
   
@@ -22134,7 +22134,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlxListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXList *arg1 = (adlx::IADLXList *) 0 ;
   adlx::IADLXList **result = 0 ;
@@ -22146,7 +22146,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlxListP_Ptr(void * jarg1) {
   adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
   
   arg1 = (adlx::IADLXList **)jarg1; 
@@ -22154,7 +22154,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlxListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlxListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
   adlx::IADLXList *arg2 = (adlx::IADLXList *) 0 ;
   
@@ -22164,7 +22164,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlxListP_Ptr_assign(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlxListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlxListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXList **arg1 = (adlx::IADLXList **) 0 ;
   adlx::IADLXList *result = 0 ;
@@ -22176,7 +22176,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlxListP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxInterfaceP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlxInterfaceP_Ptr() {
   void * jresult ;
   adlx::IADLXInterface **result = 0 ;
   
@@ -22186,7 +22186,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_adlxInterfaceP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxInterfaceP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlxInterfaceP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXInterface *arg1 = (adlx::IADLXInterface *) 0 ;
   adlx::IADLXInterface **result = 0 ;
@@ -22198,7 +22198,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_adlxInterfaceP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxInterfaceP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlxInterfaceP_Ptr(void * jarg1) {
   adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
   
   arg1 = (adlx::IADLXInterface **)jarg1; 
@@ -22206,7 +22206,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_adlxInterfaceP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlxInterfaceP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
   adlx::IADLXInterface *arg2 = (adlx::IADLXInterface *) 0 ;
   
@@ -22216,7 +22216,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_assign(void * jarg1, void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlxInterfaceP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXInterface **arg1 = (adlx::IADLXInterface **) 0 ;
   adlx::IADLXInterface *result = 0 ;
@@ -22228,7 +22228,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_adlxInterfaceP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuTuningP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpuTuningP_Ptr() {
   void * jresult ;
   adlx::IADLXGPUTuningServices **result = 0 ;
   
@@ -22238,7 +22238,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuTuningP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpuTuningP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUTuningServices *arg1 = (adlx::IADLXGPUTuningServices *) 0 ;
   adlx::IADLXGPUTuningServices **result = 0 ;
@@ -22250,7 +22250,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpuTuningP_Ptr(void * jarg1) {
   adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
   
   arg1 = (adlx::IADLXGPUTuningServices **)jarg1; 
@@ -22258,7 +22258,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpuTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpuTuningP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
   adlx::IADLXGPUTuningServices *arg2 = (adlx::IADLXGPUTuningServices *) 0 ;
   
@@ -22268,7 +22268,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpuTuningP_Ptr_assign(void * jarg1, void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpuTuningP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpuTuningP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUTuningServices **arg1 = (adlx::IADLXGPUTuningServices **) 0 ;
   adlx::IADLXGPUTuningServices *result = 0 ;
@@ -22280,7 +22280,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpuTuningP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualFanTuningP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_manualFanTuningP_Ptr() {
   void * jresult ;
   adlx::IADLXManualFanTuning **result = 0 ;
   
@@ -22290,7 +22290,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualFanTuningP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualFanTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_manualFanTuningP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuning *arg1 = (adlx::IADLXManualFanTuning *) 0 ;
   adlx::IADLXManualFanTuning **result = 0 ;
@@ -22302,7 +22302,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualFanTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualFanTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_manualFanTuningP_Ptr(void * jarg1) {
   adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuning **)jarg1; 
@@ -22310,7 +22310,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualFanTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_manualFanTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_manualFanTuningP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
   adlx::IADLXManualFanTuning *arg2 = (adlx::IADLXManualFanTuning *) 0 ;
   
@@ -22320,7 +22320,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_manualFanTuningP_Ptr_assign(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_manualFanTuningP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_manualFanTuningP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuning **arg1 = (adlx::IADLXManualFanTuning **) 0 ;
   adlx::IADLXManualFanTuning *result = 0 ;
@@ -22332,7 +22332,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_manualFanTuningP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualPowerTuningP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_manualPowerTuningP_Ptr() {
   void * jresult ;
   adlx::IADLXManualPowerTuning **result = 0 ;
   
@@ -22342,7 +22342,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_manualPowerTuningP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualPowerTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_manualPowerTuningP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualPowerTuning *arg1 = (adlx::IADLXManualPowerTuning *) 0 ;
   adlx::IADLXManualPowerTuning **result = 0 ;
@@ -22354,7 +22354,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_manualPowerTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualPowerTuningP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_manualPowerTuningP_Ptr(void * jarg1) {
   adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
   
   arg1 = (adlx::IADLXManualPowerTuning **)jarg1; 
@@ -22362,7 +22362,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_manualPowerTuningP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_manualPowerTuningP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
   adlx::IADLXManualPowerTuning *arg2 = (adlx::IADLXManualPowerTuning *) 0 ;
   
@@ -22372,7 +22372,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_assign(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_manualPowerTuningP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualPowerTuning **arg1 = (adlx::IADLXManualPowerTuning **) 0 ;
   adlx::IADLXManualPowerTuning *result = 0 ;
@@ -22384,7 +22384,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_manualPowerTuningP_Ptr_value(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_performanceP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_performanceP_Ptr() {
   void * jresult ;
   adlx::IADLXPerformanceMonitoringServices **result = 0 ;
   
@@ -22394,7 +22394,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_performanceP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_performanceP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_performanceP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXPerformanceMonitoringServices *arg1 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   adlx::IADLXPerformanceMonitoringServices **result = 0 ;
@@ -22406,7 +22406,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_performanceP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_performanceP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_performanceP_Ptr(void * jarg1) {
   adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
   
   arg1 = (adlx::IADLXPerformanceMonitoringServices **)jarg1; 
@@ -22414,7 +22414,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_performanceP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_performanceP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_performanceP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
   adlx::IADLXPerformanceMonitoringServices *arg2 = (adlx::IADLXPerformanceMonitoringServices *) 0 ;
   
@@ -22424,7 +22424,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_performanceP_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_performanceP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_performanceP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXPerformanceMonitoringServices **arg1 = (adlx::IADLXPerformanceMonitoringServices **) 0 ;
   adlx::IADLXPerformanceMonitoringServices *result = 0 ;
@@ -22436,7 +22436,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_performanceP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_fanTuningStateListP_Ptr() {
   void * jresult ;
   adlx::IADLXManualFanTuningStateList **result = 0 ;
   
@@ -22446,7 +22446,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_fanTuningStateListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuningStateList *arg1 = (adlx::IADLXManualFanTuningStateList *) 0 ;
   adlx::IADLXManualFanTuningStateList **result = 0 ;
@@ -22458,7 +22458,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateListP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_fanTuningStateListP_Ptr(void * jarg1) {
   adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuningStateList **)jarg1; 
@@ -22466,7 +22466,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateListP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_fanTuningStateListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
   adlx::IADLXManualFanTuningStateList *arg2 = (adlx::IADLXManualFanTuningStateList *) 0 ;
   
@@ -22476,7 +22476,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_fanTuningStateListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuningStateList **arg1 = (adlx::IADLXManualFanTuningStateList **) 0 ;
   adlx::IADLXManualFanTuningStateList *result = 0 ;
@@ -22488,7 +22488,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateListP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_fanTuningStateP_Ptr() {
   void * jresult ;
   adlx::IADLXManualFanTuningState **result = 0 ;
   
@@ -22498,7 +22498,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_fanTuningStateP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_fanTuningStateP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuningState *arg1 = (adlx::IADLXManualFanTuningState *) 0 ;
   adlx::IADLXManualFanTuningState **result = 0 ;
@@ -22510,7 +22510,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_fanTuningStateP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_fanTuningStateP_Ptr(void * jarg1) {
   adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
   
   arg1 = (adlx::IADLXManualFanTuningState **)jarg1; 
@@ -22518,7 +22518,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_fanTuningStateP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_fanTuningStateP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
   adlx::IADLXManualFanTuningState *arg2 = (adlx::IADLXManualFanTuningState *) 0 ;
   
@@ -22528,7 +22528,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_fanTuningStateP_Ptr_assign(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_fanTuningStateP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXManualFanTuningState **arg1 = (adlx::IADLXManualFanTuningState **) 0 ;
   adlx::IADLXManualFanTuningState *result = 0 ;
@@ -22540,7 +22540,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_fanTuningStateP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_metricsP_Ptr() {
   void * jresult ;
   adlx::IADLXGPUMetrics **result = 0 ;
   
@@ -22550,7 +22550,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_metricsP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetrics *arg1 = (adlx::IADLXGPUMetrics *) 0 ;
   adlx::IADLXGPUMetrics **result = 0 ;
@@ -22562,7 +22562,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_metricsP_Ptr(void * jarg1) {
   adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
   
   arg1 = (adlx::IADLXGPUMetrics **)jarg1; 
@@ -22570,7 +22570,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_metricsP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_metricsP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
   adlx::IADLXGPUMetrics *arg2 = (adlx::IADLXGPUMetrics *) 0 ;
   
@@ -22580,7 +22580,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_metricsP_Ptr_assign(void * jarg1, void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_metricsP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_metricsP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetrics **arg1 = (adlx::IADLXGPUMetrics **) 0 ;
   adlx::IADLXGPUMetrics *result = 0 ;
@@ -22592,7 +22592,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_metricsP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_metrics1P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_metrics1P_Ptr() {
   void * jresult ;
   adlx::IADLXGPUMetrics1 **result = 0 ;
   
@@ -22602,7 +22602,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_metrics1P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metrics1P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_metrics1P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetrics1 *arg1 = (adlx::IADLXGPUMetrics1 *) 0 ;
   adlx::IADLXGPUMetrics1 **result = 0 ;
@@ -22614,7 +22614,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metrics1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_metrics1P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_metrics1P_Ptr(void * jarg1) {
   adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
   
   arg1 = (adlx::IADLXGPUMetrics1 **)jarg1; 
@@ -22622,7 +22622,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_metrics1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_metrics1P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_metrics1P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
   adlx::IADLXGPUMetrics1 *arg2 = (adlx::IADLXGPUMetrics1 *) 0 ;
   
@@ -22632,7 +22632,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_metrics1P_Ptr_assign(void * jarg1, void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_metrics1P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_metrics1P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetrics1 **arg1 = (adlx::IADLXGPUMetrics1 **) 0 ;
   adlx::IADLXGPUMetrics1 *result = 0 ;
@@ -22644,7 +22644,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_metrics1P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupportP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_metricsSupportP_Ptr() {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport **result = 0 ;
   
@@ -22654,7 +22654,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupportP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupportP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_metricsSupportP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport *arg1 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   adlx::IADLXGPUMetricsSupport **result = 0 ;
@@ -22666,7 +22666,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupportP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupportP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_metricsSupportP_Ptr(void * jarg1) {
   adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsSupport **)jarg1; 
@@ -22674,7 +22674,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupportP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupportP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_metricsSupportP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
   adlx::IADLXGPUMetricsSupport *arg2 = (adlx::IADLXGPUMetricsSupport *) 0 ;
   
@@ -22684,7 +22684,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupportP_Ptr_assign(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupportP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_metricsSupportP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport **arg1 = (adlx::IADLXGPUMetricsSupport **) 0 ;
   adlx::IADLXGPUMetricsSupport *result = 0 ;
@@ -22696,7 +22696,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupportP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupport1P_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_metricsSupport1P_Ptr() {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport1 **result = 0 ;
   
@@ -22706,7 +22706,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_metricsSupport1P_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupport1P_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_metricsSupport1P_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport1 *arg1 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   adlx::IADLXGPUMetricsSupport1 **result = 0 ;
@@ -22718,7 +22718,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_metricsSupport1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupport1P_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_metricsSupport1P_Ptr(void * jarg1) {
   adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsSupport1 **)jarg1; 
@@ -22726,7 +22726,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_metricsSupport1P_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupport1P_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_metricsSupport1P_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
   adlx::IADLXGPUMetricsSupport1 *arg2 = (adlx::IADLXGPUMetricsSupport1 *) 0 ;
   
@@ -22736,7 +22736,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_metricsSupport1P_Ptr_assign(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupport1P_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_metricsSupport1P_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsSupport1 **arg1 = (adlx::IADLXGPUMetricsSupport1 **) 0 ;
   adlx::IADLXGPUMetricsSupport1 *result = 0 ;
@@ -22748,7 +22748,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_metricsSupport1P_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuMetricsListP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_gpuMetricsListP_Ptr() {
   void * jresult ;
   adlx::IADLXGPUMetricsList **result = 0 ;
   
@@ -22758,7 +22758,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_gpuMetricsListP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuMetricsListP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_gpuMetricsListP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsList *arg1 = (adlx::IADLXGPUMetricsList *) 0 ;
   adlx::IADLXGPUMetricsList **result = 0 ;
@@ -22770,7 +22770,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_gpuMetricsListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuMetricsListP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_gpuMetricsListP_Ptr(void * jarg1) {
   adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
   
   arg1 = (adlx::IADLXGPUMetricsList **)jarg1; 
@@ -22778,7 +22778,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_gpuMetricsListP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_gpuMetricsListP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
   adlx::IADLXGPUMetricsList *arg2 = (adlx::IADLXGPUMetricsList *) 0 ;
   
@@ -22788,7 +22788,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_assign(void * jarg1, void
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_gpuMetricsListP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXGPUMetricsList **arg1 = (adlx::IADLXGPUMetricsList **) 0 ;
   adlx::IADLXGPUMetricsList *result = 0 ;
@@ -22800,7 +22800,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_gpuMetricsListP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_charP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_charP_Ptr() {
   void * jresult ;
   char **result = 0 ;
   
@@ -22810,7 +22810,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_charP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_charP_Ptr(char * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_charP_Ptr(char * jarg1) {
   void * jresult ;
   char *arg1 = (char *) 0 ;
   char **result = 0 ;
@@ -22822,7 +22822,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_charP_Ptr(char * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_charP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_charP_Ptr(void * jarg1) {
   char **arg1 = (char **) 0 ;
   
   arg1 = (char **)jarg1; 
@@ -22830,7 +22830,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_charP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_charP_Ptr_assign(void * jarg1, char * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_charP_Ptr_assign(void * jarg1, char * jarg2) {
   char **arg1 = (char **) 0 ;
   char *arg2 = (char *) 0 ;
   
@@ -22840,7 +22840,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_charP_Ptr_assign(void * jarg1, char * jarg2) 
 }
 
 
-SWIGEXPORT char * SWIGSTDCALL CSharp_charP_Ptr_value(void * jarg1) {
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_charP_Ptr_value(void * jarg1) {
   char * jresult ;
   char **arg1 = (char **) 0 ;
   char *result = 0 ;
@@ -22852,7 +22852,7 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_charP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_voidP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_voidP_Ptr() {
   void * jresult ;
   void **result = 0 ;
   
@@ -22862,7 +22862,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_voidP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_voidP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_voidP_Ptr(void * jarg1) {
   void * jresult ;
   void *arg1 = (void *) 0 ;
   void **result = 0 ;
@@ -22874,7 +22874,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_voidP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_voidP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_voidP_Ptr(void * jarg1) {
   void **arg1 = (void **) 0 ;
   
   arg1 = (void **)jarg1; 
@@ -22882,7 +22882,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_voidP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_voidP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_voidP_Ptr_assign(void * jarg1, void * jarg2) {
   void **arg1 = (void **) 0 ;
   void *arg2 = (void *) 0 ;
   
@@ -22892,7 +22892,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_voidP_Ptr_assign(void * jarg1, void * jarg2) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_voidP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_voidP_Ptr_value(void * jarg1) {
   void * jresult ;
   void **arg1 = (void **) 0 ;
   void *result = 0 ;
@@ -22904,7 +22904,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_voidP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_display3DLUTP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_display3DLUTP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplay3DLUT **result = 0 ;
   
@@ -22914,7 +22914,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_display3DLUTP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_display3DLUTP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_display3DLUTP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplay3DLUT *arg1 = (adlx::IADLXDisplay3DLUT *) 0 ;
   adlx::IADLXDisplay3DLUT **result = 0 ;
@@ -22926,7 +22926,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_display3DLUTP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_display3DLUTP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_display3DLUTP_Ptr(void * jarg1) {
   adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
   
   arg1 = (adlx::IADLXDisplay3DLUT **)jarg1; 
@@ -22934,7 +22934,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_display3DLUTP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_display3DLUTP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_display3DLUTP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
   adlx::IADLXDisplay3DLUT *arg2 = (adlx::IADLXDisplay3DLUT *) 0 ;
   
@@ -22944,7 +22944,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_display3DLUTP_Ptr_assign(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_display3DLUTP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_display3DLUTP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplay3DLUT **arg1 = (adlx::IADLXDisplay3DLUT **) 0 ;
   adlx::IADLXDisplay3DLUT *result = 0 ;
@@ -22956,7 +22956,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_display3DLUTP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayColorDepthP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayColorDepthP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayColorDepth **result = 0 ;
   
@@ -22966,7 +22966,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayColorDepthP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayColorDepthP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayColorDepthP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayColorDepth *arg1 = (adlx::IADLXDisplayColorDepth *) 0 ;
   adlx::IADLXDisplayColorDepth **result = 0 ;
@@ -22978,7 +22978,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayColorDepthP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayColorDepthP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayColorDepthP_Ptr(void * jarg1) {
   adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
   
   arg1 = (adlx::IADLXDisplayColorDepth **)jarg1; 
@@ -22986,7 +22986,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayColorDepthP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayColorDepthP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayColorDepthP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
   adlx::IADLXDisplayColorDepth *arg2 = (adlx::IADLXDisplayColorDepth *) 0 ;
   
@@ -22996,7 +22996,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayColorDepthP_Ptr_assign(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayColorDepthP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayColorDepthP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayColorDepth **arg1 = (adlx::IADLXDisplayColorDepth **) 0 ;
   adlx::IADLXDisplayColorDepth *result = 0 ;
@@ -23008,7 +23008,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayColorDepthP_Ptr_value(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomColorP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayCustomColorP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayCustomColor **result = 0 ;
   
@@ -23018,7 +23018,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomColorP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomColorP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayCustomColorP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayCustomColor *arg1 = (adlx::IADLXDisplayCustomColor *) 0 ;
   adlx::IADLXDisplayCustomColor **result = 0 ;
@@ -23030,7 +23030,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomColorP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomColorP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayCustomColorP_Ptr(void * jarg1) {
   adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
   
   arg1 = (adlx::IADLXDisplayCustomColor **)jarg1; 
@@ -23038,7 +23038,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomColorP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomColorP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayCustomColorP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
   adlx::IADLXDisplayCustomColor *arg2 = (adlx::IADLXDisplayCustomColor *) 0 ;
   
@@ -23048,7 +23048,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomColorP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomColorP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayCustomColorP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayCustomColor **arg1 = (adlx::IADLXDisplayCustomColor **) 0 ;
   adlx::IADLXDisplayCustomColor *result = 0 ;
@@ -23060,7 +23060,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomColorP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomResolutionP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayCustomResolutionP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayCustomResolution **result = 0 ;
   
@@ -23070,7 +23070,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCustomResolutionP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomResolutionP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayCustomResolutionP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayCustomResolution *arg1 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   adlx::IADLXDisplayCustomResolution **result = 0 ;
@@ -23082,7 +23082,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCustomResolutionP_Ptr(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomResolutionP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayCustomResolutionP_Ptr(void * jarg1) {
   adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
   
   arg1 = (adlx::IADLXDisplayCustomResolution **)jarg1; 
@@ -23090,7 +23090,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCustomResolutionP_Ptr(void * ja
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayCustomResolutionP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
   adlx::IADLXDisplayCustomResolution *arg2 = (adlx::IADLXDisplayCustomResolution *) 0 ;
   
@@ -23100,7 +23100,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_assign(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayCustomResolutionP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayCustomResolution **arg1 = (adlx::IADLXDisplayCustomResolution **) 0 ;
   adlx::IADLXDisplayCustomResolution *result = 0 ;
@@ -23112,7 +23112,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayCustomResolutionP_Ptr_value(void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayFreeSyncP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayFreeSyncP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayFreeSync **result = 0 ;
   
@@ -23122,7 +23122,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayFreeSyncP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayFreeSyncP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayFreeSyncP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayFreeSync *arg1 = (adlx::IADLXDisplayFreeSync *) 0 ;
   adlx::IADLXDisplayFreeSync **result = 0 ;
@@ -23134,7 +23134,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayFreeSyncP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayFreeSyncP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayFreeSyncP_Ptr(void * jarg1) {
   adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
   
   arg1 = (adlx::IADLXDisplayFreeSync **)jarg1; 
@@ -23142,7 +23142,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayFreeSyncP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayFreeSyncP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
   adlx::IADLXDisplayFreeSync *arg2 = (adlx::IADLXDisplayFreeSync *) 0 ;
   
@@ -23152,7 +23152,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_assign(void * jarg1, voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayFreeSyncP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayFreeSync **arg1 = (adlx::IADLXDisplayFreeSync **) 0 ;
   adlx::IADLXDisplayFreeSync *result = 0 ;
@@ -23164,7 +23164,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayFreeSyncP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGPUScalingP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayGPUScalingP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayGPUScaling **result = 0 ;
   
@@ -23174,7 +23174,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGPUScalingP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGPUScalingP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayGPUScalingP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGPUScaling *arg1 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   adlx::IADLXDisplayGPUScaling **result = 0 ;
@@ -23186,7 +23186,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGPUScalingP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGPUScalingP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayGPUScalingP_Ptr(void * jarg1) {
   adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
   
   arg1 = (adlx::IADLXDisplayGPUScaling **)jarg1; 
@@ -23194,7 +23194,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGPUScalingP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayGPUScalingP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
   adlx::IADLXDisplayGPUScaling *arg2 = (adlx::IADLXDisplayGPUScaling *) 0 ;
   
@@ -23204,7 +23204,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_assign(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayGPUScalingP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGPUScaling **arg1 = (adlx::IADLXDisplayGPUScaling **) 0 ;
   adlx::IADLXDisplayGPUScaling *result = 0 ;
@@ -23216,7 +23216,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayGPUScalingP_Ptr_value(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGammaP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayGammaP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayGamma **result = 0 ;
   
@@ -23226,7 +23226,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGammaP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGammaP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayGammaP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGamma *arg1 = (adlx::IADLXDisplayGamma *) 0 ;
   adlx::IADLXDisplayGamma **result = 0 ;
@@ -23238,7 +23238,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGammaP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGammaP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayGammaP_Ptr(void * jarg1) {
   adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamma **)jarg1; 
@@ -23246,7 +23246,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGammaP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayGammaP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayGammaP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
   adlx::IADLXDisplayGamma *arg2 = (adlx::IADLXDisplayGamma *) 0 ;
   
@@ -23256,7 +23256,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayGammaP_Ptr_assign(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayGammaP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayGammaP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGamma **arg1 = (adlx::IADLXDisplayGamma **) 0 ;
   adlx::IADLXDisplayGamma *result = 0 ;
@@ -23268,7 +23268,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayGammaP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGamutP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayGamutP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayGamut **result = 0 ;
   
@@ -23278,7 +23278,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayGamutP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGamutP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayGamutP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGamut *arg1 = (adlx::IADLXDisplayGamut *) 0 ;
   adlx::IADLXDisplayGamut **result = 0 ;
@@ -23290,7 +23290,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayGamutP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGamutP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayGamutP_Ptr(void * jarg1) {
   adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
   
   arg1 = (adlx::IADLXDisplayGamut **)jarg1; 
@@ -23298,7 +23298,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayGamutP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayGamutP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayGamutP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
   adlx::IADLXDisplayGamut *arg2 = (adlx::IADLXDisplayGamut *) 0 ;
   
@@ -23308,7 +23308,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayGamutP_Ptr_assign(void * jarg1, void *
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayGamutP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayGamutP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayGamut **arg1 = (adlx::IADLXDisplayGamut **) 0 ;
   adlx::IADLXDisplayGamut *result = 0 ;
@@ -23320,7 +23320,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayGamutP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayHDCPP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayHDCPP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayHDCP **result = 0 ;
   
@@ -23330,7 +23330,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayHDCPP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayHDCPP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayHDCPP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayHDCP *arg1 = (adlx::IADLXDisplayHDCP *) 0 ;
   adlx::IADLXDisplayHDCP **result = 0 ;
@@ -23342,7 +23342,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayHDCPP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayHDCPP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayHDCPP_Ptr(void * jarg1) {
   adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
   
   arg1 = (adlx::IADLXDisplayHDCP **)jarg1; 
@@ -23350,7 +23350,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayHDCPP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayHDCPP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayHDCPP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
   adlx::IADLXDisplayHDCP *arg2 = (adlx::IADLXDisplayHDCP *) 0 ;
   
@@ -23360,7 +23360,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayHDCPP_Ptr_assign(void * jarg1, void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayHDCPP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayHDCPP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayHDCP **arg1 = (adlx::IADLXDisplayHDCP **) 0 ;
   adlx::IADLXDisplayHDCP *result = 0 ;
@@ -23372,7 +23372,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayHDCPP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayIntegerScalingP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayIntegerScalingP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayIntegerScaling **result = 0 ;
   
@@ -23382,7 +23382,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayIntegerScalingP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayIntegerScalingP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayIntegerScalingP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayIntegerScaling *arg1 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   adlx::IADLXDisplayIntegerScaling **result = 0 ;
@@ -23394,7 +23394,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayIntegerScalingP_Ptr(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayIntegerScalingP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayIntegerScalingP_Ptr(void * jarg1) {
   adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
   
   arg1 = (adlx::IADLXDisplayIntegerScaling **)jarg1; 
@@ -23402,7 +23402,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayIntegerScalingP_Ptr(void * jarg
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayIntegerScalingP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
   adlx::IADLXDisplayIntegerScaling *arg2 = (adlx::IADLXDisplayIntegerScaling *) 0 ;
   
@@ -23412,7 +23412,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_assign(void * jarg
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayIntegerScalingP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayIntegerScaling **arg1 = (adlx::IADLXDisplayIntegerScaling **) 0 ;
   adlx::IADLXDisplayIntegerScaling *result = 0 ;
@@ -23424,7 +23424,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayIntegerScalingP_Ptr_value(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayPixelFormatP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayPixelFormatP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayPixelFormat **result = 0 ;
   
@@ -23434,7 +23434,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayPixelFormatP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayPixelFormatP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayPixelFormatP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayPixelFormat *arg1 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   adlx::IADLXDisplayPixelFormat **result = 0 ;
@@ -23446,7 +23446,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayPixelFormatP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayPixelFormatP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayPixelFormatP_Ptr(void * jarg1) {
   adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
   
   arg1 = (adlx::IADLXDisplayPixelFormat **)jarg1; 
@@ -23454,7 +23454,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayPixelFormatP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayPixelFormatP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
   adlx::IADLXDisplayPixelFormat *arg2 = (adlx::IADLXDisplayPixelFormat *) 0 ;
   
@@ -23464,7 +23464,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayPixelFormatP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayPixelFormat **arg1 = (adlx::IADLXDisplayPixelFormat **) 0 ;
   adlx::IADLXDisplayPixelFormat *result = 0 ;
@@ -23476,7 +23476,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayPixelFormatP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayScalingModeP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayScalingModeP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayScalingMode **result = 0 ;
   
@@ -23486,7 +23486,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayScalingModeP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayScalingModeP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayScalingModeP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayScalingMode *arg1 = (adlx::IADLXDisplayScalingMode *) 0 ;
   adlx::IADLXDisplayScalingMode **result = 0 ;
@@ -23498,7 +23498,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayScalingModeP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayScalingModeP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayScalingModeP_Ptr(void * jarg1) {
   adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
   
   arg1 = (adlx::IADLXDisplayScalingMode **)jarg1; 
@@ -23506,7 +23506,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayScalingModeP_Ptr(void * jarg1) 
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayScalingModeP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayScalingModeP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
   adlx::IADLXDisplayScalingMode *arg2 = (adlx::IADLXDisplayScalingMode *) 0 ;
   
@@ -23516,7 +23516,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayScalingModeP_Ptr_assign(void * jarg1, 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayScalingModeP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayScalingModeP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayScalingMode **arg1 = (adlx::IADLXDisplayScalingMode **) 0 ;
   adlx::IADLXDisplayScalingMode *result = 0 ;
@@ -23528,7 +23528,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayScalingModeP_Ptr_value(void * jarg1)
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVariBrightP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayVariBrightP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayVariBright **result = 0 ;
   
@@ -23538,7 +23538,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVariBrightP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVariBrightP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayVariBrightP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayVariBright *arg1 = (adlx::IADLXDisplayVariBright *) 0 ;
   adlx::IADLXDisplayVariBright **result = 0 ;
@@ -23550,7 +23550,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVariBrightP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVariBrightP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayVariBrightP_Ptr(void * jarg1) {
   adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
   
   arg1 = (adlx::IADLXDisplayVariBright **)jarg1; 
@@ -23558,7 +23558,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVariBrightP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayVariBrightP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayVariBrightP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
   adlx::IADLXDisplayVariBright *arg2 = (adlx::IADLXDisplayVariBright *) 0 ;
   
@@ -23568,7 +23568,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayVariBrightP_Ptr_assign(void * jarg1, v
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayVariBrightP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayVariBrightP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayVariBright **arg1 = (adlx::IADLXDisplayVariBright **) 0 ;
   adlx::IADLXDisplayVariBright *result = 0 ;
@@ -23580,7 +23580,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayVariBrightP_Ptr_value(void * jarg1) 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVSRP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayVSRP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayVSR **result = 0 ;
   
@@ -23590,7 +23590,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayVSRP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVSRP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayVSRP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayVSR *arg1 = (adlx::IADLXDisplayVSR *) 0 ;
   adlx::IADLXDisplayVSR **result = 0 ;
@@ -23602,7 +23602,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayVSRP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVSRP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayVSRP_Ptr(void * jarg1) {
   adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
   
   arg1 = (adlx::IADLXDisplayVSR **)jarg1; 
@@ -23610,7 +23610,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayVSRP_Ptr(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayVSRP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayVSRP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
   adlx::IADLXDisplayVSR *arg2 = (adlx::IADLXDisplayVSR *) 0 ;
   
@@ -23620,7 +23620,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayVSRP_Ptr_assign(void * jarg1, void * j
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayVSRP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayVSRP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayVSR **arg1 = (adlx::IADLXDisplayVSR **) 0 ;
   adlx::IADLXDisplayVSR *result = 0 ;
@@ -23632,7 +23632,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayVSRP_Ptr_value(void * jarg1) {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDisplayBlankingP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayDisplayBlankingP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayBlanking **result = 0 ;
   
@@ -23642,7 +23642,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDisplayBlankingP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDisplayBlankingP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayDisplayBlankingP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayBlanking *arg1 = (adlx::IADLXDisplayBlanking *) 0 ;
   adlx::IADLXDisplayBlanking **result = 0 ;
@@ -23654,7 +23654,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDisplayBlankingP_Ptr(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDisplayBlankingP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayDisplayBlankingP_Ptr(void * jarg1) {
   adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
   
   arg1 = (adlx::IADLXDisplayBlanking **)jarg1; 
@@ -23662,7 +23662,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDisplayBlankingP_Ptr(void * jar
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayDisplayBlankingP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
   adlx::IADLXDisplayBlanking *arg2 = (adlx::IADLXDisplayBlanking *) 0 ;
   
@@ -23672,7 +23672,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_assign(void * jar
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayDisplayBlankingP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayBlanking **arg1 = (adlx::IADLXDisplayBlanking **) 0 ;
   adlx::IADLXDisplayBlanking *result = 0 ;
@@ -23684,7 +23684,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayDisplayBlankingP_Ptr_value(void * ja
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayConnectivityExperienceP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayConnectivityExperienceP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayConnectivityExperience **result = 0 ;
   
@@ -23694,7 +23694,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayConnectivityExperienceP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayConnectivityExperienceP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayConnectivityExperienceP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayConnectivityExperience *arg1 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   adlx::IADLXDisplayConnectivityExperience **result = 0 ;
@@ -23706,7 +23706,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayConnectivityExperienceP_Ptr(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayConnectivityExperienceP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayConnectivityExperienceP_Ptr(void * jarg1) {
   adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
   
   arg1 = (adlx::IADLXDisplayConnectivityExperience **)jarg1; 
@@ -23714,7 +23714,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayConnectivityExperienceP_Ptr(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayConnectivityExperienceP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
   adlx::IADLXDisplayConnectivityExperience *arg2 = (adlx::IADLXDisplayConnectivityExperience *) 0 ;
   
@@ -23724,7 +23724,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_assign(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayConnectivityExperienceP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayConnectivityExperience **arg1 = (adlx::IADLXDisplayConnectivityExperience **) 0 ;
   adlx::IADLXDisplayConnectivityExperience *result = 0 ;
@@ -23736,7 +23736,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayConnectivityExperienceP_Ptr_value(vo
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDynamicRefreshRateControlP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayDynamicRefreshRateControlP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl **result = 0 ;
   
@@ -23746,7 +23746,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayDynamicRefreshRateControlP_Ptr()
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl *arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   adlx::IADLXDisplayDynamicRefreshRateControl **result = 0 ;
@@ -23758,7 +23758,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayDynamicRefreshRateControlP_Ptr(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayDynamicRefreshRateControlP_Ptr(void * jarg1) {
   adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
   
   arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **)jarg1; 
@@ -23766,7 +23766,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayDynamicRefreshRateControlP_Ptr(
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayDynamicRefreshRateControlP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
   adlx::IADLXDisplayDynamicRefreshRateControl *arg2 = (adlx::IADLXDisplayDynamicRefreshRateControl *) 0 ;
   
@@ -23776,7 +23776,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_assign(
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayDynamicRefreshRateControlP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayDynamicRefreshRateControl **arg1 = (adlx::IADLXDisplayDynamicRefreshRateControl **) 0 ;
   adlx::IADLXDisplayDynamicRefreshRateControl *result = 0 ;
@@ -23788,7 +23788,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayDynamicRefreshRateControlP_Ptr_value
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCFreeSyncColorAccuracyP_Ptr() {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_displayCFreeSyncColorAccuracyP_Ptr() {
   void * jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy **result = 0 ;
   
@@ -23798,7 +23798,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_new_displayCFreeSyncColorAccuracyP_Ptr() {
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   adlx::IADLXDisplayFreeSyncColorAccuracy **result = 0 ;
@@ -23810,7 +23810,7 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_copy_displayCFreeSyncColorAccuracyP_Ptr(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_displayCFreeSyncColorAccuracyP_Ptr(void * jarg1) {
   adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
   
   arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **)jarg1; 
@@ -23818,7 +23818,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_displayCFreeSyncColorAccuracyP_Ptr(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_assign(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_displayCFreeSyncColorAccuracyP_Ptr_assign(void * jarg1, void * jarg2) {
   adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *arg2 = (adlx::IADLXDisplayFreeSyncColorAccuracy *) 0 ;
   
@@ -23828,7 +23828,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_assign(voi
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_value(void * jarg1) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayCFreeSyncColorAccuracyP_Ptr_value(void * jarg1) {
   void * jresult ;
   adlx::IADLXDisplayFreeSyncColorAccuracy **arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **) 0 ;
   adlx::IADLXDisplayFreeSyncColorAccuracy *result = 0 ;
@@ -23840,535 +23840,535 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_displayCFreeSyncColorAccuracyP_Ptr_value(vo
 }
 
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXChangedEvent_SWIGUpcast(adlx::IADLXChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXChangedEvent_SWIGUpcast(adlx::IADLXChangedEvent *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXList_SWIGUpcast(adlx::IADLXList *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXList_SWIGUpcast(adlx::IADLXList *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DAntiLag_SWIGUpcast(adlx::IADLX3DAntiLag *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag_SWIGUpcast(adlx::IADLX3DAntiLag *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLX3DAntiLag * SWIGSTDCALL CSharp_IADLX3DAntiLag1_SWIGUpcast(adlx::IADLX3DAntiLag1 *jarg1) {
+SWIGEXPORT adlx::IADLX3DAntiLag * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiLag1_SWIGUpcast(adlx::IADLX3DAntiLag1 *jarg1) {
     return (adlx::IADLX3DAntiLag *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DChill_SWIGUpcast(adlx::IADLX3DChill *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DChill_SWIGUpcast(adlx::IADLX3DChill *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DBoost_SWIGUpcast(adlx::IADLX3DBoost *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DBoost_SWIGUpcast(adlx::IADLX3DBoost *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DImageSharpening_SWIGUpcast(adlx::IADLX3DImageSharpening *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpening_SWIGUpcast(adlx::IADLX3DImageSharpening *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DEnhancedSync_SWIGUpcast(adlx::IADLX3DEnhancedSync *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DEnhancedSync_SWIGUpcast(adlx::IADLX3DEnhancedSync *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DWaitForVerticalRefresh_SWIGUpcast(adlx::IADLX3DWaitForVerticalRefresh *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DWaitForVerticalRefresh_SWIGUpcast(adlx::IADLX3DWaitForVerticalRefresh *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DFrameRateTargetControl_SWIGUpcast(adlx::IADLX3DFrameRateTargetControl *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DFrameRateTargetControl_SWIGUpcast(adlx::IADLX3DFrameRateTargetControl *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DAntiAliasing_SWIGUpcast(adlx::IADLX3DAntiAliasing *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAntiAliasing_SWIGUpcast(adlx::IADLX3DAntiAliasing *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DMorphologicalAntiAliasing_SWIGUpcast(adlx::IADLX3DMorphologicalAntiAliasing *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DMorphologicalAntiAliasing_SWIGUpcast(adlx::IADLX3DMorphologicalAntiAliasing *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DAnisotropicFiltering_SWIGUpcast(adlx::IADLX3DAnisotropicFiltering *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAnisotropicFiltering_SWIGUpcast(adlx::IADLX3DAnisotropicFiltering *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DTessellation_SWIGUpcast(adlx::IADLX3DTessellation *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DTessellation_SWIGUpcast(adlx::IADLX3DTessellation *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DRadeonSuperResolution_SWIGUpcast(adlx::IADLX3DRadeonSuperResolution *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DRadeonSuperResolution_SWIGUpcast(adlx::IADLX3DRadeonSuperResolution *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DResetShaderCache_SWIGUpcast(adlx::IADLX3DResetShaderCache *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DResetShaderCache_SWIGUpcast(adlx::IADLX3DResetShaderCache *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DSettingsChangedHandling_SWIGUpcast(adlx::IADLX3DSettingsChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedHandling_SWIGUpcast(adlx::IADLX3DSettingsChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DSettingsServices_SWIGUpcast(adlx::IADLX3DSettingsServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices_SWIGUpcast(adlx::IADLX3DSettingsServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DAMDFluidMotionFrames_SWIGUpcast(adlx::IADLX3DAMDFluidMotionFrames *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DAMDFluidMotionFrames_SWIGUpcast(adlx::IADLX3DAMDFluidMotionFrames *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLX3DSettingsServices * SWIGSTDCALL CSharp_IADLX3DSettingsServices1_SWIGUpcast(adlx::IADLX3DSettingsServices1 *jarg1) {
+SWIGEXPORT adlx::IADLX3DSettingsServices * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices1_SWIGUpcast(adlx::IADLX3DSettingsServices1 *jarg1) {
     return (adlx::IADLX3DSettingsServices *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLX3DSettingsChangedEvent * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent1_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent1 *jarg1) {
+SWIGEXPORT adlx::IADLX3DSettingsChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent1_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent1 *jarg1) {
     return (adlx::IADLX3DSettingsChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLX3DImageSharpenDesktop_SWIGUpcast(adlx::IADLX3DImageSharpenDesktop *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DImageSharpenDesktop_SWIGUpcast(adlx::IADLX3DImageSharpenDesktop *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLX3DSettingsServices1 * SWIGSTDCALL CSharp_IADLX3DSettingsServices2_SWIGUpcast(adlx::IADLX3DSettingsServices2 *jarg1) {
+SWIGEXPORT adlx::IADLX3DSettingsServices1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsServices2_SWIGUpcast(adlx::IADLX3DSettingsServices2 *jarg1) {
     return (adlx::IADLX3DSettingsServices1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLX3DSettingsChangedEvent1 * SWIGSTDCALL CSharp_IADLX3DSettingsChangedEvent2_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent2 *jarg1) {
+SWIGEXPORT adlx::IADLX3DSettingsChangedEvent1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLX3DSettingsChangedEvent2_SWIGUpcast(adlx::IADLX3DSettingsChangedEvent2 *jarg1) {
     return (adlx::IADLX3DSettingsChangedEvent1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXApplication_SWIGUpcast(adlx::IADLXApplication *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplication_SWIGUpcast(adlx::IADLXApplication *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXApplicationList_SWIGUpcast(adlx::IADLXApplicationList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXApplicationList_SWIGUpcast(adlx::IADLXApplicationList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUAppsListChangedHandling_SWIGUpcast(adlx::IADLXGPUAppsListChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListChangedHandling_SWIGUpcast(adlx::IADLXGPUAppsListChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDesktop_SWIGUpcast(adlx::IADLXDesktop *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktop_SWIGUpcast(adlx::IADLXDesktop *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXEyefinityDesktop_SWIGUpcast(adlx::IADLXEyefinityDesktop *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXEyefinityDesktop_SWIGUpcast(adlx::IADLXEyefinityDesktop *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXDesktopList_SWIGUpcast(adlx::IADLXDesktopList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopList_SWIGUpcast(adlx::IADLXDesktopList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDesktopChangedHandling_SWIGUpcast(adlx::IADLXDesktopChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopChangedHandling_SWIGUpcast(adlx::IADLXDesktopChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSimpleEyefinity_SWIGUpcast(adlx::IADLXSimpleEyefinity *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSimpleEyefinity_SWIGUpcast(adlx::IADLXSimpleEyefinity *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDesktopServices_SWIGUpcast(adlx::IADLXDesktopServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDesktopServices_SWIGUpcast(adlx::IADLXDesktopServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplay3DLUT_SWIGUpcast(adlx::IADLXDisplay3DLUT *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUT_SWIGUpcast(adlx::IADLXDisplay3DLUT *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayGamma_SWIGUpcast(adlx::IADLXDisplayGamma *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamma_SWIGUpcast(adlx::IADLXDisplayGamma *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayGamut_SWIGUpcast(adlx::IADLXDisplayGamut *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamut_SWIGUpcast(adlx::IADLXDisplayGamut *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplay_SWIGUpcast(adlx::IADLXDisplay *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay_SWIGUpcast(adlx::IADLXDisplay *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXDisplayList_SWIGUpcast(adlx::IADLXDisplayList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayList_SWIGUpcast(adlx::IADLXDisplayList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXDisplayGamutChangedEvent_SWIGUpcast(adlx::IADLXDisplayGamutChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGamutChangedEvent_SWIGUpcast(adlx::IADLXDisplayGamutChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXDisplayGammaChangedEvent_SWIGUpcast(adlx::IADLXDisplayGammaChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGammaChangedEvent_SWIGUpcast(adlx::IADLXDisplayGammaChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXDisplay3DLUTChangedEvent_SWIGUpcast(adlx::IADLXDisplay3DLUTChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplay3DLUTChangedEvent_SWIGUpcast(adlx::IADLXDisplay3DLUTChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayChangedHandling_SWIGUpcast(adlx::IADLXDisplayChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayChangedHandling_SWIGUpcast(adlx::IADLXDisplayChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayServices_SWIGUpcast(adlx::IADLXDisplayServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices_SWIGUpcast(adlx::IADLXDisplayServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplayServices * SWIGSTDCALL CSharp_IADLXDisplayServices1_SWIGUpcast(adlx::IADLXDisplayServices1 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplayServices * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices1_SWIGUpcast(adlx::IADLXDisplayServices1 *jarg1) {
     return (adlx::IADLXDisplayServices *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent1_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent1 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent1_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent1 *jarg1) {
     return (adlx::IADLXDisplaySettingsChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplayServices1 * SWIGSTDCALL CSharp_IADLXDisplayServices2_SWIGUpcast(adlx::IADLXDisplayServices2 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplayServices1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices2_SWIGUpcast(adlx::IADLXDisplayServices2 *jarg1) {
     return (adlx::IADLXDisplayServices1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent1 * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent2_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent2 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent2_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent2 *jarg1) {
     return (adlx::IADLXDisplaySettingsChangedEvent1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplayServices2 * SWIGSTDCALL CSharp_IADLXDisplayServices3_SWIGUpcast(adlx::IADLXDisplayServices3 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplayServices2 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayServices3_SWIGUpcast(adlx::IADLXDisplayServices3 *jarg1) {
     return (adlx::IADLXDisplayServices2 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent2 * SWIGSTDCALL CSharp_IADLXDisplaySettingsChangedEvent3_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent3 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplaySettingsChangedEvent2 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplaySettingsChangedEvent3_SWIGUpcast(adlx::IADLXDisplaySettingsChangedEvent3 *jarg1) {
     return (adlx::IADLXDisplaySettingsChangedEvent2 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayFreeSync_SWIGUpcast(adlx::IADLXDisplayFreeSync *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSync_SWIGUpcast(adlx::IADLXDisplayFreeSync *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayVSR_SWIGUpcast(adlx::IADLXDisplayVSR *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVSR_SWIGUpcast(adlx::IADLXDisplayVSR *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayGPUScaling_SWIGUpcast(adlx::IADLXDisplayGPUScaling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayGPUScaling_SWIGUpcast(adlx::IADLXDisplayGPUScaling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayScalingMode_SWIGUpcast(adlx::IADLXDisplayScalingMode *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayScalingMode_SWIGUpcast(adlx::IADLXDisplayScalingMode *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayIntegerScaling_SWIGUpcast(adlx::IADLXDisplayIntegerScaling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayIntegerScaling_SWIGUpcast(adlx::IADLXDisplayIntegerScaling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayColorDepth_SWIGUpcast(adlx::IADLXDisplayColorDepth *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayColorDepth_SWIGUpcast(adlx::IADLXDisplayColorDepth *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayPixelFormat_SWIGUpcast(adlx::IADLXDisplayPixelFormat *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayPixelFormat_SWIGUpcast(adlx::IADLXDisplayPixelFormat *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayCustomColor_SWIGUpcast(adlx::IADLXDisplayCustomColor *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomColor_SWIGUpcast(adlx::IADLXDisplayCustomColor *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayHDCP_SWIGUpcast(adlx::IADLXDisplayHDCP *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayHDCP_SWIGUpcast(adlx::IADLXDisplayHDCP *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayResolution_SWIGUpcast(adlx::IADLXDisplayResolution *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolution_SWIGUpcast(adlx::IADLXDisplayResolution *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXDisplayResolutionList_SWIGUpcast(adlx::IADLXDisplayResolutionList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayResolutionList_SWIGUpcast(adlx::IADLXDisplayResolutionList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayCustomResolution_SWIGUpcast(adlx::IADLXDisplayCustomResolution *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayCustomResolution_SWIGUpcast(adlx::IADLXDisplayCustomResolution *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayVariBright_SWIGUpcast(adlx::IADLXDisplayVariBright *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright_SWIGUpcast(adlx::IADLXDisplayVariBright *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXDisplayVariBright * SWIGSTDCALL CSharp_IADLXDisplayVariBright1_SWIGUpcast(adlx::IADLXDisplayVariBright1 *jarg1) {
+SWIGEXPORT adlx::IADLXDisplayVariBright * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayVariBright1_SWIGUpcast(adlx::IADLXDisplayVariBright1 *jarg1) {
     return (adlx::IADLXDisplayVariBright *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayConnectivityExperience_SWIGUpcast(adlx::IADLXDisplayConnectivityExperience *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayConnectivityExperience_SWIGUpcast(adlx::IADLXDisplayConnectivityExperience *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayBlanking_SWIGUpcast(adlx::IADLXDisplayBlanking *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayBlanking_SWIGUpcast(adlx::IADLXDisplayBlanking *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayDynamicRefreshRateControl_SWIGUpcast(adlx::IADLXDisplayDynamicRefreshRateControl *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayDynamicRefreshRateControl_SWIGUpcast(adlx::IADLXDisplayDynamicRefreshRateControl *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXDisplayFreeSyncColorAccuracy_SWIGUpcast(adlx::IADLXDisplayFreeSyncColorAccuracy *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXDisplayFreeSyncColorAccuracy_SWIGUpcast(adlx::IADLXDisplayFreeSyncColorAccuracy *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUAutoTuningCompleteEvent_SWIGUpcast(adlx::IADLXGPUAutoTuningCompleteEvent *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuningCompleteEvent_SWIGUpcast(adlx::IADLXGPUAutoTuningCompleteEvent *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUAutoTuning_SWIGUpcast(adlx::IADLXGPUAutoTuning *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAutoTuning_SWIGUpcast(adlx::IADLXGPUAutoTuning *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualFanTuningState_SWIGUpcast(adlx::IADLXManualFanTuningState *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningState_SWIGUpcast(adlx::IADLXManualFanTuningState *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXManualFanTuningStateList_SWIGUpcast(adlx::IADLXManualFanTuningStateList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuningStateList_SWIGUpcast(adlx::IADLXManualFanTuningStateList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualFanTuning_SWIGUpcast(adlx::IADLXManualFanTuning *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning_SWIGUpcast(adlx::IADLXManualFanTuning *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXManualFanTuning * SWIGSTDCALL CSharp_IADLXManualFanTuning1_SWIGUpcast(adlx::IADLXManualFanTuning1 *jarg1) {
+SWIGEXPORT adlx::IADLXManualFanTuning * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualFanTuning1_SWIGUpcast(adlx::IADLXManualFanTuning1 *jarg1) {
     return (adlx::IADLXManualFanTuning *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning1_SWIGUpcast(adlx::IADLXManualGraphicsTuning1 *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning1_SWIGUpcast(adlx::IADLXManualGraphicsTuning1 *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_SWIGUpcast(adlx::IADLXManualGraphicsTuning2 *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_SWIGUpcast(adlx::IADLXManualGraphicsTuning2 *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXManualGraphicsTuning2 * SWIGSTDCALL CSharp_IADLXManualGraphicsTuning2_1_SWIGUpcast(adlx::IADLXManualGraphicsTuning2_1 *jarg1) {
+SWIGEXPORT adlx::IADLXManualGraphicsTuning2 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualGraphicsTuning2_1_SWIGUpcast(adlx::IADLXManualGraphicsTuning2_1 *jarg1) {
     return (adlx::IADLXManualGraphicsTuning2 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualPowerTuning_SWIGUpcast(adlx::IADLXManualPowerTuning *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning_SWIGUpcast(adlx::IADLXManualPowerTuning *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXManualPowerTuning * SWIGSTDCALL CSharp_IADLXManualPowerTuning1_SWIGUpcast(adlx::IADLXManualPowerTuning1 *jarg1) {
+SWIGEXPORT adlx::IADLXManualPowerTuning * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualPowerTuning1_SWIGUpcast(adlx::IADLXManualPowerTuning1 *jarg1) {
     return (adlx::IADLXManualPowerTuning *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualVRAMTuning1_SWIGUpcast(adlx::IADLXManualVRAMTuning1 *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning1_SWIGUpcast(adlx::IADLXManualVRAMTuning1 *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_SWIGUpcast(adlx::IADLXManualVRAMTuning2 *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_SWIGUpcast(adlx::IADLXManualVRAMTuning2 *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXManualVRAMTuning2 * SWIGSTDCALL CSharp_IADLXManualVRAMTuning2_1_SWIGUpcast(adlx::IADLXManualVRAMTuning2_1 *jarg1) {
+SWIGEXPORT adlx::IADLXManualVRAMTuning2 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualVRAMTuning2_1_SWIGUpcast(adlx::IADLXManualVRAMTuning2_1 *jarg1) {
     return (adlx::IADLXManualVRAMTuning2 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUPresetTuning_SWIGUpcast(adlx::IADLXGPUPresetTuning *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUPresetTuning_SWIGUpcast(adlx::IADLXGPUPresetTuning *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXManualTuningState_SWIGUpcast(adlx::IADLXManualTuningState *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningState_SWIGUpcast(adlx::IADLXManualTuningState *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXMemoryTimingDescription_SWIGUpcast(adlx::IADLXMemoryTimingDescription *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescription_SWIGUpcast(adlx::IADLXMemoryTimingDescription *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXManualTuningStateList_SWIGUpcast(adlx::IADLXManualTuningStateList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXManualTuningStateList_SWIGUpcast(adlx::IADLXManualTuningStateList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXMemoryTimingDescriptionList_SWIGUpcast(adlx::IADLXMemoryTimingDescriptionList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMemoryTimingDescriptionList_SWIGUpcast(adlx::IADLXMemoryTimingDescriptionList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent_SWIGUpcast(adlx::IADLXGPUTuningChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent_SWIGUpcast(adlx::IADLXGPUTuningChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUTuningChangedHandling_SWIGUpcast(adlx::IADLXGPUTuningChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedHandling_SWIGUpcast(adlx::IADLXGPUTuningChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUTuningServices_SWIGUpcast(adlx::IADLXGPUTuningServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices_SWIGUpcast(adlx::IADLXGPUTuningServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUTuningServices * SWIGSTDCALL CSharp_IADLXGPUTuningServices1_SWIGUpcast(adlx::IADLXGPUTuningServices1 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUTuningServices * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningServices1_SWIGUpcast(adlx::IADLXGPUTuningServices1 *jarg1) {
     return (adlx::IADLXGPUTuningServices *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUTuningChangedEvent * SWIGSTDCALL CSharp_IADLXGPUTuningChangedEvent1_SWIGUpcast(adlx::IADLXGPUTuningChangedEvent1 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUTuningChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUTuningChangedEvent1_SWIGUpcast(adlx::IADLXGPUTuningChangedEvent1 *jarg1) {
     return (adlx::IADLXGPUTuningChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXI2C_SWIGUpcast(adlx::IADLXI2C *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXI2C_SWIGUpcast(adlx::IADLXI2C *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXVideoUpscale_SWIGUpcast(adlx::IADLXVideoUpscale *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoUpscale_SWIGUpcast(adlx::IADLXVideoUpscale *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXVideoSuperResolution_SWIGUpcast(adlx::IADLXVideoSuperResolution *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXVideoSuperResolution_SWIGUpcast(adlx::IADLXVideoSuperResolution *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXMultimediaChangedEvent_SWIGUpcast(adlx::IADLXMultimediaChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedEvent_SWIGUpcast(adlx::IADLXMultimediaChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXMultimediaChangedHandling_SWIGUpcast(adlx::IADLXMultimediaChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaChangedHandling_SWIGUpcast(adlx::IADLXMultimediaChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXMultimediaServices_SWIGUpcast(adlx::IADLXMultimediaServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXMultimediaServices_SWIGUpcast(adlx::IADLXMultimediaServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport_SWIGUpcast(adlx::IADLXGPUMetricsSupport *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport_SWIGUpcast(adlx::IADLXGPUMetricsSupport *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport_SWIGUpcast(adlx::IADLXSystemMetricsSupport *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport_SWIGUpcast(adlx::IADLXSystemMetricsSupport *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUMetrics_SWIGUpcast(adlx::IADLXGPUMetrics *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics_SWIGUpcast(adlx::IADLXGPUMetrics *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXGPUMetricsList_SWIGUpcast(adlx::IADLXGPUMetricsList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsList_SWIGUpcast(adlx::IADLXGPUMetricsList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSystemMetrics_SWIGUpcast(adlx::IADLXSystemMetrics *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics_SWIGUpcast(adlx::IADLXSystemMetrics *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXSystemMetricsList_SWIGUpcast(adlx::IADLXSystemMetricsList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsList_SWIGUpcast(adlx::IADLXSystemMetricsList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXFPS_SWIGUpcast(adlx::IADLXFPS *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPS_SWIGUpcast(adlx::IADLXFPS *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXFPSList_SWIGUpcast(adlx::IADLXFPSList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXFPSList_SWIGUpcast(adlx::IADLXFPSList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXAllMetrics_SWIGUpcast(adlx::IADLXAllMetrics *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetrics_SWIGUpcast(adlx::IADLXAllMetrics *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXAllMetricsList_SWIGUpcast(adlx::IADLXAllMetricsList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXAllMetricsList_SWIGUpcast(adlx::IADLXAllMetricsList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXPerformanceMonitoringServices_SWIGUpcast(adlx::IADLXPerformanceMonitoringServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPerformanceMonitoringServices_SWIGUpcast(adlx::IADLXPerformanceMonitoringServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXSystemMetricsSupport * SWIGSTDCALL CSharp_IADLXSystemMetricsSupport1_SWIGUpcast(adlx::IADLXSystemMetricsSupport1 *jarg1) {
+SWIGEXPORT adlx::IADLXSystemMetricsSupport * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetricsSupport1_SWIGUpcast(adlx::IADLXSystemMetricsSupport1 *jarg1) {
     return (adlx::IADLXSystemMetricsSupport *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXSystemMetrics * SWIGSTDCALL CSharp_IADLXSystemMetrics1_SWIGUpcast(adlx::IADLXSystemMetrics1 *jarg1) {
+SWIGEXPORT adlx::IADLXSystemMetrics * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystemMetrics1_SWIGUpcast(adlx::IADLXSystemMetrics1 *jarg1) {
     return (adlx::IADLXSystemMetrics *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUMetricsSupport * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport1_SWIGUpcast(adlx::IADLXGPUMetricsSupport1 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUMetricsSupport * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport1_SWIGUpcast(adlx::IADLXGPUMetricsSupport1 *jarg1) {
     return (adlx::IADLXGPUMetricsSupport *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUMetrics * SWIGSTDCALL CSharp_IADLXGPUMetrics1_SWIGUpcast(adlx::IADLXGPUMetrics1 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUMetrics * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics1_SWIGUpcast(adlx::IADLXGPUMetrics1 *jarg1) {
     return (adlx::IADLXGPUMetrics *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUMetricsSupport1 * SWIGSTDCALL CSharp_IADLXGPUMetricsSupport2_SWIGUpcast(adlx::IADLXGPUMetricsSupport2 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUMetricsSupport1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetricsSupport2_SWIGUpcast(adlx::IADLXGPUMetricsSupport2 *jarg1) {
     return (adlx::IADLXGPUMetricsSupport1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPUMetrics1 * SWIGSTDCALL CSharp_IADLXGPUMetrics2_SWIGUpcast(adlx::IADLXGPUMetrics2 *jarg1) {
+SWIGEXPORT adlx::IADLXGPUMetrics1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUMetrics2_SWIGUpcast(adlx::IADLXGPUMetrics2 *jarg1) {
     return (adlx::IADLXGPUMetrics1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSmartShiftMax_SWIGUpcast(adlx::IADLXSmartShiftMax *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftMax_SWIGUpcast(adlx::IADLXSmartShiftMax *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent_SWIGUpcast(adlx::IADLXPowerTuningChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent_SWIGUpcast(adlx::IADLXPowerTuningChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXPowerTuningChangedHandling_SWIGUpcast(adlx::IADLXPowerTuningChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedHandling_SWIGUpcast(adlx::IADLXPowerTuningChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXPowerTuningServices_SWIGUpcast(adlx::IADLXPowerTuningServices *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices_SWIGUpcast(adlx::IADLXPowerTuningServices *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSmartShiftEco_SWIGUpcast(adlx::IADLXSmartShiftEco *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartShiftEco_SWIGUpcast(adlx::IADLXSmartShiftEco *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_IADLXGPUConnectChangedEvent_SWIGUpcast(adlx::IADLXGPUConnectChangedEvent *jarg1) {
+SWIGEXPORT adlx::IADLXChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUConnectChangedEvent_SWIGUpcast(adlx::IADLXGPUConnectChangedEvent *jarg1) {
     return (adlx::IADLXChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXPowerTuningChangedEvent * SWIGSTDCALL CSharp_IADLXPowerTuningChangedEvent1_SWIGUpcast(adlx::IADLXPowerTuningChangedEvent1 *jarg1) {
+SWIGEXPORT adlx::IADLXPowerTuningChangedEvent * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningChangedEvent1_SWIGUpcast(adlx::IADLXPowerTuningChangedEvent1 *jarg1) {
     return (adlx::IADLXPowerTuningChangedEvent *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXPowerTuningServices * SWIGSTDCALL CSharp_IADLXPowerTuningServices1_SWIGUpcast(adlx::IADLXPowerTuningServices1 *jarg1) {
+SWIGEXPORT adlx::IADLXPowerTuningServices * SWIGSTDCALL CSharp_ADLXWrapper_IADLXPowerTuningServices1_SWIGUpcast(adlx::IADLXPowerTuningServices1 *jarg1) {
     return (adlx::IADLXPowerTuningServices *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSmartAccessMemory_SWIGUpcast(adlx::IADLXSmartAccessMemory *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSmartAccessMemory_SWIGUpcast(adlx::IADLXSmartAccessMemory *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPU_SWIGUpcast(adlx::IADLXGPU *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU_SWIGUpcast(adlx::IADLXGPU *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXGPUList_SWIGUpcast(adlx::IADLXGPUList *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUList_SWIGUpcast(adlx::IADLXGPUList *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXGPUsChangedHandling_SWIGUpcast(adlx::IADLXGPUsChangedHandling *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUsChangedHandling_SWIGUpcast(adlx::IADLXGPUsChangedHandling *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPU * SWIGSTDCALL CSharp_IADLXGPU1_SWIGUpcast(adlx::IADLXGPU1 *jarg1) {
+SWIGEXPORT adlx::IADLXGPU * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU1_SWIGUpcast(adlx::IADLXGPU1 *jarg1) {
     return (adlx::IADLXGPU *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_IADLXSystem1_SWIGUpcast(adlx::IADLXSystem1 *jarg1) {
+SWIGEXPORT adlx::IADLXInterface * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem1_SWIGUpcast(adlx::IADLXSystem1 *jarg1) {
     return (adlx::IADLXInterface *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXGPU1 * SWIGSTDCALL CSharp_IADLXGPU2_SWIGUpcast(adlx::IADLXGPU2 *jarg1) {
+SWIGEXPORT adlx::IADLXGPU1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2_SWIGUpcast(adlx::IADLXGPU2 *jarg1) {
     return (adlx::IADLXGPU1 *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_IADLXGPU2List_SWIGUpcast(adlx::IADLXGPU2List *jarg1) {
+SWIGEXPORT adlx::IADLXList * SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPU2List_SWIGUpcast(adlx::IADLXGPU2List *jarg1) {
     return (adlx::IADLXList *)jarg1;
 }
 
-SWIGEXPORT adlx::IADLXSystem1 * SWIGSTDCALL CSharp_IADLXSystem2_SWIGUpcast(adlx::IADLXSystem2 *jarg1) {
+SWIGEXPORT adlx::IADLXSystem1 * SWIGSTDCALL CSharp_ADLXWrapper_IADLXSystem2_SWIGUpcast(adlx::IADLXSystem2 *jarg1) {
     return (adlx::IADLXSystem1 *)jarg1;
 }
 

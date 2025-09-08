@@ -1,7 +1,7 @@
 using Xunit;
 using System;
 using System.Threading;
-using ADLXWrapper.Bindings; // Use the new bindings project
+using ADLXWrapper; // Use the new bindings project
 
 namespace ADLXWrapper.Tests
 {

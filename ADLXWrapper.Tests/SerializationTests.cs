@@ -1,6 +1,6 @@
 using Xunit;
 using Newtonsoft.Json;
-using ADLXWrapper.Bindings; // Use the new bindings project
+using ADLXWrapper; // Use the new bindings project
 using System.Collections.Generic;
 
 namespace ADLXWrapper.Tests

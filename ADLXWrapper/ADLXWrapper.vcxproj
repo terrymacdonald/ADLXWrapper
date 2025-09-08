@@ -131,7 +131,7 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <CustomBuild>
-      <Command>..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "cs_bindings" .\ADLXWrapper.i</Command>
+      <Command>..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" .\ADLXWrapper.i</Command>
     </CustomBuild>
     <CustomBuild>
       <Outputs>%(Filename)_wrap.cxx</Outputs>
@@ -184,12 +184,13 @@
   <ItemGroup>
     <CustomBuild Include="ADLXWrapper.i">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "cs_bindings" ADLXWrapper.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "cs_bindings" ADLXWrapper.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename)_wrap.cxx</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "cs_bindings" ADLXWrapper.i</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -outdir "cs_bindings" ADLXWrapper.i</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" ADLXWrapper.i</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)_wrap.cxx</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
     <None Include="cs_struct.i" />

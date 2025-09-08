@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
@@ -21,8 +21,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ADLXWrapper\ADLXWrapper.Bindings\ADLXWrapper.Bindings.csproj" />
+   <ItemGroup>
+    <Compile Include="cs_bindings\*.cs" />
+    <Compile Include="*.cs" />
   </ItemGroup>
 
 </Project>
