@@ -136,9 +136,6 @@
     <CustomBuild>
       <Outputs>%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
-    <PreBuildEvent>
-      <Command>powershell -ExecutionPolicy Bypass -File "$(ProjectDir)\prepare_adlx.ps1"</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
