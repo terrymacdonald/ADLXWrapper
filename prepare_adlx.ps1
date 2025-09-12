@@ -193,9 +193,6 @@ function Install-SwigWindows {
     }
 }
 
-# Change to the parent Solution Folder (as that is where we want the folders)
-Set-Location ..
-
 Write-Host "=== Enhanced ADLX Preparation Script with SWIG Integration ===" -ForegroundColor Cyan
 Write-Host "Preparing SWIG and ADLX SDK for IADLXGPU2 support..." -ForegroundColor Cyan
 
