@@ -68,7 +68,6 @@ typedef     unsigned long       adlx_ulong;
 typedef     adlx_uint32         adlx_uint;
 typedef     bool                adlx_bool;
 typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
-// TCHAR will be defined by windows.i
 
 // Microsoft
 #define ADLX_CORE_LINK          __declspec(dllexport)
@@ -106,7 +105,6 @@ typedef     unsigned long       adlx_ulong;
 typedef     adlx_uint32         adlx_uint;
 typedef     bool                adlx_bool;
 typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
-// TCHAR will be defined by windows.i
 
 // Microsoft
 #define ADLX_CORE_LINK          __declspec(dllexport)
@@ -123,10 +121,15 @@ typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
 
 #define ADLX_DECLARE_ITEM_IID(X) static ADLX_INLINE const wchar_t* ITEM_IID()  { return X; }
 
+// Suppress warning 514 for director classes without virtual destructors
+%warnfilter(514) adlx::IADLXDisplayListChangedListener;
+%warnfilter(514) adlx::IADLXGPUConnectChangedListener;
+%warnfilter(514) adlx::IADLXGPUAppsListEventListener;
+
 /* Callback to turn on director wrapping */
 %feature("director") IADLXDisplayListChangedListener;
 %feature("director") IADLXGPUConnectChangedListener;
-%feature("director") IADLXGPUAppsListChangedListener;
+%feature("director") IADLXGPUAppsListEventListener;
 
 // Create a special pointer for us to use to get interface references
 %apply void *VOID_INT_PTR { void * };
@@ -136,9 +139,18 @@ typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
 %include typemaps.i
 
 // Define TCHAR before including windows.i to avoid redefinition warning
+%{
 #ifndef TCHAR
 typedef wchar_t TCHAR;
 #endif
+%}
+
+#ifndef TCHAR
+typedef wchar_t TCHAR;
+#endif
+
+// Suppress the TCHAR redefinition warning from windows.i
+%warnfilter(302) TCHAR;
 
 %include windows.i
 

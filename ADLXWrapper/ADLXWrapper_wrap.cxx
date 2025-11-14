@@ -482,7 +482,6 @@ typedef     unsigned long       adlx_ulong;
 typedef     adlx_uint32         adlx_uint;
 typedef     bool                adlx_bool;
 typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
-// TCHAR will be defined by windows.i
 
 // Microsoft
 #define ADLX_CORE_LINK          __declspec(dllexport)
@@ -502,6 +501,11 @@ using namespace adlx;
 
 
 #include <stdint.h>		// Use the C99 official header
+
+
+#ifndef TCHAR
+typedef wchar_t TCHAR;
+#endif
 
 
 static adlx_int *new_adlx_intP(void) { 
@@ -2736,6 +2740,36 @@ static IADLXDisplayFreeSyncColorAccuracy* displayCFreeSyncColorAccuracyP_Ptr_val
  * --------------------------------------------------- */
 
 #include "ADLXWrapper_wrap.h"
+
+SwigDirector_IADLXGPUAppsListEventListener::SwigDirector_IADLXGPUAppsListEventListener() : adlx::IADLXGPUAppsListEventListener(), Swig::Director() {
+  swig_init_callbacks();
+}
+
+adlx_bool SwigDirector_IADLXGPUAppsListEventListener::OnGPUAppsListChanged(adlx::IADLXGPU2 *pGPU,adlx::IADLXApplicationList *pApplications) {
+  adlx_bool c_result = SwigValueInit< adlx_bool >() ;
+  unsigned int jresult = 0 ;
+  void * jpGPU = 0 ;
+  void * jpApplications = 0 ;
+  
+  if (!swig_callbackOnGPUAppsListChanged) {
+    Swig::DirectorPureVirtualException::raise("adlx::IADLXGPUAppsListEventListener::OnGPUAppsListChanged");
+    return c_result;
+  } else {
+    jpGPU = (void *) pGPU; 
+    jpApplications = (void *) pApplications; 
+    jresult = (unsigned int) swig_callbackOnGPUAppsListChanged(jpGPU, jpApplications);
+    c_result = jresult ? true : false; 
+  }
+  return c_result;
+}
+
+void SwigDirector_IADLXGPUAppsListEventListener::swig_connect_director(SWIG_Callback0_t callbackOnGPUAppsListChanged) {
+  swig_callbackOnGPUAppsListChanged = callbackOnGPUAppsListChanged;
+}
+
+void SwigDirector_IADLXGPUAppsListEventListener::swig_init_callbacks() {
+  swig_callbackOnGPUAppsListChanged = 0;
+}
 
 SwigDirector_IADLXDisplayListChangedListener::SwigDirector_IADLXDisplayListChangedListener() : adlx::IADLXDisplayListChangedListener(), Swig::Director() {
   swig_init_callbacks();
@@ -6640,11 +6674,28 @@ SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListEventList
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_IADLXGPUAppsListEventListener() {
+  void * jresult ;
+  adlx::IADLXGPUAppsListEventListener *result = 0 ;
+  
+  result = (adlx::IADLXGPUAppsListEventListener *)new SwigDirector_IADLXGPUAppsListEventListener();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_IADLXGPUAppsListEventListener(void * jarg1) {
   adlx::IADLXGPUAppsListEventListener *arg1 = (adlx::IADLXGPUAppsListEventListener *) 0 ;
   
   arg1 = (adlx::IADLXGPUAppsListEventListener *)jarg1; 
   delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_IADLXGPUAppsListEventListener_director_connect(void *objarg, SwigDirector_IADLXGPUAppsListEventListener::SWIG_Callback0_t callback0) {
+  adlx::IADLXGPUAppsListEventListener *obj = (adlx::IADLXGPUAppsListEventListener *)objarg;
+  SwigDirector_IADLXGPUAppsListEventListener *director = static_cast<SwigDirector_IADLXGPUAppsListEventListener *>(obj);
+  director->swig_connect_director(callback0);
 }
 
 

@@ -9,6 +9,20 @@
 #ifndef SWIG_ADLX_WRAP_H_
 #define SWIG_ADLX_WRAP_H_
 
+class SwigDirector_IADLXGPUAppsListEventListener : public adlx::IADLXGPUAppsListEventListener, public Swig::Director {
+
+public:
+    SwigDirector_IADLXGPUAppsListEventListener();
+    virtual adlx_bool OnGPUAppsListChanged(adlx::IADLXGPU2 *pGPU,adlx::IADLXApplicationList *pApplications);
+
+    typedef unsigned int (SWIGSTDCALL* SWIG_Callback0_t)(void *, void *);
+    void swig_connect_director(SWIG_Callback0_t callbackOnGPUAppsListChanged);
+
+private:
+    SWIG_Callback0_t swig_callbackOnGPUAppsListChanged;
+    void swig_init_callbacks();
+};
+
 class SwigDirector_IADLXDisplayListChangedListener : public adlx::IADLXDisplayListChangedListener, public Swig::Director {
 
 public:

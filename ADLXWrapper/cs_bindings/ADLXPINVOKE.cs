@@ -1209,8 +1209,14 @@ class ADLXPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_IADLXGPUAppsListEventListener_OnGPUAppsListChanged")]
   public static extern bool IADLXGPUAppsListEventListener_OnGPUAppsListChanged(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2, global::System.Runtime.InteropServices.HandleRef jarg3);
 
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_new_IADLXGPUAppsListEventListener")]
+  public static extern global::System.IntPtr new_IADLXGPUAppsListEventListener();
+
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_delete_IADLXGPUAppsListEventListener")]
   public static extern void delete_IADLXGPUAppsListEventListener(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_IADLXGPUAppsListEventListener_director_connect")]
+  public static extern void IADLXGPUAppsListEventListener_director_connect(global::System.Runtime.InteropServices.HandleRef jarg1, IADLXGPUAppsListEventListener.SwigDelegateIADLXGPUAppsListEventListener_0 delegate0);
 
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_IADLXGPUAppsListChangedHandling_IID")]
   public static extern global::System.IntPtr IADLXGPUAppsListChangedHandling_IID();
