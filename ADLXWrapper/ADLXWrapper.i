@@ -126,7 +126,7 @@ typedef wchar_t WCHAR;    // wc,   16-bit UNICODE character
 %warnfilter(514) adlx::IADLXGPUConnectChangedListener;
 %warnfilter(514) adlx::IADLXGPUAppsListEventListener;
 
-/* Callback to turn on director wrapping */
+/* Callback to turn on director wrapping - enables C# users to inherit from these classes */
 %feature("director") IADLXDisplayListChangedListener;
 %feature("director") IADLXGPUConnectChangedListener;
 %feature("director") IADLXGPUAppsListEventListener;
@@ -154,10 +154,173 @@ typedef wchar_t TCHAR;
 
 %include windows.i
 
+// ============================================================================
+// ADLX Core Initialization/Termination - Low Level API
+// These expose the raw C-style entry points from ADLX.h for advanced users
+// ============================================================================
+
+// Expose the DLL name constants
+%constant const char* ADLX_DLL_NAME_64 = "amdadlx64.dll";
+%constant const char* ADLX_DLL_NAME_32 = "amdadlx32.dll";
+
+// Expose the function name constants for GetProcAddress
+%constant const char* ADLX_QUERY_FULL_VERSION_FN = "ADLXQueryFullVersion";
+%constant const char* ADLX_QUERY_VERSION_FN = "ADLXQueryVersion";
+%constant const char* ADLX_INIT_FN = "ADLXInitialize";
+%constant const char* ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FN = "ADLXInitializeWithIncompatibleDriver";
+%constant const char* ADLX_INIT_WITH_CALLER_ADL_FN = "ADLXInitializeWithCallerAdl";
+%constant const char* ADLX_TERMINATE_FN = "ADLXTerminate";
+
+// Function pointer typedefs (already defined in ADLX.h, but we declare them for SWIG)
+%{
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryFullVersion_Fn)(adlx_uint64* fullVersion);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryVersion_Fn)(const char** version);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitialize_Fn)(adlx_uint64 version, adlx::IADLXSystem** ppSystem);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, adlx::IADLXSystem** ppSystem, adlx::IADLMapping** ppAdlMapping, adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXTerminate_Fn)();
+typedef void (ADLX_STD_CALL* ADLX_ADL_Main_Memory_Free)(void** buffer);
+%}
+
+// Declare these for SWIG wrapping
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryFullVersion_Fn)(adlx_uint64* fullVersion);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryVersion_Fn)(const char** version);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitialize_Fn)(adlx_uint64 version, IADLXSystem** ppSystem);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, IADLXSystem** ppSystem, IADLMapping** ppAdlMapping, adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXTerminate_Fn)();
+
+// Advanced ADLX Loader class for managing DLL loading and function pointers
+// This provides low-level control for advanced scenarios
+%inline %{
+class ADLXLoader {
+private:
+    HMODULE hADLXDLL;
+    ADLXQueryFullVersion_Fn queryFullVersion;
+    ADLXQueryVersion_Fn queryVersion;
+    ADLXInitialize_Fn initialize;
+    ADLXInitialize_Fn initializeWithIncompatibleDriver;
+    ADLXInitializeWithCallerAdl_Fn initializeWithCallerAdl;
+    ADLXTerminate_Fn terminate;
+
+public:
+    ADLXLoader() : hADLXDLL(nullptr), 
+                   queryFullVersion(nullptr),
+                   queryVersion(nullptr),
+                   initialize(nullptr),
+                   initializeWithIncompatibleDriver(nullptr),
+                   initializeWithCallerAdl(nullptr),
+                   terminate(nullptr) {}
+
+    ~ADLXLoader() {
+        Unload();
+    }
+
+    // Load the ADLX DLL and retrieve function pointers
+    bool Load() {
+        #ifdef _M_AMD64
+        hADLXDLL = LoadLibraryA("amdadlx64.dll");
+        #else
+        hADLXDLL = LoadLibraryA("amdadlx32.dll");
+        #endif
+
+        if (!hADLXDLL)
+            return false;
+
+        queryFullVersion = (ADLXQueryFullVersion_Fn)GetProcAddress(hADLXDLL, ADLX_QUERY_FULL_VERSION_FUNCTION_NAME);
+        queryVersion = (ADLXQueryVersion_Fn)GetProcAddress(hADLXDLL, ADLX_QUERY_VERSION_FUNCTION_NAME);
+        initialize = (ADLXInitialize_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_FUNCTION_NAME);
+        initializeWithIncompatibleDriver = (ADLXInitialize_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME);
+        initializeWithCallerAdl = (ADLXInitializeWithCallerAdl_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME);
+        terminate = (ADLXTerminate_Fn)GetProcAddress(hADLXDLL, ADLX_TERMINATE_FUNCTION_NAME);
+
+        return (queryFullVersion && queryVersion && initialize && terminate);
+    }
+
+    // Unload the ADLX DLL
+    void Unload() {
+        if (hADLXDLL) {
+            FreeLibrary(hADLXDLL);
+            hADLXDLL = nullptr;
+            queryFullVersion = nullptr;
+            queryVersion = nullptr;
+            initialize = nullptr;
+            initializeWithIncompatibleDriver = nullptr;
+            initializeWithCallerAdl = nullptr;
+            terminate = nullptr;
+        }
+    }
+
+    // Check if the DLL is loaded
+    bool IsLoaded() const {
+        return hADLXDLL != nullptr;
+    }
+
+    // Query the full version of ADLX (64-bit version number)
+    ADLX_RESULT QueryFullVersion(adlx_uint64* fullVersion) {
+        if (!queryFullVersion || !fullVersion) 
+            return ADLX_FAIL;
+        return queryFullVersion(fullVersion);
+    }
+
+    // Query the version string of ADLX
+    ADLX_RESULT QueryVersion(const char** version) {
+        if (!queryVersion || !version) 
+            return ADLX_FAIL;
+        return queryVersion(version);
+    }
+
+    // Initialize ADLX with default parameters
+    ADLX_RESULT Initialize(adlx_uint64 version, adlx::IADLXSystem** ppSystem) {
+        if (!initialize || !ppSystem) 
+            return ADLX_FAIL;
+        return initialize(version, ppSystem);
+    }
+
+    // Initialize ADLX even with incompatible driver (use with caution)
+    ADLX_RESULT InitializeWithIncompatibleDriver(adlx_uint64 version, adlx::IADLXSystem** ppSystem) {
+        if (!initializeWithIncompatibleDriver || !ppSystem) 
+            return ADLX_FAIL;
+        return initializeWithIncompatibleDriver(version, ppSystem);
+    }
+
+    // Initialize ADLX with an existing ADL context (for ADL/ADLX interop)
+    ADLX_RESULT InitializeWithCallerAdl(adlx_uint64 version, 
+                                        adlx::IADLXSystem** ppSystem, 
+                                        adlx::IADLMapping** ppAdlMapping, 
+                                        adlx_handle adlContext, 
+                                        ADLX_ADL_Main_Memory_Free adlMainMemoryFree) {
+        if (!initializeWithCallerAdl || !ppSystem) 
+            return ADLX_FAIL;
+        return initializeWithCallerAdl(version, ppSystem, ppAdlMapping, adlContext, adlMainMemoryFree);
+    }
+
+    // Terminate ADLX
+    ADLX_RESULT Terminate() {
+        if (!terminate) 
+            return ADLX_FAIL;
+        return terminate();
+    }
+
+    // Get the DLL module handle (advanced use only)
+    HMODULE GetModuleHandle() const {
+        return hADLXDLL;
+    }
+};
+%}
+
+// ============================================================================
+// End of ADLX Core Low-Level API
+// ============================================================================
+
+// ============================================================================
 // ADLX Runtime Detection and Validation Functions
+// ============================================================================
 bool IsADLXRuntimeAvailable();
 ADLX_RESULT ValidateADLXInstallation();
 const char* GetADLXErrorDescription(ADLX_RESULT result);
+
+// ============================================================================
+// QueryInterface Helper Functions for Interface Version Detection
+// ============================================================================
 
 // QueryInterface Helper Functions for IADLXGPU2 Access
 IADLXGPU1* QueryGPU1Interface(IADLXGPU* pGPU);
@@ -175,13 +338,17 @@ bool SupportsGPU2Interface(IADLXGPU* pGPU);
 bool SupportsSystem1Interface(IADLXSystem* pSystem);
 bool SupportsSystem2Interface(IADLXSystem* pSystem);
 
+// ============================================================================
 // Gamma Ramp Data Access Helper Functions
+// ============================================================================
 ADLX_RESULT GetGammaRampData(ADLX_GammaRamp* pGammaRamp, adlx_uint16* pRedData, adlx_uint16* pGreenData, adlx_uint16* pBlueData, adlx_size dataSize);
 ADLX_RESULT SetGammaRampData(ADLX_GammaRamp* pGammaRamp, const adlx_uint16* pRedData, const adlx_uint16* pGreenData, const adlx_uint16* pBlueData, adlx_size dataSize);
 adlx_size GetGammaRampSize();
 bool ValidateGammaRampData(const adlx_uint16* pData, adlx_size dataSize);
 
-// Enhanced ADLX Helper Class
+// ============================================================================
+// Enhanced ADLX Helper Class - Simplified High-Level API (Recommended)
+// ============================================================================
 class EnhancedADLXHelper {
 public:
     EnhancedADLXHelper();
@@ -191,6 +358,10 @@ public:
     bool IsInitialized() const;
     ~EnhancedADLXHelper();
 };
+
+// ============================================================================
+// ADLX SDK Header Includes - All interfaces and types
+// ============================================================================
 
 // Include base classes first to avoid undefined base class warnings
 %include "../ADLX/SDK/Include/ADLX.h"
@@ -237,12 +408,17 @@ public:
 
 using namespace adlx;
 
+// ============================================================================
+// Pointer Helper Functions for C# Interop
+// ============================================================================
+
 // T* pointer
 %include cpointer.i
 
 %pointer_functions(adlx_int, adlx_intP);
 %pointer_functions(adlx_uint, adlx_uintP);
 %pointer_functions(adlx_uint16, adlx_uint16P);
+%pointer_functions(adlx_uint64, adlx_uint64P);
 %pointer_functions(adlx_bool, adlx_boolP);
 //%pointer_functions(adlx_string, adlx_stringP);
 %pointer_functions(double, doubleP);
@@ -298,9 +474,7 @@ using namespace adlx;
 %pointer_functions(ADLX_LOG_SEVERITY, adlx_logSeverityP);
 %pointer_functions(ADLX_APP_GPU_DEPENDENCY, adlx_appGpuDependencyP);
 
-
-
-// T** pointers
+// T** pointers - Interface pointer-to-pointer helpers
 %pointer_functions(IADLXDisplayServices*, displaySerP_Ptr);
 %pointer_functions(IADLXDisplayServices1*, displaySer1P_Ptr);
 %pointer_functions(IADLXDisplayServices2*, displaySer2P_Ptr);
@@ -320,6 +494,9 @@ using namespace adlx;
 %pointer_functions(IADLXGPUList*, gpuListP_Ptr);
 %pointer_functions(IADLXList*, adlxListP_Ptr);
 %pointer_functions(IADLXInterface*, adlxInterfaceP_Ptr);
+%pointer_functions(IADLXSystem*, systemP_Ptr);
+%pointer_functions(IADLXSystem1*, system1P_Ptr);
+%pointer_functions(IADLXSystem2*, system2P_Ptr);
 %pointer_functions(IADLXGPUTuningServices*, gpuTuningP_Ptr);
 %pointer_functions(IADLXManualFanTuning*, manualFanTuningP_Ptr);
 %pointer_functions(IADLXManualPowerTuning*, manualPowerTuningP_Ptr);
@@ -334,27 +511,26 @@ using namespace adlx;
 %pointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
 %pointer_functions(char*, charP_Ptr);
 %pointer_functions(void*, voidP_Ptr);
-%pointer_functions( IADLXDisplay3DLUT*, display3DLUTP_Ptr);
-%pointer_functions( IADLXDisplayColorDepth*, displayColorDepthP_Ptr);
-%pointer_functions( IADLXDisplayCustomColor*, displayCustomColorP_Ptr);
-%pointer_functions( IADLXDisplayCustomResolution*, displayCustomResolutionP_Ptr);
-%pointer_functions( IADLXDisplayFreeSync*, displayFreeSyncP_Ptr);
-%pointer_functions( IADLXDisplayGPUScaling*, displayGPUScalingP_Ptr);
-%pointer_functions( IADLXDisplayGamma*, displayGammaP_Ptr);
-%pointer_functions( IADLXDisplayGamut*, displayGamutP_Ptr);
-%pointer_functions( IADLXDisplayHDCP*, displayHDCPP_Ptr);
-%pointer_functions( IADLXDisplayIntegerScaling*, displayIntegerScalingP_Ptr);
-%pointer_functions( IADLXDisplayPixelFormat*, displayPixelFormatP_Ptr);
-%pointer_functions( IADLXDisplayScalingMode*, displayScalingModeP_Ptr);
-%pointer_functions( IADLXDisplayVariBright*, displayVariBrightP_Ptr);
-%pointer_functions( IADLXDisplayVSR*, displayVSRP_Ptr);
-%pointer_functions( IADLXDisplayBlanking*, displayDisplayBlankingP_Ptr);
-%pointer_functions( IADLXDisplayConnectivityExperience*, displayConnectivityExperienceP_Ptr);
-%pointer_functions( IADLXDisplayDynamicRefreshRateControl*, displayDynamicRefreshRateControlP_Ptr);
-%pointer_functions( IADLXDisplayFreeSyncColorAccuracy*, displayCFreeSyncColorAccuracyP_Ptr);
+%pointer_functions(IADLXDisplay3DLUT*, display3DLUTP_Ptr);
+%pointer_functions(IADLXDisplayColorDepth*, displayColorDepthP_Ptr);
+%pointer_functions(IADLXDisplayCustomColor*, displayCustomColorP_Ptr);
+%pointer_functions(IADLXDisplayCustomResolution*, displayCustomResolutionP_Ptr);
+%pointer_functions(IADLXDisplayFreeSync*, displayFreeSyncP_Ptr);
+%pointer_functions(IADLXDisplayGPUScaling*, displayGPUScalingP_Ptr);
+%pointer_functions(IADLXDisplayGamma*, displayGammaP_Ptr);
+%pointer_functions(IADLXDisplayGamut*, displayGamutP_Ptr);
+%pointer_functions(IADLXDisplayHDCP*, displayHDCPP_Ptr);
+%pointer_functions(IADLXDisplayIntegerScaling*, displayIntegerScalingP_Ptr);
+%pointer_functions(IADLXDisplayPixelFormat*, displayPixelFormatP_Ptr);
+%pointer_functions(IADLXDisplayScalingMode*, displayScalingModeP_Ptr);
+%pointer_functions(IADLXDisplayVariBright*, displayVariBrightP_Ptr);
+%pointer_functions(IADLXDisplayVSR*, displayVSRP_Ptr);
+%pointer_functions(IADLXDisplayBlanking*, displayDisplayBlankingP_Ptr);
+%pointer_functions(IADLXDisplayConnectivityExperience*, displayConnectivityExperienceP_Ptr);
+%pointer_functions(IADLXDisplayDynamicRefreshRateControl*, displayDynamicRefreshRateControlP_Ptr);
+%pointer_functions(IADLXDisplayFreeSyncColorAccuracy*, displayCFreeSyncColorAccuracyP_Ptr);
 
-
-// T** ppointer
+// T** ppointer - Advanced pointer-to-pointer macro (currently unused but available)
 %define %ppointer_functions(TYPE,NAME)
 %{
 static TYPE *new_##NAME() { %}
@@ -386,6 +562,7 @@ TYPE  NAME##_value(TYPE *obj);
 
 %enddef
 
+// Pointer cast macro for type conversions (currently unused but available)
 %define %pointer_cast(TYPE1,TYPE2,NAME)
 %inline %{
 TYPE2 NAME(TYPE1 x) {
@@ -394,8 +571,9 @@ TYPE2 NAME(TYPE1 x) {
 %}
 %enddef
 
-/* %pointer_cast(IADLXManualFanTuning**, void**, CastManualFanTuningVoidPtr);
+/* Example usage of pointer casts (commented out, enable if needed):
+%pointer_cast(IADLXManualFanTuning**, void**, CastManualFanTuningVoidPtr);
 %pointer_cast(IADLXManualPowerTuning**, void**, CastManualPowerTuningVoidPtr);
-
 %pointer_cast(IADLXGPUMetrics**, IADLXGPUMetrics1**, CastGPUMetricsToGPUMetrics1);
-%pointer_cast(IADLXGPUMetricsSupport**, IADLXGPUMetricsSupport1**, CastGPUMetricsSupportToGPUMetricsSupport1); */
+%pointer_cast(IADLXGPUMetricsSupport**, IADLXGPUMetricsSupport1**, CastGPUMetricsSupportToGPUMetricsSupport1);
+*/

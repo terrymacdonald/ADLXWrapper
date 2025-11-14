@@ -508,6 +508,130 @@ typedef wchar_t TCHAR;
 #endif
 
 
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryFullVersion_Fn)(adlx_uint64* fullVersion);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXQueryVersion_Fn)(const char** version);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitialize_Fn)(adlx_uint64 version, adlx::IADLXSystem** ppSystem);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXInitializeWithCallerAdl_Fn)(adlx_uint64 version, adlx::IADLXSystem** ppSystem, adlx::IADLMapping** ppAdlMapping, adlx_handle adlContext, ADLX_ADL_Main_Memory_Free adlMainMemoryFree);
+typedef ADLX_RESULT (ADLX_CDECL_CALL *ADLXTerminate_Fn)();
+typedef void (ADLX_STD_CALL* ADLX_ADL_Main_Memory_Free)(void** buffer);
+
+
+class ADLXLoader {
+private:
+    HMODULE hADLXDLL;
+    ADLXQueryFullVersion_Fn queryFullVersion;
+    ADLXQueryVersion_Fn queryVersion;
+    ADLXInitialize_Fn initialize;
+    ADLXInitialize_Fn initializeWithIncompatibleDriver;
+    ADLXInitializeWithCallerAdl_Fn initializeWithCallerAdl;
+    ADLXTerminate_Fn terminate;
+
+public:
+    ADLXLoader() : hADLXDLL(nullptr), 
+                   queryFullVersion(nullptr),
+                   queryVersion(nullptr),
+                   initialize(nullptr),
+                   initializeWithIncompatibleDriver(nullptr),
+                   initializeWithCallerAdl(nullptr),
+                   terminate(nullptr) {}
+
+    ~ADLXLoader() {
+        Unload();
+    }
+
+    // Load the ADLX DLL and retrieve function pointers
+    bool Load() {
+        #ifdef _M_AMD64
+        hADLXDLL = LoadLibraryA("amdadlx64.dll");
+        #else
+        hADLXDLL = LoadLibraryA("amdadlx32.dll");
+        #endif
+
+        if (!hADLXDLL)
+            return false;
+
+        queryFullVersion = (ADLXQueryFullVersion_Fn)GetProcAddress(hADLXDLL, ADLX_QUERY_FULL_VERSION_FUNCTION_NAME);
+        queryVersion = (ADLXQueryVersion_Fn)GetProcAddress(hADLXDLL, ADLX_QUERY_VERSION_FUNCTION_NAME);
+        initialize = (ADLXInitialize_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_FUNCTION_NAME);
+        initializeWithIncompatibleDriver = (ADLXInitialize_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME);
+        initializeWithCallerAdl = (ADLXInitializeWithCallerAdl_Fn)GetProcAddress(hADLXDLL, ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME);
+        terminate = (ADLXTerminate_Fn)GetProcAddress(hADLXDLL, ADLX_TERMINATE_FUNCTION_NAME);
+
+        return (queryFullVersion && queryVersion && initialize && terminate);
+    }
+
+    // Unload the ADLX DLL
+    void Unload() {
+        if (hADLXDLL) {
+            FreeLibrary(hADLXDLL);
+            hADLXDLL = nullptr;
+            queryFullVersion = nullptr;
+            queryVersion = nullptr;
+            initialize = nullptr;
+            initializeWithIncompatibleDriver = nullptr;
+            initializeWithCallerAdl = nullptr;
+            terminate = nullptr;
+        }
+    }
+
+    // Check if the DLL is loaded
+    bool IsLoaded() const {
+        return hADLXDLL != nullptr;
+    }
+
+    // Query the full version of ADLX (64-bit version number)
+    ADLX_RESULT QueryFullVersion(adlx_uint64* fullVersion) {
+        if (!queryFullVersion || !fullVersion) 
+            return ADLX_FAIL;
+        return queryFullVersion(fullVersion);
+    }
+
+    // Query the version string of ADLX
+    ADLX_RESULT QueryVersion(const char** version) {
+        if (!queryVersion || !version) 
+            return ADLX_FAIL;
+        return queryVersion(version);
+    }
+
+    // Initialize ADLX with default parameters
+    ADLX_RESULT Initialize(adlx_uint64 version, adlx::IADLXSystem** ppSystem) {
+        if (!initialize || !ppSystem) 
+            return ADLX_FAIL;
+        return initialize(version, ppSystem);
+    }
+
+    // Initialize ADLX even with incompatible driver (use with caution)
+    ADLX_RESULT InitializeWithIncompatibleDriver(adlx_uint64 version, adlx::IADLXSystem** ppSystem) {
+        if (!initializeWithIncompatibleDriver || !ppSystem) 
+            return ADLX_FAIL;
+        return initializeWithIncompatibleDriver(version, ppSystem);
+    }
+
+    // Initialize ADLX with an existing ADL context (for ADL/ADLX interop)
+    ADLX_RESULT InitializeWithCallerAdl(adlx_uint64 version, 
+                                        adlx::IADLXSystem** ppSystem, 
+                                        adlx::IADLMapping** ppAdlMapping, 
+                                        adlx_handle adlContext, 
+                                        ADLX_ADL_Main_Memory_Free adlMainMemoryFree) {
+        if (!initializeWithCallerAdl || !ppSystem) 
+            return ADLX_FAIL;
+        return initializeWithCallerAdl(version, ppSystem, ppAdlMapping, adlContext, adlMainMemoryFree);
+    }
+
+    // Terminate ADLX
+    ADLX_RESULT Terminate() {
+        if (!terminate) 
+            return ADLX_FAIL;
+        return terminate();
+    }
+
+    // Get the DLL module handle (advanced use only)
+    HMODULE GetModuleHandle() const {
+        return hADLXDLL;
+    }
+};
+
+
 static adlx_int *new_adlx_intP(void) { 
   return new adlx_int(); 
 }
@@ -567,6 +691,27 @@ static void adlx_uint16P_assign(adlx_uint16 *obj, adlx_uint16 value) {
 }
 
 static adlx_uint16 adlx_uint16P_value(adlx_uint16 *obj) {
+  return *obj;
+}
+
+
+static adlx_uint64 *new_adlx_uint64P(void) { 
+  return new adlx_uint64(); 
+}
+
+static adlx_uint64 *copy_adlx_uint64P(adlx_uint64 value) { 
+  return new adlx_uint64(value); 
+}
+
+static void delete_adlx_uint64P(adlx_uint64 *obj) { 
+  delete obj; 
+}
+
+static void adlx_uint64P_assign(adlx_uint64 *obj, adlx_uint64 value) {
+  *obj = value;
+}
+
+static adlx_uint64 adlx_uint64P_value(adlx_uint64 *obj) {
   return *obj;
 }
 
@@ -2083,6 +2228,69 @@ static IADLXInterface* adlxInterfaceP_Ptr_value(IADLXInterface* *obj) {
 }
 
 
+static IADLXSystem* *new_systemP_Ptr(void) { 
+  return new IADLXSystem*(); 
+}
+
+static IADLXSystem* *copy_systemP_Ptr(IADLXSystem* value) { 
+  return new IADLXSystem*(value); 
+}
+
+static void delete_systemP_Ptr(IADLXSystem* *obj) { 
+  delete obj; 
+}
+
+static void systemP_Ptr_assign(IADLXSystem* *obj, IADLXSystem* value) {
+  *obj = value;
+}
+
+static IADLXSystem* systemP_Ptr_value(IADLXSystem* *obj) {
+  return *obj;
+}
+
+
+static IADLXSystem1* *new_system1P_Ptr(void) { 
+  return new IADLXSystem1*(); 
+}
+
+static IADLXSystem1* *copy_system1P_Ptr(IADLXSystem1* value) { 
+  return new IADLXSystem1*(value); 
+}
+
+static void delete_system1P_Ptr(IADLXSystem1* *obj) { 
+  delete obj; 
+}
+
+static void system1P_Ptr_assign(IADLXSystem1* *obj, IADLXSystem1* value) {
+  *obj = value;
+}
+
+static IADLXSystem1* system1P_Ptr_value(IADLXSystem1* *obj) {
+  return *obj;
+}
+
+
+static IADLXSystem2* *new_system2P_Ptr(void) { 
+  return new IADLXSystem2*(); 
+}
+
+static IADLXSystem2* *copy_system2P_Ptr(IADLXSystem2* value) { 
+  return new IADLXSystem2*(value); 
+}
+
+static void delete_system2P_Ptr(IADLXSystem2* *obj) { 
+  delete obj; 
+}
+
+static void system2P_Ptr_assign(IADLXSystem2* *obj, IADLXSystem2* value) {
+  *obj = value;
+}
+
+static IADLXSystem2* system2P_Ptr_value(IADLXSystem2* *obj) {
+  return *obj;
+}
+
+
 static IADLXGPUTuningServices* *new_gpuTuningP_Ptr(void) { 
   return new IADLXGPUTuningServices*(); 
 }
@@ -2831,6 +3039,242 @@ void SwigDirector_IADLXGPUConnectChangedListener::swig_init_callbacks() {
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_DLL_NAME_64_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("amdadlx64.dll");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_DLL_NAME_32_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("amdadlx32.dll");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_QUERY_FULL_VERSION_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXQueryFullVersion");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_QUERY_VERSION_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXQueryVersion");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXInitialize");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXInitializeWithIncompatibleDriver");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_INIT_WITH_CALLER_ADL_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXInitializeWithCallerAdl");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_ADLXWrapper_ADLX_TERMINATE_FN_get() {
+  char * jresult ;
+  char *result = 0 ;
+  
+  result = (char *)("ADLXTerminate");
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_ADLXLoader() {
+  void * jresult ;
+  ADLXLoader *result = 0 ;
+  
+  result = (ADLXLoader *)new ADLXLoader();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_ADLXLoader(void * jarg1) {
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_Load(void * jarg1) {
+  unsigned int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  bool result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  result = (bool)(arg1)->Load();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_Unload(void * jarg1) {
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  (arg1)->Unload();
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_IsLoaded(void * jarg1) {
+  unsigned int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  bool result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  result = (bool)((ADLXLoader const *)arg1)->IsLoaded();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_QueryFullVersion(void * jarg1, void * jarg2) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  adlx_uint64 *arg2 = (adlx_uint64 *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  arg2 = (adlx_uint64 *)jarg2; 
+  result = (ADLX_RESULT)(arg1)->QueryFullVersion(arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_QueryVersion(void * jarg1, void * jarg2) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  char **arg2 = (char **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  arg2 = (char **)jarg2; 
+  result = (ADLX_RESULT)(arg1)->QueryVersion((char const **)arg2);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_Initialize(void * jarg1, unsigned long long jarg2, void * jarg3) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  adlx_uint64 arg2 ;
+  adlx::IADLXSystem **arg3 = (adlx::IADLXSystem **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  arg2 = (adlx_uint64)jarg2; 
+  arg3 = (adlx::IADLXSystem **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->Initialize(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_InitializeWithIncompatibleDriver(void * jarg1, unsigned long long jarg2, void * jarg3) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  adlx_uint64 arg2 ;
+  adlx::IADLXSystem **arg3 = (adlx::IADLXSystem **) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  arg2 = (adlx_uint64)jarg2; 
+  arg3 = (adlx::IADLXSystem **)jarg3; 
+  result = (ADLX_RESULT)(arg1)->InitializeWithIncompatibleDriver(arg2,arg3);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_InitializeWithCallerAdl(void * jarg1, unsigned long long jarg2, void * jarg3, void * jarg4, void * jarg5, void * jarg6) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  adlx_uint64 arg2 ;
+  adlx::IADLXSystem **arg3 = (adlx::IADLXSystem **) 0 ;
+  adlx::IADLMapping **arg4 = (adlx::IADLMapping **) 0 ;
+  adlx_handle arg5 = (adlx_handle) 0 ;
+  ADLX_ADL_Main_Memory_Free arg6 = (ADLX_ADL_Main_Memory_Free) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  arg2 = (adlx_uint64)jarg2; 
+  arg3 = (adlx::IADLXSystem **)jarg3; 
+  arg4 = (adlx::IADLMapping **)jarg4; 
+  arg5 = (adlx_handle)jarg5; 
+  arg6 = (ADLX_ADL_Main_Memory_Free)jarg6; 
+  result = (ADLX_RESULT)(arg1)->InitializeWithCallerAdl(arg2,arg3,arg4,arg5,arg6);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_Terminate(void * jarg1) {
+  int jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  ADLX_RESULT result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  result = (ADLX_RESULT)(arg1)->Terminate();
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_ADLXLoader_GetModuleHandle(void * jarg1) {
+  void * jresult ;
+  ADLXLoader *arg1 = (ADLXLoader *) 0 ;
+  HMODULE result;
+  
+  arg1 = (ADLXLoader *)jarg1; 
+  result = ((ADLXLoader const *)arg1)->GetModuleHandle();
+  jresult = new HMODULE(result); 
+  return jresult;
+}
+
 
 SWIGEXPORT unsigned int SWIGSTDCALL CSharp_ADLXWrapper_IsADLXRuntimeAvailable() {
   unsigned int jresult ;
@@ -18403,6 +18847,58 @@ SWIGEXPORT unsigned short SWIGSTDCALL CSharp_ADLXWrapper_adlx_uint16P_value(void
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_uint64P() {
+  void * jresult ;
+  adlx_uint64 *result = 0 ;
+  
+  result = (adlx_uint64 *)new_adlx_uint64P();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_uint64P(unsigned long long jarg1) {
+  void * jresult ;
+  adlx_uint64 arg1 ;
+  adlx_uint64 *result = 0 ;
+  
+  arg1 = (adlx_uint64)jarg1; 
+  result = (adlx_uint64 *)copy_adlx_uint64P(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_uint64P(void * jarg1) {
+  adlx_uint64 *arg1 = (adlx_uint64 *) 0 ;
+  
+  arg1 = (adlx_uint64 *)jarg1; 
+  delete_adlx_uint64P(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_uint64P_assign(void * jarg1, unsigned long long jarg2) {
+  adlx_uint64 *arg1 = (adlx_uint64 *) 0 ;
+  adlx_uint64 arg2 ;
+  
+  arg1 = (adlx_uint64 *)jarg1; 
+  arg2 = (adlx_uint64)jarg2; 
+  adlx_uint64P_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_ADLXWrapper_adlx_uint64P_value(void * jarg1) {
+  unsigned long long jresult ;
+  adlx_uint64 *arg1 = (adlx_uint64 *) 0 ;
+  adlx_uint64 result;
+  
+  arg1 = (adlx_uint64 *)jarg1; 
+  result = (adlx_uint64)adlx_uint64P_value(arg1);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_boolP() {
   void * jresult ;
   adlx_bool *result = 0 ;
@@ -22274,6 +22770,162 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_adlxInterfaceP_Ptr_value(void *
   
   arg1 = (adlx::IADLXInterface **)jarg1; 
   result = (adlx::IADLXInterface *)adlxInterfaceP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_systemP_Ptr() {
+  void * jresult ;
+  adlx::IADLXSystem **result = 0 ;
+  
+  result = (adlx::IADLXSystem **)new_systemP_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_systemP_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem *arg1 = (adlx::IADLXSystem *) 0 ;
+  adlx::IADLXSystem **result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem *)jarg1; 
+  result = (adlx::IADLXSystem **)copy_systemP_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_systemP_Ptr(void * jarg1) {
+  adlx::IADLXSystem **arg1 = (adlx::IADLXSystem **) 0 ;
+  
+  arg1 = (adlx::IADLXSystem **)jarg1; 
+  delete_systemP_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_systemP_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXSystem **arg1 = (adlx::IADLXSystem **) 0 ;
+  adlx::IADLXSystem *arg2 = (adlx::IADLXSystem *) 0 ;
+  
+  arg1 = (adlx::IADLXSystem **)jarg1; 
+  arg2 = (adlx::IADLXSystem *)jarg2; 
+  systemP_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_systemP_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem **arg1 = (adlx::IADLXSystem **) 0 ;
+  adlx::IADLXSystem *result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem **)jarg1; 
+  result = (adlx::IADLXSystem *)systemP_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_system1P_Ptr() {
+  void * jresult ;
+  adlx::IADLXSystem1 **result = 0 ;
+  
+  result = (adlx::IADLXSystem1 **)new_system1P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_system1P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem1 *arg1 = (adlx::IADLXSystem1 *) 0 ;
+  adlx::IADLXSystem1 **result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem1 *)jarg1; 
+  result = (adlx::IADLXSystem1 **)copy_system1P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_system1P_Ptr(void * jarg1) {
+  adlx::IADLXSystem1 **arg1 = (adlx::IADLXSystem1 **) 0 ;
+  
+  arg1 = (adlx::IADLXSystem1 **)jarg1; 
+  delete_system1P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_system1P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXSystem1 **arg1 = (adlx::IADLXSystem1 **) 0 ;
+  adlx::IADLXSystem1 *arg2 = (adlx::IADLXSystem1 *) 0 ;
+  
+  arg1 = (adlx::IADLXSystem1 **)jarg1; 
+  arg2 = (adlx::IADLXSystem1 *)jarg2; 
+  system1P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_system1P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem1 **arg1 = (adlx::IADLXSystem1 **) 0 ;
+  adlx::IADLXSystem1 *result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem1 **)jarg1; 
+  result = (adlx::IADLXSystem1 *)system1P_Ptr_value(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_system2P_Ptr() {
+  void * jresult ;
+  adlx::IADLXSystem2 **result = 0 ;
+  
+  result = (adlx::IADLXSystem2 **)new_system2P_Ptr();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_system2P_Ptr(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem2 *arg1 = (adlx::IADLXSystem2 *) 0 ;
+  adlx::IADLXSystem2 **result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem2 *)jarg1; 
+  result = (adlx::IADLXSystem2 **)copy_system2P_Ptr(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_system2P_Ptr(void * jarg1) {
+  adlx::IADLXSystem2 **arg1 = (adlx::IADLXSystem2 **) 0 ;
+  
+  arg1 = (adlx::IADLXSystem2 **)jarg1; 
+  delete_system2P_Ptr(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_system2P_Ptr_assign(void * jarg1, void * jarg2) {
+  adlx::IADLXSystem2 **arg1 = (adlx::IADLXSystem2 **) 0 ;
+  adlx::IADLXSystem2 *arg2 = (adlx::IADLXSystem2 *) 0 ;
+  
+  arg1 = (adlx::IADLXSystem2 **)jarg1; 
+  arg2 = (adlx::IADLXSystem2 *)jarg2; 
+  system2P_Ptr_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_system2P_Ptr_value(void * jarg1) {
+  void * jresult ;
+  adlx::IADLXSystem2 **arg1 = (adlx::IADLXSystem2 **) 0 ;
+  adlx::IADLXSystem2 *result = 0 ;
+  
+  arg1 = (adlx::IADLXSystem2 **)jarg1; 
+  result = (adlx::IADLXSystem2 *)system2P_Ptr_value(arg1);
   jresult = (void *)result; 
   return jresult;
 }
