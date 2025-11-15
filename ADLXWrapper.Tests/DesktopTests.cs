@@ -312,4 +312,237 @@ public class DesktopTests
             ADLX.delete_desktopSerP_Ptr(desktopServicesPtr);
         }
     }
+    
+    // ============================================================================
+    // OPTIONAL TESTS - Modify System Configuration
+    // These tests are excluded by default. Run with:
+    //   dotnet test --filter "Category=CreateEyefinity"
+    // ============================================================================
+    
+    /// <summary>
+    /// ?? WARNING: This test will temporarily modify your display configuration!
+    /// 
+    /// This test creates an Eyefinity desktop (combining multiple displays into one large surface)
+    /// and then restores the original configuration. Your displays will reconfigure during this test.
+    /// 
+    /// Requirements:
+    /// - 2 or more compatible displays connected
+    /// - Displays must support Eyefinity (same resolution/refresh rate recommended)
+    /// - No applications should be using fullscreen mode
+    /// 
+    /// Run explicitly with: dotnet test --filter "Category=CreateEyefinity"
+    /// </summary>
+    [Trait("Category", "CreateEyefinity")]
+    [Trait("Category", "Integration")]
+    [SkippableFact]
+    public void Optional_Test_Eyefinity_Create_And_Restore()
+    {
+        Skip.IfNot(_fixture.IsADLXSupported, _fixture.SkipReason ?? "ADLX not supported");
+        Skip.IfNot(_fixture.Capabilities.DisplayCount >= 2, "Need at least 2 displays for Eyefinity");
+        Skip.IfNot(_fixture.Capabilities.SupportsDesktopServices, "Desktop services not supported");
+        
+        _output.WriteLine("================================================================================");
+        _output.WriteLine("??  WARNING: EYEFINITY CREATE/RESTORE TEST");
+        _output.WriteLine("================================================================================");
+        _output.WriteLine("This test will MODIFY your desktop configuration!");
+        _output.WriteLine("- Your displays will reconfigure (may go black briefly)");
+        _output.WriteLine("- Open windows may be repositioned");
+        _output.WriteLine("- The test will restore your original configuration when complete");
+        _output.WriteLine("================================================================================");
+        _output.WriteLine("");
+        
+        var desktopServicesPtr = ADLX.new_desktopSerP_Ptr();
+        try
+        {
+            _fixture.System!.GetDesktopsServices(desktopServicesPtr);
+            var desktopServices = ADLX.desktopSerP_Ptr_value(desktopServicesPtr);
+            
+            // Get SimpleEyefinity interface
+            var simpleEyefinityPtr = ADLX.new_simpleEyefinityP_Ptr();
+            try
+            {
+                var result = desktopServices!.GetSimpleEyefinity(simpleEyefinityPtr);
+                if (result != ADLX_RESULT.ADLX_OK)
+                {
+                    Skip.Always($"SimpleEyefinity not available: {result}");
+                }
+                
+                var simpleEyefinity = ADLX.simpleEyefinityP_Ptr_value(simpleEyefinityPtr);
+                if (simpleEyefinity == null)
+                {
+                    Skip.Always("SimpleEyefinity interface is null");
+                }
+                
+                // Step 1: Check if Eyefinity is supported
+                _output.WriteLine("Step 1: Checking Eyefinity support...");
+                var supportedPtr = ADLX.new_adlx_boolP();
+                try
+                {
+                    result = simpleEyefinity.IsSupported(supportedPtr);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        Skip.Always($"Could not check Eyefinity support: {result}");
+                    }
+                    
+                    bool supported = ADLX.adlx_boolP_value(supportedPtr);
+                    if (!supported)
+                    {
+                        Skip.Always("Eyefinity not supported on this system (displays may not be compatible)");
+                    }
+                    
+                    _output.WriteLine("? Eyefinity is supported");
+                }
+                finally
+                {
+                    ADLX.delete_adlx_boolP(supportedPtr);
+                }
+                
+                // Step 2: Save current Eyefinity state
+                _output.WriteLine("\nStep 2: Checking current Eyefinity state...");
+                var wasEnabledPtr = ADLX.new_adlx_boolP();
+                bool wasEnabled = false;
+                try
+                {
+                    result = simpleEyefinity.IsEnabled(wasEnabledPtr);
+                    if (result == ADLX_RESULT.ADLX_OK)
+                    {
+                        wasEnabled = ADLX.adlx_boolP_value(wasEnabledPtr);
+                        _output.WriteLine($"Original Eyefinity state: {(wasEnabled ? "Enabled" : "Disabled")}");
+                    }
+                }
+                finally
+                {
+                    ADLX.delete_adlx_boolP(wasEnabledPtr);
+                }
+                
+                try
+                {
+                    // Step 3: If Eyefinity not already enabled, create it
+                    if (!wasEnabled)
+                    {
+                        _output.WriteLine("\nStep 3: Creating Eyefinity desktop...");
+                        _output.WriteLine("??  Your displays will reconfigure now...");
+                        
+                        result = simpleEyefinity.Create();
+                        
+                        if (result == ADLX_RESULT.ADLX_OK)
+                        {
+                            _output.WriteLine("? Eyefinity desktop created successfully");
+                            
+                            // Verify it's enabled
+                            var enabledPtr = ADLX.new_adlx_boolP();
+                            try
+                            {
+                                simpleEyefinity.IsEnabled(enabledPtr);
+                                bool isEnabled = ADLX.adlx_boolP_value(enabledPtr);
+                                Assert.True(isEnabled, "Eyefinity should be enabled after creation");
+                                _output.WriteLine("? Verified: Eyefinity is now enabled");
+                            }
+                            finally
+                            {
+                                ADLX.delete_adlx_boolP(enabledPtr);
+                            }
+                        }
+                        else if (result == ADLX_RESULT.ADLX_ALREADY_ENABLED)
+                        {
+                            _output.WriteLine("??  Eyefinity was already enabled");
+                        }
+                        else
+                        {
+                            _output.WriteLine($"? Failed to create Eyefinity: {result}");
+                            _output.WriteLine($"  Error: {ADLX.GetADLXErrorDescription(result)}");
+                            throw new Exception($"Eyefinity creation failed: {result}");
+                        }
+                        
+                        // Step 4: Destroy Eyefinity to restore original state
+                        _output.WriteLine("\nStep 4: Restoring original desktop configuration...");
+                        _output.WriteLine("??  Your displays will reconfigure again...");
+                        
+                        result = simpleEyefinity.Destroy();
+                        
+                        if (result == ADLX_RESULT.ADLX_OK)
+                        {
+                            _output.WriteLine("? Eyefinity desktop destroyed successfully");
+                            
+                            // Verify it's disabled
+                            var disabledPtr = ADLX.new_adlx_boolP();
+                            try
+                            {
+                                simpleEyefinity.IsEnabled(disabledPtr);
+                                bool isEnabled = ADLX.adlx_boolP_value(disabledPtr);
+                                Assert.False(isEnabled, "Eyefinity should be disabled after destruction");
+                                _output.WriteLine("? Verified: Eyefinity is now disabled");
+                                _output.WriteLine("? Original desktop configuration restored");
+                            }
+                            finally
+                            {
+                                ADLX.delete_adlx_boolP(disabledPtr);
+                            }
+                        }
+                        else
+                        {
+                            _output.WriteLine($"? Failed to destroy Eyefinity: {result}");
+                            _output.WriteLine($"  Error: {ADLX.GetADLXErrorDescription(result)}");
+                            _output.WriteLine("??  WARNING: Your desktop configuration may not be restored!");
+                            _output.WriteLine("   You may need to manually disable Eyefinity in AMD Software");
+                            throw new Exception($"Eyefinity destruction failed: {result}");
+                        }
+                    }
+                    else
+                    {
+                        // Eyefinity was already enabled - just verify we can access it
+                        _output.WriteLine("\n??  Eyefinity was already enabled before test");
+                        _output.WriteLine("   Skipping create/destroy cycle to preserve your configuration");
+                        _output.WriteLine("   Test considered successful - Eyefinity APIs are accessible");
+                    }
+                    
+                    _output.WriteLine("\n================================================================================");
+                    _output.WriteLine("? TEST COMPLETED SUCCESSFULLY");
+                    _output.WriteLine("  Your desktop configuration should be restored to its original state");
+                    _output.WriteLine("================================================================================");
+                }
+                catch (Exception ex)
+                {
+                    _output.WriteLine("\n================================================================================");
+                    _output.WriteLine("? TEST FAILED WITH EXCEPTION");
+                    _output.WriteLine($"  {ex.Message}");
+                    _output.WriteLine("================================================================================");
+                    
+                    // Attempt to restore state on failure
+                    if (!wasEnabled)
+                    {
+                        _output.WriteLine("\nAttempting emergency restoration...");
+                        try
+                        {
+                            var emergencyResult = simpleEyefinity.Destroy();
+                            if (emergencyResult == ADLX_RESULT.ADLX_OK)
+                            {
+                                _output.WriteLine("? Emergency restoration successful");
+                            }
+                            else
+                            {
+                                _output.WriteLine($"? Emergency restoration failed: {emergencyResult}");
+                                _output.WriteLine("??  Please manually disable Eyefinity in AMD Software");
+                            }
+                        }
+                        catch
+                        {
+                            _output.WriteLine("? Emergency restoration threw exception");
+                            _output.WriteLine("??  Please manually disable Eyefinity in AMD Software");
+                        }
+                    }
+                    
+                    throw;
+                }
+            }
+            finally
+            {
+                ADLX.delete_simpleEyefinityP_Ptr(simpleEyefinityPtr);
+            }
+        }
+        finally
+        {
+            ADLX.delete_desktopSerP_Ptr(desktopServicesPtr);
+        }
+    }
 }

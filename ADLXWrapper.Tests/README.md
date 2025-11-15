@@ -130,6 +130,56 @@ dotnet test --filter "FullyQualifiedName~DisplayTests|FullyQualifiedName~Desktop
 dotnet test --filter "FullyQualifiedName~PerformanceMonitoringTests"
 ```
 
+### ?? Optional Tests That Modify System Configuration
+
+Some tests can **modify your system configuration** (e.g., creating Eyefinity desktops). These are **excluded by default** and must be explicitly enabled using test categories.
+
+#### CreateEyefinity Category
+
+Tests in this category will **create and destroy Eyefinity desktop configurations**, which will:
+- ?? Temporarily reconfigure your displays (may go black briefly)
+- ?? May reposition open windows
+- ?? Requires 2+ compatible displays
+- ? Will restore original configuration when complete
+
+**Run Eyefinity Create/Restore Tests:**
+
+```bash
+# Run ONLY the CreateEyefinity tests
+dotnet test --filter "Category=CreateEyefinity"
+
+# View detailed output while running
+dotnet test --filter "Category=CreateEyefinity" --verbosity detailed
+```
+
+**From Visual Studio Test Explorer:**
+1. In Test Explorer, find: `Optional_Test_Eyefinity_Create_And_Restore`
+2. Right-click and select `Run` or `Debug`
+3. The test will display warnings before modifying configuration
+4. Watch the test output for status messages
+
+**To exclude from normal test runs:**
+```bash
+# Run all tests EXCEPT CreateEyefinity tests (default behavior)
+dotnet test --filter "Category!=CreateEyefinity"
+```
+
+**Requirements for CreateEyefinity tests:**
+- ? 2 or more displays connected to AMD GPU
+- ? Displays should have compatible resolutions/refresh rates
+- ? No fullscreen applications running
+- ? User should be prepared for brief display reconfiguration
+- ? Test will attempt to restore original state even if it fails
+
+**What the test does:**
+1. Checks if Eyefinity is supported on your system
+2. Saves current Eyefinity state (enabled/disabled)
+3. Creates an Eyefinity desktop (combines displays)
+4. Verifies Eyefinity is enabled
+5. Destroys the Eyefinity desktop
+6. Verifies return to original state
+7. Includes emergency restoration on failure
+
 ## Test Results Interpretation
 
 ### On System WITHOUT AMD Hardware

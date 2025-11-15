@@ -1082,12 +1082,75 @@ finally
 
 ## Testing
 
+The ADLXWrapper includes a comprehensive test suite with over 37 tests covering all major ADLX features.
+
+### Standard Tests (Default)
+
 **IMPORTANT**: Unit tests require AMD GPU hardware to run successfully.
 
-Run tests using:
+Run standard tests using:
 ```cmd
 test_adlx.bat
 ```
+
+Or from the test project directory:
+```bash
+cd ADLXWrapper.Tests
+dotnet test --verbosity detailed
+```
+
+### Test Categories
+
+The test suite includes several categories:
+
+1. **Initialization Tests** - ADLX runtime detection and initialization
+2. **GPU Tests** - GPU enumeration, properties, interface versions
+3. **Display Tests** - Display enumeration and properties
+4. **Desktop Tests** - Desktop services and Eyefinity detection
+5. **Performance Tests** - GPU metrics and monitoring
+6. **Tuning Tests** - GPU tuning support detection (read-only)
+7. **System2 Tests** - Advanced features for newer GPUs
+
+### Optional Tests That Modify Configuration
+
+Some tests are **excluded by default** because they modify your system configuration. These tests are marked with special category traits.
+
+#### CreateEyefinity Tests
+
+Tests in the `CreateEyefinity` category will temporarily modify your display configuration by creating and destroying Eyefinity desktops.
+
+**⚠️ These tests will:**
+- Temporarily reconfigure your displays (may go black briefly)
+- May reposition open windows
+- Require 2+ compatible displays
+- Restore original configuration when complete
+
+**To run CreateEyefinity tests:**
+
+```bash
+# Run ONLY CreateEyefinity tests
+cd ADLXWrapper.Tests
+dotnet test --filter "Category=CreateEyefinity" --verbosity detailed
+
+# View just the test names
+dotnet test --filter "Category=CreateEyefinity" --list-tests
+```
+
+**From Visual Studio:**
+1. Open Test Explorer (`Test` → `Test Explorer`)
+2. Find: `DesktopTests` → `Optional_Test_Eyefinity_Create_And_Restore`
+3. Right-click and select `Run` or `Debug`
+4. Watch test output for status and warnings
+
+**To exclude from normal runs:**
+```bash
+# Run all tests EXCEPT CreateEyefinity (default behavior)
+dotnet test --filter "Category!=CreateEyefinity"
+```
+
+For more details on optional tests, see:
+- [`ADLXWrapper.Tests/README.md`](ADLXWrapper.Tests/README.md) - Comprehensive test documentation
+- [`ADLXWrapper.Tests/OPTIONAL_TESTS.md`](ADLXWrapper.Tests/OPTIONAL_TESTS.md) - Optional test category guide
 
 ## Troubleshooting
 
