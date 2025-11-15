@@ -218,6 +218,6 @@ public class InitializationTests
     // Helper method to create full version
     private static ulong MakeFullVersion(int major, int minor)
     {
-        return ((ulong)major << 32) | (ulong)minor;
+        return ADLX.ADLX_MAKE_FULL_VERSION((uint)major, (uint)minor);
     }
 }

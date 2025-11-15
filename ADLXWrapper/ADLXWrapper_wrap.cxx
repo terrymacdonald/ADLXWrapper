@@ -2963,6 +2963,11 @@ static IADLXDisplayFreeSyncColorAccuracy* displayCFreeSyncColorAccuracyP_Ptr_val
 }
 
 
+inline adlx_uint64 ADLX_MAKE_FULL_VERSION(adlx_uint major, adlx_uint minor) {
+    return ((adlx_uint64)major << 32) | minor;
+}
+
+
 
 /* ---------------------------------------------------
  * C++ director class methods
@@ -24612,6 +24617,20 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_displayCFreeSyncColorAccuracyP_
   arg1 = (adlx::IADLXDisplayFreeSyncColorAccuracy **)jarg1; 
   result = (adlx::IADLXDisplayFreeSyncColorAccuracy *)displayCFreeSyncColorAccuracyP_Ptr_value(arg1);
   jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_ADLXWrapper_ADLX_MAKE_FULL_VERSION(unsigned int jarg1, unsigned int jarg2) {
+  unsigned long long jresult ;
+  adlx_uint arg1 ;
+  adlx_uint arg2 ;
+  adlx_uint64 result;
+  
+  arg1 = (adlx_uint)jarg1; 
+  arg2 = (adlx_uint)jarg2; 
+  result = (adlx_uint64)ADLX_MAKE_FULL_VERSION(arg1,arg2);
+  jresult = result; 
   return jresult;
 }
 

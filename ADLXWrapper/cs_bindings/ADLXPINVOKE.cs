@@ -5628,6 +5628,9 @@ class ADLXPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_displayCFreeSyncColorAccuracyP_Ptr_value")]
   public static extern global::System.IntPtr displayCFreeSyncColorAccuracyP_Ptr_value(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_ADLX_MAKE_FULL_VERSION")]
+  public static extern ulong ADLX_MAKE_FULL_VERSION(uint jarg1, uint jarg2);
+
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_IADLXChangedEvent_SWIGUpcast")]
   public static extern global::System.IntPtr IADLXChangedEvent_SWIGUpcast(global::System.IntPtr jarg1);
 

@@ -508,7 +508,7 @@ using namespace adlx;
 %pointer_functions(IADLXGPUMetrics1*, metrics1P_Ptr);
 %pointer_functions(IADLXGPUMetricsSupport*, metricsSupportP_Ptr);
 %pointer_functions(IADLXGPUMetricsSupport1*, metricsSupport1P_Ptr);
-//%pointer_functions(adlx_string*, stringP_Ptr);
+//%pointer_functions(adlx_string*, adlx_stringP_Ptr);
 %pointer_functions(IADLXGPUMetricsList*, gpuMetricsListP_Ptr);
 %pointer_functions(char*, charP_Ptr);
 %pointer_functions(void*, voidP_Ptr);
@@ -578,3 +578,12 @@ TYPE2 NAME(TYPE1 x) {
 %pointer_cast(IADLXGPUMetrics**, IADLXGPUMetrics1**, CastGPUMetricsToGPUMetrics1);
 %pointer_cast(IADLXGPUMetricsSupport**, IADLXGPUMetricsSupport1**, CastGPUMetricsSupportToGPUMetricsSupport1);
 */
+
+// ============================================================================
+// Version Helper Function
+// ============================================================================
+%inline %{
+inline adlx_uint64 ADLX_MAKE_FULL_VERSION(adlx_uint major, adlx_uint minor) {
+    return ((adlx_uint64)major << 32) | minor;
+}
+%}

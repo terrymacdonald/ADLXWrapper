@@ -2986,6 +2986,11 @@ public class ADLX {
     return ret;
   }
 
+  public static ulong ADLX_MAKE_FULL_VERSION(uint major, uint minor) {
+    ulong ret = ADLXPINVOKE.ADLX_MAKE_FULL_VERSION(major, minor);
+    return ret;
+  }
+
   public static readonly string ADLX_DLL_NAME_64 = ADLXPINVOKE.ADLX_DLL_NAME_64_get();
   public static readonly string ADLX_DLL_NAME_32 = ADLXPINVOKE.ADLX_DLL_NAME_32_get();
   public static readonly string ADLX_QUERY_FULL_VERSION_FN = ADLXPINVOKE.ADLX_QUERY_FULL_VERSION_FN_get();
