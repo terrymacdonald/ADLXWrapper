@@ -32,8 +32,6 @@ if errorlevel 1 (
     exit /b 1
 )
 
-
-
 REM Copy compiled ADLXWrapper.dll to ADLXWrapper.Bindings and ADLXWrapper.Tests projects
 echo Copying ADLXWrapper.dll...
 copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper.Tests\bin\Debug\net9.0\ >nul
