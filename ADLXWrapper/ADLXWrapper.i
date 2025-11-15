@@ -446,6 +446,7 @@ using namespace adlx;
 %pointer_functions(ADLX_ANTI_ALIASING_LEVEL, adlx_antiAliasingLevelP);
 %pointer_functions(ADLX_ANTI_ALIASING_METHOD, adlx_antiAliasingMethodP);
 %pointer_functions(ADLX_ANTI_ALIASING_MODE, adlx_antiAliasingModeP);
+%pointer_functions(ADLX_ASIC_FAMILY_TYPE, adlx_asicFamilyTypeP);  // ADD THIS LINE
 %pointer_functions(ADLX_COLOR_DEPTH, adlx_colorDepthP);
 %pointer_functions(ADLX_DESKTOP_TYPE, adlx_desktopTypeP);
 %pointer_functions(ADLX_DISPLAY_TIMING_LIMITATION, adlx_displayTimingLimitationP);

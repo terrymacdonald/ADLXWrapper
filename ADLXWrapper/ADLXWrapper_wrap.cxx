@@ -1262,6 +1262,27 @@ static ADLX_ANTI_ALIASING_MODE adlx_antiAliasingModeP_value(ADLX_ANTI_ALIASING_M
 }
 
 
+static ADLX_ASIC_FAMILY_TYPE *new_adlx_asicFamilyTypeP(void) { 
+  return new ADLX_ASIC_FAMILY_TYPE(); 
+}
+
+static ADLX_ASIC_FAMILY_TYPE *copy_adlx_asicFamilyTypeP(ADLX_ASIC_FAMILY_TYPE value) { 
+  return new ADLX_ASIC_FAMILY_TYPE(value); 
+}
+
+static void delete_adlx_asicFamilyTypeP(ADLX_ASIC_FAMILY_TYPE *obj) { 
+  delete obj; 
+}
+
+static void adlx_asicFamilyTypeP_assign(ADLX_ASIC_FAMILY_TYPE *obj, ADLX_ASIC_FAMILY_TYPE value) {
+  *obj = value;
+}
+
+static ADLX_ASIC_FAMILY_TYPE adlx_asicFamilyTypeP_value(ADLX_ASIC_FAMILY_TYPE *obj) {
+  return *obj;
+}
+
+
 static ADLX_COLOR_DEPTH *new_adlx_colorDepthP(void) { 
   return new ADLX_COLOR_DEPTH(); 
 }
@@ -20378,6 +20399,58 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_antiAliasingModeP_value(void 
   
   arg1 = (ADLX_ANTI_ALIASING_MODE *)jarg1; 
   result = (ADLX_ANTI_ALIASING_MODE)adlx_antiAliasingModeP_value(arg1);
+  jresult = (int)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_new_adlx_asicFamilyTypeP() {
+  void * jresult ;
+  ADLX_ASIC_FAMILY_TYPE *result = 0 ;
+  
+  result = (ADLX_ASIC_FAMILY_TYPE *)new_adlx_asicFamilyTypeP();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_ADLXWrapper_copy_adlx_asicFamilyTypeP(int jarg1) {
+  void * jresult ;
+  ADLX_ASIC_FAMILY_TYPE arg1 ;
+  ADLX_ASIC_FAMILY_TYPE *result = 0 ;
+  
+  arg1 = (ADLX_ASIC_FAMILY_TYPE)jarg1; 
+  result = (ADLX_ASIC_FAMILY_TYPE *)copy_adlx_asicFamilyTypeP(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_delete_adlx_asicFamilyTypeP(void * jarg1) {
+  ADLX_ASIC_FAMILY_TYPE *arg1 = (ADLX_ASIC_FAMILY_TYPE *) 0 ;
+  
+  arg1 = (ADLX_ASIC_FAMILY_TYPE *)jarg1; 
+  delete_adlx_asicFamilyTypeP(arg1);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ADLXWrapper_adlx_asicFamilyTypeP_assign(void * jarg1, int jarg2) {
+  ADLX_ASIC_FAMILY_TYPE *arg1 = (ADLX_ASIC_FAMILY_TYPE *) 0 ;
+  ADLX_ASIC_FAMILY_TYPE arg2 ;
+  
+  arg1 = (ADLX_ASIC_FAMILY_TYPE *)jarg1; 
+  arg2 = (ADLX_ASIC_FAMILY_TYPE)jarg2; 
+  adlx_asicFamilyTypeP_assign(arg1,arg2);
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ADLXWrapper_adlx_asicFamilyTypeP_value(void * jarg1) {
+  int jresult ;
+  ADLX_ASIC_FAMILY_TYPE *arg1 = (ADLX_ASIC_FAMILY_TYPE *) 0 ;
+  ADLX_ASIC_FAMILY_TYPE result;
+  
+  arg1 = (ADLX_ASIC_FAMILY_TYPE *)jarg1; 
+  result = (ADLX_ASIC_FAMILY_TYPE)adlx_asicFamilyTypeP_value(arg1);
   jresult = (int)result; 
   return jresult;
 }

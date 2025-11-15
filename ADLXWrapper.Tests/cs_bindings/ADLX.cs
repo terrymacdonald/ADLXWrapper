@@ -910,6 +910,31 @@ public class ADLX {
     return ret;
   }
 
+  public static SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE new_adlx_asicFamilyTypeP() {
+    global::System.IntPtr cPtr = ADLXPINVOKE.new_adlx_asicFamilyTypeP();
+    SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE(cPtr, false);
+    return ret;
+  }
+
+  public static SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE copy_adlx_asicFamilyTypeP(ADLX_ASIC_FAMILY_TYPE value) {
+    global::System.IntPtr cPtr = ADLXPINVOKE.copy_adlx_asicFamilyTypeP((int)value);
+    SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE(cPtr, false);
+    return ret;
+  }
+
+  public static void delete_adlx_asicFamilyTypeP(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE obj) {
+    ADLXPINVOKE.delete_adlx_asicFamilyTypeP(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE.getCPtr(obj));
+  }
+
+  public static void adlx_asicFamilyTypeP_assign(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE obj, ADLX_ASIC_FAMILY_TYPE value) {
+    ADLXPINVOKE.adlx_asicFamilyTypeP_assign(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE.getCPtr(obj), (int)value);
+  }
+
+  public static ADLX_ASIC_FAMILY_TYPE adlx_asicFamilyTypeP_value(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE obj) {
+    ADLX_ASIC_FAMILY_TYPE ret = (ADLX_ASIC_FAMILY_TYPE)ADLXPINVOKE.adlx_asicFamilyTypeP_value(SWIGTYPE_p_ADLX_ASIC_FAMILY_TYPE.getCPtr(obj));
+    return ret;
+  }
+
   public static SWIGTYPE_p_ADLX_COLOR_DEPTH new_adlx_colorDepthP() {
     global::System.IntPtr cPtr = ADLXPINVOKE.new_adlx_colorDepthP();
     SWIGTYPE_p_ADLX_COLOR_DEPTH ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_ADLX_COLOR_DEPTH(cPtr, false);

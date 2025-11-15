@@ -4413,6 +4413,21 @@ class ADLXPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_adlx_antiAliasingModeP_value")]
   public static extern int adlx_antiAliasingModeP_value(global::System.Runtime.InteropServices.HandleRef jarg1);
 
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_new_adlx_asicFamilyTypeP")]
+  public static extern global::System.IntPtr new_adlx_asicFamilyTypeP();
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_copy_adlx_asicFamilyTypeP")]
+  public static extern global::System.IntPtr copy_adlx_asicFamilyTypeP(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_delete_adlx_asicFamilyTypeP")]
+  public static extern void delete_adlx_asicFamilyTypeP(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_adlx_asicFamilyTypeP_assign")]
+  public static extern void adlx_asicFamilyTypeP_assign(global::System.Runtime.InteropServices.HandleRef jarg1, int jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_adlx_asicFamilyTypeP_value")]
+  public static extern int adlx_asicFamilyTypeP_value(global::System.Runtime.InteropServices.HandleRef jarg1);
+
   [global::System.Runtime.InteropServices.DllImport("ADLXWrapper", EntryPoint="CSharp_ADLXWrapper_new_adlx_colorDepthP")]
   public static extern global::System.IntPtr new_adlx_colorDepthP();
 
