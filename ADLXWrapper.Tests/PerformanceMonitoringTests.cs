@@ -11,7 +11,7 @@ namespace ADLXWrapper.Tests;
 public class PerformanceMonitoringTests
 {
     private readonly ADLXTestFixture _fixture;
-    private readonly ITestOutputHelper _output;
+    private readonly ITestOutputHelper __output;
     
     public PerformanceMonitoringTests(ADLXTestFixture fixture, ITestOutputHelper output)
     {
@@ -338,7 +338,7 @@ public class PerformanceMonitoringTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var perfServicesPtr = ADLX.new_performanceP_Ptr();
@@ -356,21 +356,21 @@ public class PerformanceMonitoringTests
                     var metrics = ADLX.metricsP_Ptr_value(metricsPtr);
                     if (metrics != null)
                     {
-                        // Get timestamp
-                        var timestampPtr = ADLX.new_adlx_uint64P();
+                        // Get timestamp - NOTE: TimeStamp uses adlx_int64 (signed), not uint64
+                        var timestampPtr = ADLX.new_adlx_int64P();
                         try
                         {
                             var timestampResult = metrics.TimeStamp(timestampPtr);
                             if (timestampResult == ADLX_RESULT.ADLX_OK)
                             {
-                                ulong timestamp = ADLX.adlx_uint64P_value(timestampPtr);
+                                long timestamp = ADLX.adlx_int64P_value(timestampPtr);
                                 _output.WriteLine($"Metrics Timestamp: {timestamp} ms");
                                 Assert.True(timestamp > 0, "Timestamp should be positive");
                             }
                         }
                         finally
                         {
-                            ADLX.delete_adlx_uint64P(timestampPtr);
+                            ADLX.delete_adlx_int64P(timestampPtr);
                         }
                     }
                 }
