@@ -33,7 +33,7 @@ public class System2Tests
             _output.WriteLine("    Requirements:");
             _output.WriteLine("    - AMD Radeon RX 6000 series or newer");
             _output.WriteLine("    - AMD Adrenalin driver 23.2.1 or newer");
-            Skip.Always("IADLXSystem2 not supported on this hardware");
+            Skip.If(true, "IADLXSystem2 not supported on this hardware");
         }
         
         // Try to query System2 interface
@@ -52,7 +52,7 @@ public class System2Tests
         var system2 = ADLX.QuerySystem2Interface(_fixture.System!);
         if (system2 == null)
         {
-            Skip.Always("Could not query IADLXSystem2 interface");
+            Skip.If(true, "Could not query IADLXSystem2 interface");
         }
         
         _output.WriteLine("=== Multimedia Services (IADLXSystem2 Feature) ===");
@@ -93,7 +93,7 @@ public class System2Tests
         var system2 = ADLX.QuerySystem2Interface(_fixture.System!);
         if (system2 == null)
         {
-            Skip.Always("Could not query IADLXSystem2 interface");
+            Skip.If(true, "Could not query IADLXSystem2 interface");
         }
         
         _output.WriteLine("=== GPU App List Changed Handling (IADLXSystem2 Feature) ===");
@@ -136,7 +136,7 @@ public class System2Tests
         var system2 = ADLX.QuerySystem2Interface(_fixture.System!);
         if (system2 == null)
         {
-            Skip.Always("Could not query IADLXSystem2 interface");
+            Skip.If(true, "Could not query IADLXSystem2 interface");
         }
         
         // Check multimedia services
