@@ -114,11 +114,11 @@ public class DisplayTests
                         
                         _output.WriteLine($"Connector: {connectorType}");
                         
-                        // Manufacturer ID
-                        var mfgIdPtr = ADLX.new_adlx_intP();
+                        // Manufacturer ID (uses uint, not int)
+                        var mfgIdPtr = ADLX.new_adlx_uintP();
                         display.ManufacturerID(mfgIdPtr);
-                        int mfgId = ADLX.adlx_intP_value(mfgIdPtr);
-                        ADLX.delete_adlx_intP(mfgIdPtr);
+                        uint mfgId = ADLX.adlx_uintP_value(mfgIdPtr);
+                        ADLX.delete_adlx_uintP(mfgIdPtr);
                         
                         _output.WriteLine($"Manufacturer ID: 0x{mfgId:X4}");
                     }
@@ -146,7 +146,7 @@ public class DisplayTests
         var display = GetFirstDisplay();
         if (display == null)
         {
-            Skip.Always("Could not get first display");
+            Skip.If(true, "Could not get first display");
         }
         
         _output.WriteLine("=== Display Resolution ===");
@@ -200,18 +200,19 @@ public class DisplayTests
         var display = GetFirstDisplay();
         if (display == null)
         {
-            Skip.Always("Could not get first display");
+            Skip.If(true, "Could not get first display");
         }
         
         _output.WriteLine("=== Display Pixel Clock ===");
         
-        var pixelClockPtr = ADLX.new_adlx_intP();
+        // Pixel clock uses uint, not int
+        var pixelClockPtr = ADLX.new_adlx_uintP();
         try
         {
             var result = display!.PixelClock(pixelClockPtr);
             if (result == ADLX_RESULT.ADLX_OK)
             {
-                int pixelClock = ADLX.adlx_intP_value(pixelClockPtr);
+                uint pixelClock = ADLX.adlx_uintP_value(pixelClockPtr);
                 _output.WriteLine($"Pixel Clock: {pixelClock} KHz");
                 Assert.True(pixelClock > 0, "Pixel clock should be positive");
             }
@@ -222,7 +223,7 @@ public class DisplayTests
         }
         finally
         {
-            ADLX.delete_adlx_intP(pixelClockPtr);
+            ADLX.delete_adlx_uintP(pixelClockPtr);
         }
     }
     
@@ -235,7 +236,7 @@ public class DisplayTests
         var display = GetFirstDisplay();
         if (display == null)
         {
-            Skip.Always("Could not get first display");
+            Skip.If(true, "Could not get first display");
         }
         
         _output.WriteLine("=== Display Scan Type ===");
@@ -269,36 +270,27 @@ public class DisplayTests
         var display = GetFirstDisplay();
         if (display == null)
         {
-            Skip.Always("Could not get first display");
+            Skip.If(true, "Could not get first display");
         }
         
         _output.WriteLine("=== Display EDID Information ===");
         
-        // Manufacturer ID
-        var mfgIdPtr = ADLX.new_adlx_intP();
+        // Manufacturer ID (uses uint)
+        var mfgIdPtr = ADLX.new_adlx_uintP();
         try
         {
             display!.ManufacturerID(mfgIdPtr);
-            int mfgId = ADLX.adlx_intP_value(mfgIdPtr);
+            uint mfgId = ADLX.adlx_uintP_value(mfgIdPtr);
             _output.WriteLine($"Manufacturer ID: 0x{mfgId:X4}");
         }
         finally
         {
-            ADLX.delete_adlx_intP(mfgIdPtr);
+            ADLX.delete_adlx_uintP(mfgIdPtr);
         }
         
-        // Product ID
-        var productIdPtr = ADLX.new_adlx_intP();
-        try
-        {
-            display!.ProductID(productIdPtr);
-            int productId = ADLX.adlx_intP_value(productIdPtr);
-            _output.WriteLine($"Product ID: 0x{productId:X4}");
-        }
-        finally
-        {
-            ADLX.delete_adlx_intP(productIdPtr);
-        }
+        // Note: IADLXDisplay does NOT have a ProductID() method in the ADLX SDK
+        // The EDID data is available through ManufacturerID only
+        _output.WriteLine("Product ID: Not available via ADLX SDK");
     }
     
     // Helper method to get first display
