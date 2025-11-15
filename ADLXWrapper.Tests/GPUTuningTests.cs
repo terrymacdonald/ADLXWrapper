@@ -51,7 +51,7 @@ public class GPUTuningTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var tuningServicesPtr = ADLX.new_gpuTuningP_Ptr();
@@ -103,7 +103,7 @@ public class GPUTuningTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var tuningServicesPtr = ADLX.new_gpuTuningP_Ptr();
@@ -155,7 +155,7 @@ public class GPUTuningTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var tuningServicesPtr = ADLX.new_gpuTuningP_Ptr();
@@ -207,7 +207,7 @@ public class GPUTuningTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var tuningServicesPtr = ADLX.new_gpuTuningP_Ptr();
@@ -259,7 +259,7 @@ public class GPUTuningTests
         var gpu = GetFirstGPU();
         if (gpu == null)
         {
-            Skip.Always("Could not get first GPU");
+            Skip.If(true, "Could not get first GPU");
         }
         
         var tuningServicesPtr = ADLX.new_gpuTuningP_Ptr();
