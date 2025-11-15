@@ -16,6 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cs_struct.i" />
+    <None Include="build\UpdateVersion.ps1" />
+    <None Include="build\ApplyVersion.targets" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -28,6 +30,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ADLXWrapper_wrap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ADLXQueryInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -45,6 +50,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ADLXWrapper_wrap.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ADLXQueryInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

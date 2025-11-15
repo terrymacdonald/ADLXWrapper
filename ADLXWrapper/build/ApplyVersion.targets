@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ADLXWrapper Version Management Targets
+  
+  This file integrates automatic version management into the MSBuild process.
+  It is imported by ADLXWrapper.vcxproj and runs before compilation.
+  
+  Version Strategy:
+  - MAJOR and MINOR are manually specified in VERSION file (repository root)
+  - PATCH is automatically calculated from git commit count (or build counter)
+  - Version is applied to both C++ DLL (via .rc file) and C# bindings (via Version.cs)
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <!-- Define paths -->
+  <PropertyGroup>
+    <VersionScriptPath>$(MSBuildThisFileDirectory)UpdateVersion.ps1</VersionScriptPath>
+    <VersionUpdateCommand>powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(VersionScriptPath)"</VersionUpdateCommand>
+  </PropertyGroup>
+  
+  <!-- 
+    UpdateVersionInfo Target
+    Runs before ClCompile to ensure version is up-to-date before building
+  -->
+  <Target Name="UpdateVersionInfo" BeforeTargets="ClCompile">
+    <Message Text="=== Updating ADLXWrapper version information ===" Importance="high" />
+    
+    <!-- Execute PowerShell script -->
+    <Exec Command="$(VersionUpdateCommand)" 
+          ConsoleToMSBuild="true"
+          IgnoreStandardErrorWarningFormat="true"
+          WorkingDirectory="$(MSBuildThisFileDirectory)" />
+    
+    <Message Text="Version information updated successfully" Importance="high" />
+  </Target>
+  
+</Project>

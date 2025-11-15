@@ -190,9 +190,13 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\swigwin\swig.exe -c++ -csharp  -DSWIG_CSHARP_NO_WSTRING_HELPER  -dllimport ADLXWrapper -namespace ADLXWrapper -outdir ".\cs_bindings" ADLXWrapper.i</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx</Outputs>
     </CustomBuild>
+    <None Include="build\ApplyVersion.targets" />
+    <None Include="build\UpdateVersion.ps1" />
     <None Include="cs_struct.i" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <!-- Import version management targets -->
+  <Import Project="build\ApplyVersion.targets" />
 </Project>
