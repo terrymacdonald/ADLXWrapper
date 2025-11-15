@@ -21,19 +21,9 @@ if errorlevel 1 (
 echo Native C++ build completed successfully!
 
 REM Ensure the target directories exist for copying
-if not exist "ADLXWrapper.Bindings\bin\Debug\net9.0\" mkdir "ADLXWrapper.Bindings\bin\Debug\net9.0\"
 if not exist "ADLXWrapper.Tests\bin\Debug\net9.0\" mkdir "ADLXWrapper.Tests\bin\Debug\net9.0\"
 
-REM Copy generated C# binding files to ADLXWrapper.Bindings and ADLXWrapper.Tests projects
-echo Copying C# binding files...
-xcopy /Y ADLXWrapper\cs_bindings\*.cs ADLXWrapper.Bindings\cs_bindings\ >nul
-if errorlevel 1 (
-    echo Failed to copy C# binding files!
-    pause
-    exit /b 1
-)
-
-
+REM Copy generated C# binding files to the ADLXWrapper.Tests project
 echo Copying C# binding files...
 xcopy /Y ADLXWrapper\cs_bindings\*.cs ADLXWrapper.Tests\cs_bindings\ >nul
 if errorlevel 1 (
@@ -46,29 +36,12 @@ if errorlevel 1 (
 
 REM Copy compiled ADLXWrapper.dll to ADLXWrapper.Bindings and ADLXWrapper.Tests projects
 echo Copying ADLXWrapper.dll...
-copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper.Bindings\bin\Debug\net9.0\ >nul
-if errorlevel 1 (
-    echo Failed to copy ADLXWrapper.dll to Bindings project!
-    pause
-    exit /b 1
-)
-
 copy ADLXWrapper\x64\Debug\ADLXWrapper.dll ADLXWrapper.Tests\bin\Debug\net9.0\ >nul
 if errorlevel 1 (
     echo Failed to copy ADLXWrapper.dll to Tests project!
     pause
     exit /b 1
 )
-
-REM Build the ADLXWrapper.Bindings project
-echo Building ADLXWrapper.Bindings project...
-dotnet build ADLXWrapper.Bindings\ADLXWrapper.Bindings.csproj -c Debug -f net9.0
-if errorlevel 1 (
-    echo ADLXWrapper.Bindings build failed!
-    pause
-    exit /b 1
-)
-echo ADLXWrapper.Bindings build completed successfully!
 
 REM Build and run unit tests
 echo Building and running unit tests...

@@ -50,7 +50,7 @@ if %ERRORLEVEL% EQU 0 (
     echo.
     echo Running the .NET 9.0 C# ADLX test...
     echo.
-    dotnet run --project IADLXGPU2Test_Net9.csproj -c Debug --no-build
+    dotnet run --project  ADLXWrapper.Tests\ADLXWrapper.Tests.csproj -c Debug --no-build
 ) else (
     echo.
     echo *** BUILD FAILED! ***
