@@ -32,6 +32,11 @@ This wrapper uses SWIG to generate C# bindings from the native ADLX C++ SDK, pro
 - GPU connection/disconnection events
 - Application-specific GPU events
 
+✅ **Automatic Versioning**
+- SemVer versioning embedded in DLL and C# bindings
+- Version information accessible at runtime
+- Git commit tracking for patch versions
+
 ## Prerequisites
 
 - **Hardware**: AMD GPU with ADLX support (Radeon RX 5000 series or newer recommended)
@@ -57,7 +62,12 @@ This script will:
 - Install SWIG (if not already installed)
 - Download the AMD ADLX SDK
 
-#### Step 2: Build the Wrapper
+#### Step 2: Update the Version (optional)
+If you make changes to the ADLXWrapper DLL codebase, you can increment the version number for the ADLXWrapper DLL that is generated. To do this you should edit the `VERSION` file to set your desired MAJOR version number and MINOR version number.
+
+The MAJOR and MINOR version numbers are used to generate the version information that is embedded into the ADLXWrapper DLL and also used to generate the C# binding files. The PATCH version number is automatically generated based on the current Git commit count.
+
+#### Step 3: Build the Wrapper
 Run the build script:
 
 ```cmd
@@ -818,8 +828,8 @@ class FeatureDetectionExample
         bool supportsSystem2 = ADLX.SupportsSystem2Interface(system);
         
         Console.WriteLine($"IADLXSystem (base):  Supported");
-        Console.WriteLine($"IADLXSystem1:        {(supportsSystem1 ? "Supported ✓" : "Not Supported ✗")});
-        Console.WriteLine($"IADLXSystem2:        {(supportsSystem2 ? "Supported ✓" : "Not Supported ✗")});
+        Console.WriteLine($"IADLXSystem1:        {(supportsSystem1 ? "Supported ✓" : "Not Supported ✗")}");
+        Console.WriteLine($"IADLXSystem2:        {(supportsSystem2 ? "Supported ✓" : "Not Supported ✗")}");
         
         if (!supportsSystem2)
         {
@@ -864,8 +874,8 @@ class FeatureDetectionExample
                         
                         Console.WriteLine($"\nGPU {i}: {gpuName}");
                         Console.WriteLine($"  IADLXGPU (base):  Supported");
-                        Console.WriteLine($"  IADLXGPU1:        {(supportsGPU1 ? "Supported ✓" : "Not Supported ✗")});
-                        Console.WriteLine($"  IADLXGPU2:        {(supportsGPU2 ? "Supported ✓" : "Not Supported ✗")});
+                        Console.WriteLine($"  IADLXGPU1:        {(supportsGPU1 ? "Supported ✓" : "Not Supported ✗")}");
+                        Console.WriteLine($"  IADLXGPU2:        {(supportsGPU2 ? "Supported ✓" : "Not Supported ✗")}");
                     }
                     
                     ADLX.delete_gpuP_Ptr(gpuPtr);
