@@ -194,6 +194,9 @@
     <None Include="build\UpdateVersion.ps1" />
     <None Include="cs_struct.i" />
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ADLXWrapper.rc" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
