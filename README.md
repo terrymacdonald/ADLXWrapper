@@ -70,12 +70,18 @@ The MAJOR and MINOR version numbers are used to generate the version information
 #### Step 3: Build the Wrapper
 Run the build script:
 
-```cmd
-rebuild_adlx.bat
+```powershell
+.\rebuild_adlx.ps1
+```
+
+Or if you need to bypass execution policy:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File rebuild_adlx.ps1
 ```
 
 This generates:
-- `ADLXWrapper.dll` (64-bit) in `ADLXWrapper/x64/Debug/`
+- `ADLXWrapper.dll` (64-bit) in `x64/Debug/`
 - C# binding files in `ADLXWrapper/cs_bindings/*.cs`
 
 ### 2. Integration into Your C# Project
@@ -1099,8 +1105,14 @@ The ADLXWrapper includes a comprehensive test suite with over 37 tests covering 
 **IMPORTANT**: Unit tests require AMD GPU hardware to run successfully.
 
 Run standard tests using:
-```cmd
-test_adlx.bat
+```powershell
+.\test_adlx.ps1
+```
+
+Or if you need to bypass execution policy:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File test_adlx.ps1
 ```
 
 Or from the test project directory:
@@ -1265,7 +1277,7 @@ ADLXWrapper/
 │   └── x64/Debug/             # Built native DLL
 ├── ADLXWrapper.Tests/         # Unit tests
 ├── prepare_adlx.ps1           # Setup script
-├── rebuild_adlx.bat           # Build script
+├── rebuild_adlx.ps1           # Build script
 └── test_adlx.bat             # Test script
 ```
 

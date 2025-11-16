@@ -1,19 +1,30 @@
 # Enhanced ADLX Preparation Script with Improved Error Handling and SWIG Integration
 # Copyright (c) 2021 - 2025 Advanced Micro Devices, Inc. All rights reserved.
 
-# Define SWIG-related variables
-$swigZipUrl = "https://cytranet-dal.dl.sourceforge.net/project/swig/swigwin/swigwin-4.3.1/swigwin-4.3.1.zip?viasf=1"
-$swigZipFilePath = ".\swigwin.zip"
-$swigDestinationFolder = ".\swigwin"
-$swigTempExtractFolder = ".\swigwin-4.3.1"
-$swigExecutablePath = ".\swigwin\swig.exe"
+# Get the directory where this script is located (works from any location)
+$scriptRoot = $PSScriptRoot
+if (-not $scriptRoot) {
+    $scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+}
 
-# Define ADLX-related variables
+# Change to script directory to ensure relative paths work correctly
+Set-Location $scriptRoot
+Write-Host "Working directory: $scriptRoot" -ForegroundColor Cyan
+Write-Host ""
+
+# Define SWIG-related variables (all relative to script location)
+$swigZipUrl = "https://cytranet-dal.dl.sourceforge.net/project/swig/swigwin/swigwin-4.3.1/swigwin-4.3.1.zip?viasf=1"
+$swigZipFilePath = Join-Path $scriptRoot "swigwin.zip"
+$swigDestinationFolder = Join-Path $scriptRoot "swigwin"
+$swigTempExtractFolder = Join-Path $scriptRoot "swigwin-4.3.1"
+$swigExecutablePath = Join-Path $swigDestinationFolder "swig.exe"
+
+# Define ADLX-related variables (all relative to script location)
 $zipUrl = "https://github.com/GPUOpen-LibrariesAndSDKs/ADLX/archive/refs/heads/main.zip"
-$zipFilePath = ".\main.zip"
-$destinationFolder = ".\ADLX"
-$tempExtractFolder = ".\ADLX-main"
-$outFolder = ".\ADLXWrapper\cs_bindings"
+$zipFilePath = Join-Path $scriptRoot "main.zip"
+$destinationFolder = Join-Path $scriptRoot "ADLX"
+$tempExtractFolder = Join-Path $scriptRoot "ADLX-main"
+$outFolder = Join-Path $scriptRoot "ADLXWrapper\cs_bindings"
 
 # Function to validate ADLX SDK completeness
 function Test-ADLXSDKCompleteness {
@@ -116,26 +127,10 @@ function Install-SwigWindows {
         return $false
     }
     
-    # Remove existing SWIG folder if it exists
-    if (Test-Path -Path $swigDestinationFolder) {
-        Write-Host "Removing existing SWIG folder..."
-        try {
-            Remove-Item -Path $swigDestinationFolder -Recurse -Force -ErrorAction Stop
-            Write-Host "Removed existing SWIG folder." -ForegroundColor Green
-        } catch {
-            Write-Host "ERROR: Failed to remove existing SWIG folder: $_" -ForegroundColor Red
-            # Clean up
-            if (Test-Path -Path $swigZipFilePath) {
-                Remove-Item -Path $swigZipFilePath -Force
-            }
-            return $false
-        }
-    }
-    
     # Extract SWIG
-    Write-Host "Extracting SWIG contents... (may take a while)"
+    Write-Host "Extracting SWIG... (may take a while)"
     try {
-        Expand-Archive -Path $swigZipFilePath -DestinationPath . -Force -ErrorAction Stop
+        Expand-Archive -Path $swigZipFilePath -DestinationPath $scriptRoot -Force -ErrorAction Stop
         Write-Host "SWIG extraction completed successfully." -ForegroundColor Green
     } catch {
         Write-Host "ERROR: Failed to extract SWIG: $_" -ForegroundColor Red
@@ -146,9 +141,9 @@ function Install-SwigWindows {
         return $false
     }
     
-    # Validate extracted folder exists
+    # Validate extracted folder
     if (-not (Test-Path -Path $swigTempExtractFolder)) {
-        Write-Host "ERROR: Extracted SWIG folder '$swigTempExtractFolder' not found." -ForegroundColor Red
+        Write-Host "ERROR: Extracted SWIG folder not found." -ForegroundColor Red
         # Clean up
         if (Test-Path -Path $swigZipFilePath) {
             Remove-Item -Path $swigZipFilePath -Force
@@ -156,10 +151,15 @@ function Install-SwigWindows {
         return $false
     }
     
-    # Rename the extracted folder
+    # Rename folder
     Write-Host "Renaming SWIG folder..."
     try {
-        Rename-Item -Path $swigTempExtractFolder -NewName $swigDestinationFolder -ErrorAction Stop
+        # Remove old destination if exists
+        if (Test-Path -Path $swigDestinationFolder) {
+            Remove-Item -Path $swigDestinationFolder -Recurse -Force
+        }
+        
+        Rename-Item -Path $swigTempExtractFolder -NewName "swigwin" -ErrorAction Stop
         Write-Host "SWIG folder renamed successfully." -ForegroundColor Green
     } catch {
         Write-Host "ERROR: Failed to rename SWIG folder: $_" -ForegroundColor Red
@@ -173,6 +173,12 @@ function Install-SwigWindows {
         return $false
     }
     
+    # Validate SWIG installation
+    if (-not (Test-SwigInstallation -swigPath $swigExecutablePath)) {
+        Write-Host "ERROR: SWIG installation validation failed." -ForegroundColor Red
+        return $false
+    }
+    
     # Clean up zip file
     Write-Host "Cleaning up SWIG download files..."
     try {
@@ -180,171 +186,201 @@ function Install-SwigWindows {
         Write-Host "SWIG cleanup completed." -ForegroundColor Green
     } catch {
         Write-Host "WARNING: Failed to remove SWIG zip file: $_" -ForegroundColor Yellow
-        # This is not critical, continue
     }
     
-    # Validate SWIG installation
-    if (Test-SwigInstallation -swigPath $swigExecutablePath) {
-        Write-Host "SWIG installation completed successfully." -ForegroundColor Green
-        return $true
-    } else {
-        Write-Host "ERROR: SWIG installation validation failed." -ForegroundColor Red
-        return $false
-    }
+    return $true
 }
 
-Write-Host "=== Enhanced ADLX Preparation Script with SWIG Integration ===" -ForegroundColor Cyan
-Write-Host "Preparing SWIG and ADLX SDK for IADLXGPU2 support..." -ForegroundColor Cyan
+# ============================================================================
+# Main Script Execution
+# ============================================================================
 
-# Check internet connectivity
+Write-Host "=== ADLXWrapper Preparation Script ===" -ForegroundColor Cyan
+Write-Host "This script will download and prepare:" -ForegroundColor Cyan
+Write-Host "  1. SWIG v4.3.1 (for C# binding generation)" -ForegroundColor Cyan
+Write-Host "  2. AMD ADLX SDK (latest from GitHub)" -ForegroundColor Cyan
+Write-Host "" -ForegroundColor Cyan
+
+# Check internet connection
 Write-Host "Checking internet connectivity..."
 if (-not (Test-InternetConnection)) {
-    Write-Host "ERROR: No internet connection available. Cannot download dependencies." -ForegroundColor Red
+    Write-Host "ERROR: No internet connection detected." -ForegroundColor Red
+    Write-Host "This script requires internet access to download SWIG and ADLX SDK." -ForegroundColor Red
     exit 1
 }
-Write-Host "Internet connectivity confirmed." -ForegroundColor Green
-
-# === SWIG PROCESSING ===
+Write-Host "Internet connection verified." -ForegroundColor Green
 Write-Host ""
-Write-Host "=== SWIG Dependency Check ===" -ForegroundColor Cyan
 
-# Check if SWIG is already installed and functional
-if (Test-SwigInstallation -swigPath $swigExecutablePath) {
-    Write-Host "Existing SWIG installation is valid. Skipping download." -ForegroundColor Green
-} else {
-    Write-Host "SWIG not found or not functional. Installing SWIG..." -ForegroundColor Yellow
+# ============================================================================
+# SWIG Installation
+# ============================================================================
+Write-Host "=== Checking SWIG Installation ===" -ForegroundColor Cyan
+
+if (Test-Path -Path $swigDestinationFolder) {
+    Write-Host "SWIG folder already exists at: $swigDestinationFolder"
     
+    # Validate existing SWIG installation
+    if (Test-SwigInstallation -swigPath $swigExecutablePath) {
+        Write-Host "Existing SWIG installation is functional." -ForegroundColor Green
+    } else {
+        Write-Host "Existing SWIG installation is not functional. Re-downloading..." -ForegroundColor Yellow
+        
+        # Remove broken installation
+        try {
+            Remove-Item -Path $swigDestinationFolder -Recurse -Force -ErrorAction Stop
+        } catch {
+            Write-Host "ERROR: Failed to remove broken SWIG installation: $_" -ForegroundColor Red
+            exit 1
+        }
+        
+        # Install SWIG
+        if (-not (Install-SwigWindows)) {
+            Write-Host "ERROR: Failed to install SWIG." -ForegroundColor Red
+            exit 1
+        }
+    }
+} else {
+    Write-Host "SWIG not found. Installing..." -ForegroundColor Yellow
+    
+    # Install SWIG
     if (-not (Install-SwigWindows)) {
-        Write-Host "ERROR: Failed to install SWIG. Cannot proceed with build." -ForegroundColor Red
+        Write-Host "ERROR: Failed to install SWIG." -ForegroundColor Red
         exit 1
     }
 }
 
-# === ADLX PROCESSING ===
 Write-Host ""
-Write-Host "=== ADLX SDK Dependency Check ===" -ForegroundColor Cyan
 
-# Check if ADLX folder already exists and is complete
+# ============================================================================
+# ADLX SDK Download
+# ============================================================================
+Write-Host "=== Checking ADLX SDK ===" -ForegroundColor Cyan
+
+# Check if the ADLX folder already exists
 if (Test-Path -Path $destinationFolder) {
-    Write-Host "Existing ADLX folder found. Validating completeness..."
+    Write-Host "ADLX SDK folder already exists at: $destinationFolder"
+    
+    # Validate existing ADLX installation
     if (Test-ADLXSDKCompleteness -adlxPath $destinationFolder) {
-        Write-Host "Existing ADLX SDK is complete. Skipping download." -ForegroundColor Green
+        Write-Host "Existing ADLX SDK is complete and functional." -ForegroundColor Green
+        Write-Host ""
         
-        # Still create the out folder if it doesn't exist
-        if (-not (Test-Path -Path $outFolder)) {
-            Write-Host "Creating the out folder..."
-            New-Item -ItemType Directory -Path $outFolder | Out-Null
-        }
-        
-        Write-Host "Project pre-build tasks completed successfully." -ForegroundColor Green
-        exit 0
+        # Skip download
+        $skipDownload = $true
     } else {
         Write-Host "Existing ADLX SDK is incomplete. Re-downloading..." -ForegroundColor Yellow
+        
+        # Remove incomplete installation
         try {
             Remove-Item -Path $destinationFolder -Recurse -Force -ErrorAction Stop
-            Write-Host "Removed incomplete ADLX folder." -ForegroundColor Green
         } catch {
-            Write-Host "ERROR: Failed to remove existing ADLX folder: $_" -ForegroundColor Red
+            Write-Host "ERROR: Failed to remove incomplete ADLX SDK: $_" -ForegroundColor Red
             exit 1
         }
     }
 }
 
-# Download the zip file
-Write-Host "Downloading the latest version of ADLX... (may take a while)"
-try {
-    # Add progress tracking for large downloads
-    $ProgressPreference = 'Continue'
-    Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath -ErrorAction Stop
-    Write-Host "Download succeeded." -ForegroundColor Green
-    
-    # Validate downloaded file
-    if (-not (Test-Path -Path $zipFilePath)) {
-        throw "Downloaded file not found"
+if (-not $skipDownload) {
+    # Download the zip file
+    Write-Host "Downloading the latest version of ADLX... (may take a while)"
+    try {
+        # Add progress tracking for large downloads
+        $ProgressPreference = 'Continue'
+        Invoke-WebRequest -Uri $zipUrl -OutFile $zipFilePath -ErrorAction Stop
+        Write-Host "Download succeeded." -ForegroundColor Green
+        
+        # Validate downloaded file
+        if (-not (Test-Path -Path $zipFilePath)) {
+            throw "Downloaded file not found"
+        }
+        
+        $fileSize = (Get-Item $zipFilePath).Length
+        if ($fileSize -lt 1MB) {
+            throw "Downloaded file appears to be too small ($fileSize bytes)"
+        }
+        
+        Write-Host "Downloaded file validated ($([math]::Round($fileSize/1MB, 2)) MB)." -ForegroundColor Green
+        
+    } catch {
+        Write-Host "ERROR: Failed to download ADLX SDK: $_" -ForegroundColor Red
+        # Clean up partial download
+        if (Test-Path -Path $zipFilePath) {
+            Remove-Item -Path $zipFilePath -Force
+        }
+        exit 1
     }
     
-    $fileSize = (Get-Item $zipFilePath).Length
-    if ($fileSize -lt 1MB) {
-        throw "Downloaded file appears to be too small ($fileSize bytes)"
+    # Unzip the downloaded file into a temporary folder
+    Write-Host "Extracting the contents of the zip file... (may take a while)"
+    try {
+        Expand-Archive -Path $zipFilePath -DestinationPath $scriptRoot -Force -ErrorAction Stop
+        Write-Host "Extraction completed successfully." -ForegroundColor Green
+    } catch {
+        Write-Host "ERROR: Failed to extract ADLX SDK: $_" -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $zipFilePath) {
+            Remove-Item -Path $zipFilePath -Force
+        }
+        exit 1
     }
     
-    Write-Host "Downloaded file validated ($([math]::Round($fileSize/1MB, 2)) MB)." -ForegroundColor Green
+    # Validate extracted folder exists
+    if (-not (Test-Path -Path $tempExtractFolder)) {
+        Write-Host "ERROR: Extracted folder '$tempExtractFolder' not found." -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $zipFilePath) {
+            Remove-Item -Path $zipFilePath -Force
+        }
+        exit 1
+    }
     
-} catch {
-    Write-Host "ERROR: Failed to download ADLX SDK: $_" -ForegroundColor Red
-    # Clean up partial download
-    if (Test-Path -Path $zipFilePath) {
-        Remove-Item -Path $zipFilePath -Force
+    # Rename the ADLX-main folder to ADLX
+    Write-Host "Renaming ADLX-main to ADLX..."
+    try {
+        Rename-Item -Path $tempExtractFolder -NewName "ADLX" -ErrorAction Stop
+        Write-Host "Folder renamed successfully." -ForegroundColor Green
+    } catch {
+        Write-Host "ERROR: Failed to rename ADLX folder: $_" -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $zipFilePath) {
+            Remove-Item -Path $zipFilePath -Force
+        }
+        if (Test-Path -Path $tempExtractFolder) {
+            Remove-Item -Path $tempExtractFolder -Recurse -Force
+        }
+        exit 1
     }
-    exit 1
+    
+    # Validate ADLX SDK completeness
+    Write-Host "Validating ADLX SDK completeness..."
+    if (-not (Test-ADLXSDKCompleteness -adlxPath $destinationFolder)) {
+        Write-Host "ERROR: Downloaded ADLX SDK is incomplete." -ForegroundColor Red
+        # Clean up
+        if (Test-Path -Path $zipFilePath) {
+            Remove-Item -Path $zipFilePath -Force
+        }
+        if (Test-Path -Path $destinationFolder) {
+            Remove-Item -Path $destinationFolder -Recurse -Force
+        }
+        exit 1
+    }
+    
+    # Remove the zip file after successful extraction and validation
+    Write-Host "Cleaning up download files..."
+    try {
+        Remove-Item -Path $zipFilePath -Force -ErrorAction Stop
+        Write-Host "Cleanup completed." -ForegroundColor Green
+    } catch {
+        Write-Host "WARNING: Failed to remove zip file: $_" -ForegroundColor Yellow
+        # This is not critical, continue
+    }
 }
 
-# Unzip the downloaded file into a temporary folder
-Write-Host "Extracting the contents of the zip file... (may take a while)"
-try {
-    Expand-Archive -Path $zipFilePath -DestinationPath . -Force -ErrorAction Stop
-    Write-Host "Extraction completed successfully." -ForegroundColor Green
-} catch {
-    Write-Host "ERROR: Failed to extract ADLX SDK: $_" -ForegroundColor Red
-    # Clean up
-    if (Test-Path -Path $zipFilePath) {
-        Remove-Item -Path $zipFilePath -Force
-    }
-    exit 1
-}
+Write-Host ""
 
-# Validate extracted folder exists
-if (-not (Test-Path -Path $tempExtractFolder)) {
-    Write-Host "ERROR: Extracted folder '$tempExtractFolder' not found." -ForegroundColor Red
-    # Clean up
-    if (Test-Path -Path $zipFilePath) {
-        Remove-Item -Path $zipFilePath -Force
-    }
-    exit 1
-}
-
-# Rename the ADLX-main folder to ADLX
-Write-Host "Renaming ADLX-main to ADLX..."
-try {
-    Rename-Item -Path $tempExtractFolder -NewName $destinationFolder -ErrorAction Stop
-    Write-Host "Folder renamed successfully." -ForegroundColor Green
-} catch {
-    Write-Host "ERROR: Failed to rename ADLX folder: $_" -ForegroundColor Red
-    # Clean up
-    if (Test-Path -Path $zipFilePath) {
-        Remove-Item -Path $zipFilePath -Force
-    }
-    if (Test-Path -Path $tempExtractFolder) {
-        Remove-Item -Path $tempExtractFolder -Recurse -Force
-    }
-    exit 1
-}
-
-# Validate ADLX SDK completeness
-Write-Host "Validating ADLX SDK completeness..."
-if (-not (Test-ADLXSDKCompleteness -adlxPath $destinationFolder)) {
-    Write-Host "ERROR: Downloaded ADLX SDK is incomplete." -ForegroundColor Red
-    # Clean up
-    if (Test-Path -Path $zipFilePath) {
-        Remove-Item -Path $zipFilePath -Force
-    }
-    if (Test-Path -Path $destinationFolder) {
-        Remove-Item -Path $destinationFolder -Recurse -Force
-    }
-    exit 1
-}
-
-# Remove the zip file after successful extraction and validation
-Write-Host "Cleaning up download files..."
-try {
-    Remove-Item -Path $zipFilePath -Force -ErrorAction Stop
-    Write-Host "Cleanup completed." -ForegroundColor Green
-} catch {
-    Write-Host "WARNING: Failed to remove zip file: $_" -ForegroundColor Yellow
-    # This is not critical, continue
-}
-
-# Create the out folder if it doesn't exist
+# ============================================================================
+# Create output folder for C# bindings
+# ============================================================================
 if (-not (Test-Path -Path $outFolder)) {
     Write-Host "Creating the output folder (cs_bindings)..."
     try {
@@ -358,5 +394,13 @@ if (-not (Test-Path -Path $outFolder)) {
     Write-Host "Output folder already exists." -ForegroundColor Green
 }
 
+Write-Host ""
 Write-Host "=== Project pre-build tasks completed successfully ===" -ForegroundColor Green
-Write-Host "SWIG and ADLX SDK are ready for IADLXGPU2 support compilation." -ForegroundColor Green
+Write-Host "SWIG and ADLX SDK are ready for compilation." -ForegroundColor Green
+Write-Host ""
+Write-Host "Summary:" -ForegroundColor Cyan
+Write-Host "  - SWIG location: $swigDestinationFolder" -ForegroundColor Cyan
+Write-Host "  - ADLX SDK location: $destinationFolder" -ForegroundColor Cyan
+Write-Host "  - C# bindings output: $outFolder" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "You can now run rebuild_adlx.bat to build the wrapper." -ForegroundColor Green
