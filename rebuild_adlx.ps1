@@ -146,12 +146,7 @@ Write-Host ""
 # ============================================================================
 # Ensure target directories exist
 # ============================================================================
-$testBinDir = Join-Path $scriptRoot "ADLXWrapper.Tests\bin\Debug\net9.0"
 $testBindingsDir = Join-Path $scriptRoot "ADLXWrapper.Tests\cs_bindings"
-
-if (-not (Test-Path $testBinDir)) {
-    New-Item -ItemType Directory -Path $testBinDir -Force | Out-Null
-}
 
 if (-not (Test-Path $testBindingsDir)) {
     New-Item -ItemType Directory -Path $testBindingsDir -Force | Out-Null
@@ -183,11 +178,11 @@ Write-Host "Copying ADLXWrapper.dll..." -ForegroundColor Cyan
 
 # When building via solution, output goes to solution-level x64 folder
 $sourceDll = Join-Path $scriptRoot "x64\Debug\ADLXWrapper.dll"
-$targetDll = Join-Path $scriptRoot "ADLXWrapper.Tests\bin\Debug\net9.0\ADLXWrapper.dll"
+$targetDll = Join-Path $scriptRoot "ADLXWrapper.Tests\ADLXWrapper.dll"
 
 # Fallback: Check project-level output folder if solution-level doesn't exist
 if (-not (Test-Path $sourceDll)) {
-    $sourceDll = Join-Path $scriptRoot "ADLXWrapper\x64\Debug\ADLXWrapper.dll"
+    $sourceDll = Join-Path $scriptRoot "ADLXWrapper\ADLXWrapper.dll"
 }
 
 if (-not (Test-Path $sourceDll)) {
