@@ -9,20 +9,27 @@ ADLXWrapper.New/
 ??? ADLXWrapper.csproj          # .NET 9 project file
 ??? ClangSharpConfig.rsp        # ClangSharp generator configuration
 ??? ADLXNative.cs               # Manual P/Invoke declarations for DLL entry points
+??? ADLXApi.cs                  # Main wrapper API (IDisposable)
+??? ADLXVTables.cs              # VTable structure definitions
+??? ADLXExtensions.cs           # Helper methods for GPU/Display operations
 ??? Generated/                  # ClangSharp auto-generated bindings (DO NOT EDIT)
 ?   ??? README.cs              # Placeholder
-??? (Coming in Stage 2)
-    ??? ADLXApi.cs             # Main wrapper API (IDisposable)
-    ??? ADLXExtensions.cs      # Helper methods and VTable accessors
+??? README.md                  # This file
 ```
 
 ## Build Status
 
-? **Stage 1 Complete:** Project Setup and ClangSharp Configuration
+? **Stage 1 Complete:** Project Setup and ClangSharp Configuration  
+? **Stage 2 Complete:** Core Wrapper Layer (ADLXApi.cs)  
+? **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
+
 - Created .NET 9 C# project
 - Added ClangSharp NuGet packages (v18.1.0 / v20.1.2)
 - Created ClangSharpConfig.rsp for ADLX header processing
 - Added manual P/Invoke declarations for dynamic DLL loading
+- Implemented complete ADLXApi wrapper with initialization and GPU enumeration
+- Implemented VTable access for COM-like interfaces
+- Created comprehensive helper methods for GPU properties
 - Project builds successfully
 
 ## How to Build
@@ -32,6 +39,105 @@ cd ADLXWrapper.New
 dotnet restore
 dotnet build
 ```
+
+## Usage Example
+
+```csharp
+using ADLXWrapper;
+
+// Initialize ADLX
+using (var adlx = ADLXApi.Initialize())
+{
+    // Get version info
+    Console.WriteLine($"ADLX Version: {adlx.GetVersion()}");
+    
+    // Enumerate GPUs
+    var gpus = adlx.EnumerateGPUs();
+    Console.WriteLine($"Found {gpus.Length} GPU(s)");
+    
+    foreach (var gpu in gpus)
+    {
+        // Get basic GPU info
+        var info = ADLXGPUInfo.GetBasicInfo(gpu);
+        Console.WriteLine($"\nGPU: {info.Name}");
+        Console.WriteLine($"  Vendor: {info.VendorId}");
+        Console.WriteLine($"  VRAM: {info.TotalVRAM} MB ({info.VRAMType})");
+        Console.WriteLine($"  External: {info.IsExternal}");
+        Console.WriteLine($"  Has Desktops: {info.HasDesktops}");
+        
+        // Get individual properties
+        var uniqueId = ADLXHelpers.GetGPUUniqueId(gpu);
+        var deviceId = ADLXHelpers.GetGPUDeviceId(gpu);
+        Console.WriteLine($"  Unique ID: {uniqueId}");
+        Console.WriteLine($"  Device ID: {deviceId}");
+        
+        // Remember to release GPU interface when done
+        ADLXHelpers.ReleaseInterface(gpu);
+    }
+} // Automatic cleanup via Dispose
+```
+
+## API Reference
+
+### ADLXApi (Main Wrapper)
+
+**Initialization:**
+- `static ADLXApi Initialize()` - Initialize ADLX with default settings
+- `static ADLXApi InitializeWithCallerAdl(IntPtr adlContext, IntPtr adlMainMemoryFree)` - Initialize with existing ADL context
+
+**Version Information:**
+- `ulong GetFullVersion()` - Get ADLX full version number
+- `string GetVersion()` - Get ADLX version string
+
+**System Services:**
+- `IntPtr GetSystemServices()` - Get root system interface pointer
+- `IntPtr[] EnumerateGPUs()` - Enumerate all AMD GPUs in the system
+
+**Cleanup:**
+- `void Dispose()` - Release resources (called automatically with `using`)
+
+### ADLXHelpers (GPU Properties)
+
+**String Properties:**
+- `string GetGPUName(IntPtr pGPU)` - Get GPU name
+- `string GetGPUVendorId(IntPtr pGPU)` - Get vendor ID
+- `string GetGPUDriverPath(IntPtr pGPU)` - Get driver path
+- `string GetGPUPNPString(IntPtr pGPU)` - Get PNP string
+- `string GetGPUVRAMType(IntPtr pGPU)` - Get VRAM type
+- `string GetGPUDeviceId(IntPtr pGPU)` - Get device ID
+
+**Numeric Properties:**
+- `uint GetGPUTotalVRAM(IntPtr pGPU)` - Get total VRAM in MB
+- `int GetGPUUniqueId(IntPtr pGPU)` - Get unique identifier
+
+**Boolean Properties:**
+- `bool IsGPUExternal(IntPtr pGPU)` - Check if GPU is external
+- `bool HasGPUDesktops(IntPtr pGPU)` - Check if GPU has desktops
+
+**Interface Management:**
+- `void ReleaseInterface(IntPtr pInterface)` - Release an interface (decrement ref count)
+- `void AddRefInterface(IntPtr pInterface)` - Add reference to an interface (increment ref count)
+
+### ADLXGPUInfo (Combined Information)
+
+**Structs:**
+- `GPUBasicInfo` - Name, VendorId, UniqueId, TotalVRAM, VRAMType, IsExternal, HasDesktops
+- `GPUIdentification` - DeviceId, PNPString, DriverPath, UniqueId
+
+**Methods:**
+- `GPUBasicInfo GetBasicInfo(IntPtr pGPU)` - Get all basic info in one call
+- `GPUIdentification GetIdentification(IntPtr pGPU)` - Get all identification info in one call
+
+### ADLXListHelpers (List Operations)
+
+- `uint GetListSize(IntPtr pList)` - Get number of items in list
+- `bool IsListEmpty(IntPtr pList)` - Check if list is empty
+- `IntPtr GetListItemAt(IntPtr pList, uint index)` - Get item at index
+- `IntPtr[] ListToArray(IntPtr pList)` - Convert entire list to array
+
+### ADLXDisplayHelpers (Display Operations)
+
+- `IntPtr[] EnumerateDisplays(IntPtr pGPU)` - Enumerate displays for a GPU (placeholder, will be implemented in Stage 5)
 
 ## ClangSharp Code Generation
 
@@ -48,10 +154,11 @@ Note: ClangSharp generation will be set up in later stages once the configuratio
 
 This wrapper uses a layered approach:
 
-1. **Native Layer (ADLXNative.cs):** Manual P/Invoke for DLL loading
-2. **Generated Layer (Generated/):** ClangSharp auto-generated types and structures
-3. **Wrapper Layer (Coming in Stage 2):** Managed API with IntPtr handles
-4. **Helper Layer (Coming in Stage 3):** Convenience methods for common operations
+1. **Native Layer (ADLXNative.cs):** Manual P/Invoke for DLL loading and entry points
+2. **Generated Layer (Generated/):** ClangSharp auto-generated types and structures (future)
+3. **VTable Layer (ADLXVTables.cs):** COM-like interface vtable definitions
+4. **Wrapper Layer (ADLXApi.cs):** Managed API with IntPtr handles and IDisposable
+5. **Helper Layer (ADLXExtensions.cs):** Convenience methods for common operations
 
 ## Dependencies
 
@@ -59,12 +166,20 @@ This wrapper uses a layered approach:
 - ClangSharp 18.1.0
 - ClangSharp.Interop 20.1.2
 - AMD ADLX SDK (in ../ADLX/SDK/)
+- AMD GPU drivers with ADLX support (amdadlx64.dll)
+
+## Memory Management
+
+- All ADLX interfaces use COM-like reference counting
+- GPU handles returned by `EnumerateGPUs()` should be released with `ADLXHelpers.ReleaseInterface()` when done
+- The `ADLXApi` class implements IDisposable for automatic cleanup
+- Always use `using` statement or call `Dispose()` explicitly
 
 ## Next Steps
 
-- **Stage 2:** Create core wrapper layer (ADLXApi.cs)
-- **Stage 3:** Create helper extensions (ADLXExtensions.cs)
 - **Stage 4:** Basic tests and validation
+- **Stage 5:** Display services tests
+- **Stage 6:** GPU services tests
 - And more...
 
 ## References
