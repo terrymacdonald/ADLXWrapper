@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>13.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>ADLXWrapper</RootNamespace>
+    <AssemblyName>ADLXWrapper</AssemblyName>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <!-- Required for ClangSharp-generated attributes -->
+    <PackageReference Include="ClangSharp" Version="18.1.0" />
+    <PackageReference Include="ClangSharp.Interop" Version="20.1.2" />
+  </ItemGroup>
+  
+</Project>
