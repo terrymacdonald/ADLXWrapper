@@ -39,8 +39,8 @@ ADLXWrapper provides two implementations for working with ADLX:
 - **Modern .NET architecture** with IDisposable pattern
 - **Direct P/Invoke** for optimal performance
 - **VTable-based COM interop** for interface access
-- **Location**: `ADLXWrapper.New/` directory
-- **Documentation**: See [ClangSharp README](ADLXWrapper.New/README.md)
+- **Location**: `ADLXWrapper/` directory
+- **Documentation**: See [ClangSharp README](ADLXWrapper/README.md)
 
 ### 2. SWIG-Based Wrapper (Legacy/Compatibility)
 - **Full API coverage** of ADLX features
@@ -57,11 +57,11 @@ ADLXWrapper provides two implementations for working with ADLX:
 
 ```bash
 # Build the ClangSharp wrapper
-cd ADLXWrapper.New
+cd ADLXWrapper
 dotnet build
 
 # Add to your project
-dotnet add reference path/to/ADLXWrapper.New/ADLXWrapper.csproj
+dotnet add reference path/to/ADLXWrapper/ADLXWrapper.csproj
 ```
 
 ### Basic Usage (ClangSharp)
@@ -140,7 +140,7 @@ using (var adlx = ADLXApi.Initialize())
 - `ADLXGPUInfo` - Combined information structs
 - `ADLXDisplayInfo` - Display information structs
 
-**For complete ClangSharp documentation**, see [ADLXWrapper.New/README.md](ADLXWrapper.New/README.md)
+**For complete ClangSharp documentation**, see [ADLXWrapper/README.md](ADLXWrapper/README.md)
 
 ---
 

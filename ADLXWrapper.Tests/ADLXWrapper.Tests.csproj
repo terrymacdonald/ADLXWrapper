@@ -33,7 +33,7 @@
 
   <ItemGroup>
     <!-- Reference to new ClangSharp-based wrapper -->
-    <ProjectReference Include="..\ADLXWrapper.New\ADLXWrapper.csproj" />
+    <ProjectReference Include="..\ADLXWrapper\ADLXWrapper.csproj" />
   </ItemGroup>
 
   <ItemGroup>

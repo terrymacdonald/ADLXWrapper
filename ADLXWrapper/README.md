@@ -5,7 +5,7 @@ This is the new ClangSharp-based C# wrapper for the AMD ADLX SDK, replacing the 
 ## Project Structure
 
 ```
-ADLXWrapper.New/
+ADLXWrapper/
 ??? ADLXWrapper.csproj          # .NET 9 project file
 ??? ClangSharpConfig.rsp        # ClangSharp generator configuration
 ??? ADLXNative.cs               # Manual P/Invoke declarations for DLL entry points
@@ -274,3 +274,4 @@ This wrapper uses a layered approach:
 - ADLX SDK: `../ADLX/SDK/`
 - C samples: `../ADLX/Samples/C/`
 - IGCLWrapper reference: `C:\vs-code\IGCLWrapper\`
+

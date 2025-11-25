@@ -15,7 +15,7 @@ This release introduces a **complete ClangSharp-based implementation** of the AD
 
 ### What's New
 
-? **New ClangSharp Wrapper** (`ADLXWrapper.New/`)
+? **New ClangSharp Wrapper** (`ADLXWrapper/`)
 - Modern .NET architecture with IDisposable pattern
 - Direct P/Invoke for optimal performance
 - VTable-based COM interop
@@ -169,7 +169,7 @@ The SWIG-based wrapper (`ADLXWrapper/`) remains **unchanged and fully supported*
 - Requires manual `ReleaseInterface()` calls
 - Uses helper methods instead of direct interface access
 
-See [MIGRATION-GUIDE.md](ADLXWrapper.New/MIGRATION-GUIDE.md) for details.
+See [MIGRATION-GUIDE.md](ADLXWrapper/MIGRATION-GUIDE.md) for details.
 
 ---
 
@@ -199,7 +199,7 @@ using (var adlx = ADLXApi.Initialize())
 
 ### From SWIG to ClangSharp
 
-See comprehensive migration guide: [ADLXWrapper.New/MIGRATION-GUIDE.md](ADLXWrapper.New/MIGRATION-GUIDE.md)
+See comprehensive migration guide: [ADLXWrapper/MIGRATION-GUIDE.md](ADLXWrapper/MIGRATION-GUIDE.md)
 
 ---
 
@@ -234,8 +234,8 @@ dotnet test --filter "FullyQualifiedName~BasicApiTests|FullyQualifiedName~CoreAp
 ### New Documentation
 
 - ? **README.md** - Updated with ClangSharp info
-- ? **ADLXWrapper.New/README.md** - Complete API reference
-- ? **ADLXWrapper.New/MIGRATION-GUIDE.md** - SWIG to ClangSharp migration
+- ? **ADLXWrapper/README.md** - Complete API reference
+- ? **ADLXWrapper/MIGRATION-GUIDE.md** - SWIG to ClangSharp migration
 - ? **ADLXWrapper.Tests/README.Tests.md** - Test documentation
 - ? **.cline/migration-final-summary.md** - Project statistics
 
@@ -336,13 +336,13 @@ This project wraps AMD's ADLX SDK. Please refer to AMD's ADLX SDK license for te
 
 - [GitHub Repository](https://github.com/terrymacdonald/ADLXWrapper)
 - [AMD ADLX Documentation](https://gpuopen.com/adlx/)
-- [Migration Guide](ADLXWrapper.New/MIGRATION-GUIDE.md)
-- [API Reference](ADLXWrapper.New/README.md)
+- [Migration Guide](ADLXWrapper/MIGRATION-GUIDE.md)
+- [API Reference](ADLXWrapper/README.md)
 
 ### Getting Help
 
-1. Check the [Troubleshooting](ADLXWrapper.New/README.md#troubleshooting) section
-2. Review [Migration Guide](ADLXWrapper.New/MIGRATION-GUIDE.md)
+1. Check the [Troubleshooting](ADLXWrapper/README.md#troubleshooting) section
+2. Review [Migration Guide](ADLXWrapper/MIGRATION-GUIDE.md)
 3. Search existing GitHub issues
 4. Create new issue with environment details
 
@@ -381,7 +381,8 @@ This project wraps AMD's ADLX SDK. Please refer to AMD's ADLX SDK license for te
 ## Quick Links
 
 - [Main README](../README.md)
-- [ClangSharp README](ADLXWrapper.New/README.md)
-- [Migration Guide](ADLXWrapper.New/MIGRATION-GUIDE.md)
+- [ClangSharp README](ADLXWrapper/README.md)
+- [Migration Guide](ADLXWrapper/MIGRATION-GUIDE.md)
 - [Test Documentation](ADLXWrapper.Tests/README.Tests.md)
 - [Final Summary](.cline/migration-final-summary.md)
+

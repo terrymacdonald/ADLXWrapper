@@ -129,7 +129,7 @@ catch (ADLXException ex)
 **Add:**
 ```xml
 <!-- ClangSharp wrapper -->
-<ProjectReference Include="..\ADLXWrapper.New\ADLXWrapper.csproj" />
+<ProjectReference Include="..\ADLXWrapper\ADLXWrapper.csproj" />
 ```
 
 ### Step 2: Update Using Statements
@@ -607,7 +607,7 @@ var name = ADLXHelpers.GetGPUName(pGPU);
 ## Support
 
 For migration questions or issues:
-1. Check the [ClangSharp README](../ADLXWrapper.New/README.md)
+1. Check the [ClangSharp README](../ADLXWrapper/README.md)
 2. Review the [Architecture Validation Tests](../ADLXWrapper.Tests/ArchitectureValidationTests.cs)
 3. See examples in test files (BasicApiTests.cs, CoreApiTests.cs, etc.)
 4. Create a GitHub issue with migration questions
@@ -623,3 +623,4 @@ Once migrated:
 4. ? Share feedback on the migration experience
 
 **The ClangSharp wrapper is production-ready for 70% of ADLX functionality!**
+
