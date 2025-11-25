@@ -291,10 +291,233 @@ namespace ADLXWrapper
             if (pGPU == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pGPU));
 
-            // This will be implemented when we add display services support
-            // For now, return empty array as placeholder
-            // Will be completed in Stage 5
+            // We need the system services to get display services
+            // This will be called from tests that have access to system services
+            // For now, return empty array - will be implemented when we have display services access
             return Array.Empty<IntPtr>();
+        }
+
+        /// <summary>
+        /// Enumerate all displays from system display services
+        /// Returns array of display interface pointers
+        /// </summary>
+        public static IntPtr[] EnumerateAllDisplays(IntPtr pSystem)
+        {
+            if (pSystem == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSystem));
+
+            // Get display services from system
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
+            var getDisplayServicesFn = Marshal.GetDelegateForFunctionPointer<GetDisplayServicesFn>(
+                systemVtbl->GetDisplaysServices);
+
+            IntPtr pDisplayServices;
+            var result = getDisplayServicesFn(pSystem, &pDisplayServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display services");
+            }
+
+            if (pDisplayServices == IntPtr.Zero)
+            {
+                return Array.Empty<IntPtr>();
+            }
+
+            try
+            {
+                // Get displays from display services
+                var displayServicesVtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+                var getDisplaysFn = (ADLXVTables.GetDisplaysFn)Marshal.GetDelegateForFunctionPointer(
+                    displayServicesVtbl->GetDisplays, typeof(ADLXVTables.GetDisplaysFn));
+
+                IntPtr pDisplayList;
+                result = getDisplaysFn(pDisplayServices, &pDisplayList);
+
+                if (result != ADLX_RESULT.ADLX_OK)
+                {
+                    throw new ADLXException(result, "Failed to get display list");
+                }
+
+                if (pDisplayList == IntPtr.Zero)
+                {
+                    return Array.Empty<IntPtr>();
+                }
+
+                try
+                {
+                    // Get list size
+                    var listVtbl = *(ADLXVTables.IADLXDisplayListVtbl**)pDisplayList;
+                    var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(
+                        listVtbl->Size, typeof(ADLXVTables.SizeFn));
+                    var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(
+                        listVtbl->At, typeof(ADLXVTables.AtFn));
+
+                    uint count = sizeFn(pDisplayList);
+
+                    if (count == 0)
+                    {
+                        return Array.Empty<IntPtr>();
+                    }
+
+                    // Get each display from the list
+                    var displays = new IntPtr[count];
+                    for (uint i = 0; i < count; i++)
+                    {
+                        IntPtr pDisplay;
+                        result = atFn(pDisplayList, i, &pDisplay);
+
+                        if (result != ADLX_RESULT.ADLX_OK)
+                        {
+                            throw new ADLXException(result, $"Failed to get display at index {i}");
+                        }
+
+                        displays[i] = pDisplay;
+                    }
+
+                    return displays;
+                }
+                finally
+                {
+                    // Release the display list interface
+                    ADLXHelpers.ReleaseInterface(pDisplayList);
+                }
+            }
+            finally
+            {
+                // Release the display services interface
+                ADLXHelpers.ReleaseInterface(pDisplayServices);
+            }
+        }
+
+        // Delegate for GetDisplaysServices
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        private delegate ADLX_RESULT GetDisplayServicesFn(IntPtr pThis, IntPtr* ppDisplayServices);
+
+        /// <summary>
+        /// Get display name
+        /// </summary>
+        public static string GetDisplayName(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
+            var nameFn = (ADLXVTables.DisplayNameFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->Name, typeof(ADLXVTables.DisplayNameFn));
+
+            byte* pName;
+            var result = nameFn(pDisplay, &pName);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display name");
+            }
+
+            return MarshalString(pName);
+        }
+
+        /// <summary>
+        /// Get display native resolution
+        /// </summary>
+        public static (int width, int height) GetDisplayNativeResolution(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
+            var resolutionFn = (ADLXVTables.NativeResolutionFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->NativeResolution, typeof(ADLXVTables.NativeResolutionFn));
+
+            int width, height;
+            var result = resolutionFn(pDisplay, &width, &height);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display resolution");
+            }
+
+            return (width, height);
+        }
+
+        /// <summary>
+        /// Get display refresh rate
+        /// </summary>
+        public static double GetDisplayRefreshRate(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
+            var refreshRateFn = (ADLXVTables.RefreshRateFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->RefreshRate, typeof(ADLXVTables.RefreshRateFn));
+
+            double refreshRate;
+            var result = refreshRateFn(pDisplay, &refreshRate);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display refresh rate");
+            }
+
+            return refreshRate;
+        }
+
+        /// <summary>
+        /// Get display manufacturer ID
+        /// </summary>
+        public static uint GetDisplayManufacturerID(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
+            var manufacturerIDFn = (ADLXVTables.ManufacturerIDFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->ManufacturerID, typeof(ADLXVTables.ManufacturerIDFn));
+
+            uint manufacturerID;
+            var result = manufacturerIDFn(pDisplay, &manufacturerID);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display manufacturer ID");
+            }
+
+            return manufacturerID;
+        }
+
+        /// <summary>
+        /// Get display pixel clock
+        /// </summary>
+        public static uint GetDisplayPixelClock(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
+            var pixelClockFn = (ADLXVTables.PixelClockFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->PixelClock, typeof(ADLXVTables.PixelClockFn));
+
+            uint pixelClock;
+            var result = pixelClockFn(pDisplay, &pixelClock);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display pixel clock");
+            }
+
+            return pixelClock;
+        }
+
+        /// <summary>
+        /// Helper to marshal ANSI string pointer to managed string
+        /// </summary>
+        private static string MarshalString(byte* pStr)
+        {
+            if (pStr == null)
+                return string.Empty;
+
+            return Marshal.PtrToStringAnsi((IntPtr)pStr) ?? string.Empty;
         }
     }
 
@@ -437,6 +660,44 @@ namespace ADLXWrapper
                 PNPString = ADLXHelpers.GetGPUPNPString(pGPU),
                 DriverPath = ADLXHelpers.GetGPUDriverPath(pGPU),
                 UniqueId = ADLXHelpers.GetGPUUniqueId(pGPU)
+            };
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for display information retrieval
+    /// Combines multiple property calls into convenient structs
+    /// </summary>
+    public static class ADLXDisplayInfo
+    {
+        /// <summary>
+        /// Basic display information
+        /// </summary>
+        public struct DisplayBasicInfo
+        {
+            public string Name;
+            public int Width;
+            public int Height;
+            public double RefreshRate;
+            public uint ManufacturerID;
+            public uint PixelClock;
+        }
+
+        /// <summary>
+        /// Get comprehensive basic information about a display
+        /// </summary>
+        public static DisplayBasicInfo GetBasicInfo(IntPtr pDisplay)
+        {
+            var resolution = ADLXDisplayHelpers.GetDisplayNativeResolution(pDisplay);
+
+            return new DisplayBasicInfo
+            {
+                Name = ADLXDisplayHelpers.GetDisplayName(pDisplay),
+                Width = resolution.width,
+                Height = resolution.height,
+                RefreshRate = ADLXDisplayHelpers.GetDisplayRefreshRate(pDisplay),
+                ManufacturerID = ADLXDisplayHelpers.GetDisplayManufacturerID(pDisplay),
+                PixelClock = ADLXDisplayHelpers.GetDisplayPixelClock(pDisplay)
             };
         }
     }

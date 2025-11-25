@@ -159,5 +159,87 @@ namespace ADLXWrapper
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT HasDesktopsFn(IntPtr pThis, byte* hasDesktops);
+
+        // Display service methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDisplaysFn(IntPtr pThis, IntPtr* ppDisplayList);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetNumberOfDisplaysFn(IntPtr pThis, uint* numDisplays);
+
+        // Display property methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DisplayNameFn(IntPtr pThis, byte** name);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT NativeResolutionFn(IntPtr pThis, int* maxHResolution, int* maxVResolution);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT RefreshRateFn(IntPtr pThis, double* refreshRate);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT ManufacturerIDFn(IntPtr pThis, uint* manufacturerID);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT PixelClockFn(IntPtr pThis, uint* pixelClock);
+
+        // IADLXDisplayServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayServicesVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXDisplayServices methods
+            public IntPtr GetNumberOfDisplays;    // ADLX_RESULT GetNumberOfDisplays(adlx_uint* numDisplays)
+            public IntPtr GetDisplays;            // ADLX_RESULT GetDisplays(IADLXDisplayList** ppDisplay)
+            public IntPtr Get3DLUT;               // ADLX_RESULT Get3DLUT(IADLXDisplay* pDisplay, IADLXDisplay3DLUT** ppDisp3DLUT)
+            public IntPtr GetGamut;               // ADLX_RESULT GetGamut(IADLXDisplay* pDisplay, IADLXDisplayGamut** ppDispGamut)
+            public IntPtr GetGamma;               // ADLX_RESULT GetGamma(IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma)
+            public IntPtr GetDisplayChangedHandling;  // ADLX_RESULT GetDisplayChangedHandling(IADLXDisplayChangedHandling** ppDisplayChangedHandling)
+        }
+
+        // IADLXDisplayList vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayListVtbl
+        {
+            // Inherit from IADLXList
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+            public IntPtr Size;
+            public IntPtr Empty;
+            public IntPtr Begin;
+            public IntPtr End;
+            public IntPtr At;              // ADLX_RESULT At(adlx_uint location, IADLXDisplay** ppItem)
+            public IntPtr Clear;
+            public IntPtr Remove_Back;
+            public IntPtr Add_Back;        // ADLX_RESULT Add_Back(IADLXDisplay* pItem)
+        }
+
+        // IADLXDisplay vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXDisplay methods (based on IDisplays.h)
+            public IntPtr ManufacturerID;         // ADLX_RESULT ManufacturerID(adlx_uint* manufacturerID)
+            public IntPtr DisplayType;            // ADLX_RESULT DisplayType(ADLX_DISPLAY_TYPE* displayType)
+            public IntPtr ConnectorType;          // ADLX_RESULT ConnectorType(ADLX_DISPLAY_CONNECTOR_TYPE* connectType)
+            public IntPtr Name;                   // ADLX_RESULT Name(const char** displayName)
+            public IntPtr EDID;                   // ADLX_RESULT EDID(const char** edid)
+            public IntPtr NativeResolution;       // ADLX_RESULT NativeResolution(adlx_int* maxHResolution, adlx_int* maxVResolution)
+            public IntPtr RefreshRate;            // ADLX_RESULT RefreshRate(adlx_double* refreshRate)
+            public IntPtr PixelClock;             // ADLX_RESULT PixelClock(adlx_uint* pixelClock)
+            public IntPtr ScanType;               // ADLX_RESULT ScanType(ADLX_DISPLAY_SCAN_TYPE* scanType)
+            public IntPtr GetGPU;                 // ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
+            public IntPtr UniqueId;               // ADLX_RESULT UniqueId(adlx_size* uniqueId)
+        }
     }
 }

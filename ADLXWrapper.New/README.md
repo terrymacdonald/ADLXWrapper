@@ -22,6 +22,8 @@ ADLXWrapper.New/
 ? **Stage 1 Complete:** Project Setup and ClangSharp Configuration  
 ? **Stage 2 Complete:** Core Wrapper Layer (ADLXApi.cs)  
 ? **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
+? **Stage 4 Complete:** Basic Tests and Validation  
+? **Stage 5 Complete:** Display Services Tests  
 
 - Created .NET 9 C# project
 - Added ClangSharp NuGet packages (v18.1.0 / v20.1.2)
@@ -30,6 +32,7 @@ ADLXWrapper.New/
 - Implemented complete ADLXApi wrapper with initialization and GPU enumeration
 - Implemented VTable access for COM-like interfaces
 - Created comprehensive helper methods for GPU properties
+- Created comprehensive display enumeration and property access
 - Project builds successfully
 
 ## How to Build
@@ -73,6 +76,25 @@ using (var adlx = ADLXApi.Initialize())
         
         // Remember to release GPU interface when done
         ADLXHelpers.ReleaseInterface(gpu);
+    }
+
+    // Enumerate displays
+    var pSystem = adlx.GetSystemServices();
+    var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+    Console.WriteLine($"\nFound {displays.Length} display(s)");
+    
+    foreach (var display in displays)
+    {
+        // Get display info
+        var displayInfo = ADLXDisplayInfo.GetBasicInfo(display);
+        Console.WriteLine($"\nDisplay: {displayInfo.Name}");
+        Console.WriteLine($"  Resolution: {displayInfo.Width}x{displayInfo.Height}");
+        Console.WriteLine($"  Refresh Rate: {displayInfo.RefreshRate} Hz");
+        Console.WriteLine($"  Manufacturer ID: {displayInfo.ManufacturerID}");
+        Console.WriteLine($"  Pixel Clock: {displayInfo.PixelClock}");
+        
+        // Remember to release display interface when done
+        ADLXHelpers.ReleaseInterface(display);
     }
 } // Automatic cleanup via Dispose
 ```
@@ -137,7 +159,20 @@ using (var adlx = ADLXApi.Initialize())
 
 ### ADLXDisplayHelpers (Display Operations)
 
-- `IntPtr[] EnumerateDisplays(IntPtr pGPU)` - Enumerate displays for a GPU (placeholder, will be implemented in Stage 5)
+- `IntPtr[] EnumerateAllDisplays(IntPtr pSystem)` - Enumerate all displays from system
+- `string GetDisplayName(IntPtr pDisplay)` - Get display name
+- `(int width, int height) GetDisplayNativeResolution(IntPtr pDisplay)` - Get native resolution
+- `double GetDisplayRefreshRate(IntPtr pDisplay)` - Get refresh rate in Hz
+- `uint GetDisplayManufacturerID(IntPtr pDisplay)` - Get manufacturer ID
+- `uint GetDisplayPixelClock(IntPtr pDisplay)` - Get pixel clock
+
+### ADLXDisplayInfo (Combined Display Information)
+
+**Structs:**
+- `DisplayBasicInfo` - Name, Width, Height, RefreshRate, ManufacturerID, PixelClock
+
+**Methods:**
+- `DisplayBasicInfo GetBasicInfo(IntPtr pDisplay)` - Get all display info in one call
 
 ## ClangSharp Code Generation
 
