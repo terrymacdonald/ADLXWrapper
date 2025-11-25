@@ -24,6 +24,8 @@ ADLXWrapper.New/
 ? **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
 ? **Stage 4 Complete:** Basic Tests and Validation  
 ? **Stage 5 Complete:** Display Services Tests  
+? **Stage 6 Complete:** GPU Tuning Services Tests  
+? **Stage 7 Complete:** Performance Monitoring Tests  
 
 - Created .NET 9 C# project
 - Added ClangSharp NuGet packages (v18.1.0 / v20.1.2)
@@ -33,6 +35,8 @@ ADLXWrapper.New/
 - Implemented VTable access for COM-like interfaces
 - Created comprehensive helper methods for GPU properties
 - Created comprehensive display enumeration and property access
+- Created comprehensive GPU tuning capability checks
+- Created comprehensive performance monitoring and metrics collection
 - Project builds successfully
 
 ## How to Build
@@ -113,6 +117,8 @@ using (var adlx = ADLXApi.Initialize())
 
 **System Services:**
 - `IntPtr GetSystemServices()` - Get root system interface pointer
+- `IntPtr GetGPUTuningServices()` - Get GPU tuning services interface pointer
+- `IntPtr GetPerformanceMonitoringServices()` - Get performance monitoring services interface pointer
 - `IntPtr[] EnumerateGPUs()` - Enumerate all AMD GPUs in the system
 
 **Cleanup:**
@@ -173,6 +179,51 @@ using (var adlx = ADLXApi.Initialize())
 
 **Methods:**
 - `DisplayBasicInfo GetBasicInfo(IntPtr pDisplay)` - Get all display info in one call
+
+### ADLXGPUTuningHelpers (GPU Tuning Operations)
+
+- `bool IsSupportedAutoTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if auto tuning is supported
+- `bool IsSupportedPresetTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if preset tuning is supported
+- `bool IsSupportedManualGFXTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual GFX tuning is supported
+- `bool IsSupportedManualVRAMTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual VRAM tuning is supported
+- `bool IsSupportedManualFanTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual fan tuning is supported
+- `bool IsSupportedManualPowerTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual power tuning is supported
+
+### ADLXGPUTuningInfo (Combined GPU Tuning Information)
+
+**Structs:**
+- `GPUTuningCapabilities` - AutoTuningSupported, PresetTuningSupported, ManualGFXTuningSupported, ManualVRAMTuningSupported, ManualFanTuningSupported, ManualPowerTuningSupported
+
+**Methods:**
+- `GPUTuningCapabilities GetTuningCapabilities(IntPtr pGPUTuningServices, IntPtr pGPU)` - Get all tuning capabilities in one call
+
+### ADLXPerformanceMonitoringHelpers (Performance Monitoring Operations)
+
+- `IntPtr GetSupportedGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get GPU metrics support interface
+- `IntPtr GetCurrentGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get current GPU metrics interface
+- `bool IsSupportedGPUUsage(IntPtr pMetricsSupport)` - Check if GPU usage metric is supported
+- `bool IsSupportedGPUClockSpeed(IntPtr pMetricsSupport)` - Check if GPU clock speed metric is supported
+- `bool IsSupportedGPUTemperature(IntPtr pMetricsSupport)` - Check if GPU temperature metric is supported
+- `bool IsSupportedGPUPower(IntPtr pMetricsSupport)` - Check if GPU power metric is supported
+- `bool IsSupportedGPUFanSpeed(IntPtr pMetricsSupport)` - Check if GPU fan speed metric is supported
+- `bool IsSupportedGPUVRAM(IntPtr pMetricsSupport)` - Check if GPU VRAM metric is supported
+- `double GetGPUTemperature(IntPtr pMetrics)` - Get GPU temperature in °C
+- `double GetGPUUsage(IntPtr pMetrics)` - Get GPU usage percentage
+- `int GetGPUClockSpeed(IntPtr pMetrics)` - Get GPU clock speed in MHz
+- `int GetGPUVRAMClockSpeed(IntPtr pMetrics)` - Get VRAM clock speed in MHz
+- `int GetGPUVRAM(IntPtr pMetrics)` - Get VRAM usage in MB
+- `int GetGPUFanSpeed(IntPtr pMetrics)` - Get fan speed in RPM
+- `double GetGPUPower(IntPtr pMetrics)` - Get GPU power in Watts
+
+### ADLXPerformanceMonitoringInfo (Combined Performance Monitoring Information)
+
+**Structs:**
+- `GPUMetricsSupport` - UsageSupported, ClockSpeedSupported, TemperatureSupported, PowerSupported, FanSpeedSupported, VRAMSupported
+- `GPUMetricsSnapshot` - Temperature, Usage, ClockSpeed, VRAMClockSpeed, VRAMUsage, FanSpeed, Power
+
+**Methods:**
+- `GPUMetricsSupport GetMetricsSupport(IntPtr pPerfMonServices, IntPtr pGPU)` - Get all metrics support in one call
+- `GPUMetricsSnapshot GetCurrentMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get all current metrics in one call
 
 ## ClangSharp Code Generation
 

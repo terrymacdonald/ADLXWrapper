@@ -665,6 +665,353 @@ namespace ADLXWrapper
     }
 
     /// <summary>
+    /// Helper methods for GPU tuning services
+    /// </summary>
+    public static unsafe class ADLXGPUTuningHelpers
+    {
+        /// <summary>
+        /// Check if auto tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedAutoTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedAutoTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check auto tuning support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if preset tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedPresetTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedPresetTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check preset tuning support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if manual GFX tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedManualGFXTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedManualGFXTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check manual GFX tuning support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if manual VRAM tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedManualVRAMTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedManualVRAMTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check manual VRAM tuning support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if manual fan tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedManualFanTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedManualFanTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check manual fan tuning support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if manual power tuning is supported for a GPU
+        /// </summary>
+        public static bool IsSupportedManualPowerTuning(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            if (pGPUTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGPUTuningServices;
+            var isSupportedFn = (ADLXVTables.IsSupportedTuningFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedManualPowerTuning, typeof(ADLXVTables.IsSupportedTuningFn));
+
+            byte supported;
+            var result = isSupportedFn(pGPUTuningServices, pGPU, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check manual power tuning support");
+            }
+
+            return supported != 0;
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for GPU performance monitoring information retrieval
+    /// </summary>
+    public static class ADLXPerformanceMonitoringInfo
+    {
+        /// <summary>
+        /// GPU metrics support capabilities
+        /// </summary>
+        public struct GPUMetricsSupport
+        {
+            public bool UsageSupported;
+            public bool ClockSpeedSupported;
+            public bool TemperatureSupported;
+            public bool PowerSupported;
+            public bool FanSpeedSupported;
+            public bool VRAMSupported;
+        }
+
+        /// <summary>
+        /// Current GPU metrics values
+        /// </summary>
+        public struct GPUMetricsSnapshot
+        {
+            public double Temperature;
+            public double Usage;
+            public int ClockSpeed;
+            public int VRAMClockSpeed;
+            public int VRAMUsage;
+            public int FanSpeed;
+            public double Power;
+        }
+
+        /// <summary>
+        /// Get metrics support for a GPU
+        /// </summary>
+        public static GPUMetricsSupport GetMetricsSupport(IntPtr pPerfMonServices, IntPtr pGPU)
+        {
+            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(pPerfMonServices, pGPU);
+            try
+            {
+                var support = new GPUMetricsSupport();
+
+                try { support.UsageSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUUsage(pMetricsSupport); }
+                catch { support.UsageSupported = false; }
+
+                try { support.ClockSpeedSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUClockSpeed(pMetricsSupport); }
+                catch { support.ClockSpeedSupported = false; }
+
+                try { support.TemperatureSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUTemperature(pMetricsSupport); }
+                catch { support.TemperatureSupported = false; }
+
+                try { support.PowerSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUPower(pMetricsSupport); }
+                catch { support.PowerSupported = false; }
+
+                try { support.FanSpeedSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUFanSpeed(pMetricsSupport); }
+                catch { support.FanSpeedSupported = false; }
+
+                try { support.VRAMSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUVRAM(pMetricsSupport); }
+                catch { support.VRAMSupported = false; }
+
+                return support;
+            }
+            finally
+            {
+                ADLXHelpers.ReleaseInterface(pMetricsSupport);
+            }
+        }
+
+        /// <summary>
+        /// Get current metrics snapshot for a GPU
+        /// </summary>
+        public static GPUMetricsSnapshot GetCurrentMetrics(IntPtr pPerfMonServices, IntPtr pGPU)
+        {
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(pPerfMonServices, pGPU);
+            try
+            {
+                var snapshot = new GPUMetricsSnapshot();
+
+                try { snapshot.Temperature = ADLXPerformanceMonitoringHelpers.GetGPUTemperature(pMetrics); }
+                catch { snapshot.Temperature = 0; }
+
+                try { snapshot.Usage = ADLXPerformanceMonitoringHelpers.GetGPUUsage(pMetrics); }
+                catch { snapshot.Usage = 0; }
+
+                try { snapshot.ClockSpeed = ADLXPerformanceMonitoringHelpers.GetGPUClockSpeed(pMetrics); }
+                catch { snapshot.ClockSpeed = 0; }
+
+                try { snapshot.VRAMClockSpeed = ADLXPerformanceMonitoringHelpers.GetGPUVRAMClockSpeed(pMetrics); }
+                catch { snapshot.VRAMClockSpeed = 0; }
+
+                try { snapshot.VRAMUsage = ADLXPerformanceMonitoringHelpers.GetGPUVRAM(pMetrics); }
+                catch { snapshot.VRAMUsage = 0; }
+
+                try { snapshot.FanSpeed = ADLXPerformanceMonitoringHelpers.GetGPUFanSpeed(pMetrics); }
+                catch { snapshot.FanSpeed = 0; }
+
+                try { snapshot.Power = ADLXPerformanceMonitoringHelpers.GetGPUPower(pMetrics); }
+                catch { snapshot.Power = 0; }
+
+                return snapshot;
+            }
+            finally
+            {
+                ADLXHelpers.ReleaseInterface(pMetrics);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for GPU tuning information retrieval
+    /// </summary>
+    public static class ADLXGPUTuningInfo
+    {
+        /// <summary>
+        /// GPU tuning capabilities
+        /// </summary>
+        public struct GPUTuningCapabilities
+        {
+            public bool AutoTuningSupported;
+            public bool PresetTuningSupported;
+            public bool ManualGFXTuningSupported;
+            public bool ManualVRAMTuningSupported;
+            public bool ManualFanTuningSupported;
+            public bool ManualPowerTuningSupported;
+        }
+
+        /// <summary>
+        /// Get comprehensive tuning capabilities for a GPU
+        /// </summary>
+        public static GPUTuningCapabilities GetTuningCapabilities(IntPtr pGPUTuningServices, IntPtr pGPU)
+        {
+            var capabilities = new GPUTuningCapabilities();
+
+            try
+            {
+                capabilities.AutoTuningSupported = ADLXGPUTuningHelpers.IsSupportedAutoTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.AutoTuningSupported = false;
+            }
+
+            try
+            {
+                capabilities.PresetTuningSupported = ADLXGPUTuningHelpers.IsSupportedPresetTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.PresetTuningSupported = false;
+            }
+
+            try
+            {
+                capabilities.ManualGFXTuningSupported = ADLXGPUTuningHelpers.IsSupportedManualGFXTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.ManualGFXTuningSupported = false;
+            }
+
+            try
+            {
+                capabilities.ManualVRAMTuningSupported = ADLXGPUTuningHelpers.IsSupportedManualVRAMTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.ManualVRAMTuningSupported = false;
+            }
+
+            try
+            {
+                capabilities.ManualFanTuningSupported = ADLXGPUTuningHelpers.IsSupportedManualFanTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.ManualFanTuningSupported = false;
+            }
+
+            try
+            {
+                capabilities.ManualPowerTuningSupported = ADLXGPUTuningHelpers.IsSupportedManualPowerTuning(pGPUTuningServices, pGPU);
+            }
+            catch
+            {
+                capabilities.ManualPowerTuningSupported = false;
+            }
+
+            return capabilities;
+        }
+    }
+
+    /// <summary>
     /// Helper methods for display information retrieval
     /// Combines multiple property calls into convenient structs
     /// </summary>
@@ -699,6 +1046,361 @@ namespace ADLXWrapper
                 ManufacturerID = ADLXDisplayHelpers.GetDisplayManufacturerID(pDisplay),
                 PixelClock = ADLXDisplayHelpers.GetDisplayPixelClock(pDisplay)
             };
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for performance monitoring services
+    /// </summary>
+    public static unsafe class ADLXPerformanceMonitoringHelpers
+    {
+        /// <summary>
+        /// Get supported GPU metrics for a GPU
+        /// </summary>
+        public static IntPtr GetSupportedGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getSupportedMetricsFn = (ADLXVTables.GetSupportedGPUMetricsFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetSupportedGPUMetrics, typeof(ADLXVTables.GetSupportedGPUMetricsFn));
+
+            IntPtr pMetricsSupport;
+            var result = getSupportedMetricsFn(pPerfMonServices, pGPU, &pMetricsSupport);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get supported GPU metrics");
+            }
+
+            return pMetricsSupport;
+        }
+
+        /// <summary>
+        /// Get current GPU metrics for a GPU
+        /// </summary>
+        public static IntPtr GetCurrentGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getCurrentMetricsFn = (ADLXVTables.GetCurrentGPUMetricsFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetCurrentGPUMetrics, typeof(ADLXVTables.GetCurrentGPUMetricsFn));
+
+            IntPtr pMetrics;
+            var result = getCurrentMetricsFn(pPerfMonServices, pGPU, &pMetrics);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get current GPU metrics");
+            }
+
+            return pMetrics;
+        }
+
+        /// <summary>
+        /// Check if GPU usage metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUUsage(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUUsage, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU usage support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if GPU clock speed metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUClockSpeed(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUClockSpeed, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU clock speed support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if GPU temperature metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUTemperature(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUTemperature, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU temperature support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if GPU power metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUPower(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUPower, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU power support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if GPU fan speed metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUFanSpeed(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUFanSpeed, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU fan speed support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Check if GPU VRAM metric is supported
+        /// </summary>
+        public static bool IsSupportedGPUVRAM(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUVRAM, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to check GPU VRAM support");
+            }
+
+            return supported != 0;
+        }
+
+        /// <summary>
+        /// Get GPU temperature from metrics
+        /// </summary>
+        public static double GetGPUTemperature(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var temperatureFn = (ADLXVTables.GPUTemperatureFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUTemperature, typeof(ADLXVTables.GPUTemperatureFn));
+
+            double temperature;
+            var result = temperatureFn(pMetrics, &temperature);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU temperature");
+            }
+
+            return temperature;
+        }
+
+        /// <summary>
+        /// Get GPU usage from metrics
+        /// </summary>
+        public static double GetGPUUsage(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var usageFn = (ADLXVTables.GPUUsageFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUUsage, typeof(ADLXVTables.GPUUsageFn));
+
+            double usage;
+            var result = usageFn(pMetrics, &usage);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU usage");
+            }
+
+            return usage;
+        }
+
+        /// <summary>
+        /// Get GPU clock speed from metrics
+        /// </summary>
+        public static int GetGPUClockSpeed(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var clockSpeedFn = (ADLXVTables.GPUClockSpeedFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUClockSpeed, typeof(ADLXVTables.GPUClockSpeedFn));
+
+            int clockSpeed;
+            var result = clockSpeedFn(pMetrics, &clockSpeed);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU clock speed");
+            }
+
+            return clockSpeed;
+        }
+
+        /// <summary>
+        /// Get GPU VRAM clock speed from metrics
+        /// </summary>
+        public static int GetGPUVRAMClockSpeed(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var vramClockSpeedFn = (ADLXVTables.GPUClockSpeedFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUVRAMClockSpeed, typeof(ADLXVTables.GPUClockSpeedFn));
+
+            int vramClockSpeed;
+            var result = vramClockSpeedFn(pMetrics, &vramClockSpeed);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU VRAM clock speed");
+            }
+
+            return vramClockSpeed;
+        }
+
+        /// <summary>
+        /// Get GPU VRAM usage from metrics
+        /// </summary>
+        public static int GetGPUVRAM(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var vramFn = (ADLXVTables.GPUVRAMFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUVRAM, typeof(ADLXVTables.GPUVRAMFn));
+
+            int vram;
+            var result = vramFn(pMetrics, &vram);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU VRAM");
+            }
+
+            return vram;
+        }
+
+        /// <summary>
+        /// Get GPU fan speed from metrics
+        /// </summary>
+        public static int GetGPUFanSpeed(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var fanSpeedFn = (ADLXVTables.GPUClockSpeedFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUFanSpeed, typeof(ADLXVTables.GPUClockSpeedFn));
+
+            int fanSpeed;
+            var result = fanSpeedFn(pMetrics, &fanSpeed);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU fan speed");
+            }
+
+            return fanSpeed;
+        }
+
+        /// <summary>
+        /// Get GPU power from metrics
+        /// </summary>
+        public static double GetGPUPower(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var powerFn = (ADLXVTables.GPUPowerFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUPower, typeof(ADLXVTables.GPUPowerFn));
+
+            double power;
+            var result = powerFn(pMetrics, &power);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU power");
+            }
+
+            return power;
         }
     }
 }

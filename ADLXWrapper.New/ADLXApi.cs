@@ -217,6 +217,52 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Get GPU tuning services interface pointer
+        /// </summary>
+        public unsafe IntPtr GetGPUTuningServices()
+        {
+            ThrowIfDisposed();
+
+            // Access IADLXSystem vtable to call GetGPUTuningServices
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getGPUTuningServicesFn = (ADLXVTables.GetGPUTuningServicesFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetGPUTuningServices, typeof(ADLXVTables.GetGPUTuningServicesFn));
+
+            IntPtr pGPUTuningServices;
+            var result = getGPUTuningServicesFn(_pSystemServices, &pGPUTuningServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU tuning services");
+            }
+
+            return pGPUTuningServices;
+        }
+
+        /// <summary>
+        /// Get performance monitoring services interface pointer
+        /// </summary>
+        public unsafe IntPtr GetPerformanceMonitoringServices()
+        {
+            ThrowIfDisposed();
+
+            // Access IADLXSystem vtable to call GetPerformanceMonitoringServices
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getPerfMonServicesFn = (ADLXVTables.GetPerformanceMonitoringServicesFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetPerformanceMonitoringServices, typeof(ADLXVTables.GetPerformanceMonitoringServicesFn));
+
+            IntPtr pPerfMonServices;
+            var result = getPerfMonServicesFn(_pSystemServices, &pPerfMonServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get performance monitoring services");
+            }
+
+            return pPerfMonServices;
+        }
+
+        /// <summary>
         /// Enumerate all AMD GPUs in the system
         /// </summary>
         public unsafe IntPtr[] EnumerateGPUs()

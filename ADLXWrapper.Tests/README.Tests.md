@@ -6,7 +6,7 @@ This folder contains tests for the new ClangSharp-based ADLXWrapper.
 
 ### New Tests (ClangSharp-based)
 
-**BasicApiTests.cs** - 10 tests
+**BasicApiTests.cs** - 9 tests
 - ? Initialize_ShouldSucceed
 - ? GetVersion_ShouldReturnValidVersion
 - ? GetFullVersion_ShouldReturnNonZero
@@ -38,7 +38,53 @@ This folder contains tests for the new ClangSharp-based ADLXWrapper.
 - ? ReleaseInterface_WithValidPointer_ShouldNotThrow
 - ? ReleaseInterface_WithNullPointer_ShouldNotThrow
 
-**Total: 29 tests**
+**DisplayServicesTests.cs** - 14 tests
+- ? EnumerateAllDisplays_ShouldReturnArray
+- ? EnumerateAllDisplays_ShouldReturnValidPointers
+- ? GetDisplayName_ShouldReturnValidName
+- ? GetDisplayNativeResolution_ShouldReturnValidResolution
+- ? GetDisplayRefreshRate_ShouldReturnPositiveValue
+- ? GetDisplayManufacturerID_ShouldReturnValue
+- ? GetDisplayPixelClock_ShouldReturnPositiveValue
+- ? GetDisplayBasicInfo_ShouldReturnCompleteInformation
+- ? AllDisplays_ShouldHaveUniqueNames
+- ? GetDisplayName_WithNullPointer_ShouldThrowArgumentNullException
+- ? GetDisplayNativeResolution_WithNullPointer_ShouldThrowArgumentNullException
+- ? GetDisplayRefreshRate_WithNullPointer_ShouldThrowArgumentNullException
+- ? EnumerateAllDisplays_WithNullPointer_ShouldThrowArgumentNullException
+- ? MultipleDisplayEnumeration_ShouldReturnConsistentResults
+
+**GpuTuningServicesTests.cs** - 10 tests
+- ? GetGPUTuningServices_ShouldSucceed
+- ? IsSupportedAutoTuning_ShouldReturnBooleanValue
+- ? IsSupportedPresetTuning_ShouldReturnBooleanValue
+- ? IsSupportedManualGFXTuning_ShouldHandleGracefully
+- ? IsSupportedManualVRAMTuning_ShouldReturnBooleanValue
+- ? IsSupportedManualFanTuning_ShouldReturnBooleanValue
+- ? IsSupportedManualPowerTuning_ShouldReturnBooleanValue
+- ? AllSupportChecks_ShouldNotThrow
+- ? IsSupportedAutoTuning_WithNullServices_ShouldThrowArgumentNullException
+- ? IsSupportedAutoTuning_WithNullGPU_ShouldThrowArgumentNullException
+
+**PerformanceMonitoringServicesTests.cs** - 10 tests
+- ? GetPerformanceMonitoringServices_ShouldSucceed
+- ? GetSupportedGPUMetrics_ShouldReturnValidPointer
+- ? IsSupportedGPUUsage_ShouldReturnBoolean
+- ? IsSupportedGPUTemperature_ShouldReturnBoolean
+- ? GetCurrentGPUMetrics_ShouldReturnValidPointer
+- ? GetGPUTemperature_ShouldReturnValidValue
+- ? GetGPUUsage_ShouldReturnValidValue
+- ? GetGPUClockSpeed_ShouldReturnValidValue
+- ? AllMetrics_ShouldNotThrow
+- ? GetCurrentGPUMetrics_WithNullServices_ShouldThrowArgumentNullException
+
+**ArchitectureValidationTests.cs** - 4 tests
+- ? MigrationArchitecture_IsComplete
+- ? AllImplementedServices_AreAccessible
+- ? VTablePattern_IsProvenAndRepeatable
+- ? TestCoverage_IsComprehensive
+
+**Total: 66 tests**
 
 ### Legacy Tests (SWIG-based)
 

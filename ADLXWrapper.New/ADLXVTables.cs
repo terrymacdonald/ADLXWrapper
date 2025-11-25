@@ -183,6 +183,140 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT PixelClockFn(IntPtr pThis, uint* pixelClock);
 
+        // GPU Tuning service methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGPUTuningServicesFn(IntPtr pThis, IntPtr* ppGPUTuningServices);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT IsSupportedTuningFn(IntPtr pThis, IntPtr pGPU, byte* supported);
+
+        // Performance monitoring methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetPerformanceMonitoringServicesFn(IntPtr pThis, IntPtr* ppPerfMonServices);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT IsSupportedMetricFn(IntPtr pThis, byte* supported);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetCurrentGPUMetricsFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppMetrics);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetSupportedGPUMetricsFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppMetricsSupport);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GPUTemperatureFn(IntPtr pThis, double* temperature);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GPUUsageFn(IntPtr pThis, double* usage);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GPUClockSpeedFn(IntPtr pThis, int* clockSpeed);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GPUVRAMFn(IntPtr pThis, int* vram);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GPUPowerFn(IntPtr pThis, double* power);
+
+        // IADLXPerformanceMonitoringServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXPerformanceMonitoringServicesVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXPerformanceMonitoringServices methods
+            public IntPtr GetSamplingIntervalRange;          // ADLX_RESULT GetSamplingIntervalRange(ADLX_IntRange* range)
+            public IntPtr SetSamplingInterval;                // ADLX_RESULT SetSamplingInterval(adlx_int intervalMs)
+            public IntPtr GetSamplingInterval;                // ADLX_RESULT GetSamplingInterval(adlx_int* intervalMs)
+            public IntPtr GetMaxPerformanceMetricsHistorySize; // ADLX_RESULT GetMaxPerformanceMetricsHistorySize(adlx_int* sizeSec)
+            public IntPtr SetMaxPerformanceMetricsHistorySize; // ADLX_RESULT SetMaxPerformanceMetricsHistorySize(adlx_int sizeSec)
+            public IntPtr ClearPerformanceMetricsHistory;     // ADLX_RESULT ClearPerformanceMetricsHistory()
+            public IntPtr GetCurrentPerformanceMetricsHistorySize; // ADLX_RESULT GetCurrentPerformanceMetricsHistorySize(adlx_int* sizeSec)
+            public IntPtr GetGPUMetricsHistory;               // ADLX_RESULT GetGPUMetricsHistory(IADLXGPU* pGPU, adlx_int startMs, adlx_int stopMs, IADLXGPUMetricsList** ppMetricsList)
+            public IntPtr GetCurrentGPUMetrics;               // ADLX_RESULT GetCurrentGPUMetrics(IADLXGPU* pGPU, IADLXGPUMetrics** ppMetrics)
+            public IntPtr GetSupportedGPUMetrics;             // ADLX_RESULT GetSupportedGPUMetrics(IADLXGPU* pGPU, IADLXGPUMetricsSupport** ppMetricsSupport)
+            public IntPtr GetSystemMetricsHistory;            // ADLX_RESULT GetSystemMetricsHistory(adlx_int startMs, adlx_int stopMs, IADLXSystemMetricsList** ppMetricsList)
+            public IntPtr GetCurrentSystemMetrics;            // ADLX_RESULT GetCurrentSystemMetrics(IADLXSystemMetrics** ppMetrics)
+            public IntPtr GetSupportedSystemMetrics;          // ADLX_RESULT GetSupportedSystemMetrics(IADLXSystemMetricsSupport** ppMetricsSupport)
+            public IntPtr StartPerformanceMetricsTracking;    // ADLX_RESULT StartPerformanceMetricsTracking()
+            public IntPtr StopPerformanceMetricsTracking;     // ADLX_RESULT StopPerformanceMetricsTracking()
+            public IntPtr GetAllMetricsHistory;               // ADLX_RESULT GetAllMetricsHistory(adlx_int startMs, adlx_int stopMs, IADLXAllMetricsList** ppMetricsList)
+            public IntPtr GetCurrentAllMetrics;               // ADLX_RESULT GetCurrentAllMetrics(IADLXAllMetrics** ppMetrics)
+        }
+
+        // IADLXGPUMetricsSupport vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXGPUMetricsSupportVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXGPUMetricsSupport methods
+            public IntPtr IsSupportedGPUUsage;                // ADLX_RESULT IsSupportedGPUUsage(adlx_bool* supported)
+            public IntPtr IsSupportedGPUClockSpeed;           // ADLX_RESULT IsSupportedGPUClockSpeed(adlx_bool* supported)
+            public IntPtr IsSupportedGPUVRAMClockSpeed;       // ADLX_RESULT IsSupportedGPUVRAMClockSpeed(adlx_bool* supported)
+            public IntPtr IsSupportedGPUTemperature;          // ADLX_RESULT IsSupportedGPUTemperature(adlx_bool* supported)
+            public IntPtr IsSupportedGPUHotspotTemperature;   // ADLX_RESULT IsSupportedGPUHotspotTemperature(adlx_bool* supported)
+            public IntPtr IsSupportedGPUPower;                // ADLX_RESULT IsSupportedGPUPower(adlx_bool* supported)
+            public IntPtr IsSupportedGPUFanSpeed;             // ADLX_RESULT IsSupportedGPUFanSpeed(adlx_bool* supported)
+            public IntPtr IsSupportedGPUVRAM;                 // ADLX_RESULT IsSupportedGPUVRAM(adlx_bool* supported)
+            public IntPtr IsSupportedGPUVoltage;              // ADLX_RESULT IsSupportedGPUVoltage(adlx_bool* supported)
+            public IntPtr IsSupportedGPUTotalBoardPower;      // ADLX_RESULT IsSupportedGPUTotalBoardPower(adlx_bool* supported)
+        }
+
+        // IADLXGPUMetrics vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXGPUMetricsVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXGPUMetrics methods
+            public IntPtr TimeStamp;                          // ADLX_RESULT TimeStamp(adlx_int64* ms)
+            public IntPtr GPUUsage;                           // ADLX_RESULT GPUUsage(adlx_double* data)
+            public IntPtr GPUClockSpeed;                      // ADLX_RESULT GPUClockSpeed(adlx_int* data)
+            public IntPtr GPUVRAMClockSpeed;                  // ADLX_RESULT GPUVRAMClockSpeed(adlx_int* data)
+            public IntPtr GPUTemperature;                     // ADLX_RESULT GPUTemperature(adlx_double* data)
+            public IntPtr GPUHotspotTemperature;              // ADLX_RESULT GPUHotspotTemperature(adlx_double* data)
+            public IntPtr GPUPower;                           // ADLX_RESULT GPUPower(adlx_double* data)
+            public IntPtr GPUFanSpeed;                        // ADLX_RESULT GPUFanSpeed(adlx_int* data)
+            public IntPtr GPUVRAM;                            // ADLX_RESULT GPUVRAM(adlx_int* data)
+            public IntPtr GPUVoltage;                         // ADLX_RESULT GPUVoltage(adlx_int* data)
+            public IntPtr GPUTotalBoardPower;                 // ADLX_RESULT GPUTotalBoardPower(adlx_double* data)
+        }
+
+        // IADLXGPUTuningServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXGPUTuningServicesVtbl
+        {
+            // Base interface methods
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXGPUTuningServices methods
+            public IntPtr GetGPUTuningChangedHandling;   // ADLX_RESULT GetGPUTuningChangedHandling(IADLXGPUTuningChangedHandling** ppGPUTuningChangedHandling)
+            public IntPtr IsSupportedAutoTuning;          // ADLX_RESULT IsSupportedAutoTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr IsSupportedPresetTuning;        // ADLX_RESULT IsSupportedPresetTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr IsSupportedManualGFXTuning;     // ADLX_RESULT IsSupportedManualGFXTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr IsSupportedManualVRAMTuning;    // ADLX_RESULT IsSupportedManualVRAMTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr IsSupportedManualFanTuning;     // ADLX_RESULT IsSupportedManualFanTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr IsSupportedManualPowerTuning;   // ADLX_RESULT IsSupportedManualPowerTuning(IADLXGPU* pGPU, adlx_bool* supported)
+            public IntPtr GetAutoTuning;                  // ADLX_RESULT GetAutoTuning(IADLXGPU* pGPU, IADLXGPUAutoTuning** ppAutoTuning)
+            public IntPtr GetPresetTuning;                // ADLX_RESULT GetPresetTuning(IADLXGPU* pGPU, IADLXGPUPresetTuning** ppPresetTuning)
+            public IntPtr GetManualGFXTuning;             // ADLX_RESULT GetManualGFXTuning(IADLXGPU* pGPU, IADLXGPUManualGFXTuning** ppManualGFXTuning)
+            public IntPtr GetManualVRAMTuning;            // ADLX_RESULT GetManualVRAMTuning(IADLXGPU* pGPU, IADLXGPUManualVRAMTuning** ppManualVRAMTuning)
+            public IntPtr GetManualFanTuning;             // ADLX_RESULT GetManualFanTuning(IADLXGPU* pGPU, IADLXGPUManualFanTuning** ppManualFanTuning)
+            public IntPtr GetManualPowerTuning;           // ADLX_RESULT GetManualPowerTuning(IADLXGPU* pGPU, IADLXGPUManualPowerTuning** ppManualPowerTuning)
+        }
+
         // IADLXDisplayServices vtable
         [StructLayout(LayoutKind.Sequential)]
         internal struct IADLXDisplayServicesVtbl
