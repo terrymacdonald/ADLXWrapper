@@ -20,6 +20,53 @@ Write-Host "====================================================================
 Write-Host ""
 
 # ============================================================================
+# Read version from VERSION file and calculate build number from git commits
+# ============================================================================
+Write-Host "Determining version number..." -ForegroundColor Yellow
+
+$versionFile = Join-Path $scriptRoot "VERSION"
+if (-not (Test-Path $versionFile)) {
+    Write-Host "Warning: VERSION file not found, using default version" -ForegroundColor Yellow
+    $version = "1.0.0"
+} else {
+    # Read MAJOR and MINOR from VERSION file
+    $versionContent = Get-Content $versionFile
+    $major = "1"
+    $minor = "0"
+
+    foreach ($line in $versionContent) {
+        if ($line -match "^MAJOR=(\d+)") {
+            $major = $matches[1]
+        }
+        elseif ($line -match "^MINOR=(\d+)") {
+            $minor = $matches[1]
+        }
+    }
+
+    # Get git commit count for PATCH/build number
+    $patch = "0"
+    try {
+        # Check if git is available
+        $gitPath = Get-Command git -ErrorAction SilentlyContinue
+        if ($gitPath) {
+            # Get the commit count
+            $commitCount = & git rev-list --count HEAD 2>&1
+            if ($LASTEXITCODE -eq 0 -and $commitCount -match "^\d+$") {
+                $patch = $commitCount
+            }
+        }
+    }
+    catch {
+        # Silently fall back to 0
+    }
+
+    $version = "$major.$minor.$patch"
+}
+
+Write-Host "Testing version: $version" -ForegroundColor Green
+Write-Host ""
+
+# ============================================================================
 # Verify dotnet CLI is available
 # ============================================================================
 Write-Host "Checking for .NET CLI..." -ForegroundColor Yellow

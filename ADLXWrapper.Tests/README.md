@@ -222,13 +222,13 @@ For issues or questions:
 ## Summary Statistics
 
 - **Total Test Files**: 6
-- **Total Test Methods**: 60+
+- **Total Test Methods**: 66 (9 + 19 + 14 + 10 + 10 + 4)
 - **Coverage Areas**: Initialization, GPUs, Displays, Performance Monitoring, GPU Tuning, Architecture Validation
 - **Hardware Compatibility**: Gracefully handles all AMD GPU generations and non-AMD systems
 
 ---
 
-**Last Updated**: 2025-11-25
+**Last Updated**: 2025-11-26
 **ADLX SDK Version**: Compatible with ADLX SDK 2.0+
 **Test Framework**: xUnit 2.8.2
 **.NET Target**: .NET 9.0

@@ -20,6 +20,63 @@ Write-Host "====================================================================
 Write-Host ""
 
 # ============================================================================
+# Read version from VERSION file and calculate build number from git commits
+# ============================================================================
+Write-Host "Determining version number..." -ForegroundColor Yellow
+
+$versionFile = Join-Path $scriptRoot "VERSION"
+if (-not (Test-Path $versionFile)) {
+    Write-Host "ERROR: VERSION file not found: $versionFile" -ForegroundColor Red
+    Read-Host "Press Enter to exit"
+    exit 1
+}
+
+# Read MAJOR and MINOR from VERSION file
+$versionContent = Get-Content $versionFile
+$major = "1"
+$minor = "0"
+
+foreach ($line in $versionContent) {
+    if ($line -match "^MAJOR=(\d+)") {
+        $major = $matches[1]
+    }
+    elseif ($line -match "^MINOR=(\d+)") {
+        $minor = $matches[1]
+    }
+}
+
+# Get git commit count for PATCH/build number
+$patch = "0"
+try {
+    # Check if git is available
+    $gitPath = Get-Command git -ErrorAction SilentlyContinue
+    if ($gitPath) {
+        # Get the commit count
+        $commitCount = & git rev-list --count HEAD 2>&1
+        if ($LASTEXITCODE -eq 0 -and $commitCount -match "^\d+$") {
+            $patch = $commitCount
+        }
+        else {
+            Write-Host "Warning: Could not get git commit count, using 0" -ForegroundColor Yellow
+        }
+    }
+    else {
+        Write-Host "Warning: git not found in PATH, using PATCH=0" -ForegroundColor Yellow
+    }
+}
+catch {
+    Write-Host "Warning: Error reading git commit count: $_" -ForegroundColor Yellow
+    Write-Host "Using PATCH=0" -ForegroundColor Yellow
+}
+
+$version = "$major.$minor.$patch"
+Write-Host "Version: $version" -ForegroundColor Green
+Write-Host "  MAJOR: $major (from VERSION file)" -ForegroundColor Gray
+Write-Host "  MINOR: $minor (from VERSION file)" -ForegroundColor Gray
+Write-Host "  PATCH: $patch (git commit count)" -ForegroundColor Gray
+Write-Host ""
+
+# ============================================================================
 # Verify dotnet CLI is available
 # ============================================================================
 Write-Host "Checking for .NET CLI..." -ForegroundColor Yellow
@@ -118,7 +175,7 @@ Write-Host "====================================================================
 Write-Host ""
 
 try {
-    & dotnet build $solutionPath --configuration Debug --no-restore
+    & dotnet build $solutionPath --configuration Debug --no-restore /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version
     
     if ($LASTEXITCODE -ne 0) {
         throw "Build failed with exit code $LASTEXITCODE"
