@@ -95,14 +95,23 @@ cd ADLXWrapper
 # 4. Run tests from Test Explorer
 ```
 
-### Add to Your Project
+### How to Use
 
-```bash
-# Add project reference
-dotnet add reference path/to/ADLXWrapper/ADLXWrapper.csproj
-```
+#### Option 1: Add as Project Reference (Recommended)
 
-### Basic Usage
+1. Add the ADLXWrapper project to your solution
+2. Add a project reference to IGCLWrapper in your C# project (either using Visual Studio or `dotnet add reference path/to/ADLXWrapper/ADLXWrapper.csproj`)
+3. Add `using ADLXWrapper;` to your source files
+
+#### Option 2: Add as DLL Reference
+
+1. Copy `ADLXWrapper.dll` to your project directory
+2. Add a reference to the DLL in your project
+3. Ensure `amdadlx64.dll` (from AMD Adrenalin Graphics drivers) is accessible at runtime
+4. Add `using ADLXWrapper;` to your source files
+
+
+### Basic Usage Example
 
 ```csharp
 using ADLXWrapper;
