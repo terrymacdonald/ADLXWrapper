@@ -21,7 +21,7 @@ namespace ADLXWrapper.Tests
             {
                 // Query for video controllers with AMD's PCI Vendor ID (1002)
                 using var searcher = new ManagementObjectSearcher(
-                    "SELECT * FROM Win32_VideoController WHERE PNPDeviceID LIKE 'PCI\\\\VEN_1002%'");
+                    $"SELECT * FROM Win32_VideoController WHERE PNPDeviceID LIKE 'PCI\\\\VEN_{AMD_PCI_VENDOR_ID}%'");
 
                 var devices = searcher.Get();
                 if (devices.Count > 0)
@@ -49,7 +49,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 using var searcher = new ManagementObjectSearcher(
-                    "SELECT Name FROM Win32_VideoController WHERE PNPDeviceID LIKE 'PCI\\\\VEN_1002%'");
+                    $"SELECT Name FROM Win32_VideoController WHERE PNPDeviceID LIKE 'PCI\\\\VEN_{AMD_PCI_VENDOR_ID}%'");
 
                 var devices = searcher.Get();
                 var names = new string[devices.Count];
