@@ -10,27 +10,17 @@ namespace ADLXWrapper.Tests
     /// Demonstrates that the wrapper architecture successfully supports all ADLX services
     /// via the VTable pattern established in Stages 1-7
     /// </summary>
-    public class ArchitectureValidationTests : IDisposable
+    public class ArchitectureValidationTests : IClassFixture<ADLXTestFixture>
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
-        private readonly bool _hasHardware;
+        private readonly ADLXTestFixture _fixture;
 
-        public ArchitectureValidationTests(ITestOutputHelper output)
+        public ArchitectureValidationTests(ITestOutputHelper output, ADLXTestFixture fixture)
         {
             _output = output;
-
-            try
-            {
-                _api = ADLXApi.Initialize();
-                _hasHardware = true;
-                _output.WriteLine("? ADLX initialized successfully");
-            }
-            catch (Exception ex)
-            {
-                _hasHardware = false;
-                _output.WriteLine($"? Initialization failed: {ex.Message}");
-            }
+            _fixture = fixture;
+            
+            _fixture.WriteDiagnostics(_output);
         }
 
         [Fact]
@@ -41,61 +31,47 @@ namespace ADLXWrapper.Tests
             _output.WriteLine("This test validates that the migration from SWIG to ClangSharp");
             _output.WriteLine("has successfully established a complete, working architecture.");
             _output.WriteLine("");
-
-            // Verify core components exist
             _output.WriteLine("Core Components:");
             _output.WriteLine("  ? ADLXNative.cs - Manual P/Invoke for DLL loading");
             _output.WriteLine("  ? ADLXApi.cs - Main wrapper with IDisposable");
             _output.WriteLine("  ? ADLXVTables.cs - VTable structures for COM-like interfaces");
             _output.WriteLine("  ? ADLXExtensions.cs - Helper methods and convenience functions");
             _output.WriteLine("");
-
             _output.WriteLine("Successfully Implemented Services (Stages 1-7):");
             _output.WriteLine("  ? GPU Enumeration & Properties");
             _output.WriteLine("  ? Display Services & Properties");
             _output.WriteLine("  ? GPU Tuning Services (Auto, Preset, Manual)");
             _output.WriteLine("  ? Performance Monitoring & Metrics");
             _output.WriteLine("");
-
             _output.WriteLine("Services Using Same Pattern (Can Be Added Incrementally):");
-            _output.WriteLine("  ? Desktop Services (Get3DSettingsServices)");
-            _output.WriteLine("  ? 3D Settings Services (GetDesktopsServices)");
-            _output.WriteLine("  ? I2C Services (GetI2C)");
-            _output.WriteLine("  ? Power Tuning Services (System1::GetPowerTuningServices)");
-            _output.WriteLine("  ? Multimedia Services (System2::GetMultimediaServices)");
+            _output.WriteLine("  ?? Desktop Services (Get3DSettingsServices)");
+            _output.WriteLine("  ?? 3D Settings Services (GetDesktopsServices)");
+            _output.WriteLine("  ?? I2C Services (GetI2C)");
+            _output.WriteLine("  ?? Power Tuning Services (System1::GetPowerTuningServices)");
+            _output.WriteLine("  ?? Multimedia Services (System2::GetMultimediaServices)");
             _output.WriteLine("");
-
             _output.WriteLine("Pattern Established:");
             _output.WriteLine("  1. Add VTable structure to ADLXVTables.cs");
             _output.WriteLine("  2. Add service accessor to ADLXApi.cs");
             _output.WriteLine("  3. Add helper methods to ADLXExtensions.cs");
             _output.WriteLine("  4. Create tests for validation");
             _output.WriteLine("");
-
             _output.WriteLine("? Migration architecture is complete and proven");
         }
 
-        [Fact]
+        [SkippableFact]
         public void AllImplementedServices_AreAccessible()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
             _output.WriteLine("=== Implemented Services Accessibility Test ===");
 
-            // Test System Services
-            var pSystem = _api.GetSystemServices();
+            var pSystem = _fixture.Api!.GetSystemServices();
             Assert.NotEqual(IntPtr.Zero, pSystem);
             _output.WriteLine("? System Services: Accessible");
 
-            // Test GPU Enumeration
-            var gpus = _api.EnumerateGPUs();
-            _output.WriteLine($"? GPU Enumeration: {gpus.Length} GPU(s) found");
+            _output.WriteLine($"? GPU Enumeration: {_fixture.GPUs.Length} GPU(s) found");
 
-            // Test Display Services
             try
             {
                 var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
@@ -107,39 +83,31 @@ namespace ADLXWrapper.Tests
             }
             catch (Exception ex)
             {
-                _output.WriteLine($"? Display Services: {ex.Message}");
+                _output.WriteLine($"?? Display Services: {ex.Message}");
             }
 
-            // Test GPU Tuning Services
             try
             {
-                var pTuningServices = _api.GetGPUTuningServices();
+                var pTuningServices = _fixture.Api.GetGPUTuningServices();
                 Assert.NotEqual(IntPtr.Zero, pTuningServices);
                 _output.WriteLine("? GPU Tuning Services: Accessible");
                 ADLXHelpers.ReleaseInterface(pTuningServices);
             }
             catch (Exception ex)
             {
-                _output.WriteLine($"? GPU Tuning Services: {ex.Message}");
+                _output.WriteLine($"?? GPU Tuning Services: {ex.Message}");
             }
 
-            // Test Performance Monitoring Services
             try
             {
-                var pPerfMonServices = _api.GetPerformanceMonitoringServices();
+                var pPerfMonServices = _fixture.Api.GetPerformanceMonitoringServices();
                 Assert.NotEqual(IntPtr.Zero, pPerfMonServices);
                 _output.WriteLine("? Performance Monitoring Services: Accessible");
                 ADLXHelpers.ReleaseInterface(pPerfMonServices);
             }
             catch (Exception ex)
             {
-                _output.WriteLine($"? Performance Monitoring Services: {ex.Message}");
-            }
-
-            // Cleanup GPUs
-            foreach (var gpu in gpus)
-            {
-                ADLXHelpers.ReleaseInterface(gpu);
+                _output.WriteLine($"?? Performance Monitoring Services: {ex.Message}");
             }
 
             _output.WriteLine("");
@@ -199,7 +167,7 @@ namespace ADLXWrapper.Tests
             _output.WriteLine("=== Test Coverage Summary ===");
             _output.WriteLine("");
 
-            int totalTests = 63; // Update this as tests are added
+            int totalTests = 63;
             _output.WriteLine($"Total Tests Created: {totalTests}");
             _output.WriteLine("");
 
@@ -237,11 +205,6 @@ namespace ADLXWrapper.Tests
             _output.WriteLine("");
 
             _output.WriteLine("? Test coverage is comprehensive and production-ready");
-        }
-
-        public void Dispose()
-        {
-            _api?.Dispose();
         }
     }
 }

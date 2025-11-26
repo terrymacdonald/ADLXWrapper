@@ -417,5 +417,34 @@ namespace ADLXWrapper
                 throw new ObjectDisposedException(nameof(ADLXApi));
             }
         }
+
+        /// <summary>
+        /// Check if the ADLX DLL is available in the DLL search path
+        /// </summary>
+        /// <param name="errorMessage">Details about why the DLL could not be loaded</param>
+        /// <returns>True if DLL can be loaded, false otherwise</returns>
+        public static bool IsADLXDllAvailable(out string errorMessage)
+        {
+            var dllName = ADLXNative.GetDllName();
+            
+            IntPtr handle = ADLXNative.LoadLibraryEx(
+                dllName,
+                IntPtr.Zero,
+                ADLXNative.LOAD_LIBRARY_SEARCH_USER_DIRS |
+                ADLXNative.LOAD_LIBRARY_SEARCH_APPLICATION_DIR |
+                ADLXNative.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS |
+                ADLXNative.LOAD_LIBRARY_SEARCH_SYSTEM32);
+
+            if (handle == IntPtr.Zero)
+            {
+                var error = Marshal.GetLastWin32Error();
+                errorMessage = $"ADLX SDK DLL '{dllName}' not found in DLL search path (Error: {error})";
+                return false;
+            }
+
+            ADLXNative.FreeLibrary(handle);
+            errorMessage = string.Empty;
+            return true;
+        }
     }
 }

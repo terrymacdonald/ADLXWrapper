@@ -9,164 +9,113 @@ namespace ADLXWrapper.Tests
     /// Basic API tests for ADLX wrapper
     /// Tests initialization, version queries, and cleanup
     /// </summary>
-    public class BasicApiTests : IDisposable
+    public class BasicApiTests : IClassFixture<ADLXTestFixture>
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
-        private readonly bool _hasHardware;
+        private readonly ADLXTestFixture _fixture;
 
-        public BasicApiTests(ITestOutputHelper output)
+        public BasicApiTests(ITestOutputHelper output, ADLXTestFixture fixture)
         {
             _output = output;
-
-            try
-            {
-                _api = ADLXApi.Initialize();
-                _hasHardware = true;
-                _output.WriteLine("? ADLX initialized successfully");
-            }
-            catch (DllNotFoundException ex)
-            {
-                _hasHardware = false;
-                _output.WriteLine($"? AMD ADLX DLL not found: {ex.Message}");
-                _output.WriteLine("  Tests will be skipped (no AMD GPU drivers installed)");
-            }
-            catch (ADLXException ex)
-            {
-                _hasHardware = false;
-                _output.WriteLine($"? ADLX initialization failed: {ex.Message}");
-                _output.WriteLine($"  Result code: {ex.Result}");
-                _output.WriteLine("  Tests will be skipped (ADLX not available)");
-            }
-            catch (Exception ex)
-            {
-                _hasHardware = false;
-                _output.WriteLine($"? Unexpected error during initialization: {ex.Message}");
-                _output.WriteLine("  Tests will be skipped");
-            }
+            _fixture = fixture;
+            
+            // Write diagnostics once per test class instance
+            _fixture.WriteDiagnostics(_output);
         }
 
-        [Fact]
+        [SkippableFact]
         public void Initialize_ShouldSucceed()
         {
-            // Test that we can initialize the API
-            if (!_hasHardware)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            Assert.NotNull(_api);
+            Assert.NotNull(_fixture.Api);
             _output.WriteLine("? ADLXApi instance is not null");
         }
 
-        [Fact]
+        [SkippableFact]
         public void GetVersion_ShouldReturnValidVersion()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            var version = _api.GetVersion();
+            var version = _fixture.Api!.GetVersion();
             
             Assert.NotNull(version);
             Assert.NotEmpty(version);
             _output.WriteLine($"? ADLX Version: {version}");
         }
 
-        [Fact]
+        [SkippableFact]
         public void GetFullVersion_ShouldReturnNonZero()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            var fullVersion = _api.GetFullVersion();
+            var fullVersion = _fixture.Api!.GetFullVersion();
             
             Assert.NotEqual(0UL, fullVersion);
             _output.WriteLine($"? ADLX Full Version: {fullVersion}");
         }
 
-        [Fact]
+        [SkippableFact]
         public void GetSystemServices_ShouldReturnValidPointer()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            var pSystemServices = _api.GetSystemServices();
+            var pSystemServices = _fixture.Api!.GetSystemServices();
             
             Assert.NotEqual(IntPtr.Zero, pSystemServices);
             _output.WriteLine($"? System services pointer: 0x{pSystemServices:X}");
         }
 
-        [Fact]
+        [SkippableFact]
         public void Dispose_ShouldNotThrow()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            // Dispose should work without throwing
-            var exception = Record.Exception(() => _api.Dispose());
+            // Create a new instance to test disposal
+            using var testApi = ADLXApi.Initialize();
+            var exception = Record.Exception(() => testApi.Dispose());
             
             Assert.Null(exception);
             _output.WriteLine("? Dispose completed without exception");
         }
 
-        [Fact]
+        [SkippableFact]
         public void DisposeMultipleTimes_ShouldBeIdempotent()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
+            // Create a new instance to test multiple disposals
+            var testApi = ADLXApi.Initialize();
+            
             // Multiple dispose calls should be safe
-            _api.Dispose();
-            _api.Dispose();
-            _api.Dispose();
+            testApi.Dispose();
+            testApi.Dispose();
+            testApi.Dispose();
             
             _output.WriteLine("? Multiple Dispose calls handled correctly");
         }
 
-        [Fact]
+        [SkippableFact]
         public void AfterDispose_MethodsShouldThrowObjectDisposedException()
         {
-            if (!_hasHardware || _api == null)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
-            _api.Dispose();
+            var testApi = ADLXApi.Initialize();
+            testApi.Dispose();
 
             // After dispose, methods should throw ObjectDisposedException
-            Assert.Throws<ObjectDisposedException>(() => _api.GetVersion());
-            Assert.Throws<ObjectDisposedException>(() => _api.GetFullVersion());
-            Assert.Throws<ObjectDisposedException>(() => _api.GetSystemServices());
-            Assert.Throws<ObjectDisposedException>(() => _api.EnumerateGPUs());
+            Assert.Throws<ObjectDisposedException>(() => testApi.GetVersion());
+            Assert.Throws<ObjectDisposedException>(() => testApi.GetFullVersion());
+            Assert.Throws<ObjectDisposedException>(() => testApi.GetSystemServices());
+            Assert.Throws<ObjectDisposedException>(() => testApi.EnumerateGPUs());
             
             _output.WriteLine("? Methods correctly throw ObjectDisposedException after disposal");
         }
 
-        [Fact]
+        [SkippableFact]
         public void UsingStatement_ShouldAutomaticallyDispose()
         {
-            if (!_hasHardware)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
             ADLXApi? testApi = null;
             
@@ -183,14 +132,10 @@ namespace ADLXWrapper.Tests
             _output.WriteLine("? Using statement correctly disposed the instance");
         }
 
-        [Fact]
+        [SkippableFact]
         public void InitializeMultipleTimes_ShouldReturnSeparateInstances()
         {
-            if (!_hasHardware)
-            {
-                _output.WriteLine("? Test skipped - No AMD hardware available");
-                return;
-            }
+            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
 
             using var api1 = ADLXApi.Initialize();
             using var api2 = ADLXApi.Initialize();
@@ -200,11 +145,6 @@ namespace ADLXWrapper.Tests
             Assert.NotSame(api1, api2);
             
             _output.WriteLine("? Multiple Initialize calls return separate instances");
-        }
-
-        public void Dispose()
-        {
-            _api?.Dispose();
         }
     }
 }
