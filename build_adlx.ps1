@@ -1,6 +1,6 @@
 #
-# ADLXWrapper Test Script (PowerShell)
-# Runs unit tests for the ADLXWrapper ClangSharp-based C# bindings
+# ADLXWrapper Build Script (PowerShell)
+# Builds the ClangSharp-based C# wrapper for ADLX
 #
 
 # Get the directory where this script is located
@@ -15,7 +15,7 @@ Write-Host "Working directory: $scriptRoot" -ForegroundColor Cyan
 Write-Host ""
 
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "ADLXWrapper Test Suite (ClangSharp Implementation)" -ForegroundColor Cyan
+Write-Host "ADLXWrapper Build Script (ClangSharp Implementation)" -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -75,76 +75,86 @@ try {
 }
 
 # ============================================================================
-# Verify test project exists
+# Restore NuGet packages
 # ============================================================================
-$testProjectPath = Join-Path $scriptRoot "ADLXWrapper.Tests\ADLXWrapper.Tests.csproj"
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host "Restoring NuGet packages..." -ForegroundColor Cyan
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host ""
 
-if (-not (Test-Path $testProjectPath)) {
-    Write-Host "ERROR: Test project not found at: $testProjectPath" -ForegroundColor Red
-    Write-Host ""
+$solutionPath = Join-Path $scriptRoot "ADLXWrapper.sln"
+
+if (-not (Test-Path $solutionPath)) {
+    Write-Host "ERROR: Solution file not found: $solutionPath" -ForegroundColor Red
     Read-Host "Press Enter to exit"
     exit 1
 }
 
-Write-Host "Test project found: $testProjectPath" -ForegroundColor Green
-Write-Host ""
-
-# ============================================================================
-# Build and run unit tests
-# ============================================================================
-Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "Building and running ClangSharp-based unit tests..." -ForegroundColor Cyan
-Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host ""
-
 try {
-    # Run tests with detailed console output
-    & dotnet test $testProjectPath --configuration Debug --framework net9.0 --verbosity normal
+    & dotnet restore $solutionPath
     
-    if ($LASTEXITCODE -eq 0) {
-        Write-Host ""
-        Write-Host "============================================================================" -ForegroundColor Green
-        Write-Host "*** ALL TESTS PASSED! ***" -ForegroundColor Green
-        Write-Host "============================================================================" -ForegroundColor Green
-        Write-Host "All unit tests completed successfully using .NET 9.0" -ForegroundColor Green
-        Write-Host ""
-    } else {
-        Write-Host ""
-        Write-Host "============================================================================" -ForegroundColor Yellow
-        Write-Host "*** SOME TESTS FAILED OR WERE SKIPPED ***" -ForegroundColor Yellow
-        Write-Host "============================================================================" -ForegroundColor Yellow
-        Write-Host "Exit code: $LASTEXITCODE" -ForegroundColor Yellow
-        Write-Host ""
-        Write-Host "Troubleshooting tips:" -ForegroundColor Yellow
-        Write-Host "  - Tests gracefully skip if AMD hardware is not available" -ForegroundColor Gray
-        Write-Host "  - Ensure AMD GPU with ADLX support is present" -ForegroundColor Gray
-        Write-Host "  - Verify AMD Adrenalin drivers are installed (21.10.1 or newer)" -ForegroundColor Gray
-        Write-Host "  - Review test output above for specific failure details" -ForegroundColor Gray
-        Write-Host ""
-        
-        # Show summary of test categories
-        Write-Host "Test suite includes:" -ForegroundColor Cyan
-        Write-Host "  - BasicApiTests: Initialization and version queries" -ForegroundColor Gray
-        Write-Host "  - CoreApiTests: GPU enumeration and properties" -ForegroundColor Gray
-        Write-Host "  - DisplayServicesTests: Display enumeration" -ForegroundColor Gray
-        Write-Host "  - GpuTuningServicesTests: Tuning capability detection" -ForegroundColor Gray
-        Write-Host "  - PerformanceMonitoringServicesTests: Metrics and monitoring" -ForegroundColor Gray
-        Write-Host "  - ArchitectureValidationTests: ClangSharp pattern validation" -ForegroundColor Gray
-        Write-Host ""
-        Write-Host "Tests automatically skip if hardware/drivers don't support them." -ForegroundColor Cyan
-        Write-Host ""
-        
-        Read-Host "Press Enter to exit"
-        exit 1
+    if ($LASTEXITCODE -ne 0) {
+        throw "Restore failed with exit code $LASTEXITCODE"
     }
+    
+    Write-Host ""
+    Write-Host "NuGet packages restored successfully!" -ForegroundColor Green
+    Write-Host ""
 } catch {
     Write-Host ""
-    Write-Host "ERROR: Failed to run unit tests!" -ForegroundColor Red
+    Write-Host "ERROR: Failed to restore NuGet packages!" -ForegroundColor Red
     Write-Host "Error: $_" -ForegroundColor Yellow
     Write-Host ""
     Read-Host "Press Enter to exit"
     exit 1
 }
 
+# ============================================================================
+# Build the solution
+# ============================================================================
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host "Building ADLXWrapper solution..." -ForegroundColor Cyan
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host ""
+
+try {
+    & dotnet build $solutionPath --configuration Debug --no-restore
+    
+    if ($LASTEXITCODE -ne 0) {
+        throw "Build failed with exit code $LASTEXITCODE"
+    }
+    
+    Write-Host ""
+    Write-Host "Build completed successfully!" -ForegroundColor Green
+    Write-Host ""
+} catch {
+    Write-Host ""
+    Write-Host "ERROR: Build failed!" -ForegroundColor Red
+    Write-Host "Error: $_" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Troubleshooting:" -ForegroundColor Yellow
+    Write-Host "  - Ensure all NuGet packages are restored" -ForegroundColor Gray
+    Write-Host "  - Verify .NET 9.0 SDK is installed" -ForegroundColor Gray
+    Write-Host "  - Check project files for errors" -ForegroundColor Gray
+    Write-Host ""
+    Read-Host "Press Enter to exit"
+    exit 1
+}
+
+# ============================================================================
+# Success summary
+# ============================================================================
+Write-Host "============================================================================" -ForegroundColor Green
+Write-Host "*** BUILD SUCCESSFUL! ***" -ForegroundColor Green
+Write-Host "============================================================================" -ForegroundColor Green
+Write-Host ""
+Write-Host "Projects built:" -ForegroundColor Cyan
+Write-Host "  - ADLXWrapper (ClangSharp-based wrapper)" -ForegroundColor Green
+Write-Host "  - ADLXWrapper.Tests (Test suite)" -ForegroundColor Green
+Write-Host ""
+Write-Host "Next steps:" -ForegroundColor Cyan
+Write-Host "  - Run tests: .\test_adlx.ps1" -ForegroundColor Gray
+Write-Host "  - Use in your project: Add reference to ADLXWrapper\ADLXWrapper.csproj" -ForegroundColor Gray
+Write-Host ""
 Write-Host "Press Enter to exit..."
 Read-Host

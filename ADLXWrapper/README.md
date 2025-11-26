@@ -41,10 +41,38 @@ ADLXWrapper/
 
 ## How to Build
 
+### Using PowerShell (Recommended)
+
 ```powershell
-cd ADLXWrapper
+# From repository root
+cd ..
+.\build.ps1
+```
+
+### Using dotnet CLI
+
+```powershell
+# From this directory (ADLXWrapper/)
 dotnet restore
 dotnet build
+
+# Or from repository root
+dotnet build ADLXWrapper/ADLXWrapper.csproj
+```
+
+### Using Visual Studio
+
+1. Open `ADLXWrapper.sln` in the repository root
+2. Build the ADLXWrapper project (right-click > Build)
+3. Or Build Solution (Ctrl+Shift+B)
+
+### Using VS Code
+
+```bash
+# From repository root or ADLXWrapper directory
+dotnet build
+
+# Or use tasks.json if configured
 ```
 
 ## Usage Example
@@ -234,7 +262,7 @@ cd ADLXWrapper
 ClangSharpPInvokeGenerator @ClangSharpConfig.rsp
 ```
 
-Note: Generated bindings are optional and not currently used. The wrapper uses manual VTable structures for COM-like interface access.
+**Note:** Generated bindings are optional and not currently used. The wrapper uses manual VTable structures for COM-like interface access.
 
 ## Architecture
 
@@ -251,8 +279,19 @@ This wrapper uses a layered approach:
 - .NET 9.0
 - ClangSharp 18.1.0
 - ClangSharp.Interop 20.1.2
-- AMD ADLX SDK (in ../ADLX/SDK/)
+- AMD ADLX SDK (in ../ADLX/SDK/ - downloaded via prepare_adlx.ps1)
 - AMD GPU drivers with ADLX support (amdadlx64.dll)
+
+## Getting the ADLX SDK
+
+The ADLX SDK is required for header files and references. Download it using:
+
+```powershell
+# From repository root
+.\prepare_adlx.ps1
+```
+
+This will download and extract the latest ADLX SDK to the `ADLX/` directory.
 
 ## Memory Management
 
@@ -261,9 +300,14 @@ This wrapper uses a layered approach:
 - The `ADLXApi` class implements IDisposable for automatic cleanup
 - Always use `using` statement or call `Dispose()` explicitly
 
+## Migration from SWIG
+
+If you're migrating from the old SWIG-based wrapper, see [MIGRATION-GUIDE.md](MIGRATION-GUIDE.md) for detailed instructions and code examples.
 
 ## References
 
 - ADLX SDK: `../ADLX/SDK/`
 - C samples: `../ADLX/Samples/C/`
+- Migration Guide: `MIGRATION-GUIDE.md`
+- Root README: `../README.md`
 

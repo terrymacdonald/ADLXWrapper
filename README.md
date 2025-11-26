@@ -4,7 +4,7 @@ A modern C# wrapper for AMD's ADLX (AMD Display Library Extensions) using ClangS
 
 ## Overview
 
-ADLXWrapper provides a high-performance, native .NET wrapper for the AMD ADLX SDK built with ClangSharp. The wrapper uses direct P/Invoke with VTable-based COM interop for optimal performance and maintainability. It allows developers to easily interact with the AMD ADLX API provided by the AMD Adrenalin drivers. 
+ADLXWrapper provides a high-performance, native .NET wrapper for the AMD ADLX SDK built with ClangSharp. The wrapper uses direct P/Invoke with VTable-based COM interop for optimal performance and maintainability.
 
 ### Key Features
 
@@ -48,16 +48,57 @@ ADLXWrapper provides a high-performance, native .NET wrapper for the AMD ADLX SD
 
 ### Installation
 
+#### Option 1: Using PowerShell Scripts (Recommended)
+
+```powershell
+# 1. Clone the repository
+git clone https://github.com/terrymacdonald/ADLXWrapper.git
+cd ADLXWrapper
+
+# 2. Download ADLX SDK
+.\prepare_adlx.ps1
+
+# 3. Build the wrapper
+.\build_adlx.ps1
+
+# 4. Run tests (optional)
+.\test_adlx.ps1
+```
+
+#### Option 2: Using dotnet CLI
+
 ```bash
 # Clone the repository
 git clone https://github.com/terrymacdonald/ADLXWrapper.git
 cd ADLXWrapper
 
-# Build the wrapper
-cd ADLXWrapper
-dotnet build
+# Download ADLX SDK first (must run prepare_adlx.ps1)
+powershell -ExecutionPolicy Bypass -File prepare_adlx.ps1
 
-# Add to your project
+# Build the wrapper
+dotnet build ADLXWrapper.sln
+
+# Run tests (optional)
+dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj
+```
+
+#### Option 3: Using Visual Studio
+
+```powershell
+# 1. Clone and download SDK
+git clone https://github.com/terrymacdonald/ADLXWrapper.git
+cd ADLXWrapper
+.\prepare_adlx.ps1
+
+# 2. Open ADLXWrapper.sln in Visual Studio
+# 3. Build Solution (Ctrl+Shift+B)
+# 4. Run tests from Test Explorer
+```
+
+### Add to Your Project
+
+```bash
+# Add project reference
 dotnet add reference path/to/ADLXWrapper/ADLXWrapper.csproj
 ```
 
@@ -119,76 +160,107 @@ using (var adlx = ADLXApi.Initialize())
 } // Automatic cleanup
 ```
 
-## API Overview
+## PowerShell Scripts
 
-### ADLXApi (Main Wrapper)
+The project includes several PowerShell scripts to simplify development:
 
-**Initialization:**
-- `static ADLXApi Initialize()` - Initialize ADLX with default settings
-- `static ADLXApi InitializeWithCallerAdl(IntPtr adlContext, IntPtr adlMainMemoryFree)` - Initialize with existing ADL context
+### prepare_adlx.ps1
 
-**Version Information:**
-- `ulong GetFullVersion()` - Get ADLX full version number
-- `string GetVersion()` - Get ADLX version string
+Downloads the AMD ADLX SDK from GitHub. **Run this first** before building.
 
-**System Services:**
-- `IntPtr GetSystemServices()` - Get root system interface pointer
-- `IntPtr GetGPUTuningServices()` - Get GPU tuning services interface pointer
-- `IntPtr GetPerformanceMonitoringServices()` - Get performance monitoring services interface pointer
-- `IntPtr[] EnumerateGPUs()` - Enumerate all AMD GPUs in the system
+```powershell
+.\prepare_adlx.ps1
+```
 
-**Cleanup:**
-- `void Dispose()` - Release resources (called automatically with `using`)
+**What it does:**
+- Downloads latest ADLX SDK from GitHub
+- Extracts to `ADLX/` directory
+- Validates SDK completeness
+- Checks if SDK already exists (won't re-download if present)
 
-### Helper Classes
+**Usage in VS Code:**
+```bash
+# From integrated terminal
+.\prepare_adlx.ps1
 
-**ADLXHelpers** - GPU property access
-- `GetGPUName()`, `GetGPUVendorId()`, `GetGPUDeviceId()`
-- `GetGPUTotalVRAM()`, `GetGPUVRAMType()`
-- `IsGPUExternal()`, `HasGPUDesktops()`
-- `ReleaseInterface()`, `AddRefInterface()`
+# Or with explicit execution policy
+powershell -ExecutionPolicy Bypass -File prepare_adlx.ps1
+```
 
-**ADLXDisplayHelpers** - Display operations
-- `EnumerateAllDisplays()`
-- `GetDisplayName()`, `GetDisplayNativeResolution()`
-- `GetDisplayRefreshRate()`, `GetDisplayPixelClock()`
+### build.ps1
 
-**ADLXGPUTuningHelpers** - Tuning capabilities
-- `IsSupportedAutoTuning()`, `IsSupportedPresetTuning()`
-- `IsSupportedManualGFXTuning()`, `IsSupportedManualVRAMTuning()`
-- `IsSupportedManualFanTuning()`, `IsSupportedManualPowerTuning()`
+Builds the ADLXWrapper solution (wrapper + tests).
 
-**ADLXPerformanceMonitoringHelpers** - Performance metrics
-- `GetCurrentGPUMetrics()`
-- `GetGPUTemperature()`, `GetGPUUsage()`
-- `GetGPUClockSpeed()`, `GetGPUVRAMClockSpeed()`
-- `GetGPUFanSpeed()`, `GetGPUPower()`
+```powershell
+.\build_adlx.ps1
+```
 
-### Combined Information Structs
+**What it does:**
+- Verifies .NET 9.0 SDK is installed
+- Restores NuGet packages
+- Builds ADLXWrapper and ADLXWrapper.Tests projects
+- Reports any build errors
 
-**ADLXGPUInfo**
-- `GPUBasicInfo` - Name, VendorId, VRAM, IsExternal, etc.
-- `GPUIdentification` - DeviceId, PNPString, DriverPath
+**Usage in VS Code:**
+```bash
+# From integrated terminal
+.\build_adlx.ps1
 
-**ADLXDisplayInfo**
-- `DisplayBasicInfo` - Name, Resolution, RefreshRate, etc.
+# Or use dotnet directly
+dotnet build
+```
 
-**ADLXPerformanceMonitoringInfo**
-- `GPUMetricsSnapshot` - Temperature, Usage, ClockSpeed, etc.
-- `GPUMetricsSupport` - Capability flags for each metric
+### test_adlx.ps1
+
+Runs the comprehensive test suite.
+
+```powershell
+.\test_adlx.ps1
+```
+
+**What it does:**
+- Verifies .NET 9.0 SDK is installed
+- Builds and runs all tests
+- Displays detailed test results
+- Tests gracefully skip if AMD hardware not available
+
+**Usage in VS Code:**
+```bash
+# From integrated terminal
+.\test_adlx.ps1
+
+# Or use dotnet directly
+dotnet test --verbosity detailed
+
+# Run specific test class
+dotnet test --filter "FullyQualifiedName~BasicApiTests"
+```
 
 ## Documentation
 
 - **[ADLXWrapper/README.md](ADLXWrapper/README.md)** - Detailed API reference
+- **[ADLXWrapper/MIGRATION-GUIDE.md](ADLXWrapper/MIGRATION-GUIDE.md)** - Migration guide from SWIG
 - **[ADLXWrapper.Tests/README.md](ADLXWrapper.Tests/README.md)** - Test documentation
 
 ## Testing
 
 The project includes comprehensive tests covering all implemented features.
 
+### Using PowerShell Script
+
+```powershell
+.\test_adlx.ps1
+```
+
+### Using dotnet CLI
+
 ```bash
 cd ADLXWrapper.Tests
 dotnet test --verbosity detailed
+
+# Run specific test classes
+dotnet test --filter "FullyQualifiedName~BasicApiTests"
+dotnet test --filter "FullyQualifiedName~CoreApiTests"
 ```
 
 **Note**: Tests require AMD GPU hardware to run successfully. Tests will gracefully skip on systems without AMD hardware.
