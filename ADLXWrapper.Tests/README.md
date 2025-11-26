@@ -1,8 +1,8 @@
-# ADLXWrapper.Tests - Comprehensive Test Suite
+﻿# ADLXWrapper.Tests - Comprehensive Test Suite
 
 ## Overview
 
-This is a comprehensive test suite for the ADLXWrapper C# bindings for AMD's ADLX SDK. The tests are designed to work on any system (with or without AMD hardware) and will gracefully skip tests that cannot run on the current hardware.
+This is a comprehensive test suite for the ADLXWrapper C# ClangSharp-based bindings for AMD's ADLX SDK. The tests are designed to work on any system (with or without AMD hardware) and will gracefully skip tests that cannot run on the current hardware.
 
 ## Test Organization
 
@@ -10,83 +10,82 @@ The test suite is organized into the following test files:
 
 ### Core Tests
 
-#### 1. **InitializationTests.cs**
-Tests ADLX runtime detection, initialization, versioning, and helper classes.
+#### 1. **BasicApiTests.cs**
+Tests ADLX initialization, version queries, and cleanup.
 
 **Tests:**
-- `Test_01_ADLX_Runtime_Availability` - Detects AMD hardware and ADLX runtime
-- `Test_02_ADLX_Initialization` - Verifies ADLX initializes correctly
-- `Test_03_System_Interface_Versions` - Checks IADLXSystem1/System2 support
-- `Test_04_Hardware_Capabilities_Summary` - Displays all detected capabilities
-- `Test_05_EnhancedADLXHelper_Initialization` - Tests high-level helper class
-- `Test_06_ADLXLoader_LowLevel_Initialization` - Tests low-level DLL loading
-- `Test_07_Error_Description_Helper` - Validates error description utility
+- `Initialize_ShouldSucceed` - Verifies ADLX initializes correctly
+- `GetVersion_ShouldReturnValidVersion` - Checks version string retrieval
+- `GetFullVersion_ShouldReturnNonZero` - Checks numeric version
+- `GetSystemServices_ShouldReturnValidPointer` - Verifies system interface access
+- `Dispose_ShouldNotThrow` - Tests proper cleanup
+- `DisposeMultipleTimes_ShouldBeIdempotent` - Tests multiple dispose calls
+- `AfterDispose_MethodsShouldThrowObjectDisposedException` - Validates disposed state
+- `UsingStatement_ShouldAutomaticallyDispose` - Tests using pattern
+- `InitializeMultipleTimes_ShouldReturnSeparateInstances` - Tests multiple instances
 
-#### 2. **GPUTests.cs**
-Tests GPU enumeration, properties, and interface version detection.
+#### 2. **CoreApiTests.cs**
+Tests GPU enumeration, properties, and helper methods.
 
 **Tests:**
-- `Test_01_Enumerate_GPUs` - Lists all AMD GPUs
-- `Test_02_GPU_Basic_Properties` - Reads GPU name, vendor ID, device ID, VRAM, type
-- `Test_03_GPU_Interface_Versions` - Checks IADLXGPU1/GPU2 support
-- `Test_04_GPU_ASIC_Info` - Reads ASIC family, PCI bus type, lane width
-- `Test_05_GPU_Driver_Info` - Reads driver path and PNP string
+- GPU enumeration and basic properties
+- GPU name, vendor ID, device ID retrieval
+- VRAM information access
+- GPU identification helpers
+- Combined information struct tests
+- List operations and array conversions
+- Interface reference counting
+- Null pointer handling
 
-### Display & Desktop Tests
+#### 3. **ArchitectureValidationTests.cs**
+Validates the ClangSharp migration architecture.
 
-#### 3. **DisplayTests.cs**
+**Tests:**
+- `MigrationArchitecture_IsComplete` - Validates migration completeness
+- `AllImplementedServices_AreAccessible` - Tests service accessibility
+- `VTablePattern_IsProvenAndRepeatable` - Validates VTable pattern
+- `TestCoverage_IsComprehensive` - Summarizes test coverage
+
+### Display & Performance Tests
+
+#### 4. **DisplayServicesTests.cs**
 Tests display enumeration, properties, and configuration.
 
 **Tests:**
-- `Test_01_Enumerate_Displays` - Lists all connected displays
-- `Test_02_Display_Properties` - Reads display name, type, connector type, manufacturer ID
-- `Test_03_Display_Resolution` - Reads native resolution and refresh rate
-- `Test_04_Display_Pixel_Clock` - Reads pixel clock frequency
-- `Test_05_Display_Scan_Type` - Reads progressive/interlaced scan type
-- `Test_06_Display_EDID` - Reads EDID manufacturer and product IDs
+- Display enumeration from system services
+- Display name and resolution retrieval
+- Refresh rate and pixel clock access
+- Manufacturer ID retrieval
+- Combined display information
+- Null pointer handling
+- Multiple display support
 
-#### 4. **DesktopTests.cs**
-Tests desktop services and Eyefinity support detection.
-
-**Tests:**
-- `Test_01_Get_Desktop_Services` - Retrieves desktop services interface
-- `Test_02_Enumerate_Desktops` - Lists all desktop configurations
-- `Test_03_Desktop_GPU_Association` - Shows which GPU drives each desktop
-- `Test_04_Eyefinity_Support_Detection` - Checks if Eyefinity is possible
-- `Test_05_Eyefinity_Current_State` - Shows if Eyefinity is currently enabled
-
-### Performance & Tuning Tests
-
-#### 5. **PerformanceMonitoringTests.cs**
-Tests GPU metrics and performance monitoring.
-
-**Tests:**
-- `Test_01_Get_Performance_Monitoring_Services` - Retrieves performance services
-- `Test_02_GPU_Metrics_Support` - Checks which metrics are supported
-- `Test_03_GPU_Current_Metrics` - Reads temperature, usage, clock speeds, VRAM, fan, power
-- `Test_04_GPU_Metrics_Timestamp` - Validates metrics timestamp
-
-#### 6. **GPUTuningTests.cs**
+#### 5. **GpuTuningServicesTests.cs**
 Tests GPU tuning support detection (read-only, no modifications).
 
 **Tests:**
-- `Test_01_Get_GPU_Tuning_Services` - Retrieves tuning services
-- `Test_02_Manual_Fan_Tuning_Support` - Checks manual fan control support
-- `Test_03_Manual_Power_Tuning_Support` - Checks power limit tuning support
-- `Test_04_Manual_Graphics_Tuning_Support` - Checks clock/voltage tuning support
-- `Test_05_Auto_Tuning_Support` - Checks auto-overclocking support
-- `Test_06_Preset_Tuning_Support` - Checks preset profile support
+- GPU tuning services retrieval
+- Auto-tuning support detection
+- Preset tuning support detection
+- Manual GFX tuning support
+- Manual VRAM tuning support
+- Manual fan tuning support
+- Manual power tuning support
+- Combined tuning capabilities
+- Graceful handling of unsupported features
 
-### Advanced Features Tests
-
-#### 7. **System2Tests.cs**
-Tests IADLXSystem2-specific features (requires newer GPUs).
+#### 6. **PerformanceMonitoringServicesTests.cs**
+Tests GPU metrics and performance monitoring.
 
 **Tests:**
-- `Test_01_System2_Interface_Support` - Checks if IADLXSystem2 is available
-- `Test_02_Multimedia_Services` - Tests multimedia services access
-- `Test_03_GPU_Apps_List_Changed_Handling` - Tests app-GPU assignment monitoring
-- `Test_04_System2_Capabilities_Summary` - Displays all System2 capabilities
+- Performance monitoring services retrieval
+- GPU metrics support detection
+- Current metrics retrieval
+- Temperature, usage, clock speed access
+- VRAM, fan speed, power readings
+- Combined metrics snapshots
+- Null pointer handling
+- Unsupported metrics handling
 
 ## Hardware Requirements
 
@@ -102,13 +101,13 @@ Tests IADLXSystem2-specific features (requires newer GPUs).
 ### For Full Test Coverage
 - **AMD GPU**: Radeon RX 6000 series or newer (RDNA 2)
 - **AMD Drivers**: Adrenalin 23.2.1 or newer
-- **Multiple Displays**: 2+ for Eyefinity tests
-- Additional tests available: IADLXSystem2 features, advanced metrics, multimedia services
+- **Multiple Displays**: 2+ for display enumeration tests
+- Additional tests available: Advanced metrics, tuning capabilities
 
 ## Running the Tests
 
 ### From Visual Studio
-1. Open Test Explorer (`Test` ? `Test Explorer`)
+1. Open Test Explorer (`Test` → `Test Explorer`)
 2. Click `Run All Tests`
 3. View detailed output for each test
 
@@ -120,140 +119,70 @@ dotnet test --verbosity detailed
 
 ### Run Specific Test Categories
 ```bash
-# GPU tests only
-dotnet test --filter "FullyQualifiedName~GPUTests"
+# Basic API tests only
+dotnet test --filter "FullyQualifiedName~BasicApiTests"
 
-# Display and desktop tests
-dotnet test --filter "FullyQualifiedName~DisplayTests|FullyQualifiedName~DesktopTests"
+# Core API tests
+dotnet test --filter "FullyQualifiedName~CoreApiTests"
+
+# Display tests
+dotnet test --filter "FullyQualifiedName~DisplayServicesTests"
 
 # Performance tests
-dotnet test --filter "FullyQualifiedName~PerformanceMonitoringTests"
+dotnet test --filter "FullyQualifiedName~PerformanceMonitoringServicesTests"
+
+# Tuning tests
+dotnet test --filter "FullyQualifiedName~GpuTuningServicesTests"
 ```
-
-### ?? Optional Tests That Modify System Configuration
-
-Some tests can **modify your system configuration** (e.g., creating Eyefinity desktops). These are **excluded by default** and must be explicitly enabled using test categories.
-
-#### CreateEyefinity Category
-
-Tests in this category will **create and destroy Eyefinity desktop configurations**, which will:
-- ?? Temporarily reconfigure your displays (may go black briefly)
-- ?? May reposition open windows
-- ?? Requires 2+ compatible displays
-- ? Will restore original configuration when complete
-
-**Run Eyefinity Create/Restore Tests:**
-
-```bash
-# Run ONLY the CreateEyefinity tests
-dotnet test --filter "Category=CreateEyefinity"
-
-# View detailed output while running
-dotnet test --filter "Category=CreateEyefinity" --verbosity detailed
-```
-
-**From Visual Studio Test Explorer:**
-1. In Test Explorer, find: `Optional_Test_Eyefinity_Create_And_Restore`
-2. Right-click and select `Run` or `Debug`
-3. The test will display warnings before modifying configuration
-4. Watch the test output for status messages
-
-**To exclude from normal test runs:**
-```bash
-# Run all tests EXCEPT CreateEyefinity tests (default behavior)
-dotnet test --filter "Category!=CreateEyefinity"
-```
-
-**Requirements for CreateEyefinity tests:**
-- ? 2 or more displays connected to AMD GPU
-- ? Displays should have compatible resolutions/refresh rates
-- ? No fullscreen applications running
-- ? User should be prepared for brief display reconfiguration
-- ? Test will attempt to restore original state even if it fails
-
-**What the test does:**
-1. Checks if Eyefinity is supported on your system
-2. Saves current Eyefinity state (enabled/disabled)
-3. Creates an Eyefinity desktop (combines displays)
-4. Verifies Eyefinity is enabled
-5. Destroys the Eyefinity desktop
-6. Verifies return to original state
-7. Includes emergency restoration on failure
 
 ## Test Results Interpretation
 
 ### On System WITHOUT AMD Hardware
 ```
-? Test_01_ADLX_Runtime_Availability - PASSED
-  ??  No AMD hardware or drivers detected
-? Test_02_ADLX_Initialization - SKIPPED (No AMD hardware)
-? Test_03_System_Interface_Versions - SKIPPED (No AMD hardware)
-? All other tests - SKIPPED
+✅ Initialize_ShouldSucceed - SKIPPED
+   ℹ️  Test skipped - No AMD hardware available
+✅ All other tests - SKIPPED
 ```
 
 ### On System WITH AMD Hardware (Older GPU)
 ```
-? Test_01_ADLX_Runtime_Availability - PASSED
-? Test_02_ADLX_Initialization - PASSED
-? Test_03_System_Interface_Versions - PASSED
-  ??  IADLXSystem2: ? Not supported (requires RX 6000+)
-? Test_01_Enumerate_GPUs - PASSED (1 GPU found)
-? Test_02_GPU_Basic_Properties - PASSED
-? GPU Interface Tests - PASSED (IADLXGPU1: ?, IADLXGPU2: ?)
-? Test_02_Multimedia_Services - SKIPPED (Requires IADLXSystem2)
+✅ Initialize_ShouldSucceed - PASSED
+✅ GetVersion_ShouldReturnValidVersion - PASSED
+✅ EnumerateGPUs tests - PASSED (1+ GPUs found)
+✅ Basic GPU properties - PASSED
+✅ Display enumeration - PASSED
+ℹ️  Some advanced features may be unavailable (older GPU)
 ```
 
 ### On System WITH AMD Hardware (Newer GPU - RX 6000+)
 ```
-? Test_01_ADLX_Runtime_Availability - PASSED
-? Test_02_ADLX_Initialization - PASSED
-? Test_03_System_Interface_Versions - PASSED
-  ? IADLXSystem2: Supported
-? All GPU Tests - PASSED
-? All Display Tests - PASSED
-? All Performance Tests - PASSED
-? All System2 Tests - PASSED
+✅ All initialization tests - PASSED
+✅ All GPU enumeration tests - PASSED
+✅ All display tests - PASSED
+✅ All performance monitoring tests - PASSED
+✅ All tuning tests - PASSED
+✅ All architecture validation tests - PASSED
 ```
-
-## Test Infrastructure
-
-### ADLXTestFixture.cs
-Shared test fixture that:
-- Runs once per test collection
-- Detects AMD hardware availability
-- Initializes ADLX if possible
-- Detects hardware capabilities
-- Provides skip reasons for tests that can't run
-
-### HardwareCapabilities
-Tracks what features are available:
-- `GPUCount` - Number of AMD GPUs detected
-- `DisplayCount` - Number of displays connected
-- `SupportsGPU1` - IADLXGPU1 interface support
-- `SupportsGPU2` - IADLXGPU2 interface support
-- `SupportsDesktopServices` - Desktop management support
-- `SupportsPerformanceMonitoring` - Performance metrics support
-- `SupportsGPUTuning` - GPU tuning support
 
 ## Memory Management Pattern
 
 All tests follow proper ADLX memory management:
 
 ```csharp
-var ptr = ADLX.new_someTypeP_Ptr();
-try
+using (var adlx = ADLXApi.Initialize())
 {
-    var result = SomeADLXCall(ptr);
-    if (result == ADLX_RESULT.ADLX_OK)
+    var gpus = adlx.EnumerateGPUs();
+    
+    foreach (var gpu in gpus)
     {
-        var value = ADLX.someTypeP_Ptr_value(ptr);
-        // Use value...
+        // Use GPU interface
+        var info = ADLXGPUInfo.GetBasicInfo(gpu);
+        // ...
+        
+        // Release when done
+        ADLXHelpers.ReleaseInterface(gpu);
     }
-}
-finally
-{
-    ADLX.delete_someTypeP_Ptr(ptr);
-}
+} // Automatic cleanup via Dispose
 ```
 
 ## Key Testing Principles
@@ -261,9 +190,9 @@ finally
 1. **Graceful Degradation**: Tests skip cleanly on unsupported hardware
 2. **Read-Only**: Tests never modify user settings
 3. **Comprehensive Output**: Detailed WriteLine() statements for debugging
-4. **Proper Cleanup**: All pointers and interfaces are cleaned up
+4. **Proper Cleanup**: All interfaces are released properly
 5. **Hardware Detection**: Tests check capabilities before running
-6. **Error Handling**: All ADLX_RESULT codes are checked
+6. **Error Handling**: All operations include proper error checking
 
 ## Continuous Integration
 
@@ -273,24 +202,14 @@ These tests are CI/CD friendly:
 - No test failures due to hardware limitations
 - Suitable for automated testing pipelines
 
-## Future Enhancements
-
-Potential additions:
-1. Event listener tests (display/GPU hotplug)
-2. 3D settings configuration tests
-3. Display color/gamma adjustment tests (read & reapply)
-4. Memory timing tests
-5. I2C communication tests
-
 ## Contributing
 
 When adding new tests:
 1. Follow the existing test organization
-2. Use `[SkippableFact]` attribute
-3. Check capabilities before running
-4. Provide detailed output with `_output.WriteLine()`
-5. Clean up all ADLX resources
-6. Document hardware requirements
+2. Use graceful skipping when hardware is unavailable (see [SkippableFact] attribute
+3. Provide detailed output with `_output.WriteLine()`
+4. Clean up all ADLX resources with `ReleaseInterface()`
+5. Document hardware requirements
 
 ## Support
 
@@ -302,14 +221,15 @@ For issues or questions:
 
 ## Summary Statistics
 
-- **Total Test Files**: 7
-- **Total Test Methods**: 37+
-- **Coverage Areas**: Initialization, GPUs, Displays, Desktops, Performance, Tuning, Advanced Features
+- **Total Test Files**: 6
+- **Total Test Methods**: 60+
+- **Coverage Areas**: Initialization, GPUs, Displays, Performance Monitoring, GPU Tuning, Architecture Validation
 - **Hardware Compatibility**: Gracefully handles all AMD GPU generations and non-AMD systems
 
 ---
 
-**Last Updated**: 2025-01-XX
+**Last Updated**: 2025-11-25
 **ADLX SDK Version**: Compatible with ADLX SDK 2.0+
 **Test Framework**: xUnit 2.8.2
 **.NET Target**: .NET 9.0
+**Architecture**: ClangSharp-based VTable pattern

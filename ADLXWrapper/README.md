@@ -1,31 +1,31 @@
-# ADLXWrapper - ClangSharp-based C# Wrapper
+﻿# ADLXWrapper - ClangSharp-based C# Wrapper
 
-This is the new ClangSharp-based C# wrapper for the AMD ADLX SDK, replacing the previous SWIG-based implementation.
+A modern C# wrapper for the AMD ADLX SDK using ClangSharp for high-performance native interop.
 
 ## Project Structure
 
 ```
 ADLXWrapper/
-??? ADLXWrapper.csproj          # .NET 9 project file
-??? ClangSharpConfig.rsp        # ClangSharp generator configuration
-??? ADLXNative.cs               # Manual P/Invoke declarations for DLL entry points
-??? ADLXApi.cs                  # Main wrapper API (IDisposable)
-??? ADLXVTables.cs              # VTable structure definitions
-??? ADLXExtensions.cs           # Helper methods for GPU/Display operations
-??? Generated/                  # ClangSharp auto-generated bindings (DO NOT EDIT)
-?   ??? README.cs              # Placeholder
-??? README.md                  # This file
+├── ADLXWrapper.csproj          # .NET 9 project file
+├── ClangSharpConfig.rsp        # ClangSharp generator configuration
+├── ADLXNative.cs               # Manual P/Invoke declarations for DLL entry points
+├── ADLXApi.cs                  # Main wrapper API (IDisposable)
+├── ADLXVTables.cs              # VTable structure definitions
+├── ADLXExtensions.cs           # Helper methods for GPU/Display operations
+├── Generated/                  # ClangSharp auto-generated bindings (DO NOT EDIT)
+│   └── README.cs               # Placeholder
+└── README.md                   # This file
 ```
 
 ## Build Status
 
-? **Stage 1 Complete:** Project Setup and ClangSharp Configuration  
-? **Stage 2 Complete:** Core Wrapper Layer (ADLXApi.cs)  
-? **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
-? **Stage 4 Complete:** Basic Tests and Validation  
-? **Stage 5 Complete:** Display Services Tests  
-? **Stage 6 Complete:** GPU Tuning Services Tests  
-? **Stage 7 Complete:** Performance Monitoring Tests  
+✅ **Stage 1 Complete:** Project Setup and ClangSharp Configuration  
+✅ **Stage 2 Complete:** Core Wrapper Layer (ADLXApi.cs)  
+✅ **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
+✅ **Stage 4 Complete:** Basic Tests and Validation  
+✅ **Stage 5 Complete:** Display Services Tests  
+✅ **Stage 6 Complete:** GPU Tuning Services Tests  
+✅ **Stage 7 Complete:** Performance Monitoring Tests  
 
 - Created .NET 9 C# project
 - Added ClangSharp NuGet packages (v18.1.0 / v20.1.2)
@@ -42,7 +42,7 @@ ADLXWrapper/
 ## How to Build
 
 ```powershell
-cd ADLXWrapper.New
+cd ADLXWrapper
 dotnet restore
 dotnet build
 ```
@@ -207,7 +207,7 @@ using (var adlx = ADLXApi.Initialize())
 - `bool IsSupportedGPUPower(IntPtr pMetricsSupport)` - Check if GPU power metric is supported
 - `bool IsSupportedGPUFanSpeed(IntPtr pMetricsSupport)` - Check if GPU fan speed metric is supported
 - `bool IsSupportedGPUVRAM(IntPtr pMetricsSupport)` - Check if GPU VRAM metric is supported
-- `double GetGPUTemperature(IntPtr pMetrics)` - Get GPU temperature in �C
+- `double GetGPUTemperature(IntPtr pMetrics)` - Get GPU temperature in °C
 - `double GetGPUUsage(IntPtr pMetrics)` - Get GPU usage percentage
 - `int GetGPUClockSpeed(IntPtr pMetrics)` - Get GPU clock speed in MHz
 - `int GetGPUVRAMClockSpeed(IntPtr pMetrics)` - Get VRAM clock speed in MHz
@@ -227,21 +227,21 @@ using (var adlx = ADLXApi.Initialize())
 
 ## ClangSharp Code Generation
 
-To generate P/Invoke bindings from ADLX headers:
+To regenerate P/Invoke bindings from ADLX headers (optional):
 
 ```powershell
-cd ADLXWrapper.New
+cd ADLXWrapper
 ClangSharpPInvokeGenerator @ClangSharpConfig.rsp
 ```
 
-Note: ClangSharp generation will be set up in later stages once the configuration is finalized.
+Note: Generated bindings are optional and not currently used. The wrapper uses manual VTable structures for COM-like interface access.
 
 ## Architecture
 
 This wrapper uses a layered approach:
 
 1. **Native Layer (ADLXNative.cs):** Manual P/Invoke for DLL loading and entry points
-2. **Generated Layer (Generated/):** ClangSharp auto-generated types and structures (future)
+2. **Generated Layer (Generated/):** ClangSharp auto-generated types and structures (optional)
 3. **VTable Layer (ADLXVTables.cs):** COM-like interface vtable definitions
 4. **Wrapper Layer (ADLXApi.cs):** Managed API with IntPtr handles and IDisposable
 5. **Helper Layer (ADLXExtensions.cs):** Convenience methods for common operations
@@ -261,17 +261,9 @@ This wrapper uses a layered approach:
 - The `ADLXApi` class implements IDisposable for automatic cleanup
 - Always use `using` statement or call `Dispose()` explicitly
 
-## Next Steps
-
-- **Stage 4:** Basic tests and validation
-- **Stage 5:** Display services tests
-- **Stage 6:** GPU services tests
-- And more...
 
 ## References
 
-- Planning docs: `../.cline/`
 - ADLX SDK: `../ADLX/SDK/`
 - C samples: `../ADLX/Samples/C/`
-- IGCLWrapper reference: `C:\vs-code\IGCLWrapper\`
 
