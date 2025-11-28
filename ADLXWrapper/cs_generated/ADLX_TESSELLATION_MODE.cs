@@ -1,9 +1,0 @@
-namespace ADLXWrapper
-{
-    public enum ADLX_TESSELLATION_MODE
-    {
-        T_MODE_AMD_OPTIMIZED = 0,
-        T_MODE_USE_APP_SETTINGS,
-        T_MODE_OVERRIDE_APP_SETTINGS,
-    }
-}
