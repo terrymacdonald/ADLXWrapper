@@ -9,40 +9,112 @@ namespace ADLXWrapper.Tests
     /// Performance monitoring tests for ADLX wrapper (ClangSharp-based)
     /// Tests GPU metrics and performance monitoring (read-only)
     /// </summary>
-    public class PerformanceMonitoringServicesTests : IClassFixture<ADLXTestFixture>
+    public class PerformanceMonitoringServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXTestFixture _fixture;
+        private readonly ADLXApi? _api;
+        private readonly bool _hasHardware;
+        private readonly bool _hasDll;
+        private readonly string _skipReason = string.Empty;
+        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
         private readonly IntPtr _pPerfMonServices;
 
-        public PerformanceMonitoringServicesTests(ITestOutputHelper output, ADLXTestFixture fixture)
+        public PerformanceMonitoringServicesTests(ITestOutputHelper output)
         {
             _output = output;
-            _fixture = fixture;
             _pPerfMonServices = IntPtr.Zero;
-            
-            _fixture.WriteDiagnostics(_output);
 
-            if (_fixture.CanRunTests)
+            // Stage 1: Check for AMD GPU hardware via PCI
+            if (!HardwareDetection.HasAMDGPU(out string hwError))
             {
+                _hasHardware = false;
+                _hasDll = false;
+                _skipReason = hwError;
+                _output.WriteLine($"??  {hwError}");
+                return;
+            }
+            _hasHardware = true;
+
+            var gpuNames = HardwareDetection.GetAMDGPUNames();
+            if (gpuNames.Length > 0)
+            {
+                _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
+            }
+
+            // Stage 2: Check for ADLX DLL availability
+            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            {
+                _hasDll = false;
+                _skipReason = dllError;
+                _output.WriteLine($"??  {dllError}");
+                return;
+            }
+            _hasDll = true;
+
+            // Stage 3: Try to initialize ADLX API
+            try
+            {
+                _api = ADLXApi.Initialize();
+                _gpus = _api.EnumerateGPUs();
+                _output.WriteLine($"? ADLX initialized successfully");
+                _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
+                _output.WriteLine($"  GPUs found: {_gpus.Length}");
+
+                // Try to get performance monitoring services
                 try
                 {
-                    _pPerfMonServices = _fixture.Api!.GetPerformanceMonitoringServices();
-                    _output.WriteLine("   Performance monitoring services available");
+                    _pPerfMonServices = _api.GetPerformanceMonitoringServices();
+                    _output.WriteLine("  Performance monitoring services: Available");
                 }
                 catch (ADLXException ex)
                 {
-                    _output.WriteLine($"   ?? Performance monitoring services not available: {ex.Message}");
+                    _output.WriteLine($"  Performance monitoring services: Not available ({ex.Message})");
                 }
             }
+            catch (Exception ex)
+            {
+                _skipReason = $"ADLX initialization failed: {ex.Message}";
+                _output.WriteLine($"??  {_skipReason}");
+            }
+        }
+
+        public void Dispose()
+        {
+            // Release performance monitoring services
+            if (_pPerfMonServices != IntPtr.Zero)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(_pPerfMonServices);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            // Release GPU interfaces
+            foreach (var gpu in _gpus)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(gpu);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            _api?.Dispose();
         }
 
         [SkippableFact]
         public void GetPerformanceMonitoringServices_ShouldSucceed()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pServices = _fixture.Api!.GetPerformanceMonitoringServices();
+            var pServices = _api!.GetPerformanceMonitoringServices();
             Assert.NotEqual(IntPtr.Zero, pServices);
             _output.WriteLine($"? Performance monitoring services pointer: 0x{pServices:X}");
 
@@ -52,10 +124,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetSupportedGPUMetrics_ShouldReturnValidPointer()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _gpus[0]);
             Assert.NotEqual(IntPtr.Zero, pMetricsSupport);
             _output.WriteLine($"? GPU metrics support pointer: 0x{pMetricsSupport:X}");
 
@@ -65,10 +137,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void IsSupportedGPUUsage_ShouldReturnBoolean()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 var isSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUUsage(pMetricsSupport);
@@ -83,10 +155,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void IsSupportedGPUTemperature_ShouldReturnBoolean()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 var isSupported = ADLXPerformanceMonitoringHelpers.IsSupportedGPUTemperature(pMetricsSupport);
@@ -101,10 +173,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetCurrentGPUMetrics_ShouldReturnValidPointer()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _gpus[0]);
             Assert.NotEqual(IntPtr.Zero, pMetrics);
             _output.WriteLine($"? Current GPU metrics pointer: 0x{pMetrics:X}");
 
@@ -114,10 +186,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUTemperature_ShouldReturnValidValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 var temperature = ADLXPerformanceMonitoringHelpers.GetGPUTemperature(pMetrics);
@@ -133,10 +205,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUUsage_ShouldReturnValidValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 var usage = ADLXPerformanceMonitoringHelpers.GetGPUUsage(pMetrics);
@@ -152,10 +224,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUClockSpeed_ShouldReturnValidValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 var clockSpeed = ADLXPerformanceMonitoringHelpers.GetGPUClockSpeed(pMetrics);
@@ -171,10 +243,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void AllMetrics_ShouldNotThrow()
         {
-            Skip.IfNot(_fixture.CanRunTests && _pPerfMonServices != IntPtr.Zero,
-                _fixture.CanRunTests ? "Performance monitoring services not available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == IntPtr.Zero || _gpus.Length == 0,
+                _pPerfMonServices != IntPtr.Zero ? _skipReason : "Performance monitoring services not available");
 
-            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _fixture.GPUs[0]);
+            var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(_pPerfMonServices, _gpus[0]);
             try
             {
                 _output.WriteLine("=== Current GPU Metrics ===");
@@ -211,10 +283,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetCurrentGPUMetrics_WithNullServices_ShouldThrowArgumentNullException()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
             Assert.Throws<ArgumentNullException>(() => 
-                ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(IntPtr.Zero, _fixture.GPUs[0]));
+                ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(IntPtr.Zero, _gpus[0]));
             _output.WriteLine("? GetCurrentGPUMetrics correctly throws on null services pointer");
         }
     }

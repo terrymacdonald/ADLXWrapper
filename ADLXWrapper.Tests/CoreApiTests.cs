@@ -10,26 +10,86 @@ namespace ADLXWrapper.Tests
     /// Core API tests for ADLX wrapper
     /// Tests GPU enumeration, property access, and helper methods
     /// </summary>
-    public class CoreApiTests : IClassFixture<ADLXTestFixture>
+    public class CoreApiTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXTestFixture _fixture;
+        private readonly ADLXApi? _api;
+        private readonly bool _hasHardware;
+        private readonly bool _hasDll;
+        private readonly string _skipReason = string.Empty;
+        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
 
-        public CoreApiTests(ITestOutputHelper output, ADLXTestFixture fixture)
+        public CoreApiTests(ITestOutputHelper output)
         {
             _output = output;
-            _fixture = fixture;
-            
-            // Write diagnostics once per test class instance
-            _fixture.WriteDiagnostics(_output);
+
+            // Stage 1: Check for AMD GPU hardware via PCI
+            if (!HardwareDetection.HasAMDGPU(out string hwError))
+            {
+                _hasHardware = false;
+                _hasDll = false;
+                _skipReason = hwError;
+                _output.WriteLine($"??  {hwError}");
+                return;
+            }
+            _hasHardware = true;
+
+            var gpuNames = HardwareDetection.GetAMDGPUNames();
+            if (gpuNames.Length > 0)
+            {
+                _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
+            }
+
+            // Stage 2: Check for ADLX DLL availability
+            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            {
+                _hasDll = false;
+                _skipReason = dllError;
+                _output.WriteLine($"??  {dllError}");
+                return;
+            }
+            _hasDll = true;
+
+            // Stage 3: Try to initialize ADLX API
+            try
+            {
+                _api = ADLXApi.Initialize();
+                _gpus = _api.EnumerateGPUs();
+                _output.WriteLine($"? ADLX initialized successfully");
+                _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
+                _output.WriteLine($"  GPUs found: {_gpus.Length}");
+            }
+            catch (Exception ex)
+            {
+                _skipReason = $"ADLX initialization failed: {ex.Message}";
+                _output.WriteLine($"??  {_skipReason}");
+            }
+        }
+
+        public void Dispose()
+        {
+            // Release all GPU interfaces
+            foreach (var gpu in _gpus)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(gpu);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            _api?.Dispose();
         }
 
         [SkippableFact]
         public void EnumerateGPUs_ShouldReturnArray()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var gpus = _fixture.Api!.EnumerateGPUs();
+            var gpus = _api!.EnumerateGPUs();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -45,9 +105,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void EnumerateGPUs_ShouldReturnValidPointers()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var gpus = _fixture.Api!.EnumerateGPUs();
+            var gpus = _api!.EnumerateGPUs();
 
             foreach (var gpu in gpus)
             {
@@ -61,9 +121,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUName_ShouldReturnValidName()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var name = ADLXHelpers.GetGPUName(_fixture.GPUs[0]);
+            var name = ADLXHelpers.GetGPUName(_gpus[0]);
 
             Assert.NotNull(name);
             Assert.NotEmpty(name);
@@ -73,9 +133,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUVendorId_ShouldReturnAMD()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var vendorId = ADLXHelpers.GetGPUVendorId(_fixture.GPUs[0]);
+            var vendorId = ADLXHelpers.GetGPUVendorId(_gpus[0]);
 
             Assert.NotNull(vendorId);
             Assert.NotEmpty(vendorId);
@@ -85,9 +145,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUTotalVRAM_ShouldReturnPositiveValue()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var vram = ADLXHelpers.GetGPUTotalVRAM(_fixture.GPUs[0]);
+            var vram = ADLXHelpers.GetGPUTotalVRAM(_gpus[0]);
 
             Assert.True(vram > 0, "VRAM should be greater than 0");
             _output.WriteLine($"? Total VRAM: {vram} MB");
@@ -96,9 +156,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUVRAMType_ShouldReturnValidType()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var vramType = ADLXHelpers.GetGPUVRAMType(_fixture.GPUs[0]);
+            var vramType = ADLXHelpers.GetGPUVRAMType(_gpus[0]);
 
             Assert.NotNull(vramType);
             Assert.NotEmpty(vramType);
@@ -108,9 +168,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUUniqueId_ShouldReturnValue()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var uniqueId = ADLXHelpers.GetGPUUniqueId(_fixture.GPUs[0]);
+            var uniqueId = ADLXHelpers.GetGPUUniqueId(_gpus[0]);
 
             _output.WriteLine($"? Unique ID: {uniqueId}");
         }
@@ -118,9 +178,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUDeviceId_ShouldReturnValidId()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var deviceId = ADLXHelpers.GetGPUDeviceId(_fixture.GPUs[0]);
+            var deviceId = ADLXHelpers.GetGPUDeviceId(_gpus[0]);
 
             Assert.NotNull(deviceId);
             Assert.NotEmpty(deviceId);
@@ -130,9 +190,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUDriverPath_ShouldReturnValidPath()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var driverPath = ADLXHelpers.GetGPUDriverPath(_fixture.GPUs[0]);
+            var driverPath = ADLXHelpers.GetGPUDriverPath(_gpus[0]);
 
             Assert.NotNull(driverPath);
             Assert.NotEmpty(driverPath);
@@ -142,9 +202,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetGPUPNPString_ShouldReturnValidString()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var pnpString = ADLXHelpers.GetGPUPNPString(_fixture.GPUs[0]);
+            var pnpString = ADLXHelpers.GetGPUPNPString(_gpus[0]);
 
             Assert.NotNull(pnpString);
             Assert.NotEmpty(pnpString);
@@ -154,9 +214,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void IsGPUExternal_ShouldReturnBooleanValue()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var isExternal = ADLXHelpers.IsGPUExternal(_fixture.GPUs[0]);
+            var isExternal = ADLXHelpers.IsGPUExternal(_gpus[0]);
 
             _output.WriteLine($"? Is External: {isExternal}");
         }
@@ -164,9 +224,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void HasGPUDesktops_ShouldReturnBooleanValue()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var hasDesktops = ADLXHelpers.HasGPUDesktops(_fixture.GPUs[0]);
+            var hasDesktops = ADLXHelpers.HasGPUDesktops(_gpus[0]);
 
             _output.WriteLine($"? Has Desktops: {hasDesktops}");
         }
@@ -174,9 +234,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetBasicInfo_ShouldReturnCompleteInformation()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var info = ADLXGPUInfo.GetBasicInfo(_fixture.GPUs[0]);
+            var info = ADLXGPUInfo.GetBasicInfo(_gpus[0]);
 
             Assert.NotNull(info.Name);
             Assert.NotEmpty(info.Name);
@@ -198,9 +258,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetIdentification_ShouldReturnCompleteInformation()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var id = ADLXGPUInfo.GetIdentification(_fixture.GPUs[0]);
+            var id = ADLXGPUInfo.GetIdentification(_gpus[0]);
 
             Assert.NotNull(id.DeviceId);
             Assert.NotEmpty(id.DeviceId);
@@ -219,14 +279,14 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void AllGPUs_ShouldHaveUniqueIds()
         {
-            Skip.IfNot(_fixture.CanRunTests && _fixture.GPUs.Length >= 2, 
-                _fixture.CanRunTests ? "Need at least 2 GPUs" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length < 2, 
+                _gpus.Length >= 2 ? _skipReason : "Need at least 2 GPUs");
 
-            var uniqueIds = _fixture.GPUs.Select(gpu => ADLXHelpers.GetGPUUniqueId(gpu)).ToList();
+            var uniqueIds = _gpus.Select(gpu => ADLXHelpers.GetGPUUniqueId(gpu)).ToList();
             var distinctIds = uniqueIds.Distinct().Count();
 
             Assert.Equal(uniqueIds.Count, distinctIds);
-            _output.WriteLine($"? All {_fixture.GPUs.Length} GPUs have unique IDs");
+            _output.WriteLine($"? All {_gpus.Length} GPUs have unique IDs");
         }
 
         [Fact]
@@ -246,10 +306,10 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void ReleaseInterface_WithValidPointer_ShouldNotThrow()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Get a fresh GPU pointer
-            var gpus = _fixture.Api!.EnumerateGPUs();
+            var gpus = _api!.EnumerateGPUs();
             var exception = Record.Exception(() => ADLXHelpers.ReleaseInterface(gpus[0]));
 
             Assert.Null(exception);

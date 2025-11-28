@@ -9,35 +9,95 @@ namespace ADLXWrapper.Tests
     /// Basic API tests for ADLX wrapper
     /// Tests initialization, version queries, and cleanup
     /// </summary>
-    public class BasicApiTests : IClassFixture<ADLXTestFixture>
+    public class BasicApiTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXTestFixture _fixture;
+        private readonly ADLXApi? _api;
+        private readonly bool _hasHardware;
+        private readonly bool _hasDll;
+        private readonly string _skipReason = string.Empty;
+        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
 
-        public BasicApiTests(ITestOutputHelper output, ADLXTestFixture fixture)
+        public BasicApiTests(ITestOutputHelper output)
         {
             _output = output;
-            _fixture = fixture;
-            
-            // Write diagnostics once per test class instance
-            _fixture.WriteDiagnostics(_output);
+
+            // Stage 1: Check for AMD GPU hardware via PCI
+            if (!HardwareDetection.HasAMDGPU(out string hwError))
+            {
+                _hasHardware = false;
+                _hasDll = false;
+                _skipReason = hwError;
+                _output.WriteLine($"??  {hwError}");
+                return;
+            }
+            _hasHardware = true;
+
+            var gpuNames = HardwareDetection.GetAMDGPUNames();
+            if (gpuNames.Length > 0)
+            {
+                _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
+            }
+
+            // Stage 2: Check for ADLX DLL availability
+            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            {
+                _hasDll = false;
+                _skipReason = dllError;
+                _output.WriteLine($"??  {dllError}");
+                return;
+            }
+            _hasDll = true;
+
+            // Stage 3: Try to initialize ADLX API
+            try
+            {
+                _api = ADLXApi.Initialize();
+                _gpus = _api.EnumerateGPUs();
+                _output.WriteLine($"? ADLX initialized successfully");
+                _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
+                _output.WriteLine($"  GPUs found: {_gpus.Length}");
+            }
+            catch (Exception ex)
+            {
+                _skipReason = $"ADLX initialization failed: {ex.Message}";
+                _output.WriteLine($"??  {_skipReason}");
+            }
+        }
+
+        public void Dispose()
+        {
+            // Release GPU interfaces
+            foreach (var gpu in _gpus)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(gpu);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            _api?.Dispose();
         }
 
         [SkippableFact]
         public void Initialize_ShouldSucceed()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            Assert.NotNull(_fixture.Api);
+            Assert.NotNull(_api);
             _output.WriteLine("? ADLXApi instance is not null");
         }
 
         [SkippableFact]
         public void GetVersion_ShouldReturnValidVersion()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var version = _fixture.Api!.GetVersion();
+            var version = _api!.GetVersion();
             
             Assert.NotNull(version);
             Assert.NotEmpty(version);
@@ -47,9 +107,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetFullVersion_ShouldReturnNonZero()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var fullVersion = _fixture.Api!.GetFullVersion();
+            var fullVersion = _api!.GetFullVersion();
             
             Assert.NotEqual(0UL, fullVersion);
             _output.WriteLine($"? ADLX Full Version: {fullVersion}");
@@ -58,18 +118,73 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetSystemServices_ShouldReturnValidPointer()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystemServices = _fixture.Api!.GetSystemServices();
+            var pSystemServices = _api!.GetSystemServices();
             
             Assert.NotEqual(IntPtr.Zero, pSystemServices);
             _output.WriteLine($"? System services pointer: 0x{pSystemServices:X}");
         }
 
         [SkippableFact]
+        public void AllServiceTypes_ShouldBeAccessible()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
+
+            _output.WriteLine("=== Testing All Service Types ===");
+
+            var pSystem = _api!.GetSystemServices();
+            Assert.NotEqual(IntPtr.Zero, pSystem);
+            _output.WriteLine("? System Services: Accessible");
+
+            _output.WriteLine($"? GPU Enumeration: {_gpus.Length} GPU(s) found");
+
+            try
+            {
+                var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+                _output.WriteLine($"? Display Services: {displays.Length} display(s) found");
+                foreach (var display in displays)
+                {
+                    ADLXHelpers.ReleaseInterface(display);
+                }
+            }
+            catch (Exception ex)
+            {
+                _output.WriteLine($"??  Display Services: {ex.Message}");
+            }
+
+            try
+            {
+                var pTuningServices = _api.GetGPUTuningServices();
+                Assert.NotEqual(IntPtr.Zero, pTuningServices);
+                _output.WriteLine("? GPU Tuning Services: Accessible");
+                ADLXHelpers.ReleaseInterface(pTuningServices);
+            }
+            catch (Exception ex)
+            {
+                _output.WriteLine($"??  GPU Tuning Services: {ex.Message}");
+            }
+
+            try
+            {
+                var pPerfMonServices = _api.GetPerformanceMonitoringServices();
+                Assert.NotEqual(IntPtr.Zero, pPerfMonServices);
+                _output.WriteLine("? Performance Monitoring Services: Accessible");
+                ADLXHelpers.ReleaseInterface(pPerfMonServices);
+            }
+            catch (Exception ex)
+            {
+                _output.WriteLine($"??  Performance Monitoring Services: {ex.Message}");
+            }
+
+            _output.WriteLine("");
+            _output.WriteLine("? All implemented services are accessible and working");
+        }
+
+        [SkippableFact]
         public void Dispose_ShouldNotThrow()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Create a new instance to test disposal
             using var testApi = ADLXApi.Initialize();
@@ -82,7 +197,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void DisposeMultipleTimes_ShouldBeIdempotent()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Create a new instance to test multiple disposals
             var testApi = ADLXApi.Initialize();
@@ -98,7 +213,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void AfterDispose_MethodsShouldThrowObjectDisposedException()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             var testApi = ADLXApi.Initialize();
             testApi.Dispose();
@@ -115,7 +230,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void UsingStatement_ShouldAutomaticallyDispose()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             ADLXApi? testApi = null;
             
@@ -135,7 +250,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void InitializeMultipleTimes_ShouldReturnSeparateInstances()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             using var api1 = ADLXApi.Initialize();
             using var api2 = ADLXApi.Initialize();

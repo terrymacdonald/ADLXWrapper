@@ -10,36 +10,105 @@ namespace ADLXWrapper.Tests
     /// Display services tests for ADLX wrapper
     /// Tests display enumeration and property access
     /// </summary>
-    public class DisplayServicesTests : IClassFixture<ADLXTestFixture>
+    public class DisplayServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXTestFixture _fixture;
-        private readonly IntPtr[] _displays;
+        private readonly ADLXApi? _api;
+        private readonly bool _hasHardware;
+        private readonly bool _hasDll;
+        private readonly string _skipReason = string.Empty;
+        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
+        private readonly IntPtr[] _displays = Array.Empty<IntPtr>();
 
-        public DisplayServicesTests(ITestOutputHelper output, ADLXTestFixture fixture)
+        public DisplayServicesTests(ITestOutputHelper output)
         {
             _output = output;
-            _fixture = fixture;
-            _displays = Array.Empty<IntPtr>();
-            
-            // Write diagnostics once per test class instance
-            _fixture.WriteDiagnostics(_output);
 
-            // Enumerate displays if we have hardware
-            if (_fixture.CanRunTests)
+            // Stage 1: Check for AMD GPU hardware via PCI
+            if (!HardwareDetection.HasAMDGPU(out string hwError))
             {
-                var pSystem = _fixture.Api!.GetSystemServices();
-                _displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
-                _output.WriteLine($"   Found {_displays.Length} display(s) connected");
+                _hasHardware = false;
+                _hasDll = false;
+                _skipReason = hwError;
+                _output.WriteLine($"??  {hwError}");
+                return;
             }
+            _hasHardware = true;
+
+            var gpuNames = HardwareDetection.GetAMDGPUNames();
+            if (gpuNames.Length > 0)
+            {
+                _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
+            }
+
+            // Stage 2: Check for ADLX DLL availability
+            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            {
+                _hasDll = false;
+                _skipReason = dllError;
+                _output.WriteLine($"??  {dllError}");
+                return;
+            }
+            _hasDll = true;
+
+            // Stage 3: Try to initialize ADLX API
+            try
+            {
+                _api = ADLXApi.Initialize();
+                _gpus = _api.EnumerateGPUs();
+                _output.WriteLine($"? ADLX initialized successfully");
+                _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
+                _output.WriteLine($"  GPUs found: {_gpus.Length}");
+
+                // Enumerate displays
+                var pSystem = _api.GetSystemServices();
+                _displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+                _output.WriteLine($"  Displays found: {_displays.Length}");
+            }
+            catch (Exception ex)
+            {
+                _skipReason = $"ADLX initialization failed: {ex.Message}";
+                _output.WriteLine($"??  {_skipReason}");
+            }
+        }
+
+        public void Dispose()
+        {
+            // Release display interfaces
+            foreach (var display in _displays)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(display);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            // Release GPU interfaces
+            foreach (var gpu in _gpus)
+            {
+                try
+                {
+                    ADLXHelpers.ReleaseInterface(gpu);
+                }
+                catch
+                {
+                    // Ignore errors during cleanup
+                }
+            }
+
+            _api?.Dispose();
         }
 
         [SkippableFact]
         public void EnumerateAllDisplays_ShouldReturnArray()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystem = _fixture.Api!.GetSystemServices();
+            var pSystem = _api!.GetSystemServices();
             var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
 
             Assert.NotNull(displays);
@@ -54,8 +123,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void EnumerateAllDisplays_ShouldReturnValidPointers()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0, 
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0, 
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             foreach (var display in _displays)
             {
@@ -68,8 +137,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayName_ShouldReturnValidName()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var name = ADLXDisplayHelpers.GetDisplayName(_displays[0]);
 
@@ -81,8 +150,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayNativeResolution_ShouldReturnValidResolution()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var (width, height) = ADLXDisplayHelpers.GetDisplayNativeResolution(_displays[0]);
 
@@ -94,8 +163,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayRefreshRate_ShouldReturnPositiveValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var refreshRate = ADLXDisplayHelpers.GetDisplayRefreshRate(_displays[0]);
 
@@ -106,8 +175,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayManufacturerID_ShouldReturnValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var manufacturerID = ADLXDisplayHelpers.GetDisplayManufacturerID(_displays[0]);
 
@@ -117,8 +186,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayPixelClock_ShouldReturnPositiveValue()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var pixelClock = ADLXDisplayHelpers.GetDisplayPixelClock(_displays[0]);
 
@@ -129,8 +198,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetDisplayBasicInfo_ShouldReturnCompleteInformation()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length > 0,
-                _fixture.CanRunTests ? "No displays available" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0,
+                _displays.Length > 0 ? _skipReason : "No displays available");
 
             var info = ADLXDisplayInfo.GetBasicInfo(_displays[0]);
 
@@ -152,8 +221,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void AllDisplays_ShouldHaveNames()
         {
-            Skip.IfNot(_fixture.CanRunTests && _displays.Length >= 2,
-                _fixture.CanRunTests ? "Need at least 2 displays" : _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length < 2,
+                _displays.Length >= 2 ? _skipReason : "Need at least 2 displays");
 
             var names = _displays.Select(display => ADLXDisplayHelpers.GetDisplayName(display)).ToList();
             var distinctNames = names.Distinct().Count();
@@ -196,9 +265,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void MultipleDisplayEnumeration_ShouldReturnConsistentResults()
         {
-            Skip.IfNot(_fixture.CanRunTests, _fixture.SkipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystem = _fixture.Api!.GetSystemServices();
+            var pSystem = _api!.GetSystemServices();
             
             var displays1 = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
             var displays2 = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
