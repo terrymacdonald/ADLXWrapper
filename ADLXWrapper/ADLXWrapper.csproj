@@ -11,6 +11,8 @@
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<ClangSharpGeneratedDir>$(MSBuildProjectDirectory)\cs_generated</ClangSharpGeneratedDir>
 
+		<DefaultItemExcludes>$(DefaultItemExcludes);cs_generated\**</DefaultItemExcludes>
+
 		<Authors>Terry MacDonald</Authors>
 		<Company>Terry MacDonald</Company>
 		<Product>ADLXWrapper</Product>
@@ -26,9 +28,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="ClangSharp" Version="20.1.2" PrivateAssets="all" />
-	  <PackageReference Include="ClangSharp.Interop" Version="20.1.2" PrivateAssets="all" />
-	  <PackageReference Include="ClangSharp.PInvokeGenerator" Version="20.1.2" PrivateAssets="all" />
+		<PackageReference Include="ClangSharp" Version="20.1.2" PrivateAssets="all" />
+		<PackageReference Include="ClangSharp.Interop" Version="20.1.2" PrivateAssets="all" />
+		<PackageReference Include="ClangSharp.PInvokeGenerator" Version="20.1.2" PrivateAssets="all" />
 	</ItemGroup>
 
 	<Target Name="CleanClangSharpGenerated" AfterTargets="Clean">
@@ -38,7 +40,6 @@
 	</Target>
 
 	<Target Name="SetVersionFromGit" BeforeTargets="GetAssemblyVersion;GenerateAssemblyInfo;BeforeBuild;BeforeRebuild;CoreCompile">
-
 		<PropertyGroup>
 			<VersionFile>$(MSBuildProjectDirectory)\..\VERSION</VersionFile>
 			<SolutionRoot>$(MSBuildProjectDirectory)\..</SolutionRoot>
@@ -70,7 +71,6 @@
 
 		<PropertyGroup>
 			<FinalHash Condition="'$(GitLogExitCode)' == '0'">$(LastVersionChangeHash)</FinalHash>
-
 			<GitCountCommand Condition="'$(FinalHash)' != ''">git rev-list --count $(FinalHash)..HEAD</GitCountCommand>
 			<GitCountCommand Condition="'$(FinalHash)' == ''">git rev-list --count HEAD</GitCountCommand>
 		</PropertyGroup>
@@ -85,23 +85,31 @@
 			<VersionPatch Condition="'$(VersionPatch)' == ''">0</VersionPatch>
 
 			<AppVersion>$(VersionMajor).$(VersionMinor).$(VersionPatch)</AppVersion>
-
 			<Version>$(AppVersion)</Version>
 			<AssemblyVersion>$(AppVersion)</AssemblyVersion>
 			<FileVersion>$(AppVersion)</FileVersion>
 			<InformationalVersion>$(AppVersion)</InformationalVersion>
 		</PropertyGroup>
-
-		<Message Text="-&gt; ADLXWrapper Version: $(AppVersion) (Major/Minor from file, Patch is commits since change)" Importance="high" />
+		<Message Text="-&gt; ADLXWrapper Version: $(AppVersion)" Importance="high" />
 	</Target>
 
-	<Target Name="GenerateFromClangSharp" BeforeTargets="CoreCompile" Inputs="@(ClangSharpPInvokeGenerator)" Outputs="$(BaseIntermediateOutputPath)ClangSharp.stamp">
+	<Target Name="GenerateBindings"
+			Inputs="@(ClangSharpPInvokeGenerator)"
+			Outputs="$(BaseIntermediateOutputPath)ClangSharp.stamp">
+
+		<Message Text="Generating ClangSharp bindings..." Importance="high" />
+		<RemoveDir Directories="cs_generated" />
+
 		<Exec Command="ClangSharpPInvokeGenerator %40&quot;@(ClangSharpPInvokeGenerator)&quot;" />
-		<ItemGroup>
-			<FileWrites Include="$(ClangSharpGeneratedDir)\**\*" />
-			<FileWrites Include="$(BaseIntermediateOutputPath)ClangSharp.stamp" />
-		</ItemGroup>
+
 		<Touch Files="$(BaseIntermediateOutputPath)ClangSharp.stamp" AlwaysCreate="true" />
+	</Target>
+
+	<Target Name="IncludeBindings" BeforeTargets="CoreCompile" DependsOnTargets="GenerateBindings">
+		<ItemGroup>
+			<Compile Include="cs_generated\**\*.cs" />
+			<FileWrites Include="$(ClangSharpGeneratedDir)\**\*" />
+		</ItemGroup>
 	</Target>
 
 </Project>
