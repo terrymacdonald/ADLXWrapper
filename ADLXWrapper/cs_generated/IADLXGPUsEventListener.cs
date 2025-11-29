@@ -1,23 +1,14 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public unsafe partial struct IADLXGPUsEventListener
 {
-    public unsafe partial struct IADLXGPUsEventListener
+    public void** lpVtbl;
+
+    [return: NativeTypeName("adlx_bool")]
+    public bool OnGPUListChanged([NativeTypeName("adlx::IADLXGPUList *")] IADLXGPUList* pNewGPUs)
     {
-        public void** lpVtbl;
-
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        [return: NativeTypeName("adlx_bool")]
-        public delegate byte _OnGPUListChanged(IADLXGPUsEventListener* pThis, [NativeTypeName("adlx::IADLXGPUList *")] IADLXGPUList* pNewGPUs);
-
-        [return: NativeTypeName("adlx_bool")]
-        public bool OnGPUListChanged([NativeTypeName("adlx::IADLXGPUList *")] IADLXGPUList* pNewGPUs)
-        {
-            fixed (IADLXGPUsEventListener* pThis = &this)
-            {
-                return Marshal.GetDelegateForFunctionPointer<_OnGPUListChanged>((IntPtr)(lpVtbl[0]))(pThis, pNewGPUs) != 0;
-            }
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPUsEventListener*, IADLXGPUList*, byte>)(lpVtbl[0]))((IADLXGPUsEventListener*)Unsafe.AsPointer(ref this), pNewGPUs) != 0;
     }
 }

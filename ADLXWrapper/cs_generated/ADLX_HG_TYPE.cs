@@ -1,9 +1,8 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_HG_TYPE
 {
-    public enum ADLX_HG_TYPE
-    {
-        NONE = 0,
-        AMD,
-        OTHER,
-    }
+    NONE = 0,
+    AMD,
+    OTHER,
 }

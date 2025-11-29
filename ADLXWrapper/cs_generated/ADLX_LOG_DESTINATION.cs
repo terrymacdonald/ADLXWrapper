@@ -1,9 +1,8 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_LOG_DESTINATION
 {
-    public enum ADLX_LOG_DESTINATION
-    {
-        LOCALFILE = 0,
-        DBGVIEW,
-        APPLICATION,
-    }
+    LOCALFILE = 0,
+    DBGVIEW,
+    APPLICATION,
 }

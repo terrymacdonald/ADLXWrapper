@@ -1,8 +1,7 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_ANTILAG_STATE
 {
-    public enum ADLX_ANTILAG_STATE
-    {
-        ANTILAG = 0,
-        ANTILAGNEXT,
-    }
+    ANTILAG = 0,
+    ANTILAGNEXT,
 }

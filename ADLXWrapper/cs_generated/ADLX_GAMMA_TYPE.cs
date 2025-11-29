@@ -1,11 +1,10 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_GAMMA_TYPE
 {
-    public enum ADLX_GAMMA_TYPE
-    {
-        UNKNOW = 0,
-        DEGAMMA_RAMP,
-        REGAMMA_RAMP,
-        DEGAMMA_COEFFICIENTS,
-        REGAMMA_COEFFICIENTS,
-    }
+    UNKNOW = 0,
+    DEGAMMA_RAMP,
+    REGAMMA_RAMP,
+    DEGAMMA_COEFFICIENTS,
+    REGAMMA_COEFFICIENTS,
 }

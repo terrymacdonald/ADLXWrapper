@@ -1,9 +1,8 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_3DLUT_TRANSFER_FUNCTION
 {
-    public enum ADLX_3DLUT_TRANSFER_FUNCTION
-    {
-        TF_SRGB = 1,
-        TF_PQ,
-        TF_G22,
-    }
+    TF_SRGB = 1,
+    TF_PQ,
+    TF_G22,
 }

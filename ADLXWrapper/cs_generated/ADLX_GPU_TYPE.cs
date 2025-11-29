@@ -1,9 +1,8 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public enum ADLX_GPU_TYPE
 {
-    public enum ADLX_GPU_TYPE
-    {
-        GPUTYPE_UNDEFINED = 0,
-        GPUTYPE_INTEGRATED,
-        GPUTYPE_DISCRETE,
-    }
+    GPUTYPE_UNDEFINED = 0,
+    GPUTYPE_INTEGRATED,
+    GPUTYPE_DISCRETE,
 }

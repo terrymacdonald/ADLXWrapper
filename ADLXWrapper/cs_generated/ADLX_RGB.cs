@@ -1,14 +1,13 @@
-namespace ADLXWrapper
+namespace ADLXWrapper;
+
+public partial struct ADLX_RGB
 {
-    public partial struct ADLX_RGB
-    {
-        [NativeTypeName("adlx_double")]
-        public double gamutR;
+    [NativeTypeName("adlx_double")]
+    public double gamutR;
 
-        [NativeTypeName("adlx_double")]
-        public double gamutG;
+    [NativeTypeName("adlx_double")]
+    public double gamutG;
 
-        [NativeTypeName("adlx_double")]
-        public double gamutB;
-    }
+    [NativeTypeName("adlx_double")]
+    public double gamutB;
 }
