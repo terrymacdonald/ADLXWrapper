@@ -1,0 +1,13 @@
+namespace ADLXWrapper
+{
+    public enum ADLX_ASIC_FAMILY_TYPE
+    {
+        ASIC_UNDEFINED = 0,
+        ASIC_RADEON,
+        ASIC_FIREPRO,
+        ASIC_FIREMV,
+        ASIC_FIRESTREAM,
+        ASIC_FUSION,
+        ASIC_EMBEDDED,
+    }
+}
