@@ -1,6 +1,7 @@
-using Xunit;
 using System;
+using System.Runtime.Versioning;
 using ADLXWrapper;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace ADLXWrapper.Tests
@@ -9,6 +10,7 @@ namespace ADLXWrapper.Tests
     /// GPU tuning services tests for ADLX wrapper (ClangSharp-based)
     /// Tests GPU tuning capabilities (read-only, no modification of user settings)
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class GpuTuningServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;

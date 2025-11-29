@@ -1,6 +1,7 @@
-using Xunit;
 using System;
+using System.Runtime.Versioning;
 using ADLXWrapper;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace ADLXWrapper.Tests
@@ -9,6 +10,7 @@ namespace ADLXWrapper.Tests
     /// Performance monitoring tests for ADLX wrapper (ClangSharp-based)
     /// Tests GPU metrics and performance monitoring (read-only)
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class PerformanceMonitoringServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;

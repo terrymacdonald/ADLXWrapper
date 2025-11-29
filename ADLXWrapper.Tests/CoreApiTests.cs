@@ -1,11 +1,12 @@
-using Xunit;
 using System;
-using System.Linq;
+using System.Runtime.Versioning;
 using ADLXWrapper;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace ADLXWrapper.Tests
 {
+    [SupportedOSPlatform("windows")]
     /// <summary>
     /// Core API tests for ADLX wrapper
     /// Tests GPU enumeration, property access, and helper methods

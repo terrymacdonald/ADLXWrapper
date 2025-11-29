@@ -1,5 +1,6 @@
 using Xunit;
 using System;
+using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit.Abstractions;
 
@@ -9,6 +10,7 @@ namespace ADLXWrapper.Tests
     /// Basic API tests for ADLX wrapper
     /// Tests initialization, version queries, and cleanup
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class BasicApiTests : IDisposable
     {
         private readonly ITestOutputHelper _output;

@@ -1,7 +1,7 @@
-using Xunit;
 using System;
-using System.Linq;
+using System.Runtime.Versioning;
 using ADLXWrapper;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace ADLXWrapper.Tests
@@ -10,6 +10,7 @@ namespace ADLXWrapper.Tests
     /// Display services tests for ADLX wrapper
     /// Tests display enumeration and property access
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class DisplayServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;

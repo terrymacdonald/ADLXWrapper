@@ -1,5 +1,6 @@
 using System;
 using System.Management;
+using System.Runtime.Versioning;
 
 namespace ADLXWrapper.Tests
 {
@@ -15,6 +16,7 @@ namespace ADLXWrapper.Tests
         /// </summary>
         /// <param name="errorMessage">Details about why AMD GPU was not detected</param>
         /// <returns>True if AMD GPU hardware is detected, false otherwise</returns>
+        [SupportedOSPlatform("windows")]
         public static bool HasAMDGPU(out string errorMessage)
         {
             try
@@ -44,6 +46,7 @@ namespace ADLXWrapper.Tests
         /// Gets detailed information about detected AMD GPUs
         /// </summary>
         /// <returns>Array of GPU names, or empty array if none found</returns>
+        [SupportedOSPlatform("windows")]
         public static string[] GetAMDGPUNames()
         {
             try
