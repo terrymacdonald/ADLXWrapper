@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,41 +12,73 @@ public unsafe partial struct IADLXDisplayFreeSync
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayFreeSync* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayFreeSync* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayFreeSync* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXDisplayFreeSync* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXDisplayFreeSync* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXDisplayFreeSync* pThis, [NativeTypeName("adlx_bool")] byte enabled);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, int>)(lpVtbl[0]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, int>)(lpVtbl[1]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSync*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayFreeSync*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayFreeSync* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enabled);
+        }
     }
 }

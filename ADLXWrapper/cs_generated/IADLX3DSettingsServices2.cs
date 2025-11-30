@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,106 +8,216 @@ public unsafe partial struct IADLX3DSettingsServices2
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLX3DSettingsServices2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLX3DSettingsServices2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLX3DSettingsServices2* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetAntiLag(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAntiLag** pp3DAntiLag);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetChill(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DChill** pp3DChill);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetBoost(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DBoost** pp3DBoost);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetImageSharpening(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DImageSharpening** pp3DImageSharpening);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetEnhancedSync(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DEnhancedSync** pp3DEnhancedSync);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetWaitForVerticalRefresh(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DWaitForVerticalRefresh** pp3DWaitForVerticalRefresh);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetFrameRateTargetControl(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DFrameRateTargetControl** pp3DFrameRateTargetControl);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetAntiAliasing(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAntiAliasing** pp3DAntiAliasing);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetMorphologicalAntiAliasing(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DMorphologicalAntiAliasing** pp3DMorphologicalAntiAliasing);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetAnisotropicFiltering(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAnisotropicFiltering** pp3DAnisotropicFiltering);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetTessellation(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DTessellation** pp3DTessellation);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetRadeonSuperResolution(IADLX3DSettingsServices2* pThis, IADLX3DRadeonSuperResolution** pp3DRadeonSuperResolution);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetResetShaderCache(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DResetShaderCache** pp3DResetShaderCache);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Get3DSettingsChangedHandling(IADLX3DSettingsServices2* pThis, IADLX3DSettingsChangedHandling** pp3DSettingsChangedHandling);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetAMDFluidMotionFrames(IADLX3DSettingsServices2* pThis, IADLX3DAMDFluidMotionFrames** pp3DAMDFluidMotionFrames);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetImageSharpenDesktop(IADLX3DSettingsServices2* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DImageSharpenDesktop** pp3DImageSharpenDesktop);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, int>)(lpVtbl[0]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, int>)(lpVtbl[1]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GetAntiLag([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAntiLag** pp3DAntiLag)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DAntiLag**, ADLX_RESULT>)(lpVtbl[3]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DAntiLag);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetAntiLag>((IntPtr)(lpVtbl[3]))(pThis, pGPU, pp3DAntiLag);
+        }
     }
 
     public ADLX_RESULT GetChill([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DChill** pp3DChill)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DChill**, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DChill);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetChill>((IntPtr)(lpVtbl[4]))(pThis, pGPU, pp3DChill);
+        }
     }
 
     public ADLX_RESULT GetBoost([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DBoost** pp3DBoost)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DBoost**, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DBoost);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetBoost>((IntPtr)(lpVtbl[5]))(pThis, pGPU, pp3DBoost);
+        }
     }
 
     public ADLX_RESULT GetImageSharpening([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DImageSharpening** pp3DImageSharpening)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DImageSharpening**, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DImageSharpening);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetImageSharpening>((IntPtr)(lpVtbl[6]))(pThis, pGPU, pp3DImageSharpening);
+        }
     }
 
     public ADLX_RESULT GetEnhancedSync([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DEnhancedSync** pp3DEnhancedSync)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DEnhancedSync**, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DEnhancedSync);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetEnhancedSync>((IntPtr)(lpVtbl[7]))(pThis, pGPU, pp3DEnhancedSync);
+        }
     }
 
     public ADLX_RESULT GetWaitForVerticalRefresh([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DWaitForVerticalRefresh** pp3DWaitForVerticalRefresh)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DWaitForVerticalRefresh**, ADLX_RESULT>)(lpVtbl[8]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DWaitForVerticalRefresh);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetWaitForVerticalRefresh>((IntPtr)(lpVtbl[8]))(pThis, pGPU, pp3DWaitForVerticalRefresh);
+        }
     }
 
     public ADLX_RESULT GetFrameRateTargetControl([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DFrameRateTargetControl** pp3DFrameRateTargetControl)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DFrameRateTargetControl**, ADLX_RESULT>)(lpVtbl[9]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DFrameRateTargetControl);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetFrameRateTargetControl>((IntPtr)(lpVtbl[9]))(pThis, pGPU, pp3DFrameRateTargetControl);
+        }
     }
 
     public ADLX_RESULT GetAntiAliasing([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAntiAliasing** pp3DAntiAliasing)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DAntiAliasing**, ADLX_RESULT>)(lpVtbl[10]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DAntiAliasing);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetAntiAliasing>((IntPtr)(lpVtbl[10]))(pThis, pGPU, pp3DAntiAliasing);
+        }
     }
 
     public ADLX_RESULT GetMorphologicalAntiAliasing([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DMorphologicalAntiAliasing** pp3DMorphologicalAntiAliasing)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DMorphologicalAntiAliasing**, ADLX_RESULT>)(lpVtbl[11]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DMorphologicalAntiAliasing);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetMorphologicalAntiAliasing>((IntPtr)(lpVtbl[11]))(pThis, pGPU, pp3DMorphologicalAntiAliasing);
+        }
     }
 
     public ADLX_RESULT GetAnisotropicFiltering([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DAnisotropicFiltering** pp3DAnisotropicFiltering)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DAnisotropicFiltering**, ADLX_RESULT>)(lpVtbl[12]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DAnisotropicFiltering);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetAnisotropicFiltering>((IntPtr)(lpVtbl[12]))(pThis, pGPU, pp3DAnisotropicFiltering);
+        }
     }
 
     public ADLX_RESULT GetTessellation([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DTessellation** pp3DTessellation)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DTessellation**, ADLX_RESULT>)(lpVtbl[13]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DTessellation);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetTessellation>((IntPtr)(lpVtbl[13]))(pThis, pGPU, pp3DTessellation);
+        }
     }
 
     public ADLX_RESULT GetRadeonSuperResolution(IADLX3DRadeonSuperResolution** pp3DRadeonSuperResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLX3DRadeonSuperResolution**, ADLX_RESULT>)(lpVtbl[14]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pp3DRadeonSuperResolution);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetRadeonSuperResolution>((IntPtr)(lpVtbl[14]))(pThis, pp3DRadeonSuperResolution);
+        }
     }
 
     public ADLX_RESULT GetResetShaderCache([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DResetShaderCache** pp3DResetShaderCache)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DResetShaderCache**, ADLX_RESULT>)(lpVtbl[15]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DResetShaderCache);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetResetShaderCache>((IntPtr)(lpVtbl[15]))(pThis, pGPU, pp3DResetShaderCache);
+        }
     }
 
     public ADLX_RESULT Get3DSettingsChangedHandling(IADLX3DSettingsChangedHandling** pp3DSettingsChangedHandling)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLX3DSettingsChangedHandling**, ADLX_RESULT>)(lpVtbl[16]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pp3DSettingsChangedHandling);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Get3DSettingsChangedHandling>((IntPtr)(lpVtbl[16]))(pThis, pp3DSettingsChangedHandling);
+        }
     }
 
     public ADLX_RESULT GetAMDFluidMotionFrames(IADLX3DAMDFluidMotionFrames** pp3DAMDFluidMotionFrames)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLX3DAMDFluidMotionFrames**, ADLX_RESULT>)(lpVtbl[17]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pp3DAMDFluidMotionFrames);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetAMDFluidMotionFrames>((IntPtr)(lpVtbl[17]))(pThis, pp3DAMDFluidMotionFrames);
+        }
     }
 
     public ADLX_RESULT GetImageSharpenDesktop([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLX3DImageSharpenDesktop** pp3DImageSharpenDesktop)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsServices2*, IADLXGPU*, IADLX3DImageSharpenDesktop**, ADLX_RESULT>)(lpVtbl[18]))((IADLX3DSettingsServices2*)Unsafe.AsPointer(ref this), pGPU, pp3DImageSharpenDesktop);
+        fixed (IADLX3DSettingsServices2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetImageSharpenDesktop>((IntPtr)(lpVtbl[18]))(pThis, pGPU, pp3DImageSharpenDesktop);
+        }
     }
 }

@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,82 +12,162 @@ public unsafe partial struct IADLXDisplay
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplay* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplay* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplay* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _ManufacturerID(IADLXDisplay* pThis, [NativeTypeName("adlx_uint *")] uint* manufacturerID);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _DisplayType(IADLXDisplay* pThis, ADLX_DISPLAY_TYPE* displayType);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _ConnectorType(IADLXDisplay* pThis, ADLX_DISPLAY_CONNECTOR_TYPE* connectType);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Name(IADLXDisplay* pThis, [NativeTypeName("const char **")] sbyte** displayName);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _EDID(IADLXDisplay* pThis, [NativeTypeName("const char **")] sbyte** edid);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _NativeResolution(IADLXDisplay* pThis, [NativeTypeName("adlx_int *")] int* maxHResolution, [NativeTypeName("adlx_int *")] int* maxVResolution);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _RefreshRate(IADLXDisplay* pThis, [NativeTypeName("adlx_double *")] double* refreshRate);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _PixelClock(IADLXDisplay* pThis, [NativeTypeName("adlx_uint *")] uint* pixelClock);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _ScanType(IADLXDisplay* pThis, ADLX_DISPLAY_SCAN_TYPE* scanType);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPU(IADLXDisplay* pThis, IADLXGPU** ppGPU);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _UniqueId(IADLXDisplay* pThis, [NativeTypeName("adlx_size *")] UIntPtr* uniqueId);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, int>)(lpVtbl[0]))((IADLXDisplay*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, int>)(lpVtbl[1]))((IADLXDisplay*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplay*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public readonly ADLX_RESULT ManufacturerID([NativeTypeName("adlx_uint *")] uint* manufacturerID)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, uint*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplay*)Unsafe.AsPointer(in this), manufacturerID);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_ManufacturerID>((IntPtr)(lpVtbl[3]))(pThis, manufacturerID);
+        }
     }
 
     public readonly ADLX_RESULT DisplayType(ADLX_DISPLAY_TYPE* displayType)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_TYPE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplay*)Unsafe.AsPointer(in this), displayType);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_DisplayType>((IntPtr)(lpVtbl[4]))(pThis, displayType);
+        }
     }
 
     public readonly ADLX_RESULT ConnectorType(ADLX_DISPLAY_CONNECTOR_TYPE* connectType)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_CONNECTOR_TYPE*, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplay*)Unsafe.AsPointer(in this), connectType);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_ConnectorType>((IntPtr)(lpVtbl[5]))(pThis, connectType);
+        }
     }
 
     public readonly ADLX_RESULT Name([NativeTypeName("const char **")] sbyte** displayName)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, sbyte**, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplay*)Unsafe.AsPointer(in this), displayName);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Name>((IntPtr)(lpVtbl[6]))(pThis, displayName);
+        }
     }
 
     public readonly ADLX_RESULT EDID([NativeTypeName("const char **")] sbyte** edid)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, sbyte**, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplay*)Unsafe.AsPointer(in this), edid);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_EDID>((IntPtr)(lpVtbl[7]))(pThis, edid);
+        }
     }
 
     public readonly ADLX_RESULT NativeResolution([NativeTypeName("adlx_int *")] int* maxHResolution, [NativeTypeName("adlx_int *")] int* maxVResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, int*, int*, ADLX_RESULT>)(lpVtbl[8]))((IADLXDisplay*)Unsafe.AsPointer(in this), maxHResolution, maxVResolution);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_NativeResolution>((IntPtr)(lpVtbl[8]))(pThis, maxHResolution, maxVResolution);
+        }
     }
 
     public readonly ADLX_RESULT RefreshRate([NativeTypeName("adlx_double *")] double* refreshRate)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, double*, ADLX_RESULT>)(lpVtbl[9]))((IADLXDisplay*)Unsafe.AsPointer(in this), refreshRate);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_RefreshRate>((IntPtr)(lpVtbl[9]))(pThis, refreshRate);
+        }
     }
 
     public readonly ADLX_RESULT PixelClock([NativeTypeName("adlx_uint *")] uint* pixelClock)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, uint*, ADLX_RESULT>)(lpVtbl[10]))((IADLXDisplay*)Unsafe.AsPointer(in this), pixelClock);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_PixelClock>((IntPtr)(lpVtbl[10]))(pThis, pixelClock);
+        }
     }
 
     public readonly ADLX_RESULT ScanType(ADLX_DISPLAY_SCAN_TYPE* scanType)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_SCAN_TYPE*, ADLX_RESULT>)(lpVtbl[11]))((IADLXDisplay*)Unsafe.AsPointer(in this), scanType);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_ScanType>((IntPtr)(lpVtbl[11]))(pThis, scanType);
+        }
     }
 
     public ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, IADLXGPU**, ADLX_RESULT>)(lpVtbl[12]))((IADLXDisplay*)Unsafe.AsPointer(ref this), ppGPU);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPU>((IntPtr)(lpVtbl[12]))(pThis, ppGPU);
+        }
     }
 
-    public ADLX_RESULT UniqueId([NativeTypeName("adlx_size *")] nuint* uniqueId)
+    public ADLX_RESULT UniqueId([NativeTypeName("adlx_size *")] UIntPtr* uniqueId)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, nuint*, ADLX_RESULT>)(lpVtbl[13]))((IADLXDisplay*)Unsafe.AsPointer(ref this), uniqueId);
+        fixed (IADLXDisplay* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_UniqueId>((IntPtr)(lpVtbl[13]))(pThis, uniqueId);
+        }
     }
 }
 

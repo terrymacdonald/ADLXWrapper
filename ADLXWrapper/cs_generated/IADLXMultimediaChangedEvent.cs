@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,48 +8,88 @@ public unsafe partial struct IADLXMultimediaChangedEvent
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXMultimediaChangedEvent* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXMultimediaChangedEvent* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXMultimediaChangedEvent* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_SYNC_ORIGIN _GetOrigin(IADLXMultimediaChangedEvent* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPU(IADLXMultimediaChangedEvent* pThis, IADLXGPU** ppGPU);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsVideoUpscaleChanged(IADLXMultimediaChangedEvent* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsVideoSuperResolutionChanged(IADLXMultimediaChangedEvent* pThis);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, int>)(lpVtbl[0]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this));
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, int>)(lpVtbl[1]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this));
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this));
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetOrigin>((IntPtr)(lpVtbl[3]))(pThis);
+        }
     }
 
     public ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, IADLXGPU**, ADLX_RESULT>)(lpVtbl[4]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this), ppGPU);
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPU>((IntPtr)(lpVtbl[4]))(pThis, ppGPU);
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsVideoUpscaleChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, byte>)(lpVtbl[5]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsVideoUpscaleChanged>((IntPtr)(lpVtbl[5]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsVideoSuperResolutionChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMultimediaChangedEvent*, byte>)(lpVtbl[6]))((IADLXMultimediaChangedEvent*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLXMultimediaChangedEvent* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsVideoSuperResolutionChanged>((IntPtr)(lpVtbl[6]))(pThis) != 0;
+        }
     }
 }

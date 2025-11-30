@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,36 +8,62 @@ public unsafe partial struct IADLXGPUTuningChangedHandling
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXGPUTuningChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXGPUTuningChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXGPUTuningChangedHandling* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _AddGPUTuningEventListener(IADLXGPUTuningChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUTuningChangedListener *")] IADLXGPUTuningChangedListener* pGPUTuningChangedListener);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _RemoveGPUTuningEventListener(IADLXGPUTuningChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUTuningChangedListener *")] IADLXGPUTuningChangedListener* pGPUTuningChangedListener);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUTuningChangedHandling*, int>)(lpVtbl[0]))((IADLXGPUTuningChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUTuningChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUTuningChangedHandling*, int>)(lpVtbl[1]))((IADLXGPUTuningChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUTuningChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUTuningChangedHandling*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXGPUTuningChangedHandling*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXGPUTuningChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT AddGPUTuningEventListener([NativeTypeName("adlx::IADLXGPUTuningChangedListener *")] IADLXGPUTuningChangedListener* pGPUTuningChangedListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUTuningChangedHandling*, IADLXGPUTuningChangedListener*, ADLX_RESULT>)(lpVtbl[3]))((IADLXGPUTuningChangedHandling*)Unsafe.AsPointer(ref this), pGPUTuningChangedListener);
+        fixed (IADLXGPUTuningChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_AddGPUTuningEventListener>((IntPtr)(lpVtbl[3]))(pThis, pGPUTuningChangedListener);
+        }
     }
 
     public ADLX_RESULT RemoveGPUTuningEventListener([NativeTypeName("adlx::IADLXGPUTuningChangedListener *")] IADLXGPUTuningChangedListener* pGPUTuningChangedListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUTuningChangedHandling*, IADLXGPUTuningChangedListener*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPUTuningChangedHandling*)Unsafe.AsPointer(ref this), pGPUTuningChangedListener);
+        fixed (IADLXGPUTuningChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_RemoveGPUTuningEventListener>((IntPtr)(lpVtbl[4]))(pThis, pGPUTuningChangedListener);
+        }
     }
 }

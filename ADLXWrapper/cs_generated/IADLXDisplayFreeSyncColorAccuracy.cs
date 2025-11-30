@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,41 +12,73 @@ public unsafe partial struct IADLXDisplayFreeSyncColorAccuracy
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayFreeSyncColorAccuracy* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayFreeSyncColorAccuracy* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayFreeSyncColorAccuracy* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXDisplayFreeSyncColorAccuracy* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXDisplayFreeSyncColorAccuracy* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXDisplayFreeSyncColorAccuracy* pThis, [NativeTypeName("adlx_bool")] byte enabled);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, int>)(lpVtbl[0]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, int>)(lpVtbl[1]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayFreeSyncColorAccuracy*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayFreeSyncColorAccuracy*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayFreeSyncColorAccuracy* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enabled);
+        }
     }
 }

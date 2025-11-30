@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,36 +8,62 @@ public unsafe partial struct IADLXFPS
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXFPS* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXFPS* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXFPS* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _TimeStamp(IADLXFPS* pThis, [NativeTypeName("adlx_int64 *")] long* ms);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _FPS(IADLXFPS* pThis, [NativeTypeName("adlx_int *")] int* data);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXFPS*, int>)(lpVtbl[0]))((IADLXFPS*)Unsafe.AsPointer(ref this));
+        fixed (IADLXFPS* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXFPS*, int>)(lpVtbl[1]))((IADLXFPS*)Unsafe.AsPointer(ref this));
+        fixed (IADLXFPS* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXFPS*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXFPS*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXFPS* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT TimeStamp([NativeTypeName("adlx_int64 *")] long* ms)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXFPS*, long*, ADLX_RESULT>)(lpVtbl[3]))((IADLXFPS*)Unsafe.AsPointer(ref this), ms);
+        fixed (IADLXFPS* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_TimeStamp>((IntPtr)(lpVtbl[3]))(pThis, ms);
+        }
     }
 
     public ADLX_RESULT FPS([NativeTypeName("adlx_int *")] int* data)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXFPS*, int*, ADLX_RESULT>)(lpVtbl[4]))((IADLXFPS*)Unsafe.AsPointer(ref this), data);
+        fixed (IADLXFPS* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_FPS>((IntPtr)(lpVtbl[4]))(pThis, data);
+        }
     }
 }

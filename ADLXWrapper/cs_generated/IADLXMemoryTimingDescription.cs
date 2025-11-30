@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,31 +8,51 @@ public unsafe partial struct IADLXMemoryTimingDescription
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXMemoryTimingDescription* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXMemoryTimingDescription* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXMemoryTimingDescription* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetDescription(IADLXMemoryTimingDescription* pThis, ADLX_MEMORYTIMING_DESCRIPTION* description);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMemoryTimingDescription*, int>)(lpVtbl[0]))((IADLXMemoryTimingDescription*)Unsafe.AsPointer(ref this));
+        fixed (IADLXMemoryTimingDescription* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMemoryTimingDescription*, int>)(lpVtbl[1]))((IADLXMemoryTimingDescription*)Unsafe.AsPointer(ref this));
+        fixed (IADLXMemoryTimingDescription* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMemoryTimingDescription*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXMemoryTimingDescription*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXMemoryTimingDescription* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GetDescription(ADLX_MEMORYTIMING_DESCRIPTION* description)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXMemoryTimingDescription*, ADLX_MEMORYTIMING_DESCRIPTION*, ADLX_RESULT>)(lpVtbl[3]))((IADLXMemoryTimingDescription*)Unsafe.AsPointer(ref this), description);
+        fixed (IADLXMemoryTimingDescription* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetDescription>((IntPtr)(lpVtbl[3]))(pThis, description);
+        }
     }
 }

@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,127 +8,261 @@ public unsafe partial struct IADLXPerformanceMonitoringServices
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXPerformanceMonitoringServices* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXPerformanceMonitoringServices* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSamplingIntervalRange(IADLXPerformanceMonitoringServices* pThis, ADLX_IntRange* range);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetSamplingInterval(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int")] int askedIntervalMs);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSamplingInterval(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int *")] int* intervalMs);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetMaxPerformanceMetricsHistorySizeRange(IADLXPerformanceMonitoringServices* pThis, ADLX_IntRange* range);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int")] int sizeSec);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int *")] int* sizeSec);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _ClearPerformanceMetricsHistory(IADLXPerformanceMonitoringServices* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int *")] int* sizeSec);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _StartPerformanceMetricsTracking(IADLXPerformanceMonitoringServices* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _StopPerformanceMetricsTracking(IADLXPerformanceMonitoringServices* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetAllMetricsHistory(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXAllMetricsList** ppMetricsList);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMetricsHistory(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, [NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXGPUMetricsList** ppMetricsList);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSystemMetricsHistory(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXSystemMetricsList** ppMetricsList);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetFPSHistory(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXFPSList** ppMetricsList);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentAllMetrics(IADLXPerformanceMonitoringServices* pThis, IADLXAllMetrics** ppMetrics);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentGPUMetrics(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetrics** ppMetrics);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentSystemMetrics(IADLXPerformanceMonitoringServices* pThis, IADLXSystemMetrics** ppMetrics);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentFPS(IADLXPerformanceMonitoringServices* pThis, IADLXFPS** ppMetrics);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSupportedGPUMetrics(IADLXPerformanceMonitoringServices* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetricsSupport** ppMetricsSupported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSupportedSystemMetrics(IADLXPerformanceMonitoringServices* pThis, IADLXSystemMetricsSupport** ppMetricsSupported);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int>)(lpVtbl[0]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this));
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int>)(lpVtbl[1]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this));
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GetSamplingIntervalRange(ADLX_IntRange* range)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[3]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), range);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSamplingIntervalRange>((IntPtr)(lpVtbl[3]))(pThis, range);
+        }
     }
 
     public ADLX_RESULT SetSamplingInterval([NativeTypeName("adlx_int")] int askedIntervalMs)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, ADLX_RESULT>)(lpVtbl[4]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), askedIntervalMs);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetSamplingInterval>((IntPtr)(lpVtbl[4]))(pThis, askedIntervalMs);
+        }
     }
 
     public ADLX_RESULT GetSamplingInterval([NativeTypeName("adlx_int *")] int* intervalMs)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int*, ADLX_RESULT>)(lpVtbl[5]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), intervalMs);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSamplingInterval>((IntPtr)(lpVtbl[5]))(pThis, intervalMs);
+        }
     }
 
     public ADLX_RESULT GetMaxPerformanceMetricsHistorySizeRange(ADLX_IntRange* range)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[6]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), range);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetMaxPerformanceMetricsHistorySizeRange>((IntPtr)(lpVtbl[6]))(pThis, range);
+        }
     }
 
     public ADLX_RESULT SetMaxPerformanceMetricsHistorySize([NativeTypeName("adlx_int")] int sizeSec)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, ADLX_RESULT>)(lpVtbl[7]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), sizeSec);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetMaxPerformanceMetricsHistorySize>((IntPtr)(lpVtbl[7]))(pThis, sizeSec);
+        }
     }
 
     public ADLX_RESULT GetMaxPerformanceMetricsHistorySize([NativeTypeName("adlx_int *")] int* sizeSec)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int*, ADLX_RESULT>)(lpVtbl[8]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), sizeSec);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetMaxPerformanceMetricsHistorySize>((IntPtr)(lpVtbl[8]))(pThis, sizeSec);
+        }
     }
 
     public ADLX_RESULT ClearPerformanceMetricsHistory()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ADLX_RESULT>)(lpVtbl[9]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this));
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_ClearPerformanceMetricsHistory>((IntPtr)(lpVtbl[9]))(pThis);
+        }
     }
 
     public ADLX_RESULT GetCurrentPerformanceMetricsHistorySize([NativeTypeName("adlx_int *")] int* sizeSec)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int*, ADLX_RESULT>)(lpVtbl[10]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), sizeSec);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentPerformanceMetricsHistorySize>((IntPtr)(lpVtbl[10]))(pThis, sizeSec);
+        }
     }
 
     public ADLX_RESULT StartPerformanceMetricsTracking()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ADLX_RESULT>)(lpVtbl[11]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this));
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_StartPerformanceMetricsTracking>((IntPtr)(lpVtbl[11]))(pThis);
+        }
     }
 
     public ADLX_RESULT StopPerformanceMetricsTracking()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, ADLX_RESULT>)(lpVtbl[12]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this));
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_StopPerformanceMetricsTracking>((IntPtr)(lpVtbl[12]))(pThis);
+        }
     }
 
     public ADLX_RESULT GetAllMetricsHistory([NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXAllMetricsList** ppMetricsList)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, int, IADLXAllMetricsList**, ADLX_RESULT>)(lpVtbl[13]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), startMs, stopMs, ppMetricsList);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetAllMetricsHistory>((IntPtr)(lpVtbl[13]))(pThis, startMs, stopMs, ppMetricsList);
+        }
     }
 
     public ADLX_RESULT GetGPUMetricsHistory([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, [NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXGPUMetricsList** ppMetricsList)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, int, int, IADLXGPUMetricsList**, ADLX_RESULT>)(lpVtbl[14]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), pGPU, startMs, stopMs, ppMetricsList);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMetricsHistory>((IntPtr)(lpVtbl[14]))(pThis, pGPU, startMs, stopMs, ppMetricsList);
+        }
     }
 
     public ADLX_RESULT GetSystemMetricsHistory([NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXSystemMetricsList** ppMetricsList)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, int, IADLXSystemMetricsList**, ADLX_RESULT>)(lpVtbl[15]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), startMs, stopMs, ppMetricsList);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSystemMetricsHistory>((IntPtr)(lpVtbl[15]))(pThis, startMs, stopMs, ppMetricsList);
+        }
     }
 
     public ADLX_RESULT GetFPSHistory([NativeTypeName("adlx_int")] int startMs, [NativeTypeName("adlx_int")] int stopMs, IADLXFPSList** ppMetricsList)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, int, IADLXFPSList**, ADLX_RESULT>)(lpVtbl[16]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), startMs, stopMs, ppMetricsList);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetFPSHistory>((IntPtr)(lpVtbl[16]))(pThis, startMs, stopMs, ppMetricsList);
+        }
     }
 
     public ADLX_RESULT GetCurrentAllMetrics(IADLXAllMetrics** ppMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXAllMetrics**, ADLX_RESULT>)(lpVtbl[17]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), ppMetrics);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentAllMetrics>((IntPtr)(lpVtbl[17]))(pThis, ppMetrics);
+        }
     }
 
     public ADLX_RESULT GetCurrentGPUMetrics([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetrics** ppMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, IADLXGPUMetrics**, ADLX_RESULT>)(lpVtbl[18]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), pGPU, ppMetrics);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentGPUMetrics>((IntPtr)(lpVtbl[18]))(pThis, pGPU, ppMetrics);
+        }
     }
 
     public ADLX_RESULT GetCurrentSystemMetrics(IADLXSystemMetrics** ppMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXSystemMetrics**, ADLX_RESULT>)(lpVtbl[19]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), ppMetrics);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentSystemMetrics>((IntPtr)(lpVtbl[19]))(pThis, ppMetrics);
+        }
     }
 
     public ADLX_RESULT GetCurrentFPS(IADLXFPS** ppMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXFPS**, ADLX_RESULT>)(lpVtbl[20]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), ppMetrics);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentFPS>((IntPtr)(lpVtbl[20]))(pThis, ppMetrics);
+        }
     }
 
     public ADLX_RESULT GetSupportedGPUMetrics([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetricsSupport** ppMetricsSupported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, IADLXGPUMetricsSupport**, ADLX_RESULT>)(lpVtbl[21]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), pGPU, ppMetricsSupported);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSupportedGPUMetrics>((IntPtr)(lpVtbl[21]))(pThis, pGPU, ppMetricsSupported);
+        }
     }
 
     public ADLX_RESULT GetSupportedSystemMetrics(IADLXSystemMetricsSupport** ppMetricsSupported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXSystemMetricsSupport**, ADLX_RESULT>)(lpVtbl[22]))((IADLXPerformanceMonitoringServices*)Unsafe.AsPointer(ref this), ppMetricsSupported);
+        fixed (IADLXPerformanceMonitoringServices* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSupportedSystemMetrics>((IntPtr)(lpVtbl[22]))(pThis, ppMetricsSupported);
+        }
     }
 }
 

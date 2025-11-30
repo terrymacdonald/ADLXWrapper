@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,56 +8,106 @@ public unsafe partial struct IADLX3DFrameRateTargetControl
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLX3DFrameRateTargetControl* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLX3DFrameRateTargetControl* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("adlx_bool *")] bool* isEnabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetFPSRange(IADLX3DFrameRateTargetControl* pThis, ADLX_IntRange* range);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetFPS(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("adlx_int *")] int* currentFPS);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("adlx_bool")] byte enable);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetFPS(IADLX3DFrameRateTargetControl* pThis, [NativeTypeName("adlx_int")] int maxFPS);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, int>)(lpVtbl[0]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, int>)(lpVtbl[1]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* isEnabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), isEnabled);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, isEnabled);
+        }
     }
 
     public ADLX_RESULT GetFPSRange(ADLX_IntRange* range)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), range);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetFPSRange>((IntPtr)(lpVtbl[5]))(pThis, range);
+        }
     }
 
     public ADLX_RESULT GetFPS([NativeTypeName("adlx_int *")] int* currentFPS)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, int*, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), currentFPS);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetFPS>((IntPtr)(lpVtbl[6]))(pThis, currentFPS);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enable)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, byte, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), enable);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[7]))(pThis, enable);
+        }
     }
 
     public ADLX_RESULT SetFPS([NativeTypeName("adlx_int")] int maxFPS)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DFrameRateTargetControl*, int, ADLX_RESULT>)(lpVtbl[8]))((IADLX3DFrameRateTargetControl*)Unsafe.AsPointer(ref this), maxFPS);
+        fixed (IADLX3DFrameRateTargetControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetFPS>((IntPtr)(lpVtbl[8]))(pThis, maxFPS);
+        }
     }
 }

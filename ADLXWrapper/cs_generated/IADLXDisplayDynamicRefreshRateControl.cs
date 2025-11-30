@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,41 +12,73 @@ public unsafe partial struct IADLXDisplayDynamicRefreshRateControl
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayDynamicRefreshRateControl* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayDynamicRefreshRateControl* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayDynamicRefreshRateControl* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXDisplayDynamicRefreshRateControl* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXDisplayDynamicRefreshRateControl* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXDisplayDynamicRefreshRateControl* pThis, [NativeTypeName("adlx_bool")] byte enabled);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, int>)(lpVtbl[0]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, int>)(lpVtbl[1]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayDynamicRefreshRateControl*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayDynamicRefreshRateControl*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayDynamicRefreshRateControl* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enabled);
+        }
     }
 }

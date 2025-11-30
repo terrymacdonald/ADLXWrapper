@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -6,9 +7,16 @@ public unsafe partial struct IADLXDisplayListChangedListener
 {
     public void** lpVtbl;
 
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _OnDisplayListChanged(IADLXDisplayListChangedListener* pThis, [NativeTypeName("adlx::IADLXDisplayList *")] IADLXDisplayList* pNewDisplay);
+
     [return: NativeTypeName("adlx_bool")]
     public bool OnDisplayListChanged([NativeTypeName("adlx::IADLXDisplayList *")] IADLXDisplayList* pNewDisplay)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayListChangedListener*, IADLXDisplayList*, byte>)(lpVtbl[0]))((IADLXDisplayListChangedListener*)Unsafe.AsPointer(ref this), pNewDisplay) != 0;
+        fixed (IADLXDisplayListChangedListener* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_OnDisplayListChanged>((IntPtr)(lpVtbl[0]))(pThis, pNewDisplay) != 0;
+        }
     }
 }

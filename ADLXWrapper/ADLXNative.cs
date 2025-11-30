@@ -95,22 +95,22 @@ namespace ADLXWrapper
     /// ADLX result codes (from ADLXDefines.h)
     /// Will be replaced/augmented by ClangSharp generated enum
     /// </summary>
-    public enum ADLX_RESULT
-    {
-        ADLX_OK = 0,
-        ADLX_ALREADY_ENABLED = 1,
-        ADLX_ALREADY_INITIALIZED = 2,
-        ADLX_FAIL = -1,
-        ADLX_INVALID_ARGS = -2,
-        ADLX_BAD_VER = -3,
-        ADLX_UNKNOWN_INTERFACE = -4,
-        ADLX_TERMINATED = -5,
-        ADLX_ADL_INIT_ERROR = -6,
-        ADLX_NOT_FOUND = -7,
-        ADLX_INVALID_OBJECT = -8,
-        ADLX_ORPHAN_OBJECTS = -9,
-        ADLX_NOT_SUPPORTED = -10,
-        ADLX_PENDING_OPERATION = -11,
-        ADLX_GPU_INACTIVE = -12
-    }
+    //public enum ADLX_RESULT
+    //{
+    //    ADLX_OK = 0,
+    //    ADLX_ALREADY_ENABLED = 1,
+    //    ADLX_ALREADY_INITIALIZED = 2,
+    //    ADLX_FAIL = -1,
+    //    ADLX_INVALID_ARGS = -2,
+    //    ADLX_BAD_VER = -3,
+    //    ADLX_UNKNOWN_INTERFACE = -4,
+    //    ADLX_TERMINATED = -5,
+    //    ADLX_ADL_INIT_ERROR = -6,
+    //    ADLX_NOT_FOUND = -7,
+    //    ADLX_INVALID_OBJECT = -8,
+    //    ADLX_ORPHAN_OBJECTS = -9,
+    //    ADLX_NOT_SUPPORTED = -10,
+    //    ADLX_PENDING_OPERATION = -11,
+    //    ADLX_GPU_INACTIVE = -12
+    //}
 }

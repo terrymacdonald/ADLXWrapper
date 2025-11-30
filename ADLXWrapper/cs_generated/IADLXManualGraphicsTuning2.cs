@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,71 +8,139 @@ public unsafe partial struct IADLXManualGraphicsTuning2
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXManualGraphicsTuning2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXManualGraphicsTuning2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMinFrequencyRange(IADLXManualGraphicsTuning2* pThis, ADLX_IntRange* tuningRange);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMinFrequency(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int *")] int* minFreq);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetGPUMinFrequency(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int")] int minFreq);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMaxFrequencyRange(IADLXManualGraphicsTuning2* pThis, ADLX_IntRange* tuningRange);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMaxFrequency(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int *")] int* maxFreq);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetGPUMaxFrequency(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int")] int maxFreq);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUVoltageRange(IADLXManualGraphicsTuning2* pThis, ADLX_IntRange* tuningRange);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUVoltage(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int *")] int* volt);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetGPUVoltage(IADLXManualGraphicsTuning2* pThis, [NativeTypeName("adlx_int")] int volt);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int>)(lpVtbl[0]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this));
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int>)(lpVtbl[1]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this));
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GetGPUMinFrequencyRange(ADLX_IntRange* tuningRange)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[3]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), tuningRange);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMinFrequencyRange>((IntPtr)(lpVtbl[3]))(pThis, tuningRange);
+        }
     }
 
     public ADLX_RESULT GetGPUMinFrequency([NativeTypeName("adlx_int *")] int* minFreq)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int*, ADLX_RESULT>)(lpVtbl[4]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), minFreq);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMinFrequency>((IntPtr)(lpVtbl[4]))(pThis, minFreq);
+        }
     }
 
     public ADLX_RESULT SetGPUMinFrequency([NativeTypeName("adlx_int")] int minFreq)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int, ADLX_RESULT>)(lpVtbl[5]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), minFreq);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetGPUMinFrequency>((IntPtr)(lpVtbl[5]))(pThis, minFreq);
+        }
     }
 
     public ADLX_RESULT GetGPUMaxFrequencyRange(ADLX_IntRange* tuningRange)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[6]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), tuningRange);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMaxFrequencyRange>((IntPtr)(lpVtbl[6]))(pThis, tuningRange);
+        }
     }
 
     public ADLX_RESULT GetGPUMaxFrequency([NativeTypeName("adlx_int *")] int* maxFreq)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int*, ADLX_RESULT>)(lpVtbl[7]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), maxFreq);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMaxFrequency>((IntPtr)(lpVtbl[7]))(pThis, maxFreq);
+        }
     }
 
     public ADLX_RESULT SetGPUMaxFrequency([NativeTypeName("adlx_int")] int maxFreq)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int, ADLX_RESULT>)(lpVtbl[8]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), maxFreq);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetGPUMaxFrequency>((IntPtr)(lpVtbl[8]))(pThis, maxFreq);
+        }
     }
 
     public ADLX_RESULT GetGPUVoltageRange(ADLX_IntRange* tuningRange)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[9]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), tuningRange);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUVoltageRange>((IntPtr)(lpVtbl[9]))(pThis, tuningRange);
+        }
     }
 
     public ADLX_RESULT GetGPUVoltage([NativeTypeName("adlx_int *")] int* volt)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int*, ADLX_RESULT>)(lpVtbl[10]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), volt);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUVoltage>((IntPtr)(lpVtbl[10]))(pThis, volt);
+        }
     }
 
     public ADLX_RESULT SetGPUVoltage([NativeTypeName("adlx_int")] int volt)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXManualGraphicsTuning2*, int, ADLX_RESULT>)(lpVtbl[11]))((IADLXManualGraphicsTuning2*)Unsafe.AsPointer(ref this), volt);
+        fixed (IADLXManualGraphicsTuning2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetGPUVoltage>((IntPtr)(lpVtbl[11]))(pThis, volt);
+        }
     }
 }

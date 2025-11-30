@@ -9,28 +9,28 @@ public static unsafe partial class ADLX
     public const string ADLX_DLL_NAMEW = "amdadlx64.dll";
 
     [NativeTypeName("#define ADLX_DLL_NAMEA \"amdadlx64.dll\"")]
-    public static ReadOnlySpan<byte> ADLX_DLL_NAMEA => "amdadlx64.dll"u8;
+    public static ReadOnlySpan<byte> ADLX_DLL_NAMEA => new byte[] { 0x61, 0x6D, 0x64, 0x61, 0x64, 0x6C, 0x78, 0x36, 0x34, 0x2E, 0x64, 0x6C, 0x6C, 0x00 };
 
     [NativeTypeName("#define ADLX_DLL_NAME ADLX_DLL_NAMEA")]
-    public static ReadOnlySpan<byte> ADLX_DLL_NAME => "amdadlx64.dll"u8;
+    public static ReadOnlySpan<byte> ADLX_DLL_NAME => new byte[] { 0x61, 0x6D, 0x64, 0x61, 0x64, 0x6C, 0x78, 0x36, 0x34, 0x2E, 0x64, 0x6C, 0x6C, 0x00 };
 
     [NativeTypeName("#define ADLX_QUERY_FULL_VERSION_FUNCTION_NAME \"ADLXQueryFullVersion\"")]
-    public static ReadOnlySpan<byte> ADLX_QUERY_FULL_VERSION_FUNCTION_NAME => "ADLXQueryFullVersion"u8;
+    public static ReadOnlySpan<byte> ADLX_QUERY_FULL_VERSION_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x51, 0x75, 0x65, 0x72, 0x79, 0x46, 0x75, 0x6C, 0x6C, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x00 };
 
     [NativeTypeName("#define ADLX_QUERY_VERSION_FUNCTION_NAME \"ADLXQueryVersion\"")]
-    public static ReadOnlySpan<byte> ADLX_QUERY_VERSION_FUNCTION_NAME => "ADLXQueryVersion"u8;
+    public static ReadOnlySpan<byte> ADLX_QUERY_VERSION_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x51, 0x75, 0x65, 0x72, 0x79, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x00 };
 
     [NativeTypeName("#define ADLX_INIT_FUNCTION_NAME \"ADLXInitialize\"")]
-    public static ReadOnlySpan<byte> ADLX_INIT_FUNCTION_NAME => "ADLXInitialize"u8;
+    public static ReadOnlySpan<byte> ADLX_INIT_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x49, 0x6E, 0x69, 0x74, 0x69, 0x61, 0x6C, 0x69, 0x7A, 0x65, 0x00 };
 
     [NativeTypeName("#define ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME \"ADLXInitializeWithIncompatibleDriver\"")]
-    public static ReadOnlySpan<byte> ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME => "ADLXInitializeWithIncompatibleDriver"u8;
+    public static ReadOnlySpan<byte> ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x49, 0x6E, 0x69, 0x74, 0x69, 0x61, 0x6C, 0x69, 0x7A, 0x65, 0x57, 0x69, 0x74, 0x68, 0x49, 0x6E, 0x63, 0x6F, 0x6D, 0x70, 0x61, 0x74, 0x69, 0x62, 0x6C, 0x65, 0x44, 0x72, 0x69, 0x76, 0x65, 0x72, 0x00 };
 
     [NativeTypeName("#define ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME \"ADLXInitializeWithCallerAdl\"")]
-    public static ReadOnlySpan<byte> ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME => "ADLXInitializeWithCallerAdl"u8;
+    public static ReadOnlySpan<byte> ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x49, 0x6E, 0x69, 0x74, 0x69, 0x61, 0x6C, 0x69, 0x7A, 0x65, 0x57, 0x69, 0x74, 0x68, 0x43, 0x61, 0x6C, 0x6C, 0x65, 0x72, 0x41, 0x64, 0x6C, 0x00 };
 
     [NativeTypeName("#define ADLX_TERMINATE_FUNCTION_NAME \"ADLXTerminate\"")]
-    public static ReadOnlySpan<byte> ADLX_TERMINATE_FUNCTION_NAME => "ADLXTerminate"u8;
+    public static ReadOnlySpan<byte> ADLX_TERMINATE_FUNCTION_NAME => new byte[] { 0x41, 0x44, 0x4C, 0x58, 0x54, 0x65, 0x72, 0x6D, 0x69, 0x6E, 0x61, 0x74, 0x65, 0x00 };
 
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_atomic_inc@@YAJPEAJ@Z", ExactSpelling = true)]
     [return: NativeTypeName("adlx_long")]
@@ -70,35 +70,4 @@ public static unsafe partial class ADLX
 
     [NativeTypeName("#define ADLX_VER_BUILD_NUM 110")]
     public const int ADLX_VER_BUILD_NUM = 110;
-
-    [NativeTypeName("uint64_t")]
-    public static ulong v = 0;
-
-    [return: NativeTypeName("adlx_long")]
-    public static int adlx_atomic_inc([NativeTypeName("adlx_long *")] int* X)
-    {
-        return _InterlockedIncrement(unchecked((int*)(X)));
-    }
-
-    [return: NativeTypeName("adlx_long")]
-    public static int adlx_atomic_dec([NativeTypeName("adlx_long *")] int* X)
-    {
-        return _InterlockedDecrement(unchecked((int*)(X)));
-    }
-
-    [return: NativeTypeName("adlx_handle")]
-    public static void* adlx_load_library([NativeTypeName("const TCHAR *")] sbyte* filename)
-    {
-        return LoadLibraryExA(filename, null, 0x00000400 | 0x00000200 | 0x00001000 | 0x00000800);
-    }
-
-    public static int adlx_free_library([NativeTypeName("adlx_handle")] void* module)
-    {
-        return (FreeLibrary(unchecked((HINSTANCE__*)(module))) == 1) ? 1 : 0;
-    }
-
-    public static void* adlx_get_proc_address([NativeTypeName("adlx_handle")] void* module, [NativeTypeName("const char *")] sbyte* procName)
-    {
-        return (void*)(GetProcAddress(unchecked((HINSTANCE__*)(module)), procName));
-    }
 }

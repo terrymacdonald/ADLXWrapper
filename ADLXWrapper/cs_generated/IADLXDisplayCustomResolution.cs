@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,51 +12,95 @@ public unsafe partial struct IADLXDisplayCustomResolution
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayCustomResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayCustomResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayCustomResolution* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXDisplayCustomResolution* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetResolutionList(IADLXDisplayCustomResolution* pThis, IADLXDisplayResolutionList** ppResolutionList);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetCurrentAppliedResolution(IADLXDisplayCustomResolution* pThis, IADLXDisplayResolution** ppResolution);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _CreateNewResolution(IADLXDisplayCustomResolution* pThis, [NativeTypeName("adlx::IADLXDisplayResolution *")] IADLXDisplayResolution* pResolution);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _DeleteResolution(IADLXDisplayCustomResolution* pThis, [NativeTypeName("adlx::IADLXDisplayResolution *")] IADLXDisplayResolution* pResolution);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, int>)(lpVtbl[0]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, int>)(lpVtbl[1]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT GetResolutionList(IADLXDisplayResolutionList** ppResolutionList)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, IADLXDisplayResolutionList**, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), ppResolutionList);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetResolutionList>((IntPtr)(lpVtbl[4]))(pThis, ppResolutionList);
+        }
     }
 
     public ADLX_RESULT GetCurrentAppliedResolution(IADLXDisplayResolution** ppResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, IADLXDisplayResolution**, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), ppResolution);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetCurrentAppliedResolution>((IntPtr)(lpVtbl[5]))(pThis, ppResolution);
+        }
     }
 
     public ADLX_RESULT CreateNewResolution([NativeTypeName("adlx::IADLXDisplayResolution *")] IADLXDisplayResolution* pResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, IADLXDisplayResolution*, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), pResolution);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_CreateNewResolution>((IntPtr)(lpVtbl[6]))(pThis, pResolution);
+        }
     }
 
     public ADLX_RESULT DeleteResolution([NativeTypeName("adlx::IADLXDisplayResolution *")] IADLXDisplayResolution* pResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomResolution*, IADLXDisplayResolution*, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplayCustomResolution*)Unsafe.AsPointer(ref this), pResolution);
+        fixed (IADLXDisplayCustomResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_DeleteResolution>((IntPtr)(lpVtbl[7]))(pThis, pResolution);
+        }
     }
 }

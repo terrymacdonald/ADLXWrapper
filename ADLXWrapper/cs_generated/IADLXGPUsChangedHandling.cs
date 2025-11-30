@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,36 +8,62 @@ public unsafe partial struct IADLXGPUsChangedHandling
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXGPUsChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXGPUsChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXGPUsChangedHandling* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _AddGPUsListEventListener(IADLXGPUsChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUsEventListener *")] IADLXGPUsEventListener* pListener);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _RemoveGPUsListEventListener(IADLXGPUsChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUsEventListener *")] IADLXGPUsEventListener* pListener);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUsChangedHandling*, int>)(lpVtbl[0]))((IADLXGPUsChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUsChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUsChangedHandling*, int>)(lpVtbl[1]))((IADLXGPUsChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUsChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUsChangedHandling*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXGPUsChangedHandling*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXGPUsChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT AddGPUsListEventListener([NativeTypeName("adlx::IADLXGPUsEventListener *")] IADLXGPUsEventListener* pListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUsChangedHandling*, IADLXGPUsEventListener*, ADLX_RESULT>)(lpVtbl[3]))((IADLXGPUsChangedHandling*)Unsafe.AsPointer(ref this), pListener);
+        fixed (IADLXGPUsChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_AddGPUsListEventListener>((IntPtr)(lpVtbl[3]))(pThis, pListener);
+        }
     }
 
     public ADLX_RESULT RemoveGPUsListEventListener([NativeTypeName("adlx::IADLXGPUsEventListener *")] IADLXGPUsEventListener* pListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUsChangedHandling*, IADLXGPUsEventListener*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPUsChangedHandling*)Unsafe.AsPointer(ref this), pListener);
+        fixed (IADLXGPUsChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_RemoveGPUsListEventListener>((IntPtr)(lpVtbl[4]))(pThis, pListener);
+        }
     }
 }

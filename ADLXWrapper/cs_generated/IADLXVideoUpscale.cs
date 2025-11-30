@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,56 +8,106 @@ public unsafe partial struct IADLXVideoUpscale
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXVideoUpscale* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXVideoUpscale* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXVideoUpscale* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXVideoUpscale* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXVideoUpscale* pThis, [NativeTypeName("adlx_bool *")] bool* isEnabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSharpnessRange(IADLXVideoUpscale* pThis, ADLX_IntRange* range);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSharpness(IADLXVideoUpscale* pThis, [NativeTypeName("adlx_int *")] int* currentMinRes);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXVideoUpscale* pThis, [NativeTypeName("adlx_bool")] byte enable);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetSharpness(IADLXVideoUpscale* pThis, [NativeTypeName("adlx_int")] int minSharp);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, int>)(lpVtbl[0]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this));
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, int>)(lpVtbl[1]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this));
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* isEnabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), isEnabled);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, isEnabled);
+        }
     }
 
     public ADLX_RESULT GetSharpnessRange(ADLX_IntRange* range)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[5]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), range);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSharpnessRange>((IntPtr)(lpVtbl[5]))(pThis, range);
+        }
     }
 
     public ADLX_RESULT GetSharpness([NativeTypeName("adlx_int *")] int* currentMinRes)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, int*, ADLX_RESULT>)(lpVtbl[6]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), currentMinRes);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSharpness>((IntPtr)(lpVtbl[6]))(pThis, currentMinRes);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enable)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, byte, ADLX_RESULT>)(lpVtbl[7]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), enable);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[7]))(pThis, enable);
+        }
     }
 
     public ADLX_RESULT SetSharpness([NativeTypeName("adlx_int")] int minSharp)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, int, ADLX_RESULT>)(lpVtbl[8]))((IADLXVideoUpscale*)Unsafe.AsPointer(ref this), minSharp);
+        fixed (IADLXVideoUpscale* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetSharpness>((IntPtr)(lpVtbl[8]))(pThis, minSharp);
+        }
     }
 }

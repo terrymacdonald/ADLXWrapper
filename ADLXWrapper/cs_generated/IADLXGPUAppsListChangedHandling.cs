@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,37 +8,63 @@ public unsafe partial struct IADLXGPUAppsListChangedHandling
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXGPUAppsListChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXGPUAppsListChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXGPUAppsListChangedHandling* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _AddGPUAppsListEventListener(IADLXGPUAppsListChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUAppsListEventListener *")] IADLXGPUAppsListEventListener* pGPUAppsListEventListener);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _RemoveGPUAppsListEventListener(IADLXGPUAppsListChangedHandling* pThis, [NativeTypeName("adlx::IADLXGPUAppsListEventListener *")] IADLXGPUAppsListEventListener* pGPUAppsListEventListener);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUAppsListChangedHandling*, int>)(lpVtbl[0]))((IADLXGPUAppsListChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUAppsListChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUAppsListChangedHandling*, int>)(lpVtbl[1]))((IADLXGPUAppsListChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUAppsListChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUAppsListChangedHandling*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXGPUAppsListChangedHandling*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXGPUAppsListChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT AddGPUAppsListEventListener([NativeTypeName("adlx::IADLXGPUAppsListEventListener *")] IADLXGPUAppsListEventListener* pGPUAppsListEventListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUAppsListChangedHandling*, IADLXGPUAppsListEventListener*, ADLX_RESULT>)(lpVtbl[3]))((IADLXGPUAppsListChangedHandling*)Unsafe.AsPointer(ref this), pGPUAppsListEventListener);
+        fixed (IADLXGPUAppsListChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_AddGPUAppsListEventListener>((IntPtr)(lpVtbl[3]))(pThis, pGPUAppsListEventListener);
+        }
     }
 
     public ADLX_RESULT RemoveGPUAppsListEventListener([NativeTypeName("adlx::IADLXGPUAppsListEventListener *")] IADLXGPUAppsListEventListener* pGPUAppsListEventListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUAppsListChangedHandling*, IADLXGPUAppsListEventListener*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPUAppsListChangedHandling*)Unsafe.AsPointer(ref this), pGPUAppsListEventListener);
+        fixed (IADLXGPUAppsListChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_RemoveGPUAppsListEventListener>((IntPtr)(lpVtbl[4]))(pThis, pGPUAppsListEventListener);
+        }
     }
 }
 

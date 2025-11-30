@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,46 +8,84 @@ public unsafe partial struct IADLXAllMetrics
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXAllMetrics* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXAllMetrics* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXAllMetrics* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _TimeStamp(IADLXAllMetrics* pThis, [NativeTypeName("adlx_int64 *")] long* ms);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetSystemMetrics(IADLXAllMetrics* pThis, IADLXSystemMetrics** ppSystemMetrics);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetFPS(IADLXAllMetrics* pThis, IADLXFPS** ppFPS);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPUMetrics(IADLXAllMetrics* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetrics** ppGPUMetrics);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, int>)(lpVtbl[0]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this));
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, int>)(lpVtbl[1]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this));
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT TimeStamp([NativeTypeName("adlx_int64 *")] long* ms)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, long*, ADLX_RESULT>)(lpVtbl[3]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this), ms);
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_TimeStamp>((IntPtr)(lpVtbl[3]))(pThis, ms);
+        }
     }
 
     public ADLX_RESULT GetSystemMetrics(IADLXSystemMetrics** ppSystemMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, IADLXSystemMetrics**, ADLX_RESULT>)(lpVtbl[4]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this), ppSystemMetrics);
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetSystemMetrics>((IntPtr)(lpVtbl[4]))(pThis, ppSystemMetrics);
+        }
     }
 
     public ADLX_RESULT GetFPS(IADLXFPS** ppFPS)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, IADLXFPS**, ADLX_RESULT>)(lpVtbl[5]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this), ppFPS);
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetFPS>((IntPtr)(lpVtbl[5]))(pThis, ppFPS);
+        }
     }
 
     public ADLX_RESULT GetGPUMetrics([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pGPU, IADLXGPUMetrics** ppGPUMetrics)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXAllMetrics*, IADLXGPU*, IADLXGPUMetrics**, ADLX_RESULT>)(lpVtbl[6]))((IADLXAllMetrics*)Unsafe.AsPointer(ref this), pGPU, ppGPUMetrics);
+        fixed (IADLXAllMetrics* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPUMetrics>((IntPtr)(lpVtbl[6]))(pThis, pGPU, ppGPUMetrics);
+        }
     }
 }

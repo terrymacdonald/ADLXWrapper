@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,126 +8,257 @@ public unsafe partial struct IADLX3DSettingsChangedEvent2
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLX3DSettingsChangedEvent2* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_SYNC_ORIGIN _GetOrigin(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetGPU(IADLX3DSettingsChangedEvent2* pThis, IADLXGPU** ppGPU);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsAntiLagChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsChillChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsBoostChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsImageSharpeningChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsEnhancedSyncChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsWaitForVerticalRefreshChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsFrameRateTargetControlChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsAntiAliasingChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsMorphologicalAntiAliasingChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsAnisotropicFilteringChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsTessellationModeChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsRadeonSuperResolutionChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsResetShaderCache(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsAMDFluidMotionFramesChanged(IADLX3DSettingsChangedEvent2* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _IsImageSharpenDesktopChanged(IADLX3DSettingsChangedEvent2* pThis);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, int>)(lpVtbl[0]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, int>)(lpVtbl[1]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetOrigin>((IntPtr)(lpVtbl[3]))(pThis);
+        }
     }
 
     public ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, IADLXGPU**, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this), ppGPU);
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetGPU>((IntPtr)(lpVtbl[4]))(pThis, ppGPU);
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsAntiLagChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[5]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsAntiLagChanged>((IntPtr)(lpVtbl[5]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsChillChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[6]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsChillChanged>((IntPtr)(lpVtbl[6]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsBoostChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[7]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsBoostChanged>((IntPtr)(lpVtbl[7]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsImageSharpeningChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[8]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsImageSharpeningChanged>((IntPtr)(lpVtbl[8]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsEnhancedSyncChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[9]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnhancedSyncChanged>((IntPtr)(lpVtbl[9]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsWaitForVerticalRefreshChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[10]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsWaitForVerticalRefreshChanged>((IntPtr)(lpVtbl[10]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsFrameRateTargetControlChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[11]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsFrameRateTargetControlChanged>((IntPtr)(lpVtbl[11]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsAntiAliasingChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[12]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsAntiAliasingChanged>((IntPtr)(lpVtbl[12]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsMorphologicalAntiAliasingChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[13]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsMorphologicalAntiAliasingChanged>((IntPtr)(lpVtbl[13]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsAnisotropicFilteringChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[14]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsAnisotropicFilteringChanged>((IntPtr)(lpVtbl[14]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsTessellationModeChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[15]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsTessellationModeChanged>((IntPtr)(lpVtbl[15]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsRadeonSuperResolutionChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[16]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsRadeonSuperResolutionChanged>((IntPtr)(lpVtbl[16]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsResetShaderCache()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[17]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsResetShaderCache>((IntPtr)(lpVtbl[17]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsAMDFluidMotionFramesChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[18]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsAMDFluidMotionFramesChanged>((IntPtr)(lpVtbl[18]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsImageSharpenDesktopChanged()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DSettingsChangedEvent2*, byte>)(lpVtbl[19]))((IADLX3DSettingsChangedEvent2*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLX3DSettingsChangedEvent2* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsImageSharpenDesktopChanged>((IntPtr)(lpVtbl[19]))(pThis) != 0;
+        }
     }
 }

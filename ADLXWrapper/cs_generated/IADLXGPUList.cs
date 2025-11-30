@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,86 +8,158 @@ public unsafe partial struct IADLXGPUList
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXGPUList* pThis);
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* ITEM_IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXGPUList* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_uint")]
+    public delegate uint _Size(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_bool")]
+    public delegate byte _Empty(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_uint")]
+    public delegate uint _Begin(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_uint")]
+    public delegate uint _End(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _At(IADLXGPUList* pThis, [NativeTypeName("const adlx_uint")] uint location, IADLXInterface** ppItem);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Clear(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Remove_Back(IADLXGPUList* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Add_Back(IADLXGPUList* pThis, [NativeTypeName("adlx::IADLXInterface *")] IADLXInterface* pItem);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _At1(IADLXGPUList* pThis, [NativeTypeName("const adlx_uint")] uint location, IADLXGPU** ppItem);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _Add_Back1(IADLXGPUList* pThis, [NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pItem);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, int>)(lpVtbl[0]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, int>)(lpVtbl[1]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXGPUList*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     [return: NativeTypeName("adlx_uint")]
     public uint Size()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, uint>)(lpVtbl[3]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Size>((IntPtr)(lpVtbl[3]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool Empty()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, byte>)(lpVtbl[4]))((IADLXGPUList*)Unsafe.AsPointer(ref this)) != 0;
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Empty>((IntPtr)(lpVtbl[4]))(pThis) != 0;
+        }
     }
 
     [return: NativeTypeName("adlx_uint")]
     public uint Begin()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, uint>)(lpVtbl[5]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Begin>((IntPtr)(lpVtbl[5]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_uint")]
     public uint End()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, uint>)(lpVtbl[6]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_End>((IntPtr)(lpVtbl[6]))(pThis);
+        }
     }
 
     public ADLX_RESULT At([NativeTypeName("const adlx_uint")] uint location, IADLXInterface** ppItem)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, uint, IADLXInterface**, ADLX_RESULT>)(lpVtbl[7]))((IADLXGPUList*)Unsafe.AsPointer(ref this), location, ppItem);
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_At>((IntPtr)(lpVtbl[7]))(pThis, location, ppItem);
+        }
     }
 
     public ADLX_RESULT Clear()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, ADLX_RESULT>)(lpVtbl[8]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Clear>((IntPtr)(lpVtbl[8]))(pThis);
+        }
     }
 
     public ADLX_RESULT Remove_Back()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, ADLX_RESULT>)(lpVtbl[9]))((IADLXGPUList*)Unsafe.AsPointer(ref this));
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Remove_Back>((IntPtr)(lpVtbl[9]))(pThis);
+        }
     }
 
     public ADLX_RESULT Add_Back([NativeTypeName("adlx::IADLXInterface *")] IADLXInterface* pItem)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, IADLXInterface*, ADLX_RESULT>)(lpVtbl[10]))((IADLXGPUList*)Unsafe.AsPointer(ref this), pItem);
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Add_Back>((IntPtr)(lpVtbl[10]))(pThis, pItem);
+        }
     }
 
     public ADLX_RESULT At([NativeTypeName("const adlx_uint")] uint location, IADLXGPU** ppItem)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, uint, IADLXGPU**, ADLX_RESULT>)(lpVtbl[11]))((IADLXGPUList*)Unsafe.AsPointer(ref this), location, ppItem);
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_At1>((IntPtr)(lpVtbl[11]))(pThis, location, ppItem);
+        }
     }
 
     public ADLX_RESULT Add_Back([NativeTypeName("adlx::IADLXGPU *")] IADLXGPU* pItem)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXGPUList*, IADLXGPU*, ADLX_RESULT>)(lpVtbl[12]))((IADLXGPUList*)Unsafe.AsPointer(ref this), pItem);
+        fixed (IADLXGPUList* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Add_Back1>((IntPtr)(lpVtbl[12]))(pThis, pItem);
+        }
     }
 }

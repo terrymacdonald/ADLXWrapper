@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,51 +8,95 @@ public unsafe partial struct IADLX3DTessellation
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLX3DTessellation* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLX3DTessellation* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLX3DTessellation* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLX3DTessellation* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetMode(IADLX3DTessellation* pThis, ADLX_TESSELLATION_MODE* currentMode);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetLevel(IADLX3DTessellation* pThis, ADLX_TESSELLATION_LEVEL* currentLevel);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetMode(IADLX3DTessellation* pThis, ADLX_TESSELLATION_MODE mode);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetLevel(IADLX3DTessellation* pThis, ADLX_TESSELLATION_LEVEL level);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, int>)(lpVtbl[0]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, int>)(lpVtbl[1]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this));
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT GetMode(ADLX_TESSELLATION_MODE* currentMode)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_MODE*, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), currentMode);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetMode>((IntPtr)(lpVtbl[4]))(pThis, currentMode);
+        }
     }
 
     public ADLX_RESULT GetLevel(ADLX_TESSELLATION_LEVEL* currentLevel)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_LEVEL*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), currentLevel);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetLevel>((IntPtr)(lpVtbl[5]))(pThis, currentLevel);
+        }
     }
 
     public ADLX_RESULT SetMode(ADLX_TESSELLATION_MODE mode)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_MODE, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), mode);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetMode>((IntPtr)(lpVtbl[6]))(pThis, mode);
+        }
     }
 
     public ADLX_RESULT SetLevel(ADLX_TESSELLATION_LEVEL level)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_LEVEL, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), level);
+        fixed (IADLX3DTessellation* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetLevel>((IntPtr)(lpVtbl[7]))(pThis, level);
+        }
     }
 }

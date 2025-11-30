@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,36 +8,62 @@ public unsafe partial struct IADLXDisplayResolution
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayResolution* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetValue(IADLXDisplayResolution* pThis, ADLX_CustomResolution* customResolution);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetValue(IADLXDisplayResolution* pThis, ADLX_CustomResolution customResolution);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayResolution*, int>)(lpVtbl[0]))((IADLXDisplayResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayResolution*, int>)(lpVtbl[1]))((IADLXDisplayResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayResolution*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayResolution*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GetValue(ADLX_CustomResolution* customResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayResolution*, ADLX_CustomResolution*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayResolution*)Unsafe.AsPointer(ref this), customResolution);
+        fixed (IADLXDisplayResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetValue>((IntPtr)(lpVtbl[3]))(pThis, customResolution);
+        }
     }
 
     public ADLX_RESULT SetValue(ADLX_CustomResolution customResolution)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayResolution*, ADLX_CustomResolution, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayResolution*)Unsafe.AsPointer(ref this), customResolution);
+        fixed (IADLXDisplayResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetValue>((IntPtr)(lpVtbl[4]))(pThis, customResolution);
+        }
     }
 }

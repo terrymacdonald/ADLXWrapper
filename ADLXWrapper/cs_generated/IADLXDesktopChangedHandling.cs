@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,36 +8,62 @@ public unsafe partial struct IADLXDesktopChangedHandling
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDesktopChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDesktopChangedHandling* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDesktopChangedHandling* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _AddDesktopListEventListener(IADLXDesktopChangedHandling* pThis, [NativeTypeName("adlx::IADLXDesktopListChangedListener *")] IADLXDesktopListChangedListener* pDesktopListChangedListener);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _RemoveDesktopListEventListener(IADLXDesktopChangedHandling* pThis, [NativeTypeName("adlx::IADLXDesktopListChangedListener *")] IADLXDesktopListChangedListener* pDesktopListChangedListener);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDesktopChangedHandling*, int>)(lpVtbl[0]))((IADLXDesktopChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDesktopChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDesktopChangedHandling*, int>)(lpVtbl[1]))((IADLXDesktopChangedHandling*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDesktopChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDesktopChangedHandling*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDesktopChangedHandling*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDesktopChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT AddDesktopListEventListener([NativeTypeName("adlx::IADLXDesktopListChangedListener *")] IADLXDesktopListChangedListener* pDesktopListChangedListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDesktopChangedHandling*, IADLXDesktopListChangedListener*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDesktopChangedHandling*)Unsafe.AsPointer(ref this), pDesktopListChangedListener);
+        fixed (IADLXDesktopChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_AddDesktopListEventListener>((IntPtr)(lpVtbl[3]))(pThis, pDesktopListChangedListener);
+        }
     }
 
     public ADLX_RESULT RemoveDesktopListEventListener([NativeTypeName("adlx::IADLXDesktopListChangedListener *")] IADLXDesktopListChangedListener* pDesktopListChangedListener)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDesktopChangedHandling*, IADLXDesktopListChangedListener*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDesktopChangedHandling*)Unsafe.AsPointer(ref this), pDesktopListChangedListener);
+        fixed (IADLXDesktopChangedHandling* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_RemoveDesktopListEventListener>((IntPtr)(lpVtbl[4]))(pThis, pDesktopListChangedListener);
+        }
     }
 }

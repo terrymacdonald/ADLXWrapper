@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -11,91 +12,183 @@ public unsafe partial struct IADLXDisplayVariBright
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayVariBright* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool")] byte enabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsCurrentMaximizeBrightness(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* maximizeBrightness);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsCurrentOptimizeBrightness(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* optimizeBrightness);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsCurrentBalanced(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* balanced);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsCurrentOptimizeBattery(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* optimizeBattery);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsCurrentMaximizeBattery(IADLXDisplayVariBright* pThis, [NativeTypeName("adlx_bool *")] bool* maximizeBattery);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetMaximizeBrightness(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetOptimizeBrightness(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetBalanced(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetOptimizeBattery(IADLXDisplayVariBright* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetMaximizeBattery(IADLXDisplayVariBright* pThis);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, int>)(lpVtbl[0]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, int>)(lpVtbl[1]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), enabled);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enabled);
+        }
     }
 
     public ADLX_RESULT IsCurrentMaximizeBrightness([NativeTypeName("adlx_bool *")] bool* maximizeBrightness)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), maximizeBrightness);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsCurrentMaximizeBrightness>((IntPtr)(lpVtbl[6]))(pThis, maximizeBrightness);
+        }
     }
 
     public ADLX_RESULT IsCurrentOptimizeBrightness([NativeTypeName("adlx_bool *")] bool* optimizeBrightness)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), optimizeBrightness);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsCurrentOptimizeBrightness>((IntPtr)(lpVtbl[7]))(pThis, optimizeBrightness);
+        }
     }
 
     public ADLX_RESULT IsCurrentBalanced([NativeTypeName("adlx_bool *")] bool* balanced)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[8]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), balanced);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsCurrentBalanced>((IntPtr)(lpVtbl[8]))(pThis, balanced);
+        }
     }
 
     public ADLX_RESULT IsCurrentOptimizeBattery([NativeTypeName("adlx_bool *")] bool* optimizeBattery)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[9]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), optimizeBattery);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsCurrentOptimizeBattery>((IntPtr)(lpVtbl[9]))(pThis, optimizeBattery);
+        }
     }
 
     public ADLX_RESULT IsCurrentMaximizeBattery([NativeTypeName("adlx_bool *")] bool* maximizeBattery)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, bool*, ADLX_RESULT>)(lpVtbl[10]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this), maximizeBattery);
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsCurrentMaximizeBattery>((IntPtr)(lpVtbl[10]))(pThis, maximizeBattery);
+        }
     }
 
     public ADLX_RESULT SetMaximizeBrightness()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ADLX_RESULT>)(lpVtbl[11]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetMaximizeBrightness>((IntPtr)(lpVtbl[11]))(pThis);
+        }
     }
 
     public ADLX_RESULT SetOptimizeBrightness()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ADLX_RESULT>)(lpVtbl[12]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetOptimizeBrightness>((IntPtr)(lpVtbl[12]))(pThis);
+        }
     }
 
     public ADLX_RESULT SetBalanced()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ADLX_RESULT>)(lpVtbl[13]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetBalanced>((IntPtr)(lpVtbl[13]))(pThis);
+        }
     }
 
     public ADLX_RESULT SetOptimizeBattery()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ADLX_RESULT>)(lpVtbl[14]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetOptimizeBattery>((IntPtr)(lpVtbl[14]))(pThis);
+        }
     }
 
     public ADLX_RESULT SetMaximizeBattery()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXDisplayVariBright*, ADLX_RESULT>)(lpVtbl[15]))((IADLXDisplayVariBright*)Unsafe.AsPointer(ref this));
+        fixed (IADLXDisplayVariBright* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetMaximizeBattery>((IntPtr)(lpVtbl[15]))(pThis);
+        }
     }
 }

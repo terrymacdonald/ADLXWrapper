@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,41 +8,73 @@ public unsafe partial struct IADLXVideoSuperResolution
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXVideoSuperResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXVideoSuperResolution* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXVideoSuperResolution* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsSupported(IADLXVideoSuperResolution* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _IsEnabled(IADLXVideoSuperResolution* pThis, [NativeTypeName("adlx_bool *")] bool* isEnabled);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _SetEnabled(IADLXVideoSuperResolution* pThis, [NativeTypeName("adlx_bool")] byte enable);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, int>)(lpVtbl[0]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, int>)(lpVtbl[1]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this));
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this), supported);
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
+        }
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* isEnabled)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this), isEnabled);
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, isEnabled);
+        }
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enable)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXVideoSuperResolution*)Unsafe.AsPointer(ref this), enable);
+        fixed (IADLXVideoSuperResolution* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enable);
+        }
     }
 }

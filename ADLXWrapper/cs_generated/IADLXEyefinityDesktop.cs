@@ -1,4 +1,5 @@
-using System.Runtime.CompilerServices;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ADLXWrapper;
 
@@ -7,51 +8,95 @@ public unsafe partial struct IADLXEyefinityDesktop
 {
     public void** lpVtbl;
 
-    [return: NativeTypeName("const wchar_t *")]
-    public static ushort* IID()
-    {
-        return "IADLXInterface";
-    }
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Acquire(IADLXEyefinityDesktop* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    [return: NativeTypeName("adlx_long")]
+    public delegate int _Release(IADLXEyefinityDesktop* pThis);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _QueryInterface(IADLXEyefinityDesktop* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GridSize(IADLXEyefinityDesktop* pThis, [NativeTypeName("adlx_uint *")] uint* rows, [NativeTypeName("adlx_uint *")] uint* cols);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _GetDisplay(IADLXEyefinityDesktop* pThis, [NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, IADLXDisplay** ppDisplay);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _DisplayOrientation(IADLXEyefinityDesktop* pThis, [NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, ADLX_ORIENTATION* displayOrientation);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _DisplaySize(IADLXEyefinityDesktop* pThis, [NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, [NativeTypeName("adlx_int *")] int* displayWidth, [NativeTypeName("adlx_int *")] int* displayHeight);
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+    public delegate ADLX_RESULT _DisplayTopLeft(IADLXEyefinityDesktop* pThis, [NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, ADLX_Point* displayLocationTopLeft);
 
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, int>)(lpVtbl[0]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this));
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
+        }
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, int>)(lpVtbl[1]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this));
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
+        }
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
+        }
     }
 
     public ADLX_RESULT GridSize([NativeTypeName("adlx_uint *")] uint* rows, [NativeTypeName("adlx_uint *")] uint* cols)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint*, uint*, ADLX_RESULT>)(lpVtbl[3]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), rows, cols);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GridSize>((IntPtr)(lpVtbl[3]))(pThis, rows, cols);
+        }
     }
 
     public ADLX_RESULT GetDisplay([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, IADLXDisplay** ppDisplay)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint, uint, IADLXDisplay**, ADLX_RESULT>)(lpVtbl[4]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), row, col, ppDisplay);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_GetDisplay>((IntPtr)(lpVtbl[4]))(pThis, row, col, ppDisplay);
+        }
     }
 
     public ADLX_RESULT DisplayOrientation([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, ADLX_ORIENTATION* displayOrientation)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint, uint, ADLX_ORIENTATION*, ADLX_RESULT>)(lpVtbl[5]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), row, col, displayOrientation);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_DisplayOrientation>((IntPtr)(lpVtbl[5]))(pThis, row, col, displayOrientation);
+        }
     }
 
     public ADLX_RESULT DisplaySize([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, [NativeTypeName("adlx_int *")] int* displayWidth, [NativeTypeName("adlx_int *")] int* displayHeight)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint, uint, int*, int*, ADLX_RESULT>)(lpVtbl[6]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), row, col, displayWidth, displayHeight);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_DisplaySize>((IntPtr)(lpVtbl[6]))(pThis, row, col, displayWidth, displayHeight);
+        }
     }
 
     public ADLX_RESULT DisplayTopLeft([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, ADLX_Point* displayLocationTopLeft)
     {
-        return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint, uint, ADLX_Point*, ADLX_RESULT>)(lpVtbl[7]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), row, col, displayLocationTopLeft);
+        fixed (IADLXEyefinityDesktop* pThis = &this)
+        {
+            return Marshal.GetDelegateForFunctionPointer<_DisplayTopLeft>((IntPtr)(lpVtbl[7]))(pThis, row, col, displayLocationTopLeft);
+        }
     }
 }
