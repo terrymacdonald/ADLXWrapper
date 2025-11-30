@@ -15,7 +15,7 @@ Write-Host "Working directory: $scriptRoot" -ForegroundColor Cyan
 Write-Host ""
 
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "ADLXWrapper Build Script (ClangSharp Implementation)" -ForegroundColor Cyan
+Write-Host "ADLXWrapper Rebuild Script (ClangSharp Implementation)" -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -167,10 +167,10 @@ try {
 }
 
 # ============================================================================
-# Build the solution
+# Rebuild the solution
 # ============================================================================
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "Building ADLXWrapper solution..." -ForegroundColor Cyan
+Write-Host "Rebuilding ADLXWrapper solution..." -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -178,15 +178,15 @@ try {
     & dotnet build $solutionPath --configuration Debug --no-restore /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version
     
     if ($LASTEXITCODE -ne 0) {
-        throw "Build failed with exit code $LASTEXITCODE"
+        throw "Rebuild failed with exit code $LASTEXITCODE"
     }
     
     Write-Host ""
-    Write-Host "Build completed successfully!" -ForegroundColor Green
+    Write-Host "Rebuild completed successfully!" -ForegroundColor Green
     Write-Host ""
 } catch {
     Write-Host ""
-    Write-Host "ERROR: Build failed!" -ForegroundColor Red
+    Write-Host "ERROR: Rebuild failed!" -ForegroundColor Red
     Write-Host "Error: $_" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "Troubleshooting:" -ForegroundColor Yellow
@@ -202,7 +202,7 @@ try {
 # Success summary
 # ============================================================================
 Write-Host "============================================================================" -ForegroundColor Green
-Write-Host "*** BUILD SUCCESSFUL! ***" -ForegroundColor Green
+Write-Host "*** REBUILD SUCCESSFUL! ***" -ForegroundColor Green
 Write-Host "============================================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "Projects built:" -ForegroundColor Cyan
