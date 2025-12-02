@@ -81,7 +81,7 @@ try {
     Write-Host ""
     Write-Host "ERROR: dotnet CLI not found in PATH" -ForegroundColor Red
     Write-Host ""
-    Write-Host "Please ensure .NET 9.0 SDK is installed" -ForegroundColor Yellow
+    Write-Host "Please ensure .NET 10.0 SDK is installed" -ForegroundColor Yellow
     Write-Host "Download from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
     Write-Host ""
     Read-Host "Press Enter to exit"
@@ -91,7 +91,7 @@ try {
 # ============================================================================
 # Check .NET 9.0 SDK availability
 # ============================================================================
-Write-Host "Checking for .NET 9.0 SDK..." -ForegroundColor Yellow
+Write-Host "Checking for .NET 10.0 SDK..." -ForegroundColor Yellow
 
 try {
     $sdks = & dotnet --list-sdks 2>&1
@@ -146,14 +146,14 @@ Write-Host ""
 
 try {
     # Run tests with detailed console output
-    & dotnet test $testProjectPath --configuration Debug --framework net9.0 --verbosity normal
+    & dotnet test $testProjectPath --configuration Debug --verbosity normal
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""
         Write-Host "============================================================================" -ForegroundColor Green
         Write-Host "*** ALL TESTS PASSED! ***" -ForegroundColor Green
         Write-Host "============================================================================" -ForegroundColor Green
-        Write-Host "All unit tests completed successfully using .NET 9.0" -ForegroundColor Green
+        Write-Host "All unit tests completed successfully using .NET 10.0" -ForegroundColor Green
         Write-Host ""
     } else {
         Write-Host ""
@@ -168,20 +168,10 @@ try {
         Write-Host "  - Verify AMD Adrenalin drivers are installed (21.10.1 or newer)" -ForegroundColor Gray
         Write-Host "  - Review test output above for specific failure details" -ForegroundColor Gray
         Write-Host ""
-        
-        # Show summary of test categories
-        Write-Host "Test suite includes:" -ForegroundColor Cyan
-        Write-Host "  - BasicApiTests: Initialization and version queries" -ForegroundColor Gray
-        Write-Host "  - CoreApiTests: GPU enumeration and properties" -ForegroundColor Gray
-        Write-Host "  - DisplayServicesTests: Display enumeration" -ForegroundColor Gray
-        Write-Host "  - GpuTuningServicesTests: Tuning capability detection" -ForegroundColor Gray
-        Write-Host "  - PerformanceMonitoringServicesTests: Metrics and monitoring" -ForegroundColor Gray
-        Write-Host "  - ArchitectureValidationTests: ClangSharp pattern validation" -ForegroundColor Gray
-        Write-Host ""
         Write-Host "Tests automatically skip if hardware/drivers don't support them." -ForegroundColor Cyan
         Write-Host ""
         
-        Read-Host "Press Enter to exit"
+        Read-Host "Press Enter to exit..."
         exit 1
     }
 } catch {
@@ -189,9 +179,7 @@ try {
     Write-Host "ERROR: Failed to run unit tests!" -ForegroundColor Red
     Write-Host "Error: $_" -ForegroundColor Yellow
     Write-Host ""
-    Read-Host "Press Enter to exit"
+    Read-Host "Press Enter to exit..."
     exit 1
 }
-
-Write-Host "Press Enter to exit..."
-Read-Host
+Read-Host "Press Enter to exit..."

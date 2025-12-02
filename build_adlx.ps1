@@ -92,7 +92,7 @@ try {
     Write-Host "ERROR: dotnet CLI not found in PATH" -ForegroundColor Red
     Write-Host ""
     Write-Host "Please ensure .NET 10.0 SDK is installed" -ForegroundColor Yellow
-    Write-Host "Download from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
+    Write-Host "Download from: https://dotnet.microsoft.com/download/dotnet/10.0" -ForegroundColor Cyan
     Write-Host ""
     Read-Host "Press Enter to exit"
     exit 1
