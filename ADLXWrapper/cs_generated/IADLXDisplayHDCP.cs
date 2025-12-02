@@ -1,84 +1,41 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
-
-public partial struct IADLXDisplayHDCP
-{
-}
 
 [NativeTypeName("struct IADLXDisplayHDCP : adlx::IADLXInterface")]
 public unsafe partial struct IADLXDisplayHDCP
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXDisplayHDCP* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXDisplayHDCP* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayHDCP* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsSupported(IADLXDisplayHDCP* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsEnabled(IADLXDisplayHDCP* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetEnabled(IADLXDisplayHDCP* pThis, [NativeTypeName("adlx_bool")] byte enabled);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, int>)(lpVtbl[0]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, int>)(lpVtbl[1]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this), enabled);
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enabled)
     {
-        fixed (IADLXDisplayHDCP* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enabled);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayHDCP*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayHDCP*)Unsafe.AsPointer(ref this), enabled);
     }
 }

@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,51 +7,25 @@ public unsafe partial struct IADLXChangedEvent
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXChangedEvent* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXChangedEvent* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXChangedEvent* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_SYNC_ORIGIN _GetOrigin(IADLXChangedEvent* pThis);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXChangedEvent*, int>)(lpVtbl[0]))((IADLXChangedEvent*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXChangedEvent*, int>)(lpVtbl[1]))((IADLXChangedEvent*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXChangedEvent*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXChangedEvent*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
-        fixed (IADLXChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetOrigin>((IntPtr)(lpVtbl[3]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXChangedEvent*)Unsafe.AsPointer(ref this));
     }
 }

@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,64 +7,31 @@ public unsafe partial struct IADLXPowerTuningChangedEvent
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXPowerTuningChangedEvent* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXPowerTuningChangedEvent* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXPowerTuningChangedEvent* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_SYNC_ORIGIN _GetOrigin(IADLXPowerTuningChangedEvent* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_bool")]
-    public delegate byte _IsSmartShiftMaxChanged(IADLXPowerTuningChangedEvent* pThis);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXPowerTuningChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, int>)(lpVtbl[0]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXPowerTuningChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, int>)(lpVtbl[1]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXPowerTuningChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
-        fixed (IADLXPowerTuningChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetOrigin>((IntPtr)(lpVtbl[3]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_bool")]
     public bool IsSmartShiftMaxChanged()
     {
-        fixed (IADLXPowerTuningChangedEvent* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsSmartShiftMaxChanged>((IntPtr)(lpVtbl[4]))(pThis) != 0;
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, byte>)(lpVtbl[4]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this)) != 0;
     }
 }

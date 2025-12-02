@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,84 +7,40 @@ public unsafe partial struct IADLXApplication
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXApplication* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXApplication* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXApplication* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _ProcessID(IADLXApplication* pThis, [NativeTypeName("adlx_ulong *")] uint* pid);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _Name(IADLXApplication* pThis, [NativeTypeName("const wchar_t **")] ushort** ppAppName);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _FullPath(IADLXApplication* pThis, [NativeTypeName("const wchar_t **")] ushort** ppAppPath);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GPUDependencyType(IADLXApplication* pThis, ADLX_APP_GPU_DEPENDENCY* gpuDependency);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, int>)(lpVtbl[0]))((IADLXApplication*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, int>)(lpVtbl[1]))((IADLXApplication*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXApplication*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT ProcessID([NativeTypeName("adlx_ulong *")] uint* pid)
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_ProcessID>((IntPtr)(lpVtbl[3]))(pThis, pid);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, uint*, ADLX_RESULT>)(lpVtbl[3]))((IADLXApplication*)Unsafe.AsPointer(ref this), pid);
     }
 
     public ADLX_RESULT Name([NativeTypeName("const wchar_t **")] ushort** ppAppName)
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Name>((IntPtr)(lpVtbl[4]))(pThis, ppAppName);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, ushort**, ADLX_RESULT>)(lpVtbl[4]))((IADLXApplication*)Unsafe.AsPointer(ref this), ppAppName);
     }
 
     public ADLX_RESULT FullPath([NativeTypeName("const wchar_t **")] ushort** ppAppPath)
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_FullPath>((IntPtr)(lpVtbl[5]))(pThis, ppAppPath);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, ushort**, ADLX_RESULT>)(lpVtbl[5]))((IADLXApplication*)Unsafe.AsPointer(ref this), ppAppPath);
     }
 
     public ADLX_RESULT GPUDependencyType(ADLX_APP_GPU_DEPENDENCY* gpuDependency)
     {
-        fixed (IADLXApplication* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GPUDependencyType>((IntPtr)(lpVtbl[6]))(pThis, gpuDependency);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXApplication*, ADLX_APP_GPU_DEPENDENCY*, ADLX_RESULT>)(lpVtbl[6]))((IADLXApplication*)Unsafe.AsPointer(ref this), gpuDependency);
     }
 }

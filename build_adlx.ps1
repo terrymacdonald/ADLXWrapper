@@ -91,7 +91,7 @@ try {
     Write-Host ""
     Write-Host "ERROR: dotnet CLI not found in PATH" -ForegroundColor Red
     Write-Host ""
-    Write-Host "Please ensure .NET 9.0 SDK is installed" -ForegroundColor Yellow
+    Write-Host "Please ensure .NET 10.0 SDK is installed" -ForegroundColor Yellow
     Write-Host "Download from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
     Write-Host ""
     Read-Host "Press Enter to exit"
@@ -101,24 +101,24 @@ try {
 # ============================================================================
 # Check .NET 9.0 SDK availability
 # ============================================================================
-Write-Host "Checking for .NET 9.0 SDK..." -ForegroundColor Yellow
+Write-Host "Checking for .NET 10.0 SDK..." -ForegroundColor Yellow
 
 try {
     $sdks = & dotnet --list-sdks 2>&1
-    $net9Sdk = $sdks | Where-Object { $_ -match "9\.0\." }
+    $net9Sdk = $sdks | Where-Object { $_ -match "10\.0\." }
     
     if ($net9Sdk) {
-        Write-Host ".NET 9.0 SDK found:" -ForegroundColor Green
+        Write-Host ".NET 10.0 SDK found:" -ForegroundColor Green
         $net9Sdk | ForEach-Object { Write-Host "  $_" -ForegroundColor Green }
         Write-Host ""
     } else {
         Write-Host ""
-        Write-Host "ERROR: .NET 9.0 SDK not found" -ForegroundColor Red
+        Write-Host "ERROR: .NET 10.0 SDK not found" -ForegroundColor Red
         Write-Host ""
         Write-Host "Available SDKs:" -ForegroundColor Yellow
         $sdks | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
         Write-Host ""
-        Write-Host "Please install .NET 9.0 SDK from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
+        Write-Host "Please install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0" -ForegroundColor Cyan
         Write-Host ""
         Read-Host "Press Enter to exit"
         exit 1
@@ -167,6 +167,39 @@ try {
 }
 
 # ============================================================================
+# Clean the solution
+# ============================================================================
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host "Cleaning ADLXWrapper solution..." -ForegroundColor Cyan
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host ""
+
+try {
+    Write-Host "dotnet clean $solutionPath --configuration Debug  /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version"
+    dotnet clean $solutionPath --configuration Debug  /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version
+    
+    if ($LASTEXITCODE -ne 0) {
+        throw "Clean failed with exit code $LASTEXITCODE"
+    }
+    
+    Write-Host ""
+    Write-Host "Clean completed successfully!" -ForegroundColor Green
+    Write-Host ""
+} catch {
+    Write-Host ""
+    Write-Host "ERROR: Clean failed!" -ForegroundColor Red
+    Write-Host "Error: $_" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "Troubleshooting:" -ForegroundColor Yellow
+    Write-Host "  - Ensure all NuGet packages are restored" -ForegroundColor Gray
+    Write-Host "  - Verify .NET 10.0 SDK is installed" -ForegroundColor Gray
+    Write-Host "  - Check project files for errors" -ForegroundColor Gray
+    Write-Host ""
+    Read-Host "Press Enter to exit"
+    exit 1
+}
+
+# ============================================================================
 # Rebuild the solution
 # ============================================================================
 Write-Host "============================================================================" -ForegroundColor Cyan
@@ -175,7 +208,8 @@ Write-Host "====================================================================
 Write-Host ""
 
 try {
-    & dotnet build $solutionPath --configuration Debug --no-restore /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version
+    Write-Host "dotnet build $solutionPath --configuration Debug --no-restore /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version"
+    dotnet build $solutionPath --configuration Debug --no-restore /p:Version=$version /p:AssemblyVersion=$version /p:FileVersion=$version
     
     if ($LASTEXITCODE -ne 0) {
         throw "Rebuild failed with exit code $LASTEXITCODE"
@@ -191,7 +225,7 @@ try {
     Write-Host ""
     Write-Host "Troubleshooting:" -ForegroundColor Yellow
     Write-Host "  - Ensure all NuGet packages are restored" -ForegroundColor Gray
-    Write-Host "  - Verify .NET 9.0 SDK is installed" -ForegroundColor Gray
+    Write-Host "  - Verify .NET 10.0 SDK is installed" -ForegroundColor Gray
     Write-Host "  - Check project files for errors" -ForegroundColor Gray
     Write-Host ""
     Read-Host "Press Enter to exit"

@@ -1,271 +1,126 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
-
-public partial struct IADLXDisplayCustomColor
-{
-}
 
 [NativeTypeName("struct IADLXDisplayCustomColor : adlx::IADLXInterface")]
 public unsafe partial struct IADLXDisplayCustomColor
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXDisplayCustomColor* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXDisplayCustomColor* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayCustomColor* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsHueSupported(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetHueRange(IADLXDisplayCustomColor* pThis, ADLX_IntRange* range);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetHue(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int *")] int* currentHue);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetHue(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int")] int hue);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsSaturationSupported(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetSaturationRange(IADLXDisplayCustomColor* pThis, ADLX_IntRange* range);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetSaturation(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int *")] int* currentSaturation);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetSaturation(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int")] int saturation);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsBrightnessSupported(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetBrightnessRange(IADLXDisplayCustomColor* pThis, ADLX_IntRange* range);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetBrightness(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int *")] int* currentBrightness);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetBrightness(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int")] int brightness);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsContrastSupported(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetContrastRange(IADLXDisplayCustomColor* pThis, ADLX_IntRange* range);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetContrast(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int *")] int* currentContrast);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetContrast(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int")] int contrast);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsTemperatureSupported(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetTemperatureRange(IADLXDisplayCustomColor* pThis, ADLX_IntRange* range);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetTemperature(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int *")] int* currentTemperature);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetTemperature(IADLXDisplayCustomColor* pThis, [NativeTypeName("adlx_int")] int temperature);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int>)(lpVtbl[0]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int>)(lpVtbl[1]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT IsHueSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsHueSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT GetHueRange(ADLX_IntRange* range)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetHueRange>((IntPtr)(lpVtbl[4]))(pThis, range);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), range);
     }
 
     public ADLX_RESULT GetHue([NativeTypeName("adlx_int *")] int* currentHue)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetHue>((IntPtr)(lpVtbl[5]))(pThis, currentHue);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int*, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), currentHue);
     }
 
     public ADLX_RESULT SetHue([NativeTypeName("adlx_int")] int hue)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetHue>((IntPtr)(lpVtbl[6]))(pThis, hue);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), hue);
     }
 
     public ADLX_RESULT IsSaturationSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsSaturationSupported>((IntPtr)(lpVtbl[7]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, bool*, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT GetSaturationRange(ADLX_IntRange* range)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetSaturationRange>((IntPtr)(lpVtbl[8]))(pThis, range);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[8]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), range);
     }
 
     public ADLX_RESULT GetSaturation([NativeTypeName("adlx_int *")] int* currentSaturation)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetSaturation>((IntPtr)(lpVtbl[9]))(pThis, currentSaturation);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int*, ADLX_RESULT>)(lpVtbl[9]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), currentSaturation);
     }
 
     public ADLX_RESULT SetSaturation([NativeTypeName("adlx_int")] int saturation)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetSaturation>((IntPtr)(lpVtbl[10]))(pThis, saturation);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int, ADLX_RESULT>)(lpVtbl[10]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), saturation);
     }
 
     public ADLX_RESULT IsBrightnessSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsBrightnessSupported>((IntPtr)(lpVtbl[11]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, bool*, ADLX_RESULT>)(lpVtbl[11]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT GetBrightnessRange(ADLX_IntRange* range)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetBrightnessRange>((IntPtr)(lpVtbl[12]))(pThis, range);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[12]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), range);
     }
 
     public ADLX_RESULT GetBrightness([NativeTypeName("adlx_int *")] int* currentBrightness)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetBrightness>((IntPtr)(lpVtbl[13]))(pThis, currentBrightness);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int*, ADLX_RESULT>)(lpVtbl[13]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), currentBrightness);
     }
 
     public ADLX_RESULT SetBrightness([NativeTypeName("adlx_int")] int brightness)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetBrightness>((IntPtr)(lpVtbl[14]))(pThis, brightness);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int, ADLX_RESULT>)(lpVtbl[14]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), brightness);
     }
 
     public ADLX_RESULT IsContrastSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsContrastSupported>((IntPtr)(lpVtbl[15]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, bool*, ADLX_RESULT>)(lpVtbl[15]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT GetContrastRange(ADLX_IntRange* range)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetContrastRange>((IntPtr)(lpVtbl[16]))(pThis, range);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[16]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), range);
     }
 
     public ADLX_RESULT GetContrast([NativeTypeName("adlx_int *")] int* currentContrast)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetContrast>((IntPtr)(lpVtbl[17]))(pThis, currentContrast);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int*, ADLX_RESULT>)(lpVtbl[17]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), currentContrast);
     }
 
     public ADLX_RESULT SetContrast([NativeTypeName("adlx_int")] int contrast)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetContrast>((IntPtr)(lpVtbl[18]))(pThis, contrast);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int, ADLX_RESULT>)(lpVtbl[18]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), contrast);
     }
 
     public ADLX_RESULT IsTemperatureSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsTemperatureSupported>((IntPtr)(lpVtbl[19]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, bool*, ADLX_RESULT>)(lpVtbl[19]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT GetTemperatureRange(ADLX_IntRange* range)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetTemperatureRange>((IntPtr)(lpVtbl[20]))(pThis, range);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, ADLX_IntRange*, ADLX_RESULT>)(lpVtbl[20]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), range);
     }
 
     public ADLX_RESULT GetTemperature([NativeTypeName("adlx_int *")] int* currentTemperature)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetTemperature>((IntPtr)(lpVtbl[21]))(pThis, currentTemperature);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int*, ADLX_RESULT>)(lpVtbl[21]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), currentTemperature);
     }
 
     public ADLX_RESULT SetTemperature([NativeTypeName("adlx_int")] int temperature)
     {
-        fixed (IADLXDisplayCustomColor* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetTemperature>((IntPtr)(lpVtbl[22]))(pThis, temperature);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayCustomColor*, int, ADLX_RESULT>)(lpVtbl[22]))((IADLXDisplayCustomColor*)Unsafe.AsPointer(ref this), temperature);
     }
 }

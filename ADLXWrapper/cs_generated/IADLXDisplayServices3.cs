@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,271 +7,125 @@ public unsafe partial struct IADLXDisplayServices3
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXDisplayServices3* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXDisplayServices3* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXDisplayServices3* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetNumberOfDisplays(IADLXDisplayServices3* pThis, [NativeTypeName("adlx_uint *")] uint* numDisplays);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDisplays(IADLXDisplayServices3* pThis, IADLXDisplayList** ppDisplay);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _Get3DLUT(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplay3DLUT** ppDisp3DLUT);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetGamut(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGamut** ppDispGamut);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetGamma(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDisplayChangedHandling(IADLXDisplayServices3* pThis, IADLXDisplayChangedHandling** ppDisplayChangedHandling);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetFreeSync(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayFreeSync** ppFreeSync);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetVirtualSuperResolution(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayVSR** ppVSR);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetGPUScaling(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGPUScaling** ppGPUScaling);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetScalingMode(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayScalingMode** ppScalingMode);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetIntegerScaling(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayIntegerScaling** ppIntegerScaling);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetColorDepth(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayColorDepth** ppColorDepth);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetPixelFormat(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayPixelFormat** ppPixelFormat);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetCustomColor(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayCustomColor** ppCustomColor);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetHDCP(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayHDCP** ppHDCP);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetCustomResolution(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayCustomResolution** ppCustomResolution);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetVariBright(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDisplayBlanking(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDisplayConnectivityExperience(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDynamicRefreshRateControl(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayDynamicRefreshRateControl** ppDRRC);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetFreeSyncColorAccuracy(IADLXDisplayServices3* pThis, [NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayFreeSyncColorAccuracy** ppFSCA);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, int>)(lpVtbl[0]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, int>)(lpVtbl[1]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT GetNumberOfDisplays([NativeTypeName("adlx_uint *")] uint* numDisplays)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetNumberOfDisplays>((IntPtr)(lpVtbl[3]))(pThis, numDisplays);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, uint*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), numDisplays);
     }
 
     public ADLX_RESULT GetDisplays(IADLXDisplayList** ppDisplay)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplays>((IntPtr)(lpVtbl[4]))(pThis, ppDisplay);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplayList**, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), ppDisplay);
     }
 
     public ADLX_RESULT Get3DLUT([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplay3DLUT** ppDisp3DLUT)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Get3DLUT>((IntPtr)(lpVtbl[5]))(pThis, pDisplay, ppDisp3DLUT);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplay3DLUT**, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDisp3DLUT);
     }
 
     public ADLX_RESULT GetGamut([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGamut** ppDispGamut)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetGamut>((IntPtr)(lpVtbl[6]))(pThis, pDisplay, ppDispGamut);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayGamut**, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDispGamut);
     }
 
     public ADLX_RESULT GetGamma([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetGamma>((IntPtr)(lpVtbl[7]))(pThis, pDisplay, ppDispGamma);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayGamma**, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDispGamma);
     }
 
     public ADLX_RESULT GetDisplayChangedHandling(IADLXDisplayChangedHandling** ppDisplayChangedHandling)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayChangedHandling>((IntPtr)(lpVtbl[8]))(pThis, ppDisplayChangedHandling);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplayChangedHandling**, ADLX_RESULT>)(lpVtbl[8]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), ppDisplayChangedHandling);
     }
 
     public ADLX_RESULT GetFreeSync([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayFreeSync** ppFreeSync)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetFreeSync>((IntPtr)(lpVtbl[9]))(pThis, pDisplay, ppFreeSync);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayFreeSync**, ADLX_RESULT>)(lpVtbl[9]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppFreeSync);
     }
 
     public ADLX_RESULT GetVirtualSuperResolution([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayVSR** ppVSR)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetVirtualSuperResolution>((IntPtr)(lpVtbl[10]))(pThis, pDisplay, ppVSR);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayVSR**, ADLX_RESULT>)(lpVtbl[10]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppVSR);
     }
 
     public ADLX_RESULT GetGPUScaling([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayGPUScaling** ppGPUScaling)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetGPUScaling>((IntPtr)(lpVtbl[11]))(pThis, pDisplay, ppGPUScaling);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayGPUScaling**, ADLX_RESULT>)(lpVtbl[11]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppGPUScaling);
     }
 
     public ADLX_RESULT GetScalingMode([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayScalingMode** ppScalingMode)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetScalingMode>((IntPtr)(lpVtbl[12]))(pThis, pDisplay, ppScalingMode);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayScalingMode**, ADLX_RESULT>)(lpVtbl[12]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppScalingMode);
     }
 
     public ADLX_RESULT GetIntegerScaling([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayIntegerScaling** ppIntegerScaling)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetIntegerScaling>((IntPtr)(lpVtbl[13]))(pThis, pDisplay, ppIntegerScaling);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayIntegerScaling**, ADLX_RESULT>)(lpVtbl[13]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppIntegerScaling);
     }
 
     public ADLX_RESULT GetColorDepth([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayColorDepth** ppColorDepth)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetColorDepth>((IntPtr)(lpVtbl[14]))(pThis, pDisplay, ppColorDepth);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayColorDepth**, ADLX_RESULT>)(lpVtbl[14]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppColorDepth);
     }
 
     public ADLX_RESULT GetPixelFormat([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayPixelFormat** ppPixelFormat)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetPixelFormat>((IntPtr)(lpVtbl[15]))(pThis, pDisplay, ppPixelFormat);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayPixelFormat**, ADLX_RESULT>)(lpVtbl[15]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppPixelFormat);
     }
 
     public ADLX_RESULT GetCustomColor([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayCustomColor** ppCustomColor)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetCustomColor>((IntPtr)(lpVtbl[16]))(pThis, pDisplay, ppCustomColor);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayCustomColor**, ADLX_RESULT>)(lpVtbl[16]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppCustomColor);
     }
 
     public ADLX_RESULT GetHDCP([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayHDCP** ppHDCP)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetHDCP>((IntPtr)(lpVtbl[17]))(pThis, pDisplay, ppHDCP);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayHDCP**, ADLX_RESULT>)(lpVtbl[17]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppHDCP);
     }
 
     public ADLX_RESULT GetCustomResolution([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayCustomResolution** ppCustomResolution)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetCustomResolution>((IntPtr)(lpVtbl[18]))(pThis, pDisplay, ppCustomResolution);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayCustomResolution**, ADLX_RESULT>)(lpVtbl[18]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppCustomResolution);
     }
 
     public ADLX_RESULT GetVariBright([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetVariBright>((IntPtr)(lpVtbl[19]))(pThis, pDisplay, ppVariBright);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayVariBright**, ADLX_RESULT>)(lpVtbl[19]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppVariBright);
     }
 
     public ADLX_RESULT GetDisplayBlanking([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayBlanking>((IntPtr)(lpVtbl[20]))(pThis, pDisplay, ppDisplayBlanking);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayBlanking**, ADLX_RESULT>)(lpVtbl[20]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDisplayBlanking);
     }
 
     public ADLX_RESULT GetDisplayConnectivityExperience([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDisplayConnectivityExperience>((IntPtr)(lpVtbl[21]))(pThis, pDisplay, ppDisplayConnectivityExperience);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayConnectivityExperience**, ADLX_RESULT>)(lpVtbl[21]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDisplayConnectivityExperience);
     }
 
     public ADLX_RESULT GetDynamicRefreshRateControl([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayDynamicRefreshRateControl** ppDRRC)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDynamicRefreshRateControl>((IntPtr)(lpVtbl[22]))(pThis, pDisplay, ppDRRC);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayDynamicRefreshRateControl**, ADLX_RESULT>)(lpVtbl[22]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppDRRC);
     }
 
     public ADLX_RESULT GetFreeSyncColorAccuracy([NativeTypeName("adlx::IADLXDisplay *")] IADLXDisplay* pDisplay, IADLXDisplayFreeSyncColorAccuracy** ppFSCA)
     {
-        fixed (IADLXDisplayServices3* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetFreeSyncColorAccuracy>((IntPtr)(lpVtbl[23]))(pThis, pDisplay, ppFSCA);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayServices3*, IADLXDisplay*, IADLXDisplayFreeSyncColorAccuracy**, ADLX_RESULT>)(lpVtbl[23]))((IADLXDisplayServices3*)Unsafe.AsPointer(ref this), pDisplay, ppFSCA);
     }
 }

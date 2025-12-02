@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -7,16 +6,9 @@ public unsafe partial struct IADLXDisplayGamutChangedListener
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_bool")]
-    public delegate byte _OnDisplayGamutChanged(IADLXDisplayGamutChangedListener* pThis, [NativeTypeName("adlx::IADLXDisplayGamutChangedEvent *")] IADLXDisplayGamutChangedEvent* pDisplayGamutChangedEvent);
-
     [return: NativeTypeName("adlx_bool")]
     public bool OnDisplayGamutChanged([NativeTypeName("adlx::IADLXDisplayGamutChangedEvent *")] IADLXDisplayGamutChangedEvent* pDisplayGamutChangedEvent)
     {
-        fixed (IADLXDisplayGamutChangedListener* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_OnDisplayGamutChanged>((IntPtr)(lpVtbl[0]))(pThis, pDisplayGamutChangedEvent) != 0;
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplayGamutChangedListener*, IADLXDisplayGamutChangedEvent*, byte>)(lpVtbl[0]))((IADLXDisplayGamutChangedListener*)Unsafe.AsPointer(ref this), pDisplayGamutChangedEvent) != 0;
     }
 }

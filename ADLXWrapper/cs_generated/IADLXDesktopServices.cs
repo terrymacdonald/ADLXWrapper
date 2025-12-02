@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,88 +7,40 @@ public unsafe partial struct IADLXDesktopServices
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXDesktopServices* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXDesktopServices* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXDesktopServices* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetNumberOfDesktops(IADLXDesktopServices* pThis, [NativeTypeName("adlx_uint *")] uint* numDesktops);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDesktops(IADLXDesktopServices* pThis, IADLXDesktopList** ppDesktops);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetDesktopChangedHandling(IADLXDesktopServices* pThis, IADLXDesktopChangedHandling** ppDesktopChangedHandling);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _GetSimpleEyefinity(IADLXDesktopServices* pThis, IADLXSimpleEyefinity** ppSimpleEyefinity);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, int>)(lpVtbl[0]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, int>)(lpVtbl[1]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT GetNumberOfDesktops([NativeTypeName("adlx_uint *")] uint* numDesktops)
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetNumberOfDesktops>((IntPtr)(lpVtbl[3]))(pThis, numDesktops);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, uint*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this), numDesktops);
     }
 
     public ADLX_RESULT GetDesktops(IADLXDesktopList** ppDesktops)
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesktops>((IntPtr)(lpVtbl[4]))(pThis, ppDesktops);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, IADLXDesktopList**, ADLX_RESULT>)(lpVtbl[4]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this), ppDesktops);
     }
 
     public ADLX_RESULT GetDesktopChangedHandling(IADLXDesktopChangedHandling** ppDesktopChangedHandling)
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetDesktopChangedHandling>((IntPtr)(lpVtbl[5]))(pThis, ppDesktopChangedHandling);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, IADLXDesktopChangedHandling**, ADLX_RESULT>)(lpVtbl[5]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this), ppDesktopChangedHandling);
     }
 
     public ADLX_RESULT GetSimpleEyefinity(IADLXSimpleEyefinity** ppSimpleEyefinity)
     {
-        fixed (IADLXDesktopServices* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_GetSimpleEyefinity>((IntPtr)(lpVtbl[6]))(pThis, ppSimpleEyefinity);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXDesktopServices*, IADLXSimpleEyefinity**, ADLX_RESULT>)(lpVtbl[6]))((IADLXDesktopServices*)Unsafe.AsPointer(ref this), ppSimpleEyefinity);
     }
-}
-
-public partial struct IADLXDesktopServices
-{
 }

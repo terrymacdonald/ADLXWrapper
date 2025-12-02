@@ -1,5 +1,4 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
@@ -8,73 +7,35 @@ public unsafe partial struct IADLX3DAntiLag
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLX3DAntiLag* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLX3DAntiLag* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLX3DAntiLag* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsSupported(IADLX3DAntiLag* pThis, [NativeTypeName("adlx_bool *")] bool* supported);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsEnabled(IADLX3DAntiLag* pThis, [NativeTypeName("adlx_bool *")] bool* enabled);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SetEnabled(IADLX3DAntiLag* pThis, [NativeTypeName("adlx_bool")] byte enable);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, int>)(lpVtbl[0]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, int>)(lpVtbl[1]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT IsSupported([NativeTypeName("adlx_bool *")] bool* supported)
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsSupported>((IntPtr)(lpVtbl[3]))(pThis, supported);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, bool*, ADLX_RESULT>)(lpVtbl[3]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this), supported);
     }
 
     public ADLX_RESULT IsEnabled([NativeTypeName("adlx_bool *")] bool* enabled)
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsEnabled>((IntPtr)(lpVtbl[4]))(pThis, enabled);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this), enabled);
     }
 
     public ADLX_RESULT SetEnabled([NativeTypeName("adlx_bool")] byte enable)
     {
-        fixed (IADLX3DAntiLag* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SetEnabled>((IntPtr)(lpVtbl[5]))(pThis, enable);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag*, byte, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DAntiLag*)Unsafe.AsPointer(ref this), enable);
     }
 }

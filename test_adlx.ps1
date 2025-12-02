@@ -98,17 +98,17 @@ try {
     $net9Sdk = $sdks | Where-Object { $_ -match "9\.0\." }
     
     if ($net9Sdk) {
-        Write-Host ".NET 9.0 SDK found:" -ForegroundColor Green
+        Write-Host ".NET 10.0 SDK found:" -ForegroundColor Green
         $net9Sdk | ForEach-Object { Write-Host "  $_" -ForegroundColor Green }
         Write-Host ""
     } else {
         Write-Host ""
-        Write-Host "ERROR: .NET 9.0 SDK not found" -ForegroundColor Red
+        Write-Host "ERROR: .NET 10.0 SDK not found" -ForegroundColor Red
         Write-Host ""
         Write-Host "Available SDKs:" -ForegroundColor Yellow
         $sdks | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
         Write-Host ""
-        Write-Host "Please install .NET 9.0 SDK from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
+        Write-Host "Please install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0" -ForegroundColor Cyan
         Write-Host ""
         Read-Host "Press Enter to exit"
         exit 1

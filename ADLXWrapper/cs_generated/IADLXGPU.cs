@@ -1,263 +1,106 @@
-using System;
-using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
-
-public partial struct IADLXGPU
-{
-}
 
 [NativeTypeName("struct IADLXGPU : adlx::IADLXInterface")]
 public unsafe partial struct IADLXGPU
 {
     public void** lpVtbl;
 
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Acquire(IADLXGPU* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    [return: NativeTypeName("adlx_long")]
-    public delegate int _Release(IADLXGPU* pThis);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _QueryInterface(IADLXGPU* pThis, [NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _VendorId(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** vendorId);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _ASICFamilyType(IADLXGPU* pThis, ADLX_ASIC_FAMILY_TYPE* asicFamilyType);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _Type(IADLXGPU* pThis, ADLX_GPU_TYPE* gpuType);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _IsExternal(IADLXGPU* pThis, [NativeTypeName("adlx_bool *")] bool* isExternal);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _Name(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** name);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _DriverPath(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** driverPath);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _PNPString(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** pnpString);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _HasDesktops(IADLXGPU* pThis, [NativeTypeName("adlx_bool *")] bool* hasDesktops);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _TotalVRAM(IADLXGPU* pThis, [NativeTypeName("adlx_uint *")] uint* vramMB);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _VRAMType(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** type);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _BIOSInfo(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** partNumber, [NativeTypeName("const char **")] sbyte** version, [NativeTypeName("const char **")] sbyte** date);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _DeviceId(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** deviceId);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _RevisionId(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** revisionId);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SubSystemId(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** subSystemId);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _SubSystemVendorId(IADLXGPU* pThis, [NativeTypeName("const char **")] sbyte** subSystemVendorId);
-
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    public delegate ADLX_RESULT _UniqueId(IADLXGPU* pThis, [NativeTypeName("adlx_int *")] int* uniqueId);
-
     [return: NativeTypeName("adlx_long")]
     public int Acquire()
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Acquire>((IntPtr)(lpVtbl[0]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, int>)(lpVtbl[0]))((IADLXGPU*)Unsafe.AsPointer(ref this));
     }
 
     [return: NativeTypeName("adlx_long")]
     public int Release()
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Release>((IntPtr)(lpVtbl[1]))(pThis);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, int>)(lpVtbl[1]))((IADLXGPU*)Unsafe.AsPointer(ref this));
     }
 
     public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_QueryInterface>((IntPtr)(lpVtbl[2]))(pThis, interfaceId, ppInterface);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXGPU*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
     }
 
     public ADLX_RESULT VendorId([NativeTypeName("const char **")] sbyte** vendorId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_VendorId>((IntPtr)(lpVtbl[3]))(pThis, vendorId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[3]))((IADLXGPU*)Unsafe.AsPointer(ref this), vendorId);
     }
 
     public readonly ADLX_RESULT ASICFamilyType(ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_ASICFamilyType>((IntPtr)(lpVtbl[4]))(pThis, asicFamilyType);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, ADLX_ASIC_FAMILY_TYPE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPU*)Unsafe.AsPointer(in this), asicFamilyType);
     }
 
     public readonly ADLX_RESULT Type(ADLX_GPU_TYPE* gpuType)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Type>((IntPtr)(lpVtbl[5]))(pThis, gpuType);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, ADLX_GPU_TYPE*, ADLX_RESULT>)(lpVtbl[5]))((IADLXGPU*)Unsafe.AsPointer(in this), gpuType);
     }
 
     public readonly ADLX_RESULT IsExternal([NativeTypeName("adlx_bool *")] bool* isExternal)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_IsExternal>((IntPtr)(lpVtbl[6]))(pThis, isExternal);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, bool*, ADLX_RESULT>)(lpVtbl[6]))((IADLXGPU*)Unsafe.AsPointer(in this), isExternal);
     }
 
     public readonly ADLX_RESULT Name([NativeTypeName("const char **")] sbyte** name)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_Name>((IntPtr)(lpVtbl[7]))(pThis, name);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[7]))((IADLXGPU*)Unsafe.AsPointer(in this), name);
     }
 
     public readonly ADLX_RESULT DriverPath([NativeTypeName("const char **")] sbyte** driverPath)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_DriverPath>((IntPtr)(lpVtbl[8]))(pThis, driverPath);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[8]))((IADLXGPU*)Unsafe.AsPointer(in this), driverPath);
     }
 
     public readonly ADLX_RESULT PNPString([NativeTypeName("const char **")] sbyte** pnpString)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_PNPString>((IntPtr)(lpVtbl[9]))(pThis, pnpString);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[9]))((IADLXGPU*)Unsafe.AsPointer(in this), pnpString);
     }
 
     public readonly ADLX_RESULT HasDesktops([NativeTypeName("adlx_bool *")] bool* hasDesktops)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_HasDesktops>((IntPtr)(lpVtbl[10]))(pThis, hasDesktops);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, bool*, ADLX_RESULT>)(lpVtbl[10]))((IADLXGPU*)Unsafe.AsPointer(in this), hasDesktops);
     }
 
     public ADLX_RESULT TotalVRAM([NativeTypeName("adlx_uint *")] uint* vramMB)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_TotalVRAM>((IntPtr)(lpVtbl[11]))(pThis, vramMB);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, uint*, ADLX_RESULT>)(lpVtbl[11]))((IADLXGPU*)Unsafe.AsPointer(ref this), vramMB);
     }
 
     public ADLX_RESULT VRAMType([NativeTypeName("const char **")] sbyte** type)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_VRAMType>((IntPtr)(lpVtbl[12]))(pThis, type);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[12]))((IADLXGPU*)Unsafe.AsPointer(ref this), type);
     }
 
     public ADLX_RESULT BIOSInfo([NativeTypeName("const char **")] sbyte** partNumber, [NativeTypeName("const char **")] sbyte** version, [NativeTypeName("const char **")] sbyte** date)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_BIOSInfo>((IntPtr)(lpVtbl[13]))(pThis, partNumber, version, date);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, sbyte**, sbyte**, ADLX_RESULT>)(lpVtbl[13]))((IADLXGPU*)Unsafe.AsPointer(ref this), partNumber, version, date);
     }
 
     public ADLX_RESULT DeviceId([NativeTypeName("const char **")] sbyte** deviceId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_DeviceId>((IntPtr)(lpVtbl[14]))(pThis, deviceId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[14]))((IADLXGPU*)Unsafe.AsPointer(ref this), deviceId);
     }
 
     public ADLX_RESULT RevisionId([NativeTypeName("const char **")] sbyte** revisionId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_RevisionId>((IntPtr)(lpVtbl[15]))(pThis, revisionId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[15]))((IADLXGPU*)Unsafe.AsPointer(ref this), revisionId);
     }
 
     public ADLX_RESULT SubSystemId([NativeTypeName("const char **")] sbyte** subSystemId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SubSystemId>((IntPtr)(lpVtbl[16]))(pThis, subSystemId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[16]))((IADLXGPU*)Unsafe.AsPointer(ref this), subSystemId);
     }
 
     public ADLX_RESULT SubSystemVendorId([NativeTypeName("const char **")] sbyte** subSystemVendorId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_SubSystemVendorId>((IntPtr)(lpVtbl[17]))(pThis, subSystemVendorId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, sbyte**, ADLX_RESULT>)(lpVtbl[17]))((IADLXGPU*)Unsafe.AsPointer(ref this), subSystemVendorId);
     }
 
     public ADLX_RESULT UniqueId([NativeTypeName("adlx_int *")] int* uniqueId)
     {
-        fixed (IADLXGPU* pThis = &this)
-        {
-            return Marshal.GetDelegateForFunctionPointer<_UniqueId>((IntPtr)(lpVtbl[18]))(pThis, uniqueId);
-        }
+        return ((delegate* unmanaged[Stdcall]<IADLXGPU*, int*, ADLX_RESULT>)(lpVtbl[18]))((IADLXGPU*)Unsafe.AsPointer(ref this), uniqueId);
     }
 }
