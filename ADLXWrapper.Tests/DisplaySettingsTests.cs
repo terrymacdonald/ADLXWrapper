@@ -318,5 +318,56 @@ namespace ADLXWrapper.Tests
                 Skip.If(true, "VariBright1 not supported on this hardware.");
             }
         }
+
+        [SkippableFact]
+        public void Gamma_ReadState()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var gamma = ADLXDisplaySettingsHelpers.GetGammaHandle(_displayServices, display);
+                var state = ADLXDisplaySettingsHelpers.GetGammaState(gamma);
+                _output.WriteLine($"Gamma reRamp={state.reGammaRamp}, deRamp={state.deGammaRamp}, coeff={state.reGammaCoeff}, sRGB={state.currentSRGB}, BT709={state.currentBT709}, PQ={state.currentPQ}, PQ2084Interim={state.currentPQ2084Interim}, Re36={state.current36}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Gamma not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void Gamut_ReadState()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var gamut = ADLXDisplaySettingsHelpers.GetGamutHandle(_displayServices, display);
+                var state = ADLXDisplaySettingsHelpers.GetGamutState(gamut);
+                _output.WriteLine($"Gamut: whitePoints 5000={state.whitePoint5000K}, 6500={state.whitePoint6500K}, 7500={state.whitePoint7500K}, 9300={state.whitePoint9300K}, custom={state.customWhitePoint}, bt2020Sup={state.bt2020Supported}, adobeSup={state.adobeSupported}, red=({state.gamut.red.x},{state.gamut.red.y})");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Gamut not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void ThreeDLUT_ReadState()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(_displayServices, display);
+                var state = ADLXDisplaySettingsHelpers.Get3DLUTState(lut);
+                _output.WriteLine($"3DLUT SCE sup={state.sceSupported}, vividSup={state.vividGamingSupported}, curDisabled={state.currentDisabled}, curVivid={state.currentVividGaming}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "3DLUT not supported on this hardware.");
+            }
+        }
     }
 }

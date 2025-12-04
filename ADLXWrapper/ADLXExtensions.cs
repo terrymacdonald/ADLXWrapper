@@ -1694,6 +1694,117 @@ namespace ADLXWrapper
     /// </summary>
     public static unsafe class ADLXDisplaySettingsHelpers
     {
+        public static AdlxInterfaceHandle GetGammaHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGammaFn>(vtbl->GetGamma);
+            IntPtr pGamma;
+            var result = getFn(pDisplayServices, pDisplay, &pGamma);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Gamma interface");
+            return AdlxInterfaceHandle.From(pGamma);
+        }
+
+        public static (bool reGammaRamp, bool deGammaRamp, bool reGammaCoeff, bool currentSRGB, bool currentBT709, bool currentPQ, bool currentPQ2084Interim, bool current36) GetGammaState(IntPtr pGamma)
+        {
+            if (pGamma == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGamma));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGammaVtbl**)pGamma;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+
+            byte a = 0, b = 0, c = 0, d = 0, e = 0, f = 0, g = 0;
+            boolFn(vtbl->IsCurrentReGammaRamp)(pGamma, &a);
+            boolFn(vtbl->IsCurrentDeGammaRamp)(pGamma, &b);
+            boolFn(vtbl->IsCurrentRegammaCoefficient)(pGamma, &c);
+            boolFn(vtbl->IsCurrentReGammaSRGB)(pGamma, &d);
+            boolFn(vtbl->IsCurrentReGammaBT709)(pGamma, &e);
+            boolFn(vtbl->IsCurrentReGammaPQ)(pGamma, &f);
+            boolFn(vtbl->IsCurrentReGammaPQ2084Interim)(pGamma, &g);
+            byte h = 0;
+            boolFn(vtbl->IsCurrentReGamma36)(pGamma, &h);
+
+            return (a != 0, b != 0, c != 0, d != 0, e != 0, f != 0, g != 0, h != 0);
+        }
+
+        public static AdlxInterfaceHandle GetGamutHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGamutFn>(vtbl->GetGamut);
+            IntPtr pGamut;
+            var result = getFn(pDisplayServices, pDisplay, &pGamut);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Gamut interface");
+            return AdlxInterfaceHandle.From(pGamut);
+        }
+
+        public static (ADLX_GamutColorSpace gamut, bool whitePoint5000K, bool whitePoint6500K, bool whitePoint7500K, bool whitePoint9300K, bool customWhitePoint, bool bt2020Supported, bool adobeSupported) GetGamutState(IntPtr pGamut)
+        {
+            if (pGamut == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGamut));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGamutVtbl**)pGamut;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            ADLX_GamutColorSpace gamut = default;
+            var getSpaceFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGamutColorSpaceFn>(vtbl->GetGamutColorSpace);
+            var r = getSpaceFn(pGamut, &gamut);
+            if (r != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r, "Failed to get gamut color space");
+
+            byte w5000 = 0, w6500 = 0, w7500 = 0, w9300 = 0, wCustom = 0, bt2020 = 0, adobe = 0;
+            boolFn(vtbl->IsCurrent5000kWhitePoint)(pGamut, &w5000);
+            boolFn(vtbl->IsCurrent6500kWhitePoint)(pGamut, &w6500);
+            boolFn(vtbl->IsCurrent7500kWhitePoint)(pGamut, &w7500);
+            boolFn(vtbl->IsCurrent9300kWhitePoint)(pGamut, &w9300);
+            boolFn(vtbl->IsCurrentCustomWhitePoint)(pGamut, &wCustom);
+            boolFn(vtbl->IsSupportedCCIR2020ColorSpace)(pGamut, &bt2020);
+            boolFn(vtbl->IsSupportedAdobeRgbColorSpace)(pGamut, &adobe);
+
+            return (gamut, w5000 != 0, w6500 != 0, w7500 != 0, w9300 != 0, wCustom != 0, bt2020 != 0, adobe != 0);
+        }
+
+        public static AdlxInterfaceHandle Get3DLUTHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.Get3DLUTFn>(vtbl->Get3DLUT);
+            IntPtr pLut;
+            var result = getFn(pDisplayServices, pDisplay, &pLut);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get 3DLUT interface");
+            return AdlxInterfaceHandle.From(pLut);
+        }
+
+        public static (bool sceSupported, bool vividGamingSupported, bool currentDisabled, bool currentVividGaming) Get3DLUTState(IntPtr p3dLut)
+        {
+            if (p3dLut == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(p3dLut));
+
+            var vtbl = *(ADLXVTables.IADLXDisplay3DLUTVtbl**)p3dLut;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            byte supSce = 0, supVivid = 0, curDis = 0, curVivid = 0;
+            boolFn(vtbl->IsSupportedSCE)(p3dLut, &supSce);
+            boolFn(vtbl->IsSupportedSCEVividGaming)(p3dLut, &supVivid);
+            boolFn(vtbl->IsCurrentSCEDisabled)(p3dLut, &curDis);
+            boolFn(vtbl->IsCurrentSCEVividGaming)(p3dLut, &curVivid);
+
+            return (supSce != 0, supVivid != 0, curDis != 0, curVivid != 0);
+        }
+
         public static AdlxInterfaceHandle GetDisplayConnectivityExperienceHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)

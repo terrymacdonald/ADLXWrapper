@@ -296,6 +296,9 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetDisplayConnectivityExperienceFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppConnectivity);
         internal delegate ADLX_RESULT GetDynamicRefreshRateControlFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppDRRC);
         internal delegate ADLX_RESULT GetFreeSyncColorAccuracyFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppFSCA);
+        internal delegate ADLX_RESULT Get3DLUTFn(IntPtr pThis, IntPtr pDisplay, IntPtr* pp3dLut);
+        internal delegate ADLX_RESULT GetGamutFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppGamut);
+        internal delegate ADLX_RESULT GetGammaFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppGamma);
         internal delegate ADLX_RESULT GetColorDepthFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppColorDepth);
         internal delegate ADLX_RESULT GetPixelFormatFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppPixelFormat);
 
@@ -333,6 +336,15 @@ namespace ADLXWrapper
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetDPLinkRateFn(IntPtr pThis, ADLX_DP_LINK_RATE* linkRate);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGammaRampFn(IntPtr pThis, ADLX_GammaRamp* ramp);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGammaCoeffFn(IntPtr pThis, ADLX_RegammaCoeff* coeff);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGamutColorSpaceFn(IntPtr pThis, ADLX_GamutColorSpace* space);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetColorDepthValueFn(IntPtr pThis, ADLX_COLOR_DEPTH* depth);
@@ -608,6 +620,101 @@ namespace ADLXWrapper
             public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
             public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
             public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplay3DLUT vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplay3DLUTVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupportedSCE;
+            public IntPtr IsSupportedSCEVividGaming;
+            public IntPtr IsCurrentSCEDisabled;
+            public IntPtr IsCurrentSCEVividGaming;
+            public IntPtr Clear;
+            public IntPtr SetSCEDisabled;
+            public IntPtr SetSCEVividGaming;
+            public IntPtr IsSupportedDynamicContrast;
+            public IntPtr GetContrastRange;
+            public IntPtr GetContrast;
+            public IntPtr SetContrast;
+            public IntPtr IsSupportedVividGamutMapping;
+            public IntPtr EnableVividGamutMapping;
+            public IntPtr IsEnabledVividGamutMapping;
+            public IntPtr GetVividGamingLUT;
+            public IntPtr SetVividGamingLUT;
+            public IntPtr SetCustomLUT;
+            public IntPtr GetCustomLUT;
+            public IntPtr SetCustomLUTValue;
+        }
+
+        // IADLXDisplayGamma vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayGammaVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsCurrentReGammaRamp;
+            public IntPtr IsCurrentDeGammaRamp;
+            public IntPtr IsCurrentRegammaCoefficient;
+            public IntPtr GetGammaRamp;
+            public IntPtr GetGammaCoefficient;
+            public IntPtr IsSupportedReGammaSRGB;
+            public IntPtr IsSupportedReGammaBT709;
+            public IntPtr IsSupportedReGammaPQ;
+            public IntPtr IsSupportedReGammaPQ2084Interim;
+            public IntPtr IsSupportedReGamma36;
+            public IntPtr IsCurrentReGammaSRGB;
+            public IntPtr IsCurrentReGammaBT709;
+            public IntPtr IsCurrentReGammaPQ;
+            public IntPtr IsCurrentReGammaPQ2084Interim;
+            public IntPtr IsCurrentReGamma36;
+            public IntPtr SetReGammaSRGB;
+            public IntPtr SetReGammaBT709;
+            public IntPtr SetReGammaPQ;
+            public IntPtr SetReGammaPQ2084Interim;
+            public IntPtr SetReGamma36;
+            public IntPtr SetReGammaCoefficient;
+            public IntPtr SetDeGammaRamp;
+            public IntPtr SetDeGammaRamp_Path;
+            public IntPtr SetReGammaRamp;
+            public IntPtr SetReGammaRamp_Path;
+        }
+
+        // IADLXDisplayGamut vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayGamutVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupportedCCIR709ColorSpace;
+            public IntPtr IsSupportedCCIR601ColorSpace;
+            public IntPtr IsSupportedAdobeRgbColorSpace;
+            public IntPtr IsSupportedCIERgbColorSpace;
+            public IntPtr IsSupportedCCIR2020ColorSpace;
+            public IntPtr IsSupportedCustomColorSpace;
+            public IntPtr IsSupported5000kWhitePoint;
+            public IntPtr IsSupported6500kWhitePoint;
+            public IntPtr IsSupported7500kWhitePoint;
+            public IntPtr IsSupported9300kWhitePoint;
+            public IntPtr IsSupportedCustomWhitePoint;
+            public IntPtr IsCurrent5000kWhitePoint;
+            public IntPtr IsCurrent6500kWhitePoint;
+            public IntPtr IsCurrent7500kWhitePoint;
+            public IntPtr IsCurrent9300kWhitePoint;
+            public IntPtr IsCurrentCustomWhitePoint;
+            public IntPtr GetGamutColorSpace;
+            public IntPtr SetGamut_CustomWhite_CustomGamut;
+            public IntPtr SetGamut_PredefinedWhite_CustomGamut;
+            public IntPtr SetGamut_CustomWhite_PredefinedGamut;
+            public IntPtr SetGamut_PredefinedWhite_PredefinedGamut;
         }
 
         // IADLXDisplayVSR vtable
