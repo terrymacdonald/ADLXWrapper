@@ -117,8 +117,24 @@ foreach (var display in ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys))
 }
 ```
 
-### Example 6: Save Eyefinity desktop settings (not yet implemented in helpers)
-The current helper set does not expose Eyefinity save/restore APIs. If you need this, wrap the corresponding ADLX interfaces and vtable methods for Eyefinity desktop configuration, then follow the same SafeHandle pattern shown above to ensure automatic release.
+### Example 6: Enumerate desktops and detect Eyefinity
+```csharp
+using var adlx = ADLXApi.Initialize();
+using var sys = adlx.GetSystemServicesHandle();
+using var desktops = ADLXDesktopHelpers.GetDesktopServicesHandle(sys);
+
+var desktopHandles = ADLXDesktopHelpers.EnumerateAllDesktopHandles(desktops);
+foreach (var desk in desktopHandles)
+{
+    using (desk)
+    {
+        var type = ADLXDesktopHelpers.GetDesktopType(desk);
+        var size = ADLXDesktopHelpers.GetDesktopSize(desk);
+        Console.WriteLine($"Desktop {type}: {size.Width}x{size.Height}");
+    }
+}
+```
+Eyefinity creation/destruction is available via `ADLXDesktopHelpers.GetSimpleEyefinityHandle` and `CreateEyefinityDesktop`/`DestroyEyefinityDesktop`, but these operations change user display configuration. Use with extreme caution; the ADLX SDK does not expose a file-based save/restore API.
 
 ## Scripts
 - `prepare_adlx.ps1` — downloads/extracts the ADLX SDK into `ADLX/`

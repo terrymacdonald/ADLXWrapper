@@ -146,7 +146,8 @@ Write-Host ""
 
 try {
     # Run tests with detailed console output
-    & dotnet test $testProjectPath --configuration Debug --verbosity normal
+    Write-Host "dotnet test $testProjectPath --configuration Debug --verbosity normal"
+    dotnet test $testProjectPath --configuration Debug --verbosity normal
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""

@@ -1440,4 +1440,252 @@ namespace ADLXWrapper
             return power;
         }
     }
+
+    /// <summary>
+    /// Helper methods for desktop and Eyefinity services
+    /// </summary>
+    public static unsafe class ADLXDesktopHelpers
+    {
+        public static AdlxInterfaceHandle GetDesktopServicesHandle(IntPtr pSystem)
+        {
+            if (pSystem == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSystem));
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
+            var getDesktopServicesFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDesktopsServicesFn>(
+                systemVtbl->GetDesktopsServices);
+
+            IntPtr pDesktopServices;
+            var result = getDesktopServicesFn(pSystem, &pDesktopServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop services");
+            }
+
+            return AdlxInterfaceHandle.From(pDesktopServices);
+        }
+
+        public static IntPtr[] EnumerateAllDesktops(IntPtr pDesktopServices)
+        {
+            if (pDesktopServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktopServices));
+
+            var svcVtbl = *(ADLXVTables.IADLXDesktopServicesVtbl**)pDesktopServices;
+            var getDesktopsFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDesktopsFn>(
+                svcVtbl->GetDesktops);
+
+            IntPtr pDesktopList;
+            var result = getDesktopsFn(pDesktopServices, &pDesktopList);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop list");
+            }
+
+            if (pDesktopList == IntPtr.Zero)
+            {
+                return Array.Empty<IntPtr>();
+            }
+
+            try
+            {
+                var listVtbl = *(ADLXVTables.IADLXDesktopListVtbl**)pDesktopList;
+                var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(listVtbl->Size, typeof(ADLXVTables.SizeFn));
+                var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(listVtbl->At, typeof(ADLXVTables.AtFn));
+
+                uint count = sizeFn(pDesktopList);
+                if (count == 0)
+                {
+                    return Array.Empty<IntPtr>();
+                }
+
+                var desktops = new IntPtr[count];
+                for (uint i = 0; i < count; i++)
+                {
+                    IntPtr pDesktop;
+                    result = atFn(pDesktopList, i, &pDesktop);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        throw new ADLXException(result, $"Failed to get desktop at index {i}");
+                    }
+                    desktops[i] = pDesktop;
+                }
+
+                return desktops;
+            }
+            finally
+            {
+                ADLXHelpers.ReleaseInterface(pDesktopList);
+            }
+        }
+
+        public static AdlxInterfaceHandle[] EnumerateAllDesktopHandles(IntPtr pDesktopServices)
+        {
+            var raw = EnumerateAllDesktops(pDesktopServices);
+            var handles = new AdlxInterfaceHandle[raw.Length];
+            for (int i = 0; i < raw.Length; i++)
+            {
+                handles[i] = AdlxInterfaceHandle.From(raw[i]);
+            }
+            return handles;
+        }
+
+        public static ADLX_DESKTOP_TYPE GetDesktopType(IntPtr pDesktop)
+        {
+            if (pDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXDesktopVtbl**)pDesktop;
+            var typeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.DesktopTypeFn>(vtbl->Type);
+
+            ADLX_DESKTOP_TYPE type;
+            var result = typeFn(pDesktop, &type);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop type");
+            }
+
+            return type;
+        }
+
+        public static (int Width, int Height) GetDesktopSize(IntPtr pDesktop)
+        {
+            if (pDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXDesktopVtbl**)pDesktop;
+            var sizeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.DesktopSizeFn>(vtbl->Size);
+
+            int w, h;
+            var result = sizeFn(pDesktop, &w, &h);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop size");
+            }
+
+            return (w, h);
+        }
+
+        public static (int X, int Y) GetDesktopTopLeft(IntPtr pDesktop)
+        {
+            if (pDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXDesktopVtbl**)pDesktop;
+            var topLeftFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.DesktopTopLeftFn>(vtbl->TopLeft);
+
+            ADLX_Point pt;
+            var result = topLeftFn(pDesktop, &pt);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop top-left");
+            }
+
+            return (pt.x, pt.y);
+        }
+
+        public static ADLX_ORIENTATION GetDesktopOrientation(IntPtr pDesktop)
+        {
+            if (pDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXDesktopVtbl**)pDesktop;
+            var orientFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.DesktopOrientationFn>(vtbl->Orientation);
+
+            ADLX_ORIENTATION orientation;
+            var result = orientFn(pDesktop, &orientation);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get desktop orientation");
+            }
+
+            return orientation;
+        }
+
+        public static AdlxInterfaceHandle GetSimpleEyefinityHandle(IntPtr pDesktopServices)
+        {
+            if (pDesktopServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDesktopServices));
+
+            var vtbl = *(ADLXVTables.IADLXDesktopServicesVtbl**)pDesktopServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetSimpleEyefinityFn>(vtbl->GetSimpleEyefinity);
+
+            IntPtr pSimple;
+            var result = getFn(pDesktopServices, &pSimple);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get simple Eyefinity interface");
+            }
+
+            return AdlxInterfaceHandle.From(pSimple);
+        }
+
+        public static bool IsSimpleEyefinitySupported(IntPtr pSimpleEyefinity)
+        {
+            if (pSimpleEyefinity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSimpleEyefinity));
+
+            var vtbl = *(ADLXVTables.IADLXSimpleEyefinityVtbl**)pSimpleEyefinity;
+            var supportedFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityIsSupportedFn>(vtbl->IsSupported);
+
+            byte supported;
+            var result = supportedFn(pSimpleEyefinity, &supported);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to query Eyefinity support");
+            }
+
+            return supported != 0;
+        }
+
+        public static AdlxInterfaceHandle CreateEyefinityDesktop(IntPtr pSimpleEyefinity)
+        {
+            if (pSimpleEyefinity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSimpleEyefinity));
+
+            var vtbl = *(ADLXVTables.IADLXSimpleEyefinityVtbl**)pSimpleEyefinity;
+            var createFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityCreateFn>(vtbl->Create);
+
+            IntPtr pDesktop;
+            var result = createFn(pSimpleEyefinity, &pDesktop);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to create Eyefinity desktop");
+            }
+
+            return AdlxInterfaceHandle.From(pDesktop);
+        }
+
+        public static void DestroyEyefinityDesktop(IntPtr pSimpleEyefinity, IntPtr pEyefinityDesktop)
+        {
+            if (pSimpleEyefinity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSimpleEyefinity));
+            if (pEyefinityDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pEyefinityDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXSimpleEyefinityVtbl**)pSimpleEyefinity;
+            var destroyFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityDestroyFn>(vtbl->Destroy);
+
+            var result = destroyFn(pSimpleEyefinity, pEyefinityDesktop);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to destroy Eyefinity desktop");
+            }
+        }
+
+        public static void DestroyAllEyefinityDesktops(IntPtr pSimpleEyefinity)
+        {
+            if (pSimpleEyefinity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSimpleEyefinity));
+
+            var vtbl = *(ADLXVTables.IADLXSimpleEyefinityVtbl**)pSimpleEyefinity;
+            var destroyAllFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityDestroyAllFn>(vtbl->DestroyAll);
+
+            var result = destroyAllFn(pSimpleEyefinity);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to destroy all Eyefinity desktops");
+            }
+        }
+    }
 }

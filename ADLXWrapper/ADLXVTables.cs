@@ -218,6 +218,64 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GPUPowerFn(IntPtr pThis, double* power);
 
+        // Desktop services methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDesktopsServicesFn(IntPtr pThis, IntPtr* ppDeskServices);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetNumberOfDesktopsFn(IntPtr pThis, uint* pNumDesktops);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDesktopsFn(IntPtr pThis, IntPtr* ppDesktops);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDesktopChangedHandlingFn(IntPtr pThis, IntPtr* ppHandling);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetSimpleEyefinityFn(IntPtr pThis, IntPtr* ppSimpleEyefinity);
+
+        // Desktop methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DesktopOrientationFn(IntPtr pThis, ADLX_ORIENTATION* orientation);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DesktopSizeFn(IntPtr pThis, int* width, int* height);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DesktopTopLeftFn(IntPtr pThis, ADLX_Point* topLeft);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DesktopTypeFn(IntPtr pThis, ADLX_DESKTOP_TYPE* desktopType);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT DesktopGetDisplaysFn(IntPtr pThis, IntPtr* ppDisplays);
+
+        // Eyefinity desktop methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityGridSizeFn(IntPtr pThis, uint* rows, uint* cols);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityGetDisplayFn(IntPtr pThis, uint row, uint col, IntPtr* ppDisplay);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityDisplayOrientationFn(IntPtr pThis, uint row, uint col, ADLX_ORIENTATION* orientation);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityDisplaySizeFn(IntPtr pThis, uint row, uint col, int* width, int* height);
+
+        // Simple Eyefinity methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityIsSupportedFn(IntPtr pThis, byte* supported);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityCreateFn(IntPtr pThis, IntPtr* ppEyefinityDesktop);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityDestroyAllFn(IntPtr pThis);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT EyefinityDestroyFn(IntPtr pThis, IntPtr pDesktop);
+
         // IADLXPerformanceMonitoringServices vtable
         [StructLayout(LayoutKind.Sequential)]
         internal struct IADLXPerformanceMonitoringServicesVtbl
@@ -374,6 +432,83 @@ namespace ADLXWrapper
             public IntPtr ScanType;               // ADLX_RESULT ScanType(ADLX_DISPLAY_SCAN_TYPE* scanType)
             public IntPtr GetGPU;                 // ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
             public IntPtr UniqueId;               // ADLX_RESULT UniqueId(adlx_size* uniqueId)
+        }
+
+        // IADLXDesktop vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDesktopVtbl
+        {
+            // IADLXInterface
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            // IADLXDesktop
+            public IntPtr Orientation;          // ADLX_RESULT Orientation(ADLX_ORIENTATION* orientation)
+            public IntPtr Size;                 // ADLX_RESULT Size(adlx_int* width, adlx_int* height)
+            public IntPtr TopLeft;              // ADLX_RESULT TopLeft(ADLX_Point* locationTopLeft)
+            public IntPtr Type;                 // ADLX_RESULT Type(ADLX_DESKTOP_TYPE* desktopType)
+            public IntPtr GetNumberOfDisplays;  // ADLX_RESULT GetNumberOfDisplays(adlx_uint* numDisplays)
+            public IntPtr GetDisplays;          // ADLX_RESULT GetDisplays(IADLXDisplayList** ppDisplays)
+        }
+
+        // IADLXDesktopList vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDesktopListVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+            public IntPtr Size;
+            public IntPtr Empty;
+            public IntPtr Begin;
+            public IntPtr End;
+            public IntPtr At;              // ADLX_RESULT At(adlx_uint location, IADLXDesktop** ppItem)
+            public IntPtr Clear;
+            public IntPtr Remove_Back;
+            public IntPtr Add_Back;        // ADLX_RESULT Add_Back(IADLXDesktop* pItem)
+        }
+
+        // IADLXEyefinityDesktop vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXEyefinityDesktopVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GridSize;             // ADLX_RESULT GridSize(adlx_uint* rows, adlx_uint* cols)
+            public IntPtr GetDisplay;           // ADLX_RESULT GetDisplay(adlx_uint row, adlx_uint col, IADLXDisplay** ppDisplay)
+            public IntPtr DisplayOrientation;   // ADLX_RESULT DisplayOrientation(adlx_uint row, adlx_uint col, ADLX_ORIENTATION* displayOrientation)
+            public IntPtr DisplaySize;          // ADLX_RESULT DisplaySize(adlx_uint row, adlx_uint col, adlx_int* displayWidth, adlx_int* displayHeight)
+        }
+
+        // IADLXSimpleEyefinity vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXSimpleEyefinityVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;          // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr Create;               // ADLX_RESULT Create(IADLXEyefinityDesktop** ppEyefinityDesktop)
+            public IntPtr DestroyAll;           // ADLX_RESULT DestroyAll()
+            public IntPtr Destroy;              // ADLX_RESULT Destroy(IADLXEyefinityDesktop* pDesktop)
+        }
+
+        // IADLXDesktopServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDesktopServicesVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetNumberOfDesktops;      // ADLX_RESULT GetNumberOfDesktops(adlx_uint* pNumDesktops)
+            public IntPtr GetDesktops;              // ADLX_RESULT GetDesktops(IADLXDesktopList** ppDesktops)
+            public IntPtr GetDesktopChangedHandling;// ADLX_RESULT GetDesktopChangedHandling(IADLXDesktopChangedHandling** ppDesktopChangedHandling)
+            public IntPtr GetSimpleEyefinity;       // ADLX_RESULT GetSimpleEyefinity(IADLXSimpleEyefinity** ppSimpleEyefinity)
         }
     }
 }
