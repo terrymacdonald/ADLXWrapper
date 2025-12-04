@@ -1,313 +1,42 @@
-﻿# ADLXWrapper - ClangSharp-based C# Wrapper
+# ADLXWrapper (ClangSharp-based)
 
-A modern C# wrapper for the AMD ADLX SDK using ClangSharp for high-performance native interop.
+High-performance C# bindings for AMD ADLX using vtable-based interop.
 
-## Project Structure
-
-```
-ADLXWrapper/
-├── ADLXWrapper.csproj          # .NET 9 project file
-├── ClangSharpConfig.rsp        # ClangSharp generator configuration
-├── ADLXNative.cs               # Manual P/Invoke declarations for DLL entry points
-├── ADLXApi.cs                  # Main wrapper API (IDisposable)
-├── ADLXVTables.cs              # VTable structure definitions
-├── ADLXExtensions.cs           # Helper methods for GPU/Display operations
-├── Generated/                  # ClangSharp auto-generated bindings (DO NOT EDIT)
-│   └── README.cs               # Placeholder
-└── README.md                   # This file
-```
-
-## Build Status
-
-✅ **Stage 1 Complete:** Project Setup and ClangSharp Configuration  
-✅ **Stage 2 Complete:** Core Wrapper Layer (ADLXApi.cs)  
-✅ **Stage 3 Complete:** Helper Extension Layer (ADLXExtensions.cs)  
-✅ **Stage 4 Complete:** Basic Tests and Validation  
-✅ **Stage 5 Complete:** Display Services Tests  
-✅ **Stage 6 Complete:** GPU Tuning Services Tests  
-✅ **Stage 7 Complete:** Performance Monitoring Tests  
-
-- Created .NET 9 C# project
-- Added ClangSharp NuGet packages (v18.1.0 / v20.1.2)
-- Created ClangSharpConfig.rsp for ADLX header processing
-- Added manual P/Invoke declarations for dynamic DLL loading
-- Implemented complete ADLXApi wrapper with initialization and GPU enumeration
-- Implemented VTable access for COM-like interfaces
-- Created comprehensive helper methods for GPU properties
-- Created comprehensive display enumeration and property access
-- Created comprehensive GPU tuning capability checks
-- Created comprehensive performance monitoring and metrics collection
-- Project builds successfully
-
-## How to Build
-
-### Using PowerShell (Recommended)
+## Build
+- Requires .NET SDK 10.0 and the ADLX SDK (downloaded into `../ADLX/` via `prepare_adlx.ps1`).
 
 ```powershell
-# From repository root
-cd ..
-.\build.ps1
-```
-
-### Using dotnet CLI
-
-```powershell
-# From this directory (ADLXWrapper/)
-dotnet restore
-dotnet build
-
-# Or from repository root
+# from repo root
+.\prepare_adlx.ps1
+.\build_adlx.ps1        # builds wrapper + tests
+# or
 dotnet build ADLXWrapper/ADLXWrapper.csproj
 ```
 
-### Using Visual Studio
-
-1. Open `ADLXWrapper.sln` in the repository root
-2. Build the ADLXWrapper project (right-click > Build)
-3. Or Build Solution (Ctrl+Shift+B)
-
-### Using VS Code
-
-```bash
-# From repository root or ADLXWrapper directory
-dotnet build
-
-# Or use tasks.json if configured
-```
-
-## Usage Example
-
+## Usage snapshot
 ```csharp
 using ADLXWrapper;
 
-// Initialize ADLX
-using (var adlx = ADLXApi.Initialize())
-{
-    // Get version info
-    Console.WriteLine($"ADLX Version: {adlx.GetVersion()}");
-    
-    // Enumerate GPUs
-    var gpus = adlx.EnumerateGPUs();
-    Console.WriteLine($"Found {gpus.Length} GPU(s)");
-    
-    foreach (var gpu in gpus)
-    {
-        // Get basic GPU info
-        var info = ADLXGPUInfo.GetBasicInfo(gpu);
-        Console.WriteLine($"\nGPU: {info.Name}");
-        Console.WriteLine($"  Vendor: {info.VendorId}");
-        Console.WriteLine($"  VRAM: {info.TotalVRAM} MB ({info.VRAMType})");
-        Console.WriteLine($"  External: {info.IsExternal}");
-        Console.WriteLine($"  Has Desktops: {info.HasDesktops}");
-        
-        // Get individual properties
-        var uniqueId = ADLXHelpers.GetGPUUniqueId(gpu);
-        var deviceId = ADLXHelpers.GetGPUDeviceId(gpu);
-        Console.WriteLine($"  Unique ID: {uniqueId}");
-        Console.WriteLine($"  Device ID: {deviceId}");
-        
-        // Remember to release GPU interface when done
-        ADLXHelpers.ReleaseInterface(gpu);
-    }
+using var adlx = ADLXApi.Initialize();
+var gpus = adlx.EnumerateGPUs();
 
-    // Enumerate displays
-    var pSystem = adlx.GetSystemServices();
-    var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
-    Console.WriteLine($"\nFound {displays.Length} display(s)");
-    
-    foreach (var display in displays)
-    {
-        // Get display info
-        var displayInfo = ADLXDisplayInfo.GetBasicInfo(display);
-        Console.WriteLine($"\nDisplay: {displayInfo.Name}");
-        Console.WriteLine($"  Resolution: {displayInfo.Width}x{displayInfo.Height}");
-        Console.WriteLine($"  Refresh Rate: {displayInfo.RefreshRate} Hz");
-        Console.WriteLine($"  Manufacturer ID: {displayInfo.ManufacturerID}");
-        Console.WriteLine($"  Pixel Clock: {displayInfo.PixelClock}");
-        
-        // Remember to release display interface when done
-        ADLXHelpers.ReleaseInterface(display);
-    }
-} // Automatic cleanup via Dispose
+foreach (var gpu in gpus)
+{
+    var info = ADLXGPUInfo.GetBasicInfo(gpu);
+    Console.WriteLine($"{info.Name} ({info.VRAMType}) - {info.TotalVRAM} MB");
+    ADLXHelpers.ReleaseInterface(gpu);
+}
 ```
 
-## API Reference
+More helpers:
+- `ADLXDisplayHelpers` / `ADLXDisplayInfo` – enumerate displays and read properties
+- `ADLXPerformanceMonitoringHelpers` / `ADLXPerformanceMonitoringInfo` – metrics/support queries
+- `ADLXGPUTuningHelpers` / `ADLXGPUTuningInfo` – check tuning capabilities (read-only)
+- `ADLXListHelpers` – convert ADLX list interfaces to arrays
 
-### ADLXApi (Main Wrapper)
-
-**Initialization:**
-- `static ADLXApi Initialize()` - Initialize ADLX with default settings
-- `static ADLXApi InitializeWithCallerAdl(IntPtr adlContext, IntPtr adlMainMemoryFree)` - Initialize with existing ADL context
-
-**Version Information:**
-- `ulong GetFullVersion()` - Get ADLX full version number
-- `string GetVersion()` - Get ADLX version string
-
-**System Services:**
-- `IntPtr GetSystemServices()` - Get root system interface pointer
-- `IntPtr GetGPUTuningServices()` - Get GPU tuning services interface pointer
-- `IntPtr GetPerformanceMonitoringServices()` - Get performance monitoring services interface pointer
-- `IntPtr[] EnumerateGPUs()` - Enumerate all AMD GPUs in the system
-
-**Cleanup:**
-- `void Dispose()` - Release resources (called automatically with `using`)
-
-### ADLXHelpers (GPU Properties)
-
-**String Properties:**
-- `string GetGPUName(IntPtr pGPU)` - Get GPU name
-- `string GetGPUVendorId(IntPtr pGPU)` - Get vendor ID
-- `string GetGPUDriverPath(IntPtr pGPU)` - Get driver path
-- `string GetGPUPNPString(IntPtr pGPU)` - Get PNP string
-- `string GetGPUVRAMType(IntPtr pGPU)` - Get VRAM type
-- `string GetGPUDeviceId(IntPtr pGPU)` - Get device ID
-
-**Numeric Properties:**
-- `uint GetGPUTotalVRAM(IntPtr pGPU)` - Get total VRAM in MB
-- `int GetGPUUniqueId(IntPtr pGPU)` - Get unique identifier
-
-**Boolean Properties:**
-- `bool IsGPUExternal(IntPtr pGPU)` - Check if GPU is external
-- `bool HasGPUDesktops(IntPtr pGPU)` - Check if GPU has desktops
-
-**Interface Management:**
-- `void ReleaseInterface(IntPtr pInterface)` - Release an interface (decrement ref count)
-- `void AddRefInterface(IntPtr pInterface)` - Add reference to an interface (increment ref count)
-
-### ADLXGPUInfo (Combined Information)
-
-**Structs:**
-- `GPUBasicInfo` - Name, VendorId, UniqueId, TotalVRAM, VRAMType, IsExternal, HasDesktops
-- `GPUIdentification` - DeviceId, PNPString, DriverPath, UniqueId
-
-**Methods:**
-- `GPUBasicInfo GetBasicInfo(IntPtr pGPU)` - Get all basic info in one call
-- `GPUIdentification GetIdentification(IntPtr pGPU)` - Get all identification info in one call
-
-### ADLXListHelpers (List Operations)
-
-- `uint GetListSize(IntPtr pList)` - Get number of items in list
-- `bool IsListEmpty(IntPtr pList)` - Check if list is empty
-- `IntPtr GetListItemAt(IntPtr pList, uint index)` - Get item at index
-- `IntPtr[] ListToArray(IntPtr pList)` - Convert entire list to array
-
-### ADLXDisplayHelpers (Display Operations)
-
-- `IntPtr[] EnumerateAllDisplays(IntPtr pSystem)` - Enumerate all displays from system
-- `string GetDisplayName(IntPtr pDisplay)` - Get display name
-- `(int width, int height) GetDisplayNativeResolution(IntPtr pDisplay)` - Get native resolution
-- `double GetDisplayRefreshRate(IntPtr pDisplay)` - Get refresh rate in Hz
-- `uint GetDisplayManufacturerID(IntPtr pDisplay)` - Get manufacturer ID
-- `uint GetDisplayPixelClock(IntPtr pDisplay)` - Get pixel clock
-
-### ADLXDisplayInfo (Combined Display Information)
-
-**Structs:**
-- `DisplayBasicInfo` - Name, Width, Height, RefreshRate, ManufacturerID, PixelClock
-
-**Methods:**
-- `DisplayBasicInfo GetBasicInfo(IntPtr pDisplay)` - Get all display info in one call
-
-### ADLXGPUTuningHelpers (GPU Tuning Operations)
-
-- `bool IsSupportedAutoTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if auto tuning is supported
-- `bool IsSupportedPresetTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if preset tuning is supported
-- `bool IsSupportedManualGFXTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual GFX tuning is supported
-- `bool IsSupportedManualVRAMTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual VRAM tuning is supported
-- `bool IsSupportedManualFanTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual fan tuning is supported
-- `bool IsSupportedManualPowerTuning(IntPtr pGPUTuningServices, IntPtr pGPU)` - Check if manual power tuning is supported
-
-### ADLXGPUTuningInfo (Combined GPU Tuning Information)
-
-**Structs:**
-- `GPUTuningCapabilities` - AutoTuningSupported, PresetTuningSupported, ManualGFXTuningSupported, ManualVRAMTuningSupported, ManualFanTuningSupported, ManualPowerTuningSupported
-
-**Methods:**
-- `GPUTuningCapabilities GetTuningCapabilities(IntPtr pGPUTuningServices, IntPtr pGPU)` - Get all tuning capabilities in one call
-
-### ADLXPerformanceMonitoringHelpers (Performance Monitoring Operations)
-
-- `IntPtr GetSupportedGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get GPU metrics support interface
-- `IntPtr GetCurrentGPUMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get current GPU metrics interface
-- `bool IsSupportedGPUUsage(IntPtr pMetricsSupport)` - Check if GPU usage metric is supported
-- `bool IsSupportedGPUClockSpeed(IntPtr pMetricsSupport)` - Check if GPU clock speed metric is supported
-- `bool IsSupportedGPUTemperature(IntPtr pMetricsSupport)` - Check if GPU temperature metric is supported
-- `bool IsSupportedGPUPower(IntPtr pMetricsSupport)` - Check if GPU power metric is supported
-- `bool IsSupportedGPUFanSpeed(IntPtr pMetricsSupport)` - Check if GPU fan speed metric is supported
-- `bool IsSupportedGPUVRAM(IntPtr pMetricsSupport)` - Check if GPU VRAM metric is supported
-- `double GetGPUTemperature(IntPtr pMetrics)` - Get GPU temperature in °C
-- `double GetGPUUsage(IntPtr pMetrics)` - Get GPU usage percentage
-- `int GetGPUClockSpeed(IntPtr pMetrics)` - Get GPU clock speed in MHz
-- `int GetGPUVRAMClockSpeed(IntPtr pMetrics)` - Get VRAM clock speed in MHz
-- `int GetGPUVRAM(IntPtr pMetrics)` - Get VRAM usage in MB
-- `int GetGPUFanSpeed(IntPtr pMetrics)` - Get fan speed in RPM
-- `double GetGPUPower(IntPtr pMetrics)` - Get GPU power in Watts
-
-### ADLXPerformanceMonitoringInfo (Combined Performance Monitoring Information)
-
-**Structs:**
-- `GPUMetricsSupport` - UsageSupported, ClockSpeedSupported, TemperatureSupported, PowerSupported, FanSpeedSupported, VRAMSupported
-- `GPUMetricsSnapshot` - Temperature, Usage, ClockSpeed, VRAMClockSpeed, VRAMUsage, FanSpeed, Power
-
-**Methods:**
-- `GPUMetricsSupport GetMetricsSupport(IntPtr pPerfMonServices, IntPtr pGPU)` - Get all metrics support in one call
-- `GPUMetricsSnapshot GetCurrentMetrics(IntPtr pPerfMonServices, IntPtr pGPU)` - Get all current metrics in one call
-
-## ClangSharp Code Generation
-
-To regenerate P/Invoke bindings from ADLX headers (optional):
-
+## Regenerating bindings (optional)
 ```powershell
 cd ADLXWrapper
 ClangSharpPInvokeGenerator @ClangSharpConfig.rsp
 ```
-
-**Note:** Generated bindings are optional and not currently used. The wrapper uses manual VTable structures for COM-like interface access.
-
-## Architecture
-
-This wrapper uses a layered approach:
-
-1. **Native Layer (ADLXNative.cs):** Manual P/Invoke for DLL loading and entry points
-2. **Generated Layer (Generated/):** ClangSharp auto-generated types and structures (optional)
-3. **VTable Layer (ADLXVTables.cs):** COM-like interface vtable definitions
-4. **Wrapper Layer (ADLXApi.cs):** Managed API with IntPtr handles and IDisposable
-5. **Helper Layer (ADLXExtensions.cs):** Convenience methods for common operations
-
-## Dependencies
-
-- .NET 9.0
-- ClangSharp 18.1.0
-- ClangSharp.Interop 20.1.2
-- AMD ADLX SDK (in ../ADLX/SDK/ - downloaded via prepare_adlx.ps1)
-- AMD GPU drivers with ADLX support (amdadlx64.dll)
-
-## Getting the ADLX SDK
-
-The ADLX SDK is required for header files and references. Download it using:
-
-```powershell
-# From repository root
-.\prepare_adlx.ps1
-```
-
-This will download and extract the latest ADLX SDK to the `ADLX/` directory.
-
-## Memory Management
-
-- All ADLX interfaces use COM-like reference counting
-- GPU handles returned by `EnumerateGPUs()` should be released with `ADLXHelpers.ReleaseInterface()` when done
-- The `ADLXApi` class implements IDisposable for automatic cleanup
-- Always use `using` statement or call `Dispose()` explicitly
-
-## Migration from SWIG
-
-If you're migrating from the old SWIG-based wrapper, see [MIGRATION-GUIDE.md](MIGRATION-GUIDE.md) for detailed instructions and code examples.
-
-## References
-
-- ADLX SDK: `../ADLX/SDK/`
-- C samples: `../ADLX/Samples/C/`
-- Migration Guide: `MIGRATION-GUIDE.md`
-- Root README: `../README.md`
-
+Generated files land in `cs_generated/` and are excluded from source control.
