@@ -472,12 +472,6 @@ namespace ADLXWrapper
             public IntPtr GetVariBright;          // ADLX_RESULT GetVariBright(IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright)
             public IntPtr GetDisplayBlanking;     // ADLX_RESULT GetDisplayBlanking(IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking)
             public IntPtr GetDisplayConnectivityExperience; // ADLX_RESULT GetDisplayConnectivityExperience(IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience)
-            public IntPtr GetPowerTuning; // placeholder
-            public IntPtr GetRadeonSuperResolution; // placeholder
-            public IntPtr GetVirtualResolution; // placeholder
-            public IntPtr GetAdaptiveSync; // placeholder
-            public IntPtr GetDisplayGamutPixelFormat; // placeholder
-            public IntPtr GetCustomColorTemperature; // placeholder
             public IntPtr GetFreeSyncColorAccuracy; // IADLXDisplayFreeSyncColorAccuracy**
             public IntPtr GetDynamicRefreshRateControl; // IADLXDisplayDynamicRefreshRateControl**
         }
