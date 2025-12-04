@@ -1690,10 +1690,479 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Display settings helpers (FreeSync, GPU scaling, scaling mode).
+    /// Display settings helpers (FreeSync, GPU scaling, scaling mode, color depth, pixel format, VSR, integer scaling, HDCP, VariBright, display blanking).
     /// </summary>
     public static unsafe class ADLXDisplaySettingsHelpers
     {
+        public static AdlxInterfaceHandle GetDisplayBlankingHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDisplayBlankingFn>(vtbl->GetDisplayBlanking);
+
+            IntPtr pBlanking;
+            var result = getFn(pDisplayServices, pDisplay, &pBlanking);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Display Blanking interface");
+            }
+
+            return AdlxInterfaceHandle.From(pBlanking);
+        }
+
+        public static (bool supported, bool blanked) GetDisplayBlankingState(IntPtr pBlanking)
+        {
+            if (pBlanking == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pBlanking));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayBlankingVtbl**)pBlanking;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var blankedFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentBlanked);
+
+            byte supported = 0;
+            byte blanked = 0;
+            var r1 = supFn(pBlanking, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query Display Blanking support");
+
+            var r2 = blankedFn(pBlanking, &blanked);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query current blanking state");
+
+            return (supported != 0, blanked != 0);
+        }
+
+        public static void SetDisplayBlanked(IntPtr pBlanking, bool blank)
+        {
+            if (pBlanking == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pBlanking));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayBlankingVtbl**)pBlanking;
+            if (blank)
+            {
+                var fn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetBlanked);
+                var result = fn(pBlanking);
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to set display blanked");
+            }
+            else
+            {
+                var fn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetUnblanked);
+                var result = fn(pBlanking);
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to set display unblanked");
+            }
+        }
+
+        public static AdlxInterfaceHandle GetVirtualSuperResolutionHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetVirtualSuperResolutionFn>(vtbl->GetVirtualSuperResolution);
+
+            IntPtr pVsr;
+            var result = getFn(pDisplayServices, pDisplay, &pVsr);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Virtual Super Resolution interface");
+            }
+
+            return AdlxInterfaceHandle.From(pVsr);
+        }
+
+        public static (bool supported, bool enabled) GetVirtualSuperResolutionState(IntPtr pVsr)
+        {
+            if (pVsr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVsr));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVSRVtbl**)pVsr;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported = 0;
+            byte enabled = 0;
+
+            var r1 = supFn(pVsr, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query VSR support");
+
+            var r2 = enFn(pVsr, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query VSR enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetVirtualSuperResolutionEnabled(IntPtr pVsr, bool enable)
+        {
+            if (pVsr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVsr));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVSRVtbl**)pVsr;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pVsr, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set VSR state");
+        }
+
+        public static AdlxInterfaceHandle GetIntegerScalingHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntegerScalingFn>(vtbl->GetIntegerScaling);
+
+            IntPtr pIntegerScaling;
+            var result = getFn(pDisplayServices, pDisplay, &pIntegerScaling);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Integer Scaling interface");
+            }
+
+            return AdlxInterfaceHandle.From(pIntegerScaling);
+        }
+
+        public static (bool supported, bool enabled) GetIntegerScalingState(IntPtr pIntegerScaling)
+        {
+            if (pIntegerScaling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pIntegerScaling));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayIntegerScalingVtbl**)pIntegerScaling;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported = 0;
+            byte enabled = 0;
+
+            var r1 = supFn(pIntegerScaling, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query Integer Scaling support");
+
+            var r2 = enFn(pIntegerScaling, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query Integer Scaling enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetIntegerScalingEnabled(IntPtr pIntegerScaling, bool enable)
+        {
+            if (pIntegerScaling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pIntegerScaling));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayIntegerScalingVtbl**)pIntegerScaling;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pIntegerScaling, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set Integer Scaling state");
+        }
+
+        public static AdlxInterfaceHandle GetHDCPHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetHDCPFn>(vtbl->GetHDCP);
+
+            IntPtr pHdcp;
+            var result = getFn(pDisplayServices, pDisplay, &pHdcp);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get HDCP interface");
+            }
+
+            return AdlxInterfaceHandle.From(pHdcp);
+        }
+
+        public static (bool supported, bool enabled) GetHDCPState(IntPtr pHdcp)
+        {
+            if (pHdcp == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pHdcp));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayHDCPVtbl**)pHdcp;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported = 0;
+            byte enabled = 0;
+
+            var r1 = supFn(pHdcp, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query HDCP support");
+
+            var r2 = enFn(pHdcp, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query HDCP enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetHDCPEnabled(IntPtr pHdcp, bool enable)
+        {
+            if (pHdcp == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pHdcp));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayHDCPVtbl**)pHdcp;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pHdcp, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set HDCP state");
+        }
+
+        public enum VariBrightMode
+        {
+            Unknown = 0,
+            MaximizeBrightness,
+            OptimizeBrightness,
+            Balanced,
+            OptimizeBattery,
+            MaximizeBattery
+        }
+
+        public static AdlxInterfaceHandle GetVariBrightHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetVariBrightFn>(vtbl->GetVariBright);
+
+            IntPtr pVariBright;
+            var result = getFn(pDisplayServices, pDisplay, &pVariBright);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get VariBright interface");
+            }
+
+            return AdlxInterfaceHandle.From(pVariBright);
+        }
+
+        public static (bool supported, bool enabled, VariBrightMode mode) GetVariBrightState(IntPtr pVariBright)
+        {
+            if (pVariBright == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVariBright));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVariBrightVtbl**)pVariBright;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported = 0;
+            byte enabled = 0;
+            var r1 = supFn(pVariBright, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query VariBright support");
+
+            var r2 = enFn(pVariBright, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query VariBright enabled");
+
+            VariBrightMode mode = VariBrightMode.Unknown;
+            if (supported != 0)
+            {
+                mode = DetectVariBrightMode(pVariBright, vtbl);
+            }
+
+            return (supported != 0, enabled != 0, mode);
+        }
+
+        private static VariBrightMode DetectVariBrightMode(IntPtr pVariBright, ADLXVTables.IADLXDisplayVariBrightVtbl* vtbl)
+        {
+            byte flag = 0;
+
+            var maxBrightFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentMaximizeBrightness);
+            var maxBright = maxBrightFn(pVariBright, &flag);
+            if (maxBright == ADLX_RESULT.ADLX_OK && flag != 0) return VariBrightMode.MaximizeBrightness;
+
+            flag = 0;
+            var optBrightFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentOptimizeBrightness);
+            var optBright = optBrightFn(pVariBright, &flag);
+            if (optBright == ADLX_RESULT.ADLX_OK && flag != 0) return VariBrightMode.OptimizeBrightness;
+
+            flag = 0;
+            var balancedFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentBalanced);
+            var balanced = balancedFn(pVariBright, &flag);
+            if (balanced == ADLX_RESULT.ADLX_OK && flag != 0) return VariBrightMode.Balanced;
+
+            flag = 0;
+            var optBatteryFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentOptimizeBattery);
+            var optBattery = optBatteryFn(pVariBright, &flag);
+            if (optBattery == ADLX_RESULT.ADLX_OK && flag != 0) return VariBrightMode.OptimizeBattery;
+
+            flag = 0;
+            var maxBatteryFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsCurrentMaximizeBattery);
+            var maxBattery = maxBatteryFn(pVariBright, &flag);
+            if (maxBattery == ADLX_RESULT.ADLX_OK && flag != 0) return VariBrightMode.MaximizeBattery;
+
+            return VariBrightMode.Unknown;
+        }
+
+        public static void SetVariBright(IntPtr pVariBright, bool enable, VariBrightMode mode)
+        {
+            if (pVariBright == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVariBright));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVariBrightVtbl**)pVariBright;
+            var setEnabledFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setEnabledFn(pVariBright, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set VariBright enabled state");
+
+            if (!enable)
+                return;
+
+            ADLX_RESULT modeResult = ADLX_RESULT.ADLX_OK;
+            switch (mode)
+            {
+                case VariBrightMode.MaximizeBrightness:
+                    modeResult = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetMaximizeBrightness)(pVariBright);
+                    break;
+                case VariBrightMode.OptimizeBrightness:
+                    modeResult = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetOptimizeBrightness)(pVariBright);
+                    break;
+                case VariBrightMode.Balanced:
+                    modeResult = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetBalanced)(pVariBright);
+                    break;
+                case VariBrightMode.OptimizeBattery:
+                    modeResult = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetOptimizeBattery)(pVariBright);
+                    break;
+                case VariBrightMode.MaximizeBattery:
+                    modeResult = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->SetMaximizeBattery)(pVariBright);
+                    break;
+                default:
+                    modeResult = ADLX_RESULT.ADLX_OK;
+                    break;
+            }
+
+            if (modeResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(modeResult, "Failed to set VariBright mode");
+        }
+
+        public static AdlxInterfaceHandle GetColorDepthHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetColorDepthFn>(vtbl->GetColorDepth);
+
+            IntPtr pColorDepth;
+            var result = getFn(pDisplayServices, pDisplay, &pColorDepth);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Color Depth interface");
+            }
+
+            return AdlxInterfaceHandle.From(pColorDepth);
+        }
+
+        public static (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState(IntPtr pColorDepth)
+        {
+            if (pColorDepth == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pColorDepth));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayColorDepthVtbl**)pColorDepth;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetColorDepthValueFn>(vtbl->GetValue);
+
+            byte supported = 0;
+            ADLX_COLOR_DEPTH depth = default;
+
+            var r1 = supFn(pColorDepth, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query Color Depth support");
+
+            var r2 = getFn(pColorDepth, &depth);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query Color Depth value");
+
+            return (supported != 0, depth);
+        }
+
+        public static void SetColorDepth(IntPtr pColorDepth, ADLX_COLOR_DEPTH depth)
+        {
+            if (pColorDepth == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pColorDepth));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayColorDepthVtbl**)pColorDepth;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetColorDepthValueFn>(vtbl->SetValue);
+            var result = setFn(pColorDepth, depth);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set Color Depth");
+        }
+
+        public static AdlxInterfaceHandle GetPixelFormatHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetPixelFormatFn>(vtbl->GetPixelFormat);
+
+            IntPtr pPixelFormat;
+            var result = getFn(pDisplayServices, pDisplay, &pPixelFormat);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Pixel Format interface");
+            }
+
+            return AdlxInterfaceHandle.From(pPixelFormat);
+        }
+
+        public static (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState(IntPtr pPixelFormat)
+        {
+            if (pPixelFormat == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPixelFormat));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayPixelFormatVtbl**)pPixelFormat;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetPixelFormatValueFn>(vtbl->GetValue);
+
+            byte supported = 0;
+            ADLX_PIXEL_FORMAT format = default;
+
+            var r1 = supFn(pPixelFormat, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query Pixel Format support");
+
+            var r2 = getFn(pPixelFormat, &format);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query Pixel Format value");
+
+            return (supported != 0, format);
+        }
+
+        public static void SetPixelFormat(IntPtr pPixelFormat, ADLX_PIXEL_FORMAT format)
+        {
+            if (pPixelFormat == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPixelFormat));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayPixelFormatVtbl**)pPixelFormat;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetPixelFormatValueFn>(vtbl->SetValue);
+            var result = setFn(pPixelFormat, format);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set Pixel Format");
+        }
+
         public static AdlxInterfaceHandle GetFreeSyncHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)

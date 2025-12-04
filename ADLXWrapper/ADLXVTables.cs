@@ -285,6 +285,11 @@ namespace ADLXWrapper
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetScalingModeFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppScalingMode);
+        internal delegate ADLX_RESULT GetIntegerScalingFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppIntegerScaling);
+        internal delegate ADLX_RESULT GetVirtualSuperResolutionFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppVsr);
+        internal delegate ADLX_RESULT GetHDCPFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppHdcp);
+        internal delegate ADLX_RESULT GetVariBrightFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppVariBright);
+        internal delegate ADLX_RESULT GetDisplayBlankingFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppBlanking);
         internal delegate ADLX_RESULT GetDynamicRefreshRateControlFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppDRRC);
         internal delegate ADLX_RESULT GetFreeSyncColorAccuracyFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppFSCA);
         internal delegate ADLX_RESULT GetColorDepthFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppColorDepth);
@@ -305,6 +310,7 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT SetScaleModeFn(IntPtr pThis, ADLX_SCALE_MODE mode);
         internal delegate ADLX_RESULT BoolSetFn(IntPtr pThis, byte enable);
+        internal delegate ADLX_RESULT InvokeFn(IntPtr pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetColorDepthValueFn(IntPtr pThis, ADLX_COLOR_DEPTH* depth);
@@ -432,16 +438,17 @@ namespace ADLXWrapper
             public IntPtr GetGamma;               // ADLX_RESULT GetGamma(IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma)
             public IntPtr GetDisplayChangedHandling;  // ADLX_RESULT GetDisplayChangedHandling(IADLXDisplayChangedHandling** ppDisplayChangedHandling)
             public IntPtr GetFreeSync;            // ADLX_RESULT GetFreeSync(IADLXDisplay* pDisplay, IADLXDisplayFreeSync** ppFreeSync)
-            public IntPtr GetVirtualSuperResolution; // placeholder to maintain vtable alignment
+            public IntPtr GetVirtualSuperResolution; // ADLX_RESULT GetVirtualSuperResolution(IADLXDisplay* pDisplay, IADLXDisplayVSR** ppVSR)
             public IntPtr GetGPUScaling;          // ADLX_RESULT GetGPUScaling(IADLXDisplay* pDisplay, IADLXDisplayGPUScaling** ppGPUScaling)
             public IntPtr GetScalingMode;         // ADLX_RESULT GetScalingMode(IADLXDisplay* pDisplay, IADLXDisplayScalingMode** ppScalingMode)
-            public IntPtr GetIntegerScaling;
-            public IntPtr GetHDCP;
-            public IntPtr GetVariBright;
-            public IntPtr GetCustomResolution;
-            public IntPtr GetColorDepth;
-            public IntPtr GetPixelFormat;
-            public IntPtr GetCustomColor;
+            public IntPtr GetIntegerScaling;      // ADLX_RESULT GetIntegerScaling(IADLXDisplay* pDisplay, IADLXDisplayIntegerScaling** ppIntegerScaling)
+            public IntPtr GetColorDepth;          // ADLX_RESULT GetColorDepth(IADLXDisplay* pDisplay, IADLXDisplayColorDepth** ppColorDepth)
+            public IntPtr GetPixelFormat;         // ADLX_RESULT GetPixelFormat(IADLXDisplay* pDisplay, IADLXDisplayPixelFormat** ppPixelFormat)
+            public IntPtr GetCustomColor;         // ADLX_RESULT GetCustomColor(IADLXDisplay* pDisplay, IADLXDisplayCustomColor** ppCustomColor)
+            public IntPtr GetHDCP;               // ADLX_RESULT GetHDCP(IADLXDisplay* pDisplay, IADLXDisplayHDCP** ppHDCP)
+            public IntPtr GetCustomResolution;    // ADLX_RESULT GetCustomResolution(IADLXDisplay* pDisplay, IADLXDisplayCustomResolution** ppCustomResolution)
+            public IntPtr GetVariBright;          // ADLX_RESULT GetVariBright(IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright)
+            public IntPtr GetDisplayBlanking;     // ADLX_RESULT GetDisplayBlanking(IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking)
             public IntPtr GetPowerTuning; // placeholder
             public IntPtr GetRadeonSuperResolution; // placeholder
             public IntPtr GetVirtualResolution; // placeholder
@@ -585,6 +592,83 @@ namespace ADLXWrapper
             public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
             public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
             public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayVSR vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayVSRVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayIntegerScaling vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayIntegerScalingVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayHDCP vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayHDCPVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayVariBright vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayVariBrightVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;              // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;                // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;               // ADLX_RESULT SetEnabled(adlx_bool enabled)
+            public IntPtr IsCurrentMaximizeBrightness;
+            public IntPtr IsCurrentOptimizeBrightness;
+            public IntPtr IsCurrentBalanced;
+            public IntPtr IsCurrentOptimizeBattery;
+            public IntPtr IsCurrentMaximizeBattery;
+            public IntPtr SetMaximizeBrightness;
+            public IntPtr SetOptimizeBrightness;
+            public IntPtr SetBalanced;
+            public IntPtr SetOptimizeBattery;
+            public IntPtr SetMaximizeBattery;
+        }
+
+        // IADLXDisplayBlanking vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayBlankingVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;      // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsCurrentBlanked; // ADLX_RESULT IsCurrentBlanked(adlx_bool* blanked)
+            public IntPtr IsCurrentUnblanked; // ADLX_RESULT IsCurrentUnblanked(adlx_bool* unBlanked)
+            public IntPtr SetBlanked;       // ADLX_RESULT SetBlanked()
+            public IntPtr SetUnblanked;     // ADLX_RESULT SetUnblanked()
         }
 
         // IADLXDesktop vtable

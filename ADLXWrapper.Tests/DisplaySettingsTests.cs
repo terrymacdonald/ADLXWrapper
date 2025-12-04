@@ -7,7 +7,7 @@ using Xunit.Abstractions;
 namespace ADLXWrapper.Tests
 {
     /// <summary>
-    /// Smoke tests for display settings slice (FreeSync, GPU scaling, scaling mode).
+    /// Smoke tests for display settings slice (FreeSync, GPU scaling, scaling mode, color depth, pixel format).
     /// Uses SafeHandles and re-applies current values to avoid changing user config.
     /// </summary>
     [SupportedOSPlatform("windows")]
@@ -139,6 +139,111 @@ namespace ADLXWrapper.Tests
             if (state.supported)
             {
                 ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled(drr, state.enabled);
+            }
+        }
+
+        [SkippableFact]
+        public void ColorDepth_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var depth = ADLXDisplaySettingsHelpers.GetColorDepthHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetColorDepthState(depth);
+            _output.WriteLine($"ColorDepth supported={state.supported}, value={state.current}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetColorDepth(depth, state.current);
+            }
+        }
+
+        [SkippableFact]
+        public void PixelFormat_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var format = ADLXDisplaySettingsHelpers.GetPixelFormatHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetPixelFormatState(format);
+            _output.WriteLine($"PixelFormat supported={state.supported}, value={state.current}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetPixelFormat(format, state.current);
+            }
+        }
+
+        [SkippableFact]
+        public void VirtualSuperResolution_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var vsr = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState(vsr);
+            _output.WriteLine($"VSR supported={state.supported}, enabled={state.enabled}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled(vsr, state.enabled);
+            }
+        }
+
+        [SkippableFact]
+        public void IntegerScaling_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var intScale = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetIntegerScalingState(intScale);
+            _output.WriteLine($"IntegerScaling supported={state.supported}, enabled={state.enabled}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled(intScale, state.enabled);
+            }
+        }
+
+        [SkippableFact]
+        public void HDCP_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var hdcp = ADLXDisplaySettingsHelpers.GetHDCPHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetHDCPState(hdcp);
+            _output.WriteLine($"HDCP supported={state.supported}, enabled={state.enabled}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetHDCPEnabled(hdcp, state.enabled);
+            }
+        }
+
+        [SkippableFact]
+        public void VariBright_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var vb = ADLXDisplaySettingsHelpers.GetVariBrightHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetVariBrightState(vb);
+            _output.WriteLine($"VariBright supported={state.supported}, enabled={state.enabled}, mode={state.mode}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetVariBright(vb, state.enabled, state.mode);
+            }
+        }
+
+        [SkippableFact]
+        public void DisplayBlanking_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var blanking = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetDisplayBlankingState(blanking);
+            _output.WriteLine($"DisplayBlanking supported={state.supported}, blanked={state.blanked}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetDisplayBlanked(blanking, state.blanked);
             }
         }
     }
