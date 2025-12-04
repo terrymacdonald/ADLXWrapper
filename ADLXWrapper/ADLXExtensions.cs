@@ -1863,5 +1863,117 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to set scaling mode");
             }
         }
+
+        public static AdlxInterfaceHandle GetFreeSyncColorAccuracyHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetFreeSyncColorAccuracyFn>(vtbl->GetFreeSyncColorAccuracy);
+
+            IntPtr pFSCA;
+            var result = getFn(pDisplayServices, pDisplay, &pFSCA);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get FreeSync Color Accuracy interface");
+            }
+
+            return AdlxInterfaceHandle.From(pFSCA);
+        }
+
+        public static (bool supported, bool enabled) GetFreeSyncColorAccuracyState(IntPtr pFSCA)
+        {
+            if (pFSCA == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pFSCA));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayFreeSyncColorAccuracyVtbl**)pFSCA;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported;
+            byte enabled = 0;
+            var r1 = supFn(pFSCA, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query FreeSync Color Accuracy support");
+
+            var r2 = enFn(pFSCA, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query FreeSync Color Accuracy enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetFreeSyncColorAccuracyEnabled(IntPtr pFSCA, bool enable)
+        {
+            if (pFSCA == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pFSCA));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayFreeSyncColorAccuracyVtbl**)pFSCA;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pFSCA, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to set FreeSync Color Accuracy state");
+            }
+        }
+
+        public static AdlxInterfaceHandle GetDynamicRefreshRateControlHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDynamicRefreshRateControlFn>(vtbl->GetDynamicRefreshRateControl);
+
+            IntPtr pDRR;
+            var result = getFn(pDisplayServices, pDisplay, &pDRR);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Dynamic Refresh Rate Control interface");
+            }
+
+            return AdlxInterfaceHandle.From(pDRR);
+        }
+
+        public static (bool supported, bool enabled) GetDynamicRefreshRateControlState(IntPtr pDRR)
+        {
+            if (pDRR == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDRR));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayDynamicRefreshRateControlVtbl**)pDRR;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported;
+            byte enabled = 0;
+            var r1 = supFn(pDRR, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query DRR support");
+
+            var r2 = enFn(pDRR, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query DRR enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetDynamicRefreshRateControlEnabled(IntPtr pDRR, bool enable)
+        {
+            if (pDRR == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDRR));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayDynamicRefreshRateControlVtbl**)pDRR;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetFn>(vtbl->SetEnabled);
+            var result = setFn(pDRR, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to set DRR state");
+            }
+        }
     }
 }

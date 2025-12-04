@@ -111,5 +111,35 @@ namespace ADLXWrapper.Tests
                 ADLXDisplaySettingsHelpers.SetScalingMode(modeHandle, state.mode);
             }
         }
+
+        [SkippableFact]
+        public void FreeSyncColorAccuracy_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var fsca = ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyState(fsca);
+            _output.WriteLine($"FS Color Accuracy supported={state.supported}, enabled={state.enabled}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetFreeSyncColorAccuracyEnabled(fsca, state.enabled);
+            }
+        }
+
+        [SkippableFact]
+        public void DynamicRefreshRate_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var drr = ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlState(drr);
+            _output.WriteLine($"DRR supported={state.supported}, enabled={state.enabled}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled(drr, state.enabled);
+            }
+        }
     }
 }
