@@ -18,7 +18,7 @@ namespace ADLXWrapper.Tests
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
+        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
 
         public BasicApiTests(ITestOutputHelper output)
         {
@@ -55,7 +55,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                _gpus = _api.EnumerateGPUs();
+                _gpus = _api.EnumerateGPUHandles();
                 _output.WriteLine($"? ADLX initialized successfully");
                 _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
                 _output.WriteLine($"  GPUs found: {_gpus.Length}");
@@ -74,7 +74,7 @@ namespace ADLXWrapper.Tests
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(gpu);
+                    gpu.Dispose();
                 }
                 catch
                 {
@@ -122,10 +122,10 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystemServices = _api!.GetSystemServices();
+            using var pSystemServices = _api!.GetSystemServicesHandle();
             
-            Assert.NotEqual(IntPtr.Zero, pSystemServices);
-            _output.WriteLine($"? System services pointer: 0x{pSystemServices:X}");
+            Assert.False(pSystemServices.IsInvalid);
+            _output.WriteLine($"? System services handle: 0x{((IntPtr)pSystemServices):X}");
         }
 
         [SkippableFact]
@@ -135,19 +135,19 @@ namespace ADLXWrapper.Tests
 
             _output.WriteLine("=== Testing All Service Types ===");
 
-            var pSystem = _api!.GetSystemServices();
-            Assert.NotEqual(IntPtr.Zero, pSystem);
+            using var pSystem = _api!.GetSystemServicesHandle();
+            Assert.False(pSystem.IsInvalid);
             _output.WriteLine("? System Services: Accessible");
 
             _output.WriteLine($"? GPU Enumeration: {_gpus.Length} GPU(s) found");
 
             try
             {
-                var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+                var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(pSystem);
                 _output.WriteLine($"? Display Services: {displays.Length} display(s) found");
                 foreach (var display in displays)
                 {
-                    ADLXHelpers.ReleaseInterface(display);
+                    display.Dispose();
                 }
             }
             catch (Exception ex)
@@ -157,10 +157,9 @@ namespace ADLXWrapper.Tests
 
             try
             {
-                var pTuningServices = _api.GetGPUTuningServices();
-                Assert.NotEqual(IntPtr.Zero, pTuningServices);
+                using var pTuningServices = _api.GetGPUTuningServicesHandle();
+                Assert.False(pTuningServices.IsInvalid);
                 _output.WriteLine("? GPU Tuning Services: Accessible");
-                ADLXHelpers.ReleaseInterface(pTuningServices);
             }
             catch (Exception ex)
             {
@@ -169,10 +168,9 @@ namespace ADLXWrapper.Tests
 
             try
             {
-                var pPerfMonServices = _api.GetPerformanceMonitoringServices();
-                Assert.NotEqual(IntPtr.Zero, pPerfMonServices);
+                using var pPerfMonServices = _api.GetPerformanceMonitoringServicesHandle();
+                Assert.False(pPerfMonServices.IsInvalid);
                 _output.WriteLine("? Performance Monitoring Services: Accessible");
-                ADLXHelpers.ReleaseInterface(pPerfMonServices);
             }
             catch (Exception ex)
             {
@@ -223,8 +221,8 @@ namespace ADLXWrapper.Tests
             // After dispose, methods should throw ObjectDisposedException
             Assert.Throws<ObjectDisposedException>(() => testApi.GetVersion());
             Assert.Throws<ObjectDisposedException>(() => testApi.GetFullVersion());
-            Assert.Throws<ObjectDisposedException>(() => testApi.GetSystemServices());
-            Assert.Throws<ObjectDisposedException>(() => testApi.EnumerateGPUs());
+            Assert.Throws<ObjectDisposedException>(() => testApi.GetSystemServicesHandle());
+            Assert.Throws<ObjectDisposedException>(() => testApi.EnumerateGPUHandles());
             
             _output.WriteLine("? Methods correctly throw ObjectDisposedException after disposal");
         }

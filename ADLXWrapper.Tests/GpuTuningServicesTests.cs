@@ -18,13 +18,13 @@ namespace ADLXWrapper.Tests
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
-        private readonly IntPtr _pGPUTuningServices;
+        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
+        private readonly AdlxInterfaceHandle? _pGPUTuningServices;
 
         public GpuTuningServicesTests(ITestOutputHelper output)
         {
             _output = output;
-            _pGPUTuningServices = IntPtr.Zero;
+            _pGPUTuningServices = null;
 
             // Stage 1: Check for AMD GPU hardware via PCI
             if (!HardwareDetection.HasAMDGPU(out string hwError))
@@ -57,7 +57,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                _gpus = _api.EnumerateGPUs();
+                _gpus = _api.EnumerateGPUHandles();
                 _output.WriteLine($"? ADLX initialized successfully");
                 _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
                 _output.WriteLine($"  GPUs found: {_gpus.Length}");
@@ -65,7 +65,8 @@ namespace ADLXWrapper.Tests
                 // Try to get GPU tuning services
                 try
                 {
-                    _pGPUTuningServices = _api.GetGPUTuningServices();
+                    var handle = _api.GetGPUTuningServicesHandle();
+                    _pGPUTuningServices = handle;
                     _output.WriteLine("  GPU tuning services: Available");
                 }
                 catch (ADLXException ex)
@@ -83,11 +84,11 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             // Release tuning services
-            if (_pGPUTuningServices != IntPtr.Zero)
+            if (_pGPUTuningServices is not null)
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(_pGPUTuningServices);
+                    _pGPUTuningServices.Dispose();
                 }
                 catch
                 {
@@ -100,7 +101,7 @@ namespace ADLXWrapper.Tests
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(gpu);
+                    gpu.Dispose();
                 }
                 catch
                 {
@@ -116,42 +117,43 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pTuningServices = _api!.GetGPUTuningServices();
-            Assert.NotEqual(IntPtr.Zero, pTuningServices);
-            _output.WriteLine($"? GPU tuning services pointer: 0x{pTuningServices:X}");
-
-            ADLXHelpers.ReleaseInterface(pTuningServices);
+            using var pTuningServices = _api!.GetGPUTuningServicesHandle();
+            Assert.False(pTuningServices.IsInvalid);
+            _output.WriteLine($"? GPU tuning services pointer: 0x{((IntPtr)pTuningServices):X}");
         }
 
         [SkippableFact]
         public void IsSupportedAutoTuning_ShouldReturnBooleanValue()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
-            var isSupported = ADLXGPUTuningHelpers.IsSupportedAutoTuning(_pGPUTuningServices, _gpus[0]);
+            var tuning = _pGPUTuningServices!;
+            var isSupported = ADLXGPUTuningHelpers.IsSupportedAutoTuning(tuning, _gpus[0]);
             _output.WriteLine($"? Auto Tuning Supported: {isSupported}");
         }
 
         [SkippableFact]
         public void IsSupportedPresetTuning_ShouldReturnBooleanValue()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
-            var isSupported = ADLXGPUTuningHelpers.IsSupportedPresetTuning(_pGPUTuningServices, _gpus[0]);
+            var tuning = _pGPUTuningServices!;
+            var isSupported = ADLXGPUTuningHelpers.IsSupportedPresetTuning(tuning, _gpus[0]);
             _output.WriteLine($"? Preset Tuning Supported: {isSupported}");
         }
 
         [SkippableFact]
         public void IsSupportedManualGFXTuning_ShouldHandleGracefully()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
             try
             {
-                var isSupported = ADLXGPUTuningHelpers.IsSupportedManualGFXTuning(_pGPUTuningServices, _gpus[0]);
+                var tuning = _pGPUTuningServices!;
+                var isSupported = ADLXGPUTuningHelpers.IsSupportedManualGFXTuning(tuning, _gpus[0]);
                 _output.WriteLine($"? Manual GFX Tuning Supported: {isSupported}");
             }
             catch (ADLXException ex)
@@ -163,57 +165,61 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void IsSupportedManualVRAMTuning_ShouldReturnBooleanValue()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
-            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualVRAMTuning(_pGPUTuningServices, _gpus[0]);
+            var tuning = _pGPUTuningServices!;
+            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualVRAMTuning(tuning, _gpus[0]);
             _output.WriteLine($"? Manual VRAM Tuning Supported: {isSupported}");
         }
 
         [SkippableFact]
         public void IsSupportedManualFanTuning_ShouldReturnBooleanValue()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
-            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualFanTuning(_pGPUTuningServices, _gpus[0]);
+            var tuning = _pGPUTuningServices!;
+            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualFanTuning(tuning, _gpus[0]);
             _output.WriteLine($"? Manual Fan Tuning Supported: {isSupported}");
         }
 
         [SkippableFact]
         public void IsSupportedManualPowerTuning_ShouldReturnBooleanValue()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
-            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualPowerTuning(_pGPUTuningServices, _gpus[0]);
+            var tuning = _pGPUTuningServices!;
+            var isSupported = ADLXGPUTuningHelpers.IsSupportedManualPowerTuning(tuning, _gpus[0]);
             _output.WriteLine($"? Manual Power Tuning Supported: {isSupported}");
         }
 
         [SkippableFact]
         public void AllSupportChecks_ShouldNotThrow()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero || _gpus.Length == 0,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
             _output.WriteLine("=== GPU Tuning Support Summary ===");
             
-            try { _output.WriteLine($"  Auto Tuning: {ADLXGPUTuningHelpers.IsSupportedAutoTuning(_pGPUTuningServices, _gpus[0])}"); }
+            var tuning = _pGPUTuningServices!;
+            try { _output.WriteLine($"  Auto Tuning: {ADLXGPUTuningHelpers.IsSupportedAutoTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Auto Tuning: Error - {ex.Message}"); }
 
-            try { _output.WriteLine($"  Preset Tuning: {ADLXGPUTuningHelpers.IsSupportedPresetTuning(_pGPUTuningServices, _gpus[0])}"); }
+            try { _output.WriteLine($"  Preset Tuning: {ADLXGPUTuningHelpers.IsSupportedPresetTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Preset Tuning: Error - {ex.Message}"); }
 
-            try { _output.WriteLine($"  Manual GFX Tuning: {ADLXGPUTuningHelpers.IsSupportedManualGFXTuning(_pGPUTuningServices, _gpus[0])}"); }
+            try { _output.WriteLine($"  Manual GFX Tuning: {ADLXGPUTuningHelpers.IsSupportedManualGFXTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Manual GFX Tuning: Error - {ex.Message}"); }
 
-            try { _output.WriteLine($"  Manual VRAM Tuning: {ADLXGPUTuningHelpers.IsSupportedManualVRAMTuning(_pGPUTuningServices, _gpus[0])}"); }
+            try { _output.WriteLine($"  Manual VRAM Tuning: {ADLXGPUTuningHelpers.IsSupportedManualVRAMTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Manual VRAM Tuning: Error - {ex.Message}"); }
 
-            try { _output.WriteLine($"  Manual Fan Tuning: {ADLXGPUTuningHelpers.IsSupportedManualFanTuning(_pGPUTuningServices, _gpus[0])}"); }
+            try { _output.WriteLine($"  Manual Fan Tuning: {ADLXGPUTuningHelpers.IsSupportedManualFanTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Manual Fan Tuning: Error - {ex.Message}"); }
 
-            try { _output.WriteLine($"  Manual Power Tuning: {ADLXGPUTuningHelpers.IsSupportedManualPowerTuning(_pGPUTuningServices, _gpus[0])}"); }
+            try { _output.WriteLine($"  Manual Power Tuning: {ADLXGPUTuningHelpers.IsSupportedManualPowerTuning(tuning, _gpus[0])}"); }
             catch (Exception ex) { _output.WriteLine($"  Manual Power Tuning: Error - {ex.Message}"); }
 
             _output.WriteLine("? All support checks completed");
@@ -232,11 +238,12 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void IsSupportedAutoTuning_WithNullGPU_ShouldThrowArgumentNullException()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == IntPtr.Zero,
-                _pGPUTuningServices != IntPtr.Zero ? _skipReason : "GPU tuning services not available");
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
 
+            var tuning = _pGPUTuningServices!;
             Assert.Throws<ArgumentNullException>(() => 
-                ADLXGPUTuningHelpers.IsSupportedAutoTuning(_pGPUTuningServices, IntPtr.Zero));
+                ADLXGPUTuningHelpers.IsSupportedAutoTuning(tuning, IntPtr.Zero));
             _output.WriteLine("? IsSupportedAutoTuning correctly throws on null GPU pointer");
         }
     }

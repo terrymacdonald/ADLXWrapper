@@ -18,13 +18,13 @@ dotnet build ADLXWrapper/ADLXWrapper.csproj
 using ADLXWrapper;
 
 using var adlx = ADLXApi.Initialize();
-var gpus = adlx.EnumerateGPUs();
-
-foreach (var gpu in gpus)
+foreach (var gpu in adlx.EnumerateGPUHandles())
 {
-    var info = ADLXGPUInfo.GetBasicInfo(gpu);
-    Console.WriteLine($"{info.Name} ({info.VRAMType}) - {info.TotalVRAM} MB");
-    ADLXHelpers.ReleaseInterface(gpu);
+    using (gpu)
+    {
+        var info = ADLXGPUInfo.GetBasicInfo(gpu);
+        Console.WriteLine($"{info.Name} ({info.VRAMType}) - {info.TotalVRAM} MB");
+    }
 }
 ```
 

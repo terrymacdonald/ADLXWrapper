@@ -18,8 +18,8 @@ namespace ADLXWrapper.Tests
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
-        private readonly IntPtr[] _displays = Array.Empty<IntPtr>();
+        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
+        private readonly AdlxInterfaceHandle[] _displays = Array.Empty<AdlxInterfaceHandle>();
 
         public DisplayServicesTests(ITestOutputHelper output)
         {
@@ -56,14 +56,14 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                _gpus = _api.EnumerateGPUs();
+                _gpus = _api.EnumerateGPUHandles();
                 _output.WriteLine($"? ADLX initialized successfully");
                 _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
                 _output.WriteLine($"  GPUs found: {_gpus.Length}");
 
                 // Enumerate displays
-                var pSystem = _api.GetSystemServices();
-                _displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+                using var pSystem = _api.GetSystemServicesHandle();
+                _displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(pSystem);
                 _output.WriteLine($"  Displays found: {_displays.Length}");
             }
             catch (Exception ex)
@@ -80,7 +80,7 @@ namespace ADLXWrapper.Tests
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(display);
+                    display.Dispose();
                 }
                 catch
                 {
@@ -93,7 +93,7 @@ namespace ADLXWrapper.Tests
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(gpu);
+                    gpu.Dispose();
                 }
                 catch
                 {
@@ -109,15 +109,15 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystem = _api!.GetSystemServices();
-            var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+            using var pSystem = _api!.GetSystemServicesHandle();
+            var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(pSystem);
 
             Assert.NotNull(displays);
             _output.WriteLine($"? Found {displays.Length} display(s)");
 
             foreach (var display in displays)
             {
-                ADLXHelpers.ReleaseInterface(display);
+                display.Dispose();
             }
         }
 
@@ -129,10 +129,10 @@ namespace ADLXWrapper.Tests
 
             foreach (var display in _displays)
             {
-                Assert.NotEqual(IntPtr.Zero, display);
+                Assert.False(display.IsInvalid);
             }
 
-            _output.WriteLine($"? All {_displays.Length} display pointer(s) are valid (non-zero)");
+            _output.WriteLine($"? All {_displays.Length} display handle(s) are valid");
         }
 
         [SkippableFact]
@@ -268,21 +268,21 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var pSystem = _api!.GetSystemServices();
+            using var pSystem = _api!.GetSystemServicesHandle();
             
-            var displays1 = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
-            var displays2 = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
+            var displays1 = ADLXDisplayHelpers.EnumerateAllDisplayHandles(pSystem);
+            var displays2 = ADLXDisplayHelpers.EnumerateAllDisplayHandles(pSystem);
 
             Assert.Equal(displays1.Length, displays2.Length);
             _output.WriteLine($"? Multiple enumerations return consistent count: {displays1.Length}");
 
             foreach (var display in displays1)
             {
-                ADLXHelpers.ReleaseInterface(display);
+                display.Dispose();
             }
             foreach (var display in displays2)
             {
-                ADLXHelpers.ReleaseInterface(display);
+                display.Dispose();
             }
         }
     }

@@ -207,128 +207,44 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Get the system services interface pointer
-        /// This is the root interface for all ADLX functionality
+        /// Get the system services as a SafeHandle (auto-release even if not disposed manually).
         /// </summary>
-        public IntPtr GetSystemServices()
+        public AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
-            return _pSystemServices;
+            return AdlxInterfaceHandle.From(_pSystemServices, addRef: true);
         }
 
         /// <summary>
-        /// Get GPU tuning services interface pointer
+        /// Get GPU tuning services wrapped in a SafeHandle.
         /// </summary>
-        public unsafe IntPtr GetGPUTuningServices()
+        public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
-            ThrowIfDisposed();
-
-            // Access IADLXSystem vtable to call GetGPUTuningServices
-            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
-            var getGPUTuningServicesFn = (ADLXVTables.GetGPUTuningServicesFn)Marshal.GetDelegateForFunctionPointer(
-                systemVtbl->GetGPUTuningServices, typeof(ADLXVTables.GetGPUTuningServicesFn));
-
-            IntPtr pGPUTuningServices;
-            var result = getGPUTuningServicesFn(_pSystemServices, &pGPUTuningServices);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU tuning services");
-            }
-
-            return pGPUTuningServices;
+            var ptr = GetGPUTuningServicesInternal();
+            return AdlxInterfaceHandle.From(ptr);
         }
 
         /// <summary>
-        /// Get performance monitoring services interface pointer
+        /// Get performance monitoring services wrapped in a SafeHandle.
         /// </summary>
-        public unsafe IntPtr GetPerformanceMonitoringServices()
+        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
-            ThrowIfDisposed();
-
-            // Access IADLXSystem vtable to call GetPerformanceMonitoringServices
-            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
-            var getPerfMonServicesFn = (ADLXVTables.GetPerformanceMonitoringServicesFn)Marshal.GetDelegateForFunctionPointer(
-                systemVtbl->GetPerformanceMonitoringServices, typeof(ADLXVTables.GetPerformanceMonitoringServicesFn));
-
-            IntPtr pPerfMonServices;
-            var result = getPerfMonServicesFn(_pSystemServices, &pPerfMonServices);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get performance monitoring services");
-            }
-
-            return pPerfMonServices;
+            var ptr = GetPerformanceMonitoringServicesInternal();
+            return AdlxInterfaceHandle.From(ptr);
         }
 
         /// <summary>
-        /// Enumerate all AMD GPUs in the system
+        /// Enumerate GPUs and wrap them in SafeHandles for automatic release.
         /// </summary>
-        public unsafe IntPtr[] EnumerateGPUs()
+        public AdlxInterfaceHandle[] EnumerateGPUHandles()
         {
-            ThrowIfDisposed();
-
-            // Access IADLXSystem vtable to call GetGPUs
-            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
-            var getGPUsFn = (ADLXVTables.GetGPUsFn)Marshal.GetDelegateForFunctionPointer(
-                systemVtbl->GetGPUs, typeof(ADLXVTables.GetGPUsFn));
-
-            // Call GetGPUs to get the GPU list
-            IntPtr pGPUList;
-            var result = getGPUsFn(_pSystemServices, &pGPUList);
-            
-            if (result != ADLX_RESULT.ADLX_OK)
+            var raw = EnumerateGPUsInternal();
+            var handles = new AdlxInterfaceHandle[raw.Length];
+            for (int i = 0; i < raw.Length; i++)
             {
-                throw new ADLXException(result, "Failed to get GPU list");
+                handles[i] = AdlxInterfaceHandle.From(raw[i]);
             }
-
-            if (pGPUList == IntPtr.Zero)
-            {
-                return Array.Empty<IntPtr>();
-            }
-
-            try
-            {
-                // Access IADLXGPUList vtable to get list size
-                var listVtbl = *(ADLXVTables.IADLXGPUListVtbl**)pGPUList;
-                var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(
-                    listVtbl->Size, typeof(ADLXVTables.SizeFn));
-                var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(
-                    listVtbl->At, typeof(ADLXVTables.AtFn));
-
-                uint count = sizeFn(pGPUList);
-                
-                if (count == 0)
-                {
-                    return Array.Empty<IntPtr>();
-                }
-
-                // Get each GPU from the list
-                var gpus = new IntPtr[count];
-                for (uint i = 0; i < count; i++)
-                {
-                    IntPtr pGPU;
-                    result = atFn(pGPUList, i, &pGPU);
-                    
-                    if (result != ADLX_RESULT.ADLX_OK)
-                    {
-                        throw new ADLXException(result, $"Failed to get GPU at index {i}");
-                    }
-
-                    gpus[i] = pGPU;
-                }
-
-                return gpus;
-            }
-            finally
-            {
-                // Release the GPU list interface
-                var listVtbl = *(ADLXVTables.IADLXListVtbl**)pGPUList;
-                var releaseFn = (ADLXVTables.ReleaseFn)Marshal.GetDelegateForFunctionPointer(
-                    listVtbl->Release, typeof(ADLXVTables.ReleaseFn));
-                releaseFn(pGPUList);
-            }
+            return handles;
         }
 
         /// <summary>
@@ -341,6 +257,18 @@ namespace ADLXWrapper
 
             unsafe
             {
+                if (_pSystemServices != IntPtr.Zero)
+                {
+                    try
+                    {
+                        ADLXHelpers.ReleaseInterface(_pSystemServices);
+                    }
+                    catch
+                    {
+                        // ignore release errors during cleanup
+                    }
+                }
+
                 // Terminate ADLX
                 if (_terminateFn != null && _pSystemServices != IntPtr.Zero)
                 {
@@ -445,6 +373,105 @@ namespace ADLXWrapper
             ADLXNative.FreeLibrary(handle);
             errorMessage = string.Empty;
             return true;
+        }
+
+        private unsafe IntPtr GetGPUTuningServicesInternal()
+        {
+            ThrowIfDisposed();
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getGPUTuningServicesFn = (ADLXVTables.GetGPUTuningServicesFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetGPUTuningServices, typeof(ADLXVTables.GetGPUTuningServicesFn));
+
+            IntPtr pGPUTuningServices;
+            var result = getGPUTuningServicesFn(_pSystemServices, &pGPUTuningServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU tuning services");
+            }
+
+            return pGPUTuningServices;
+        }
+
+        private unsafe IntPtr GetPerformanceMonitoringServicesInternal()
+        {
+            ThrowIfDisposed();
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getPerfMonServicesFn = (ADLXVTables.GetPerformanceMonitoringServicesFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetPerformanceMonitoringServices, typeof(ADLXVTables.GetPerformanceMonitoringServicesFn));
+
+            IntPtr pPerfMonServices;
+            var result = getPerfMonServicesFn(_pSystemServices, &pPerfMonServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get performance monitoring services");
+            }
+
+            return pPerfMonServices;
+        }
+
+        private unsafe IntPtr[] EnumerateGPUsInternal()
+        {
+            ThrowIfDisposed();
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getGPUsFn = (ADLXVTables.GetGPUsFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetGPUs, typeof(ADLXVTables.GetGPUsFn));
+
+            IntPtr pGPUList;
+            var result = getGPUsFn(_pSystemServices, &pGPUList);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU list");
+            }
+
+            if (pGPUList == IntPtr.Zero)
+            {
+                return Array.Empty<IntPtr>();
+            }
+
+            try
+            {
+                var listVtbl = *(ADLXVTables.IADLXGPUListVtbl**)pGPUList;
+                var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(
+                    listVtbl->Size, typeof(ADLXVTables.SizeFn));
+                var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(
+                    listVtbl->At, typeof(ADLXVTables.AtFn));
+
+                uint count = sizeFn(pGPUList);
+
+                if (count == 0)
+                {
+                    return Array.Empty<IntPtr>();
+                }
+
+                var gpus = new IntPtr[count];
+                for (uint i = 0; i < count; i++)
+                {
+                    IntPtr pGPU;
+                    result = atFn(pGPUList, i, &pGPU);
+
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        throw new ADLXException(result, $"Failed to get GPU at index {i}");
+                    }
+
+                    gpus[i] = pGPU;
+                }
+
+                return gpus;
+            }
+            finally
+            {
+                var listVtbl = *(ADLXVTables.IADLXListVtbl**)pGPUList;
+                var releaseFn = (ADLXVTables.ReleaseFn)Marshal.GetDelegateForFunctionPointer(
+                    listVtbl->Release, typeof(ADLXVTables.ReleaseFn));
+                releaseFn(pGPUList);
+            }
         }
     }
 }

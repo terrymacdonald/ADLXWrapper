@@ -18,7 +18,7 @@ namespace ADLXWrapper.Tests
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly IntPtr[] _gpus = Array.Empty<IntPtr>();
+        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
 
         public CoreApiTests(ITestOutputHelper output)
         {
@@ -55,7 +55,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                _gpus = _api.EnumerateGPUs();
+                _gpus = _api.EnumerateGPUHandles();
                 _output.WriteLine($"? ADLX initialized successfully");
                 _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
                 _output.WriteLine($"  GPUs found: {_gpus.Length}");
@@ -74,7 +74,7 @@ namespace ADLXWrapper.Tests
             {
                 try
                 {
-                    ADLXHelpers.ReleaseInterface(gpu);
+                    gpu.Dispose();
                 }
                 catch
                 {
@@ -90,7 +90,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var gpus = _api!.EnumerateGPUs();
+            var gpus = _api!.EnumerateGPUHandles();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -99,7 +99,7 @@ namespace ADLXWrapper.Tests
             // Release the newly enumerated GPUs
             foreach (var gpu in gpus)
             {
-                ADLXHelpers.ReleaseInterface(gpu);
+                gpu.Dispose();
             }
         }
 
@@ -108,15 +108,15 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var gpus = _api!.EnumerateGPUs();
+            var gpus = _api!.EnumerateGPUHandles();
 
             foreach (var gpu in gpus)
             {
-                Assert.NotEqual(IntPtr.Zero, gpu);
-                ADLXHelpers.ReleaseInterface(gpu);
+                Assert.False(gpu.IsInvalid);
+                gpu.Dispose();
             }
 
-            _output.WriteLine($"? All {gpus.Length} GPU pointer(s) are valid (non-zero)");
+            _output.WriteLine($"? All {gpus.Length} GPU handle(s) are valid");
         }
 
         [SkippableFact]
@@ -310,8 +310,8 @@ namespace ADLXWrapper.Tests
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Get a fresh GPU pointer
-            var gpus = _api!.EnumerateGPUs();
-            var exception = Record.Exception(() => ADLXHelpers.ReleaseInterface(gpus[0]));
+            var gpus = _api!.EnumerateGPUHandles();
+            var exception = Record.Exception(() => gpus[0].Dispose());
 
             Assert.Null(exception);
             _output.WriteLine("? ReleaseInterface executed without exception");
@@ -319,7 +319,7 @@ namespace ADLXWrapper.Tests
             // Release remaining GPUs
             for (int i = 1; i < gpus.Length; i++)
             {
-                ADLXHelpers.ReleaseInterface(gpus[i]);
+                gpus[i].Dispose();
             }
         }
 

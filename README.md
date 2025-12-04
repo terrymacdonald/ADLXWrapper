@@ -42,102 +42,83 @@ dotnet add reference ..\ADLXWrapper\ADLXWrapper.csproj
 using ADLXWrapper;
 ```
 
-### Example 1: Enumerate GPUs and basic info
+### Example 1: Enumerate GPUs and basic info (auto-disposed handles)
 ```csharp
 using var adlx = ADLXApi.Initialize();
-var gpus = adlx.EnumerateGPUs();
+using var system = adlx.GetSystemServicesHandle(); // SafeHandle that auto-releases
 
-foreach (var gpu in gpus)
+foreach (var gpu in adlx.EnumerateGPUHandles())
 {
-    var info = ADLXGPUInfo.GetBasicInfo(gpu);
-    Console.WriteLine($"{info.Name} | VRAM: {info.TotalVRAM} MB | External: {info.IsExternal}");
-    ADLXHelpers.ReleaseInterface(gpu);
+    using (gpu)
+    {
+        var info = ADLXGPUInfo.GetBasicInfo(gpu);
+        Console.WriteLine($"{info.Name} | VRAM: {info.TotalVRAM} MB | External: {info.IsExternal}");
+    }
 }
 ```
 
 ### Example 2: Query displays
 ```csharp
 using var adlx = ADLXApi.Initialize();
-var pSystem = adlx.GetSystemServices();
-var displays = ADLXDisplayHelpers.EnumerateAllDisplays(pSystem);
-
-foreach (var display in displays)
+using var system = adlx.GetSystemServicesHandle();
+foreach (var display in ADLXDisplayHelpers.EnumerateAllDisplayHandles(system))
 {
-    var d = ADLXDisplayInfo.GetBasicInfo(display);
-    Console.WriteLine($"{d.Name} - {d.Width}x{d.Height} @ {d.RefreshRate} Hz");
-    ADLXHelpers.ReleaseInterface(display);
+    using (display)
+    {
+        var d = ADLXDisplayInfo.GetBasicInfo(display);
+        Console.WriteLine($"{d.Name} - {d.Width}x{d.Height} @ {d.RefreshRate} Hz");
+    }
 }
 ```
 
 ### Example 3: Read GPU metrics
 ```csharp
 using var adlx = ADLXApi.Initialize();
-var gpus = adlx.EnumerateGPUs();
+var gpus = adlx.EnumerateGPUHandles();
 if (gpus.Length > 0)
 {
-    var perf = adlx.GetPerformanceMonitoringServices();
-    var snapshot = ADLXPerformanceMonitoringInfo.GetCurrentMetrics(perf, gpus[0]);
-    Console.WriteLine($"Temp: {snapshot.Temperature:F1} C, Usage: {snapshot.Usage:F1}%, Clock: {snapshot.ClockSpeed} MHz");
-    ADLXHelpers.ReleaseInterface(perf);
+    using var perf = adlx.GetPerformanceMonitoringServicesHandle();
+    using (gpus[0])
+    {
+        var snapshot = ADLXPerformanceMonitoringInfo.GetCurrentMetrics(perf, gpus[0]);
+        Console.WriteLine($"Temp: {snapshot.Temperature:F1} C, Usage: {snapshot.Usage:F1}%, Clock: {snapshot.ClockSpeed} MHz");
+    }
 }
-foreach (var gpu in gpus) ADLXHelpers.ReleaseInterface(gpu);
+foreach (var gpu in gpus) gpu.Dispose();
 ```
 
 ### Example 4: Check GPU tuning capabilities (read-only)
 ```csharp
 using var adlx = ADLXApi.Initialize();
-var gpus = adlx.EnumerateGPUs();
+var gpus = adlx.EnumerateGPUHandles();
 if (gpus.Length > 0)
 {
-    var tuning = adlx.GetGPUTuningServices();
-    var caps = ADLXGPUTuningInfo.GetTuningCapabilities(tuning, gpus[0]);
-    Console.WriteLine($"Auto: {caps.AutoTuningSupported}, Preset: {caps.PresetTuningSupported}, Manual GFX: {caps.ManualGFXTuningSupported}");
-    ADLXHelpers.ReleaseInterface(tuning);
+    using var tuning = adlx.GetGPUTuningServicesHandle();
+    using (gpus[0])
+    {
+        var caps = ADLXGPUTuningInfo.GetTuningCapabilities(tuning, gpus[0]);
+        Console.WriteLine($"Auto: {caps.AutoTuningSupported}, Preset: {caps.PresetTuningSupported}, Manual GFX: {caps.ManualGFXTuningSupported}");
+    }
 }
-foreach (var gpu in gpus) ADLXHelpers.ReleaseInterface(gpu);
+foreach (var gpu in gpus) gpu.Dispose();
 ```
 
 ### Example 5: List display names
 ```csharp
 using var adlx = ADLXApi.Initialize();
-var sys = adlx.GetSystemServices();
-var displays = ADLXDisplayHelpers.EnumerateAllDisplays(sys);
-
-foreach (var display in displays)
+using var sys = adlx.GetSystemServicesHandle();
+foreach (var display in ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys))
 {
-    var info = ADLXDisplayInfo.GetBasicInfo(display);
-    Console.WriteLine(info.Name);
-    ADLXHelpers.ReleaseInterface(display);
+    using (display)
+    {
+        var info = ADLXDisplayInfo.GetBasicInfo(display);
+        Console.WriteLine(info.Name);
+    }
 }
 ```
 
-### Example 6: Save Eyefinity desktop settings (requires AMD Eyefinity-capable GPU)
-```csharp
-using var adlx = ADLXApi.Initialize();
-var sys = adlx.GetSystemServices();
-
-// Ensure the GPU has desktops (Eyefinity-capable)
-var gpus = adlx.EnumerateGPUs();
-if (gpus.Length == 0)
-    throw new InvalidOperationException("No AMD GPU found");
-
-if (!ADLXHelpers.HasGPUDesktops(gpus[0]))
-    throw new InvalidOperationException("GPU reports no desktops / Eyefinity not available");
-
-// Acquire display services and desktop configuration
-var dispServices = ADLXDisplayHelpers.GetDisplayServices(sys);
-var desktopConfig = ADLXDisplayHelpers.GetCurrentDesktopConfig(dispServices);
-
-// Save to file
-const string path = "eyefinity-desktop.bin";
-ADLXDisplayHelpers.SaveDesktopConfigToFile(desktopConfig, path);
-Console.WriteLine($"Saved Eyefinity desktop config to {path}");
-
-// Release resources
-ADLXHelpers.ReleaseInterface(desktopConfig);
-ADLXHelpers.ReleaseInterface(dispServices);
-foreach (var gpu in gpus) ADLXHelpers.ReleaseInterface(gpu);
-```
+### Example 6: Save Eyefinity desktop settings (not yet implemented in helpers)
+The current helper set does not expose Eyefinity save/restore APIs. If you need this, wrap the corresponding ADLX interfaces and vtable methods for Eyefinity desktop configuration, then follow the same SafeHandle pattern shown above to ensure automatic release.
 
 ## Scripts
 - `prepare_adlx.ps1` — downloads/extracts the ADLX SDK into `ADLX/`
@@ -154,6 +135,7 @@ ADLXWrapper.sln
 │  ├─ ADLXExtensions.cs     # Helper and info utilities (GPU, display, tuning, metrics)
 │  └─ cs_generated/         # (optional) ClangSharp-generated bindings
 ├─ ADLXWrapper.Tests/       # xUnit tests (includes generated struct/layout tests)
+│  └─ generated_tests/         # ClangSharp-generated tests that are included in the test build
 └─ scripts: prepare_adlx.ps1, build_adlx.ps1, test_adlx.ps1
 ```
 

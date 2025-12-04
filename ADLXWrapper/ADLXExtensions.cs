@@ -283,6 +283,29 @@ namespace ADLXWrapper
     public static unsafe class ADLXDisplayHelpers
     {
         /// <summary>
+        /// Acquire display services and wrap in a SafeHandle.
+        /// </summary>
+        public static AdlxInterfaceHandle GetDisplayServicesHandle(IntPtr pSystem)
+        {
+            if (pSystem == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSystem));
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
+            var getDisplayServicesFn = Marshal.GetDelegateForFunctionPointer<GetDisplayServicesFn>(
+                systemVtbl->GetDisplaysServices);
+
+            IntPtr pDisplayServices;
+            var result = getDisplayServicesFn(pSystem, &pDisplayServices);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get display services");
+            }
+
+            return AdlxInterfaceHandle.From(pDisplayServices);
+        }
+
+        /// <summary>
         /// Enumerate displays for a GPU
         /// Returns array of display interface pointers
         /// </summary>
@@ -388,6 +411,20 @@ namespace ADLXWrapper
                 // Release the display services interface
                 ADLXHelpers.ReleaseInterface(pDisplayServices);
             }
+        }
+
+        /// <summary>
+        /// Enumerate all displays from system display services, returning SafeHandles for automatic release.
+        /// </summary>
+        public static AdlxInterfaceHandle[] EnumerateAllDisplayHandles(IntPtr pSystem)
+        {
+            var raw = EnumerateAllDisplays(pSystem);
+            var handles = new AdlxInterfaceHandle[raw.Length];
+            for (int i = 0; i < raw.Length; i++)
+            {
+                handles[i] = AdlxInterfaceHandle.From(raw[i]);
+            }
+            return handles;
         }
 
         // Delegate for GetDisplaysServices
