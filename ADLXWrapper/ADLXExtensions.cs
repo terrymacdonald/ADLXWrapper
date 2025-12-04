@@ -1673,6 +1673,56 @@ namespace ADLXWrapper
             }
         }
 
+        public static (uint rows, uint cols) GetEyefinityGridSize(IntPtr pEyefinityDesktop)
+        {
+            if (pEyefinityDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pEyefinityDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXEyefinityDesktopVtbl**)pEyefinityDesktop;
+            var gridFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityGridSizeFn>(vtbl->GridSize);
+            uint rows = 0, cols = 0;
+            var result = gridFn(pEyefinityDesktop, &rows, &cols);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to query Eyefinity grid size");
+            return (rows, cols);
+        }
+
+        public static AdlxInterfaceHandle GetEyefinityDisplay(IntPtr pEyefinityDesktop, uint row, uint col)
+        {
+            if (pEyefinityDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pEyefinityDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXEyefinityDesktopVtbl**)pEyefinityDesktop;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityGetDisplayFn>(vtbl->GetDisplay);
+            IntPtr pDisplay;
+            var result = getFn(pEyefinityDesktop, row, col, &pDisplay);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, $"Failed to get Eyefinity display at {row},{col}");
+            return AdlxInterfaceHandle.From(pDisplay);
+        }
+
+        public static (ADLX_ORIENTATION orientation, int width, int height) GetEyefinityDisplayInfo(IntPtr pEyefinityDesktop, uint row, uint col)
+        {
+            if (pEyefinityDesktop == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pEyefinityDesktop));
+
+            var vtbl = *(ADLXVTables.IADLXEyefinityDesktopVtbl**)pEyefinityDesktop;
+            var orientFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityDisplayOrientationFn>(vtbl->DisplayOrientation);
+            var sizeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.EyefinityDisplaySizeFn>(vtbl->DisplaySize);
+
+            ADLX_ORIENTATION orientation = default;
+            int w = 0, h = 0;
+            var r1 = orientFn(pEyefinityDesktop, row, col, &orientation);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, $"Failed to get Eyefinity orientation at {row},{col}");
+
+            var r2 = sizeFn(pEyefinityDesktop, row, col, &w, &h);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, $"Failed to get Eyefinity display size at {row},{col}");
+
+            return (orientation, w, h);
+        }
+
         public static void DestroyAllEyefinityDesktops(IntPtr pSimpleEyefinity)
         {
             if (pSimpleEyefinity == IntPtr.Zero)

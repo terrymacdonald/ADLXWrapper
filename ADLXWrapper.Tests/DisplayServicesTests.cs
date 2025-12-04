@@ -122,6 +122,27 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void EyefinityDesktop_ReadGridIfSupported()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
+
+            using var pSystem = _api!.GetSystemServicesHandle();
+            using var desktops = ADLXDesktopHelpers.GetDesktopServicesHandle(pSystem);
+
+            try
+            {
+                using var simple = ADLXDesktopHelpers.GetSimpleEyefinityHandle(desktops);
+                using var eyefinity = ADLXDesktopHelpers.CreateEyefinityDesktop(simple);
+                var grid = ADLXDesktopHelpers.GetEyefinityGridSize(eyefinity);
+                _output.WriteLine($"Eyefinity grid: {grid.rows}x{grid.cols}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Eyefinity not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
         public void EnumerateAllDisplays_ShouldReturnValidPointers()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _displays.Length == 0, 
