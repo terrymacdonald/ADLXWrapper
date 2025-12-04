@@ -97,6 +97,48 @@ if (gpus.Length > 0)
 foreach (var gpu in gpus) ADLXHelpers.ReleaseInterface(gpu);
 ```
 
+### Example 5: List display names
+```csharp
+using var adlx = ADLXApi.Initialize();
+var sys = adlx.GetSystemServices();
+var displays = ADLXDisplayHelpers.EnumerateAllDisplays(sys);
+
+foreach (var display in displays)
+{
+    var info = ADLXDisplayInfo.GetBasicInfo(display);
+    Console.WriteLine(info.Name);
+    ADLXHelpers.ReleaseInterface(display);
+}
+```
+
+### Example 6: Save Eyefinity desktop settings (requires AMD Eyefinity-capable GPU)
+```csharp
+using var adlx = ADLXApi.Initialize();
+var sys = adlx.GetSystemServices();
+
+// Ensure the GPU has desktops (Eyefinity-capable)
+var gpus = adlx.EnumerateGPUs();
+if (gpus.Length == 0)
+    throw new InvalidOperationException("No AMD GPU found");
+
+if (!ADLXHelpers.HasGPUDesktops(gpus[0]))
+    throw new InvalidOperationException("GPU reports no desktops / Eyefinity not available");
+
+// Acquire display services and desktop configuration
+var dispServices = ADLXDisplayHelpers.GetDisplayServices(sys);
+var desktopConfig = ADLXDisplayHelpers.GetCurrentDesktopConfig(dispServices);
+
+// Save to file
+const string path = "eyefinity-desktop.bin";
+ADLXDisplayHelpers.SaveDesktopConfigToFile(desktopConfig, path);
+Console.WriteLine($"Saved Eyefinity desktop config to {path}");
+
+// Release resources
+ADLXHelpers.ReleaseInterface(desktopConfig);
+ADLXHelpers.ReleaseInterface(dispServices);
+foreach (var gpu in gpus) ADLXHelpers.ReleaseInterface(gpu);
+```
+
 ## Scripts
 - `prepare_adlx.ps1` — downloads/extracts the ADLX SDK into `ADLX/`
 - `build_adlx.ps1` — builds wrapper + tests (net10.0)
@@ -119,4 +161,3 @@ ADLXWrapper.sln
 - Wrapper targets `net10.0`; ensure the .NET 10 SDK is installed.
 - ADLX is provided by the AMD driver (`amdadlx64.dll`); no extra native install is required beyond drivers.
 - Helper methods that query hardware will throw or skip if inputs are null; release COM-style interfaces with `ADLXHelpers.ReleaseInterface`.
-
