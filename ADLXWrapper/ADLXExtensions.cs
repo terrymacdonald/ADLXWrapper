@@ -1688,4 +1688,180 @@ namespace ADLXWrapper
             }
         }
     }
+
+    /// <summary>
+    /// Display settings helpers (FreeSync, GPU scaling, scaling mode).
+    /// </summary>
+    public static unsafe class ADLXDisplaySettingsHelpers
+    {
+        public static AdlxInterfaceHandle GetFreeSyncHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetFreeSyncFn>(vtbl->GetFreeSync);
+
+            IntPtr pFS;
+            var result = getFn(pDisplayServices, pDisplay, &pFS);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get FreeSync interface");
+            }
+
+            return AdlxInterfaceHandle.From(pFS);
+        }
+
+        public static AdlxInterfaceHandle GetGPUScalingHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGPUScalingFn>(vtbl->GetGPUScaling);
+
+            IntPtr pScaling;
+            var result = getFn(pDisplayServices, pDisplay, &pScaling);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get GPU scaling interface");
+            }
+
+            return AdlxInterfaceHandle.From(pScaling);
+        }
+
+        public static AdlxInterfaceHandle GetScalingModeHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetScalingModeFn>(vtbl->GetScalingMode);
+
+            IntPtr pMode;
+            var result = getFn(pDisplayServices, pDisplay, &pMode);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get scaling mode interface");
+            }
+
+            return AdlxInterfaceHandle.From(pMode);
+        }
+
+        public static (bool supported, bool enabled) GetFreeSyncState(IntPtr pFreeSync)
+        {
+            if (pFreeSync == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pFreeSync));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayFreeSyncVtbl**)pFreeSync;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported;
+            byte enabled = 0;
+            var r1 = supFn(pFreeSync, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query FreeSync support");
+
+            var r2 = enFn(pFreeSync, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query FreeSync enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetFreeSyncEnabled(IntPtr pFreeSync, bool enable)
+        {
+            if (pFreeSync == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pFreeSync));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayFreeSyncVtbl**)pFreeSync;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pFreeSync, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to set FreeSync enabled state");
+            }
+        }
+
+        public static (bool supported, bool enabled) GetGPUScalingState(IntPtr pGPUScaling)
+        {
+            if (pGPUScaling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUScaling));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGPUScalingVtbl**)pGPUScaling;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+
+            byte supported;
+            byte enabled = 0;
+            var r1 = supFn(pGPUScaling, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query GPU scaling support");
+
+            var r2 = enFn(pGPUScaling, &enabled);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, "Failed to query GPU scaling enabled");
+
+            return (supported != 0, enabled != 0);
+        }
+
+        public static void SetGPUScalingEnabled(IntPtr pGPUScaling, bool enable)
+        {
+            if (pGPUScaling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPUScaling));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGPUScalingVtbl**)pGPUScaling;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pGPUScaling, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to set GPU scaling enabled state");
+            }
+        }
+
+        public static (bool supported, ADLX_SCALE_MODE mode) GetScalingMode(IntPtr pScalingMode)
+        {
+            if (pScalingMode == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pScalingMode));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayScalingModeVtbl**)pScalingMode;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetScaleModeFn>(vtbl->GetMode);
+
+            byte supported;
+            var r1 = supFn(pScalingMode, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query scaling mode support");
+
+            ADLX_SCALE_MODE mode;
+            var r2 = getFn(pScalingMode, &mode);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(r2, "Failed to get scaling mode");
+            }
+
+            return (supported != 0, mode);
+        }
+
+        public static void SetScalingMode(IntPtr pScalingMode, ADLX_SCALE_MODE mode)
+        {
+            if (pScalingMode == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pScalingMode));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayScalingModeVtbl**)pScalingMode;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetScaleModeFn>(vtbl->SetMode);
+            var result = setFn(pScalingMode, mode);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to set scaling mode");
+            }
+        }
+    }
 }

@@ -271,10 +271,35 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT EyefinityCreateFn(IntPtr pThis, IntPtr* ppEyefinityDesktop);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        internal delegate ADLX_RESULT EyefinityDestroyAllFn(IntPtr pThis);
+        internal delegate ADLX_RESULT EyefinityDestroyFn(IntPtr pThis, IntPtr pDesktop);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        internal delegate ADLX_RESULT EyefinityDestroyFn(IntPtr pThis, IntPtr pDesktop);
+        internal delegate ADLX_RESULT EyefinityDestroyAllFn(IntPtr pThis);
+
+        // Display settings methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetFreeSyncFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppFreeSync);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGPUScalingFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppGPUScaling);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetScalingModeFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppScalingMode);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT BoolSupportedFn(IntPtr pThis, byte* supported);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT BoolEnabledFn(IntPtr pThis, byte* enabled);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT BoolSetEnabledFn(IntPtr pThis, byte enabled);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetScaleModeFn(IntPtr pThis, ADLX_SCALE_MODE* mode);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetScaleModeFn(IntPtr pThis, ADLX_SCALE_MODE mode);
 
         // IADLXPerformanceMonitoringServices vtable
         [StructLayout(LayoutKind.Sequential)]
@@ -391,6 +416,10 @@ namespace ADLXWrapper
             public IntPtr GetGamut;               // ADLX_RESULT GetGamut(IADLXDisplay* pDisplay, IADLXDisplayGamut** ppDispGamut)
             public IntPtr GetGamma;               // ADLX_RESULT GetGamma(IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma)
             public IntPtr GetDisplayChangedHandling;  // ADLX_RESULT GetDisplayChangedHandling(IADLXDisplayChangedHandling** ppDisplayChangedHandling)
+            public IntPtr GetFreeSync;            // ADLX_RESULT GetFreeSync(IADLXDisplay* pDisplay, IADLXDisplayFreeSync** ppFreeSync)
+            public IntPtr GetVirtualSuperResolution; // placeholder to maintain vtable alignment
+            public IntPtr GetGPUScaling;          // ADLX_RESULT GetGPUScaling(IADLXDisplay* pDisplay, IADLXDisplayGPUScaling** ppGPUScaling)
+            public IntPtr GetScalingMode;         // ADLX_RESULT GetScalingMode(IADLXDisplay* pDisplay, IADLXDisplayScalingMode** ppScalingMode)
         }
 
         // IADLXDisplayList vtable
@@ -432,6 +461,45 @@ namespace ADLXWrapper
             public IntPtr ScanType;               // ADLX_RESULT ScanType(ADLX_DISPLAY_SCAN_TYPE* scanType)
             public IntPtr GetGPU;                 // ADLX_RESULT GetGPU(IADLXGPU** ppGPU)
             public IntPtr UniqueId;               // ADLX_RESULT UniqueId(adlx_size* uniqueId)
+        }
+
+        // IADLXDisplayFreeSync vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayFreeSyncVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayGPUScaling vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayGPUScalingVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr IsEnabled;    // ADLX_RESULT IsEnabled(adlx_bool* enabled)
+            public IntPtr SetEnabled;   // ADLX_RESULT SetEnabled(adlx_bool enabled)
+        }
+
+        // IADLXDisplayScalingMode vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayScalingModeVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr GetMode;      // ADLX_RESULT GetMode(ADLX_SCALE_MODE* currentMode)
+            public IntPtr SetMode;      // ADLX_RESULT SetMode(ADLX_SCALE_MODE mode)
         }
 
         // IADLXDesktop vtable
