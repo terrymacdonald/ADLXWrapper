@@ -287,6 +287,8 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetScalingModeFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppScalingMode);
         internal delegate ADLX_RESULT GetDynamicRefreshRateControlFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppDRRC);
         internal delegate ADLX_RESULT GetFreeSyncColorAccuracyFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppFSCA);
+        internal delegate ADLX_RESULT GetColorDepthFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppColorDepth);
+        internal delegate ADLX_RESULT GetPixelFormatFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppPixelFormat);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT BoolSupportedFn(IntPtr pThis, byte* supported);
@@ -303,6 +305,16 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT SetScaleModeFn(IntPtr pThis, ADLX_SCALE_MODE mode);
         internal delegate ADLX_RESULT BoolSetFn(IntPtr pThis, byte enable);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetColorDepthValueFn(IntPtr pThis, ADLX_COLOR_DEPTH* depth);
+        internal delegate ADLX_RESULT SetColorDepthValueFn(IntPtr pThis, ADLX_COLOR_DEPTH depth);
+        internal delegate ADLX_RESULT IsSupportedColorDepthFn(IntPtr pThis, ADLX_COLOR_DEPTH depth, byte* supported);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetPixelFormatValueFn(IntPtr pThis, ADLX_PIXEL_FORMAT* format);
+        internal delegate ADLX_RESULT SetPixelFormatValueFn(IntPtr pThis, ADLX_PIXEL_FORMAT format);
+        internal delegate ADLX_RESULT IsSupportedPixelFormatFn(IntPtr pThis, ADLX_PIXEL_FORMAT format, byte* supported);
 
         // IADLXPerformanceMonitoringServices vtable
         [StructLayout(LayoutKind.Sequential)]
@@ -519,6 +531,34 @@ namespace ADLXWrapper
             public IntPtr IsSupported;  // ADLX_RESULT IsSupported(adlx_bool* supported)
             public IntPtr GetMode;      // ADLX_RESULT GetMode(ADLX_SCALE_MODE* currentMode)
             public IntPtr SetMode;      // ADLX_RESULT SetMode(ADLX_SCALE_MODE mode)
+        }
+
+        // IADLXDisplayColorDepth vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayColorDepthVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;          // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr GetValue;             // ADLX_RESULT GetValue(ADLX_COLOR_DEPTH* currentColorDepth)
+            public IntPtr SetValue;             // ADLX_RESULT SetValue(ADLX_COLOR_DEPTH colorDepth)
+            public IntPtr IsSupportedColorDepth;// ADLX_RESULT IsSupportedColorDepth(ADLX_COLOR_DEPTH depth, adlx_bool* supported)
+        }
+
+        // IADLXDisplayPixelFormat vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayPixelFormatVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;            // ADLX_RESULT IsSupported(adlx_bool* supported)
+            public IntPtr GetValue;               // ADLX_RESULT GetValue(ADLX_PIXEL_FORMAT* pixelFormat)
+            public IntPtr SetValue;               // ADLX_RESULT SetValue(ADLX_PIXEL_FORMAT pixelFormat)
+            public IntPtr IsSupportedPixelFormat; // ADLX_RESULT IsSupportedPixelFormat(ADLX_PIXEL_FORMAT pixelFormat, adlx_bool* supported)
         }
 
         // IADLXDisplayFreeSyncColorAccuracy vtable
