@@ -246,5 +246,31 @@ namespace ADLXWrapper.Tests
                 ADLXDisplaySettingsHelpers.SetDisplayBlanked(blanking, state.blanked);
             }
         }
+
+        [SkippableFact]
+        public void CustomColor_Hue_GetAndReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var cc = ADLXDisplaySettingsHelpers.GetCustomColorHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetCustomColorHue(cc);
+            _output.WriteLine($"CustomColor Hue supported={state.supported}, value={state.value}, range=[{state.range.minValue},{state.range.maxValue}] step={state.range.step}");
+            if (state.supported)
+            {
+                ADLXDisplaySettingsHelpers.SetCustomColorHue(cc, state.value);
+            }
+        }
+
+        [SkippableFact]
+        public void CustomResolution_GetCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+
+            var display = _displays[0];
+            using var cr = ADLXDisplaySettingsHelpers.GetCustomResolutionHandle(_displayServices, display);
+            var state = ADLXDisplaySettingsHelpers.GetCustomResolutionState(cr);
+            _output.WriteLine($"CustomResolution supported={state.supported}, current={state.current.resWidth}x{state.current.resHeight}@{state.current.refreshRate}");
+        }
     }
 }

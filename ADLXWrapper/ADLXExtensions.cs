@@ -1690,10 +1690,198 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Display settings helpers (FreeSync, GPU scaling, scaling mode, color depth, pixel format, VSR, integer scaling, HDCP, VariBright, display blanking).
+    /// Display settings helpers (FreeSync, GPU scaling, scaling mode, color depth, pixel format, VSR, integer scaling, HDCP, VariBright, display blanking, custom color).
     /// </summary>
     public static unsafe class ADLXDisplaySettingsHelpers
     {
+        public static AdlxInterfaceHandle GetCustomResolutionHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetCustomResolutionFn>(vtbl->GetCustomResolution);
+
+            IntPtr pCustomRes;
+            var result = getFn(pDisplayServices, pDisplay, &pCustomRes);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Custom Resolution interface");
+            }
+
+            return AdlxInterfaceHandle.From(pCustomRes);
+        }
+
+        public static (bool supported, ADLX_CustomResolution current) GetCustomResolutionState(IntPtr pCustomResolution)
+        {
+            if (pCustomResolution == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomResolution));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomResolutionVtbl**)pCustomResolution;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            byte supported = 0;
+            var r1 = supFn(pCustomResolution, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, "Failed to query Custom Resolution support");
+
+            ADLX_CustomResolution current = default;
+            if (supported != 0)
+            {
+                IntPtr pRes;
+                var getCurr = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetCurrentResolutionFn>(vtbl->GetCurrentAppliedResolution);
+                var r2 = getCurr(pCustomResolution, &pRes);
+                if (r2 == ADLX_RESULT.ADLX_OK && pRes != IntPtr.Zero)
+                {
+                    var resVtbl = *(ADLXVTables.IADLXDisplayResolutionVtbl**)pRes;
+                    var getValue = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetCustomResolutionValueFn>(resVtbl->GetValue);
+                    var r3 = getValue(pRes, &current);
+                    Marshal.GetDelegateForFunctionPointer<ADLXVTables.ReleaseFn>(resVtbl->Release)(pRes);
+                    if (r3 != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(r3, "Failed to read current custom resolution");
+                }
+            }
+
+            return (supported != 0, current);
+        }
+
+        public static AdlxInterfaceHandle GetCustomColorHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetCustomColorFn>(vtbl->GetCustomColor);
+
+            IntPtr pCustomColor;
+            var result = getFn(pDisplayServices, pDisplay, &pCustomColor);
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                throw new ADLXException(result, "Failed to get Custom Color interface");
+            }
+
+            return AdlxInterfaceHandle.From(pCustomColor);
+        }
+
+        public static (bool supported, int value, ADLX_IntRange range) GetCustomColorHue(IntPtr pCustomColor)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            return GetCustomColorIntProperty(pCustomColor, vtbl->IsHueSupported, vtbl->GetHueRange, vtbl->GetHue, "Hue");
+        }
+
+        public static void SetCustomColorHue(IntPtr pCustomColor, int hue)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            SetCustomColorIntProperty(pCustomColor, vtbl->SetHue, hue);
+        }
+
+        public static (bool supported, int value, ADLX_IntRange range) GetCustomColorSaturation(IntPtr pCustomColor)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            return GetCustomColorIntProperty(pCustomColor, vtbl->IsSaturationSupported, vtbl->GetSaturationRange, vtbl->GetSaturation, "Saturation");
+        }
+
+        public static void SetCustomColorSaturation(IntPtr pCustomColor, int saturation)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            SetCustomColorIntProperty(pCustomColor, vtbl->SetSaturation, saturation);
+        }
+
+        public static (bool supported, int value, ADLX_IntRange range) GetCustomColorBrightness(IntPtr pCustomColor)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            return GetCustomColorIntProperty(pCustomColor, vtbl->IsBrightnessSupported, vtbl->GetBrightnessRange, vtbl->GetBrightness, "Brightness");
+        }
+
+        public static void SetCustomColorBrightness(IntPtr pCustomColor, int brightness)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            SetCustomColorIntProperty(pCustomColor, vtbl->SetBrightness, brightness);
+        }
+
+        public static (bool supported, int value, ADLX_IntRange range) GetCustomColorContrast(IntPtr pCustomColor)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            return GetCustomColorIntProperty(pCustomColor, vtbl->IsContrastSupported, vtbl->GetContrastRange, vtbl->GetContrast, "Contrast");
+        }
+
+        public static void SetCustomColorContrast(IntPtr pCustomColor, int contrast)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            SetCustomColorIntProperty(pCustomColor, vtbl->SetContrast, contrast);
+        }
+
+        public static (bool supported, int value, ADLX_IntRange range) GetCustomColorTemperature(IntPtr pCustomColor)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            return GetCustomColorIntProperty(pCustomColor, vtbl->IsTemperatureSupported, vtbl->GetTemperatureRange, vtbl->GetTemperature, "Temperature");
+        }
+
+        public static void SetCustomColorTemperature(IntPtr pCustomColor, int temperature)
+        {
+            if (pCustomColor == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pCustomColor));
+            var vtbl = *(ADLXVTables.IADLXDisplayCustomColorVtbl**)pCustomColor;
+            SetCustomColorIntProperty(pCustomColor, vtbl->SetTemperature, temperature);
+        }
+
+        private static (bool supported, int value, ADLX_IntRange range) GetCustomColorIntProperty(IntPtr pCustomColor, IntPtr supportPtr, IntPtr rangePtr, IntPtr valuePtr, string name)
+        {
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(supportPtr);
+            byte supported = 0;
+            var r1 = supFn(pCustomColor, &supported);
+            if (r1 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r1, $"Failed to query Custom Color support for {name}");
+
+            ADLX_IntRange range = default;
+            var rangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(rangePtr);
+            var r2 = rangeFn(pCustomColor, &range);
+            if (r2 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r2, $"Failed to query Custom Color range for {name}");
+
+            int value = 0;
+            var valFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(valuePtr);
+            var r3 = valFn(pCustomColor, &value);
+            if (r3 != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r3, $"Failed to query Custom Color value for {name}");
+
+            return (supported != 0, value, range);
+        }
+
+        private static void SetCustomColorIntProperty(IntPtr pCustomColor, IntPtr setterPtr, int value)
+        {
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(setterPtr);
+            var result = setFn(pCustomColor, value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set Custom Color value");
+        }
+
         public static AdlxInterfaceHandle GetDisplayBlankingHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)
