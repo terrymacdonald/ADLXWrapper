@@ -293,6 +293,7 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetDisplayBlankingFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppBlanking);
         internal delegate ADLX_RESULT GetCustomResolutionFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppCustomResolution);
         internal delegate ADLX_RESULT GetCurrentResolutionFn(IntPtr pThis, IntPtr* ppResolution);
+        internal delegate ADLX_RESULT GetDisplayConnectivityExperienceFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppConnectivity);
         internal delegate ADLX_RESULT GetDynamicRefreshRateControlFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppDRRC);
         internal delegate ADLX_RESULT GetFreeSyncColorAccuracyFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppFSCA);
         internal delegate ADLX_RESULT GetColorDepthFn(IntPtr pThis, IntPtr pDisplay, IntPtr* ppColorDepth);
@@ -316,6 +317,9 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT InvokeFn(IntPtr pThis);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetUIntFn(IntPtr pThis, uint* value);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetIntRangeFn(IntPtr pThis, ADLX_IntRange* range);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -326,6 +330,9 @@ namespace ADLXWrapper
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetCustomResolutionValueFn(IntPtr pThis, ADLX_CustomResolution* resolution);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDPLinkRateFn(IntPtr pThis, ADLX_DP_LINK_RATE* linkRate);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetColorDepthValueFn(IntPtr pThis, ADLX_COLOR_DEPTH* depth);
@@ -464,10 +471,10 @@ namespace ADLXWrapper
             public IntPtr GetCustomResolution;    // ADLX_RESULT GetCustomResolution(IADLXDisplay* pDisplay, IADLXDisplayCustomResolution** ppCustomResolution)
             public IntPtr GetVariBright;          // ADLX_RESULT GetVariBright(IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright)
             public IntPtr GetDisplayBlanking;     // ADLX_RESULT GetDisplayBlanking(IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking)
+            public IntPtr GetDisplayConnectivityExperience; // ADLX_RESULT GetDisplayConnectivityExperience(IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience)
             public IntPtr GetPowerTuning; // placeholder
             public IntPtr GetRadeonSuperResolution; // placeholder
             public IntPtr GetVirtualResolution; // placeholder
-            public IntPtr GetDisplayConnectivityExperience; // placeholder
             public IntPtr GetAdaptiveSync; // placeholder
             public IntPtr GetDisplayGamutPixelFormat; // placeholder
             public IntPtr GetCustomColorTemperature; // placeholder
@@ -701,6 +708,35 @@ namespace ADLXWrapper
             public IntPtr SetMaximizeBattery;
         }
 
+        // IADLXDisplayVariBright1 vtable (extends VariBright)
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayVariBright1Vtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;
+            public IntPtr IsEnabled;
+            public IntPtr SetEnabled;
+            public IntPtr IsCurrentMaximizeBrightness;
+            public IntPtr IsCurrentOptimizeBrightness;
+            public IntPtr IsCurrentBalanced;
+            public IntPtr IsCurrentOptimizeBattery;
+            public IntPtr IsCurrentMaximizeBattery;
+            public IntPtr SetMaximizeBrightness;
+            public IntPtr SetOptimizeBrightness;
+            public IntPtr SetBalanced;
+            public IntPtr SetOptimizeBattery;
+            public IntPtr SetMaximizeBattery;
+            public IntPtr IsBacklightAdaptiveSupported;
+            public IntPtr IsBacklightAdaptiveEnabled;
+            public IntPtr SetBacklightAdaptiveEnabled;
+            public IntPtr IsBatteryLifeSupported;
+            public IntPtr IsBatteryLifeEnabled;
+            public IntPtr SetBatteryLifeEnabled;
+        }
+
         // IADLXDisplayBlanking vtable
         [StructLayout(LayoutKind.Sequential)]
         internal struct IADLXDisplayBlankingVtbl
@@ -741,6 +777,28 @@ namespace ADLXWrapper
 
             public IntPtr GetValue; // ADLX_RESULT GetValue(ADLX_CustomResolution* customResolution)
             public IntPtr SetValue; // ADLX_RESULT SetValue(ADLX_CustomResolution customResolution)
+        }
+
+        // IADLXDisplayConnectivityExperience vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayConnectivityExperienceVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupportedHDMIQualityDetection;
+            public IntPtr IsSupportedDPLink;
+            public IntPtr IsEnabledHDMIQualityDetection;
+            public IntPtr SetEnabledHDMIQualityDetection;
+            public IntPtr GetDPLinkRate;
+            public IntPtr GetNumberOfActiveLanes;
+            public IntPtr GetNumberOfTotalLanes;
+            public IntPtr GetRelativePreEmphasis;
+            public IntPtr SetRelativePreEmphasis;
+            public IntPtr GetRelativeVoltageSwing;
+            public IntPtr SetRelativeVoltageSwing;
+            public IntPtr IsEnabledLinkProtection;
         }
 
         // IADLXDesktop vtable

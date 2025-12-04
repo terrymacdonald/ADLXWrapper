@@ -136,6 +136,38 @@ foreach (var desk in desktopHandles)
 ```
 Eyefinity creation/destruction is available via `ADLXDesktopHelpers.GetSimpleEyefinityHandle` and `CreateEyefinityDesktop`/`DestroyEyefinityDesktop`, but these operations change user display configuration. Use with extreme caution; the ADLX SDK does not expose a file-based save/restore API.
 
+### Example 7: Guard System2-only features
+System2 interfaces are absent on older drivers. Wrap System2 entry points and treat `ADLX_NOT_SUPPORTED` as a skip:
+```csharp
+using var adlx = ADLXApi.Initialize();
+using var sys = adlx.GetSystemServicesHandle(); // IADLXSystem (System1)
+
+try
+{
+    // This helper calls a System2 method internally.
+    using var power = ADLXPowerTuningHelpers.GetPowerTuningServicesHandle(sys);
+    Console.WriteLine("System2 power tuning supported.");
+}
+catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+{
+    Console.WriteLine("System2 not supported on this driver/hardware; skipping System2 features.");
+}
+
+// Alternatively, check with TryQueryInterface (false => System2 absent)
+if (sys.TryQueryInterface<IADLXSystem2>(out var sys2))
+{
+    using (sys2)
+    {
+        // safe to call System2 members, e.g.:
+        using var power = ADLXPowerTuningHelpers.GetPowerTuningServicesHandle(sys2);
+    }
+}
+else
+{
+    Console.WriteLine("System2 interface not available.");
+}
+```
+
 ## Scripts
 - `prepare_adlx.ps1` — downloads/extracts the ADLX SDK into `ADLX/`
 - `build_adlx.ps1` — builds wrapper + tests (net10.0)

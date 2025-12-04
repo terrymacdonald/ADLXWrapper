@@ -272,5 +272,51 @@ namespace ADLXWrapper.Tests
             var state = ADLXDisplaySettingsHelpers.GetCustomResolutionState(cr);
             _output.WriteLine($"CustomResolution supported={state.supported}, current={state.current.resWidth}x{state.current.resHeight}@{state.current.refreshRate}");
         }
+
+        [SkippableFact]
+        public void DisplayConnectivityExperience_GetState()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var conn = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperienceHandle(_displayServices, display);
+                var state = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperienceState(conn);
+                _output.WriteLine($"Connectivity: HDMI QD sup={state.hdmiQdSupported} en={state.hdmiQdEnabled}, DP sup={state.dpLinkSupported}, rate={state.dpLinkRate}, lanes {state.activeLanes}/{state.totalLanes}, pre={state.preEmphasis}, volt={state.voltageSwing}, linkProtect={state.linkProtectionEnabled}");
+                if (state.hdmiQdSupported)
+                {
+                    ADLXDisplaySettingsHelpers.SetDisplayConnectivityHDMIQualityDetectionEnabled(conn, state.hdmiQdEnabled);
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display connectivity experience not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void VariBright1_BacklightAdaptive_GetAndReapply()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var vb = ADLXDisplaySettingsHelpers.GetVariBrightHandle(_displayServices, display);
+                var state = ADLXDisplaySettingsHelpers.GetVariBright1State(vb);
+                _output.WriteLine($"VariBright1 sup={state.supported}, BA sup={state.backlightAdaptiveSupported} en={state.backlightAdaptiveEnabled}, batteryLife sup={state.batteryLifeSupported} en={state.batteryLifeEnabled}");
+                if (state.backlightAdaptiveSupported)
+                {
+                    ADLXDisplaySettingsHelpers.SetVariBrightBacklightAdaptiveEnabled(vb, state.backlightAdaptiveEnabled);
+                }
+                if (state.batteryLifeSupported)
+                {
+                    ADLXDisplaySettingsHelpers.SetVariBrightBatteryLifeEnabled(vb, state.batteryLifeEnabled);
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "VariBright1 not supported on this hardware.");
+            }
+        }
     }
 }

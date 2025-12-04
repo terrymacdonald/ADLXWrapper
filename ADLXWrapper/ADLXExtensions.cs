@@ -1694,6 +1694,98 @@ namespace ADLXWrapper
     /// </summary>
     public static unsafe class ADLXDisplaySettingsHelpers
     {
+        public static AdlxInterfaceHandle GetDisplayConnectivityExperienceHandle(IntPtr pDisplayServices, IntPtr pDisplay)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplay));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDisplayConnectivityExperienceFn>(vtbl->GetDisplayConnectivityExperience);
+
+            IntPtr pConn;
+            var result = getFn(pDisplayServices, pDisplay, &pConn);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
+
+            return AdlxInterfaceHandle.From(pConn);
+        }
+
+        public static (bool hdmiQdSupported, bool hdmiQdEnabled, bool dpLinkSupported, ADLX_DP_LINK_RATE dpLinkRate, uint activeLanes, uint totalLanes, int preEmphasis, int voltageSwing, bool linkProtectionEnabled) GetDisplayConnectivityExperienceState(IntPtr pConnectivity)
+        {
+            if (pConnectivity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pConnectivity));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayConnectivityExperienceVtbl**)pConnectivity;
+            var supHdmiFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupportedHDMIQualityDetection);
+            var supDpFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupportedDPLink);
+            var enHdmiFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabledHDMIQualityDetection);
+            var getLinkRateFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDPLinkRateFn>(vtbl->GetDPLinkRate);
+            var getActiveFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetUIntFn>(vtbl->GetNumberOfActiveLanes);
+            var getTotalFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetUIntFn>(vtbl->GetNumberOfTotalLanes);
+            var getPreFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetRelativePreEmphasis);
+            var getVoltFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetRelativeVoltageSwing);
+            var linkProtectFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabledLinkProtection);
+
+            byte supHdmi = 0, supDp = 0, enHdmi = 0, linkProtect = 0;
+            var r1 = supHdmiFn(pConnectivity, &supHdmi);
+            var r2 = supDpFn(pConnectivity, &supDp);
+            var r3 = enHdmiFn(pConnectivity, &enHdmi);
+            if (r1 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r1, "Failed to query HDMI quality detection support");
+            if (r2 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r2, "Failed to query DP link support");
+            if (r3 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r3, "Failed to query HDMI quality detection enabled");
+
+            ADLX_DP_LINK_RATE linkRate = default;
+            getLinkRateFn(pConnectivity, &linkRate);
+
+            uint active = 0, total = 0;
+            getActiveFn(pConnectivity, &active);
+            getTotalFn(pConnectivity, &total);
+
+            int pre = 0, volt = 0;
+            getPreFn(pConnectivity, &pre);
+            getVoltFn(pConnectivity, &volt);
+
+            linkProtectFn(pConnectivity, &linkProtect);
+
+            return (supHdmi != 0, enHdmi != 0, supDp != 0, linkRate, active, total, pre, volt, linkProtect != 0);
+        }
+
+        public static void SetDisplayConnectivityHDMIQualityDetectionEnabled(IntPtr pConnectivity, bool enable)
+        {
+            if (pConnectivity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pConnectivity));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayConnectivityExperienceVtbl**)pConnectivity;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabledHDMIQualityDetection);
+            var result = setFn(pConnectivity, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set HDMI quality detection");
+        }
+
+        public static void SetDisplayConnectivityRelativePreEmphasis(IntPtr pConnectivity, int value)
+        {
+            if (pConnectivity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pConnectivity));
+            var vtbl = *(ADLXVTables.IADLXDisplayConnectivityExperienceVtbl**)pConnectivity;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetRelativePreEmphasis);
+            var result = setFn(pConnectivity, value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set relative pre-emphasis");
+        }
+
+        public static void SetDisplayConnectivityRelativeVoltageSwing(IntPtr pConnectivity, int value)
+        {
+            if (pConnectivity == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pConnectivity));
+            var vtbl = *(ADLXVTables.IADLXDisplayConnectivityExperienceVtbl**)pConnectivity;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetRelativeVoltageSwing);
+            var result = setFn(pConnectivity, value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set relative voltage swing");
+        }
+
         public static AdlxInterfaceHandle GetCustomResolutionHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)
@@ -1744,6 +1836,52 @@ namespace ADLXWrapper
             }
 
             return (supported != 0, current);
+        }
+
+        public static (bool supported, bool enabled, bool backlightAdaptiveSupported, bool backlightAdaptiveEnabled, bool batteryLifeSupported, bool batteryLifeEnabled) GetVariBright1State(IntPtr pVariBright)
+        {
+            if (pVariBright == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVariBright));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayVariBright1Vtbl**)pVariBright;
+            var supFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            var enFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsEnabled);
+            var supBAFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsBacklightAdaptiveSupported);
+            var enBAFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsBacklightAdaptiveEnabled);
+            var supBLFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsBatteryLifeSupported);
+            var enBLFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolEnabledFn>(vtbl->IsBatteryLifeEnabled);
+
+            byte sup = 0, en = 0, supBA = 0, enBA = 0, supBL = 0, enBL = 0;
+            supFn(pVariBright, &sup);
+            enFn(pVariBright, &en);
+            supBAFn(pVariBright, &supBA);
+            enBAFn(pVariBright, &enBA);
+            supBLFn(pVariBright, &supBL);
+            enBLFn(pVariBright, &enBL);
+
+            return (sup != 0, en != 0, supBA != 0, enBA != 0, supBL != 0, enBL != 0);
+        }
+
+        public static void SetVariBrightBacklightAdaptiveEnabled(IntPtr pVariBright, bool enable)
+        {
+            if (pVariBright == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVariBright));
+            var vtbl = *(ADLXVTables.IADLXDisplayVariBright1Vtbl**)pVariBright;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetBacklightAdaptiveEnabled);
+            var result = setFn(pVariBright, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set backlight adaptive mode");
+        }
+
+        public static void SetVariBrightBatteryLifeEnabled(IntPtr pVariBright, bool enable)
+        {
+            if (pVariBright == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVariBright));
+            var vtbl = *(ADLXVTables.IADLXDisplayVariBright1Vtbl**)pVariBright;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetBatteryLifeEnabled);
+            var result = setFn(pVariBright, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set battery life mode");
         }
 
         public static AdlxInterfaceHandle GetCustomColorHandle(IntPtr pDisplayServices, IntPtr pDisplay)
