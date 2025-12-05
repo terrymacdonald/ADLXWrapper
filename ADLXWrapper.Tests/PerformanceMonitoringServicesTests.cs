@@ -115,6 +115,43 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void SamplingInterval_ReadAndReapply()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == null, _skipReason);
+            try
+            {
+                var range = ADLXPerformanceMonitoringHelpers.GetSamplingIntervalRange((IntPtr)_pPerfMonServices!);
+                var current = ADLXPerformanceMonitoringHelpers.GetSamplingInterval((IntPtr)_pPerfMonServices!);
+                _output.WriteLine($"Sampling interval range=({range.minValue},{range.maxValue}) step={range.step}, current={current}");
+                var clamped = Math.Clamp(current, range.minValue, range.maxValue);
+                ADLXPerformanceMonitoringHelpers.SetSamplingInterval((IntPtr)_pPerfMonServices!, clamped);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Sampling interval not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void HistorySize_ReadAndReapply()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == null, _skipReason);
+            try
+            {
+                var max = ADLXPerformanceMonitoringHelpers.GetMaxPerformanceMetricsHistorySize((IntPtr)_pPerfMonServices!);
+                var current = ADLXPerformanceMonitoringHelpers.GetCurrentPerformanceMetricsHistorySize((IntPtr)_pPerfMonServices!);
+                _output.WriteLine($"History size current={current}, max={max}");
+                var clamped = Math.Clamp(current, 0, max);
+                ADLXPerformanceMonitoringHelpers.SetMaxPerformanceMetricsHistorySize((IntPtr)_pPerfMonServices!, clamped);
+                ADLXPerformanceMonitoringHelpers.ClearPerformanceMetricsHistory((IntPtr)_pPerfMonServices!);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Performance metrics history not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
         public void GetSupportedGPUMetrics_ShouldReturnValidPointer()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == null || _gpus.Length == 0,
@@ -289,6 +326,64 @@ namespace ADLXWrapper.Tests
             Assert.Throws<ArgumentNullException>(() => 
                 ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(IntPtr.Zero, _gpus[0]));
             _output.WriteLine("? GetCurrentGPUMetrics correctly throws on null services pointer");
+        }
+
+        [SkippableFact]
+        public void ExtendedMetrics_ReadCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == null || _gpus.Length == 0,
+                _pPerfMonServices != null ? _skipReason : "Performance monitoring services not available");
+
+            var perf = _pPerfMonServices!;
+            var gpu = _gpus[0];
+            try
+            {
+                var pMetricsSupport = ADLXPerformanceMonitoringHelpers.GetSupportedGPUMetrics(perf, gpu);
+                var pMetrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(perf, gpu);
+
+                try
+                {
+                    if (ADLXPerformanceMonitoringHelpers.IsSupportedGPUHotspotTemperature(pMetricsSupport))
+                        _output.WriteLine($"Hotspot temp={ADLXPerformanceMonitoringHelpers.GetGPUHotspotTemperature(pMetrics)}");
+                    if (ADLXPerformanceMonitoringHelpers.IsSupportedGPUVoltage(pMetricsSupport))
+                        _output.WriteLine($"Voltage={ADLXPerformanceMonitoringHelpers.GetGPUVoltage(pMetrics)} mV");
+                    if (ADLXPerformanceMonitoringHelpers.IsSupportedGPUTotalBoardPower(pMetricsSupport))
+                        _output.WriteLine($"Total board power={ADLXPerformanceMonitoringHelpers.GetGPUTotalBoardPower(pMetrics)} W");
+                    if (ADLXPerformanceMonitoringHelpers.IsSupportedGPUVRAMClockSpeed(pMetricsSupport))
+                        _output.WriteLine($"VRAM clock={ADLXPerformanceMonitoringHelpers.GetGPUVRAMClockSpeed(pMetrics)} MHz");
+                }
+                finally
+                {
+                    ADLXHelpers.ReleaseInterface(pMetricsSupport);
+                    ADLXHelpers.ReleaseInterface(pMetrics);
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Extended metrics not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void MetricsTracking_StartStop_AndHistory()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pPerfMonServices == null || _gpus.Length == 0,
+                _pPerfMonServices != null ? _skipReason : "Performance monitoring services not available");
+
+            var perf = _pPerfMonServices!;
+            var gpu = _gpus[0];
+            try
+            {
+                ADLXPerformanceMonitoringHelpers.StartPerformanceMetricsTracking(perf);
+                ADLXPerformanceMonitoringHelpers.StopPerformanceMetricsTracking(perf);
+
+                using var history = ADLXPerformanceMonitoringHelpers.GetGPUMetricsHistory(perf, gpu, 0, 0);
+                _output.WriteLine($"GPU metrics history handle: {(IntPtr)history}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Performance metrics history not supported on this hardware.");
+            }
         }
     }
 }

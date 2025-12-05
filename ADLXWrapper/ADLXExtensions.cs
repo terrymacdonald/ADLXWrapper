@@ -1489,6 +1489,156 @@ namespace ADLXWrapper
     /// </summary>
     public static unsafe class ADLXPerformanceMonitoringHelpers
     {
+        public static ADLX_IntRange GetSamplingIntervalRange(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getRangeFn = (ADLXVTables.GetIntRangeFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetSamplingIntervalRange, typeof(ADLXVTables.GetIntRangeFn));
+            ADLX_IntRange range = default;
+            var result = getRangeFn(pPerfMonServices, &range);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get sampling interval range");
+            return range;
+        }
+
+        public static int GetSamplingInterval(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetSamplingInterval, typeof(ADLXVTables.GetIntValueFn));
+            int interval = 0;
+            var result = getFn(pPerfMonServices, &interval);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get sampling interval");
+            return interval;
+        }
+
+        public static void SetSamplingInterval(IntPtr pPerfMonServices, int intervalMs)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var setFn = (ADLXVTables.SetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->SetSamplingInterval, typeof(ADLXVTables.SetIntValueFn));
+            var result = setFn(pPerfMonServices, intervalMs);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set sampling interval");
+        }
+
+        public static ADLX_IntRange GetMaxHistorySizeRange(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            // Max history size range isn't exposed directly; use max getter as upper bound and 0 as min
+            int max = GetMaxPerformanceMetricsHistorySize(pPerfMonServices);
+            return new ADLX_IntRange { minValue = 0, maxValue = max, step = 1 };
+        }
+
+        public static int GetMaxPerformanceMetricsHistorySize(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetMaxPerformanceMetricsHistorySize, typeof(ADLXVTables.GetIntValueFn));
+            int size = 0;
+            var result = getFn(pPerfMonServices, &size);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get max performance metrics history size");
+            return size;
+        }
+
+        public static int GetCurrentPerformanceMetricsHistorySize(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetCurrentPerformanceMetricsHistorySize, typeof(ADLXVTables.GetIntValueFn));
+            int size = 0;
+            var result = getFn(pPerfMonServices, &size);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get current performance metrics history size");
+            return size;
+        }
+
+        public static void SetMaxPerformanceMetricsHistorySize(IntPtr pPerfMonServices, int sizeSec)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var setFn = (ADLXVTables.SetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->SetMaxPerformanceMetricsHistorySize, typeof(ADLXVTables.SetIntValueFn));
+            var result = setFn(pPerfMonServices, sizeSec);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set max performance metrics history size");
+        }
+
+        public static void ClearPerformanceMetricsHistory(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var clearFn = (ADLXVTables.InvokeFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->ClearPerformanceMetricsHistory, typeof(ADLXVTables.InvokeFn));
+            var result = clearFn(pPerfMonServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to clear performance metrics history");
+        }
+
+        public static AdlxInterfaceHandle GetGPUMetricsHistory(IntPtr pPerfMonServices, IntPtr pGPU, int startMs, int stopMs)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetGPUMetricsHistoryFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetGPUMetricsHistory, typeof(ADLXVTables.GetGPUMetricsHistoryFn));
+            IntPtr list;
+            var result = getFn(pPerfMonServices, pGPU, startMs, stopMs, &list);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU metrics history");
+            return AdlxInterfaceHandle.From(list);
+        }
+
+        public static void StartPerformanceMetricsTracking(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var startFn = (ADLXVTables.InvokeFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->StartPerformanceMetricsTracking, typeof(ADLXVTables.InvokeFn));
+            var result = startFn(pPerfMonServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to start performance metrics tracking");
+        }
+
+        public static void StopPerformanceMetricsTracking(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var stopFn = (ADLXVTables.InvokeFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->StopPerformanceMetricsTracking, typeof(ADLXVTables.InvokeFn));
+            var result = stopFn(pPerfMonServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to stop performance metrics tracking");
+        }
+
         /// <summary>
         /// Get supported GPU metrics for a GPU
         /// </summary>
@@ -1608,6 +1758,24 @@ namespace ADLXWrapper
             return supported != 0;
         }
 
+        public static bool IsSupportedGPUHotspotTemperature(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUHotspotTemperature, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to check GPU hotspot temperature support");
+
+            return supported != 0;
+        }
+
         /// <summary>
         /// Check if GPU power metric is supported
         /// </summary>
@@ -1627,6 +1795,60 @@ namespace ADLXWrapper
             {
                 throw new ADLXException(result, "Failed to check GPU power support");
             }
+
+            return supported != 0;
+        }
+
+        public static bool IsSupportedGPUVoltage(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUVoltage, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to check GPU voltage support");
+
+            return supported != 0;
+        }
+
+        public static bool IsSupportedGPUTotalBoardPower(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUTotalBoardPower, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to check GPU total board power support");
+
+            return supported != 0;
+        }
+
+        public static bool IsSupportedGPUVRAMClockSpeed(IntPtr pMetricsSupport)
+        {
+            if (pMetricsSupport == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsSupport));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsSupportVtbl**)pMetricsSupport;
+            var isSupportedFn = (ADLXVTables.IsSupportedMetricFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->IsSupportedGPUVRAMClockSpeed, typeof(ADLXVTables.IsSupportedMetricFn));
+
+            byte supported;
+            var result = isSupportedFn(pMetricsSupport, &supported);
+
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to check GPU VRAM clock support");
 
             return supported != 0;
         }
@@ -1837,6 +2059,64 @@ namespace ADLXWrapper
 
             return power;
         }
+
+        /// <summary>
+        /// Get GPU hotspot temperature (if supported).
+        /// </summary>
+        public static double GetGPUHotspotTemperature(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var tempFn = (ADLXVTables.GPUTemperatureFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUHotspotTemperature, typeof(ADLXVTables.GPUTemperatureFn));
+
+            double temp;
+            var result = tempFn(pMetrics, &temp);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU hotspot temperature");
+            return temp;
+        }
+
+        /// <summary>
+        /// Get GPU voltage (if supported).
+        /// </summary>
+        public static int GetGPUVoltage(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var voltFn = (ADLXVTables.GetIntValueFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUVoltage, typeof(ADLXVTables.GetIntValueFn));
+
+            int voltage = 0;
+            var result = voltFn(pMetrics, &voltage);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU voltage");
+            return voltage;
+        }
+
+        /// <summary>
+        /// Get GPU total board power (if supported).
+        /// </summary>
+        public static double GetGPUTotalBoardPower(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var powerFn = (ADLXVTables.GPUPowerFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GPUTotalBoardPower, typeof(ADLXVTables.GPUPowerFn));
+
+            double value = 0;
+            var result = powerFn(pMetrics, &value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU total board power");
+            return value;
+        }
+
     }
 
     /// <summary>

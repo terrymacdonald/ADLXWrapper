@@ -421,6 +421,10 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT SetSSMBiasModeFn(IntPtr pThis, ADLX_SSM_BIAS_MODE mode);
 
+        // Performance monitoring history
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetGPUMetricsHistoryFn(IntPtr pThis, IntPtr pGPU, int startMs, int stopMs, IntPtr* ppList);
+
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT AddMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
