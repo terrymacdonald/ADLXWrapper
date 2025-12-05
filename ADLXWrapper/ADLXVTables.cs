@@ -354,6 +354,15 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetGammaCoeffFn(IntPtr pThis, ADLX_RegammaCoeff* coeff);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGammaCoeffFn(IntPtr pThis, ADLX_RegammaCoeff coeff);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGammaRampFn(IntPtr pThis, ADLX_GammaRamp ramp);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGammaRampFromPathFn(IntPtr pThis, sbyte* path);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetGamutColorSpaceFn(IntPtr pThis, ADLX_GamutColorSpace* space);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -365,6 +374,30 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetPixelFormatValueFn(IntPtr pThis, ADLX_PIXEL_FORMAT* format);
         internal delegate ADLX_RESULT SetPixelFormatValueFn(IntPtr pThis, ADLX_PIXEL_FORMAT format);
         internal delegate ADLX_RESULT IsSupportedPixelFormatFn(IntPtr pThis, ADLX_PIXEL_FORMAT format, byte* supported);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetWhitePointFn(IntPtr pThis, ADLX_Point* point);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGamutCustomWhiteCustomFn(IntPtr pThis, ADLX_RGB whitePoint, ADLX_GamutColorSpace gamut);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGamutPredefinedWhiteCustomFn(IntPtr pThis, ADLX_WHITE_POINT whitePoint, ADLX_GamutColorSpace gamut);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGamutCustomWhitePredefinedFn(IntPtr pThis, ADLX_RGB whitePoint, ADLX_GAMUT_SPACE gamutSpace);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetGamutPredefinedWhitePredefinedFn(IntPtr pThis, ADLX_WHITE_POINT whitePoint, ADLX_GAMUT_SPACE gamutSpace);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetUser3DLUTFn(IntPtr pThis, ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, ADLX_3DLUT_COLORSPACE* colorSpace, int* pointsNumber, ADLX_3DLUT_Data* data);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetUser3DLUTFn(IntPtr pThis, ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, ADLX_3DLUT_COLORSPACE colorSpace, int pointsNumber, ADLX_3DLUT_Data* data);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetUser3DLUTIndexFn(IntPtr pThis, int lutSize, ADLX_UINT16_RGB* rgbCoordinate, int* index);
 
         // IADLXPerformanceMonitoringServices vtable
         [StructLayout(LayoutKind.Sequential)]
@@ -664,21 +697,22 @@ namespace ADLXWrapper
             public IntPtr IsSupportedSCEVividGaming;
             public IntPtr IsCurrentSCEDisabled;
             public IntPtr IsCurrentSCEVividGaming;
-            public IntPtr Clear;
             public IntPtr SetSCEDisabled;
             public IntPtr SetSCEVividGaming;
-            public IntPtr IsSupportedDynamicContrast;
-            public IntPtr GetContrastRange;
-            public IntPtr GetContrast;
-            public IntPtr SetContrast;
-            public IntPtr IsSupportedVividGamutMapping;
-            public IntPtr EnableVividGamutMapping;
-            public IntPtr IsEnabledVividGamutMapping;
-            public IntPtr GetVividGamingLUT;
-            public IntPtr SetVividGamingLUT;
-            public IntPtr SetCustomLUT;
-            public IntPtr GetCustomLUT;
-            public IntPtr SetCustomLUTValue;
+            public IntPtr IsSupportedSCEDynamicContrast;
+            public IntPtr IsCurrentSCEDynamicContrast;
+            public IntPtr GetSCEDynamicContrastRange;
+            public IntPtr GetSCEDynamicContrast;
+            public IntPtr SetSCEDynamicContrast;
+            public IntPtr IsSupportedUser3DLUT;
+            public IntPtr ClearUser3DLUT;
+            public IntPtr GetSDRUser3DLUT;
+            public IntPtr SetSDRUser3DLUT;
+            public IntPtr GetHDRUser3DLUT;
+            public IntPtr SetHDRUser3DLUT;
+            public IntPtr GetAllUser3DLUT;
+            public IntPtr SetAllUser3DLUT;
+            public IntPtr GetUser3DLUTIndex;
         }
 
         // IADLXDisplayGamma vtable
@@ -714,6 +748,7 @@ namespace ADLXWrapper
             public IntPtr SetDeGammaRamp_Path;
             public IntPtr SetReGammaRamp;
             public IntPtr SetReGammaRamp_Path;
+            public IntPtr ResetGammaRamp;
         }
 
         // IADLXDisplayGamut vtable
@@ -740,6 +775,13 @@ namespace ADLXWrapper
             public IntPtr IsCurrent7500kWhitePoint;
             public IntPtr IsCurrent9300kWhitePoint;
             public IntPtr IsCurrentCustomWhitePoint;
+            public IntPtr GetWhitePoint;
+            public IntPtr IsCurrentCCIR709ColorSpace;
+            public IntPtr IsCurrentCCIR601ColorSpace;
+            public IntPtr IsCurrentAdobeRgbColorSpace;
+            public IntPtr IsCurrentCIERgbColorSpace;
+            public IntPtr IsCurrentCCIR2020ColorSpace;
+            public IntPtr IsCurrentCustomColorSpace;
             public IntPtr GetGamutColorSpace;
             public IntPtr SetGamut_CustomWhite_CustomGamut;
             public IntPtr SetGamut_PredefinedWhite_CustomGamut;

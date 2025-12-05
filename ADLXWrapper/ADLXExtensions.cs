@@ -1836,6 +1836,85 @@ namespace ADLXWrapper
             return (a != 0, b != 0, c != 0, d != 0, e != 0, f != 0, g != 0, h != 0);
         }
 
+        public static void ReapplyGamma(IntPtr pGamma)
+        {
+            if (pGamma == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGamma));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGammaVtbl**)pGamma;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            var invokeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>;
+
+            byte srgb = 0, bt709 = 0, pq = 0, pq2084 = 0, g36 = 0, coeff = 0, reRamp = 0, deRamp = 0;
+            boolFn(vtbl->IsCurrentReGammaSRGB)(pGamma, &srgb);
+            boolFn(vtbl->IsCurrentReGammaBT709)(pGamma, &bt709);
+            boolFn(vtbl->IsCurrentReGammaPQ)(pGamma, &pq);
+            boolFn(vtbl->IsCurrentReGammaPQ2084Interim)(pGamma, &pq2084);
+            boolFn(vtbl->IsCurrentReGamma36)(pGamma, &g36);
+            boolFn(vtbl->IsCurrentRegammaCoefficient)(pGamma, &coeff);
+            boolFn(vtbl->IsCurrentReGammaRamp)(pGamma, &reRamp);
+            boolFn(vtbl->IsCurrentDeGammaRamp)(pGamma, &deRamp);
+
+            if (srgb != 0 || bt709 != 0 || pq != 0 || pq2084 != 0 || g36 != 0)
+            {
+                var target = srgb != 0 ? vtbl->SetReGammaSRGB :
+                             bt709 != 0 ? vtbl->SetReGammaBT709 :
+                             pq != 0 ? vtbl->SetReGammaPQ :
+                             pq2084 != 0 ? vtbl->SetReGammaPQ2084Interim :
+                             vtbl->SetReGamma36;
+                var r = invokeFn(target)(pGamma);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to reapply preset gamma");
+                return;
+            }
+
+            if (coeff != 0)
+            {
+                ADLX_RegammaCoeff current = default;
+                var getCoeffFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGammaCoeffFn>(vtbl->GetGammaCoefficient);
+                var setCoeffFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGammaCoeffFn>(vtbl->SetReGammaCoefficient);
+                var r = getCoeffFn(pGamma, &current);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to read current gamma coefficient");
+                r = setCoeffFn(pGamma, current);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to reapply gamma coefficient");
+                return;
+            }
+
+            var getRampFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGammaRampFn>(vtbl->GetGammaRamp);
+            if (reRamp != 0)
+            {
+                ADLX_GammaRamp ramp = default;
+                var r = getRampFn(pGamma, &ramp);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to read current re-gamma ramp");
+                var setRampFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGammaRampFn>(vtbl->SetReGammaRamp);
+                r = setRampFn(pGamma, ramp);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to reapply re-gamma ramp");
+                return;
+            }
+
+            if (deRamp != 0)
+            {
+                ADLX_GammaRamp ramp = default;
+                var r = getRampFn(pGamma, &ramp);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to read current de-gamma ramp");
+                var setRampFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGammaRampFn>(vtbl->SetDeGammaRamp);
+                r = setRampFn(pGamma, ramp);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to reapply de-gamma ramp");
+                return;
+            }
+
+            var resetFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>(vtbl->ResetGammaRamp);
+            var reset = resetFn(pGamma);
+            if (reset != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(reset, "Failed to reset gamma ramp");
+        }
+
         public static AdlxInterfaceHandle GetGamutHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)
@@ -1877,6 +1956,101 @@ namespace ADLXWrapper
             return (gamut, w5000 != 0, w6500 != 0, w7500 != 0, w9300 != 0, wCustom != 0, bt2020 != 0, adobe != 0);
         }
 
+        public static void ReapplyGamut(IntPtr pGamut)
+        {
+            if (pGamut == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGamut));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayGamutVtbl**)pGamut;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+
+            byte cur5000 = 0, cur6500 = 0, cur7500 = 0, cur9300 = 0, curCustomWhite = 0;
+            boolFn(vtbl->IsCurrent5000kWhitePoint)(pGamut, &cur5000);
+            boolFn(vtbl->IsCurrent6500kWhitePoint)(pGamut, &cur6500);
+            boolFn(vtbl->IsCurrent7500kWhitePoint)(pGamut, &cur7500);
+            boolFn(vtbl->IsCurrent9300kWhitePoint)(pGamut, &cur9300);
+            boolFn(vtbl->IsCurrentCustomWhitePoint)(pGamut, &curCustomWhite);
+
+            byte cur709 = 0, cur601 = 0, curAdobe = 0, curCIERgb = 0, cur2020 = 0, curCustomSpace = 0;
+            boolFn(vtbl->IsCurrentCCIR709ColorSpace)(pGamut, &cur709);
+            boolFn(vtbl->IsCurrentCCIR601ColorSpace)(pGamut, &cur601);
+            boolFn(vtbl->IsCurrentAdobeRgbColorSpace)(pGamut, &curAdobe);
+            boolFn(vtbl->IsCurrentCIERgbColorSpace)(pGamut, &curCIERgb);
+            boolFn(vtbl->IsCurrentCCIR2020ColorSpace)(pGamut, &cur2020);
+            boolFn(vtbl->IsCurrentCustomColorSpace)(pGamut, &curCustomSpace);
+
+            ADLX_GamutColorSpace currentSpace = default;
+            var getSpaceFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGamutColorSpaceFn>(vtbl->GetGamutColorSpace);
+            var r = getSpaceFn(pGamut, &currentSpace);
+            if (r != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(r, "Failed to read current gamut color space");
+
+            ADLX_Point whitePoint = default;
+            var whiteResult = ADLX_RESULT.ADLX_FAIL;
+            if (vtbl->GetWhitePoint != IntPtr.Zero)
+            {
+                var getWpFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetWhitePointFn>(vtbl->GetWhitePoint);
+                whiteResult = getWpFn(pGamut, &whitePoint);
+            }
+            var hasCustomWhitePoint = whiteResult == ADLX_RESULT.ADLX_OK;
+
+            ADLX_WHITE_POINT? wp = cur5000 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_5000K :
+                                   cur6500 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_6500K :
+                                   cur7500 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_7500K :
+                                   cur9300 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_9300K :
+                                   (ADLX_WHITE_POINT?)null;
+
+            ADLX_GAMUT_SPACE? gamutSpace = cur709 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_709 :
+                                         cur601 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_601 :
+                                         curAdobe != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_ADOBE_RGB :
+                                         curCIERgb != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CIE_RGB :
+                                         cur2020 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_2020 :
+                                         (ADLX_GAMUT_SPACE?)null;
+
+            if (gamutSpace.HasValue)
+            {
+                if (wp.HasValue)
+                {
+                    var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGamutPredefinedWhitePredefinedFn>(vtbl->SetGamut_PredefinedWhite_PredefinedGamut);
+                    var setResult = setFn(pGamut, wp.Value, gamutSpace.Value);
+                    if (setResult != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(setResult, "Failed to reapply predefined gamut");
+                    return;
+                }
+
+                if (hasCustomWhitePoint || curCustomWhite != 0)
+                {
+                    ADLX_RGB white = new ADLX_RGB { gamutR = whitePoint.x, gamutG = whitePoint.y, gamutB = 0 };
+                    var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGamutCustomWhitePredefinedFn>(vtbl->SetGamut_CustomWhite_PredefinedGamut);
+                    var setResult = setFn(pGamut, white, gamutSpace.Value);
+                    if (setResult != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(setResult, "Failed to reapply custom white point with predefined gamut");
+                    return;
+                }
+            }
+
+            if (wp.HasValue)
+            {
+                var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGamutPredefinedWhiteCustomFn>(vtbl->SetGamut_PredefinedWhite_CustomGamut);
+                var setResult = setFn(pGamut, wp.Value, currentSpace);
+                if (setResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(setResult, "Failed to reapply custom gamut with predefined white point");
+                return;
+            }
+
+            if (hasCustomWhitePoint || curCustomWhite != 0 || curCustomSpace != 0)
+            {
+                ADLX_RGB white = new ADLX_RGB { gamutR = whitePoint.x, gamutG = whitePoint.y, gamutB = 0 };
+                var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetGamutCustomWhiteCustomFn>(vtbl->SetGamut_CustomWhite_CustomGamut);
+                var setResult = setFn(pGamut, white, currentSpace);
+                if (setResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(setResult, "Failed to reapply custom gamut");
+                return;
+            }
+
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Unable to determine current gamut configuration to reapply");
+        }
+
         public static AdlxInterfaceHandle Get3DLUTHandle(IntPtr pDisplayServices, IntPtr pDisplay)
         {
             if (pDisplayServices == IntPtr.Zero)
@@ -1907,6 +2081,53 @@ namespace ADLXWrapper
             boolFn(vtbl->IsCurrentSCEVividGaming)(p3dLut, &curVivid);
 
             return (supSce != 0, supVivid != 0, curDis != 0, curVivid != 0);
+        }
+
+        public static void Reapply3DLUT(IntPtr p3dLut)
+        {
+            if (p3dLut == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(p3dLut));
+
+            var vtbl = *(ADLXVTables.IADLXDisplay3DLUTVtbl**)p3dLut;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            var invokeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.InvokeFn>;
+
+            byte supSce = 0, supVivid = 0, curDis = 0, curVivid = 0;
+            boolFn(vtbl->IsSupportedSCE)(p3dLut, &supSce);
+            boolFn(vtbl->IsSupportedSCEVividGaming)(p3dLut, &supVivid);
+            boolFn(vtbl->IsCurrentSCEDisabled)(p3dLut, &curDis);
+            boolFn(vtbl->IsCurrentSCEVividGaming)(p3dLut, &curVivid);
+
+            if (supSce != 0 || supVivid != 0)
+            {
+                var target = curVivid != 0 && supVivid != 0 ? vtbl->SetSCEVividGaming : vtbl->SetSCEDisabled;
+                var r = invokeFn(target)(p3dLut);
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to reapply SCE state");
+            }
+
+            byte supDynamic = 0;
+            boolFn(vtbl->IsSupportedSCEDynamicContrast)(p3dLut, &supDynamic);
+            if (supDynamic != 0)
+            {
+                ADLX_IntRange range = default;
+                var getRangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(vtbl->GetSCEDynamicContrastRange);
+                var rangeResult = getRangeFn(p3dLut, &range);
+                if (rangeResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(rangeResult, "Failed to query SCE dynamic contrast range");
+
+                int currentContrast = 0;
+                var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetSCEDynamicContrast);
+                var getResult = getFn(p3dLut, &currentContrast);
+                if (getResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(getResult, "Failed to read SCE dynamic contrast");
+
+                var clamped = Math.Clamp(currentContrast, range.minValue, range.maxValue);
+                var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetSCEDynamicContrast);
+                var setResult = setFn(p3dLut, clamped);
+                if (setResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(setResult, "Failed to reapply SCE dynamic contrast");
+            }
         }
 
         public static AdlxInterfaceHandle GetDisplayConnectivityExperienceHandle(IntPtr pDisplayServices, IntPtr pDisplay)

@@ -337,6 +337,22 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void Gamma_ReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var gamma = ADLXDisplaySettingsHelpers.GetGammaHandle(_displayServices, display);
+                ADLXDisplaySettingsHelpers.ReapplyGamma(gamma);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Gamma not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
         public void Gamut_ReadState()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
@@ -354,6 +370,22 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void Gamut_ReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var gamut = ADLXDisplaySettingsHelpers.GetGamutHandle(_displayServices, display);
+                ADLXDisplaySettingsHelpers.ReapplyGamut(gamut);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Gamut not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
         public void ThreeDLUT_ReadState()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
@@ -363,6 +395,22 @@ namespace ADLXWrapper.Tests
                 using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(_displayServices, display);
                 var state = ADLXDisplaySettingsHelpers.Get3DLUTState(lut);
                 _output.WriteLine($"3DLUT SCE sup={state.sceSupported}, vividSup={state.vividGamingSupported}, curDisabled={state.currentDisabled}, curVivid={state.currentVividGaming}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "3DLUT not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void ThreeDLUT_ReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var display = _displays[0];
+            try
+            {
+                using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(_displayServices, display);
+                ADLXDisplaySettingsHelpers.Reapply3DLUT(lut);
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
