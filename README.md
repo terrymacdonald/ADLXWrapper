@@ -1,4 +1,4 @@
-# ADLXWrapper
+﻿# ADLXWrapper
 
 A modern C# wrapper for AMD's ADLX (AMD Display Library Extensions) using ClangSharp. It exposes ADLX via vtable-based interop for fast, type-safe access from .NET.
 
@@ -168,6 +168,35 @@ else
 }
 ```
 
+### Example 8: Perf monitoring history (GPU + system + all-metrics)
+```csharp
+using var adlx = ADLXApi.Initialize();
+var gpus = adlx.EnumerateGPUHandles();
+if (gpus.Length == 0) return;
+
+using var perf = adlx.GetPerformanceMonitoringServicesHandle();
+var gpu = gpus[0];
+
+// Start/stop tracking then pull history for the default time window (0,0)
+ADLXPerformanceMonitoringHelpers.StartPerformanceMetricsTracking(perf);
+ADLXPerformanceMonitoringHelpers.StopPerformanceMetricsTracking(perf);
+
+using var gpuHistory = ADLXPerformanceMonitoringHelpers.GetGPUMetricsHistory(perf, gpu, 0, 0);
+var gpuSnapshots = ADLXPerformanceMonitoringHelpers.EnumerateGPUMetricsList(gpuHistory);
+
+using var sysHistory = ADLXPerformanceMonitoringHelpers.GetSystemMetricsHistory(perf, 0, 0);
+var sysSnapshots = ADLXPerformanceMonitoringHelpers.EnumerateSystemMetricsList(sysHistory);
+
+using var allHistory = ADLXPerformanceMonitoringHelpers.GetAllMetricsHistory(perf, 0, 0);
+var allSnapshots = ADLXPerformanceMonitoringHelpers.EnumerateAllMetricsList(allHistory, new[] { (IntPtr)gpu });
+
+Console.WriteLine($"GPU snapshots={gpuSnapshots.Length}, System snapshots={sysSnapshots.Length}, All snapshots={allSnapshots.Length}");
+if (allSnapshots.Length > 0 && allSnapshots[^1].System is { } sysSnap)
+{
+    Console.WriteLine($"System CPU={sysSnap.CpuUsage:F1}% RAM={sysSnap.SystemRam}MB");
+}
+```
+
 ## Scripts
 - `prepare_adlx.ps1` — downloads/extracts the ADLX SDK into `ADLX/`
 - `build_adlx.ps1` — builds wrapper + tests (net10.0)
@@ -176,18 +205,22 @@ else
 ## Project Layout
 ```
 ADLXWrapper.sln
-├─ ADLX/                    # Downloaded ADLX SDK (prepare_adlx.ps1)
-├─ ADLXWrapper/             # Wrapper source
-│  ├─ ADLXApi.cs            # Main API entry and lifetime
-│  ├─ ADLXVTables.cs        # VTable definitions
-│  ├─ ADLXExtensions.cs     # Helper and info utilities (GPU, display, tuning, metrics)
-│  └─ cs_generated/         # (optional) ClangSharp-generated bindings
-├─ ADLXWrapper.Tests/       # xUnit tests (includes generated struct/layout tests)
-│  └─ generated_tests/         # ClangSharp-generated tests that are included in the test build
-└─ scripts: prepare_adlx.ps1, build_adlx.ps1, test_adlx.ps1
++-- ADLX/                    # Downloaded ADLX SDK (prepare_adlx.ps1)
++-- ADLXWrapper/             # Wrapper source
+�   +-- ADLXApi.cs           # Main API entry and lifetime
+�   +-- ADLXVTables.cs       # VTable definitions
+�   +-- ADLXExtensions.cs    # Helper and info utilities (GPU, display, tuning, metrics)
+�   +-- cs_generated/        # (optional) ClangSharp-generated bindings
++-- ADLXWrapper.Tests/       # xUnit tests (includes generated struct/layout tests)
+�   +-- generated_tests/     # ClangSharp-generated tests included in the test build
++-- Samples/                 # Small console samples per API area
+�   +-- DisplaySample/       # Enumerate display names/resolutions
+�   +-- PerfMonitoringSample/# Read current metrics and history snapshots
+�   +-- PowerTuningSample/   # Guard System2 and read SmartShift state
++-- scripts: prepare_adlx.ps1, build_adlx.ps1, test_adlx.ps1
 ```
 
-## Notes
-- Wrapper targets `net10.0`; ensure the .NET 10 SDK is installed.
-- ADLX is provided by the AMD driver (`amdadlx64.dll`); no extra native install is required beyond drivers.
-- Helper methods that query hardware will throw or skip if inputs are null; release COM-style interfaces with `ADLXHelpers.ReleaseInterface`.
+
+- Coverage status (SDK review): display + display settings (3DLUT/Gamma/Gamut), desktop/Eyefinity, performance monitoring (extended metrics/history), power tuning (SmartShift Max/Eco, manual power/TDC), and multimedia (video upscale/super-resolution) are wrapped. No additional multimedia or power surfaces were found in the current SDK drop.
+
+
