@@ -167,6 +167,9 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetNumberOfDisplaysFn(IntPtr pThis, uint* numDisplays);
 
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetDisplayChangedHandlingFn(IntPtr pThis, IntPtr* ppHandling);
+
         // Display property methods
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT DisplayNameFn(IntPtr pThis, byte** name);
@@ -275,6 +278,13 @@ namespace ADLXWrapper
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT EyefinityDestroyAllFn(IntPtr pThis);
+
+        // Display changed handling methods
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT AddDisplaySettingsEventListenerFn(IntPtr pThis, IntPtr pListener);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT RemoveDisplaySettingsEventListenerFn(IntPtr pThis, IntPtr pListener);
 
         // Display settings methods
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
@@ -486,6 +496,26 @@ namespace ADLXWrapper
             public IntPtr GetDisplayConnectivityExperience; // ADLX_RESULT GetDisplayConnectivityExperience(IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience)
             public IntPtr GetFreeSyncColorAccuracy; // IADLXDisplayFreeSyncColorAccuracy**
             public IntPtr GetDynamicRefreshRateControl; // IADLXDisplayDynamicRefreshRateControl**
+        }
+
+        // IADLXDisplayChangedHandling vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXDisplayChangedHandlingVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr AddDisplayListEventListener;
+            public IntPtr RemoveDisplayListEventListener;
+            public IntPtr AddDisplayGamutEventListener;
+            public IntPtr RemoveDisplayGamutEventListener;
+            public IntPtr AddDisplayGammaEventListener;
+            public IntPtr RemoveDisplayGammaEventListener;
+            public IntPtr AddDisplay3DLUTEventListener;
+            public IntPtr RemoveDisplay3DLUTEventListener;
+            public IntPtr AddDisplaySettingsEventListener;
+            public IntPtr RemoveDisplaySettingsEventListener;
         }
 
         // IADLXDisplayList vtable

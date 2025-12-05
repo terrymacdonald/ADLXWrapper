@@ -306,5 +306,29 @@ namespace ADLXWrapper.Tests
                 display.Dispose();
             }
         }
+
+        [SkippableFact]
+        public void DisplaySettingsChangedListener_AddAndRemove()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
+
+            using var system = _api!.GetSystemServicesHandle();
+            using var displayServices = ADLXDisplayHelpers.GetDisplayServicesHandle(system);
+            using var handling = ADLXDisplayHelpers.GetDisplayChangedHandlingHandle(displayServices);
+            var listener = ADLXDisplayHelpers.CreateDisplaySettingsChangedListener(_ => true);
+            try
+            {
+                ADLXDisplayHelpers.AddDisplaySettingsChangedListener(handling, listener);
+                ADLXDisplayHelpers.RemoveDisplaySettingsChangedListener(handling, listener);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display changed handling not supported on this hardware.");
+            }
+            finally
+            {
+                listener.Dispose();
+            }
+        }
     }
 }

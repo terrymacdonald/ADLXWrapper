@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace ADLXWrapper
 {
@@ -303,6 +306,57 @@ namespace ADLXWrapper
             }
 
             return AdlxInterfaceHandle.From(pDisplayServices);
+        }
+
+        public static AdlxInterfaceHandle GetDisplayChangedHandlingHandle(IntPtr pDisplayServices)
+        {
+            if (pDisplayServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayServices));
+
+            var svcVtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDisplayChangedHandlingFn>(svcVtbl->GetDisplayChangedHandling);
+
+            IntPtr pHandling;
+            var result = getFn(pDisplayServices, &pHandling);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get display changed handling");
+
+            return AdlxInterfaceHandle.From(pHandling);
+        }
+
+        public delegate bool DisplaySettingsChangedCallback(IntPtr pEvent);
+
+        public static DisplaySettingsListenerHandle CreateDisplaySettingsChangedListener(DisplaySettingsChangedCallback cb)
+        {
+            return DisplaySettingsListenerHandle.Create(cb);
+        }
+
+        public static void AddDisplaySettingsChangedListener(IntPtr pDisplayChangedHandling, DisplaySettingsListenerHandle listener)
+        {
+            if (pDisplayChangedHandling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayChangedHandling));
+            if (listener is null)
+                throw new ArgumentNullException(nameof(listener));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayChangedHandlingVtbl**)pDisplayChangedHandling;
+            var addFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.AddDisplaySettingsEventListenerFn>(vtbl->AddDisplaySettingsEventListener);
+            var result = addFn(pDisplayChangedHandling, listener.DangerousGetHandle());
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to add display settings listener");
+        }
+
+        public static void RemoveDisplaySettingsChangedListener(IntPtr pDisplayChangedHandling, DisplaySettingsListenerHandle listener)
+        {
+            if (pDisplayChangedHandling == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pDisplayChangedHandling));
+            if (listener is null)
+                throw new ArgumentNullException(nameof(listener));
+
+            var vtbl = *(ADLXVTables.IADLXDisplayChangedHandlingVtbl**)pDisplayChangedHandling;
+            var removeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.RemoveDisplaySettingsEventListenerFn>(vtbl->RemoveDisplaySettingsEventListener);
+            var result = removeFn(pDisplayChangedHandling, listener.DangerousGetHandle());
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to remove display settings listener");
         }
 
         /// <summary>
@@ -2930,6 +2984,55 @@ namespace ADLXWrapper
             {
                 throw new ADLXException(result, "Failed to set DRR state");
             }
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplaySettingsChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DisplaySettingsListenerHandle : SafeHandleZeroOrMinusOneIsInvalid
+    {
+        private static readonly ConcurrentDictionary<IntPtr, ADLXDisplayHelpers.DisplaySettingsChangedCallback> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplaySettingsChanged;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplaySettingsListenerHandle(ADLXDisplayHelpers.DisplaySettingsChangedCallback cb)
+            : base(true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplaySettingsListenerHandle Create(ADLXDisplayHelpers.DisplaySettingsChangedCallback cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplaySettingsListenerHandle(cb);
+        }
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnDisplaySettingsChanged(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
         }
     }
 }
