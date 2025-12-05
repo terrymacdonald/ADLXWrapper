@@ -1141,6 +1141,130 @@ namespace ADLXWrapper
     }
 
     /// <summary>
+    /// Helpers for multimedia settings (video upscale and video super resolution).
+    /// </summary>
+    public static unsafe class ADLXMultimediaHelpers
+    {
+        public static AdlxInterfaceHandle GetMultimediaServices(IntPtr pSystem)
+        {
+            if (pSystem == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSystem));
+
+            var vtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetMultiMediaServicesFn>(vtbl->GetMultiMediaServices);
+            IntPtr pServices;
+            var result = getFn(pSystem, &pServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get multimedia services");
+            return AdlxInterfaceHandle.From(pServices);
+        }
+
+        public static AdlxInterfaceHandle GetVideoUpscale(IntPtr pMultimediaServices, IntPtr pGPU)
+        {
+            if (pMultimediaServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMultimediaServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXMultimediaServicesVtbl**)pMultimediaServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetVideoUpscaleFn>(vtbl->GetVideoUpscale);
+            IntPtr pUpscale;
+            var result = getFn(pMultimediaServices, pGPU, &pUpscale);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get video upscale interface");
+            return AdlxInterfaceHandle.From(pUpscale);
+        }
+
+        public static AdlxInterfaceHandle GetVideoSuperResolution(IntPtr pMultimediaServices, IntPtr pGPU)
+        {
+            if (pMultimediaServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMultimediaServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXMultimediaServicesVtbl**)pMultimediaServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetVideoSuperResolutionFn>(vtbl->GetVideoSuperResolution);
+            IntPtr pVsr;
+            var result = getFn(pMultimediaServices, pGPU, &pVsr);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get video super resolution interface");
+            return AdlxInterfaceHandle.From(pVsr);
+        }
+
+        public static (bool supported, bool enabled, ADLX_IntRange scaleFactorRange, int minInputResolution) GetVideoUpscaleState(IntPtr pVideoUpscale)
+        {
+            if (pVideoUpscale == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVideoUpscale));
+
+            var vtbl = *(ADLXVTables.IADLXVideoUpscaleVtbl**)pVideoUpscale;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            var getRangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(vtbl->GetScaleFactorRange);
+            var getMinResFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetMinInputResolution);
+
+            byte sup = 0, en = 0;
+            boolFn(vtbl->IsSupported)(pVideoUpscale, &sup);
+            boolFn(vtbl->IsEnabled)(pVideoUpscale, &en);
+
+            ADLX_IntRange range = default;
+            getRangeFn(pVideoUpscale, &range);
+
+            int minRes = 0;
+            getMinResFn(pVideoUpscale, &minRes);
+
+            return (sup != 0, en != 0, range, minRes);
+        }
+
+        public static void SetVideoUpscaleEnabled(IntPtr pVideoUpscale, bool enable)
+        {
+            if (pVideoUpscale == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVideoUpscale));
+
+            var vtbl = *(ADLXVTables.IADLXVideoUpscaleVtbl**)pVideoUpscale;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pVideoUpscale, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video upscale enabled");
+        }
+
+        public static void SetVideoUpscaleMinInputResolution(IntPtr pVideoUpscale, int minResolution)
+        {
+            if (pVideoUpscale == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVideoUpscale));
+
+            var vtbl = *(ADLXVTables.IADLXVideoUpscaleVtbl**)pVideoUpscale;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetMinInputResolution);
+            var result = setFn(pVideoUpscale, minResolution);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video upscale minimum input resolution");
+        }
+
+        public static (bool supported, bool enabled) GetVideoSuperResolutionState(IntPtr pVsr)
+        {
+            if (pVsr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVsr));
+
+            var vtbl = *(ADLXVTables.IADLXVideoSuperResolutionVtbl**)pVsr;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            byte sup = 0, en = 0;
+            boolFn(vtbl->IsSupported)(pVsr, &sup);
+            boolFn(vtbl->IsEnabled)(pVsr, &en);
+            return (sup != 0, en != 0);
+        }
+
+        public static void SetVideoSuperResolutionEnabled(IntPtr pVsr, bool enable)
+        {
+            if (pVsr == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pVsr));
+
+            var vtbl = *(ADLXVTables.IADLXVideoSuperResolutionVtbl**)pVsr;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pVsr, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video super resolution enabled");
+        }
+    }
+
+    /// <summary>
     /// Helper methods for performance monitoring services
     /// </summary>
     public static unsafe class ADLXPerformanceMonitoringHelpers

@@ -399,6 +399,21 @@ namespace ADLXWrapper
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetUser3DLUTIndexFn(IntPtr pThis, int lutSize, ADLX_UINT16_RGB* rgbCoordinate, int* index);
 
+        // Multimedia services
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetMultimediaChangedHandlingFn(IntPtr pThis, IntPtr* ppHandling);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetVideoUpscaleFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppUpscale);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetVideoSuperResolutionFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppVsr);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetMultiMediaServicesFn(IntPtr pThis, IntPtr* ppServices);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT AddMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT RemoveMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);
+
         // IADLXPerformanceMonitoringServices vtable
         [StructLayout(LayoutKind.Sequential)]
         internal struct IADLXPerformanceMonitoringServicesVtbl
@@ -787,6 +802,63 @@ namespace ADLXWrapper
             public IntPtr SetGamut_PredefinedWhite_CustomGamut;
             public IntPtr SetGamut_CustomWhite_PredefinedGamut;
             public IntPtr SetGamut_PredefinedWhite_PredefinedGamut;
+        }
+
+        // IADLXMultimediaServices vtable
+
+
+        // IADLXMultimediaServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXMultimediaServicesVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetMultimediaChangedHandling; // ADLX_RESULT GetMultimediaChangedHandling(IADLXMultimediaChangedHandling** ppHandling)
+            public IntPtr GetVideoUpscale;               // ADLX_RESULT GetVideoUpscale(IADLXGPU* pGPU, IADLXVideoUpscale** ppVideoUpscale)
+            public IntPtr GetVideoSuperResolution;       // ADLX_RESULT GetVideoSuperResolution(IADLXGPU* pGPU, IADLXVideoSuperResolution** ppVideoSuperResolution)
+        }
+
+        // IADLXMultimediaChangedHandling vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXMultimediaChangedHandlingVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr AddMultimediaEventListener;
+            public IntPtr RemoveMultimediaEventListener;
+        }
+
+        // IADLXVideoUpscale vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXVideoUpscaleVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;
+            public IntPtr IsEnabled;
+            public IntPtr GetScaleFactorRange;
+            public IntPtr GetMinInputResolution;
+            public IntPtr SetEnabled;
+            public IntPtr SetMinInputResolution;
+        }
+
+        // IADLXVideoSuperResolution vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXVideoSuperResolutionVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;
+            public IntPtr IsEnabled;
+            public IntPtr SetEnabled;
         }
 
         // IADLXDisplayVSR vtable

@@ -20,6 +20,7 @@ namespace ADLXWrapper.Tests
         private readonly string _skipReason = string.Empty;
         private readonly AdlxInterfaceHandle? _displayServices;
         private readonly AdlxInterfaceHandle[] _displays = Array.Empty<AdlxInterfaceHandle>();
+        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
 
         public DisplaySettingsTests(ITestOutputHelper output)
         {
@@ -49,6 +50,7 @@ namespace ADLXWrapper.Tests
                 var dispSvc = ADLXDisplayHelpers.GetDisplayServicesHandle(system);
                 _displayServices = dispSvc;
                 _displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system);
+                _gpus = _api.EnumerateGPUHandles();
             }
             catch (Exception ex)
             {
@@ -415,6 +417,38 @@ namespace ADLXWrapper.Tests
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
                 Skip.If(true, "3DLUT not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
+        public void Multimedia_VideoUpscaleAndVsr_ReadState()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
+            try
+            {
+                using var system = _api.GetSystemServicesHandle();
+                using var mm = ADLXMultimediaHelpers.GetMultimediaServices(system);
+                var gpu = _gpus[0];
+                using var upscale = ADLXMultimediaHelpers.GetVideoUpscale(mm, gpu);
+                var upState = ADLXMultimediaHelpers.GetVideoUpscaleState(upscale);
+                _output.WriteLine($"VideoUpscale sup={upState.supported}, en={upState.enabled}, scaleRange=({upState.scaleFactorRange.minValue},{upState.scaleFactorRange.maxValue}), minRes={upState.minInputResolution}");
+                if (upState.supported)
+                {
+                    ADLXMultimediaHelpers.SetVideoUpscaleEnabled(upscale, upState.enabled);
+                    ADLXMultimediaHelpers.SetVideoUpscaleMinInputResolution(upscale, upState.minInputResolution);
+                }
+
+                using var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(mm, gpu);
+                var vsrState = ADLXMultimediaHelpers.GetVideoSuperResolutionState(vsr);
+                _output.WriteLine($"VideoSuperResolution sup={vsrState.supported}, en={vsrState.enabled}");
+                if (vsrState.supported)
+                {
+                    ADLXMultimediaHelpers.SetVideoSuperResolutionEnabled(vsr, vsrState.enabled);
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Multimedia not supported on this hardware.");
             }
         }
     }
