@@ -7,7 +7,7 @@ var gpus = adlx.EnumerateGPUHandles();
 if (gpus.Length == 0)
 {
     Console.WriteLine("No AMD GPU found; exiting.");
-    yield break;
+    return;
 }
 
 using var perf = adlx.GetPerformanceMonitoringServicesHandle();

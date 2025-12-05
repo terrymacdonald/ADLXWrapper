@@ -9,7 +9,7 @@ using var sys = adlx.GetSystemServicesHandle();
 if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
 {
     Console.WriteLine("System2 not available; power tuning not supported on this driver/hardware.");
-    yield break;
+    return;
 }
 
 using var sys2 = AdlxInterfaceHandle.From(sys2Ptr);
