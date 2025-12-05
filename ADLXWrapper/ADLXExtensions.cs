@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using Microsoft.Win32.SafeHandles;
@@ -966,6 +967,53 @@ namespace ADLXWrapper
             public int VRAMUsage;
             public int FanSpeed;
             public double Power;
+            public double TotalBoardPower;
+            public int Voltage;
+            public long TimestampMs;
+        }
+
+        /// <summary>
+        /// System-level metrics values.
+        /// </summary>
+        public struct SystemMetricsSnapshot
+        {
+            public long TimestampMs;
+            public double CpuUsage;
+            public int SystemRam;
+            public int SmartShift;
+            public PowerDistributionSnapshot? PowerDistribution;
+        }
+
+        /// <summary>
+        /// SmartShift power distribution values (when available via IADLXSystemMetrics1).
+        /// </summary>
+        public struct PowerDistributionSnapshot
+        {
+            public int ApuShiftValue;
+            public int GpuShiftValue;
+            public int ApuShiftLimit;
+            public int GpuShiftLimit;
+            public int TotalShiftLimit;
+        }
+
+        /// <summary>
+        /// GPU metrics paired with a GPU identifier.
+        /// </summary>
+        public struct GPUMetricsEntry
+        {
+            public int GPUUniqueId;
+            public GPUMetricsSnapshot Metrics;
+        }
+
+        /// <summary>
+        /// Aggregate snapshot for system + GPU metrics.
+        /// </summary>
+        public struct AllMetricsSnapshot
+        {
+            public long TimestampMs;
+            public SystemMetricsSnapshot? System;
+            public int? FPS;
+            public GPUMetricsEntry[] GPU;
         }
 
         /// <summary>
@@ -1489,6 +1537,269 @@ namespace ADLXWrapper
     /// </summary>
     public static unsafe class ADLXPerformanceMonitoringHelpers
     {
+        public static ADLXPerformanceMonitoringInfo.GPUMetricsSnapshot[] EnumerateGPUMetricsList(IntPtr pMetricsList)
+        {
+            if (pMetricsList == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsList));
+
+            var vtbl = *(ADLXVTables.IADLXListVtbl**)pMetricsList;
+            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(vtbl->Size, typeof(ADLXVTables.SizeFn));
+            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(vtbl->At, typeof(ADLXVTables.AtFn));
+            var count = sizeFn(pMetricsList);
+            var snapshots = new ADLXPerformanceMonitoringInfo.GPUMetricsSnapshot[count];
+            for (uint i = 0; i < count; i++)
+            {
+                IntPtr pItem = IntPtr.Zero;
+                if (atFn(pMetricsList, i, &pItem) == ADLX_RESULT.ADLX_OK && pItem != IntPtr.Zero)
+                {
+                    try
+                    {
+                        snapshots[i] = GetCurrentMetricsFromHandle(pItem);
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface(pItem);
+                    }
+                }
+            }
+            return snapshots;
+        }
+
+        public static ADLXPerformanceMonitoringInfo.GPUMetricsSnapshot GetCurrentMetricsFromHandle(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var snapshot = new ADLXPerformanceMonitoringInfo.GPUMetricsSnapshot();
+            try { snapshot.Temperature = GetGPUTemperature(pMetrics); } catch { }
+            try { snapshot.Usage = GetGPUUsage(pMetrics); } catch { }
+            try { snapshot.ClockSpeed = GetGPUClockSpeed(pMetrics); } catch { }
+            try { snapshot.VRAMClockSpeed = GetGPUVRAMClockSpeed(pMetrics); } catch { }
+            try { snapshot.VRAMUsage = GetGPUVRAM(pMetrics); } catch { }
+            try { snapshot.FanSpeed = GetGPUFanSpeed(pMetrics); } catch { }
+            try { snapshot.Power = GetGPUPower(pMetrics); } catch { }
+            try { snapshot.TimestampMs = GetMetricTimestamp(pMetrics); } catch { }
+            try { snapshot.TotalBoardPower = GetGPUTotalBoardPower(pMetrics); } catch { }
+            try { snapshot.Voltage = GetGPUVoltage(pMetrics); } catch { }
+            return snapshot;
+        }
+
+        public static ADLXPerformanceMonitoringInfo.SystemMetricsSnapshot[] EnumerateSystemMetricsList(IntPtr pMetricsList)
+        {
+            if (pMetricsList == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsList));
+
+            var vtbl = *(ADLXVTables.IADLXListVtbl**)pMetricsList;
+            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(vtbl->Size, typeof(ADLXVTables.SizeFn));
+            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(vtbl->At, typeof(ADLXVTables.AtFn));
+            var count = sizeFn(pMetricsList);
+            var snapshots = new ADLXPerformanceMonitoringInfo.SystemMetricsSnapshot[count];
+            for (uint i = 0; i < count; i++)
+            {
+                IntPtr pItem = IntPtr.Zero;
+                if (atFn(pMetricsList, i, &pItem) == ADLX_RESULT.ADLX_OK && pItem != IntPtr.Zero)
+                {
+                    try
+                    {
+                        snapshots[i] = GetCurrentSystemMetricsFromHandle(pItem);
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface(pItem);
+                    }
+                }
+            }
+            return snapshots;
+        }
+
+        public static ADLXPerformanceMonitoringInfo.SystemMetricsSnapshot GetCurrentSystemMetricsFromHandle(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var snapshot = new ADLXPerformanceMonitoringInfo.SystemMetricsSnapshot();
+            var pSys = (IADLXSystemMetrics*)pMetrics;
+
+            try { long ts = 0; pSys->TimeStamp(&ts); snapshot.TimestampMs = ts; } catch { }
+            try { double cpu = 0; pSys->CPUUsage(&cpu); snapshot.CpuUsage = cpu; } catch { }
+            try { int ram = 0; pSys->SystemRAM(&ram); snapshot.SystemRam = ram; } catch { }
+            try { int ss = 0; pSys->SmartShift(&ss); snapshot.SmartShift = ss; } catch { }
+
+            try
+            {
+                if (ADLXHelpers.TryQueryInterface(pMetrics, "IADLXSystemMetrics1", out var sys1Ptr) && sys1Ptr != IntPtr.Zero)
+                {
+                    try
+                    {
+                        var pSys1 = (IADLXSystemMetrics1*)sys1Ptr;
+                        int apu = 0, gpu = 0, apuLimit = 0, gpuLimit = 0, total = 0;
+                        if (pSys1->PowerDistribution(&apu, &gpu, &apuLimit, &gpuLimit, &total) == ADLX_RESULT.ADLX_OK)
+                        {
+                            snapshot.PowerDistribution = new ADLXPerformanceMonitoringInfo.PowerDistributionSnapshot
+                            {
+                                ApuShiftValue = apu,
+                                GpuShiftValue = gpu,
+                                ApuShiftLimit = apuLimit,
+                                GpuShiftLimit = gpuLimit,
+                                TotalShiftLimit = total
+                            };
+                        }
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface(sys1Ptr);
+                    }
+                }
+            }
+            catch
+            {
+                // ignore, optional
+            }
+
+            return snapshot;
+        }
+
+        public static ADLXPerformanceMonitoringInfo.AllMetricsSnapshot[] EnumerateAllMetricsList(IntPtr pMetricsList, IntPtr[]? gpuHandles = null)
+        {
+            if (pMetricsList == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetricsList));
+
+            var vtbl = *(ADLXVTables.IADLXListVtbl**)pMetricsList;
+            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(vtbl->Size, typeof(ADLXVTables.SizeFn));
+            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(vtbl->At, typeof(ADLXVTables.AtFn));
+            var count = sizeFn(pMetricsList);
+            var snapshots = new ADLXPerformanceMonitoringInfo.AllMetricsSnapshot[count];
+            for (uint i = 0; i < count; i++)
+            {
+                IntPtr pItem = IntPtr.Zero;
+                if (atFn(pMetricsList, i, &pItem) == ADLX_RESULT.ADLX_OK && pItem != IntPtr.Zero)
+                {
+                    try
+                    {
+                        snapshots[i] = GetCurrentAllMetricsFromHandle(pItem, gpuHandles);
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface(pItem);
+                    }
+                }
+            }
+            return snapshots;
+        }
+
+        public static ADLXPerformanceMonitoringInfo.AllMetricsSnapshot GetCurrentAllMetricsFromHandle(IntPtr pMetrics, IntPtr[]? gpuHandles = null)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var snapshot = new ADLXPerformanceMonitoringInfo.AllMetricsSnapshot
+            {
+                GPU = Array.Empty<ADLXPerformanceMonitoringInfo.GPUMetricsEntry>()
+            };
+
+            var pAll = (IADLXAllMetrics*)pMetrics;
+            try { long ts = 0; pAll->TimeStamp(&ts); snapshot.TimestampMs = ts; } catch { }
+
+            // System metrics
+            try
+            {
+                IADLXSystemMetrics* pSys = null;
+                if (pAll->GetSystemMetrics(&pSys) == ADLX_RESULT.ADLX_OK && pSys != null)
+                {
+                    try
+                    {
+                        snapshot.System = GetCurrentSystemMetricsFromHandle((IntPtr)pSys);
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface((IntPtr)pSys);
+                    }
+                }
+            }
+            catch { snapshot.System = null; }
+
+            // FPS
+            try
+            {
+                IADLXFPS* pFps = null;
+                if (pAll->GetFPS(&pFps) == ADLX_RESULT.ADLX_OK && pFps != null)
+                {
+                    try
+                    {
+                        snapshot.FPS = TryReadFps((IntPtr)pFps);
+                    }
+                    finally
+                    {
+                        ADLXHelpers.ReleaseInterface((IntPtr)pFps);
+                    }
+                }
+            }
+            catch { snapshot.FPS = null; }
+
+            // GPU metrics
+            if (gpuHandles != null && gpuHandles.Length > 0)
+            {
+                var gpuSnapshots = new List<ADLXPerformanceMonitoringInfo.GPUMetricsEntry>(gpuHandles.Length);
+                foreach (var gpu in gpuHandles)
+                {
+                    if (gpu == IntPtr.Zero)
+                        continue;
+
+                    IADLXGPUMetrics* pGpuMetrics = null;
+                    if (pAll->GetGPUMetrics((IADLXGPU*)gpu, &pGpuMetrics) == ADLX_RESULT.ADLX_OK && pGpuMetrics != null)
+                    {
+                        try
+                        {
+                            var metrics = GetCurrentMetricsFromHandle((IntPtr)pGpuMetrics);
+                            int gpuId = 0;
+                            try { gpuId = ADLXHelpers.GetGPUUniqueId(gpu); } catch { }
+                            gpuSnapshots.Add(new ADLXPerformanceMonitoringInfo.GPUMetricsEntry
+                            {
+                                GPUUniqueId = gpuId,
+                                Metrics = metrics
+                            });
+                        }
+                        finally
+                        {
+                            ADLXHelpers.ReleaseInterface((IntPtr)pGpuMetrics);
+                        }
+                    }
+                }
+
+                snapshot.GPU = gpuSnapshots.ToArray();
+            }
+
+            return snapshot;
+        }
+
+        private static int? TryReadFps(IntPtr pFps)
+        {
+            var pFPS = (IADLXFPS*)pFps;
+            try
+            {
+                int fps = 0;
+                if (pFPS->FPS(&fps) == ADLX_RESULT.ADLX_OK)
+                    return fps;
+            }
+            catch
+            {
+            }
+            return null;
+        }
+
+        public static long GetMetricTimestamp(IntPtr pMetrics)
+        {
+            if (pMetrics == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pMetrics));
+
+            var vtbl = *(ADLXVTables.IADLXGPUMetricsVtbl**)pMetrics;
+            var tsFn = (delegate* unmanaged[Stdcall]<IntPtr, long*, ADLX_RESULT>)vtbl->TimeStamp;
+            long ts = 0;
+            var result = tsFn(pMetrics, &ts);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get metric timestamp");
+            return ts;
+        }
         public static ADLX_IntRange GetSamplingIntervalRange(IntPtr pPerfMonServices)
         {
             if (pPerfMonServices == IntPtr.Zero)
@@ -1637,6 +1948,51 @@ namespace ADLXWrapper
             var result = stopFn(pPerfMonServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to stop performance metrics tracking");
+        }
+
+        public static AdlxInterfaceHandle GetAllMetricsHistory(IntPtr pPerfMonServices, int startMs, int stopMs)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetAllMetricsHistoryFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetAllMetricsHistory, typeof(ADLXVTables.GetAllMetricsHistoryFn));
+            IntPtr list;
+            var result = getFn(pPerfMonServices, startMs, stopMs, &list);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get all metrics history");
+            return AdlxInterfaceHandle.From(list);
+        }
+
+        public static AdlxInterfaceHandle GetSystemMetricsHistory(IntPtr pPerfMonServices, int startMs, int stopMs)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetSystemMetricsHistoryFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetSystemMetricsHistory, typeof(ADLXVTables.GetSystemMetricsHistoryFn));
+            IntPtr list;
+            var result = getFn(pPerfMonServices, startMs, stopMs, &list);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get system metrics history");
+            return AdlxInterfaceHandle.From(list);
+        }
+
+        public static AdlxInterfaceHandle GetCurrentAllMetrics(IntPtr pPerfMonServices)
+        {
+            if (pPerfMonServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPerfMonServices));
+
+            var vtbl = *(ADLXVTables.IADLXPerformanceMonitoringServicesVtbl**)pPerfMonServices;
+            var getFn = (ADLXVTables.GetAllMetricsHistoryFn)Marshal.GetDelegateForFunctionPointer(
+                vtbl->GetCurrentAllMetrics, typeof(ADLXVTables.GetAllMetricsHistoryFn));
+            IntPtr pAll;
+            var result = getFn(pPerfMonServices, 0, 0, &pAll);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get current all metrics");
+            return AdlxInterfaceHandle.From(pAll);
         }
 
         /// <summary>

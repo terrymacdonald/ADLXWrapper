@@ -426,6 +426,12 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetGPUMetricsHistoryFn(IntPtr pThis, IntPtr pGPU, int startMs, int stopMs, IntPtr* ppList);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetAllMetricsHistoryFn(IntPtr pThis, int startMs, int stopMs, IntPtr* ppList);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetSystemMetricsHistoryFn(IntPtr pThis, int startMs, int stopMs, IntPtr* ppList);
+
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT AddMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT RemoveMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);

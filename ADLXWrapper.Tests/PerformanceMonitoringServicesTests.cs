@@ -379,6 +379,31 @@ namespace ADLXWrapper.Tests
 
                 using var history = ADLXPerformanceMonitoringHelpers.GetGPUMetricsHistory(perf, gpu, 0, 0);
                 _output.WriteLine($"GPU metrics history handle: {(IntPtr)history}");
+                var gpuHistory = ADLXPerformanceMonitoringHelpers.EnumerateGPUMetricsList((IntPtr)history);
+                _output.WriteLine($"GPU metrics history snapshots: {gpuHistory.Length}");
+
+                using var all = ADLXPerformanceMonitoringHelpers.GetAllMetricsHistory(perf, 0, 0);
+                _output.WriteLine($"All metrics history handle: {(IntPtr)all}");
+                var gpuPtrs = Array.ConvertAll(_gpus, g => (IntPtr)g);
+                var allHistory = ADLXPerformanceMonitoringHelpers.EnumerateAllMetricsList((IntPtr)all, gpuPtrs);
+                _output.WriteLine($"All metrics history snapshots: {allHistory.Length}");
+                if (allHistory.Length > 0)
+                {
+                    var first = allHistory[0];
+                    if (first.System is { } sysSnap)
+                    {
+                        _output.WriteLine($"  System CPU={sysSnap.CpuUsage:F1}% RAM={sysSnap.SystemRam}MB SmartShift={sysSnap.SmartShift}");
+                    }
+                    if (first.GPU.Length > 0)
+                    {
+                        _output.WriteLine($"  GPU entries={first.GPU.Length}");
+                    }
+                }
+
+                using var sys = ADLXPerformanceMonitoringHelpers.GetSystemMetricsHistory(perf, 0, 0);
+                _output.WriteLine($"System metrics history handle: {(IntPtr)sys}");
+                var sysHistory = ADLXPerformanceMonitoringHelpers.EnumerateSystemMetricsList((IntPtr)sys);
+                _output.WriteLine($"System metrics history snapshots: {sysHistory.Length}");
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
