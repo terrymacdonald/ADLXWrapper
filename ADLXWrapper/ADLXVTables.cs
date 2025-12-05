@@ -408,6 +408,18 @@ namespace ADLXWrapper
         internal delegate ADLX_RESULT GetVideoSuperResolutionFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppVsr);
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT GetMultiMediaServicesFn(IntPtr pThis, IntPtr* ppServices);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetPowerTuningServicesFn(IntPtr pThis, IntPtr* ppServices);
+
+        // Manual power tuning
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetManualPowerTuningFn(IntPtr pThis, IntPtr pGPU, IntPtr* ppManualPowerTuning);
+
+        // SmartShift
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT GetSSMBiasModeFn(IntPtr pThis, ADLX_SSM_BIAS_MODE* mode);
+        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
+        internal delegate ADLX_RESULT SetSSMBiasModeFn(IntPtr pThis, ADLX_SSM_BIAS_MODE mode);
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
         internal delegate ADLX_RESULT AddMultimediaEventListenerFn(IntPtr pThis, IntPtr pListener);
@@ -859,6 +871,94 @@ namespace ADLXWrapper
             public IntPtr IsSupported;
             public IntPtr IsEnabled;
             public IntPtr SetEnabled;
+        }
+
+        // IADLXPowerTuningServices vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXPowerTuningServicesVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetPowerTuningChangedHandling;
+            public IntPtr GetSmartShiftMax;
+        }
+
+        // IADLXPowerTuningServices1 vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXPowerTuningServices1Vtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetPowerTuningChangedHandling;
+            public IntPtr GetSmartShiftMax;
+            public IntPtr GetSmartShiftEco;
+            public IntPtr IsGPUConnectSupported;
+            public IntPtr GetGPUConnectGPUs;
+        }
+
+        // IADLXSmartShiftMax vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXSmartShiftMaxVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;
+            public IntPtr GetBiasMode;
+            public IntPtr SetBiasMode;
+            public IntPtr GetBiasRange;
+            public IntPtr GetBias;
+            public IntPtr SetBias;
+        }
+
+        // IADLXSmartShiftEco vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXSmartShiftEcoVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr IsSupported;
+            public IntPtr IsEnabled;
+            public IntPtr SetEnabled;
+        }
+
+        // IADLXManualPowerTuning vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXManualPowerTuningVtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetPowerLimitRange;
+            public IntPtr GetPowerLimit;
+            public IntPtr SetPowerLimit;
+        }
+
+        // IADLXManualPowerTuning1 vtable
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct IADLXManualPowerTuning1Vtbl
+        {
+            public IntPtr QueryInterface;
+            public IntPtr AddRef;
+            public IntPtr Release;
+
+            public IntPtr GetPowerLimitRange;
+            public IntPtr GetPowerLimit;
+            public IntPtr SetPowerLimit;
+            public IntPtr IsSupportedTDCLimit;
+            public IntPtr GetTDCLimitRange;
+            public IntPtr GetTDCLimit;
+            public IntPtr SetTDCLimit;
+            public IntPtr GetPowerLimitDefault;
+            public IntPtr GetTDCLimitDefault;
         }
 
         // IADLXDisplayVSR vtable

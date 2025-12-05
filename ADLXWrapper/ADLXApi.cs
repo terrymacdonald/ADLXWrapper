@@ -233,6 +233,12 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(ptr);
         }
 
+        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+        {
+            var ptr = GetPowerTuningServicesInternal();
+            return AdlxInterfaceHandle.From(ptr);
+        }
+
         /// <summary>
         /// Enumerate GPUs and wrap them in SafeHandles for automatic release.
         /// </summary>
@@ -392,6 +398,22 @@ namespace ADLXWrapper
             }
 
             return pGPUTuningServices;
+        }
+
+        private unsafe IntPtr GetPowerTuningServicesInternal()
+        {
+            ThrowIfDisposed();
+
+            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)_pSystemServices;
+            var getPowerTuningServicesFn = (ADLXVTables.GetPowerTuningServicesFn)Marshal.GetDelegateForFunctionPointer(
+                systemVtbl->GetPowerTuningServices, typeof(ADLXVTables.GetPowerTuningServicesFn));
+
+            IntPtr pPowerServices;
+            var result = getPowerTuningServicesFn(_pSystemServices, &pPowerServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get power tuning services");
+
+            return pPowerServices;
         }
 
         private unsafe IntPtr GetPerformanceMonitoringServicesInternal()

@@ -13,6 +13,31 @@ namespace ADLXWrapper
     public static unsafe class ADLXHelpers
     {
         /// <summary>
+        /// Try QueryInterface on an ADLX interface given an IID string (wide string).
+        /// </summary>
+        public static unsafe bool TryQueryInterface(IntPtr pInterface, string iid, out IntPtr resultPtr)
+        {
+            if (pInterface == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pInterface));
+            resultPtr = IntPtr.Zero;
+            var vtbl = *(ADLXVTables.IADLXInterfaceVtbl**)pInterface;
+            var qiFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.QueryInterfaceFn>(vtbl->QueryInterface);
+            var pChars = Marshal.StringToHGlobalUni(iid);
+            try
+            {
+                IntPtr* pOut = stackalloc IntPtr[1];
+                *pOut = IntPtr.Zero;
+                var r = qiFn(pInterface, (char*)pChars, pOut);
+                resultPtr = *pOut;
+                return r == ADLX_RESULT.ADLX_OK && resultPtr != IntPtr.Zero;
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(pChars);
+            }
+        }
+
+        /// <summary>
         /// Get GPU name
         /// </summary>
         public static string GetGPUName(IntPtr pGPU)
@@ -1261,6 +1286,201 @@ namespace ADLXWrapper
             var result = setFn(pVsr, enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video super resolution enabled");
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for power tuning (manual power limit, SmartShift Max/Eco).
+    /// </summary>
+    public static unsafe class ADLXPowerTuningHelpers
+    {
+        public static AdlxInterfaceHandle GetPowerTuningServices(IntPtr pSystem)
+        {
+            if (pSystem == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSystem));
+
+            var vtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetPowerTuningServicesFn>(vtbl->GetPowerTuningServices);
+            IntPtr pServices;
+            var result = getFn(pSystem, &pServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get power tuning services");
+            return AdlxInterfaceHandle.From(pServices);
+        }
+
+        public static AdlxInterfaceHandle GetSmartShiftMax(IntPtr pPowerServices)
+        {
+            if (pPowerServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPowerServices));
+
+            var vtbl = *(ADLXVTables.IADLXPowerTuningServicesVtbl**)pPowerServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGPUsFn>(vtbl->GetSmartShiftMax);
+            IntPtr pMax;
+            var result = getFn(pPowerServices, &pMax);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get SmartShift Max interface");
+            return AdlxInterfaceHandle.From(pMax);
+        }
+
+        public static AdlxInterfaceHandle GetSmartShiftEco(IntPtr pPowerServices)
+        {
+            if (pPowerServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pPowerServices));
+
+            var vtbl = *(ADLXVTables.IADLXPowerTuningServices1Vtbl**)pPowerServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetGPUsFn>(vtbl->GetSmartShiftEco);
+            IntPtr pEco;
+            var result = getFn(pPowerServices, &pEco);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get SmartShift Eco interface");
+            return AdlxInterfaceHandle.From(pEco);
+        }
+
+        public static (bool supported, ADLX_SSM_BIAS_MODE biasMode, ADLX_IntRange biasRange, int biasValue) GetSmartShiftMaxState(IntPtr pSmartShiftMax)
+        {
+            if (pSmartShiftMax == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSmartShiftMax));
+
+            var vtbl = *(ADLXVTables.IADLXSmartShiftMaxVtbl**)pSmartShiftMax;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupported);
+            byte sup = 0;
+            boolFn(pSmartShiftMax, &sup);
+
+            ADLX_SSM_BIAS_MODE mode = default;
+            ADLX_IntRange range = default;
+            int bias = 0;
+
+            var getModeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetSSMBiasModeFn>(vtbl->GetBiasMode);
+            var getRangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(vtbl->GetBiasRange);
+            var getBiasFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetBias);
+
+            getModeFn(pSmartShiftMax, &mode);
+            getRangeFn(pSmartShiftMax, &range);
+            getBiasFn(pSmartShiftMax, &bias);
+
+            return (sup != 0, mode, range, bias);
+        }
+
+        public static void SetSmartShiftMaxBias(IntPtr pSmartShiftMax, ADLX_SSM_BIAS_MODE mode, int bias)
+        {
+            if (pSmartShiftMax == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSmartShiftMax));
+
+            var vtbl = *(ADLXVTables.IADLXSmartShiftMaxVtbl**)pSmartShiftMax;
+            var setModeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetSSMBiasModeFn>(vtbl->SetBiasMode);
+            var setBiasFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetBias);
+
+            var modeResult = setModeFn(pSmartShiftMax, mode);
+            if (modeResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(modeResult, "Failed to set SmartShift Max bias mode");
+
+            var biasResult = setBiasFn(pSmartShiftMax, bias);
+            if (biasResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(biasResult, "Failed to set SmartShift Max bias");
+        }
+
+        public static (bool supported, bool enabled) GetSmartShiftEcoState(IntPtr pSmartShiftEco)
+        {
+            if (pSmartShiftEco == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSmartShiftEco));
+
+            var vtbl = *(ADLXVTables.IADLXSmartShiftEcoVtbl**)pSmartShiftEco;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>;
+            byte sup = 0, en = 0;
+            boolFn(vtbl->IsSupported)(pSmartShiftEco, &sup);
+            boolFn(vtbl->IsEnabled)(pSmartShiftEco, &en);
+            return (sup != 0, en != 0);
+        }
+
+        public static void SetSmartShiftEcoEnabled(IntPtr pSmartShiftEco, bool enable)
+        {
+            if (pSmartShiftEco == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pSmartShiftEco));
+
+            var vtbl = *(ADLXVTables.IADLXSmartShiftEcoVtbl**)pSmartShiftEco;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSetEnabledFn>(vtbl->SetEnabled);
+            var result = setFn(pSmartShiftEco, enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set SmartShift Eco");
+        }
+
+        public static AdlxInterfaceHandle GetManualPowerTuning(IntPtr pGpuTuningServices, IntPtr pGPU)
+        {
+            if (pGpuTuningServices == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGpuTuningServices));
+            if (pGPU == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pGPU));
+
+            var vtbl = *(ADLXVTables.IADLXGPUTuningServicesVtbl**)pGpuTuningServices;
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetManualPowerTuningFn>(vtbl->GetManualPowerTuning);
+            IntPtr pManual;
+            var result = getFn(pGpuTuningServices, pGPU, &pManual);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get manual power tuning interface");
+            return AdlxInterfaceHandle.From(pManual);
+        }
+
+        public static (bool supported, ADLX_IntRange range, int value) GetManualPowerLimit(IntPtr pManualPower)
+        {
+            if (pManualPower == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pManualPower));
+
+            var vtbl = *(ADLXVTables.IADLXManualPowerTuningVtbl**)pManualPower;
+            var rangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(vtbl->GetPowerLimitRange);
+            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetPowerLimit);
+            ADLX_IntRange range = default;
+            var r1 = rangeFn(pManualPower, &range);
+            int value = 0;
+            var r2 = getFn(pManualPower, &value);
+            var supported = r1 == ADLX_RESULT.ADLX_OK && r2 == ADLX_RESULT.ADLX_OK;
+            return (supported, range, value);
+        }
+
+        public static void SetManualPowerLimit(IntPtr pManualPower, int value)
+        {
+            if (pManualPower == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pManualPower));
+
+            var vtbl = *(ADLXVTables.IADLXManualPowerTuningVtbl**)pManualPower;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetPowerLimit);
+            var result = setFn(pManualPower, value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set manual power limit");
+        }
+
+        public static (bool supported, ADLX_IntRange range, int value, int defaultValue) GetManualTDCLimit(IntPtr pManualPowerV1)
+        {
+            if (pManualPowerV1 == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pManualPowerV1));
+
+            var vtbl = *(ADLXVTables.IADLXManualPowerTuning1Vtbl**)pManualPowerV1;
+            var boolFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.BoolSupportedFn>(vtbl->IsSupportedTDCLimit);
+            byte sup = 0;
+            boolFn(pManualPowerV1, &sup);
+
+            ADLX_IntRange range = default;
+            int value = 0, defVal = 0;
+            var getRangeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntRangeFn>(vtbl->GetTDCLimitRange);
+            var getValFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetTDCLimit);
+            var getDefFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetIntValueFn>(vtbl->GetTDCLimitDefault);
+
+            getRangeFn(pManualPowerV1, &range);
+            getValFn(pManualPowerV1, &value);
+            getDefFn(pManualPowerV1, &defVal);
+
+            return (sup != 0, range, value, defVal);
+        }
+
+        public static void SetManualTDCLimit(IntPtr pManualPowerV1, int value)
+        {
+            if (pManualPowerV1 == IntPtr.Zero)
+                throw new ArgumentNullException(nameof(pManualPowerV1));
+
+            var vtbl = *(ADLXVTables.IADLXManualPowerTuning1Vtbl**)pManualPowerV1;
+            var setFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.SetIntValueFn>(vtbl->SetTDCLimit);
+            var result = setFn(pManualPowerV1, value);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set TDC limit");
         }
     }
 

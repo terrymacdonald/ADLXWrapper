@@ -196,6 +196,45 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void ManualPowerTuning_ReapplyCurrent()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
+                _pGPUTuningServices != null ? _skipReason : "GPU tuning services not available");
+
+            var tuning = _pGPUTuningServices!;
+            var gpu = _gpus[0];
+            try
+            {
+                using var manual = ADLXPowerTuningHelpers.GetManualPowerTuning(tuning, gpu);
+                var state = ADLXPowerTuningHelpers.GetManualPowerLimit(manual);
+                _output.WriteLine($"Manual Power: supported={state.supported}, range=({state.range.minValue},{state.range.maxValue}), value={state.value}");
+                if (state.supported)
+                {
+                    var clamped = Math.Clamp(state.value, state.range.minValue, state.range.maxValue);
+                    ADLXPowerTuningHelpers.SetManualPowerLimit(manual, clamped);
+                }
+
+                // Try TDCLimit via v1 interface if available
+                var manualV1Ptr = IntPtr.Zero;
+                if (ADLXHelpers.TryQueryInterface(manual, "IADLXManualPowerTuning1", out manualV1Ptr) && manualV1Ptr != IntPtr.Zero)
+                {
+                    using var manualV1 = AdlxInterfaceHandle.From(manualV1Ptr);
+                    var tdcState = ADLXPowerTuningHelpers.GetManualTDCLimit(manualV1);
+                    _output.WriteLine($"Manual Power TDC: sup={tdcState.supported}, range=({tdcState.range.minValue},{tdcState.range.maxValue}), value={tdcState.value}, default={tdcState.defaultValue}");
+                    if (tdcState.supported)
+                    {
+                        var clampedTdc = Math.Clamp(tdcState.value, tdcState.range.minValue, tdcState.range.maxValue);
+                        ADLXPowerTuningHelpers.SetManualTDCLimit(manualV1, clampedTdc);
+                    }
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Manual power tuning not supported on this hardware.");
+            }
+        }
+
+        [SkippableFact]
         public void AllSupportChecks_ShouldNotThrow()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _pGPUTuningServices == null || _gpus.Length == 0,
