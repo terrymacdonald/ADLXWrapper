@@ -1,7 +1,15 @@
-﻿## ADLXWrapper expansion plan
+﻿﻿## ADLXWrapper expansion plan
 
-1) Display settings (get/set): color depth/format, scaling, HDR/VRR/FreeSync, etc. SafeHandle helpers + tests/docs.
-2) Desktop/Eyefinity: grid/layout read, change handling, create/destroy wrappers. SafeHandles + tests/docs.
-3) Additional settings: vari-bright, custom resolutions, events, and broader display settings; polish API and samples.
+### Phase 1: Core Feature Implementation (Complete)
 
-Current status: Starting step 1.
+1.  [x] **Display Settings (get/set)**: Implemented color depth/format, scaling, FreeSync, etc.
+2.  [x] **Desktop/Eyefinity**: Implemented grid/layout reading, change handling, and create/destroy wrappers.
+3.  [x] **3D Settings**: Implemented full get/apply support for Anti-Lag, Boost, RIS, etc.
+4.  [x] **Event Handling**: Added listeners for Display, Desktop, and GPU Tuning changes.
+5.  [x] **API Polish**: Refactored into a clean, helper-based architecture.
+
+### Phase 2: Next Steps
+
+- [ ] Create comprehensive sample applications demonstrating save/load of full system state.
+- [ ] Expand test coverage for `Apply` methods.
+- [ ] Document advanced use cases like event handling.

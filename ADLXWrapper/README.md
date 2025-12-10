@@ -16,15 +16,31 @@ dotnet build ADLXWrapper/ADLXWrapper.csproj
 ## Usage snapshot
 ```csharp
 using ADLXWrapper;
+using System;
+using System.Linq;
 
+// Initialize ADLX
 using var adlx = ADLXApi.Initialize();
-foreach (var gpu in adlx.EnumerateGPUHandles())
+var systemServices = adlx.GetSystemServices();
+
+// Enumerate GPUs
+var gpus = ADLXGpuHelpers.EnumerateAllGpus(systemServices).ToList();
+Console.WriteLine($"Found {gpus.Count} GPU(s).");
+
+foreach (var gpuInfo in gpus)
 {
-    using (gpu)
-    {
-        var info = ADLXGPUInfo.GetBasicInfo(gpu);
-        Console.WriteLine($"{info.Name} ({info.VRAMType}) - {info.TotalVRAM} MB");
-    }
+    Console.WriteLine($"- GPU: {gpuInfo.Name} (ID: {gpuInfo.UniqueId})");
+    Console.WriteLine($"  VRAM: {gpuInfo.TotalVRAM} MB ({gpuInfo.VRAMType})");
+}
+
+// Enumerate Displays
+var displays = ADLXDisplayHelpers.EnumerateAllDisplays(systemServices).ToList();
+Console.WriteLine($"\nFound {displays.Count} display(s).");
+
+foreach (var displayInfo in displays)
+{
+    Console.WriteLine($"- Display: {displayInfo.Name} on GPU {displayInfo.GpuUniqueId}");
+    Console.WriteLine($"  Resolution: {displayInfo.Width}x{displayInfo.Height} @ {displayInfo.RefreshRate:F2} Hz");
 }
 ```
 
