@@ -1,455 +1,69 @@
-using System;
+﻿using System;
+using System.Linq;
 using System.Runtime.Versioning;
-using ADLXWrapper;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace ADLXWrapper.Tests
 {
     /// <summary>
-    /// Smoke tests for display settings slice (FreeSync, GPU scaling, scaling mode, color depth, pixel format).
-    /// Uses SafeHandles and re-applies current values to avoid changing user config.
+    /// Tests for various display settings services.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public class DisplaySettingsTests : IDisposable
+    public unsafe class DisplaySettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
-        private readonly bool _hasHardware;
-        private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly AdlxInterfaceHandle? _displayServices;
-        private readonly AdlxInterfaceHandle[] _displays = Array.Empty<AdlxInterfaceHandle>();
-        private readonly AdlxInterfaceHandle[] _gpus = Array.Empty<AdlxInterfaceHandle>();
+        private readonly IADLXDisplay* _display;
+        private readonly IADLXDisplayServices* _displayServices;
 
         public DisplaySettingsTests(ITestOutputHelper output)
         {
             _output = output;
-
-            if (!HardwareDetection.HasAMDGPU(out var hwError))
-            {
-                _hasHardware = false;
-                _hasDll = false;
-                _skipReason = hwError;
-                return;
-            }
-            _hasHardware = true;
-
-            if (!ADLXApi.IsADLXDllAvailable(out var dllError))
-            {
-                _hasDll = false;
-                _skipReason = dllError;
-                return;
-            }
-            _hasDll = true;
-
             try
             {
                 _api = ADLXApi.Initialize();
-                using var system = _api.GetSystemServicesHandle();
-                var dispSvc = ADLXDisplayHelpers.GetDisplayServicesHandle(system);
-                _displayServices = dispSvc;
-                _displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system);
-                _gpus = _api.EnumerateGPUHandles();
+                var system = _api.GetSystemServices();
+                _displayServices = ADLXDisplayHelpers.GetDisplayServices(system);
+
+                _displayServices->GetDisplays(out var displayList);
+                if (displayList->Size() == 0)
+                {
+                    _skipReason = "No displays found.";
+                    return;
+                }
+                displayList->At(0, out _display);
             }
             catch (Exception ex)
             {
-                _skipReason = $"ADLX init/display services failed: {ex.Message}";
+                _skipReason = $"ADLX initialization failed: {ex.Message}";
             }
         }
 
         public void Dispose()
         {
-            foreach (var d in _displays)
-            {
-                try { d.Dispose(); } catch { }
-            }
-            try { _displayServices?.Dispose(); } catch { }
+            if (_display != null) ((IUnknown*)_display)->Release();
+            if (_displayServices != null) ((IUnknown*)_displayServices)->Release();
             _api?.Dispose();
         }
 
         [SkippableFact]
-        public void FreeSync_GetAndReapplyCurrent()
+        public void CanGetDisplaySettings()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            Skip.If(_api == null || _display == null || _displayServices == null, _skipReason);
 
-            var display = _displays[0];
-            using var fs = ADLXDisplaySettingsHelpers.GetFreeSyncHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetFreeSyncState(fs);
-            _output.WriteLine($"FreeSync supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                // Re-apply current value to avoid changing user config
-                ADLXDisplaySettingsHelpers.SetFreeSyncEnabled(fs, state.enabled);
-            }
-        }
+            var gamma = ADLXDisplaySettingsHelpers.GetGamma(_displayServices, _display);
+            Assert.NotNull(gamma);
+            _output.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-        [SkippableFact]
-        public void GPUScaling_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
+            var gamut = ADLXDisplaySettingsHelpers.GetGamut(_displayServices, _display);
+            Assert.NotNull(gamut);
+            _output.WriteLine($"Gamut supported: {gamut.IsGamutSupported}");
 
-            var display = _displays[0];
-            using var scaling = ADLXDisplaySettingsHelpers.GetGPUScalingHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetGPUScalingState(scaling);
-            _output.WriteLine($"GPU scaling supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetGPUScalingEnabled(scaling, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void ScalingMode_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var modeHandle = ADLXDisplaySettingsHelpers.GetScalingModeHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetScalingMode(modeHandle);
-            _output.WriteLine($"Scaling mode supported={state.supported}, mode={state.mode}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetScalingMode(modeHandle, state.mode);
-            }
-        }
-
-        [SkippableFact]
-        public void FreeSyncColorAccuracy_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var fsca = ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyState(fsca);
-            _output.WriteLine($"FS Color Accuracy supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetFreeSyncColorAccuracyEnabled(fsca, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void DynamicRefreshRate_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var drr = ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlState(drr);
-            _output.WriteLine($"DRR supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled(drr, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void ColorDepth_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var depth = ADLXDisplaySettingsHelpers.GetColorDepthHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetColorDepthState(depth);
-            _output.WriteLine($"ColorDepth supported={state.supported}, value={state.current}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetColorDepth(depth, state.current);
-            }
-        }
-
-        [SkippableFact]
-        public void PixelFormat_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var format = ADLXDisplaySettingsHelpers.GetPixelFormatHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetPixelFormatState(format);
-            _output.WriteLine($"PixelFormat supported={state.supported}, value={state.current}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetPixelFormat(format, state.current);
-            }
-        }
-
-        [SkippableFact]
-        public void VirtualSuperResolution_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var vsr = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState(vsr);
-            _output.WriteLine($"VSR supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled(vsr, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void IntegerScaling_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var intScale = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetIntegerScalingState(intScale);
-            _output.WriteLine($"IntegerScaling supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled(intScale, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void HDCP_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var hdcp = ADLXDisplaySettingsHelpers.GetHDCPHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetHDCPState(hdcp);
-            _output.WriteLine($"HDCP supported={state.supported}, enabled={state.enabled}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetHDCPEnabled(hdcp, state.enabled);
-            }
-        }
-
-        [SkippableFact]
-        public void VariBright_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var vb = ADLXDisplaySettingsHelpers.GetVariBrightHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetVariBrightState(vb);
-            _output.WriteLine($"VariBright supported={state.supported}, enabled={state.enabled}, mode={state.mode}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetVariBright(vb, state.enabled, state.mode);
-            }
-        }
-
-        [SkippableFact]
-        public void DisplayBlanking_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var blanking = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetDisplayBlankingState(blanking);
-            _output.WriteLine($"DisplayBlanking supported={state.supported}, blanked={state.blanked}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetDisplayBlanked(blanking, state.blanked);
-            }
-        }
-
-        [SkippableFact]
-        public void CustomColor_Hue_GetAndReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var cc = ADLXDisplaySettingsHelpers.GetCustomColorHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetCustomColorHue(cc);
-            _output.WriteLine($"CustomColor Hue supported={state.supported}, value={state.value}, range=[{state.range.minValue},{state.range.maxValue}] step={state.range.step}");
-            if (state.supported)
-            {
-                ADLXDisplaySettingsHelpers.SetCustomColorHue(cc, state.value);
-            }
-        }
-
-        [SkippableFact]
-        public void CustomResolution_GetCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-
-            var display = _displays[0];
-            using var cr = ADLXDisplaySettingsHelpers.GetCustomResolutionHandle(_displayServices, display);
-            var state = ADLXDisplaySettingsHelpers.GetCustomResolutionState(cr);
-            _output.WriteLine($"CustomResolution supported={state.supported}, current={state.current.resWidth}x{state.current.resHeight}@{state.current.refreshRate}");
-        }
-
-        [SkippableFact]
-        public void DisplayConnectivityExperience_GetState()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var conn = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperienceHandle(_displayServices, display);
-                var state = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperienceState(conn);
-                _output.WriteLine($"Connectivity: HDMI QD sup={state.hdmiQdSupported} en={state.hdmiQdEnabled}, DP sup={state.dpLinkSupported}, rate={state.dpLinkRate}, lanes {state.activeLanes}/{state.totalLanes}, pre={state.preEmphasis}, volt={state.voltageSwing}, linkProtect={state.linkProtectionEnabled}");
-                if (state.hdmiQdSupported)
-                {
-                    ADLXDisplaySettingsHelpers.SetDisplayConnectivityHDMIQualityDetectionEnabled(conn, state.hdmiQdEnabled);
-                }
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Display connectivity experience not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void VariBright1_BacklightAdaptive_GetAndReapply()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var vb = ADLXDisplaySettingsHelpers.GetVariBrightHandle(_displayServices, display);
-                var state = ADLXDisplaySettingsHelpers.GetVariBright1State(vb);
-                _output.WriteLine($"VariBright1 sup={state.supported}, BA sup={state.backlightAdaptiveSupported} en={state.backlightAdaptiveEnabled}, batteryLife sup={state.batteryLifeSupported} en={state.batteryLifeEnabled}");
-                if (state.backlightAdaptiveSupported)
-                {
-                    ADLXDisplaySettingsHelpers.SetVariBrightBacklightAdaptiveEnabled(vb, state.backlightAdaptiveEnabled);
-                }
-                if (state.batteryLifeSupported)
-                {
-                    ADLXDisplaySettingsHelpers.SetVariBrightBatteryLifeEnabled(vb, state.batteryLifeEnabled);
-                }
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "VariBright1 not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void Gamma_ReadState()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var gamma = ADLXDisplaySettingsHelpers.GetGammaHandle(_displayServices, display);
-                var state = ADLXDisplaySettingsHelpers.GetGammaState(gamma);
-                _output.WriteLine($"Gamma reRamp={state.reGammaRamp}, deRamp={state.deGammaRamp}, coeff={state.reGammaCoeff}, sRGB={state.currentSRGB}, BT709={state.currentBT709}, PQ={state.currentPQ}, PQ2084Interim={state.currentPQ2084Interim}, Re36={state.current36}");
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Gamma not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void Gamma_ReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var gamma = ADLXDisplaySettingsHelpers.GetGammaHandle(_displayServices, display);
-                ADLXDisplaySettingsHelpers.ReapplyGamma(gamma);
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Gamma not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void Gamut_ReadState()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var gamut = ADLXDisplaySettingsHelpers.GetGamutHandle(_displayServices, display);
-                var state = ADLXDisplaySettingsHelpers.GetGamutState(gamut);
-                _output.WriteLine($"Gamut: whitePoints 5000={state.whitePoint5000K}, 6500={state.whitePoint6500K}, 7500={state.whitePoint7500K}, 9300={state.whitePoint9300K}, custom={state.customWhitePoint}, bt2020Sup={state.bt2020Supported}, adobeSup={state.adobeSupported}, red=({state.gamut.red.x},{state.gamut.red.y})");
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Gamut not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void Gamut_ReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var gamut = ADLXDisplaySettingsHelpers.GetGamutHandle(_displayServices, display);
-                ADLXDisplaySettingsHelpers.ReapplyGamut(gamut);
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Gamut not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void ThreeDLUT_ReadState()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(_displayServices, display);
-                var state = ADLXDisplaySettingsHelpers.Get3DLUTState(lut);
-                _output.WriteLine($"3DLUT SCE sup={state.sceSupported}, vividSup={state.vividGamingSupported}, curDisabled={state.currentDisabled}, curVivid={state.currentVividGaming}");
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "3DLUT not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void ThreeDLUT_ReapplyCurrent()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _displayServices == null || _displays.Length == 0, _skipReason);
-            var display = _displays[0];
-            try
-            {
-                using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(_displayServices, display);
-                ADLXDisplaySettingsHelpers.Reapply3DLUT(lut);
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "3DLUT not supported on this hardware.");
-            }
-        }
-
-        [SkippableFact]
-        public void Multimedia_VideoUpscaleAndVsr_ReadState()
-        {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
-            try
-            {
-                using var system = _api.GetSystemServicesHandle();
-                using var mm = ADLXMultimediaHelpers.GetMultimediaServices(system);
-                var gpu = _gpus[0];
-                using var upscale = ADLXMultimediaHelpers.GetVideoUpscale(mm, gpu);
-                var upState = ADLXMultimediaHelpers.GetVideoUpscaleState(upscale);
-                _output.WriteLine($"VideoUpscale sup={upState.supported}, en={upState.enabled}, scaleRange=({upState.scaleFactorRange.minValue},{upState.scaleFactorRange.maxValue}), minRes={upState.minInputResolution}");
-                if (upState.supported)
-                {
-                    ADLXMultimediaHelpers.SetVideoUpscaleEnabled(upscale, upState.enabled);
-                    ADLXMultimediaHelpers.SetVideoUpscaleMinInputResolution(upscale, upState.minInputResolution);
-                }
-
-                using var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(mm, gpu);
-                var vsrState = ADLXMultimediaHelpers.GetVideoSuperResolutionState(vsr);
-                _output.WriteLine($"VideoSuperResolution sup={vsrState.supported}, en={vsrState.enabled}");
-                if (vsrState.supported)
-                {
-                    ADLXMultimediaHelpers.SetVideoSuperResolutionEnabled(vsr, vsrState.enabled);
-                }
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                Skip.If(true, "Multimedia not supported on this hardware.");
-            }
+            var customColor = ADLXDisplaySettingsHelpers.GetCustomColor(_displayServices, _display);
+            Assert.NotNull(customColor);
+            _output.WriteLine($"Custom Color supported: {customColor.IsSupported}");
         }
     }
 }

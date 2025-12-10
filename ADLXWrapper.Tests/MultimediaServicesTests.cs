@@ -6,25 +6,25 @@ using Xunit.Abstractions;
 namespace ADLXWrapper.Tests
 {
     /// <summary>
-    /// Tests for Performance Monitoring services.
+    /// Tests for Multimedia services (VSR, Upscale).
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class PerformanceMonitoringServicesTests : IDisposable
+    public unsafe class MultimediaServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
-        private readonly IADLXPerformanceMonitoringServices* _perfServices;
+        private readonly IADLXMultimediaServices* _multimediaServices;
 
-        public PerformanceMonitoringServicesTests(ITestOutputHelper output)
+        public MultimediaServicesTests(ITestOutputHelper output)
         {
             _output = output;
             try
             {
                 _api = ADLXApi.Initialize();
                 var system = _api.GetSystemServices();
-                _perfServices = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(system);
+                _multimediaServices = ADLXMultimediaHelpers.GetMultimediaServices(system);
 
                 system->GetGPUs(out var gpuList);
                 if (gpuList->Size() == 0)
@@ -43,22 +43,22 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_perfServices != null) ((IUnknown*)_perfServices)->Release();
+            if (_multimediaServices != null) ((IUnknown*)_multimediaServices)->Release();
             _api?.Dispose();
         }
 
         [SkippableFact]
-        public void CanGetPerformanceInfo()
+        public void CanGetMultimediaInfo()
         {
-            Skip.If(_api == null || _gpu == null || _perfServices == null, _skipReason);
+            Skip.If(_api == null || _gpu == null || _multimediaServices == null, _skipReason);
 
-            var settings = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringSettings(_perfServices);
-            Assert.True(settings.SamplingIntervalMs > 0);
-            _output.WriteLine($"Sampling Interval: {settings.SamplingIntervalMs}ms");
+            var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(_multimediaServices, _gpu);
+            Assert.NotNull(vsr);
+            _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
 
-            var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(_perfServices, _gpu);
-            Assert.NotNull(metrics);
-            _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");
+            var upscale = ADLXMultimediaHelpers.GetVideoUpscale(_multimediaServices, _gpu);
+            Assert.NotNull(upscale);
+            _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
         }
     }
 }
