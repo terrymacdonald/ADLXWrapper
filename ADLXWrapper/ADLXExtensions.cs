@@ -1,16 +1,10 @@
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-using Microsoft.Win32.SafeHandles;
+using Newtonsoft.Json;
 
 namespace ADLXWrapper
 {
-    /// <summary>
-    /// Helper methods for ADLX GPU operations
-    /// Provides convenient access to GPU properties via VTable
-    /// </summary>
     public static unsafe class ADLXHelpers
     {
         /// <summary>
@@ -18,8 +12,7 @@ namespace ADLXWrapper
         /// </summary>
         public static unsafe bool TryQueryInterface(IntPtr pInterface, string iid, out IntPtr resultPtr)
         {
-            if (pInterface == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pInterface));
+            if (pInterface == IntPtr.Zero) throw new ArgumentNullException(nameof(pInterface));
             resultPtr = IntPtr.Zero;
             var vtbl = *(ADLXVTables.IADLXInterfaceVtbl**)pInterface;
             var qiFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.QueryInterfaceFn>(vtbl->QueryInterface);
@@ -36,230 +29,6 @@ namespace ADLXWrapper
             {
                 Marshal.FreeHGlobal(pChars);
             }
-        }
-
-        /// <summary>
-        /// Get GPU name
-        /// </summary>
-        public static string GetGPUName(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var nameFn = (ADLXVTables.NameFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->Name, typeof(ADLXVTables.NameFn));
-
-            byte* pName;
-            var result = nameFn(pGPU, &pName);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU name");
-            }
-
-            return MarshalString(pName);
-        }
-
-        /// <summary>
-        /// Get GPU vendor ID
-        /// </summary>
-        public static string GetGPUVendorId(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var vendorIdFn = (ADLXVTables.VendorIdFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->VendorId, typeof(ADLXVTables.VendorIdFn));
-
-            byte* pVendorId;
-            var result = vendorIdFn(pGPU, &pVendorId);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU vendor ID");
-            }
-
-            return MarshalString(pVendorId);
-        }
-
-        /// <summary>
-        /// Get GPU driver path
-        /// </summary>
-        public static string GetGPUDriverPath(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var driverPathFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.NameFn>(vtbl->DriverPath);
-
-            byte* pDriverPath;
-            var result = driverPathFn(pGPU, &pDriverPath);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU driver path");
-            }
-
-            return MarshalString(pDriverPath);
-        }
-
-        /// <summary>
-        /// Get GPU PNP string
-        /// </summary>
-        public static string GetGPUPNPString(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var pnpStringFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.NameFn>(vtbl->PNPString);
-
-            byte* pPNPString;
-            var result = pnpStringFn(pGPU, &pPNPString);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU PNP string");
-            }
-
-            return MarshalString(pPNPString);
-        }
-
-        /// <summary>
-        /// Get GPU total VRAM in MB
-        /// </summary>
-        public static uint GetGPUTotalVRAM(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var totalVRAMFn = (ADLXVTables.TotalVRAMFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->TotalVRAM, typeof(ADLXVTables.TotalVRAMFn));
-
-            uint vramMB;
-            var result = totalVRAMFn(pGPU, &vramMB);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU total VRAM");
-            }
-
-            return vramMB;
-        }
-
-        /// <summary>
-        /// Get GPU VRAM type
-        /// </summary>
-        public static string GetGPUVRAMType(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var vramTypeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.NameFn>(vtbl->VRAMType);
-
-            byte* pVRAMType;
-            var result = vramTypeFn(pGPU, &pVRAMType);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU VRAM type");
-            }
-
-            return MarshalString(pVRAMType);
-        }
-
-        /// <summary>
-        /// Get GPU unique ID
-        /// </summary>
-        public static int GetGPUUniqueId(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var uniqueIdFn = (ADLXVTables.UniqueIdFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->UniqueId, typeof(ADLXVTables.UniqueIdFn));
-
-            int uniqueId;
-            var result = uniqueIdFn(pGPU, &uniqueId);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU unique ID");
-            }
-
-            return uniqueId;
-        }
-
-        /// <summary>
-        /// Get GPU device ID
-        /// </summary>
-        public static string GetGPUDeviceId(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var deviceIdFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.NameFn>(vtbl->DeviceId);
-
-            byte* pDeviceId;
-            var result = deviceIdFn(pGPU, &pDeviceId);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get GPU device ID");
-            }
-
-            return MarshalString(pDeviceId);
-        }
-
-        /// <summary>
-        /// Check if GPU is external
-        /// </summary>
-        public static bool IsGPUExternal(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var isExternalFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.IsExternalFn>(vtbl->IsExternal);
-
-            byte isExternal;
-            var result = isExternalFn(pGPU, &isExternal);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to check if GPU is external");
-            }
-
-            return isExternal != 0;
-        }
-
-        /// <summary>
-        /// Check if GPU has desktops
-        /// </summary>
-        public static bool HasGPUDesktops(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            var vtbl = *(ADLXVTables.IADLXGPUVtbl**)pGPU;
-            var hasDesktopsFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.HasDesktopsFn>(vtbl->HasDesktops);
-
-            byte hasDesktops;
-            var result = hasDesktopsFn(pGPU, &hasDesktops);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to check if GPU has desktops");
-            }
-
-            return hasDesktops != 0;
         }
 
         /// <summary>
@@ -297,7 +66,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Helper to marshal ANSI string pointer to managed string
         /// </summary>
-        private static string MarshalString(byte* pStr)
+        internal static string MarshalString(byte* pStr)
         {
             if (pStr == null)
                 return string.Empty;
@@ -307,21 +76,18 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Helper methods for working with ADLX display services
+    /// Helper methods for ADLX Display operations.
     /// </summary>
     public static unsafe class ADLXDisplayHelpers
     {
         /// <summary>
-        /// Acquire display services and wrap in a SafeHandle.
+        /// Gets the IADLXDisplayServices interface from the system services.
         /// </summary>
-        public static AdlxInterfaceHandle GetDisplayServicesHandle(IntPtr pSystem)
+        public static IADLXDisplayServices* GetDisplayServices(IADLXSystem* pSystem)
         {
-            if (pSystem == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pSystem));
+            if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
-            var getDisplayServicesFn = Marshal.GetDelegateForFunctionPointer<GetDisplayServicesFn>(
-                systemVtbl->GetDisplaysServices);
+            var getDisplayServicesFn = (delegate* unmanaged[Stdcall]<IntPtr, IntPtr*, ADLX_RESULT>)pSystem->Vtbl->GetDisplaysServices;
 
             IntPtr pDisplayServices;
             var result = getDisplayServicesFn(pSystem, &pDisplayServices);
@@ -331,315 +97,86 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get display services");
             }
 
-            return AdlxInterfaceHandle.From(pDisplayServices);
-        }
-
-        public static AdlxInterfaceHandle GetDisplayChangedHandlingHandle(IntPtr pDisplayServices)
-        {
-            if (pDisplayServices == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplayServices));
-
-            var svcVtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
-            var getFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.GetDisplayChangedHandlingFn>(svcVtbl->GetDisplayChangedHandling);
-
-            IntPtr pHandling;
-            var result = getFn(pDisplayServices, &pHandling);
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get display changed handling");
-
-            return AdlxInterfaceHandle.From(pHandling);
-        }
-
-        public delegate bool DisplaySettingsChangedCallback(IntPtr pEvent);
-
-        public static DisplaySettingsListenerHandle CreateDisplaySettingsChangedListener(DisplaySettingsChangedCallback cb)
-        {
-            return DisplaySettingsListenerHandle.Create(cb);
-        }
-
-        public static void AddDisplaySettingsChangedListener(IntPtr pDisplayChangedHandling, DisplaySettingsListenerHandle listener)
-        {
-            if (pDisplayChangedHandling == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplayChangedHandling));
-            if (listener is null)
-                throw new ArgumentNullException(nameof(listener));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayChangedHandlingVtbl**)pDisplayChangedHandling;
-            var addFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.AddDisplaySettingsEventListenerFn>(vtbl->AddDisplaySettingsEventListener);
-            var result = addFn(pDisplayChangedHandling, listener.DangerousGetHandle());
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to add display settings listener");
-        }
-
-        public static void RemoveDisplaySettingsChangedListener(IntPtr pDisplayChangedHandling, DisplaySettingsListenerHandle listener)
-        {
-            if (pDisplayChangedHandling == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplayChangedHandling));
-            if (listener is null)
-                throw new ArgumentNullException(nameof(listener));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayChangedHandlingVtbl**)pDisplayChangedHandling;
-            var removeFn = Marshal.GetDelegateForFunctionPointer<ADLXVTables.RemoveDisplaySettingsEventListenerFn>(vtbl->RemoveDisplaySettingsEventListener);
-            var result = removeFn(pDisplayChangedHandling, listener.DangerousGetHandle());
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to remove display settings listener");
-        }
-
-        /// <summary>
-        /// Enumerate displays for a GPU
-        /// Returns array of display interface pointers
-        /// </summary>
-        public static IntPtr[] EnumerateDisplays(IntPtr pGPU)
-        {
-            if (pGPU == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pGPU));
-
-            // We need the system services to get display services
-            // This will be called from tests that have access to system services
-            // For now, return empty array - will be implemented when we have display services access
-            return Array.Empty<IntPtr>();
+            return (IADLXDisplayServices*)pDisplayServices;
         }
 
         /// <summary>
         /// Enumerate all displays from system display services
-        /// Returns array of display interface pointers
         /// </summary>
-        public static IntPtr[] EnumerateAllDisplays(IntPtr pSystem)
+        public static IEnumerable<DisplayInfo> EnumerateAllDisplays(IADLXSystem* pSystem)
         {
-            if (pSystem == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pSystem));
+            if (pSystem == null) yield break;
 
-            // Get display services from system
-            var systemVtbl = *(ADLXVTables.IADLXSystemVtbl**)pSystem;
-            var getDisplayServicesFn = Marshal.GetDelegateForFunctionPointer<GetDisplayServicesFn>(
-                systemVtbl->GetDisplaysServices);
+            using var displayServices = new ComPtr<IADLXDisplayServices>(GetDisplayServices(pSystem));
+            if (displayServices.Get() == null) yield break;
 
-            IntPtr pDisplayServices;
-            var result = getDisplayServicesFn(pSystem, &pDisplayServices);
+            displayServices.Get()->GetDisplays(out var pDisplayList);
+            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
 
-            if (result != ADLX_RESULT.ADLX_OK)
+            for (uint i = 0; i < displayList.Get()->Size(); i++)
             {
-                throw new ADLXException(result, "Failed to get display services");
+                displayList.Get()->At(i, out var pDisplay);
+                using var display = new ComPtr<IADLXDisplay>(pDisplay);
+                yield return new DisplayInfo(display.Get());
             }
-
-            if (pDisplayServices == IntPtr.Zero)
-            {
-                return Array.Empty<IntPtr>();
-            }
-
-            try
-            {
-                // Get displays from display services
-                var displayServicesVtbl = *(ADLXVTables.IADLXDisplayServicesVtbl**)pDisplayServices;
-                var getDisplaysFn = (ADLXVTables.GetDisplaysFn)Marshal.GetDelegateForFunctionPointer(
-                    displayServicesVtbl->GetDisplays, typeof(ADLXVTables.GetDisplaysFn));
-
-                IntPtr pDisplayList;
-                result = getDisplaysFn(pDisplayServices, &pDisplayList);
-
-                if (result != ADLX_RESULT.ADLX_OK)
-                {
-                    throw new ADLXException(result, "Failed to get display list");
-                }
-
-                if (pDisplayList == IntPtr.Zero)
-                {
-                    return Array.Empty<IntPtr>();
-                }
-
-                try
-                {
-                    // Get list size
-                    var listVtbl = *(ADLXVTables.IADLXDisplayListVtbl**)pDisplayList;
-                    var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(
-                        listVtbl->Size, typeof(ADLXVTables.SizeFn));
-                    var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(
-                        listVtbl->At, typeof(ADLXVTables.AtFn));
-
-                    uint count = sizeFn(pDisplayList);
-
-                    if (count == 0)
-                    {
-                        return Array.Empty<IntPtr>();
-                    }
-
-                    // Get each display from the list
-                    var displays = new IntPtr[count];
-                    for (uint i = 0; i < count; i++)
-                    {
-                        IntPtr pDisplay;
-                        result = atFn(pDisplayList, i, &pDisplay);
-
-                        if (result != ADLX_RESULT.ADLX_OK)
-                        {
-                            throw new ADLXException(result, $"Failed to get display at index {i}");
-                        }
-
-                        displays[i] = pDisplay;
-                    }
-
-                    return displays;
-                }
-                finally
-                {
-                    // Release the display list interface
-                    ADLXHelpers.ReleaseInterface(pDisplayList);
-                }
-            }
-            finally
-            {
-                // Release the display services interface
-                ADLXHelpers.ReleaseInterface(pDisplayServices);
-            }
-        }
-
-        /// <summary>
-        /// Enumerate all displays from system display services, returning SafeHandles for automatic release.
-        /// </summary>
-        public static AdlxInterfaceHandle[] EnumerateAllDisplayHandles(IntPtr pSystem)
-        {
-            var raw = EnumerateAllDisplays(pSystem);
-            var handles = new AdlxInterfaceHandle[raw.Length];
-            for (int i = 0; i < raw.Length; i++)
-            {
-                handles[i] = AdlxInterfaceHandle.From(raw[i]);
-            }
-            return handles;
-        }
-
-        // Delegate for GetDisplaysServices
-        [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-        private delegate ADLX_RESULT GetDisplayServicesFn(IntPtr pThis, IntPtr* ppDisplayServices);
-
-        /// <summary>
-        /// Get display name
-        /// </summary>
-        public static string GetDisplayName(IntPtr pDisplay)
-        {
-            if (pDisplay == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplay));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
-            var nameFn = (ADLXVTables.DisplayNameFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->Name, typeof(ADLXVTables.DisplayNameFn));
-
-            byte* pName;
-            var result = nameFn(pDisplay, &pName);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get display name");
-            }
-
-            return MarshalString(pName);
-        }
-
-        /// <summary>
-        /// Get display native resolution
-        /// </summary>
-        public static (int width, int height) GetDisplayNativeResolution(IntPtr pDisplay)
-        {
-            if (pDisplay == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplay));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
-            var resolutionFn = (ADLXVTables.NativeResolutionFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->NativeResolution, typeof(ADLXVTables.NativeResolutionFn));
-
-            int width, height;
-            var result = resolutionFn(pDisplay, &width, &height);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get display resolution");
-            }
-
-            return (width, height);
-        }
-
-        /// <summary>
-        /// Get display refresh rate
-        /// </summary>
-        public static double GetDisplayRefreshRate(IntPtr pDisplay)
-        {
-            if (pDisplay == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplay));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
-            var refreshRateFn = (ADLXVTables.RefreshRateFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->RefreshRate, typeof(ADLXVTables.RefreshRateFn));
-
-            double refreshRate;
-            var result = refreshRateFn(pDisplay, &refreshRate);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get display refresh rate");
-            }
-
-            return refreshRate;
-        }
-
-        /// <summary>
-        /// Get display manufacturer ID
-        /// </summary>
-        public static uint GetDisplayManufacturerID(IntPtr pDisplay)
-        {
-            if (pDisplay == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplay));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
-            var manufacturerIDFn = (ADLXVTables.ManufacturerIDFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->ManufacturerID, typeof(ADLXVTables.ManufacturerIDFn));
-
-            uint manufacturerID;
-            var result = manufacturerIDFn(pDisplay, &manufacturerID);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get display manufacturer ID");
-            }
-
-            return manufacturerID;
-        }
-
-        /// <summary>
-        /// Get display pixel clock
-        /// </summary>
-        public static uint GetDisplayPixelClock(IntPtr pDisplay)
-        {
-            if (pDisplay == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pDisplay));
-
-            var vtbl = *(ADLXVTables.IADLXDisplayVtbl**)pDisplay;
-            var pixelClockFn = (ADLXVTables.PixelClockFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->PixelClock, typeof(ADLXVTables.PixelClockFn));
-
-            uint pixelClock;
-            var result = pixelClockFn(pDisplay, &pixelClock);
-
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                throw new ADLXException(result, "Failed to get display pixel clock");
-            }
-
-            return pixelClock;
-        }
-
-        /// <summary>
-        /// Helper to marshal ANSI string pointer to managed string
-        /// </summary>
-        private static string MarshalString(byte* pStr)
-        {
-            if (pStr == null)
-                return string.Empty;
-
-            return Marshal.PtrToStringAnsi((IntPtr)pStr) ?? string.Empty;
         }
     }
 
     /// <summary>
-    /// Helper methods for ADLX list operations
+    /// Represents the collected information for a display.
+    /// </summary>
+    public readonly struct DisplayInfo
+    {
+        public string Name { get; init; }
+        public int Width { get; init; }
+        public int Height { get; init; }
+        public double RefreshRate { get; init; }
+        public uint ManufacturerID { get; init; }
+        public uint PixelClock { get; init; }
+        public ADLX_DISPLAY_TYPE Type { get; init; }
+        public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get; init; }
+
+        [JsonConstructor]
+        public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType)
+        {
+            Name = name;
+            Width = width;
+            Height = height;
+            RefreshRate = refreshRate;
+            ManufacturerID = manufacturerID;
+            PixelClock = pixelClock;
+            Type = type;
+            ConnectorType = connectorType;
+        }
+
+        internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
+        {
+            pDisplay->Name(out var namePtr);
+            Name = ADLXHelpers.MarshalString(namePtr);
+
+            pDisplay->NativeResolution(out var w, out var h);
+            Width = w;
+            Height = h;
+
+            pDisplay->RefreshRate(out var rr);
+            RefreshRate = rr;
+
+            pDisplay->ManufacturerID(out var mid);
+            ManufacturerID = mid;
+
+            pDisplay->PixelClock(out var pc);
+            PixelClock = pc;
+
+            pDisplay->DisplayType(out var dt);
+            Type = dt;
+
+            pDisplay->ConnectorType(out var ct);
+            ConnectorType = ct;
+        }
+    }
+
+    /// <summary>
+    /// Helper methods for ADLX list operations.
     /// </summary>
     public static unsafe class ADLXListHelpers
     {
@@ -648,12 +185,10 @@ namespace ADLXWrapper
         /// </summary>
         public static uint GetListSize(IntPtr pList)
         {
-            if (pList == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pList));
+            if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
             var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->Size, typeof(ADLXVTables.SizeFn));
+            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(vtbl->Size, typeof(ADLXVTables.SizeFn));
 
             return sizeFn(pList);
         }
@@ -663,12 +198,10 @@ namespace ADLXWrapper
         /// </summary>
         public static bool IsListEmpty(IntPtr pList)
         {
-            if (pList == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pList));
+            if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
             var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var emptyFn = (ADLXVTables.EmptyFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->Empty, typeof(ADLXVTables.EmptyFn));
+            var emptyFn = (ADLXVTables.EmptyFn)Marshal.GetDelegateForFunctionPointer(vtbl->Empty, typeof(ADLXVTables.EmptyFn));
 
             return emptyFn(pList) != 0;
         }
@@ -678,12 +211,10 @@ namespace ADLXWrapper
         /// </summary>
         public static IntPtr GetListItemAt(IntPtr pList, uint index)
         {
-            if (pList == IntPtr.Zero)
-                throw new ArgumentNullException(nameof(pList));
+            if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
             var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->At, typeof(ADLXVTables.AtFn));
+            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(vtbl->At, typeof(ADLXVTables.AtFn));
 
             IntPtr pItem;
             var result = atFn(pList, index, &pItem);
@@ -719,65 +250,91 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Helper methods for GPU information retrieval
-    /// Combines multiple property calls into convenient structs
+    /// Helper methods for ADLX GPU operations.
     /// </summary>
-    public static class ADLXGPUInfo
+    public static unsafe class ADLXGpuHelpers
     {
         /// <summary>
-        /// Basic GPU information
+        /// Enumerates all available GPUs.
         /// </summary>
-        public struct GPUBasicInfo
+        public static IEnumerable<GpuInfo> EnumerateAllGpus(IADLXSystem* pSystem)
         {
-            public string Name;
-            public string VendorId;
-            public int UniqueId;
-            public uint TotalVRAM;
-            public string VRAMType;
-            public bool IsExternal;
-            public bool HasDesktops;
-        }
+            if (pSystem == null) yield break;
 
-        /// <summary>
-        /// Get comprehensive basic information about a GPU
-        /// </summary>
-        public static GPUBasicInfo GetBasicInfo(IntPtr pGPU)
-        {
-            return new GPUBasicInfo
+            pSystem->GetGPUs(out var pGpuList);
+            using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
+
+            for (uint i = 0; i < gpuList.Get()->Size(); i++)
             {
-                Name = ADLXHelpers.GetGPUName(pGPU),
-                VendorId = ADLXHelpers.GetGPUVendorId(pGPU),
-                UniqueId = ADLXHelpers.GetGPUUniqueId(pGPU),
-                TotalVRAM = ADLXHelpers.GetGPUTotalVRAM(pGPU),
-                VRAMType = ADLXHelpers.GetGPUVRAMType(pGPU),
-                IsExternal = ADLXHelpers.IsGPUExternal(pGPU),
-                HasDesktops = ADLXHelpers.HasGPUDesktops(pGPU)
-            };
+                gpuList.Get()->At(i, out var pGpu);
+                using var gpu = new ComPtr<IADLXGPU>(pGpu);
+                yield return new GpuInfo(gpu.Get());
+            }
+        }
+    }
+
+    /// <summary>
+    /// Represents the collected information for a GPU.
+    /// </summary>
+    public readonly struct GpuInfo
+    {
+        public string Name { get; init; }
+        public string VendorId { get; init; }
+        public int UniqueId { get; init; }
+        public uint TotalVRAM { get; init; }
+        public string VRAMType { get; init; }
+        public bool IsExternal { get; init; }
+        public bool HasDesktops { get; init; }
+        public string DeviceId { get; init; }
+        public string PNPString { get; init; }
+        public string DriverPath { get; init; }
+
+        [JsonConstructor]
+        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath)
+        {
+            Name = name;
+            VendorId = vendorId;
+            UniqueId = uniqueId;
+            TotalVRAM = totalVRAM;
+            VRAMType = vramType;
+            IsExternal = isExternal;
+            HasDesktops = hasDesktops;
+            DeviceId = deviceId;
+            PNPString = pnpString;
+            DriverPath = driverPath;
         }
 
-        /// <summary>
-        /// GPU identification information
-        /// </summary>
-        public struct GPUIdentification
+        internal unsafe GpuInfo(IADLXGPU* pGpu)
         {
-            public string DeviceId;
-            public string PNPString;
-            public string DriverPath;
-            public int UniqueId;
-        }
+            pGpu->Name(out var namePtr);
+            Name = ADLXHelpers.MarshalString(namePtr);
 
-        /// <summary>
-        /// Get GPU identification information
-        /// </summary>
-        public static GPUIdentification GetIdentification(IntPtr pGPU)
-        {
-            return new GPUIdentification
-            {
-                DeviceId = ADLXHelpers.GetGPUDeviceId(pGPU),
-                PNPString = ADLXHelpers.GetGPUPNPString(pGPU),
-                DriverPath = ADLXHelpers.GetGPUDriverPath(pGPU),
-                UniqueId = ADLXHelpers.GetGPUUniqueId(pGPU)
-            };
+            pGpu->VendorId(out var vendorIdPtr);
+            VendorId = ADLXHelpers.MarshalString(vendorIdPtr);
+
+            pGpu->UniqueId(out var uid);
+            UniqueId = uid;
+
+            pGpu->TotalVRAM(out var vram);
+            TotalVRAM = vram;
+
+            pGpu->VRAMType(out var vramTypePtr);
+            VRAMType = ADLXHelpers.MarshalString(vramTypePtr);
+
+            pGpu->IsExternal(out var isExt);
+            IsExternal = isExt != 0;
+
+            pGpu->HasDesktops(out var hasDesk);
+            HasDesktops = hasDesk != 0;
+
+            pGpu->DeviceId(out var devIdPtr);
+            DeviceId = ADLXHelpers.MarshalString(devIdPtr);
+
+            pGpu->PNPString(out var pnpPtr);
+            PNPString = ADLXHelpers.MarshalString(pnpPtr);
+
+            pGpu->DriverPath(out var driverPathPtr);
+            DriverPath = ADLXHelpers.MarshalString(driverPathPtr);
         }
     }
 
@@ -4235,5 +3792,33 @@ namespace ADLXWrapper
             }
             return 0;
         }
+    }
+
+    /// <summary>
+    /// A helper struct to manage the lifetime of a COM pointer from ADLX.
+    /// It automatically calls Release() when disposed.
+    /// </summary>
+    /// <typeparam name="T">The type of the COM interface pointer.</typeparam>
+    internal readonly unsafe struct ComPtr<T> : IDisposable where T : unmanaged, IComObject
+    {
+        private readonly T* _ptr;
+
+        public ComPtr(T* ptr)
+        {
+            _ptr = ptr;
+        }
+
+        public T* Get() => _ptr;
+
+        public void Dispose()
+        {
+            if (_ptr != null)
+            {
+                ((IUnknown*)_ptr)->Release();
+            }
+        }
+
+        // Allow implicit conversion to the raw pointer for convenience in calls
+        public static implicit operator T*(ComPtr<T> comPtr) => comPtr._ptr;
     }
 }

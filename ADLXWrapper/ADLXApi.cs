@@ -258,24 +258,18 @@ namespace ADLXWrapper
         /// </summary>
         public void Dispose()
         {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private void Dispose(bool disposing)
+        {
             if (_disposed)
                 return;
 
             unsafe
             {
-                if (_pSystemServices != IntPtr.Zero)
-                {
-                    try
-                    {
-                        ADLXHelpers.ReleaseInterface(_pSystemServices);
-                    }
-                    catch
-                    {
-                        // ignore release errors during cleanup
-                    }
-                }
-
-                // Terminate ADLX
+                // Terminate first (keeps system pointer valid while terminating)
                 if (_terminateFn != null && _pSystemServices != IntPtr.Zero)
                 {
                     try
@@ -285,6 +279,19 @@ namespace ADLXWrapper
                     catch
                     {
                         // Ignore errors during cleanup
+                    }
+                }
+
+                // Release system interface if still present
+                if (_pSystemServices != IntPtr.Zero)
+                {
+                    try
+                    {
+                        ADLXHelpers.ReleaseInterface(_pSystemServices);
+                    }
+                    catch
+                    {
+                        // ignore release errors during cleanup
                     }
                 }
 
@@ -304,7 +311,6 @@ namespace ADLXWrapper
             _terminateFn = null;
 
             _disposed = true;
-            GC.SuppressFinalize(this);
         }
 
         /// <summary>
@@ -312,7 +318,7 @@ namespace ADLXWrapper
         /// </summary>
         ~ADLXApi()
         {
-            Dispose();
+            Dispose(false);
         }
 
         /// <summary>

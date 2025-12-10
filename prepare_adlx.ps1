@@ -71,26 +71,26 @@ Write-Host "This script will download the AMD ADLX SDK" -ForegroundColor Cyan
 Write-Host ""
 
 # ============================================================================
-# Check .NET 9.0 SDK (informational only)
+# Check .NET 10.0 SDK (informational only)
 # ============================================================================
-Write-Host "Checking for .NET 9.0 SDK..." -ForegroundColor Yellow
+Write-Host "Checking for .NET 10.0 SDK..." -ForegroundColor Yellow
 
 $dotnetInstalled = $false
-$net9Installed = $false
+$net10Installed = $false
 
 try {
     $dotnetPath = Get-Command dotnet -ErrorAction SilentlyContinue
     if ($dotnetPath) {
         $dotnetInstalled = $true
         $sdks = & dotnet --list-sdks 2>&1
-        $net9Sdk = $sdks | Where-Object { $_ -match "9\.0\." }
+        $net10Sdk = $sdks | Where-Object { $_ -match "10\.0\." }
         
-        if ($net9Sdk) {
-            $net9Installed = $true
-            Write-Host ".NET 9.0 SDK found:" -ForegroundColor Green
-            $net9Sdk | ForEach-Object { Write-Host "  $_" -ForegroundColor Green }
+        if ($net10Sdk) {
+            $net10Installed = $true
+            Write-Host ".NET 10.0 SDK found:" -ForegroundColor Green
+            $net10Sdk | ForEach-Object { Write-Host "  $_" -ForegroundColor Green }
         } else {
-            Write-Host ".NET CLI found, but .NET 9.0 SDK not installed" -ForegroundColor Yellow
+            Write-Host ".NET CLI found, but .NET 10.0 SDK not installed" -ForegroundColor Yellow
             Write-Host "Available SDKs:" -ForegroundColor Gray
             $sdks | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
         }
@@ -101,18 +101,18 @@ try {
     Write-Host "Could not check .NET installation: $_" -ForegroundColor Yellow
 }
 
-if (-not $net9Installed) {
+if (-not $net10Installed) {
     Write-Host ""
-    Write-Host "??  WARNING: .NET 9.0 SDK not detected" -ForegroundColor Yellow
+    Write-Host "??  WARNING: .NET 10.0 SDK not detected" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "To build this project, you need:" -ForegroundColor Yellow
-    Write-Host "  - .NET 9.0 SDK" -ForegroundColor Cyan
-    Write-Host "  - Download from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
+    Write-Host "  - .NET 10.0 SDK" -ForegroundColor Cyan
+    Write-Host "  - Download from: https://dotnet.microsoft.com/download/dotnet/10.0" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Or install via Visual Studio:" -ForegroundColor Yellow
     Write-Host "  - Open Visual Studio Installer" -ForegroundColor Cyan
     Write-Host "  - Modify your installation" -ForegroundColor Cyan
-    Write-Host "  - Under 'Individual components', select '.NET 9.0 Runtime'" -ForegroundColor Cyan
+    Write-Host "  - Under 'Individual components', select '.NET 10.0 Runtime'" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Continuing with ADLX SDK download..." -ForegroundColor Gray
     Write-Host ""
@@ -147,14 +147,14 @@ if (Test-Path -Path $destinationFolder) {
         Write-Host "SDK location: $destinationFolder" -ForegroundColor Cyan
         Write-Host ""
         
-        if ($net9Installed) {
+        if ($net10Installed) {
             Write-Host "Next steps:" -ForegroundColor Green
             Write-Host "  - Build the wrapper: .\build_adlx.ps1" -ForegroundColor Gray
             Write-Host "  - Or open ADLXWrapper.sln in Visual Studio" -ForegroundColor Gray
             Write-Host "  - Or use: dotnet build" -ForegroundColor Gray
         } else {
             Write-Host "Before building:" -ForegroundColor Yellow
-            Write-Host "  - Install .NET 9.0 SDK (see warning above)" -ForegroundColor Cyan
+            Write-Host "  - Install .NET 10.0 SDK (see warning above)" -ForegroundColor Cyan
             Write-Host ""
             Write-Host "Then build:" -ForegroundColor Green
             Write-Host "  - .\build_adlx.ps1" -ForegroundColor Gray
@@ -283,14 +283,14 @@ Write-Host "Summary:" -ForegroundColor Cyan
 Write-Host "  - ADLX SDK location: $destinationFolder" -ForegroundColor Cyan
 Write-Host ""
 
-if ($net9Installed) {
+if ($net10Installed) {
     Write-Host "Next steps:" -ForegroundColor Green
     Write-Host "  - Build the wrapper: .\build_adlx.ps1" -ForegroundColor Gray
     Write-Host "  - Or open ADLXWrapper.sln in Visual Studio" -ForegroundColor Gray
     Write-Host "  - Or use: dotnet build" -ForegroundColor Gray
 } else {
     Write-Host "Before building:" -ForegroundColor Yellow
-    Write-Host "  1. Install .NET 9.0 SDK from: https://dotnet.microsoft.com/download/dotnet/9.0" -ForegroundColor Cyan
+    Write-Host "  1. Install .NET 10.0 SDK from: https://dotnet.microsoft.com/download/dotnet/10.0" -ForegroundColor Cyan
     Write-Host "     Or via Visual Studio Installer (see warning above)" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Then build:" -ForegroundColor Green
