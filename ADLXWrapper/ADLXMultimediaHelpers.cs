@@ -42,6 +42,18 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Applies the settings from a VideoUpscaleInfo object to the hardware.
+        /// </summary>
+        public static void ApplyVideoUpscale(IADLXVideoUpscale* pVideoUpscale, VideoUpscaleInfo info)
+        {
+            if (pVideoUpscale == null) throw new ArgumentNullException(nameof(pVideoUpscale));
+            if (!info.IsSupported) return;
+
+            SetVideoUpscaleEnabled(pVideoUpscale, info.IsEnabled);
+            SetVideoUpscaleMinInputResolution(pVideoUpscale, info.MinInputResolution);
+        }
+
+        /// <summary>
         /// Gets the Video Super Resolution information for a specific GPU.
         /// </summary>
         public static VideoSuperResolutionInfo GetVideoSuperResolution(IADLXMultimediaServices* pMultimediaServices, IADLXGPU* pGPU)
@@ -57,6 +69,17 @@ namespace ADLXWrapper
 
             using var vsr = new ComPtr<IADLXVideoSuperResolution>((IADLXVideoSuperResolution*)pVsr);
             return new VideoSuperResolutionInfo(vsr.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a VideoSuperResolutionInfo object to the hardware.
+        /// </summary>
+        public static void ApplyVideoSuperResolution(IADLXVideoSuperResolution* pVsr, VideoSuperResolutionInfo info)
+        {
+            if (pVsr == null) throw new ArgumentNullException(nameof(pVsr));
+            if (!info.IsSupported) return;
+
+            SetVideoSuperResolutionEnabled(pVsr, info.IsEnabled);
         }
 
         /// <summary>

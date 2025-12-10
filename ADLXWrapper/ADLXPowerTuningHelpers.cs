@@ -41,6 +41,18 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Applies the settings from a SmartShiftMaxInfo object to the hardware.
+        /// </summary>
+        public static void ApplySmartShiftMax(IADLXSmartShiftMax* pSmartShiftMax, SmartShiftMaxInfo info)
+        {
+            if (pSmartShiftMax == null) throw new ArgumentNullException(nameof(pSmartShiftMax));
+            if (!info.IsSupported) return;
+
+            // Set mode first, then bias value
+            SetSmartShiftMaxBias(pSmartShiftMax, info.BiasMode, info.BiasValue);
+        }
+
+        /// <summary>
         /// Gets the SmartShift Eco information.
         /// </summary>
         public static SmartShiftEcoInfo GetSmartShiftEco(IADLXPowerTuningServices* pPowerServices)
@@ -63,6 +75,17 @@ namespace ADLXWrapper
 
             using var smartShiftEco = new ComPtr<IADLXSmartShiftEco>((IADLXSmartShiftEco*)pEco);
             return new SmartShiftEcoInfo(smartShiftEco.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a SmartShiftEcoInfo object to the hardware.
+        /// </summary>
+        public static void ApplySmartShiftEco(IADLXSmartShiftEco* pSmartShiftEco, SmartShiftEcoInfo info)
+        {
+            if (pSmartShiftEco == null) throw new ArgumentNullException(nameof(pSmartShiftEco));
+            if (!info.IsSupported) return;
+
+            SetSmartShiftEcoEnabled(pSmartShiftEco, info.IsEnabled);
         }
 
         /// <summary>
@@ -113,6 +136,25 @@ namespace ADLXWrapper
 
             using var manualPowerTuning = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)pManual);
             return new ManualPowerTuningInfo(manualPowerTuning.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a ManualPowerTuningInfo object to the hardware.
+        /// </summary>
+        public static void ApplyManualPowerTuning(IADLXManualPowerTuning* pManualPower, ManualPowerTuningInfo info)
+        {
+            if (pManualPower == null) throw new ArgumentNullException(nameof(pManualPower));
+
+            if (info.PowerLimitSupported)
+            {
+                SetManualPowerLimit(pManualPower, info.PowerLimitValue);
+            }
+
+            if (info.TdcLimitSupported && pManualPower->TryQueryInterface(out IADLXManualPowerTuning1* pManualPower1) == ADLX_RESULT.ADLX_OK)
+            {
+                using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>(pManualPower1);
+                SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
+            }
         }
 
         /// <summary>

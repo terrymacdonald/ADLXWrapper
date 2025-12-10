@@ -202,6 +202,30 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Gets the configurable settings for the performance monitoring service.
+        /// </summary>
+        public static PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices* pServices)
+        {
+            if (pServices == null) throw new ArgumentNullException(nameof(pServices));
+            return new PerformanceMonitoringSettingsInfo(pServices);
+        }
+
+        /// <summary>
+        /// Applies configurable settings to the performance monitoring service.
+        /// </summary>
+        public static void ApplyPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices* pServices, PerformanceMonitoringSettingsInfo info)
+        {
+            if (pServices == null) throw new ArgumentNullException(nameof(pServices));
+
+            // Apply settings if they are within valid ranges
+            var intervalRange = GetSamplingIntervalRange(pServices);
+            if (info.SamplingIntervalMs >= intervalRange.minValue && info.SamplingIntervalMs <= intervalRange.maxValue)
+                SetSamplingInterval(pServices, info.SamplingIntervalMs);
+
+            SetMaxPerformanceMetricsHistorySize(pServices, info.MaxHistorySizeSec);
+        }
+
+        /// <summary>
         /// Gets the maximum history size range.
         /// </summary>
         public static ADLX_IntRange GetMaxHistorySizeRange(IADLXPerformanceMonitoringServices* pServices)
@@ -663,6 +687,33 @@ namespace ADLXWrapper
                 }
                 GpuMetrics = gpuSnapshots.ToArray();
             }
+        }
+    }
+
+    /// <summary>
+    /// Represents the configurable settings for the performance monitoring service.
+    /// </summary>
+    public readonly struct PerformanceMonitoringSettingsInfo
+    {
+        public int SamplingIntervalMs { get; init; }
+        public int MaxHistorySizeSec { get; init; }
+
+        [JsonConstructor]
+        public PerformanceMonitoringSettingsInfo(int samplingIntervalMs, int maxHistorySizeSec)
+        {
+            SamplingIntervalMs = samplingIntervalMs;
+            MaxHistorySizeSec = maxHistorySizeSec;
+        }
+
+        internal unsafe PerformanceMonitoringSettingsInfo(IADLXPerformanceMonitoringServices* pServices)
+        {
+            int interval = 0;
+            pServices->GetSamplingInterval(&interval);
+            SamplingIntervalMs = interval;
+
+            int size = 0;
+            pServices->GetCurrentPerformanceMetricsHistorySize(&size);
+            MaxHistorySizeSec = size;
         }
     }
 }

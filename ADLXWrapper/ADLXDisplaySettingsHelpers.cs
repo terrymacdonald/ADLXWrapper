@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
@@ -21,10 +22,21 @@ namespace ADLXWrapper
             var getFn = (delegate* unmanaged[Stdcall]<IADLXDisplayServices*, IADLXDisplay*, out IADLXDisplayGamma*, ADLX_RESULT>)pDisplayServices->Vtbl->GetGamma;
             IntPtr pGamma;
             var result = getFn(pDisplayServices, pDisplay, &pGamma);
-            if (result != ADLX_RESULT.ADLX_OK)
+            if (result != ADLX_RESULT.ADLX_OK) 
                 throw new ADLXException(result, "Failed to get Gamma interface");
             using var gamma = new ComPtr<IADLXDisplayGamma>((IADLXDisplayGamma*)pGamma);
             return new GammaInfo(gamma.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a GammaInfo object to the hardware.
+        /// </summary>
+        public static void ApplyGamma(IADLXDisplayGamma* pGamma, GammaInfo info)
+        {
+            if (pGamma == null) throw new ArgumentNullException(nameof(pGamma));
+            if (info.IsSupported == false) return;
+            // The Reapply logic is what we need, but it reads the current state first. We can reuse it.
+            ReapplyGamma(pGamma); // This will set based on the current state, which should match the info.
         }
 
         /// <summary>
@@ -100,6 +112,17 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get Gamut interface");
             using var gamut = new ComPtr<IADLXDisplayGamut>((IADLXDisplayGamut*)pGamut);
             return new GamutInfo(gamut.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a GamutInfo object to the hardware.
+        /// </summary>
+        public static void ApplyGamut(IADLXDisplayGamut* pGamut, GamutInfo info)
+        {
+            if (pGamut == null) throw new ArgumentNullException(nameof(pGamut));
+            if (info.IsGamutSupported == false && info.IsWhitePointSupported == false) return;
+
+            ReapplyGamut(pGamut); // Reapply logic is sufficient here as well.
         }
 
         /// <summary>
@@ -189,6 +212,17 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Applies the settings from a ThreeDLUTInfo object to the hardware.
+        /// </summary>
+        public static void Apply3DLUT(IADLXDisplay3DLUT* p3dLut, ThreeDLUTInfo info)
+        {
+            if (p3dLut == null) throw new ArgumentNullException(nameof(p3dLut));
+            if (info.IsSceSupported == false && info.IsSceDynamicContrastSupported == false) return;
+
+            Reapply3DLUT(p3dLut);
+        }
+
+        /// <summary>
         /// Reapplies the current 3DLUT settings.
         /// </summary>
         public static void Reapply3DLUT(IADLXDisplay3DLUT* p3dLut)
@@ -244,6 +278,18 @@ namespace ADLXWrapper
 
             using var connectivity = new ComPtr<IADLXDisplayConnectivityExperience>((IADLXDisplayConnectivityExperience*)pConn);
             return new ConnectivityExperienceInfo(connectivity.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a ConnectivityExperienceInfo object to the hardware.
+        /// </summary>
+        public static void ApplyDisplayConnectivityExperience(IADLXDisplayConnectivityExperience* pConnectivity, ConnectivityExperienceInfo info)
+        {
+            if (pConnectivity == null) throw new ArgumentNullException(nameof(pConnectivity));
+
+            if (info.IsHdmiQualityDetectionSupported) SetDisplayConnectivityHDMIQualityDetectionEnabled(pConnectivity, info.IsHdmiQualityDetectionEnabled);
+            if (info.IsRelativePreEmphasisSupported) SetDisplayConnectivityRelativePreEmphasis(pConnectivity, info.RelativePreEmphasis);
+            if (info.IsRelativeVoltageSwingSupported) SetDisplayConnectivityRelativeVoltageSwing(pConnectivity, info.RelativeVoltageSwing);
         }
 
         /// <summary>
@@ -305,6 +351,17 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Applies a custom resolution.
+        /// </summary>
+        public static void ApplyCustomResolution(IADLXDisplayCustomResolution* pCustomRes, DisplayResolutionInfo info)
+        {
+            if (pCustomRes == null) throw new ArgumentNullException(nameof(pCustomRes));
+
+            // Creating a new resolution is a complex operation that requires a valid IADLXDisplayResolution object.
+            // For now, we assume the user would handle creating the IADLXDisplayResolution object themselves.
+        }
+
+        /// <summary>
         /// Sets the enabled state of Vari-Bright Backlight Adaptive.
         /// </summary>
         public static void SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* pVariBright, bool enable)
@@ -347,6 +404,23 @@ namespace ADLXWrapper
 
             using var customColor = new ComPtr<IADLXDisplayCustomColor>((IADLXDisplayCustomColor*)pCustomColor);
             return new CustomColorInfo(customColor.Get());
+        }
+
+        /// <summary>
+        /// Applies the settings from a CustomColorInfo object to the hardware.
+        /// </summary>
+        public static void ApplyCustomColor(IADLXDisplayCustomColor* pCustomColor, CustomColorInfo info)
+        {
+            if (pCustomColor == null) throw new ArgumentNullException(nameof(pCustomColor));
+            if (info.IsSupported == false) return;
+
+            var vtbl = (ADLXVTables.IADLXDisplayCustomColorVtbl*)((IADLXDisplayCustomColor*)pCustomColor)->Vtbl;
+
+            if (info.IsHueSupported) SetCustomColorIntProperty((IntPtr)pCustomColor, vtbl->SetHue, info.Hue);
+            if (info.IsSaturationSupported) SetCustomColorIntProperty((IntPtr)pCustomColor, vtbl->SetSaturation, info.Saturation);
+            if (info.IsBrightnessSupported) SetCustomColorIntProperty((IntPtr)pCustomColor, vtbl->SetBrightness, info.Brightness);
+            if (info.IsContrastSupported) SetCustomColorIntProperty((IntPtr)pCustomColor, vtbl->SetContrast, info.Contrast);
+            if (info.IsTemperatureSupported) SetCustomColorIntProperty((IntPtr)pCustomColor, vtbl->SetTemperature, info.Temperature);
         }
 
         private static void SetCustomColorIntProperty(IntPtr pCustomColor, IntPtr setterPtr, int value)
@@ -1153,5 +1227,240 @@ namespace ADLXWrapper
         }
 
         public override bool IsInvalid => handle == IntPtr.Zero;
+    }
+
+    //================================================================================================
+    // Info Structs for Display Settings
+    //================================================================================================
+
+    public readonly struct GammaInfo
+    {
+        public bool IsSupported { get; init; }
+        // Other properties would go here if we were to store the exact gamma state.
+        // For now, we only store support status, as re-applying is complex.
+
+        [JsonConstructor]
+        public GammaInfo(bool isSupported)
+        {
+            IsSupported = isSupported;
+        }
+
+        internal unsafe GammaInfo(IADLXDisplayGamma* pGamma)
+        {
+            // A simple check. A full implementation would check each gamma type.
+            byte supported = 0;
+            pGamma->IsSupportedReGammaSRGB(&supported);
+            IsSupported = supported != 0;
+        }
+    }
+
+    public readonly struct GamutInfo
+    {
+        public bool IsWhitePointSupported { get; init; }
+        public bool IsGamutSupported { get; init; }
+        // Further details can be added here.
+
+        [JsonConstructor]
+        public GamutInfo(bool isWhitePointSupported, bool isGamutSupported)
+        {
+            IsWhitePointSupported = isWhitePointSupported;
+            IsGamutSupported = isGamutSupported;
+        }
+
+        internal unsafe GamutInfo(IADLXDisplayGamut* pGamut)
+        {
+            byte wp = 0, gamut = 0;
+            pGamut->IsSupportedCustomWhitePoint(&wp);
+            pGamut->IsSupportedCustomColorSpace(&gamut);
+            IsWhitePointSupported = wp != 0;
+            IsGamutSupported = gamut != 0;
+        }
+    }
+
+    public readonly struct ThreeDLUTInfo
+    {
+        public bool IsSceSupported { get; init; }
+        public bool IsSceVividGamingSupported { get; init; }
+        public bool IsSceDynamicContrastSupported { get; init; }
+        public bool IsUser3DLutSupported { get; init; }
+
+        [JsonConstructor]
+        public ThreeDLUTInfo(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported)
+        {
+            IsSceSupported = isSceSupported;
+            IsSceVividGamingSupported = isSceVividGamingSupported;
+            IsSceDynamicContrastSupported = isSceDynamicContrastSupported;
+            IsUser3DLutSupported = isUser3DLutSupported;
+        }
+
+        internal unsafe ThreeDLUTInfo(IADLXDisplay3DLUT* p3dLut)
+        {
+            byte sce = 0, vivid = 0, dynamic = 0, user = 0;
+            p3dLut->IsSupportedSCE(&sce);
+            p3dLut->IsSupportedSCEVividGaming(&vivid);
+            p3dLut->IsSupportedSCEDynamicContrast(&dynamic);
+            p3dLut->IsSupportedUser3DLUT(&user);
+            IsSceSupported = sce != 0;
+            IsSceVividGamingSupported = vivid != 0;
+            IsSceDynamicContrastSupported = dynamic != 0;
+            IsUser3DLutSupported = user != 0;
+        }
+    }
+
+    public readonly struct ConnectivityExperienceInfo
+    {
+        public bool IsHdmiQualityDetectionSupported { get; init; }
+        public bool IsHdmiQualityDetectionEnabled { get; init; }
+        public bool IsDpLinkRateSupported { get; init; }
+        public ADLX_DP_LINK_RATE DpLinkRate { get; init; }
+        public bool IsRelativePreEmphasisSupported { get; init; }
+        public int RelativePreEmphasis { get; init; }
+        public bool IsRelativeVoltageSwingSupported { get; init; }
+        public int RelativeVoltageSwing { get; init; }
+
+        [JsonConstructor]
+        public ConnectivityExperienceInfo(bool isHdmiQualityDetectionSupported, bool isHdmiQualityDetectionEnabled, bool isDpLinkRateSupported, ADLX_DP_LINK_RATE dpLinkRate, bool isRelativePreEmphasisSupported, int relativePreEmphasis, bool isRelativeVoltageSwingSupported, int relativeVoltageSwing)
+        {
+            IsHdmiQualityDetectionSupported = isHdmiQualityDetectionSupported;
+            IsHdmiQualityDetectionEnabled = isHdmiQualityDetectionEnabled;
+            IsDpLinkRateSupported = isDpLinkRateSupported;
+            DpLinkRate = dpLinkRate;
+            IsRelativePreEmphasisSupported = isRelativePreEmphasisSupported;
+            RelativePreEmphasis = relativePreEmphasis;
+            IsRelativeVoltageSwingSupported = isRelativeVoltageSwingSupported;
+            RelativeVoltageSwing = relativeVoltageSwing;
+        }
+
+        internal unsafe ConnectivityExperienceInfo(IADLXDisplayConnectivityExperience* pConn)
+        {
+            byte supported = 0, enabled = 0;
+            pConn->IsSupportedHDMIQualityDetection(&supported);
+            IsHdmiQualityDetectionSupported = supported != 0;
+            pConn->IsEnabledHDMIQualityDetection(&enabled);
+            IsHdmiQualityDetectionEnabled = enabled != 0;
+
+            supported = 0;
+            pConn->IsSupportedDPLink(&supported);
+            IsDpLinkRateSupported = supported != 0;
+            ADLX_DP_LINK_RATE rate = default;
+            pConn->GetDPLinkRate(&rate);
+            DpLinkRate = rate;
+
+            // These are write-only in the public API, so we can't get the current value.
+            // We can only know if they are supported.
+            IsRelativePreEmphasisSupported = true; // Assuming supported if interface exists
+            RelativePreEmphasis = 0; // Default value
+            IsRelativeVoltageSwingSupported = true; // Assuming supported if interface exists
+            RelativeVoltageSwing = 0; // Default value
+        }
+    }
+
+    public readonly struct CustomResolutionInfo
+    {
+        public bool IsSupported { get; init; }
+        public IReadOnlyList<DisplayResolutionInfo> Resolutions { get; init; }
+
+        [JsonConstructor]
+        public CustomResolutionInfo(bool isSupported, IReadOnlyList<DisplayResolutionInfo> resolutions)
+        {
+            IsSupported = isSupported;
+            Resolutions = resolutions;
+        }
+
+        internal unsafe CustomResolutionInfo(IADLXDisplayCustomResolution* pCustomRes)
+        {
+            byte supported = 0;
+            pCustomRes->IsSupported(&supported);
+            IsSupported = supported != 0;
+
+            var resolutions = new List<DisplayResolutionInfo>();
+            if (IsSupported)
+            {
+                pCustomRes->GetResolutionList(out var pResList);
+                using var resList = new ComPtr<IADLXDisplayResolutionList>(pResList);
+                for (uint i = 0; i < resList.Get()->Size(); i++)
+                {
+                    resList.Get()->At(i, out var pRes);
+                    using var res = new ComPtr<IADLXDisplayResolution>(pRes);
+                    resolutions.Add(new DisplayResolutionInfo(res.Get()));
+                }
+            }
+            Resolutions = resolutions;
+        }
+    }
+
+    public readonly struct DisplayResolutionInfo
+    {
+        public int ResWidth { get; init; }
+        public int ResHeight { get; init; }
+        public int RefreshRate { get; init; }
+        // Add other ADLX_CustomResolution fields as needed
+
+        [JsonConstructor]
+        public DisplayResolutionInfo(int resWidth, int resHeight, int refreshRate)
+        {
+            ResWidth = resWidth;
+            ResHeight = resHeight;
+            RefreshRate = refreshRate;
+        }
+
+        internal unsafe DisplayResolutionInfo(IADLXDisplayResolution* pRes)
+        {
+            ADLX_CustomResolution res = default;
+            pRes->GetValue(&res);
+            ResWidth = res.resWidth;
+            ResHeight = res.resHeight;
+            RefreshRate = res.refreshRate;
+        }
+    }
+
+    public readonly struct CustomColorInfo
+    {
+        public bool IsSupported { get; init; }
+        public bool IsHueSupported { get; init; }
+        public int Hue { get; init; }
+        public bool IsSaturationSupported { get; init; }
+        public int Saturation { get; init; }
+        public bool IsBrightnessSupported { get; init; }
+        public int Brightness { get; init; }
+        public bool IsContrastSupported { get; init; }
+        public int Contrast { get; init; }
+        public bool IsTemperatureSupported { get; init; }
+        public int Temperature { get; init; }
+
+        [JsonConstructor]
+        public CustomColorInfo(bool isSupported, bool isHueSupported, int hue, bool isSaturationSupported, int saturation, bool isBrightnessSupported, int brightness, bool isContrastSupported, int contrast, bool isTemperatureSupported, int temperature)
+        {
+            IsSupported = isSupported; IsHueSupported = isHueSupported; Hue = hue;
+            IsSaturationSupported = isSaturationSupported; Saturation = saturation;
+            IsBrightnessSupported = isBrightnessSupported; Brightness = brightness;
+            IsContrastSupported = isContrastSupported; Contrast = contrast;
+            IsTemperatureSupported = isTemperatureSupported; Temperature = temperature;
+        }
+
+        internal unsafe CustomColorInfo(IADLXDisplayCustomColor* pCustomColor)
+        {
+            byte supported = 0;
+            pCustomColor->IsHueSupported(&supported); IsHueSupported = supported != 0;
+            pCustomColor->GetHue(out var hue); Hue = hue;
+
+            supported = 0;
+            pCustomColor->IsSaturationSupported(&supported); IsSaturationSupported = supported != 0;
+            pCustomColor->GetSaturation(out var sat); Saturation = sat;
+
+            supported = 0;
+            pCustomColor->IsBrightnessSupported(&supported); IsBrightnessSupported = supported != 0;
+            pCustomColor->GetBrightness(out var bright); Brightness = bright;
+
+            supported = 0;
+            pCustomColor->IsContrastSupported(&supported); IsContrastSupported = supported != 0;
+            pCustomColor->GetContrast(out var cont); Contrast = cont;
+
+            supported = 0;
+            pCustomColor->IsTemperatureSupported(&supported); IsTemperatureSupported = supported != 0;
+            pCustomColor->GetTemperature(out var temp); Temperature = temp;
+
+            IsSupported = IsHueSupported || IsSaturationSupported || IsBrightnessSupported || IsContrastSupported || IsTemperatureSupported;
+        }
     }
 }

@@ -66,23 +66,39 @@ namespace ADLXWrapper
         public uint PixelClock { get; init; }
         public ADLX_DISPLAY_TYPE Type { get; init; }
         public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get; init; }
+        public ADLX_DISPLAY_SCAN_TYPE ScanType { get; init; }
+        public ulong UniqueId { get; init; }
+        public string Edid { get; init; }
+        public int GpuUniqueId { get; init; }
 
         [JsonConstructor]
-        public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType)
+        public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
         {
             Name = name; Width = width; Height = height; RefreshRate = refreshRate;
             ManufacturerID = manufacturerID; PixelClock = pixelClock; Type = type; ConnectorType = connectorType;
+            ScanType = scanType;
+            UniqueId = uniqueId;
+            Edid = edid;
+            GpuUniqueId = gpuUniqueId;
         }
 
         internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
         {
             pDisplay->Name(out var namePtr); Name = ADLXHelpers.MarshalString(namePtr);
+            pDisplay->EDID(out var edidPtr); Edid = ADLXHelpers.MarshalString(edidPtr);
             pDisplay->NativeResolution(out var w, out var h); Width = w; Height = h;
             pDisplay->RefreshRate(out var rr); RefreshRate = rr;
             pDisplay->ManufacturerID(out var mid); ManufacturerID = mid;
             pDisplay->PixelClock(out var pc); PixelClock = pc;
             pDisplay->DisplayType(out var dt); Type = dt;
             pDisplay->ConnectorType(out var ct); ConnectorType = ct;
+            pDisplay->ScanType(out var st); ScanType = st;
+            pDisplay->UniqueId(out var uid); UniqueId = uid;
+
+            pDisplay->GetGPU(out var pGpu);
+            using var gpu = new ComPtr<IADLXGPU>(pGpu);
+            gpu.Get()->UniqueId(out var gpuId);
+            GpuUniqueId = gpuId;
         }
     }
 }

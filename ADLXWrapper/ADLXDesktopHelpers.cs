@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
@@ -148,6 +149,34 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to destroy all Eyefinity desktops");
             }
         }
+
+        /// <summary>
+        /// Gets the desktop changed handling interface.
+        /// </summary>
+        public static IADLXDesktopChangedHandling* GetDesktopChangedHandling(IADLXDesktopServices* pDesktopServices)
+        {
+            if (pDesktopServices == null) throw new ArgumentNullException(nameof(pDesktopServices));
+            pDesktopServices->GetDesktopChangedHandling(out var pHandling);
+            return pHandling;
+        }
+
+        /// <summary>
+        /// Adds a desktop list event listener.
+        /// </summary>
+        public static void AddDesktopListEventListener(IADLXDesktopChangedHandling* pHandling, DesktopListListenerHandle listener)
+        {
+            if (pHandling == null || listener == null || listener.IsInvalid) return;
+            pHandling->AddDesktopListEventListener(listener.GetListener());
+        }
+
+        /// <summary>
+        /// Removes a desktop list event listener.
+        /// </summary>
+        public static void RemoveDesktopListEventListener(IADLXDesktopChangedHandling* pHandling, DesktopListListenerHandle listener)
+        {
+            if (pHandling == null || listener == null || listener.IsInvalid) return;
+            pHandling->RemoveDesktopListEventListener(listener.GetListener());
+        }
     }
 
     /// <summary>
@@ -197,6 +226,53 @@ namespace ADLXWrapper
             ADLX_ORIENTATION orientation = default;
             pDesktop->Orientation(&orientation);
             Orientation = orientation;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDesktopListChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DesktopListListenerHandle : SafeHandle
+    {
+        public delegate void OnDesktopListChanged(IADLXDesktopList* pNewDesktops);
+
+        private static readonly ConcurrentDictionary<IntPtr, OnDesktopListChanged> _map = new();
+        private static readonly IntPtr _vtbl;
+
+        private readonly GCHandle _gcHandle;
+
+        static DesktopListListenerHandle()
+        {
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size * 2); // IUnknown + OnDesktopListChanged
+            var iunknown = new IUnknownVtbl
+            {
+                QueryInterface = (delegate* unmanaged[Stdcall]<IUnknown*, Guid*, void**, int>)&IUnknownVtbl.DummyQueryInterface,
+                AddRef = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyAddRef,
+                Release = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyRelease
+            };
+            Marshal.StructureToPtr(iunknown, _vtbl, false);
+            Marshal.WriteIntPtr(_vtbl, IntPtr.Size, (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IADLXDesktopList*, byte>)&OnDesktopListChangedThunk);
+        }
+
+        private DesktopListListenerHandle(OnDesktopListChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DesktopListListenerHandle Create(OnDesktopListChanged cb) => new(cb);
+        public IADLXDesktopListChangedListener* GetListener() => (IADLXDesktopListChangedListener*)handle;
+        protected override bool ReleaseHandle() { _map.TryRemove(handle, out _); if (_gcHandle.IsAllocated) _gcHandle.Free(); Marshal.FreeHGlobal(handle); return true; }
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDesktopListChangedThunk(IntPtr pThis, IADLXDesktopList* pNewDesktops)
+        {
+            if (_map.TryGetValue(pThis, out var cb)) { cb(pNewDesktops); }
+            return 1;
         }
     }
 }
