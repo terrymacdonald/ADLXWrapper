@@ -1,42 +1,38 @@
 using ADLXWrapper;
 
-Console.WriteLine("=== ADLX Display Color Sample (gamma/gamut/3DLUT) ===");
-
-using var adlx = ADLXApi.Initialize();
-using var sys = adlx.GetSystemServicesHandle();
-var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys);
-
-if (displays.Length == 0)
+unsafe
 {
-    Console.WriteLine("No displays found.");
-    return;
-}
+    Console.WriteLine("=== ADLX Display Color Sample (gamma/gamut/3DLUT) ===");
 
-var display = displays[0];
-using (display)
-{
-    Console.WriteLine($"Using display: {ADLXDisplayHelpers.GetDisplayName(display)}");
+    using var adlx = ADLXApi.Initialize();
+    var sys = adlx.GetSystemServices();
+    var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys);
 
-    using var dispServices = ADLXDisplayHelpers.GetDisplayServicesHandle(sys);
+    if (displays.Length == 0)
+    {
+        Console.WriteLine("No displays found.");
+        return;
+    }
 
-    // Gamma read/reapply current
-    using var gamma = ADLXDisplaySettingsHelpers.GetGammaHandle(dispServices, display);
-    var gammaState = ADLXDisplaySettingsHelpers.GetGammaState(gamma);
-    Console.WriteLine($"Gamma state: ReGammaRamp={gammaState.reGammaRamp}, DeGammaRamp={gammaState.deGammaRamp}, ReGammaCoeff={gammaState.reGammaCoeff}");
+    var display = displays[0];
+    using (display)
+    {
+        Console.WriteLine($"Using display: {ADLXDisplayHelpers.GetDisplayName(display)}");
+        using var dispServices = AdlxInterfaceHandle.From(ADLXDisplayHelpers.GetDisplayServices(sys), addRef: false);
 
-    // Gamut read
-    using var gamut = ADLXDisplaySettingsHelpers.GetGamutHandle(dispServices, display);
-    var gamutState = ADLXDisplaySettingsHelpers.GetGamutState(gamut);
-    Console.WriteLine($"Gamut space: {gamutState.gamut}, white points: 5000K={gamutState.whitePoint5000K}, 6500K={gamutState.whitePoint6500K}, 7500K={gamutState.whitePoint7500K}, 9300K={gamutState.whitePoint9300K}");
+        var gamma = ADLXDisplaySettingsHelpers.GetGamma(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        Console.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-    // 3DLUT presence (read-only)
-    using var lut = ADLXDisplaySettingsHelpers.Get3DLUTHandle(dispServices, display);
-    var lutState = ADLXDisplaySettingsHelpers.Get3DLUTState(lut);
-    Console.WriteLine($"3DLUT: SCE supported={lutState.sceSupported}, VividGaming supported={lutState.vividGamingSupported}");
-    // This sample is read-only; production apps should supply LUT data before calling setters.
-}
+        var gamut = ADLXDisplaySettingsHelpers.GetGamut(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        Console.WriteLine($"Gamut supported: {gamut.IsGamutSupported}, custom white point supported: {gamut.IsWhitePointSupported}");
 
-foreach (var d in displays)
-{
-    try { d.Dispose(); } catch { }
+        var lut = ADLXDisplaySettingsHelpers.Get3DLUT(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        Console.WriteLine($"3DLUT: SCE={lut.IsSceSupported}, VividGaming={lut.IsSceVividGamingSupported}, DynamicContrast={lut.IsSceDynamicContrastSupported}, User3DLUT={lut.IsUser3DLutSupported}");
+        // This sample is read-only; production apps should supply LUT data before calling setters.
+    }
+
+    foreach (var d in displays)
+    {
+        try { d.Dispose(); } catch { }
+    }
 }
