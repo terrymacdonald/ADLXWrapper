@@ -56,7 +56,6 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _gpu == null || _settingsServices == null, _skipReason);
             var settings = ADLX3DSettingsHelpers.GetAll3DSettings(_settingsServices, _gpu);
-            Assert.NotNull(settings);
             _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {settings.AntiLag?.IsSupported ?? false}");
         }
     }

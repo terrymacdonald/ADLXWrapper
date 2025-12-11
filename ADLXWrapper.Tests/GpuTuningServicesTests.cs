@@ -60,15 +60,12 @@ namespace ADLXWrapper.Tests
             _output.WriteLine($"Manual GFX Tuning Supported: {caps.ManualGFXTuningSupported}");
 
             var fanInfo = ADLXGPUTuningHelpers.GetManualFanTuning(_tuningServices, _gpu);
-            Assert.NotNull(fanInfo);
             _output.WriteLine($"Manual Fan Tuning Supported: {fanInfo.IsSupported}");
 
             var vramInfo = ADLXGPUTuningHelpers.GetManualVramTuning(_tuningServices, _gpu);
-            Assert.NotNull(vramInfo);
             _output.WriteLine($"Manual VRAM Tuning Supported: {vramInfo.IsSupported}");
 
             var presetInfo = ADLXGPUTuningHelpers.GetPresetTuning(_tuningServices, _gpu);
-            Assert.NotNull(presetInfo);
             _output.WriteLine($"Preset Tuning Supported: {presetInfo.IsSupported}");
         }
     }

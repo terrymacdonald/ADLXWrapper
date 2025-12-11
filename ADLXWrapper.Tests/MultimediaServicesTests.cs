@@ -57,11 +57,9 @@ namespace ADLXWrapper.Tests
             Skip.If(_api == null || _gpu == null || _multimediaServices == null, _skipReason);
 
             var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(_multimediaServices, _gpu);
-            Assert.NotNull(vsr);
             _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
 
             var upscale = ADLXMultimediaHelpers.GetVideoUpscale(_multimediaServices, _gpu);
-            Assert.NotNull(upscale);
             _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
         }
     }
