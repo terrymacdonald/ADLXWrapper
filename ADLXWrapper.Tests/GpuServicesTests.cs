@@ -11,20 +11,19 @@ namespace ADLXWrapper.Tests
     /// Tests for GPU enumeration and property access via ADLXGpuHelpers.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public class CoreApiTests : IDisposable
+    public unsafe class GpuServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXGPUList* _gpuList;
+        private readonly IADLXGPUList* _gpuList = null;
 
-        public CoreApiTests(ITestOutputHelper output)
+        public GpuServicesTests(ITestOutputHelper output)
         {
             _output = output;
 
-            // Stage 1: Check for AMD GPU hardware via PCI
             if (!HardwareDetection.HasAMDGPU(out string hwError))
             {
                 _hasHardware = false;
@@ -41,7 +40,6 @@ namespace ADLXWrapper.Tests
                 _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
             }
 
-            // Stage 2: Check for ADLX DLL availability
             if (!ADLXApi.IsADLXDllAvailable(out string dllError))
             {
                 _hasDll = false;
@@ -51,13 +49,20 @@ namespace ADLXWrapper.Tests
             }
             _hasDll = true;
 
-            // Stage 3: Try to initialize ADLX API
             try
             {
                 _api = ADLXApi.Initialize();
                 var system = _api.GetSystemServices();
-                system->GetGPUs(out _gpuList);
-
+                IADLXGPUList* gpuList = null;
+                var result = system->GetGPUs(&gpuList);
+                if (result == ADLX_RESULT.ADLX_OK)
+                {
+                    _gpuList = gpuList;
+                }
+                else
+                {
+                    _skipReason = $"GetGPUs failed: {result}";
+                }
             }
             catch (Exception ex)
             {
@@ -68,7 +73,7 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_gpuList != null) ((IUnknown*)_gpuList)->Release();
+            if (_gpuList != null) ((IADLXInterface*)_gpuList)->Release();
             _api?.Dispose();
         }
 
@@ -81,7 +86,7 @@ namespace ADLXWrapper.Tests
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
-            _output.WriteLine($"? Found {gpus.Length} GPU(s)");
+            _output.WriteLine($"? Found {gpus.Count} GPU(s)");
         }
 
         [SkippableFact]
@@ -89,9 +94,10 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
 
-            _gpuList->At(0, out var pGpu);
-            using var gpu = new ComPtr<IADLXGPU>(pGpu);
-            var info = new GpuInfo(gpu.Get());
+            IADLXGPU* pGpu = null;
+            _gpuList->At(0, &pGpu);
+            using var gpu = AdlxInterfaceHandle.From(pGpu, addRef: false);
+            var info = ADLXGPUInfo.GetBasicInfo((IntPtr)gpu.As<IADLXGPU>());
 
             Assert.NotNull(info.Name);
             Assert.NotEmpty(info.Name);

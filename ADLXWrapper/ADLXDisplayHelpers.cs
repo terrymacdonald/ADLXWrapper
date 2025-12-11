@@ -55,6 +55,43 @@ namespace ADLXWrapper
 
             return results;
         }
+
+        /// <summary>
+        /// Enumerate raw display handles for compatibility helpers.
+        /// </summary>
+        public static AdlxInterfaceHandle[] EnumerateAllDisplayHandles(IADLXSystem* pSystem)
+        {
+            if (pSystem == null) return Array.Empty<AdlxInterfaceHandle>();
+
+            using var displayServices = new ComPtr<IADLXDisplayServices>(GetDisplayServices(pSystem));
+            if (displayServices.Get() == null) return Array.Empty<AdlxInterfaceHandle>();
+
+            IADLXDisplayList* pDisplayList = null;
+            var result = displayServices.Get()->GetDisplays(&pDisplayList);
+            if (result != ADLX_RESULT.ADLX_OK || pDisplayList == null)
+                return Array.Empty<AdlxInterfaceHandle>();
+
+            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+            var count = displayList.Get()->Size();
+            var handles = new AdlxInterfaceHandle[count];
+
+            for (uint i = 0; i < count; i++)
+            {
+                IADLXDisplay* pDisplay = null;
+                displayList.Get()->At(i, &pDisplay);
+                handles[i] = AdlxInterfaceHandle.From(pDisplay, addRef: false);
+            }
+
+            return handles;
+        }
+
+        public static unsafe string GetDisplayName(IntPtr pDisplay)
+        {
+            if (pDisplay == IntPtr.Zero) throw new ArgumentNullException(nameof(pDisplay));
+            sbyte* name = null;
+            ((IADLXDisplay*)pDisplay)->Name(&name);
+            return ADLXHelpers.MarshalString(&name);
+        }
     }
 
     /// <summary>

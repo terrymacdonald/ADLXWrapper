@@ -11,7 +11,7 @@ namespace ADLXWrapper.Tests
     /// Tests initialization, version queries, and cleanup
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public class BasicApiTests : IDisposable
+    public unsafe class BasicApiTests : IDisposable
     {
         private readonly ADLXApi? _api;
         private readonly bool _hasHardware;

@@ -28,13 +28,17 @@ namespace ADLXWrapper.Tests
                 _powerServices = ADLXPowerTuningHelpers.GetPowerTuningServices(system);
                 _tuningServices = _api.GetGPUTuningServices();
 
-                system->GetGPUs(out var gpuList);
-                if (gpuList->Size() == 0)
+                IADLXGPUList* gpuList = null;
+                var result = system->GetGPUs(&gpuList);
+                if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
                 {
                     _skipReason = "No AMD GPUs found.";
                     return;
                 }
-                gpuList->At(0, out _gpu);
+                IADLXGPU* pGpu = null;
+                gpuList->At(0, &pGpu);
+                _gpu = pGpu;
+                ((IADLXInterface*)gpuList)->Release();
             }
             catch (Exception ex)
             {

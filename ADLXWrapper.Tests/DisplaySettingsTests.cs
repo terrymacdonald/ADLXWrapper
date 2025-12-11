@@ -27,13 +27,17 @@ namespace ADLXWrapper.Tests
                 var system = _api.GetSystemServices();
                 _displayServices = ADLXDisplayHelpers.GetDisplayServices(system);
 
-                _displayServices->GetDisplays(out var displayList);
-                if (displayList->Size() == 0)
+                IADLXDisplayList* displayList = null;
+                var result = _displayServices->GetDisplays(&displayList);
+                if (result != ADLX_RESULT.ADLX_OK || displayList == null || displayList->Size() == 0)
                 {
                     _skipReason = "No displays found.";
                     return;
                 }
-                displayList->At(0, out _display);
+                IADLXDisplay* pDisplay = null;
+                displayList->At(0, &pDisplay);
+                _display = pDisplay;
+                ((IADLXInterface*)displayList)->Release();
             }
             catch (Exception ex)
             {

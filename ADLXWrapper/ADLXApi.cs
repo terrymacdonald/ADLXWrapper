@@ -219,6 +219,70 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Enumerate GPU handles with automatic lifetime management.
+        /// </summary>
+        public unsafe AdlxInterfaceHandle[] EnumerateGPUHandles()
+        {
+            ThrowIfDisposed();
+
+            IADLXGPUList* pGpuList = null;
+            var system = _systemServices.Get();
+            var result = system->GetGPUs(&pGpuList);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate GPUs");
+
+            using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
+            var count = gpuList.Get()->Size();
+            var handles = new AdlxInterfaceHandle[count];
+
+            for (uint i = 0; i < count; i++)
+            {
+                IADLXGPU* pGpu = null;
+                gpuList.Get()->At(i, &pGpu);
+                handles[i] = AdlxInterfaceHandle.From(pGpu, addRef: false); // At already AddRef's
+            }
+
+            return handles;
+        }
+
+        /// <summary>
+        /// Get the GPU tuning services interface.
+        /// </summary>
+        public unsafe IADLXGPUTuningServices* GetGPUTuningServices()
+        {
+            ThrowIfDisposed();
+            IADLXGPUTuningServices* pServices = null;
+            var result = _systemServices.Get()->GetGPUTuningServices(&pServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU tuning services");
+            return pServices;
+        }
+
+        /// <summary>
+        /// Get the performance monitoring services as a disposable handle.
+        /// </summary>
+        public unsafe AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+        {
+            ThrowIfDisposed();
+            IADLXPerformanceMonitoringServices* pServices = null;
+            var result = _systemServices.Get()->GetPerformanceMonitoringServices(&pServices);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get performance monitoring services");
+            return AdlxInterfaceHandle.From(pServices, addRef: false);
+        }
+
+        /// <summary>
+        /// Get the system services as a disposable handle (AddRef'd).
+        /// </summary>
+        public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
+        {
+            ThrowIfDisposed();
+            var ptr = _systemServices.Get();
+            ADLXHelpers.AddRefInterface((IntPtr)ptr);
+            return AdlxInterfaceHandle.From(ptr, addRef: false);
+        }
+
+        /// <summary>
         /// Dispose pattern implementation
         /// </summary>
         public void Dispose()

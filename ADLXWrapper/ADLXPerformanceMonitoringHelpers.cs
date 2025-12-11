@@ -57,6 +57,10 @@ namespace ADLXWrapper
             return new GpuMetricsSnapshotInfo(metrics.Get());
         }
 
+        // Compatibility alias for older naming used in tests
+        public static GpuMetricsSnapshotInfo GetCurrentGPUMetrics(IADLXPerformanceMonitoringServices* pServices, IADLXGPU* pGpu)
+            => GetCurrentGpuMetrics(pServices, pGpu);
+
         /// <summary>
         /// Gets the current System metrics snapshot.
         /// </summary>

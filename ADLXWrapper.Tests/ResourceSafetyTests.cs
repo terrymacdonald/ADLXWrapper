@@ -11,7 +11,7 @@ namespace ADLXWrapper.Tests
     /// Skips when ADLX DLL or AMD hardware is unavailable.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public class ResourceSafetyTests
+    public unsafe class ResourceSafetyTests
     {
         private readonly ITestOutputHelper _output;
 
@@ -42,17 +42,15 @@ namespace ADLXWrapper.Tests
                 {
                     using (gpu)
                     {
-                        // Touch a few APIs to ensure handles are valid
                         var info = ADLXGPUInfo.GetBasicInfo(gpu);
                         _output.WriteLine($"[Iter {i}] GPU: {info.Name}");
 
-                        var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(perf, gpu);
-                        ADLXHelpers.ReleaseInterface(metrics);
+                        var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(perf.As<IADLXPerformanceMonitoringServices>(), gpu.As<IADLXGPU>());
+                        _output.WriteLine($"[Iter {i}] Temp: {metrics.Temperature}C");
                     }
                 }
 
-                // Enumerate displays and dispose
-                var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system);
+                var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system.As<IADLXSystem>());
                 foreach (var display in displays)
                 {
                     using (display)

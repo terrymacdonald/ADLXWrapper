@@ -73,6 +73,87 @@ namespace ADLXWrapper
 
             return Marshal.PtrToStringAnsi((IntPtr)(*pStr)) ?? string.Empty;
         }
+
+        // Legacy helpers used by tests
+        public static unsafe string GetGPUName(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* name = null;
+            ((IADLXGPU*)pGpu)->Name(&name);
+            return MarshalString(&name);
+        }
+
+        public static unsafe string GetGPUVendorId(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* vendor = null;
+            ((IADLXGPU*)pGpu)->VendorId(&vendor);
+            return MarshalString(&vendor);
+        }
+
+        public static unsafe uint GetGPUTotalVRAM(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            uint vram = 0;
+            ((IADLXGPU*)pGpu)->TotalVRAM(&vram);
+            return vram;
+        }
+
+        public static unsafe string GetGPUVRAMType(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* type = null;
+            ((IADLXGPU*)pGpu)->VRAMType(&type);
+            return MarshalString(&type);
+        }
+
+        public static unsafe int GetGPUUniqueId(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            int id = 0;
+            ((IADLXGPU*)pGpu)->UniqueId(&id);
+            return id;
+        }
+
+        public static unsafe string GetGPUDeviceId(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* device = null;
+            ((IADLXGPU*)pGpu)->DeviceId(&device);
+            return MarshalString(&device);
+        }
+
+        public static unsafe string GetGPUDriverPath(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* path = null;
+            ((IADLXGPU*)pGpu)->DriverPath(&path);
+            return MarshalString(&path);
+        }
+
+        public static unsafe string GetGPUPNPString(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            sbyte* pnp = null;
+            ((IADLXGPU*)pGpu)->PNPString(&pnp);
+            return MarshalString(&pnp);
+        }
+
+        public static unsafe bool IsGPUExternal(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            bool external = false;
+            ((IADLXGPU*)pGpu)->IsExternal(&external);
+            return external;
+        }
+
+        public static unsafe bool HasGPUDesktops(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            bool hasDesk = false;
+            ((IADLXGPU*)pGpu)->HasDesktops(&hasDesk);
+            return hasDesk;
+        }
     }
 
     /// <summary>

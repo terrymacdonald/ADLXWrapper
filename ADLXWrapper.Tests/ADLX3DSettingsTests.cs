@@ -14,7 +14,7 @@ namespace ADLXWrapper.Tests
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
-        private readonly string _skipReason;
+        private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
         private readonly IADLX3DSettingsServices* _settingsServices;
 
@@ -25,13 +25,17 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApi.Initialize();
                 var system = _api.GetSystemServices();
-                system->GetGPUs(out var gpuList);
-                if (gpuList->Size() == 0)
+                IADLXGPUList* gpuList = null;
+                var result = system->GetGPUs(&gpuList);
+                if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
                 {
                     _skipReason = "No AMD GPUs found.";
                     return;
                 }
-                gpuList->At(0, out _gpu);
+                IADLXGPU* pGpu = null;
+                gpuList->At(0, &pGpu);
+                _gpu = pGpu;
+                ((IADLXInterface*)gpuList)->Release();
                 _settingsServices = ADLX3DSettingsHelpers.Get3DSettingsServices(system);
             }
             catch (Exception ex)

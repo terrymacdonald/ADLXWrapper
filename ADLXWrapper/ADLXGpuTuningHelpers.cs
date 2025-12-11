@@ -290,7 +290,7 @@ namespace ADLXWrapper
             ManualPowerTuningSupported = manualPowerTuningSupported;
         }
 
-        internal unsafe GpuTuningCapabilitiesInfo(IADLXGPUTuningServices* pServices, IADLXGPU* pGpu)
+        public unsafe GpuTuningCapabilitiesInfo(IADLXGPUTuningServices* pServices, IADLXGPU* pGpu)
         {
             AutoTuningSupported = ADLXGPUTuningHelpers.IsSupportedAutoTuning((IntPtr)pServices, (IntPtr)pGpu);
             PresetTuningSupported = ADLXGPUTuningHelpers.IsSupportedPresetTuning((IntPtr)pServices, (IntPtr)pGpu);
