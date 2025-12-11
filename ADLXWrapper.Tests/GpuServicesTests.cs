@@ -24,7 +24,7 @@ namespace ADLXWrapper.Tests
         {
             _output = output;
 
-            if (!HardwareDetection.HasAMDGPU(out string hwError))
+            if (!ADLXHardwareDetection.HasAMDGPU(out string hwError))
             {
                 _hasHardware = false;
                 _hasDll = false;
@@ -34,7 +34,7 @@ namespace ADLXWrapper.Tests
             }
             _hasHardware = true;
 
-            var gpuNames = HardwareDetection.GetAMDGPUNames();
+            var gpuNames = ADLXHardwareDetection.GetAMDGPUNames();
             if (gpuNames.Length > 0)
             {
                 _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");

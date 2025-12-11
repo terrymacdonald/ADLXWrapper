@@ -23,7 +23,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void EnumerateAndDispose_Repeatedly_ShouldNotThrow()
         {
-            Skip.If(!HardwareDetection.HasAMDGPU(out var hwReason), hwReason);
+            Skip.If(!ADLXHardwareDetection.HasAMDGPU(out var hwReason), hwReason);
 
             if (!ADLXApi.IsADLXDllAvailable(out var dllReason))
             {

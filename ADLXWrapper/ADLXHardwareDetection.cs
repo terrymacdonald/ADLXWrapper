@@ -7,7 +7,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Hardware detection utilities for AMD GPU presence.
     /// </summary>
-    public static class HardwareDetection
+    public static class ADLXHardwareDetection
     {
         private const string AMD_PCI_VENDOR_ID = "1002";
 
