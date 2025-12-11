@@ -15,8 +15,12 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            IADLXPowerTuningServices* pServices;
-            var result = pSystem->GetPowerTuningServices(&pServices);
+            if (!ADLXHelpers.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
+                throw new ADLXException(ADLX_RESULT.ADLX_INVALID_ARGS, "Power tuning services require IADLXSystem2");
+
+            using var system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
+            IADLXPowerTuningServices* pServices = null;
+            var result = system2.Get()->GetPowerTuningServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get power tuning services");
             return pServices;

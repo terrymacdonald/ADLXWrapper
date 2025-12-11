@@ -104,6 +104,7 @@
 
 	<Target Name="IncludeBindings" BeforeTargets="BeforeCompile" DependsOnTargets="GenerateBindings">
 		<ItemGroup>
+			<Compile Remove="cs_generated\**\*.cs" />
 			<Compile Include="cs_generated\**\*.cs" />
 			<FileWrites Include="$(ClangSharpGeneratedDir)\**\*" />
 		</ItemGroup>

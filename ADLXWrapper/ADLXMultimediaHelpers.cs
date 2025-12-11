@@ -15,8 +15,9 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
+            var system2 = (IADLXSystem2*)pSystem;
             IADLXMultimediaServices* pServices;
-            var result = pSystem->GetMultiMediaServices(&pServices);
+            var result = system2->GetMultimediaServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia services");
             return pServices;
@@ -48,7 +49,7 @@ namespace ADLXWrapper
             if (!info.IsSupported) return;
 
             SetVideoUpscaleEnabled(pVideoUpscale, info.IsEnabled);
-            SetVideoUpscaleMinInputResolution(pVideoUpscale, info.MinInputResolution);
+            SetVideoUpscaleSharpness(pVideoUpscale, info.Sharpness);
         }
 
         /// <summary>
@@ -92,15 +93,15 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Sets the minimum input resolution for Video Upscale.
+        /// Sets the sharpness for Video Upscale.
         /// </summary>
-        public static void SetVideoUpscaleMinInputResolution(IADLXVideoUpscale* pVideoUpscale, int minResolution)
+        public static void SetVideoUpscaleSharpness(IADLXVideoUpscale* pVideoUpscale, int sharpness)
         {
             if (pVideoUpscale == null) throw new ArgumentNullException(nameof(pVideoUpscale));
 
-            var result = pVideoUpscale->SetMinInputResolution(minResolution);
+            var result = pVideoUpscale->SetSharpness(sharpness);
             if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to set video upscale minimum input resolution");
+                throw new ADLXException(result, "Failed to set video upscale sharpness");
         }
 
         /// <summary>
@@ -123,16 +124,16 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
-        public ADLX_IntRange ScaleFactorRange { get; init; }
-        public int MinInputResolution { get; init; }
+        public int Sharpness { get; init; }
+        public ADLX_IntRange SharpnessRange { get; init; }
 
         [JsonConstructor]
-        public VideoUpscaleInfo(bool isSupported, bool isEnabled, ADLX_IntRange scaleFactorRange, int minInputResolution)
+        public VideoUpscaleInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
-            ScaleFactorRange = scaleFactorRange;
-            MinInputResolution = minInputResolution;
+            Sharpness = sharpness;
+            SharpnessRange = sharpnessRange;
         }
 
         internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
@@ -143,13 +144,13 @@ namespace ADLXWrapper
             IsSupported = supported;
             IsEnabled = enabled;
 
-            ADLX_IntRange range = default;
-            pUpscale->GetScaleFactorRange(&range);
-            ScaleFactorRange = range;
+            int sharpness = 0;
+            pUpscale->GetSharpness(&sharpness);
+            Sharpness = sharpness;
 
-            int minRes = 0;
-            pUpscale->GetMinInputResolution(&minRes);
-            MinInputResolution = minRes;
+            ADLX_IntRange range = default;
+            pUpscale->GetSharpnessRange(&range);
+            SharpnessRange = range;
         }
     }
 

@@ -34,20 +34,28 @@ namespace ADLXWrapper
         /// </summary>
         public static IEnumerable<DesktopInfo> EnumerateAllDesktops(IADLXSystem* pSystem)
         {
-            if (pSystem == null) yield break;
+            if (pSystem == null) return Array.Empty<DesktopInfo>();
 
+            var desktops = new List<DesktopInfo>();
             using var desktopServices = new ComPtr<IADLXDesktopServices>(GetDesktopServices(pSystem));
-            if (desktopServices.Get() == null) yield break;
+            if (desktopServices.Get() == null) return desktops;
 
-            desktopServices.Get()->GetDesktops(out var pDesktopList);
+            IADLXDesktopList* pDesktopList;
+            var listResult = desktopServices.Get()->GetDesktops(&pDesktopList);
+            if (listResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(listResult, "Failed to get desktop list");
+
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
 
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
-                desktopList.Get()->At(i, out var pDesktop);
+                IADLXDesktop* pDesktop;
+                desktopList.Get()->At(i, &pDesktop);
                 using var desktop = new ComPtr<IADLXDesktop>(pDesktop);
-                yield return new DesktopInfo(desktop.Get());
+                desktops.Add(new DesktopInfo(desktop.Get()));
             }
+
+            return desktops;
         }
 
         private static IADLXDisplay* GetEyefinityDisplayInternal(IADLXEyefinityDesktop* pEyefinityDesktop, uint row, uint col)
@@ -125,8 +133,9 @@ namespace ADLXWrapper
         /// </summary>
         public static IEnumerable<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* pEyefinityDesktop)
         {
-            if (pEyefinityDesktop == null) yield break;
+            if (pEyefinityDesktop == null) return Array.Empty<DisplayInfo>();
 
+            var displays = new List<DisplayInfo>();
             var (rows, cols) = GetEyefinityGridSize(pEyefinityDesktop);
             for (uint r = 0; r < rows; r++)
             {
@@ -134,9 +143,11 @@ namespace ADLXWrapper
                 {
                     var pDisplay = GetEyefinityDisplayInternal(pEyefinityDesktop, r, c);
                     using var display = new ComPtr<IADLXDisplay>(pDisplay);
-                    yield return new DisplayInfo(display.Get());
+                    displays.Add(new DisplayInfo(display.Get()));
                 }
             }
+
+            return displays;
         }
 
         public static void DestroyAllEyefinityDesktops(IADLXSimpleEyefinity* pSimpleEyefinity)
@@ -156,7 +167,10 @@ namespace ADLXWrapper
         public static IADLXDesktopChangedHandling* GetDesktopChangedHandling(IADLXDesktopServices* pDesktopServices)
         {
             if (pDesktopServices == null) throw new ArgumentNullException(nameof(pDesktopServices));
-            pDesktopServices->GetDesktopChangedHandling(out var pHandling);
+            IADLXDesktopChangedHandling* pHandling;
+            var result = pDesktopServices->GetDesktopChangedHandling(&pHandling);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get desktop changed handling");
             return pHandling;
         }
 
@@ -184,7 +198,6 @@ namespace ADLXWrapper
     /// </summary>
     public readonly struct DesktopInfo
     {
-        public string Name { get; init; }
         public ADLX_DESKTOP_TYPE Type { get; init; }
         public int Width { get; init; }
         public int Height { get; init; }
@@ -193,9 +206,8 @@ namespace ADLXWrapper
         public ADLX_ORIENTATION Orientation { get; init; }
 
         [JsonConstructor]
-        public DesktopInfo(string name, ADLX_DESKTOP_TYPE type, int width, int height, int topLeftX, int topLeftY, ADLX_ORIENTATION orientation)
+        public DesktopInfo(ADLX_DESKTOP_TYPE type, int width, int height, int topLeftX, int topLeftY, ADLX_ORIENTATION orientation)
         {
-            Name = name;
             Type = type;
             Width = width;
             Height = height;
@@ -206,9 +218,6 @@ namespace ADLXWrapper
 
         internal unsafe DesktopInfo(IADLXDesktop* pDesktop)
         {
-            pDesktop->Name(out var namePtr);
-            Name = ADLXHelpers.MarshalString(namePtr);
-
             ADLX_DESKTOP_TYPE type = default;
             pDesktop->Type(&type);
             Type = type;
@@ -218,10 +227,10 @@ namespace ADLXWrapper
             Width = w;
             Height = h;
 
-            int x = 0, y = 0;
-            pDesktop->TopLeft(&x, &y);
-            TopLeftX = x;
-            TopLeftY = y;
+            ADLX_Point topLeft = default;
+            pDesktop->TopLeft(&topLeft);
+            TopLeftX = topLeft.x;
+            TopLeftY = topLeft.y;
 
             ADLX_ORIENTATION orientation = default;
             pDesktop->Orientation(&orientation);
@@ -237,42 +246,46 @@ namespace ADLXWrapper
         public delegate void OnDesktopListChanged(IADLXDesktopList* pNewDesktops);
 
         private static readonly ConcurrentDictionary<IntPtr, OnDesktopListChanged> _map = new();
-        private static readonly IntPtr _vtbl;
-
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IADLXDesktopList*, byte>)&OnDesktopListChangedThunk;
         private readonly GCHandle _gcHandle;
-
-        static DesktopListListenerHandle()
-        {
-            _vtbl = Marshal.AllocHGlobal(IntPtr.Size * 2); // IUnknown + OnDesktopListChanged
-            var iunknown = new IUnknownVtbl
-            {
-                QueryInterface = (delegate* unmanaged[Stdcall]<IUnknown*, Guid*, void**, int>)&IUnknownVtbl.DummyQueryInterface,
-                AddRef = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyAddRef,
-                Release = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyRelease
-            };
-            Marshal.StructureToPtr(iunknown, _vtbl, false);
-            Marshal.WriteIntPtr(_vtbl, IntPtr.Size, (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IADLXDesktopList*, byte>)&OnDesktopListChangedThunk);
-        }
+        private readonly IntPtr _vtbl;
 
         private DesktopListListenerHandle(OnDesktopListChanged cb) : base(IntPtr.Zero, true)
         {
             _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
             var inst = Marshal.AllocHGlobal(IntPtr.Size);
             Marshal.WriteIntPtr(inst, _vtbl);
             handle = inst;
             _map[inst] = cb;
         }
 
-        public static DesktopListListenerHandle Create(OnDesktopListChanged cb) => new(cb);
+        public static DesktopListListenerHandle Create(OnDesktopListChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DesktopListListenerHandle(cb);
+        }
+
         public IADLXDesktopListChangedListener* GetListener() => (IADLXDesktopListChangedListener*)handle;
-        protected override bool ReleaseHandle() { _map.TryRemove(handle, out _); if (_gcHandle.IsAllocated) _gcHandle.Free(); Marshal.FreeHGlobal(handle); return true; }
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
         public override bool IsInvalid => handle == IntPtr.Zero;
 
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
         private static byte OnDesktopListChangedThunk(IntPtr pThis, IADLXDesktopList* pNewDesktops)
         {
-            if (_map.TryGetValue(pThis, out var cb)) { cb(pNewDesktops); }
-            return 1;
+            if (_map.TryGetValue(pThis, out var cb)) { cb(pNewDesktops); return 1; }
+            return 0;
         }
     }
 

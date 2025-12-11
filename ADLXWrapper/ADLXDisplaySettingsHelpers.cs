@@ -57,16 +57,16 @@ namespace ADLXWrapper
 
             ADLX_RESULT r = ADLX_RESULT.ADLX_FAIL;
 
-            if (srgb != 0) { r = pGamma->SetReGammaSRGB(); }
-            else if (bt709 != 0) { r = pGamma->SetReGammaBT709(); }
-            else if (pq != 0) { r = pGamma->SetReGammaPQ(); }
-            else if (pq2084 != 0) { r = pGamma->SetReGammaPQ2084Interim(); }
-            else if (g36 != 0) { r = pGamma->SetReGamma36(); }
+            if (srgb) { r = pGamma->SetReGammaSRGB(); }
+            else if (bt709) { r = pGamma->SetReGammaBT709(); }
+            else if (pq) { r = pGamma->SetReGammaPQ(); }
+            else if (pq2084) { r = pGamma->SetReGammaPQ2084Interim(); }
+            else if (g36) { r = pGamma->SetReGamma36(); }
 
             if (r == ADLX_RESULT.ADLX_OK) { return; }
             if (r != ADLX_RESULT.ADLX_FAIL) throw new ADLXException(r, "Failed to reapply preset gamma");
 
-            if (coeff != 0)
+            if (coeff)
             {
                 ADLX_RegammaCoeff current = default;
                 pGamma->GetGammaCoefficient(&current);
@@ -76,7 +76,7 @@ namespace ADLXWrapper
             }
 
             ADLX_GammaRamp ramp = default;
-            if (reRamp != 0)
+            if (reRamp)
             {
                 pGamma->GetGammaRamp(&ramp);
                 r = pGamma->SetReGammaRamp(ramp);
@@ -84,7 +84,7 @@ namespace ADLXWrapper
                 return;
             }
 
-            if (deRamp != 0)
+            if (deRamp)
             {
                 pGamma->GetGammaRamp(&ramp);
                 r = pGamma->SetDeGammaRamp(ramp);
@@ -151,17 +151,17 @@ namespace ADLXWrapper
             ADLX_Point whitePoint = default;
             bool hasCustomWhitePoint = pGamut->GetWhitePoint(&whitePoint) == ADLX_RESULT.ADLX_OK;
 
-            ADLX_WHITE_POINT? wp = cur5000 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_5000K :
-                                   cur6500 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_6500K :
-                                   cur7500 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_7500K :
-                                   cur9300 != 0 ? ADLX_WHITE_POINT.WHITE_POINT_9300K :
+            ADLX_WHITE_POINT? wp = cur5000 ? ADLX_WHITE_POINT.WHITE_POINT_5000K :
+                                   cur6500 ? ADLX_WHITE_POINT.WHITE_POINT_6500K :
+                                   cur7500 ? ADLX_WHITE_POINT.WHITE_POINT_7500K :
+                                   cur9300 ? ADLX_WHITE_POINT.WHITE_POINT_9300K :
                                    (ADLX_WHITE_POINT?)null;
 
-            ADLX_GAMUT_SPACE? gamutSpace = cur709 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_709 :
-                                         cur601 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_601 :
-                                         curAdobe != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_ADOBE_RGB :
-                                         curCIERgb != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CIE_RGB :
-                                         cur2020 != 0 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_2020 :
+            ADLX_GAMUT_SPACE? gamutSpace = cur709 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_709 :
+                                         cur601 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_601 :
+                                         curAdobe ? ADLX_GAMUT_SPACE.GAMUT_SPACE_ADOBE_RGB :
+                                         curCIERgb ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CIE_RGB :
+                                         cur2020 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_2020 :
                                          (ADLX_GAMUT_SPACE?)null;
 
             ADLX_RESULT r = ADLX_RESULT.ADLX_FAIL;
@@ -170,22 +170,26 @@ namespace ADLXWrapper
             {
                 if (wp.HasValue)
                 {
-                    r = pGamut->SetGamut_PredefinedWhite_PredefinedGamut(wp.Value, gamutSpace.Value);
+                    r = pGamut->SetGamut(wp.Value, gamutSpace.Value);
                 }
-                else if (hasCustomWhitePoint || curCustomWhite != 0)
+                else if (hasCustomWhitePoint || curCustomWhite)
                 {
                     ADLX_RGB white = new ADLX_RGB { gamutR = whitePoint.x, gamutG = whitePoint.y, gamutB = 0 };
-                    r = pGamut->SetGamut_CustomWhite_PredefinedGamut(white, gamutSpace.Value);
+                    r = pGamut->SetGamut(white, gamutSpace.Value);
                 }
             }
             else if (wp.HasValue)
             {
-                r = pGamut->SetGamut_PredefinedWhite_CustomGamut(wp.Value, currentSpace);
+                r = pGamut->SetGamut(wp.Value, currentSpace);
             }
-            else if (hasCustomWhitePoint || curCustomWhite != 0 || curCustomSpace != 0)
+            else if (hasCustomWhitePoint || curCustomWhite || curCustomSpace)
             {
                 ADLX_RGB white = new ADLX_RGB { gamutR = whitePoint.x, gamutG = whitePoint.y, gamutB = 0 };
-                r = pGamut->SetGamut_CustomWhite_CustomGamut(white, currentSpace);
+                r = pGamut->SetGamut(white, currentSpace);
+            }
+            else
+            {
+                return; // Nothing to reapply
             }
 
             if (r != ADLX_RESULT.ADLX_OK)
@@ -234,9 +238,9 @@ namespace ADLXWrapper
 
             ADLX_RESULT r = ADLX_RESULT.ADLX_FAIL;
 
-            if (supSce != 0 || supVivid != 0)
+            if (supSce || supVivid)
             {
-                if (curVivid != 0 && supVivid != 0) { r = p3dLut->SetSCEVividGaming(); }
+                if (curVivid && supVivid) { r = p3dLut->SetSCEVividGaming(); }
                 else { r = p3dLut->SetSCEDisabled(); }
 
                 if (r != ADLX_RESULT.ADLX_OK) throw new ADLXException(r, "Failed to reapply SCE state");
@@ -244,7 +248,7 @@ namespace ADLXWrapper
 
             bool supDynamic = false;
             p3dLut->IsSupportedSCEDynamicContrast(&supDynamic);
-            if (supDynamic != 0)
+            if (supDynamic)
             {
                 ADLX_IntRange range = default;
                 p3dLut->GetSCEDynamicContrastRange(&range);
@@ -266,8 +270,9 @@ namespace ADLXWrapper
             if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
             if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
 
+            var services3 = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayConnectivityExperience* pConn;
-            var result = pDisplayServices->GetDisplayConnectivityExperience(pDisplay, &pConn);
+            var result = services3->GetDisplayConnectivityExperience(pDisplay, &pConn);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
 
@@ -415,7 +420,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetDisplayBlanking((IADLXDisplay*)pDisplay, out var pBlanking);
+            IADLXDisplayBlanking* pBlanking;
+            var result = services->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Display Blanking interface");
@@ -462,7 +468,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetVirtualSuperResolution((IADLXDisplay*)pDisplay, out var pVsr);
+            IADLXDisplayVSR* pVsr;
+            var result = services->GetVirtualSuperResolution((IADLXDisplay*)pDisplay, &pVsr);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Virtual Super Resolution interface");
@@ -510,7 +517,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetIntegerScaling((IADLXDisplay*)pDisplay, out var pIntegerScaling);
+            IADLXDisplayIntegerScaling* pIntegerScaling;
+            var result = services->GetIntegerScaling((IADLXDisplay*)pDisplay, &pIntegerScaling);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Integer Scaling interface");
@@ -558,7 +566,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetHDCP((IADLXDisplay*)pDisplay, out var pHdcp);
+            IADLXDisplayHDCP* pHdcp;
+            var result = services->GetHDCP((IADLXDisplay*)pDisplay, &pHdcp);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get HDCP interface");
@@ -616,7 +625,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetVariBright((IADLXDisplay*)pDisplay, out var pVariBright);
+            IADLXDisplayVariBright* pVariBright;
+            var result = services->GetVariBright((IADLXDisplay*)pDisplay, &pVariBright);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get VariBright interface");
@@ -707,7 +717,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetColorDepth((IADLXDisplay*)pDisplay, out var pColorDepth);
+            IADLXDisplayColorDepth* pColorDepth;
+            var result = services->GetColorDepth((IADLXDisplay*)pDisplay, &pColorDepth);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Color Depth interface");
@@ -754,7 +765,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetPixelFormat((IADLXDisplay*)pDisplay, out var pPixelFormat);
+            IADLXDisplayPixelFormat* pPixelFormat;
+            var result = services->GetPixelFormat((IADLXDisplay*)pDisplay, &pPixelFormat);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Pixel Format interface");
@@ -801,7 +813,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetFreeSync((IADLXDisplay*)pDisplay, out var pFS);
+            IADLXDisplayFreeSync* pFS;
+            var result = services->GetFreeSync((IADLXDisplay*)pDisplay, &pFS);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get FreeSync interface");
@@ -818,7 +831,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetGPUScaling((IADLXDisplay*)pDisplay, out var pScaling);
+            IADLXDisplayGPUScaling* pScaling;
+            var result = services->GetGPUScaling((IADLXDisplay*)pDisplay, &pScaling);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get GPU scaling interface");
@@ -835,7 +849,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetScalingMode((IADLXDisplay*)pDisplay, out var pMode);
+            IADLXDisplayScalingMode* pMode;
+            var result = services->GetScalingMode((IADLXDisplay*)pDisplay, &pMode);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get scaling mode interface");
@@ -950,7 +965,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetFreeSyncColorAccuracy((IADLXDisplay*)pDisplay, out var pFSCA);
+            IADLXDisplayFreeSyncColorAccuracy* pFSCA;
+            var result = services->GetFreeSyncColorAccuracy((IADLXDisplay*)pDisplay, &pFSCA);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get FreeSync Color Accuracy interface");
@@ -999,7 +1015,8 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pDisplay));
 
             var services = (IADLXDisplayServices3*)pDisplayServices;
-            var result = services->GetDynamicRefreshRateControl((IADLXDisplay*)pDisplay, out var pDRR);
+            IADLXDisplayDynamicRefreshRateControl* pDRR;
+            var result = services->GetDynamicRefreshRateControl((IADLXDisplay*)pDisplay, &pDRR);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Dynamic Refresh Rate Control interface");
@@ -1052,7 +1069,7 @@ namespace ADLXWrapper
         private readonly GCHandle _gcHandle;
         private readonly IntPtr _vtbl;
 
-        private DisplaySettingsListenerHandle(DisplaySettingsChangedCallback cb)
+        private DisplaySettingsListenerHandle(DisplaySettingsChangedCallback cb) : base(IntPtr.Zero, true)
         {
             _gcHandle = GCHandle.Alloc(cb);
             _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
@@ -1111,9 +1128,9 @@ namespace ADLXWrapper
         internal unsafe GammaInfo(IADLXDisplayGamma* pGamma)
         {
             // A simple check. A full implementation would check each gamma type.
-            byte supported = 0;
+            bool supported = false;
             pGamma->IsSupportedReGammaSRGB(&supported);
-            IsSupported = supported != 0;
+            IsSupported = supported;
         }
     }
 
@@ -1132,11 +1149,11 @@ namespace ADLXWrapper
 
         internal unsafe GamutInfo(IADLXDisplayGamut* pGamut)
         {
-            byte wp = 0, gamut = 0;
+            bool wp = false, gamut = false;
             pGamut->IsSupportedCustomWhitePoint(&wp);
             pGamut->IsSupportedCustomColorSpace(&gamut);
-            IsWhitePointSupported = wp != 0;
-            IsGamutSupported = gamut != 0;
+            IsWhitePointSupported = wp;
+            IsGamutSupported = gamut;
         }
     }
 
@@ -1158,15 +1175,15 @@ namespace ADLXWrapper
 
         internal unsafe ThreeDLUTInfo(IADLXDisplay3DLUT* p3dLut)
         {
-            byte sce = 0, vivid = 0, dynamic = 0, user = 0;
+            bool sce = false, vivid = false, dynamic = false, user = false;
             p3dLut->IsSupportedSCE(&sce);
             p3dLut->IsSupportedSCEVividGaming(&vivid);
             p3dLut->IsSupportedSCEDynamicContrast(&dynamic);
             p3dLut->IsSupportedUser3DLUT(&user);
-            IsSceSupported = sce != 0;
-            IsSceVividGamingSupported = vivid != 0;
-            IsSceDynamicContrastSupported = dynamic != 0;
-            IsUser3DLutSupported = user != 0;
+            IsSceSupported = sce;
+            IsSceVividGamingSupported = vivid;
+            IsSceDynamicContrastSupported = dynamic;
+            IsUser3DLutSupported = user;
         }
     }
 
@@ -1196,25 +1213,32 @@ namespace ADLXWrapper
 
         internal unsafe ConnectivityExperienceInfo(IADLXDisplayConnectivityExperience* pConn)
         {
-            byte supported = 0, enabled = 0;
+            bool supported = false, enabled = false;
             pConn->IsSupportedHDMIQualityDetection(&supported);
-            IsHdmiQualityDetectionSupported = supported != 0;
+            IsHdmiQualityDetectionSupported = supported;
             pConn->IsEnabledHDMIQualityDetection(&enabled);
-            IsHdmiQualityDetectionEnabled = enabled != 0;
+            IsHdmiQualityDetectionEnabled = enabled;
 
-            supported = 0;
+            supported = false;
             pConn->IsSupportedDPLink(&supported);
-            IsDpLinkRateSupported = supported != 0;
+            IsDpLinkRateSupported = supported;
             ADLX_DP_LINK_RATE rate = default;
-            pConn->GetDPLinkRate(&rate);
-            DpLinkRate = rate;
+            if (IsDpLinkRateSupported && pConn->GetDPLinkRate(&rate) == ADLX_RESULT.ADLX_OK)
+            {
+                DpLinkRate = rate;
+            }
+            else
+            {
+                DpLinkRate = default;
+            }
 
-            // These are write-only in the public API, so we can't get the current value.
-            // We can only know if they are supported.
-            IsRelativePreEmphasisSupported = true; // Assuming supported if interface exists
-            RelativePreEmphasis = 0; // Default value
-            IsRelativeVoltageSwingSupported = true; // Assuming supported if interface exists
-            RelativeVoltageSwing = 0; // Default value
+            int relPre = 0;
+            IsRelativePreEmphasisSupported = pConn->GetRelativePreEmphasis(&relPre) == ADLX_RESULT.ADLX_OK;
+            RelativePreEmphasis = relPre;
+
+            int relVolt = 0;
+            IsRelativeVoltageSwingSupported = pConn->GetRelativeVoltageSwing(&relVolt) == ADLX_RESULT.ADLX_OK;
+            RelativeVoltageSwing = relVolt;
         }
     }
 
@@ -1232,18 +1256,20 @@ namespace ADLXWrapper
 
         internal unsafe CustomResolutionInfo(IADLXDisplayCustomResolution* pCustomRes)
         {
-            byte supported = 0;
+            bool supported = false;
             pCustomRes->IsSupported(&supported);
-            IsSupported = supported != 0;
+            IsSupported = supported;
 
             var resolutions = new List<DisplayResolutionInfo>();
             if (IsSupported)
             {
-                pCustomRes->GetResolutionList(out var pResList);
+                IADLXDisplayResolutionList* pResList;
+                pCustomRes->GetResolutionList(&pResList);
                 using var resList = new ComPtr<IADLXDisplayResolutionList>(pResList);
                 for (uint i = 0; i < resList.Get()->Size(); i++)
                 {
-                    resList.Get()->At(i, out var pRes);
+                    IADLXDisplayResolution* pRes;
+                    resList.Get()->At(i, &pRes);
                     using var res = new ComPtr<IADLXDisplayResolution>(pRes);
                     resolutions.Add(new DisplayResolutionInfo(res.Get()));
                 }
@@ -1303,25 +1329,25 @@ namespace ADLXWrapper
 
         internal unsafe CustomColorInfo(IADLXDisplayCustomColor* pCustomColor)
         {
-            byte supported = 0;
-            pCustomColor->IsHueSupported(&supported); IsHueSupported = supported != 0;
-            pCustomColor->GetHue(out var hue); Hue = hue;
+            bool supported = false;
+            pCustomColor->IsHueSupported(&supported); IsHueSupported = supported;
+            int hue = 0; pCustomColor->GetHue(&hue); Hue = hue;
 
-            supported = 0;
-            pCustomColor->IsSaturationSupported(&supported); IsSaturationSupported = supported != 0;
-            pCustomColor->GetSaturation(out var sat); Saturation = sat;
+            supported = false;
+            pCustomColor->IsSaturationSupported(&supported); IsSaturationSupported = supported;
+            int sat = 0; pCustomColor->GetSaturation(&sat); Saturation = sat;
 
-            supported = 0;
-            pCustomColor->IsBrightnessSupported(&supported); IsBrightnessSupported = supported != 0;
-            pCustomColor->GetBrightness(out var bright); Brightness = bright;
+            supported = false;
+            pCustomColor->IsBrightnessSupported(&supported); IsBrightnessSupported = supported;
+            int bright = 0; pCustomColor->GetBrightness(&bright); Brightness = bright;
 
-            supported = 0;
-            pCustomColor->IsContrastSupported(&supported); IsContrastSupported = supported != 0;
-            pCustomColor->GetContrast(out var cont); Contrast = cont;
+            supported = false;
+            pCustomColor->IsContrastSupported(&supported); IsContrastSupported = supported;
+            int cont = 0; pCustomColor->GetContrast(&cont); Contrast = cont;
 
-            supported = 0;
-            pCustomColor->IsTemperatureSupported(&supported); IsTemperatureSupported = supported != 0;
-            pCustomColor->GetTemperature(out var temp); Temperature = temp;
+            supported = false;
+            pCustomColor->IsTemperatureSupported(&supported); IsTemperatureSupported = supported;
+            int temp = 0; pCustomColor->GetTemperature(&temp); Temperature = temp;
 
             IsSupported = IsHueSupported || IsSaturationSupported || IsBrightnessSupported || IsContrastSupported || IsTemperatureSupported;
         }

@@ -22,8 +22,10 @@ namespace ADLXWrapper
             var terminated = interfaceName + "\0";
             fixed (char* chars = terminated)
             {
-                var result = iface->QueryInterface((ushort*)chars, (void**)&resultPtr);
-                return result == ADLX_RESULT.ADLX_OK && resultPtr != IntPtr.Zero;
+                void* queried = null;
+                var result = iface->QueryInterface((ushort*)chars, &queried);
+                resultPtr = (IntPtr)queried;
+                return result == ADLX_RESULT.ADLX_OK && queried != null;
             }
         }
 

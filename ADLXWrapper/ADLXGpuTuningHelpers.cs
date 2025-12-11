@@ -153,7 +153,7 @@ namespace ADLXWrapper
             if (pFanTuning == null) throw new ArgumentNullException(nameof(pFanTuning));
             if (!info.IsSupported) return;
 
-            if (info.IsZeroRPMSupported) pFanTuning->SetZeroRPMState(info.ZeroRPMEnabled ? 1 : 0);
+            if (info.IsZeroRPMSupported) pFanTuning->SetZeroRPMState(info.ZeroRPMEnabled ? (byte)1 : (byte)0);
             
             // Skipping state writes to avoid reconstructing ADLX state lists with current generated signatures.
         }
@@ -214,7 +214,19 @@ namespace ADLXWrapper
             if (pPresetTuning == null) throw new ArgumentNullException(nameof(pPresetTuning));
             if (!info.IsSupported) return;
 
-            pPresetTuning->SetTuningPreset(info.CurrentPreset);
+            ADLX_RESULT result = ADLX_RESULT.ADLX_OK;
+            switch (info.CurrentPreset)
+            {
+                case PresetKind.PowerSaver: result = pPresetTuning->SetPowerSaver(); break;
+                case PresetKind.Quiet: result = pPresetTuning->SetQuiet(); break;
+                case PresetKind.Balanced: result = pPresetTuning->SetBalanced(); break;
+                case PresetKind.Turbo: result = pPresetTuning->SetTurbo(); break;
+                case PresetKind.Rage: result = pPresetTuning->SetRage(); break;
+                default: result = ADLX_RESULT.ADLX_OK; break;
+            }
+
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to apply preset tuning");
         }
 
         public static AutoTuningInfo GetAutoTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGpu)
@@ -234,7 +246,8 @@ namespace ADLXWrapper
         public static IADLXGPUTuningChangedHandling* GetGpuTuningChangedHandling(IADLXGPUTuningServices* pGpuTuningServices)
         {
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
-            pGpuTuningServices->GetGPUTuningChangedHandling(out var pHandling);
+            IADLXGPUTuningChangedHandling* pHandling;
+            pGpuTuningServices->GetGPUTuningChangedHandling(&pHandling);
             return pHandling;
         }
 
@@ -315,16 +328,19 @@ namespace ADLXWrapper
             ZeroRPMEnabled = enabled;
 
             var points = new List<FanPoint>();
-            pFanTuning->GetFanTuningStates(out var pStates);
+            IADLXManualFanTuningStateList* pStates;
+            pFanTuning->GetFanTuningStates(&pStates);
             using var states = new ComPtr<IADLXManualFanTuningStateList>(pStates);
             if (states.Get() != null)
             {
                 for (uint i = 0; i < states.Get()->Size(); i++)
                 {
-                    states.Get()->At(i, out var pState);
+                    IADLXManualFanTuningState* pState;
+                    states.Get()->At(i, &pState);
                     using var state = new ComPtr<IADLXManualFanTuningState>(pState);
-                    state.Get()->GetFanSpeed(out var speed);
-                    state.Get()->GetTemperature(out var temp);
+                    int speed = 0, temp = 0;
+                    state.Get()->GetFanSpeed(&speed);
+                    state.Get()->GetTemperature(&temp);
                     points.Add(new FanPoint { FanSpeed = speed, Temperature = temp });
                 }
             }
@@ -354,16 +370,19 @@ namespace ADLXWrapper
         internal unsafe ManualVramTuningInfo(IADLXManualVRAMTuning1* pVramTuning)
         {
             var states = new List<VramState>();
-            pVramTuning->GetVRAMTuningStates(out var pStates);
+            IADLXManualTuningStateList* pStates;
+            pVramTuning->GetVRAMTuningStates(&pStates);
             using var stateList = new ComPtr<IADLXManualTuningStateList>(pStates);
             if (stateList.Get() != null)
             {
                 for (uint i = 0; i < stateList.Get()->Size(); i++)
                 {
-                    stateList.Get()->At(i, out var pState);
+                    IADLXManualTuningState* pState;
+                    stateList.Get()->At(i, &pState);
                     using var state = new ComPtr<IADLXManualTuningState>(pState);
-                    state.Get()->GetFrequency(out var freq);
-                    state.Get()->GetVoltage(out var volt);
+                    int freq = 0, volt = 0;
+                    state.Get()->GetFrequency(&freq);
+                    state.Get()->GetVoltage(&volt);
                     states.Add(new VramState { Frequency = freq, Voltage = volt });
                 }
             }
@@ -396,9 +415,10 @@ namespace ADLXWrapper
 
         internal unsafe ManualGfxTuningInfo(IADLXManualGraphicsTuning2* pGfxTuning)
         {
-            pGfxTuning->GetGPUMinFrequency(out var minFreq);
-            pGfxTuning->GetGPUMaxFrequency(out var maxFreq);
-            pGfxTuning->GetGPUVoltage(out var volt);
+            int minFreq = 0, maxFreq = 0, volt = 0;
+            pGfxTuning->GetGPUMinFrequency(&minFreq);
+            pGfxTuning->GetGPUMaxFrequency(&maxFreq);
+            pGfxTuning->GetGPUVoltage(&volt);
             MinFrequency = minFreq;
             MaxFrequency = maxFreq;
             Voltage = volt;
@@ -422,21 +442,24 @@ namespace ADLXWrapper
 
         internal unsafe PresetTuningInfo(IADLXGPUPresetTuning* pPresetTuning)
         {
-            bool supportBalanced = false; pPresetTuning->IsSupportedBalanced(&supportBalanced);
-            IsSupported = supportBalanced;
-
             var supported = new List<PresetKind>();
             bool b;
             if (pPresetTuning->IsSupportedPowerSaver(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.PowerSaver);
             if (pPresetTuning->IsSupportedQuiet(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Quiet);
-            if (supportBalanced) supported.Add(PresetKind.Balanced);
+            if (pPresetTuning->IsSupportedBalanced(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Balanced);
             if (pPresetTuning->IsSupportedTurbo(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Turbo);
             if (pPresetTuning->IsSupportedRage(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Rage);
             SupportedPresets = supported;
+            IsSupported = supported.Count > 0;
 
-            bool isBalance = false;
-            pPresetTuning->IsCurrentBalanced(&isBalance);
-            CurrentPreset = isBalance ? PresetKind.Balanced : (supported.Count > 0 ? supported[0] : PresetKind.Balanced);
+            bool curPower = false, curQuiet = false, curBalanced = false, curTurbo = false, curRage = false;
+            if (pPresetTuning->IsCurrentPowerSaver(&curPower) == ADLX_RESULT.ADLX_OK && curPower) { CurrentPreset = PresetKind.PowerSaver; return; }
+            if (pPresetTuning->IsCurrentQuiet(&curQuiet) == ADLX_RESULT.ADLX_OK && curQuiet) { CurrentPreset = PresetKind.Quiet; return; }
+            if (pPresetTuning->IsCurrentBalanced(&curBalanced) == ADLX_RESULT.ADLX_OK && curBalanced) { CurrentPreset = PresetKind.Balanced; return; }
+            if (pPresetTuning->IsCurrentTurbo(&curTurbo) == ADLX_RESULT.ADLX_OK && curTurbo) { CurrentPreset = PresetKind.Turbo; return; }
+            if (pPresetTuning->IsCurrentRage(&curRage) == ADLX_RESULT.ADLX_OK && curRage) { CurrentPreset = PresetKind.Rage; return; }
+
+            CurrentPreset = supported.Count > 0 ? supported[0] : PresetKind.Balanced;
         }
     }
 
@@ -462,9 +485,11 @@ namespace ADLXWrapper
 
         internal unsafe AutoTuningInfo(IADLXGPUAutoTuning* pAutoTuning)
         {
-            bool supported = false;
-            pAutoTuning->IsSupported(&supported);
-            IsSupported = supported;
+            bool supUnder = false, supOcGpu = false, supOcVram = false;
+            pAutoTuning->IsSupportedUndervoltGPU(&supUnder);
+            pAutoTuning->IsSupportedOverclockGPU(&supOcGpu);
+            pAutoTuning->IsSupportedOverclockVRAM(&supOcVram);
+            IsSupported = supUnder || supOcGpu || supOcVram;
         }
     }
 

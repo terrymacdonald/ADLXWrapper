@@ -46,7 +46,7 @@ namespace ADLXWrapper
     /// </summary>
     public sealed class ADLXApi : IDisposable
     {
-        private readonly IntPtr _hDLL;
+        private IntPtr _hDLL;
         private ComPtr<IADLXSystem> _systemServices;
         private bool _disposed;
 

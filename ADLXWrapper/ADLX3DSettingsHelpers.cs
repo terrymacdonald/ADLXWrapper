@@ -50,30 +50,112 @@ namespace ADLXWrapper
 
         // Individual Get/Apply helpers for each feature
 
-        private static void ApplyAntiLag(IADLX3DSettingsServices* s, IADLXGPU* g, AntiLagInfo i) { if (s->GetAntiLag(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); } }
-        private static void ApplyBoost(IADLX3DSettingsServices* s, IADLXGPU* g, BoostInfo i) { if (s->GetBoost(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); if (i.IsMinResSupported) c.Get()->SetMinimumResolution(i.MinResolution); } } }
-        private static void ApplyRadeonImageSharpening(IADLX3DSettingsServices* s, IADLXGPU* g, RadeonImageSharpeningInfo i) { if (s->GetImageSharpening(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); c.Get()->SetSharpness(i.Sharpness); } } }
-        private static void ApplyEnhancedSync(IADLX3DSettingsServices* s, IADLXGPU* g, EnhancedSyncInfo i) { if (s->GetEnhancedSync(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); } }
-        private static void ApplyWaitForVerticalRefresh(IADLX3DSettingsServices* s, IADLXGPU* g, WaitForVerticalRefreshInfo i) { if (s->GetWaitForVerticalRefresh(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); if (i.IsModeSupported) c.Get()->SetMode(i.Mode); } }
-        private static void ApplyFrameRateTargetControl(IADLX3DSettingsServices* s, IADLXGPU* g, FrameRateTargetControlInfo i) { if (s->GetFrameRateTargetControl(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); c.Get()->SetFPS(i.Fps); } } }
-        private static void ApplyAntiAliasing(IADLX3DSettingsServices* s, IADLXGPU* g, AntiAliasingInfo i) { if (s->GetAntiAliasing(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(p); if (i.IsSupported) c.Get()->SetMode(i.Mode); } }
-        private static void ApplyAnisotropicFiltering(IADLX3DSettingsServices* s, IADLXGPU* g, AnisotropicFilteringInfo i) { if (s->GetAnisotropicFiltering(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(p); if (i.IsSupported) c.Get()->SetLevel(i.Level); } }
-        private static void ApplyTessellation(IADLX3DSettingsServices* s, IADLXGPU* g, TessellationInfo i) { if (s->GetTessellation(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(p); if (i.IsSupported) c.Get()->SetMode(i.Mode); } }
-
-        /// <summary>
-        /// Resets all 3D settings for a GPU to their default values.
-        /// </summary>
-        public static void ResetAll3DSettings(IADLX3DSettingsServices* p3DSettingsServices, IADLXGPU* pGpu)
+        private static void ApplyAntiLag(IADLX3DSettingsServices* s, IADLXGPU* g, AntiLagInfo i)
         {
-            if (p3DSettingsServices == null) throw new ArgumentNullException(nameof(p3DSettingsServices));
-            if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
-
-            var result = p3DSettingsServices->ResetAll3DSettings(pGpu);
-            if (result != ADLX_RESULT.ADLX_OK)
+            IADLX3DAntiLag* p;
+            if (s->GetAntiLag(g, &p) == ADLX_RESULT.ADLX_OK)
             {
-                throw new ADLXException(result, "Failed to reset all 3D settings.");
+                using var c = new ComPtr<IADLX3DAntiLag>(p);
+                if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
             }
         }
+
+        private static void ApplyBoost(IADLX3DSettingsServices* s, IADLXGPU* g, BoostInfo i)
+        {
+            IADLX3DBoost* p;
+            if (s->GetBoost(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DBoost>(p);
+                if (i.IsSupported)
+                {
+                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                    if (i.IsMinResSupported) c.Get()->SetResolution(i.MinResolution);
+                }
+            }
+        }
+
+        private static void ApplyRadeonImageSharpening(IADLX3DSettingsServices* s, IADLXGPU* g, RadeonImageSharpeningInfo i)
+        {
+            IADLX3DImageSharpening* p;
+            if (s->GetImageSharpening(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DImageSharpening>(p);
+                if (i.IsSupported)
+                {
+                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                    c.Get()->SetSharpness(i.Sharpness);
+                }
+            }
+        }
+
+        private static void ApplyEnhancedSync(IADLX3DSettingsServices* s, IADLXGPU* g, EnhancedSyncInfo i)
+        {
+            IADLX3DEnhancedSync* p;
+            if (s->GetEnhancedSync(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DEnhancedSync>(p);
+                if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+            }
+        }
+
+        private static void ApplyWaitForVerticalRefresh(IADLX3DSettingsServices* s, IADLXGPU* g, WaitForVerticalRefreshInfo i)
+        {
+            IADLX3DWaitForVerticalRefresh* p;
+            if (s->GetWaitForVerticalRefresh(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(p);
+                if (i.IsSupported) c.Get()->SetMode(i.Mode);
+            }
+        }
+
+        private static void ApplyFrameRateTargetControl(IADLX3DSettingsServices* s, IADLXGPU* g, FrameRateTargetControlInfo i)
+        {
+            IADLX3DFrameRateTargetControl* p;
+            if (s->GetFrameRateTargetControl(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DFrameRateTargetControl>(p);
+                if (i.IsSupported)
+                {
+                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                    c.Get()->SetFPS(i.Fps);
+                }
+            }
+        }
+
+        private static void ApplyAntiAliasing(IADLX3DSettingsServices* s, IADLXGPU* g, AntiAliasingInfo i)
+        {
+            IADLX3DAntiAliasing* p;
+            if (s->GetAntiAliasing(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DAntiAliasing>(p);
+                if (i.IsSupported) c.Get()->SetMode(i.Mode);
+            }
+        }
+
+        private static void ApplyAnisotropicFiltering(IADLX3DSettingsServices* s, IADLXGPU* g, AnisotropicFilteringInfo i)
+        {
+            IADLX3DAnisotropicFiltering* p;
+            if (s->GetAnisotropicFiltering(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DAnisotropicFiltering>(p);
+                if (i.IsSupported) c.Get()->SetLevel(i.Level);
+            }
+        }
+
+        private static void ApplyTessellation(IADLX3DSettingsServices* s, IADLXGPU* g, TessellationInfo i)
+        {
+            IADLX3DTessellation* p;
+            if (s->GetTessellation(g, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DTessellation>(p);
+                if (i.IsSupported)
+                {
+                    c.Get()->SetMode(i.Mode);
+                    c.Get()->SetLevel(i.Level);
+                }
+            }
+        }
+
     }
 
     //================================================================================================
@@ -111,15 +193,32 @@ namespace ADLXWrapper
 
         internal unsafe All3DSettingsInfo(IADLX3DSettingsServices* s, IADLXGPU* g)
         {
-            if (s->GetAntiLag(g, out var pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagInfo(c.Get()); } else { AntiLag = null; }
-            if (s->GetBoost(g, out var pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostInfo(c.Get()); } else { Boost = null; }
-            if (s->GetImageSharpening(g, out var pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningInfo(c.Get()); } else { ImageSharpening = null; }
-            if (s->GetEnhancedSync(g, out var pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); EnhancedSync = new EnhancedSyncInfo(c.Get()); } else { EnhancedSync = null; }
-            if (s->GetWaitForVerticalRefresh(g, out var pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); WaitForVerticalRefresh = new WaitForVerticalRefreshInfo(c.Get()); } else { WaitForVerticalRefresh = null; }
-            if (s->GetFrameRateTargetControl(g, out var pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); FrameRateTargetControl = new FrameRateTargetControlInfo(c.Get()); } else { FrameRateTargetControl = null; }
-            if (s->GetAntiAliasing(g, out var pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); AntiAliasing = new AntiAliasingInfo(c.Get()); } else { AntiAliasing = null; }
-            if (s->GetAnisotropicFiltering(g, out var pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); AnisotropicFiltering = new AnisotropicFilteringInfo(c.Get()); } else { AnisotropicFiltering = null; }
-            if (s->GetTessellation(g, out var pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationInfo(c.Get()); } else { Tessellation = null; }
+            IADLX3DAntiLag* pAntiLag;
+            if (s->GetAntiLag(g, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagInfo(c.Get()); } else { AntiLag = null; }
+
+            IADLX3DBoost* pBoost;
+            if (s->GetBoost(g, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostInfo(c.Get()); } else { Boost = null; }
+
+            IADLX3DImageSharpening* pRis;
+            if (s->GetImageSharpening(g, &pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningInfo(c.Get()); } else { ImageSharpening = null; }
+
+            IADLX3DEnhancedSync* pEs;
+            if (s->GetEnhancedSync(g, &pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); EnhancedSync = new EnhancedSyncInfo(c.Get()); } else { EnhancedSync = null; }
+
+            IADLX3DWaitForVerticalRefresh* pVsync;
+            if (s->GetWaitForVerticalRefresh(g, &pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); WaitForVerticalRefresh = new WaitForVerticalRefreshInfo(c.Get()); } else { WaitForVerticalRefresh = null; }
+
+            IADLX3DFrameRateTargetControl* pFrtc;
+            if (s->GetFrameRateTargetControl(g, &pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); FrameRateTargetControl = new FrameRateTargetControlInfo(c.Get()); } else { FrameRateTargetControl = null; }
+
+            IADLX3DAntiAliasing* pAa;
+            if (s->GetAntiAliasing(g, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); AntiAliasing = new AntiAliasingInfo(c.Get()); } else { AntiAliasing = null; }
+
+            IADLX3DAnisotropicFiltering* pAf;
+            if (s->GetAnisotropicFiltering(g, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); AnisotropicFiltering = new AnisotropicFilteringInfo(c.Get()); } else { AnisotropicFiltering = null; }
+
+            IADLX3DTessellation* pTess;
+            if (s->GetTessellation(g, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationInfo(c.Get()); } else { Tessellation = null; }
         }
     }
 
@@ -137,9 +236,12 @@ namespace ADLXWrapper
 
         internal unsafe AntiLagInfo(IADLX3DAntiLag* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
-            if (IsSupported) p->IsEnabled(out var enabled); else enabled = false;
+
+            bool enabled = false;
+            if (IsSupported) p->IsEnabled(&enabled);
             IsEnabled = enabled;
         }
     }
@@ -164,27 +266,24 @@ namespace ADLXWrapper
 
         internal unsafe BoostInfo(IADLX3DBoost* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
 
             if (IsSupported)
             {
-                p->IsEnabled(out var enabled);
+                bool enabled = false;
+                p->IsEnabled(&enabled);
                 IsEnabled = enabled;
-                p->IsSupportedMinimumResolution(out var minResSupported);
-                IsMinResSupported = minResSupported;
-                if (IsMinResSupported)
-                {
-                    p->GetMinimumResolution(out var minRes);
-                    MinResolution = minRes;
-                    p->GetMinimumResolutionRange(out var range);
-                    ResolutionRange = range;
-                }
-                else
-                {
-                    MinResolution = 0;
-                    ResolutionRange = default;
-                }
+
+                ADLX_IntRange range = default;
+                p->GetResolutionRange(&range);
+                ResolutionRange = range;
+
+                int minRes = 0;
+                p->GetResolution(&minRes);
+                MinResolution = minRes;
+                IsMinResSupported = true;
             }
             else
             {
@@ -214,16 +313,22 @@ namespace ADLXWrapper
 
         internal unsafe RadeonImageSharpeningInfo(IADLX3DImageSharpening* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
 
             if (IsSupported)
             {
-                p->IsEnabled(out var enabled);
+                bool enabled = false;
+                p->IsEnabled(&enabled);
                 IsEnabled = enabled;
-                p->GetSharpness(out var sharpness);
+
+                int sharpness = 0;
+                p->GetSharpness(&sharpness);
                 Sharpness = sharpness;
-                p->GetSharpnessRange(out var range);
+
+                ADLX_IntRange range = default;
+                p->GetSharpnessRange(&range);
                 SharpnessRange = range;
             }
             else
@@ -249,9 +354,12 @@ namespace ADLXWrapper
 
         internal unsafe EnhancedSyncInfo(IADLX3DEnhancedSync* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
-            if (IsSupported) p->IsEnabled(out var enabled); else enabled = false;
+
+            bool enabled = false;
+            if (IsSupported) p->IsEnabled(&enabled);
             IsEnabled = enabled;
         }
     }
@@ -259,37 +367,29 @@ namespace ADLXWrapper
     public readonly struct WaitForVerticalRefreshInfo
     {
         public bool IsSupported { get; init; }
-        public bool IsEnabled { get; init; }
-        public bool IsModeSupported { get; init; }
         public ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE Mode { get; init; }
 
         [JsonConstructor]
-        public WaitForVerticalRefreshInfo(bool isSupported, bool isEnabled, bool isModeSupported, ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode)
+        public WaitForVerticalRefreshInfo(bool isSupported, ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode)
         {
             IsSupported = isSupported;
-            IsEnabled = isEnabled;
-            IsModeSupported = isModeSupported;
             Mode = mode;
         }
 
         internal unsafe WaitForVerticalRefreshInfo(IADLX3DWaitForVerticalRefresh* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
 
             if (IsSupported)
             {
-                p->IsEnabled(out var enabled);
-                IsEnabled = enabled;
-                p->IsModeSupported(out var modeSupported);
-                IsModeSupported = modeSupported;
-                if (IsModeSupported) p->GetMode(out var mode); else mode = default;
+                ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode = default;
+                p->GetMode(&mode);
                 Mode = mode;
             }
             else
             {
-                IsEnabled = false;
-                IsModeSupported = false;
                 Mode = default;
             }
         }
@@ -313,16 +413,22 @@ namespace ADLXWrapper
 
         internal unsafe FrameRateTargetControlInfo(IADLX3DFrameRateTargetControl* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
 
             if (IsSupported)
             {
-                p->IsEnabled(out var enabled);
+                bool enabled = false;
+                p->IsEnabled(&enabled);
                 IsEnabled = enabled;
-                p->GetFPS(out var fps);
+
+                int fps = 0;
+                p->GetFPS(&fps);
                 Fps = fps;
-                p->GetFPSRange(out var range);
+
+                ADLX_IntRange range = default;
+                p->GetFPSRange(&range);
                 FpsRange = range;
             }
             else
@@ -348,9 +454,12 @@ namespace ADLXWrapper
 
         internal unsafe AntiAliasingInfo(IADLX3DAntiAliasing* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
-            if (IsSupported) p->GetMode(out var mode); else mode = default;
+
+            ADLX_ANTI_ALIASING_MODE mode = default;
+            if (IsSupported) p->GetMode(&mode);
             Mode = mode;
         }
     }
@@ -369,9 +478,12 @@ namespace ADLXWrapper
 
         internal unsafe AnisotropicFilteringInfo(IADLX3DAnisotropicFiltering* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
-            if (IsSupported) p->GetLevel(out var level); else level = default;
+
+            ADLX_ANISOTROPIC_FILTERING_LEVEL level = default;
+            if (IsSupported) p->GetLevel(&level);
             Level = level;
         }
     }
@@ -392,14 +504,16 @@ namespace ADLXWrapper
 
         internal unsafe TessellationInfo(IADLX3DTessellation* p)
         {
-            p->IsSupported(out var supported);
+            bool supported = false;
+            p->IsSupported(&supported);
             IsSupported = supported;
 
             if (IsSupported)
             {
-                p->GetMode(out var mode);
+                ADLX_TESSELLATION_MODE mode = default;
+                ADLX_TESSELLATION_LEVEL level = default;
+                p->GetMode(&mode);
                 Mode = mode;
-                p->GetLevel(out var level);
                 Level = level;
             }
             else

@@ -102,13 +102,17 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU metrics history");
 
+            var snapshots = new List<GpuMetricsSnapshotInfo>();
             using var metricsList = new ComPtr<IADLXGPUMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
-                metricsList.Get()->At(i, out var pMetrics);
+                IADLXGPUMetrics* pMetrics;
+                metricsList.Get()->At(i, &pMetrics);
                 using var metrics = new ComPtr<IADLXGPUMetrics>(pMetrics);
-                yield return new GpuMetricsSnapshotInfo(metrics.Get());
+                snapshots.Add(new GpuMetricsSnapshotInfo(metrics.Get()));
             }
+
+            return snapshots;
         }
 
         /// <summary>
@@ -123,13 +127,17 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get System metrics history");
 
+            var snapshots = new List<SystemMetricsSnapshotInfo>();
             using var metricsList = new ComPtr<IADLXSystemMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
-                metricsList.Get()->At(i, out var pMetrics);
+                IADLXSystemMetrics* pMetrics;
+                metricsList.Get()->At(i, &pMetrics);
                 using var metrics = new ComPtr<IADLXSystemMetrics>(pMetrics);
-                yield return new SystemMetricsSnapshotInfo(metrics.Get());
+                snapshots.Add(new SystemMetricsSnapshotInfo(metrics.Get()));
             }
+
+            return snapshots;
         }
 
         /// <summary>
@@ -144,13 +152,17 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get All metrics history");
 
+            var snapshots = new List<AllMetricsSnapshotInfo>();
             using var metricsList = new ComPtr<IADLXAllMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
-                metricsList.Get()->At(i, out var pMetrics);
+                IADLXAllMetrics* pMetrics;
+                metricsList.Get()->At(i, &pMetrics);
                 using var metrics = new ComPtr<IADLXAllMetrics>(pMetrics);
-                yield return new AllMetricsSnapshotInfo(metrics.Get());
+                snapshots.Add(new AllMetricsSnapshotInfo(metrics.Get()));
             }
+
+            return snapshots;
         }
 
         /// <summary>
@@ -306,63 +318,63 @@ namespace ADLXWrapper
         // Individual metric support checks (used by GpuMetricsSupportInfo)
         internal static bool IsSupportedGPUUsage(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUUsage(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUClockSpeed(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUClockSpeed(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUTemperature(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUTemperature(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUHotspotTemperature(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUHotspotTemperature(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUPower(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUPower(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUVoltage(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUVoltage(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUTotalBoardPower(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUTotalBoardPower(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUVRAMClockSpeed(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUVRAMClockSpeed(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUFanSpeed(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUFanSpeed(&supported);
-            return supported != 0;
+            return supported;
         }
         internal static bool IsSupportedGPUVRAM(IADLXGPUMetricsSupport* pMetricsSupport)
         {
-            byte supported = 0;
+            bool supported = false;
             pMetricsSupport->IsSupportedGPUVRAM(&supported);
-            return supported != 0;
+            return supported;
         }
 
         // Individual metric getters (used by GpuMetricsSnapshotInfo)
@@ -577,9 +589,9 @@ namespace ADLXWrapper
             int ss = 0; pMetrics->SmartShift(&ss); SmartShift = ss;
 
             PowerDistribution = null;
-            if (pMetrics->TryQueryInterface(out IADLXSystemMetrics1* pMetrics1) == ADLX_RESULT.ADLX_OK)
+            if (ADLXHelpers.TryQueryInterface((IntPtr)pMetrics, nameof(IADLXSystemMetrics1), out var pMetrics1Ptr))
             {
-                using var metrics1 = new ComPtr<IADLXSystemMetrics1>(pMetrics1);
+                using var metrics1 = new ComPtr<IADLXSystemMetrics1>((IADLXSystemMetrics1*)pMetrics1Ptr);
                 int apu = 0, gpu = 0, apuLimit = 0, gpuLimit = 0, total = 0;
                 if (metrics1.Get()->PowerDistribution(&apu, &gpu, &apuLimit, &gpuLimit, &total) == ADLX_RESULT.ADLX_OK)
                 {
