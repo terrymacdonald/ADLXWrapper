@@ -30,6 +30,7 @@
 		<PackageReference Include="ClangSharp.Interop" Version="20.1.2.4" PrivateAssets="all" />
 		<PackageReference Include="ClangSharp.PInvokeGenerator" Version="20.1.2.4" PrivateAssets="all" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
 	</ItemGroup>
 
 	<Target Name="CleanClangSharpGenerated" AfterTargets="Clean">
