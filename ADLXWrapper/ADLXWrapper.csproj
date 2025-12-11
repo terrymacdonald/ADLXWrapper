@@ -11,8 +11,6 @@
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<ClangSharpGeneratedDir>$(MSBuildProjectDirectory)\cs_generated</ClangSharpGeneratedDir>
 
-		<DefaultItemExcludes>$(DefaultItemExcludes);cs_generated\**</DefaultItemExcludes>
-
 		<Authors>Terry MacDonald</Authors>
 		<Company>Terry MacDonald</Company>
 		<Product>ADLXWrapper</Product>
@@ -104,7 +102,7 @@
 		<Touch Files="$(BaseIntermediateOutputPath)ClangSharp.stamp" AlwaysCreate="true" />
 	</Target>
 
-	<Target Name="IncludeBindings" BeforeTargets="CoreCompile" DependsOnTargets="GenerateBindings">
+	<Target Name="IncludeBindings" BeforeTargets="BeforeCompile" DependsOnTargets="GenerateBindings">
 		<ItemGroup>
 			<Compile Include="cs_generated\**\*.cs" />
 			<FileWrites Include="$(ClangSharpGeneratedDir)\**\*" />

@@ -15,17 +15,24 @@ namespace ADLXWrapper
         /// </summary>
         public static IEnumerable<GpuInfo> EnumerateAllGpus(IADLXSystem* pSystem)
         {
-            if (pSystem == null) yield break;
+            if (pSystem == null) return Array.Empty<GpuInfo>();
 
-            pSystem->GetGPUs(out var pGpuList);
+            var results = new List<GpuInfo>();
+
+            IADLXGPUList* pGpuList = null;
+            pSystem->GetGPUs(&pGpuList);
             using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
 
             for (uint i = 0; i < gpuList.Get()->Size(); i++)
             {
-                gpuList.Get()->At(i, out var pGpu);
+                IADLXInterface* pItem = null;
+                gpuList.Get()->At(i, &pItem);
+                var pGpu = (IADLXGPU*)pItem;
                 using var gpu = new ComPtr<IADLXGPU>(pGpu);
-                yield return new GpuInfo(gpu.Get());
+                results.Add(new GpuInfo(gpu.Get()));
             }
+
+            return results;
         }
     }
 
@@ -62,35 +69,45 @@ namespace ADLXWrapper
 
         internal unsafe GpuInfo(IADLXGPU* pGpu)
         {
-            pGpu->Name(out var namePtr);
-            Name = ADLXHelpers.MarshalString(namePtr);
+            sbyte* namePtr = null;
+            pGpu->Name(&namePtr);
+            Name = ADLXHelpers.MarshalString(&namePtr);
 
-            pGpu->VendorId(out var vendorIdPtr);
-            VendorId = ADLXHelpers.MarshalString(vendorIdPtr);
+            sbyte* vendorIdPtr = null;
+            pGpu->VendorId(&vendorIdPtr);
+            VendorId = ADLXHelpers.MarshalString(&vendorIdPtr);
 
-            pGpu->UniqueId(out var uid);
+            int uid = 0;
+            pGpu->UniqueId(&uid);
             UniqueId = uid;
 
-            pGpu->TotalVRAM(out var vram);
+            uint vram = 0;
+            pGpu->TotalVRAM(&vram);
             TotalVRAM = vram;
 
-            pGpu->VRAMType(out var vramTypePtr);
-            VRAMType = ADLXHelpers.MarshalString(vramTypePtr);
+            sbyte* vramTypePtr = null;
+            pGpu->VRAMType(&vramTypePtr);
+            VRAMType = ADLXHelpers.MarshalString(&vramTypePtr);
 
-            pGpu->IsExternal(out var isExt);
-            IsExternal = isExt != 0;
+            bool isExt = false;
+            pGpu->IsExternal(&isExt);
+            IsExternal = isExt;
 
-            pGpu->HasDesktops(out var hasDesk);
-            HasDesktops = hasDesk != 0;
+            bool hasDesk = false;
+            pGpu->HasDesktops(&hasDesk);
+            HasDesktops = hasDesk;
 
-            pGpu->DeviceId(out var devIdPtr);
-            DeviceId = ADLXHelpers.MarshalString(devIdPtr);
+            sbyte* devIdPtr = null;
+            pGpu->DeviceId(&devIdPtr);
+            DeviceId = ADLXHelpers.MarshalString(&devIdPtr);
 
-            pGpu->PNPString(out var pnpPtr);
-            PNPString = ADLXHelpers.MarshalString(pnpPtr);
+            sbyte* pnpPtr = null;
+            pGpu->PNPString(&pnpPtr);
+            PNPString = ADLXHelpers.MarshalString(&pnpPtr);
 
-            pGpu->DriverPath(out var driverPathPtr);
-            DriverPath = ADLXHelpers.MarshalString(driverPathPtr);
+            sbyte* driverPathPtr = null;
+            pGpu->DriverPath(&driverPathPtr);
+            DriverPath = ADLXHelpers.MarshalString(&driverPathPtr);
         }
     }
 }

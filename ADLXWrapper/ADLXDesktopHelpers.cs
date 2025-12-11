@@ -275,4 +275,24 @@ namespace ADLXWrapper
             return 1;
         }
     }
+
+    public readonly struct SimpleEyefinityInfo
+    {
+        public bool IsSupported { get; init; }
+
+        internal unsafe SimpleEyefinityInfo(IADLXSimpleEyefinity* p)
+        {
+            IsSupported = p != null;
+        }
+    }
+
+    public readonly struct EyefinityDesktopInfo
+    {
+        public bool IsValid { get; init; }
+
+        internal unsafe EyefinityDesktopInfo(IADLXEyefinityDesktop* p)
+        {
+            IsValid = p != null;
+        }
+    }
 }

@@ -15,12 +15,11 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXSystem*, out IADLXPowerTuningServices*, ADLX_RESULT>)pSystem->Vtbl->GetPowerTuningServices;
-            IntPtr pServices;
-            var result = getFn(pSystem, &pServices);
+            IADLXPowerTuningServices* pServices;
+            var result = pSystem->GetPowerTuningServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get power tuning services");
-            return (IADLXPowerTuningServices*)pServices;
+            return pServices;
         }
 
         /// <summary>
@@ -30,13 +29,12 @@ namespace ADLXWrapper
         {
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXPowerTuningServices*, out IADLXSmartShiftMax*, ADLX_RESULT>)pPowerServices->Vtbl->GetSmartShiftMax;
-            IntPtr pMax;
-            var result = getFn(pPowerServices, &pMax);
+            IADLXSmartShiftMax* pMax;
+            var result = pPowerServices->GetSmartShiftMax(&pMax);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Max interface");
 
-            using var smartShiftMax = new ComPtr<IADLXSmartShiftMax>((IADLXSmartShiftMax*)pMax);
+            using var smartShiftMax = new ComPtr<IADLXSmartShiftMax>(pMax);
             return new SmartShiftMaxInfo(smartShiftMax.Get());
         }
 
@@ -60,20 +58,18 @@ namespace ADLXWrapper
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
             // IADLXPowerTuningServices1 is required for GetSmartShiftEco
-            if (pPowerServices->TryQueryInterface(out IADLXPowerTuningServices1* pPowerServices1) != ADLX_RESULT.ADLX_OK)
+            if (!ADLXHelpers.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pPowerServices1))
             {
-                // Not supported, return default info
                 return new SmartShiftEcoInfo(false, false);
             }
-            using var powerServices1 = new ComPtr<IADLXPowerTuningServices1>(pPowerServices1);
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXPowerTuningServices1*, out IADLXSmartShiftEco*, ADLX_RESULT>)powerServices1.Get()->Vtbl->GetSmartShiftEco;
-            IntPtr pEco;
-            var result = getFn(powerServices1.Get(), &pEco);
+            using var powerServices1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)pPowerServices1);
+            IADLXSmartShiftEco* pEco;
+            var result = powerServices1.Get()->GetSmartShiftEco(&pEco);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Eco interface");
 
-            using var smartShiftEco = new ComPtr<IADLXSmartShiftEco>((IADLXSmartShiftEco*)pEco);
+            using var smartShiftEco = new ComPtr<IADLXSmartShiftEco>(pEco);
             return new SmartShiftEcoInfo(smartShiftEco.Get());
         }
 
@@ -95,14 +91,11 @@ namespace ADLXWrapper
         {
             if (pSmartShiftMax == null) throw new ArgumentNullException(nameof(pSmartShiftMax));
 
-            var setModeFn = (delegate* unmanaged[Stdcall]<IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, ADLX_RESULT>)pSmartShiftMax->Vtbl->SetBiasMode;
-            var setBiasFn = (delegate* unmanaged[Stdcall]<IADLXSmartShiftMax*, int, ADLX_RESULT>)pSmartShiftMax->Vtbl->SetBias;
-
-            var modeResult = setModeFn(pSmartShiftMax, mode);
+            var modeResult = pSmartShiftMax->SetBiasMode(mode);
             if (modeResult != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(modeResult, "Failed to set SmartShift Max bias mode");
 
-            var biasResult = setBiasFn(pSmartShiftMax, bias);
+            var biasResult = pSmartShiftMax->SetBias(bias);
             if (biasResult != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(biasResult, "Failed to set SmartShift Max bias");
         }
@@ -114,8 +107,7 @@ namespace ADLXWrapper
         {
             if (pSmartShiftEco == null) throw new ArgumentNullException(nameof(pSmartShiftEco));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXSmartShiftEco*, byte, ADLX_RESULT>)pSmartShiftEco->Vtbl->SetEnabled;
-            var result = setFn(pSmartShiftEco, enable ? (byte)1 : (byte)0);
+            var result = pSmartShiftEco->SetEnabled(enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set SmartShift Eco");
         }
@@ -128,9 +120,8 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGPU == null) throw new ArgumentNullException(nameof(pGPU));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, out IADLXManualPowerTuning*, ADLX_RESULT>)pGpuTuningServices->Vtbl->GetManualPowerTuning;
-            IntPtr pManual;
-            var result = getFn(pGpuTuningServices, pGPU, &pManual);
+            IADLXInterface* pManual = null;
+            var result = pGpuTuningServices->GetManualPowerTuning(pGPU, &pManual);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get manual power tuning interface");
 
@@ -150,10 +141,13 @@ namespace ADLXWrapper
                 SetManualPowerLimit(pManualPower, info.PowerLimitValue);
             }
 
-            if (info.TdcLimitSupported && pManualPower->TryQueryInterface(out IADLXManualPowerTuning1* pManualPower1) == ADLX_RESULT.ADLX_OK)
+            if (info.TdcLimitSupported)
             {
-                using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>(pManualPower1);
-                SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
+                if (ADLXHelpers.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
+                {
+                    using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
+                    SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
+                }
             }
         }
 
@@ -164,8 +158,7 @@ namespace ADLXWrapper
         {
             if (pManualPower == null) throw new ArgumentNullException(nameof(pManualPower));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXManualPowerTuning*, int, ADLX_RESULT>)pManualPower->Vtbl->SetPowerLimit;
-            var result = setFn(pManualPower, value);
+            var result = pManualPower->SetPowerLimit(value);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set manual power limit");
         }
@@ -177,8 +170,7 @@ namespace ADLXWrapper
         {
             if (pManualPowerV1 == null) throw new ArgumentNullException(nameof(pManualPowerV1));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXManualPowerTuning1*, int, ADLX_RESULT>)pManualPowerV1->Vtbl->SetTDCLimit;
-            var result = setFn(pManualPowerV1, value);
+            var result = pManualPowerV1->SetTDCLimit(value);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set TDC limit");
         }
@@ -205,9 +197,9 @@ namespace ADLXWrapper
 
         internal unsafe SmartShiftMaxInfo(IADLXSmartShiftMax* pSmartShiftMax)
         {
-            byte supported = 0;
+            bool supported = false;
             pSmartShiftMax->IsSupported(&supported);
-            IsSupported = supported != 0;
+            IsSupported = supported;
 
             ADLX_SSM_BIAS_MODE mode = default;
             pSmartShiftMax->GetBiasMode(&mode);
@@ -240,11 +232,11 @@ namespace ADLXWrapper
 
         internal unsafe SmartShiftEcoInfo(IADLXSmartShiftEco* pSmartShiftEco)
         {
-            byte supported = 0, enabled = 0;
+            bool supported = false, enabled = false;
             pSmartShiftEco->IsSupported(&supported);
             pSmartShiftEco->IsEnabled(&enabled);
-            IsSupported = supported != 0;
-            IsEnabled = enabled != 0;
+            IsSupported = supported;
+            IsEnabled = enabled;
         }
     }
 
@@ -283,13 +275,12 @@ namespace ADLXWrapper
             PowerLimitRange = powerRange;
             PowerLimitValue = powerValue;
 
-            // Try to query for IADLXManualPowerTuning1 for TDC limit
-            if (pManualPower->TryQueryInterface(out IADLXManualPowerTuning1* pManualPower1) == ADLX_RESULT.ADLX_OK)
+            if (ADLXHelpers.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
             {
-                using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>(pManualPower1);
-                byte tdcSupported = 0;
+                using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
+                bool tdcSupported = false;
                 manualPower1.Get()->IsSupportedTDCLimit(&tdcSupported);
-                TdcLimitSupported = tdcSupported != 0;
+                TdcLimitSupported = tdcSupported;
 
                 ADLX_IntRange tdcRange = default;
                 int tdcValue = 0, tdcDefault = 0;

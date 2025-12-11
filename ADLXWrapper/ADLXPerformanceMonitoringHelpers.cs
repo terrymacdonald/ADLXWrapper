@@ -16,12 +16,11 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXSystem*, out IADLXPerformanceMonitoringServices*, ADLX_RESULT>)pSystem->Vtbl->GetPerformanceMonitoringServices;
-            IntPtr pServices;
-            var result = getFn(pSystem, &pServices);
+            IADLXPerformanceMonitoringServices* pServices;
+            var result = pSystem->GetPerformanceMonitoringServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get performance monitoring services");
-            return (IADLXPerformanceMonitoringServices*)pServices;
+            return pServices;
         }
 
         /// <summary>
@@ -32,13 +31,12 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            var getSupportedMetricsFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, out IADLXGPUMetricsSupport*, ADLX_RESULT>)pServices->Vtbl->GetSupportedGPUMetrics;
-            IntPtr pMetricsSupport;
-            var result = getSupportedMetricsFn(pServices, pGpu, &pMetricsSupport);
+            IADLXGPUMetricsSupport* pMetricsSupport;
+            var result = pServices->GetSupportedGPUMetrics(pGpu, &pMetricsSupport);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get supported GPU metrics");
 
-            using var metricsSupport = new ComPtr<IADLXGPUMetricsSupport>((IADLXGPUMetricsSupport*)pMetricsSupport);
+            using var metricsSupport = new ComPtr<IADLXGPUMetricsSupport>(pMetricsSupport);
             return new GpuMetricsSupportInfo(metricsSupport.Get());
         }
 
@@ -50,13 +48,12 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            var getCurrentMetricsFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, out IADLXGPUMetrics*, ADLX_RESULT>)pServices->Vtbl->GetCurrentGPUMetrics;
-            IntPtr pMetrics;
-            var result = getCurrentMetricsFn(pServices, pGpu, &pMetrics);
+            IADLXGPUMetrics* pMetrics;
+            var result = pServices->GetCurrentGPUMetrics(pGpu, &pMetrics);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current GPU metrics");
 
-            using var metrics = new ComPtr<IADLXGPUMetrics>((IADLXGPUMetrics*)pMetrics);
+            using var metrics = new ComPtr<IADLXGPUMetrics>(pMetrics);
             return new GpuMetricsSnapshotInfo(metrics.Get());
         }
 
@@ -67,31 +64,29 @@ namespace ADLXWrapper
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
-            var getCurrentMetricsFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, out IADLXSystemMetrics*, ADLX_RESULT>)pServices->Vtbl->GetCurrentSystemMetrics;
-            IntPtr pMetrics;
-            var result = getCurrentMetricsFn(pServices, &pMetrics);
+            IADLXSystemMetrics* pMetrics;
+            var result = pServices->GetCurrentSystemMetrics(&pMetrics);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current System metrics");
 
-            using var metrics = new ComPtr<IADLXSystemMetrics>((IADLXSystemMetrics*)pMetrics);
+            using var metrics = new ComPtr<IADLXSystemMetrics>(pMetrics);
             return new SystemMetricsSnapshotInfo(metrics.Get());
         }
 
         /// <summary>
         /// Gets the current All metrics snapshot.
         /// </summary>
-        public static AllMetricsSnapshotInfo GetCurrentAllMetrics(IADLXPerformanceMonitoringServices* pServices, IEnumerable<IADLXGPU*>? pGpus = null)
+        public static AllMetricsSnapshotInfo GetCurrentAllMetrics(IADLXPerformanceMonitoringServices* pServices)
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
-            var getCurrentMetricsFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, out IADLXAllMetrics*, ADLX_RESULT>)pServices->Vtbl->GetCurrentAllMetrics;
-            IntPtr pAllMetrics;
-            var result = getCurrentMetricsFn(pServices, &pAllMetrics);
+            IADLXAllMetrics* pAllMetrics;
+            var result = pServices->GetCurrentAllMetrics(&pAllMetrics);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current All metrics");
 
-            using var allMetrics = new ComPtr<IADLXAllMetrics>((IADLXAllMetrics*)pAllMetrics);
-            return new AllMetricsSnapshotInfo(allMetrics.Get(), pGpus);
+            using var allMetrics = new ComPtr<IADLXAllMetrics>(pAllMetrics);
+            return new AllMetricsSnapshotInfo(allMetrics.Get());
         }
 
         /// <summary>
@@ -102,13 +97,12 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            var getHistoryFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, IADLXGPU*, int, int, out IADLXGPUMetricsList*, ADLX_RESULT>)pServices->Vtbl->GetGPUMetricsHistory;
-            IntPtr pMetricsList;
-            var result = getHistoryFn(pServices, pGpu, startMs, stopMs, &pMetricsList);
+            IADLXGPUMetricsList* pMetricsList;
+            var result = pServices->GetGPUMetricsHistory(pGpu, startMs, stopMs, &pMetricsList);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU metrics history");
 
-            using var metricsList = new ComPtr<IADLXGPUMetricsList>((IADLXGPUMetricsList*)pMetricsList);
+            using var metricsList = new ComPtr<IADLXGPUMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
                 metricsList.Get()->At(i, out var pMetrics);
@@ -124,13 +118,12 @@ namespace ADLXWrapper
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
-            var getHistoryFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, int, out IADLXSystemMetricsList*, ADLX_RESULT>)pServices->Vtbl->GetSystemMetricsHistory;
-            IntPtr pMetricsList;
-            var result = getHistoryFn(pServices, startMs, stopMs, &pMetricsList);
+            IADLXSystemMetricsList* pMetricsList;
+            var result = pServices->GetSystemMetricsHistory(startMs, stopMs, &pMetricsList);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get System metrics history");
 
-            using var metricsList = new ComPtr<IADLXSystemMetricsList>((IADLXSystemMetricsList*)pMetricsList);
+            using var metricsList = new ComPtr<IADLXSystemMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
                 metricsList.Get()->At(i, out var pMetrics);
@@ -142,22 +135,21 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates All metrics history within a time range.
         /// </summary>
-        public static IEnumerable<AllMetricsSnapshotInfo> EnumerateAllMetricsHistory(IADLXPerformanceMonitoringServices* pServices, int startMs, int stopMs, IEnumerable<IADLXGPU*>? pGpus = null)
+        public static IEnumerable<AllMetricsSnapshotInfo> EnumerateAllMetricsHistory(IADLXPerformanceMonitoringServices* pServices, int startMs, int stopMs)
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
-            var getHistoryFn = (delegate* unmanaged[Stdcall]<IADLXPerformanceMonitoringServices*, int, int, out IADLXAllMetricsList*, ADLX_RESULT>)pServices->Vtbl->GetAllMetricsHistory;
-            IntPtr pMetricsList;
-            var result = getHistoryFn(pServices, startMs, stopMs, &pMetricsList);
+            IADLXAllMetricsList* pMetricsList;
+            var result = pServices->GetAllMetricsHistory(startMs, stopMs, &pMetricsList);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get All metrics history");
 
-            using var metricsList = new ComPtr<IADLXAllMetricsList>((IADLXAllMetricsList*)pMetricsList);
+            using var metricsList = new ComPtr<IADLXAllMetricsList>(pMetricsList);
             for (uint i = 0; i < metricsList.Get()->Size(); i++)
             {
                 metricsList.Get()->At(i, out var pMetrics);
                 using var metrics = new ComPtr<IADLXAllMetrics>(pMetrics);
-                yield return new AllMetricsSnapshotInfo(metrics.Get(), pGpus);
+                yield return new AllMetricsSnapshotInfo(metrics.Get());
             }
         }
 
@@ -639,7 +631,7 @@ namespace ADLXWrapper
             GpuMetrics = gpuMetrics;
         }
 
-        internal unsafe AllMetricsSnapshotInfo(IADLXAllMetrics* pMetrics, IEnumerable<IADLXGPU*>? pGpus)
+        internal unsafe AllMetricsSnapshotInfo(IADLXAllMetrics* pMetrics)
         {
             long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
 
@@ -664,29 +656,6 @@ namespace ADLXWrapper
             }
 
             GpuMetrics = Array.Empty<GpuMetricsEntryInfo>();
-            if (pGpus != null)
-            {
-                var gpuSnapshots = new List<GpuMetricsEntryInfo>();
-                foreach (var pGpu in pGpus)
-                {
-                    if (pGpu == null) continue;
-
-                    IADLXGPUMetrics* pGpuMetrics = null;
-                    if (pMetrics->GetGPUMetrics(pGpu, &pGpuMetrics) == ADLX_RESULT.ADLX_OK && pGpuMetrics != null)
-                    {
-                        using var gpuMetrics = new ComPtr<IADLXGPUMetrics>(pGpuMetrics);
-                        var metrics = new GpuMetricsSnapshotInfo(gpuMetrics.Get());
-                        int gpuId = 0;
-                        pGpu->UniqueId(&gpuId); // Assuming UniqueId is always available
-                        gpuSnapshots.Add(new GpuMetricsEntryInfo
-                        {
-                            GpuUniqueId = gpuId,
-                            Metrics = metrics
-                        });
-                    }
-                }
-                GpuMetrics = gpuSnapshots.ToArray();
-            }
         }
     }
 

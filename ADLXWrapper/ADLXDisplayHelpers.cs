@@ -17,10 +17,8 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var getDisplayServicesFn = (delegate* unmanaged[Stdcall]<IADLXSystem*, out IADLXDisplayServices*, ADLX_RESULT>)pSystem->Vtbl->GetDisplaysServices;
-
-            IADLXDisplayServices* pDisplayServices;
-            var result = getDisplayServicesFn(pSystem, &pDisplayServices);
+            IADLXDisplayServices* pDisplayServices = null;
+            var result = pSystem->GetDisplaysServices(&pDisplayServices);
 
             if (result != ADLX_RESULT.ADLX_OK)
             {
@@ -36,20 +34,26 @@ namespace ADLXWrapper
         /// </summary>
         public static IEnumerable<DisplayInfo> EnumerateAllDisplays(IADLXSystem* pSystem)
         {
-            if (pSystem == null) yield break;
+            if (pSystem == null) return Array.Empty<DisplayInfo>();
+
+            var results = new List<DisplayInfo>();
 
             using var displayServices = new ComPtr<IADLXDisplayServices>(GetDisplayServices(pSystem));
-            if (displayServices.Get() == null) yield break;
+            if (displayServices.Get() == null) return Array.Empty<DisplayInfo>();
 
-            displayServices.Get()->GetDisplays(out var pDisplayList);
+            IADLXDisplayList* pDisplayList = null;
+            displayServices.Get()->GetDisplays(&pDisplayList);
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
 
             for (uint i = 0; i < displayList.Get()->Size(); i++)
             {
-                displayList.Get()->At(i, out var pDisplay);
-                using var display = new ComPtr<IADLXDisplay>(pDisplay);
-                yield return new DisplayInfo(display.Get());
+                IADLXInterface* pItem = null;
+                displayList.Get()->At(i, &pItem);
+                using var display = new ComPtr<IADLXDisplay>((IADLXDisplay*)pItem);
+                results.Add(new DisplayInfo(display.Get()));
             }
+
+            return results;
         }
     }
 
@@ -84,20 +88,21 @@ namespace ADLXWrapper
 
         internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
         {
-            pDisplay->Name(out var namePtr); Name = ADLXHelpers.MarshalString(namePtr);
-            pDisplay->EDID(out var edidPtr); Edid = ADLXHelpers.MarshalString(edidPtr);
-            pDisplay->NativeResolution(out var w, out var h); Width = w; Height = h;
-            pDisplay->RefreshRate(out var rr); RefreshRate = rr;
-            pDisplay->ManufacturerID(out var mid); ManufacturerID = mid;
-            pDisplay->PixelClock(out var pc); PixelClock = pc;
-            pDisplay->DisplayType(out var dt); Type = dt;
-            pDisplay->ConnectorType(out var ct); ConnectorType = ct;
-            pDisplay->ScanType(out var st); ScanType = st;
-            pDisplay->UniqueId(out var uid); UniqueId = uid;
+            sbyte* namePtr = null; pDisplay->Name(&namePtr); Name = ADLXHelpers.MarshalString(&namePtr);
+            sbyte* edidPtr = null; pDisplay->EDID(&edidPtr); Edid = ADLXHelpers.MarshalString(&edidPtr);
+            int w = 0, h = 0; pDisplay->NativeResolution(&w, &h); Width = w; Height = h;
+            double rr = 0; pDisplay->RefreshRate(&rr); RefreshRate = rr;
+            uint mid = 0; pDisplay->ManufacturerID(&mid); ManufacturerID = mid;
+            uint pc = 0; pDisplay->PixelClock(&pc); PixelClock = pc;
+            ADLX_DISPLAY_TYPE dt = default; pDisplay->DisplayType(&dt); Type = dt;
+            ADLX_DISPLAY_CONNECTOR_TYPE ct = default; pDisplay->ConnectorType(&ct); ConnectorType = ct;
+            ADLX_DISPLAY_SCAN_TYPE st = default; pDisplay->ScanType(&st); ScanType = st;
+            nuint uid = 0; pDisplay->UniqueId(&uid); UniqueId = (ulong)uid;
 
-            pDisplay->GetGPU(out var pGpu);
+            IADLXGPU* pGpu = null;
+            pDisplay->GetGPU(&pGpu);
             using var gpu = new ComPtr<IADLXGPU>(pGpu);
-            gpu.Get()->UniqueId(out var gpuId);
+            int gpuId = 0; gpu.Get()->UniqueId(&gpuId);
             GpuUniqueId = gpuId;
         }
     }

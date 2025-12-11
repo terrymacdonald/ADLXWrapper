@@ -12,11 +12,19 @@ namespace ADLXWrapper
         /// <summary>
         /// Try QueryInterface on an ADLX interface given an IID string (wide string).
         /// </summary>
-        public static unsafe bool TryQueryInterface(IUnknown* pInterface, string iid, out IntPtr resultPtr)
+        public static unsafe bool TryQueryInterface(IntPtr pInterface, string interfaceName, out IntPtr resultPtr)
         {
-            Guid guid = new Guid(iid);
-            var result = pInterface->QueryInterface(&guid, out *(void**)&resultPtr);
-            return result == 0;
+            resultPtr = IntPtr.Zero;
+            if (pInterface == IntPtr.Zero || string.IsNullOrEmpty(interfaceName))
+                return false;
+
+            var iface = (IADLXInterface*)pInterface;
+            var terminated = interfaceName + "\0";
+            fixed (char* chars = terminated)
+            {
+                var result = iface->QueryInterface((ushort*)chars, (void**)&resultPtr);
+                return result == ADLX_RESULT.ADLX_OK && resultPtr != IntPtr.Zero;
+            }
         }
 
         /// <summary>
@@ -28,11 +36,8 @@ namespace ADLXWrapper
             if (pInterface == IntPtr.Zero)
                 return;
 
-            var vtbl = *(ADLXVTables.IADLXInterfaceVtbl**)pInterface;
-            var releaseFn = (ADLXVTables.ReleaseFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->Release, typeof(ADLXVTables.ReleaseFn));
-
-            releaseFn(pInterface);
+            var iface = (IADLXInterface*)pInterface;
+            iface->Release();
         }
 
         /// <summary>
@@ -44,11 +49,8 @@ namespace ADLXWrapper
             if (pInterface == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pInterface));
 
-            var vtbl = *(ADLXVTables.IADLXInterfaceVtbl**)pInterface;
-            var addRefFn = (ADLXVTables.AddRefFn)Marshal.GetDelegateForFunctionPointer(
-                vtbl->AddRef, typeof(ADLXVTables.AddRefFn));
-
-            addRefFn(pInterface);
+            var iface = (IADLXInterface*)pInterface;
+            iface->Acquire();
         }
 
         /// <summary>
@@ -60,6 +62,14 @@ namespace ADLXWrapper
                 return string.Empty;
 
             return Marshal.PtrToStringAnsi((IntPtr)pStr) ?? string.Empty;
+        }
+
+        internal static string MarshalString(sbyte** pStr)
+        {
+            if (pStr == null || *pStr == null)
+                return string.Empty;
+
+            return Marshal.PtrToStringAnsi((IntPtr)(*pStr)) ?? string.Empty;
         }
     }
 
@@ -75,10 +85,7 @@ namespace ADLXWrapper
         {
             if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
-            var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var sizeFn = (ADLXVTables.SizeFn)Marshal.GetDelegateForFunctionPointer(vtbl->Size, typeof(ADLXVTables.SizeFn));
-
-            return sizeFn(pList);
+            return ((IADLXList*)pList)->Size();
         }
 
         /// <summary>
@@ -88,10 +95,7 @@ namespace ADLXWrapper
         {
             if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
-            var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var emptyFn = (ADLXVTables.EmptyFn)Marshal.GetDelegateForFunctionPointer(vtbl->Empty, typeof(ADLXVTables.EmptyFn));
-
-            return emptyFn(pList) != 0;
+            return ((IADLXList*)pList)->Empty();
         }
 
         /// <summary>
@@ -101,11 +105,8 @@ namespace ADLXWrapper
         {
             if (pList == IntPtr.Zero) throw new ArgumentNullException(nameof(pList));
 
-            var vtbl = *(ADLXVTables.IADLXListVtbl**)pList;
-            var atFn = (ADLXVTables.AtFn)Marshal.GetDelegateForFunctionPointer(vtbl->At, typeof(ADLXVTables.AtFn));
-
             IntPtr pItem;
-            var result = atFn(pList, index, &pItem);
+            var result = ((IADLXList*)pList)->At(index, (IADLXInterface**)&pItem);
 
             if (result != ADLX_RESULT.ADLX_OK)
             {
@@ -142,7 +143,7 @@ namespace ADLXWrapper
     /// It automatically calls Release() when disposed.
     /// </summary>
     /// <typeparam name="T">The type of the COM interface pointer.</typeparam>
-    internal readonly unsafe struct ComPtr<T> : IDisposable where T : unmanaged, IComObject
+    internal readonly unsafe struct ComPtr<T> : IDisposable where T : unmanaged
     {
         private readonly T* _ptr;
 
@@ -157,7 +158,7 @@ namespace ADLXWrapper
         {
             if (_ptr != null)
             {
-                ((IUnknown*)_ptr)->Release();
+                ((IADLXInterface*)_ptr)->Release();
             }
         }
 

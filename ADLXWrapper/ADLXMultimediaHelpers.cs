@@ -15,12 +15,11 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXSystem*, out IADLXMultimediaServices*, ADLX_RESULT>)pSystem->Vtbl->GetMultiMediaServices;
-            IntPtr pServices;
-            var result = getFn(pSystem, &pServices);
+            IADLXMultimediaServices* pServices;
+            var result = pSystem->GetMultiMediaServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia services");
-            return (IADLXMultimediaServices*)pServices;
+            return pServices;
         }
 
         /// <summary>
@@ -31,13 +30,12 @@ namespace ADLXWrapper
             if (pMultimediaServices == null) throw new ArgumentNullException(nameof(pMultimediaServices));
             if (pGPU == null) throw new ArgumentNullException(nameof(pGPU));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXMultimediaServices*, IADLXGPU*, out IADLXVideoUpscale*, ADLX_RESULT>)pMultimediaServices->Vtbl->GetVideoUpscale;
-            IntPtr pUpscale;
-            var result = getFn(pMultimediaServices, pGPU, &pUpscale);
+            IADLXVideoUpscale* pUpscale;
+            var result = pMultimediaServices->GetVideoUpscale(pGPU, &pUpscale);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video upscale interface");
 
-            using var upscale = new ComPtr<IADLXVideoUpscale>((IADLXVideoUpscale*)pUpscale);
+            using var upscale = new ComPtr<IADLXVideoUpscale>(pUpscale);
             return new VideoUpscaleInfo(upscale.Get());
         }
 
@@ -61,13 +59,12 @@ namespace ADLXWrapper
             if (pMultimediaServices == null) throw new ArgumentNullException(nameof(pMultimediaServices));
             if (pGPU == null) throw new ArgumentNullException(nameof(pGPU));
 
-            var getFn = (delegate* unmanaged[Stdcall]<IADLXMultimediaServices*, IADLXGPU*, out IADLXVideoSuperResolution*, ADLX_RESULT>)pMultimediaServices->Vtbl->GetVideoSuperResolution;
-            IntPtr pVsr;
-            var result = getFn(pMultimediaServices, pGPU, &pVsr);
+            IADLXVideoSuperResolution* pVsr;
+            var result = pMultimediaServices->GetVideoSuperResolution(pGPU, &pVsr);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video super resolution interface");
 
-            using var vsr = new ComPtr<IADLXVideoSuperResolution>((IADLXVideoSuperResolution*)pVsr);
+            using var vsr = new ComPtr<IADLXVideoSuperResolution>(pVsr);
             return new VideoSuperResolutionInfo(vsr.Get());
         }
 
@@ -89,8 +86,7 @@ namespace ADLXWrapper
         {
             if (pVideoUpscale == null) throw new ArgumentNullException(nameof(pVideoUpscale));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, byte, ADLX_RESULT>)pVideoUpscale->Vtbl->SetEnabled;
-            var result = setFn(pVideoUpscale, enable ? (byte)1 : (byte)0);
+            var result = pVideoUpscale->SetEnabled(enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video upscale enabled");
         }
@@ -102,8 +98,7 @@ namespace ADLXWrapper
         {
             if (pVideoUpscale == null) throw new ArgumentNullException(nameof(pVideoUpscale));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXVideoUpscale*, int, ADLX_RESULT>)pVideoUpscale->Vtbl->SetMinInputResolution;
-            var result = setFn(pVideoUpscale, minResolution);
+            var result = pVideoUpscale->SetMinInputResolution(minResolution);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video upscale minimum input resolution");
         }
@@ -115,8 +110,7 @@ namespace ADLXWrapper
         {
             if (pVsr == null) throw new ArgumentNullException(nameof(pVsr));
 
-            var setFn = (delegate* unmanaged[Stdcall]<IADLXVideoSuperResolution*, byte, ADLX_RESULT>)pVsr->Vtbl->SetEnabled;
-            var result = setFn(pVsr, enable ? (byte)1 : (byte)0);
+            var result = pVsr->SetEnabled(enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video super resolution enabled");
         }
@@ -143,11 +137,11 @@ namespace ADLXWrapper
 
         internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
         {
-            byte supported = 0, enabled = 0;
+            bool supported = false, enabled = false;
             pUpscale->IsSupported(&supported);
             pUpscale->IsEnabled(&enabled);
-            IsSupported = supported != 0;
-            IsEnabled = enabled != 0;
+            IsSupported = supported;
+            IsEnabled = enabled;
 
             ADLX_IntRange range = default;
             pUpscale->GetScaleFactorRange(&range);
@@ -176,11 +170,11 @@ namespace ADLXWrapper
 
         internal unsafe VideoSuperResolutionInfo(IADLXVideoSuperResolution* pVsr)
         {
-            byte supported = 0, enabled = 0;
+            bool supported = false, enabled = false;
             pVsr->IsSupported(&supported);
             pVsr->IsEnabled(&enabled);
-            IsSupported = supported != 0;
-            IsEnabled = enabled != 0;
+            IsSupported = supported;
+            IsEnabled = enabled;
         }
     }
 }

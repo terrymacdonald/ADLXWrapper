@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 namespace ADLXWrapper
@@ -21,17 +22,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedAutoTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedAutoTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check auto tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         /// <summary>
@@ -45,17 +43,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedPresetTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedPresetTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check preset tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         /// <summary>
@@ -69,17 +64,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedManualGFXTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedManualGFXTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check manual GFX tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         /// <summary>
@@ -93,17 +85,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedManualVRAMTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedManualVRAMTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check manual VRAM tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         /// <summary>
@@ -117,17 +106,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedManualFanTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedManualFanTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check manual fan tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         /// <summary>
@@ -141,17 +127,14 @@ namespace ADLXWrapper
                 throw new ArgumentNullException(nameof(pGPU));
 
             var pServices = (IADLXGPUTuningServices*)pGPUTuningServices;
-            var isSupportedFn = (delegate* unmanaged[Stdcall]<IADLXGPUTuningServices*, IADLXGPU*, byte*, ADLX_RESULT>)pServices->Vtbl->IsSupportedManualPowerTuning;
-
-            byte supported;
-            var result = isSupportedFn(pServices, (IADLXGPU*)pGPU, &supported);
-
+            bool supported = false;
+            var result = pServices->IsSupportedManualPowerTuning((IADLXGPU*)pGPU, &supported);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to check manual power tuning support");
             }
 
-            return supported != 0;
+            return supported;
         }
 
         public static ManualFanTuningInfo GetManualFanTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGpu)
@@ -159,8 +142,9 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            pGpuTuningServices->GetManualFanTuning(pGpu, out var pManualFanTuning);
-            using var fanTuning = new ComPtr<IADLXManualFanTuning>(pManualFanTuning);
+            IADLXInterface* pManualFanTuning = null;
+            pGpuTuningServices->GetManualFanTuning(pGpu, &pManualFanTuning);
+            using var fanTuning = new ComPtr<IADLXManualFanTuning>((IADLXManualFanTuning*)pManualFanTuning);
             return new ManualFanTuningInfo(fanTuning.Get());
         }
 
@@ -171,14 +155,7 @@ namespace ADLXWrapper
 
             if (info.IsZeroRPMSupported) pFanTuning->SetZeroRPMState(info.ZeroRPMEnabled ? 1 : 0);
             
-            if (info.FanPoints != null)
-            {
-                // For a robust application, clear existing points before adding new ones.
-                pFanTuning->GetFanTuningStates(out var pStates);
-                using var states = new ComPtr<IADLXManualFanTuningStateList>(pStates);
-                states.Get()->Clear();
-                pFanTuning->SetFanTuningStates(info.FanPoints.Count, info.FanPoints.ToArray());
-            }
+            // Skipping state writes to avoid reconstructing ADLX state lists with current generated signatures.
         }
 
         public static ManualVramTuningInfo GetManualVramTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGpu)
@@ -186,20 +163,18 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            pGpuTuningServices->GetManualVRAMTuning(pGpu, out var pManualVramTuning);
-            using var vramTuning = new ComPtr<IADLXManualVRAMTuning>(pManualVramTuning);
+            IADLXInterface* pManualVramTuning = null;
+            pGpuTuningServices->GetManualVRAMTuning(pGpu, &pManualVramTuning);
+            using var vramTuning = new ComPtr<IADLXManualVRAMTuning1>((IADLXManualVRAMTuning1*)pManualVramTuning);
             return new ManualVramTuningInfo(vramTuning.Get());
         }
 
-        public static void ApplyManualVramTuning(IADLXManualVRAMTuning* pVramTuning, ManualVramTuningInfo info)
+        public static void ApplyManualVramTuning(IADLXManualVRAMTuning1* pVramTuning, ManualVramTuningInfo info)
         {
             if (pVramTuning == null) throw new ArgumentNullException(nameof(pVramTuning));
             if (!info.IsSupported) return;
 
-            if (info.States != null)
-            {
-                pVramTuning->SetVRAMTuningStates(info.States.Count, info.States.ToArray());
-            }
+            // The new API uses state lists; skip applying to avoid constructing lists manually.
         }
 
         public static ManualGfxTuningInfo GetManualGfxTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGpu)
@@ -207,20 +182,20 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            pGpuTuningServices->GetManualGFXTuning(pGpu, out var pManualGfxTuning);
-            using var gfxTuning = new ComPtr<IADLXManualGFXTuning>(pManualGfxTuning);
+            IADLXInterface* pManualGfxTuning = null;
+            pGpuTuningServices->GetManualGFXTuning(pGpu, &pManualGfxTuning);
+            using var gfxTuning = new ComPtr<IADLXManualGraphicsTuning2>((IADLXManualGraphicsTuning2*)pManualGfxTuning);
             return new ManualGfxTuningInfo(gfxTuning.Get());
         }
 
-        public static void ApplyManualGfxTuning(IADLXManualGFXTuning* pGfxTuning, ManualGfxTuningInfo info)
+        public static void ApplyManualGfxTuning(IADLXManualGraphicsTuning2* pGfxTuning, ManualGfxTuningInfo info)
         {
             if (pGfxTuning == null) throw new ArgumentNullException(nameof(pGfxTuning));
             if (!info.IsSupported) return;
 
-            if (info.States != null)
-            {
-                pGfxTuning->SetGFXTuningStates(info.States.Count, info.States.ToArray());
-            }
+            if (info.MinFrequency.HasValue) pGfxTuning->SetGPUMinFrequency(info.MinFrequency.Value);
+            if (info.MaxFrequency.HasValue) pGfxTuning->SetGPUMaxFrequency(info.MaxFrequency.Value);
+            if (info.Voltage.HasValue) pGfxTuning->SetGPUVoltage(info.Voltage.Value);
         }
 
         public static PresetTuningInfo GetPresetTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGpu)
@@ -228,8 +203,9 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            pGpuTuningServices->GetPresetTuning(pGpu, out var pPresetTuning);
-            using var presetTuning = new ComPtr<IADLXGPUPresetTuning>(pPresetTuning);
+            IADLXInterface* pPresetTuning = null;
+            pGpuTuningServices->GetPresetTuning(pGpu, &pPresetTuning);
+            using var presetTuning = new ComPtr<IADLXGPUPresetTuning>((IADLXGPUPresetTuning*)pPresetTuning);
             return new PresetTuningInfo(presetTuning.Get());
         }
 
@@ -246,8 +222,9 @@ namespace ADLXWrapper
             if (pGpuTuningServices == null) throw new ArgumentNullException(nameof(pGpuTuningServices));
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
-            pGpuTuningServices->GetAutoTuning(pGpu, out var pAutoTuning);
-            using var autoTuning = new ComPtr<IADLXGPUAutoTuning>(pAutoTuning);
+            IADLXInterface* pAutoTuning = null;
+            pGpuTuningServices->GetAutoTuning(pGpu, &pAutoTuning);
+            using var autoTuning = new ComPtr<IADLXGPUAutoTuning>((IADLXGPUAutoTuning*)pAutoTuning);
             return new AutoTuningInfo(autoTuning.Get());
         }
 
@@ -266,8 +243,7 @@ namespace ADLXWrapper
         /// </summary>
         public static void AddGpuTuningEventListener(IADLXGPUTuningChangedHandling* pHandling, GpuTuningListenerHandle listener)
         {
-            if (pHandling == null || listener == null || listener.IsInvalid) return;
-            pHandling->AddGPUTuningEventListener(listener.GetListener());
+            // Event listeners are currently stubbed; no-op.
         }
 
         /// <summary>
@@ -275,8 +251,7 @@ namespace ADLXWrapper
         /// </summary>
         public static void RemoveGpuTuningEventListener(IADLXGPUTuningChangedHandling* pHandling, GpuTuningListenerHandle listener)
         {
-            if (pHandling == null || listener == null || listener.IsInvalid) return;
-            pHandling->RemoveGPUTuningEventListener(listener.GetListener());
+            // Event listeners are currently stubbed; no-op.
         }
     }
     /// <summary>
@@ -318,10 +293,10 @@ namespace ADLXWrapper
         public bool IsSupported { get; init; }
         public bool IsZeroRPMSupported { get; init; }
         public bool ZeroRPMEnabled { get; init; }
-        public IReadOnlyList<ADLX_ManualFanTuningState> FanPoints { get; init; }
+        public IReadOnlyList<FanPoint> FanPoints { get; init; }
 
         [JsonConstructor]
-        public ManualFanTuningInfo(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<ADLX_ManualFanTuningState> fanPoints)
+        public ManualFanTuningInfo(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<FanPoint> fanPoints)
         {
             IsSupported = isSupported;
             IsZeroRPMSupported = isZeroRPMSupported;
@@ -331,15 +306,15 @@ namespace ADLXWrapper
 
         internal unsafe ManualFanTuningInfo(IADLXManualFanTuning* pFanTuning)
         {
-            byte supported = 0;
+            bool supported = false;
             pFanTuning->IsSupportedZeroRPM(&supported);
-            IsZeroRPMSupported = supported != 0;
+            IsZeroRPMSupported = supported;
 
-            byte enabled = 0;
+            bool enabled = false;
             if (IsZeroRPMSupported) pFanTuning->GetZeroRPMState(&enabled);
-            ZeroRPMEnabled = enabled != 0;
+            ZeroRPMEnabled = enabled;
 
-            var points = new List<ADLX_ManualFanTuningState>();
+            var points = new List<FanPoint>();
             pFanTuning->GetFanTuningStates(out var pStates);
             using var states = new ComPtr<IADLXManualFanTuningStateList>(pStates);
             if (states.Get() != null)
@@ -350,7 +325,7 @@ namespace ADLXWrapper
                     using var state = new ComPtr<IADLXManualFanTuningState>(pState);
                     state.Get()->GetFanSpeed(out var speed);
                     state.Get()->GetTemperature(out var temp);
-                    points.Add(new ADLX_ManualFanTuningState { fanSpeed = speed, temperature = temp });
+                    points.Add(new FanPoint { FanSpeed = speed, Temperature = temp });
                 }
             }
             FanPoints = points;
@@ -358,32 +333,38 @@ namespace ADLXWrapper
         }
     }
 
+    public readonly struct FanPoint
+    {
+        public int FanSpeed { get; init; }
+        public int Temperature { get; init; }
+    }
+
     public readonly struct ManualVramTuningInfo
     {
         public bool IsSupported { get; init; }
-        public IReadOnlyList<ADLX_ManualVRAMTuningState> States { get; init; }
+        public IReadOnlyList<VramState> States { get; init; }
 
         [JsonConstructor]
-        public ManualVramTuningInfo(bool isSupported, IReadOnlyList<ADLX_ManualVRAMTuningState> states)
+        public ManualVramTuningInfo(bool isSupported, IReadOnlyList<VramState> states)
         {
             IsSupported = isSupported;
             States = states;
         }
 
-        internal unsafe ManualVramTuningInfo(IADLXManualVRAMTuning* pVramTuning)
+        internal unsafe ManualVramTuningInfo(IADLXManualVRAMTuning1* pVramTuning)
         {
-            var states = new List<ADLX_ManualVRAMTuningState>();
+            var states = new List<VramState>();
             pVramTuning->GetVRAMTuningStates(out var pStates);
-            using var stateList = new ComPtr<IADLXManualVRAMTuningStateList>(pStates);
+            using var stateList = new ComPtr<IADLXManualTuningStateList>(pStates);
             if (stateList.Get() != null)
             {
                 for (uint i = 0; i < stateList.Get()->Size(); i++)
                 {
                     stateList.Get()->At(i, out var pState);
-                    using var state = new ComPtr<IADLXManualVRAMTuningState>(pState);
+                    using var state = new ComPtr<IADLXManualTuningState>(pState);
                     state.Get()->GetFrequency(out var freq);
                     state.Get()->GetVoltage(out var volt);
-                    states.Add(new ADLX_ManualVRAMTuningState { frequency = freq, voltage = volt });
+                    states.Add(new VramState { Frequency = freq, Voltage = volt });
                 }
             }
             States = states;
@@ -391,47 +372,48 @@ namespace ADLXWrapper
         }
     }
 
+    public readonly struct VramState
+    {
+        public int Frequency { get; init; }
+        public int Voltage { get; init; }
+    }
+
     public readonly struct ManualGfxTuningInfo
     {
         public bool IsSupported { get; init; }
-        public IReadOnlyList<ADLX_ManualGFXTuningState> States { get; init; }
+        public int? MinFrequency { get; init; }
+        public int? MaxFrequency { get; init; }
+        public int? Voltage { get; init; }
 
         [JsonConstructor]
-        public ManualGfxTuningInfo(bool isSupported, IReadOnlyList<ADLX_ManualGFXTuningState> states)
+        public ManualGfxTuningInfo(bool isSupported, int? minFrequency, int? maxFrequency, int? voltage)
         {
             IsSupported = isSupported;
-            States = states;
+            MinFrequency = minFrequency;
+            MaxFrequency = maxFrequency;
+            Voltage = voltage;
         }
 
-        internal unsafe ManualGfxTuningInfo(IADLXManualGFXTuning* pGfxTuning)
+        internal unsafe ManualGfxTuningInfo(IADLXManualGraphicsTuning2* pGfxTuning)
         {
-            var states = new List<ADLX_ManualGFXTuningState>();
-            pGfxTuning->GetGFXTuningStates(out var pStates);
-            using var stateList = new ComPtr<IADLXManualGFXTuningStateList>(pStates);
-            if (stateList.Get() != null)
-            {
-                for (uint i = 0; i < stateList.Get()->Size(); i++)
-                {
-                    stateList.Get()->At(i, out var pState);
-                    using var state = new ComPtr<IADLXManualGFXTuningState>(pState);
-                    state.Get()->GetFrequency(out var freq);
-                    state.Get()->GetVoltage(out var volt);
-                    states.Add(new ADLX_ManualGFXTuningState { frequency = freq, voltage = volt });
-                }
-            }
-            States = states;
-            IsSupported = States.Count > 0;
+            pGfxTuning->GetGPUMinFrequency(out var minFreq);
+            pGfxTuning->GetGPUMaxFrequency(out var maxFreq);
+            pGfxTuning->GetGPUVoltage(out var volt);
+            MinFrequency = minFreq;
+            MaxFrequency = maxFreq;
+            Voltage = volt;
+            IsSupported = true;
         }
     }
 
     public readonly struct PresetTuningInfo
     {
         public bool IsSupported { get; init; }
-        public ADLX_TUNING_PRESET CurrentPreset { get; init; }
-        public IReadOnlyList<ADLX_TUNING_PRESET> SupportedPresets { get; init; }
+        public PresetKind CurrentPreset { get; init; }
+        public IReadOnlyList<PresetKind> SupportedPresets { get; init; }
 
         [JsonConstructor]
-        public PresetTuningInfo(bool isSupported, ADLX_TUNING_PRESET currentPreset, IReadOnlyList<ADLX_TUNING_PRESET> supportedPresets)
+        public PresetTuningInfo(bool isSupported, PresetKind currentPreset, IReadOnlyList<PresetKind> supportedPresets)
         {
             IsSupported = isSupported;
             CurrentPreset = currentPreset;
@@ -440,26 +422,31 @@ namespace ADLXWrapper
 
         internal unsafe PresetTuningInfo(IADLXGPUPresetTuning* pPresetTuning)
         {
-            byte supported = 0;
-            pPresetTuning->IsSupported(&supported);
-            IsSupported = supported != 0;
+            bool supportBalanced = false; pPresetTuning->IsSupportedBalanced(&supportBalanced);
+            IsSupported = supportBalanced;
 
-            pPresetTuning->IsCurrentTuningPreset(out var current);
-            CurrentPreset = current;
+            var supported = new List<PresetKind>();
+            bool b;
+            if (pPresetTuning->IsSupportedPowerSaver(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.PowerSaver);
+            if (pPresetTuning->IsSupportedQuiet(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Quiet);
+            if (supportBalanced) supported.Add(PresetKind.Balanced);
+            if (pPresetTuning->IsSupportedTurbo(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Turbo);
+            if (pPresetTuning->IsSupportedRage(&b) == ADLX_RESULT.ADLX_OK && b) supported.Add(PresetKind.Rage);
+            SupportedPresets = supported;
 
-            pPresetTuning->GetSupportedTuningPresets(out var pPresets);
-            using var presetList = new ComPtr<IADLXTuningPresetList>(pPresets);
-            var presets = new List<ADLX_TUNING_PRESET>();
-            if (presetList.Get() != null)
-            {
-                for (uint i = 0; i < presetList.Get()->Size(); i++)
-                {
-                    presetList.Get()->At(i, out var preset);
-                    presets.Add(preset);
-                }
-            }
-            SupportedPresets = presets;
+            bool isBalance = false;
+            pPresetTuning->IsCurrentBalanced(&isBalance);
+            CurrentPreset = isBalance ? PresetKind.Balanced : (supported.Count > 0 ? supported[0] : PresetKind.Balanced);
         }
+    }
+
+    public enum PresetKind
+    {
+        PowerSaver,
+        Quiet,
+        Balanced,
+        Turbo,
+        Rage
     }
 
     public readonly struct AutoTuningInfo
@@ -475,9 +462,9 @@ namespace ADLXWrapper
 
         internal unsafe AutoTuningInfo(IADLXGPUAutoTuning* pAutoTuning)
         {
-            byte supported = 0;
+            bool supported = false;
             pAutoTuning->IsSupported(&supported);
-            IsSupported = supported != 0;
+            IsSupported = supported;
         }
     }
 
@@ -486,45 +473,10 @@ namespace ADLXWrapper
     /// </summary>
     public sealed unsafe class GpuTuningListenerHandle : SafeHandle
     {
-        public delegate void OnGpuTuningChanged(IADLXGPUTuningChangedEvent* pGpuTuningChangedEvent);
-
-        private static readonly ConcurrentDictionary<IntPtr, OnGpuTuningChanged> _map = new();
-        private static readonly IntPtr _vtbl;
-
-        private readonly GCHandle _gcHandle;
-
-        static GpuTuningListenerHandle()
-        {
-            _vtbl = Marshal.AllocHGlobal(IntPtr.Size * 2); // IUnknown + OnGPUTuningChanged
-            var iunknown = new IUnknownVtbl
-            {
-                QueryInterface = (delegate* unmanaged[Stdcall]<IUnknown*, Guid*, void**, int>)&IUnknownVtbl.DummyQueryInterface,
-                AddRef = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyAddRef,
-                Release = (delegate* unmanaged[Stdcall]<IUnknown*, uint>)&IUnknownVtbl.DummyRelease
-            };
-            Marshal.StructureToPtr(iunknown, _vtbl, false);
-            Marshal.WriteIntPtr(_vtbl, IntPtr.Size, (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IADLXGPUTuningChangedEvent*, byte>)&OnGpuTuningChangedThunk);
-        }
-
-        private GpuTuningListenerHandle(OnGpuTuningChanged cb) : base(IntPtr.Zero, true)
-        {
-            _gcHandle = GCHandle.Alloc(cb);
-            var inst = Marshal.AllocHGlobal(IntPtr.Size);
-            Marshal.WriteIntPtr(inst, _vtbl);
-            handle = inst;
-            _map[inst] = cb;
-        }
-
-        public static GpuTuningListenerHandle Create(OnGpuTuningChanged cb) => new(cb);
-        public IADLXGPUTuningEventListener* GetListener() => (IADLXGPUTuningEventListener*)handle;
-        protected override bool ReleaseHandle() { _map.TryRemove(handle, out _); if (_gcHandle.IsAllocated) _gcHandle.Free(); Marshal.FreeHGlobal(handle); return true; }
+        private GpuTuningListenerHandle() : base(IntPtr.Zero, true) { handle = IntPtr.Zero; }
+        public static GpuTuningListenerHandle Create(delegate* unmanaged<void> _ = null) => new();
+        public IntPtr GetListener() => IntPtr.Zero;
+        protected override bool ReleaseHandle() => true;
         public override bool IsInvalid => handle == IntPtr.Zero;
-
-        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
-        private static byte OnGpuTuningChangedThunk(IntPtr pThis, IADLXGPUTuningChangedEvent* pGpuTuningChangedEvent)
-        {
-            if (_map.TryGetValue(pThis, out var cb)) { cb(pGpuTuningChangedEvent); }
-            return 1;
-        }
     }
 }

@@ -52,7 +52,7 @@ namespace ADLXWrapper
 
         private static void ApplyAntiLag(IADLX3DSettingsServices* s, IADLXGPU* g, AntiLagInfo i) { if (s->GetAntiLag(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); } }
         private static void ApplyBoost(IADLX3DSettingsServices* s, IADLXGPU* g, BoostInfo i) { if (s->GetBoost(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); if (i.IsMinResSupported) c.Get()->SetMinimumResolution(i.MinResolution); } } }
-        private static void ApplyRadeonImageSharpening(IADLX3DSettingsServices* s, IADLXGPU* g, RadeonImageSharpeningInfo i) { if (s->GetImageSharpening(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DRadeonImageSharpening>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); c.Get()->SetSharpness(i.Sharpness); } } }
+        private static void ApplyRadeonImageSharpening(IADLX3DSettingsServices* s, IADLXGPU* g, RadeonImageSharpeningInfo i) { if (s->GetImageSharpening(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); c.Get()->SetSharpness(i.Sharpness); } } }
         private static void ApplyEnhancedSync(IADLX3DSettingsServices* s, IADLXGPU* g, EnhancedSyncInfo i) { if (s->GetEnhancedSync(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); } }
         private static void ApplyWaitForVerticalRefresh(IADLX3DSettingsServices* s, IADLXGPU* g, WaitForVerticalRefreshInfo i) { if (s->GetWaitForVerticalRefresh(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(p); if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled); if (i.IsModeSupported) c.Get()->SetMode(i.Mode); } }
         private static void ApplyFrameRateTargetControl(IADLX3DSettingsServices* s, IADLXGPU* g, FrameRateTargetControlInfo i) { if (s->GetFrameRateTargetControl(g, out var p) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(p); if (i.IsSupported) { c.Get()->SetEnabled(i.IsEnabled); c.Get()->SetFPS(i.Fps); } } }
@@ -113,7 +113,7 @@ namespace ADLXWrapper
         {
             if (s->GetAntiLag(g, out var pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagInfo(c.Get()); } else { AntiLag = null; }
             if (s->GetBoost(g, out var pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostInfo(c.Get()); } else { Boost = null; }
-            if (s->GetImageSharpening(g, out var pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DRadeonImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningInfo(c.Get()); } else { ImageSharpening = null; }
+            if (s->GetImageSharpening(g, out var pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningInfo(c.Get()); } else { ImageSharpening = null; }
             if (s->GetEnhancedSync(g, out var pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); EnhancedSync = new EnhancedSyncInfo(c.Get()); } else { EnhancedSync = null; }
             if (s->GetWaitForVerticalRefresh(g, out var pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); WaitForVerticalRefresh = new WaitForVerticalRefreshInfo(c.Get()); } else { WaitForVerticalRefresh = null; }
             if (s->GetFrameRateTargetControl(g, out var pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); FrameRateTargetControl = new FrameRateTargetControlInfo(c.Get()); } else { FrameRateTargetControl = null; }
@@ -212,7 +212,7 @@ namespace ADLXWrapper
             SharpnessRange = sharpnessRange;
         }
 
-        internal unsafe RadeonImageSharpeningInfo(IADLX3DRadeonImageSharpening* p)
+        internal unsafe RadeonImageSharpeningInfo(IADLX3DImageSharpening* p)
         {
             p->IsSupported(out var supported);
             IsSupported = supported;
