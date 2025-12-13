@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Versioning;
 using Xunit;
@@ -60,6 +61,57 @@ namespace ADLXWrapper.Tests
                 var skips = new System.Collections.Generic.List<string>();
                 display.ApplyProfile(profile, s => skips.Add(s));
                 _output.WriteLine($"Applied profile to display {display.Name}; skips: {string.Join("; ", skips)}");
+            }
+        }
+
+        [SkippableFact]
+        public void DisplayProfile_SkipCallback_WhenDisplayServices3Missing()
+        {
+            Skip.If(_api == null || _sys == null, _skipReason);
+            Skip.If(!ADLXHardwareDetection.HasAMDGPU(out var hwReason), hwReason);
+            if (!ADLXApi.IsADLXDllAvailable(out var dllReason))
+            {
+                Skip.If(true, dllReason);
+            }
+
+            var display = _sys.EnumerateAllDisplays().FirstOrDefault();
+            if (display == null)
+            {
+                Skip.If(true, "No displays found.");
+            }
+
+            using (display!)
+            {
+                var profile = display.GetProfile();
+                var supportsDs3 = _sys.Capabilities.SupportsDisplayServices3;
+
+                if (!supportsDs3)
+                {
+                    profile.Connectivity ??= new ConnectivityState();
+                    profile.ColorDepth ??= new ColorDepthState();
+                    profile.PixelFormat ??= new PixelFormatState();
+                    profile.FreeSync ??= new FreeSyncState();
+                    profile.Vsr ??= new VirtualSuperResolutionState();
+                    profile.IntegerScaling ??= new IntegerScalingState();
+                    profile.GpuScaling ??= new GPUScalingState();
+                    profile.ScalingMode ??= new ScalingModeState();
+                    profile.Hdcp ??= new HdcpState();
+                    profile.VariBright ??= new VariBrightState();
+                    profile.Blanking ??= new BlankingState();
+                }
+
+                var skips = new List<string>();
+                display.ApplyProfile(profile, s => skips.Add(s));
+
+                if (!supportsDs3)
+                {
+                    Assert.NotEmpty(skips);
+                    _output.WriteLine($"Skip callbacks (DS3 unavailable): {string.Join("; ", skips)}");
+                }
+                else
+                {
+                    _output.WriteLine($"DS3 available; skip callbacks count: {skips.Count}");
+                }
             }
         }
 
