@@ -8,11 +8,13 @@ namespace ADLXWrapper
     /// <summary>
     /// Helper methods for ADLX Display operations.
     /// </summary>
+    [Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")]
     public static unsafe class ADLXDisplayHelpers
     {
         /// <summary>
         /// Gets the IADLXDisplayServices interface from the system services. Callers must dispose the returned pointer.
         /// </summary>
+        [Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")]
         public static IADLXDisplayServices* GetDisplayServices(IADLXSystem* pSystem)
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
@@ -97,6 +99,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for a display.
     /// </summary>
+    [Obsolete("Use DisplayProfile + AdlxDisplay instead.")]
     public readonly struct DisplayInfo
     {
         public string Name { get; init; }

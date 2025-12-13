@@ -10,13 +10,12 @@ namespace ADLXWrapper.Tests
     /// Tests for various display settings services.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class DisplaySettingsTests : IDisposable
+    public class DisplaySettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXDisplay* _display;
-        private readonly IADLXDisplayServices* _displayServices;
+        private readonly AdlxDisplay? _display;
 
         public DisplaySettingsTests(ITestOutputHelper output)
         {
@@ -24,20 +23,12 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                _displayServices = ADLXDisplayHelpers.GetDisplayServices(system);
-
-                IADLXDisplayList* displayList = null;
-                var result = _displayServices->GetDisplays(&displayList);
-                if (result != ADLX_RESULT.ADLX_OK || displayList == null || displayList->Size() == 0)
+                var displays = _api.GetSystemServices().EnumerateAllDisplays();
+                _display = displays.FirstOrDefault();
+                if (_display == null)
                 {
                     _skipReason = "No displays found.";
-                    return;
                 }
-                IADLXDisplay* pDisplay = null;
-                displayList->At(0, &pDisplay);
-                _display = pDisplay;
-                ((IADLXInterface*)displayList)->Release();
             }
             catch (Exception ex)
             {
@@ -47,24 +38,23 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_display != null) ((IUnknown*)_display)->Release();
-            if (_displayServices != null) ((IUnknown*)_displayServices)->Release();
+            _display?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetDisplaySettings()
         {
-            Skip.If(_api == null || _display == null || _displayServices == null, _skipReason);
+            Skip.If(_api == null || _display == null, _skipReason);
 
-            var gamma = ADLXDisplaySettingsHelpers.GetGamma(_displayServices, _display);
-            _output.WriteLine($"Gamma supported: {gamma.IsSupported}");
+            var gamma = _display.GetGamma();
+            _output.WriteLine($"Gamma supported: {gamma.Supported}");
 
-            var gamut = ADLXDisplaySettingsHelpers.GetGamut(_displayServices, _display);
-            _output.WriteLine($"Gamut supported: {gamut.IsGamutSupported}");
+            var gamut = _display.GetGamut();
+            _output.WriteLine($"Gamut supported: {gamut.Supported}");
 
-            var customColor = ADLXDisplaySettingsHelpers.GetCustomColor(_displayServices, _display);
-            _output.WriteLine($"Custom Color supported: {customColor.IsSupported}");
+            var customColor = _display.GetCustomColor();
+            _output.WriteLine($"Custom Color supported: {customColor.IsHueSupported || customColor.IsSaturationSupported || customColor.IsBrightnessSupported || customColor.IsContrastSupported || customColor.IsTemperatureSupported}");
         }
     }
 }

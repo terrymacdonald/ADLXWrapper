@@ -31,7 +31,7 @@ namespace ADLXWrapper.Tests
             }
 
             using var api = ADLXApi.Initialize();
-            using var system = api.GetSystemServicesHandle();
+            var system = api.GetSystemServices();
 
             for (int i = 0; i < 5; i++)
             {
@@ -50,13 +50,12 @@ namespace ADLXWrapper.Tests
                     }
                 }
 
-                var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system.As<IADLXSystem>());
+                var displays = system.EnumerateAllDisplays();
                 foreach (var display in displays)
                 {
                     using (display)
                     {
-                        var name = ADLXDisplayHelpers.GetDisplayName(display);
-                        _output.WriteLine($"[Iter {i}] Display: {name}");
+                        _output.WriteLine($"[Iter {i}] Display: {display.Name}");
                     }
                 }
             }

@@ -10,7 +10,7 @@ namespace ADLXWrapper.Tests
     /// Tests for basic display enumeration.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class DisplayServicesTests : IDisposable
+    public class DisplayServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
@@ -39,7 +39,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null, _skipReason);
 
-            var displays = ADLXDisplayHelpers.EnumerateAllDisplays(_api.GetSystemServices()).ToList();
+            var displays = _api.GetSystemServices().EnumerateAllDisplays().ToList();
             _output.WriteLine($"Found {displays.Count} display(s).");
             Assert.NotNull(displays);
         }

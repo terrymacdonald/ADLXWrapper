@@ -206,15 +206,21 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Get the system services as a SafeHandle (auto-release even if not disposed manually).
+        /// Get the system services as a facade. Preferred over the raw pointer for new code.
+        /// </summary>
+        public unsafe ADLXSystemServices GetSystemServicesFacade()
+        {
+            ThrowIfDisposed();
+            ADLXHelpers.AddRefInterface((IntPtr)_systemServices.Get());
+            return new ADLXSystemServices(this, _systemServices.Get());
+        }
+
+        /// <summary>
+        /// Get the system services as a SafeHandle (auto-release even if not disposed manually). Legacy API.
         /// </summary>
         public unsafe IADLXSystem* GetSystemServices()
         {
             ThrowIfDisposed();
-            // AddRef is handled by the ComPtr wrapper when it's created.
-            // We return the raw pointer here for convenience, but its lifetime is managed by _systemServices.
-            // Callers should not call Release() on this pointer.
-            // If a caller needs to hold onto it, they should create their own ComPtr and call AddRef().
             return _systemServices.Get();
         }
 

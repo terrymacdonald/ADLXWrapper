@@ -10,12 +10,12 @@ namespace ADLXWrapper.Tests
     /// Tests for Desktop and Eyefinity services.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class DesktopServicesTests : IDisposable
+    public class DesktopServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXDesktopServices* _desktopServices;
+        private readonly ADLXSystemServices? _system;
 
         public DesktopServicesTests(ITestOutputHelper output)
         {
@@ -23,8 +23,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                _desktopServices = ADLXDesktopHelpers.GetDesktopServices(system);
+                _system = _api.GetSystemServices();
             }
             catch (Exception ex)
             {
@@ -34,33 +33,38 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_desktopServices != null) ((IUnknown*)_desktopServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanEnumerateDesktops()
         {
-            Skip.If(_api == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null, _skipReason);
 
-            var desktops = ADLXDesktopHelpers.EnumerateAllDesktops(_api.GetSystemServices()).ToList();
+            var desktops = _system.EnumerateAllDesktops().ToList();
             _output.WriteLine($"Found {desktops.Count} desktop(s).");
             Assert.NotNull(desktops);
         }
 
         [SkippableFact]
-        public void CanGetEyefinityInfo()
+        public void CanGetDesktopProfiles()
         {
-            Skip.If(_api == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null, _skipReason);
 
-            try
+            var desktops = _system.EnumerateAllDesktops();
+            if (!desktops.Any())
             {
-                var eyefinityInfo = ADLXDesktopHelpers.GetSimpleEyefinity(_desktopServices);
-                _output.WriteLine($"Eyefinity supported: {eyefinityInfo.IsSupported}");
+                Skip.If(true, "No desktops found.");
             }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+
+            foreach (var desktop in desktops)
             {
-                Skip.If(true, "Eyefinity is not supported on this system.");
+                using (desktop)
+                {
+                    var profile = desktop.GetProfile();
+                    _output.WriteLine($"Desktop {profile.Type} {profile.Width}x{profile.Height} at ({profile.TopLeftX},{profile.TopLeftY}) displays: {profile.Displays.Count}");
+                }
             }
         }
     }

@@ -9,6 +9,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Helper methods for desktop and Eyefinity services
     /// </summary>
+    [Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")]
     public static unsafe class ADLXDesktopHelpers
     {
         /// <summary>
@@ -32,6 +33,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates all available desktops.
         /// </summary>
+            [Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")]
         public static IEnumerable<DesktopInfo> EnumerateAllDesktops(IADLXSystem* pSystem)
         {
             if (pSystem == null) return Array.Empty<DesktopInfo>();
@@ -196,6 +198,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for a desktop.
     /// </summary>
+        [Obsolete("Use DesktopProfile + AdlxDesktop instead.")]
     public readonly struct DesktopInfo
     {
         public ADLX_DESKTOP_TYPE Type { get; init; }
