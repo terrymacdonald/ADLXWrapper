@@ -1172,15 +1172,20 @@ namespace ADLXWrapper
 
         internal unsafe GammaInfo(IADLXDisplayGamma* pGamma)
         {
-            bool srgb = false, bt709 = false, pq = false, pq2084 = false, g36 = false, coeff = false, reRamp = false, deRamp = false;
+            bool srgb = false, bt709 = false, pq = false, pq2084 = false, g36 = false;
             pGamma->IsSupportedReGammaSRGB(&srgb);
             pGamma->IsSupportedReGammaBT709(&bt709);
             pGamma->IsSupportedReGammaPQ(&pq);
             pGamma->IsSupportedReGammaPQ2084Interim(&pq2084);
             pGamma->IsSupportedReGamma36(&g36);
-            pGamma->IsSupportedRegammaCoefficient(&coeff);
-            pGamma->IsSupportedReGammaRamp(&reRamp);
-            pGamma->IsSupportedDeGammaRamp(&deRamp);
+
+            ADLX_RegammaCoeff coeffValue = default;
+            var coeffResult = pGamma->GetGammaCoefficient(&coeffValue);
+            bool coeffSupported = coeffResult == ADLX_RESULT.ADLX_OK;
+
+            ADLX_GammaRamp rampValue = default;
+            var rampResult = pGamma->GetGammaRamp(&rampValue);
+            bool rampSupported = rampResult == ADLX_RESULT.ADLX_OK;
 
             // Read current state to infer preset
             bool curSrgb = false, curBt709 = false, curPq = false, curPq2084 = false, curG36 = false, curCoeff = false, curReRamp = false, curDeRamp = false;
@@ -1193,7 +1198,7 @@ namespace ADLXWrapper
             pGamma->IsCurrentReGammaRamp(&curReRamp);
             pGamma->IsCurrentDeGammaRamp(&curDeRamp);
 
-            IsSupported = srgb || bt709 || pq || pq2084 || g36 || coeff || reRamp || deRamp;
+            IsSupported = srgb || bt709 || pq || pq2084 || g36 || coeffSupported || rampSupported;
             Preset = GammaPreset.Unknown;
             Coefficient = null;
             Ramp = null;
@@ -1203,23 +1208,15 @@ namespace ADLXWrapper
             else if (curPq) Preset = GammaPreset.PQ;
             else if (curPq2084) Preset = GammaPreset.PQ2084;
             else if (curG36) Preset = GammaPreset.G36;
-            else if (curCoeff && coeff)
+            else if (curCoeff && coeffSupported)
             {
-                ADLX_RegammaCoeff current = default;
-                if (pGamma->GetGammaCoefficient(&current) == ADLX_RESULT.ADLX_OK)
-                {
-                    Preset = GammaPreset.CustomCoefficient;
-                    Coefficient = current;
-                }
+                Preset = GammaPreset.CustomCoefficient;
+                Coefficient = coeffValue;
             }
-            else if ((curReRamp && reRamp) || (curDeRamp && deRamp))
+            else if ((curReRamp || curDeRamp) && rampSupported)
             {
-                ADLX_GammaRamp ramp = default;
-                if (pGamma->GetGammaRamp(&ramp) == ADLX_RESULT.ADLX_OK)
-                {
-                    Preset = GammaPreset.CustomRamp;
-                    Ramp = ramp;
-                }
+                Preset = GammaPreset.CustomRamp;
+                Ramp = rampValue;
             }
             else
             {
@@ -1281,7 +1278,7 @@ namespace ADLXWrapper
                          curAdobe ? ADLX_GAMUT_SPACE.GAMUT_SPACE_ADOBE_RGB :
                          curCIERgb ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CIE_RGB :
                          cur2020 ? ADLX_GAMUT_SPACE.GAMUT_SPACE_CCIR_2020 :
-                         curCustomSpace ? (ADLX_GAMUT_SPACE?)currentSpace : null;
+                         (ADLX_GAMUT_SPACE?)null;
 
             WhitePoint = cur5000 ? ADLX_WHITE_POINT.WHITE_POINT_5000K :
                          cur6500 ? ADLX_WHITE_POINT.WHITE_POINT_6500K :

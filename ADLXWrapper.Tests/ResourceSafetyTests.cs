@@ -11,7 +11,7 @@ namespace ADLXWrapper.Tests
     /// Skips when ADLX DLL or AMD hardware is unavailable.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class ResourceSafetyTests
+    public class ResourceSafetyTests
     {
         private readonly ITestOutputHelper _output;
 
@@ -21,7 +21,7 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
-        public void EnumerateAndDispose_Repeatedly_ShouldNotThrow()
+        public unsafe void EnumerateAndDispose_Repeatedly_ShouldNotThrow()
         {
             Skip.If(!ADLXHardwareDetection.HasAMDGPU(out var hwReason), hwReason);
 
@@ -31,7 +31,7 @@ namespace ADLXWrapper.Tests
             }
 
             using var api = ADLXApi.Initialize();
-            var system = api.GetSystemServices();
+            var system = api.GetSystemServicesFacade();
 
             for (int i = 0; i < 5; i++)
             {

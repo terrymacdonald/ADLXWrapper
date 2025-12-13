@@ -23,7 +23,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var displays = _api.GetSystemServices().EnumerateAllDisplays();
+                var displays = _api.GetSystemServicesFacade().EnumerateAllDisplays();
                 _display = displays.FirstOrDefault();
                 if (_display == null)
                 {

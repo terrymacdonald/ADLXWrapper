@@ -39,7 +39,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null, _skipReason);
 
-            var displays = _api.GetSystemServices().EnumerateAllDisplays().ToList();
+            var displays = _api.GetSystemServicesFacade().EnumerateAllDisplays().ToList();
             _output.WriteLine($"Found {displays.Count} display(s).");
             Assert.NotNull(displays);
         }
