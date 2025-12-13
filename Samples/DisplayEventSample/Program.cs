@@ -6,12 +6,18 @@ unsafe
     Console.WriteLine("=== ADLX Display Event Sample (display-changed listener) ===");
 
     using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServices();
+    var sys = adlx.GetSystemServicesFacade();
 
-    using var dispServices = AdlxInterfaceHandle.From(ADLXDisplayHelpers.GetDisplayServices(sys), addRef: false);
+    using var dispServices = sys.GetDisplayServicesHandle();
 
     IADLXDisplayChangedHandling* pHandling = null;
-    dispServices.As<IADLXDisplayServices>()->GetDisplayChangedHandling(&pHandling);
+    var res = dispServices.As<IADLXDisplayServices>()->GetDisplayChangedHandling(&pHandling);
+    if (res != ADLX_RESULT.ADLX_OK || pHandling == null)
+    {
+        Console.WriteLine("Display changed handling not available.");
+        return;
+    }
+
     using var handling = AdlxInterfaceHandle.From(pHandling, addRef: false);
 
     var listener = DisplaySettingsListenerHandle.Create(evt =>

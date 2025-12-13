@@ -92,6 +92,16 @@ namespace ADLXWrapper
             throw new InvalidOperationException("Matching desktop not found for supplied profile");
         }
 
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw display services for event/listener scenarios.
+        /// </summary>
+        public AdlxInterfaceHandle GetDisplayServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = AcquireDisplayServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: false);
+        }
+
         internal ComPtr<IADLXDisplayServices> AcquireDisplayServices()
         {
             IADLXDisplayServices* pDisplayServices = null;

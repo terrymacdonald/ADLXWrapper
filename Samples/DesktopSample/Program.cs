@@ -1,36 +1,20 @@
 using System.Linq;
 using ADLXWrapper;
 
-unsafe
+Console.WriteLine("=== ADLX Desktop/Eyefinity Sample ===");
+
+using var adlx = ADLXApi.Initialize();
+var sys = adlx.GetSystemServicesFacade();
+var desktops = sys.EnumerateAllDesktops().ToList();
+Console.WriteLine($"Found {desktops.Count} desktop(s)");
+
+foreach (var desk in desktops)
 {
-    Console.WriteLine("=== ADLX Desktop/Eyefinity Sample ===");
-
-    using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServices();
-    var desktops = ADLXDesktopHelpers.EnumerateAllDesktops(sys)?.ToList() ?? new List<DesktopInfo>();
-    Console.WriteLine($"Found {desktops.Count} desktops");
-
-    foreach (var desk in desktops)
+    using (desk)
     {
-        Console.WriteLine($"Desktop {desk.Type} => {desk.Width}x{desk.Height}");
+        var profile = desk.GetProfile();
+        Console.WriteLine($"Desktop {profile.Type} => {profile.Width}x{profile.Height} at ({profile.TopLeftX},{profile.TopLeftY}) displays={profile.Displays.Count}");
     }
-
-    // Guard System2 for any create/destroy operations
-    if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
-    {
-        Console.WriteLine("System2 not available; skipping Eyefinity creation/destruction.");
-        return;
-    }
-
-    using var sys2 = AdlxInterfaceHandle.From((void*)sys2Ptr);
-    Console.WriteLine("System2 available. Eyefinity create/destroy helpers are accessible, but disabled in this sample by default.");
-    Console.WriteLine("Uncomment the block below to experiment (changes user display configuration!).");
-
-    /*
-    using var dsk2 = AdlxInterfaceHandle.From(ADLXDesktopHelpers.GetDesktopServices(sys2.As<IADLXSystem>()), addRef: false);
-    // Example: create/destroy a simple Eyefinity desktop
-    // var simple = ADLXDesktopHelpers.GetSimpleEyefinity(dsk2.As<IADLXDesktopServices>());
-    // ADLXDesktopHelpers.CreateEyefinityDesktop(simpleHandle);
-    // ADLXDesktopHelpers.DestroyEyefinityDesktop(simpleHandle);
-    */
 }
+
+Console.WriteLine("Eyefinity create/destroy is intentionally disabled in this sample to avoid reconfiguring user displays.");
