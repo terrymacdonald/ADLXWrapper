@@ -4,7 +4,7 @@ using ADLXWrapper;
 Console.WriteLine("=== ADLX Display Color Sample (gamma/gamut/3DLUT) ===");
 
 using var adlx = ADLXApi.Initialize();
-var sys = adlx.GetSystemServicesFacade();
+var sys = adlx.GetSystemServicesProfile();
 var display = sys.EnumerateAllDisplays().FirstOrDefault();
 
 if (display == null)

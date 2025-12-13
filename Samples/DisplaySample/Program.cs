@@ -4,7 +4,7 @@ using ADLXWrapper;
 Console.WriteLine("=== ADLX Display Sample ===");
 
 using var adlx = ADLXApi.Initialize();
-var sys = adlx.GetSystemServicesFacade();
+var sys = adlx.GetSystemServicesProfile();
 var displays = sys.EnumerateAllDisplays();
 Console.WriteLine($"Found {displays.Count} display(s)");
 

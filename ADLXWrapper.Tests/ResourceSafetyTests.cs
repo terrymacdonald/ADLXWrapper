@@ -31,7 +31,7 @@ namespace ADLXWrapper.Tests
             }
 
             using var api = ADLXApi.Initialize();
-            var system = api.GetSystemServicesFacade();
+            var system = api.GetSystemServicesProfile();
 
             for (int i = 0; i < 5; i++)
             {

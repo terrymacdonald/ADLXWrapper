@@ -23,7 +23,7 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                _system = _api.GetSystemServicesFacade();
+                _system = _api.GetSystemServicesProfile();
             }
             catch (Exception ex)
             {

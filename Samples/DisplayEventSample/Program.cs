@@ -6,7 +6,7 @@ unsafe
     Console.WriteLine("=== ADLX Display Event Sample (display-changed listener) ===");
 
     using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServicesFacade();
+    var sys = adlx.GetSystemServicesProfile();
 
     using var dispServices = sys.GetDisplayServicesHandle();
 

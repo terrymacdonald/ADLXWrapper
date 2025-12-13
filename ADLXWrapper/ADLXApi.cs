@@ -206,9 +206,9 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Get the system services as a facade. Preferred over the raw pointer for new code.
+        /// Get the system services profile object. Preferred over the raw pointer for new code.
         /// </summary>
-        public unsafe ADLXSystemServices GetSystemServicesFacade()
+        public unsafe ADLXSystemServices GetSystemServicesProfile()
         {
             ThrowIfDisposed();
             ADLXHelpers.AddRefInterface((IntPtr)_systemServices.Get());

@@ -4,7 +4,7 @@ using ADLXWrapper;
 Console.WriteLine("=== ADLX Desktop/Eyefinity Sample ===");
 
 using var adlx = ADLXApi.Initialize();
-var sys = adlx.GetSystemServicesFacade();
+var sys = adlx.GetSystemServicesProfile();
 var desktops = sys.EnumerateAllDesktops().ToList();
 Console.WriteLine($"Found {desktops.Count} desktop(s)");
 

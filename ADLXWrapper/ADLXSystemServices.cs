@@ -76,6 +76,44 @@ namespace ADLXWrapper
             throw new InvalidOperationException($"Display with UniqueId {profile.UniqueId} not found");
         }
 
+        public void ApplyDisplayProfiles(IEnumerable<DisplayProfile> profiles, Action<string>? onSkip = null)
+        {
+            if (profiles == null) throw new ArgumentNullException(nameof(profiles));
+            ThrowIfDisposed();
+
+            var live = new Dictionary<ulong, AdlxDisplay>();
+            foreach (var disp in EnumerateAllDisplays())
+            {
+                live[disp.UniqueId] = disp;
+            }
+
+            foreach (var profile in profiles)
+            {
+                if (profile == null) continue;
+                if (!live.TryGetValue(profile.UniqueId, out var display))
+                    throw new InvalidOperationException($"Display with UniqueId {profile.UniqueId} not found");
+
+                using (display)
+                {
+                    display.ApplyProfile(profile, onSkip);
+                }
+            }
+        }
+
+        public IReadOnlyList<DisplayProfile> GetAllDisplayProfiles()
+        {
+            ThrowIfDisposed();
+            var profiles = new List<DisplayProfile>();
+            foreach (var display in EnumerateAllDisplays())
+            {
+                using (display)
+                {
+                    profiles.Add(display.GetProfile());
+                }
+            }
+            return profiles;
+        }
+
         public void ApplyDesktopProfile(DesktopProfile profile)
         {
             if (profile == null) throw new ArgumentNullException(nameof(profile));
@@ -90,6 +128,50 @@ namespace ADLXWrapper
                 }
             }
             throw new InvalidOperationException("Matching desktop not found for supplied profile");
+        }
+
+        public void ApplyDesktopProfiles(IEnumerable<DesktopProfile> profiles)
+        {
+            if (profiles == null) throw new ArgumentNullException(nameof(profiles));
+            ThrowIfDisposed();
+
+            var live = EnumerateAllDesktops();
+
+            foreach (var profile in profiles)
+            {
+                if (profile == null) continue;
+                AdlxDesktop? match = null;
+                foreach (var desk in live)
+                {
+                    if (desk.Type == profile.Type && desk.TopLeftX == profile.TopLeftX && desk.TopLeftY == profile.TopLeftY && desk.Width == profile.Width && desk.Height == profile.Height)
+                    {
+                        match = desk;
+                        break;
+                    }
+                }
+
+                if (match == null)
+                    throw new InvalidOperationException("Matching desktop not found for supplied profile");
+
+                using (match)
+                {
+                    match.ApplyProfile(profile);
+                }
+            }
+        }
+
+        public IReadOnlyList<DesktopProfile> GetAllDesktopProfiles()
+        {
+            ThrowIfDisposed();
+            var profiles = new List<DesktopProfile>();
+            foreach (var desktop in EnumerateAllDesktops())
+            {
+                using (desktop)
+                {
+                    profiles.Add(desktop.GetProfile());
+                }
+            }
+            return profiles;
         }
 
         /// <summary>
