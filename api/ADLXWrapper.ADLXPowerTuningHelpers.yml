@@ -1,0 +1,918 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXPowerTuningHelpers
+  commentId: T:ADLXWrapper.ADLXPowerTuningHelpers
+  id: ADLXPowerTuningHelpers
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  - ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*,ADLXWrapper.SmartShiftEcoInfo)
+  - ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.SmartShiftMaxInfo)
+  - ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices(ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)
+  - ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)
+  - ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*,System.Int32)
+  - ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*,System.Int32)
+  - ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*,System.Boolean)
+  - ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.ADLX_SSM_BIAS_MODE,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: ADLXPowerTuningHelpers
+  nameWithType: ADLXPowerTuningHelpers
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXPowerTuningHelpers
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Helper methods for power tuning (manual power limit, SmartShift Max/Eco).
+  example: []
+  syntax:
+    content: public static class ADLXPowerTuningHelpers
+    content.vb: Public Module ADLXPowerTuningHelpers
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices(ADLXWrapper.IADLXSystem*)
+  id: GetPowerTuningServices(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetPowerTuningServices(IADLXSystem*)
+  nameWithType: ADLXPowerTuningHelpers.GetPowerTuningServices(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPowerTuningServices
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 13
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the IADLXPowerTuningServices interface from the system services. Callers must dispose the returned pointer.
+  example: []
+  syntax:
+    content: public static IADLXPowerTuningServices* GetPowerTuningServices(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: ADLXWrapper.IADLXPowerTuningServices*
+    content.vb: Public Shared Function GetPowerTuningServices(pSystem As IADLXSystem*) As IADLXPowerTuningServices*
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)
+  id: GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetSmartShiftMax(IADLXPowerTuningServices*)
+  nameWithType: ADLXPowerTuningHelpers.GetSmartShiftMax(IADLXPowerTuningServices*)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSmartShiftMax
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 28
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the SmartShift Max information.
+  example: []
+  syntax:
+    content: public static SmartShiftMaxInfo GetSmartShiftMax(IADLXPowerTuningServices* pPowerServices)
+    parameters:
+    - id: pPowerServices
+      type: ADLXWrapper.IADLXPowerTuningServices*
+    return:
+      type: ADLXWrapper.SmartShiftMaxInfo
+    content.vb: Public Shared Function GetSmartShiftMax(pPowerServices As IADLXPowerTuningServices*) As SmartShiftMaxInfo
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.SmartShiftMaxInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.SmartShiftMaxInfo)
+  id: ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.SmartShiftMaxInfo)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: ApplySmartShiftMax(IADLXSmartShiftMax*, SmartShiftMaxInfo)
+  nameWithType: ADLXPowerTuningHelpers.ApplySmartShiftMax(IADLXSmartShiftMax*, SmartShiftMaxInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*, ADLXWrapper.SmartShiftMaxInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplySmartShiftMax
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 44
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies the settings from a SmartShiftMaxInfo object to the hardware.
+  example: []
+  syntax:
+    content: public static void ApplySmartShiftMax(IADLXSmartShiftMax* pSmartShiftMax, SmartShiftMaxInfo info)
+    parameters:
+    - id: pSmartShiftMax
+      type: ADLXWrapper.IADLXSmartShiftMax*
+    - id: info
+      type: ADLXWrapper.SmartShiftMaxInfo
+    content.vb: Public Shared Sub ApplySmartShiftMax(pSmartShiftMax As IADLXSmartShiftMax*, info As SmartShiftMaxInfo)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)
+  id: GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetSmartShiftEco(IADLXPowerTuningServices*)
+  nameWithType: ADLXPowerTuningHelpers.GetSmartShiftEco(IADLXPowerTuningServices*)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSmartShiftEco
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 56
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the SmartShift Eco information.
+  example: []
+  syntax:
+    content: public static SmartShiftEcoInfo GetSmartShiftEco(IADLXPowerTuningServices* pPowerServices)
+    parameters:
+    - id: pPowerServices
+      type: ADLXWrapper.IADLXPowerTuningServices*
+    return:
+      type: ADLXWrapper.SmartShiftEcoInfo
+    content.vb: Public Shared Function GetSmartShiftEco(pPowerServices As IADLXPowerTuningServices*) As SmartShiftEcoInfo
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*,ADLXWrapper.SmartShiftEcoInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*,ADLXWrapper.SmartShiftEcoInfo)
+  id: ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*,ADLXWrapper.SmartShiftEcoInfo)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: ApplySmartShiftEco(IADLXSmartShiftEco*, SmartShiftEcoInfo)
+  nameWithType: ADLXPowerTuningHelpers.ApplySmartShiftEco(IADLXSmartShiftEco*, SmartShiftEcoInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*, ADLXWrapper.SmartShiftEcoInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplySmartShiftEco
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 73
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies the settings from a SmartShiftEcoInfo object to the hardware.
+  example: []
+  syntax:
+    content: public static void ApplySmartShiftEco(IADLXSmartShiftEco* pSmartShiftEco, SmartShiftEcoInfo info)
+    parameters:
+    - id: pSmartShiftEco
+      type: ADLXWrapper.IADLXSmartShiftEco*
+    - id: info
+      type: ADLXWrapper.SmartShiftEcoInfo
+    content.vb: Public Shared Sub ApplySmartShiftEco(pSmartShiftEco As IADLXSmartShiftEco*, info As SmartShiftEcoInfo)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.ADLX_SSM_BIAS_MODE,System.Int32)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.ADLX_SSM_BIAS_MODE,System.Int32)
+  id: SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.ADLX_SSM_BIAS_MODE,System.Int32)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: SetSmartShiftMaxBias(IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, int)
+  nameWithType: ADLXPowerTuningHelpers.SetSmartShiftMaxBias(IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, int)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*, ADLXWrapper.ADLX_SSM_BIAS_MODE, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetSmartShiftMaxBias
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 84
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Sets the SmartShift Max bias mode and value.
+  example: []
+  syntax:
+    content: public static void SetSmartShiftMaxBias(IADLXSmartShiftMax* pSmartShiftMax, ADLX_SSM_BIAS_MODE mode, int bias)
+    parameters:
+    - id: pSmartShiftMax
+      type: ADLXWrapper.IADLXSmartShiftMax*
+    - id: mode
+      type: ADLXWrapper.ADLX_SSM_BIAS_MODE
+    - id: bias
+      type: System.Int32
+    content.vb: Public Shared Sub SetSmartShiftMaxBias(pSmartShiftMax As IADLXSmartShiftMax*, mode As ADLX_SSM_BIAS_MODE, bias As Integer)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias*
+  nameWithType.vb: ADLXPowerTuningHelpers.SetSmartShiftMaxBias(IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, Integer)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*, ADLXWrapper.ADLX_SSM_BIAS_MODE, Integer)
+  name.vb: SetSmartShiftMaxBias(IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, Integer)
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*,System.Boolean)
+  id: SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*,System.Boolean)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: SetSmartShiftEcoEnabled(IADLXSmartShiftEco*, bool)
+  nameWithType: ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(IADLXSmartShiftEco*, bool)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetSmartShiftEcoEnabled
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 100
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Sets the enabled state of SmartShift Eco.
+  example: []
+  syntax:
+    content: public static void SetSmartShiftEcoEnabled(IADLXSmartShiftEco* pSmartShiftEco, bool enable)
+    parameters:
+    - id: pSmartShiftEco
+      type: ADLXWrapper.IADLXSmartShiftEco*
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Shared Sub SetSmartShiftEcoEnabled(pSmartShiftEco As IADLXSmartShiftEco*, enable As Boolean)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled*
+  nameWithType.vb: ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(IADLXSmartShiftEco*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*, Boolean)
+  name.vb: SetSmartShiftEcoEnabled(IADLXSmartShiftEco*, Boolean)
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  id: GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*)
+  nameWithType: ADLXPowerTuningHelpers.GetManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*, ADLXWrapper.IADLXGPU*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetManualPowerTuning
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 112
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the Manual Power Tuning information for a specific GPU.
+  example: []
+  syntax:
+    content: public static ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGPU)
+    parameters:
+    - id: pGpuTuningServices
+      type: ADLXWrapper.IADLXGPUTuningServices*
+    - id: pGPU
+      type: ADLXWrapper.IADLXGPU*
+    return:
+      type: ADLXWrapper.ManualPowerTuningInfo
+    content.vb: Public Shared Function GetManualPowerTuning(pGpuTuningServices As IADLXGPUTuningServices*, pGPU As IADLXGPU*) As ManualPowerTuningInfo
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  id: ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: ApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningHelpers.ApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*, ADLXWrapper.ManualPowerTuningInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyManualPowerTuning
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 129
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies the settings from a ManualPowerTuningInfo object to the hardware.
+  example: []
+  syntax:
+    content: public static void ApplyManualPowerTuning(IADLXManualPowerTuning* pManualPower, ManualPowerTuningInfo info)
+    parameters:
+    - id: pManualPower
+      type: ADLXWrapper.IADLXManualPowerTuning*
+    - id: info
+      type: ADLXWrapper.ManualPowerTuningInfo
+    content.vb: Public Shared Sub ApplyManualPowerTuning(pManualPower As IADLXManualPowerTuning*, info As ManualPowerTuningInfo)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*,System.Int32)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*,System.Int32)
+  id: SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*,System.Int32)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: SetManualPowerLimit(IADLXManualPowerTuning*, int)
+  nameWithType: ADLXPowerTuningHelpers.SetManualPowerLimit(IADLXManualPowerTuning*, int)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetManualPowerLimit
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 148
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Sets the manual power limit.
+  example: []
+  syntax:
+    content: public static void SetManualPowerLimit(IADLXManualPowerTuning* pManualPower, int value)
+    parameters:
+    - id: pManualPower
+      type: ADLXWrapper.IADLXManualPowerTuning*
+    - id: value
+      type: System.Int32
+    content.vb: Public Shared Sub SetManualPowerLimit(pManualPower As IADLXManualPowerTuning*, value As Integer)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit*
+  nameWithType.vb: ADLXPowerTuningHelpers.SetManualPowerLimit(IADLXManualPowerTuning*, Integer)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*, Integer)
+  name.vb: SetManualPowerLimit(IADLXManualPowerTuning*, Integer)
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*,System.Int32)
+  commentId: M:ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*,System.Int32)
+  id: SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*,System.Int32)
+  parent: ADLXWrapper.ADLXPowerTuningHelpers
+  langs:
+  - csharp
+  - vb
+  name: SetManualTDCLimit(IADLXManualPowerTuning1*, int)
+  nameWithType: ADLXPowerTuningHelpers.SetManualTDCLimit(IADLXManualPowerTuning1*, int)
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetManualTDCLimit
+    path: ADLXWrapper/ADLXPowerTuningHelpers.cs
+    startLine: 160
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Sets the manual TDC limit.
+  example: []
+  syntax:
+    content: public static void SetManualTDCLimit(IADLXManualPowerTuning1* pManualPowerV1, int value)
+    parameters:
+    - id: pManualPowerV1
+      type: ADLXWrapper.IADLXManualPowerTuning1*
+    - id: value
+      type: System.Int32
+    content.vb: Public Shared Sub SetManualTDCLimit(pManualPowerV1 As IADLXManualPowerTuning1*, value As Integer)
+  overload: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit*
+  nameWithType.vb: ADLXPowerTuningHelpers.SetManualTDCLimit(IADLXManualPowerTuning1*, Integer)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*, Integer)
+  name.vb: SetManualTDCLimit(IADLXManualPowerTuning1*, Integer)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_GetPowerTuningServices_ADLXWrapper_IADLXSystem__
+  name: GetPowerTuningServices
+  nameWithType: ADLXPowerTuningHelpers.GetPowerTuningServices
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXPowerTuningServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXPowerTuningServices.html
+  name: IADLXPowerTuningServices*
+  nameWithType: IADLXPowerTuningServices*
+  fullName: ADLXWrapper.IADLXPowerTuningServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXPowerTuningServices
+    name: IADLXPowerTuningServices
+    href: ADLXWrapper.IADLXPowerTuningServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXPowerTuningServices
+    name: IADLXPowerTuningServices
+    href: ADLXWrapper.IADLXPowerTuningServices.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftMax_ADLXWrapper_IADLXPowerTuningServices__
+  name: GetSmartShiftMax
+  nameWithType: ADLXPowerTuningHelpers.GetSmartShiftMax
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax
+- uid: ADLXWrapper.SmartShiftMaxInfo
+  commentId: T:ADLXWrapper.SmartShiftMaxInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.SmartShiftMaxInfo.html
+  name: SmartShiftMaxInfo
+  nameWithType: SmartShiftMaxInfo
+  fullName: ADLXWrapper.SmartShiftMaxInfo
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftMax_ADLXWrapper_IADLXSmartShiftMax__ADLXWrapper_SmartShiftMaxInfo_
+  name: ApplySmartShiftMax
+  nameWithType: ADLXPowerTuningHelpers.ApplySmartShiftMax
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax
+- uid: ADLXWrapper.IADLXSmartShiftMax*
+  isExternal: true
+  href: ADLXWrapper.IADLXSmartShiftMax.html
+  name: IADLXSmartShiftMax*
+  nameWithType: IADLXSmartShiftMax*
+  fullName: ADLXWrapper.IADLXSmartShiftMax*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSmartShiftMax
+    name: IADLXSmartShiftMax
+    href: ADLXWrapper.IADLXSmartShiftMax.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSmartShiftMax
+    name: IADLXSmartShiftMax
+    href: ADLXWrapper.IADLXSmartShiftMax.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftEco_ADLXWrapper_IADLXPowerTuningServices__
+  name: GetSmartShiftEco
+  nameWithType: ADLXPowerTuningHelpers.GetSmartShiftEco
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco
+- uid: ADLXWrapper.SmartShiftEcoInfo
+  commentId: T:ADLXWrapper.SmartShiftEcoInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.SmartShiftEcoInfo.html
+  name: SmartShiftEcoInfo
+  nameWithType: SmartShiftEcoInfo
+  fullName: ADLXWrapper.SmartShiftEcoInfo
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftEco_ADLXWrapper_IADLXSmartShiftEco__ADLXWrapper_SmartShiftEcoInfo_
+  name: ApplySmartShiftEco
+  nameWithType: ADLXPowerTuningHelpers.ApplySmartShiftEco
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco
+- uid: ADLXWrapper.IADLXSmartShiftEco*
+  isExternal: true
+  href: ADLXWrapper.IADLXSmartShiftEco.html
+  name: IADLXSmartShiftEco*
+  nameWithType: IADLXSmartShiftEco*
+  fullName: ADLXWrapper.IADLXSmartShiftEco*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSmartShiftEco
+    name: IADLXSmartShiftEco
+    href: ADLXWrapper.IADLXSmartShiftEco.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSmartShiftEco
+    name: IADLXSmartShiftEco
+    href: ADLXWrapper.IADLXSmartShiftEco.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftMaxBias_ADLXWrapper_IADLXSmartShiftMax__ADLXWrapper_ADLX_SSM_BIAS_MODE_System_Int32_
+  name: SetSmartShiftMaxBias
+  nameWithType: ADLXPowerTuningHelpers.SetSmartShiftMaxBias
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias
+- uid: ADLXWrapper.ADLX_SSM_BIAS_MODE
+  commentId: T:ADLXWrapper.ADLX_SSM_BIAS_MODE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_SSM_BIAS_MODE.html
+  name: ADLX_SSM_BIAS_MODE
+  nameWithType: ADLX_SSM_BIAS_MODE
+  fullName: ADLXWrapper.ADLX_SSM_BIAS_MODE
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftEcoEnabled_ADLXWrapper_IADLXSmartShiftEco__System_Boolean_
+  name: SetSmartShiftEcoEnabled
+  nameWithType: ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_GetManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__
+  name: GetManualPowerTuning
+  nameWithType: ADLXPowerTuningHelpers.GetManualPowerTuning
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning
+- uid: ADLXWrapper.IADLXGPUTuningServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPUTuningServices.html
+  name: IADLXGPUTuningServices*
+  nameWithType: IADLXGPUTuningServices*
+  fullName: ADLXWrapper.IADLXGPUTuningServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUTuningServices
+    name: IADLXGPUTuningServices
+    href: ADLXWrapper.IADLXGPUTuningServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUTuningServices
+    name: IADLXGPUTuningServices
+    href: ADLXWrapper.IADLXGPUTuningServices.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPU.html
+  name: IADLXGPU*
+  nameWithType: IADLXGPU*
+  fullName: ADLXWrapper.IADLXGPU*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPU
+    name: IADLXGPU
+    href: ADLXWrapper.IADLXGPU.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPU
+    name: IADLXGPU
+    href: ADLXWrapper.IADLXGPU.html
+  - name: '*'
+- uid: ADLXWrapper.ManualPowerTuningInfo
+  commentId: T:ADLXWrapper.ManualPowerTuningInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.ManualPowerTuningInfo.html
+  name: ManualPowerTuningInfo
+  nameWithType: ManualPowerTuningInfo
+  fullName: ADLXWrapper.ManualPowerTuningInfo
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_ApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_
+  name: ApplyManualPowerTuning
+  nameWithType: ADLXPowerTuningHelpers.ApplyManualPowerTuning
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning
+- uid: ADLXWrapper.IADLXManualPowerTuning*
+  isExternal: true
+  href: ADLXWrapper.IADLXManualPowerTuning.html
+  name: IADLXManualPowerTuning*
+  nameWithType: IADLXManualPowerTuning*
+  fullName: ADLXWrapper.IADLXManualPowerTuning*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXManualPowerTuning
+    name: IADLXManualPowerTuning
+    href: ADLXWrapper.IADLXManualPowerTuning.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXManualPowerTuning
+    name: IADLXManualPowerTuning
+    href: ADLXWrapper.IADLXManualPowerTuning.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_SetManualPowerLimit_ADLXWrapper_IADLXManualPowerTuning__System_Int32_
+  name: SetManualPowerLimit
+  nameWithType: ADLXPowerTuningHelpers.SetManualPowerLimit
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit
+- uid: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit
+  href: ADLXWrapper.ADLXPowerTuningHelpers.html#ADLXWrapper_ADLXPowerTuningHelpers_SetManualTDCLimit_ADLXWrapper_IADLXManualPowerTuning1__System_Int32_
+  name: SetManualTDCLimit
+  nameWithType: ADLXPowerTuningHelpers.SetManualTDCLimit
+  fullName: ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit
+- uid: ADLXWrapper.IADLXManualPowerTuning1*
+  isExternal: true
+  href: ADLXWrapper.IADLXManualPowerTuning1.html
+  name: IADLXManualPowerTuning1*
+  nameWithType: IADLXManualPowerTuning1*
+  fullName: ADLXWrapper.IADLXManualPowerTuning1*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXManualPowerTuning1
+    name: IADLXManualPowerTuning1
+    href: ADLXWrapper.IADLXManualPowerTuning1.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXManualPowerTuning1
+    name: IADLXManualPowerTuning1
+    href: ADLXWrapper.IADLXManualPowerTuning1.html
+  - name: '*'

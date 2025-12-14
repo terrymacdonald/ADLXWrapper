@@ -1,0 +1,220 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  commentId: T:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  id: ADLXDisplaySettingsHelpers.VariBrightMode
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Balanced
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBattery
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBrightness
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBattery
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBrightness
+  - ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Unknown
+  langs:
+  - csharp
+  - vb
+  name: ADLXDisplaySettingsHelpers.VariBrightMode
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VariBrightMode
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 665
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public enum ADLXDisplaySettingsHelpers.VariBrightMode
+    content.vb: Public Enum ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Unknown
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Unknown
+  id: Unknown
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.Unknown
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Unknown
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Unknown
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 667
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: Unknown = 0
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBrightness
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBrightness
+  id: MaximizeBrightness
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: MaximizeBrightness
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBrightness
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBrightness
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaximizeBrightness
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 668
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: MaximizeBrightness = 1
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBrightness
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBrightness
+  id: OptimizeBrightness
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: OptimizeBrightness
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBrightness
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBrightness
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: OptimizeBrightness
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 669
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: OptimizeBrightness = 2
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Balanced
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Balanced
+  id: Balanced
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: Balanced
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.Balanced
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.Balanced
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Balanced
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 670
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: Balanced = 3
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBattery
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBattery
+  id: OptimizeBattery
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: OptimizeBattery
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBattery
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.OptimizeBattery
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: OptimizeBattery
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 671
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: OptimizeBattery = 4
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBattery
+  commentId: F:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBattery
+  id: MaximizeBattery
+  parent: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  langs:
+  - csharp
+  - vb
+  name: MaximizeBattery
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBattery
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.MaximizeBattery
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaximizeBattery
+    path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 672
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: MaximizeBattery = 5
+    return:
+      type: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  commentId: T:ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXDisplaySettingsHelpers.html
+  name: ADLXDisplaySettingsHelpers.VariBrightMode
+  nameWithType: ADLXDisplaySettingsHelpers.VariBrightMode
+  fullName: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXDisplaySettingsHelpers
+    name: ADLXDisplaySettingsHelpers
+    href: ADLXWrapper.ADLXDisplaySettingsHelpers.html
+  - name: .
+  - uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+    name: VariBrightMode
+    href: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXDisplaySettingsHelpers
+    name: ADLXDisplaySettingsHelpers
+    href: ADLXWrapper.ADLXDisplaySettingsHelpers.html
+  - name: .
+  - uid: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode
+    name: VariBrightMode
+    href: ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.html

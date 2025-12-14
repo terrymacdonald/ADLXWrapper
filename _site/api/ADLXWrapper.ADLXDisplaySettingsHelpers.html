@@ -1,0 +1,2171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ADLXDisplaySettingsHelpers | ADLXWrapper </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ADLXDisplaySettingsHelpers | ADLXWrapper ">
+      
+      <meta name="description" content="Display settings helpers (FreeSync, GPU scaling, scaling mode, color depth, pixel format, VSR, integer scaling, HDCP, VariBright, display blanking, custom color).">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-api-overhaul/apiSpec/new?filename=ADLXWrapper_ADLXDisplaySettingsHelpers.md&amp;value=---%0Auid%3A%20ADLXWrapper.ADLXDisplaySettingsHelpers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ADLXWrapper">
+            ADLXWrapper
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers">
+
+
+
+  <h1 id="ADLXWrapper_ADLXDisplaySettingsHelpers" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers" class="text-break">
+Class ADLXDisplaySettingsHelpers  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ADLXWrapper.html">ADLXWrapper</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Display settings helpers (FreeSync, GPU scaling, scaling mode, color depth, pixel format, VSR, integer scaling, HDCP, VariBright, display blanking, custom color).</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ADLXDisplaySettingsHelpers</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ADLXDisplaySettingsHelpers</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_Apply3DLUT_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Apply3DLUT*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_Apply3DLUT_ADLXWrapper_IADLXDisplay3DLUT__ADLXWrapper_ThreeDLUTInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Apply3DLUT(ADLXWrapper.IADLXDisplay3DLUT*,ADLXWrapper.ThreeDLUTInfo)">
+  Apply3DLUT(IADLXDisplay3DLUT*, ThreeDLUTInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a ThreeDLUTInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Apply3DLUT(IADLXDisplay3DLUT* p3dLut, ThreeDLUTInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p3dLut</code> <a class="xref" href="ADLXWrapper.IADLXDisplay3DLUT.html">IADLXDisplay3DLUT</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ThreeDLUTInfo.html">ThreeDLUTInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyCustomColor_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyCustomColor*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyCustomColor_ADLXWrapper_IADLXDisplayCustomColor__ADLXWrapper_CustomColorInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyCustomColor(ADLXWrapper.IADLXDisplayCustomColor*,ADLXWrapper.CustomColorInfo)">
+  ApplyCustomColor(IADLXDisplayCustomColor*, CustomColorInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L459"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a CustomColorInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyCustomColor(IADLXDisplayCustomColor* pCustomColor, CustomColorInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pCustomColor</code> <a class="xref" href="ADLXWrapper.IADLXDisplayCustomColor.html">IADLXDisplayCustomColor</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.CustomColorInfo.html">CustomColorInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyCustomResolution_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyCustomResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)">
+  ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies a custom resolution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyCustomResolution(IADLXDisplayCustomResolution* pCustomRes, DisplayResolutionInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pCustomRes</code> <a class="xref" href="ADLXWrapper.IADLXDisplayCustomResolution.html">IADLXDisplayCustomResolution</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.DisplayResolutionInfo.html">DisplayResolutionInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyDisplayConnectivityExperience_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyDisplayConnectivityExperience*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyDisplayConnectivityExperience_ADLXWrapper_IADLXDisplayConnectivityExperience__ADLXWrapper_ConnectivityExperienceInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyDisplayConnectivityExperience(ADLXWrapper.IADLXDisplayConnectivityExperience*,ADLXWrapper.ConnectivityExperienceInfo)">
+  ApplyDisplayConnectivityExperience(IADLXDisplayConnectivityExperience*, ConnectivityExperienceInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a ConnectivityExperienceInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyDisplayConnectivityExperience(IADLXDisplayConnectivityExperience* pConnectivity, ConnectivityExperienceInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pConnectivity</code> <a class="xref" href="ADLXWrapper.IADLXDisplayConnectivityExperience.html">IADLXDisplayConnectivityExperience</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ConnectivityExperienceInfo.html">ConnectivityExperienceInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyGamma_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyGamma*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyGamma_ADLXWrapper_IADLXDisplayGamma__ADLXWrapper_GammaInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyGamma(ADLXWrapper.IADLXDisplayGamma*,ADLXWrapper.GammaInfo)">
+  ApplyGamma(IADLXDisplayGamma*, GammaInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a GammaInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyGamma(IADLXDisplayGamma* pGamma, GammaInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGamma</code> <a class="xref" href="ADLXWrapper.IADLXDisplayGamma.html">IADLXDisplayGamma</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.GammaInfo.html">GammaInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyGamut_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyGamut*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ApplyGamut_ADLXWrapper_IADLXDisplayGamut__ADLXWrapper_GamutInfo_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ApplyGamut(ADLXWrapper.IADLXDisplayGamut*,ADLXWrapper.GamutInfo)">
+  ApplyGamut(IADLXDisplayGamut*, GamutInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a GamutInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyGamut(IADLXDisplayGamut* pGamut, GamutInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGamut</code> <a class="xref" href="ADLXWrapper.IADLXDisplayGamut.html">IADLXDisplayGamut</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.GamutInfo.html">GamutInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_Get3DLUT_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Get3DLUT*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_Get3DLUT_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Get3DLUT(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  Get3DLUT(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the 3DLUT settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ThreeDLUTInfo Get3DLUT(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ThreeDLUTInfo.html">ThreeDLUTInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetColorDepthHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetColorDepthHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetColorDepthHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetColorDepthHandle(System.IntPtr,System.IntPtr)">
+  GetColorDepthHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L768"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetColorDepthHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetColorDepthState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetColorDepthState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetColorDepthState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetColorDepthState(System.IntPtr)">
+  GetColorDepthState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L786"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState(nint pColorDepth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pColorDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.supported">supported</a>, <a class="xref" href="ADLXWrapper.ADLX_COLOR_DEPTH.html">ADLX_COLOR_DEPTH</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.current">current</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetCustomColor_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetCustomColor*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetCustomColor_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetCustomColor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  GetCustomColor(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Custom Color settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CustomColorInfo GetCustomColor(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.CustomColorInfo.html">CustomColorInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetCustomResolution_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetCustomResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetCustomResolution_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetCustomResolution(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  GetCustomResolution(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L388"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Custom Resolution settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CustomResolutionInfo GetCustomResolution(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.CustomResolutionInfo.html">CustomResolutionInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayBlankingHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayBlankingHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle(System.IntPtr,System.IntPtr)">
+  GetDisplayBlankingHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L471"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetDisplayBlankingHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayBlankingState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayBlankingState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayBlankingState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayBlankingState(System.IntPtr)">
+  GetDisplayBlankingState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L489"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool blanked) GetDisplayBlankingState(nint pBlanking)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pBlanking</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayConnectivityExperience_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperience*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDisplayConnectivityExperience_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperience(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  GetDisplayConnectivityExperience(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Display Connectivity Experience settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConnectivityExperienceInfo GetDisplayConnectivityExperience(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ConnectivityExperienceInfo.html">ConnectivityExperienceInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDynamicRefreshRateControlHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDynamicRefreshRateControlHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle(System.IntPtr,System.IntPtr)">
+  GetDynamicRefreshRateControlHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1066"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetDynamicRefreshRateControlHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDynamicRefreshRateControlState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetDynamicRefreshRateControlState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlState(System.IntPtr)">
+  GetDynamicRefreshRateControlState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1084"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetDynamicRefreshRateControlState(nint pDRR)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDRR</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncColorAccuracyHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncColorAccuracyHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle(System.IntPtr,System.IntPtr)">
+  GetFreeSyncColorAccuracyHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1016"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetFreeSyncColorAccuracyHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncColorAccuracyState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncColorAccuracyState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyState(System.IntPtr)">
+  GetFreeSyncColorAccuracyState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1034"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetFreeSyncColorAccuracyState(nint pFSCA)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pFSCA</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncHandle(System.IntPtr,System.IntPtr)">
+  GetFreeSyncHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L864"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetFreeSyncHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetFreeSyncState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetFreeSyncState(System.IntPtr)">
+  GetFreeSyncState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L918"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetFreeSyncState(nint pFreeSync)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pFreeSync</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGPUScalingHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGPUScalingHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGPUScalingHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGPUScalingHandle(System.IntPtr,System.IntPtr)">
+  GetGPUScalingHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L882"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetGPUScalingHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGPUScalingState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGPUScalingState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGPUScalingState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGPUScalingState(System.IntPtr)">
+  GetGPUScalingState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L950"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetGPUScalingState(nint pGPUScaling)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGPUScaling</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGamma_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGamma*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGamma_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGamma(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  GetGamma(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Gamma settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GammaInfo GetGamma(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.GammaInfo.html">GammaInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGamut_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGamut*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetGamut_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetGamut(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*)">
+  GetGamut(IADLXDisplayServices*, IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Gamut settings for a specific display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GamutInfo GetGamut(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.GamutInfo.html">GamutInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetHDCPHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetHDCPHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetHDCPHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetHDCPHandle(System.IntPtr,System.IntPtr)">
+  GetHDCPHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L617"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetHDCPHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetHDCPState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetHDCPState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetHDCPState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetHDCPState(System.IntPtr)">
+  GetHDCPState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L635"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetHDCPState(nint pHdcp)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pHdcp</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetIntegerScalingHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetIntegerScalingHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetIntegerScalingHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetIntegerScalingHandle(System.IntPtr,System.IntPtr)">
+  GetIntegerScalingHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L568"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetIntegerScalingHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetIntegerScalingState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetIntegerScalingState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetIntegerScalingState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetIntegerScalingState(System.IntPtr)">
+  GetIntegerScalingState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L586"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetIntegerScalingState(nint pIntegerScaling)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pIntegerScaling</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetPixelFormatHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetPixelFormatHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetPixelFormatHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetPixelFormatHandle(System.IntPtr,System.IntPtr)">
+  GetPixelFormatHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L816"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetPixelFormatHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetPixelFormatState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetPixelFormatState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetPixelFormatState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetPixelFormatState(System.IntPtr)">
+  GetPixelFormatState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState(nint pPixelFormat)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pPixelFormat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.supported">supported</a>, <a class="xref" href="ADLXWrapper.ADLX_PIXEL_FORMAT.html">ADLX_PIXEL_FORMAT</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.current">current</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetScalingMode_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetScalingMode*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetScalingMode_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetScalingMode(System.IntPtr)">
+  GetScalingMode(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L982"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, ADLX_SCALE_MODE mode) GetScalingMode(nint pScalingMode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pScalingMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.supported">supported</a>, <a class="xref" href="ADLXWrapper.ADLX_SCALE_MODE.html">ADLX_SCALE_MODE</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.mode">mode</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetScalingModeHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetScalingModeHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetScalingModeHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetScalingModeHandle(System.IntPtr,System.IntPtr)">
+  GetScalingModeHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L900"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetScalingModeHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVariBrightHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVariBrightHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVariBrightHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVariBrightHandle(System.IntPtr,System.IntPtr)">
+  GetVariBrightHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L676"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetVariBrightHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVariBrightState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVariBrightState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVariBrightState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVariBrightState(System.IntPtr)">
+  GetVariBrightState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L694"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled, ADLXDisplaySettingsHelpers.VariBrightMode mode) GetVariBrightState(nint pVariBright)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVariBright</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.adlxdisplaysettingshelpers.varibrightmode-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.adlxdisplaysettingshelpers.varibrightmode-.enabled">enabled</a>, <a class="xref" href="ADLXWrapper.ADLXDisplaySettingsHelpers.html">ADLXDisplaySettingsHelpers</a>.<a class="xref" href="ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.html">VariBrightMode</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.adlxdisplaysettingshelpers.varibrightmode-.mode">mode</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVirtualSuperResolutionHandle_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVirtualSuperResolutionHandle_System_IntPtr_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle(System.IntPtr,System.IntPtr)">
+  GetVirtualSuperResolutionHandle(nint, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L519"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetVirtualSuperResolutionHandle(nint pDisplayServices, nint pDisplay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>pDisplay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVirtualSuperResolutionState_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_GetVirtualSuperResolutionState_System_IntPtr_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState(System.IntPtr)">
+  GetVirtualSuperResolutionState(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L537"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (bool supported, bool enabled) GetVirtualSuperResolutionState(nint pVsr)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVsr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported">supported</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.blanked">blanked</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_Reapply3DLUT_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Reapply3DLUT*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_Reapply3DLUT_ADLXWrapper_IADLXDisplay3DLUT__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.Reapply3DLUT(ADLXWrapper.IADLXDisplay3DLUT*)">
+  Reapply3DLUT(IADLXDisplay3DLUT*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reapplies the current 3DLUT settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Reapply3DLUT(IADLXDisplay3DLUT* p3dLut)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>p3dLut</code> <a class="xref" href="ADLXWrapper.IADLXDisplay3DLUT.html">IADLXDisplay3DLUT</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ReapplyGamma_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ReapplyGamma*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ReapplyGamma_ADLXWrapper_IADLXDisplayGamma__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ReapplyGamma(ADLXWrapper.IADLXDisplayGamma*)">
+  ReapplyGamma(IADLXDisplayGamma*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reapplies the current Gamma settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReapplyGamma(IADLXDisplayGamma* pGamma)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGamma</code> <a class="xref" href="ADLXWrapper.IADLXDisplayGamma.html">IADLXDisplayGamma</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_ReapplyGamut_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ReapplyGamut*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_ReapplyGamut_ADLXWrapper_IADLXDisplayGamut__" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.ReapplyGamut(ADLXWrapper.IADLXDisplayGamut*)">
+  ReapplyGamut(IADLXDisplayGamut*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reapplies the current Gamut settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ReapplyGamut(IADLXDisplayGamut* pGamut)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGamut</code> <a class="xref" href="ADLXWrapper.IADLXDisplayGamut.html">IADLXDisplayGamut</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetColorDepth_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetColorDepth*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetColorDepth_System_IntPtr_ADLXWrapper_ADLX_COLOR_DEPTH_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetColorDepth(System.IntPtr,ADLXWrapper.ADLX_COLOR_DEPTH)">
+  SetColorDepth(nint, ADLX_COLOR_DEPTH)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L805"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetColorDepth(nint pColorDepth, ADLX_COLOR_DEPTH depth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pColorDepth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="ADLXWrapper.ADLX_COLOR_DEPTH.html">ADLX_COLOR_DEPTH</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayBlanked_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayBlanked*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayBlanked_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayBlanked(System.IntPtr,System.Boolean)">
+  SetDisplayBlanked(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L508"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDisplayBlanked(nint pBlanking, bool blank)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pBlanking</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>blank</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityHDMIQualityDetectionEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityHDMIQualityDetectionEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityHDMIQualityDetectionEnabled_ADLXWrapper_IADLXDisplayConnectivityExperience__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityHDMIQualityDetectionEnabled(ADLXWrapper.IADLXDisplayConnectivityExperience*,System.Boolean)">
+  SetDisplayConnectivityHDMIQualityDetectionEnabled(IADLXDisplayConnectivityExperience*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the enabled state of HDMI Quality Detection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDisplayConnectivityHDMIQualityDetectionEnabled(IADLXDisplayConnectivityExperience* pConnectivity, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pConnectivity</code> <a class="xref" href="ADLXWrapper.IADLXDisplayConnectivityExperience.html">IADLXDisplayConnectivityExperience</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityRelativePreEmphasis_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityRelativePreEmphasis*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityRelativePreEmphasis_ADLXWrapper_IADLXDisplayConnectivityExperience__System_Int32_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityRelativePreEmphasis(ADLXWrapper.IADLXDisplayConnectivityExperience*,System.Int32)">
+  SetDisplayConnectivityRelativePreEmphasis(IADLXDisplayConnectivityExperience*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L366"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the relative pre-emphasis for display connectivity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDisplayConnectivityRelativePreEmphasis(IADLXDisplayConnectivityExperience* pConnectivity, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pConnectivity</code> <a class="xref" href="ADLXWrapper.IADLXDisplayConnectivityExperience.html">IADLXDisplayConnectivityExperience</a>*</dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityRelativeVoltageSwing_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityRelativeVoltageSwing*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDisplayConnectivityRelativeVoltageSwing_ADLXWrapper_IADLXDisplayConnectivityExperience__System_Int32_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDisplayConnectivityRelativeVoltageSwing(ADLXWrapper.IADLXDisplayConnectivityExperience*,System.Int32)">
+  SetDisplayConnectivityRelativeVoltageSwing(IADLXDisplayConnectivityExperience*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L377"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the relative voltage swing for display connectivity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDisplayConnectivityRelativeVoltageSwing(IADLXDisplayConnectivityExperience* pConnectivity, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pConnectivity</code> <a class="xref" href="ADLXWrapper.IADLXDisplayConnectivityExperience.html">IADLXDisplayConnectivityExperience</a>*</dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDynamicRefreshRateControlEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetDynamicRefreshRateControlEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled(System.IntPtr,System.Boolean)">
+  SetDynamicRefreshRateControlEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetDynamicRefreshRateControlEnabled(nint pDRR, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pDRR</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetFreeSyncColorAccuracyEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetFreeSyncColorAccuracyEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetFreeSyncColorAccuracyEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetFreeSyncColorAccuracyEnabled(System.IntPtr,System.Boolean)">
+  SetFreeSyncColorAccuracyEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1053"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetFreeSyncColorAccuracyEnabled(nint pFSCA, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pFSCA</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetFreeSyncEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetFreeSyncEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetFreeSyncEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetFreeSyncEnabled(System.IntPtr,System.Boolean)">
+  SetFreeSyncEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L937"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetFreeSyncEnabled(nint pFreeSync, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pFreeSync</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetGPUScalingEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetGPUScalingEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetGPUScalingEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetGPUScalingEnabled(System.IntPtr,System.Boolean)">
+  SetGPUScalingEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L969"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetGPUScalingEnabled(nint pGPUScaling, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGPUScaling</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetHDCPEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetHDCPEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetHDCPEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetHDCPEnabled(System.IntPtr,System.Boolean)">
+  SetHDCPEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L655"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetHDCPEnabled(nint pHdcp, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pHdcp</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetIntegerScalingEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetIntegerScalingEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled(System.IntPtr,System.Boolean)">
+  SetIntegerScalingEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L606"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetIntegerScalingEnabled(nint pIntegerScaling, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pIntegerScaling</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetPixelFormat_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetPixelFormat*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetPixelFormat_System_IntPtr_ADLXWrapper_ADLX_PIXEL_FORMAT_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetPixelFormat(System.IntPtr,ADLXWrapper.ADLX_PIXEL_FORMAT)">
+  SetPixelFormat(nint, ADLX_PIXEL_FORMAT)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L853"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetPixelFormat(nint pPixelFormat, ADLX_PIXEL_FORMAT format)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pPixelFormat</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>format</code> <a class="xref" href="ADLXWrapper.ADLX_PIXEL_FORMAT.html">ADLX_PIXEL_FORMAT</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetScalingMode_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetScalingMode*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetScalingMode_System_IntPtr_ADLXWrapper_ADLX_SCALE_MODE_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetScalingMode(System.IntPtr,ADLXWrapper.ADLX_SCALE_MODE)">
+  SetScalingMode(nint, ADLX_SCALE_MODE)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L1003"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetScalingMode(nint pScalingMode, ADLX_SCALE_MODE mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pScalingMode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="ADLXWrapper.ADLX_SCALE_MODE.html">ADLX_SCALE_MODE</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBright_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBright*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBright_System_IntPtr_System_Boolean_ADLXWrapper_ADLXDisplaySettingsHelpers_VariBrightMode_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBright(System.IntPtr,System.Boolean,ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode)">
+  SetVariBright(nint, bool, VariBrightMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L728"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVariBright(nint pVariBright, bool enable, ADLXDisplaySettingsHelpers.VariBrightMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVariBright</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="ADLXWrapper.ADLXDisplaySettingsHelpers.html">ADLXDisplaySettingsHelpers</a>.<a class="xref" href="ADLXWrapper.ADLXDisplaySettingsHelpers.VariBrightMode.html">VariBrightMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBrightBacklightAdaptiveEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBrightBacklightAdaptiveEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
+  SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L418"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the enabled state of Vari-Bright Backlight Adaptive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* pVariBright, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVariBright</code> <a class="xref" href="ADLXWrapper.IADLXDisplayVariBright1.html">IADLXDisplayVariBright1</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBrightBatteryLifeEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBrightBatteryLifeEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
+  SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the enabled state of Vari-Bright Battery Life.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1* pVariBright, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVariBright</code> <a class="xref" href="ADLXWrapper.IADLXDisplayVariBright1.html">IADLXDisplayVariBright1</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVirtualSuperResolutionEnabled_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplaySettingsHelpers_SetVirtualSuperResolutionEnabled_System_IntPtr_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled(System.IntPtr,System.Boolean)">
+  SetVirtualSuperResolutionEnabled(nint, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L557"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetVirtualSuperResolutionEnabled(nint pVsr, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pVsr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXDisplaySettingsHelpers.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

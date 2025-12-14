@@ -1,57 +1,62 @@
 ﻿# ADLXWrapper
 
-A modern, high-performance C# wrapper for the AMD Display Library Extensions (ADLX) SDK, generated using ClangSharp.
+High-performance C# bindings for AMD ADLX using facade-first, vtable-based interop (generated with ClangSharp).
 
-This wrapper provides a safe, idiomatic, and vtable-based interop layer, allowing .NET applications to interact directly and efficiently with AMD GPU features.
+## Highlights
 
-## Features
+- Facade-first API surface (`ADLXSystemServices`, `AdlxDisplay`, `AdlxDesktop`, `AdlxPerformanceMonitor`, `AdlxGpuTuning`, `AdlxMultimedia`, `AdlxPowerTuning`, `Adlx3DSettings`).
+- Profile capture/apply patterns with JSON-friendly DTOs; skip-safe applies when features are unsupported.
+- Logging wrapper (`ADLXApi.EnableLog/DisableLog`) with file/debug-view/application sinks.
+- Samples and tests auto-skip cleanly on non-AMD systems or when `amdadlx64.dll` is absent.
 
-- **Full API Coverage**: Wraps the core ADLX services for System, GPU, Display, Desktop, 3D Settings, Performance Monitoring, Power Tuning, and Multimedia.
-- **Helper-Based Architecture**: Simplifies complex ADLX operations into easy-to-use static helper methods (e.g., `ADLXGpuHelpers.EnumerateAllGpus`).
-- **Serializable Data Objects**: All hardware states are read into serializable `Info` structs, perfect for saving configurations to JSON.
-- **Configuration Management**: Includes `Apply` methods to restore hardware states from deserialized `Info` objects.
-- **Real-time Event Handling**: Provides listeners for display, desktop, and GPU tuning changes.
+## Quick start
 
-## Project Structure
+**Visual Studio 2026**
+- Open `ADLXWrapper.sln`.
+- Restore/build the solution; run tests from Test Explorer (tests skip on non-AMD or missing `amdadlx64.dll`).
 
-```
-ADLXWrapper/
-├── ADLX/                     # ADLX SDK headers (downloaded by script)
-├── ADLXWrapper/              # The main C# wrapper project
-│   ├── Helpers/              # Helper classes for each ADLX service
-│   ├── ADLXApi.cs            # Core ADLX initialization and lifetime management
-│   └── README.md             # Detailed API documentation and examples
-├── ADLXWrapper.Tests/        # xUnit test suite
-├── Samples/                  # Sample console applications
-└── scripts/                  # Build, test, and preparation scripts
-```
-
-## Getting Started
-
-### 1. Prepare the Environment
-
-First, run the preparation script. This will download the required ADLX SDK headers into the `ADLX/` directory.
-
+**VS Code / dotnet CLI**
 ```powershell
-.\prepare_adlx.ps1
+# From repo root
+./prepare_adlx.ps1                  # downloads ADLX SDK into ADLX/
+./build_adlx.ps1                    # builds wrapper + tests + samples
+# Optional: run samples only
+dotnet build Samples/ADLXWrapper.Samples.sln
+# Tests (skip on non-AMD or missing DLL)
+dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj
 ```
 
-### 2. Build the Solution
+## Minimal usage (facade)
 
-Once the SDK is in place, you can build the entire solution, including the wrapper, tests, and samples.
+```csharp
+using ADLXWrapper;
 
-```powershell
-.\build_adlx.ps1
+using var adlx = ADLXApi.Initialize();
+var system = adlx.GetSystemServicesProfile();
+
+var displays = system.EnumerateAllDisplays();
+foreach (var display in displays)
+{
+	using (display)
+	{
+		var profile = display.GetProfile();
+		display.ApplyProfile(profile, skip => System.Console.WriteLine($"skip: {skip}"));
+	}
+}
 ```
 
-### 3. Run Tests
+## Logging
 
-To verify the build and check hardware compatibility, run the test script.
-
-```powershell
-.\test_adlx.ps1
+```csharp
+using var adlx = ADLXApi.Initialize();
+adlx.EnableLog(new LogProfile
+{
+	Destination = ADLX_LOG_DESTINATION.DBGVIEW,
+	Severity = ADLX_LOG_SEVERITY.LINFO,
+});
 ```
 
-## Detailed Usage and Examples
+## More
 
-For detailed API documentation, code examples, and a list of all available helpers, please see the **ADLXWrapper Project README**.
+- See [ADLXWrapper/README.md](ADLXWrapper/README.md) for detailed facade docs, capability matrix, and event handling.
+- When running on non-AMD hardware or without `amdadlx64.dll`, samples/tests will skip runtime actions gracefully.

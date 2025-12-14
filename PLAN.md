@@ -43,7 +43,7 @@
 	 - [x] Profile DTOs: JSON-serializable shapes with support flags; include per-feature support booleans/ranges; no unmanaged pointers. Apply methods skip unsupported; when interface exists but call fails, propagate ADLXException. GPU tuning profile captures auto/preset/manual (gfx/vram/fan/power), SmartShift (if present), with ranges where needed. Performance monitoring profile captures sampling interval/history size. Multimedia profile captures enabled + sharpness for upscale, enabled for VSR. Power tuning captures bias mode/value and Eco enabled; optional per-GPU manual power/TDC. 3D settings profile captures the existing info structs.
 	 - [x] Ownership/lifetime rules: facades keep owner `ADLXApi`; AddRef on service/GPU pointers; Dispose releases; throw ObjectDisposedException on use-after-dispose or when owner disposed.
 	 - [x] Gating: attempt QueryInterface for newer interfaces/versions; if unavailable, mark unsupported and skip during apply; keep handle escape hatches for advanced use.
- - [ ] Stage 4 – Implementation: Build facades per area (GPU tuning, perf monitoring, multimedia, power tuning, 3D settings, logging). Implement profile capture/apply with skip-on-unsupported semantics and RAII/disposal safety.
+- [x] Stage 4 – Implementation: Build facades per area (GPU tuning, perf monitoring, multimedia, power tuning, 3D settings, logging). Implement profile capture/apply with skip-on-unsupported semantics and RAII/disposal safety.
 	 - [x] Add facades and system entrypoints for performance monitoring, GPU tuning, multimedia, power tuning, and 3D settings (handles + acquisition helpers).
 	 - [x] Wire ADLXApi convenience accessors if desired and ensure disposal guards across new types.
 	 - [x] Add manual power/TDC profile flow (GPU-level) if kept separate from power tuning facade.
@@ -51,13 +51,25 @@
 		 - [x] Add LogProfile DTO (destination, severity, file path, optional managed sink shim) and keep it JSON-serializable.
 		 - [x] Add ADLXApi.EnableLog(LogProfile) and DisableLog wrappers (mirrored on ADLXSystemServices); guard disposal and propagate ADLXException.
 		 - [x] Test/verification notes: file logging happy path, disable path, dispose guard; optional callback sink if ADLX invokes it on this host.
-- [ ] Stage 5 – Samples/tests: Update samples to facades; expand tests for new surfaces (support gating, profile round-trips, disposal guards). Ensure non-AMD skip logic remains intact.
+
+- [x] Stage 5 – Samples/tests: Update samples to facades; expand tests for new surfaces (support gating, profile round-trips, disposal guards). Ensure non-AMD skip logic remains intact.
 	- [x] Tests migration (complete): Perf/Multimedia/Power/GPU Tuning/3D settings/Resource safety tests now use facades and AdlxInterfaceHandle with skip guards; latest `dotnet test` clean (skipped due to missing ADLX DLL/AMD GPU on host).
 	- [x] Sample migrations: Perf/Multimedia/Power tuning samples now use facades (`GetSystemServicesProfile`, `GetPerformanceMonitoringServices`, `GetMultimediaServices`, `GetPowerTuningServices`), legacy helpers removed; display/color/event/desktop samples verified facade-only; `dotnet build Samples/ADLXWrapper.Samples.sln` succeeds on host (skip-safe runtime expected without AMD GPU/DLL).
+
 - [ ] Stage 6 – Docs/verification: Refresh READMEs with new quick-starts; run `dotnet build ADLXWrapper/ADLXWrapper.csproj` and `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj` (skip-aware); ensure no generated file edits.
+	- Docs refreshed: root README and ADLXWrapper/README now describe facade-first usage, logging, and skip-safe behavior.
+	- Next actions: run the above build/test on hardware with AMD GPU and amdadlx64.dll present; adjust docs if needed after hardware validation.
 
 - [ ] Stage 7 – Copilot/README alignment: Update `.github/copilot-instructions.md` and project READMEs to reflect current facade-first usage, logging API, and sample/test expectations.
 
+- [x] Stage 8 – API docs: Produce detailed API documentation in `APIDocs/` (facade-first surfaces, profiles, logging, init/lifetime, gating/skip semantics, sample/test expectations). Generate markdown with links to relevant source files and usage snippets.
+
+### Current state snapshot (2025-12-14)
+
+- Stage 5 samples/tests are migrated to facades; `dotnet build Samples/ADLXWrapper.Samples.sln` succeeds on this host.
+- Latest `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj` run was clean-but-skipped due to missing AMD GPU and `amdadlx64.dll` on this machine.
+- Next active work: Stage 6 docs/verification (run build/test on AMD-capable host and refresh READMEs) and Stage 7 Copilot/README alignment.
+- Runtime expectation: samples/tests remain skip-safe on non-AMD systems; hardware-dependent behavior still unverified here.
 ### Future things to fix
 
 - Auto-tuning profile apply: auto-tuning is captured in `GpuTuningProfile` but not applied because no apply helper exists in current helpers. Add apply support when ADLX helper coverage is expanded.

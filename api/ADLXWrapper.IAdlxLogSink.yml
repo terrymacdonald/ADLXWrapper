@@ -1,0 +1,101 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IAdlxLogSink
+  commentId: T:ADLXWrapper.IAdlxLogSink
+  id: IAdlxLogSink
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IAdlxLogSink.WriteLog(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IAdlxLogSink
+  nameWithType: IAdlxLogSink
+  fullName: ADLXWrapper.IAdlxLogSink
+  type: Interface
+  source:
+    remote:
+      path: ADLXWrapper/LogProfile.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IAdlxLogSink
+    path: ADLXWrapper/LogProfile.cs
+    startLine: 16
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public interface IAdlxLogSink
+    content.vb: Public Interface IAdlxLogSink
+- uid: ADLXWrapper.IAdlxLogSink.WriteLog(System.String)
+  commentId: M:ADLXWrapper.IAdlxLogSink.WriteLog(System.String)
+  id: WriteLog(System.String)
+  parent: ADLXWrapper.IAdlxLogSink
+  langs:
+  - csharp
+  - vb
+  name: WriteLog(string)
+  nameWithType: IAdlxLogSink.WriteLog(string)
+  fullName: ADLXWrapper.IAdlxLogSink.WriteLog(string)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/LogProfile.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: WriteLog
+    path: ADLXWrapper/LogProfile.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: ADLX_RESULT WriteLog(string message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Function WriteLog(message As String) As ADLX_RESULT
+  overload: ADLXWrapper.IAdlxLogSink.WriteLog*
+  nameWithType.vb: IAdlxLogSink.WriteLog(String)
+  fullName.vb: ADLXWrapper.IAdlxLogSink.WriteLog(String)
+  name.vb: WriteLog(String)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.IAdlxLogSink.WriteLog*
+  commentId: Overload:ADLXWrapper.IAdlxLogSink.WriteLog
+  href: ADLXWrapper.IAdlxLogSink.html#ADLXWrapper_IAdlxLogSink_WriteLog_System_String_
+  name: WriteLog
+  nameWithType: IAdlxLogSink.WriteLog
+  fullName: ADLXWrapper.IAdlxLogSink.WriteLog
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,1048 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXDesktopHelpers
+  commentId: T:ADLXWrapper.ADLXDesktopHelpers
+  id: ADLXDesktopHelpers
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  - ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
+  - ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
+  - ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)
+  - ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops(ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)
+  - ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling(ADLXWrapper.IADLXDesktopServices*)
+  - ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices(ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
+  - ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity(ADLXWrapper.IADLXDesktopServices*)
+  - ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  langs:
+  - csharp
+  - vb
+  name: ADLXDesktopHelpers
+  nameWithType: ADLXDesktopHelpers
+  fullName: ADLXWrapper.ADLXDesktopHelpers
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXDesktopHelpers
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Helper methods for desktop and Eyefinity services
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")]
+
+      public static class ADLXDesktopHelpers
+    content.vb: >-
+      <Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")>
+
+      Public Module ADLXDesktopHelpers
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices(ADLXWrapper.IADLXSystem*)
+  id: GetDesktopServices(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetDesktopServices(IADLXSystem*)
+  nameWithType: ADLXDesktopHelpers.GetDesktopServices(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDesktopServices
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 17
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the IADLXDesktopServices interface from the system services. Callers must dispose the returned pointer.
+  example: []
+  syntax:
+    content: public static IADLXDesktopServices* GetDesktopServices(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: ADLXWrapper.IADLXDesktopServices*
+    content.vb: Public Shared Function GetDesktopServices(pSystem As IADLXSystem*) As IADLXDesktopServices*
+  overload: ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices*
+- uid: ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops(ADLXWrapper.IADLXSystem*)
+  id: EnumerateAllDesktops(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllDesktops(IADLXSystem*)
+  nameWithType: ADLXDesktopHelpers.EnumerateAllDesktops(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllDesktops
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 35
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerates all available desktops.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")]
+
+      public static IEnumerable<DesktopInfo> EnumerateAllDesktops(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
+    content.vb: >-
+      <Obsolete("Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.")>
+
+      Public Shared Function EnumerateAllDesktops(pSystem As IADLXSystem*) As IEnumerable(Of DesktopInfo)
+  overload: ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use ADLXSystemServices.EnumerateAllDesktops() returning AdlxDesktop facades.
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity(ADLXWrapper.IADLXDesktopServices*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity(ADLXWrapper.IADLXDesktopServices*)
+  id: GetSimpleEyefinity(ADLXWrapper.IADLXDesktopServices*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetSimpleEyefinity(IADLXDesktopServices*)
+  nameWithType: ADLXDesktopHelpers.GetSimpleEyefinity(IADLXDesktopServices*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity(ADLXWrapper.IADLXDesktopServices*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSimpleEyefinity
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 76
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the Simple Eyefinity information.
+  example: []
+  syntax:
+    content: public static SimpleEyefinityInfo GetSimpleEyefinity(IADLXDesktopServices* pDesktopServices)
+    parameters:
+    - id: pDesktopServices
+      type: ADLXWrapper.IADLXDesktopServices*
+    return:
+      type: ADLXWrapper.SimpleEyefinityInfo
+    content.vb: Public Shared Function GetSimpleEyefinity(pDesktopServices As IADLXDesktopServices*) As SimpleEyefinityInfo
+  overload: ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity*
+- uid: ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
+  id: CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: CreateEyefinityDesktop(IADLXSimpleEyefinity*)
+  nameWithType: ADLXDesktopHelpers.CreateEyefinityDesktop(IADLXSimpleEyefinity*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CreateEyefinityDesktop
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 94
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Creates an Eyefinity desktop.
+  example: []
+  syntax:
+    content: public static EyefinityDesktopInfo CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)
+    parameters:
+    - id: pSimpleEyefinity
+      type: ADLXWrapper.IADLXSimpleEyefinity*
+    return:
+      type: ADLXWrapper.EyefinityDesktopInfo
+    content.vb: Public Shared Function CreateEyefinityDesktop(pSimpleEyefinity As IADLXSimpleEyefinity*) As EyefinityDesktopInfo
+  overload: ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop*
+- uid: ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)
+  id: DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: DestroyEyefinityDesktop(IADLXSimpleEyefinity*, IADLXEyefinityDesktop*)
+  nameWithType: ADLXDesktopHelpers.DestroyEyefinityDesktop(IADLXSimpleEyefinity*, IADLXEyefinityDesktop*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*, ADLXWrapper.IADLXEyefinityDesktop*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DestroyEyefinityDesktop
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 109
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static void DestroyEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity, IADLXEyefinityDesktop* pEyefinityDesktop)
+    parameters:
+    - id: pSimpleEyefinity
+      type: ADLXWrapper.IADLXSimpleEyefinity*
+    - id: pEyefinityDesktop
+      type: ADLXWrapper.IADLXEyefinityDesktop*
+    content.vb: Public Shared Sub DestroyEyefinityDesktop(pSimpleEyefinity As IADLXSimpleEyefinity*, pEyefinityDesktop As IADLXEyefinityDesktop*)
+  overload: ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop*
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
+  id: GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetEyefinityGridSize(IADLXEyefinityDesktop*)
+  nameWithType: ADLXDesktopHelpers.GetEyefinityGridSize(IADLXEyefinityDesktop*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetEyefinityGridSize
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 121
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static (uint rows, uint cols) GetEyefinityGridSize(IADLXEyefinityDesktop* pEyefinityDesktop)
+    parameters:
+    - id: pEyefinityDesktop
+      type: ADLXWrapper.IADLXEyefinityDesktop*
+    return:
+      type: System.ValueTuple{System.UInt32,System.UInt32}
+    content.vb: Public Shared Function GetEyefinityGridSize(pEyefinityDesktop As IADLXEyefinityDesktop*) As (rows As UInteger, cols As UInteger)
+  overload: ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize*
+- uid: ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)
+  id: EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: EnumerateEyefinityDisplays(IADLXEyefinityDesktop*)
+  nameWithType: ADLXDesktopHelpers.EnumerateEyefinityDisplays(IADLXEyefinityDesktop*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateEyefinityDisplays
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 135
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerates displays within an Eyefinity desktop.
+  example: []
+  syntax:
+    content: public static IEnumerable<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* pEyefinityDesktop)
+    parameters:
+    - id: pEyefinityDesktop
+      type: ADLXWrapper.IADLXEyefinityDesktop*
+    return:
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+    content.vb: Public Shared Function EnumerateEyefinityDisplays(pEyefinityDesktop As IADLXEyefinityDesktop*) As IEnumerable(Of DisplayInfo)
+  overload: ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays*
+- uid: ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
+  id: DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: DestroyAllEyefinityDesktops(IADLXSimpleEyefinity*)
+  nameWithType: ADLXDesktopHelpers.DestroyAllEyefinityDesktops(IADLXSimpleEyefinity*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DestroyAllEyefinityDesktops
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 154
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static void DestroyAllEyefinityDesktops(IADLXSimpleEyefinity* pSimpleEyefinity)
+    parameters:
+    - id: pSimpleEyefinity
+      type: ADLXWrapper.IADLXSimpleEyefinity*
+    content.vb: Public Shared Sub DestroyAllEyefinityDesktops(pSimpleEyefinity As IADLXSimpleEyefinity*)
+  overload: ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops*
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling(ADLXWrapper.IADLXDesktopServices*)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling(ADLXWrapper.IADLXDesktopServices*)
+  id: GetDesktopChangedHandling(ADLXWrapper.IADLXDesktopServices*)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetDesktopChangedHandling(IADLXDesktopServices*)
+  nameWithType: ADLXDesktopHelpers.GetDesktopChangedHandling(IADLXDesktopServices*)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling(ADLXWrapper.IADLXDesktopServices*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDesktopChangedHandling
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 168
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the desktop changed handling interface.
+  example: []
+  syntax:
+    content: public static IADLXDesktopChangedHandling* GetDesktopChangedHandling(IADLXDesktopServices* pDesktopServices)
+    parameters:
+    - id: pDesktopServices
+      type: ADLXWrapper.IADLXDesktopServices*
+    return:
+      type: ADLXWrapper.IADLXDesktopChangedHandling*
+    content.vb: Public Shared Function GetDesktopChangedHandling(pDesktopServices As IADLXDesktopServices*) As IADLXDesktopChangedHandling*
+  overload: ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling*
+- uid: ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  id: AddDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: AddDesktopListEventListener(IADLXDesktopChangedHandling*, DesktopListListenerHandle)
+  nameWithType: ADLXDesktopHelpers.AddDesktopListEventListener(IADLXDesktopChangedHandling*, DesktopListListenerHandle)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*, ADLXWrapper.DesktopListListenerHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDesktopListEventListener
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 181
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Adds a desktop list event listener.
+  example: []
+  syntax:
+    content: public static void AddDesktopListEventListener(IADLXDesktopChangedHandling* pHandling, DesktopListListenerHandle listener)
+    parameters:
+    - id: pHandling
+      type: ADLXWrapper.IADLXDesktopChangedHandling*
+    - id: listener
+      type: ADLXWrapper.DesktopListListenerHandle
+    content.vb: Public Shared Sub AddDesktopListEventListener(pHandling As IADLXDesktopChangedHandling*, listener As DesktopListListenerHandle)
+  overload: ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener*
+- uid: ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  commentId: M:ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  id: RemoveDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*,ADLXWrapper.DesktopListListenerHandle)
+  parent: ADLXWrapper.ADLXDesktopHelpers
+  langs:
+  - csharp
+  - vb
+  name: RemoveDesktopListEventListener(IADLXDesktopChangedHandling*, DesktopListListenerHandle)
+  nameWithType: ADLXDesktopHelpers.RemoveDesktopListEventListener(IADLXDesktopChangedHandling*, DesktopListListenerHandle)
+  fullName: ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener(ADLXWrapper.IADLXDesktopChangedHandling*, ADLXWrapper.DesktopListListenerHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDesktopListEventListener
+    path: ADLXWrapper/ADLXDesktopHelpers.cs
+    startLine: 190
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Removes a desktop list event listener.
+  example: []
+  syntax:
+    content: public static void RemoveDesktopListEventListener(IADLXDesktopChangedHandling* pHandling, DesktopListListenerHandle listener)
+    parameters:
+    - id: pHandling
+      type: ADLXWrapper.IADLXDesktopChangedHandling*
+    - id: listener
+      type: ADLXWrapper.DesktopListListenerHandle
+    content.vb: Public Shared Sub RemoveDesktopListEventListener(pHandling As IADLXDesktopChangedHandling*, listener As DesktopListListenerHandle)
+  overload: ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener*
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_GetDesktopServices_ADLXWrapper_IADLXSystem__
+  name: GetDesktopServices
+  nameWithType: ADLXDesktopHelpers.GetDesktopServices
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetDesktopServices
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXDesktopServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXDesktopServices.html
+  name: IADLXDesktopServices*
+  nameWithType: IADLXDesktopServices*
+  fullName: ADLXWrapper.IADLXDesktopServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDesktopServices
+    name: IADLXDesktopServices
+    href: ADLXWrapper.IADLXDesktopServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDesktopServices
+    name: IADLXDesktopServices
+    href: ADLXWrapper.IADLXDesktopServices.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_EnumerateAllDesktops_ADLXWrapper_IADLXSystem__
+  name: EnumerateAllDesktops
+  nameWithType: ADLXDesktopHelpers.EnumerateAllDesktops
+  fullName: ADLXWrapper.ADLXDesktopHelpers.EnumerateAllDesktops
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DesktopInfo>
+  nameWithType: IEnumerable<DesktopInfo>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DesktopInfo>
+  nameWithType.vb: IEnumerable(Of DesktopInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DesktopInfo)
+  name.vb: IEnumerable(Of DesktopInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DesktopInfo
+    name: DesktopInfo
+    href: ADLXWrapper.DesktopInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DesktopInfo
+    name: DesktopInfo
+    href: ADLXWrapper.DesktopInfo.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_GetSimpleEyefinity_ADLXWrapper_IADLXDesktopServices__
+  name: GetSimpleEyefinity
+  nameWithType: ADLXDesktopHelpers.GetSimpleEyefinity
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetSimpleEyefinity
+- uid: ADLXWrapper.SimpleEyefinityInfo
+  commentId: T:ADLXWrapper.SimpleEyefinityInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.SimpleEyefinityInfo.html
+  name: SimpleEyefinityInfo
+  nameWithType: SimpleEyefinityInfo
+  fullName: ADLXWrapper.SimpleEyefinityInfo
+- uid: ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_CreateEyefinityDesktop_ADLXWrapper_IADLXSimpleEyefinity__
+  name: CreateEyefinityDesktop
+  nameWithType: ADLXDesktopHelpers.CreateEyefinityDesktop
+  fullName: ADLXWrapper.ADLXDesktopHelpers.CreateEyefinityDesktop
+- uid: ADLXWrapper.IADLXSimpleEyefinity*
+  isExternal: true
+  href: ADLXWrapper.IADLXSimpleEyefinity.html
+  name: IADLXSimpleEyefinity*
+  nameWithType: IADLXSimpleEyefinity*
+  fullName: ADLXWrapper.IADLXSimpleEyefinity*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSimpleEyefinity
+    name: IADLXSimpleEyefinity
+    href: ADLXWrapper.IADLXSimpleEyefinity.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSimpleEyefinity
+    name: IADLXSimpleEyefinity
+    href: ADLXWrapper.IADLXSimpleEyefinity.html
+  - name: '*'
+- uid: ADLXWrapper.EyefinityDesktopInfo
+  commentId: T:ADLXWrapper.EyefinityDesktopInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.EyefinityDesktopInfo.html
+  name: EyefinityDesktopInfo
+  nameWithType: EyefinityDesktopInfo
+  fullName: ADLXWrapper.EyefinityDesktopInfo
+- uid: ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_DestroyEyefinityDesktop_ADLXWrapper_IADLXSimpleEyefinity__ADLXWrapper_IADLXEyefinityDesktop__
+  name: DestroyEyefinityDesktop
+  nameWithType: ADLXDesktopHelpers.DestroyEyefinityDesktop
+  fullName: ADLXWrapper.ADLXDesktopHelpers.DestroyEyefinityDesktop
+- uid: ADLXWrapper.IADLXEyefinityDesktop*
+  isExternal: true
+  href: ADLXWrapper.IADLXEyefinityDesktop.html
+  name: IADLXEyefinityDesktop*
+  nameWithType: IADLXEyefinityDesktop*
+  fullName: ADLXWrapper.IADLXEyefinityDesktop*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXEyefinityDesktop
+    name: IADLXEyefinityDesktop
+    href: ADLXWrapper.IADLXEyefinityDesktop.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXEyefinityDesktop
+    name: IADLXEyefinityDesktop
+    href: ADLXWrapper.IADLXEyefinityDesktop.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_GetEyefinityGridSize_ADLXWrapper_IADLXEyefinityDesktop__
+  name: GetEyefinityGridSize
+  nameWithType: ADLXDesktopHelpers.GetEyefinityGridSize
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetEyefinityGridSize
+- uid: System.ValueTuple{System.UInt32,System.UInt32}
+  commentId: T:System.ValueTuple{System.UInt32,System.UInt32}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: (uint rows, uint cols)
+  nameWithType: (uint rows, uint cols)
+  fullName: (uint rows, uint cols)
+  nameWithType.vb: (rows As UInteger, cols As UInteger)
+  fullName.vb: (rows As UInteger, cols As UInteger)
+  name.vb: (rows As UInteger, cols As UInteger)
+  spec.csharp:
+  - name: (
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: " "
+  - uid: System.ValueTuple{System.UInt32,System.UInt32}.rows
+    name: rows
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.uint32,system.uint32-.rows
+  - name: ','
+  - name: " "
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: " "
+  - uid: System.ValueTuple{System.UInt32,System.UInt32}.cols
+    name: cols
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.uint32,system.uint32-.cols
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.UInt32,System.UInt32}.rows
+    name: rows
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.uint32,system.uint32-.rows
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.UInt32,System.UInt32}.cols
+    name: cols
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.uint32,system.uint32-.cols
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_EnumerateEyefinityDisplays_ADLXWrapper_IADLXEyefinityDesktop__
+  name: EnumerateEyefinityDisplays
+  nameWithType: ADLXDesktopHelpers.EnumerateEyefinityDisplays
+  fullName: ADLXWrapper.ADLXDesktopHelpers.EnumerateEyefinityDisplays
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DisplayInfo>
+  nameWithType: IEnumerable<DisplayInfo>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayInfo>
+  nameWithType.vb: IEnumerable(Of DisplayInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayInfo)
+  name.vb: IEnumerable(Of DisplayInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DisplayInfo
+    name: DisplayInfo
+    href: ADLXWrapper.DisplayInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DisplayInfo
+    name: DisplayInfo
+    href: ADLXWrapper.DisplayInfo.html
+  - name: )
+- uid: ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_DestroyAllEyefinityDesktops_ADLXWrapper_IADLXSimpleEyefinity__
+  name: DestroyAllEyefinityDesktops
+  nameWithType: ADLXDesktopHelpers.DestroyAllEyefinityDesktops
+  fullName: ADLXWrapper.ADLXDesktopHelpers.DestroyAllEyefinityDesktops
+- uid: ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_GetDesktopChangedHandling_ADLXWrapper_IADLXDesktopServices__
+  name: GetDesktopChangedHandling
+  nameWithType: ADLXDesktopHelpers.GetDesktopChangedHandling
+  fullName: ADLXWrapper.ADLXDesktopHelpers.GetDesktopChangedHandling
+- uid: ADLXWrapper.IADLXDesktopChangedHandling*
+  isExternal: true
+  href: ADLXWrapper.IADLXDesktopChangedHandling.html
+  name: IADLXDesktopChangedHandling*
+  nameWithType: IADLXDesktopChangedHandling*
+  fullName: ADLXWrapper.IADLXDesktopChangedHandling*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDesktopChangedHandling
+    name: IADLXDesktopChangedHandling
+    href: ADLXWrapper.IADLXDesktopChangedHandling.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDesktopChangedHandling
+    name: IADLXDesktopChangedHandling
+    href: ADLXWrapper.IADLXDesktopChangedHandling.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_AddDesktopListEventListener_ADLXWrapper_IADLXDesktopChangedHandling__ADLXWrapper_DesktopListListenerHandle_
+  name: AddDesktopListEventListener
+  nameWithType: ADLXDesktopHelpers.AddDesktopListEventListener
+  fullName: ADLXWrapper.ADLXDesktopHelpers.AddDesktopListEventListener
+- uid: ADLXWrapper.DesktopListListenerHandle
+  commentId: T:ADLXWrapper.DesktopListListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.DesktopListListenerHandle.html
+  name: DesktopListListenerHandle
+  nameWithType: DesktopListListenerHandle
+  fullName: ADLXWrapper.DesktopListListenerHandle
+- uid: ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener*
+  commentId: Overload:ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener
+  href: ADLXWrapper.ADLXDesktopHelpers.html#ADLXWrapper_ADLXDesktopHelpers_RemoveDesktopListEventListener_ADLXWrapper_IADLXDesktopChangedHandling__ADLXWrapper_DesktopListListenerHandle_
+  name: RemoveDesktopListEventListener
+  nameWithType: ADLXDesktopHelpers.RemoveDesktopListEventListener
+  fullName: ADLXWrapper.ADLXDesktopHelpers.RemoveDesktopListEventListener

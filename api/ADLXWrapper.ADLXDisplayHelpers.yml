@@ -1,0 +1,642 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXDisplayHelpers
+  commentId: T:ADLXWrapper.ADLXDisplayHelpers
+  id: ADLXDisplayHelpers
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles(ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays(ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXDisplayHelpers.GetDisplayName(System.IntPtr)
+  - ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices(ADLXWrapper.IADLXSystem*)
+  langs:
+  - csharp
+  - vb
+  name: ADLXDisplayHelpers
+  nameWithType: ADLXDisplayHelpers
+  fullName: ADLXWrapper.ADLXDisplayHelpers
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXDisplayHelpers
+    path: ADLXWrapper/ADLXDisplayHelpers.cs
+    startLine: 10
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Helper methods for ADLX Display operations.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")]
+
+      public static class ADLXDisplayHelpers
+    content.vb: >-
+      <Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")>
+
+      Public Module ADLXDisplayHelpers
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.
+- uid: ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices(ADLXWrapper.IADLXSystem*)
+  id: GetDisplayServices(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXDisplayHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayServices(IADLXSystem*)
+  nameWithType: ADLXDisplayHelpers.GetDisplayServices(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDisplayServices
+    path: ADLXWrapper/ADLXDisplayHelpers.cs
+    startLine: 16
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the IADLXDisplayServices interface from the system services. Callers must dispose the returned pointer.
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")]
+
+      public static IADLXDisplayServices* GetDisplayServices(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: ADLXWrapper.IADLXDisplayServices*
+    content.vb: >-
+      <Obsolete("Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.")>
+
+      Public Shared Function GetDisplayServices(pSystem As IADLXSystem*) As IADLXDisplayServices*
+  overload: ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Use ADLXSystemServices.EnumerateAllDisplays() returning AdlxDisplay facades.
+- uid: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays(ADLXWrapper.IADLXSystem*)
+  id: EnumerateAllDisplays(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXDisplayHelpers
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllDisplays(IADLXSystem*)
+  nameWithType: ADLXDisplayHelpers.EnumerateAllDisplays(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllDisplays
+    path: ADLXWrapper/ADLXDisplayHelpers.cs
+    startLine: 36
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerate all displays from system display services
+  example: []
+  syntax:
+    content: public static IEnumerable<DisplayInfo> EnumerateAllDisplays(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+    content.vb: Public Shared Function EnumerateAllDisplays(pSystem As IADLXSystem*) As IEnumerable(Of DisplayInfo)
+  overload: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays*
+- uid: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles(ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles(ADLXWrapper.IADLXSystem*)
+  id: EnumerateAllDisplayHandles(ADLXWrapper.IADLXSystem*)
+  parent: ADLXWrapper.ADLXDisplayHelpers
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllDisplayHandles(IADLXSystem*)
+  nameWithType: ADLXDisplayHelpers.EnumerateAllDisplayHandles(IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles(ADLXWrapper.IADLXSystem*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllDisplayHandles
+    path: ADLXWrapper/ADLXDisplayHelpers.cs
+    startLine: 63
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerate raw display handles for compatibility helpers.
+  example: []
+  syntax:
+    content: public static AdlxInterfaceHandle[] EnumerateAllDisplayHandles(IADLXSystem* pSystem)
+    parameters:
+    - id: pSystem
+      type: ADLXWrapper.IADLXSystem*
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle[]
+    content.vb: Public Shared Function EnumerateAllDisplayHandles(pSystem As IADLXSystem*) As AdlxInterfaceHandle()
+  overload: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles*
+- uid: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName(System.IntPtr)
+  commentId: M:ADLXWrapper.ADLXDisplayHelpers.GetDisplayName(System.IntPtr)
+  id: GetDisplayName(System.IntPtr)
+  parent: ADLXWrapper.ADLXDisplayHelpers
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayName(nint)
+  nameWithType: ADLXDisplayHelpers.GetDisplayName(nint)
+  fullName: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName(nint)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDisplayName
+    path: ADLXWrapper/ADLXDisplayHelpers.cs
+    startLine: 89
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static string GetDisplayName(nint pDisplay)
+    parameters:
+    - id: pDisplay
+      type: System.IntPtr
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetDisplayName(pDisplay As IntPtr) As String
+  overload: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName*
+  nameWithType.vb: ADLXDisplayHelpers.GetDisplayName(IntPtr)
+  fullName.vb: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName(System.IntPtr)
+  name.vb: GetDisplayName(IntPtr)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices*
+  commentId: Overload:ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices
+  href: ADLXWrapper.ADLXDisplayHelpers.html#ADLXWrapper_ADLXDisplayHelpers_GetDisplayServices_ADLXWrapper_IADLXSystem__
+  name: GetDisplayServices
+  nameWithType: ADLXDisplayHelpers.GetDisplayServices
+  fullName: ADLXWrapper.ADLXDisplayHelpers.GetDisplayServices
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXDisplayServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXDisplayServices.html
+  name: IADLXDisplayServices*
+  nameWithType: IADLXDisplayServices*
+  fullName: ADLXWrapper.IADLXDisplayServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDisplayServices
+    name: IADLXDisplayServices
+    href: ADLXWrapper.IADLXDisplayServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDisplayServices
+    name: IADLXDisplayServices
+    href: ADLXWrapper.IADLXDisplayServices.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays
+  href: ADLXWrapper.ADLXDisplayHelpers.html#ADLXWrapper_ADLXDisplayHelpers_EnumerateAllDisplays_ADLXWrapper_IADLXSystem__
+  name: EnumerateAllDisplays
+  nameWithType: ADLXDisplayHelpers.EnumerateAllDisplays
+  fullName: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplays
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DisplayInfo>
+  nameWithType: IEnumerable<DisplayInfo>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayInfo>
+  nameWithType.vb: IEnumerable(Of DisplayInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayInfo)
+  name.vb: IEnumerable(Of DisplayInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DisplayInfo
+    name: DisplayInfo
+    href: ADLXWrapper.DisplayInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DisplayInfo
+    name: DisplayInfo
+    href: ADLXWrapper.DisplayInfo.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles*
+  commentId: Overload:ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles
+  href: ADLXWrapper.ADLXDisplayHelpers.html#ADLXWrapper_ADLXDisplayHelpers_EnumerateAllDisplayHandles_ADLXWrapper_IADLXSystem__
+  name: EnumerateAllDisplayHandles
+  nameWithType: ADLXDisplayHelpers.EnumerateAllDisplayHandles
+  fullName: ADLXWrapper.ADLXDisplayHelpers.EnumerateAllDisplayHandles
+- uid: ADLXWrapper.AdlxInterfaceHandle[]
+  isExternal: true
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle[]
+  nameWithType: AdlxInterfaceHandle[]
+  fullName: ADLXWrapper.AdlxInterfaceHandle[]
+  nameWithType.vb: AdlxInterfaceHandle()
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle()
+  name.vb: AdlxInterfaceHandle()
+  spec.csharp:
+  - uid: ADLXWrapper.AdlxInterfaceHandle
+    name: AdlxInterfaceHandle
+    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: ADLXWrapper.AdlxInterfaceHandle
+    name: AdlxInterfaceHandle
+    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - name: (
+  - name: )
+- uid: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName*
+  commentId: Overload:ADLXWrapper.ADLXDisplayHelpers.GetDisplayName
+  href: ADLXWrapper.ADLXDisplayHelpers.html#ADLXWrapper_ADLXDisplayHelpers_GetDisplayName_System_IntPtr_
+  name: GetDisplayName
+  nameWithType: ADLXDisplayHelpers.GetDisplayName
+  fullName: ADLXWrapper.ADLXDisplayHelpers.GetDisplayName
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

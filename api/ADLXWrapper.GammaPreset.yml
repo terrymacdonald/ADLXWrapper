@@ -1,0 +1,285 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GammaPreset
+  commentId: T:ADLXWrapper.GammaPreset
+  id: GammaPreset
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GammaPreset.BT709
+  - ADLXWrapper.GammaPreset.CustomCoefficient
+  - ADLXWrapper.GammaPreset.CustomRamp
+  - ADLXWrapper.GammaPreset.G36
+  - ADLXWrapper.GammaPreset.PQ
+  - ADLXWrapper.GammaPreset.PQ2084
+  - ADLXWrapper.GammaPreset.Reset
+  - ADLXWrapper.GammaPreset.SRGB
+  - ADLXWrapper.GammaPreset.Unknown
+  langs:
+  - csharp
+  - vb
+  name: GammaPreset
+  nameWithType: GammaPreset
+  fullName: ADLXWrapper.GammaPreset
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GammaPreset
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public enum GammaPreset
+    content.vb: Public Enum GammaPreset
+- uid: ADLXWrapper.GammaPreset.Unknown
+  commentId: F:ADLXWrapper.GammaPreset.Unknown
+  id: Unknown
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: GammaPreset.Unknown
+  fullName: ADLXWrapper.GammaPreset.Unknown
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Unknown
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 7
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: Unknown = 0
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.SRGB
+  commentId: F:ADLXWrapper.GammaPreset.SRGB
+  id: SRGB
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: SRGB
+  nameWithType: GammaPreset.SRGB
+  fullName: ADLXWrapper.GammaPreset.SRGB
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SRGB
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: SRGB = 1
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.BT709
+  commentId: F:ADLXWrapper.GammaPreset.BT709
+  id: BT709
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: BT709
+  nameWithType: GammaPreset.BT709
+  fullName: ADLXWrapper.GammaPreset.BT709
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: BT709
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: BT709 = 2
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.PQ
+  commentId: F:ADLXWrapper.GammaPreset.PQ
+  id: PQ
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: PQ
+  nameWithType: GammaPreset.PQ
+  fullName: ADLXWrapper.GammaPreset.PQ
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PQ
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 10
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: PQ = 3
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.PQ2084
+  commentId: F:ADLXWrapper.GammaPreset.PQ2084
+  id: PQ2084
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: PQ2084
+  nameWithType: GammaPreset.PQ2084
+  fullName: ADLXWrapper.GammaPreset.PQ2084
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PQ2084
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: PQ2084 = 4
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.G36
+  commentId: F:ADLXWrapper.GammaPreset.G36
+  id: G36
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: G36
+  nameWithType: GammaPreset.G36
+  fullName: ADLXWrapper.GammaPreset.G36
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: G36
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: G36 = 5
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.CustomCoefficient
+  commentId: F:ADLXWrapper.GammaPreset.CustomCoefficient
+  id: CustomCoefficient
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: CustomCoefficient
+  nameWithType: GammaPreset.CustomCoefficient
+  fullName: ADLXWrapper.GammaPreset.CustomCoefficient
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CustomCoefficient
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 13
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: CustomCoefficient = 6
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.CustomRamp
+  commentId: F:ADLXWrapper.GammaPreset.CustomRamp
+  id: CustomRamp
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: CustomRamp
+  nameWithType: GammaPreset.CustomRamp
+  fullName: ADLXWrapper.GammaPreset.CustomRamp
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CustomRamp
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 14
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: CustomRamp = 7
+    return:
+      type: ADLXWrapper.GammaPreset
+- uid: ADLXWrapper.GammaPreset.Reset
+  commentId: F:ADLXWrapper.GammaPreset.Reset
+  id: Reset
+  parent: ADLXWrapper.GammaPreset
+  langs:
+  - csharp
+  - vb
+  name: Reset
+  nameWithType: GammaPreset.Reset
+  fullName: ADLXWrapper.GammaPreset.Reset
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Reset
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 15
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: Reset = 8
+    return:
+      type: ADLXWrapper.GammaPreset
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.GammaPreset
+  commentId: T:ADLXWrapper.GammaPreset
+  parent: ADLXWrapper
+  href: ADLXWrapper.GammaPreset.html
+  name: GammaPreset
+  nameWithType: GammaPreset
+  fullName: ADLXWrapper.GammaPreset

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ADLXPowerTuningHelpers | ADLXWrapper </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ADLXPowerTuningHelpers | ADLXWrapper ">
+      
+      <meta name="description" content="Helper methods for power tuning (manual power limit, SmartShift Max/Eco).">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-api-overhaul/apiSpec/new?filename=ADLXWrapper_ADLXPowerTuningHelpers.md&amp;value=---%0Auid%3A%20ADLXWrapper.ADLXPowerTuningHelpers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ADLXWrapper">
+            ADLXWrapper
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ADLXWrapper.ADLXPowerTuningHelpers">
+
+
+
+  <h1 id="ADLXWrapper_ADLXPowerTuningHelpers" data-uid="ADLXWrapper.ADLXPowerTuningHelpers" class="text-break">
+Class ADLXPowerTuningHelpers  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ADLXWrapper.html">ADLXWrapper</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Helper methods for power tuning (manual power limit, SmartShift Max/Eco).</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ADLXPowerTuningHelpers</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ADLXPowerTuningHelpers</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_ApplyManualPowerTuning_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_ApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)">
+  ApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a ManualPowerTuningInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyManualPowerTuning(IADLXManualPowerTuning* pManualPower, ManualPowerTuningInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pManualPower</code> <a class="xref" href="ADLXWrapper.IADLXManualPowerTuning.html">IADLXManualPowerTuning</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ManualPowerTuningInfo.html">ManualPowerTuningInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftEco_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftEco_ADLXWrapper_IADLXSmartShiftEco__ADLXWrapper_SmartShiftEcoInfo_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftEco(ADLXWrapper.IADLXSmartShiftEco*,ADLXWrapper.SmartShiftEcoInfo)">
+  ApplySmartShiftEco(IADLXSmartShiftEco*, SmartShiftEcoInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a SmartShiftEcoInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplySmartShiftEco(IADLXSmartShiftEco* pSmartShiftEco, SmartShiftEcoInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSmartShiftEco</code> <a class="xref" href="ADLXWrapper.IADLXSmartShiftEco.html">IADLXSmartShiftEco</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.SmartShiftEcoInfo.html">SmartShiftEcoInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftMax_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_ApplySmartShiftMax_ADLXWrapper_IADLXSmartShiftMax__ADLXWrapper_SmartShiftMaxInfo_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.ApplySmartShiftMax(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.SmartShiftMaxInfo)">
+  ApplySmartShiftMax(IADLXSmartShiftMax*, SmartShiftMaxInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies the settings from a SmartShiftMaxInfo object to the hardware.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplySmartShiftMax(IADLXSmartShiftMax* pSmartShiftMax, SmartShiftMaxInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSmartShiftMax</code> <a class="xref" href="ADLXWrapper.IADLXSmartShiftMax.html">IADLXSmartShiftMax</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.SmartShiftMaxInfo.html">SmartShiftMaxInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_GetManualPowerTuning_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_GetManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)">
+  GetManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the Manual Power Tuning information for a specific GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* pGpuTuningServices, IADLXGPU* pGPU)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pGpuTuningServices</code> <a class="xref" href="ADLXWrapper.IADLXGPUTuningServices.html">IADLXGPUTuningServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pGPU</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ManualPowerTuningInfo.html">ManualPowerTuningInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_GetPowerTuningServices_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_GetPowerTuningServices_ADLXWrapper_IADLXSystem__" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetPowerTuningServices(ADLXWrapper.IADLXSystem*)">
+  GetPowerTuningServices(IADLXSystem*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the IADLXPowerTuningServices interface from the system services. Callers must dispose the returned pointer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IADLXPowerTuningServices* GetPowerTuningServices(IADLXSystem* pSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSystem</code> <a class="xref" href="ADLXWrapper.IADLXSystem.html">IADLXSystem</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IADLXPowerTuningServices.html">IADLXPowerTuningServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftEco_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftEco_ADLXWrapper_IADLXPowerTuningServices__" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftEco(ADLXWrapper.IADLXPowerTuningServices*)">
+  GetSmartShiftEco(IADLXPowerTuningServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the SmartShift Eco information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SmartShiftEcoInfo GetSmartShiftEco(IADLXPowerTuningServices* pPowerServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pPowerServices</code> <a class="xref" href="ADLXWrapper.IADLXPowerTuningServices.html">IADLXPowerTuningServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.SmartShiftEcoInfo.html">SmartShiftEcoInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftMax_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_GetSmartShiftMax_ADLXWrapper_IADLXPowerTuningServices__" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.GetSmartShiftMax(ADLXWrapper.IADLXPowerTuningServices*)">
+  GetSmartShiftMax(IADLXPowerTuningServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the SmartShift Max information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SmartShiftMaxInfo GetSmartShiftMax(IADLXPowerTuningServices* pPowerServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pPowerServices</code> <a class="xref" href="ADLXWrapper.IADLXPowerTuningServices.html">IADLXPowerTuningServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.SmartShiftMaxInfo.html">SmartShiftMaxInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_SetManualPowerLimit_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_SetManualPowerLimit_ADLXWrapper_IADLXManualPowerTuning__System_Int32_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetManualPowerLimit(ADLXWrapper.IADLXManualPowerTuning*,System.Int32)">
+  SetManualPowerLimit(IADLXManualPowerTuning*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the manual power limit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetManualPowerLimit(IADLXManualPowerTuning* pManualPower, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pManualPower</code> <a class="xref" href="ADLXWrapper.IADLXManualPowerTuning.html">IADLXManualPowerTuning</a>*</dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_SetManualTDCLimit_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_SetManualTDCLimit_ADLXWrapper_IADLXManualPowerTuning1__System_Int32_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetManualTDCLimit(ADLXWrapper.IADLXManualPowerTuning1*,System.Int32)">
+  SetManualTDCLimit(IADLXManualPowerTuning1*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the manual TDC limit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetManualTDCLimit(IADLXManualPowerTuning1* pManualPowerV1, int value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pManualPowerV1</code> <a class="xref" href="ADLXWrapper.IADLXManualPowerTuning1.html">IADLXManualPowerTuning1</a>*</dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftEcoEnabled_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftEcoEnabled_ADLXWrapper_IADLXSmartShiftEco__System_Boolean_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftEcoEnabled(ADLXWrapper.IADLXSmartShiftEco*,System.Boolean)">
+  SetSmartShiftEcoEnabled(IADLXSmartShiftEco*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the enabled state of SmartShift Eco.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSmartShiftEcoEnabled(IADLXSmartShiftEco* pSmartShiftEco, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSmartShiftEco</code> <a class="xref" href="ADLXWrapper.IADLXSmartShiftEco.html">IADLXSmartShiftEco</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftMaxBias_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningHelpers_SetSmartShiftMaxBias_ADLXWrapper_IADLXSmartShiftMax__ADLXWrapper_ADLX_SSM_BIAS_MODE_System_Int32_" data-uid="ADLXWrapper.ADLXPowerTuningHelpers.SetSmartShiftMaxBias(ADLXWrapper.IADLXSmartShiftMax*,ADLXWrapper.ADLX_SSM_BIAS_MODE,System.Int32)">
+  SetSmartShiftMaxBias(IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the SmartShift Max bias mode and value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSmartShiftMaxBias(IADLXSmartShiftMax* pSmartShiftMax, ADLX_SSM_BIAS_MODE mode, int bias)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSmartShiftMax</code> <a class="xref" href="ADLXWrapper.IADLXSmartShiftMax.html">IADLXSmartShiftMax</a>*</dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="ADLXWrapper.ADLX_SSM_BIAS_MODE.html">ADLX_SSM_BIAS_MODE</a></dt>
+    <dd></dd>
+    <dt><code>bias</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPowerTuningHelpers.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

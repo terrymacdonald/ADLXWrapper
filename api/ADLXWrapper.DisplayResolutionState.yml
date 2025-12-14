@@ -1,0 +1,695 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.DisplayResolutionState
+  commentId: T:ADLXWrapper.DisplayResolutionState
+  id: DisplayResolutionState
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.DisplayResolutionState.DetailedTiming
+  - ADLXWrapper.DisplayResolutionState.Height
+  - ADLXWrapper.DisplayResolutionState.PixelClock
+  - ADLXWrapper.DisplayResolutionState.RefreshRate
+  - ADLXWrapper.DisplayResolutionState.ScanType
+  - ADLXWrapper.DisplayResolutionState.TimingStandard
+  - ADLXWrapper.DisplayResolutionState.Width
+  langs:
+  - csharp
+  - vb
+  name: DisplayResolutionState
+  nameWithType: DisplayResolutionState
+  fullName: ADLXWrapper.DisplayResolutionState
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DisplayResolutionState
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 74
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public sealed class DisplayResolutionState
+    content.vb: Public NotInheritable Class DisplayResolutionState
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.DisplayResolutionState.Width
+  commentId: P:ADLXWrapper.DisplayResolutionState.Width
+  id: Width
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: DisplayResolutionState.Width
+  fullName: ADLXWrapper.DisplayResolutionState.Width
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Width
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 76
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public int Width { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Width As Integer
+  overload: ADLXWrapper.DisplayResolutionState.Width*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.Height
+  commentId: P:ADLXWrapper.DisplayResolutionState.Height
+  id: Height
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: DisplayResolutionState.Height
+  fullName: ADLXWrapper.DisplayResolutionState.Height
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Height
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 77
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public int Height { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Height As Integer
+  overload: ADLXWrapper.DisplayResolutionState.Height*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.RefreshRate
+  commentId: P:ADLXWrapper.DisplayResolutionState.RefreshRate
+  id: RefreshRate
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: RefreshRate
+  nameWithType: DisplayResolutionState.RefreshRate
+  fullName: ADLXWrapper.DisplayResolutionState.RefreshRate
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RefreshRate
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 78
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public int RefreshRate { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property RefreshRate As Integer
+  overload: ADLXWrapper.DisplayResolutionState.RefreshRate*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.ScanType
+  commentId: P:ADLXWrapper.DisplayResolutionState.ScanType
+  id: ScanType
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: ScanType
+  nameWithType: DisplayResolutionState.ScanType
+  fullName: ADLXWrapper.DisplayResolutionState.ScanType
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ScanType
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 79
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ADLX_DISPLAY_SCAN_TYPE? ScanType { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE}
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property ScanType As ADLX_DISPLAY_SCAN_TYPE?
+  overload: ADLXWrapper.DisplayResolutionState.ScanType*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.TimingStandard
+  commentId: P:ADLXWrapper.DisplayResolutionState.TimingStandard
+  id: TimingStandard
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: TimingStandard
+  nameWithType: DisplayResolutionState.TimingStandard
+  fullName: ADLXWrapper.DisplayResolutionState.TimingStandard
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TimingStandard
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 80
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ADLX_TIMING_STANDARD? TimingStandard { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_TIMING_STANDARD}
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property TimingStandard As ADLX_TIMING_STANDARD?
+  overload: ADLXWrapper.DisplayResolutionState.TimingStandard*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.PixelClock
+  commentId: P:ADLXWrapper.DisplayResolutionState.PixelClock
+  id: PixelClock
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: PixelClock
+  nameWithType: DisplayResolutionState.PixelClock
+  fullName: ADLXWrapper.DisplayResolutionState.PixelClock
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PixelClock
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 81
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public int? PixelClock { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property PixelClock As Integer?
+  overload: ADLXWrapper.DisplayResolutionState.PixelClock*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayResolutionState.DetailedTiming
+  commentId: P:ADLXWrapper.DisplayResolutionState.DetailedTiming
+  id: DetailedTiming
+  parent: ADLXWrapper.DisplayResolutionState
+  langs:
+  - csharp
+  - vb
+  name: DetailedTiming
+  nameWithType: DisplayResolutionState.DetailedTiming
+  fullName: ADLXWrapper.DisplayResolutionState.DetailedTiming
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DetailedTiming
+    path: ADLXWrapper/DisplayProfiles.cs
+    startLine: 82
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ADLX_TimingInfo? DetailedTiming { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_TimingInfo}
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property DetailedTiming As ADLX_TimingInfo?
+  overload: ADLXWrapper.DisplayResolutionState.DetailedTiming*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.DisplayResolutionState.Width*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.Width
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_Width
+  name: Width
+  nameWithType: DisplayResolutionState.Width
+  fullName: ADLXWrapper.DisplayResolutionState.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.DisplayResolutionState.Height*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.Height
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_Height
+  name: Height
+  nameWithType: DisplayResolutionState.Height
+  fullName: ADLXWrapper.DisplayResolutionState.Height
+- uid: ADLXWrapper.DisplayResolutionState.RefreshRate*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.RefreshRate
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_RefreshRate
+  name: RefreshRate
+  nameWithType: DisplayResolutionState.RefreshRate
+  fullName: ADLXWrapper.DisplayResolutionState.RefreshRate
+- uid: ADLXWrapper.DisplayResolutionState.ScanType*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.ScanType
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_ScanType
+  name: ScanType
+  nameWithType: DisplayResolutionState.ScanType
+  fullName: ADLXWrapper.DisplayResolutionState.ScanType
+- uid: System.Nullable{ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE.html
+  name: ADLX_DISPLAY_SCAN_TYPE?
+  nameWithType: ADLX_DISPLAY_SCAN_TYPE?
+  fullName: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+    name: ADLX_DISPLAY_SCAN_TYPE
+    href: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+    name: ADLX_DISPLAY_SCAN_TYPE
+    href: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.DisplayResolutionState.TimingStandard*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.TimingStandard
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_TimingStandard
+  name: TimingStandard
+  nameWithType: DisplayResolutionState.TimingStandard
+  fullName: ADLXWrapper.DisplayResolutionState.TimingStandard
+- uid: System.Nullable{ADLXWrapper.ADLX_TIMING_STANDARD}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_TIMING_STANDARD}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_TIMING_STANDARD.html
+  name: ADLX_TIMING_STANDARD?
+  nameWithType: ADLX_TIMING_STANDARD?
+  fullName: ADLXWrapper.ADLX_TIMING_STANDARD?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_TIMING_STANDARD
+    name: ADLX_TIMING_STANDARD
+    href: ADLXWrapper.ADLX_TIMING_STANDARD.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_TIMING_STANDARD
+    name: ADLX_TIMING_STANDARD
+    href: ADLXWrapper.ADLX_TIMING_STANDARD.html
+  - name: '?'
+- uid: ADLXWrapper.DisplayResolutionState.PixelClock*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.PixelClock
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_PixelClock
+  name: PixelClock
+  nameWithType: DisplayResolutionState.PixelClock
+  fullName: ADLXWrapper.DisplayResolutionState.PixelClock
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: ADLXWrapper.DisplayResolutionState.DetailedTiming*
+  commentId: Overload:ADLXWrapper.DisplayResolutionState.DetailedTiming
+  href: ADLXWrapper.DisplayResolutionState.html#ADLXWrapper_DisplayResolutionState_DetailedTiming
+  name: DetailedTiming
+  nameWithType: DisplayResolutionState.DetailedTiming
+  fullName: ADLXWrapper.DisplayResolutionState.DetailedTiming
+- uid: System.Nullable{ADLXWrapper.ADLX_TimingInfo}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_TimingInfo}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_TimingInfo.html
+  name: ADLX_TimingInfo?
+  nameWithType: ADLX_TimingInfo?
+  fullName: ADLXWrapper.ADLX_TimingInfo?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_TimingInfo
+    name: ADLX_TimingInfo
+    href: ADLXWrapper.ADLX_TimingInfo.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_TimingInfo
+    name: ADLX_TimingInfo
+    href: ADLXWrapper.ADLX_TimingInfo.html
+  - name: '?'

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ADLXPerformanceMonitoringHelpers | ADLXWrapper </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ADLXPerformanceMonitoringHelpers | ADLXWrapper ">
+      
+      <meta name="description" content="Helper methods for performance monitoring services">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-api-overhaul/apiSpec/new?filename=ADLXWrapper_ADLXPerformanceMonitoringHelpers.md&amp;value=---%0Auid%3A%20ADLXWrapper.ADLXPerformanceMonitoringHelpers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ADLXWrapper">
+            ADLXWrapper
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers">
+
+
+
+  <h1 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers" class="text-break">
+Class ADLXPerformanceMonitoringHelpers  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ADLXWrapper.html">ADLXWrapper</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Helper methods for performance monitoring services</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ADLXPerformanceMonitoringHelpers</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ADLXPerformanceMonitoringHelpers</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_ApplyPerformanceMonitoringSettings_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.ApplyPerformanceMonitoringSettings*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_ApplyPerformanceMonitoringSettings_ADLXWrapper_IADLXPerformanceMonitoringServices__ADLXWrapper_PerformanceMonitoringSettingsInfo_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.ApplyPerformanceMonitoringSettings(ADLXWrapper.IADLXPerformanceMonitoringServices*,ADLXWrapper.PerformanceMonitoringSettingsInfo)">
+  ApplyPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices*, PerformanceMonitoringSettingsInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies configurable settings to the performance monitoring service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ApplyPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices* pServices, PerformanceMonitoringSettingsInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.PerformanceMonitoringSettingsInfo.html">PerformanceMonitoringSettingsInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_ClearPerformanceMetricsHistory_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.ClearPerformanceMetricsHistory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_ClearPerformanceMetricsHistory_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.ClearPerformanceMetricsHistory(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  ClearPerformanceMetricsHistory(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears the performance metrics history.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearPerformanceMetricsHistory(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateAllMetricsHistory_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateAllMetricsHistory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateAllMetricsHistory_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Int32_System_Int32_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateAllMetricsHistory(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Int32,System.Int32)">
+  EnumerateAllMetricsHistory(IADLXPerformanceMonitoringServices*, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enumerates All metrics history within a time range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;AllMetricsSnapshotInfo&gt; EnumerateAllMetricsHistory(IADLXPerformanceMonitoringServices* pServices, int startMs, int stopMs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>startMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>stopMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ADLXWrapper.AllMetricsSnapshotInfo.html">AllMetricsSnapshotInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateGpuMetricsHistory_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateGpuMetricsHistory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateGpuMetricsHistory_ADLXWrapper_IADLXPerformanceMonitoringServices__ADLXWrapper_IADLXGPU__System_Int32_System_Int32_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXPerformanceMonitoringServices*,ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)">
+  EnumerateGpuMetricsHistory(IADLXPerformanceMonitoringServices*, IADLXGPU*, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enumerates GPU metrics history for a specific GPU within a time range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;GpuMetricsSnapshotInfo&gt; EnumerateGpuMetricsHistory(IADLXPerformanceMonitoringServices* pServices, IADLXGPU* pGpu, int startMs, int stopMs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pGpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+    <dt><code>startMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>stopMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ADLXWrapper.GpuMetricsSnapshotInfo.html">GpuMetricsSnapshotInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateSystemMetricsHistory_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateSystemMetricsHistory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_EnumerateSystemMetricsHistory_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Int32_System_Int32_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.EnumerateSystemMetricsHistory(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Int32,System.Int32)">
+  EnumerateSystemMetricsHistory(IADLXPerformanceMonitoringServices*, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enumerates System metrics history within a time range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;SystemMetricsSnapshotInfo&gt; EnumerateSystemMetricsHistory(IADLXPerformanceMonitoringServices* pServices, int startMs, int stopMs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>startMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>stopMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ADLXWrapper.SystemMetricsSnapshotInfo.html">SystemMetricsSnapshotInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentAllMetrics_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentAllMetrics*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentAllMetrics_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentAllMetrics(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetCurrentAllMetrics(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current All metrics snapshot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AllMetricsSnapshotInfo GetCurrentAllMetrics(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.AllMetricsSnapshotInfo.html">AllMetricsSnapshotInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentGPUMetrics_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentGPUMetrics_ADLXWrapper_IADLXPerformanceMonitoringServices__ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentGPUMetrics(ADLXWrapper.IADLXPerformanceMonitoringServices*,ADLXWrapper.IADLXGPU*)">
+  GetCurrentGPUMetrics(IADLXPerformanceMonitoringServices*, IADLXGPU*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GpuMetricsSnapshotInfo GetCurrentGPUMetrics(IADLXPerformanceMonitoringServices* pServices, IADLXGPU* pGpu)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pGpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.GpuMetricsSnapshotInfo.html">GpuMetricsSnapshotInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentGpuMetrics_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentGpuMetrics_ADLXWrapper_IADLXPerformanceMonitoringServices__ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(ADLXWrapper.IADLXPerformanceMonitoringServices*,ADLXWrapper.IADLXGPU*)">
+  GetCurrentGpuMetrics(IADLXPerformanceMonitoringServices*, IADLXGPU*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current GPU metrics snapshot for a specific GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXPerformanceMonitoringServices* pServices, IADLXGPU* pGpu)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pGpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.GpuMetricsSnapshotInfo.html">GpuMetricsSnapshotInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentPerformanceMetricsHistorySize_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentPerformanceMetricsHistorySize*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentPerformanceMetricsHistorySize_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentPerformanceMetricsHistorySize(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetCurrentPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current performance metrics history size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetCurrentPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentSystemMetrics_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentSystemMetrics*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetCurrentSystemMetrics_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetCurrentSystemMetrics(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetCurrentSystemMetrics(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current System metrics snapshot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SystemMetricsSnapshotInfo GetCurrentSystemMetrics(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.SystemMetricsSnapshotInfo.html">SystemMetricsSnapshotInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetGpuMetricsSupport_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetGpuMetricsSupport*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetGpuMetricsSupport_ADLXWrapper_IADLXPerformanceMonitoringServices__ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetGpuMetricsSupport(ADLXWrapper.IADLXPerformanceMonitoringServices*,ADLXWrapper.IADLXGPU*)">
+  GetGpuMetricsSupport(IADLXPerformanceMonitoringServices*, IADLXGPU*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the GPU metrics support capabilities for a specific GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXPerformanceMonitoringServices* pServices, IADLXGPU* pGpu)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>pGpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.GpuMetricsSupportInfo.html">GpuMetricsSupportInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetMaxHistorySizeRange_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetMaxHistorySizeRange*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetMaxHistorySizeRange_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetMaxHistorySizeRange(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetMaxHistorySizeRange(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the maximum history size range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ADLX_IntRange GetMaxHistorySizeRange(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_IntRange.html">ADLX_IntRange</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetMaxPerformanceMetricsHistorySize_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetMaxPerformanceMetricsHistorySize*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetMaxPerformanceMetricsHistorySize_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetMaxPerformanceMetricsHistorySize(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the maximum performance metrics history size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetPerformanceMonitoringServices_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetPerformanceMonitoringServices_ADLXWrapper_IADLXSystem__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(ADLXWrapper.IADLXSystem*)">
+  GetPerformanceMonitoringServices(IADLXSystem*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the IADLXPerformanceMonitoringServices interface from the system services. Callers must dispose the returned pointer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServices(IADLXSystem* pSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pSystem</code> <a class="xref" href="ADLXWrapper.IADLXSystem.html">IADLXSystem</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetPerformanceMonitoringSettings_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringSettings*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetPerformanceMonitoringSettings_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringSettings(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the configurable settings for the performance monitoring service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.PerformanceMonitoringSettingsInfo.html">PerformanceMonitoringSettingsInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetSamplingInterval_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetSamplingInterval*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetSamplingInterval_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetSamplingInterval(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetSamplingInterval(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current sampling interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetSamplingInterval(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetSamplingIntervalRange_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetSamplingIntervalRange*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_GetSamplingIntervalRange_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.GetSamplingIntervalRange(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  GetSamplingIntervalRange(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the sampling interval range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ADLX_IntRange GetSamplingIntervalRange(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_IntRange.html">ADLX_IntRange</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_SetMaxPerformanceMetricsHistorySize_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.SetMaxPerformanceMetricsHistorySize*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_SetMaxPerformanceMetricsHistorySize_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Int32_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.SetMaxPerformanceMetricsHistorySize(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Int32)">
+  SetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the maximum performance metrics history size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetMaxPerformanceMetricsHistorySize(IADLXPerformanceMonitoringServices* pServices, int sizeSec)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>sizeSec</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_SetSamplingInterval_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.SetSamplingInterval*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_SetSamplingInterval_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Int32_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.SetSamplingInterval(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Int32)">
+  SetSamplingInterval(IADLXPerformanceMonitoringServices*, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the sampling interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetSamplingInterval(IADLXPerformanceMonitoringServices* pServices, int intervalMs)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+    <dt><code>intervalMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_StartPerformanceMetricsTracking_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.StartPerformanceMetricsTracking*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_StartPerformanceMetricsTracking_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.StartPerformanceMetricsTracking(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  StartPerformanceMetricsTracking(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts performance metrics tracking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StartPerformanceMetricsTracking(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_StopPerformanceMetricsTracking_" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.StopPerformanceMetricsTracking*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPerformanceMonitoringHelpers_StopPerformanceMetricsTracking_ADLXWrapper_IADLXPerformanceMonitoringServices__" data-uid="ADLXWrapper.ADLXPerformanceMonitoringHelpers.StopPerformanceMetricsTracking(ADLXWrapper.IADLXPerformanceMonitoringServices*)">
+  StopPerformanceMetricsTracking(IADLXPerformanceMonitoringServices*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stops performance metrics tracking.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void StopPerformanceMetricsTracking(IADLXPerformanceMonitoringServices* pServices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pServices</code> <a class="xref" href="ADLXWrapper.IADLXPerformanceMonitoringServices.html">IADLXPerformanceMonitoringServices</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/ADLXPerformanceMonitoringHelpers.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,489 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.AdlxPowerTuning
+  commentId: T:ADLXWrapper.AdlxPowerTuning
+  id: AdlxPowerTuning
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.AdlxPowerTuning.ApplyProfile(ADLXWrapper.PowerTuningProfile)
+  - ADLXWrapper.AdlxPowerTuning.Dispose
+  - ADLXWrapper.AdlxPowerTuning.Finalize
+  - ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle
+  - ADLXWrapper.AdlxPowerTuning.GetProfile
+  langs:
+  - csharp
+  - vb
+  name: AdlxPowerTuning
+  nameWithType: AdlxPowerTuning
+  fullName: ADLXWrapper.AdlxPowerTuning
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AdlxPowerTuning
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Facade for power tuning services (SmartShift, manual power/TDC via GPU tuning services).
+  example: []
+  syntax:
+    content: 'public sealed class AdlxPowerTuning : IDisposable'
+    content.vb: Public NotInheritable Class AdlxPowerTuning Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.AdlxPowerTuning.GetProfile
+  commentId: M:ADLXWrapper.AdlxPowerTuning.GetProfile
+  id: GetProfile
+  parent: ADLXWrapper.AdlxPowerTuning
+  langs:
+  - csharp
+  - vb
+  name: GetProfile()
+  nameWithType: AdlxPowerTuning.GetProfile()
+  fullName: ADLXWrapper.AdlxPowerTuning.GetProfile()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetProfile
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 21
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public PowerTuningProfile GetProfile()
+    return:
+      type: ADLXWrapper.PowerTuningProfile
+    content.vb: Public Function GetProfile() As PowerTuningProfile
+  overload: ADLXWrapper.AdlxPowerTuning.GetProfile*
+- uid: ADLXWrapper.AdlxPowerTuning.ApplyProfile(ADLXWrapper.PowerTuningProfile)
+  commentId: M:ADLXWrapper.AdlxPowerTuning.ApplyProfile(ADLXWrapper.PowerTuningProfile)
+  id: ApplyProfile(ADLXWrapper.PowerTuningProfile)
+  parent: ADLXWrapper.AdlxPowerTuning
+  langs:
+  - csharp
+  - vb
+  name: ApplyProfile(PowerTuningProfile)
+  nameWithType: AdlxPowerTuning.ApplyProfile(PowerTuningProfile)
+  fullName: ADLXWrapper.AdlxPowerTuning.ApplyProfile(ADLXWrapper.PowerTuningProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyProfile
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 33
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyProfile(PowerTuningProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.PowerTuningProfile
+    content.vb: Public Sub ApplyProfile(profile As PowerTuningProfile)
+  overload: ADLXWrapper.AdlxPowerTuning.ApplyProfile*
+- uid: ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle
+  commentId: M:ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle
+  id: GetPowerTuningServicesHandle
+  parent: ADLXWrapper.AdlxPowerTuning
+  langs:
+  - csharp
+  - vb
+  name: GetPowerTuningServicesHandle()
+  nameWithType: AdlxPowerTuning.GetPowerTuningServicesHandle()
+  fullName: ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPowerTuningServicesHandle
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 65
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetPowerTuningServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle*
+- uid: ADLXWrapper.AdlxPowerTuning.Dispose
+  commentId: M:ADLXWrapper.AdlxPowerTuning.Dispose
+  id: Dispose
+  parent: ADLXWrapper.AdlxPowerTuning
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AdlxPowerTuning.Dispose()
+  fullName: ADLXWrapper.AdlxPowerTuning.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 72
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.AdlxPowerTuning.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: ADLXWrapper.AdlxPowerTuning.Finalize
+  commentId: M:ADLXWrapper.AdlxPowerTuning.Finalize
+  id: Finalize
+  parent: ADLXWrapper.AdlxPowerTuning
+  langs:
+  - csharp
+  - vb
+  name: ~AdlxPowerTuning()
+  nameWithType: AdlxPowerTuning.~AdlxPowerTuning()
+  fullName: ADLXWrapper.AdlxPowerTuning.~AdlxPowerTuning()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPowerTuning.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Finalize
+    path: ADLXWrapper/AdlxPowerTuning.cs
+    startLine: 86
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: protected ~AdlxPowerTuning()
+    content.vb: 'Protected '
+  overload: ADLXWrapper.AdlxPowerTuning.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.AdlxPowerTuning.GetProfile*
+  commentId: Overload:ADLXWrapper.AdlxPowerTuning.GetProfile
+  href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_GetProfile
+  name: GetProfile
+  nameWithType: AdlxPowerTuning.GetProfile
+  fullName: ADLXWrapper.AdlxPowerTuning.GetProfile
+- uid: ADLXWrapper.PowerTuningProfile
+  commentId: T:ADLXWrapper.PowerTuningProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.PowerTuningProfile.html
+  name: PowerTuningProfile
+  nameWithType: PowerTuningProfile
+  fullName: ADLXWrapper.PowerTuningProfile
+- uid: ADLXWrapper.AdlxPowerTuning.ApplyProfile*
+  commentId: Overload:ADLXWrapper.AdlxPowerTuning.ApplyProfile
+  href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_ApplyProfile_ADLXWrapper_PowerTuningProfile_
+  name: ApplyProfile
+  nameWithType: AdlxPowerTuning.ApplyProfile
+  fullName: ADLXWrapper.AdlxPowerTuning.ApplyProfile
+- uid: ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle*
+  commentId: Overload:ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle
+  href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_GetPowerTuningServicesHandle
+  name: GetPowerTuningServicesHandle
+  nameWithType: AdlxPowerTuning.GetPowerTuningServicesHandle
+  fullName: ADLXWrapper.AdlxPowerTuning.GetPowerTuningServicesHandle
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.AdlxPowerTuning.Dispose*
+  commentId: Overload:ADLXWrapper.AdlxPowerTuning.Dispose
+  href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_Dispose
+  name: Dispose
+  nameWithType: AdlxPowerTuning.Dispose
+  fullName: ADLXWrapper.AdlxPowerTuning.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: ADLXWrapper.AdlxPowerTuning.Finalize*
+  commentId: Overload:ADLXWrapper.AdlxPowerTuning.Finalize
+  href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_Finalize
+  name: ~AdlxPowerTuning
+  nameWithType: AdlxPowerTuning.~AdlxPowerTuning
+  fullName: ADLXWrapper.AdlxPowerTuning.~AdlxPowerTuning
+  spec.csharp:
+  - name: "~"
+  - uid: ADLXWrapper.AdlxPowerTuning.Finalize*
+    name: AdlxPowerTuning
+    href: ADLXWrapper.AdlxPowerTuning.html#ADLXWrapper_AdlxPowerTuning_Finalize

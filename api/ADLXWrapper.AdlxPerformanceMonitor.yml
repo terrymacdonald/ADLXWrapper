@@ -1,0 +1,1042 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.AdlxPerformanceMonitor
+  commentId: T:ADLXWrapper.AdlxPerformanceMonitor
+  id: AdlxPerformanceMonitor
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile(ADLXWrapper.PerformanceMonitoringProfile)
+  - ADLXWrapper.AdlxPerformanceMonitor.Dispose
+  - ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory(System.Int32,System.Int32)
+  - ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle,System.Int32,System.Int32)
+  - ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
+  - ADLXWrapper.AdlxPerformanceMonitor.Finalize
+  - ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics
+  - ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics(ADLXWrapper.AdlxInterfaceHandle)
+  - ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics
+  - ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport(ADLXWrapper.AdlxInterfaceHandle)
+  - ADLXWrapper.AdlxPerformanceMonitor.GetProfile
+  - ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange
+  - ADLXWrapper.AdlxPerformanceMonitor.StartTracking
+  - ADLXWrapper.AdlxPerformanceMonitor.StopTracking
+  langs:
+  - csharp
+  - vb
+  name: AdlxPerformanceMonitor
+  nameWithType: AdlxPerformanceMonitor
+  fullName: ADLXWrapper.AdlxPerformanceMonitor
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AdlxPerformanceMonitor
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Facade for ADLX performance monitoring services.
+  example: []
+  syntax:
+    content: 'public sealed class AdlxPerformanceMonitor : IDisposable'
+    content.vb: Public NotInheritable Class AdlxPerformanceMonitor Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetProfile
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetProfile
+  id: GetProfile
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetProfile()
+  nameWithType: AdlxPerformanceMonitor.GetProfile()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetProfile()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetProfile
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 21
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public PerformanceMonitoringProfile GetProfile()
+    return:
+      type: ADLXWrapper.PerformanceMonitoringProfile
+    content.vb: Public Function GetProfile() As PerformanceMonitoringProfile
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetProfile*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile(ADLXWrapper.PerformanceMonitoringProfile)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile(ADLXWrapper.PerformanceMonitoringProfile)
+  id: ApplyProfile(ADLXWrapper.PerformanceMonitoringProfile)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: ApplyProfile(PerformanceMonitoringProfile)
+  nameWithType: AdlxPerformanceMonitor.ApplyProfile(PerformanceMonitoringProfile)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile(ADLXWrapper.PerformanceMonitoringProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyProfile
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 27
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyProfile(PerformanceMonitoringProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.PerformanceMonitoringProfile
+    content.vb: Public Sub ApplyProfile(profile As PerformanceMonitoringProfile)
+  overload: ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange
+  id: GetSamplingIntervalRange
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetSamplingIntervalRange()
+  nameWithType: AdlxPerformanceMonitor.GetSamplingIntervalRange()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSamplingIntervalRange
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 45
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_IntRange GetSamplingIntervalRange()
+    return:
+      type: ADLXWrapper.ADLX_IntRange
+    content.vb: Public Function GetSamplingIntervalRange() As ADLX_IntRange
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport(ADLXWrapper.AdlxInterfaceHandle)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport(ADLXWrapper.AdlxInterfaceHandle)
+  id: GetGpuMetricsSupport(ADLXWrapper.AdlxInterfaceHandle)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetGpuMetricsSupport(AdlxInterfaceHandle)
+  nameWithType: AdlxPerformanceMonitor.GetGpuMetricsSupport(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport(ADLXWrapper.AdlxInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpuMetricsSupport
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 55
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GpuMetricsSupportInfo GetGpuMetricsSupport(AdlxInterfaceHandle gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.GpuMetricsSupportInfo
+    content.vb: Public Function GetGpuMetricsSupport(gpu As AdlxInterfaceHandle) As GpuMetricsSupportInfo
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics(ADLXWrapper.AdlxInterfaceHandle)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics(ADLXWrapper.AdlxInterfaceHandle)
+  id: GetCurrentGpuMetrics(ADLXWrapper.AdlxInterfaceHandle)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentGpuMetrics(AdlxInterfaceHandle)
+  nameWithType: AdlxPerformanceMonitor.GetCurrentGpuMetrics(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics(ADLXWrapper.AdlxInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCurrentGpuMetrics
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 70
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(AdlxInterfaceHandle gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.GpuMetricsSnapshotInfo
+    content.vb: Public Function GetCurrentGpuMetrics(gpu As AdlxInterfaceHandle) As GpuMetricsSnapshotInfo
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle,System.Int32,System.Int32)
+  id: EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle,System.Int32,System.Int32)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: EnumerateGpuMetricsHistory(AdlxInterfaceHandle, int, int)
+  nameWithType: AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(AdlxInterfaceHandle, int, int)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle, int, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateGpuMetricsHistory
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 85
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(AdlxInterfaceHandle gpu, int startMs, int stopMs)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    - id: startMs
+      type: System.Int32
+    - id: stopMs
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.GpuMetricsSnapshotInfo}
+    content.vb: Public Function EnumerateGpuMetricsHistory(gpu As AdlxInterfaceHandle, startMs As Integer, stopMs As Integer) As IReadOnlyList(Of GpuMetricsSnapshotInfo)
+  overload: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory*
+  nameWithType.vb: AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(AdlxInterfaceHandle, Integer, Integer)
+  fullName.vb: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory(ADLXWrapper.AdlxInterfaceHandle, Integer, Integer)
+  name.vb: EnumerateGpuMetricsHistory(AdlxInterfaceHandle, Integer, Integer)
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics
+  id: GetCurrentSystemMetrics
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentSystemMetrics()
+  nameWithType: AdlxPerformanceMonitor.GetCurrentSystemMetrics()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCurrentSystemMetrics
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 108
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public SystemMetricsSnapshotInfo GetCurrentSystemMetrics()
+    return:
+      type: ADLXWrapper.SystemMetricsSnapshotInfo
+    content.vb: Public Function GetCurrentSystemMetrics() As SystemMetricsSnapshotInfo
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics
+  id: GetCurrentAllMetrics
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentAllMetrics()
+  nameWithType: AdlxPerformanceMonitor.GetCurrentAllMetrics()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCurrentAllMetrics
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 119
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AllMetricsSnapshotInfo GetCurrentAllMetrics()
+    return:
+      type: ADLXWrapper.AllMetricsSnapshotInfo
+    content.vb: Public Function GetCurrentAllMetrics() As AllMetricsSnapshotInfo
+  overload: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
+  id: EnumerateSystemMetricsHistory(System.Int32,System.Int32)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: EnumerateSystemMetricsHistory(int, int)
+  nameWithType: AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(int, int)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(int, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateSystemMetricsHistory
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 130
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<SystemMetricsSnapshotInfo> EnumerateSystemMetricsHistory(int startMs, int stopMs)
+    parameters:
+    - id: startMs
+      type: System.Int32
+    - id: stopMs
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.SystemMetricsSnapshotInfo}
+    content.vb: Public Function EnumerateSystemMetricsHistory(startMs As Integer, stopMs As Integer) As IReadOnlyList(Of SystemMetricsSnapshotInfo)
+  overload: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory*
+  nameWithType.vb: AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(Integer, Integer)
+  fullName.vb: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory(Integer, Integer)
+  name.vb: EnumerateSystemMetricsHistory(Integer, Integer)
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory(System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory(System.Int32,System.Int32)
+  id: EnumerateAllMetricsHistory(System.Int32,System.Int32)
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllMetricsHistory(int, int)
+  nameWithType: AdlxPerformanceMonitor.EnumerateAllMetricsHistory(int, int)
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory(int, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllMetricsHistory
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 150
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<AllMetricsSnapshotInfo> EnumerateAllMetricsHistory(int startMs, int stopMs)
+    parameters:
+    - id: startMs
+      type: System.Int32
+    - id: stopMs
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AllMetricsSnapshotInfo}
+    content.vb: Public Function EnumerateAllMetricsHistory(startMs As Integer, stopMs As Integer) As IReadOnlyList(Of AllMetricsSnapshotInfo)
+  overload: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory*
+  nameWithType.vb: AdlxPerformanceMonitor.EnumerateAllMetricsHistory(Integer, Integer)
+  fullName.vb: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory(Integer, Integer)
+  name.vb: EnumerateAllMetricsHistory(Integer, Integer)
+- uid: ADLXWrapper.AdlxPerformanceMonitor.StartTracking
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.StartTracking
+  id: StartTracking
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: StartTracking()
+  nameWithType: AdlxPerformanceMonitor.StartTracking()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.StartTracking()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: StartTracking
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 170
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void StartTracking()
+    content.vb: Public Sub StartTracking()
+  overload: ADLXWrapper.AdlxPerformanceMonitor.StartTracking*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.StopTracking
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.StopTracking
+  id: StopTracking
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: StopTracking()
+  nameWithType: AdlxPerformanceMonitor.StopTracking()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.StopTracking()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: StopTracking
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 178
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void StopTracking()
+    content.vb: Public Sub StopTracking()
+  overload: ADLXWrapper.AdlxPerformanceMonitor.StopTracking*
+- uid: ADLXWrapper.AdlxPerformanceMonitor.Dispose
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.Dispose
+  id: Dispose
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AdlxPerformanceMonitor.Dispose()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 186
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.AdlxPerformanceMonitor.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: ADLXWrapper.AdlxPerformanceMonitor.Finalize
+  commentId: M:ADLXWrapper.AdlxPerformanceMonitor.Finalize
+  id: Finalize
+  parent: ADLXWrapper.AdlxPerformanceMonitor
+  langs:
+  - csharp
+  - vb
+  name: ~AdlxPerformanceMonitor()
+  nameWithType: AdlxPerformanceMonitor.~AdlxPerformanceMonitor()
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.~AdlxPerformanceMonitor()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxPerformanceMonitor.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Finalize
+    path: ADLXWrapper/AdlxPerformanceMonitor.cs
+    startLine: 200
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: protected ~AdlxPerformanceMonitor()
+    content.vb: 'Protected '
+  overload: ADLXWrapper.AdlxPerformanceMonitor.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetProfile*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetProfile
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetProfile
+  name: GetProfile
+  nameWithType: AdlxPerformanceMonitor.GetProfile
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetProfile
+- uid: ADLXWrapper.PerformanceMonitoringProfile
+  commentId: T:ADLXWrapper.PerformanceMonitoringProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.PerformanceMonitoringProfile.html
+  name: PerformanceMonitoringProfile
+  nameWithType: PerformanceMonitoringProfile
+  fullName: ADLXWrapper.PerformanceMonitoringProfile
+- uid: ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_ApplyProfile_ADLXWrapper_PerformanceMonitoringProfile_
+  name: ApplyProfile
+  nameWithType: AdlxPerformanceMonitor.ApplyProfile
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.ApplyProfile
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetSamplingIntervalRange
+  name: GetSamplingIntervalRange
+  nameWithType: AdlxPerformanceMonitor.GetSamplingIntervalRange
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetSamplingIntervalRange
+- uid: ADLXWrapper.ADLX_IntRange
+  commentId: T:ADLXWrapper.ADLX_IntRange
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_IntRange.html
+  name: ADLX_IntRange
+  nameWithType: ADLX_IntRange
+  fullName: ADLXWrapper.ADLX_IntRange
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetGpuMetricsSupport_ADLXWrapper_AdlxInterfaceHandle_
+  name: GetGpuMetricsSupport
+  nameWithType: AdlxPerformanceMonitor.GetGpuMetricsSupport
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetGpuMetricsSupport
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.GpuMetricsSupportInfo
+  commentId: T:ADLXWrapper.GpuMetricsSupportInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuMetricsSupportInfo.html
+  name: GpuMetricsSupportInfo
+  nameWithType: GpuMetricsSupportInfo
+  fullName: ADLXWrapper.GpuMetricsSupportInfo
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetCurrentGpuMetrics_ADLXWrapper_AdlxInterfaceHandle_
+  name: GetCurrentGpuMetrics
+  nameWithType: AdlxPerformanceMonitor.GetCurrentGpuMetrics
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentGpuMetrics
+- uid: ADLXWrapper.GpuMetricsSnapshotInfo
+  commentId: T:ADLXWrapper.GpuMetricsSnapshotInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuMetricsSnapshotInfo.html
+  name: GpuMetricsSnapshotInfo
+  nameWithType: GpuMetricsSnapshotInfo
+  fullName: ADLXWrapper.GpuMetricsSnapshotInfo
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_EnumerateGpuMetricsHistory_ADLXWrapper_AdlxInterfaceHandle_System_Int32_System_Int32_
+  name: EnumerateGpuMetricsHistory
+  nameWithType: AdlxPerformanceMonitor.EnumerateGpuMetricsHistory
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateGpuMetricsHistory
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.GpuMetricsSnapshotInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.GpuMetricsSnapshotInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<GpuMetricsSnapshotInfo>
+  nameWithType: IReadOnlyList<GpuMetricsSnapshotInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.GpuMetricsSnapshotInfo>
+  nameWithType.vb: IReadOnlyList(Of GpuMetricsSnapshotInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.GpuMetricsSnapshotInfo)
+  name.vb: IReadOnlyList(Of GpuMetricsSnapshotInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.GpuMetricsSnapshotInfo
+    name: GpuMetricsSnapshotInfo
+    href: ADLXWrapper.GpuMetricsSnapshotInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.GpuMetricsSnapshotInfo
+    name: GpuMetricsSnapshotInfo
+    href: ADLXWrapper.GpuMetricsSnapshotInfo.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetCurrentSystemMetrics
+  name: GetCurrentSystemMetrics
+  nameWithType: AdlxPerformanceMonitor.GetCurrentSystemMetrics
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentSystemMetrics
+- uid: ADLXWrapper.SystemMetricsSnapshotInfo
+  commentId: T:ADLXWrapper.SystemMetricsSnapshotInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.SystemMetricsSnapshotInfo.html
+  name: SystemMetricsSnapshotInfo
+  nameWithType: SystemMetricsSnapshotInfo
+  fullName: ADLXWrapper.SystemMetricsSnapshotInfo
+- uid: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_GetCurrentAllMetrics
+  name: GetCurrentAllMetrics
+  nameWithType: AdlxPerformanceMonitor.GetCurrentAllMetrics
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.GetCurrentAllMetrics
+- uid: ADLXWrapper.AllMetricsSnapshotInfo
+  commentId: T:ADLXWrapper.AllMetricsSnapshotInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.AllMetricsSnapshotInfo.html
+  name: AllMetricsSnapshotInfo
+  nameWithType: AllMetricsSnapshotInfo
+  fullName: ADLXWrapper.AllMetricsSnapshotInfo
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_EnumerateSystemMetricsHistory_System_Int32_System_Int32_
+  name: EnumerateSystemMetricsHistory
+  nameWithType: AdlxPerformanceMonitor.EnumerateSystemMetricsHistory
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateSystemMetricsHistory
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.SystemMetricsSnapshotInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.SystemMetricsSnapshotInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<SystemMetricsSnapshotInfo>
+  nameWithType: IReadOnlyList<SystemMetricsSnapshotInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.SystemMetricsSnapshotInfo>
+  nameWithType.vb: IReadOnlyList(Of SystemMetricsSnapshotInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.SystemMetricsSnapshotInfo)
+  name.vb: IReadOnlyList(Of SystemMetricsSnapshotInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.SystemMetricsSnapshotInfo
+    name: SystemMetricsSnapshotInfo
+    href: ADLXWrapper.SystemMetricsSnapshotInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.SystemMetricsSnapshotInfo
+    name: SystemMetricsSnapshotInfo
+    href: ADLXWrapper.SystemMetricsSnapshotInfo.html
+  - name: )
+- uid: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_EnumerateAllMetricsHistory_System_Int32_System_Int32_
+  name: EnumerateAllMetricsHistory
+  nameWithType: AdlxPerformanceMonitor.EnumerateAllMetricsHistory
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.EnumerateAllMetricsHistory
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AllMetricsSnapshotInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AllMetricsSnapshotInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<AllMetricsSnapshotInfo>
+  nameWithType: IReadOnlyList<AllMetricsSnapshotInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AllMetricsSnapshotInfo>
+  nameWithType.vb: IReadOnlyList(Of AllMetricsSnapshotInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AllMetricsSnapshotInfo)
+  name.vb: IReadOnlyList(Of AllMetricsSnapshotInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.AllMetricsSnapshotInfo
+    name: AllMetricsSnapshotInfo
+    href: ADLXWrapper.AllMetricsSnapshotInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.AllMetricsSnapshotInfo
+    name: AllMetricsSnapshotInfo
+    href: ADLXWrapper.AllMetricsSnapshotInfo.html
+  - name: )
+- uid: ADLXWrapper.AdlxPerformanceMonitor.StartTracking*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.StartTracking
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_StartTracking
+  name: StartTracking
+  nameWithType: AdlxPerformanceMonitor.StartTracking
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.StartTracking
+- uid: ADLXWrapper.AdlxPerformanceMonitor.StopTracking*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.StopTracking
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_StopTracking
+  name: StopTracking
+  nameWithType: AdlxPerformanceMonitor.StopTracking
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.StopTracking
+- uid: ADLXWrapper.AdlxPerformanceMonitor.Dispose*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.Dispose
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_Dispose
+  name: Dispose
+  nameWithType: AdlxPerformanceMonitor.Dispose
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: ADLXWrapper.AdlxPerformanceMonitor.Finalize*
+  commentId: Overload:ADLXWrapper.AdlxPerformanceMonitor.Finalize
+  href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_Finalize
+  name: ~AdlxPerformanceMonitor
+  nameWithType: AdlxPerformanceMonitor.~AdlxPerformanceMonitor
+  fullName: ADLXWrapper.AdlxPerformanceMonitor.~AdlxPerformanceMonitor
+  spec.csharp:
+  - name: "~"
+  - uid: ADLXWrapper.AdlxPerformanceMonitor.Finalize*
+    name: AdlxPerformanceMonitor
+    href: ADLXWrapper.AdlxPerformanceMonitor.html#ADLXWrapper_AdlxPerformanceMonitor_Finalize

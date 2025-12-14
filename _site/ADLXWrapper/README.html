@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ADLXWrapper (ClangSharp-based) | ADLXWrapper </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ADLXWrapper (ClangSharp-based) | ADLXWrapper ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="ADLXWrapper">
+            ADLXWrapper
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="adlxwrapper-clangsharp-based">ADLXWrapper (ClangSharp-based)</h1>
+
+<p>High-performance C# bindings for AMD ADLX using vtable-based interop.</p>
+<h2 id="build">Build</h2>
+<ul>
+<li>Requires .NET SDK 10.0 and the ADLX SDK (downloaded into <code>../ADLX/</code> via <code>prepare_adlx.ps1</code>).</li>
+</ul>
+<p><strong>Visual Studio 2026</strong></p>
+<ul>
+<li>Open <code>ADLXWrapper.sln</code>, restore, build, and run tests from Test Explorer (tests skip on non-AMD systems or without <code>amdadlx64.dll</code>).</li>
+</ul>
+<p><strong>VS Code / dotnet CLI</strong></p>
+<pre><code class="lang-powershell"># from repo root
+.\prepare_adlx.ps1
+.\build_adlx.ps1        # builds wrapper + tests
+# or
+dotnet build ADLXWrapper/ADLXWrapper.csproj
+</code></pre>
+<h2 id="usage-snapshot-facades">Usage snapshot (facades)</h2>
+<pre><code class="lang-csharp">using ADLXWrapper;
+using System.Linq;
+
+// Initialize ADLX
+using var adlx = ADLXApi.Initialize();
+var system = adlx.GetSystemServicesProfile();
+
+// Enumerate displays via facades
+var displays = system.EnumerateAllDisplays();
+foreach (var d in displays)
+{
+    using (d)
+    {
+        var profile = d.GetProfile();
+        d.ApplyProfile(profile, skip =&gt; System.Console.WriteLine($&quot;skip: {skip}&quot;)); // safe: re-applies current state
+        System.Console.WriteLine($&quot;Display {d.Name} {profile.Width}x{profile.Height} @ {profile.RefreshRate}Hz&quot;);
+    }
+}
+
+// System-level apply (resolve by UniqueId)
+// system.ApplyDisplayProfile(profile);
+</code></pre>
+<h3 id="desktop-profile-snapshot">Desktop profile snapshot</h3>
+<pre><code class="lang-csharp">using ADLXWrapper;
+using System.Linq;
+
+using var adlx = ADLXApi.Initialize();
+var system = adlx.GetSystemServicesProfile();
+
+var desktop = system.EnumerateAllDesktops().FirstOrDefault();
+if (desktop != null)
+{
+    using (desktop)
+    {
+        var profile = desktop.GetProfile();
+        desktop.ApplyProfile(profile); // re-applies current layout safely
+    }
+}
+</code></pre>
+<h3 id="display-events-snapshot">Display events snapshot</h3>
+<pre><code class="lang-csharp">using ADLXWrapper;
+
+unsafe
+{
+    using var adlx = ADLXApi.Initialize();
+    var system = adlx.GetSystemServicesProfile();
+
+    using var dispServices = system.GetDisplayServicesHandle();
+
+    IADLXDisplayChangedHandling* handlingPtr = null;
+    if (dispServices.As&lt;IADLXDisplayServices&gt;()-&gt;GetDisplayChangedHandling(&amp;handlingPtr) != ADLX_RESULT.ADLX_OK || handlingPtr == null)
+        return;
+
+    using var handling = AdlxInterfaceHandle.From(handlingPtr, addRef: false);
+    var listener = DisplaySettingsListenerHandle.Create(evt =&gt; { System.Console.WriteLine($&quot;Display event: 0x{evt.ToInt64():X}&quot;); return true; });
+
+    try
+    {
+        handling.As&lt;IADLXDisplayChangedHandling&gt;()-&gt;AddDisplaySettingsEventListener((IADLXDisplaySettingsChangedListener*)listener.DangerousGetHandle());
+        System.Console.ReadLine();
+    }
+    finally
+    {
+        handling.As&lt;IADLXDisplayChangedHandling&gt;()-&gt;RemoveDisplaySettingsEventListener((IADLXDisplaySettingsChangedListener*)listener.DangerousGetHandle());
+        listener.Dispose();
+    }
+}
+</code></pre>
+<p>Key facades:</p>
+<ul>
+<li><code>ADLXSystemServices</code> – enumerates displays/desktops as <code>AdlxDisplay</code>/<code>AdlxDesktop</code>; entry to performance monitoring, GPU tuning, multimedia, power tuning, and 3D settings.</li>
+<li><code>AdlxDisplay</code> – identity + per-feature getters/setters (gamma, gamut, 3DLUT, custom color, connectivity, resolutions, color depth, pixel format, FreeSync, VSR, integer scaling, GPU scaling, scaling mode, HDCP, VariBright, blanking, resolution). Profiles are JSON-serializable and skip unsupported features.</li>
+<li><code>AdlxDesktop</code> – geometry/orientation, members, profile capture/apply.</li>
+<li><code>AdlxPerformanceMonitor</code>, <code>AdlxGpuTuning</code>, <code>AdlxMultimedia</code>, <code>AdlxPowerTuning</code>, <code>Adlx3DSettings</code> – profile capture/apply + per-feature access; handle gating and skip on unsupported interfaces.</li>
+</ul>
+<p>Legacy helpers:</p>
+<ul>
+<li>Static helper classes (e.g., <code>ADLXDisplayHelpers</code>, <code>ADLXDesktopHelpers</code>, <code>ADLXPerformanceMonitoringHelpers</code>, <code>ADLXGPUTuningHelpers</code>, <code>ADLXMultimediaHelpers</code>, <code>ADLXPowerTuningHelpers</code>, <code>ADLX3DSettingsHelpers</code>) remain only for compatibility; prefer the facades. Samples/tests use facades exclusively.</li>
+</ul>
+<h2 id="regenerating-bindings-optional">Regenerating bindings (optional)</h2>
+<pre><code class="lang-powershell">cd ADLXWrapper
+ClangSharpPInvokeGenerator @ClangSharpConfig.rsp
+</code></pre>
+<p>Generated files land in <code>cs_generated/</code> and are excluded from source control.</p>
+<h2 id="version-gating-and-skips">Version gating and skips</h2>
+<ul>
+<li>Prefer on-demand <code>QueryInterface</code> gating and propagate ADLX errors (e.g., <code>ADLX_NOT_SUPPORTED</code>/<code>ADLX_BAD_VER</code>) when features are unavailable.</li>
+<li>Display apply methods accept an optional skip callback to surface skipped features when newer interfaces are unavailable.</li>
+<li>Always guard test/sample runs with <code>ADLXHardwareDetection.HasAMDGPU</code> and <code>ADLXApi.IsADLXDllAvailable</code> to skip cleanly on non-AMD systems.</li>
+</ul>
+<h3 id="capability-matrix-displayservices3--ds3">Capability matrix (DisplayServices3 = DS3)</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Facade surface</th>
+<th>Requires DS3 for apply?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connectivity (HDMI quality, DP link rate, voltage swing)</td>
+<td><code>AdlxDisplay.GetConnectivity()</code> / <code>ApplyProfile.Connectivity</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Color depth</td>
+<td><code>AdlxDisplay.GetColorDepth()</code> / <code>ApplyProfile.ColorDepth</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Pixel format</td>
+<td><code>AdlxDisplay.GetPixelFormat()</code> / <code>ApplyProfile.PixelFormat</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>FreeSync</td>
+<td><code>AdlxDisplay.GetFreeSyncState()</code> / <code>ApplyProfile.FreeSync</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>VSR</td>
+<td><code>AdlxDisplay.GetVsrState()</code> / <code>ApplyProfile.Vsr</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Integer scaling</td>
+<td><code>AdlxDisplay.GetIntegerScalingState()</code> / <code>ApplyProfile.IntegerScaling</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>GPU scaling</td>
+<td><code>AdlxDisplay.GetGpuScalingState()</code> / <code>ApplyProfile.GpuScaling</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Scaling mode</td>
+<td><code>AdlxDisplay.GetScalingMode()</code> / <code>ApplyProfile.ScalingMode</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>HDCP</td>
+<td><code>AdlxDisplay.GetHdcpState()</code> / <code>ApplyProfile.Hdcp</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>VariBright</td>
+<td><code>AdlxDisplay.GetVariBright()</code> / <code>ApplyProfile.VariBright</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Blanking</td>
+<td><code>AdlxDisplay.GetBlanking()</code> / <code>ApplyProfile.Blanking</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Gamma, gamut, 3DLUT, custom color, custom resolution</td>
+<td><code>AdlxDisplay</code> getters/setters</td>
+<td>No (DS2 sufficient)</td>
+</tr>
+<tr>
+<td>Desktop geometry/profile</td>
+<td><code>AdlxDesktop</code></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<ul>
+<li>For display events, obtain a display-services handle via <code>GetDisplayServicesHandle()</code> on the facade, then register listeners through <code>IADLXDisplayChangedHandling</code>.</li>
+</ul>
+<h2 id="logging">Logging</h2>
+<ul>
+<li>Configure via <code>ADLXApi.EnableLog(LogProfile)</code> with destinations: local file, debug view, or managed sink (<code>ADLX_LOG_DESTINATION</code> + <code>ADLX_LOG_SEVERITY</code>).</li>
+<li><code>DisableLog()</code> reverts to low-noise debug-view logging and disposes any managed sink.</li>
+</ul>
+<h2 id="testing-and-hardware-notes">Testing and hardware notes</h2>
+<ul>
+<li>Run from repo root: <code>dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj</code>.</li>
+<li>Tests auto-skip on non-AMD systems or when <code>amdadlx64.dll</code> is unavailable; a fully passing run requires an AMD GPU with ADLX installed.</li>
+<li>Samples can be built with <code>dotnet build Samples/ADLXWrapper.Samples.sln</code>; runtime behavior that touches hardware requires AMD drivers.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-overhaul/ADLXWrapper/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

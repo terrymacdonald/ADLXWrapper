@@ -1,0 +1,449 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.MultimediaProfile
+  commentId: T:ADLXWrapper.MultimediaProfile
+  id: MultimediaProfile
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.MultimediaProfile.#ctor(System.Nullable{ADLXWrapper.VideoUpscaleInfo},System.Nullable{ADLXWrapper.VideoSuperResolutionInfo})
+  - ADLXWrapper.MultimediaProfile.VideoSuperResolution
+  - ADLXWrapper.MultimediaProfile.VideoUpscale
+  langs:
+  - csharp
+  - vb
+  name: MultimediaProfile
+  nameWithType: MultimediaProfile
+  fullName: ADLXWrapper.MultimediaProfile
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MultimediaProfile
+    path: ADLXWrapper/AdlxMultimedia.cs
+    startLine: 98
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: JSON-serializable multimedia profile.
+  example: []
+  syntax:
+    content: public sealed class MultimediaProfile
+    content.vb: Public NotInheritable Class MultimediaProfile
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.MultimediaProfile.VideoUpscale
+  commentId: P:ADLXWrapper.MultimediaProfile.VideoUpscale
+  id: VideoUpscale
+  parent: ADLXWrapper.MultimediaProfile
+  langs:
+  - csharp
+  - vb
+  name: VideoUpscale
+  nameWithType: MultimediaProfile.VideoUpscale
+  fullName: ADLXWrapper.MultimediaProfile.VideoUpscale
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VideoUpscale
+    path: ADLXWrapper/AdlxMultimedia.cs
+    startLine: 100
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public VideoUpscaleInfo? VideoUpscale { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.VideoUpscaleInfo}
+    content.vb: Public Property VideoUpscale As VideoUpscaleInfo?
+  overload: ADLXWrapper.MultimediaProfile.VideoUpscale*
+- uid: ADLXWrapper.MultimediaProfile.VideoSuperResolution
+  commentId: P:ADLXWrapper.MultimediaProfile.VideoSuperResolution
+  id: VideoSuperResolution
+  parent: ADLXWrapper.MultimediaProfile
+  langs:
+  - csharp
+  - vb
+  name: VideoSuperResolution
+  nameWithType: MultimediaProfile.VideoSuperResolution
+  fullName: ADLXWrapper.MultimediaProfile.VideoSuperResolution
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VideoSuperResolution
+    path: ADLXWrapper/AdlxMultimedia.cs
+    startLine: 101
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public VideoSuperResolutionInfo? VideoSuperResolution { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.VideoSuperResolutionInfo}
+    content.vb: Public Property VideoSuperResolution As VideoSuperResolutionInfo?
+  overload: ADLXWrapper.MultimediaProfile.VideoSuperResolution*
+- uid: ADLXWrapper.MultimediaProfile.#ctor(System.Nullable{ADLXWrapper.VideoUpscaleInfo},System.Nullable{ADLXWrapper.VideoSuperResolutionInfo})
+  commentId: M:ADLXWrapper.MultimediaProfile.#ctor(System.Nullable{ADLXWrapper.VideoUpscaleInfo},System.Nullable{ADLXWrapper.VideoSuperResolutionInfo})
+  id: '#ctor(System.Nullable{ADLXWrapper.VideoUpscaleInfo},System.Nullable{ADLXWrapper.VideoSuperResolutionInfo})'
+  parent: ADLXWrapper.MultimediaProfile
+  langs:
+  - csharp
+  - vb
+  name: MultimediaProfile(VideoUpscaleInfo?, VideoSuperResolutionInfo?)
+  nameWithType: MultimediaProfile.MultimediaProfile(VideoUpscaleInfo?, VideoSuperResolutionInfo?)
+  fullName: ADLXWrapper.MultimediaProfile.MultimediaProfile(ADLXWrapper.VideoUpscaleInfo?, ADLXWrapper.VideoSuperResolutionInfo?)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ADLXWrapper/AdlxMultimedia.cs
+    startLine: 103
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public MultimediaProfile(VideoUpscaleInfo? videoUpscale, VideoSuperResolutionInfo? videoSuperResolution)
+    parameters:
+    - id: videoUpscale
+      type: System.Nullable{ADLXWrapper.VideoUpscaleInfo}
+    - id: videoSuperResolution
+      type: System.Nullable{ADLXWrapper.VideoSuperResolutionInfo}
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(videoUpscale As VideoUpscaleInfo?, videoSuperResolution As VideoSuperResolutionInfo?)
+  overload: ADLXWrapper.MultimediaProfile.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: MultimediaProfile.New(VideoUpscaleInfo?, VideoSuperResolutionInfo?)
+  fullName.vb: ADLXWrapper.MultimediaProfile.New(ADLXWrapper.VideoUpscaleInfo?, ADLXWrapper.VideoSuperResolutionInfo?)
+  name.vb: New(VideoUpscaleInfo?, VideoSuperResolutionInfo?)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.MultimediaProfile.VideoUpscale*
+  commentId: Overload:ADLXWrapper.MultimediaProfile.VideoUpscale
+  href: ADLXWrapper.MultimediaProfile.html#ADLXWrapper_MultimediaProfile_VideoUpscale
+  name: VideoUpscale
+  nameWithType: MultimediaProfile.VideoUpscale
+  fullName: ADLXWrapper.MultimediaProfile.VideoUpscale
+- uid: System.Nullable{ADLXWrapper.VideoUpscaleInfo}
+  commentId: T:System.Nullable{ADLXWrapper.VideoUpscaleInfo}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.VideoUpscaleInfo.html
+  name: VideoUpscaleInfo?
+  nameWithType: VideoUpscaleInfo?
+  fullName: ADLXWrapper.VideoUpscaleInfo?
+  spec.csharp:
+  - uid: ADLXWrapper.VideoUpscaleInfo
+    name: VideoUpscaleInfo
+    href: ADLXWrapper.VideoUpscaleInfo.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.VideoUpscaleInfo
+    name: VideoUpscaleInfo
+    href: ADLXWrapper.VideoUpscaleInfo.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.MultimediaProfile.VideoSuperResolution*
+  commentId: Overload:ADLXWrapper.MultimediaProfile.VideoSuperResolution
+  href: ADLXWrapper.MultimediaProfile.html#ADLXWrapper_MultimediaProfile_VideoSuperResolution
+  name: VideoSuperResolution
+  nameWithType: MultimediaProfile.VideoSuperResolution
+  fullName: ADLXWrapper.MultimediaProfile.VideoSuperResolution
+- uid: System.Nullable{ADLXWrapper.VideoSuperResolutionInfo}
+  commentId: T:System.Nullable{ADLXWrapper.VideoSuperResolutionInfo}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.VideoSuperResolutionInfo.html
+  name: VideoSuperResolutionInfo?
+  nameWithType: VideoSuperResolutionInfo?
+  fullName: ADLXWrapper.VideoSuperResolutionInfo?
+  spec.csharp:
+  - uid: ADLXWrapper.VideoSuperResolutionInfo
+    name: VideoSuperResolutionInfo
+    href: ADLXWrapper.VideoSuperResolutionInfo.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.VideoSuperResolutionInfo
+    name: VideoSuperResolutionInfo
+    href: ADLXWrapper.VideoSuperResolutionInfo.html
+  - name: '?'
+- uid: ADLXWrapper.MultimediaProfile.#ctor*
+  commentId: Overload:ADLXWrapper.MultimediaProfile.#ctor
+  href: ADLXWrapper.MultimediaProfile.html#ADLXWrapper_MultimediaProfile__ctor_System_Nullable_ADLXWrapper_VideoUpscaleInfo__System_Nullable_ADLXWrapper_VideoSuperResolutionInfo__
+  name: MultimediaProfile
+  nameWithType: MultimediaProfile.MultimediaProfile
+  fullName: ADLXWrapper.MultimediaProfile.MultimediaProfile
+  nameWithType.vb: MultimediaProfile.New
+  fullName.vb: ADLXWrapper.MultimediaProfile.New
+  name.vb: New

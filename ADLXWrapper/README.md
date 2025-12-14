@@ -5,6 +5,10 @@ High-performance C# bindings for AMD ADLX using vtable-based interop.
 ## Build
 - Requires .NET SDK 10.0 and the ADLX SDK (downloaded into `../ADLX/` via `prepare_adlx.ps1`).
 
+**Visual Studio 2026**
+- Open `ADLXWrapper.sln`, restore, build, and run tests from Test Explorer (tests skip on non-AMD systems or without `amdadlx64.dll`).
+
+**VS Code / dotnet CLI**
 ```powershell
 # from repo root
 .\prepare_adlx.ps1
@@ -20,7 +24,7 @@ using System.Linq;
 
 // Initialize ADLX
 using var adlx = ADLXApi.Initialize();
-var system = adlx.GetSystemServicesFacade();
+var system = adlx.GetSystemServicesProfile();
 
 // Enumerate displays via facades
 var displays = system.EnumerateAllDisplays();
@@ -44,7 +48,7 @@ using ADLXWrapper;
 using System.Linq;
 
 using var adlx = ADLXApi.Initialize();
-var system = adlx.GetSystemServicesFacade();
+var system = adlx.GetSystemServicesProfile();
 
 var desktop = system.EnumerateAllDesktops().FirstOrDefault();
 if (desktop != null)
@@ -64,7 +68,7 @@ using ADLXWrapper;
 unsafe
 {
     using var adlx = ADLXApi.Initialize();
-    var system = adlx.GetSystemServicesFacade();
+    var system = adlx.GetSystemServicesProfile();
 
     using var dispServices = system.GetDisplayServicesHandle();
 
@@ -88,15 +92,14 @@ unsafe
 }
 ```
 
-Key helpers:
-- `ADLXSystemServices` – enumerates displays/desktops as `AdlxDisplay`/`AdlxDesktop` facades.
-- `AdlxDisplay` – identity + per-feature getters/setters (gamma, gamut, 3DLUT, custom color, connectivity, resolutions, color depth, pixel format, FreeSync, VSR, integer scaling, GPU scaling, scaling mode, HDCP, VariBright, blanking, resolution). Profiles are JSON-serializable.
+Key facades:
+- `ADLXSystemServices` – enumerates displays/desktops as `AdlxDisplay`/`AdlxDesktop`; entry to performance monitoring, GPU tuning, multimedia, power tuning, and 3D settings.
+- `AdlxDisplay` – identity + per-feature getters/setters (gamma, gamut, 3DLUT, custom color, connectivity, resolutions, color depth, pixel format, FreeSync, VSR, integer scaling, GPU scaling, scaling mode, HDCP, VariBright, blanking, resolution). Profiles are JSON-serializable and skip unsupported features.
 - `AdlxDesktop` – geometry/orientation, members, profile capture/apply.
-- `ADLXPerformanceMonitoringHelpers` – metrics/support queries.
-- `ADLXGPUTuningHelpers` – tuning capability inspection (read-only).
+- `AdlxPerformanceMonitor`, `AdlxGpuTuning`, `AdlxMultimedia`, `AdlxPowerTuning`, `Adlx3DSettings` – profile capture/apply + per-feature access; handle gating and skip on unsupported interfaces.
 
 Legacy helpers:
-- Static helper classes (e.g., `ADLXDisplayHelpers`, `ADLXDesktopHelpers`) remain for compatibility but are considered legacy; prefer the facade types. Samples/tests use facades exclusively.
+- Static helper classes (e.g., `ADLXDisplayHelpers`, `ADLXDesktopHelpers`, `ADLXPerformanceMonitoringHelpers`, `ADLXGPUTuningHelpers`, `ADLXMultimediaHelpers`, `ADLXPowerTuningHelpers`, `ADLX3DSettingsHelpers`) remain only for compatibility; prefer the facades. Samples/tests use facades exclusively.
 
 ## Regenerating bindings (optional)
 ```powershell
@@ -130,7 +133,11 @@ Generated files land in `cs_generated/` and are excluded from source control.
 ## Events
 - For display events, obtain a display-services handle via `GetDisplayServicesHandle()` on the facade, then register listeners through `IADLXDisplayChangedHandling`.
 
-## Testing on AMD hardware
+## Logging
+- Configure via `ADLXApi.EnableLog(LogProfile)` with destinations: local file, debug view, or managed sink (`ADLX_LOG_DESTINATION` + `ADLX_LOG_SEVERITY`).
+- `DisableLog()` reverts to low-noise debug-view logging and disposes any managed sink.
+
+## Testing and hardware notes
 - Run from repo root: `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj`.
 - Tests auto-skip on non-AMD systems or when `amdadlx64.dll` is unavailable; a fully passing run requires an AMD GPU with ADLX installed.
 - Samples can be built with `dotnet build Samples/ADLXWrapper.Samples.sln`; runtime behavior that touches hardware requires AMD drivers.
