@@ -117,6 +117,71 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
+        public void DisplayProfile_SkipCallback_WhenDisplayServices2Or1Missing()
+        {
+            Skip.If(_api == null || _sys == null, _skipReason);
+            Skip.If(!ADLXHardwareDetection.HasAMDGPU(out var hwReason), hwReason);
+            if (!ADLXApi.IsADLXDllAvailable(out var dllReason))
+            {
+                Skip.If(true, dllReason);
+            }
+
+            var display = _sys.EnumerateAllDisplays().FirstOrDefault();
+            if (display == null)
+            {
+                Skip.If(true, "No displays found.");
+            }
+
+            using (display!)
+            {
+                var profile = display.GetProfile();
+                using var displayServices = _sys.GetDisplayServicesHandle();
+                var supportsDs2 = ADLXHelpers.TryQueryInterface((IntPtr)displayServices, nameof(IADLXDisplayServices2), out _);
+                var supportsDs1 = ADLXHelpers.TryQueryInterface((IntPtr)displayServices, nameof(IADLXDisplayServices1), out _);
+
+                if (!supportsDs2)
+                {
+                    profile.Connectivity = new ConnectivityState
+                    {
+                        HdmiQualityDetectionSupported = true,
+                        HdmiQualityDetectionEnabled = true,
+                        DpLinkRateSupported = true,
+                        DpLinkRate = ADLX_DP_LINK_RATE.DP_LINK_RATE_HBR2,
+                        RelativePreEmphasisSupported = true,
+                        RelativePreEmphasis = 0,
+                        RelativeVoltageSwingSupported = true,
+                        RelativeVoltageSwing = 0
+                    };
+                }
+
+                if (!supportsDs1)
+                {
+                    profile.Blanking = new BlankingState { Supported = true, Blanked = true };
+                }
+
+                var skips = new List<string>();
+                display.ApplyProfile(profile, s => skips.Add(s));
+
+                if (!supportsDs2)
+                {
+                    Assert.Contains(skips, s => s.Contains("Connectivity"));
+                    _output.WriteLine($"Connectivity skipped: {string.Join("; ", skips)}");
+                }
+
+                if (!supportsDs1)
+                {
+                    Assert.Contains(skips, s => s.Contains("Blanking"));
+                    _output.WriteLine($"Blanking skipped: {string.Join("; ", skips)}");
+                }
+
+                if (supportsDs2 && supportsDs1)
+                {
+                    _output.WriteLine($"DisplayServices1/2 available; skip callbacks count: {skips.Count}");
+                }
+            }
+        }
+
+        [SkippableFact]
         public void DesktopProfile_RoundTrips()
         {
             Skip.If(_api == null || _sys == null, _skipReason);

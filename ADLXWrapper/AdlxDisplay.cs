@@ -268,7 +268,7 @@ namespace ADLXWrapper
             if (profile.Connectivity != null)
             {
                 try { SetConnectivity(profile.Connectivity); }
-                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Connectivity skipped (DisplayServices3 unavailable)"); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Connectivity skipped (DisplayServices2 unavailable)"); }
             }
 
             if (profile.CustomResolution != null) SetCustomResolution(profile.CustomResolution);
@@ -331,7 +331,7 @@ namespace ADLXWrapper
             if (profile.Blanking?.Blanked != null)
             {
                 try { SetBlanked(profile.Blanking.Blanked.Value); }
-                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Blanking skipped (DisplayServices3 unavailable)"); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Blanking skipped (DisplayServices1 unavailable)"); }
             }
         }
 

@@ -31,8 +31,9 @@ namespace ADLXWrapper
 
         /// <summary>
         /// QueryInterface and throw ADLX_NOT_SUPPORTED if the requested interface is unavailable.
+        /// Internal to avoid exposing the internal ComPtr.
         /// </summary>
-        public static unsafe ComPtr<T> RequireInterface<T>(IntPtr pInterface, string interfaceName) where T : unmanaged
+        internal static unsafe ComPtr<T> RequireInterface<T>(IntPtr pInterface, string interfaceName) where T : unmanaged
         {
             if (pInterface == IntPtr.Zero) throw new ArgumentNullException(nameof(pInterface));
             if (string.IsNullOrEmpty(interfaceName)) throw new ArgumentNullException(nameof(interfaceName));

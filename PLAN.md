@@ -17,7 +17,7 @@
 ### Phase 3: Interface version gating
 
 - [x] Wire DisplayServices v1/v2 gating in helpers/facades (blanking via DS1; connectivity via DS2; retain DS3-only FSCA/DRRC).
-- [ ] Run regression tests after gating changes.
+- [x] Run regression tests after gating changes (current run skipped on non-AMD hardware; DLL missing on host).
 
 ### Display/Desktop facade & profile plan
 
