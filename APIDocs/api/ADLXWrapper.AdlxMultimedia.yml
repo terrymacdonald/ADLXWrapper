@@ -1,0 +1,489 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.AdlxMultimedia
+  commentId: T:ADLXWrapper.AdlxMultimedia
+  id: AdlxMultimedia
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.AdlxMultimedia.ApplyProfile(ADLXWrapper.MultimediaProfile)
+  - ADLXWrapper.AdlxMultimedia.Dispose
+  - ADLXWrapper.AdlxMultimedia.Finalize
+  - ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle
+  - ADLXWrapper.AdlxMultimedia.GetProfile
+  langs:
+  - csharp
+  - vb
+  name: AdlxMultimedia
+  nameWithType: AdlxMultimedia
+  fullName: ADLXWrapper.AdlxMultimedia
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AdlxMultimedia
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Facade for multimedia services (video upscale, video super resolution) bound to a GPU.
+  example: []
+  syntax:
+    content: 'public sealed class AdlxMultimedia : IDisposable'
+    content.vb: Public NotInheritable Class AdlxMultimedia Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.AdlxMultimedia.GetProfile
+  commentId: M:ADLXWrapper.AdlxMultimedia.GetProfile
+  id: GetProfile
+  parent: ADLXWrapper.AdlxMultimedia
+  langs:
+  - csharp
+  - vb
+  name: GetProfile()
+  nameWithType: AdlxMultimedia.GetProfile()
+  fullName: ADLXWrapper.AdlxMultimedia.GetProfile()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetProfile
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 24
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public MultimediaProfile GetProfile()
+    return:
+      type: ADLXWrapper.MultimediaProfile
+    content.vb: Public Function GetProfile() As MultimediaProfile
+  overload: ADLXWrapper.AdlxMultimedia.GetProfile*
+- uid: ADLXWrapper.AdlxMultimedia.ApplyProfile(ADLXWrapper.MultimediaProfile)
+  commentId: M:ADLXWrapper.AdlxMultimedia.ApplyProfile(ADLXWrapper.MultimediaProfile)
+  id: ApplyProfile(ADLXWrapper.MultimediaProfile)
+  parent: ADLXWrapper.AdlxMultimedia
+  langs:
+  - csharp
+  - vb
+  name: ApplyProfile(MultimediaProfile)
+  nameWithType: AdlxMultimedia.ApplyProfile(MultimediaProfile)
+  fullName: ADLXWrapper.AdlxMultimedia.ApplyProfile(ADLXWrapper.MultimediaProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyProfile
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 32
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyProfile(MultimediaProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.MultimediaProfile
+    content.vb: Public Sub ApplyProfile(profile As MultimediaProfile)
+  overload: ADLXWrapper.AdlxMultimedia.ApplyProfile*
+- uid: ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle
+  commentId: M:ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle
+  id: GetMultimediaServicesHandle
+  parent: ADLXWrapper.AdlxMultimedia
+  langs:
+  - csharp
+  - vb
+  name: GetMultimediaServicesHandle()
+  nameWithType: AdlxMultimedia.GetMultimediaServicesHandle()
+  fullName: ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetMultimediaServicesHandle
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 60
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AdlxInterfaceHandle GetMultimediaServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetMultimediaServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle*
+- uid: ADLXWrapper.AdlxMultimedia.Dispose
+  commentId: M:ADLXWrapper.AdlxMultimedia.Dispose
+  id: Dispose
+  parent: ADLXWrapper.AdlxMultimedia
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AdlxMultimedia.Dispose()
+  fullName: ADLXWrapper.AdlxMultimedia.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 67
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.AdlxMultimedia.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: ADLXWrapper.AdlxMultimedia.Finalize
+  commentId: M:ADLXWrapper.AdlxMultimedia.Finalize
+  id: Finalize
+  parent: ADLXWrapper.AdlxMultimedia
+  langs:
+  - csharp
+  - vb
+  name: ~AdlxMultimedia()
+  nameWithType: AdlxMultimedia.~AdlxMultimedia()
+  fullName: ADLXWrapper.AdlxMultimedia.~AdlxMultimedia()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxMultimedia.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Finalize
+    path: ../ADLXWrapper/AdlxMultimedia.cs
+    startLine: 83
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: protected ~AdlxMultimedia()
+    content.vb: 'Protected '
+  overload: ADLXWrapper.AdlxMultimedia.Finalize*
+  nameWithType.vb: ''
+  fullName.vb: ''
+  name.vb: ''
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.AdlxMultimedia.GetProfile*
+  commentId: Overload:ADLXWrapper.AdlxMultimedia.GetProfile
+  href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_GetProfile
+  name: GetProfile
+  nameWithType: AdlxMultimedia.GetProfile
+  fullName: ADLXWrapper.AdlxMultimedia.GetProfile
+- uid: ADLXWrapper.MultimediaProfile
+  commentId: T:ADLXWrapper.MultimediaProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.MultimediaProfile.html
+  name: MultimediaProfile
+  nameWithType: MultimediaProfile
+  fullName: ADLXWrapper.MultimediaProfile
+- uid: ADLXWrapper.AdlxMultimedia.ApplyProfile*
+  commentId: Overload:ADLXWrapper.AdlxMultimedia.ApplyProfile
+  href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_ApplyProfile_ADLXWrapper_MultimediaProfile_
+  name: ApplyProfile
+  nameWithType: AdlxMultimedia.ApplyProfile
+  fullName: ADLXWrapper.AdlxMultimedia.ApplyProfile
+- uid: ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle*
+  commentId: Overload:ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle
+  href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_GetMultimediaServicesHandle
+  name: GetMultimediaServicesHandle
+  nameWithType: AdlxMultimedia.GetMultimediaServicesHandle
+  fullName: ADLXWrapper.AdlxMultimedia.GetMultimediaServicesHandle
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.AdlxMultimedia.Dispose*
+  commentId: Overload:ADLXWrapper.AdlxMultimedia.Dispose
+  href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_Dispose
+  name: Dispose
+  nameWithType: AdlxMultimedia.Dispose
+  fullName: ADLXWrapper.AdlxMultimedia.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: ADLXWrapper.AdlxMultimedia.Finalize*
+  commentId: Overload:ADLXWrapper.AdlxMultimedia.Finalize
+  href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_Finalize
+  name: ~AdlxMultimedia
+  nameWithType: AdlxMultimedia.~AdlxMultimedia
+  fullName: ADLXWrapper.AdlxMultimedia.~AdlxMultimedia
+  spec.csharp:
+  - name: "~"
+  - uid: ADLXWrapper.AdlxMultimedia.Finalize*
+    name: AdlxMultimedia
+    href: ADLXWrapper.AdlxMultimedia.html#ADLXWrapper_AdlxMultimedia_Finalize

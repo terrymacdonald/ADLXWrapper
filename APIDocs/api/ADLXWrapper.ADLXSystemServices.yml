@@ -1,0 +1,1524 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXSystemServices
+  commentId: T:ADLXWrapper.ADLXSystemServices
+  id: ADLXSystemServices
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile(ADLXWrapper.DesktopProfile)
+  - ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile})
+  - ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile(ADLXWrapper.DisplayProfile)
+  - ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile},System.Action{System.String})
+  - ADLXWrapper.ADLXSystemServices.DisableLog
+  - ADLXWrapper.ADLXSystemServices.Dispose
+  - ADLXWrapper.ADLXSystemServices.EnableLog(ADLXWrapper.LogProfile)
+  - ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops
+  - ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays
+  - ADLXWrapper.ADLXSystemServices.Get3DSettingsServices(ADLXWrapper.AdlxInterfaceHandle)
+  - ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle
+  - ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles
+  - ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles
+  - ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle
+  - ADLXWrapper.ADLXSystemServices.GetGpuTuningServices(ADLXWrapper.AdlxInterfaceHandle)
+  - ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle
+  - ADLXWrapper.ADLXSystemServices.GetMultimediaServices(ADLXWrapper.AdlxInterfaceHandle)
+  - ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle
+  - ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices
+  - ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+  - ADLXWrapper.ADLXSystemServices.GetPowerTuningServices
+  - ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle
+  langs:
+  - csharp
+  - vb
+  name: ADLXSystemServices
+  nameWithType: ADLXSystemServices
+  fullName: ADLXWrapper.ADLXSystemServices
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXSystemServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: 'public sealed class ADLXSystemServices : IDisposable'
+    content.vb: Public NotInheritable Class ADLXSystemServices Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays
+  commentId: M:ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays
+  id: EnumerateAllDisplays
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllDisplays()
+  nameWithType: ADLXSystemServices.EnumerateAllDisplays()
+  fullName: ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllDisplays
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<AdlxDisplay> EnumerateAllDisplays()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+    content.vb: Public Function EnumerateAllDisplays() As IReadOnlyList(Of AdlxDisplay)
+  overload: ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays*
+- uid: ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops
+  commentId: M:ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops
+  id: EnumerateAllDesktops
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: EnumerateAllDesktops()
+  nameWithType: ADLXSystemServices.EnumerateAllDesktops()
+  fullName: ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateAllDesktops
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 38
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<AdlxDesktop> EnumerateAllDesktops()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDesktop}
+    content.vb: Public Function EnumerateAllDesktops() As IReadOnlyList(Of AdlxDesktop)
+  overload: ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops*
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile(ADLXWrapper.DisplayProfile)
+  commentId: M:ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile(ADLXWrapper.DisplayProfile)
+  id: ApplyDisplayProfile(ADLXWrapper.DisplayProfile)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: ApplyDisplayProfile(DisplayProfile)
+  nameWithType: ADLXSystemServices.ApplyDisplayProfile(DisplayProfile)
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile(ADLXWrapper.DisplayProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyDisplayProfile
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 58
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyDisplayProfile(DisplayProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.DisplayProfile
+    content.vb: Public Sub ApplyDisplayProfile(profile As DisplayProfile)
+  overload: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile*
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile},System.Action{System.String})
+  commentId: M:ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile},System.Action{System.String})
+  id: ApplyDisplayProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile},System.Action{System.String})
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: ApplyDisplayProfiles(IEnumerable<DisplayProfile>, Action<string>?)
+  nameWithType: ADLXSystemServices.ApplyDisplayProfiles(IEnumerable<DisplayProfile>, Action<string>?)
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles(System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayProfile>, System.Action<string>?)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyDisplayProfiles
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 74
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyDisplayProfiles(IEnumerable<DisplayProfile> profiles, Action<string>? onSkip = null)
+    parameters:
+    - id: profiles
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile}
+    - id: onSkip
+      type: System.Action{System.String}
+    content.vb: Public Sub ApplyDisplayProfiles(profiles As IEnumerable(Of DisplayProfile), onSkip As Action(Of String) = Nothing)
+  overload: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles*
+  nameWithType.vb: ADLXSystemServices.ApplyDisplayProfiles(IEnumerable(Of DisplayProfile), Action(Of String))
+  fullName.vb: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles(System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayProfile), System.Action(Of String))
+  name.vb: ApplyDisplayProfiles(IEnumerable(Of DisplayProfile), Action(Of String))
+- uid: ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles
+  id: GetAllDisplayProfiles
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetAllDisplayProfiles()
+  nameWithType: ADLXSystemServices.GetAllDisplayProfiles()
+  fullName: ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetAllDisplayProfiles
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 98
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<DisplayProfile> GetAllDisplayProfiles()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayProfile}
+    content.vb: Public Function GetAllDisplayProfiles() As IReadOnlyList(Of DisplayProfile)
+  overload: ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles*
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile(ADLXWrapper.DesktopProfile)
+  commentId: M:ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile(ADLXWrapper.DesktopProfile)
+  id: ApplyDesktopProfile(ADLXWrapper.DesktopProfile)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: ApplyDesktopProfile(DesktopProfile)
+  nameWithType: ADLXSystemServices.ApplyDesktopProfile(DesktopProfile)
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile(ADLXWrapper.DesktopProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyDesktopProfile
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 112
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyDesktopProfile(DesktopProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.DesktopProfile
+    content.vb: Public Sub ApplyDesktopProfile(profile As DesktopProfile)
+  overload: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile*
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile})
+  commentId: M:ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile})
+  id: ApplyDesktopProfiles(System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile})
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: ApplyDesktopProfiles(IEnumerable<DesktopProfile>)
+  nameWithType: ADLXSystemServices.ApplyDesktopProfiles(IEnumerable<DesktopProfile>)
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles(System.Collections.Generic.IEnumerable<ADLXWrapper.DesktopProfile>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyDesktopProfiles
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 128
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyDesktopProfiles(IEnumerable<DesktopProfile> profiles)
+    parameters:
+    - id: profiles
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile}
+    content.vb: Public Sub ApplyDesktopProfiles(profiles As IEnumerable(Of DesktopProfile))
+  overload: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles*
+  nameWithType.vb: ADLXSystemServices.ApplyDesktopProfiles(IEnumerable(Of DesktopProfile))
+  fullName.vb: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles(System.Collections.Generic.IEnumerable(Of ADLXWrapper.DesktopProfile))
+  name.vb: ApplyDesktopProfiles(IEnumerable(Of DesktopProfile))
+- uid: ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles
+  id: GetAllDesktopProfiles
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetAllDesktopProfiles()
+  nameWithType: ADLXSystemServices.GetAllDesktopProfiles()
+  fullName: ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetAllDesktopProfiles
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 158
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<DesktopProfile> GetAllDesktopProfiles()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopProfile}
+    content.vb: Public Function GetAllDesktopProfiles() As IReadOnlyList(Of DesktopProfile)
+  overload: ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles*
+- uid: ADLXWrapper.ADLXSystemServices.GetGpuTuningServices(ADLXWrapper.AdlxInterfaceHandle)
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetGpuTuningServices(ADLXWrapper.AdlxInterfaceHandle)
+  id: GetGpuTuningServices(ADLXWrapper.AdlxInterfaceHandle)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetGpuTuningServices(AdlxInterfaceHandle)
+  nameWithType: ADLXSystemServices.GetGpuTuningServices(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.ADLXSystemServices.GetGpuTuningServices(ADLXWrapper.AdlxInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpuTuningServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 175
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Get the GPU tuning services facade for a specific GPU handle.
+  example: []
+  syntax:
+    content: public AdlxGpuTuning GetGpuTuningServices(AdlxInterfaceHandle gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.AdlxGpuTuning
+    content.vb: Public Function GetGpuTuningServices(gpu As AdlxInterfaceHandle) As AdlxGpuTuning
+  overload: ADLXWrapper.ADLXSystemServices.GetGpuTuningServices*
+- uid: ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle
+  id: GetGpuTuningServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetGpuTuningServicesHandle()
+  nameWithType: ADLXSystemServices.GetGpuTuningServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpuTuningServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 188
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw GPU tuning services.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle GetGpuTuningServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetGpuTuningServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.GetMultimediaServices(ADLXWrapper.AdlxInterfaceHandle)
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetMultimediaServices(ADLXWrapper.AdlxInterfaceHandle)
+  id: GetMultimediaServices(ADLXWrapper.AdlxInterfaceHandle)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetMultimediaServices(AdlxInterfaceHandle)
+  nameWithType: ADLXSystemServices.GetMultimediaServices(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.ADLXSystemServices.GetMultimediaServices(ADLXWrapper.AdlxInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetMultimediaServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 198
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Get the multimedia services facade for a specific GPU handle.
+  example: []
+  syntax:
+    content: public AdlxMultimedia GetMultimediaServices(AdlxInterfaceHandle gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.AdlxMultimedia
+    content.vb: Public Function GetMultimediaServices(gpu As AdlxInterfaceHandle) As AdlxMultimedia
+  overload: ADLXWrapper.ADLXSystemServices.GetMultimediaServices*
+- uid: ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle
+  id: GetMultimediaServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetMultimediaServicesHandle()
+  nameWithType: ADLXSystemServices.GetMultimediaServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetMultimediaServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 211
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw multimedia services.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle GetMultimediaServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetMultimediaServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.GetPowerTuningServices
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetPowerTuningServices
+  id: GetPowerTuningServices
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetPowerTuningServices()
+  nameWithType: ADLXSystemServices.GetPowerTuningServices()
+  fullName: ADLXWrapper.ADLXSystemServices.GetPowerTuningServices()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPowerTuningServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 221
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Get the power tuning services facade.
+  example: []
+  syntax:
+    content: public AdlxPowerTuning GetPowerTuningServices()
+    return:
+      type: ADLXWrapper.AdlxPowerTuning
+    content.vb: Public Function GetPowerTuningServices() As AdlxPowerTuning
+  overload: ADLXWrapper.ADLXSystemServices.GetPowerTuningServices*
+- uid: ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle
+  id: GetPowerTuningServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetPowerTuningServicesHandle()
+  nameWithType: ADLXSystemServices.GetPowerTuningServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPowerTuningServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 232
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw power tuning services.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetPowerTuningServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.Get3DSettingsServices(ADLXWrapper.AdlxInterfaceHandle)
+  commentId: M:ADLXWrapper.ADLXSystemServices.Get3DSettingsServices(ADLXWrapper.AdlxInterfaceHandle)
+  id: Get3DSettingsServices(ADLXWrapper.AdlxInterfaceHandle)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: Get3DSettingsServices(AdlxInterfaceHandle)
+  nameWithType: ADLXSystemServices.Get3DSettingsServices(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.ADLXSystemServices.Get3DSettingsServices(ADLXWrapper.AdlxInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Get3DSettingsServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 242
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Get the 3D settings services facade for a specific GPU handle.
+  example: []
+  syntax:
+    content: public Adlx3DSettings Get3DSettingsServices(AdlxInterfaceHandle gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.Adlx3DSettings
+    content.vb: Public Function Get3DSettingsServices(gpu As AdlxInterfaceHandle) As Adlx3DSettings
+  overload: ADLXWrapper.ADLXSystemServices.Get3DSettingsServices*
+- uid: ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle
+  id: Get3DSettingsServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: Get3DSettingsServicesHandle()
+  nameWithType: ADLXSystemServices.Get3DSettingsServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Get3DSettingsServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 255
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw 3D settings services.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function Get3DSettingsServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices
+  id: GetPerformanceMonitoringServices
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetPerformanceMonitoringServices()
+  nameWithType: ADLXSystemServices.GetPerformanceMonitoringServices()
+  fullName: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPerformanceMonitoringServices
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 265
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Get the performance monitoring services facade.
+  example: []
+  syntax:
+    content: public AdlxPerformanceMonitor GetPerformanceMonitoringServices()
+    return:
+      type: ADLXWrapper.AdlxPerformanceMonitor
+    content.vb: Public Function GetPerformanceMonitoringServices() As AdlxPerformanceMonitor
+  overload: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices*
+- uid: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+  id: GetPerformanceMonitoringServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetPerformanceMonitoringServicesHandle()
+  nameWithType: ADLXSystemServices.GetPerformanceMonitoringServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPerformanceMonitoringServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 276
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw performance monitoring services.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetPerformanceMonitoringServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.EnableLog(ADLXWrapper.LogProfile)
+  commentId: M:ADLXWrapper.ADLXSystemServices.EnableLog(ADLXWrapper.LogProfile)
+  id: EnableLog(ADLXWrapper.LogProfile)
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: EnableLog(LogProfile)
+  nameWithType: ADLXSystemServices.EnableLog(LogProfile)
+  fullName: ADLXWrapper.ADLXSystemServices.EnableLog(ADLXWrapper.LogProfile)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnableLog
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 286
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Configure ADLX logging via the owner API.
+  example: []
+  syntax:
+    content: public void EnableLog(LogProfile profile)
+    parameters:
+    - id: profile
+      type: ADLXWrapper.LogProfile
+    content.vb: Public Sub EnableLog(profile As LogProfile)
+  overload: ADLXWrapper.ADLXSystemServices.EnableLog*
+- uid: ADLXWrapper.ADLXSystemServices.DisableLog
+  commentId: M:ADLXWrapper.ADLXSystemServices.DisableLog
+  id: DisableLog
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: DisableLog()
+  nameWithType: ADLXSystemServices.DisableLog()
+  fullName: ADLXWrapper.ADLXSystemServices.DisableLog()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DisableLog
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 295
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Reduce ADLX logging to a minimal setting.
+  example: []
+  syntax:
+    content: public void DisableLog()
+    content.vb: Public Sub DisableLog()
+  overload: ADLXWrapper.ADLXSystemServices.DisableLog*
+- uid: ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle
+  commentId: M:ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle
+  id: GetDisplayServicesHandle
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayServicesHandle()
+  nameWithType: ADLXSystemServices.GetDisplayServicesHandle()
+  fullName: ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDisplayServicesHandle
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 304
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 'Advanced: get a disposable handle to the raw display services for event/listener scenarios.'
+  example: []
+  syntax:
+    content: public AdlxInterfaceHandle GetDisplayServicesHandle()
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Function GetDisplayServicesHandle() As AdlxInterfaceHandle
+  overload: ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle*
+- uid: ADLXWrapper.ADLXSystemServices.Dispose
+  commentId: M:ADLXWrapper.ADLXSystemServices.Dispose
+  id: Dispose
+  parent: ADLXWrapper.ADLXSystemServices
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ADLXSystemServices.Dispose()
+  fullName: ADLXWrapper.ADLXSystemServices.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServices.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ../ADLXWrapper/ADLXSystemServices.cs
+    startLine: 468
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.ADLXSystemServices.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_EnumerateAllDisplays
+  name: EnumerateAllDisplays
+  nameWithType: ADLXSystemServices.EnumerateAllDisplays
+  fullName: ADLXWrapper.ADLXSystemServices.EnumerateAllDisplays
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<AdlxDisplay>
+  nameWithType: IReadOnlyList<AdlxDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AdlxDisplay>
+  nameWithType.vb: IReadOnlyList(Of AdlxDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AdlxDisplay)
+  name.vb: IReadOnlyList(Of AdlxDisplay)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.AdlxDisplay
+    name: AdlxDisplay
+    href: ADLXWrapper.AdlxDisplay.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.AdlxDisplay
+    name: AdlxDisplay
+    href: ADLXWrapper.AdlxDisplay.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_EnumerateAllDesktops
+  name: EnumerateAllDesktops
+  nameWithType: ADLXSystemServices.EnumerateAllDesktops
+  fullName: ADLXWrapper.ADLXSystemServices.EnumerateAllDesktops
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDesktop}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDesktop}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<AdlxDesktop>
+  nameWithType: IReadOnlyList<AdlxDesktop>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AdlxDesktop>
+  nameWithType.vb: IReadOnlyList(Of AdlxDesktop)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AdlxDesktop)
+  name.vb: IReadOnlyList(Of AdlxDesktop)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.AdlxDesktop
+    name: AdlxDesktop
+    href: ADLXWrapper.AdlxDesktop.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.AdlxDesktop
+    name: AdlxDesktop
+    href: ADLXWrapper.AdlxDesktop.html
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_ApplyDisplayProfile_ADLXWrapper_DisplayProfile_
+  name: ApplyDisplayProfile
+  nameWithType: ADLXSystemServices.ApplyDisplayProfile
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfile
+- uid: ADLXWrapper.DisplayProfile
+  commentId: T:ADLXWrapper.DisplayProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayProfile.html
+  name: DisplayProfile
+  nameWithType: DisplayProfile
+  fullName: ADLXWrapper.DisplayProfile
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_ApplyDisplayProfiles_System_Collections_Generic_IEnumerable_ADLXWrapper_DisplayProfile__System_Action_System_String__
+  name: ApplyDisplayProfiles
+  nameWithType: ADLXSystemServices.ApplyDisplayProfiles
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDisplayProfiles
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayProfile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DisplayProfile>
+  nameWithType: IEnumerable<DisplayProfile>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayProfile>
+  nameWithType.vb: IEnumerable(Of DisplayProfile)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayProfile)
+  name.vb: IEnumerable(Of DisplayProfile)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DisplayProfile
+    name: DisplayProfile
+    href: ADLXWrapper.DisplayProfile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DisplayProfile
+    name: DisplayProfile
+    href: ADLXWrapper.DisplayProfile.html
+  - name: )
+- uid: System.Action{System.String}
+  commentId: T:System.Action{System.String}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<string>
+  nameWithType: Action<string>
+  fullName: System.Action<string>
+  nameWithType.vb: Action(Of String)
+  fullName.vb: System.Action(Of String)
+  name.vb: Action(Of String)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetAllDisplayProfiles
+  name: GetAllDisplayProfiles
+  nameWithType: ADLXSystemServices.GetAllDisplayProfiles
+  fullName: ADLXWrapper.ADLXSystemServices.GetAllDisplayProfiles
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayProfile}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayProfile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DisplayProfile>
+  nameWithType: IReadOnlyList<DisplayProfile>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DisplayProfile>
+  nameWithType.vb: IReadOnlyList(Of DisplayProfile)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DisplayProfile)
+  name.vb: IReadOnlyList(Of DisplayProfile)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.DisplayProfile
+    name: DisplayProfile
+    href: ADLXWrapper.DisplayProfile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DisplayProfile
+    name: DisplayProfile
+    href: ADLXWrapper.DisplayProfile.html
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_ApplyDesktopProfile_ADLXWrapper_DesktopProfile_
+  name: ApplyDesktopProfile
+  nameWithType: ADLXSystemServices.ApplyDesktopProfile
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfile
+- uid: ADLXWrapper.DesktopProfile
+  commentId: T:ADLXWrapper.DesktopProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.DesktopProfile.html
+  name: DesktopProfile
+  nameWithType: DesktopProfile
+  fullName: ADLXWrapper.DesktopProfile
+- uid: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_ApplyDesktopProfiles_System_Collections_Generic_IEnumerable_ADLXWrapper_DesktopProfile__
+  name: ApplyDesktopProfiles
+  nameWithType: ADLXSystemServices.ApplyDesktopProfiles
+  fullName: ADLXWrapper.ADLXSystemServices.ApplyDesktopProfiles
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopProfile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DesktopProfile>
+  nameWithType: IEnumerable<DesktopProfile>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DesktopProfile>
+  nameWithType.vb: IEnumerable(Of DesktopProfile)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DesktopProfile)
+  name.vb: IEnumerable(Of DesktopProfile)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DesktopProfile
+    name: DesktopProfile
+    href: ADLXWrapper.DesktopProfile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DesktopProfile
+    name: DesktopProfile
+    href: ADLXWrapper.DesktopProfile.html
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetAllDesktopProfiles
+  name: GetAllDesktopProfiles
+  nameWithType: ADLXSystemServices.GetAllDesktopProfiles
+  fullName: ADLXWrapper.ADLXSystemServices.GetAllDesktopProfiles
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopProfile}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopProfile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DesktopProfile>
+  nameWithType: IReadOnlyList<DesktopProfile>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DesktopProfile>
+  nameWithType.vb: IReadOnlyList(Of DesktopProfile)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DesktopProfile)
+  name.vb: IReadOnlyList(Of DesktopProfile)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.DesktopProfile
+    name: DesktopProfile
+    href: ADLXWrapper.DesktopProfile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DesktopProfile
+    name: DesktopProfile
+    href: ADLXWrapper.DesktopProfile.html
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServices.GetGpuTuningServices*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetGpuTuningServices
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetGpuTuningServices_ADLXWrapper_AdlxInterfaceHandle_
+  name: GetGpuTuningServices
+  nameWithType: ADLXSystemServices.GetGpuTuningServices
+  fullName: ADLXWrapper.ADLXSystemServices.GetGpuTuningServices
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.AdlxGpuTuning
+  commentId: T:ADLXWrapper.AdlxGpuTuning
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxGpuTuning.html
+  name: AdlxGpuTuning
+  nameWithType: AdlxGpuTuning
+  fullName: ADLXWrapper.AdlxGpuTuning
+- uid: ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetGpuTuningServicesHandle
+  name: GetGpuTuningServicesHandle
+  nameWithType: ADLXSystemServices.GetGpuTuningServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.GetGpuTuningServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.GetMultimediaServices*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetMultimediaServices
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetMultimediaServices_ADLXWrapper_AdlxInterfaceHandle_
+  name: GetMultimediaServices
+  nameWithType: ADLXSystemServices.GetMultimediaServices
+  fullName: ADLXWrapper.ADLXSystemServices.GetMultimediaServices
+- uid: ADLXWrapper.AdlxMultimedia
+  commentId: T:ADLXWrapper.AdlxMultimedia
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxMultimedia.html
+  name: AdlxMultimedia
+  nameWithType: AdlxMultimedia
+  fullName: ADLXWrapper.AdlxMultimedia
+- uid: ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetMultimediaServicesHandle
+  name: GetMultimediaServicesHandle
+  nameWithType: ADLXSystemServices.GetMultimediaServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.GetMultimediaServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.GetPowerTuningServices*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetPowerTuningServices
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetPowerTuningServices
+  name: GetPowerTuningServices
+  nameWithType: ADLXSystemServices.GetPowerTuningServices
+  fullName: ADLXWrapper.ADLXSystemServices.GetPowerTuningServices
+- uid: ADLXWrapper.AdlxPowerTuning
+  commentId: T:ADLXWrapper.AdlxPowerTuning
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxPowerTuning.html
+  name: AdlxPowerTuning
+  nameWithType: AdlxPowerTuning
+  fullName: ADLXWrapper.AdlxPowerTuning
+- uid: ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetPowerTuningServicesHandle
+  name: GetPowerTuningServicesHandle
+  nameWithType: ADLXSystemServices.GetPowerTuningServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.GetPowerTuningServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.Get3DSettingsServices*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.Get3DSettingsServices
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_Get3DSettingsServices_ADLXWrapper_AdlxInterfaceHandle_
+  name: Get3DSettingsServices
+  nameWithType: ADLXSystemServices.Get3DSettingsServices
+  fullName: ADLXWrapper.ADLXSystemServices.Get3DSettingsServices
+- uid: ADLXWrapper.Adlx3DSettings
+  commentId: T:ADLXWrapper.Adlx3DSettings
+  parent: ADLXWrapper
+  href: ADLXWrapper.Adlx3DSettings.html
+  name: Adlx3DSettings
+  nameWithType: Adlx3DSettings
+  fullName: ADLXWrapper.Adlx3DSettings
+- uid: ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_Get3DSettingsServicesHandle
+  name: Get3DSettingsServicesHandle
+  nameWithType: ADLXSystemServices.Get3DSettingsServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.Get3DSettingsServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetPerformanceMonitoringServices
+  name: GetPerformanceMonitoringServices
+  nameWithType: ADLXSystemServices.GetPerformanceMonitoringServices
+  fullName: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServices
+- uid: ADLXWrapper.AdlxPerformanceMonitor
+  commentId: T:ADLXWrapper.AdlxPerformanceMonitor
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxPerformanceMonitor.html
+  name: AdlxPerformanceMonitor
+  nameWithType: AdlxPerformanceMonitor
+  fullName: ADLXWrapper.AdlxPerformanceMonitor
+- uid: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetPerformanceMonitoringServicesHandle
+  name: GetPerformanceMonitoringServicesHandle
+  nameWithType: ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.GetPerformanceMonitoringServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.EnableLog*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.EnableLog
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_EnableLog_ADLXWrapper_LogProfile_
+  name: EnableLog
+  nameWithType: ADLXSystemServices.EnableLog
+  fullName: ADLXWrapper.ADLXSystemServices.EnableLog
+- uid: ADLXWrapper.LogProfile
+  commentId: T:ADLXWrapper.LogProfile
+  parent: ADLXWrapper
+  href: ADLXWrapper.LogProfile.html
+  name: LogProfile
+  nameWithType: LogProfile
+  fullName: ADLXWrapper.LogProfile
+- uid: ADLXWrapper.ADLXSystemServices.DisableLog*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.DisableLog
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_DisableLog
+  name: DisableLog
+  nameWithType: ADLXSystemServices.DisableLog
+  fullName: ADLXWrapper.ADLXSystemServices.DisableLog
+- uid: ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_GetDisplayServicesHandle
+  name: GetDisplayServicesHandle
+  nameWithType: ADLXSystemServices.GetDisplayServicesHandle
+  fullName: ADLXWrapper.ADLXSystemServices.GetDisplayServicesHandle
+- uid: ADLXWrapper.ADLXSystemServices.Dispose*
+  commentId: Overload:ADLXWrapper.ADLXSystemServices.Dispose
+  href: ADLXWrapper.ADLXSystemServices.html#ADLXWrapper_ADLXSystemServices_Dispose
+  name: Dispose
+  nameWithType: ADLXSystemServices.Dispose
+  fullName: ADLXWrapper.ADLXSystemServices.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

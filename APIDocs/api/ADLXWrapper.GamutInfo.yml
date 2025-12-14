@@ -1,0 +1,592 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GamutInfo
+  commentId: T:ADLXWrapper.GamutInfo
+  id: GamutInfo
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GamutInfo.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE},System.Nullable{ADLXWrapper.ADLX_WHITE_POINT},System.Nullable{ADLXWrapper.ADLX_RGB})
+  - ADLXWrapper.GamutInfo.ColorSpace
+  - ADLXWrapper.GamutInfo.CustomWhitePoint
+  - ADLXWrapper.GamutInfo.IsGamutSupported
+  - ADLXWrapper.GamutInfo.IsWhitePointSupported
+  - ADLXWrapper.GamutInfo.WhitePoint
+  langs:
+  - csharp
+  - vb
+  name: GamutInfo
+  nameWithType: GamutInfo
+  fullName: ADLXWrapper.GamutInfo
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GamutInfo
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1242
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GamutInfo
+    content.vb: Public Structure GamutInfo
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GamutInfo.IsWhitePointSupported
+  commentId: P:ADLXWrapper.GamutInfo.IsWhitePointSupported
+  id: IsWhitePointSupported
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: IsWhitePointSupported
+  nameWithType: GamutInfo.IsWhitePointSupported
+  fullName: ADLXWrapper.GamutInfo.IsWhitePointSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsWhitePointSupported
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1244
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsWhitePointSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsWhitePointSupported As Boolean
+  overload: ADLXWrapper.GamutInfo.IsWhitePointSupported*
+- uid: ADLXWrapper.GamutInfo.IsGamutSupported
+  commentId: P:ADLXWrapper.GamutInfo.IsGamutSupported
+  id: IsGamutSupported
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: IsGamutSupported
+  nameWithType: GamutInfo.IsGamutSupported
+  fullName: ADLXWrapper.GamutInfo.IsGamutSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsGamutSupported
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1245
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsGamutSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsGamutSupported As Boolean
+  overload: ADLXWrapper.GamutInfo.IsGamutSupported*
+- uid: ADLXWrapper.GamutInfo.ColorSpace
+  commentId: P:ADLXWrapper.GamutInfo.ColorSpace
+  id: ColorSpace
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: ColorSpace
+  nameWithType: GamutInfo.ColorSpace
+  fullName: ADLXWrapper.GamutInfo.ColorSpace
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ColorSpace
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1246
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_GAMUT_SPACE? ColorSpace { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE}
+    content.vb: Public Property ColorSpace As ADLX_GAMUT_SPACE?
+  overload: ADLXWrapper.GamutInfo.ColorSpace*
+- uid: ADLXWrapper.GamutInfo.WhitePoint
+  commentId: P:ADLXWrapper.GamutInfo.WhitePoint
+  id: WhitePoint
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: WhitePoint
+  nameWithType: GamutInfo.WhitePoint
+  fullName: ADLXWrapper.GamutInfo.WhitePoint
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: WhitePoint
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1247
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_WHITE_POINT? WhitePoint { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_WHITE_POINT}
+    content.vb: Public Property WhitePoint As ADLX_WHITE_POINT?
+  overload: ADLXWrapper.GamutInfo.WhitePoint*
+- uid: ADLXWrapper.GamutInfo.CustomWhitePoint
+  commentId: P:ADLXWrapper.GamutInfo.CustomWhitePoint
+  id: CustomWhitePoint
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: CustomWhitePoint
+  nameWithType: GamutInfo.CustomWhitePoint
+  fullName: ADLXWrapper.GamutInfo.CustomWhitePoint
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CustomWhitePoint
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1248
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_RGB? CustomWhitePoint { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_RGB}
+    content.vb: Public Property CustomWhitePoint As ADLX_RGB?
+  overload: ADLXWrapper.GamutInfo.CustomWhitePoint*
+- uid: ADLXWrapper.GamutInfo.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE},System.Nullable{ADLXWrapper.ADLX_WHITE_POINT},System.Nullable{ADLXWrapper.ADLX_RGB})
+  commentId: M:ADLXWrapper.GamutInfo.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE},System.Nullable{ADLXWrapper.ADLX_WHITE_POINT},System.Nullable{ADLXWrapper.ADLX_RGB})
+  id: '#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE},System.Nullable{ADLXWrapper.ADLX_WHITE_POINT},System.Nullable{ADLXWrapper.ADLX_RGB})'
+  parent: ADLXWrapper.GamutInfo
+  langs:
+  - csharp
+  - vb
+  name: GamutInfo(bool, bool, ADLX_GAMUT_SPACE?, ADLX_WHITE_POINT?, ADLX_RGB?)
+  nameWithType: GamutInfo.GamutInfo(bool, bool, ADLX_GAMUT_SPACE?, ADLX_WHITE_POINT?, ADLX_RGB?)
+  fullName: ADLXWrapper.GamutInfo.GamutInfo(bool, bool, ADLXWrapper.ADLX_GAMUT_SPACE?, ADLXWrapper.ADLX_WHITE_POINT?, ADLXWrapper.ADLX_RGB?)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDisplaySettingsHelpers.cs
+    startLine: 1250
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GamutInfo(bool isWhitePointSupported, bool isGamutSupported, ADLX_GAMUT_SPACE? colorSpace, ADLX_WHITE_POINT? whitePoint, ADLX_RGB? customWhitePoint)
+    parameters:
+    - id: isWhitePointSupported
+      type: System.Boolean
+    - id: isGamutSupported
+      type: System.Boolean
+    - id: colorSpace
+      type: System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE}
+    - id: whitePoint
+      type: System.Nullable{ADLXWrapper.ADLX_WHITE_POINT}
+    - id: customWhitePoint
+      type: System.Nullable{ADLXWrapper.ADLX_RGB}
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(isWhitePointSupported As Boolean, isGamutSupported As Boolean, colorSpace As ADLX_GAMUT_SPACE?, whitePoint As ADLX_WHITE_POINT?, customWhitePoint As ADLX_RGB?)
+  overload: ADLXWrapper.GamutInfo.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GamutInfo.New(Boolean, Boolean, ADLX_GAMUT_SPACE?, ADLX_WHITE_POINT?, ADLX_RGB?)
+  fullName.vb: ADLXWrapper.GamutInfo.New(Boolean, Boolean, ADLXWrapper.ADLX_GAMUT_SPACE?, ADLXWrapper.ADLX_WHITE_POINT?, ADLXWrapper.ADLX_RGB?)
+  name.vb: New(Boolean, Boolean, ADLX_GAMUT_SPACE?, ADLX_WHITE_POINT?, ADLX_RGB?)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GamutInfo.IsWhitePointSupported*
+  commentId: Overload:ADLXWrapper.GamutInfo.IsWhitePointSupported
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsWhitePointSupported
+  name: IsWhitePointSupported
+  nameWithType: GamutInfo.IsWhitePointSupported
+  fullName: ADLXWrapper.GamutInfo.IsWhitePointSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.GamutInfo.IsGamutSupported*
+  commentId: Overload:ADLXWrapper.GamutInfo.IsGamutSupported
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsGamutSupported
+  name: IsGamutSupported
+  nameWithType: GamutInfo.IsGamutSupported
+  fullName: ADLXWrapper.GamutInfo.IsGamutSupported
+- uid: ADLXWrapper.GamutInfo.ColorSpace*
+  commentId: Overload:ADLXWrapper.GamutInfo.ColorSpace
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_ColorSpace
+  name: ColorSpace
+  nameWithType: GamutInfo.ColorSpace
+  fullName: ADLXWrapper.GamutInfo.ColorSpace
+- uid: System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_GAMUT_SPACE}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_GAMUT_SPACE.html
+  name: ADLX_GAMUT_SPACE?
+  nameWithType: ADLX_GAMUT_SPACE?
+  fullName: ADLXWrapper.ADLX_GAMUT_SPACE?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_GAMUT_SPACE
+    name: ADLX_GAMUT_SPACE
+    href: ADLXWrapper.ADLX_GAMUT_SPACE.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_GAMUT_SPACE
+    name: ADLX_GAMUT_SPACE
+    href: ADLXWrapper.ADLX_GAMUT_SPACE.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.GamutInfo.WhitePoint*
+  commentId: Overload:ADLXWrapper.GamutInfo.WhitePoint
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_WhitePoint
+  name: WhitePoint
+  nameWithType: GamutInfo.WhitePoint
+  fullName: ADLXWrapper.GamutInfo.WhitePoint
+- uid: System.Nullable{ADLXWrapper.ADLX_WHITE_POINT}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_WHITE_POINT}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_WHITE_POINT.html
+  name: ADLX_WHITE_POINT?
+  nameWithType: ADLX_WHITE_POINT?
+  fullName: ADLXWrapper.ADLX_WHITE_POINT?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_WHITE_POINT
+    name: ADLX_WHITE_POINT
+    href: ADLXWrapper.ADLX_WHITE_POINT.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_WHITE_POINT
+    name: ADLX_WHITE_POINT
+    href: ADLXWrapper.ADLX_WHITE_POINT.html
+  - name: '?'
+- uid: ADLXWrapper.GamutInfo.CustomWhitePoint*
+  commentId: Overload:ADLXWrapper.GamutInfo.CustomWhitePoint
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_CustomWhitePoint
+  name: CustomWhitePoint
+  nameWithType: GamutInfo.CustomWhitePoint
+  fullName: ADLXWrapper.GamutInfo.CustomWhitePoint
+- uid: System.Nullable{ADLXWrapper.ADLX_RGB}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_RGB}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_RGB.html
+  name: ADLX_RGB?
+  nameWithType: ADLX_RGB?
+  fullName: ADLXWrapper.ADLX_RGB?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_RGB
+    name: ADLX_RGB
+    href: ADLXWrapper.ADLX_RGB.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_RGB
+    name: ADLX_RGB
+    href: ADLXWrapper.ADLX_RGB.html
+  - name: '?'
+- uid: ADLXWrapper.GamutInfo.#ctor*
+  commentId: Overload:ADLXWrapper.GamutInfo.#ctor
+  href: ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo__ctor_System_Boolean_System_Boolean_System_Nullable_ADLXWrapper_ADLX_GAMUT_SPACE__System_Nullable_ADLXWrapper_ADLX_WHITE_POINT__System_Nullable_ADLXWrapper_ADLX_RGB__
+  name: GamutInfo
+  nameWithType: GamutInfo.GamutInfo
+  fullName: ADLXWrapper.GamutInfo.GamutInfo
+  nameWithType.vb: GamutInfo.New
+  fullName.vb: ADLXWrapper.GamutInfo.New
+  name.vb: New

@@ -1,0 +1,96 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ThreeDLUTMode
+  commentId: T:ADLXWrapper.ThreeDLUTMode
+  id: ThreeDLUTMode
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ThreeDLUTMode.Disabled
+  - ADLXWrapper.ThreeDLUTMode.VividGaming
+  langs:
+  - csharp
+  - vb
+  name: ThreeDLUTMode
+  nameWithType: ThreeDLUTMode
+  fullName: ADLXWrapper.ThreeDLUTMode
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ThreeDLUTMode
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 34
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public enum ThreeDLUTMode
+    content.vb: Public Enum ThreeDLUTMode
+- uid: ADLXWrapper.ThreeDLUTMode.Disabled
+  commentId: F:ADLXWrapper.ThreeDLUTMode.Disabled
+  id: Disabled
+  parent: ADLXWrapper.ThreeDLUTMode
+  langs:
+  - csharp
+  - vb
+  name: Disabled
+  nameWithType: ThreeDLUTMode.Disabled
+  fullName: ADLXWrapper.ThreeDLUTMode.Disabled
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Disabled
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 36
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: Disabled = 0
+    return:
+      type: ADLXWrapper.ThreeDLUTMode
+- uid: ADLXWrapper.ThreeDLUTMode.VividGaming
+  commentId: F:ADLXWrapper.ThreeDLUTMode.VividGaming
+  id: VividGaming
+  parent: ADLXWrapper.ThreeDLUTMode
+  langs:
+  - csharp
+  - vb
+  name: VividGaming
+  nameWithType: ThreeDLUTMode.VividGaming
+  fullName: ADLXWrapper.ThreeDLUTMode.VividGaming
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VividGaming
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: VividGaming = 1
+    return:
+      type: ADLXWrapper.ThreeDLUTMode
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ThreeDLUTMode
+  commentId: T:ADLXWrapper.ThreeDLUTMode
+  parent: ADLXWrapper
+  href: ADLXWrapper.ThreeDLUTMode.html
+  name: ThreeDLUTMode
+  nameWithType: ThreeDLUTMode
+  fullName: ADLXWrapper.ThreeDLUTMode

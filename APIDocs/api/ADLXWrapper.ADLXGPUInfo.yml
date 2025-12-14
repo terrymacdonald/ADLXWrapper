@@ -1,0 +1,384 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXGPUInfo
+  commentId: T:ADLXWrapper.ADLXGPUInfo
+  id: ADLXGPUInfo
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXGPUInfo.GetBasicInfo(System.IntPtr)
+  - ADLXWrapper.ADLXGPUInfo.GetIdentification(System.IntPtr)
+  langs:
+  - csharp
+  - vb
+  name: ADLXGPUInfo
+  nameWithType: ADLXGPUInfo
+  fullName: ADLXWrapper.ADLXGPUInfo
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUInfo.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXGPUInfo
+    path: ../ADLXWrapper/ADLXGPUInfo.cs
+    startLine: 7
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Compatibility helpers to materialize GPU information from raw pointers.
+  example: []
+  syntax:
+    content: public static class ADLXGPUInfo
+    content.vb: Public Module ADLXGPUInfo
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.ADLXGPUInfo.GetBasicInfo(System.IntPtr)
+  commentId: M:ADLXWrapper.ADLXGPUInfo.GetBasicInfo(System.IntPtr)
+  id: GetBasicInfo(System.IntPtr)
+  parent: ADLXWrapper.ADLXGPUInfo
+  langs:
+  - csharp
+  - vb
+  name: GetBasicInfo(nint)
+  nameWithType: ADLXGPUInfo.GetBasicInfo(nint)
+  fullName: ADLXWrapper.ADLXGPUInfo.GetBasicInfo(nint)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUInfo.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetBasicInfo
+    path: ../ADLXWrapper/ADLXGPUInfo.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static GpuInfo GetBasicInfo(nint pGpu)
+    parameters:
+    - id: pGpu
+      type: System.IntPtr
+    return:
+      type: ADLXWrapper.GpuInfo
+    content.vb: Public Shared Function GetBasicInfo(pGpu As IntPtr) As GpuInfo
+  overload: ADLXWrapper.ADLXGPUInfo.GetBasicInfo*
+  nameWithType.vb: ADLXGPUInfo.GetBasicInfo(IntPtr)
+  fullName.vb: ADLXWrapper.ADLXGPUInfo.GetBasicInfo(System.IntPtr)
+  name.vb: GetBasicInfo(IntPtr)
+- uid: ADLXWrapper.ADLXGPUInfo.GetIdentification(System.IntPtr)
+  commentId: M:ADLXWrapper.ADLXGPUInfo.GetIdentification(System.IntPtr)
+  id: GetIdentification(System.IntPtr)
+  parent: ADLXWrapper.ADLXGPUInfo
+  langs:
+  - csharp
+  - vb
+  name: GetIdentification(nint)
+  nameWithType: ADLXGPUInfo.GetIdentification(nint)
+  fullName: ADLXWrapper.ADLXGPUInfo.GetIdentification(nint)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUInfo.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetIdentification
+    path: ../ADLXWrapper/ADLXGPUInfo.cs
+    startLine: 15
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static GpuInfo GetIdentification(nint pGpu)
+    parameters:
+    - id: pGpu
+      type: System.IntPtr
+    return:
+      type: ADLXWrapper.GpuInfo
+    content.vb: Public Shared Function GetIdentification(pGpu As IntPtr) As GpuInfo
+  overload: ADLXWrapper.ADLXGPUInfo.GetIdentification*
+  nameWithType.vb: ADLXGPUInfo.GetIdentification(IntPtr)
+  fullName.vb: ADLXWrapper.ADLXGPUInfo.GetIdentification(System.IntPtr)
+  name.vb: GetIdentification(IntPtr)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXGPUInfo.GetBasicInfo*
+  commentId: Overload:ADLXWrapper.ADLXGPUInfo.GetBasicInfo
+  href: ADLXWrapper.ADLXGPUInfo.html#ADLXWrapper_ADLXGPUInfo_GetBasicInfo_System_IntPtr_
+  name: GetBasicInfo
+  nameWithType: ADLXGPUInfo.GetBasicInfo
+  fullName: ADLXWrapper.ADLXGPUInfo.GetBasicInfo
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: ADLXWrapper.GpuInfo
+  commentId: T:ADLXWrapper.GpuInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuInfo.html
+  name: GpuInfo
+  nameWithType: GpuInfo
+  fullName: ADLXWrapper.GpuInfo
+- uid: ADLXWrapper.ADLXGPUInfo.GetIdentification*
+  commentId: Overload:ADLXWrapper.ADLXGPUInfo.GetIdentification
+  href: ADLXWrapper.ADLXGPUInfo.html#ADLXWrapper_ADLXGPUInfo_GetIdentification_System_IntPtr_
+  name: GetIdentification
+  nameWithType: ADLXGPUInfo.GetIdentification
+  fullName: ADLXWrapper.ADLXGPUInfo.GetIdentification

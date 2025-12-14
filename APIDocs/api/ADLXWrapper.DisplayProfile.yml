@@ -1,0 +1,1375 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.DisplayProfile
+  commentId: T:ADLXWrapper.DisplayProfile
+  id: DisplayProfile
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.DisplayProfile.Blanking
+  - ADLXWrapper.DisplayProfile.ColorDepth
+  - ADLXWrapper.DisplayProfile.Connectivity
+  - ADLXWrapper.DisplayProfile.CustomColor
+  - ADLXWrapper.DisplayProfile.CustomResolution
+  - ADLXWrapper.DisplayProfile.Edid
+  - ADLXWrapper.DisplayProfile.FreeSync
+  - ADLXWrapper.DisplayProfile.Gamma
+  - ADLXWrapper.DisplayProfile.Gamut
+  - ADLXWrapper.DisplayProfile.GpuScaling
+  - ADLXWrapper.DisplayProfile.GpuUniqueId
+  - ADLXWrapper.DisplayProfile.Hdcp
+  - ADLXWrapper.DisplayProfile.IntegerScaling
+  - ADLXWrapper.DisplayProfile.Name
+  - ADLXWrapper.DisplayProfile.PixelFormat
+  - ADLXWrapper.DisplayProfile.Resolution
+  - ADLXWrapper.DisplayProfile.ScalingMode
+  - ADLXWrapper.DisplayProfile.ThreeDLUT
+  - ADLXWrapper.DisplayProfile.UniqueId
+  - ADLXWrapper.DisplayProfile.VariBright
+  - ADLXWrapper.DisplayProfile.Vsr
+  langs:
+  - csharp
+  - vb
+  name: DisplayProfile
+  nameWithType: DisplayProfile
+  fullName: ADLXWrapper.DisplayProfile
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DisplayProfile
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 152
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public sealed class DisplayProfile
+    content.vb: Public NotInheritable Class DisplayProfile
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.DisplayProfile.UniqueId
+  commentId: P:ADLXWrapper.DisplayProfile.UniqueId
+  id: UniqueId
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: UniqueId
+  nameWithType: DisplayProfile.UniqueId
+  fullName: ADLXWrapper.DisplayProfile.UniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: UniqueId
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 154
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ulong UniqueId { get; set; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property UniqueId As ULong
+  overload: ADLXWrapper.DisplayProfile.UniqueId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.GpuUniqueId
+  commentId: P:ADLXWrapper.DisplayProfile.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: GpuUniqueId
+  nameWithType: DisplayProfile.GpuUniqueId
+  fullName: ADLXWrapper.DisplayProfile.GpuUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuUniqueId
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 155
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public int GpuUniqueId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property GpuUniqueId As Integer
+  overload: ADLXWrapper.DisplayProfile.GpuUniqueId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Name
+  commentId: P:ADLXWrapper.DisplayProfile.Name
+  id: Name
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: DisplayProfile.Name
+  fullName: ADLXWrapper.DisplayProfile.Name
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Name
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 156
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Name As String
+  overload: ADLXWrapper.DisplayProfile.Name*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Edid
+  commentId: P:ADLXWrapper.DisplayProfile.Edid
+  id: Edid
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Edid
+  nameWithType: DisplayProfile.Edid
+  fullName: ADLXWrapper.DisplayProfile.Edid
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Edid
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 157
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public string? Edid { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Edid As String
+  overload: ADLXWrapper.DisplayProfile.Edid*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Resolution
+  commentId: P:ADLXWrapper.DisplayProfile.Resolution
+  id: Resolution
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Resolution
+  nameWithType: DisplayProfile.Resolution
+  fullName: ADLXWrapper.DisplayProfile.Resolution
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Resolution
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 158
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public DisplayResolutionState? Resolution { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.DisplayResolutionState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Resolution As DisplayResolutionState
+  overload: ADLXWrapper.DisplayProfile.Resolution*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Gamma
+  commentId: P:ADLXWrapper.DisplayProfile.Gamma
+  id: Gamma
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Gamma
+  nameWithType: DisplayProfile.Gamma
+  fullName: ADLXWrapper.DisplayProfile.Gamma
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Gamma
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 159
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public GammaState? Gamma { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GammaState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Gamma As GammaState
+  overload: ADLXWrapper.DisplayProfile.Gamma*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Gamut
+  commentId: P:ADLXWrapper.DisplayProfile.Gamut
+  id: Gamut
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Gamut
+  nameWithType: DisplayProfile.Gamut
+  fullName: ADLXWrapper.DisplayProfile.Gamut
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Gamut
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 160
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public GamutState? Gamut { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GamutState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Gamut As GamutState
+  overload: ADLXWrapper.DisplayProfile.Gamut*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.ThreeDLUT
+  commentId: P:ADLXWrapper.DisplayProfile.ThreeDLUT
+  id: ThreeDLUT
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: ThreeDLUT
+  nameWithType: DisplayProfile.ThreeDLUT
+  fullName: ADLXWrapper.DisplayProfile.ThreeDLUT
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ThreeDLUT
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 161
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ThreeDLUTState? ThreeDLUT { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ThreeDLUTState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property ThreeDLUT As ThreeDLUTState
+  overload: ADLXWrapper.DisplayProfile.ThreeDLUT*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.CustomColor
+  commentId: P:ADLXWrapper.DisplayProfile.CustomColor
+  id: CustomColor
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: CustomColor
+  nameWithType: DisplayProfile.CustomColor
+  fullName: ADLXWrapper.DisplayProfile.CustomColor
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CustomColor
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 162
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public CustomColorState? CustomColor { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.CustomColorState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property CustomColor As CustomColorState
+  overload: ADLXWrapper.DisplayProfile.CustomColor*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Connectivity
+  commentId: P:ADLXWrapper.DisplayProfile.Connectivity
+  id: Connectivity
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Connectivity
+  nameWithType: DisplayProfile.Connectivity
+  fullName: ADLXWrapper.DisplayProfile.Connectivity
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Connectivity
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 163
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ConnectivityState? Connectivity { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ConnectivityState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Connectivity As ConnectivityState
+  overload: ADLXWrapper.DisplayProfile.Connectivity*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.CustomResolution
+  commentId: P:ADLXWrapper.DisplayProfile.CustomResolution
+  id: CustomResolution
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: CustomResolution
+  nameWithType: DisplayProfile.CustomResolution
+  fullName: ADLXWrapper.DisplayProfile.CustomResolution
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CustomResolution
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 164
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public CustomResolutionState? CustomResolution { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.CustomResolutionState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property CustomResolution As CustomResolutionState
+  overload: ADLXWrapper.DisplayProfile.CustomResolution*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.ColorDepth
+  commentId: P:ADLXWrapper.DisplayProfile.ColorDepth
+  id: ColorDepth
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: ColorDepth
+  nameWithType: DisplayProfile.ColorDepth
+  fullName: ADLXWrapper.DisplayProfile.ColorDepth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ColorDepth
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 165
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ColorDepthState? ColorDepth { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ColorDepthState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property ColorDepth As ColorDepthState
+  overload: ADLXWrapper.DisplayProfile.ColorDepth*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.PixelFormat
+  commentId: P:ADLXWrapper.DisplayProfile.PixelFormat
+  id: PixelFormat
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: PixelFormat
+  nameWithType: DisplayProfile.PixelFormat
+  fullName: ADLXWrapper.DisplayProfile.PixelFormat
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PixelFormat
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 166
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public PixelFormatState? PixelFormat { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.PixelFormatState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property PixelFormat As PixelFormatState
+  overload: ADLXWrapper.DisplayProfile.PixelFormat*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.FreeSync
+  commentId: P:ADLXWrapper.DisplayProfile.FreeSync
+  id: FreeSync
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: FreeSync
+  nameWithType: DisplayProfile.FreeSync
+  fullName: ADLXWrapper.DisplayProfile.FreeSync
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FreeSync
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 167
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public FreeSyncState? FreeSync { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.FreeSyncState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property FreeSync As FreeSyncState
+  overload: ADLXWrapper.DisplayProfile.FreeSync*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Vsr
+  commentId: P:ADLXWrapper.DisplayProfile.Vsr
+  id: Vsr
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Vsr
+  nameWithType: DisplayProfile.Vsr
+  fullName: ADLXWrapper.DisplayProfile.Vsr
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Vsr
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 168
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public VirtualSuperResolutionState? Vsr { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.VirtualSuperResolutionState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Vsr As VirtualSuperResolutionState
+  overload: ADLXWrapper.DisplayProfile.Vsr*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.IntegerScaling
+  commentId: P:ADLXWrapper.DisplayProfile.IntegerScaling
+  id: IntegerScaling
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: IntegerScaling
+  nameWithType: DisplayProfile.IntegerScaling
+  fullName: ADLXWrapper.DisplayProfile.IntegerScaling
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IntegerScaling
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 169
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public IntegerScalingState? IntegerScaling { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntegerScalingState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property IntegerScaling As IntegerScalingState
+  overload: ADLXWrapper.DisplayProfile.IntegerScaling*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.GpuScaling
+  commentId: P:ADLXWrapper.DisplayProfile.GpuScaling
+  id: GpuScaling
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: GpuScaling
+  nameWithType: DisplayProfile.GpuScaling
+  fullName: ADLXWrapper.DisplayProfile.GpuScaling
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuScaling
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 170
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public GPUScalingState? GpuScaling { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GPUScalingState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property GpuScaling As GPUScalingState
+  overload: ADLXWrapper.DisplayProfile.GpuScaling*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.ScalingMode
+  commentId: P:ADLXWrapper.DisplayProfile.ScalingMode
+  id: ScalingMode
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: ScalingMode
+  nameWithType: DisplayProfile.ScalingMode
+  fullName: ADLXWrapper.DisplayProfile.ScalingMode
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ScalingMode
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 171
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public ScalingModeState? ScalingMode { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ScalingModeState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property ScalingMode As ScalingModeState
+  overload: ADLXWrapper.DisplayProfile.ScalingMode*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Hdcp
+  commentId: P:ADLXWrapper.DisplayProfile.Hdcp
+  id: Hdcp
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Hdcp
+  nameWithType: DisplayProfile.Hdcp
+  fullName: ADLXWrapper.DisplayProfile.Hdcp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Hdcp
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 172
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public HdcpState? Hdcp { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.HdcpState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Hdcp As HdcpState
+  overload: ADLXWrapper.DisplayProfile.Hdcp*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.VariBright
+  commentId: P:ADLXWrapper.DisplayProfile.VariBright
+  id: VariBright
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: VariBright
+  nameWithType: DisplayProfile.VariBright
+  fullName: ADLXWrapper.DisplayProfile.VariBright
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VariBright
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 173
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public VariBrightState? VariBright { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.VariBrightState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property VariBright As VariBrightState
+  overload: ADLXWrapper.DisplayProfile.VariBright*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+- uid: ADLXWrapper.DisplayProfile.Blanking
+  commentId: P:ADLXWrapper.DisplayProfile.Blanking
+  id: Blanking
+  parent: ADLXWrapper.DisplayProfile
+  langs:
+  - csharp
+  - vb
+  name: Blanking
+  nameWithType: DisplayProfile.Blanking
+  fullName: ADLXWrapper.DisplayProfile.Blanking
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/DisplayProfiles.cs
+      branch: feature-api-overhaul
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Blanking
+    path: ../ADLXWrapper/DisplayProfiles.cs
+    startLine: 174
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      public BlankingState? Blanking { get; set; }
+    parameters: []
+    return:
+      type: ADLXWrapper.BlankingState
+    content.vb: >-
+      <JsonProperty>
+
+      Public Property Blanking As BlankingState
+  overload: ADLXWrapper.DisplayProfile.Blanking*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.DisplayProfile.UniqueId*
+  commentId: Overload:ADLXWrapper.DisplayProfile.UniqueId
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_UniqueId
+  name: UniqueId
+  nameWithType: DisplayProfile.UniqueId
+  fullName: ADLXWrapper.DisplayProfile.UniqueId
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: ADLXWrapper.DisplayProfile.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.DisplayProfile.GpuUniqueId
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: DisplayProfile.GpuUniqueId
+  fullName: ADLXWrapper.DisplayProfile.GpuUniqueId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.DisplayProfile.Name*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Name
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Name
+  name: Name
+  nameWithType: DisplayProfile.Name
+  fullName: ADLXWrapper.DisplayProfile.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.DisplayProfile.Edid*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Edid
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Edid
+  name: Edid
+  nameWithType: DisplayProfile.Edid
+  fullName: ADLXWrapper.DisplayProfile.Edid
+- uid: ADLXWrapper.DisplayProfile.Resolution*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Resolution
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Resolution
+  name: Resolution
+  nameWithType: DisplayProfile.Resolution
+  fullName: ADLXWrapper.DisplayProfile.Resolution
+- uid: ADLXWrapper.DisplayResolutionState
+  commentId: T:ADLXWrapper.DisplayResolutionState
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayResolutionState.html
+  name: DisplayResolutionState
+  nameWithType: DisplayResolutionState
+  fullName: ADLXWrapper.DisplayResolutionState
+- uid: ADLXWrapper.DisplayProfile.Gamma*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Gamma
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Gamma
+  name: Gamma
+  nameWithType: DisplayProfile.Gamma
+  fullName: ADLXWrapper.DisplayProfile.Gamma
+- uid: ADLXWrapper.GammaState
+  commentId: T:ADLXWrapper.GammaState
+  parent: ADLXWrapper
+  href: ADLXWrapper.GammaState.html
+  name: GammaState
+  nameWithType: GammaState
+  fullName: ADLXWrapper.GammaState
+- uid: ADLXWrapper.DisplayProfile.Gamut*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Gamut
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Gamut
+  name: Gamut
+  nameWithType: DisplayProfile.Gamut
+  fullName: ADLXWrapper.DisplayProfile.Gamut
+- uid: ADLXWrapper.GamutState
+  commentId: T:ADLXWrapper.GamutState
+  parent: ADLXWrapper
+  href: ADLXWrapper.GamutState.html
+  name: GamutState
+  nameWithType: GamutState
+  fullName: ADLXWrapper.GamutState
+- uid: ADLXWrapper.DisplayProfile.ThreeDLUT*
+  commentId: Overload:ADLXWrapper.DisplayProfile.ThreeDLUT
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_ThreeDLUT
+  name: ThreeDLUT
+  nameWithType: DisplayProfile.ThreeDLUT
+  fullName: ADLXWrapper.DisplayProfile.ThreeDLUT
+- uid: ADLXWrapper.ThreeDLUTState
+  commentId: T:ADLXWrapper.ThreeDLUTState
+  parent: ADLXWrapper
+  href: ADLXWrapper.ThreeDLUTState.html
+  name: ThreeDLUTState
+  nameWithType: ThreeDLUTState
+  fullName: ADLXWrapper.ThreeDLUTState
+- uid: ADLXWrapper.DisplayProfile.CustomColor*
+  commentId: Overload:ADLXWrapper.DisplayProfile.CustomColor
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_CustomColor
+  name: CustomColor
+  nameWithType: DisplayProfile.CustomColor
+  fullName: ADLXWrapper.DisplayProfile.CustomColor
+- uid: ADLXWrapper.CustomColorState
+  commentId: T:ADLXWrapper.CustomColorState
+  parent: ADLXWrapper
+  href: ADLXWrapper.CustomColorState.html
+  name: CustomColorState
+  nameWithType: CustomColorState
+  fullName: ADLXWrapper.CustomColorState
+- uid: ADLXWrapper.DisplayProfile.Connectivity*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Connectivity
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Connectivity
+  name: Connectivity
+  nameWithType: DisplayProfile.Connectivity
+  fullName: ADLXWrapper.DisplayProfile.Connectivity
+- uid: ADLXWrapper.ConnectivityState
+  commentId: T:ADLXWrapper.ConnectivityState
+  parent: ADLXWrapper
+  href: ADLXWrapper.ConnectivityState.html
+  name: ConnectivityState
+  nameWithType: ConnectivityState
+  fullName: ADLXWrapper.ConnectivityState
+- uid: ADLXWrapper.DisplayProfile.CustomResolution*
+  commentId: Overload:ADLXWrapper.DisplayProfile.CustomResolution
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_CustomResolution
+  name: CustomResolution
+  nameWithType: DisplayProfile.CustomResolution
+  fullName: ADLXWrapper.DisplayProfile.CustomResolution
+- uid: ADLXWrapper.CustomResolutionState
+  commentId: T:ADLXWrapper.CustomResolutionState
+  parent: ADLXWrapper
+  href: ADLXWrapper.CustomResolutionState.html
+  name: CustomResolutionState
+  nameWithType: CustomResolutionState
+  fullName: ADLXWrapper.CustomResolutionState
+- uid: ADLXWrapper.DisplayProfile.ColorDepth*
+  commentId: Overload:ADLXWrapper.DisplayProfile.ColorDepth
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_ColorDepth
+  name: ColorDepth
+  nameWithType: DisplayProfile.ColorDepth
+  fullName: ADLXWrapper.DisplayProfile.ColorDepth
+- uid: ADLXWrapper.ColorDepthState
+  commentId: T:ADLXWrapper.ColorDepthState
+  parent: ADLXWrapper
+  href: ADLXWrapper.ColorDepthState.html
+  name: ColorDepthState
+  nameWithType: ColorDepthState
+  fullName: ADLXWrapper.ColorDepthState
+- uid: ADLXWrapper.DisplayProfile.PixelFormat*
+  commentId: Overload:ADLXWrapper.DisplayProfile.PixelFormat
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_PixelFormat
+  name: PixelFormat
+  nameWithType: DisplayProfile.PixelFormat
+  fullName: ADLXWrapper.DisplayProfile.PixelFormat
+- uid: ADLXWrapper.PixelFormatState
+  commentId: T:ADLXWrapper.PixelFormatState
+  parent: ADLXWrapper
+  href: ADLXWrapper.PixelFormatState.html
+  name: PixelFormatState
+  nameWithType: PixelFormatState
+  fullName: ADLXWrapper.PixelFormatState
+- uid: ADLXWrapper.DisplayProfile.FreeSync*
+  commentId: Overload:ADLXWrapper.DisplayProfile.FreeSync
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_FreeSync
+  name: FreeSync
+  nameWithType: DisplayProfile.FreeSync
+  fullName: ADLXWrapper.DisplayProfile.FreeSync
+- uid: ADLXWrapper.FreeSyncState
+  commentId: T:ADLXWrapper.FreeSyncState
+  parent: ADLXWrapper
+  href: ADLXWrapper.FreeSyncState.html
+  name: FreeSyncState
+  nameWithType: FreeSyncState
+  fullName: ADLXWrapper.FreeSyncState
+- uid: ADLXWrapper.DisplayProfile.Vsr*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Vsr
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Vsr
+  name: Vsr
+  nameWithType: DisplayProfile.Vsr
+  fullName: ADLXWrapper.DisplayProfile.Vsr
+- uid: ADLXWrapper.VirtualSuperResolutionState
+  commentId: T:ADLXWrapper.VirtualSuperResolutionState
+  parent: ADLXWrapper
+  href: ADLXWrapper.VirtualSuperResolutionState.html
+  name: VirtualSuperResolutionState
+  nameWithType: VirtualSuperResolutionState
+  fullName: ADLXWrapper.VirtualSuperResolutionState
+- uid: ADLXWrapper.DisplayProfile.IntegerScaling*
+  commentId: Overload:ADLXWrapper.DisplayProfile.IntegerScaling
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_IntegerScaling
+  name: IntegerScaling
+  nameWithType: DisplayProfile.IntegerScaling
+  fullName: ADLXWrapper.DisplayProfile.IntegerScaling
+- uid: ADLXWrapper.IntegerScalingState
+  commentId: T:ADLXWrapper.IntegerScalingState
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntegerScalingState.html
+  name: IntegerScalingState
+  nameWithType: IntegerScalingState
+  fullName: ADLXWrapper.IntegerScalingState
+- uid: ADLXWrapper.DisplayProfile.GpuScaling*
+  commentId: Overload:ADLXWrapper.DisplayProfile.GpuScaling
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_GpuScaling
+  name: GpuScaling
+  nameWithType: DisplayProfile.GpuScaling
+  fullName: ADLXWrapper.DisplayProfile.GpuScaling
+- uid: ADLXWrapper.GPUScalingState
+  commentId: T:ADLXWrapper.GPUScalingState
+  parent: ADLXWrapper
+  href: ADLXWrapper.GPUScalingState.html
+  name: GPUScalingState
+  nameWithType: GPUScalingState
+  fullName: ADLXWrapper.GPUScalingState
+- uid: ADLXWrapper.DisplayProfile.ScalingMode*
+  commentId: Overload:ADLXWrapper.DisplayProfile.ScalingMode
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_ScalingMode
+  name: ScalingMode
+  nameWithType: DisplayProfile.ScalingMode
+  fullName: ADLXWrapper.DisplayProfile.ScalingMode
+- uid: ADLXWrapper.ScalingModeState
+  commentId: T:ADLXWrapper.ScalingModeState
+  parent: ADLXWrapper
+  href: ADLXWrapper.ScalingModeState.html
+  name: ScalingModeState
+  nameWithType: ScalingModeState
+  fullName: ADLXWrapper.ScalingModeState
+- uid: ADLXWrapper.DisplayProfile.Hdcp*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Hdcp
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Hdcp
+  name: Hdcp
+  nameWithType: DisplayProfile.Hdcp
+  fullName: ADLXWrapper.DisplayProfile.Hdcp
+- uid: ADLXWrapper.HdcpState
+  commentId: T:ADLXWrapper.HdcpState
+  parent: ADLXWrapper
+  href: ADLXWrapper.HdcpState.html
+  name: HdcpState
+  nameWithType: HdcpState
+  fullName: ADLXWrapper.HdcpState
+- uid: ADLXWrapper.DisplayProfile.VariBright*
+  commentId: Overload:ADLXWrapper.DisplayProfile.VariBright
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_VariBright
+  name: VariBright
+  nameWithType: DisplayProfile.VariBright
+  fullName: ADLXWrapper.DisplayProfile.VariBright
+- uid: ADLXWrapper.VariBrightState
+  commentId: T:ADLXWrapper.VariBrightState
+  parent: ADLXWrapper
+  href: ADLXWrapper.VariBrightState.html
+  name: VariBrightState
+  nameWithType: VariBrightState
+  fullName: ADLXWrapper.VariBrightState
+- uid: ADLXWrapper.DisplayProfile.Blanking*
+  commentId: Overload:ADLXWrapper.DisplayProfile.Blanking
+  href: ADLXWrapper.DisplayProfile.html#ADLXWrapper_DisplayProfile_Blanking
+  name: Blanking
+  nameWithType: DisplayProfile.Blanking
+  fullName: ADLXWrapper.DisplayProfile.Blanking
+- uid: ADLXWrapper.BlankingState
+  commentId: T:ADLXWrapper.BlankingState
+  parent: ADLXWrapper
+  href: ADLXWrapper.BlankingState.html
+  name: BlankingState
+  nameWithType: BlankingState
+  fullName: ADLXWrapper.BlankingState
