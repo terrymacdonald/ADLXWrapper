@@ -53,106 +53,106 @@ namespace ADLXWrapper
         private static void ApplyAntiLag(IADLX3DSettingsServices* s, IADLXGPU* g, AntiLagInfo i)
         {
             IADLX3DAntiLag* p;
-            if (s->GetAntiLag(g, &p) == ADLX_RESULT.ADLX_OK)
-            {
-                using var c = new ComPtr<IADLX3DAntiLag>(p);
-                if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
-            }
+            var res = s->GetAntiLag(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "Anti-Lag is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DAntiLag>(p);
+            if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
         }
 
         private static void ApplyBoost(IADLX3DSettingsServices* s, IADLXGPU* g, BoostInfo i)
         {
             IADLX3DBoost* p;
-            if (s->GetBoost(g, &p) == ADLX_RESULT.ADLX_OK)
+            var res = s->GetBoost(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "Boost is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DBoost>(p);
+            if (i.IsSupported)
             {
-                using var c = new ComPtr<IADLX3DBoost>(p);
-                if (i.IsSupported)
-                {
-                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
-                    if (i.IsMinResSupported) c.Get()->SetResolution(i.MinResolution);
-                }
+                c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                if (i.IsMinResSupported) c.Get()->SetResolution(i.MinResolution);
             }
         }
 
         private static void ApplyRadeonImageSharpening(IADLX3DSettingsServices* s, IADLXGPU* g, RadeonImageSharpeningInfo i)
         {
             IADLX3DImageSharpening* p;
-            if (s->GetImageSharpening(g, &p) == ADLX_RESULT.ADLX_OK)
+            var res = s->GetImageSharpening(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "Radeon Image Sharpening is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DImageSharpening>(p);
+            if (i.IsSupported)
             {
-                using var c = new ComPtr<IADLX3DImageSharpening>(p);
-                if (i.IsSupported)
-                {
-                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
-                    c.Get()->SetSharpness(i.Sharpness);
-                }
+                c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                c.Get()->SetSharpness(i.Sharpness);
             }
         }
 
         private static void ApplyEnhancedSync(IADLX3DSettingsServices* s, IADLXGPU* g, EnhancedSyncInfo i)
         {
             IADLX3DEnhancedSync* p;
-            if (s->GetEnhancedSync(g, &p) == ADLX_RESULT.ADLX_OK)
-            {
-                using var c = new ComPtr<IADLX3DEnhancedSync>(p);
-                if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
-            }
+            var res = s->GetEnhancedSync(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "Enhanced Sync is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DEnhancedSync>(p);
+            if (i.IsSupported) c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
         }
 
         private static void ApplyWaitForVerticalRefresh(IADLX3DSettingsServices* s, IADLXGPU* g, WaitForVerticalRefreshInfo i)
         {
             IADLX3DWaitForVerticalRefresh* p;
-            if (s->GetWaitForVerticalRefresh(g, &p) == ADLX_RESULT.ADLX_OK)
-            {
-                using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(p);
-                if (i.IsSupported) c.Get()->SetMode(i.Mode);
-            }
+            var res = s->GetWaitForVerticalRefresh(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "WaitForVerticalRefresh is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(p);
+            if (i.IsSupported) c.Get()->SetMode(i.Mode);
         }
 
         private static void ApplyFrameRateTargetControl(IADLX3DSettingsServices* s, IADLXGPU* g, FrameRateTargetControlInfo i)
         {
             IADLX3DFrameRateTargetControl* p;
-            if (s->GetFrameRateTargetControl(g, &p) == ADLX_RESULT.ADLX_OK)
+            var res = s->GetFrameRateTargetControl(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "FrameRateTargetControl is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DFrameRateTargetControl>(p);
+            if (i.IsSupported)
             {
-                using var c = new ComPtr<IADLX3DFrameRateTargetControl>(p);
-                if (i.IsSupported)
-                {
-                    c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
-                    c.Get()->SetFPS(i.Fps);
-                }
+                c.Get()->SetEnabled(i.IsEnabled ? (byte)1 : (byte)0);
+                c.Get()->SetFPS(i.Fps);
             }
         }
 
         private static void ApplyAntiAliasing(IADLX3DSettingsServices* s, IADLXGPU* g, AntiAliasingInfo i)
         {
             IADLX3DAntiAliasing* p;
-            if (s->GetAntiAliasing(g, &p) == ADLX_RESULT.ADLX_OK)
-            {
-                using var c = new ComPtr<IADLX3DAntiAliasing>(p);
-                if (i.IsSupported) c.Get()->SetMode(i.Mode);
-            }
+            var res = s->GetAntiAliasing(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "AntiAliasing is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DAntiAliasing>(p);
+            if (i.IsSupported) c.Get()->SetMode(i.Mode);
         }
 
         private static void ApplyAnisotropicFiltering(IADLX3DSettingsServices* s, IADLXGPU* g, AnisotropicFilteringInfo i)
         {
             IADLX3DAnisotropicFiltering* p;
-            if (s->GetAnisotropicFiltering(g, &p) == ADLX_RESULT.ADLX_OK)
-            {
-                using var c = new ComPtr<IADLX3DAnisotropicFiltering>(p);
-                if (i.IsSupported) c.Get()->SetLevel(i.Level);
-            }
+            var res = s->GetAnisotropicFiltering(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "AnisotropicFiltering is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DAnisotropicFiltering>(p);
+            if (i.IsSupported) c.Get()->SetLevel(i.Level);
         }
 
         private static void ApplyTessellation(IADLX3DSettingsServices* s, IADLXGPU* g, TessellationInfo i)
         {
             IADLX3DTessellation* p;
-            if (s->GetTessellation(g, &p) == ADLX_RESULT.ADLX_OK)
+            var res = s->GetTessellation(g, &p);
+            if (res != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(res, "Tessellation is not supported by this driver/GPU");
+            using var c = new ComPtr<IADLX3DTessellation>(p);
+            if (i.IsSupported)
             {
-                using var c = new ComPtr<IADLX3DTessellation>(p);
-                if (i.IsSupported)
-                {
-                    c.Get()->SetMode(i.Mode);
-                    c.Get()->SetLevel(i.Level);
-                }
+                c.Get()->SetMode(i.Mode);
+                c.Get()->SetLevel(i.Level);
             }
         }
 

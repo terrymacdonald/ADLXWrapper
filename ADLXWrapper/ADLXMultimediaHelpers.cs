@@ -15,9 +15,9 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var system2 = (IADLXSystem2*)pSystem;
+            using var system2 = ADLXHelpers.RequireInterface<IADLXSystem2>((IntPtr)pSystem, nameof(IADLXSystem2));
             IADLXMultimediaServices* pServices;
-            var result = system2->GetMultimediaServices(&pServices);
+            var result = system2.Get()->GetMultimediaServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia services");
             return pServices;

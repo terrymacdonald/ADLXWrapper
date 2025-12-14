@@ -254,8 +254,6 @@ namespace ADLXWrapper
 
         public string ToJson() => JsonConvert.SerializeObject(GetProfile(), Formatting.Indented);
 
-        public AdlxCapabilities Capabilities => _system.Capabilities;
-
         public void ApplyProfile(DisplayProfile profile) => ApplyProfile(profile, null);
 
         public void ApplyProfile(DisplayProfile profile, Action<string>? onSkip)
@@ -263,16 +261,14 @@ namespace ADLXWrapper
             if (profile == null) throw new ArgumentNullException(nameof(profile));
             ThrowIfDisposed();
 
-            var ds3Available = _system.Capabilities.SupportsDisplayServices3;
-
             if (profile.Gamma != null) SetGamma(profile.Gamma);
             if (profile.Gamut != null) SetGamut(profile.Gamut);
             if (profile.ThreeDLUT != null) SetThreeDLUT(profile.ThreeDLUT);
             if (profile.CustomColor != null) SetCustomColor(profile.CustomColor);
             if (profile.Connectivity != null)
             {
-                if (ds3Available) SetConnectivity(profile.Connectivity);
-                else onSkip?.Invoke("Connectivity skipped (DisplayServices3 unavailable)");
+                try { SetConnectivity(profile.Connectivity); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Connectivity skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.CustomResolution != null) SetCustomResolution(profile.CustomResolution);
@@ -280,62 +276,62 @@ namespace ADLXWrapper
 
             if (profile.ColorDepth != null)
             {
-                if (ds3Available) SetColorDepth(profile.ColorDepth);
-                else onSkip?.Invoke("ColorDepth skipped (DisplayServices3 unavailable)");
+                try { SetColorDepth(profile.ColorDepth); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("ColorDepth skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.PixelFormat != null)
             {
-                if (ds3Available) SetPixelFormat(profile.PixelFormat);
-                else onSkip?.Invoke("PixelFormat skipped (DisplayServices3 unavailable)");
+                try { SetPixelFormat(profile.PixelFormat); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("PixelFormat skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.FreeSync?.Enabled != null)
             {
-                if (ds3Available) SetFreeSyncEnabled(profile.FreeSync.Enabled.Value);
-                else onSkip?.Invoke("FreeSync skipped (DisplayServices3 unavailable)");
+                try { SetFreeSyncEnabled(profile.FreeSync.Enabled.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("FreeSync skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.Vsr?.Enabled != null)
             {
-                if (ds3Available) SetVsrEnabled(profile.Vsr.Enabled.Value);
-                else onSkip?.Invoke("VSR skipped (DisplayServices3 unavailable)");
+                try { SetVsrEnabled(profile.Vsr.Enabled.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("VSR skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.IntegerScaling?.Enabled != null)
             {
-                if (ds3Available) SetIntegerScalingEnabled(profile.IntegerScaling.Enabled.Value);
-                else onSkip?.Invoke("IntegerScaling skipped (DisplayServices3 unavailable)");
+                try { SetIntegerScalingEnabled(profile.IntegerScaling.Enabled.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("IntegerScaling skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.GpuScaling?.Enabled != null)
             {
-                if (ds3Available) SetGpuScalingEnabled(profile.GpuScaling.Enabled.Value);
-                else onSkip?.Invoke("GPUScaling skipped (DisplayServices3 unavailable)");
+                try { SetGpuScalingEnabled(profile.GpuScaling.Enabled.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("GPUScaling skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.ScalingMode?.Mode != null)
             {
-                if (ds3Available) SetScalingMode(profile.ScalingMode.Mode.Value);
-                else onSkip?.Invoke("ScalingMode skipped (DisplayServices3 unavailable)");
+                try { SetScalingMode(profile.ScalingMode.Mode.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("ScalingMode skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.Hdcp?.Enabled != null)
             {
-                if (ds3Available) SetHdcpEnabled(profile.Hdcp.Enabled.Value);
-                else onSkip?.Invoke("HDCP skipped (DisplayServices3 unavailable)");
+                try { SetHdcpEnabled(profile.Hdcp.Enabled.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("HDCP skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.VariBright?.Enabled != null)
             {
-                if (ds3Available) SetVariBright(profile.VariBright);
-                else onSkip?.Invoke("VariBright skipped (DisplayServices3 unavailable)");
+                try { SetVariBright(profile.VariBright); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("VariBright skipped (DisplayServices3 unavailable)"); }
             }
 
             if (profile.Blanking?.Blanked != null)
             {
-                if (ds3Available) SetBlanked(profile.Blanking.Blanked.Value);
-                else onSkip?.Invoke("Blanking skipped (DisplayServices3 unavailable)");
+                try { SetBlanked(profile.Blanking.Blanked.Value); }
+                catch (ADLXException ex) when (IsNotSupported(ex)) { onSkip?.Invoke("Blanking skipped (DisplayServices3 unavailable)"); }
             }
         }
 
@@ -495,12 +491,8 @@ namespace ADLXWrapper
         public ConnectivityState GetConnectivity()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null)
-            {
-                return new ConnectivityState { HdmiQualityDetectionSupported = false, DpLinkRateSupported = false, RelativePreEmphasisSupported = false, RelativeVoltageSwingSupported = false };
-            }
-            var info = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperience((IADLXDisplayServices*)svc3.Get(), _display.Get());
+            using var svc2 = AcquireServices2OrThrow();
+            var info = ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperience((IADLXDisplayServices*)svc2.Get(), _display.Get());
             return new ConnectivityState
             {
                 HdmiQualityDetectionSupported = info.IsHdmiQualityDetectionSupported,
@@ -518,12 +510,11 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             if (state == null) return;
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var services3 = svc3.Get();
+            using var svc2 = AcquireServices2OrThrow();
+            var services2 = svc2.Get();
             IADLXDisplayConnectivityExperience* pConn;
-            var result = services3->GetDisplayConnectivityExperience(_display.Get(), &pConn);
-            if (result != ADLX_RESULT.ADLX_OK) return; // unsupported
+            var result = services2->GetDisplayConnectivityExperience(_display.Get(), &pConn);
+            if (result != ADLX_RESULT.ADLX_OK) throw new ADLXException(result, "Failed to get display connectivity experience");
             using var conn = new ComPtr<IADLXDisplayConnectivityExperience>(pConn);
             ADLXDisplaySettingsHelpers.ApplyDisplayConnectivityExperience(conn.Get(), new ConnectivityExperienceInfo(state.HdmiQualityDetectionSupported, state.HdmiQualityDetectionEnabled ?? false, state.DpLinkRateSupported, state.DpLinkRate ?? default, state.RelativePreEmphasisSupported, state.RelativePreEmphasis ?? 0, state.RelativeVoltageSwingSupported, state.RelativeVoltageSwing ?? 0));
         }
@@ -616,9 +607,7 @@ namespace ADLXWrapper
         public ColorDepthState GetColorDepth()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new ColorDepthState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var depth = new ComPtr<IADLXDisplayColorDepth>((IADLXDisplayColorDepth*)handle);
             var (supported, current) = ADLXDisplaySettingsHelpers.GetColorDepthState(handle);
             return new ColorDepthState { Supported = supported, Value = supported ? current : null };
@@ -628,9 +617,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             if (state == null || !state.Supported || state.Value == null) return;
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var depth = new ComPtr<IADLXDisplayColorDepth>((IADLXDisplayColorDepth*)handle);
             ADLXDisplaySettingsHelpers.SetColorDepth(handle, state.Value.Value);
         }
@@ -638,9 +625,7 @@ namespace ADLXWrapper
         public PixelFormatState GetPixelFormat()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new PixelFormatState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var pf = new ComPtr<IADLXDisplayPixelFormat>((IADLXDisplayPixelFormat*)handle);
             var (supported, current) = ADLXDisplaySettingsHelpers.GetPixelFormatState(handle);
             return new PixelFormatState { Supported = supported, Value = supported ? current : null };
@@ -650,9 +635,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             if (state == null || !state.Supported || state.Value == null) return;
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var pf = new ComPtr<IADLXDisplayPixelFormat>((IADLXDisplayPixelFormat*)handle);
             ADLXDisplaySettingsHelpers.SetPixelFormat(handle, state.Value.Value);
         }
@@ -660,9 +643,7 @@ namespace ADLXWrapper
         public FreeSyncState GetFreeSyncState()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new FreeSyncState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var fs = new ComPtr<IADLXDisplayFreeSync>((IADLXDisplayFreeSync*)handle);
             var (supported, enabled) = ADLXDisplaySettingsHelpers.GetFreeSyncState(handle);
             return new FreeSyncState { Supported = supported, Enabled = supported ? enabled : null };
@@ -671,9 +652,7 @@ namespace ADLXWrapper
         public void SetFreeSyncEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var fs = new ComPtr<IADLXDisplayFreeSync>((IADLXDisplayFreeSync*)handle);
             ADLXDisplaySettingsHelpers.SetFreeSyncEnabled(handle, enable);
         }
@@ -681,9 +660,7 @@ namespace ADLXWrapper
         public VirtualSuperResolutionState GetVsrState()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new VirtualSuperResolutionState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var vsr = new ComPtr<IADLXDisplayVSR>((IADLXDisplayVSR*)handle);
             var (supported, enabled) = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState(handle);
             return new VirtualSuperResolutionState { Supported = supported, Enabled = supported ? enabled : null };
@@ -692,9 +669,7 @@ namespace ADLXWrapper
         public void SetVsrEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var vsr = new ComPtr<IADLXDisplayVSR>((IADLXDisplayVSR*)handle);
             ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled(handle, enable);
         }
@@ -702,9 +677,7 @@ namespace ADLXWrapper
         public IntegerScalingState GetIntegerScalingState()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new IntegerScalingState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var iscale = new ComPtr<IADLXDisplayIntegerScaling>((IADLXDisplayIntegerScaling*)handle);
             var (supported, enabled) = ADLXDisplaySettingsHelpers.GetIntegerScalingState(handle);
             return new IntegerScalingState { Supported = supported, Enabled = supported ? enabled : null };
@@ -713,9 +686,7 @@ namespace ADLXWrapper
         public void SetIntegerScalingEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var iscale = new ComPtr<IADLXDisplayIntegerScaling>((IADLXDisplayIntegerScaling*)handle);
             ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled(handle, enable);
         }
@@ -723,9 +694,7 @@ namespace ADLXWrapper
         public GPUScalingState GetGpuScalingState()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new GPUScalingState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var gs = new ComPtr<IADLXDisplayGPUScaling>((IADLXDisplayGPUScaling*)handle);
             var (supported, enabled) = ADLXDisplaySettingsHelpers.GetGPUScalingState(handle);
             return new GPUScalingState { Supported = supported, Enabled = supported ? enabled : null };
@@ -734,9 +703,7 @@ namespace ADLXWrapper
         public void SetGpuScalingEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var gs = new ComPtr<IADLXDisplayGPUScaling>((IADLXDisplayGPUScaling*)handle);
             ADLXDisplaySettingsHelpers.SetGPUScalingEnabled(handle, enable);
         }
@@ -744,9 +711,7 @@ namespace ADLXWrapper
         public ScalingModeState GetScalingMode()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new ScalingModeState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var sm = new ComPtr<IADLXDisplayScalingMode>((IADLXDisplayScalingMode*)handle);
             var (supported, mode) = ADLXDisplaySettingsHelpers.GetScalingMode(handle);
             return new ScalingModeState { Supported = supported, Mode = supported ? mode : null };
@@ -755,9 +720,7 @@ namespace ADLXWrapper
         public void SetScalingMode(ADLX_SCALE_MODE mode)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var sm = new ComPtr<IADLXDisplayScalingMode>((IADLXDisplayScalingMode*)handle);
             ADLXDisplaySettingsHelpers.SetScalingMode(handle, mode);
         }
@@ -765,9 +728,7 @@ namespace ADLXWrapper
         public HdcpState GetHdcpState()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new HdcpState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var hd = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)handle);
             var (supported, enabled) = ADLXDisplaySettingsHelpers.GetHDCPState(handle);
             return new HdcpState { Supported = supported, Enabled = supported ? enabled : null };
@@ -776,9 +737,7 @@ namespace ADLXWrapper
         public void SetHdcpEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var hd = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)handle);
             ADLXDisplaySettingsHelpers.SetHDCPEnabled(handle, enable);
         }
@@ -786,9 +745,7 @@ namespace ADLXWrapper
         public VariBrightState GetVariBright()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new VariBrightState { Supported = false, Mode = ADLXDisplaySettingsHelpers.VariBrightMode.Unknown };
-            var handle = ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)handle);
             var (supported, enabled, mode) = ADLXDisplaySettingsHelpers.GetVariBrightState(handle);
             return new VariBrightState { Supported = supported, Enabled = supported ? enabled : null, Mode = mode };
@@ -798,9 +755,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             if (state == null || state.Enabled == null) return;
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            var handle = ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get());
             using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)handle);
             ADLXDisplaySettingsHelpers.SetVariBright(handle, state.Enabled.Value, state.Mode);
         }
@@ -808,9 +763,8 @@ namespace ADLXWrapper
         public BlankingState GetBlanking()
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return new BlankingState { Supported = false };
-            var handle = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            using var svc1 = AcquireServices1OrThrow();
+            var handle = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)svc1.Get(), (IntPtr)_display.Get());
             using var blank = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)handle);
             var (supported, blanked) = ADLXDisplaySettingsHelpers.GetDisplayBlankingState(handle);
             return new BlankingState { Supported = supported, Blanked = supported ? blanked : null };
@@ -819,9 +773,8 @@ namespace ADLXWrapper
         public void SetBlanked(bool blanked)
         {
             ThrowIfDisposed();
-            using var svc3 = AcquireServices3OrNull();
-            if (svc3.Get() == null) return;
-            var handle = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)svc3.Get(), (IntPtr)_display.Get());
+            using var svc1 = AcquireServices1OrThrow();
+            var handle = ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)svc1.Get(), (IntPtr)_display.Get());
             using var blank = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)handle);
             ADLXDisplaySettingsHelpers.SetDisplayBlanked(handle, blanked);
         }
@@ -834,9 +787,19 @@ namespace ADLXWrapper
             if (_disposed) throw new ObjectDisposedException(nameof(AdlxDisplay));
         }
 
-        private ComPtr<IADLXDisplayServices3> AcquireServices3OrNull()
+        private static bool IsNotSupported(ADLXException ex)
         {
-            return _system.TryGetDisplayServices3(_displayServices);
+            return ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED || ex.Result == ADLX_RESULT.ADLX_BAD_VER;
+        }
+
+        private ComPtr<IADLXDisplayServices2> AcquireServices2OrThrow()
+        {
+            return _system.RequireDisplayServices2(_displayServices);
+        }
+
+        private ComPtr<IADLXDisplayServices1> AcquireServices1OrThrow()
+        {
+            return _system.RequireDisplayServices1(_displayServices);
         }
 
         private static ADLX_CustomResolution BuildCustomResolution(DisplayResolutionState res)

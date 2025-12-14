@@ -143,7 +143,9 @@ namespace ADLXWrapper
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
             IADLXInterface* pManualFanTuning = null;
-            pGpuTuningServices->GetManualFanTuning(pGpu, &pManualFanTuning);
+            var result = pGpuTuningServices->GetManualFanTuning(pGpu, &pManualFanTuning);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get manual fan tuning interface");
             using var fanTuning = new ComPtr<IADLXManualFanTuning>((IADLXManualFanTuning*)pManualFanTuning);
             return new ManualFanTuningInfo(fanTuning.Get());
         }
@@ -164,8 +166,12 @@ namespace ADLXWrapper
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
             IADLXInterface* pManualVramTuning = null;
-            pGpuTuningServices->GetManualVRAMTuning(pGpu, &pManualVramTuning);
-            using var vramTuning = new ComPtr<IADLXManualVRAMTuning1>((IADLXManualVRAMTuning1*)pManualVramTuning);
+            var result = pGpuTuningServices->GetManualVRAMTuning(pGpu, &pManualVramTuning);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get manual VRAM tuning interface");
+
+            using var manualBase = new ComPtr<IADLXInterface>(pManualVramTuning);
+            using var vramTuning = ADLXHelpers.RequireInterface<IADLXManualVRAMTuning1>((IntPtr)manualBase.Get(), nameof(IADLXManualVRAMTuning1));
             return new ManualVramTuningInfo(vramTuning.Get());
         }
 
@@ -183,8 +189,12 @@ namespace ADLXWrapper
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
 
             IADLXInterface* pManualGfxTuning = null;
-            pGpuTuningServices->GetManualGFXTuning(pGpu, &pManualGfxTuning);
-            using var gfxTuning = new ComPtr<IADLXManualGraphicsTuning2>((IADLXManualGraphicsTuning2*)pManualGfxTuning);
+            var result = pGpuTuningServices->GetManualGFXTuning(pGpu, &pManualGfxTuning);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get manual GFX tuning interface");
+
+            using var manualBase = new ComPtr<IADLXInterface>(pManualGfxTuning);
+            using var gfxTuning = ADLXHelpers.RequireInterface<IADLXManualGraphicsTuning2>((IntPtr)manualBase.Get(), nameof(IADLXManualGraphicsTuning2));
             return new ManualGfxTuningInfo(gfxTuning.Get());
         }
 

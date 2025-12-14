@@ -11,6 +11,21 @@ namespace ADLXWrapper
     /// </summary>
     public static unsafe class ADLXDisplaySettingsHelpers
     {
+        private static ComPtr<IADLXDisplayServices2> RequireDisplayServices2(IntPtr pDisplayServices)
+        {
+            return ADLXHelpers.RequireInterface<IADLXDisplayServices2>(pDisplayServices, nameof(IADLXDisplayServices2));
+        }
+
+        private static ComPtr<IADLXDisplayServices3> RequireDisplayServices3(IntPtr pDisplayServices)
+        {
+            return ADLXHelpers.RequireInterface<IADLXDisplayServices3>(pDisplayServices, nameof(IADLXDisplayServices3));
+        }
+
+        private static ComPtr<IADLXDisplayServices1> RequireDisplayServices1(IntPtr pDisplayServices)
+        {
+            return ADLXHelpers.RequireInterface<IADLXDisplayServices1>(pDisplayServices, nameof(IADLXDisplayServices1));
+        }
+
         /// <summary>
         /// Gets the Gamma settings for a specific display.
         /// </summary>
@@ -311,9 +326,9 @@ namespace ADLXWrapper
             if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
             if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
 
-            var services3 = (IADLXDisplayServices3*)pDisplayServices;
+            using var services2 = RequireDisplayServices2((IntPtr)pDisplayServices);
             IADLXDisplayConnectivityExperience* pConn;
-            var result = services3->GetDisplayConnectivityExperience(pDisplay, &pConn);
+            var result = services2.Get()->GetDisplayConnectivityExperience(pDisplay, &pConn);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
 
@@ -460,9 +475,9 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            using var services1 = RequireDisplayServices1(pDisplayServices);
             IADLXDisplayBlanking* pBlanking;
-            var result = services->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
+            var result = services1.Get()->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Display Blanking interface");
@@ -508,7 +523,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayVSR* pVsr;
             var result = services->GetVirtualSuperResolution((IADLXDisplay*)pDisplay, &pVsr);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -557,7 +572,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayIntegerScaling* pIntegerScaling;
             var result = services->GetIntegerScaling((IADLXDisplay*)pDisplay, &pIntegerScaling);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -606,7 +621,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayHDCP* pHdcp;
             var result = services->GetHDCP((IADLXDisplay*)pDisplay, &pHdcp);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -665,7 +680,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayVariBright* pVariBright;
             var result = services->GetVariBright((IADLXDisplay*)pDisplay, &pVariBright);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -757,7 +772,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayColorDepth* pColorDepth;
             var result = services->GetColorDepth((IADLXDisplay*)pDisplay, &pColorDepth);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -805,7 +820,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayPixelFormat* pPixelFormat;
             var result = services->GetPixelFormat((IADLXDisplay*)pDisplay, &pPixelFormat);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -853,7 +868,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayFreeSync* pFS;
             var result = services->GetFreeSync((IADLXDisplay*)pDisplay, &pFS);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -871,7 +886,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayGPUScaling* pScaling;
             var result = services->GetGPUScaling((IADLXDisplay*)pDisplay, &pScaling);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -889,7 +904,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            var services = (IADLXDisplayServices*)pDisplayServices;
             IADLXDisplayScalingMode* pMode;
             var result = services->GetScalingMode((IADLXDisplay*)pDisplay, &pMode);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -1005,9 +1020,9 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            using var services3 = RequireDisplayServices3(pDisplayServices);
             IADLXDisplayFreeSyncColorAccuracy* pFSCA;
-            var result = services->GetFreeSyncColorAccuracy((IADLXDisplay*)pDisplay, &pFSCA);
+            var result = services3.Get()->GetFreeSyncColorAccuracy((IADLXDisplay*)pDisplay, &pFSCA);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get FreeSync Color Accuracy interface");
@@ -1055,9 +1070,9 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pDisplay));
 
-            var services = (IADLXDisplayServices3*)pDisplayServices;
+            using var services3 = RequireDisplayServices3(pDisplayServices);
             IADLXDisplayDynamicRefreshRateControl* pDRR;
-            var result = services->GetDynamicRefreshRateControl((IADLXDisplay*)pDisplay, &pDRR);
+            var result = services3.Get()->GetDynamicRefreshRateControl((IADLXDisplay*)pDisplay, &pDRR);
             if (result != ADLX_RESULT.ADLX_OK)
             {
                 throw new ADLXException(result, "Failed to get Dynamic Refresh Rate Control interface");

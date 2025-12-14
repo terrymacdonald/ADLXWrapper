@@ -15,10 +15,7 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
-                throw new ADLXException(ADLX_RESULT.ADLX_INVALID_ARGS, "Power tuning services require IADLXSystem2");
-
-            using var system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
+            using var system2 = ADLXHelpers.RequireInterface<IADLXSystem2>((IntPtr)pSystem, nameof(IADLXSystem2));
             IADLXPowerTuningServices* pServices = null;
             var result = system2.Get()->GetPowerTuningServices(&pServices);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -61,13 +58,7 @@ namespace ADLXWrapper
         {
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
-            // IADLXPowerTuningServices1 is required for GetSmartShiftEco
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pPowerServices1))
-            {
-                return new SmartShiftEcoInfo(false, false);
-            }
-
-            using var powerServices1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)pPowerServices1);
+            using var powerServices1 = ADLXHelpers.RequireInterface<IADLXPowerTuningServices1>((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1));
             IADLXSmartShiftEco* pEco;
             var result = powerServices1.Get()->GetSmartShiftEco(&pEco);
             if (result != ADLX_RESULT.ADLX_OK)
@@ -147,11 +138,8 @@ namespace ADLXWrapper
 
             if (info.TdcLimitSupported)
             {
-                if (ADLXHelpers.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
-                {
-                    using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
-                    SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
-                }
+                using var manualPower1 = ADLXHelpers.RequireInterface<IADLXManualPowerTuning1>((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1));
+                SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
             }
         }
 

@@ -14,6 +14,11 @@
 - [ ] Expand test coverage for `Apply` methods.
 - [ ] Document advanced use cases like event handling.
 
+### Phase 3: Interface version gating
+
+- [x] Wire DisplayServices v1/v2 gating in helpers/facades (blanking via DS1; connectivity via DS2; retain DS3-only FSCA/DRRC).
+- [ ] Run regression tests after gating changes.
+
 ### Display/Desktop facade & profile plan
 
 - Remove/replace legacy DTOs: `DisplayInfo`, `DesktopInfo`, and their enumeration helpers will be removed or marked obsolete; callers should migrate to facades/profiles. Files to update: `ADLXDisplayHelpers.cs`, `ADLXDesktopHelpers.cs`, samples, tests.

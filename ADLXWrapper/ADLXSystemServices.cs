@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using Newtonsoft.Json;
 
 namespace ADLXWrapper
 {
@@ -9,7 +7,6 @@ namespace ADLXWrapper
     {
         private readonly ADLXApi _owner;
         private ComPtr<IADLXSystem> _system;
-        private readonly AdlxCapabilities _capabilities;
         private bool _disposed;
 
         internal ADLXSystemServices(ADLXApi owner, IADLXSystem* system)
@@ -17,7 +14,6 @@ namespace ADLXWrapper
             _owner = owner ?? throw new ArgumentNullException(nameof(owner));
             if (system == null) throw new ArgumentNullException(nameof(system));
             _system = new ComPtr<IADLXSystem>(system);
-            _capabilities = AdlxCapabilities.Create(owner, system);
         }
 
         public IReadOnlyList<AdlxDisplay> EnumerateAllDisplays()
@@ -193,9 +189,53 @@ namespace ADLXWrapper
             return new ComPtr<IADLXDisplayServices>(pDisplayServices);
         }
 
+        internal ComPtr<IADLXDisplayServices1> TryGetDisplayServices1(ComPtr<IADLXDisplayServices> baseServices)
+        {
+            if (baseServices.Get() == null)
+                return default;
+
+            if (ADLXHelpers.TryQueryInterface((IntPtr)baseServices.Get(), nameof(IADLXDisplayServices1), out var ptr) && ptr != IntPtr.Zero)
+            {
+                return new ComPtr<IADLXDisplayServices1>((IADLXDisplayServices1*)ptr);
+            }
+
+            return default;
+        }
+
+        internal ComPtr<IADLXDisplayServices1> RequireDisplayServices1(ComPtr<IADLXDisplayServices> baseServices)
+        {
+            var svc1 = TryGetDisplayServices1(baseServices);
+            if (svc1.Get() == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "DisplayServices1 is not supported on this system");
+
+            return svc1;
+        }
+
+        internal ComPtr<IADLXDisplayServices2> TryGetDisplayServices2(ComPtr<IADLXDisplayServices> baseServices)
+        {
+            if (baseServices.Get() == null)
+                return default;
+
+            if (ADLXHelpers.TryQueryInterface((IntPtr)baseServices.Get(), nameof(IADLXDisplayServices2), out var ptr) && ptr != IntPtr.Zero)
+            {
+                return new ComPtr<IADLXDisplayServices2>((IADLXDisplayServices2*)ptr);
+            }
+
+            return default;
+        }
+
+        internal ComPtr<IADLXDisplayServices2> RequireDisplayServices2(ComPtr<IADLXDisplayServices> baseServices)
+        {
+            var svc2 = TryGetDisplayServices2(baseServices);
+            if (svc2.Get() == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "DisplayServices2 is not supported on this system");
+
+            return svc2;
+        }
+
         internal ComPtr<IADLXDisplayServices3> TryGetDisplayServices3(ComPtr<IADLXDisplayServices> baseServices)
         {
-            if (!_capabilities.SupportsDisplayServices3 || baseServices.Get() == null)
+            if (baseServices.Get() == null)
                 return default;
 
             if (ADLXHelpers.TryQueryInterface((IntPtr)baseServices.Get(), nameof(IADLXDisplayServices3), out var ptr) && ptr != IntPtr.Zero)
@@ -204,6 +244,15 @@ namespace ADLXWrapper
             }
 
             return default;
+        }
+
+        internal ComPtr<IADLXDisplayServices3> RequireDisplayServices3(ComPtr<IADLXDisplayServices> baseServices)
+        {
+            var svc3 = TryGetDisplayServices3(baseServices);
+            if (svc3.Get() == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "DisplayServices3 is not supported on this system");
+
+            return svc3;
         }
 
         internal ComPtr<IADLXDesktopServices> AcquireDesktopServices()
@@ -241,8 +290,6 @@ namespace ADLXWrapper
             if (_disposed) throw new ObjectDisposedException(nameof(ADLXSystemServices));
         }
 
-        public AdlxCapabilities Capabilities => _capabilities;
-
         public void Dispose()
         {
             if (_disposed) return;
@@ -252,58 +299,4 @@ namespace ADLXWrapper
         }
     }
 
-    public sealed class AdlxCapabilities
-    {
-        private AdlxCapabilities(ulong fullVersion, string versionString, int major, int minor, int patch, bool supportsDisplayServices2, bool supportsDisplayServices3)
-        {
-            FullVersion = fullVersion;
-            VersionString = versionString;
-            Major = major;
-            Minor = minor;
-            Patch = patch;
-            SupportsDisplayServices2 = supportsDisplayServices2;
-            SupportsDisplayServices3 = supportsDisplayServices3;
-        }
-
-        public ulong FullVersion { get; }
-        public string VersionString { get; }
-        public int Major { get; }
-        public int Minor { get; }
-        public int Patch { get; }
-        public bool SupportsDisplayServices2 { get; }
-        public bool SupportsDisplayServices3 { get; }
-
-        public static unsafe AdlxCapabilities Create(ADLXApi owner, IADLXSystem* system)
-        {
-            var versionString = owner.GetVersion();
-            var fullVersion = owner.GetFullVersion();
-            var (major, minor, patch) = ParseVersion(versionString);
-
-            bool hasDs3 = false, hasDs2 = false;
-            if (system != null)
-            {
-                IADLXDisplayServices* pDisplayServices = null;
-                var res = system->GetDisplaysServices(&pDisplayServices);
-                if (res == ADLX_RESULT.ADLX_OK && pDisplayServices != null)
-                {
-                    using var services = new ComPtr<IADLXDisplayServices>(pDisplayServices);
-                    hasDs3 = ADLXHelpers.TryQueryInterface((IntPtr)services.Get(), nameof(IADLXDisplayServices3), out _);
-                    hasDs2 = hasDs3 || ADLXHelpers.TryQueryInterface((IntPtr)services.Get(), nameof(IADLXDisplayServices2), out _);
-                }
-            }
-
-            return new AdlxCapabilities(fullVersion, versionString, major, minor, patch, hasDs2, hasDs3);
-        }
-
-        private static (int Major, int Minor, int Patch) ParseVersion(string version)
-        {
-            if (string.IsNullOrWhiteSpace(version)) return (0, 0, 0);
-
-            var parts = version.Split('.', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-            var major = parts.Length > 0 && int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var m) ? m : 0;
-            var minor = parts.Length > 1 && int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var n) ? n : 0;
-            var patch = parts.Length > 2 && int.TryParse(parts[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out var p) ? p : 0;
-            return (major, minor, patch);
-        }
-    }
 }

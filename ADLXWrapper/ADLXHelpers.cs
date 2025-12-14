@@ -30,6 +30,20 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// QueryInterface and throw ADLX_NOT_SUPPORTED if the requested interface is unavailable.
+        /// </summary>
+        public static unsafe ComPtr<T> RequireInterface<T>(IntPtr pInterface, string interfaceName) where T : unmanaged
+        {
+            if (pInterface == IntPtr.Zero) throw new ArgumentNullException(nameof(pInterface));
+            if (string.IsNullOrEmpty(interfaceName)) throw new ArgumentNullException(nameof(interfaceName));
+
+            if (!TryQueryInterface(pInterface, interfaceName, out var ptr) || ptr == IntPtr.Zero)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, $"Interface {interfaceName} is not supported by this driver");
+
+            return new ComPtr<T>((T*)ptr);
+        }
+
+        /// <summary>
         /// Release an ADLX interface
         /// Decrements the reference count
         /// </summary>

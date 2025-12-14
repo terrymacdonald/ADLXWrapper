@@ -83,7 +83,8 @@ namespace ADLXWrapper.Tests
             using (display!)
             {
                 var profile = display.GetProfile();
-                var supportsDs3 = _sys.Capabilities.SupportsDisplayServices3;
+                using var displayServices = _sys.GetDisplayServicesHandle();
+                var supportsDs3 = ADLXHelpers.TryQueryInterface((IntPtr)displayServices, nameof(IADLXDisplayServices3), out _);
 
                 if (!supportsDs3)
                 {
