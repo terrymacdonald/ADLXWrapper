@@ -1,34 +1,44 @@
 using ADLXWrapper;
 
-unsafe
+Console.WriteLine("=== ADLX Power Tuning Sample ===");
+
+using var adlx = ADLXApi.Initialize();
+
+try
 {
-    Console.WriteLine("=== ADLX Power Tuning Sample ===");
+    using var sys = adlx.GetSystemServicesProfile();
+    using var power = sys.GetPowerTuningServices();
 
-    using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServices();
+    var profile = power.GetProfile();
 
-    // System2 is required for power tuning services on newer SDKs.
-    if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
+    if (profile.SmartShiftMax.HasValue)
     {
-        Console.WriteLine("System2 not available; power tuning not supported on this driver/hardware.");
-        return;
+        var ssm = profile.SmartShiftMax.Value;
+        Console.WriteLine($"SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.minValue}-{ssm.BiasRange.maxValue})");
+    }
+    else
+    {
+        Console.WriteLine("SmartShift Max not supported.");
     }
 
-    using var sys2 = AdlxInterfaceHandle.From((void*)sys2Ptr);
-
-    try
+    if (profile.SmartShiftEco.HasValue)
     {
-        using var powerServices = AdlxInterfaceHandle.From(ADLXPowerTuningHelpers.GetPowerTuningServices(sys2.As<IADLXSystem>()), addRef: false);
-        Console.WriteLine("Power tuning services acquired.");
-
-        var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(powerServices.As<IADLXPowerTuningServices>());
-        Console.WriteLine($"SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.minValue}-{ssm.BiasRange.maxValue})");
-
-        var eco = ADLXPowerTuningHelpers.GetSmartShiftEco(powerServices.As<IADLXPowerTuningServices>());
+        var eco = profile.SmartShiftEco.Value;
         Console.WriteLine($"SmartShift Eco -> supported={eco.IsSupported}, enabled={eco.IsEnabled}");
     }
-    catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+    else
     {
-        Console.WriteLine("Power tuning not supported on this hardware/driver.");
+        Console.WriteLine("SmartShift Eco not supported.");
     }
+
+    // Example apply (commented to remain read-only):
+    // if (profile.SmartShiftMax?.IsSupported == true)
+    // {
+    //     var newMax = profile.SmartShiftMax.Value;
+    //     power.ApplyProfile(new PowerTuningProfile(newMax with { BiasValue = newMax.BiasValue }, profile.SmartShiftEco));
+    // }
+}
+catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+{
+    Console.WriteLine("Power tuning not supported on this hardware/driver.");
 }
