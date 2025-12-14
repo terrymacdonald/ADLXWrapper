@@ -19,6 +19,15 @@
 - [x] Wire DisplayServices v1/v2 gating in helpers/facades (blanking via DS1; connectivity via DS2; retain DS3-only FSCA/DRRC).
 - [x] Run regression tests after gating changes (current run skipped on non-AMD hardware; DLL missing on host).
 
+### Phase 4: Facade expansion (Planned)
+
+- [ ] Stage 1 – Scope inventory: Catalog remaining non-facade helpers/raw entry points (GPU tuning, performance monitoring, multimedia, power tuning, 3D settings, logging/system init variants). Note call sites in samples/tests to quantify migration.
+- [ ] Stage 2 – Surface design: Define facade types and naming aligned with existing conventions (Profile naming, legacy handle escape hatches). Decide gating/error propagation per area (QueryInterface, ADLX_NOT_SUPPORTED/BAD_VER pass-through).
+- [ ] Stage 3 – API shape draft: Sketch C# types and primary methods/properties per facade (profiles, support queries, apply patterns, JSON DTOs, ComPtr ownership rules).
+- [ ] Stage 4 – Implementation: Build facades per area (GPU tuning, perf monitoring, multimedia, power tuning, 3D settings, logging). Implement profile capture/apply with skip-on-unsupported semantics and RAII/disposal safety.
+- [ ] Stage 5 – Samples/tests: Update samples to facades; expand tests for new surfaces (support gating, profile round-trips, disposal guards). Ensure non-AMD skip logic remains intact.
+- [ ] Stage 6 – Docs/verification: Refresh READMEs with new quick-starts; run `dotnet build ADLXWrapper/ADLXWrapper.csproj` and `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj` (skip-aware); ensure no generated file edits.
+
 ### Display/Desktop facade & profile plan
 
 - Remove/replace legacy DTOs: `DisplayInfo`, `DesktopInfo`, and their enumeration helpers will be removed or marked obsolete; callers should migrate to facades/profiles. Files to update: `ADLXDisplayHelpers.cs`, `ADLXDesktopHelpers.cs`, samples, tests.
