@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Runtime.Versioning;
 using Xunit;
 using Xunit.Abstractions;
@@ -10,13 +9,14 @@ namespace ADLXWrapper.Tests
     /// Tests for 3D Settings services.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class ADLX3DSettingsTests : IDisposable
+    public class ADLX3DSettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
+        private readonly ADLXSystemServices? _system;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXGPU* _gpu;
-        private readonly IADLX3DSettingsServices* _settingsServices;
+        private readonly AdlxInterfaceHandle _gpu;
+        private readonly Adlx3DSettings? _settings;
 
         public ADLX3DSettingsTests(ITestOutputHelper output)
         {
@@ -24,19 +24,22 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                IADLXGPUList* gpuList = null;
-                var result = system->GetGPUs(&gpuList);
-                if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
+                _system = _api.GetSystemServicesProfile();
+
+                var gpus = _api.EnumerateGPUHandles();
+                if (gpus.Length == 0)
                 {
                     _skipReason = "No AMD GPUs found.";
                     return;
                 }
-                IADLXGPU* pGpu = null;
-                gpuList->At(0, &pGpu);
-                _gpu = pGpu;
-                ((IADLXInterface*)gpuList)->Release();
-                _settingsServices = ADLX3DSettingsHelpers.Get3DSettingsServices(system);
+
+                _gpu = gpus[0];
+                for (int i = 1; i < gpus.Length; i++)
+                {
+                    gpus[i].Dispose();
+                }
+
+                _settings = _system.Get3DSettingsServices(_gpu);
             }
             catch (Exception ex)
             {
@@ -46,17 +49,19 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_settingsServices != null) ((IUnknown*)_settingsServices)->Release();
+            _settings?.Dispose();
+            _gpu.Dispose();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetAll3DSettings()
         {
-            Skip.If(_api == null || _gpu == null || _settingsServices == null, _skipReason);
-            var settings = ADLX3DSettingsHelpers.GetAll3DSettings(_settingsServices, _gpu);
-            _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {settings.AntiLag?.IsSupported ?? false}");
+            Skip.If(_api == null || _settings == null || _gpu.IsInvalid, _skipReason);
+            var profile = _settings.GetProfile();
+            _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {profile.AntiLag?.IsSupported ?? false}");
+            Assert.NotNull(profile);
         }
     }
 }

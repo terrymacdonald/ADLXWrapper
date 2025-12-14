@@ -9,13 +9,14 @@ namespace ADLXWrapper.Tests
     /// Tests for Performance Monitoring services.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class PerformanceMonitoringServicesTests : IDisposable
+    public class PerformanceMonitoringServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
+        private readonly ADLXSystemServices? _system;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXGPU* _gpu;
-        private readonly IADLXPerformanceMonitoringServices* _perfServices;
+        private readonly AdlxInterfaceHandle _gpu;
+        private readonly AdlxPerformanceMonitor? _perf;
 
         public PerformanceMonitoringServicesTests(ITestOutputHelper output)
         {
@@ -23,20 +24,22 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                _perfServices = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(system);
+                _system = _api.GetSystemServicesProfile();
 
-                IADLXGPUList* gpuList = null;
-                var result = system->GetGPUs(&gpuList);
-                if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
+                var gpus = _api.EnumerateGPUHandles();
+                if (gpus.Length == 0)
                 {
                     _skipReason = "No AMD GPUs found.";
                     return;
                 }
-                IADLXGPU* pGpu = null;
-                gpuList->At(0, &pGpu);
-                _gpu = pGpu;
-                ((IADLXInterface*)gpuList)->Release();
+
+                _gpu = gpus[0];
+                for (int i = 1; i < gpus.Length; i++)
+                {
+                    gpus[i].Dispose();
+                }
+
+                _perf = _system.GetPerformanceMonitoringServices();
             }
             catch (Exception ex)
             {
@@ -46,22 +49,22 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_perfServices != null) ((IUnknown*)_perfServices)->Release();
+            _perf?.Dispose();
+            _gpu.Dispose();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetPerformanceInfo()
         {
-            Skip.If(_api == null || _gpu == null || _perfServices == null, _skipReason);
+            Skip.If(_api == null || _perf == null || _gpu.IsInvalid, _skipReason);
 
-            var settings = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringSettings(_perfServices);
-            Assert.True(settings.SamplingIntervalMs > 0);
-            _output.WriteLine($"Sampling Interval: {settings.SamplingIntervalMs}ms");
+            var profile = _perf.GetProfile();
+            _output.WriteLine($"Sampling Interval: {profile.SamplingIntervalMs}ms");
+            Assert.True(profile.SamplingIntervalMs >= 0);
 
-            var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(_perfServices, _gpu);
-            // Metrics is a struct; just ensure we read a plausible value
+            var metrics = _perf.GetCurrentGpuMetrics(_gpu);
             Assert.True(metrics.Temperature >= 0);
             _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");
         }

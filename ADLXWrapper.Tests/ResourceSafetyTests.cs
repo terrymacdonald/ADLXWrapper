@@ -1,6 +1,5 @@
 using System;
 using System.Runtime.Versioning;
-using ADLXWrapper;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -21,7 +20,7 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
-        public unsafe void EnumerateAndDispose_Repeatedly_ShouldNotThrow()
+        public void EnumerateAndDispose_Repeatedly_ShouldNotThrow()
         {
             Skip.If(!ADLXHardwareDetection.HasAMDGPU(out var hwReason), hwReason);
 
@@ -31,11 +30,11 @@ namespace ADLXWrapper.Tests
             }
 
             using var api = ADLXApi.Initialize();
-            var system = api.GetSystemServicesProfile();
+            using var system = api.GetSystemServicesProfile();
 
             for (int i = 0; i < 5; i++)
             {
-                using var perf = api.GetPerformanceMonitoringServicesHandle();
+                using var perf = system.GetPerformanceMonitoringServices();
                 var gpus = api.EnumerateGPUHandles();
 
                 foreach (var gpu in gpus)
@@ -45,7 +44,7 @@ namespace ADLXWrapper.Tests
                         var info = ADLXGPUInfo.GetBasicInfo(gpu);
                         _output.WriteLine($"[Iter {i}] GPU: {info.Name}");
 
-                        var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(perf.As<IADLXPerformanceMonitoringServices>(), gpu.As<IADLXGPU>());
+                        var metrics = perf.GetCurrentGpuMetrics(gpu);
                         _output.WriteLine($"[Iter {i}] Temp: {metrics.Temperature}C");
                     }
                 }

@@ -9,13 +9,14 @@ namespace ADLXWrapper.Tests
     /// Tests for Multimedia services (VSR, Upscale).
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class MultimediaServicesTests : IDisposable
+    public class MultimediaServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApi? _api;
+        private readonly ADLXSystemServices? _system;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXGPU* _gpu;
-        private readonly IADLXMultimediaServices* _multimediaServices;
+        private readonly AdlxInterfaceHandle _gpu;
+        private readonly AdlxMultimedia? _multimedia;
 
         public MultimediaServicesTests(ITestOutputHelper output)
         {
@@ -23,20 +24,22 @@ namespace ADLXWrapper.Tests
             try
             {
                 _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                _multimediaServices = ADLXMultimediaHelpers.GetMultimediaServices(system);
+                _system = _api.GetSystemServicesProfile();
 
-                IADLXGPUList* gpuList = null;
-                var result = system->GetGPUs(&gpuList);
-                if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
+                var gpus = _api.EnumerateGPUHandles();
+                if (gpus.Length == 0)
                 {
                     _skipReason = "No AMD GPUs found.";
                     return;
                 }
-                IADLXGPU* pGpu = null;
-                gpuList->At(0, &pGpu);
-                _gpu = pGpu;
-                ((IADLXInterface*)gpuList)->Release();
+
+                _gpu = gpus[0];
+                for (int i = 1; i < gpus.Length; i++)
+                {
+                    gpus[i].Dispose();
+                }
+
+                _multimedia = _system.GetMultimediaServices(_gpu);
             }
             catch (Exception ex)
             {
@@ -46,21 +49,23 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_multimediaServices != null) ((IUnknown*)_multimediaServices)->Release();
+            _multimedia?.Dispose();
+            _gpu.Dispose();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetMultimediaInfo()
         {
-            Skip.If(_api == null || _gpu == null || _multimediaServices == null, _skipReason);
+            Skip.If(_api == null || _multimedia == null || _gpu.IsInvalid, _skipReason);
 
-            var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(_multimediaServices, _gpu);
-            _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
+            var profile = _multimedia.GetProfile();
+            _output.WriteLine($"Video Super Resolution supported: {profile.VideoSuperResolution?.IsSupported}");
+            _output.WriteLine($"Video Upscale supported: {profile.VideoUpscale?.IsSupported}");
 
-            var upscale = ADLXMultimediaHelpers.GetVideoUpscale(_multimediaServices, _gpu);
-            _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
+            Assert.NotNull(profile.VideoSuperResolution);
+            Assert.NotNull(profile.VideoUpscale);
         }
     }
 }

@@ -19,7 +19,7 @@
 - [x] Wire DisplayServices v1/v2 gating in helpers/facades (blanking via DS1; connectivity via DS2; retain DS3-only FSCA/DRRC).
 - [x] Run regression tests after gating changes (current run skipped on non-AMD hardware; DLL missing on host).
 
-### Phase 4: Facade expansion (In progress)
+### Phase 4: Facade expansion (Complete)
 
 - [x] Stage 1 – Scope inventory: Catalog remaining non-facade helpers/raw entry points (GPU tuning, performance monitoring, multimedia, power tuning, 3D settings, logging/system init variants). Note call sites in samples/tests to quantify migration.
 	- Raw helper surfaces to replace with facades: ADLXGPUTuningHelpers (manual/preset/auto tuning, fan/VRAM/power tuning; event listeners stubbed), ADLXPowerTuningHelpers (SmartShift Max/Eco, manual power/TDC), ADLXPerformanceMonitoringHelpers (metrics support/current/history, sampling config), ADLXMultimediaHelpers (video upscale/VSR), ADLX3DSettingsHelpers (anti-lag/boost/RIS/ESync/VSync/FRTC/AA/AF/Tessellation). Legacy DTO helpers still present: ADLXGpuHelpers, ADLXDisplayHelpers, ADLXDesktopHelpers. System logging/init facade absent.
@@ -52,6 +52,10 @@
 		 - [x] Add ADLXApi.EnableLog(LogProfile) and DisableLog wrappers (mirrored on ADLXSystemServices); guard disposal and propagate ADLXException.
 		 - [x] Test/verification notes: file logging happy path, disable path, dispose guard; optional callback sink if ADLX invokes it on this host.
 - [ ] Stage 5 – Samples/tests: Update samples to facades; expand tests for new surfaces (support gating, profile round-trips, disposal guards). Ensure non-AMD skip logic remains intact.
+	- [ ] Tests migration (current focus):
+		- Targets: PerformanceMonitoringServicesTests, MultimediaServicesTests, PowerTuningServicesTests, GpuTuningServicesTests, ADLX3DSettingsTests, ResourceSafetyTests.
+		- Success criteria: use facades/AdlxInterfaceHandle instead of raw pointers/helpers; preserve skip guards for AMD hardware and DLL presence; ensure using/Dispose on all handles; keep assertions meaningful (support/metrics values read, not modifying hardware).
+		- Out of scope for now: sample refactors and helper deprecation—track separately after tests land.
 - [ ] Stage 6 – Docs/verification: Refresh READMEs with new quick-starts; run `dotnet build ADLXWrapper/ADLXWrapper.csproj` and `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj` (skip-aware); ensure no generated file edits.
 
 ### Future things to fix
