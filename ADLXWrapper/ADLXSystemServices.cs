@@ -171,6 +171,135 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Get the GPU tuning services facade for a specific GPU handle.
+        /// </summary>
+        public AdlxGpuTuning GetGpuTuningServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            if (gpu.IsInvalid) throw new ArgumentException("GPU handle is invalid", nameof(gpu));
+            var services = AcquireGpuTuningServices();
+            ADLXHelpers.AddRefInterface((IntPtr)services.Get());
+            ADLXHelpers.AddRefInterface((IntPtr)gpu.As<IADLXGPU>());
+            return new AdlxGpuTuning(_owner, services.Get(), gpu.As<IADLXGPU>());
+        }
+
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw GPU tuning services.
+        /// </summary>
+        public AdlxInterfaceHandle GetGpuTuningServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = AcquireGpuTuningServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: true);
+        }
+
+        /// <summary>
+        /// Get the multimedia services facade for a specific GPU handle.
+        /// </summary>
+        public AdlxMultimedia GetMultimediaServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            if (gpu.IsInvalid) throw new ArgumentException("GPU handle is invalid", nameof(gpu));
+            var services = AcquireMultimediaServices();
+            ADLXHelpers.AddRefInterface((IntPtr)services.Get());
+            ADLXHelpers.AddRefInterface((IntPtr)gpu.As<IADLXGPU>());
+            return new AdlxMultimedia(_owner, services.Get(), gpu.As<IADLXGPU>());
+        }
+
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw multimedia services.
+        /// </summary>
+        public AdlxInterfaceHandle GetMultimediaServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = AcquireMultimediaServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: true);
+        }
+
+        /// <summary>
+        /// Get the power tuning services facade.
+        /// </summary>
+        public AdlxPowerTuning GetPowerTuningServices()
+        {
+            ThrowIfDisposed();
+            var services = AcquirePowerTuningServices();
+            ADLXHelpers.AddRefInterface((IntPtr)services.Get());
+            return new AdlxPowerTuning(_owner, services.Get());
+        }
+
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw power tuning services.
+        /// </summary>
+        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = AcquirePowerTuningServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: true);
+        }
+
+        /// <summary>
+        /// Get the 3D settings services facade for a specific GPU handle.
+        /// </summary>
+        public Adlx3DSettings Get3DSettingsServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            if (gpu.IsInvalid) throw new ArgumentException("GPU handle is invalid", nameof(gpu));
+            var services = Acquire3DSettingsServices();
+            ADLXHelpers.AddRefInterface((IntPtr)services.Get());
+            ADLXHelpers.AddRefInterface((IntPtr)gpu.As<IADLXGPU>());
+            return new Adlx3DSettings(_owner, services.Get(), gpu.As<IADLXGPU>());
+        }
+
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw 3D settings services.
+        /// </summary>
+        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = Acquire3DSettingsServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: true);
+        }
+
+        /// <summary>
+        /// Get the performance monitoring services facade.
+        /// </summary>
+        public AdlxPerformanceMonitor GetPerformanceMonitoringServices()
+        {
+            ThrowIfDisposed();
+            var services = AcquirePerformanceMonitoringServices();
+            ADLXHelpers.AddRefInterface((IntPtr)services.Get());
+            return new AdlxPerformanceMonitor(_owner, services.Get());
+        }
+
+        /// <summary>
+        /// Advanced: get a disposable handle to the raw performance monitoring services.
+        /// </summary>
+        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+        {
+            ThrowIfDisposed();
+            var services = AcquirePerformanceMonitoringServices();
+            return AdlxInterfaceHandle.From(services.Get(), addRef: true);
+        }
+
+        /// <summary>
+        /// Configure ADLX logging via the owner API.
+        /// </summary>
+        public void EnableLog(LogProfile profile)
+        {
+            ThrowIfDisposed();
+            _owner.EnableLog(profile);
+        }
+
+        /// <summary>
+        /// Reduce ADLX logging to a minimal setting.
+        /// </summary>
+        public void DisableLog()
+        {
+            ThrowIfDisposed();
+            _owner.DisableLog();
+        }
+
+        /// <summary>
         /// Advanced: get a disposable handle to the raw display services for event/listener scenarios.
         /// </summary>
         public AdlxInterfaceHandle GetDisplayServicesHandle()
@@ -276,6 +405,53 @@ namespace ADLXWrapper
             if (ptr == null) throw new ArgumentNullException(nameof(ptr));
             ADLXHelpers.AddRefInterface((IntPtr)ptr);
             return new ComPtr<IADLXDisplayServices>(ptr);
+        }
+
+        internal ComPtr<IADLXGPUTuningServices> AcquireGpuTuningServices()
+        {
+            IADLXGPUTuningServices* pServices = null;
+            var res = _system.Get()->GetGPUTuningServices(&pServices);
+            if (res != ADLX_RESULT.ADLX_OK || pServices == null)
+                throw new ADLXException(res, "Failed to get GPU tuning services");
+            return new ComPtr<IADLXGPUTuningServices>(pServices);
+        }
+
+        internal ComPtr<IADLXMultimediaServices> AcquireMultimediaServices()
+        {
+            using var system2 = ADLXHelpers.RequireInterface<IADLXSystem2>((IntPtr)_system.Get(), nameof(IADLXSystem2));
+            IADLXMultimediaServices* pServices = null;
+            var res = system2.Get()->GetMultimediaServices(&pServices);
+            if (res != ADLX_RESULT.ADLX_OK || pServices == null)
+                throw new ADLXException(res, "Failed to get multimedia services");
+            return new ComPtr<IADLXMultimediaServices>(pServices);
+        }
+
+        internal ComPtr<IADLXPowerTuningServices> AcquirePowerTuningServices()
+        {
+            using var system2 = ADLXHelpers.RequireInterface<IADLXSystem2>((IntPtr)_system.Get(), nameof(IADLXSystem2));
+            IADLXPowerTuningServices* pServices = null;
+            var res = system2.Get()->GetPowerTuningServices(&pServices);
+            if (res != ADLX_RESULT.ADLX_OK || pServices == null)
+                throw new ADLXException(res, "Failed to get power tuning services");
+            return new ComPtr<IADLXPowerTuningServices>(pServices);
+        }
+
+        internal ComPtr<IADLX3DSettingsServices> Acquire3DSettingsServices()
+        {
+            IADLX3DSettingsServices* pServices = null;
+            var res = _system.Get()->Get3DSettingsServices(&pServices);
+            if (res != ADLX_RESULT.ADLX_OK || pServices == null)
+                throw new ADLXException(res, "Failed to get 3D settings services");
+            return new ComPtr<IADLX3DSettingsServices>(pServices);
+        }
+
+        internal ComPtr<IADLXPerformanceMonitoringServices> AcquirePerformanceMonitoringServices()
+        {
+            IADLXPerformanceMonitoringServices* pServices = null;
+            var res = _system.Get()->GetPerformanceMonitoringServices(&pServices);
+            if (res != ADLX_RESULT.ADLX_OK || pServices == null)
+                throw new ADLXException(res, "Failed to get performance monitoring services");
+            return new ComPtr<IADLXPerformanceMonitoringServices>(pServices);
         }
 
         internal ComPtr<IADLXDesktop> CloneDesktopPtr(IADLXDesktop* ptr)

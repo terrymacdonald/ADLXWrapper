@@ -49,6 +49,7 @@ namespace ADLXWrapper
         private IntPtr _hDLL;
         private ComPtr<IADLXSystem> _systemServices;
         private bool _disposed;
+        private AdlxLogSinkHandle? _logSinkHandle;
 
         // Function pointers loaded from DLL
 #pragma warning disable CS0414 // Field assigned but never used - kept for potential future use
@@ -206,6 +207,86 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Configure ADLX logging. Destination-specific parameters must match the native contract:
+        /// LOCALFILE requires FilePath and a null sink; DBGVIEW requires null file/sink; APPLICATION requires a sink and null file.
+        /// </summary>
+        public unsafe void EnableLog(LogProfile profile)
+        {
+            if (profile == null) throw new ArgumentNullException(nameof(profile));
+            ThrowIfDisposed();
+
+            var system = _systemServices.Get();
+            if (system == null)
+            {
+                throw new ADLXException(ADLX_RESULT.ADLX_INVALID_OBJECT, "System services unavailable");
+            }
+
+            AdlxLogSinkHandle? sinkHandle = null;
+            IADLXLog* pLogger = null;
+            ADLX_RESULT result;
+
+            switch (profile.Destination)
+            {
+                case ADLX_LOG_DESTINATION.LOCALFILE:
+                    if (string.IsNullOrWhiteSpace(profile.FilePath))
+                        throw new ArgumentException("FilePath is required for LOCALFILE logging", nameof(profile));
+                    fixed (char* fileName = profile.FilePath)
+                    {
+                        result = system->EnableLog(profile.Destination, profile.Severity, null, (ushort*)fileName);
+                    }
+                    sinkHandle?.Dispose();
+                    sinkHandle = null;
+                    break;
+
+                case ADLX_LOG_DESTINATION.DBGVIEW:
+                    result = system->EnableLog(profile.Destination, profile.Severity, null, null);
+                    sinkHandle?.Dispose();
+                    sinkHandle = null;
+                    break;
+
+                case ADLX_LOG_DESTINATION.APPLICATION:
+                    if (profile.Sink == null)
+                        throw new ArgumentException("Sink is required for APPLICATION logging", nameof(profile));
+                    sinkHandle = AdlxLogSinkHandle.Create(profile.Sink);
+                    pLogger = sinkHandle.GetPointer();
+                    result = system->EnableLog(profile.Destination, profile.Severity, pLogger, null);
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(profile.Destination), "Unknown logging destination");
+            }
+
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                sinkHandle?.Dispose();
+                throw new ADLXException(result, "Failed to enable ADLX logging");
+            }
+
+            _logSinkHandle?.Dispose();
+            _logSinkHandle = sinkHandle;
+        }
+
+        /// <summary>
+        /// Reduce logging to the minimal configuration (debug-view, errors only) and release any managed sink.
+        /// ADLX does not provide an explicit disable; this reverts to a low-noise setting.
+        /// </summary>
+        public unsafe void DisableLog()
+        {
+            ThrowIfDisposed();
+
+            _logSinkHandle?.Dispose();
+            _logSinkHandle = null;
+
+            var system = _systemServices.Get();
+            if (system == null)
+                return;
+
+            var result = system->EnableLog(ADLX_LOG_DESTINATION.DBGVIEW, ADLX_LOG_SEVERITY.LERROR, null, null);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to disable ADLX logging");
+        }
+
+        /// <summary>
         /// Get the system services profile object. Preferred over the raw pointer for new code.
         /// </summary>
         public unsafe ADLXSystemServices GetSystemServicesProfile()
@@ -278,6 +359,106 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Convenience: get the performance monitoring services facade.
+        /// </summary>
+        public AdlxPerformanceMonitor GetPerformanceMonitoringServices()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetPerformanceMonitoringServices();
+        }
+
+        /// <summary>
+        /// Convenience: get the GPU tuning services facade for a GPU handle.
+        /// </summary>
+        public AdlxGpuTuning GetGpuTuningServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetGpuTuningServices(gpu);
+        }
+
+        /// <summary>
+        /// Convenience: get the multimedia services facade for a GPU handle.
+        /// </summary>
+        public AdlxMultimedia GetMultimediaServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetMultimediaServices(gpu);
+        }
+
+        /// <summary>
+        /// Convenience: get the power tuning services facade.
+        /// </summary>
+        public AdlxPowerTuning GetPowerTuningServices()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetPowerTuningServices();
+        }
+
+        /// <summary>
+        /// Convenience: get the 3D settings services facade for a GPU handle.
+        /// </summary>
+        public Adlx3DSettings Get3DSettingsServices(AdlxInterfaceHandle gpu)
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.Get3DSettingsServices(gpu);
+        }
+
+        /// <summary>
+        /// Convenience: get a raw performance monitoring services handle.
+        /// </summary>
+        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandleLegacy()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetPerformanceMonitoringServicesHandle();
+        }
+
+        /// <summary>
+        /// Convenience: get a raw GPU tuning services handle.
+        /// </summary>
+        public AdlxInterfaceHandle GetGpuTuningServicesHandle()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetGpuTuningServicesHandle();
+        }
+
+        /// <summary>
+        /// Convenience: get a raw multimedia services handle.
+        /// </summary>
+        public AdlxInterfaceHandle GetMultimediaServicesHandle()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetMultimediaServicesHandle();
+        }
+
+        /// <summary>
+        /// Convenience: get a raw power tuning services handle.
+        /// </summary>
+        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.GetPowerTuningServicesHandle();
+        }
+
+        /// <summary>
+        /// Convenience: get a raw 3D settings services handle.
+        /// </summary>
+        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+        {
+            ThrowIfDisposed();
+            using var system = GetSystemServicesProfile();
+            return system.Get3DSettingsServicesHandle();
+        }
+
+        /// <summary>
         /// Get the system services as a disposable handle (AddRef'd).
         /// </summary>
         public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
@@ -329,6 +510,9 @@ namespace ADLXWrapper
                         // ignore release errors during cleanup
                     }
                 }
+
+                _logSinkHandle?.Dispose();
+                _logSinkHandle = null;
 
                 // Free DLL
                 if (_hDLL != IntPtr.Zero)
