@@ -108,6 +108,10 @@ ClangSharpPInvokeGenerator @ClangSharpConfig.rsp
 ```
 Generated files land in `cs_generated/` and are excluded from source control.
 
+## API docs (DocFX)
+- DocFX config: [APIDocs/docfx.json](../APIDocs/docfx.json); content under [APIDocs/docs](../APIDocs/docs).
+- Generate locally: `docfx docfx.json --serve` from `APIDocs` (output in `APIDocs/_site`).
+
 ## Version gating and skips
 - Prefer on-demand `QueryInterface` gating and propagate ADLX errors (e.g., `ADLX_NOT_SUPPORTED`/`ADLX_BAD_VER`) when features are unavailable.
 - Display apply methods accept an optional skip callback to surface skipped features when newer interfaces are unavailable.

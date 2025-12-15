@@ -60,3 +60,4 @@ adlx.EnableLog(new LogProfile
 
 - See [ADLXWrapper/README.md](ADLXWrapper/README.md) for detailed facade docs, capability matrix, and event handling.
 - When running on non-AMD hardware or without `amdadlx64.dll`, samples/tests will skip runtime actions gracefully.
+- API reference: DocFX config lives in [APIDocs/docfx.json](APIDocs/docfx.json); generate with `docfx docfx.json --serve` from `APIDocs` (output in `APIDocs/_site`).

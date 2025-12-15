@@ -60,7 +60,7 @@
 	- Docs refreshed: root README and ADLXWrapper/README now describe facade-first usage, logging, and skip-safe behavior.
 	- Next actions: run the above build/test on hardware with AMD GPU and amdadlx64.dll present; adjust docs if needed after hardware validation.
 
-- [ ] Stage 7 – Copilot/README alignment: Update `.github/copilot-instructions.md` and project READMEs to reflect current facade-first usage, logging API, and sample/test expectations.
+- [x] Stage 7 – Copilot/README alignment: Update `.github/copilot-instructions.md` and project READMEs to reflect current facade-first usage, logging API, sample/test expectations, and DocFX API docs location.
 
 - [x] Stage 8 – API docs: Produce detailed API documentation in `APIDocs/` (facade-first surfaces, profiles, logging, init/lifetime, gating/skip semantics, sample/test expectations). Generate markdown with links to relevant source files and usage snippets.
 
