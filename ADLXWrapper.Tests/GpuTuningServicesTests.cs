@@ -12,7 +12,8 @@ namespace ADLXWrapper.Tests
     public unsafe class GpuTuningServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
         private readonly IADLXGPUTuningServices* _tuningServices;
@@ -22,9 +23,10 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
-                _tuningServices = _api.GetGPUTuningServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
+                _tuningServices = _system.GetGPUTuningServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -48,13 +50,14 @@ namespace ADLXWrapper.Tests
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
             if (_tuningServices != null) ((IUnknown*)_tuningServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetTuningInfo()
         {
-            Skip.If(_api == null || _gpu == null || _tuningServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _tuningServices == null, _skipReason);
 
             var caps = new GpuTuningCapabilitiesInfo(_tuningServices, _gpu);
             _output.WriteLine($"Manual GFX Tuning Supported: {caps.ManualGFXTuningSupported}");

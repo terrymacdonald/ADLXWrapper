@@ -13,7 +13,7 @@ namespace ADLXWrapper.Tests
     [SupportedOSPlatform("windows")]
     public unsafe class BasicApiTests : IDisposable
     {
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
@@ -36,7 +36,7 @@ namespace ADLXWrapper.Tests
             }
 
             // Stage 2: Check for ADLX DLL availability
-            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            if (!ADLXApiHelper.IsADLXDllAvailable(out string dllError))
             {
                 _hasDll = false;
                 _skipReason = dllError;
@@ -47,7 +47,7 @@ namespace ADLXWrapper.Tests
             // Stage 3: Try to initialize ADLX API
             try
             {
-                _api = ADLXApi.Initialize();
+                _api = ADLXApiHelper.Initialize();
             }
             catch (Exception ex)
             {
@@ -93,7 +93,8 @@ namespace ADLXWrapper.Tests
         public void GetSystemServices_ShouldReturnValidPointer()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
-            Assert.NotEqual(IntPtr.Zero, (IntPtr)_api!.GetSystemServices());
+            using var handle = _api!.GetSystemServices();
+            Assert.False(handle.IsInvalid);
         }
 
         [SkippableFact]
@@ -102,7 +103,7 @@ namespace ADLXWrapper.Tests
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Create a new instance to test disposal
-            using var testApi = ADLXApi.Initialize();
+            using var testApi = ADLXApiHelper.Initialize();
             var exception = Record.Exception(() => testApi.Dispose());
             
             Assert.Null(exception);
@@ -114,7 +115,7 @@ namespace ADLXWrapper.Tests
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Create a new instance to test multiple disposals
-            var testApi = ADLXApi.Initialize();
+            var testApi = ADLXApiHelper.Initialize();
             
             // Multiple dispose calls should be safe
             testApi.Dispose();
@@ -128,7 +129,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            var testApi = ADLXApi.Initialize();
+            var testApi = ADLXApiHelper.Initialize();
             testApi.Dispose();
 
             // After dispose, methods should throw ObjectDisposedException
@@ -142,9 +143,9 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            ADLXApi? testApi = null;
+            ADLXApiHelper? testApi = null;
             
-            using (testApi = ADLXApi.Initialize())
+            using (testApi = ADLXApiHelper.Initialize())
             {
                 Assert.NotNull(testApi);
                 var version = testApi.GetVersion();
@@ -160,8 +161,8 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
-            using var api1 = ADLXApi.Initialize();
-            using var api2 = ADLXApi.Initialize();
+            using var api1 = ADLXApiHelper.Initialize();
+            using var api2 = ADLXApiHelper.Initialize();
 
             Assert.NotNull(api1);
             Assert.NotNull(api2);

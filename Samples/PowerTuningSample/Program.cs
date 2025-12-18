@@ -4,8 +4,9 @@ unsafe
 {
     Console.WriteLine("=== ADLX Power Tuning Sample ===");
 
-    using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServices();
+    using var adlx = ADLXApiHelper.Initialize();
+    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+    var sys = sysHelper.GetSystemServicesNative();
 
     // System2 is required for power tuning services on newer SDKs.
     if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)

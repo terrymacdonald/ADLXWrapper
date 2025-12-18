@@ -5,15 +5,16 @@ unsafe
 {
     Console.WriteLine("=== ADLX Perf Monitoring Sample ===");
 
-    using var adlx = ADLXApi.Initialize();
-    var gpus = adlx.EnumerateGPUHandles();
+    using var adlx = ADLXApiHelper.Initialize();
+    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+    var gpus = sysHelper.EnumerateGPUHandles();
     if (gpus.Length == 0)
     {
         Console.WriteLine("No AMD GPU found; exiting.");
         return;
     }
 
-    var sys = adlx.GetSystemServices();
+    var sys = sysHelper.GetSystemServicesNative();
     using var perf = AdlxInterfaceHandle.From(ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(sys), addRef: false);
     var gpu = gpus[0];
 

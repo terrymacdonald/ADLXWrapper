@@ -4,8 +4,9 @@ unsafe
 {
     Console.WriteLine("=== ADLX Display Color Sample (gamma/gamut/3DLUT) ===");
 
-    using var adlx = ADLXApi.Initialize();
-    var sys = adlx.GetSystemServices();
+    using var adlx = ADLXApiHelper.Initialize();
+    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+    var sys = sysHelper.GetSystemServicesNative();
     var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys);
 
     if (displays.Length == 0)

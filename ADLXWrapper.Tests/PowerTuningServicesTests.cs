@@ -12,7 +12,8 @@ namespace ADLXWrapper.Tests
     public unsafe class PowerTuningServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
         private readonly IADLXPowerTuningServices* _powerServices;
@@ -23,10 +24,11 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 _powerServices = ADLXPowerTuningHelpers.GetPowerTuningServices(system);
-                _tuningServices = _api.GetGPUTuningServices();
+                _tuningServices = _system.GetGPUTuningServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -51,13 +53,14 @@ namespace ADLXWrapper.Tests
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
             if (_powerServices != null) ((IUnknown*)_powerServices)->Release();
             if (_tuningServices != null) ((IUnknown*)_tuningServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetPowerTuningInfo()
         {
-            Skip.If(_api == null || _gpu == null || _powerServices == null || _tuningServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _powerServices == null || _tuningServices == null, _skipReason);
 
             var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(_powerServices);
             _output.WriteLine($"SmartShift Max supported: {ssm.IsSupported}");

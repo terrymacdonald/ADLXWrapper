@@ -13,7 +13,8 @@ namespace ADLXWrapper.Tests
     public unsafe class DesktopServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXDesktopServices* _desktopServices;
 
@@ -22,8 +23,9 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 _desktopServices = ADLXDesktopHelpers.GetDesktopServices(system);
             }
             catch (Exception ex)
@@ -35,15 +37,16 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_desktopServices != null) ((IUnknown*)_desktopServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanEnumerateDesktops()
         {
-            Skip.If(_api == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
 
-            var desktops = ADLXDesktopHelpers.EnumerateAllDesktops(_api.GetSystemServices()).ToList();
+            var desktops = ADLXDesktopHelpers.EnumerateAllDesktops(_system.GetSystemServicesNative()).ToList();
             _output.WriteLine($"Found {desktops.Count} desktop(s).");
             Assert.NotNull(desktops);
         }
@@ -51,7 +54,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetEyefinityInfo()
         {
-            Skip.If(_api == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
 
             try
             {

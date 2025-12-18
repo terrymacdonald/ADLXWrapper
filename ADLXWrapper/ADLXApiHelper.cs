@@ -44,7 +44,7 @@ namespace ADLXWrapper
     /// Main ADLX API wrapper providing safe access to AMD ADLX Library
     /// Implements IDisposable for proper resource cleanup
     /// </summary>
-    public sealed class ADLXApi : IDisposable
+    public sealed class ADLXApiHelper : IDisposable
     {
         private IntPtr _hDLL;
         private ComPtr<IADLXSystem> _systemServices;
@@ -63,7 +63,7 @@ namespace ADLXWrapper
         private ulong _fullVersion;
         private string? _version;
 
-        private unsafe ADLXApi(IntPtr hDLL, IADLXSystem* pSystemServices)
+        private unsafe ADLXApiHelper(IntPtr hDLL, IADLXSystem* pSystemServices)
         {
             _hDLL = hDLL;
             _systemServices = new ComPtr<IADLXSystem>(pSystemServices);
@@ -72,7 +72,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Initialize the ADLX API with default settings
         /// </summary>
-        public static unsafe ADLXApi Initialize()
+        public static unsafe ADLXApiHelper Initialize()
         {
             // Load ADLX DLL
             var hDLL = LoadADLXDll();
@@ -105,7 +105,7 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to initialize ADLX");
             }
 
-            var api = new ADLXApi(hDLL, (IADLXSystem*)pSystem)
+            var api = new ADLXApiHelper(hDLL, (IADLXSystem*)pSystem)
             {
                 _queryFullVersionFn = queryFullVersionFn,
                 _queryVersionFn = queryVersionFn,
@@ -128,7 +128,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Initialize ADLX with an existing ADL context (for applications migrating from ADL)
         /// </summary>
-        public static unsafe ADLXApi InitializeWithCallerAdl(IntPtr adlContext, IntPtr adlMainMemoryFree)
+        public static unsafe ADLXApiHelper InitializeWithCallerAdl(IntPtr adlContext, IntPtr adlMainMemoryFree)
         {
             if (adlContext == IntPtr.Zero || adlMainMemoryFree == IntPtr.Zero)
             {
@@ -167,7 +167,7 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to initialize ADLX with ADL context");
             }
 
-            var api = new ADLXApi(hDLL, (IADLXSystem*)pSystem)
+            var api = new ADLXApiHelper(hDLL, (IADLXSystem*)pSystem)
             {
                 _queryFullVersionFn = queryFullVersionFn,
                 _queryVersionFn = queryVersionFn,
@@ -206,75 +206,20 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Get the system services as a SafeHandle (auto-release even if not disposed manually).
+        /// <summary>
+        /// Get the system services native pointer (lifetime owned by this API helper).
+        /// Callers must not Release() it directly.
         /// </summary>
-        public unsafe IADLXSystem* GetSystemServices()
+        public unsafe IADLXSystem* GetSystemServicesNative()
         {
             ThrowIfDisposed();
-            // AddRef is handled by the ComPtr wrapper when it's created.
-            // We return the raw pointer here for convenience, but its lifetime is managed by _systemServices.
-            // Callers should not call Release() on this pointer.
-            // If a caller needs to hold onto it, they should create their own ComPtr and call AddRef().
             return _systemServices.Get();
         }
 
         /// <summary>
-        /// Enumerate GPU handles with automatic lifetime management.
+        /// Get the system services as an AdlxInterfaceHandle (AddRef'd for caller ownership).
         /// </summary>
-        public unsafe AdlxInterfaceHandle[] EnumerateGPUHandles()
-        {
-            ThrowIfDisposed();
-
-            IADLXGPUList* pGpuList = null;
-            var system = _systemServices.Get();
-            var result = system->GetGPUs(&pGpuList);
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to enumerate GPUs");
-
-            using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
-            var count = gpuList.Get()->Size();
-            var handles = new AdlxInterfaceHandle[count];
-
-            for (uint i = 0; i < count; i++)
-            {
-                IADLXGPU* pGpu = null;
-                gpuList.Get()->At(i, &pGpu);
-                handles[i] = AdlxInterfaceHandle.From(pGpu, addRef: false); // At already AddRef's
-            }
-
-            return handles;
-        }
-
-        /// <summary>
-        /// Get the GPU tuning services interface.
-        /// </summary>
-        public unsafe IADLXGPUTuningServices* GetGPUTuningServices()
-        {
-            ThrowIfDisposed();
-            IADLXGPUTuningServices* pServices = null;
-            var result = _systemServices.Get()->GetGPUTuningServices(&pServices);
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get GPU tuning services");
-            return pServices;
-        }
-
-        /// <summary>
-        /// Get the performance monitoring services as a disposable handle.
-        /// </summary>
-        public unsafe AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
-        {
-            ThrowIfDisposed();
-            IADLXPerformanceMonitoringServices* pServices = null;
-            var result = _systemServices.Get()->GetPerformanceMonitoringServices(&pServices);
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get performance monitoring services");
-            return AdlxInterfaceHandle.From(pServices, addRef: false);
-        }
-
-        /// <summary>
-        /// Get the system services as a disposable handle (AddRef'd).
-        /// </summary>
-        public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
+        public unsafe AdlxInterfaceHandle GetSystemServices()
         {
             ThrowIfDisposed();
             var ptr = _systemServices.Get();
@@ -345,7 +290,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Finalizer
         /// </summary>
-        ~ADLXApi()
+        ~ADLXApiHelper()
         {
             Dispose(false);
         }
@@ -383,7 +328,7 @@ namespace ADLXWrapper
         {
             if (_disposed)
             {
-                throw new ObjectDisposedException(nameof(ADLXApi));
+                throw new ObjectDisposedException(nameof(ADLXApiHelper));
             }
         }
 

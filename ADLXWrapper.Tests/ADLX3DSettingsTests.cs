@@ -13,7 +13,8 @@ namespace ADLXWrapper.Tests
     public unsafe class ADLX3DSettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
         private readonly IADLX3DSettingsServices* _settingsServices;
@@ -23,8 +24,9 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
                 if (result != ADLX_RESULT.ADLX_OK || gpuList == null || gpuList->Size() == 0)
@@ -48,13 +50,14 @@ namespace ADLXWrapper.Tests
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
             if (_settingsServices != null) ((IUnknown*)_settingsServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetAll3DSettings()
         {
-            Skip.If(_api == null || _gpu == null || _settingsServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _settingsServices == null, _skipReason);
             var settings = ADLX3DSettingsHelpers.GetAll3DSettings(_settingsServices, _gpu);
             _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {settings.AntiLag?.IsSupported ?? false}");
         }

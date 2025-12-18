@@ -13,7 +13,8 @@ namespace ADLXWrapper.Tests
     public unsafe class DisplaySettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXDisplay* _display;
         private readonly IADLXDisplayServices* _displayServices;
@@ -23,8 +24,9 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 _displayServices = ADLXDisplayHelpers.GetDisplayServices(system);
 
                 IADLXDisplayList* displayList = null;
@@ -49,13 +51,14 @@ namespace ADLXWrapper.Tests
         {
             if (_display != null) ((IUnknown*)_display)->Release();
             if (_displayServices != null) ((IUnknown*)_displayServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetDisplaySettings()
         {
-            Skip.If(_api == null || _display == null || _displayServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _display == null || _displayServices == null, _skipReason);
 
             var gamma = ADLXDisplaySettingsHelpers.GetGamma(_displayServices, _display);
             _output.WriteLine($"Gamma supported: {gamma.IsSupported}");

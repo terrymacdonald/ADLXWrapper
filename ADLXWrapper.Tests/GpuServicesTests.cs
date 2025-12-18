@@ -14,7 +14,8 @@ namespace ADLXWrapper.Tests
     public unsafe class GpuServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly bool _hasHardware;
         private readonly bool _hasDll;
         private readonly string _skipReason = string.Empty;
@@ -40,7 +41,7 @@ namespace ADLXWrapper.Tests
                 _output.WriteLine($"? AMD GPU detected: {string.Join(", ", gpuNames)}");
             }
 
-            if (!ADLXApi.IsADLXDllAvailable(out string dllError))
+            if (!ADLXApiHelper.IsADLXDllAvailable(out string dllError))
             {
                 _hasDll = false;
                 _skipReason = dllError;
@@ -51,8 +52,9 @@ namespace ADLXWrapper.Tests
 
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
                 if (result == ADLX_RESULT.ADLX_OK)
@@ -74,15 +76,16 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_gpuList != null) ((IADLXInterface*)_gpuList)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void EnumerateGPUs_ShouldReturnArray()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_api!.GetSystemServices()).ToList();
+            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_system.GetSystemServicesNative()).ToList();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -92,7 +95,7 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void GetBasicInfo_ShouldReturnCompleteInformation()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
 
             IADLXGPU* pGpu = null;
             _gpuList->At(0, &pGpu);
@@ -111,9 +114,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void AllGPUs_ShouldHaveUniqueIds()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _gpuList == null || _gpuList->Size() < 2, _skipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() < 2, _skipReason);
 
-            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_api!.GetSystemServices()).ToList();
+            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_system.GetSystemServicesNative()).ToList();
             var uniqueIds = gpus.Select(g => g.UniqueId).ToList();
             var distinctIds = uniqueIds.Distinct().Count();
 

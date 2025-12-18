@@ -4,15 +4,16 @@ unsafe
 {
     Console.WriteLine("=== ADLX Multimedia Sample (Video Upscale / VSR) ===");
 
-    using var adlx = ADLXApi.Initialize();
-    var gpus = adlx.EnumerateGPUHandles();
+    using var adlx = ADLXApiHelper.Initialize();
+    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+    var gpus = sysHelper.EnumerateGPUHandles();
     if (gpus.Length == 0)
     {
         Console.WriteLine("No AMD GPU found.");
         return;
     }
 
-    var sys = adlx.GetSystemServices();
+    var sys = sysHelper.GetSystemServicesNative();
     using var mm = AdlxInterfaceHandle.From(ADLXMultimediaHelpers.GetMultimediaServices(sys), addRef: false);
     var gpu = gpus[0];
 

@@ -12,7 +12,8 @@ namespace ADLXWrapper.Tests
     public unsafe class MultimediaServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
-        private readonly ADLXApi? _api;
+        private readonly ADLXApiHelper? _api;
+        private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
         private readonly IADLXGPU* _gpu;
         private readonly IADLXMultimediaServices* _multimediaServices;
@@ -22,8 +23,9 @@ namespace ADLXWrapper.Tests
             _output = output;
             try
             {
-                _api = ADLXApi.Initialize();
-                var system = _api.GetSystemServices();
+                _api = ADLXApiHelper.Initialize();
+                _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                var system = _system.GetSystemServicesNative();
                 _multimediaServices = ADLXMultimediaHelpers.GetMultimediaServices(system);
 
                 IADLXGPUList* gpuList = null;
@@ -48,13 +50,14 @@ namespace ADLXWrapper.Tests
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
             if (_multimediaServices != null) ((IUnknown*)_multimediaServices)->Release();
+            _system?.Dispose();
             _api?.Dispose();
         }
 
         [SkippableFact]
         public void CanGetMultimediaInfo()
         {
-            Skip.If(_api == null || _gpu == null || _multimediaServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _multimediaServices == null, _skipReason);
 
             var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(_multimediaServices, _gpu);
             _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
