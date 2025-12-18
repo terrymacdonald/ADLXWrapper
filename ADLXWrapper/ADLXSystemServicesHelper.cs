@@ -218,7 +218,9 @@ namespace ADLXWrapper
 
             IADLXDisplayServices* services = null;
             var result = _system.Get()->GetDisplaysServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get display services");
 
             _displayServices = new ComPtr<IADLXDisplayServices>(services);
@@ -232,7 +234,9 @@ namespace ADLXWrapper
 
             IADLXDesktopServices* services = null;
             var result = _system.Get()->GetDesktopsServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get desktop services");
 
             _desktopServices = new ComPtr<IADLXDesktopServices>(services);
@@ -246,7 +250,9 @@ namespace ADLXWrapper
 
             IADLX3DSettingsServices* services = null;
             var result = _system.Get()->Get3DSettingsServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get 3D settings services");
 
             _threeDSettingsServices = new ComPtr<IADLX3DSettingsServices>(services);
@@ -260,7 +266,9 @@ namespace ADLXWrapper
 
             IADLXGPUTuningServices* services = null;
             var result = _system.Get()->GetGPUTuningServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU tuning services");
 
             _gpuTuningServices = new ComPtr<IADLXGPUTuningServices>(services);
@@ -274,7 +282,9 @@ namespace ADLXWrapper
 
             IADLXPerformanceMonitoringServices* services = null;
             var result = _system.Get()->GetPerformanceMonitoringServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance monitoring services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get performance monitoring services");
 
             _performanceMonitoringServices = new ComPtr<IADLXPerformanceMonitoringServices>(services);
@@ -299,8 +309,10 @@ namespace ADLXWrapper
                 result = system1->GetPowerTuningServices(&services);
             }
 
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
-                throw new ADLXException(result, "Power tuning services not supported by this ADLX system");
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Power tuning services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get power tuning services");
 
             _powerTuningServices = new ComPtr<IADLXPowerTuningServices>(services);
             return services;
@@ -314,8 +326,10 @@ namespace ADLXWrapper
             var system2 = GetSystem2();
             IADLXMultimediaServices* services = null;
             var result = system2->GetMultimediaServices(&services);
-            if (result != ADLX_RESULT.ADLX_OK || services == null)
-                throw new ADLXException(result, "Multimedia services not supported by this ADLX system");
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia services not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get multimedia services");
 
             _multimediaServices = new ComPtr<IADLXMultimediaServices>(services);
             return services;
@@ -328,8 +342,10 @@ namespace ADLXWrapper
 
             IADLXGPUsChangedHandling* handling = null;
             var result = _system.Get()->GetGPUsChangedHandling(&handling);
-            if (result != ADLX_RESULT.ADLX_OK || handling == null)
-                throw new ADLXException(result, "GPU change handling not supported by this ADLX system");
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU change handling not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU change handling");
 
             _gpusChangedHandling = new ComPtr<IADLXGPUsChangedHandling>(handling);
             return handling;
@@ -343,8 +359,10 @@ namespace ADLXWrapper
             var system2 = GetSystem2();
             IADLXGPUAppsListChangedHandling* handling = null;
             var result = system2->GetGPUAppsListChangedHandling(&handling);
-            if (result != ADLX_RESULT.ADLX_OK || handling == null)
-                throw new ADLXException(result, "GPU applications list handling not supported by this ADLX system");
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU applications list handling not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get GPU applications list handling");
 
             _gpuAppsListChangedHandling = new ComPtr<IADLXGPUAppsListChangedHandling>(handling);
             return handling;

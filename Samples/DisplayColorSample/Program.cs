@@ -6,8 +6,8 @@ unsafe
 
     using var adlx = ADLXApiHelper.Initialize();
     using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var sys = sysHelper.GetSystemServicesNative();
-    var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(sys);
+    using var displayHelper = new ADLXDisplayServicesHelper(sysHelper.GetDisplayServicesNative());
+    var displays = displayHelper.EnumerateDisplayHandles();
 
     if (displays.Length == 0)
     {
@@ -15,11 +15,11 @@ unsafe
         return;
     }
 
-    var display = displays[0];
-    using (display)
+    try
     {
+        using var display = displays[0];
         Console.WriteLine($"Using display: {ADLXDisplayHelpers.GetDisplayName(display)}");
-        using var dispServices = AdlxInterfaceHandle.From(ADLXDisplayHelpers.GetDisplayServices(sys), addRef: false);
+        using var dispServices = displayHelper.GetDisplayServices();
 
         var gamma = ADLXDisplaySettingsHelpers.GetGamma(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
         Console.WriteLine($"Gamma supported: {gamma.IsSupported}");
@@ -31,9 +31,11 @@ unsafe
         Console.WriteLine($"3DLUT: SCE={lut.IsSceSupported}, VividGaming={lut.IsSceVividGamingSupported}, DynamicContrast={lut.IsSceDynamicContrastSupported}, User3DLUT={lut.IsUser3DLutSupported}");
         // This sample is read-only; production apps should supply LUT data before calling setters.
     }
-
-    foreach (var d in displays)
+    finally
     {
-        try { d.Dispose(); } catch { }
+        for (int i = 1; i < displays.Length; i++)
+        {
+            try { displays[i].Dispose(); } catch { }
+        }
     }
 }

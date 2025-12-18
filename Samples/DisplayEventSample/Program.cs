@@ -7,13 +7,8 @@ unsafe
 
     using var adlx = ADLXApiHelper.Initialize();
     using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var sys = sysHelper.GetSystemServicesNative();
-
-    using var dispServices = AdlxInterfaceHandle.From(ADLXDisplayHelpers.GetDisplayServices(sys), addRef: false);
-
-    IADLXDisplayChangedHandling* pHandling = null;
-    dispServices.As<IADLXDisplayServices>()->GetDisplayChangedHandling(&pHandling);
-    using var handling = AdlxInterfaceHandle.From(pHandling, addRef: false);
+    using var displayHelper = new ADLXDisplayServicesHelper(sysHelper.GetDisplayServicesNative());
+    using var handling = displayHelper.GetDisplayChangedHandling();
 
     var listener = DisplaySettingsListenerHandle.Create(evt =>
     {

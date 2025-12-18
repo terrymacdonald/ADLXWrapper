@@ -15,6 +15,7 @@ namespace ADLXWrapper.Tests
         private readonly ITestOutputHelper _output;
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
+        private readonly ADLXDisplayServicesHelper? _displayServices;
         private readonly string _skipReason = string.Empty;
 
         public DisplayServicesTests(ITestOutputHelper output)
@@ -24,6 +25,7 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
+                _displayServices = new ADLXDisplayServicesHelper(_system.GetDisplayServicesNative());
             }
             catch (Exception ex)
             {
@@ -33,6 +35,7 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
+            _displayServices?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }
@@ -40,11 +43,18 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanEnumerateDisplays()
         {
-            Skip.If(_api == null || _system == null, _skipReason);
+            Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
 
-            var displays = ADLXDisplayHelpers.EnumerateAllDisplays(_system.GetSystemServicesNative()).ToList();
-            _output.WriteLine($"Found {displays.Count} display(s).");
-            Assert.NotNull(displays);
+            try
+            {
+                var displays = _displayServices.EnumerateDisplays().ToList();
+                _output.WriteLine($"Found {displays.Count} display(s).");
+                Assert.NotNull(displays);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display services are not supported on this system.");
+            }
         }
     }
 }

@@ -33,6 +33,7 @@ namespace ADLXWrapper.Tests
             using var api = ADLXApiHelper.Initialize();
             using var systemHelper = new ADLXSystemServicesHelper(api.GetSystemServicesNative());
             var system = systemHelper.GetSystemServicesNative();
+            using var displayHelper = new ADLXDisplayServicesHelper(systemHelper.GetDisplayServicesNative());
 
             for (int i = 0; i < 5; i++)
             {
@@ -51,7 +52,7 @@ namespace ADLXWrapper.Tests
                     }
                 }
 
-                var displays = ADLXDisplayHelpers.EnumerateAllDisplayHandles(system);
+                var displays = displayHelper.EnumerateDisplayHandles();
                 foreach (var display in displays)
                 {
                     using (display)

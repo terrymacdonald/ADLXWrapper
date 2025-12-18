@@ -8,7 +8,8 @@ unsafe
 
     using var adlx = ADLXApiHelper.Initialize();
     using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var displays = ADLXDisplayHelpers.EnumerateAllDisplays(sysHelper.GetSystemServicesNative());
+    using var displayHelper = new ADLXDisplayServicesHelper(sysHelper.GetDisplayServicesNative());
+    var displays = displayHelper.EnumerateDisplays();
     var displayList = displays?.ToList() ?? new List<DisplayInfo>();
     Console.WriteLine($"Found {displayList.Count} displays");
 

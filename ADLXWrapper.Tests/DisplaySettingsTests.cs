@@ -16,8 +16,8 @@ namespace ADLXWrapper.Tests
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXDisplay* _display;
-        private readonly IADLXDisplayServices* _displayServices;
+        private readonly ADLXDisplayServicesHelper? _displayHelper;
+        private readonly AdlxInterfaceHandle? _displayHandle;
 
         public DisplaySettingsTests(ITestOutputHelper output)
         {
@@ -26,20 +26,24 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                var system = _system.GetSystemServicesNative();
-                _displayServices = ADLXDisplayHelpers.GetDisplayServices(system);
+                _displayHelper = new ADLXDisplayServicesHelper(_system.GetDisplayServicesNative());
 
-                IADLXDisplayList* displayList = null;
-                var result = _displayServices->GetDisplays(&displayList);
-                if (result != ADLX_RESULT.ADLX_OK || displayList == null || displayList->Size() == 0)
+                var displayHandles = _displayHelper.EnumerateDisplayHandles();
+                if (displayHandles.Length == 0)
                 {
                     _skipReason = "No displays found.";
                     return;
                 }
-                IADLXDisplay* pDisplay = null;
-                displayList->At(0, &pDisplay);
-                _display = pDisplay;
-                ((IADLXInterface*)displayList)->Release();
+
+                _displayHandle = displayHandles[0];
+                for (int i = 1; i < displayHandles.Length; i++)
+                {
+                    displayHandles[i].Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                _skipReason = "Display services are not supported on this system.";
             }
             catch (Exception ex)
             {
@@ -49,8 +53,8 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_display != null) ((IUnknown*)_display)->Release();
-            if (_displayServices != null) ((IUnknown*)_displayServices)->Release();
+            if (_displayHandle.HasValue) _displayHandle.Value.Dispose();
+            _displayHelper?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }
@@ -58,15 +62,18 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetDisplaySettings()
         {
-            Skip.If(_api == null || _system == null || _display == null || _displayServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _displayHelper == null || !_displayHandle.HasValue, _skipReason);
 
-            var gamma = ADLXDisplaySettingsHelpers.GetGamma(_displayServices, _display);
+            var displayServices = _displayHelper.GetDisplayServicesNative();
+            var display = _displayHandle.Value.As<IADLXDisplay>();
+
+            var gamma = ADLXDisplaySettingsHelpers.GetGamma(displayServices, display);
             _output.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-            var gamut = ADLXDisplaySettingsHelpers.GetGamut(_displayServices, _display);
+            var gamut = ADLXDisplaySettingsHelpers.GetGamut(displayServices, display);
             _output.WriteLine($"Gamut supported: {gamut.IsGamutSupported}");
 
-            var customColor = ADLXDisplaySettingsHelpers.GetCustomColor(_displayServices, _display);
+            var customColor = ADLXDisplaySettingsHelpers.GetCustomColor(displayServices, display);
             _output.WriteLine($"Custom Color supported: {customColor.IsSupported}");
         }
     }
