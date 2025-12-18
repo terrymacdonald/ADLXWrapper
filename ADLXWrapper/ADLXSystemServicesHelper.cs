@@ -34,13 +34,25 @@ namespace ADLXWrapper
         public IADLXSystem* GetSystemServicesNative()
         {
             ThrowIfDisposed();
+
+            // Prefer the most capable interface available.
+            if (TryGetSystem2(out var system2) && system2 != null)
+            {
+                return (IADLXSystem*)system2;
+            }
+
+            if (TryGetSystem1(out var system1) && system1 != null)
+            {
+                return (IADLXSystem*)system1;
+            }
+
             return _system.Get();
         }
 
         public AdlxInterfaceHandle GetSystemServices()
         {
             ThrowIfDisposed();
-            return AdlxInterfaceHandle.From(_system.Get(), addRef: true);
+            return AdlxInterfaceHandle.From(GetSystemServicesNative(), addRef: true);
         }
 
         public IADLXDisplayServices* GetDisplayServicesNative()
@@ -348,6 +360,25 @@ namespace ADLXWrapper
 
             _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
             return _system1.Value.Get();
+        }
+
+        private bool TryGetSystem1(out IADLXSystem1* system1)
+        {
+            if (_system1.HasValue)
+            {
+                system1 = _system1.Value.Get();
+                return system1 != null;
+            }
+
+            if (ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
+            {
+                _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
+                system1 = _system1.Value.Get();
+                return true;
+            }
+
+            system1 = null;
+            return false;
         }
 
         private IADLXSystem2* GetSystem2()

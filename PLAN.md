@@ -38,12 +38,15 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Combine existing system services responsibilities with per-feature dual accessors: Get<Feature>() → AdlxInterfaceHandle façade; Get<Feature>Native() → IADLX<Feature>Services*.
 - Cover all SDK services: 3DSettings, GPUTuning, Desktop, Display, Multimedia, PerformanceMonitoring, PowerTuning, Applications/System power control (as exposed), and any future service exposed by IADLXSystem.
 - Define caching/ownership rules: keep underlying ComPtr<T> for system services; return handles that do not outlive the parent; no double-release when wrapped.
-- Acceptance: all feature helpers can be obtained through this helper; disposal releases ComPtrs and throws ObjectDisposedException after dispose; ADLX_NOT_SUPPORTED surfaced if a service is absent on hardware/driver.
+- Error contract: every accessor exists; if unsupported on hardware/driver, throw ADLX_NOT_SUPPORTED (never null/empty). Guard disposed instances with ObjectDisposedException; map other ADLX errors to ADLXException.
+- System native access: GetSystemServicesNative() returns the highest available interface (System2 if present, else System1, else base). Add version-specific helpers only if a caller needs an explicit interface version; otherwise prefer the highest level.
+- Acceptance: all feature helpers obtainable; unsupported surfaces as ADLX_NOT_SUPPORTED; disposal releases ComPtrs and throws after dispose.
 
 ### Stage 3: Per-feature service helpers (ADLX<Feature>ServicesHelper)
 - Rename each service helper to ADLX<Feature>ServicesHelper and merge any split helper/service logic.
 - Common surface per service (where applicable): Dispose; EnumerateAll<Thing>() returning managed façade list; EnumerateAll<Thing>Native() returning native list pointer (ComPtr-managed); event subscription helpers where SDK defines change events.
 - Enforce capability checks only for optional knobs (see Stage 0 matrix). Always-on primitives skip redundant IsSupported.
+- Error contract: methods exist for all features; when unsupported, throw ADLX_NOT_SUPPORTED (managed and native). Native getters should choose the highest available interface version (e.g., System2 power tuning else System1) before throwing.
 - Per-feature notes:
 	- Display: enumerate displays; managed/native display lists; access to sub-features (color depth, pixel format, scaling, FreeSync, VSR, HDR-related where present) via flattened façade methods. Handle display change events.
 	- Desktop: enumerate desktops; manage Eyefinity grid create/destroy; desktop change listeners; mappings between displays/desktops; expose GetGPU()/GetGPUNative() from a desktop façade.
@@ -68,6 +71,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 ### Stage 4: Object flattening and façade shapes
 - For each settings-bearing object (Display, Desktop, GPU, Application, System power control, tuning state holders), define flattened methods/properties that inline linked sub-interfaces while keeping disposals safe.
 - Naming rules: Get*/Set*/IsSupported*/IsEnabled* aligned to SDK feature names; properties for identity/metadata (always-on) without support checks. Optional features must call IsSupported (or capability object) first and throw ADLX_NOT_SUPPORTED on unsupported hardware/driver.
+- Caller contract: callers need not pre-check support; unsupported paths raise ADLX_NOT_SUPPORTED.
 - Display façade example set: identity properties (Name, ManufacturerId, UniqueId, Width/Height, RefreshRate, PixelClock, ConnectorType, ScanType, Type, Edid, GpuUniqueId); methods and IsSupported/IsEnabled for FreeSync, VSR, GPU scaling, scaling mode, integer scaling, color depth, pixel format, custom color, HDCP, custom resolution, Vari-Bright, gamma, gamut, 3DLUT, connectivity, blanking, DRR, FreeSync color accuracy, video sharpness/upscale.
 - Desktop façade: identity/geometry; Eyefinity grid info; IsSupported/Apply create/destroy; desktop change events hook.
 - GPU façade: identity/VRAM/product/LUID/BDF; MGPU mode; SAM support flag; links to applications if exposed; EnumerateAllDisplays/EnumerateAllDesktops to traverse topology; GetDisplayListNative/GetDesktopListNative variants.
@@ -84,7 +88,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Metrics snapshots/history: snapshot objects with support markers; history list items disposed after use; conversions to managed types only (no raw pointer leakage).
 
 ### Stage 5: Cross-cutting concerns and safeguards
-- Error handling: map non-OK ADLX results to ADLXException; translate capability failures to ADLX_NOT_SUPPORTED; guard disposed instances with ObjectDisposedException.
+- Error handling: map non-OK ADLX results to ADLXException; translate capability failures to ADLX_NOT_SUPPORTED; guard disposed instances with ObjectDisposedException; keep highest-available-interface selection for native paths.
 - ComPtr ownership: every native pointer returned to callers must be wrapped or documented; no manual Release on ComPtr-owned pointers; helpers dispose of lists/items they create.
 - Generated bindings: do not hand-edit cs_generated; adjust only helpers and headers/config if generation is needed.
 - Threading/events: document that callbacks originate from ADLX threads; ensure delegates are rooted; provide unsubscribe patterns.
@@ -92,7 +96,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Acceptance: clear guidance in docs/tests; build scripts unaffected (prepare/build/test scripts stay valid).
 
 ### Stage 6: Validation and rollout
-- Tests: extend xUnit to cover new helper names, support-guarded paths (ADLX_NOT_SUPPORTED), dispose-after-use behavior, and representative feature toggles per service. Skip gracefully when hardware/driver support is absent.
+- Tests: extend xUnit to cover new helper names, support-guarded paths (ADLX_NOT_SUPPORTED), dispose-after-use behavior, and representative feature toggles per service. Skip gracefully when hardware/driver support is absent; assert ADLX_NOT_SUPPORTED on unsupported feature calls.
 - Samples: update existing Samples/* to use new helper names and flattened façades; add small snippets demonstrating support gating.
 - Migration notes: brief section summarizing breaking changes (renames, removed service getters from API) and the new acquisition pattern.
 
