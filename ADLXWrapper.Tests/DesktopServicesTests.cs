@@ -66,5 +66,44 @@ namespace ADLXWrapper.Tests
                 Skip.If(true, "Eyefinity is not supported on this system.");
             }
         }
+
+        [SkippableFact]
+        public void CanEnumerateAdlxDesktops()
+        {
+            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+
+            try
+            {
+                using var helper = new ADLXDesktopServicesHelper(_desktopServices, _system.GetDisplayServicesNative());
+                var desktops = helper.EnumerateAdlxDesktops().ToList();
+                _output.WriteLine($"Found {desktops.Count} desktop façade(s).");
+                foreach (var d in desktops)
+                {
+                    _output.WriteLine($"Desktop type: {d.Type}, Width: {d.Width}, Height: {d.Height}");
+                    d.Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Desktop services are not supported on this system.");
+            }
+        }
+
+        [SkippableFact]
+        public void CanAddAndRemoveDesktopListListener()
+        {
+            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+
+            try
+            {
+                using var helper = new ADLXDesktopServicesHelper(_desktopServices, _system.GetDisplayServicesNative());
+                var handle = helper.AddDesktopListEventListener(_ => { return; });
+                helper.RemoveDesktopListEventListener(handle);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Desktop change handling is not supported on this system.");
+            }
+        }
     }
 }

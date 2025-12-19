@@ -106,6 +106,47 @@ namespace ADLXWrapper
             return displays;
         }
 
+        public IEnumerable<AdlxDisplay> EnumerateAdlxDisplaysForGpu(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+
+            IADLXDisplayList* pDisplayList = null;
+            var result = services->GetDisplays(&pDisplayList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate displays");
+
+            var displays = new List<AdlxDisplay>();
+            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+            for (uint i = 0; i < displayList.Get()->Size(); i++)
+            {
+                IADLXDisplay* pDisplay = null;
+                var itemResult = displayList.Get()->At(i, &pDisplay);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
+                {
+                    if (pDisplay != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                    throw new ADLXException(itemResult, "Failed to access display from list");
+                }
+
+                var identity = new DisplayInfo(pDisplay);
+                if (identity.GpuUniqueId == gpuUniqueId)
+                {
+                    displays.Add(CreateAdlxDisplay(pDisplay, addRef: false));
+                }
+                else
+                {
+                    ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                }
+            }
+
+            return displays;
+        }
+
         public AdlxDisplay CreateAdlxDisplay(IADLXDisplay* pDisplay, bool addRef = true)
         {
             ThrowIfDisposed();
@@ -188,6 +229,147 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetDisplayChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetDisplayChangedHandlingNative(), addRef: true);
+        }
+
+        public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDisplayChangedHandlingNative();
+            var handle = DisplayListListenerHandle.Create(callback);
+            var result = handling->AddDisplayListEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add display list event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDisplayChangedHandlingNative();
+            handling->RemoveDisplayListEventListener(handle.GetListener());
+
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
+        }
+
+        public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDisplayChangedHandlingNative();
+            var handle = DisplayGamutListenerHandle.Create(callback);
+            var result = handling->AddDisplayGamutEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add display gamut event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDisplayChangedHandlingNative();
+            handling->RemoveDisplayGamutEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
+        }
+
+        public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDisplayChangedHandlingNative();
+            var handle = DisplayGammaListenerHandle.Create(callback);
+            var result = handling->AddDisplayGammaEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add display gamma event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDisplayChangedHandlingNative();
+            handling->RemoveDisplayGammaEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
+        }
+
+        public Display3DLutListenerHandle AddDisplay3DLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDisplayChangedHandlingNative();
+            var handle = Display3DLutListenerHandle.Create(callback);
+            var result = handling->AddDisplay3DLUTEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add display 3DLUT event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveDisplay3DLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDisplayChangedHandlingNative();
+            handling->RemoveDisplay3DLUTEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
+        }
+
+        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDisplayChangedHandlingNative();
+            var handle = DisplaySettingsListenerHandle.Create(callback);
+            var result = handling->AddDisplaySettingsEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add display settings event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDisplayChangedHandlingNative();
+            handling->RemoveDisplaySettingsEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
         }
 
         public void Dispose()

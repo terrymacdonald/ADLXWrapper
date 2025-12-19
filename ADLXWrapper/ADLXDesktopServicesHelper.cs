@@ -9,17 +9,26 @@ namespace ADLXWrapper
     public sealed unsafe class ADLXDesktopServicesHelper : IDisposable
     {
         private ComPtr<IADLXDesktopServices> _desktopServices;
+        private ComPtr<IADLXDisplayServices>? _displayServices;
         private ComPtr<IADLXDesktopChangedHandling>? _desktopChangedHandling;
         private bool _disposed;
 
-        public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, bool addRef = true)
+        public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true)
         {
             if (desktopServices == null) throw new ArgumentNullException(nameof(desktopServices));
-            if (addRef)
+            if (addRefDesktopServices)
             {
                 ADLXUtils.AddRefInterface((IntPtr)desktopServices);
             }
             _desktopServices = new ComPtr<IADLXDesktopServices>(desktopServices);
+            if (displayServices != null)
+            {
+                if (addRefDisplayServices)
+                {
+                    ADLXUtils.AddRefInterface((IntPtr)displayServices);
+                }
+                _displayServices = new ComPtr<IADLXDisplayServices>(displayServices);
+            }
         }
 
         public IADLXDesktopServices* GetDesktopServicesNative()
@@ -94,6 +103,62 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        public IEnumerable<AdlxDesktop> EnumerateAdlxDesktopsForGpu(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            var services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            IADLXDesktopList* pDesktopList = null;
+            var result = services->GetDesktops(&pDesktopList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDesktopList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate desktops");
+
+            var desktops = new List<AdlxDesktop>();
+            using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
+            for (uint i = 0; i < desktopList.Get()->Size(); i++)
+            {
+                IADLXDesktop* pDesktop = null;
+                var itemResult = desktopList.Get()->At(i, &pDesktop);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDesktop == null)
+                {
+                    if (pDesktop != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                    throw new ADLXException(itemResult, "Failed to access desktop from list");
+                }
+
+                var hasMatch = false;
+                var displayListPtr = ADLXDesktopHelpers.GetDesktopDisplayListNative(pDesktop);
+                using var displayList = new ComPtr<IADLXDisplayList>(displayListPtr);
+                var displayCount = displayList.Get()->Size();
+                for (uint d = 0; d < displayCount && !hasMatch; d++)
+                {
+                    IADLXDisplay* pDisplay = null;
+                    displayList.Get()->At(d, &pDisplay);
+                    using var display = new ComPtr<IADLXDisplay>(pDisplay);
+                    var info = new DisplayInfo(display.Get());
+                    if (info.GpuUniqueId == gpuUniqueId)
+                    {
+                        hasMatch = true;
+                    }
+                }
+
+                if (hasMatch)
+                {
+                    desktops.Add(CreateAdlxDesktop(pDesktop, addRef: false));
+                }
+                else
+                {
+                    ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                }
+            }
+
+            return desktops;
+        }
+
         public AdlxDesktop CreateAdlxDesktop(IADLXDesktop* pDesktop, bool addRef = true)
         {
             ThrowIfDisposed();
@@ -107,7 +172,73 @@ namespace ADLXWrapper
             if (services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
 
-            return new AdlxDesktop(services, pDesktop);
+            var displayServices = _displayServices.HasValue ? _displayServices.Value.Get() : null;
+            return new AdlxDesktop(services, pDesktop, displayServices);
+        }
+
+        public EyefinityDesktopInfo CreateEyefinityDesktop()
+        {
+            ThrowIfDisposed();
+            var services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            IADLXSimpleEyefinity* pSimple = null;
+            var result = services->GetSimpleEyefinity(&pSimple);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pSimple == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get simple Eyefinity interface");
+
+            using var simple = new ComPtr<IADLXSimpleEyefinity>(pSimple);
+            return ADLXDesktopHelpers.CreateEyefinityDesktop(simple.Get());
+        }
+
+        public void DestroyAllEyefinityDesktops()
+        {
+            ThrowIfDisposed();
+            var services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            IADLXSimpleEyefinity* pSimple = null;
+            var result = services->GetSimpleEyefinity(&pSimple);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pSimple == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get simple Eyefinity interface");
+
+            using var simple = new ComPtr<IADLXSimpleEyefinity>(pSimple);
+            ADLXDesktopHelpers.DestroyAllEyefinityDesktops(simple.Get());
+        }
+
+        public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetDesktopChangedHandlingNative();
+            var handle = DesktopListListenerHandle.Create(callback);
+            var result = handling->AddDesktopListEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add desktop list event listener");
+            }
+
+            return handle;
+        }
+
+        public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetDesktopChangedHandlingNative();
+            handling->RemoveDesktopListEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
         }
 
         public AdlxInterfaceHandle[] EnumerateDesktopHandles()
@@ -246,6 +377,7 @@ namespace ADLXWrapper
         {
             if (_disposed) return;
             _desktopChangedHandling?.Dispose();
+            _displayServices?.Dispose();
             _desktopServices.Dispose();
             _disposed = true;
             GC.SuppressFinalize(this);

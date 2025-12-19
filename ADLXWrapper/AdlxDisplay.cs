@@ -376,6 +376,96 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
+        /// </summary>
+        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.AddDisplaySettingsEventListener(callback);
+        }
+
+        public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+            using var helper = CreateDisplayServicesHelper();
+            helper.RemoveDisplaySettingsEventListener(handle, disposeHandle);
+        }
+
+        /// <summary>
+        /// Subscribe to gamma change events.
+        /// </summary>
+        public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.AddDisplayGammaEventListener(callback);
+        }
+
+        public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+            using var helper = CreateDisplayServicesHelper();
+            helper.RemoveDisplayGammaEventListener(handle, disposeHandle);
+        }
+
+        /// <summary>
+        /// Subscribe to gamut change events.
+        /// </summary>
+        public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.AddDisplayGamutEventListener(callback);
+        }
+
+        public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+            using var helper = CreateDisplayServicesHelper();
+            helper.RemoveDisplayGamutEventListener(handle, disposeHandle);
+        }
+
+        /// <summary>
+        /// Subscribe to 3DLUT change events.
+        /// </summary>
+        public Display3DLutListenerHandle AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.AddDisplay3DLutEventListener(callback);
+        }
+
+        public void RemoveDisplay3dLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+            using var helper = CreateDisplayServicesHelper();
+            helper.RemoveDisplay3DLutEventListener(handle, disposeHandle);
+        }
+
+        /// <summary>
+        /// Subscribe to display list change events.
+        /// </summary>
+        public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.AddDisplayListEventListener(callback);
+        }
+
+        public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+            using var helper = CreateDisplayServicesHelper();
+            helper.RemoveDisplayListEventListener(handle, disposeHandle);
+        }
+
+        /// <summary>
         /// GPU that drives this display.
         /// </summary>
         public AdlxGpu GetGpu()
@@ -388,7 +478,8 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to resolve GPU for display");
 
-            return new AdlxGpu(pGpu);
+            IADLXDesktopServices* desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
+            return new AdlxGpu(pGpu, _displayServices.Get(), desktopServices);
         }
 
         /// <summary>
@@ -463,6 +554,13 @@ namespace ADLXWrapper
             _desktopServices?.Dispose();
             _displayServices.Dispose();
             _disposed = true;
+        }
+
+        private ADLXDisplayServicesHelper CreateDisplayServicesHelper()
+        {
+            IADLXDesktopServices* desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
+            // Helpers AddRef their inputs; safe to dispose helper without affecting this façade.
+            return new ADLXDisplayServicesHelper(_displayServices.Get(), desktopServices);
         }
     }
 }

@@ -56,5 +56,42 @@ namespace ADLXWrapper.Tests
                 Skip.If(true, "Display services are not supported on this system.");
             }
         }
+
+        [SkippableFact]
+        public void CanEnumerateAdlxDisplayFacades()
+        {
+            Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
+
+            try
+            {
+                var facades = _displayServices.EnumerateAdlxDisplays().ToList();
+                _output.WriteLine($"Found {facades.Count} display façade(s).");
+                foreach (var d in facades)
+                {
+                    _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
+                    d.Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display services are not supported on this system.");
+            }
+        }
+
+        [SkippableFact]
+        public void CanAddAndRemoveDisplayListListener()
+        {
+            Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
+
+            try
+            {
+                var handle = _displayServices.AddDisplayListEventListener(_ => false);
+                _displayServices.RemoveDisplayListEventListener(handle);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display change handling is not supported on this system.");
+            }
+        }
     }
 }

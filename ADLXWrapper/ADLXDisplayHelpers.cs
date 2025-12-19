@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
@@ -147,6 +148,222 @@ namespace ADLXWrapper
             using var gpu = new ComPtr<IADLXGPU>(pGpu);
             int gpuId = 0; gpu.Get()->UniqueId(&gpuId);
             GpuUniqueId = gpuId;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplayListChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DisplayListListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayListChanged(IADLXDisplayList* pNewDisplays);
+
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayListChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IADLXDisplayList*, byte>)&OnDisplayListChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayListListenerHandle(OnDisplayListChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayListListenerHandle Create(OnDisplayListChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayListListenerHandle(cb);
+        }
+
+        public IADLXDisplayListChangedListener* GetListener() => (IADLXDisplayListChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDisplayListChangedThunk(IntPtr pThis, IADLXDisplayList* pNewDisplays)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pNewDisplays) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplayGamutChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DisplayGamutListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayGamutChanged(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayGamutChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnGamutChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayGamutListenerHandle(OnDisplayGamutChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayGamutListenerHandle Create(OnDisplayGamutChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayGamutListenerHandle(cb);
+        }
+
+        public IADLXDisplayGamutChangedListener* GetListener() => (IADLXDisplayGamutChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnGamutChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplayGammaChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DisplayGammaListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayGammaChanged(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayGammaChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnGammaChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayGammaListenerHandle(OnDisplayGammaChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayGammaListenerHandle Create(OnDisplayGammaChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayGammaListenerHandle(cb);
+        }
+
+        public IADLXDisplayGammaChangedListener* GetListener() => (IADLXDisplayGammaChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnGammaChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplay3DLUTChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class Display3DLutListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplay3DLutChanged(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplay3DLutChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&On3DLutChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private Display3DLutListenerHandle(OnDisplay3DLutChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static Display3DLutListenerHandle Create(OnDisplay3DLutChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new Display3DLutListenerHandle(cb);
+        }
+
+        public IADLXDisplay3DLUTChangedListener* GetListener() => (IADLXDisplay3DLUTChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte On3DLutChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
         }
     }
 }

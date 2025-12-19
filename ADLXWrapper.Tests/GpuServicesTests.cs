@@ -122,6 +122,54 @@ namespace ADLXWrapper.Tests
 
             Assert.Equal(uniqueIds.Count, distinctIds);
         }
+
+        [SkippableFact]
+        public void CanEnumerateAdlxFacadesFromGpu()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
+
+            IADLXGPU* pGpu = null;
+            _gpuList->At(0, &pGpu);
+
+            ADLXUtils.AddRefInterface((IntPtr)pGpu);
+            using var gpuFacade = new AdlxGpu(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            try
+            {
+                var displays = gpuFacade.EnumerateAdlxDisplays().ToList();
+                foreach (var d in displays) d.Dispose();
+
+                var desktops = gpuFacade.EnumerateAdlxDesktops().ToList();
+                foreach (var d in desktops) d.Dispose();
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display or desktop services are not supported on this system.");
+            }
+        }
+
+        [SkippableFact]
+        public void CanAddAndRemoveListListenersViaGpu()
+        {
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
+
+            IADLXGPU* pGpu = null;
+            _gpuList->At(0, &pGpu);
+
+            ADLXUtils.AddRefInterface((IntPtr)pGpu);
+            using var gpuFacade = new AdlxGpu(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            try
+            {
+                var dHandle = gpuFacade.AddDisplayListEventListener(_ => false);
+                gpuFacade.RemoveDisplayListEventListener(dHandle);
+
+                var deskHandle = gpuFacade.AddDesktopListEventListener(_ => { return; });
+                gpuFacade.RemoveDesktopListEventListener(deskHandle);
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Change handling is not supported on this system.");
+            }
+        }
     }
 }
 

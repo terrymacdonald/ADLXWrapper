@@ -1142,6 +1142,8 @@ namespace ADLXWrapper
             return new DisplaySettingsListenerHandle(cb);
         }
 
+        public IADLXDisplaySettingsChangedListener* GetListener() => (IADLXDisplaySettingsChangedListener*)handle;
+
         protected override bool ReleaseHandle()
         {
             _map.TryRemove(handle, out _);
