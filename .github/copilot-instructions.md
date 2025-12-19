@@ -19,3 +19,4 @@
 - **Platform assumptions**: Windows-only, x64, .NET 10.0. Ensure AMD Adrenalin drivers (with ADLX) are installed for runtime/tests; `IsADLXDllAvailable` is the lightweight preflight.
 - **Samples**: Reference usage patterns in `ADLXWrapper/README.md` and `Samples/*` solutions for enumeration/printing flows.
 - **When extending**: Follow existing helper style—pull raw interfaces via system/display services, materialize into immutable infos, JSON-serializable, and avoid mutating hardware state unless intentionally adding `Apply`-style methods.
+- **Use ClangSharp enums where possible**: Prefer generated enums (e.g., `ADLX_VRAM_TYPE`) over custom ones to maintain consistency with ADLX definitions and ensure that new ADLX version updates autopmatically update the enum selection as well.

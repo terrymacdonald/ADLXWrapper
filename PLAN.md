@@ -106,6 +106,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Tests: extend xUnit to cover new helper names, support-guarded paths (ADLX_NOT_SUPPORTED), dispose-after-use behavior, and representative feature toggles per service. Skip gracefully when hardware/driver support is absent; assert ADLX_NOT_SUPPORTED on unsupported feature calls.
 - Samples: update existing Samples/* to use new helper names and flattened façades; add small snippets demonstrating support gating.
 - Migration notes: brief section summarizing breaking changes (renames, removed service getters from API) and the new acquisition pattern.
+- Helper consolidation: collapse per-feature helpers to a single `ADLX<feature>ServicesHelper` by migrating any needed functionality from legacy `ADLX<feature>Helper` files, then delete the old files. Review `ADLXGPUInfo.cs` and move any required DTO/info into the appropriate helper file to match the pattern. Flag any proposed deletions for approval before removal.
 
 - Cleanup timing: remove legacy/unneeded helpers and files only after façade migration is complete and tests/samples are green (end of Stage 6), leaving a trimmed working surface.
 
