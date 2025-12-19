@@ -18,3 +18,4 @@ namespace ADLXWrapper
             ((ulong)major << 48) | ((ulong)minor << 32) | ((ulong)patch << 16) | build;
     }
 }
+

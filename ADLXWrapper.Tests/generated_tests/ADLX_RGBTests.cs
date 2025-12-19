@@ -27,3 +27,4 @@ public static unsafe partial class ADLX_RGBTests
         Assert.Equal(24, sizeof(ADLX_RGB));
     }
 }
+

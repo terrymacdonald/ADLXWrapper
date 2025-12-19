@@ -9,7 +9,7 @@ unsafe
     var sys = sysHelper.GetSystemServicesNative();
 
     // System2 is required for power tuning services on newer SDKs.
-    if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
+    if (!ADLXUtils.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
     {
         Console.WriteLine("System2 not available; power tuning not supported on this driver/hardware.");
         return;
@@ -33,3 +33,4 @@ unsafe
         Console.WriteLine("Power tuning not supported on this hardware/driver.");
     }
 }
+

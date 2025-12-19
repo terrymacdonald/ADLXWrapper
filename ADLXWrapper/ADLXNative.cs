@@ -114,3 +114,4 @@ namespace ADLXWrapper
     //    ADLX_GPU_INACTIVE = -12
     //}
 }
+

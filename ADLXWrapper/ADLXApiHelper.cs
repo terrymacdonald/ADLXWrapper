@@ -223,7 +223,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var ptr = _systemServices.Get();
-            ADLXHelpers.AddRefInterface((IntPtr)ptr);
+            ADLXUtils.AddRefInterface((IntPtr)ptr);
             return AdlxInterfaceHandle.From(ptr, addRef: false);
         }
 
@@ -363,3 +363,4 @@ namespace ADLXWrapper
 
     }
 }
+

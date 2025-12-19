@@ -26,7 +26,7 @@ namespace ADLXWrapper
             if (system == null) throw new ArgumentNullException(nameof(system));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)system);
+                ADLXUtils.AddRefInterface((IntPtr)system);
             }
             _system = new ComPtr<IADLXSystem>(system);
         }
@@ -386,7 +386,7 @@ namespace ADLXWrapper
             if (_system1.HasValue)
                 return _system1.Value.Get();
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "IADLXSystem1 is not supported by this ADLX system");
 
             _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
@@ -401,7 +401,7 @@ namespace ADLXWrapper
                 return system1 != null;
             }
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
             {
                 _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
                 system1 = _system1.Value.Get();
@@ -417,7 +417,7 @@ namespace ADLXWrapper
             if (_system2.HasValue)
                 return _system2.Value.Get();
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Extended system services not supported by this ADLX system");
 
             _system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
@@ -432,7 +432,7 @@ namespace ADLXWrapper
                 return system2 != null;
             }
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
+            if (ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
             {
                 _system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
                 system2 = _system2.Value.Get();
@@ -444,3 +444,4 @@ namespace ADLXWrapper
         }
     }
 }
+

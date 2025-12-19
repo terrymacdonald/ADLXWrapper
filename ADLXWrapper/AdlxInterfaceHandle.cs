@@ -24,7 +24,7 @@ namespace ADLXWrapper
 			var intPtr = (IntPtr)ptr;
 			if (addRef)
 			{
-				ADLXHelpers.AddRefInterface(intPtr);
+				ADLXUtils.AddRefInterface(intPtr);
 			}
 			return new AdlxInterfaceHandle(intPtr, owns: true);
 		}
@@ -35,7 +35,7 @@ namespace ADLXWrapper
 		{
 			if (_owns && _ptr != IntPtr.Zero)
 			{
-				ADLXHelpers.ReleaseInterface(_ptr);
+				ADLXUtils.ReleaseInterface(_ptr);
 			}
 		}
 
@@ -43,3 +43,4 @@ namespace ADLXWrapper
 		public static implicit operator IADLXInterface*(AdlxInterfaceHandle handle) => (IADLXInterface*)handle._ptr;
 	}
 }
+

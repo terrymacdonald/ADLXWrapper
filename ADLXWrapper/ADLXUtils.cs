@@ -249,4 +249,3 @@ namespace ADLXWrapper
         public static implicit operator T*(ComPtr<T> comPtr) => comPtr._ptr;
     }
 }
-

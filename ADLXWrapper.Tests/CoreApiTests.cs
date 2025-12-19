@@ -128,7 +128,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var name = ADLXHelpers.GetGPUName(_gpus[0]);
+            var name = ADLXUtils.GetGPUName(_gpus[0]);
 
             Assert.NotNull(name);
             Assert.NotEmpty(name);
@@ -140,7 +140,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var vendorId = ADLXHelpers.GetGPUVendorId(_gpus[0]);
+            var vendorId = ADLXUtils.GetGPUVendorId(_gpus[0]);
 
             Assert.NotNull(vendorId);
             Assert.NotEmpty(vendorId);
@@ -152,7 +152,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var vram = ADLXHelpers.GetGPUTotalVRAM(_gpus[0]);
+            var vram = ADLXUtils.GetGPUTotalVRAM(_gpus[0]);
 
             Assert.True(vram > 0, "VRAM should be greater than 0");
             _output.WriteLine($"? Total VRAM: {vram} MB");
@@ -163,7 +163,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var vramType = ADLXHelpers.GetGPUVRAMType(_gpus[0]);
+            var vramType = ADLXUtils.GetGPUVRAMType(_gpus[0]);
 
             Assert.NotNull(vramType);
             Assert.NotEmpty(vramType);
@@ -175,7 +175,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var uniqueId = ADLXHelpers.GetGPUUniqueId(_gpus[0]);
+            var uniqueId = ADLXUtils.GetGPUUniqueId(_gpus[0]);
 
             _output.WriteLine($"? Unique ID: {uniqueId}");
         }
@@ -185,7 +185,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var deviceId = ADLXHelpers.GetGPUDeviceId(_gpus[0]);
+            var deviceId = ADLXUtils.GetGPUDeviceId(_gpus[0]);
 
             Assert.NotNull(deviceId);
             Assert.NotEmpty(deviceId);
@@ -197,7 +197,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length == 0, _skipReason);
 
-            var driverPath = ADLXHelpers.GetGPUDriverPath(_gpus[0]);
+            var driverPath = ADLXUtils.GetGPUDriverPath(_gpus[0]);
 
             Assert.NotNull(driverPath);
             Assert.NotEmpty(driverPath);
@@ -209,7 +209,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var pnpString = ADLXHelpers.GetGPUPNPString(_gpus[0]);
+            var pnpString = ADLXUtils.GetGPUPNPString(_gpus[0]);
 
             Assert.NotNull(pnpString);
             Assert.NotEmpty(pnpString);
@@ -221,7 +221,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var isExternal = ADLXHelpers.IsGPUExternal(_gpus[0]);
+            var isExternal = ADLXUtils.IsGPUExternal(_gpus[0]);
 
             _output.WriteLine($"? Is External: {isExternal}");
         }
@@ -231,7 +231,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var hasDesktops = ADLXHelpers.HasGPUDesktops(_gpus[0]);
+            var hasDesktops = ADLXUtils.HasGPUDesktops(_gpus[0]);
 
             _output.WriteLine($"? Has Desktops: {hasDesktops}");
         }
@@ -287,7 +287,7 @@ namespace ADLXWrapper.Tests
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpus.Length < 2, 
                 _gpus.Length >= 2 ? _skipReason : "Need at least 2 GPUs");
 
-            var uniqueIds = _gpus.Select(gpu => ADLXHelpers.GetGPUUniqueId(gpu)).ToList();
+            var uniqueIds = _gpus.Select(gpu => ADLXUtils.GetGPUUniqueId(gpu)).ToList();
             var distinctIds = uniqueIds.Distinct().Count();
 
             Assert.Equal(uniqueIds.Count, distinctIds);
@@ -297,14 +297,14 @@ namespace ADLXWrapper.Tests
         [Fact]
         public void GetGPUName_WithNullPointer_ShouldThrowArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => ADLXHelpers.GetGPUName(IntPtr.Zero));
+            Assert.Throws<ArgumentNullException>(() => ADLXUtils.GetGPUName(IntPtr.Zero));
             _output.WriteLine("? GetGPUName correctly throws on null pointer");
         }
 
         [Fact]
         public void GetGPUTotalVRAM_WithNullPointer_ShouldThrowArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => ADLXHelpers.GetGPUTotalVRAM(IntPtr.Zero));
+            Assert.Throws<ArgumentNullException>(() => ADLXUtils.GetGPUTotalVRAM(IntPtr.Zero));
             _output.WriteLine("? GetGPUTotalVRAM correctly throws on null pointer");
         }
 
@@ -341,7 +341,7 @@ namespace ADLXWrapper.Tests
             Exception? exception = null;
             try
             {
-                ADLXHelpers.ReleaseInterface(IntPtr.Zero);
+                ADLXUtils.ReleaseInterface(IntPtr.Zero);
             }
             catch (Exception ex)
             {
@@ -353,3 +353,4 @@ namespace ADLXWrapper.Tests
         }
     }
 }
+

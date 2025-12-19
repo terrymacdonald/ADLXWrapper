@@ -27,3 +27,4 @@ public static unsafe partial class ADLX_3DLUT_DataTests
         Assert.Equal(29478, sizeof(ADLX_3DLUT_Data));
     }
 }
+

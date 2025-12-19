@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
@@ -17,7 +17,7 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia services require IADLXSystem2");
 
             using var system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
@@ -273,3 +273,4 @@ namespace ADLXWrapper
         }
     }
 }
+

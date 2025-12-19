@@ -18,3 +18,4 @@ unsafe
         Console.WriteLine($"Name: {info.Name} | {info.Width}x{info.Height} @ {info.RefreshRate}Hz");
     }
 }
+

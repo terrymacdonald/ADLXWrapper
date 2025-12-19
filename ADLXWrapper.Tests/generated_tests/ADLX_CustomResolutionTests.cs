@@ -27,3 +27,4 @@ public static unsafe partial class ADLX_CustomResolutionTests
         Assert.Equal(68, sizeof(ADLX_CustomResolution));
     }
 }
+

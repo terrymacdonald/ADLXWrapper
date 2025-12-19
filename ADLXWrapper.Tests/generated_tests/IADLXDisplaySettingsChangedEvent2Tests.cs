@@ -35,3 +35,4 @@ public static unsafe partial class IADLXDisplaySettingsChangedEvent2Tests
         }
     }
 }
+

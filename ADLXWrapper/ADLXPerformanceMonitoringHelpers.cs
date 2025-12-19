@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -627,7 +627,7 @@ namespace ADLXWrapper
             int ss = 0; pMetrics->SmartShift(&ss); SmartShift = ss;
 
             PowerDistribution = null;
-            if (ADLXHelpers.TryQueryInterface((IntPtr)pMetrics, nameof(IADLXSystemMetrics1), out var pMetrics1Ptr))
+            if (ADLXUtils.TryQueryInterface((IntPtr)pMetrics, nameof(IADLXSystemMetrics1), out var pMetrics1Ptr))
             {
                 using var metrics1 = new ComPtr<IADLXSystemMetrics1>((IADLXSystemMetrics1*)pMetrics1Ptr);
                 int apu = 0, gpu = 0, apuLimit = 0, gpuLimit = 0, total = 0;

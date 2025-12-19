@@ -35,3 +35,4 @@ public static unsafe partial class IADLXGPUMetricsTests
         }
     }
 }
+

@@ -27,3 +27,4 @@ public static unsafe partial class ADLX_TimingInfoTests
         Assert.Equal(44, sizeof(ADLX_TimingInfo));
     }
 }
+

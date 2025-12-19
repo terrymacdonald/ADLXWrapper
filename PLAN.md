@@ -79,6 +79,13 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Performance monitoring façades: metric snapshots and history with support flags for each metric group (power, clocks, temps, fan, VRAM, voltage, NPU, shared memory, system metrics/power distribution).
 - Acceptance: façade APIs map one-to-one to SDK capabilities, optional features guarded, no duplicate unmanaged releases, and serialization-friendly shapes preserved.
 
+#### Stage 4 execution plan
+- Add disposable façade classes `AdlxDisplay`, `AdlxDesktop`, and `AdlxGpu` that own the native interface via ComPtr plus the needed service pointer(s). Identity stays as properties; optional features are methods that internally perform support checks and throw ADLX_NOT_SUPPORTED on unsupported hardware/driver. Dispose guards every call after disposal with ObjectDisposedException.
+- For every SDK list-returning API, provide (1) a managed enumeration that materializes immutable DTOs and disposes all native resources internally, and (2) a native accessor that returns a ComPtr-wrapped list for advanced callers (caller must dispose that ComPtr and any retained items).
+- Sequence: implement `AdlxDisplay` first (identity + optional display features + lists/events), then `AdlxDesktop` (identity + displays + Eyefinity + events), then `AdlxGpu` (identity + topology + future application/power hooks). Add thin factories to create façades from existing service helpers while keeping legacy helpers intact during migration.
+- Maintain highest-available-interface selection before declaring unsupported; reuse existing helper logic for support queries and get/set flows to avoid duplication.
+- Tests: add dispose-guard and ADLX_NOT_SUPPORTED coverage for façade methods, skipping when hardware support is absent.
+
 #### Stage 4 per-object checklists
 - Display: map each sub-interface (color depth, pixel format, custom color, HDCP, FreeSync, VSR, GPU scaling, scaling mode, integer scaling, custom resolution, Vari-Bright, gamma, gamut, 3DLUT, connectivity, blanking, DRR, FreeSync color accuracy, video sharpness) to façade methods/properties with support guards; ensure GetGPU()/GetDesktop() return façades; handle event origin references.
 - Desktop: grid geometry, linked displays, Eyefinity group info; create/destroy flows; surface unique ID; ensure dispose behavior if backed by ComPtr list items.
@@ -99,6 +106,8 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Tests: extend xUnit to cover new helper names, support-guarded paths (ADLX_NOT_SUPPORTED), dispose-after-use behavior, and representative feature toggles per service. Skip gracefully when hardware/driver support is absent; assert ADLX_NOT_SUPPORTED on unsupported feature calls.
 - Samples: update existing Samples/* to use new helper names and flattened façades; add small snippets demonstrating support gating.
 - Migration notes: brief section summarizing breaking changes (renames, removed service getters from API) and the new acquisition pattern.
+
+- Cleanup timing: remove legacy/unneeded helpers and files only after façade migration is complete and tests/samples are green (end of Stage 6), leaving a trimmed working surface.
 
 #### Stage 6 validation matrix
 - ADLXApiHelper: init/terminate, version queries, dispose guard; IsADLXDllAvailable behavior.

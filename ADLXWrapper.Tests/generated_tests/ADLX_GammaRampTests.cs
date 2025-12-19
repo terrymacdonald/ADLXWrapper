@@ -27,3 +27,4 @@ public static unsafe partial class ADLX_GammaRampTests
         Assert.Equal(1536, sizeof(ADLX_GammaRamp));
     }
 }
+

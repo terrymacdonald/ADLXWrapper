@@ -17,7 +17,7 @@ unsafe
     }
 
     // Guard System2 for any create/destroy operations
-    if (!ADLXHelpers.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
+    if (!ADLXUtils.TryQueryInterface((IntPtr)sys, "IADLXSystem2", out var sys2Ptr) || sys2Ptr == IntPtr.Zero)
     {
         Console.WriteLine("System2 not available; skipping Eyefinity creation/destruction.");
         return;
@@ -35,3 +35,4 @@ unsafe
     // ADLXDesktopHelpers.DestroyEyefinityDesktop(simpleHandle);
     */
 }
+

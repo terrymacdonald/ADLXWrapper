@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
@@ -17,7 +17,7 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Power tuning services require IADLXSystem2");
 
             using var system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
@@ -68,7 +68,7 @@ namespace ADLXWrapper
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
             // IADLXPowerTuningServices1 is required for GetSmartShiftEco
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pPowerServices1))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pPowerServices1))
             {
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Eco not supported by this ADLX system");
             }
@@ -157,7 +157,7 @@ namespace ADLXWrapper
 
             if (info.TdcLimitSupported)
             {
-                if (ADLXHelpers.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
+                if (ADLXUtils.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
                 {
                     using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
                     SetManualTDCLimit(manualPower1.Get(), info.TdcLimitValue);
@@ -222,7 +222,7 @@ namespace ADLXWrapper
         {
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pServices1))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pServices1))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUConnect not supported by this ADLX system");
 
             using var services1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)pServices1);
@@ -243,7 +243,7 @@ namespace ADLXWrapper
         {
             if (pPowerServices == null) throw new ArgumentNullException(nameof(pPowerServices));
 
-            if (!ADLXHelpers.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pServices1))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)pPowerServices, nameof(IADLXPowerTuningServices1), out var pServices1))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUConnect not supported by this ADLX system");
 
             using var services1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)pServices1);
@@ -367,7 +367,7 @@ namespace ADLXWrapper
             PowerLimitRange = powerRange;
             PowerLimitValue = powerValue;
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)pManualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
             {
                 using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
                 bool tdcSupported = false;

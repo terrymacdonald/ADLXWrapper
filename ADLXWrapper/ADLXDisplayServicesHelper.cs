@@ -19,7 +19,7 @@ namespace ADLXWrapper
             if (displayServices == null) throw new ArgumentNullException(nameof(displayServices));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)displayServices);
+                ADLXUtils.AddRefInterface((IntPtr)displayServices);
             }
             _displayServices = new ComPtr<IADLXDisplayServices>(displayServices);
             TryUpgradeDisplayServices(displayServices);
@@ -163,13 +163,13 @@ namespace ADLXWrapper
             if (services == null)
                 return;
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices3), out var pServices3))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices3), out var pServices3))
             {
                 _displayServices3 = new ComPtr<IADLXDisplayServices3>((IADLXDisplayServices3*)pServices3);
                 return;
             }
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices2), out var pServices2))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices2), out var pServices2))
             {
                 _displayServices2 = new ComPtr<IADLXDisplayServices2>((IADLXDisplayServices2*)pServices2);
             }

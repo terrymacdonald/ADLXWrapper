@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
@@ -96,7 +96,7 @@ namespace ADLXWrapper
             if (pDisplay == IntPtr.Zero) throw new ArgumentNullException(nameof(pDisplay));
             sbyte* name = null;
             ((IADLXDisplay*)pDisplay)->Name(&name);
-            return ADLXHelpers.MarshalString(&name);
+            return ADLXUtils.MarshalString(&name);
         }
     }
 
@@ -131,8 +131,8 @@ namespace ADLXWrapper
 
         internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
         {
-            sbyte* namePtr = null; pDisplay->Name(&namePtr); Name = ADLXHelpers.MarshalString(&namePtr);
-            sbyte* edidPtr = null; pDisplay->EDID(&edidPtr); Edid = ADLXHelpers.MarshalString(&edidPtr);
+            sbyte* namePtr = null; pDisplay->Name(&namePtr); Name = ADLXUtils.MarshalString(&namePtr);
+            sbyte* edidPtr = null; pDisplay->EDID(&edidPtr); Edid = ADLXUtils.MarshalString(&edidPtr);
             int w = 0, h = 0; pDisplay->NativeResolution(&w, &h); Width = w; Height = h;
             double rr = 0; pDisplay->RefreshRate(&rr); RefreshRate = rr;
             uint mid = 0; pDisplay->ManufacturerID(&mid); ManufacturerID = mid;

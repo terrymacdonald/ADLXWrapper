@@ -16,7 +16,7 @@ namespace ADLXWrapper
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)services);
+                ADLXUtils.AddRefInterface((IntPtr)services);
             }
             _services = new ComPtr<IADLXPerformanceMonitoringServices>(services);
         }
@@ -336,3 +336,4 @@ namespace ADLXWrapper
         }
     }
 }
+

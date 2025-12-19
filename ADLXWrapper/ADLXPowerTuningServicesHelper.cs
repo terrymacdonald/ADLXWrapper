@@ -17,7 +17,7 @@ namespace ADLXWrapper
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)services);
+                ADLXUtils.AddRefInterface((IntPtr)services);
             }
             _services = new ComPtr<IADLXPowerTuningServices>(services);
             TryUpgradeServices(services);
@@ -139,7 +139,7 @@ namespace ADLXWrapper
         {
             if (services == null) return;
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLXPowerTuningServices1), out var p1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLXPowerTuningServices1), out var p1))
             {
                 _services1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)p1);
             }
@@ -150,7 +150,7 @@ namespace ADLXWrapper
             if (_services1.HasValue)
                 return _services1.Value.Get();
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)_services.Get(), nameof(IADLXPowerTuningServices1), out var p1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)_services.Get(), nameof(IADLXPowerTuningServices1), out var p1))
             {
                 _services1 = new ComPtr<IADLXPowerTuningServices1>((IADLXPowerTuningServices1*)p1);
                 return _services1.Value.Get();
@@ -167,3 +167,4 @@ namespace ADLXWrapper
         }
     }
 }
+

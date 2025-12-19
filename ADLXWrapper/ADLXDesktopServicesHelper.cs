@@ -17,7 +17,7 @@ namespace ADLXWrapper
             if (desktopServices == null) throw new ArgumentNullException(nameof(desktopServices));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)desktopServices);
+                ADLXUtils.AddRefInterface((IntPtr)desktopServices);
             }
             _desktopServices = new ComPtr<IADLXDesktopServices>(desktopServices);
         }
@@ -217,3 +217,4 @@ namespace ADLXWrapper
         }
     }
 }
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
@@ -71,11 +71,11 @@ namespace ADLXWrapper
         {
             sbyte* namePtr = null;
             pGpu->Name(&namePtr);
-            Name = ADLXHelpers.MarshalString(&namePtr);
+            Name = ADLXUtils.MarshalString(&namePtr);
 
             sbyte* vendorIdPtr = null;
             pGpu->VendorId(&vendorIdPtr);
-            VendorId = ADLXHelpers.MarshalString(&vendorIdPtr);
+            VendorId = ADLXUtils.MarshalString(&vendorIdPtr);
 
             int uid = 0;
             pGpu->UniqueId(&uid);
@@ -87,7 +87,7 @@ namespace ADLXWrapper
 
             sbyte* vramTypePtr = null;
             pGpu->VRAMType(&vramTypePtr);
-            VRAMType = ADLXHelpers.MarshalString(&vramTypePtr);
+            VRAMType = ADLXUtils.MarshalString(&vramTypePtr);
 
             bool isExt = false;
             pGpu->IsExternal(&isExt);
@@ -99,15 +99,15 @@ namespace ADLXWrapper
 
             sbyte* devIdPtr = null;
             pGpu->DeviceId(&devIdPtr);
-            DeviceId = ADLXHelpers.MarshalString(&devIdPtr);
+            DeviceId = ADLXUtils.MarshalString(&devIdPtr);
 
             sbyte* pnpPtr = null;
             pGpu->PNPString(&pnpPtr);
-            PNPString = ADLXHelpers.MarshalString(&pnpPtr);
+            PNPString = ADLXUtils.MarshalString(&pnpPtr);
 
             sbyte* driverPathPtr = null;
             pGpu->DriverPath(&driverPathPtr);
-            DriverPath = ADLXHelpers.MarshalString(&driverPathPtr);
+            DriverPath = ADLXUtils.MarshalString(&driverPathPtr);
         }
     }
 }

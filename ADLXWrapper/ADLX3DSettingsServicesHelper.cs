@@ -18,7 +18,7 @@ namespace ADLXWrapper
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (addRef)
             {
-                ADLXHelpers.AddRefInterface((IntPtr)services);
+                ADLXUtils.AddRefInterface((IntPtr)services);
             }
             _services = new ComPtr<IADLX3DSettingsServices>(services);
             TryUpgradeServices(services);
@@ -87,13 +87,13 @@ namespace ADLXWrapper
         {
             if (services == null) return;
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
             {
                 _services2 = new ComPtr<IADLX3DSettingsServices2>((IADLX3DSettingsServices2*)p2);
                 return;
             }
 
-            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices1), out var p1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices1), out var p1))
             {
                 _services1 = new ComPtr<IADLX3DSettingsServices1>((IADLX3DSettingsServices1*)p1);
             }
@@ -109,3 +109,4 @@ namespace ADLXWrapper
         }
     }
 }
+
