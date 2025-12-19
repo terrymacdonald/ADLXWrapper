@@ -21,6 +21,8 @@ namespace ADLXWrapper
 
             IADLXDisplayGamma* pGamma;
             var result = pDisplayServices->GetGamma(pDisplay, &pGamma);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGamma == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Gamma not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK) 
                 throw new ADLXException(result, "Failed to get Gamma interface");
             using var gamma = new ComPtr<IADLXDisplayGamma>(pGamma);
@@ -106,6 +108,8 @@ namespace ADLXWrapper
 
             IADLXDisplayGamut* pGamut;
             var result = pDisplayServices->GetGamut(pDisplay, &pGamut);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGamut == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Gamut not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get Gamut interface");
             using var gamut = new ComPtr<IADLXDisplayGamut>(pGamut);
@@ -206,6 +210,8 @@ namespace ADLXWrapper
 
             IADLXDisplay3DLUT* pLut;
             var result = pDisplayServices->Get3DLUT(pDisplay, &pLut);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pLut == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3DLUT not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get 3DLUT interface");
             using var lut = new ComPtr<IADLXDisplay3DLUT>(pLut);
@@ -273,6 +279,8 @@ namespace ADLXWrapper
             var services3 = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayConnectivityExperience* pConn;
             var result = services3->GetDisplayConnectivityExperience(pDisplay, &pConn);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pConn == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Connectivity Experience not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
 
@@ -336,13 +344,60 @@ namespace ADLXWrapper
 
             IADLXDisplayCustomResolution* pCustomRes;
             var result = pDisplayServices->GetCustomResolution(pDisplay, &pCustomRes);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pCustomRes == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Custom Resolution not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Custom Resolution interface");
-            }
 
             using var customRes = new ComPtr<IADLXDisplayCustomResolution>(pCustomRes);
             return new CustomResolutionInfo(customRes.Get());
+        }
+
+        /// <summary>
+        /// Returns the native custom resolution list for a display. Caller must wrap/dispose.
+        /// </summary>
+        public static IADLXDisplayResolutionList* GetCustomResolutionListNative(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+        {
+            if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
+            if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
+
+            IADLXDisplayCustomResolution* pCustomRes;
+            var result = pDisplayServices->GetCustomResolution(pDisplay, &pCustomRes);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pCustomRes == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Custom Resolution not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Custom Resolution interface");
+
+            using var customRes = new ComPtr<IADLXDisplayCustomResolution>(pCustomRes);
+            IADLXDisplayResolutionList* list = null;
+            var listResult = customRes.Get()->GetResolutionList(&list);
+            if (listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Custom Resolution list not supported by this ADLX system");
+            if (listResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(listResult, "Failed to get Custom Resolution list");
+
+            return list;
+        }
+
+        /// <summary>
+        /// Enumerates custom resolutions for a display.
+        /// </summary>
+        public static IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+        {
+            if (pDisplayServices == null || pDisplay == null) return Array.Empty<DisplayResolutionInfo>();
+
+            using var list = new ComPtr<IADLXDisplayResolutionList>(GetCustomResolutionListNative(pDisplayServices, pDisplay));
+            var count = list.Get()->Size();
+            var resolutions = new List<DisplayResolutionInfo>((int)count);
+            for (uint i = 0; i < count; i++)
+            {
+                IADLXDisplayResolution* pRes;
+                list.Get()->At(i, &pRes);
+                using var res = new ComPtr<IADLXDisplayResolution>(pRes);
+                resolutions.Add(new DisplayResolutionInfo(res.Get()));
+            }
+
+            return resolutions;
         }
 
         /// <summary>
@@ -388,10 +443,10 @@ namespace ADLXWrapper
 
             IADLXDisplayCustomColor* pCustomColor;
             var result = pDisplayServices->GetCustomColor(pDisplay, &pCustomColor);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pCustomColor == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Custom Color not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Custom Color interface");
-            }
 
             using var customColor = new ComPtr<IADLXDisplayCustomColor>(pCustomColor);
             return new CustomColorInfo(customColor.Get());
@@ -422,10 +477,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayBlanking* pBlanking;
             var result = services->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pBlanking == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Blanking not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Display Blanking interface");
-            }
 
             return (IntPtr)pBlanking;
         }
@@ -470,10 +525,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayVSR* pVsr;
             var result = services->GetVirtualSuperResolution((IADLXDisplay*)pDisplay, &pVsr);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pVsr == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Virtual Super Resolution not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Virtual Super Resolution interface");
-            }
 
             return (IntPtr)pVsr;
         }
@@ -519,10 +574,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayIntegerScaling* pIntegerScaling;
             var result = services->GetIntegerScaling((IADLXDisplay*)pDisplay, &pIntegerScaling);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pIntegerScaling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Integer Scaling not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Integer Scaling interface");
-            }
 
             return (IntPtr)pIntegerScaling;
         }
@@ -568,10 +623,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayHDCP* pHdcp;
             var result = services->GetHDCP((IADLXDisplay*)pDisplay, &pHdcp);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pHdcp == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "HDCP not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get HDCP interface");
-            }
 
             return (IntPtr)pHdcp;
         }
@@ -627,10 +682,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayVariBright* pVariBright;
             var result = services->GetVariBright((IADLXDisplay*)pDisplay, &pVariBright);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pVariBright == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "VariBright not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get VariBright interface");
-            }
 
             return (IntPtr)pVariBright;
         }
@@ -719,10 +774,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayColorDepth* pColorDepth;
             var result = services->GetColorDepth((IADLXDisplay*)pDisplay, &pColorDepth);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pColorDepth == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Color Depth not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Color Depth interface");
-            }
 
             return (IntPtr)pColorDepth;
         }
@@ -767,10 +822,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayPixelFormat* pPixelFormat;
             var result = services->GetPixelFormat((IADLXDisplay*)pDisplay, &pPixelFormat);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pPixelFormat == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Pixel Format not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Pixel Format interface");
-            }
 
             return (IntPtr)pPixelFormat;
         }
@@ -815,10 +870,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayFreeSync* pFS;
             var result = services->GetFreeSync((IADLXDisplay*)pDisplay, &pFS);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pFS == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FreeSync not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get FreeSync interface");
-            }
 
             return (IntPtr)pFS;
         }
@@ -833,10 +888,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayGPUScaling* pScaling;
             var result = services->GetGPUScaling((IADLXDisplay*)pDisplay, &pScaling);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pScaling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU scaling not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get GPU scaling interface");
-            }
 
             return (IntPtr)pScaling;
         }
@@ -851,10 +906,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayScalingMode* pMode;
             var result = services->GetScalingMode((IADLXDisplay*)pDisplay, &pMode);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMode == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Scaling mode not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get scaling mode interface");
-            }
 
             return (IntPtr)pMode;
         }
@@ -967,10 +1022,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayFreeSyncColorAccuracy* pFSCA;
             var result = services->GetFreeSyncColorAccuracy((IADLXDisplay*)pDisplay, &pFSCA);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pFSCA == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FreeSync Color Accuracy not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get FreeSync Color Accuracy interface");
-            }
 
             return (IntPtr)pFSCA;
         }
@@ -1017,10 +1072,10 @@ namespace ADLXWrapper
             var services = (IADLXDisplayServices3*)pDisplayServices;
             IADLXDisplayDynamicRefreshRateControl* pDRR;
             var result = services->GetDynamicRefreshRateControl((IADLXDisplay*)pDisplay, &pDRR);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDRR == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Dynamic Refresh Rate Control not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get Dynamic Refresh Rate Control interface");
-            }
 
             return (IntPtr)pDRR;
         }

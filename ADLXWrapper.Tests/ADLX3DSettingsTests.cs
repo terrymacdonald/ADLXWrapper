@@ -16,6 +16,7 @@ namespace ADLXWrapper.Tests
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
+        private readonly ADLX3DSettingsServicesHelper? _settingsHelper;
         private readonly IADLXGPU* _gpu;
         private readonly IADLX3DSettingsServices* _settingsServices;
 
@@ -38,7 +39,8 @@ namespace ADLXWrapper.Tests
                 gpuList->At(0, &pGpu);
                 _gpu = pGpu;
                 ((IADLXInterface*)gpuList)->Release();
-                _settingsServices = ADLX3DSettingsHelpers.Get3DSettingsServices(system);
+                _settingsHelper = new ADLX3DSettingsServicesHelper(_system.Get3DSettingsServicesNative());
+                _settingsServices = _settingsHelper.Get3DSettingsServicesNative();
             }
             catch (Exception ex)
             {
@@ -49,7 +51,7 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_settingsServices != null) ((IUnknown*)_settingsServices)->Release();
+            _settingsHelper?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }

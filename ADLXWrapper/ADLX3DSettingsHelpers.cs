@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 namespace ADLXWrapper
@@ -17,10 +19,10 @@ namespace ADLXWrapper
 
             IADLX3DSettingsServices* p3DSettingsServices;
             var result = pSystem->Get3DSettingsServices(&p3DSettingsServices);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || p3DSettingsServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D Settings services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get 3D Settings services");
-            }
             return p3DSettingsServices;
         }
 
@@ -155,7 +157,6 @@ namespace ADLXWrapper
                 }
             }
         }
-
     }
 
     //================================================================================================
@@ -513,6 +514,7 @@ namespace ADLXWrapper
                 ADLX_TESSELLATION_MODE mode = default;
                 ADLX_TESSELLATION_LEVEL level = default;
                 p->GetMode(&mode);
+                p->GetLevel(&level);
                 Mode = mode;
                 Level = level;
             }
@@ -521,6 +523,89 @@ namespace ADLXWrapper
                 Mode = default;
                 Level = default;
             }
+        }
+    }
+
+    public static unsafe class ADLX3DSettingsEventHelpers
+    {
+        public static IADLX3DSettingsChangedHandling* Get3DSettingsChangedHandling(IADLX3DSettingsServices* p3DSettingsServices)
+    {
+        if (p3DSettingsServices == null) throw new ArgumentNullException(nameof(p3DSettingsServices));
+
+        IADLX3DSettingsChangedHandling* pHandling = null;
+        var result = p3DSettingsServices->Get3DSettingsChangedHandling(&pHandling);
+        if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pHandling == null)
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings change handling not supported by this ADLX system");
+        if (result != ADLX_RESULT.ADLX_OK)
+            throw new ADLXException(result, "Failed to get 3D settings change handling");
+
+        return pHandling;
+    }
+
+    public static void Add3DSettingsEventListener(IADLX3DSettingsChangedHandling* pHandling, ThreeDSettingsListenerHandle listener)
+    {
+        if (pHandling == null || listener == null || listener.IsInvalid) return;
+        pHandling->Add3DSettingsEventListener(listener.GetListener());
+    }
+
+        public static void Remove3DSettingsEventListener(IADLX3DSettingsChangedHandling* pHandling, ThreeDSettingsListenerHandle listener)
+        {
+            if (pHandling == null || listener == null || listener.IsInvalid) return;
+            pHandling->Remove3DSettingsEventListener(listener.GetListener());
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLX3DSettingsChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class ThreeDSettingsListenerHandle : SafeHandle
+    {
+        public delegate bool ThreeDSettingsChangedCallback(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, ThreeDSettingsChangedCallback> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&On3DSettingsChanged;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private ThreeDSettingsListenerHandle(ThreeDSettingsChangedCallback cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static ThreeDSettingsListenerHandle Create(ThreeDSettingsChangedCallback cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new ThreeDSettingsListenerHandle(cb);
+        }
+
+        public IADLX3DSettingsChangedListener* GetListener() => (IADLX3DSettingsChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte On3DSettingsChanged(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
         }
     }
 }

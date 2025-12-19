@@ -20,10 +20,10 @@ namespace ADLXWrapper
             IADLXDisplayServices* pDisplayServices = null;
             var result = pSystem->GetDisplaysServices(&pDisplayServices);
 
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
-            {
                 throw new ADLXException(result, "Failed to get display services");
-            }
 
             // Caller must wrap this in a ComPtr and dispose it.
             return (IADLXDisplayServices*)pDisplayServices;
@@ -42,7 +42,11 @@ namespace ADLXWrapper
             if (displayServices.Get() == null) return Array.Empty<DisplayInfo>();
 
             IADLXDisplayList* pDisplayList = null;
-            displayServices.Get()->GetDisplays(&pDisplayList);
+            var result = displayServices.Get()->GetDisplays(&pDisplayList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate displays");
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
 
             for (uint i = 0; i < displayList.Get()->Size(); i++)
@@ -68,8 +72,10 @@ namespace ADLXWrapper
 
             IADLXDisplayList* pDisplayList = null;
             var result = displayServices.Get()->GetDisplays(&pDisplayList);
-            if (result != ADLX_RESULT.ADLX_OK || pDisplayList == null)
-                return Array.Empty<AdlxInterfaceHandle>();
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate displays");
 
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
             var count = displayList.Get()->Size();

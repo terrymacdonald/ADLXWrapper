@@ -18,6 +18,8 @@ namespace ADLXWrapper
 
             IADLXPerformanceMonitoringServices* pServices;
             var result = pSystem->GetPerformanceMonitoringServices(&pServices);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance monitoring services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get performance monitoring services");
             return pServices;
@@ -33,6 +35,8 @@ namespace ADLXWrapper
 
             IADLXGPUMetricsSupport* pMetricsSupport;
             var result = pServices->GetSupportedGPUMetrics(pGpu, &pMetricsSupport);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetricsSupport == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics support not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get supported GPU metrics");
 
@@ -50,6 +54,8 @@ namespace ADLXWrapper
 
             IADLXGPUMetrics* pMetrics;
             var result = pServices->GetCurrentGPUMetrics(pGpu, &pMetrics);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetrics == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current GPU metrics");
 
@@ -70,6 +76,8 @@ namespace ADLXWrapper
 
             IADLXSystemMetrics* pMetrics;
             var result = pServices->GetCurrentSystemMetrics(&pMetrics);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetrics == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current System metrics");
 
@@ -86,6 +94,8 @@ namespace ADLXWrapper
 
             IADLXAllMetrics* pAllMetrics;
             var result = pServices->GetCurrentAllMetrics(&pAllMetrics);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pAllMetrics == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current All metrics");
 
@@ -103,6 +113,8 @@ namespace ADLXWrapper
 
             IADLXGPUMetricsList* pMetricsList;
             var result = pServices->GetGPUMetricsHistory(pGpu, startMs, stopMs, &pMetricsList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetricsList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU metrics history");
 
@@ -128,6 +140,8 @@ namespace ADLXWrapper
 
             IADLXSystemMetricsList* pMetricsList;
             var result = pServices->GetSystemMetricsHistory(startMs, stopMs, &pMetricsList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetricsList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get System metrics history");
 
@@ -153,6 +167,8 @@ namespace ADLXWrapper
 
             IADLXAllMetricsList* pMetricsList;
             var result = pServices->GetAllMetricsHistory(startMs, stopMs, &pMetricsList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMetricsList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get All metrics history");
 
@@ -178,6 +194,8 @@ namespace ADLXWrapper
 
             ADLX_IntRange range = default;
             var result = pServices->GetSamplingIntervalRange(&range);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval range");
             return range;
@@ -192,6 +210,8 @@ namespace ADLXWrapper
 
             int interval = 0;
             var result = pServices->GetSamplingInterval(&interval);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval");
             return interval;
@@ -205,6 +225,8 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
             var result = pServices->SetSamplingInterval(intervalMs);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set sampling interval");
         }
@@ -254,6 +276,8 @@ namespace ADLXWrapper
 
             int size = 0;
             var result = pServices->GetMaxPerformanceMetricsHistorySize(&size);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get max performance metrics history size");
             return size;
@@ -268,6 +292,8 @@ namespace ADLXWrapper
 
             int size = 0;
             var result = pServices->GetCurrentPerformanceMetricsHistorySize(&size);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current performance metrics history size");
             return size;
@@ -281,6 +307,8 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
             var result = pServices->SetMaxPerformanceMetricsHistorySize(sizeSec);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set max performance metrics history size");
         }
@@ -293,6 +321,8 @@ namespace ADLXWrapper
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
 
             var result = pServices->ClearPerformanceMetricsHistory();
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to clear performance metrics history");
         }
@@ -304,6 +334,8 @@ namespace ADLXWrapper
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
             var result = pServices->StartPerformanceMetricsTracking();
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics tracking not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to start performance metrics tracking");
         }
@@ -315,6 +347,8 @@ namespace ADLXWrapper
         {
             if (pServices == null) throw new ArgumentNullException(nameof(pServices));
             var result = pServices->StopPerformanceMetricsTracking();
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics tracking not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to stop performance metrics tracking");
         }

@@ -15,6 +15,7 @@ namespace ADLXWrapper.Tests
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
+        private readonly ADLXPerformanceMonitoringServicesHelper? _perfHelper;
         private readonly IADLXGPU* _gpu;
         private readonly IADLXPerformanceMonitoringServices* _perfServices;
 
@@ -26,7 +27,8 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _perfServices = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(system);
+                _perfHelper = new ADLXPerformanceMonitoringServicesHelper(_system.GetPerformanceMonitoringServicesNative());
+                _perfServices = _perfHelper.GetPerformanceMonitoringServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -49,7 +51,7 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_perfServices != null) ((IUnknown*)_perfServices)->Release();
+            _perfHelper?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }

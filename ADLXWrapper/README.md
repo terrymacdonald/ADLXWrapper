@@ -50,6 +50,11 @@ More helpers:
 - `ADLXGPUTuningHelpers` / `ADLXGPUTuningInfo` – check tuning capabilities (read-only)
 - `ADLXListHelpers` – convert ADLX list interfaces to arrays
 
+Error contract:
+- All helper entry points exist; if a feature is unavailable on the current hardware/driver, calls throw `ADLX_NOT_SUPPORTED` (via `ADLXException`).
+- Helpers select the highest available ADLX interface version before failing with `ADLX_NOT_SUPPORTED`.
+- After `ADLXApi.Dispose`, any further call throws `ObjectDisposedException`.
+
 ## Regenerating bindings (optional)
 ```powershell
 cd ADLXWrapper

@@ -111,3 +111,8 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 ### Open points to confirm before implementation
 - Optional vs always-on matrix per feature is based on SDK headers; adjust if ADLX version updates change defaults.
 - Decide list return types (IList vs IReadOnlyList) for managed enumerations and keep AdlxInterfaceHandle usage consistent across helpers.
+
+### Contract guardrails (applies to all stages)
+- Every helper entry point exists; unsupported hardware/driver surfaces as ADLX_NOT_SUPPORTED (via ADLXException) rather than returning null.
+- Native accessors pick the highest available ADLX interface version before failing as unsupported.
+- After disposal (ComPtr or helper), subsequent calls throw ObjectDisposedException; no manual Release on ComPtr-owned pointers.

@@ -15,6 +15,7 @@ namespace ADLXWrapper.Tests
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
+        private readonly ADLXMultimediaServicesHelper? _multimediaHelper;
         private readonly IADLXGPU* _gpu;
         private readonly IADLXMultimediaServices* _multimediaServices;
 
@@ -26,7 +27,8 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _multimediaServices = ADLXMultimediaHelpers.GetMultimediaServices(system);
+                _multimediaHelper = new ADLXMultimediaServicesHelper(_system.GetMultimediaServicesNative());
+                _multimediaServices = _multimediaHelper.GetMultimediaServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -49,7 +51,7 @@ namespace ADLXWrapper.Tests
         public void Dispose()
         {
             if (_gpu != null) ((IUnknown*)_gpu)->Release();
-            if (_multimediaServices != null) ((IUnknown*)_multimediaServices)->Release();
+            _multimediaHelper?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }
@@ -64,6 +66,37 @@ namespace ADLXWrapper.Tests
 
             var upscale = ADLXMultimediaHelpers.GetVideoUpscale(_multimediaServices, _gpu);
             _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
+        }
+
+        [SkippableFact]
+        public void CanRegisterMultimediaListener()
+        {
+            Skip.If(_api == null || _system == null || _gpu == null || _multimediaServices == null, _skipReason);
+
+            IADLXMultimediaChangedHandling* handling;
+            try
+            {
+                handling = _multimediaHelper!.GetMultimediaChangedHandlingNative();
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Multimedia change handling not supported.");
+                return;
+            }
+
+            using var listener = MultimediaEventListenerHandle.Create(pEvent =>
+            {
+                if (pEvent == IntPtr.Zero) return true;
+                var evt = (IADLXMultimediaChangedEvent*)pEvent;
+                var origin = evt->GetOrigin();
+                var ups = evt->IsVideoUpscaleChanged();
+                var vsr = evt->IsVideoSuperResolutionChanged();
+                _output.WriteLine($"Multimedia event: origin={origin}, upscaleChanged={ups}, vsrChanged={vsr}");
+                return true; // continue receiving events
+            });
+
+            ADLXMultimediaHelpers.AddMultimediaEventListener(handling, listener);
+            ADLXMultimediaHelpers.RemoveMultimediaEventListener(handling, listener);
         }
     }
 }

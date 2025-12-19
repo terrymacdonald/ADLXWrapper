@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 namespace ADLXWrapper
@@ -15,9 +17,14 @@ namespace ADLXWrapper
         {
             if (pSystem == null) throw new ArgumentNullException(nameof(pSystem));
 
-            var system2 = (IADLXSystem2*)pSystem;
+            if (!ADLXHelpers.TryQueryInterface((IntPtr)pSystem, nameof(IADLXSystem2), out var pSystem2))
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia services require IADLXSystem2");
+
+            using var system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
             IADLXMultimediaServices* pServices;
-            var result = system2->GetMultimediaServices(&pServices);
+            var result = system2.Get()->GetMultimediaServices(&pServices);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia services");
             return pServices;
@@ -33,6 +40,8 @@ namespace ADLXWrapper
 
             IADLXVideoUpscale* pUpscale;
             var result = pMultimediaServices->GetVideoUpscale(pGPU, &pUpscale);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pUpscale == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Video upscale not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video upscale interface");
 
@@ -62,6 +71,8 @@ namespace ADLXWrapper
 
             IADLXVideoSuperResolution* pVsr;
             var result = pMultimediaServices->GetVideoSuperResolution(pGPU, &pVsr);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pVsr == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Video super resolution not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video super resolution interface");
 
@@ -114,6 +125,35 @@ namespace ADLXWrapper
             var result = pVsr->SetEnabled(enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video super resolution enabled");
+        }
+
+        /// <summary>
+        /// Gets the multimedia changed handling interface.
+        /// </summary>
+        public static IADLXMultimediaChangedHandling* GetMultimediaChangedHandling(IADLXMultimediaServices* pMultimediaServices)
+        {
+            if (pMultimediaServices == null) throw new ArgumentNullException(nameof(pMultimediaServices));
+
+            IADLXMultimediaChangedHandling* pHandling = null;
+            var result = pMultimediaServices->GetMultimediaChangedHandling(&pHandling);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pHandling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia change handling not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get multimedia change handling");
+
+            return pHandling;
+        }
+
+        public static void AddMultimediaEventListener(IADLXMultimediaChangedHandling* pHandling, MultimediaEventListenerHandle listener)
+        {
+            if (pHandling == null || listener == null || listener.IsInvalid) return;
+            pHandling->AddMultimediaEventListener(listener.GetListener());
+        }
+
+        public static void RemoveMultimediaEventListener(IADLXMultimediaChangedHandling* pHandling, MultimediaEventListenerHandle listener)
+        {
+            if (pHandling == null || listener == null || listener.IsInvalid) return;
+            pHandling->RemoveMultimediaEventListener(listener.GetListener());
         }
     }
 
@@ -176,6 +216,60 @@ namespace ADLXWrapper
             pVsr->IsEnabled(&enabled);
             IsSupported = supported;
             IsEnabled = enabled;
+        }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXMultimediaChangedEventListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class MultimediaEventListenerHandle : SafeHandle
+    {
+        public delegate bool MultimediaChangedCallback(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, MultimediaChangedCallback> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnMultimediaChanged;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private MultimediaEventListenerHandle(MultimediaChangedCallback cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static MultimediaEventListenerHandle Create(MultimediaChangedCallback cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new MultimediaEventListenerHandle(cb);
+        }
+
+        public IADLXMultimediaChangedEventListener* GetListener() => (IADLXMultimediaChangedEventListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnMultimediaChanged(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
         }
     }
 }

@@ -9,6 +9,8 @@ namespace ADLXWrapper
     public sealed unsafe class ADLXDisplayServicesHelper : IDisposable
     {
         private ComPtr<IADLXDisplayServices> _displayServices;
+        private ComPtr<IADLXDisplayServices2>? _displayServices2;
+        private ComPtr<IADLXDisplayServices3>? _displayServices3;
         private ComPtr<IADLXDisplayChangedHandling>? _displayChangedHandling;
         private bool _disposed;
 
@@ -20,29 +22,33 @@ namespace ADLXWrapper
                 ADLXHelpers.AddRefInterface((IntPtr)displayServices);
             }
             _displayServices = new ComPtr<IADLXDisplayServices>(displayServices);
+            TryUpgradeDisplayServices(displayServices);
         }
 
         public IADLXDisplayServices* GetDisplayServicesNative()
         {
             ThrowIfDisposed();
-            return _displayServices.Get();
+            return GetHighestDisplayServices();
         }
 
         public AdlxInterfaceHandle GetDisplayServices()
         {
             ThrowIfDisposed();
-            return AdlxInterfaceHandle.From(_displayServices.Get(), addRef: true);
+            return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
         public IEnumerable<DisplayInfo> EnumerateDisplays()
         {
             ThrowIfDisposed();
-            var services = _displayServices.Get();
-            if (services == null) return Array.Empty<DisplayInfo>();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
 
             IADLXDisplayList* pDisplayList = null;
             var result = services->GetDisplays(&pDisplayList);
-            if (result != ADLX_RESULT.ADLX_OK || pDisplayList == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate displays");
 
             var displays = new List<DisplayInfo>();
@@ -58,15 +64,35 @@ namespace ADLXWrapper
             return displays;
         }
 
-        public AdlxInterfaceHandle[] EnumerateDisplayHandles()
+        public IADLXDisplayList* GetDisplayListNative()
         {
             ThrowIfDisposed();
-            var services = _displayServices.Get();
-            if (services == null) return Array.Empty<AdlxInterfaceHandle>();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
 
             IADLXDisplayList* pDisplayList = null;
             var result = services->GetDisplays(&pDisplayList);
-            if (result != ADLX_RESULT.ADLX_OK || pDisplayList == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate displays");
+
+            return pDisplayList; // caller must wrap/dispose
+        }
+
+        public AdlxInterfaceHandle[] EnumerateDisplayHandles()
+        {
+            ThrowIfDisposed();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+
+            IADLXDisplayList* pDisplayList = null;
+            var result = services->GetDisplays(&pDisplayList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate displays");
 
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
@@ -91,7 +117,9 @@ namespace ADLXWrapper
 
             IADLXDisplayChangedHandling* handling = null;
             var result = _displayServices.Get()->GetDisplayChangedHandling(&handling);
-            if (result != ADLX_RESULT.ADLX_OK || handling == null)
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display change handling not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get display changed handling");
 
             _displayChangedHandling = new ComPtr<IADLXDisplayChangedHandling>(handling);
@@ -107,6 +135,8 @@ namespace ADLXWrapper
         {
             if (_disposed) return;
             _displayChangedHandling?.Dispose();
+            _displayServices3?.Dispose();
+            _displayServices2?.Dispose();
             _displayServices.Dispose();
             _disposed = true;
             GC.SuppressFinalize(this);
@@ -126,6 +156,32 @@ namespace ADLXWrapper
             {
                 Dispose();
             }
+        }
+
+        private void TryUpgradeDisplayServices(IADLXDisplayServices* services)
+        {
+            if (services == null)
+                return;
+
+            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices3), out var pServices3))
+            {
+                _displayServices3 = new ComPtr<IADLXDisplayServices3>((IADLXDisplayServices3*)pServices3);
+                return;
+            }
+
+            if (ADLXHelpers.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices2), out var pServices2))
+            {
+                _displayServices2 = new ComPtr<IADLXDisplayServices2>((IADLXDisplayServices2*)pServices2);
+            }
+        }
+
+        private IADLXDisplayServices* GetHighestDisplayServices()
+        {
+            if (_displayServices3.HasValue)
+                return (IADLXDisplayServices*)_displayServices3.Value.Get();
+            if (_displayServices2.HasValue)
+                return (IADLXDisplayServices*)_displayServices2.Value.Get();
+            return _displayServices.Get();
         }
     }
 }

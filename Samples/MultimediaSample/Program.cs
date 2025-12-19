@@ -25,6 +25,29 @@ unsafe
         var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>());
         Console.WriteLine($"Video Super Resolution: supported={vsr.IsSupported}, enabled={vsr.IsEnabled}");
 
+        try
+        {
+            using var changedHandling = AdlxInterfaceHandle.From(ADLXMultimediaHelpers.GetMultimediaChangedHandling(mm.As<IADLXMultimediaServices>()), addRef: false);
+            using var listener = MultimediaEventListenerHandle.Create(evtPtr =>
+            {
+                if (evtPtr == IntPtr.Zero) return true;
+                var evt = (IADLXMultimediaChangedEvent*)evtPtr;
+                var origin = evt->GetOrigin();
+                var upsChanged = evt->IsVideoUpscaleChanged();
+                var vsrChanged = evt->IsVideoSuperResolutionChanged();
+                Console.WriteLine($"[Event] origin={origin}, upscaleChanged={upsChanged}, vsrChanged={vsrChanged}");
+                return true; // keep listener active
+            });
+
+            ADLXMultimediaHelpers.AddMultimediaEventListener(changedHandling.As<IADLXMultimediaChangedHandling>(), listener);
+            Console.WriteLine("Registered multimedia change listener (no events expected in this sample run).");
+            ADLXMultimediaHelpers.RemoveMultimediaEventListener(changedHandling.As<IADLXMultimediaChangedHandling>(), listener);
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            Console.WriteLine("Multimedia change handling not supported; listener registration skipped.");
+        }
+
         // Toggle example (commented to stay read-only)
         // if (upscale.IsSupported) ADLXMultimediaHelpers.SetVideoUpscaleEnabled(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>(), !upscale.IsEnabled);
         // if (vsr.IsSupported) ADLXMultimediaHelpers.SetVideoSuperResolutionEnabled(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>(), !vsr.IsEnabled);

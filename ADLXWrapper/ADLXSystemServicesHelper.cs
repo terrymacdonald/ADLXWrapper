@@ -176,6 +176,19 @@ namespace ADLXWrapper
             return handles;
         }
 
+        public IADLXGPUList* GetGPUListNative()
+        {
+            ThrowIfDisposed();
+            IADLXGPUList* pGpuList = null;
+            var result = _system.Get()->GetGPUs(&pGpuList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate GPUs");
+
+            return pGpuList; // caller must wrap/dispose
+        }
+
         public void Dispose()
         {
             if (_disposed) return;
@@ -374,7 +387,7 @@ namespace ADLXWrapper
                 return _system1.Value.Get();
 
             if (!ADLXHelpers.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Power tuning services not supported by this ADLX system");
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "IADLXSystem1 is not supported by this ADLX system");
 
             _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
             return _system1.Value.Get();
