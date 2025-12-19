@@ -11,17 +11,26 @@ namespace ADLXWrapper
         private ComPtr<IADLXDisplayServices> _displayServices;
         private ComPtr<IADLXDisplayServices2>? _displayServices2;
         private ComPtr<IADLXDisplayServices3>? _displayServices3;
+        private ComPtr<IADLXDesktopServices>? _desktopServices;
         private ComPtr<IADLXDisplayChangedHandling>? _displayChangedHandling;
         private bool _disposed;
 
-        public ADLXDisplayServicesHelper(IADLXDisplayServices* displayServices, bool addRef = true)
+        public ADLXDisplayServicesHelper(IADLXDisplayServices* displayServices, IADLXDesktopServices* desktopServices = null, bool addRefDisplayServices = true, bool addRefDesktopServices = true)
         {
             if (displayServices == null) throw new ArgumentNullException(nameof(displayServices));
-            if (addRef)
+            if (addRefDisplayServices)
             {
                 ADLXUtils.AddRefInterface((IntPtr)displayServices);
             }
             _displayServices = new ComPtr<IADLXDisplayServices>(displayServices);
+            if (desktopServices != null)
+            {
+                if (addRefDesktopServices)
+                {
+                    ADLXUtils.AddRefInterface((IntPtr)desktopServices);
+                }
+                _desktopServices = new ComPtr<IADLXDesktopServices>(desktopServices);
+            }
             TryUpgradeDisplayServices(displayServices);
         }
 
@@ -62,6 +71,56 @@ namespace ADLXWrapper
             }
 
             return displays;
+        }
+
+        public IEnumerable<AdlxDisplay> EnumerateAdlxDisplays()
+        {
+            ThrowIfDisposed();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+
+            IADLXDisplayList* pDisplayList = null;
+            var result = services->GetDisplays(&pDisplayList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate displays");
+
+            var displays = new List<AdlxDisplay>();
+            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+            for (uint i = 0; i < displayList.Get()->Size(); i++)
+            {
+                IADLXDisplay* pDisplay = null;
+                var itemResult = displayList.Get()->At(i, &pDisplay);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
+                {
+                    if (pDisplay != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                    throw new ADLXException(itemResult, "Failed to access display from list");
+                }
+
+                displays.Add(CreateAdlxDisplay(pDisplay, addRef: false));
+            }
+
+            return displays;
+        }
+
+        public AdlxDisplay CreateAdlxDisplay(IADLXDisplay* pDisplay, bool addRef = true)
+        {
+            ThrowIfDisposed();
+            if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
+            if (addRef)
+            {
+                ADLXUtils.AddRefInterface((IntPtr)pDisplay);
+            }
+
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+
+            var desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
+            return new AdlxDisplay(services, pDisplay, desktopServices);
         }
 
         public IADLXDisplayList* GetDisplayListNative()
@@ -135,6 +194,7 @@ namespace ADLXWrapper
         {
             if (_disposed) return;
             _displayChangedHandling?.Dispose();
+            _desktopServices?.Dispose();
             _displayServices3?.Dispose();
             _displayServices2?.Dispose();
             _displayServices.Dispose();

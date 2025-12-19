@@ -61,6 +61,55 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        public IEnumerable<AdlxDesktop> EnumerateAdlxDesktops()
+        {
+            ThrowIfDisposed();
+            var services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            IADLXDesktopList* pDesktopList = null;
+            var result = services->GetDesktops(&pDesktopList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDesktopList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate desktops");
+
+            var desktops = new List<AdlxDesktop>();
+            using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
+            for (uint i = 0; i < desktopList.Get()->Size(); i++)
+            {
+                IADLXDesktop* pDesktop = null;
+                var itemResult = desktopList.Get()->At(i, &pDesktop);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDesktop == null)
+                {
+                    if (pDesktop != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                    throw new ADLXException(itemResult, "Failed to access desktop from list");
+                }
+
+                desktops.Add(CreateAdlxDesktop(pDesktop, addRef: false));
+            }
+
+            return desktops;
+        }
+
+        public AdlxDesktop CreateAdlxDesktop(IADLXDesktop* pDesktop, bool addRef = true)
+        {
+            ThrowIfDisposed();
+            if (pDesktop == null) throw new ArgumentNullException(nameof(pDesktop));
+            if (addRef)
+            {
+                ADLXUtils.AddRefInterface((IntPtr)pDesktop);
+            }
+
+            var services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            return new AdlxDesktop(services, pDesktop);
+        }
+
         public AdlxInterfaceHandle[] EnumerateDesktopHandles()
         {
             ThrowIfDisposed();
