@@ -120,6 +120,13 @@ namespace ADLXWrapper
             return displays;
         }
 
+        public DisplayInfo GetDisplayInfo(IADLXDisplay* display)
+        {
+            ThrowIfDisposed();
+            if (display == null) throw new ArgumentNullException(nameof(display));
+            return new DisplayInfo(display);
+        }
+
         public IEnumerable<AdlxDisplay> EnumerateAdlxDisplaysForGpu(int gpuUniqueId)
         {
             ThrowIfDisposed();
@@ -1872,6 +1879,62 @@ namespace ADLXWrapper
     }
 
     #region Display DTOs and listener handles (relocated from DisplaySettingsOps)
+    /// <summary>
+    /// Represents the collected information for a display.
+    /// </summary>
+    public readonly struct DisplayInfo
+    {
+        public string Name { get; init; }
+        public int Width { get; init; }
+        public int Height { get; init; }
+        public double RefreshRate { get; init; }
+        public uint ManufacturerID { get; init; }
+        public uint PixelClock { get; init; }
+        public ADLX_DISPLAY_TYPE Type { get; init; }
+        public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get; init; }
+        public ADLX_DISPLAY_SCAN_TYPE ScanType { get; init; }
+        public ulong UniqueId { get; init; }
+        public string Edid { get; init; }
+        public int GpuUniqueId { get; init; }
+
+        [JsonConstructor]
+        public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
+        {
+            Name = name;
+            Width = width;
+            Height = height;
+            RefreshRate = refreshRate;
+            ManufacturerID = manufacturerID;
+            PixelClock = pixelClock;
+            Type = type;
+            ConnectorType = connectorType;
+            ScanType = scanType;
+            UniqueId = uniqueId;
+            Edid = edid;
+            GpuUniqueId = gpuUniqueId;
+        }
+
+        internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
+        {
+            sbyte* namePtr = null; pDisplay->Name(&namePtr); Name = ADLXUtils.MarshalString(&namePtr);
+            sbyte* edidPtr = null; pDisplay->EDID(&edidPtr); Edid = ADLXUtils.MarshalString(&edidPtr);
+            int w = 0, h = 0; pDisplay->NativeResolution(&w, &h); Width = w; Height = h;
+            double rr = 0; pDisplay->RefreshRate(&rr); RefreshRate = rr;
+            uint mid = 0; pDisplay->ManufacturerID(&mid); ManufacturerID = mid;
+            uint pc = 0; pDisplay->PixelClock(&pc); PixelClock = pc;
+            ADLX_DISPLAY_TYPE dt = default; pDisplay->DisplayType(&dt); Type = dt;
+            ADLX_DISPLAY_CONNECTOR_TYPE ct = default; pDisplay->ConnectorType(&ct); ConnectorType = ct;
+            ADLX_DISPLAY_SCAN_TYPE st = default; pDisplay->ScanType(&st); ScanType = st;
+            nuint uid = 0; pDisplay->UniqueId(&uid); UniqueId = (ulong)uid;
+
+            IADLXGPU* pGpu = null;
+            pDisplay->GetGPU(&pGpu);
+            using var gpu = new ComPtr<IADLXGPU>(pGpu);
+            int gpuId = 0; gpu.Get()->UniqueId(&gpuId);
+            GpuUniqueId = gpuId;
+        }
+    }
+
     public readonly struct GammaInfo
     {
         public bool IsSupported { get; init; }
@@ -2105,6 +2168,209 @@ namespace ADLXWrapper
 
             IsSupported = IsHueSupported || IsSaturationSupported || IsBrightnessSupported || IsContrastSupported || IsTemperatureSupported;
         }
+    }
+
+    /// <summary>
+    /// Safe handle for an unmanaged IADLXDisplayListChangedListener backed by a managed delegate.
+    /// </summary>
+    public sealed unsafe class DisplayListListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayListChanged(IADLXDisplayList* pNewDisplays);
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayListChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplayListChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayListListenerHandle(OnDisplayListChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayListListenerHandle Create(OnDisplayListChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayListListenerHandle(cb);
+        }
+
+        public IADLXDisplayListChangedListener* GetListener() => (IADLXDisplayListChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDisplayListChangedThunk(IntPtr pThis, IntPtr pNewDisplays)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb((IADLXDisplayList*)pNewDisplays) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+    }
+
+    public sealed unsafe class DisplayGamutListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayGamutChanged(IntPtr pEvent);
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayGamutChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplayGamutChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayGamutListenerHandle(OnDisplayGamutChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayGamutListenerHandle Create(OnDisplayGamutChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayGamutListenerHandle(cb);
+        }
+
+        public IADLXDisplayGamutChangedListener* GetListener() => (IADLXDisplayGamutChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDisplayGamutChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+    }
+
+    public sealed unsafe class DisplayGammaListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplayGammaChanged(IntPtr pEvent);
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplayGammaChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplayGammaChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private DisplayGammaListenerHandle(OnDisplayGammaChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static DisplayGammaListenerHandle Create(OnDisplayGammaChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new DisplayGammaListenerHandle(cb);
+        }
+
+        public IADLXDisplayGammaChangedListener* GetListener() => (IADLXDisplayGammaChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDisplayGammaChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+    }
+
+    public sealed unsafe class Display3DLutListenerHandle : SafeHandle
+    {
+        public delegate bool OnDisplay3DLutChanged(IntPtr pEvent);
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplay3DLutChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplay3DLutChangedThunk;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private Display3DLutListenerHandle(OnDisplay3DLutChanged cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static Display3DLutListenerHandle Create(OnDisplay3DLutChanged cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new Display3DLutListenerHandle(cb);
+        }
+
+        public IADLXDisplay3DLUTChangedListener* GetListener() => (IADLXDisplay3DLUTChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+        private static byte OnDisplay3DLutChangedThunk(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
     }
 
     /// <summary>

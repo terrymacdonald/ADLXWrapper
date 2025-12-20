@@ -59,7 +59,8 @@ namespace ADLXWrapper.Tests
                 {
                     using (display)
                     {
-                        var name = ADLXDisplayHelpers.GetDisplayName(display);
+                        var info = displayHelper.GetDisplayInfo(display.As<IADLXDisplay>());
+                        var name = info.Name;
                         _output.WriteLine($"[Iter {i}] Display: {name}");
                     }
                 }

@@ -107,13 +107,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Samples: update existing Samples/* to use new helper names and flattened façades; add small snippets demonstrating support gating.
 - Migration notes: brief section summarizing breaking changes (renames, removed service getters from API) and the new acquisition pattern.
 - Helper consolidation: collapse per-feature helpers to a single `ADLX<feature>ServicesHelper` by migrating any needed functionality from legacy `ADLX<feature>Helper` files, then delete the old files. Review `ADLXGPUInfo.cs` and move any required DTO/info into the appropriate helper file to match the pattern. Flag any proposed deletions for approval before removal.
-- Display settings refactor: before deleting `ADLXDisplaySettingsHelpers.cs`, move its feature operations into `ADLXDisplayServicesHelper` and surface them on `AdlxDisplay`. Cover:
-  - FreeSync get/set; GPU scaling + scaling mode get/set; VSR get/set; integer scaling get/set; HDCP get/set; Vari-Bright get/set (plus backlight adaptive and battery-life toggles); color depth get/set; pixel format get/set.
-  - Custom color get/apply; gamma get/reapply/apply; gamut get/reapply/apply; 3DLUT get/reapply/apply.
-  - Connectivity experience get/apply (HDMI quality, pre-emphasis, voltage swing); blanking get/set; FreeSync color accuracy get/set; DRR control get/set.
-  - Custom resolutions enumerate/list/native accessor and create/delete/apply.
-  - Add native accessors on `ADLXDisplayServicesHelper` (e.g., GetFreeSyncNative/GetScalingNative/etc.) if raw pointers are needed.
-  Update `AdlxDisplay` to use these new APIs and remove all references to `ADLXDisplaySettingsHelpers`; delete the legacy helper only after references are gone.
+- Display settings refactor: operations have been moved into `ADLXDisplayServicesHelper` and surfaced on `AdlxDisplay`; `ADLXDisplaySettingsHelpers.cs` has been removed. Coverage includes FreeSync, GPU scaling + scaling mode, VSR, integer scaling, HDCP, Vari-Bright (including backlight/battery toggles), color depth, pixel format, custom color, gamma, gamut, 3DLUT, connectivity, blanking, FreeSync color accuracy, DRR control, and custom resolutions (enumerate/list/native and apply). Native accessors are provided via the service helper where needed. `ADLXDisplayHelpers.cs` has been consolidated into `ADLXDisplayServicesHelper` (DisplayInfo + display listeners).
 
 - Cleanup timing: remove legacy/unneeded helpers and files only after façade migration is complete and tests/samples are green (end of Stage 6), leaving a trimmed working surface.
 
