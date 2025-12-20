@@ -53,4 +53,33 @@ To verify the build and check hardware compatibility, run the test script.
 
 ## Detailed Usage and Examples
 
-For detailed API documentation, code examples, and a list of all available helpers, please see the **ADLXWrapper Project README**.
+### Quick sample
+
+```csharp
+using var adlx = ADLXApiHelper.Initialize();
+using var sys = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+
+// Enumerate GPUs and displays
+var gpuHandles = sys.EnumerateGPUHandles();
+var displayHandles = sys.EnumerateDisplayHandles();
+
+// Toggle a display feature if supported (e.g., Virtual Super Resolution)
+using var displayHelper = new ADLXDisplayServicesHelper(sys.GetDisplayServicesNative());
+var firstDisplay = displayHandles[0].As<IADLXDisplay>();
+var vsr = displayHelper.GetVirtualSuperResolution(firstDisplay);
+if (vsr.IsSupported)
+{
+    displayHelper.SetVirtualSuperResolutionEnabled(displayHelper.GetVirtualSuperResolutionNative(firstDisplay), !vsr.IsEnabled);
+}
+
+// Always dispose handles/helpers to release native refs
+foreach (var h in gpuHandles) h.Dispose();
+foreach (var h in displayHandles) h.Dispose();
+```
+
+### Support and disposal notes
+- Optional features surface support via `IsSupported` or capability objects; unsupported operations throw `ADLX_NOT_SUPPORTED`.
+- Helpers guard against use-after-dispose with `ObjectDisposedException`. Native pointers returned by helpers should be wrapped in `ComPtr` or disposed handles to avoid leaks.
+- Tests and samples may skip on systems without the required AMD hardware/driver.
+
+For additional API documentation and examples, see the **ADLXWrapper Project README** in the `ADLXWrapper/` folder.
