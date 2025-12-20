@@ -153,6 +153,7 @@ namespace ADLXWrapper
 
     /// <summary>
     /// Safe handle for an unmanaged IADLXDisplayListChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class DisplayListListenerHandle : SafeHandle
     {
@@ -207,6 +208,7 @@ namespace ADLXWrapper
 
     /// <summary>
     /// Safe handle for an unmanaged IADLXDisplayGamutChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class DisplayGamutListenerHandle : SafeHandle
     {
@@ -261,6 +263,7 @@ namespace ADLXWrapper
 
     /// <summary>
     /// Safe handle for an unmanaged IADLXDisplayGammaChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class DisplayGammaListenerHandle : SafeHandle
     {
@@ -315,6 +318,7 @@ namespace ADLXWrapper
 
     /// <summary>
     /// Safe handle for an unmanaged IADLXDisplay3DLUTChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class Display3DLutListenerHandle : SafeHandle
     {

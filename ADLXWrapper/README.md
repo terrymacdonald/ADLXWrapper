@@ -13,47 +13,39 @@ High-performance C# bindings for AMD ADLX using vtable-based interop.
 dotnet build ADLXWrapper/ADLXWrapper.csproj
 ```
 
-## Usage snapshot
+## Usage snapshot (current helper surface)
 ```csharp
 using ADLXWrapper;
 using System;
-using System.Linq;
 
-// Initialize ADLX
-using var adlx = ADLXApi.Initialize();
-var systemServices = adlx.GetSystemServices();
+// Initialize ADLX (ADLXApiHelper owns DLL + system lifetime)
+using var adlx = ADLXApiHelper.Initialize();
 
-// Enumerate GPUs
-var gpus = ADLXGpuHelpers.EnumerateAllGpus(systemServices).ToList();
-Console.WriteLine($"Found {gpus.Count} GPU(s).");
+// Wrap system services (AddRef'd; dispose before disposing adlx)
+using var system = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
 
-foreach (var gpuInfo in gpus)
+// Display helpers / façades
+using var displayServices = new ADLXDisplayServicesHelper(
+    system.GetDisplayServicesNative(),
+    system.GetDesktopServicesNative());
+
+foreach (var display in displayServices.EnumerateAdlxDisplays())
+using (display) // AdlxDisplay is IDisposable
 {
-    Console.WriteLine($"- GPU: {gpuInfo.Name} (ID: {gpuInfo.UniqueId})");
-    Console.WriteLine($"  VRAM: {gpuInfo.TotalVRAM} MB ({gpuInfo.VRAMType})");
-}
+    Console.WriteLine($"Display {display.Name} on GPU {display.GpuUniqueId}: " +
+                      $"{display.Width}x{display.Height} @ {display.RefreshRate:F2} Hz");
 
-// Enumerate Displays
-var displays = ADLXDisplayHelpers.EnumerateAllDisplays(systemServices).ToList();
-Console.WriteLine($"\nFound {displays.Count} display(s).");
-
-foreach (var displayInfo in displays)
-{
-    Console.WriteLine($"- Display: {displayInfo.Name} on GPU {displayInfo.GpuUniqueId}");
-    Console.WriteLine($"  Resolution: {displayInfo.Width}x{displayInfo.Height} @ {displayInfo.RefreshRate:F2} Hz");
+    // Grab the owning GPU façade if needed
+    using var gpu = display.GetGpu();
+    Console.WriteLine($"  GPU: {gpu.Name} ({gpu.VRAMType}, {gpu.TotalVRAM} MB)");
 }
 ```
 
-More helpers:
-- `ADLXDisplayHelpers` / `ADLXDisplayInfo` – enumerate displays and read properties
-- `ADLXPerformanceMonitoringHelpers` / `ADLXPerformanceMonitoringInfo` – metrics/support queries
-- `ADLXGPUTuningHelpers` / `ADLXGPUTuningInfo` – check tuning capabilities (read-only)
-- `ADLXListHelpers` – convert ADLX list interfaces to arrays
-
-Error contract:
-- All helper entry points exist; if a feature is unavailable on the current hardware/driver, calls throw `ADLX_NOT_SUPPORTED` (via `ADLXException`).
-- Helpers select the highest available ADLX interface version before failing with `ADLX_NOT_SUPPORTED`.
-- After `ADLXApi.Dispose`, any further call throws `ObjectDisposedException`.
+Notes and contracts
+- Error handling: non-OK ADLX calls throw `ADLXException`; capability gaps surface as `ADLX_NOT_SUPPORTED`. Post-dispose calls throw `ObjectDisposedException`.
+- Interface selection: helpers pick the highest available ADLX interface version before failing with `ADLX_NOT_SUPPORTED`.
+- Ownership: helpers/façades AddRef native pointers; always `Dispose()` them. Do not manually Release pointers owned by a `ComPtr`.
+- Events: listener callbacks are invoked on ADLX threads. Keep the returned listener handle alive and dispose (or call the corresponding remove helper) to unsubscribe.
 
 ## Regenerating bindings (optional)
 ```powershell

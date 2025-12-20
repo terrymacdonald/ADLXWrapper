@@ -1114,7 +1114,8 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Safe handle for an unmanaged IADLXDisplaySettingsChangedListener backed by a managed delegate. 
+    /// Safe handle for an unmanaged IADLXDisplaySettingsChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class DisplaySettingsListenerHandle : SafeHandle
     {

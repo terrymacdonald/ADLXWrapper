@@ -282,6 +282,7 @@ namespace ADLXWrapper
 
     /// <summary>
     /// Safe handle for an unmanaged IADLXDesktopListChangedListener backed by a managed delegate.
+    /// Callbacks arrive on ADLX threads; the handle roots the delegate until disposed or explicitly removed.
     /// </summary>
     public sealed unsafe class DesktopListListenerHandle : SafeHandle
     {
