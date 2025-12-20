@@ -13,21 +13,19 @@ unsafe
         return;
     }
 
-    var sys = sysHelper.GetSystemServicesNative();
-    using var mm = AdlxInterfaceHandle.From(ADLXMultimediaHelpers.GetMultimediaServices(sys), addRef: false);
+    using var mmHelper = new ADLXMultimediaServicesHelper(sysHelper.GetMultimediaServicesNative());
     var gpu = gpus[0];
 
     try
     {
-        var upscale = ADLXMultimediaHelpers.GetVideoUpscale(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>());
+        var upscale = mmHelper.GetVideoUpscale(gpu.As<IADLXGPU>());
         Console.WriteLine($"Video Upscale: supported={upscale.IsSupported}, enabled={upscale.IsEnabled}, sharpness={upscale.Sharpness}, range=({upscale.SharpnessRange.minValue}-{upscale.SharpnessRange.maxValue})");
 
-        var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>());
+        var vsr = mmHelper.GetVideoSuperResolution(gpu.As<IADLXGPU>());
         Console.WriteLine($"Video Super Resolution: supported={vsr.IsSupported}, enabled={vsr.IsEnabled}");
 
         try
         {
-            using var changedHandling = AdlxInterfaceHandle.From(ADLXMultimediaHelpers.GetMultimediaChangedHandling(mm.As<IADLXMultimediaServices>()), addRef: false);
             using var listener = MultimediaEventListenerHandle.Create(evtPtr =>
             {
                 if (evtPtr == IntPtr.Zero) return true;
@@ -39,9 +37,9 @@ unsafe
                 return true; // keep listener active
             });
 
-            ADLXMultimediaHelpers.AddMultimediaEventListener(changedHandling.As<IADLXMultimediaChangedHandling>(), listener);
+            mmHelper.AddMultimediaEventListener(listener);
             Console.WriteLine("Registered multimedia change listener (no events expected in this sample run).");
-            ADLXMultimediaHelpers.RemoveMultimediaEventListener(changedHandling.As<IADLXMultimediaChangedHandling>(), listener);
+            mmHelper.RemoveMultimediaEventListener(listener);
         }
         catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
         {

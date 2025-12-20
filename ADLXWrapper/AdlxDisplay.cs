@@ -49,15 +49,13 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetFreeSyncState()
         {
             ThrowIfDisposed();
-            using var fs = new ComPtr<IADLXDisplayFreeSync>((IADLXDisplayFreeSync*)ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetFreeSyncState((IntPtr)fs.Get());
+            return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
         }
 
         public void SetFreeSyncEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var fs = new ComPtr<IADLXDisplayFreeSync>((IADLXDisplayFreeSync*)ADLXDisplaySettingsHelpers.GetFreeSyncHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetFreeSyncEnabled((IntPtr)fs.Get(), enable);
+            CreateDisplayServicesHelper().SetFreeSyncEnabled(_display.Get(), enable);
         }
 
         /// <summary>
@@ -66,15 +64,13 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetGpuScalingState()
         {
             ThrowIfDisposed();
-            using var scaling = new ComPtr<IADLXDisplayGPUScaling>((IADLXDisplayGPUScaling*)ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetGPUScalingState((IntPtr)scaling.Get());
+            return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
         }
 
         public void SetGpuScalingEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var scaling = new ComPtr<IADLXDisplayGPUScaling>((IADLXDisplayGPUScaling*)ADLXDisplaySettingsHelpers.GetGPUScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetGPUScalingEnabled((IntPtr)scaling.Get(), enable);
+            CreateDisplayServicesHelper().SetGPUScalingEnabled(_display.Get(), enable);
         }
 
         /// <summary>
@@ -83,15 +79,13 @@ namespace ADLXWrapper
         public (bool supported, ADLX_SCALE_MODE mode) GetScalingMode()
         {
             ThrowIfDisposed();
-            using var scalingMode = new ComPtr<IADLXDisplayScalingMode>((IADLXDisplayScalingMode*)ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetScalingMode((IntPtr)scalingMode.Get());
+            return CreateDisplayServicesHelper().GetScalingMode(_display.Get());
         }
 
         public void SetScalingMode(ADLX_SCALE_MODE mode)
         {
             ThrowIfDisposed();
-            using var scalingMode = new ComPtr<IADLXDisplayScalingMode>((IADLXDisplayScalingMode*)ADLXDisplaySettingsHelpers.GetScalingModeHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetScalingMode((IntPtr)scalingMode.Get(), mode);
+            CreateDisplayServicesHelper().SetScalingMode(_display.Get(), mode);
         }
 
         /// <summary>
@@ -100,7 +94,8 @@ namespace ADLXWrapper
         public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.EnumerateCustomResolutions(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.EnumerateCustomResolutions(_display.Get());
         }
 
         /// <summary>
@@ -109,7 +104,8 @@ namespace ADLXWrapper
         public ComPtr<IADLXDisplayResolutionList> GetCustomResolutionListNative()
         {
             ThrowIfDisposed();
-            return new ComPtr<IADLXDisplayResolutionList>(ADLXDisplaySettingsHelpers.GetCustomResolutionListNative(_displayServices.Get(), _display.Get()));
+            using var helper = CreateDisplayServicesHelper();
+            return new ComPtr<IADLXDisplayResolutionList>(helper.GetCustomResolutionListNative(_display.Get()));
         }
 
         /// <summary>
@@ -118,15 +114,13 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetVirtualSuperResolutionState()
         {
             ThrowIfDisposed();
-            using var vsr = new ComPtr<IADLXDisplayVSR>((IADLXDisplayVSR*)ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionState((IntPtr)vsr.Get());
+            return CreateDisplayServicesHelper().GetVirtualSuperResolutionState(_display.Get());
         }
 
         public void SetVirtualSuperResolutionEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var vsr = new ComPtr<IADLXDisplayVSR>((IADLXDisplayVSR*)ADLXDisplaySettingsHelpers.GetVirtualSuperResolutionHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetVirtualSuperResolutionEnabled((IntPtr)vsr.Get(), enable);
+            CreateDisplayServicesHelper().SetVirtualSuperResolutionEnabled(_display.Get(), enable);
         }
 
         /// <summary>
@@ -135,15 +129,13 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetIntegerScalingState()
         {
             ThrowIfDisposed();
-            using var integerScaling = new ComPtr<IADLXDisplayIntegerScaling>((IADLXDisplayIntegerScaling*)ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetIntegerScalingState((IntPtr)integerScaling.Get());
+            return CreateDisplayServicesHelper().GetIntegerScalingState(_display.Get());
         }
 
         public void SetIntegerScalingEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var integerScaling = new ComPtr<IADLXDisplayIntegerScaling>((IADLXDisplayIntegerScaling*)ADLXDisplaySettingsHelpers.GetIntegerScalingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetIntegerScalingEnabled((IntPtr)integerScaling.Get(), enable);
+            CreateDisplayServicesHelper().SetIntegerScalingEnabled(_display.Get(), enable);
         }
 
         /// <summary>
@@ -152,32 +144,28 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetHdcpState()
         {
             ThrowIfDisposed();
-            using var hdcp = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetHDCPState((IntPtr)hdcp.Get());
+            return CreateDisplayServicesHelper().GetHDCPState(_display.Get());
         }
 
         public void SetHdcpEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var hdcp = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)ADLXDisplaySettingsHelpers.GetHDCPHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetHDCPEnabled((IntPtr)hdcp.Get(), enable);
+            CreateDisplayServicesHelper().SetHDCPEnabled(_display.Get(), enable);
         }
 
         /// <summary>
         /// Vari-Bright support/enabled/mode state.
         /// </summary>
-        public (bool supported, bool enabled, ADLXDisplaySettingsHelpers.VariBrightMode mode) GetVariBrightState()
+        public (bool supported, bool enabled, VariBrightMode mode) GetVariBrightState()
         {
             ThrowIfDisposed();
-            using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetVariBrightState((IntPtr)vb.Get());
+            return CreateDisplayServicesHelper().GetVariBrightState(_display.Get());
         }
 
-        public void SetVariBright(bool enable, ADLXDisplaySettingsHelpers.VariBrightMode mode)
+        public void SetVariBright(bool enable, VariBrightMode mode)
         {
             ThrowIfDisposed();
-            using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)ADLXDisplaySettingsHelpers.GetVariBrightHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetVariBright((IntPtr)vb.Get(), enable, mode);
+            CreateDisplayServicesHelper().SetVariBright(_display.Get(), enable, mode);
         }
 
         /// <summary>
@@ -186,15 +174,13 @@ namespace ADLXWrapper
         public (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState()
         {
             ThrowIfDisposed();
-            using var cd = new ComPtr<IADLXDisplayColorDepth>((IADLXDisplayColorDepth*)ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetColorDepthState((IntPtr)cd.Get());
+            return CreateDisplayServicesHelper().GetColorDepthState(_display.Get());
         }
 
         public void SetColorDepth(ADLX_COLOR_DEPTH depth)
         {
             ThrowIfDisposed();
-            using var cd = new ComPtr<IADLXDisplayColorDepth>((IADLXDisplayColorDepth*)ADLXDisplaySettingsHelpers.GetColorDepthHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetColorDepth((IntPtr)cd.Get(), depth);
+            CreateDisplayServicesHelper().SetColorDepth(_display.Get(), depth);
         }
 
         /// <summary>
@@ -203,15 +189,13 @@ namespace ADLXWrapper
         public (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState()
         {
             ThrowIfDisposed();
-            using var pf = new ComPtr<IADLXDisplayPixelFormat>((IADLXDisplayPixelFormat*)ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetPixelFormatState((IntPtr)pf.Get());
+            return CreateDisplayServicesHelper().GetPixelFormatState(_display.Get());
         }
 
         public void SetPixelFormat(ADLX_PIXEL_FORMAT format)
         {
             ThrowIfDisposed();
-            using var pf = new ComPtr<IADLXDisplayPixelFormat>((IADLXDisplayPixelFormat*)ADLXDisplaySettingsHelpers.GetPixelFormatHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetPixelFormat((IntPtr)pf.Get(), format);
+            CreateDisplayServicesHelper().SetPixelFormat(_display.Get(), format);
         }
 
         /// <summary>
@@ -220,20 +204,15 @@ namespace ADLXWrapper
         public CustomColorInfo GetCustomColor()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.GetCustomColor(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetCustomColor(_display.Get());
         }
 
         public void ApplyCustomColor(CustomColorInfo info)
         {
             ThrowIfDisposed();
-            IADLXDisplayCustomColor* pCustomColor;
-            var result = _displayServices.Get()->GetCustomColor(_display.Get(), &pCustomColor);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pCustomColor == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Custom Color not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get Custom Color interface");
-            using var customColor = new ComPtr<IADLXDisplayCustomColor>(pCustomColor);
-            ADLXDisplaySettingsHelpers.ApplyCustomColor(customColor.Get(), info);
+            using var helper = CreateDisplayServicesHelper();
+            helper.ApplyCustomColor(_display.Get(), info);
         }
 
         /// <summary>
@@ -242,20 +221,15 @@ namespace ADLXWrapper
         public GammaInfo GetGamma()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.GetGamma(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetGamma(_display.Get());
         }
 
         public void ReapplyGamma()
         {
             ThrowIfDisposed();
-            IADLXDisplayGamma* pGamma;
-            var result = _displayServices.Get()->GetGamma(_display.Get(), &pGamma);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGamma == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Gamma not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get Gamma interface");
-            using var gamma = new ComPtr<IADLXDisplayGamma>(pGamma);
-            ADLXDisplaySettingsHelpers.ReapplyGamma(gamma.Get());
+            using var helper = CreateDisplayServicesHelper();
+            helper.ReapplyGamma(_display.Get());
         }
 
         /// <summary>
@@ -264,20 +238,15 @@ namespace ADLXWrapper
         public GamutInfo GetGamut()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.GetGamut(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetGamut(_display.Get());
         }
 
         public void ReapplyGamut()
         {
             ThrowIfDisposed();
-            IADLXDisplayGamut* pGamut;
-            var result = _displayServices.Get()->GetGamut(_display.Get(), &pGamut);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGamut == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Gamut not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get Gamut interface");
-            using var gamut = new ComPtr<IADLXDisplayGamut>(pGamut);
-            ADLXDisplaySettingsHelpers.ReapplyGamut(gamut.Get());
+            using var helper = CreateDisplayServicesHelper();
+            helper.ReapplyGamut(_display.Get());
         }
 
         /// <summary>
@@ -286,20 +255,15 @@ namespace ADLXWrapper
         public ThreeDLUTInfo GetThreeDLut()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.Get3DLUT(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetThreeDLut(_display.Get());
         }
 
         public void ReapplyThreeDLut()
         {
             ThrowIfDisposed();
-            IADLXDisplay3DLUT* pLut;
-            var result = _displayServices.Get()->Get3DLUT(_display.Get(), &pLut);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pLut == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3DLUT not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get 3DLUT interface");
-            using var lut = new ComPtr<IADLXDisplay3DLUT>(pLut);
-            ADLXDisplaySettingsHelpers.Reapply3DLUT(lut.Get());
+            using var helper = CreateDisplayServicesHelper();
+            helper.ReapplyThreeDLut(_display.Get());
         }
 
         /// <summary>
@@ -308,20 +272,15 @@ namespace ADLXWrapper
         public ConnectivityExperienceInfo GetConnectivityExperience()
         {
             ThrowIfDisposed();
-            return ADLXDisplaySettingsHelpers.GetDisplayConnectivityExperience(_displayServices.Get(), _display.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetConnectivityExperience(_display.Get());
         }
 
         public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
         {
             ThrowIfDisposed();
-            IADLXDisplayConnectivityExperience* pConn;
-            var result = ((IADLXDisplayServices3*)_displayServices.Get())->GetDisplayConnectivityExperience(_display.Get(), &pConn);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pConn == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Connectivity Experience not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
-            using var conn = new ComPtr<IADLXDisplayConnectivityExperience>(pConn);
-            ADLXDisplaySettingsHelpers.ApplyDisplayConnectivityExperience(conn.Get(), info);
+            using var helper = CreateDisplayServicesHelper();
+            helper.ApplyConnectivityExperience(_display.Get(), info);
         }
 
         /// <summary>
@@ -330,15 +289,15 @@ namespace ADLXWrapper
         public (bool supported, bool blanked) GetDisplayBlankingState()
         {
             ThrowIfDisposed();
-            using var blanking = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetDisplayBlankingState((IntPtr)blanking.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetDisplayBlankingState(_display.Get());
         }
 
         public void SetDisplayBlanked(bool blank)
         {
             ThrowIfDisposed();
-            using var blanking = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)ADLXDisplaySettingsHelpers.GetDisplayBlankingHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetDisplayBlanked((IntPtr)blanking.Get(), blank);
+            using var helper = CreateDisplayServicesHelper();
+            helper.SetDisplayBlanked(_display.Get(), blank);
         }
 
         /// <summary>
@@ -347,15 +306,15 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetFreeSyncColorAccuracyState()
         {
             ThrowIfDisposed();
-            using var fsca = new ComPtr<IADLXDisplayFreeSyncColorAccuracy>((IADLXDisplayFreeSyncColorAccuracy*)ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyState((IntPtr)fsca.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetFreeSyncColorAccuracyState(_display.Get());
         }
 
         public void SetFreeSyncColorAccuracyEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var fsca = new ComPtr<IADLXDisplayFreeSyncColorAccuracy>((IADLXDisplayFreeSyncColorAccuracy*)ADLXDisplaySettingsHelpers.GetFreeSyncColorAccuracyHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetFreeSyncColorAccuracyEnabled((IntPtr)fsca.Get(), enable);
+            using var helper = CreateDisplayServicesHelper();
+            helper.SetFreeSyncColorAccuracyEnabled(_display.Get(), enable);
         }
 
         /// <summary>
@@ -364,15 +323,15 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetDynamicRefreshRateControlState()
         {
             ThrowIfDisposed();
-            using var drr = new ComPtr<IADLXDisplayDynamicRefreshRateControl>((IADLXDisplayDynamicRefreshRateControl*)ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            return ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlState((IntPtr)drr.Get());
+            using var helper = CreateDisplayServicesHelper();
+            return helper.GetDynamicRefreshRateControlState(_display.Get());
         }
 
         public void SetDynamicRefreshRateControlEnabled(bool enable)
         {
             ThrowIfDisposed();
-            using var drr = new ComPtr<IADLXDisplayDynamicRefreshRateControl>((IADLXDisplayDynamicRefreshRateControl*)ADLXDisplaySettingsHelpers.GetDynamicRefreshRateControlHandle((IntPtr)_displayServices.Get(), (IntPtr)_display.Get()));
-            ADLXDisplaySettingsHelpers.SetDynamicRefreshRateControlEnabled((IntPtr)drr.Get(), enable);
+            using var helper = CreateDisplayServicesHelper();
+            helper.SetDynamicRefreshRateControlEnabled(_display.Get(), enable);
         }
 
         /// <summary>

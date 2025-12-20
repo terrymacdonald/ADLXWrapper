@@ -64,16 +64,15 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _displayHelper == null || !_displayHandle.HasValue, _skipReason);
 
-            var displayServices = _displayHelper.GetDisplayServicesNative();
             var display = _displayHandle.Value.As<IADLXDisplay>();
 
-            var gamma = ADLXDisplaySettingsHelpers.GetGamma(displayServices, display);
+            var gamma = _displayHelper.GetGamma(display);
             _output.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-            var gamut = ADLXDisplaySettingsHelpers.GetGamut(displayServices, display);
+            var gamut = _displayHelper.GetGamut(display);
             _output.WriteLine($"Gamut supported: {gamut.IsGamutSupported}");
 
-            var customColor = ADLXDisplaySettingsHelpers.GetCustomColor(displayServices, display);
+            var customColor = _displayHelper.GetCustomColor(display);
             _output.WriteLine($"Custom Color supported: {customColor.IsSupported}");
         }
     }

@@ -17,17 +17,17 @@ unsafe
 
     try
     {
-        using var display = displays[0];
-        Console.WriteLine($"Using display: {ADLXDisplayHelpers.GetDisplayName(display)}");
-        using var dispServices = displayHelper.GetDisplayServices();
+        using var displayHandle = displays[0];
+        using var display = displayHelper.CreateAdlxDisplay(displayHandle.As<IADLXDisplay>());
+        Console.WriteLine($"Using display: {display.Name}");
 
-        var gamma = ADLXDisplaySettingsHelpers.GetGamma(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        var gamma = display.GetGamma();
         Console.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-        var gamut = ADLXDisplaySettingsHelpers.GetGamut(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        var gamut = display.GetGamut();
         Console.WriteLine($"Gamut supported: {gamut.IsGamutSupported}, custom white point supported: {gamut.IsWhitePointSupported}");
 
-        var lut = ADLXDisplaySettingsHelpers.Get3DLUT(dispServices.As<IADLXDisplayServices>(), display.As<IADLXDisplay>());
+        var lut = display.GetThreeDLut();
         Console.WriteLine($"3DLUT: SCE={lut.IsSceSupported}, VividGaming={lut.IsSceVividGamingSupported}, DynamicContrast={lut.IsSceDynamicContrastSupported}, User3DLUT={lut.IsUser3DLutSupported}");
         // This sample is read-only; production apps should supply LUT data before calling setters.
     }

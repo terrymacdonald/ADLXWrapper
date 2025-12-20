@@ -15,17 +15,16 @@ unsafe
         return;
     }
 
-    using var sys2 = AdlxInterfaceHandle.From((void*)sys2Ptr);
-
     try
     {
-        using var powerServices = AdlxInterfaceHandle.From(ADLXPowerTuningHelpers.GetPowerTuningServices(sys2.As<IADLXSystem>()), addRef: false);
+        // Acquire power tuning services via helper (System2 required)
+        using var powerServicesHelper = new ADLXPowerTuningServicesHelper(sysHelper.GetPowerTuningServicesNative());
         Console.WriteLine("Power tuning services acquired.");
 
-        var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(powerServices.As<IADLXPowerTuningServices>());
+        var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(powerServicesHelper.GetPowerTuningServicesNative());
         Console.WriteLine($"SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.minValue}-{ssm.BiasRange.maxValue})");
 
-        var eco = ADLXPowerTuningHelpers.GetSmartShiftEco(powerServices.As<IADLXPowerTuningServices>());
+        var eco = ADLXPowerTuningHelpers.GetSmartShiftEco(powerServicesHelper.GetPowerTuningServicesNative());
         Console.WriteLine($"SmartShift Eco -> supported={eco.IsSupported}, enabled={eco.IsEnabled}");
     }
     catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)

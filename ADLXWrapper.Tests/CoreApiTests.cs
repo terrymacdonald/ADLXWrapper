@@ -241,7 +241,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var info = ADLXGPUInfo.GetBasicInfo(_gpus[0]);
+            var info = ADLXGpuHelpers.GetInfo(_gpus[0]);
 
             Assert.NotNull(info.Name);
             Assert.NotEmpty(info.Name);
@@ -265,7 +265,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _gpus.Length == 0, _skipReason);
 
-            var id = ADLXGPUInfo.GetIdentification(_gpus[0]);
+            var id = ADLXGpuHelpers.GetInfo(_gpus[0]);
 
             Assert.NotNull(id.DeviceId);
             Assert.NotEmpty(id.DeviceId);

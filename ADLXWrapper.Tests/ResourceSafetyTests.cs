@@ -44,10 +44,12 @@ namespace ADLXWrapper.Tests
                 {
                     using (gpu)
                     {
-                        var info = ADLXGPUInfo.GetBasicInfo(gpu);
+                        var info = ADLXGpuHelpers.GetInfo((IntPtr)gpu);
                         _output.WriteLine($"[Iter {i}] GPU: {info.Name}");
 
-                        var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(perf.As<IADLXPerformanceMonitoringServices>(), gpu.As<IADLXGPU>());
+                        var metricsHelper = new ADLXPerformanceMonitoringServicesHelper(perf.As<IADLXPerformanceMonitoringServices>(), addRef: true);
+                        var metrics = metricsHelper.GetCurrentGpuMetrics(gpu.As<IADLXGPU>());
+                        metricsHelper.Dispose();
                         _output.WriteLine($"[Iter {i}] Temp: {metrics.Temperature}C");
                     }
                 }

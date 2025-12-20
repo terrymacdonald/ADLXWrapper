@@ -55,6 +55,34 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
         }
 
+        public MultimediaEventListenerHandle AddMultimediaEventListener(MultimediaEventListenerHandle.MultimediaChangedCallback callback)
+        {
+            ThrowIfDisposed();
+            var handling = GetMultimediaChangedHandlingNative();
+            var handle = MultimediaEventListenerHandle.Create(callback);
+            var result = handling->AddMultimediaEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add multimedia event listener");
+            }
+            return handle;
+        }
+
+        public void RemoveMultimediaEventListener(MultimediaEventListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid)
+                return;
+
+            var handling = GetMultimediaChangedHandlingNative();
+            handling->RemoveMultimediaEventListener(handle.GetListener());
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
+        }
+
         public IADLXVideoUpscale* GetVideoUpscaleNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();

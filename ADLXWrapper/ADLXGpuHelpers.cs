@@ -11,6 +11,24 @@ namespace ADLXWrapper
     public static unsafe class ADLXGpuHelpers
     {
         /// <summary>
+        /// Materialize GPU info from a native GPU pointer.
+        /// </summary>
+        public static GpuInfo GetInfo(IntPtr pGpu)
+        {
+            if (pGpu == IntPtr.Zero) throw new ArgumentNullException(nameof(pGpu));
+            return new GpuInfo((IADLXGPU*)pGpu);
+        }
+
+        /// <summary>
+        /// Materialize GPU info from a native GPU pointer.
+        /// </summary>
+        public static GpuInfo GetInfo(IADLXGPU* pGpu)
+        {
+            if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
+            return new GpuInfo(pGpu);
+        }
+
+        /// <summary>
         /// Enumerates all available GPUs.
         /// </summary>
         public static IEnumerable<GpuInfo> EnumerateAllGpus(IADLXSystem* pSystem)

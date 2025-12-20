@@ -100,7 +100,7 @@ namespace ADLXWrapper.Tests
             IADLXGPU* pGpu = null;
             _gpuList->At(0, &pGpu);
             using var gpu = AdlxInterfaceHandle.From(pGpu, addRef: false);
-            var info = ADLXGPUInfo.GetBasicInfo((IntPtr)gpu.As<IADLXGPU>());
+            var info = ADLXGpuHelpers.GetInfo((IntPtr)gpu.As<IADLXGPU>());
 
             Assert.NotNull(info.Name);
             Assert.NotEmpty(info.Name);

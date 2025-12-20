@@ -14,27 +14,26 @@ unsafe
         return;
     }
 
-    var sys = sysHelper.GetSystemServicesNative();
-    using var perf = AdlxInterfaceHandle.From(ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringServices(sys), addRef: false);
+    using var perfHelper = new ADLXPerformanceMonitoringServicesHelper(sysHelper.GetPerformanceMonitoringServicesNative());
     var gpu = gpus[0];
 
     try
     {
         Console.WriteLine("Reading current GPU metrics...");
-        var current = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(perf.As<IADLXPerformanceMonitoringServices>(), gpu.As<IADLXGPU>());
+        var current = perfHelper.GetCurrentGpuMetrics(gpu.As<IADLXGPU>());
         Console.WriteLine($"Temp={current.Temperature:F1}C, Usage={current.Usage:F1}%, Clock={current.ClockSpeed}MHz, VRAM={current.VRAMUsage}MB");
 
         Console.WriteLine("Starting/stopping tracking and fetching history (0,0 => driver default window)...");
-        ADLXPerformanceMonitoringHelpers.StartPerformanceMetricsTracking(perf.As<IADLXPerformanceMonitoringServices>());
-        ADLXPerformanceMonitoringHelpers.StopPerformanceMetricsTracking(perf.As<IADLXPerformanceMonitoringServices>());
+        perfHelper.StartPerformanceMetricsTracking();
+        perfHelper.StopPerformanceMetricsTracking();
 
-        var snapshots = ADLXPerformanceMonitoringHelpers.EnumerateGpuMetricsHistory(perf.As<IADLXPerformanceMonitoringServices>(), gpu.As<IADLXGPU>(), 0, 0).ToList();
+        var snapshots = perfHelper.EnumerateGpuMetricsHistory(gpu.As<IADLXGPU>(), 0, 0).ToList();
         Console.WriteLine($"GPU history count: {snapshots.Count}");
 
-        var sysSnapshots = ADLXPerformanceMonitoringHelpers.EnumerateSystemMetricsHistory(perf.As<IADLXPerformanceMonitoringServices>(), 0, 0).ToList();
+        var sysSnapshots = perfHelper.EnumerateSystemMetricsHistory(0, 0).ToList();
         Console.WriteLine($"System history count: {sysSnapshots.Count}");
 
-        var allSnapshots = ADLXPerformanceMonitoringHelpers.EnumerateAllMetricsHistory(perf.As<IADLXPerformanceMonitoringServices>(), 0, 0).ToList();
+        var allSnapshots = perfHelper.EnumerateAllMetricsHistory(0, 0).ToList();
         Console.WriteLine($"All-metrics history count: {allSnapshots.Count}");
         if (allSnapshots.Count > 0)
         {

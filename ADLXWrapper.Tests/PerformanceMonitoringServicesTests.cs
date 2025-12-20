@@ -65,7 +65,7 @@ namespace ADLXWrapper.Tests
             Assert.True(settings.SamplingIntervalMs > 0);
             _output.WriteLine($"Sampling Interval: {settings.SamplingIntervalMs}ms");
 
-            var metrics = ADLXPerformanceMonitoringHelpers.GetCurrentGpuMetrics(_perfServices, _gpu);
+            var metrics = _perfHelper!.GetCurrentGpuMetrics(_gpu);
             // Metrics is a struct; just ensure we read a plausible value
             Assert.True(metrics.Temperature >= 0);
             _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");

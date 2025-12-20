@@ -67,13 +67,13 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _powerServices == null || _tuningServices == null, _skipReason);
 
-            var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(_powerServices);
+            var ssm = _powerHelper!.GetSmartShiftMax();
             _output.WriteLine($"SmartShift Max supported: {ssm.IsSupported}");
 
-            var sse = ADLXPowerTuningHelpers.GetSmartShiftEco(_powerServices);
+            var sse = _powerHelper.GetSmartShiftEco();
             _output.WriteLine($"SmartShift Eco supported: {sse.IsSupported}");
 
-            var manual = ADLXPowerTuningHelpers.GetManualPowerTuning(_tuningServices, _gpu);
+            var manual = _powerHelper.GetManualPowerTuning(_tuningServices, _gpu);
             _output.WriteLine($"Manual Power Tuning supported: {manual.PowerLimitSupported}");
         }
     }

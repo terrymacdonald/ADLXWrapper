@@ -61,10 +61,10 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _multimediaServices == null, _skipReason);
 
-            var vsr = ADLXMultimediaHelpers.GetVideoSuperResolution(_multimediaServices, _gpu);
+            var vsr = _multimediaHelper!.GetVideoSuperResolution(_gpu);
             _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
 
-            var upscale = ADLXMultimediaHelpers.GetVideoUpscale(_multimediaServices, _gpu);
+            var upscale = _multimediaHelper.GetVideoUpscale(_gpu);
             _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
         }
 
@@ -84,7 +84,7 @@ namespace ADLXWrapper.Tests
                 return;
             }
 
-            using var listener = MultimediaEventListenerHandle.Create(pEvent =>
+            using var listener = _multimediaHelper.AddMultimediaEventListener(pEvent =>
             {
                 if (pEvent == IntPtr.Zero) return true;
                 var evt = (IADLXMultimediaChangedEvent*)pEvent;
@@ -95,8 +95,7 @@ namespace ADLXWrapper.Tests
                 return true; // continue receiving events
             });
 
-            ADLXMultimediaHelpers.AddMultimediaEventListener(handling, listener);
-            ADLXMultimediaHelpers.RemoveMultimediaEventListener(handling, listener);
+            _multimediaHelper.RemoveMultimediaEventListener(listener);
         }
     }
 }

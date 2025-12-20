@@ -111,6 +111,55 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
         }
 
+        public SmartShiftMaxInfo GetSmartShiftMax()
+        {
+            ThrowIfDisposed();
+            using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
+            return new SmartShiftMaxInfo(ssm.Get());
+        }
+
+        public IADLXSmartShiftMax* GetSmartShiftMaxNative()
+        {
+            ThrowIfDisposed();
+            IADLXSmartShiftMax* ssm = null;
+            var result = GetHighestServices()->GetSmartShiftMax(&ssm);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || ssm == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Max not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get SmartShift Max interface");
+            return ssm; // caller wraps/disposes
+        }
+
+        public SmartShiftEcoInfo GetSmartShiftEco()
+        {
+            ThrowIfDisposed();
+            var services1 = GetPowerTuningServices1();
+            IADLXSmartShiftEco* eco = null;
+            var result = services1->GetSmartShiftEco(&eco);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || eco == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Eco not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get SmartShift Eco interface");
+            using var ecoPtr = new ComPtr<IADLXSmartShiftEco>(eco);
+            return new SmartShiftEcoInfo(ecoPtr.Get());
+        }
+
+        public ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            if (tuningServices == null) throw new ArgumentNullException(nameof(tuningServices));
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+
+            IADLXInterface* manual = null;
+            var result = tuningServices->GetManualPowerTuning(gpu, &manual);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || manual == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Manual power tuning not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get manual power tuning interface");
+            using var manualPower = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)manual);
+            return new ManualPowerTuningInfo(manualPower.Get());
+        }
+
         public void Dispose()
         {
             if (_disposed) return;
