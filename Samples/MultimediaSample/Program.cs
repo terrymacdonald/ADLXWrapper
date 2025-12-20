@@ -47,8 +47,10 @@ unsafe
         }
 
         // Toggle example (commented to stay read-only)
-        // if (upscale.IsSupported) ADLXMultimediaHelpers.SetVideoUpscaleEnabled(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>(), !upscale.IsEnabled);
-        // if (vsr.IsSupported) ADLXMultimediaHelpers.SetVideoSuperResolutionEnabled(mm.As<IADLXMultimediaServices>(), gpu.As<IADLXGPU>(), !vsr.IsEnabled);
+        // using var upscaleNative = new ComPtr<IADLXVideoUpscale>(mmHelper.GetVideoUpscaleNative(gpu.As<IADLXGPU>()));
+        // mmHelper.SetVideoUpscaleEnabled(upscaleNative.Get(), !upscale.IsEnabled);
+        // using var vsrNative = new ComPtr<IADLXVideoSuperResolution>(mmHelper.GetVideoSuperResolutionNative(gpu.As<IADLXGPU>()));
+        // mmHelper.SetVideoSuperResolutionEnabled(vsrNative.Get(), !vsr.IsEnabled);
     }
     catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
     {

@@ -8,7 +8,7 @@ using Xunit.Abstractions;
 namespace ADLXWrapper.Tests
 {
     /// <summary>
-    /// Tests for GPU enumeration and property access via ADLXGpuHelpers.
+    /// Tests for GPU enumeration and property access via system/GPU services helpers.
     /// </summary>
     [SupportedOSPlatform("windows")]
     public unsafe class GpuServicesTests : IDisposable
