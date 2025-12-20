@@ -21,10 +21,10 @@ unsafe
         using var powerServicesHelper = new ADLXPowerTuningServicesHelper(sysHelper.GetPowerTuningServicesNative());
         Console.WriteLine("Power tuning services acquired.");
 
-        var ssm = ADLXPowerTuningHelpers.GetSmartShiftMax(powerServicesHelper.GetPowerTuningServicesNative());
+        var ssm = powerServicesHelper.GetSmartShiftMax();
         Console.WriteLine($"SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.minValue}-{ssm.BiasRange.maxValue})");
 
-        var eco = ADLXPowerTuningHelpers.GetSmartShiftEco(powerServicesHelper.GetPowerTuningServicesNative());
+        var eco = powerServicesHelper.GetSmartShiftEco();
         Console.WriteLine($"SmartShift Eco -> supported={eco.IsSupported}, enabled={eco.IsEnabled}");
     }
     catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)

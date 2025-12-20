@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ADLXWrapper
 {
@@ -313,6 +314,26 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to stop performance metrics tracking");
         }
 
+        public PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings()
+        {
+            ThrowIfDisposed();
+            return new PerformanceMonitoringSettingsInfo(_services.Get());
+        }
+
+        public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo info)
+        {
+            ThrowIfDisposed();
+            var intervalRange = GetSamplingIntervalRange();
+            if (info.SamplingIntervalMs >= intervalRange.minValue && info.SamplingIntervalMs <= intervalRange.maxValue)
+            {
+                SetSamplingInterval(info.SamplingIntervalMs);
+            }
+
+            var maxHistory = GetMaxPerformanceMetricsHistorySize();
+            var clampedHistory = Math.Min(info.MaxHistorySizeSec, maxHistory);
+            SetMaxPerformanceMetricsHistorySize(clampedHistory);
+        }
+
         public void Dispose()
         {
             if (_disposed) return;
@@ -335,5 +356,232 @@ namespace ADLXWrapper
             }
         }
     }
+
+    #region Performance monitoring DTOs
+    public readonly struct GpuMetricsSupportInfo
+    {
+        public bool UsageSupported { get; init; }
+        public bool ClockSpeedSupported { get; init; }
+        public bool TemperatureSupported { get; init; }
+        public bool HotspotTemperatureSupported { get; init; }
+        public bool PowerSupported { get; init; }
+        public bool FanSpeedSupported { get; init; }
+        public bool VRAMSupported { get; init; }
+        public bool VRAMClockSpeedSupported { get; init; }
+        public bool VoltageSupported { get; init; }
+        public bool TotalBoardPowerSupported { get; init; }
+
+        [JsonConstructor]
+        public GpuMetricsSupportInfo(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)
+        {
+            UsageSupported = usageSupported;
+            ClockSpeedSupported = clockSpeedSupported;
+            TemperatureSupported = temperatureSupported;
+            HotspotTemperatureSupported = hotspotTemperatureSupported;
+            PowerSupported = powerSupported;
+            FanSpeedSupported = fanSpeedSupported;
+            VRAMSupported = vRAMSupported;
+            VRAMClockSpeedSupported = vRAMClockSpeedSupported;
+            VoltageSupported = voltageSupported;
+            TotalBoardPowerSupported = totalBoardPowerSupported;
+        }
+
+        internal unsafe GpuMetricsSupportInfo(IADLXGPUMetricsSupport* pMetricsSupport)
+        {
+            bool supported = false;
+            pMetricsSupport->IsSupportedGPUUsage(&supported); UsageSupported = supported;
+            pMetricsSupport->IsSupportedGPUClockSpeed(&supported); ClockSpeedSupported = supported;
+            pMetricsSupport->IsSupportedGPUTemperature(&supported); TemperatureSupported = supported;
+            pMetricsSupport->IsSupportedGPUHotspotTemperature(&supported); HotspotTemperatureSupported = supported;
+            pMetricsSupport->IsSupportedGPUPower(&supported); PowerSupported = supported;
+            pMetricsSupport->IsSupportedGPUFanSpeed(&supported); FanSpeedSupported = supported;
+            pMetricsSupport->IsSupportedGPUVRAM(&supported); VRAMSupported = supported;
+            pMetricsSupport->IsSupportedGPUVRAMClockSpeed(&supported); VRAMClockSpeedSupported = supported;
+            pMetricsSupport->IsSupportedGPUVoltage(&supported); VoltageSupported = supported;
+            pMetricsSupport->IsSupportedGPUTotalBoardPower(&supported); TotalBoardPowerSupported = supported;
+        }
+    }
+
+    public readonly struct GpuMetricsSnapshotInfo
+    {
+        public double Temperature { get; init; }
+        public double HotspotTemperature { get; init; }
+        public double Usage { get; init; }
+        public int ClockSpeed { get; init; }
+        public int VRAMClockSpeed { get; init; }
+        public int VRAMUsage { get; init; }
+        public int FanSpeed { get; init; }
+        public double Power { get; init; }
+        public double TotalBoardPower { get; init; }
+        public int Voltage { get; init; }
+        public long TimestampMs { get; init; }
+
+        [JsonConstructor]
+        public GpuMetricsSnapshotInfo(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
+        {
+            Temperature = temperature;
+            HotspotTemperature = hotspotTemperature;
+            Usage = usage;
+            ClockSpeed = clockSpeed;
+            VRAMClockSpeed = vramClockSpeed;
+            VRAMUsage = vramUsage;
+            FanSpeed = fanSpeed;
+            Power = power;
+            TotalBoardPower = totalBoardPower;
+            Voltage = voltage;
+            TimestampMs = timestampMs;
+        }
+
+        internal unsafe GpuMetricsSnapshotInfo(IADLXGPUMetrics* pMetrics)
+        {
+            long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
+            double temp = 0; pMetrics->GPUTemperature(&temp); Temperature = temp;
+            double hot = 0; pMetrics->GPUHotspotTemperature(&hot); HotspotTemperature = hot;
+            double usage = 0; pMetrics->GPUUsage(&usage); Usage = usage;
+            int clock = 0; pMetrics->GPUClockSpeed(&clock); ClockSpeed = clock;
+            int vramClock = 0; pMetrics->GPUVRAMClockSpeed(&vramClock); VRAMClockSpeed = vramClock;
+            int vram = 0; pMetrics->GPUVRAM(&vram); VRAMUsage = vram;
+            int fan = 0; pMetrics->GPUFanSpeed(&fan); FanSpeed = fan;
+            double power = 0; pMetrics->GPUPower(&power); Power = power;
+            double totalPower = 0; pMetrics->GPUTotalBoardPower(&totalPower); TotalBoardPower = totalPower;
+            int voltage = 0; pMetrics->GPUVoltage(&voltage); Voltage = voltage;
+        }
+    }
+
+    public readonly struct PowerDistributionSnapshotInfo
+    {
+        public int ApuShiftValue { get; init; }
+        public int GpuShiftValue { get; init; }
+        public int ApuShiftLimit { get; init; }
+        public int GpuShiftLimit { get; init; }
+        public int TotalShiftLimit { get; init; }
+    }
+
+    public readonly struct SystemMetricsSnapshotInfo
+    {
+        public long TimestampMs { get; init; }
+        public double CpuUsage { get; init; }
+        public int SystemRam { get; init; }
+        public int SmartShift { get; init; }
+        public PowerDistributionSnapshotInfo? PowerDistribution { get; init; }
+
+        [JsonConstructor]
+        public SystemMetricsSnapshotInfo(long timestampMs, double cpuUsage, int systemRam, int smartShift, PowerDistributionSnapshotInfo? powerDistribution)
+        {
+            TimestampMs = timestampMs;
+            CpuUsage = cpuUsage;
+            SystemRam = systemRam;
+            SmartShift = smartShift;
+            PowerDistribution = powerDistribution;
+        }
+
+        internal unsafe SystemMetricsSnapshotInfo(IADLXSystemMetrics* pMetrics)
+        {
+            long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
+            double cpu = 0; pMetrics->CPUUsage(&cpu); CpuUsage = cpu;
+            int ram = 0; pMetrics->SystemRAM(&ram); SystemRam = ram;
+            int ss = 0; pMetrics->SmartShift(&ss); SmartShift = ss;
+
+            PowerDistribution = null;
+            if (ADLXUtils.TryQueryInterface((IntPtr)pMetrics, nameof(IADLXSystemMetrics1), out var pMetrics1Ptr))
+            {
+                using var metrics1 = new ComPtr<IADLXSystemMetrics1>((IADLXSystemMetrics1*)pMetrics1Ptr);
+                int apu = 0, gpu = 0, apuLimit = 0, gpuLimit = 0, total = 0;
+                if (metrics1.Get()->PowerDistribution(&apu, &gpu, &apuLimit, &gpuLimit, &total) == ADLX_RESULT.ADLX_OK)
+                {
+                    PowerDistribution = new PowerDistributionSnapshotInfo
+                    {
+                        ApuShiftValue = apu,
+                        GpuShiftValue = gpu,
+                        ApuShiftLimit = apuLimit,
+                        GpuShiftLimit = gpuLimit,
+                        TotalShiftLimit = total
+                    };
+                }
+            }
+        }
+    }
+
+    public readonly struct GpuMetricsEntryInfo
+    {
+        public int GpuUniqueId { get; init; }
+        public GpuMetricsSnapshotInfo Metrics { get; init; }
+
+        [JsonConstructor]
+        public GpuMetricsEntryInfo(int gpuUniqueId, GpuMetricsSnapshotInfo metrics)
+        {
+            GpuUniqueId = gpuUniqueId;
+            Metrics = metrics;
+        }
+    }
+
+    public readonly struct AllMetricsSnapshotInfo
+    {
+        public long TimestampMs { get; init; }
+        public SystemMetricsSnapshotInfo? System { get; init; }
+        public int? FPS { get; init; }
+        public GpuMetricsEntryInfo[] GpuMetrics { get; init; }
+
+        [JsonConstructor]
+        public AllMetricsSnapshotInfo(long timestampMs, SystemMetricsSnapshotInfo? system, int? fps, GpuMetricsEntryInfo[] gpuMetrics)
+        {
+            TimestampMs = timestampMs;
+            System = system;
+            FPS = fps;
+            GpuMetrics = gpuMetrics;
+        }
+
+        internal unsafe AllMetricsSnapshotInfo(IADLXAllMetrics* pMetrics)
+        {
+            long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
+
+            System = null;
+            IADLXSystemMetrics* pSys = null;
+            if (pMetrics->GetSystemMetrics(&pSys) == ADLX_RESULT.ADLX_OK && pSys != null)
+            {
+                using var sysMetrics = new ComPtr<IADLXSystemMetrics>(pSys);
+                System = new SystemMetricsSnapshotInfo(sysMetrics.Get());
+            }
+
+            FPS = null;
+            IADLXFPS* pFps = null;
+            if (pMetrics->GetFPS(&pFps) == ADLX_RESULT.ADLX_OK && pFps != null)
+            {
+                using var fpsMetrics = new ComPtr<IADLXFPS>(pFps);
+                int fpsValue = 0;
+                if (fpsMetrics.Get()->FPS(&fpsValue) == ADLX_RESULT.ADLX_OK)
+                {
+                    FPS = fpsValue;
+                }
+            }
+
+            GpuMetrics = Array.Empty<GpuMetricsEntryInfo>();
+        }
+    }
+
+    public readonly struct PerformanceMonitoringSettingsInfo
+    {
+        public int SamplingIntervalMs { get; init; }
+        public int MaxHistorySizeSec { get; init; }
+
+        [JsonConstructor]
+        public PerformanceMonitoringSettingsInfo(int samplingIntervalMs, int maxHistorySizeSec)
+        {
+            SamplingIntervalMs = samplingIntervalMs;
+            MaxHistorySizeSec = maxHistorySizeSec;
+        }
+
+        internal unsafe PerformanceMonitoringSettingsInfo(IADLXPerformanceMonitoringServices* pServices)
+        {
+            int interval = 0;
+            pServices->GetSamplingInterval(&interval);
+            SamplingIntervalMs = interval;
+
+            int size = 0;
+            pServices->GetCurrentPerformanceMetricsHistorySize(&size);
+            MaxHistorySizeSec = size;
+        }
+    }
+    #endregion
 }
 

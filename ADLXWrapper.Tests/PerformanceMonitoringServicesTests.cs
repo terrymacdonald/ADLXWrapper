@@ -17,7 +17,6 @@ namespace ADLXWrapper.Tests
         private readonly string _skipReason = string.Empty;
         private readonly ADLXPerformanceMonitoringServicesHelper? _perfHelper;
         private readonly IADLXGPU* _gpu;
-        private readonly IADLXPerformanceMonitoringServices* _perfServices;
 
         public PerformanceMonitoringServicesTests(ITestOutputHelper output)
         {
@@ -28,7 +27,6 @@ namespace ADLXWrapper.Tests
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
                 _perfHelper = new ADLXPerformanceMonitoringServicesHelper(_system.GetPerformanceMonitoringServicesNative());
-                _perfServices = _perfHelper.GetPerformanceMonitoringServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -59,9 +57,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetPerformanceInfo()
         {
-            Skip.If(_api == null || _system == null || _gpu == null || _perfServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _perfHelper == null, _skipReason);
 
-            var settings = ADLXPerformanceMonitoringHelpers.GetPerformanceMonitoringSettings(_perfServices);
+            var settings = _perfHelper.GetPerformanceMonitoringSettings();
             Assert.True(settings.SamplingIntervalMs > 0);
             _output.WriteLine($"Sampling Interval: {settings.SamplingIntervalMs}ms");
 

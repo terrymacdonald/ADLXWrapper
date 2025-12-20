@@ -18,7 +18,6 @@ namespace ADLXWrapper.Tests
         private readonly string _skipReason = string.Empty;
         private readonly ADLX3DSettingsServicesHelper? _settingsHelper;
         private readonly IADLXGPU* _gpu;
-        private readonly IADLX3DSettingsServices* _settingsServices;
 
         public ADLX3DSettingsTests(ITestOutputHelper output)
         {
@@ -40,7 +39,6 @@ namespace ADLXWrapper.Tests
                 _gpu = pGpu;
                 ((IADLXInterface*)gpuList)->Release();
                 _settingsHelper = new ADLX3DSettingsServicesHelper(_system.Get3DSettingsServicesNative());
-                _settingsServices = _settingsHelper.Get3DSettingsServicesNative();
             }
             catch (Exception ex)
             {
@@ -59,8 +57,8 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetAll3DSettings()
         {
-            Skip.If(_api == null || _system == null || _gpu == null || _settingsServices == null, _skipReason);
-            var settings = ADLX3DSettingsHelpers.GetAll3DSettings(_settingsServices, _gpu);
+            Skip.If(_api == null || _system == null || _gpu == null || _settingsHelper == null, _skipReason);
+            var settings = _settingsHelper.GetAll3DSettings(_gpu);
             _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {settings.AntiLag?.IsSupported ?? false}");
         }
     }

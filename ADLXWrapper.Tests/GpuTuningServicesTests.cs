@@ -17,7 +17,6 @@ namespace ADLXWrapper.Tests
         private readonly string _skipReason = string.Empty;
         private readonly ADLXGPUTuningServicesHelper? _tuningHelper;
         private readonly IADLXGPU* _gpu;
-        private readonly IADLXGPUTuningServices* _tuningServices;
 
         public GpuTuningServicesTests(ITestOutputHelper output)
         {
@@ -28,7 +27,6 @@ namespace ADLXWrapper.Tests
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
                 _tuningHelper = new ADLXGPUTuningServicesHelper(_system.GetGPUTuningServicesNative());
-                _tuningServices = _tuningHelper.GetGPUTuningServicesNative();
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -59,18 +57,18 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetTuningInfo()
         {
-            Skip.If(_api == null || _system == null || _gpu == null || _tuningServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _gpu == null || _tuningHelper == null, _skipReason);
 
-            var caps = new GpuTuningCapabilitiesInfo(_tuningServices, _gpu);
+            var caps = _tuningHelper.GetCapabilities(_gpu);
             _output.WriteLine($"Manual GFX Tuning Supported: {caps.ManualGFXTuningSupported}");
 
-            var fanInfo = ADLXGPUTuningHelpers.GetManualFanTuning(_tuningServices, _gpu);
+            var fanInfo = _tuningHelper.GetManualFanTuning(_gpu);
             _output.WriteLine($"Manual Fan Tuning Supported: {fanInfo.IsSupported}");
 
-            var vramInfo = ADLXGPUTuningHelpers.GetManualVramTuning(_tuningServices, _gpu);
+            var vramInfo = _tuningHelper.GetManualVramTuning(_gpu);
             _output.WriteLine($"Manual VRAM Tuning Supported: {vramInfo.IsSupported}");
 
-            var presetInfo = ADLXGPUTuningHelpers.GetPresetTuning(_tuningServices, _gpu);
+            var presetInfo = _tuningHelper.GetPresetTuning(_gpu);
             _output.WriteLine($"Preset Tuning Supported: {presetInfo.IsSupported}");
         }
     }

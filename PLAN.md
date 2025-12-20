@@ -1,4 +1,4 @@
-﻿﻿## ADLXWrapper refactor plan
+## ADLXWrapper refactor plan
 
 Goal: redesign the helper surface to align with the new helper naming, full ADLX coverage, hardware/driver capability checks, flattened feature exposure, and clear testing/doc updates. This plan is staged to allow review before code changes.
 
@@ -106,7 +106,7 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Tests: extend xUnit to cover new helper names, support-guarded paths (ADLX_NOT_SUPPORTED), dispose-after-use behavior, and representative feature toggles per service. Skip gracefully when hardware/driver support is absent; assert ADLX_NOT_SUPPORTED on unsupported feature calls.
 - Samples: update existing Samples/* to use new helper names and flattened façades; add small snippets demonstrating support gating.
 - Migration notes: brief section summarizing breaking changes (renames, removed service getters from API) and the new acquisition pattern.
-- Helper consolidation: collapse per-feature helpers to a single `ADLX<feature>ServicesHelper` by migrating any needed functionality from legacy `ADLX<feature>Helper` files, then delete the old files. Display/desktop helpers are done; remaining helper files to merge: GPU, multimedia, performance monitoring, power tuning, 3D settings, GPU tuning. `ADLXGPUInfo.cs` and `ADLXGpuHelpers.cs` have been removed; GPU info DTO now lives in `ADLXSystemServicesHelper`.
+- Helper consolidation: collapse per-feature helpers to a single `ADLX<feature>ServicesHelper` by migrating any needed functionality from legacy `ADLX<feature>Helper` files, then delete the old files. Display/desktop/GPU/multimedia/performance monitoring/power tuning/3D settings/GPU tuning helpers are done. GPU info DTO now lives in `ADLXSystemServicesHelper`; multimedia DTOs/listener now live in `ADLXMultimediaServicesHelper`.
 - Display settings refactor: operations have been moved into `ADLXDisplayServicesHelper` and surfaced on `AdlxDisplay`; `ADLXDisplaySettingsHelpers.cs` has been removed. Coverage includes FreeSync, GPU scaling + scaling mode, VSR, integer scaling, HDCP, Vari-Bright (including backlight/battery toggles), color depth, pixel format, custom color, gamma, gamut, 3DLUT, connectivity, blanking, FreeSync color accuracy, DRR control, and custom resolutions (enumerate/list/native and apply). Native accessors are provided via the service helper where needed. `ADLXDisplayHelpers.cs` has been consolidated into `ADLXDisplayServicesHelper` (DisplayInfo + display listeners). `ADLXDesktopHelpers.cs` has been consolidated into `ADLXDesktopServicesHelper` (DesktopInfo, Eyefinity info, listeners, display enumeration).
 
 - Cleanup timing: remove legacy/unneeded helpers and files only after façade migration is complete and tests/samples are green (end of Stage 6), leaving a trimmed working surface.
@@ -127,3 +127,4 @@ Goal: redesign the helper surface to align with the new helper naming, full ADLX
 - Every helper entry point exists; unsupported hardware/driver surfaces as ADLX_NOT_SUPPORTED (via ADLXException) rather than returning null.
 - Native accessors pick the highest available ADLX interface version before failing as unsupported.
 - After disposal (ComPtr or helper), subsequent calls throw ObjectDisposedException; no manual Release on ComPtr-owned pointers.
+

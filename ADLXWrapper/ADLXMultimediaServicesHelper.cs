@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 namespace ADLXWrapper
 {
@@ -107,6 +111,26 @@ namespace ADLXWrapper
             return new VideoUpscaleInfo(upscale.Get());
         }
 
+        public void SetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
+        {
+            ThrowIfDisposed();
+            if (upscale == null) throw new ArgumentNullException(nameof(upscale));
+
+            var result = upscale->SetEnabled(enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video upscale enabled");
+        }
+
+        public void SetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
+        {
+            ThrowIfDisposed();
+            if (upscale == null) throw new ArgumentNullException(nameof(upscale));
+
+            var result = upscale->SetSharpness(sharpness);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video upscale sharpness");
+        }
+
         public IADLXVideoSuperResolution* GetVideoSuperResolutionNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -131,6 +155,16 @@ namespace ADLXWrapper
             return new VideoSuperResolutionInfo(vsr.Get());
         }
 
+        public void SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
+        {
+            ThrowIfDisposed();
+            if (vsr == null) throw new ArgumentNullException(nameof(vsr));
+
+            var result = vsr->SetEnabled(enable ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set video super resolution enabled");
+        }
+
         public void Dispose()
         {
             if (_disposed) return;
@@ -139,6 +173,115 @@ namespace ADLXWrapper
             _disposed = true;
             GC.SuppressFinalize(this);
         }
+
+        #region Multimedia DTOs and listener handle
+        public readonly struct VideoUpscaleInfo
+        {
+            public bool IsSupported { get; init; }
+            public bool IsEnabled { get; init; }
+            public int Sharpness { get; init; }
+            public ADLX_IntRange SharpnessRange { get; init; }
+
+            [JsonConstructor]
+            public VideoUpscaleInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
+            {
+                IsSupported = isSupported;
+                IsEnabled = isEnabled;
+                Sharpness = sharpness;
+                SharpnessRange = sharpnessRange;
+            }
+
+            internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
+            {
+                bool supported = false, enabled = false;
+                pUpscale->IsSupported(&supported);
+                pUpscale->IsEnabled(&enabled);
+                IsSupported = supported;
+                IsEnabled = enabled;
+
+                int sharpness = 0;
+                pUpscale->GetSharpness(&sharpness);
+                Sharpness = sharpness;
+
+                ADLX_IntRange range = default;
+                pUpscale->GetSharpnessRange(&range);
+                SharpnessRange = range;
+            }
+        }
+
+        public readonly struct VideoSuperResolutionInfo
+        {
+            public bool IsSupported { get; init; }
+            public bool IsEnabled { get; init; }
+
+            [JsonConstructor]
+            public VideoSuperResolutionInfo(bool isSupported, bool isEnabled)
+            {
+                IsSupported = isSupported;
+                IsEnabled = isEnabled;
+            }
+
+            internal unsafe VideoSuperResolutionInfo(IADLXVideoSuperResolution* pVsr)
+            {
+                bool supported = false, enabled = false;
+                pVsr->IsSupported(&supported);
+                pVsr->IsEnabled(&enabled);
+                IsSupported = supported;
+                IsEnabled = enabled;
+            }
+        }
+
+        public sealed unsafe class MultimediaEventListenerHandle : SafeHandle
+        {
+            public delegate bool MultimediaChangedCallback(IntPtr pEvent);
+
+            private static readonly ConcurrentDictionary<IntPtr, MultimediaChangedCallback> _map = new();
+            private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnMultimediaChanged;
+            private readonly GCHandle _gcHandle;
+            private readonly IntPtr _vtbl;
+
+            private MultimediaEventListenerHandle(MultimediaChangedCallback cb) : base(IntPtr.Zero, true)
+            {
+                _gcHandle = GCHandle.Alloc(cb);
+                _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+                Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+                var inst = Marshal.AllocHGlobal(IntPtr.Size);
+                Marshal.WriteIntPtr(inst, _vtbl);
+                handle = inst;
+                _map[inst] = cb;
+            }
+
+            public static MultimediaEventListenerHandle Create(MultimediaChangedCallback cb)
+            {
+                if (cb == null) throw new ArgumentNullException(nameof(cb));
+                return new MultimediaEventListenerHandle(cb);
+            }
+
+            public IADLXMultimediaChangedEventListener* GetListener() => (IADLXMultimediaChangedEventListener*)handle;
+
+            protected override bool ReleaseHandle()
+            {
+                _map.TryRemove(handle, out _);
+                if (_gcHandle.IsAllocated) _gcHandle.Free();
+                if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+                if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+                return true;
+            }
+
+            public override bool IsInvalid => handle == IntPtr.Zero;
+
+            [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
+            private static byte OnMultimediaChanged(IntPtr pThis, IntPtr pEvent)
+            {
+                if (_map.TryGetValue(pThis, out var cb))
+                {
+                    return cb(pEvent) ? (byte)1 : (byte)0;
+                }
+                return 0;
+            }
+        }
+        #endregion
 
         private void ThrowIfDisposed()
         {
