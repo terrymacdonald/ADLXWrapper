@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ADLXWrapper
 {
@@ -174,6 +176,30 @@ namespace ADLXWrapper
             }
 
             return handles;
+        }
+
+        public IEnumerable<GpuInfo> EnumerateGpus()
+        {
+            ThrowIfDisposed();
+            using var gpuList = new ComPtr<IADLXGPUList>(GetGPUListNative());
+            var count = gpuList.Get()->Size();
+            var results = new List<GpuInfo>((int)count);
+            for (uint i = 0; i < count; i++)
+            {
+                IADLXGPU* pGpu = null;
+                gpuList.Get()->At(i, &pGpu);
+                using var gpu = new ComPtr<IADLXGPU>(pGpu);
+                results.Add(new GpuInfo(gpu.Get()));
+            }
+
+            return results;
+        }
+
+        public GpuInfo GetGpuInfo(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+            return new GpuInfo(gpu);
         }
 
         public IADLXGPUList* GetGPUListNative()
@@ -443,5 +469,79 @@ namespace ADLXWrapper
             return false;
         }
     }
+
+    #region GPU DTO
+    public readonly struct GpuInfo
+    {
+        public string Name { get; init; }
+        public string VendorId { get; init; }
+        public int UniqueId { get; init; }
+        public uint TotalVRAM { get; init; }
+        public string VRAMType { get; init; }
+        public bool IsExternal { get; init; }
+        public bool HasDesktops { get; init; }
+        public string DeviceId { get; init; }
+        public string PNPString { get; init; }
+        public string DriverPath { get; init; }
+
+        [JsonConstructor]
+        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath)
+        {
+            Name = name;
+            VendorId = vendorId;
+            UniqueId = uniqueId;
+            TotalVRAM = totalVRAM;
+            VRAMType = vramType;
+            IsExternal = isExternal;
+            HasDesktops = hasDesktops;
+            DeviceId = deviceId;
+            PNPString = pnpString;
+            DriverPath = driverPath;
+        }
+
+        internal unsafe GpuInfo(IADLXGPU* pGpu)
+        {
+            sbyte* namePtr = null;
+            pGpu->Name(&namePtr);
+            Name = ADLXUtils.MarshalString(&namePtr);
+
+            sbyte* vendorIdPtr = null;
+            pGpu->VendorId(&vendorIdPtr);
+            VendorId = ADLXUtils.MarshalString(&vendorIdPtr);
+
+            int uid = 0;
+            pGpu->UniqueId(&uid);
+            UniqueId = uid;
+
+            uint vram = 0;
+            pGpu->TotalVRAM(&vram);
+            TotalVRAM = vram;
+
+            sbyte* vramTypePtr = null;
+            pGpu->VRAMType(&vramTypePtr);
+            VRAMType = ADLXUtils.MarshalString(&vramTypePtr);
+
+            bool isExt = false;
+            pGpu->IsExternal(&isExt);
+            IsExternal = isExt;
+
+            bool hasDesk = false;
+            pGpu->HasDesktops(&hasDesk);
+            HasDesktops = hasDesk;
+
+            sbyte* devIdPtr = null;
+            pGpu->DeviceId(&devIdPtr);
+            DeviceId = ADLXUtils.MarshalString(&devIdPtr);
+
+            sbyte* pnpPtr = null;
+            pGpu->PNPString(&pnpPtr);
+            PNPString = ADLXUtils.MarshalString(&pnpPtr);
+
+            sbyte* driverPathPtr = null;
+            pGpu->DriverPath(&driverPathPtr);
+            DriverPath = ADLXUtils.MarshalString(&driverPathPtr);
+        }
+    }
+    #endregion
 }
 

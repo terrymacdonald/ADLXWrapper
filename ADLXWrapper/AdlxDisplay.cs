@@ -472,7 +472,8 @@ namespace ADLXWrapper
                     throw new ADLXException(itemResult, "Failed to access desktop while resolving display owner");
                 }
 
-                var displayListPtr = ADLXDesktopHelpers.GetDesktopDisplayListNative(pDesktop);
+                using var desktopHelper = new ADLXDesktopServicesHelper(desktopServices);
+                var displayListPtr = desktopHelper.GetDesktopDisplayListNative(pDesktop);
                 using var displayList = new ComPtr<IADLXDisplayList>(displayListPtr);
                 var displayCount = displayList.Get()->Size();
                 var match = false;

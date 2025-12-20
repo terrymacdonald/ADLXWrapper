@@ -16,7 +16,7 @@ namespace ADLXWrapper.Tests
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
         private readonly string _skipReason = string.Empty;
-        private readonly IADLXDesktopServices* _desktopServices;
+        private readonly ADLXDesktopServicesHelper? _desktopHelper;
 
         public DesktopServicesTests(ITestOutputHelper output)
         {
@@ -25,8 +25,7 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                var system = _system.GetSystemServicesNative();
-                _desktopServices = ADLXDesktopHelpers.GetDesktopServices(system);
+                _desktopHelper = new ADLXDesktopServicesHelper(_system.GetDesktopServicesNative(), _system.GetDisplayServicesNative());
             }
             catch (Exception ex)
             {
@@ -36,7 +35,7 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_desktopServices != null) ((IUnknown*)_desktopServices)->Release();
+            _desktopHelper?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }
@@ -44,9 +43,9 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanEnumerateDesktops()
         {
-            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
 
-            var desktops = ADLXDesktopHelpers.EnumerateAllDesktops(_system.GetSystemServicesNative()).ToList();
+            var desktops = _desktopHelper.EnumerateDesktops().ToList();
             _output.WriteLine($"Found {desktops.Count} desktop(s).");
             Assert.NotNull(desktops);
         }
@@ -54,11 +53,11 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetEyefinityInfo()
         {
-            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
 
             try
             {
-                var eyefinityInfo = ADLXDesktopHelpers.GetSimpleEyefinity(_desktopServices);
+                var eyefinityInfo = _desktopHelper.GetSimpleEyefinity();
                 _output.WriteLine($"Eyefinity supported: {eyefinityInfo.IsSupported}");
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
@@ -70,12 +69,11 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanEnumerateAdlxDesktops()
         {
-            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
 
             try
             {
-                using var helper = new ADLXDesktopServicesHelper(_desktopServices, _system.GetDisplayServicesNative());
-                var desktops = helper.EnumerateAdlxDesktops().ToList();
+                var desktops = _desktopHelper.EnumerateAdlxDesktops().ToList();
                 _output.WriteLine($"Found {desktops.Count} desktop façade(s).");
                 foreach (var d in desktops)
                 {
@@ -92,13 +90,12 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanAddAndRemoveDesktopListListener()
         {
-            Skip.If(_api == null || _system == null || _desktopServices == null, _skipReason);
+            Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
 
             try
             {
-                using var helper = new ADLXDesktopServicesHelper(_desktopServices, _system.GetDisplayServicesNative());
-                var handle = helper.AddDesktopListEventListener(_ => { return; });
-                helper.RemoveDesktopListEventListener(handle);
+                var handle = _desktopHelper.AddDesktopListEventListener(_ => { return; });
+                _desktopHelper.RemoveDesktopListEventListener(handle);
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {

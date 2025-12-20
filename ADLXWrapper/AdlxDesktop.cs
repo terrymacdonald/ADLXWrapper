@@ -44,7 +44,8 @@ namespace ADLXWrapper
         public IEnumerable<DisplayInfo> EnumerateDisplays()
         {
             ThrowIfDisposed();
-            return ADLXDesktopHelpers.EnumerateDesktopDisplays(_desktop.Get());
+            using var helper = CreateDesktopServicesHelper();
+            return helper.EnumerateDesktopDisplays(_desktop.Get());
         }
 
         /// <summary>
@@ -54,6 +55,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var ownsHelper = false;
+            using var desktopHelper = CreateDesktopServicesHelper();
             if (displayHelper == null)
             {
                 if (!_displayServices.HasValue)
@@ -64,7 +66,7 @@ namespace ADLXWrapper
 
             try
             {
-                using var displayList = new ComPtr<IADLXDisplayList>(ADLXDesktopHelpers.GetDesktopDisplayListNative(_desktop.Get()));
+                using var displayList = new ComPtr<IADLXDisplayList>(desktopHelper.GetDesktopDisplayListNative(_desktop.Get()));
                 var count = displayList.Get()->Size();
                 var displays = new List<AdlxDisplay>((int)count);
                 for (uint i = 0; i < count; i++)
@@ -115,7 +117,8 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var eyefinity = GetEyefinityDesktop();
-            return ADLXDesktopHelpers.GetEyefinityGridSize(eyefinity.Get());
+            using var helper = CreateDesktopServicesHelper();
+            return helper.GetEyefinityGridSize(eyefinity.Get());
         }
 
         /// <summary>
@@ -125,7 +128,8 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var eyefinity = GetEyefinityDesktop();
-            return ADLXDesktopHelpers.EnumerateEyefinityDisplays(eyefinity.Get());
+            using var helper = CreateDesktopServicesHelper();
+            return helper.EnumerateEyefinityDisplays(eyefinity.Get());
         }
 
         private ComPtr<IADLXEyefinityDesktop> GetEyefinityDesktop()
@@ -151,7 +155,8 @@ namespace ADLXWrapper
         public ComPtr<IADLXDisplayList> GetDisplayListNative()
         {
             ThrowIfDisposed();
-            return new ComPtr<IADLXDisplayList>(ADLXDesktopHelpers.GetDesktopDisplayListNative(_desktop.Get()));
+            using var helper = CreateDesktopServicesHelper();
+            return new ComPtr<IADLXDisplayList>(helper.GetDesktopDisplayListNative(_desktop.Get()));
         }
 
         private void ThrowIfDisposed()

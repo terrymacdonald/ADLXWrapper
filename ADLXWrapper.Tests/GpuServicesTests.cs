@@ -85,7 +85,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_system.GetSystemServicesNative()).ToList();
+            var gpus = _system.EnumerateGpus().ToList();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -100,7 +100,7 @@ namespace ADLXWrapper.Tests
             IADLXGPU* pGpu = null;
             _gpuList->At(0, &pGpu);
             using var gpu = AdlxInterfaceHandle.From(pGpu, addRef: false);
-            var info = ADLXGpuHelpers.GetInfo((IntPtr)gpu.As<IADLXGPU>());
+            var info = _system.GetGpuInfo(gpu.As<IADLXGPU>());
 
             Assert.NotNull(info.Name);
             Assert.NotEmpty(info.Name);
@@ -116,7 +116,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() < 2, _skipReason);
 
-            var gpus = ADLXGpuHelpers.EnumerateAllGpus(_system.GetSystemServicesNative()).ToList();
+            var gpus = _system.EnumerateGpus().ToList();
             var uniqueIds = gpus.Select(g => g.UniqueId).ToList();
             var distinctIds = uniqueIds.Distinct().Count();
 

@@ -44,7 +44,7 @@ namespace ADLXWrapper.Tests
                 {
                     using (gpu)
                     {
-                        var info = ADLXGpuHelpers.GetInfo((IntPtr)gpu);
+                        var info = systemHelper.GetGpuInfo(gpu.As<IADLXGPU>());
                         _output.WriteLine($"[Iter {i}] GPU: {info.Name}");
 
                         var metricsHelper = new ADLXPerformanceMonitoringServicesHelper(perf.As<IADLXPerformanceMonitoringServices>(), addRef: true);
