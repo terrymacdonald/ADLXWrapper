@@ -41,7 +41,7 @@ namespace ADLXWrapper
             return _desktopServices.Get();
         }
 
-        public AdlxInterfaceHandle GetDesktopServices()
+        public AdlxInterfaceHandle GetDesktopServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);

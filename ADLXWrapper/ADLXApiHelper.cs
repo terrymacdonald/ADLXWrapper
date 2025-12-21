@@ -216,7 +216,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Get the system services as an AdlxInterfaceHandle (AddRef'd for caller ownership).
         /// </summary>
-        public unsafe AdlxInterfaceHandle GetSystemServices()
+        public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
             var ptr = _systemServices.Get();
@@ -227,7 +227,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Get the system services wrapped in an ADLXSystemServicesHelper.
         /// </summary>
-        public unsafe ADLXSystemServicesHelper GetSystemServicesHelper()
+        public unsafe ADLXSystemServicesHelper GetSystemServices()
         {
             ThrowIfDisposed();
             var ptr = _systemServices.Get();

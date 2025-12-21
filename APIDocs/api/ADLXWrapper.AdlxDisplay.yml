@@ -1,0 +1,3523 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.AdlxDisplay
+  commentId: T:ADLXWrapper.AdlxDisplay
+  id: AdlxDisplay
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.AdlxDisplay.#ctor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*,ADLXWrapper.IADLXDesktopServices*)
+  - ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  - ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  - ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  - ADLXWrapper.AdlxDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
+  - ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  - ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  - ADLXWrapper.AdlxDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  - ADLXWrapper.AdlxDisplay.ConnectorType
+  - ADLXWrapper.AdlxDisplay.Dispose
+  - ADLXWrapper.AdlxDisplay.Edid
+  - ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions
+  - ADLXWrapper.AdlxDisplay.GetColorDepthState
+  - ADLXWrapper.AdlxDisplay.GetConnectivityExperience
+  - ADLXWrapper.AdlxDisplay.GetCustomColor
+  - ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative
+  - ADLXWrapper.AdlxDisplay.GetDesktop
+  - ADLXWrapper.AdlxDisplay.GetDisplayBlankingState
+  - ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
+  - ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
+  - ADLXWrapper.AdlxDisplay.GetFreeSyncState
+  - ADLXWrapper.AdlxDisplay.GetGamma
+  - ADLXWrapper.AdlxDisplay.GetGamut
+  - ADLXWrapper.AdlxDisplay.GetGpu
+  - ADLXWrapper.AdlxDisplay.GetGpuScalingState
+  - ADLXWrapper.AdlxDisplay.GetHdcpState
+  - ADLXWrapper.AdlxDisplay.GetIntegerScalingState
+  - ADLXWrapper.AdlxDisplay.GetPixelFormatState
+  - ADLXWrapper.AdlxDisplay.GetScalingMode
+  - ADLXWrapper.AdlxDisplay.GetThreeDLut
+  - ADLXWrapper.AdlxDisplay.GetVariBrightState
+  - ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
+  - ADLXWrapper.AdlxDisplay.GpuUniqueId
+  - ADLXWrapper.AdlxDisplay.Height
+  - ADLXWrapper.AdlxDisplay.Identity
+  - ADLXWrapper.AdlxDisplay.ManufacturerId
+  - ADLXWrapper.AdlxDisplay.Name
+  - ADLXWrapper.AdlxDisplay.PixelClock
+  - ADLXWrapper.AdlxDisplay.ReapplyGamma
+  - ADLXWrapper.AdlxDisplay.ReapplyGamut
+  - ADLXWrapper.AdlxDisplay.ReapplyThreeDLut
+  - ADLXWrapper.AdlxDisplay.RefreshRate
+  - ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
+  - ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
+  - ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
+  - ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
+  - ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
+  - ADLXWrapper.AdlxDisplay.ScanType
+  - ADLXWrapper.AdlxDisplay.SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  - ADLXWrapper.AdlxDisplay.SetDisplayBlanked(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  - ADLXWrapper.AdlxDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  - ADLXWrapper.AdlxDisplay.SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  - ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.Type
+  - ADLXWrapper.AdlxDisplay.UniqueId
+  - ADLXWrapper.AdlxDisplay.Width
+  langs:
+  - csharp
+  - vb
+  name: AdlxDisplay
+  nameWithType: AdlxDisplay
+  fullName: ADLXWrapper.AdlxDisplay
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AdlxDisplay
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.
+  example: []
+  syntax:
+    content: 'public sealed class AdlxDisplay : IDisposable'
+    content.vb: Public NotInheritable Class AdlxDisplay Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.AdlxDisplay.#ctor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*,ADLXWrapper.IADLXDesktopServices*)
+  commentId: M:ADLXWrapper.AdlxDisplay.#ctor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*,ADLXWrapper.IADLXDesktopServices*)
+  id: '#ctor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDisplay*,ADLXWrapper.IADLXDesktopServices*)'
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AdlxDisplay(IADLXDisplayServices*, IADLXDisplay*, IADLXDesktopServices*)
+  nameWithType: AdlxDisplay.AdlxDisplay(IADLXDisplayServices*, IADLXDisplay*, IADLXDesktopServices*)
+  fullName: ADLXWrapper.AdlxDisplay.AdlxDisplay(ADLXWrapper.IADLXDisplayServices*, ADLXWrapper.IADLXDisplay*, ADLXWrapper.IADLXDesktopServices*)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 16
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AdlxDisplay(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay, IADLXDesktopServices* pDesktopServices = null)
+    parameters:
+    - id: pDisplayServices
+      type: ADLXWrapper.IADLXDisplayServices*
+    - id: pDisplay
+      type: ADLXWrapper.IADLXDisplay*
+    - id: pDesktopServices
+      type: ADLXWrapper.IADLXDesktopServices*
+    content.vb: Public Sub New(pDisplayServices As IADLXDisplayServices*, pDisplay As IADLXDisplay*, pDesktopServices As IADLXDesktopServices* = Nothing)
+  overload: ADLXWrapper.AdlxDisplay.#ctor*
+  nameWithType.vb: AdlxDisplay.New(IADLXDisplayServices*, IADLXDisplay*, IADLXDesktopServices*)
+  fullName.vb: ADLXWrapper.AdlxDisplay.New(ADLXWrapper.IADLXDisplayServices*, ADLXWrapper.IADLXDisplay*, ADLXWrapper.IADLXDesktopServices*)
+  name.vb: New(IADLXDisplayServices*, IADLXDisplay*, IADLXDesktopServices*)
+- uid: ADLXWrapper.AdlxDisplay.Name
+  commentId: P:ADLXWrapper.AdlxDisplay.Name
+  id: Name
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AdlxDisplay.Name
+  fullName: ADLXWrapper.AdlxDisplay.Name
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Name
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: ADLXWrapper.AdlxDisplay.Name*
+- uid: ADLXWrapper.AdlxDisplay.Edid
+  commentId: P:ADLXWrapper.AdlxDisplay.Edid
+  id: Edid
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Edid
+  nameWithType: AdlxDisplay.Edid
+  fullName: ADLXWrapper.AdlxDisplay.Edid
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Edid
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 32
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string Edid { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Edid As String
+  overload: ADLXWrapper.AdlxDisplay.Edid*
+- uid: ADLXWrapper.AdlxDisplay.Width
+  commentId: P:ADLXWrapper.AdlxDisplay.Width
+  id: Width
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: AdlxDisplay.Width
+  fullName: ADLXWrapper.AdlxDisplay.Width
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Width
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 33
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Width As Integer
+  overload: ADLXWrapper.AdlxDisplay.Width*
+- uid: ADLXWrapper.AdlxDisplay.Height
+  commentId: P:ADLXWrapper.AdlxDisplay.Height
+  id: Height
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: AdlxDisplay.Height
+  fullName: ADLXWrapper.AdlxDisplay.Height
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Height
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 34
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: ADLXWrapper.AdlxDisplay.Height*
+- uid: ADLXWrapper.AdlxDisplay.RefreshRate
+  commentId: P:ADLXWrapper.AdlxDisplay.RefreshRate
+  id: RefreshRate
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RefreshRate
+  nameWithType: AdlxDisplay.RefreshRate
+  fullName: ADLXWrapper.AdlxDisplay.RefreshRate
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RefreshRate
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 35
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double RefreshRate { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property RefreshRate As Double
+  overload: ADLXWrapper.AdlxDisplay.RefreshRate*
+- uid: ADLXWrapper.AdlxDisplay.ManufacturerId
+  commentId: P:ADLXWrapper.AdlxDisplay.ManufacturerId
+  id: ManufacturerId
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ManufacturerId
+  nameWithType: AdlxDisplay.ManufacturerId
+  fullName: ADLXWrapper.AdlxDisplay.ManufacturerId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManufacturerId
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 36
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint ManufacturerId { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property ManufacturerId As UInteger
+  overload: ADLXWrapper.AdlxDisplay.ManufacturerId*
+- uid: ADLXWrapper.AdlxDisplay.PixelClock
+  commentId: P:ADLXWrapper.AdlxDisplay.PixelClock
+  id: PixelClock
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: PixelClock
+  nameWithType: AdlxDisplay.PixelClock
+  fullName: ADLXWrapper.AdlxDisplay.PixelClock
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PixelClock
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint PixelClock { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property PixelClock As UInteger
+  overload: ADLXWrapper.AdlxDisplay.PixelClock*
+- uid: ADLXWrapper.AdlxDisplay.Type
+  commentId: P:ADLXWrapper.AdlxDisplay.Type
+  id: Type
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: AdlxDisplay.Type
+  fullName: ADLXWrapper.AdlxDisplay.Type
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Type
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 38
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_TYPE Type { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_TYPE
+    content.vb: Public ReadOnly Property Type As ADLX_DISPLAY_TYPE
+  overload: ADLXWrapper.AdlxDisplay.Type*
+- uid: ADLXWrapper.AdlxDisplay.ConnectorType
+  commentId: P:ADLXWrapper.AdlxDisplay.ConnectorType
+  id: ConnectorType
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ConnectorType
+  nameWithType: AdlxDisplay.ConnectorType
+  fullName: ADLXWrapper.AdlxDisplay.ConnectorType
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ConnectorType
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 39
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+    content.vb: Public ReadOnly Property ConnectorType As ADLX_DISPLAY_CONNECTOR_TYPE
+  overload: ADLXWrapper.AdlxDisplay.ConnectorType*
+- uid: ADLXWrapper.AdlxDisplay.ScanType
+  commentId: P:ADLXWrapper.AdlxDisplay.ScanType
+  id: ScanType
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ScanType
+  nameWithType: AdlxDisplay.ScanType
+  fullName: ADLXWrapper.AdlxDisplay.ScanType
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ScanType
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 40
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_SCAN_TYPE ScanType { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+    content.vb: Public ReadOnly Property ScanType As ADLX_DISPLAY_SCAN_TYPE
+  overload: ADLXWrapper.AdlxDisplay.ScanType*
+- uid: ADLXWrapper.AdlxDisplay.UniqueId
+  commentId: P:ADLXWrapper.AdlxDisplay.UniqueId
+  id: UniqueId
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: UniqueId
+  nameWithType: AdlxDisplay.UniqueId
+  fullName: ADLXWrapper.AdlxDisplay.UniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: UniqueId
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 41
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ulong UniqueId { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property UniqueId As ULong
+  overload: ADLXWrapper.AdlxDisplay.UniqueId*
+- uid: ADLXWrapper.AdlxDisplay.GpuUniqueId
+  commentId: P:ADLXWrapper.AdlxDisplay.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GpuUniqueId
+  nameWithType: AdlxDisplay.GpuUniqueId
+  fullName: ADLXWrapper.AdlxDisplay.GpuUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuUniqueId
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 42
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int GpuUniqueId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property GpuUniqueId As Integer
+  overload: ADLXWrapper.AdlxDisplay.GpuUniqueId*
+- uid: ADLXWrapper.AdlxDisplay.Identity
+  commentId: P:ADLXWrapper.AdlxDisplay.Identity
+  id: Identity
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: AdlxDisplay.Identity
+  fullName: ADLXWrapper.AdlxDisplay.Identity
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Identity
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public DisplayInfo Identity { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.DisplayInfo
+    content.vb: Public ReadOnly Property Identity As DisplayInfo
+  overload: ADLXWrapper.AdlxDisplay.Identity*
+- uid: ADLXWrapper.AdlxDisplay.GetFreeSyncState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetFreeSyncState
+  id: GetFreeSyncState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetFreeSyncState()
+  nameWithType: AdlxDisplay.GetFreeSyncState()
+  fullName: ADLXWrapper.AdlxDisplay.GetFreeSyncState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFreeSyncState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 48
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Query FreeSync support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetFreeSyncState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetFreeSyncState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetFreeSyncState*
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
+  id: SetFreeSyncEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetFreeSyncEnabled(bool)
+  nameWithType: AdlxDisplay.SetFreeSyncEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetFreeSyncEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 54
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetFreeSyncEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetFreeSyncEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled*
+  nameWithType.vb: AdlxDisplay.SetFreeSyncEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(Boolean)
+  name.vb: SetFreeSyncEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetGpuScalingState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetGpuScalingState
+  id: GetGpuScalingState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetGpuScalingState()
+  nameWithType: AdlxDisplay.GetGpuScalingState()
+  fullName: ADLXWrapper.AdlxDisplay.GetGpuScalingState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpuScalingState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 63
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Query GPU scaling support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetGpuScalingState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetGpuScalingState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetGpuScalingState*
+- uid: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
+  id: SetGpuScalingEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetGpuScalingEnabled(bool)
+  nameWithType: AdlxDisplay.SetGpuScalingEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetGpuScalingEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 69
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetGpuScalingEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetGpuScalingEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled*
+  nameWithType.vb: AdlxDisplay.SetGpuScalingEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(Boolean)
+  name.vb: SetGpuScalingEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetScalingMode
+  commentId: M:ADLXWrapper.AdlxDisplay.GetScalingMode
+  id: GetScalingMode
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetScalingMode()
+  nameWithType: AdlxDisplay.GetScalingMode()
+  fullName: ADLXWrapper.AdlxDisplay.GetScalingMode()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetScalingMode
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 78
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Query scaling mode support/value.
+  example: []
+  syntax:
+    content: public (bool supported, ADLX_SCALE_MODE mode) GetScalingMode()
+    return:
+      type: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}
+    content.vb: Public Function GetScalingMode() As (supported As Boolean, mode As ADLX_SCALE_MODE)
+  overload: ADLXWrapper.AdlxDisplay.GetScalingMode*
+- uid: ADLXWrapper.AdlxDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  id: SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetScalingMode(ADLX_SCALE_MODE)
+  nameWithType: AdlxDisplay.SetScalingMode(ADLX_SCALE_MODE)
+  fullName: ADLXWrapper.AdlxDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetScalingMode
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 84
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetScalingMode(ADLX_SCALE_MODE mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_SCALE_MODE
+    content.vb: Public Sub SetScalingMode(mode As ADLX_SCALE_MODE)
+  overload: ADLXWrapper.AdlxDisplay.SetScalingMode*
+- uid: ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions
+  commentId: M:ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions
+  id: EnumerateCustomResolutions
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: EnumerateCustomResolutions()
+  nameWithType: AdlxDisplay.EnumerateCustomResolutions()
+  fullName: ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateCustomResolutions
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 93
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerate custom resolutions as managed DTOs.
+  example: []
+  syntax:
+    content: public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions()
+    return:
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
+    content.vb: Public Function EnumerateCustomResolutions() As IEnumerable(Of DisplayResolutionInfo)
+  overload: ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions*
+- uid: ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative
+  commentId: M:ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative
+  id: GetCustomResolutionListNative
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetCustomResolutionListNative()
+  nameWithType: AdlxDisplay.GetCustomResolutionListNative()
+  fullName: ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCustomResolutionListNative
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 103
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Native custom resolution list accessor. Caller must dispose the returned ComPtr and any retained items.
+  example: []
+  syntax:
+    content: public ComPtr<IADLXDisplayResolutionList> GetCustomResolutionListNative()
+    return:
+      type: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
+    content.vb: Public Function GetCustomResolutionListNative() As ComPtr(Of IADLXDisplayResolutionList)
+  overload: ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative*
+- uid: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
+  id: GetVirtualSuperResolutionState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetVirtualSuperResolutionState()
+  nameWithType: AdlxDisplay.GetVirtualSuperResolutionState()
+  fullName: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetVirtualSuperResolutionState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 113
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Virtual Super Resolution support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetVirtualSuperResolutionState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetVirtualSuperResolutionState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState*
+- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
+  id: SetVirtualSuperResolutionEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetVirtualSuperResolutionEnabled(bool)
+  nameWithType: AdlxDisplay.SetVirtualSuperResolutionEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetVirtualSuperResolutionEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 119
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetVirtualSuperResolutionEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetVirtualSuperResolutionEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled*
+  nameWithType.vb: AdlxDisplay.SetVirtualSuperResolutionEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(Boolean)
+  name.vb: SetVirtualSuperResolutionEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetIntegerScalingState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetIntegerScalingState
+  id: GetIntegerScalingState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetIntegerScalingState()
+  nameWithType: AdlxDisplay.GetIntegerScalingState()
+  fullName: ADLXWrapper.AdlxDisplay.GetIntegerScalingState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetIntegerScalingState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 128
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Integer scaling support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetIntegerScalingState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetIntegerScalingState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetIntegerScalingState*
+- uid: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
+  id: SetIntegerScalingEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetIntegerScalingEnabled(bool)
+  nameWithType: AdlxDisplay.SetIntegerScalingEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetIntegerScalingEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 134
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetIntegerScalingEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetIntegerScalingEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled*
+  nameWithType.vb: AdlxDisplay.SetIntegerScalingEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(Boolean)
+  name.vb: SetIntegerScalingEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetHdcpState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetHdcpState
+  id: GetHdcpState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetHdcpState()
+  nameWithType: AdlxDisplay.GetHdcpState()
+  fullName: ADLXWrapper.AdlxDisplay.GetHdcpState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetHdcpState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 143
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: HDCP support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetHdcpState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetHdcpState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetHdcpState*
+- uid: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
+  id: SetHdcpEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetHdcpEnabled(bool)
+  nameWithType: AdlxDisplay.SetHdcpEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetHdcpEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 149
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetHdcpEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetHdcpEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetHdcpEnabled*
+  nameWithType.vb: AdlxDisplay.SetHdcpEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(Boolean)
+  name.vb: SetHdcpEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetVariBrightState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetVariBrightState
+  id: GetVariBrightState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetVariBrightState()
+  nameWithType: AdlxDisplay.GetVariBrightState()
+  fullName: ADLXWrapper.AdlxDisplay.GetVariBrightState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetVariBrightState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 158
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Vari-Bright support/enabled/mode state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled, VariBrightMode mode) GetVariBrightState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}
+    content.vb: Public Function GetVariBrightState() As (supported As Boolean, enabled As Boolean, mode As VariBrightMode)
+  overload: ADLXWrapper.AdlxDisplay.GetVariBrightState*
+- uid: ADLXWrapper.AdlxDisplay.SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  id: SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetVariBright(bool, VariBrightMode)
+  nameWithType: AdlxDisplay.SetVariBright(bool, VariBrightMode)
+  fullName: ADLXWrapper.AdlxDisplay.SetVariBright(bool, ADLXWrapper.VariBrightMode)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetVariBright
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 164
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetVariBright(bool enable, VariBrightMode mode)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    - id: mode
+      type: ADLXWrapper.VariBrightMode
+    content.vb: Public Sub SetVariBright(enable As Boolean, mode As VariBrightMode)
+  overload: ADLXWrapper.AdlxDisplay.SetVariBright*
+  nameWithType.vb: AdlxDisplay.SetVariBright(Boolean, VariBrightMode)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetVariBright(Boolean, ADLXWrapper.VariBrightMode)
+  name.vb: SetVariBright(Boolean, VariBrightMode)
+- uid: ADLXWrapper.AdlxDisplay.GetColorDepthState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetColorDepthState
+  id: GetColorDepthState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetColorDepthState()
+  nameWithType: AdlxDisplay.GetColorDepthState()
+  fullName: ADLXWrapper.AdlxDisplay.GetColorDepthState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetColorDepthState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 173
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Color depth support/value.
+  example: []
+  syntax:
+    content: public (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState()
+    return:
+      type: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}
+    content.vb: Public Function GetColorDepthState() As (supported As Boolean, current As ADLX_COLOR_DEPTH)
+  overload: ADLXWrapper.AdlxDisplay.GetColorDepthState*
+- uid: ADLXWrapper.AdlxDisplay.SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  id: SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetColorDepth(ADLX_COLOR_DEPTH)
+  nameWithType: AdlxDisplay.SetColorDepth(ADLX_COLOR_DEPTH)
+  fullName: ADLXWrapper.AdlxDisplay.SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetColorDepth
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 179
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetColorDepth(ADLX_COLOR_DEPTH depth)
+    parameters:
+    - id: depth
+      type: ADLXWrapper.ADLX_COLOR_DEPTH
+    content.vb: Public Sub SetColorDepth(depth As ADLX_COLOR_DEPTH)
+  overload: ADLXWrapper.AdlxDisplay.SetColorDepth*
+- uid: ADLXWrapper.AdlxDisplay.GetPixelFormatState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetPixelFormatState
+  id: GetPixelFormatState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetPixelFormatState()
+  nameWithType: AdlxDisplay.GetPixelFormatState()
+  fullName: ADLXWrapper.AdlxDisplay.GetPixelFormatState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPixelFormatState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 188
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Pixel format support/value.
+  example: []
+  syntax:
+    content: public (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState()
+    return:
+      type: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}
+    content.vb: Public Function GetPixelFormatState() As (supported As Boolean, current As ADLX_PIXEL_FORMAT)
+  overload: ADLXWrapper.AdlxDisplay.GetPixelFormatState*
+- uid: ADLXWrapper.AdlxDisplay.SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  id: SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetPixelFormat(ADLX_PIXEL_FORMAT)
+  nameWithType: AdlxDisplay.SetPixelFormat(ADLX_PIXEL_FORMAT)
+  fullName: ADLXWrapper.AdlxDisplay.SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetPixelFormat
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 194
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetPixelFormat(ADLX_PIXEL_FORMAT format)
+    parameters:
+    - id: format
+      type: ADLXWrapper.ADLX_PIXEL_FORMAT
+    content.vb: Public Sub SetPixelFormat(format As ADLX_PIXEL_FORMAT)
+  overload: ADLXWrapper.AdlxDisplay.SetPixelFormat*
+- uid: ADLXWrapper.AdlxDisplay.GetCustomColor
+  commentId: M:ADLXWrapper.AdlxDisplay.GetCustomColor
+  id: GetCustomColor
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetCustomColor()
+  nameWithType: AdlxDisplay.GetCustomColor()
+  fullName: ADLXWrapper.AdlxDisplay.GetCustomColor()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCustomColor
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 203
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Custom color info and application.
+  example: []
+  syntax:
+    content: public CustomColorInfo GetCustomColor()
+    return:
+      type: ADLXWrapper.CustomColorInfo
+    content.vb: Public Function GetCustomColor() As CustomColorInfo
+  overload: ADLXWrapper.AdlxDisplay.GetCustomColor*
+- uid: ADLXWrapper.AdlxDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  commentId: M:ADLXWrapper.AdlxDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  id: ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ApplyCustomColor(CustomColorInfo)
+  nameWithType: AdlxDisplay.ApplyCustomColor(CustomColorInfo)
+  fullName: ADLXWrapper.AdlxDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyCustomColor
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 210
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyCustomColor(CustomColorInfo info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.CustomColorInfo
+    content.vb: Public Sub ApplyCustomColor(info As CustomColorInfo)
+  overload: ADLXWrapper.AdlxDisplay.ApplyCustomColor*
+- uid: ADLXWrapper.AdlxDisplay.GetGamma
+  commentId: M:ADLXWrapper.AdlxDisplay.GetGamma
+  id: GetGamma
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetGamma()
+  nameWithType: AdlxDisplay.GetGamma()
+  fullName: ADLXWrapper.AdlxDisplay.GetGamma()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGamma
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 220
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gamma info and reapply.
+  example: []
+  syntax:
+    content: public GammaInfo GetGamma()
+    return:
+      type: ADLXWrapper.GammaInfo
+    content.vb: Public Function GetGamma() As GammaInfo
+  overload: ADLXWrapper.AdlxDisplay.GetGamma*
+- uid: ADLXWrapper.AdlxDisplay.ReapplyGamma
+  commentId: M:ADLXWrapper.AdlxDisplay.ReapplyGamma
+  id: ReapplyGamma
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ReapplyGamma()
+  nameWithType: AdlxDisplay.ReapplyGamma()
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyGamma()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ReapplyGamma
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 227
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ReapplyGamma()
+    content.vb: Public Sub ReapplyGamma()
+  overload: ADLXWrapper.AdlxDisplay.ReapplyGamma*
+- uid: ADLXWrapper.AdlxDisplay.GetGamut
+  commentId: M:ADLXWrapper.AdlxDisplay.GetGamut
+  id: GetGamut
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetGamut()
+  nameWithType: AdlxDisplay.GetGamut()
+  fullName: ADLXWrapper.AdlxDisplay.GetGamut()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGamut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 237
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gamut info and reapply.
+  example: []
+  syntax:
+    content: public GamutInfo GetGamut()
+    return:
+      type: ADLXWrapper.GamutInfo
+    content.vb: Public Function GetGamut() As GamutInfo
+  overload: ADLXWrapper.AdlxDisplay.GetGamut*
+- uid: ADLXWrapper.AdlxDisplay.ReapplyGamut
+  commentId: M:ADLXWrapper.AdlxDisplay.ReapplyGamut
+  id: ReapplyGamut
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ReapplyGamut()
+  nameWithType: AdlxDisplay.ReapplyGamut()
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyGamut()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ReapplyGamut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 244
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ReapplyGamut()
+    content.vb: Public Sub ReapplyGamut()
+  overload: ADLXWrapper.AdlxDisplay.ReapplyGamut*
+- uid: ADLXWrapper.AdlxDisplay.GetThreeDLut
+  commentId: M:ADLXWrapper.AdlxDisplay.GetThreeDLut
+  id: GetThreeDLut
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetThreeDLut()
+  nameWithType: AdlxDisplay.GetThreeDLut()
+  fullName: ADLXWrapper.AdlxDisplay.GetThreeDLut()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetThreeDLut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 254
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: 3DLUT info and reapply.
+  example: []
+  syntax:
+    content: public ThreeDLUTInfo GetThreeDLut()
+    return:
+      type: ADLXWrapper.ThreeDLUTInfo
+    content.vb: Public Function GetThreeDLut() As ThreeDLUTInfo
+  overload: ADLXWrapper.AdlxDisplay.GetThreeDLut*
+- uid: ADLXWrapper.AdlxDisplay.ReapplyThreeDLut
+  commentId: M:ADLXWrapper.AdlxDisplay.ReapplyThreeDLut
+  id: ReapplyThreeDLut
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ReapplyThreeDLut()
+  nameWithType: AdlxDisplay.ReapplyThreeDLut()
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyThreeDLut()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ReapplyThreeDLut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 261
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ReapplyThreeDLut()
+    content.vb: Public Sub ReapplyThreeDLut()
+  overload: ADLXWrapper.AdlxDisplay.ReapplyThreeDLut*
+- uid: ADLXWrapper.AdlxDisplay.GetConnectivityExperience
+  commentId: M:ADLXWrapper.AdlxDisplay.GetConnectivityExperience
+  id: GetConnectivityExperience
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetConnectivityExperience()
+  nameWithType: AdlxDisplay.GetConnectivityExperience()
+  fullName: ADLXWrapper.AdlxDisplay.GetConnectivityExperience()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetConnectivityExperience
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 271
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Display connectivity experience info and application.
+  example: []
+  syntax:
+    content: public ConnectivityExperienceInfo GetConnectivityExperience()
+    return:
+      type: ADLXWrapper.ConnectivityExperienceInfo
+    content.vb: Public Function GetConnectivityExperience() As ConnectivityExperienceInfo
+  overload: ADLXWrapper.AdlxDisplay.GetConnectivityExperience*
+- uid: ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  commentId: M:ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  id: ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: ApplyConnectivityExperience(ConnectivityExperienceInfo)
+  nameWithType: AdlxDisplay.ApplyConnectivityExperience(ConnectivityExperienceInfo)
+  fullName: ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyConnectivityExperience
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 278
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.ConnectivityExperienceInfo
+    content.vb: Public Sub ApplyConnectivityExperience(info As ConnectivityExperienceInfo)
+  overload: ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience*
+- uid: ADLXWrapper.AdlxDisplay.GetDisplayBlankingState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetDisplayBlankingState
+  id: GetDisplayBlankingState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayBlankingState()
+  nameWithType: AdlxDisplay.GetDisplayBlankingState()
+  fullName: ADLXWrapper.AdlxDisplay.GetDisplayBlankingState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDisplayBlankingState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 288
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Display blanking support/state.
+  example: []
+  syntax:
+    content: public (bool supported, bool blanked) GetDisplayBlankingState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetDisplayBlankingState() As (supported As Boolean, blanked As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetDisplayBlankingState*
+- uid: ADLXWrapper.AdlxDisplay.SetDisplayBlanked(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetDisplayBlanked(System.Boolean)
+  id: SetDisplayBlanked(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetDisplayBlanked(bool)
+  nameWithType: AdlxDisplay.SetDisplayBlanked(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetDisplayBlanked(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetDisplayBlanked
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 295
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetDisplayBlanked(bool blank)
+    parameters:
+    - id: blank
+      type: System.Boolean
+    content.vb: Public Sub SetDisplayBlanked(blank As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetDisplayBlanked*
+  nameWithType.vb: AdlxDisplay.SetDisplayBlanked(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetDisplayBlanked(Boolean)
+  name.vb: SetDisplayBlanked(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
+  id: GetFreeSyncColorAccuracyState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetFreeSyncColorAccuracyState()
+  nameWithType: AdlxDisplay.GetFreeSyncColorAccuracyState()
+  fullName: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFreeSyncColorAccuracyState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 305
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: FreeSync Color Accuracy support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetFreeSyncColorAccuracyState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetFreeSyncColorAccuracyState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState*
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
+  id: SetFreeSyncColorAccuracyEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetFreeSyncColorAccuracyEnabled(bool)
+  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracyEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetFreeSyncColorAccuracyEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 312
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetFreeSyncColorAccuracyEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetFreeSyncColorAccuracyEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled*
+  nameWithType.vb: AdlxDisplay.SetFreeSyncColorAccuracyEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(Boolean)
+  name.vb: SetFreeSyncColorAccuracyEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
+  commentId: M:ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
+  id: GetDynamicRefreshRateControlState
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetDynamicRefreshRateControlState()
+  nameWithType: AdlxDisplay.GetDynamicRefreshRateControlState()
+  fullName: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDynamicRefreshRateControlState
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 322
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Dynamic Refresh Rate Control support/enabled state.
+  example: []
+  syntax:
+    content: public (bool supported, bool enabled) GetDynamicRefreshRateControlState()
+    return:
+      type: System.ValueTuple{System.Boolean,System.Boolean}
+    content.vb: Public Function GetDynamicRefreshRateControlState() As (supported As Boolean, enabled As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState*
+- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
+  id: SetDynamicRefreshRateControlEnabled(System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: SetDynamicRefreshRateControlEnabled(bool)
+  nameWithType: AdlxDisplay.SetDynamicRefreshRateControlEnabled(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetDynamicRefreshRateControlEnabled
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 329
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void SetDynamicRefreshRateControlEnabled(bool enable)
+    parameters:
+    - id: enable
+      type: System.Boolean
+    content.vb: Public Sub SetDynamicRefreshRateControlEnabled(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled*
+  nameWithType.vb: AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
+  name.vb: SetDynamicRefreshRateControlEnabled(Boolean)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  id: AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AddDisplaySettingsEventListener(DisplaySettingsChangedCallback)
+  nameWithType: AdlxDisplay.AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDisplaySettingsEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 339
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
+  example: []
+  syntax:
+    content: public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+    return:
+      type: ADLXWrapper.DisplaySettingsListenerHandle
+    content.vb: Public Function AddDisplaySettingsEventListener(callback As DisplaySettingsListenerHandle.DisplaySettingsChangedCallback) As DisplaySettingsListenerHandle
+  overload: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener*
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
+  id: RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, bool)
+  nameWithType: AdlxDisplay.RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, bool)
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDisplaySettingsEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 346
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.DisplaySettingsListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveDisplaySettingsEventListener(handle As DisplaySettingsListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener*
+  nameWithType.vb: AdlxDisplay.RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle, Boolean)
+  name.vb: RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, Boolean)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  id: AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AddDisplayGammaEventListener(OnDisplayGammaChanged)
+  nameWithType: AdlxDisplay.AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDisplayGammaEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 357
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Subscribe to gamma change events.
+  example: []
+  syntax:
+    content: public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+    return:
+      type: ADLXWrapper.DisplayGammaListenerHandle
+    content.vb: Public Function AddDisplayGammaEventListener(callback As DisplayGammaListenerHandle.OnDisplayGammaChanged) As DisplayGammaListenerHandle
+  overload: ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener*
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
+  id: RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, bool)
+  nameWithType: AdlxDisplay.RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, bool)
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDisplayGammaEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 364
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.DisplayGammaListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveDisplayGammaEventListener(handle As DisplayGammaListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener*
+  nameWithType.vb: AdlxDisplay.RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle, Boolean)
+  name.vb: RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, Boolean)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  id: AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AddDisplayGamutEventListener(OnDisplayGamutChanged)
+  nameWithType: AdlxDisplay.AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDisplayGamutEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 375
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Subscribe to gamut change events.
+  example: []
+  syntax:
+    content: public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+    return:
+      type: ADLXWrapper.DisplayGamutListenerHandle
+    content.vb: Public Function AddDisplayGamutEventListener(callback As DisplayGamutListenerHandle.OnDisplayGamutChanged) As DisplayGamutListenerHandle
+  overload: ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener*
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
+  id: RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, bool)
+  nameWithType: AdlxDisplay.RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, bool)
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDisplayGamutEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 382
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.DisplayGamutListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveDisplayGamutEventListener(handle As DisplayGamutListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener*
+  nameWithType.vb: AdlxDisplay.RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle, Boolean)
+  name.vb: RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, Boolean)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  id: AddDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AddDisplay3dLutEventListener(OnDisplay3DLutChanged)
+  nameWithType: AdlxDisplay.AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDisplay3dLutEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 393
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Subscribe to 3DLUT change events.
+  example: []
+  syntax:
+    content: public Display3DLutListenerHandle AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+    return:
+      type: ADLXWrapper.Display3DLutListenerHandle
+    content.vb: Public Function AddDisplay3dLutEventListener(callback As Display3DLutListenerHandle.OnDisplay3DLutChanged) As Display3DLutListenerHandle
+  overload: ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener*
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
+  id: RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RemoveDisplay3dLutEventListener(Display3DLutListenerHandle, bool)
+  nameWithType: AdlxDisplay.RemoveDisplay3dLutEventListener(Display3DLutListenerHandle, bool)
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDisplay3dLutEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 400
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveDisplay3dLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.Display3DLutListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveDisplay3dLutEventListener(handle As Display3DLutListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener*
+  nameWithType.vb: AdlxDisplay.RemoveDisplay3dLutEventListener(Display3DLutListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener(ADLXWrapper.Display3DLutListenerHandle, Boolean)
+  name.vb: RemoveDisplay3dLutEventListener(Display3DLutListenerHandle, Boolean)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
+  id: AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: AddDisplayListEventListener(OnDisplayListChanged)
+  nameWithType: AdlxDisplay.AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddDisplayListEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 411
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Subscribe to display list change events.
+  example: []
+  syntax:
+    content: public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+    return:
+      type: ADLXWrapper.DisplayListListenerHandle
+    content.vb: Public Function AddDisplayListEventListener(callback As DisplayListListenerHandle.OnDisplayListChanged) As DisplayListListenerHandle
+  overload: ADLXWrapper.AdlxDisplay.AddDisplayListEventListener*
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
+  id: RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: RemoveDisplayListEventListener(DisplayListListenerHandle, bool)
+  nameWithType: AdlxDisplay.RemoveDisplayListEventListener(DisplayListListenerHandle, bool)
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveDisplayListEventListener
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 418
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.DisplayListListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveDisplayListEventListener(handle As DisplayListListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener*
+  nameWithType.vb: AdlxDisplay.RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle, Boolean)
+  name.vb: RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
+- uid: ADLXWrapper.AdlxDisplay.GetGpu
+  commentId: M:ADLXWrapper.AdlxDisplay.GetGpu
+  id: GetGpu
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetGpu()
+  nameWithType: AdlxDisplay.GetGpu()
+  fullName: ADLXWrapper.AdlxDisplay.GetGpu()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpu
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 429
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: GPU that drives this display.
+  example: []
+  syntax:
+    content: public AdlxGpu GetGpu()
+    return:
+      type: ADLXWrapper.AdlxGpu
+    content.vb: Public Function GetGpu() As AdlxGpu
+  overload: ADLXWrapper.AdlxDisplay.GetGpu*
+- uid: ADLXWrapper.AdlxDisplay.GetDesktop
+  commentId: M:ADLXWrapper.AdlxDisplay.GetDesktop
+  id: GetDesktop
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: GetDesktop()
+  nameWithType: AdlxDisplay.GetDesktop()
+  fullName: ADLXWrapper.AdlxDisplay.GetDesktop()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetDesktop
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 446
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Desktop that contains this display (requires desktop services supplied to the display instance).
+  example: []
+  syntax:
+    content: public AdlxDesktop GetDesktop()
+    return:
+      type: ADLXWrapper.AdlxDesktop
+    content.vb: Public Function GetDesktop() As AdlxDesktop
+  overload: ADLXWrapper.AdlxDisplay.GetDesktop*
+- uid: ADLXWrapper.AdlxDisplay.Dispose
+  commentId: M:ADLXWrapper.AdlxDisplay.Dispose
+  id: Dispose
+  parent: ADLXWrapper.AdlxDisplay
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AdlxDisplay.Dispose()
+  fullName: ADLXWrapper.AdlxDisplay.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 509
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.AdlxDisplay.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.AdlxDisplay.#ctor*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.#ctor
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay__ctor_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDisplay__ADLXWrapper_IADLXDesktopServices__
+  name: AdlxDisplay
+  nameWithType: AdlxDisplay.AdlxDisplay
+  fullName: ADLXWrapper.AdlxDisplay.AdlxDisplay
+  nameWithType.vb: AdlxDisplay.New
+  fullName.vb: ADLXWrapper.AdlxDisplay.New
+  name.vb: New
+- uid: ADLXWrapper.IADLXDisplayServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXDisplayServices.html
+  name: IADLXDisplayServices*
+  nameWithType: IADLXDisplayServices*
+  fullName: ADLXWrapper.IADLXDisplayServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDisplayServices
+    name: IADLXDisplayServices
+    href: ADLXWrapper.IADLXDisplayServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDisplayServices
+    name: IADLXDisplayServices
+    href: ADLXWrapper.IADLXDisplayServices.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXDisplay*
+  isExternal: true
+  href: ADLXWrapper.IADLXDisplay.html
+  name: IADLXDisplay*
+  nameWithType: IADLXDisplay*
+  fullName: ADLXWrapper.IADLXDisplay*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDisplay
+    name: IADLXDisplay
+    href: ADLXWrapper.IADLXDisplay.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDisplay
+    name: IADLXDisplay
+    href: ADLXWrapper.IADLXDisplay.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXDesktopServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXDesktopServices.html
+  name: IADLXDesktopServices*
+  nameWithType: IADLXDesktopServices*
+  fullName: ADLXWrapper.IADLXDesktopServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXDesktopServices
+    name: IADLXDesktopServices
+    href: ADLXWrapper.IADLXDesktopServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXDesktopServices
+    name: IADLXDesktopServices
+    href: ADLXWrapper.IADLXDesktopServices.html
+  - name: '*'
+- uid: ADLXWrapper.AdlxDisplay.Name*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Name
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Name
+  name: Name
+  nameWithType: AdlxDisplay.Name
+  fullName: ADLXWrapper.AdlxDisplay.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.AdlxDisplay.Edid*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Edid
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Edid
+  name: Edid
+  nameWithType: AdlxDisplay.Edid
+  fullName: ADLXWrapper.AdlxDisplay.Edid
+- uid: ADLXWrapper.AdlxDisplay.Width*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Width
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Width
+  name: Width
+  nameWithType: AdlxDisplay.Width
+  fullName: ADLXWrapper.AdlxDisplay.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.AdlxDisplay.Height*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Height
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Height
+  name: Height
+  nameWithType: AdlxDisplay.Height
+  fullName: ADLXWrapper.AdlxDisplay.Height
+- uid: ADLXWrapper.AdlxDisplay.RefreshRate*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RefreshRate
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RefreshRate
+  name: RefreshRate
+  nameWithType: AdlxDisplay.RefreshRate
+  fullName: ADLXWrapper.AdlxDisplay.RefreshRate
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: ADLXWrapper.AdlxDisplay.ManufacturerId*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ManufacturerId
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ManufacturerId
+  name: ManufacturerId
+  nameWithType: AdlxDisplay.ManufacturerId
+  fullName: ADLXWrapper.AdlxDisplay.ManufacturerId
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.AdlxDisplay.PixelClock*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.PixelClock
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_PixelClock
+  name: PixelClock
+  nameWithType: AdlxDisplay.PixelClock
+  fullName: ADLXWrapper.AdlxDisplay.PixelClock
+- uid: ADLXWrapper.AdlxDisplay.Type*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Type
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Type
+  name: Type
+  nameWithType: AdlxDisplay.Type
+  fullName: ADLXWrapper.AdlxDisplay.Type
+- uid: ADLXWrapper.ADLX_DISPLAY_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_TYPE.html
+  name: ADLX_DISPLAY_TYPE
+  nameWithType: ADLX_DISPLAY_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_TYPE
+- uid: ADLXWrapper.AdlxDisplay.ConnectorType*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ConnectorType
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ConnectorType
+  name: ConnectorType
+  nameWithType: AdlxDisplay.ConnectorType
+  fullName: ADLXWrapper.AdlxDisplay.ConnectorType
+- uid: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE.html
+  name: ADLX_DISPLAY_CONNECTOR_TYPE
+  nameWithType: ADLX_DISPLAY_CONNECTOR_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+- uid: ADLXWrapper.AdlxDisplay.ScanType*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ScanType
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ScanType
+  name: ScanType
+  nameWithType: AdlxDisplay.ScanType
+  fullName: ADLXWrapper.AdlxDisplay.ScanType
+- uid: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE.html
+  name: ADLX_DISPLAY_SCAN_TYPE
+  nameWithType: ADLX_DISPLAY_SCAN_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+- uid: ADLXWrapper.AdlxDisplay.UniqueId*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.UniqueId
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_UniqueId
+  name: UniqueId
+  nameWithType: AdlxDisplay.UniqueId
+  fullName: ADLXWrapper.AdlxDisplay.UniqueId
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: ADLXWrapper.AdlxDisplay.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GpuUniqueId
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: AdlxDisplay.GpuUniqueId
+  fullName: ADLXWrapper.AdlxDisplay.GpuUniqueId
+- uid: ADLXWrapper.AdlxDisplay.Identity*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Identity
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Identity
+  name: Identity
+  nameWithType: AdlxDisplay.Identity
+  fullName: ADLXWrapper.AdlxDisplay.Identity
+- uid: ADLXWrapper.DisplayInfo
+  commentId: T:ADLXWrapper.DisplayInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayInfo.html
+  name: DisplayInfo
+  nameWithType: DisplayInfo
+  fullName: ADLXWrapper.DisplayInfo
+- uid: ADLXWrapper.AdlxDisplay.GetFreeSyncState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetFreeSyncState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetFreeSyncState
+  name: GetFreeSyncState
+  nameWithType: AdlxDisplay.GetFreeSyncState
+  fullName: ADLXWrapper.AdlxDisplay.GetFreeSyncState
+- uid: System.ValueTuple{System.Boolean,System.Boolean}
+  commentId: T:System.ValueTuple{System.Boolean,System.Boolean}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool supported, bool enabled)
+  nameWithType: (bool supported, bool enabled)
+  fullName: (bool supported, bool enabled)
+  nameWithType.vb: (supported As Boolean, enabled As Boolean)
+  fullName.vb: (supported As Boolean, enabled As Boolean)
+  name.vb: (supported As Boolean, enabled As Boolean)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean}.enabled
+    name: enabled
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.enabled
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,System.Boolean}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.supported
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean}.enabled
+    name: enabled
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean-.enabled
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSyncEnabled_System_Boolean_
+  name: SetFreeSyncEnabled
+  nameWithType: AdlxDisplay.SetFreeSyncEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.AdlxDisplay.GetGpuScalingState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetGpuScalingState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetGpuScalingState
+  name: GetGpuScalingState
+  nameWithType: AdlxDisplay.GetGpuScalingState
+  fullName: ADLXWrapper.AdlxDisplay.GetGpuScalingState
+- uid: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetGpuScalingEnabled_System_Boolean_
+  name: SetGpuScalingEnabled
+  nameWithType: AdlxDisplay.SetGpuScalingEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled
+- uid: ADLXWrapper.AdlxDisplay.GetScalingMode*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetScalingMode
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetScalingMode
+  name: GetScalingMode
+  nameWithType: AdlxDisplay.GetScalingMode
+  fullName: ADLXWrapper.AdlxDisplay.GetScalingMode
+- uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}
+  commentId: T:System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool supported, ADLX_SCALE_MODE mode)
+  nameWithType: (bool supported, ADLX_SCALE_MODE mode)
+  fullName: (bool supported, ADLXWrapper.ADLX_SCALE_MODE mode)
+  nameWithType.vb: (supported As Boolean, mode As ADLX_SCALE_MODE)
+  fullName.vb: (supported As Boolean, mode As ADLXWrapper.ADLX_SCALE_MODE)
+  name.vb: (supported As Boolean, mode As ADLX_SCALE_MODE)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.supported
+  - name: ','
+  - name: " "
+  - uid: ADLXWrapper.ADLX_SCALE_MODE
+    name: ADLX_SCALE_MODE
+    href: ADLXWrapper.ADLX_SCALE_MODE.html
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}.mode
+    name: mode
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.mode
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.supported
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}.mode
+    name: mode
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_scale_mode-.mode
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: ADLXWrapper.ADLX_SCALE_MODE
+    name: ADLX_SCALE_MODE
+    href: ADLXWrapper.ADLX_SCALE_MODE.html
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.SetScalingMode*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetScalingMode
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetScalingMode_ADLXWrapper_ADLX_SCALE_MODE_
+  name: SetScalingMode
+  nameWithType: AdlxDisplay.SetScalingMode
+  fullName: ADLXWrapper.AdlxDisplay.SetScalingMode
+- uid: ADLXWrapper.ADLX_SCALE_MODE
+  commentId: T:ADLXWrapper.ADLX_SCALE_MODE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_SCALE_MODE.html
+  name: ADLX_SCALE_MODE
+  nameWithType: ADLX_SCALE_MODE
+  fullName: ADLXWrapper.ADLX_SCALE_MODE
+- uid: ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_EnumerateCustomResolutions
+  name: EnumerateCustomResolutions
+  nameWithType: AdlxDisplay.EnumerateCustomResolutions
+  fullName: ADLXWrapper.AdlxDisplay.EnumerateCustomResolutions
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<DisplayResolutionInfo>
+  nameWithType: IEnumerable<DisplayResolutionInfo>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayResolutionInfo>
+  nameWithType.vb: IEnumerable(Of DisplayResolutionInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayResolutionInfo)
+  name.vb: IEnumerable(Of DisplayResolutionInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.DisplayResolutionInfo
+    name: DisplayResolutionInfo
+    href: ADLXWrapper.DisplayResolutionInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.DisplayResolutionInfo
+    name: DisplayResolutionInfo
+    href: ADLXWrapper.DisplayResolutionInfo.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetCustomResolutionListNative
+  name: GetCustomResolutionListNative
+  nameWithType: AdlxDisplay.GetCustomResolutionListNative
+  fullName: ADLXWrapper.AdlxDisplay.GetCustomResolutionListNative
+- uid: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
+  commentId: T:ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
+  parent: ADLXWrapper
+  definition: ADLXWrapper.ComPtr`1
+  href: ADLXWrapper.ComPtr-1.html
+  name: ComPtr<IADLXDisplayResolutionList>
+  nameWithType: ComPtr<IADLXDisplayResolutionList>
+  fullName: ADLXWrapper.ComPtr<ADLXWrapper.IADLXDisplayResolutionList>
+  nameWithType.vb: ComPtr(Of IADLXDisplayResolutionList)
+  fullName.vb: ADLXWrapper.ComPtr(Of ADLXWrapper.IADLXDisplayResolutionList)
+  name.vb: ComPtr(Of IADLXDisplayResolutionList)
+  spec.csharp:
+  - uid: ADLXWrapper.ComPtr`1
+    name: ComPtr
+    href: ADLXWrapper.ComPtr-1.html
+  - name: <
+  - uid: ADLXWrapper.IADLXDisplayResolutionList
+    name: IADLXDisplayResolutionList
+    href: ADLXWrapper.IADLXDisplayResolutionList.html
+  - name: '>'
+  spec.vb:
+  - uid: ADLXWrapper.ComPtr`1
+    name: ComPtr
+    href: ADLXWrapper.ComPtr-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.IADLXDisplayResolutionList
+    name: IADLXDisplayResolutionList
+    href: ADLXWrapper.IADLXDisplayResolutionList.html
+  - name: )
+- uid: ADLXWrapper.ComPtr`1
+  commentId: T:ADLXWrapper.ComPtr`1
+  parent: ADLXWrapper
+  href: ADLXWrapper.ComPtr-1.html
+  name: ComPtr<T>
+  nameWithType: ComPtr<T>
+  fullName: ADLXWrapper.ComPtr<T>
+  nameWithType.vb: ComPtr(Of T)
+  fullName.vb: ADLXWrapper.ComPtr(Of T)
+  name.vb: ComPtr(Of T)
+  spec.csharp:
+  - uid: ADLXWrapper.ComPtr`1
+    name: ComPtr
+    href: ADLXWrapper.ComPtr-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ADLXWrapper.ComPtr`1
+    name: ComPtr
+    href: ADLXWrapper.ComPtr-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetVirtualSuperResolutionState
+  name: GetVirtualSuperResolutionState
+  nameWithType: AdlxDisplay.GetVirtualSuperResolutionState
+  fullName: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
+- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetVirtualSuperResolutionEnabled_System_Boolean_
+  name: SetVirtualSuperResolutionEnabled
+  nameWithType: AdlxDisplay.SetVirtualSuperResolutionEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled
+- uid: ADLXWrapper.AdlxDisplay.GetIntegerScalingState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetIntegerScalingState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetIntegerScalingState
+  name: GetIntegerScalingState
+  nameWithType: AdlxDisplay.GetIntegerScalingState
+  fullName: ADLXWrapper.AdlxDisplay.GetIntegerScalingState
+- uid: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetIntegerScalingEnabled_System_Boolean_
+  name: SetIntegerScalingEnabled
+  nameWithType: AdlxDisplay.SetIntegerScalingEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled
+- uid: ADLXWrapper.AdlxDisplay.GetHdcpState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetHdcpState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetHdcpState
+  name: GetHdcpState
+  nameWithType: AdlxDisplay.GetHdcpState
+  fullName: ADLXWrapper.AdlxDisplay.GetHdcpState
+- uid: ADLXWrapper.AdlxDisplay.SetHdcpEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetHdcpEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetHdcpEnabled_System_Boolean_
+  name: SetHdcpEnabled
+  nameWithType: AdlxDisplay.SetHdcpEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetHdcpEnabled
+- uid: ADLXWrapper.AdlxDisplay.GetVariBrightState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetVariBrightState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetVariBrightState
+  name: GetVariBrightState
+  nameWithType: AdlxDisplay.GetVariBrightState
+  fullName: ADLXWrapper.AdlxDisplay.GetVariBrightState
+- uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}
+  commentId: T:System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}
+  parent: System
+  definition: System.ValueTuple`3
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool supported, bool enabled, VariBrightMode mode)
+  nameWithType: (bool supported, bool enabled, VariBrightMode mode)
+  fullName: (bool supported, bool enabled, ADLXWrapper.VariBrightMode mode)
+  nameWithType.vb: (supported As Boolean, enabled As Boolean, mode As VariBrightMode)
+  fullName.vb: (supported As Boolean, enabled As Boolean, mode As ADLXWrapper.VariBrightMode)
+  name.vb: (supported As Boolean, enabled As Boolean, mode As VariBrightMode)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.supported
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.enabled
+    name: enabled
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.enabled
+  - name: ','
+  - name: " "
+  - uid: ADLXWrapper.VariBrightMode
+    name: VariBrightMode
+    href: ADLXWrapper.VariBrightMode.html
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.mode
+    name: mode
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.mode
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.supported
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.enabled
+    name: enabled
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.enabled
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,System.Boolean,ADLXWrapper.VariBrightMode}.mode
+    name: mode
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,system.boolean,adlxwrapper.varibrightmode-.mode
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: ADLXWrapper.VariBrightMode
+    name: VariBrightMode
+    href: ADLXWrapper.VariBrightMode.html
+  - name: )
+- uid: System.ValueTuple`3
+  commentId: T:System.ValueTuple`3
+  name: (T1, T2, T3)
+  nameWithType: (T1, T2, T3)
+  fullName: (T1, T2, T3)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.SetVariBright*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetVariBright
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetVariBright_System_Boolean_ADLXWrapper_VariBrightMode_
+  name: SetVariBright
+  nameWithType: AdlxDisplay.SetVariBright
+  fullName: ADLXWrapper.AdlxDisplay.SetVariBright
+- uid: ADLXWrapper.VariBrightMode
+  commentId: T:ADLXWrapper.VariBrightMode
+  parent: ADLXWrapper
+  href: ADLXWrapper.VariBrightMode.html
+  name: VariBrightMode
+  nameWithType: VariBrightMode
+  fullName: ADLXWrapper.VariBrightMode
+- uid: ADLXWrapper.AdlxDisplay.GetColorDepthState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetColorDepthState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetColorDepthState
+  name: GetColorDepthState
+  nameWithType: AdlxDisplay.GetColorDepthState
+  fullName: ADLXWrapper.AdlxDisplay.GetColorDepthState
+- uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}
+  commentId: T:System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool supported, ADLX_COLOR_DEPTH current)
+  nameWithType: (bool supported, ADLX_COLOR_DEPTH current)
+  fullName: (bool supported, ADLXWrapper.ADLX_COLOR_DEPTH current)
+  nameWithType.vb: (supported As Boolean, current As ADLX_COLOR_DEPTH)
+  fullName.vb: (supported As Boolean, current As ADLXWrapper.ADLX_COLOR_DEPTH)
+  name.vb: (supported As Boolean, current As ADLX_COLOR_DEPTH)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.supported
+  - name: ','
+  - name: " "
+  - uid: ADLXWrapper.ADLX_COLOR_DEPTH
+    name: ADLX_COLOR_DEPTH
+    href: ADLXWrapper.ADLX_COLOR_DEPTH.html
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}.current
+    name: current
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.current
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.supported
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_COLOR_DEPTH}.current
+    name: current
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_color_depth-.current
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: ADLXWrapper.ADLX_COLOR_DEPTH
+    name: ADLX_COLOR_DEPTH
+    href: ADLXWrapper.ADLX_COLOR_DEPTH.html
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.SetColorDepth*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetColorDepth
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetColorDepth_ADLXWrapper_ADLX_COLOR_DEPTH_
+  name: SetColorDepth
+  nameWithType: AdlxDisplay.SetColorDepth
+  fullName: ADLXWrapper.AdlxDisplay.SetColorDepth
+- uid: ADLXWrapper.ADLX_COLOR_DEPTH
+  commentId: T:ADLXWrapper.ADLX_COLOR_DEPTH
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_COLOR_DEPTH.html
+  name: ADLX_COLOR_DEPTH
+  nameWithType: ADLX_COLOR_DEPTH
+  fullName: ADLXWrapper.ADLX_COLOR_DEPTH
+- uid: ADLXWrapper.AdlxDisplay.GetPixelFormatState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetPixelFormatState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetPixelFormatState
+  name: GetPixelFormatState
+  nameWithType: AdlxDisplay.GetPixelFormatState
+  fullName: ADLXWrapper.AdlxDisplay.GetPixelFormatState
+- uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}
+  commentId: T:System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: (bool supported, ADLX_PIXEL_FORMAT current)
+  nameWithType: (bool supported, ADLX_PIXEL_FORMAT current)
+  fullName: (bool supported, ADLXWrapper.ADLX_PIXEL_FORMAT current)
+  nameWithType.vb: (supported As Boolean, current As ADLX_PIXEL_FORMAT)
+  fullName.vb: (supported As Boolean, current As ADLXWrapper.ADLX_PIXEL_FORMAT)
+  name.vb: (supported As Boolean, current As ADLX_PIXEL_FORMAT)
+  spec.csharp:
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.supported
+  - name: ','
+  - name: " "
+  - uid: ADLXWrapper.ADLX_PIXEL_FORMAT
+    name: ADLX_PIXEL_FORMAT
+    href: ADLXWrapper.ADLX_PIXEL_FORMAT.html
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}.current
+    name: current
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.current
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}.supported
+    name: supported
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.supported
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_PIXEL_FORMAT}.current
+    name: current
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.boolean,adlxwrapper.adlx_pixel_format-.current
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: ADLXWrapper.ADLX_PIXEL_FORMAT
+    name: ADLX_PIXEL_FORMAT
+    href: ADLXWrapper.ADLX_PIXEL_FORMAT.html
+  - name: )
+- uid: ADLXWrapper.AdlxDisplay.SetPixelFormat*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetPixelFormat
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetPixelFormat_ADLXWrapper_ADLX_PIXEL_FORMAT_
+  name: SetPixelFormat
+  nameWithType: AdlxDisplay.SetPixelFormat
+  fullName: ADLXWrapper.AdlxDisplay.SetPixelFormat
+- uid: ADLXWrapper.ADLX_PIXEL_FORMAT
+  commentId: T:ADLXWrapper.ADLX_PIXEL_FORMAT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_PIXEL_FORMAT.html
+  name: ADLX_PIXEL_FORMAT
+  nameWithType: ADLX_PIXEL_FORMAT
+  fullName: ADLXWrapper.ADLX_PIXEL_FORMAT
+- uid: ADLXWrapper.AdlxDisplay.GetCustomColor*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetCustomColor
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetCustomColor
+  name: GetCustomColor
+  nameWithType: AdlxDisplay.GetCustomColor
+  fullName: ADLXWrapper.AdlxDisplay.GetCustomColor
+- uid: ADLXWrapper.CustomColorInfo
+  commentId: T:ADLXWrapper.CustomColorInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.CustomColorInfo.html
+  name: CustomColorInfo
+  nameWithType: CustomColorInfo
+  fullName: ADLXWrapper.CustomColorInfo
+- uid: ADLXWrapper.AdlxDisplay.ApplyCustomColor*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ApplyCustomColor
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ApplyCustomColor_ADLXWrapper_CustomColorInfo_
+  name: ApplyCustomColor
+  nameWithType: AdlxDisplay.ApplyCustomColor
+  fullName: ADLXWrapper.AdlxDisplay.ApplyCustomColor
+- uid: ADLXWrapper.AdlxDisplay.GetGamma*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetGamma
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetGamma
+  name: GetGamma
+  nameWithType: AdlxDisplay.GetGamma
+  fullName: ADLXWrapper.AdlxDisplay.GetGamma
+- uid: ADLXWrapper.GammaInfo
+  commentId: T:ADLXWrapper.GammaInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.GammaInfo.html
+  name: GammaInfo
+  nameWithType: GammaInfo
+  fullName: ADLXWrapper.GammaInfo
+- uid: ADLXWrapper.AdlxDisplay.ReapplyGamma*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ReapplyGamma
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ReapplyGamma
+  name: ReapplyGamma
+  nameWithType: AdlxDisplay.ReapplyGamma
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyGamma
+- uid: ADLXWrapper.AdlxDisplay.GetGamut*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetGamut
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetGamut
+  name: GetGamut
+  nameWithType: AdlxDisplay.GetGamut
+  fullName: ADLXWrapper.AdlxDisplay.GetGamut
+- uid: ADLXWrapper.GamutInfo
+  commentId: T:ADLXWrapper.GamutInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.GamutInfo.html
+  name: GamutInfo
+  nameWithType: GamutInfo
+  fullName: ADLXWrapper.GamutInfo
+- uid: ADLXWrapper.AdlxDisplay.ReapplyGamut*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ReapplyGamut
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ReapplyGamut
+  name: ReapplyGamut
+  nameWithType: AdlxDisplay.ReapplyGamut
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyGamut
+- uid: ADLXWrapper.AdlxDisplay.GetThreeDLut*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetThreeDLut
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetThreeDLut
+  name: GetThreeDLut
+  nameWithType: AdlxDisplay.GetThreeDLut
+  fullName: ADLXWrapper.AdlxDisplay.GetThreeDLut
+- uid: ADLXWrapper.ThreeDLUTInfo
+  commentId: T:ADLXWrapper.ThreeDLUTInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.ThreeDLUTInfo.html
+  name: ThreeDLUTInfo
+  nameWithType: ThreeDLUTInfo
+  fullName: ADLXWrapper.ThreeDLUTInfo
+- uid: ADLXWrapper.AdlxDisplay.ReapplyThreeDLut*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ReapplyThreeDLut
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ReapplyThreeDLut
+  name: ReapplyThreeDLut
+  nameWithType: AdlxDisplay.ReapplyThreeDLut
+  fullName: ADLXWrapper.AdlxDisplay.ReapplyThreeDLut
+- uid: ADLXWrapper.AdlxDisplay.GetConnectivityExperience*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetConnectivityExperience
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetConnectivityExperience
+  name: GetConnectivityExperience
+  nameWithType: AdlxDisplay.GetConnectivityExperience
+  fullName: ADLXWrapper.AdlxDisplay.GetConnectivityExperience
+- uid: ADLXWrapper.ConnectivityExperienceInfo
+  commentId: T:ADLXWrapper.ConnectivityExperienceInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.ConnectivityExperienceInfo.html
+  name: ConnectivityExperienceInfo
+  nameWithType: ConnectivityExperienceInfo
+  fullName: ADLXWrapper.ConnectivityExperienceInfo
+- uid: ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_ApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceInfo_
+  name: ApplyConnectivityExperience
+  nameWithType: AdlxDisplay.ApplyConnectivityExperience
+  fullName: ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience
+- uid: ADLXWrapper.AdlxDisplay.GetDisplayBlankingState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetDisplayBlankingState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetDisplayBlankingState
+  name: GetDisplayBlankingState
+  nameWithType: AdlxDisplay.GetDisplayBlankingState
+  fullName: ADLXWrapper.AdlxDisplay.GetDisplayBlankingState
+- uid: ADLXWrapper.AdlxDisplay.SetDisplayBlanked*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetDisplayBlanked
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetDisplayBlanked_System_Boolean_
+  name: SetDisplayBlanked
+  nameWithType: AdlxDisplay.SetDisplayBlanked
+  fullName: ADLXWrapper.AdlxDisplay.SetDisplayBlanked
+- uid: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetFreeSyncColorAccuracyState
+  name: GetFreeSyncColorAccuracyState
+  nameWithType: AdlxDisplay.GetFreeSyncColorAccuracyState
+  fullName: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSyncColorAccuracyEnabled_System_Boolean_
+  name: SetFreeSyncColorAccuracyEnabled
+  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracyEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled
+- uid: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetDynamicRefreshRateControlState
+  name: GetDynamicRefreshRateControlState
+  nameWithType: AdlxDisplay.GetDynamicRefreshRateControlState
+  fullName: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
+- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetDynamicRefreshRateControlEnabled_System_Boolean_
+  name: SetDynamicRefreshRateControlEnabled
+  nameWithType: AdlxDisplay.SetDynamicRefreshRateControlEnabled
+  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled
+- uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_DisplaySettingsChangedCallback_
+  name: AddDisplaySettingsEventListener
+  nameWithType: AdlxDisplay.AddDisplaySettingsEventListener
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplaySettingsListenerHandle.html
+  name: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  nameWithType: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  spec.csharp:
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle
+    name: DisplaySettingsListenerHandle
+    href: ADLXWrapper.DisplaySettingsListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+    name: DisplaySettingsChangedCallback
+    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle
+    name: DisplaySettingsListenerHandle
+    href: ADLXWrapper.DisplaySettingsListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+    name: DisplaySettingsChangedCallback
+    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+- uid: ADLXWrapper.DisplaySettingsListenerHandle
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplaySettingsListenerHandle.html
+  name: DisplaySettingsListenerHandle
+  nameWithType: DisplaySettingsListenerHandle
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RemoveDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_System_Boolean_
+  name: RemoveDisplaySettingsEventListener
+  nameWithType: AdlxDisplay.RemoveDisplaySettingsEventListener
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplayGammaEventListener_ADLXWrapper_DisplayGammaListenerHandle_OnDisplayGammaChanged_
+  name: AddDisplayGammaEventListener
+  nameWithType: AdlxDisplay.AddDisplayGammaEventListener
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener
+- uid: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+  commentId: T:ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayGammaListenerHandle.html
+  name: DisplayGammaListenerHandle.OnDisplayGammaChanged
+  nameWithType: DisplayGammaListenerHandle.OnDisplayGammaChanged
+  fullName: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+  spec.csharp:
+  - uid: ADLXWrapper.DisplayGammaListenerHandle
+    name: DisplayGammaListenerHandle
+    href: ADLXWrapper.DisplayGammaListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+    name: OnDisplayGammaChanged
+    href: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged.html
+  spec.vb:
+  - uid: ADLXWrapper.DisplayGammaListenerHandle
+    name: DisplayGammaListenerHandle
+    href: ADLXWrapper.DisplayGammaListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+    name: OnDisplayGammaChanged
+    href: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged.html
+- uid: ADLXWrapper.DisplayGammaListenerHandle
+  commentId: T:ADLXWrapper.DisplayGammaListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayGammaListenerHandle.html
+  name: DisplayGammaListenerHandle
+  nameWithType: DisplayGammaListenerHandle
+  fullName: ADLXWrapper.DisplayGammaListenerHandle
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RemoveDisplayGammaEventListener_ADLXWrapper_DisplayGammaListenerHandle_System_Boolean_
+  name: RemoveDisplayGammaEventListener
+  nameWithType: AdlxDisplay.RemoveDisplayGammaEventListener
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayGammaEventListener
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplayGamutEventListener_ADLXWrapper_DisplayGamutListenerHandle_OnDisplayGamutChanged_
+  name: AddDisplayGamutEventListener
+  nameWithType: AdlxDisplay.AddDisplayGamutEventListener
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener
+- uid: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+  commentId: T:ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayGamutListenerHandle.html
+  name: DisplayGamutListenerHandle.OnDisplayGamutChanged
+  nameWithType: DisplayGamutListenerHandle.OnDisplayGamutChanged
+  fullName: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+  spec.csharp:
+  - uid: ADLXWrapper.DisplayGamutListenerHandle
+    name: DisplayGamutListenerHandle
+    href: ADLXWrapper.DisplayGamutListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+    name: OnDisplayGamutChanged
+    href: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged.html
+  spec.vb:
+  - uid: ADLXWrapper.DisplayGamutListenerHandle
+    name: DisplayGamutListenerHandle
+    href: ADLXWrapper.DisplayGamutListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+    name: OnDisplayGamutChanged
+    href: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged.html
+- uid: ADLXWrapper.DisplayGamutListenerHandle
+  commentId: T:ADLXWrapper.DisplayGamutListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayGamutListenerHandle.html
+  name: DisplayGamutListenerHandle
+  nameWithType: DisplayGamutListenerHandle
+  fullName: ADLXWrapper.DisplayGamutListenerHandle
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RemoveDisplayGamutEventListener_ADLXWrapper_DisplayGamutListenerHandle_System_Boolean_
+  name: RemoveDisplayGamutEventListener
+  nameWithType: AdlxDisplay.RemoveDisplayGamutEventListener
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayGamutEventListener
+- uid: ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplay3dLutEventListener_ADLXWrapper_Display3DLutListenerHandle_OnDisplay3DLutChanged_
+  name: AddDisplay3dLutEventListener
+  nameWithType: AdlxDisplay.AddDisplay3dLutEventListener
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplay3dLutEventListener
+- uid: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+  commentId: T:ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+  parent: ADLXWrapper
+  href: ADLXWrapper.Display3DLutListenerHandle.html
+  name: Display3DLutListenerHandle.OnDisplay3DLutChanged
+  nameWithType: Display3DLutListenerHandle.OnDisplay3DLutChanged
+  fullName: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+  spec.csharp:
+  - uid: ADLXWrapper.Display3DLutListenerHandle
+    name: Display3DLutListenerHandle
+    href: ADLXWrapper.Display3DLutListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+    name: OnDisplay3DLutChanged
+    href: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged.html
+  spec.vb:
+  - uid: ADLXWrapper.Display3DLutListenerHandle
+    name: Display3DLutListenerHandle
+    href: ADLXWrapper.Display3DLutListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+    name: OnDisplay3DLutChanged
+    href: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged.html
+- uid: ADLXWrapper.Display3DLutListenerHandle
+  commentId: T:ADLXWrapper.Display3DLutListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.Display3DLutListenerHandle.html
+  name: Display3DLutListenerHandle
+  nameWithType: Display3DLutListenerHandle
+  fullName: ADLXWrapper.Display3DLutListenerHandle
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RemoveDisplay3dLutEventListener_ADLXWrapper_Display3DLutListenerHandle_System_Boolean_
+  name: RemoveDisplay3dLutEventListener
+  nameWithType: AdlxDisplay.RemoveDisplay3dLutEventListener
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplay3dLutEventListener
+- uid: ADLXWrapper.AdlxDisplay.AddDisplayListEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplayListEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_OnDisplayListChanged_
+  name: AddDisplayListEventListener
+  nameWithType: AdlxDisplay.AddDisplayListEventListener
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplayListEventListener
+- uid: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+  commentId: T:ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayListListenerHandle.html
+  name: DisplayListListenerHandle.OnDisplayListChanged
+  nameWithType: DisplayListListenerHandle.OnDisplayListChanged
+  fullName: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+  spec.csharp:
+  - uid: ADLXWrapper.DisplayListListenerHandle
+    name: DisplayListListenerHandle
+    href: ADLXWrapper.DisplayListListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+    name: OnDisplayListChanged
+    href: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged.html
+  spec.vb:
+  - uid: ADLXWrapper.DisplayListListenerHandle
+    name: DisplayListListenerHandle
+    href: ADLXWrapper.DisplayListListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+    name: OnDisplayListChanged
+    href: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged.html
+- uid: ADLXWrapper.DisplayListListenerHandle
+  commentId: T:ADLXWrapper.DisplayListListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.DisplayListListenerHandle.html
+  name: DisplayListListenerHandle
+  nameWithType: DisplayListListenerHandle
+  fullName: ADLXWrapper.DisplayListListenerHandle
+- uid: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_RemoveDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_System_Boolean_
+  name: RemoveDisplayListEventListener
+  nameWithType: AdlxDisplay.RemoveDisplayListEventListener
+  fullName: ADLXWrapper.AdlxDisplay.RemoveDisplayListEventListener
+- uid: ADLXWrapper.AdlxDisplay.GetGpu*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetGpu
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetGpu
+  name: GetGpu
+  nameWithType: AdlxDisplay.GetGpu
+  fullName: ADLXWrapper.AdlxDisplay.GetGpu
+- uid: ADLXWrapper.AdlxGpu
+  commentId: T:ADLXWrapper.AdlxGpu
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxGpu.html
+  name: AdlxGpu
+  nameWithType: AdlxGpu
+  fullName: ADLXWrapper.AdlxGpu
+- uid: ADLXWrapper.AdlxDisplay.GetDesktop*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.GetDesktop
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetDesktop
+  name: GetDesktop
+  nameWithType: AdlxDisplay.GetDesktop
+  fullName: ADLXWrapper.AdlxDisplay.GetDesktop
+- uid: ADLXWrapper.AdlxDesktop
+  commentId: T:ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxDesktop.html
+  name: AdlxDesktop
+  nameWithType: AdlxDesktop
+  fullName: ADLXWrapper.AdlxDesktop
+- uid: ADLXWrapper.AdlxDisplay.Dispose*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.Dispose
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_Dispose
+  name: Dispose
+  nameWithType: AdlxDisplay.Dispose
+  fullName: ADLXWrapper.AdlxDisplay.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

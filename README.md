@@ -57,19 +57,20 @@ To verify the build and check hardware compatibility, run the test script.
 
 ```csharp
 using var adlx = ADLXApiHelper.Initialize();
-using var sys = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+using var sys = adlx.GetSystemServices();
 
 // Enumerate GPUs and displays
 var gpuHandles = sys.EnumerateGPUHandles();
 var displayHandles = sys.EnumerateDisplayHandles();
 
 // Toggle a display feature if supported (e.g., Virtual Super Resolution)
-using var displayHelper = new ADLXDisplayServicesHelper(sys.GetDisplayServicesNative());
+using var displayHelper = sys.GetDisplayServices();
 var firstDisplay = displayHandles[0].As<IADLXDisplay>();
 var vsr = displayHelper.GetVirtualSuperResolution(firstDisplay);
 if (vsr.IsSupported)
 {
-    displayHelper.SetVirtualSuperResolutionEnabled(displayHelper.GetVirtualSuperResolutionNative(firstDisplay), !vsr.IsEnabled);
+    using var vsrNative = new ComPtr<IADLXVirtualSuperResolution>(displayHelper.GetVirtualSuperResolutionNative(firstDisplay));
+    displayHelper.SetVirtualSuperResolutionEnabled(vsrNative.Get(), !vsr.IsEnabled);
 }
 
 // Always dispose handles/helpers to release native refs

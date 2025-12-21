@@ -54,7 +54,7 @@ namespace ADLXWrapper
             return GetHighestDisplayServices();
         }
 
-        public AdlxInterfaceHandle GetDisplayServices()
+        public AdlxInterfaceHandle GetDisplayServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);

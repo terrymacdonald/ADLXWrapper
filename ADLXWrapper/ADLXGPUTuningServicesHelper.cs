@@ -32,7 +32,7 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
-        public AdlxInterfaceHandle GetGPUTuningServices()
+        public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);

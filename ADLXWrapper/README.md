@@ -21,13 +21,11 @@ using System;
 // Initialize ADLX (ADLXApiHelper owns DLL + system lifetime)
 using var adlx = ADLXApiHelper.Initialize();
 
-// Wrap system services (AddRef'd; dispose before disposing adlx)
-using var system = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
+// Wrap system services via helper (AddRef'd; dispose before disposing adlx)
+using var system = adlx.GetSystemServices();
 
-// Display helpers / façades
-using var displayServices = new ADLXDisplayServicesHelper(
-    system.GetDisplayServicesNative(),
-    system.GetDesktopServicesNative());
+// Display helpers / façades via system helper
+using var displayServices = system.GetDisplayServices();
 
 foreach (var display in displayServices.EnumerateAdlxDisplays())
 using (display) // AdlxDisplay is IDisposable

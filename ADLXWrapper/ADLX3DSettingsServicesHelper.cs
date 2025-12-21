@@ -33,7 +33,7 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
-        public AdlxInterfaceHandle Get3DSettingsServices()
+        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);

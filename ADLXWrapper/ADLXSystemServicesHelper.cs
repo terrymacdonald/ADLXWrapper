@@ -51,7 +51,7 @@ namespace ADLXWrapper
             return _system.Get();
         }
 
-        public AdlxInterfaceHandle GetSystemServices()
+        public AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetSystemServicesNative(), addRef: true);
@@ -63,9 +63,19 @@ namespace ADLXWrapper
             return EnsureDisplayServices();
         }
 
-        public AdlxInterfaceHandle GetDisplayServices()
+        public AdlxInterfaceHandle GetDisplayServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
+        }
+
+        public ADLXDisplayServicesHelper GetDisplayServices()
+        {
+            ThrowIfDisposed();
+            var displayServices = GetDisplayServicesNative();
+            var desktopServices = GetDesktopServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)displayServices);
+            ADLXUtils.AddRefInterface((IntPtr)desktopServices);
+            return new ADLXDisplayServicesHelper(displayServices, desktopServices, addRefDisplayServices: false, addRefDesktopServices: false);
         }
 
         public IADLXDesktopServices* GetDesktopServicesNative()
@@ -74,9 +84,19 @@ namespace ADLXWrapper
             return EnsureDesktopServices();
         }
 
-        public AdlxInterfaceHandle GetDesktopServices()
+        public AdlxInterfaceHandle GetDesktopServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
+        }
+
+        public ADLXDesktopServicesHelper GetDesktopServices()
+        {
+            ThrowIfDisposed();
+            var desktopServices = GetDesktopServicesNative();
+            var displayServices = GetDisplayServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)desktopServices);
+            ADLXUtils.AddRefInterface((IntPtr)displayServices);
+            return new ADLXDesktopServicesHelper(desktopServices, displayServices, addRefDesktopServices: false);
         }
 
         public IADLX3DSettingsServices* Get3DSettingsServicesNative()
@@ -85,9 +105,17 @@ namespace ADLXWrapper
             return Ensure3DSettingsServices();
         }
 
-        public AdlxInterfaceHandle Get3DSettingsServices()
+        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
         {
             return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
+        }
+
+        public ADLX3DSettingsServicesHelper Get3DSettingsServices()
+        {
+            ThrowIfDisposed();
+            var services = Get3DSettingsServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ADLX3DSettingsServicesHelper(services, addRef: false);
         }
 
         public IADLXGPUTuningServices* GetGPUTuningServicesNative()
@@ -96,9 +124,17 @@ namespace ADLXWrapper
             return EnsureGPUTuningServices();
         }
 
-        public AdlxInterfaceHandle GetGPUTuningServices()
+        public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
+        }
+
+        public ADLXGPUTuningServicesHelper GetGPUTuningServices()
+        {
+            ThrowIfDisposed();
+            var services = GetGPUTuningServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ADLXGPUTuningServicesHelper(services, addRef: false);
         }
 
         public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
@@ -107,9 +143,17 @@ namespace ADLXWrapper
             return EnsurePerformanceMonitoringServices();
         }
 
-        public AdlxInterfaceHandle GetPerformanceMonitoringServices()
+        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+        }
+
+        public ADLXPerformanceMonitoringServicesHelper GetPerformanceMonitoringServices()
+        {
+            ThrowIfDisposed();
+            var services = GetPerformanceMonitoringServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ADLXPerformanceMonitoringServicesHelper(services, addRef: false);
         }
 
         public IADLXPowerTuningServices* GetPowerTuningServicesNative()
@@ -118,9 +162,17 @@ namespace ADLXWrapper
             return EnsurePowerTuningServices();
         }
 
-        public AdlxInterfaceHandle GetPowerTuningServices()
+        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
+        }
+
+        public ADLXPowerTuningServicesHelper GetPowerTuningServices()
+        {
+            ThrowIfDisposed();
+            var services = GetPowerTuningServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ADLXPowerTuningServicesHelper(services, addRef: false);
         }
 
         public IADLXMultimediaServices* GetMultimediaServicesNative()
@@ -129,9 +181,17 @@ namespace ADLXWrapper
             return EnsureMultimediaServices();
         }
 
-        public AdlxInterfaceHandle GetMultimediaServices()
+        public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
+        }
+
+        public ADLXMultimediaServicesHelper GetMultimediaServices()
+        {
+            ThrowIfDisposed();
+            var services = GetMultimediaServicesNative();
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ADLXMultimediaServicesHelper(services, addRef: false);
         }
 
         public IADLXGPUsChangedHandling* GetGPUsChangedHandlingNative()

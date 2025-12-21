@@ -32,7 +32,7 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
-        public AdlxInterfaceHandle GetPowerTuningServices()
+        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);

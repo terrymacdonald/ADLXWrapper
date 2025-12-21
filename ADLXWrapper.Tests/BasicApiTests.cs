@@ -93,7 +93,7 @@ namespace ADLXWrapper.Tests
         public void GetSystemServices_ShouldReturnValidPointer()
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
-            using var handle = _api!.GetSystemServices();
+            using var handle = _api!.GetSystemServicesHandle();
             Assert.False(handle.IsInvalid);
         }
 
@@ -135,7 +135,7 @@ namespace ADLXWrapper.Tests
             // After dispose, methods should throw ObjectDisposedException
             Assert.Throws<ObjectDisposedException>(() => testApi.GetVersion());
             Assert.Throws<ObjectDisposedException>(() => testApi.GetFullVersion());
-            Assert.Throws<ObjectDisposedException>(() => testApi.GetSystemServices());
+            Assert.Throws<ObjectDisposedException>(() => testApi.GetSystemServicesHandle());
         }
 
         [SkippableFact]

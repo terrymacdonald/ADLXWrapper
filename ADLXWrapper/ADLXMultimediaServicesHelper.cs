@@ -31,7 +31,7 @@ namespace ADLXWrapper
             return _services.Get();
         }
 
-        public AdlxInterfaceHandle GetMultimediaServices()
+        public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);

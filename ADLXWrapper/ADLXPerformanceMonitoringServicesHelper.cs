@@ -28,7 +28,7 @@ namespace ADLXWrapper
             return _services.Get();
         }
 
-        public AdlxInterfaceHandle GetPerformanceMonitoringServices()
+        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
