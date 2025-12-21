@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplaySettingsChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2381
+    startLine: 2338
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

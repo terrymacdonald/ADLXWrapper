@@ -32,7 +32,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1885
+    startLine: 1842
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,7 +66,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1887
+    startLine: 1844
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,7 +95,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1888
+    startLine: 1845
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -124,7 +124,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1889
+    startLine: 1846
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -153,7 +153,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1890
+    startLine: 1847
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -182,7 +182,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerID
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1891
+    startLine: 1848
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -211,7 +211,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1892
+    startLine: 1849
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -240,7 +240,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1893
+    startLine: 1850
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1894
+    startLine: 1851
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -298,7 +298,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1895
+    startLine: 1852
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -327,7 +327,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1896
+    startLine: 1853
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -356,7 +356,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1897
+    startLine: 1854
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -385,7 +385,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1898
+    startLine: 1855
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -414,7 +414,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1900
+    startLine: 1857
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

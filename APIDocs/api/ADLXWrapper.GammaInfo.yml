@@ -21,7 +21,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GammaInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1938
+    startLine: 1895
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -53,7 +53,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1940
+    startLine: 1897
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -82,7 +82,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1942
+    startLine: 1899
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

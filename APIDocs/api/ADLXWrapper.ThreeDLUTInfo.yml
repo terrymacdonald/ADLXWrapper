@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDLUTInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1978
+    startLine: 1935
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1980
+    startLine: 1937
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceVividGamingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1981
+    startLine: 1938
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceDynamicContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1982
+    startLine: 1939
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUser3DLutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1983
+    startLine: 1940
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1985
+    startLine: 1942
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CustomResolutionInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2063
+    startLine: 2020
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2065
+    startLine: 2022
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Resolutions
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2066
+    startLine: 2023
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2068
+    startLine: 2025
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

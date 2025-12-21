@@ -7,6 +7,7 @@ items:
   children:
   - ADLXWrapper.ADLXSystemServicesHelper.#ctor(ADLXWrapper.IADLXSystem*,System.Boolean)
   - ADLXWrapper.ADLXSystemServicesHelper.Dispose
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
@@ -863,6 +864,34 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetGPUAppsListChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling*
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+  id: EnumerateDisplays
+  parent: ADLXWrapper.ADLXSystemServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: EnumerateDisplays()
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplays()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateDisplays
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 218
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<AdlxDisplay> EnumerateDisplays()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of AdlxDisplay)
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   id: EnumerateGPUsHandle
@@ -881,7 +910,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 218
+    startLine: 225
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -909,7 +938,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 240
+    startLine: 247
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -937,7 +966,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 257
+    startLine: 264
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -968,7 +997,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 264
+    startLine: 271
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -996,7 +1025,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 277
+    startLine: 284
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1026,7 +1055,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 304
+    startLine: 311
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1663,6 +1692,110 @@ references:
   name: GetGPUAppsListChangedHandling
   nameWithType: ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplays
+  name: EnumerateDisplays
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplays
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<AdlxDisplay>
+  nameWithType: IReadOnlyList<AdlxDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AdlxDisplay>
+  nameWithType.vb: IReadOnlyList(Of AdlxDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AdlxDisplay)
+  name.vb: IReadOnlyList(Of AdlxDisplay)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.AdlxDisplay
+    name: AdlxDisplay
+    href: ADLXWrapper.AdlxDisplay.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.AdlxDisplay
+    name: AdlxDisplay
+    href: ADLXWrapper.AdlxDisplay.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
   commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle
@@ -1757,43 +1890,6 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo*
   commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo
   href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetGpuInfo_ADLXWrapper_IADLXGPU__

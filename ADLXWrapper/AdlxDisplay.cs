@@ -52,7 +52,7 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
         }
 
-        public void SetFreeSyncEnabled(bool enable)
+        public void SetFreeSync(bool enable)
         {
             ThrowIfDisposed();
             CreateDisplayServicesHelper().SetFreeSyncEnabled(_display.Get(), enable);
@@ -67,7 +67,7 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
         }
 
-        public void SetGpuScalingEnabled(bool enable)
+        public void SetGpuScaling(bool enable)
         {
             ThrowIfDisposed();
             CreateDisplayServicesHelper().SetGPUScalingEnabled(_display.Get(), enable);
@@ -117,7 +117,7 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetVirtualSuperResolutionState(_display.Get());
         }
 
-        public void SetVirtualSuperResolutionEnabled(bool enable)
+        public void SetVirtualSuperResolution(bool enable)
         {
             ThrowIfDisposed();
             CreateDisplayServicesHelper().SetVirtualSuperResolutionEnabled(_display.Get(), enable);
@@ -132,7 +132,7 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetIntegerScalingState(_display.Get());
         }
 
-        public void SetIntegerScalingEnabled(bool enable)
+        public void SetIntegerScaling(bool enable)
         {
             ThrowIfDisposed();
             CreateDisplayServicesHelper().SetIntegerScalingEnabled(_display.Get(), enable);
@@ -147,7 +147,7 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetHDCPState(_display.Get());
         }
 
-        public void SetHdcpEnabled(bool enable)
+        public void SetHdcp(bool enable)
         {
             ThrowIfDisposed();
             CreateDisplayServicesHelper().SetHDCPEnabled(_display.Get(), enable);
@@ -293,11 +293,11 @@ namespace ADLXWrapper
             return helper.GetDisplayBlankingState(_display.Get());
         }
 
-        public void SetDisplayBlanked(bool blank)
+        public void SetDisplayBlanked(bool enabled)
         {
             ThrowIfDisposed();
             using var helper = CreateDisplayServicesHelper();
-            helper.SetDisplayBlanked(_display.Get(), blank);
+            helper.SetDisplayBlanked(_display.Get(), enabled);
         }
 
         /// <summary>
@@ -310,7 +310,7 @@ namespace ADLXWrapper
             return helper.GetFreeSyncColorAccuracyState(_display.Get());
         }
 
-        public void SetFreeSyncColorAccuracyEnabled(bool enable)
+        public void SetFreeSyncColorAccuracy(bool enable)
         {
             ThrowIfDisposed();
             using var helper = CreateDisplayServicesHelper();
@@ -327,7 +327,7 @@ namespace ADLXWrapper
             return helper.GetDynamicRefreshRateControlState(_display.Get());
         }
 
-        public void SetDynamicRefreshRateControlEnabled(bool enable)
+        public void SetDynamicRefreshRateControl(bool enable)
         {
             ThrowIfDisposed();
             using var helper = CreateDisplayServicesHelper();

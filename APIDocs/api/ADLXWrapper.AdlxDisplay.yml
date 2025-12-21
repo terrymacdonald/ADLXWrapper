@@ -55,16 +55,16 @@ items:
   - ADLXWrapper.AdlxDisplay.ScanType
   - ADLXWrapper.AdlxDisplay.SetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
   - ADLXWrapper.AdlxDisplay.SetDisplayBlanked(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
-  - ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetFreeSync(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetGpuScaling(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetHdcp(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetIntegerScaling(System.Boolean)
   - ADLXWrapper.AdlxDisplay.SetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
   - ADLXWrapper.AdlxDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
   - ADLXWrapper.AdlxDisplay.SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
-  - ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
+  - ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution(System.Boolean)
   - ADLXWrapper.AdlxDisplay.Type
   - ADLXWrapper.AdlxDisplay.UniqueId
   - ADLXWrapper.AdlxDisplay.Width
@@ -545,38 +545,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetFreeSyncState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetFreeSyncState*
-- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(System.Boolean)
-  id: SetFreeSyncEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSync(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSync(System.Boolean)
+  id: SetFreeSync(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetFreeSyncEnabled(bool)
-  nameWithType: AdlxDisplay.SetFreeSyncEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(bool)
+  name: SetFreeSync(bool)
+  nameWithType: AdlxDisplay.SetFreeSync(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSync(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetFreeSyncEnabled
+    id: SetFreeSync
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 54
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetFreeSyncEnabled(bool enable)
+    content: public void SetFreeSync(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetFreeSyncEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled*
-  nameWithType.vb: AdlxDisplay.SetFreeSyncEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled(Boolean)
-  name.vb: SetFreeSyncEnabled(Boolean)
+    content.vb: Public Sub SetFreeSync(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetFreeSync*
+  nameWithType.vb: AdlxDisplay.SetFreeSync(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSync(Boolean)
+  name.vb: SetFreeSync(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetGpuScalingState
   commentId: M:ADLXWrapper.AdlxDisplay.GetGpuScalingState
   id: GetGpuScalingState
@@ -607,38 +607,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetGpuScalingState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetGpuScalingState*
-- uid: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(System.Boolean)
-  id: SetGpuScalingEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetGpuScaling(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetGpuScaling(System.Boolean)
+  id: SetGpuScaling(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetGpuScalingEnabled(bool)
-  nameWithType: AdlxDisplay.SetGpuScalingEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(bool)
+  name: SetGpuScaling(bool)
+  nameWithType: AdlxDisplay.SetGpuScaling(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetGpuScaling(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetGpuScalingEnabled
+    id: SetGpuScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 69
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetGpuScalingEnabled(bool enable)
+    content: public void SetGpuScaling(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetGpuScalingEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled*
-  nameWithType.vb: AdlxDisplay.SetGpuScalingEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled(Boolean)
-  name.vb: SetGpuScalingEnabled(Boolean)
+    content.vb: Public Sub SetGpuScaling(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetGpuScaling*
+  nameWithType.vb: AdlxDisplay.SetGpuScaling(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetGpuScaling(Boolean)
+  name.vb: SetGpuScaling(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetScalingMode
   commentId: M:ADLXWrapper.AdlxDisplay.GetScalingMode
   id: GetScalingMode
@@ -788,38 +788,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetVirtualSuperResolutionState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState*
-- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(System.Boolean)
-  id: SetVirtualSuperResolutionEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution(System.Boolean)
+  id: SetVirtualSuperResolution(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetVirtualSuperResolutionEnabled(bool)
-  nameWithType: AdlxDisplay.SetVirtualSuperResolutionEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(bool)
+  name: SetVirtualSuperResolution(bool)
+  nameWithType: AdlxDisplay.SetVirtualSuperResolution(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetVirtualSuperResolutionEnabled
+    id: SetVirtualSuperResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 119
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetVirtualSuperResolutionEnabled(bool enable)
+    content: public void SetVirtualSuperResolution(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetVirtualSuperResolutionEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled*
-  nameWithType.vb: AdlxDisplay.SetVirtualSuperResolutionEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled(Boolean)
-  name.vb: SetVirtualSuperResolutionEnabled(Boolean)
+    content.vb: Public Sub SetVirtualSuperResolution(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution*
+  nameWithType.vb: AdlxDisplay.SetVirtualSuperResolution(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution(Boolean)
+  name.vb: SetVirtualSuperResolution(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetIntegerScalingState
   commentId: M:ADLXWrapper.AdlxDisplay.GetIntegerScalingState
   id: GetIntegerScalingState
@@ -850,38 +850,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetIntegerScalingState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetIntegerScalingState*
-- uid: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(System.Boolean)
-  id: SetIntegerScalingEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetIntegerScaling(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetIntegerScaling(System.Boolean)
+  id: SetIntegerScaling(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetIntegerScalingEnabled(bool)
-  nameWithType: AdlxDisplay.SetIntegerScalingEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(bool)
+  name: SetIntegerScaling(bool)
+  nameWithType: AdlxDisplay.SetIntegerScaling(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScaling(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetIntegerScalingEnabled
+    id: SetIntegerScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 134
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetIntegerScalingEnabled(bool enable)
+    content: public void SetIntegerScaling(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetIntegerScalingEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled*
-  nameWithType.vb: AdlxDisplay.SetIntegerScalingEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled(Boolean)
-  name.vb: SetIntegerScalingEnabled(Boolean)
+    content.vb: Public Sub SetIntegerScaling(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetIntegerScaling*
+  nameWithType.vb: AdlxDisplay.SetIntegerScaling(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetIntegerScaling(Boolean)
+  name.vb: SetIntegerScaling(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetHdcpState
   commentId: M:ADLXWrapper.AdlxDisplay.GetHdcpState
   id: GetHdcpState
@@ -912,38 +912,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetHdcpState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetHdcpState*
-- uid: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetHdcpEnabled(System.Boolean)
-  id: SetHdcpEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetHdcp(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetHdcp(System.Boolean)
+  id: SetHdcp(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetHdcpEnabled(bool)
-  nameWithType: AdlxDisplay.SetHdcpEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(bool)
+  name: SetHdcp(bool)
+  nameWithType: AdlxDisplay.SetHdcp(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetHdcp(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetHdcpEnabled
+    id: SetHdcp
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetHdcpEnabled(bool enable)
+    content: public void SetHdcp(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetHdcpEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetHdcpEnabled*
-  nameWithType.vb: AdlxDisplay.SetHdcpEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetHdcpEnabled(Boolean)
-  name.vb: SetHdcpEnabled(Boolean)
+    content.vb: Public Sub SetHdcp(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetHdcp*
+  nameWithType.vb: AdlxDisplay.SetHdcp(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetHdcp(Boolean)
+  name.vb: SetHdcp(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetVariBrightState
   commentId: M:ADLXWrapper.AdlxDisplay.GetVariBrightState
   id: GetVariBrightState
@@ -1465,11 +1465,11 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetDisplayBlanked(bool blank)
+    content: public void SetDisplayBlanked(bool enabled)
     parameters:
-    - id: blank
+    - id: enabled
       type: System.Boolean
-    content.vb: Public Sub SetDisplayBlanked(blank As Boolean)
+    content.vb: Public Sub SetDisplayBlanked(enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.SetDisplayBlanked*
   nameWithType.vb: AdlxDisplay.SetDisplayBlanked(Boolean)
   fullName.vb: ADLXWrapper.AdlxDisplay.SetDisplayBlanked(Boolean)
@@ -1504,38 +1504,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetFreeSyncColorAccuracyState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState*
-- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(System.Boolean)
-  id: SetFreeSyncColorAccuracyEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy(System.Boolean)
+  id: SetFreeSyncColorAccuracy(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetFreeSyncColorAccuracyEnabled(bool)
-  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracyEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(bool)
+  name: SetFreeSyncColorAccuracy(bool)
+  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracy(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetFreeSyncColorAccuracyEnabled
+    id: SetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 312
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetFreeSyncColorAccuracyEnabled(bool enable)
+    content: public void SetFreeSyncColorAccuracy(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetFreeSyncColorAccuracyEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled*
-  nameWithType.vb: AdlxDisplay.SetFreeSyncColorAccuracyEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled(Boolean)
-  name.vb: SetFreeSyncColorAccuracyEnabled(Boolean)
+    content.vb: Public Sub SetFreeSyncColorAccuracy(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy*
+  nameWithType.vb: AdlxDisplay.SetFreeSyncColorAccuracy(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy(Boolean)
+  name.vb: SetFreeSyncColorAccuracy(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
   commentId: M:ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
   id: GetDynamicRefreshRateControlState
@@ -1566,38 +1566,38 @@ items:
       type: System.ValueTuple{System.Boolean,System.Boolean}
     content.vb: Public Function GetDynamicRefreshRateControlState() As (supported As Boolean, enabled As Boolean)
   overload: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState*
-- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(System.Boolean)
-  id: SetDynamicRefreshRateControlEnabled(System.Boolean)
+- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl(System.Boolean)
+  commentId: M:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl(System.Boolean)
+  id: SetDynamicRefreshRateControl(System.Boolean)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: SetDynamicRefreshRateControlEnabled(bool)
-  nameWithType: AdlxDisplay.SetDynamicRefreshRateControlEnabled(bool)
-  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(bool)
+  name: SetDynamicRefreshRateControl(bool)
+  nameWithType: AdlxDisplay.SetDynamicRefreshRateControl(bool)
+  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl(bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: SetDynamicRefreshRateControlEnabled
+    id: SetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 329
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void SetDynamicRefreshRateControlEnabled(bool enable)
+    content: public void SetDynamicRefreshRateControl(bool enable)
     parameters:
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetDynamicRefreshRateControlEnabled(enable As Boolean)
-  overload: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled*
-  nameWithType.vb: AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
-  fullName.vb: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
-  name.vb: SetDynamicRefreshRateControlEnabled(Boolean)
+    content.vb: Public Sub SetDynamicRefreshRateControl(enable As Boolean)
+  overload: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl*
+  nameWithType.vb: AdlxDisplay.SetDynamicRefreshRateControl(Boolean)
+  fullName.vb: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl(Boolean)
+  name.vb: SetDynamicRefreshRateControl(Boolean)
 - uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   commentId: M:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   id: AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
@@ -2551,12 +2551,12 @@ references:
   - name: " "
   - name: T2
   - name: )
-- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSyncEnabled_System_Boolean_
-  name: SetFreeSyncEnabled
-  nameWithType: AdlxDisplay.SetFreeSyncEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSync*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSync
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSync_System_Boolean_
+  name: SetFreeSync
+  nameWithType: AdlxDisplay.SetFreeSync
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSync
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -2574,12 +2574,12 @@ references:
   name: GetGpuScalingState
   nameWithType: AdlxDisplay.GetGpuScalingState
   fullName: ADLXWrapper.AdlxDisplay.GetGpuScalingState
-- uid: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetGpuScalingEnabled_System_Boolean_
-  name: SetGpuScalingEnabled
-  nameWithType: AdlxDisplay.SetGpuScalingEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetGpuScalingEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetGpuScaling*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetGpuScaling
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetGpuScaling_System_Boolean_
+  name: SetGpuScaling
+  nameWithType: AdlxDisplay.SetGpuScaling
+  fullName: ADLXWrapper.AdlxDisplay.SetGpuScaling
 - uid: ADLXWrapper.AdlxDisplay.GetScalingMode*
   commentId: Overload:ADLXWrapper.AdlxDisplay.GetScalingMode
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetScalingMode
@@ -2827,36 +2827,36 @@ references:
   name: GetVirtualSuperResolutionState
   nameWithType: AdlxDisplay.GetVirtualSuperResolutionState
   fullName: ADLXWrapper.AdlxDisplay.GetVirtualSuperResolutionState
-- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetVirtualSuperResolutionEnabled_System_Boolean_
-  name: SetVirtualSuperResolutionEnabled
-  nameWithType: AdlxDisplay.SetVirtualSuperResolutionEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolutionEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetVirtualSuperResolution_System_Boolean_
+  name: SetVirtualSuperResolution
+  nameWithType: AdlxDisplay.SetVirtualSuperResolution
+  fullName: ADLXWrapper.AdlxDisplay.SetVirtualSuperResolution
 - uid: ADLXWrapper.AdlxDisplay.GetIntegerScalingState*
   commentId: Overload:ADLXWrapper.AdlxDisplay.GetIntegerScalingState
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetIntegerScalingState
   name: GetIntegerScalingState
   nameWithType: AdlxDisplay.GetIntegerScalingState
   fullName: ADLXWrapper.AdlxDisplay.GetIntegerScalingState
-- uid: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetIntegerScalingEnabled_System_Boolean_
-  name: SetIntegerScalingEnabled
-  nameWithType: AdlxDisplay.SetIntegerScalingEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScalingEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetIntegerScaling*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetIntegerScaling
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetIntegerScaling_System_Boolean_
+  name: SetIntegerScaling
+  nameWithType: AdlxDisplay.SetIntegerScaling
+  fullName: ADLXWrapper.AdlxDisplay.SetIntegerScaling
 - uid: ADLXWrapper.AdlxDisplay.GetHdcpState*
   commentId: Overload:ADLXWrapper.AdlxDisplay.GetHdcpState
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetHdcpState
   name: GetHdcpState
   nameWithType: AdlxDisplay.GetHdcpState
   fullName: ADLXWrapper.AdlxDisplay.GetHdcpState
-- uid: ADLXWrapper.AdlxDisplay.SetHdcpEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetHdcpEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetHdcpEnabled_System_Boolean_
-  name: SetHdcpEnabled
-  nameWithType: AdlxDisplay.SetHdcpEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetHdcpEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetHdcp*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetHdcp
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetHdcp_System_Boolean_
+  name: SetHdcp
+  nameWithType: AdlxDisplay.SetHdcp
+  fullName: ADLXWrapper.AdlxDisplay.SetHdcp
 - uid: ADLXWrapper.AdlxDisplay.GetVariBrightState*
   commentId: Overload:ADLXWrapper.AdlxDisplay.GetVariBrightState
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetVariBrightState
@@ -3239,24 +3239,24 @@ references:
   name: GetFreeSyncColorAccuracyState
   nameWithType: AdlxDisplay.GetFreeSyncColorAccuracyState
   fullName: ADLXWrapper.AdlxDisplay.GetFreeSyncColorAccuracyState
-- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSyncColorAccuracyEnabled_System_Boolean_
-  name: SetFreeSyncColorAccuracyEnabled
-  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracyEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracyEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetFreeSyncColorAccuracy_System_Boolean_
+  name: SetFreeSyncColorAccuracy
+  nameWithType: AdlxDisplay.SetFreeSyncColorAccuracy
+  fullName: ADLXWrapper.AdlxDisplay.SetFreeSyncColorAccuracy
 - uid: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState*
   commentId: Overload:ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_GetDynamicRefreshRateControlState
   name: GetDynamicRefreshRateControlState
   nameWithType: AdlxDisplay.GetDynamicRefreshRateControlState
   fullName: ADLXWrapper.AdlxDisplay.GetDynamicRefreshRateControlState
-- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled*
-  commentId: Overload:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetDynamicRefreshRateControlEnabled_System_Boolean_
-  name: SetDynamicRefreshRateControlEnabled
-  nameWithType: AdlxDisplay.SetDynamicRefreshRateControlEnabled
-  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled
+- uid: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl*
+  commentId: Overload:ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_SetDynamicRefreshRateControl_System_Boolean_
+  name: SetDynamicRefreshRateControl
+  nameWithType: AdlxDisplay.SetDynamicRefreshRateControl
+  fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControl
 - uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener*
   commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener
   href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_OnDisplaySettingsChanged_
