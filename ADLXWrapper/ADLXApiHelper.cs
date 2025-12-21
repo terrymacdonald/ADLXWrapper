@@ -203,7 +203,6 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// <summary>
         /// Get the system services native pointer (lifetime owned by this API helper).
         /// Callers must not Release() it directly.
         /// </summary>
