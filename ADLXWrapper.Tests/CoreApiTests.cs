@@ -58,7 +58,7 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                _gpus = _system.EnumerateGPUHandles();
+                _gpus = _system.EnumerateGPUsHandle();
                 _output.WriteLine($"? ADLX initialized successfully");
                 _output.WriteLine($"  ADLX Version: {_api.GetVersion()}");
                 _output.WriteLine($"  GPUs found: {_gpus.Length}");
@@ -94,7 +94,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            var gpus = _system!.EnumerateGPUHandles();
+            var gpus = _system!.EnumerateGPUsHandle();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -112,7 +112,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            var gpus = _system!.EnumerateGPUHandles();
+            var gpus = _system!.EnumerateGPUsHandle();
 
             foreach (var gpu in gpus)
             {
@@ -314,7 +314,7 @@ namespace ADLXWrapper.Tests
             Skip.If(!_hasHardware || !_hasDll || _api == null, _skipReason);
 
             // Get a fresh GPU pointer
-            var gpus = _system!.EnumerateGPUHandles();
+            var gpus = _system!.EnumerateGPUsHandle();
             Exception? exception = null;
             try
             {

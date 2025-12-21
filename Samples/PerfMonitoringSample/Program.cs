@@ -7,7 +7,7 @@ unsafe
 
     using var adlx = ADLXApiHelper.Initialize();
     using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var gpus = sysHelper.EnumerateGPUHandles();
+    var gpus = sysHelper.EnumerateGPUsHandle();
     if (gpus.Length == 0)
     {
         Console.WriteLine("No AMD GPU found; exiting.");

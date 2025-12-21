@@ -7,8 +7,9 @@ items:
   children:
   - ADLXWrapper.ADLXSystemServicesHelper.#ctor(ADLXWrapper.IADLXSystem*,System.Boolean)
   - ADLXWrapper.ADLXSystemServicesHelper.Dispose
-  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
   - ADLXWrapper.ADLXSystemServicesHelper.Finalize
   - ADLXWrapper.ADLXSystemServicesHelper.Get3DSettingsServices
   - ADLXWrapper.ADLXSystemServicesHelper.Get3DSettingsServicesHandle
@@ -21,7 +22,6 @@ items:
   - ADLXWrapper.ADLXSystemServicesHelper.GetDisplayServicesNative
   - ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
   - ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandlingNative
-  - ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
   - ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServices
   - ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServicesHandle
   - ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServicesNative
@@ -863,62 +863,62 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetGPUAppsListChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling*
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  id: EnumerateGPUHandles
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  id: EnumerateGPUsHandle
   parent: ADLXWrapper.ADLXSystemServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateGPUHandles()
-  nameWithType: ADLXSystemServicesHelper.EnumerateGPUHandles()
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles()
+  name: EnumerateGPUsHandle()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsHandle()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateGPUHandles
+    id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
     startLine: 218
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle[] EnumerateGPUHandles()
+    content: public AdlxInterfaceHandle[] EnumerateGPUsHandle()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle[]
-    content.vb: Public Function EnumerateGPUHandles() As AdlxInterfaceHandle()
-  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles*
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  id: EnumerateGpus
+    content.vb: Public Function EnumerateGPUsHandle() As AdlxInterfaceHandle()
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  id: EnumerateGPUs
   parent: ADLXWrapper.ADLXSystemServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateGpus()
-  nameWithType: ADLXSystemServicesHelper.EnumerateGpus()
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus()
+  name: EnumerateGPUs()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUs()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateGpus
+    id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
     startLine: 240
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<GpuInfo> EnumerateGpus()
+    content: public IEnumerable<GpuInfo> EnumerateGPUs()
     return:
       type: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuInfo}
-    content.vb: Public Function EnumerateGpus() As IEnumerable(Of GpuInfo)
-  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus*
+    content.vb: Public Function EnumerateGPUs() As IEnumerable(Of GpuInfo)
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo(ADLXWrapper.IADLXGPU*)
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo(ADLXWrapper.IADLXGPU*)
   id: GetGpuInfo(ADLXWrapper.IADLXGPU*)
@@ -950,34 +950,34 @@ items:
       type: ADLXWrapper.GpuInfo
     content.vb: Public Function GetGpuInfo(gpu As IADLXGPU*) As GpuInfo
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo*
-- uid: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  id: GetGPUListNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  id: EnumerateGPUsNative
   parent: ADLXWrapper.ADLXSystemServicesHelper
   langs:
   - csharp
   - vb
-  name: GetGPUListNative()
-  nameWithType: ADLXSystemServicesHelper.GetGPUListNative()
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative()
+  name: EnumerateGPUsNative()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsNative()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGPUListNative
+    id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
     startLine: 264
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IADLXGPUList* GetGPUListNative()
+    content: public IADLXGPUList* EnumerateGPUsNative()
     return:
       type: ADLXWrapper.IADLXGPUList*
-    content.vb: Public Function GetGPUListNative() As IADLXGPUList*
-  overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative*
+    content.vb: Public Function EnumerateGPUsNative() As IADLXGPUList*
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.Dispose
   id: Dispose
@@ -1663,12 +1663,12 @@ references:
   name: GetGPUAppsListChangedHandling
   nameWithType: ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles*
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUHandles
-  name: EnumerateGPUHandles
-  nameWithType: ADLXSystemServicesHelper.EnumerateGPUHandles
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle
+  name: EnumerateGPUsHandle
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsHandle
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
 - uid: ADLXWrapper.AdlxInterfaceHandle[]
   isExternal: true
   href: ADLXWrapper.AdlxInterfaceHandle.html
@@ -1690,12 +1690,12 @@ references:
     href: ADLXWrapper.AdlxInterfaceHandle.html
   - name: (
   - name: )
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus*
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGpus
-  name: EnumerateGpus
-  nameWithType: ADLXSystemServicesHelper.EnumerateGpus
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs
+  name: EnumerateGPUs
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUs
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
 - uid: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuInfo}
   commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.GpuInfo}
   parent: System.Collections.Generic
@@ -1823,12 +1823,12 @@ references:
   name: GpuInfo
   nameWithType: GpuInfo
   fullName: ADLXWrapper.GpuInfo
-- uid: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative*
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetGPUListNative
-  name: GetGPUListNative
-  nameWithType: ADLXSystemServicesHelper.GetGPUListNative
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsNative
+  name: EnumerateGPUsNative
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsNative
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
 - uid: ADLXWrapper.IADLXGPUList*
   isExternal: true
   href: ADLXWrapper.IADLXGPUList.html

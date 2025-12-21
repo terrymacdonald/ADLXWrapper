@@ -3427,32 +3427,45 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.Dispose
   nameWithType: ADLXSystemServicesHelper.Dispose
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  name: EnumerateGPUHandles()
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUHandles
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles()
-  nameWithType: ADLXSystemServicesHelper.EnumerateGPUHandles()
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles*
-  name: EnumerateGPUHandles
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUHandles_
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  name: EnumerateGPUs()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUs()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs*
+  name: EnumerateGPUs
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUHandles
-  nameWithType: ADLXSystemServicesHelper.EnumerateGPUHandles
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  name: EnumerateGpus()
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGpus
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus()
-  nameWithType: ADLXSystemServicesHelper.EnumerateGpus()
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus*
-  name: EnumerateGpus
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGpus_
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUs
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  name: EnumerateGPUsHandle()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsHandle()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
+  name: EnumerateGPUsHandle
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGpus
-  nameWithType: ADLXSystemServicesHelper.EnumerateGpus
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsHandle
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  name: EnumerateGPUsNative()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsNative
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative()
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsNative()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative*
+  name: EnumerateGPUsNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
+  nameWithType: ADLXSystemServicesHelper.EnumerateGPUsNative
 - uid: ADLXWrapper.ADLXSystemServicesHelper.Finalize
   name: ~ADLXSystemServicesHelper()
   href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_Finalize
@@ -3612,19 +3625,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandlingNative
   nameWithType: ADLXSystemServicesHelper.GetGPUAppsListChangedHandlingNative
-- uid: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  name: GetGPUListNative()
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetGPUListNative
-  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative()
-  nameWithType: ADLXSystemServicesHelper.GetGPUListNative()
-- uid: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative*
-  name: GetGPUListNative
-  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetGPUListNative_
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUListNative
-  nameWithType: ADLXSystemServicesHelper.GetGPUListNative
 - uid: ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServices
   name: GetGPUTuningServices()
   href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetGPUTuningServices

@@ -216,7 +216,7 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
         }
 
-        public AdlxInterfaceHandle[] EnumerateGPUHandles()
+        public AdlxInterfaceHandle[] EnumerateGPUsHandle()
         {
             ThrowIfDisposed();
             IADLXGPUList* pGpuList = null;
@@ -238,10 +238,10 @@ namespace ADLXWrapper
             return handles;
         }
 
-        public IEnumerable<GpuInfo> EnumerateGpus()
+        public IEnumerable<GpuInfo> EnumerateGPUs()
         {
             ThrowIfDisposed();
-            using var gpuList = new ComPtr<IADLXGPUList>(GetGPUListNative());
+            using var gpuList = new ComPtr<IADLXGPUList>(EnumerateGPUsNative());
             var count = gpuList.Get()->Size();
             var results = new List<GpuInfo>((int)count);
             for (uint i = 0; i < count; i++)
@@ -262,7 +262,7 @@ namespace ADLXWrapper
             return new GpuInfo(gpu);
         }
 
-        public IADLXGPUList* GetGPUListNative()
+        public IADLXGPUList* EnumerateGPUsNative()
         {
             ThrowIfDisposed();
             IADLXGPUList* pGpuList = null;

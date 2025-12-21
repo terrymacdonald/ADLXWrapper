@@ -85,7 +85,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            var gpus = _system.EnumerateGpus().ToList();
+                var gpus = _system.EnumerateGPUs().ToList();
 
             Assert.NotNull(gpus);
             Assert.NotEmpty(gpus);
@@ -116,7 +116,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() < 2, _skipReason);
 
-            var gpus = _system.EnumerateGpus().ToList();
+            var gpus = _system.EnumerateGPUs().ToList();
             var uniqueIds = gpus.Select(g => g.UniqueId).ToList();
             var distinctIds = uniqueIds.Distinct().Count();
 

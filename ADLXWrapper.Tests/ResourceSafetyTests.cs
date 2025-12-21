@@ -38,7 +38,7 @@ namespace ADLXWrapper.Tests
             for (int i = 0; i < 5; i++)
             {
                 using var perf = AdlxInterfaceHandle.From(systemHelper.GetPerformanceMonitoringServicesNative(), addRef: false);
-                var gpus = systemHelper.EnumerateGPUHandles();
+                var gpus = systemHelper.EnumerateGPUsHandle();
 
                 foreach (var gpu in gpus)
                 {

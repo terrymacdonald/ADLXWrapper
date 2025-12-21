@@ -60,7 +60,7 @@ using var adlx = ADLXApiHelper.Initialize();
 using var sys = adlx.GetSystemServices();
 
 // Enumerate GPUs and displays
-var gpuHandles = sys.EnumerateGPUHandles();
+var gpuHandles = sys.EnumerateGPUsHandle();
 var displayHandles = sys.EnumerateDisplayHandles();
 
 // Toggle a display feature if supported (e.g., Virtual Super Resolution)
