@@ -161,7 +161,7 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_Dispose" data-uid="ADLXWrapper.ADLXApiHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L240"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Dispose pattern implementation</p>
@@ -188,7 +188,7 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_Finalize" data-uid="ADLXWrapper.ADLXApiHelper.Finalize">
   ~ADLXApiHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L315"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Finalizer</p>
@@ -247,7 +247,7 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_GetSystemServices" data-uid="ADLXWrapper.ADLXApiHelper.GetSystemServices">
   GetSystemServices()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L230"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L229"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get the system services wrapped in an ADLXSystemServicesHelper.</p>
@@ -279,7 +279,7 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_GetSystemServicesHandle" data-uid="ADLXWrapper.ADLXApiHelper.GetSystemServicesHandle">
   GetSystemServicesHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get the system services as an AdlxInterfaceHandle (AddRef'd for caller ownership).</p>
@@ -311,10 +311,12 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_GetSystemServicesNative" data-uid="ADLXWrapper.ADLXApiHelper.GetSystemServicesNative">
   GetSystemServicesNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L209"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get the system services native pointer (lifetime owned by this API helper).
+Callers must not Release() it directly.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -445,7 +447,7 @@ Implements IDisposable for proper resource cleanup</p>
 
   <h3 id="ADLXWrapper_ADLXApiHelper_IsADLXDllAvailable_System_String__" data-uid="ADLXWrapper.ADLXApiHelper.IsADLXDllAvailable(System.String@)">
   IsADLXDllAvailable(out string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXApiHelper.cs/#L362"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Check if the ADLX DLL is available in the DLL search path</p>

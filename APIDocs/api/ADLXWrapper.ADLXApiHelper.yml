@@ -198,10 +198,15 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 209
+    startLine: 208
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: >-
+    Get the system services native pointer (lifetime owned by this API helper).
+
+    Callers must not Release() it directly.
+  example: []
   syntax:
     content: public IADLXSystem* GetSystemServicesNative()
     return:
@@ -226,7 +231,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 218
+    startLine: 217
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -256,7 +261,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 229
+    startLine: 228
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -286,7 +291,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 240
+    startLine: 239
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -316,7 +321,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 315
+    startLine: 314
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -347,7 +352,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 362
+    startLine: 361
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
