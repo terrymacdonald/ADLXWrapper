@@ -225,6 +225,17 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Get the system services wrapped in an ADLXSystemServicesHelper.
+        /// </summary>
+        public unsafe ADLXSystemServicesHelper GetSystemServicesHelper()
+        {
+            ThrowIfDisposed();
+            var ptr = _systemServices.Get();
+            ADLXUtils.AddRefInterface((IntPtr)ptr);
+            return new ADLXSystemServicesHelper(ptr, addRef: false);
+        }
+
+        /// <summary>
         /// Dispose pattern implementation
         /// </summary>
         public void Dispose()
