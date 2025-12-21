@@ -216,6 +216,13 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
         }
 
+        public IReadOnlyList<AdlxDisplay> EnumerateDisplays()
+        {
+            ThrowIfDisposed();
+            using var displayHelper = GetDisplayServices();
+            return displayHelper.EnumerateDisplays();
+        }
+
         public AdlxInterfaceHandle[] EnumerateGPUsHandle()
         {
             ThrowIfDisposed();

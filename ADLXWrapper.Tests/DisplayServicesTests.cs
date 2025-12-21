@@ -47,8 +47,13 @@ namespace ADLXWrapper.Tests
 
             try
             {
-                var displays = _displayServices.EnumerateDisplays().ToList();
+                var displays = _displayServices.EnumerateDisplays();
                 _output.WriteLine($"Found {displays.Count} display(s).");
+                foreach (var d in displays)
+                {
+                    _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
+                    d.Dispose();
+                }
                 Assert.NotNull(displays);
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)

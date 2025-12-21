@@ -7,15 +7,17 @@ unsafe
     Console.WriteLine("=== ADLX Display Sample ===");
 
     using var adlx = ADLXApiHelper.Initialize();
-    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    using var displayHelper = new ADLXDisplayServicesHelper(sysHelper.GetDisplayServicesNative());
-    var displays = displayHelper.EnumerateDisplays();
-    var displayList = displays?.ToList() ?? new List<DisplayInfo>();
-    Console.WriteLine($"Found {displayList.Count} displays");
+    using var sysHelper = adlx.GetSystemServices();
+    var displays = sysHelper.EnumerateDisplays();
+    var displayList = displays?.ToList() ?? new List<AdlxDisplay>();
+    Console.WriteLine($"Found {displayList.Count} display(s)");
 
-    foreach (var info in displayList)
+    foreach (var display in displayList)
     {
-        Console.WriteLine($"Name: {info.Name} | {info.Width}x{info.Height} @ {info.RefreshRate}Hz");
+        using (display)
+        {
+            Console.WriteLine($"Name: {display.Name} | {display.Width}x{display.Height} @ {display.RefreshRate}Hz");
+        }
     }
 }
 
