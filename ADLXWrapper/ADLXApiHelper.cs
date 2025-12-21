@@ -46,27 +46,25 @@ namespace ADLXWrapper
     /// </summary>
     public sealed class ADLXApiHelper : IDisposable
     {
-        private IntPtr _hDLL;
+        private static readonly object _sync = new();
+        private static int _globalRefCount;
+        private static ComPtr<IADLXSystem> _sharedSystem;
+        private static IntPtr _sharedDll;
+        private static ADLXNative.ADLXTerminate_Fn? _sharedTerminateFn;
+        private static ulong _sharedFullVersion;
+        private static string? _sharedVersion;
+
         private ComPtr<IADLXSystem> _systemServices;
         private bool _disposed;
 
-        // Function pointers loaded from DLL
-#pragma warning disable CS0414 // Field assigned but never used - kept for potential future use
-        private ADLXNative.ADLXQueryFullVersion_Fn? _queryFullVersionFn;
-        private ADLXNative.ADLXQueryVersion_Fn? _queryVersionFn;
-        private ADLXNative.ADLXInitialize_Fn? _initializeFn;
-        private ADLXNative.ADLXInitializeWithCallerAdl_Fn? _initializeWithCallerAdlFn;
-        private ADLXNative.ADLXTerminate_Fn? _terminateFn;
-#pragma warning restore CS0414
-
-        // Cached version info
         private ulong _fullVersion;
         private string? _version;
 
-        private unsafe ADLXApiHelper(IntPtr hDLL, IADLXSystem* pSystemServices)
+        private unsafe ADLXApiHelper(IADLXSystem* pSystemServices, ulong fullVersion, string? version)
         {
-            _hDLL = hDLL;
             _systemServices = new ComPtr<IADLXSystem>(pSystemServices);
+            _fullVersion = fullVersion;
+            _version = version;
         }
 
         /// <summary>
@@ -74,55 +72,55 @@ namespace ADLXWrapper
         /// </summary>
         public static unsafe ADLXApiHelper Initialize()
         {
-            // Load ADLX DLL
-            var hDLL = LoadADLXDll();
-            
-            // Get function pointers
-            var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
-                hDLL, ADLXNative.GetQueryFullVersionFunctionName());
-            var queryVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryVersion_Fn>(
-                hDLL, ADLXNative.GetQueryVersionFunctionName());
-            var initializeFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXInitialize_Fn>(
-                hDLL, ADLXNative.GetInitializeFunctionName());
-            var terminateFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXTerminate_Fn>(
-                hDLL, ADLXNative.GetTerminateFunctionName());
-
-            // Query version
-            ulong fullVersion = 0;
-            var result = queryFullVersionFn(&fullVersion);
-            if (result != ADLX_RESULT.ADLX_OK)
+            lock (_sync)
             {
-                ADLXNative.FreeLibrary(hDLL);
-                throw new ADLXException(result, "Failed to query ADLX version");
+                if (_globalRefCount == 0)
+                {
+                    var hDLL = LoadADLXDll();
+
+                    var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
+                        hDLL, ADLXNative.GetQueryFullVersionFunctionName());
+                    var queryVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryVersion_Fn>(
+                        hDLL, ADLXNative.GetQueryVersionFunctionName());
+                    var initializeFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXInitialize_Fn>(
+                        hDLL, ADLXNative.GetInitializeFunctionName());
+                    var terminateFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXTerminate_Fn>(
+                        hDLL, ADLXNative.GetTerminateFunctionName());
+
+                    ulong fullVersion = 0;
+                    var result = queryFullVersionFn(&fullVersion);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(result, "Failed to query ADLX version");
+                    }
+
+                    IntPtr pSystem;
+                    result = initializeFn(fullVersion, &pSystem);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(result, "Failed to initialize ADLX");
+                    }
+
+                    _sharedDll = hDLL;
+                    _sharedTerminateFn = terminateFn;
+                    _sharedFullVersion = fullVersion;
+
+                    byte* pVersion;
+                    result = queryVersionFn(&pVersion);
+                    _sharedVersion = (result == ADLX_RESULT.ADLX_OK && pVersion != null)
+                        ? Marshal.PtrToStringAnsi((IntPtr)pVersion)
+                        : null;
+
+                    _sharedSystem = new ComPtr<IADLXSystem>((IADLXSystem*)pSystem);
+                }
+
+                // AddRef for this instance
+                ADLXUtils.AddRefInterface((IntPtr)_sharedSystem.Get());
+                _globalRefCount++;
+                return new ADLXApiHelper(_sharedSystem.Get(), _sharedFullVersion, _sharedVersion);
             }
-
-            // Initialize ADLX
-            IntPtr pSystem;
-            result = initializeFn(fullVersion, &pSystem);
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                ADLXNative.FreeLibrary(hDLL);
-                throw new ADLXException(result, "Failed to initialize ADLX");
-            }
-
-            var api = new ADLXApiHelper(hDLL, (IADLXSystem*)pSystem)
-            {
-                _queryFullVersionFn = queryFullVersionFn,
-                _queryVersionFn = queryVersionFn,
-                _initializeFn = initializeFn,
-                _terminateFn = terminateFn,
-                _fullVersion = fullVersion
-            };
-
-            // Cache version string
-            byte* pVersion;
-            result = queryVersionFn(&pVersion);
-            if (result == ADLX_RESULT.ADLX_OK && pVersion != null)
-            {
-                api._version = Marshal.PtrToStringAnsi((IntPtr)pVersion);
-            }
-
-            return api;
         }
 
         /// <summary>
@@ -135,56 +133,55 @@ namespace ADLXWrapper
                 throw new ArgumentException("ADL context and memory free function must not be null");
             }
 
-            // Load ADLX DLL
-            var hDLL = LoadADLXDll();
-
-            // Get function pointers
-            var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
-                hDLL, ADLXNative.GetQueryFullVersionFunctionName());
-            var queryVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryVersion_Fn>(
-                hDLL, ADLXNative.GetQueryVersionFunctionName());
-            var initializeWithCallerAdlFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXInitializeWithCallerAdl_Fn>(
-                hDLL, ADLXNative.GetInitializeWithCallerAdlFunctionName());
-            var terminateFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXTerminate_Fn>(
-                hDLL, ADLXNative.GetTerminateFunctionName());
-
-            // Query version
-            ulong fullVersion = 0;
-            var result = queryFullVersionFn(&fullVersion);
-            if (result != ADLX_RESULT.ADLX_OK)
+            lock (_sync)
             {
-                ADLXNative.FreeLibrary(hDLL);
-                throw new ADLXException(result, "Failed to query ADLX version");
+                if (_globalRefCount == 0)
+                {
+                    var hDLL = LoadADLXDll();
+
+                    var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
+                        hDLL, ADLXNative.GetQueryFullVersionFunctionName());
+                    var queryVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryVersion_Fn>(
+                        hDLL, ADLXNative.GetQueryVersionFunctionName());
+                    var initializeWithCallerAdlFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXInitializeWithCallerAdl_Fn>(
+                        hDLL, ADLXNative.GetInitializeWithCallerAdlFunctionName());
+                    var terminateFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXTerminate_Fn>(
+                        hDLL, ADLXNative.GetTerminateFunctionName());
+
+                    ulong fullVersion = 0;
+                    var result = queryFullVersionFn(&fullVersion);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(result, "Failed to query ADLX version");
+                    }
+
+                    IntPtr pSystem;
+                    IntPtr pAdlMapping;
+                    result = initializeWithCallerAdlFn(fullVersion, &pSystem, &pAdlMapping, adlContext, adlMainMemoryFree);
+                    if (result != ADLX_RESULT.ADLX_OK)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(result, "Failed to initialize ADLX with ADL context");
+                    }
+
+                    _sharedDll = hDLL;
+                    _sharedTerminateFn = terminateFn;
+                    _sharedFullVersion = fullVersion;
+
+                    byte* pVersion;
+                    result = queryVersionFn(&pVersion);
+                    _sharedVersion = (result == ADLX_RESULT.ADLX_OK && pVersion != null)
+                        ? Marshal.PtrToStringAnsi((IntPtr)pVersion)
+                        : null;
+
+                    _sharedSystem = new ComPtr<IADLXSystem>((IADLXSystem*)pSystem);
+                }
+
+                ADLXUtils.AddRefInterface((IntPtr)_sharedSystem.Get());
+                _globalRefCount++;
+                return new ADLXApiHelper(_sharedSystem.Get(), _sharedFullVersion, _sharedVersion);
             }
-
-            // Initialize ADLX with ADL context
-            IntPtr pSystem;
-            IntPtr pAdlMapping;
-            result = initializeWithCallerAdlFn(fullVersion, &pSystem, &pAdlMapping, adlContext, adlMainMemoryFree);
-            if (result != ADLX_RESULT.ADLX_OK)
-            {
-                ADLXNative.FreeLibrary(hDLL);
-                throw new ADLXException(result, "Failed to initialize ADLX with ADL context");
-            }
-
-            var api = new ADLXApiHelper(hDLL, (IADLXSystem*)pSystem)
-            {
-                _queryFullVersionFn = queryFullVersionFn,
-                _queryVersionFn = queryVersionFn,
-                _initializeWithCallerAdlFn = initializeWithCallerAdlFn,
-                _terminateFn = terminateFn,
-                _fullVersion = fullVersion
-            };
-
-            // Cache version string
-            byte* pVersion;
-            result = queryVersionFn(&pVersion);
-            if (result == ADLX_RESULT.ADLX_OK && pVersion != null)
-            {
-                api._version = Marshal.PtrToStringAnsi((IntPtr)pVersion);
-            }
-
-            return api;
         }
 
         /// <summary>
@@ -241,49 +238,64 @@ namespace ADLXWrapper
             if (_disposed)
                 return;
 
-            unsafe
+            lock (_sync)
             {
-                // Terminate first (keeps system pointer valid while terminating)
-                if (_terminateFn != null && _systemServices.Get() != null)
+                unsafe
                 {
-                    try
+                    if (_systemServices.Get() != null)
                     {
-                        _terminateFn();
+                        try
+                        {
+                            _systemServices.Dispose(); // Release this instance's ref
+                        }
+                        catch
+                        {
+                            // ignore release errors during cleanup
+                        }
                     }
-                    catch
-                    {
-                        // Ignore errors during cleanup
-                    }
-                }
 
-                // Release system interface if still present
-                if (_systemServices.Get() != null)
-                {
-                    try
+                    _globalRefCount--;
+                    if (_globalRefCount == 0)
                     {
-                        _systemServices.Dispose(); // This calls Release()
-                    }
-                    catch
-                    {
-                        // ignore release errors during cleanup
-                    }
-                }
+                        if (_sharedTerminateFn != null && _sharedSystem.Get() != null)
+                        {
+                            try
+                            {
+                                _sharedTerminateFn();
+                            }
+                            catch
+                            {
+                                // Ignore errors during cleanup
+                            }
+                        }
 
-                // Free DLL
-                if (_hDLL != IntPtr.Zero)
-                {
-                    ADLXNative.FreeLibrary(_hDLL);
-                    _hDLL = IntPtr.Zero;
+                        if (_sharedSystem.Get() != null)
+                        {
+                            try
+                            {
+                                _sharedSystem.Dispose();
+                            }
+                            catch
+                            {
+                                // ignore release errors during cleanup
+                            }
+                        }
+
+                        if (_sharedDll != IntPtr.Zero)
+                        {
+                            ADLXNative.FreeLibrary(_sharedDll);
+                            _sharedDll = IntPtr.Zero;
+                        }
+
+                        _sharedTerminateFn = null;
+                        _sharedFullVersion = 0;
+                        _sharedVersion = null;
+                        _sharedSystem = default;
+                    }
                 }
             }
             
             _systemServices = default; // Clear the ComPtr
-            _queryFullVersionFn = null;
-            _queryVersionFn = null;
-            _initializeFn = null;
-            _initializeWithCallerAdlFn = null;
-            _terminateFn = null;
-
             _disposed = true;
         }
 
