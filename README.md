@@ -73,6 +73,15 @@ if (vsr.IsSupported)
     displayHelper.SetVirtualSuperResolutionEnabled(vsrNative.Get(), !vsr.IsEnabled);
 }
 
+// Listen for display settings changes (callbacks occur on ADLX threads)
+using var settingsListener = displayHelper.AddDisplaySettingsEventListener(evtPtr =>
+{
+    if (evtPtr == IntPtr.Zero) return true;
+    var evt = (IADLXDisplaySettingsChangedEvent*)evtPtr;
+    Console.WriteLine($"[Display settings] origin={evt->GetOrigin()} pixelFormatChanged={evt->IsPixelFormatChanged()}");
+    return true; // keep listening
+});
+
 // Always dispose handles/helpers to release native refs
 foreach (var h in gpuHandles) h.Dispose();
 foreach (var h in displayHandles) h.Dispose();

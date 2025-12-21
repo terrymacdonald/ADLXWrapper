@@ -301,8 +301,8 @@ items:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     type: Class
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     type: Delegate
   - uid: ADLXWrapper.EnhancedSyncInfo
     name: EnhancedSyncInfo

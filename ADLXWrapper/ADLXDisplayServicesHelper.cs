@@ -365,9 +365,10 @@ namespace ADLXWrapper
             }
         }
 
-        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
         {
             ThrowIfDisposed();
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
             var handling = GetDisplayChangedHandlingNative();
             var handle = DisplaySettingsListenerHandle.Create(callback);
             var result = handling->AddDisplaySettingsEventListener(handle.GetListener());
@@ -2378,13 +2379,13 @@ namespace ADLXWrapper
     /// </summary>
     public sealed unsafe class DisplaySettingsListenerHandle : SafeHandle
     {
-        public delegate bool DisplaySettingsChangedCallback(IntPtr pEvent);
-        private static readonly ConcurrentDictionary<IntPtr, DisplaySettingsChangedCallback> _map = new();
-        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplaySettingsChanged;
+        public delegate bool OnDisplaySettingsChanged(IntPtr pEvent);
+        private static readonly ConcurrentDictionary<IntPtr, OnDisplaySettingsChanged> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnDisplaySettingsChangedThunk;
         private readonly GCHandle _gcHandle;
         private readonly IntPtr _vtbl;
 
-        private DisplaySettingsListenerHandle(DisplaySettingsChangedCallback cb) : base(IntPtr.Zero, true)
+        private DisplaySettingsListenerHandle(OnDisplaySettingsChanged cb) : base(IntPtr.Zero, true)
         {
             _gcHandle = GCHandle.Alloc(cb);
             _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
@@ -2396,7 +2397,7 @@ namespace ADLXWrapper
             _map[inst] = cb;
         }
 
-        public static DisplaySettingsListenerHandle Create(DisplaySettingsChangedCallback cb)
+        public static DisplaySettingsListenerHandle Create(OnDisplaySettingsChanged cb)
         {
             if (cb == null) throw new ArgumentNullException(nameof(cb));
             return new DisplaySettingsListenerHandle(cb);
@@ -2414,7 +2415,7 @@ namespace ADLXWrapper
         }
 
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
-        private static byte OnDisplaySettingsChanged(IntPtr pThis, IntPtr pEvent)
+        private static byte OnDisplaySettingsChangedThunk(IntPtr pThis, IntPtr pEvent)
         {
             if (_map.TryGetValue(pThis, out var cb))
             {

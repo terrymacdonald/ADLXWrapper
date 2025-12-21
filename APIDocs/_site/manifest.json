@@ -1398,6 +1398,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.DisplaySettingsListenerHandle.yml",
       "output": {
         ".html": {

@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplaySettingsChangedCallback
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2380
+    startLine: 2387
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -1,36 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
-  commentId: T:ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
-  id: Display3DLutListenerHandle.OnDisplay3DLutChanged
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  id: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   parent: ADLXWrapper
   children: []
   langs:
   - csharp
   - vb
-  name: Display3DLutListenerHandle.OnDisplay3DLutChanged
-  nameWithType: Display3DLutListenerHandle.OnDisplay3DLutChanged
-  fullName: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+  name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  nameWithType: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   type: Delegate
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: OnDisplay3DLutChanged
+    id: OnDisplaySettingsChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2328
+    startLine: 2381
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public delegate bool Display3DLutListenerHandle.OnDisplay3DLutChanged(nint pEvent)
+    content: public delegate bool DisplaySettingsListenerHandle.OnDisplaySettingsChanged(nint pEvent)
     parameters:
     - id: pEvent
       type: System.IntPtr
     return:
       type: System.Boolean
-    content.vb: Public Delegate Function Display3DLutListenerHandle.OnDisplay3DLutChanged(pEvent As IntPtr) As Boolean
+    content.vb: Public Delegate Function DisplaySettingsListenerHandle.OnDisplaySettingsChanged(pEvent As IntPtr) As Boolean
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper

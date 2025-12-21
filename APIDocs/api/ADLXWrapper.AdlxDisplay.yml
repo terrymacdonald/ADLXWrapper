@@ -10,7 +10,7 @@ items:
   - ADLXWrapper.AdlxDisplay.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)
   - ADLXWrapper.AdlxDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
   - ADLXWrapper.AdlxDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
-  - ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  - ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   - ADLXWrapper.AdlxDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
   - ADLXWrapper.AdlxDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
   - ADLXWrapper.AdlxDisplay.ConnectorType
@@ -1598,16 +1598,16 @@ items:
   nameWithType.vb: AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
   fullName.vb: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled(Boolean)
   name.vb: SetDynamicRefreshRateControlEnabled(Boolean)
-- uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  id: AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+- uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  commentId: M:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  id: AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   parent: ADLXWrapper.AdlxDisplay
   langs:
   - csharp
   - vb
-  name: AddDisplaySettingsEventListener(DisplaySettingsChangedCallback)
-  nameWithType: AdlxDisplay.AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  fullName: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  name: AddDisplaySettingsEventListener(OnDisplaySettingsChanged)
+  nameWithType: AdlxDisplay.AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  fullName: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   type: Method
   source:
     remote:
@@ -1623,13 +1623,13 @@ items:
   summary: Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
   example: []
   syntax:
-    content: public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+    content: public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
     parameters:
     - id: callback
-      type: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+      type: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     return:
       type: ADLXWrapper.DisplaySettingsListenerHandle
-    content.vb: Public Function AddDisplaySettingsEventListener(callback As DisplaySettingsListenerHandle.DisplaySettingsChangedCallback) As DisplaySettingsListenerHandle
+    content.vb: Public Function AddDisplaySettingsEventListener(callback As DisplaySettingsListenerHandle.OnDisplaySettingsChanged) As DisplaySettingsListenerHandle
   overload: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener*
 - uid: ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.AdlxDisplay.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
@@ -3259,33 +3259,33 @@ references:
   fullName: ADLXWrapper.AdlxDisplay.SetDynamicRefreshRateControlEnabled
 - uid: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener*
   commentId: Overload:ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener
-  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_DisplaySettingsChangedCallback_
+  href: ADLXWrapper.AdlxDisplay.html#ADLXWrapper_AdlxDisplay_AddDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_OnDisplaySettingsChanged_
   name: AddDisplaySettingsEventListener
   nameWithType: AdlxDisplay.AddDisplaySettingsEventListener
   fullName: ADLXWrapper.AdlxDisplay.AddDisplaySettingsEventListener
-- uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   parent: ADLXWrapper
   href: ADLXWrapper.DisplaySettingsListenerHandle.html
-  name: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  nameWithType: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  fullName: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  nameWithType: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   spec.csharp:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
   spec.vb:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
 - uid: ADLXWrapper.DisplaySettingsListenerHandle
   commentId: T:ADLXWrapper.DisplaySettingsListenerHandle
   parent: ADLXWrapper

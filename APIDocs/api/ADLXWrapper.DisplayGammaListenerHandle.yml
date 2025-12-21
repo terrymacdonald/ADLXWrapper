@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayGammaListenerHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2275
+    startLine: 2276
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -68,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2295
+    startLine: 2296
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -99,7 +99,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2301
+    startLine: 2302
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2303
+    startLine: 2304
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2322
+    startLine: 2323
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

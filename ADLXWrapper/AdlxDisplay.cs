@@ -337,7 +337,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
         /// </summary>
-        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback callback)
+        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
         {
             ThrowIfDisposed();
             using var helper = CreateDisplayServicesHelper();

@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayResolutionInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2098
+    startLine: 2099
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -55,7 +55,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResWidth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2100
+    startLine: 2101
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -84,7 +84,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResHeight
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2101
+    startLine: 2102
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -113,7 +113,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2102
+    startLine: 2103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2104
+    startLine: 2105
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

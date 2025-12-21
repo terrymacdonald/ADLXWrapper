@@ -1,5 +1,7 @@
 # Copilot Instructions for ADLXWrapper
 
+IMPORTANT: These instructions guide the AI in generating code for the ADLXWrapper project. They should be followed closely to ensure consistency and correctness.
+
 - **Goal**: A safe C# wrapper over AMD ADLX native DLLs (vtable COM style) targeting Windows x64, .NET 10.0. Generated bindings live in `ADLXWrapper/cs_generated/`; hand-written helpers live in the project root.
 - **Initialization pattern**: Always create the API via `using var adlx = ADLXApi.Initialize();` (or `InitializeWithCallerAdl` if integrating with existing ADL). Retrieve services from `adlx.GetSystemServices()` and wrap returned pointers in `ComPtr<T>` for lifetime safety.
 - **DLL loading**: `ADLXApi` dynamically loads `amdadlx64.dll` via `LoadLibraryEx` with search flags. If you change DLL names or search paths, keep `ADLXNative.GetDllName()` and `ADLXApi.LoadADLXDll()` consistent. Surface errors via `ADLXException`.
@@ -18,5 +20,5 @@
 - **Versioning**: `build_adlx.ps1` and MSBuild target `SetVersionFromGit` compute `MAJOR.MINOR` from `VERSION`, `PATCH` from git commit count. Keep `VERSION` updated if bumping major/minor.
 - **Platform assumptions**: Windows-only, x64, .NET 10.0. Ensure AMD Adrenalin drivers (with ADLX) are installed for runtime/tests; `IsADLXDllAvailable` is the lightweight preflight.
 - **Samples**: Reference usage patterns in `ADLXWrapper/README.md` and `Samples/*` solutions for enumeration/printing flows.
-- **When extending**: Follow existing helper style—pull raw interfaces via system/display services, materialize into immutable infos, JSON-serializable, and avoid mutating hardware state unless intentionally adding `Apply`-style methods.
+- **When extending**: Look for existing patterns in helpers/tests and replicate them wherever possible. The user has spent a long time designing the ADLXWrapper API, and does not want you to break existing conventions or introduce inconsistencies. Follow naming conventions (e.g., `ADLX<Feature>ServicesHelper`, `Get<Feature>ServicesNative()`, `Get<Feature>Services()`). Ensure proper disposal, error handling, and interface versioning.
 - **Use ClangSharp enums where possible**: Prefer generated enums (e.g., `ADLX_VRAM_TYPE`) over custom ones to maintain consistency with ADLX definitions and ensure that new ADLX version updates autopmatically update the enum selection as well.

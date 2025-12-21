@@ -103,7 +103,7 @@ items:
   - ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
   - ADLXWrapper.DisplayResolutionInfo
   - ADLXWrapper.DisplaySettingsListenerHandle
-  - ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  - ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   - ADLXWrapper.EnhancedSyncInfo
   - ADLXWrapper.EyefinityDesktopInfo
   - ADLXWrapper.FanPoint
@@ -679,29 +679,29 @@ references:
   name: DisplaySettingsListenerHandle
   nameWithType: DisplaySettingsListenerHandle
   fullName: ADLXWrapper.DisplaySettingsListenerHandle
-- uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   parent: ADLXWrapper
   href: ADLXWrapper.DisplaySettingsListenerHandle.html
-  name: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  nameWithType: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  fullName: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  nameWithType: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   spec.csharp:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
   spec.vb:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
 - uid: ADLXWrapper.AdlxGpu
   commentId: T:ADLXWrapper.AdlxGpu
   parent: ADLXWrapper

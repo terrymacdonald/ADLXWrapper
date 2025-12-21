@@ -5,7 +5,7 @@ items:
   id: DisplaySettingsListenerHandle
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  - ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   - ADLXWrapper.DisplaySettingsListenerHandle.GetListener
   - ADLXWrapper.DisplaySettingsListenerHandle.IsInvalid
   - ADLXWrapper.DisplaySettingsListenerHandle.ReleaseHandle
@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplaySettingsListenerHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2378
+    startLine: 2379
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -52,16 +52,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  commentId: M:ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  id: Create(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  commentId: M:ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  id: Create(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   parent: ADLXWrapper.DisplaySettingsListenerHandle
   langs:
   - csharp
   - vb
-  name: Create(DisplaySettingsChangedCallback)
-  nameWithType: DisplaySettingsListenerHandle.Create(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
-  fullName: ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback)
+  name: Create(OnDisplaySettingsChanged)
+  nameWithType: DisplaySettingsListenerHandle.Create(DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.Create(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   type: Method
   source:
     remote:
@@ -70,18 +70,18 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2398
+    startLine: 2399
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public static DisplaySettingsListenerHandle Create(DisplaySettingsListenerHandle.DisplaySettingsChangedCallback cb)
+    content: public static DisplaySettingsListenerHandle Create(DisplaySettingsListenerHandle.OnDisplaySettingsChanged cb)
     parameters:
     - id: cb
-      type: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+      type: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     return:
       type: ADLXWrapper.DisplaySettingsListenerHandle
-    content.vb: Public Shared Function Create(cb As DisplaySettingsListenerHandle.DisplaySettingsChangedCallback) As DisplaySettingsListenerHandle
+    content.vb: Public Shared Function Create(cb As DisplaySettingsListenerHandle.OnDisplaySettingsChanged) As DisplaySettingsListenerHandle
   overload: ADLXWrapper.DisplaySettingsListenerHandle.Create*
 - uid: ADLXWrapper.DisplaySettingsListenerHandle.GetListener
   commentId: M:ADLXWrapper.DisplaySettingsListenerHandle.GetListener
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2404
+    startLine: 2405
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -129,7 +129,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2406
+    startLine: 2407
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -161,7 +161,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2425
+    startLine: 2426
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -649,33 +649,33 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: ADLXWrapper.DisplaySettingsListenerHandle.Create*
   commentId: Overload:ADLXWrapper.DisplaySettingsListenerHandle.Create
-  href: ADLXWrapper.DisplaySettingsListenerHandle.html#ADLXWrapper_DisplaySettingsListenerHandle_Create_ADLXWrapper_DisplaySettingsListenerHandle_DisplaySettingsChangedCallback_
+  href: ADLXWrapper.DisplaySettingsListenerHandle.html#ADLXWrapper_DisplaySettingsListenerHandle_Create_ADLXWrapper_DisplaySettingsListenerHandle_OnDisplaySettingsChanged_
   name: Create
   nameWithType: DisplaySettingsListenerHandle.Create
   fullName: ADLXWrapper.DisplaySettingsListenerHandle.Create
-- uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+- uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  commentId: T:ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   parent: ADLXWrapper
   href: ADLXWrapper.DisplaySettingsListenerHandle.html
-  name: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  nameWithType: DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-  fullName: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
+  name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  nameWithType: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+  fullName: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   spec.csharp:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
   spec.vb:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
     href: ADLXWrapper.DisplaySettingsListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback
-    name: DisplaySettingsChangedCallback
-    href: ADLXWrapper.DisplaySettingsListenerHandle.DisplaySettingsChangedCallback.html
+  - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+    name: OnDisplaySettingsChanged
+    href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
 - uid: ADLXWrapper.DisplaySettingsListenerHandle
   commentId: T:ADLXWrapper.DisplaySettingsListenerHandle
   parent: ADLXWrapper
