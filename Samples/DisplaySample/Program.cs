@@ -9,7 +9,7 @@ unsafe
     using var adlx = ADLXApiHelper.Initialize();
     using var sysHelper = adlx.GetSystemServices();
     var displays = sysHelper.EnumerateDisplays();
-    var displayList = displays?.ToList() ?? new List<AdlxDisplay>();
+    var displayList = displays?.ToList() ?? new List<ADLXDisplay>();
     Console.WriteLine($"Found {displayList.Count} display(s)");
 
     foreach (var display in displayList)

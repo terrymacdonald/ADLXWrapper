@@ -14,10 +14,10 @@ items:
   - ADLXWrapper.ADLXDisplayServicesHelper.ApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
   - ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
   - ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  - ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
   - ADLXWrapper.ADLXDisplayServicesHelper.Dispose
-  - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays
-  - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(System.Int32)
+  - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
+  - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)
   - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions(ADLXWrapper.IADLXDisplay*)
   - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles
   - ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
@@ -220,39 +220,39 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IReadOnlyList<AdlxDisplay> EnumerateDisplays()
+    content: public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of AdlxDisplay)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays*
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays
-  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays
-  id: EnumerateAdlxDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
+  id: EnumerateADLXDisplays
   parent: ADLXWrapper.ADLXDisplayServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateAdlxDisplays()
-  nameWithType: ADLXDisplayServicesHelper.EnumerateAdlxDisplays()
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays()
+  name: EnumerateADLXDisplays()
+  nameWithType: ADLXDisplayServicesHelper.EnumerateADLXDisplays()
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateAdlxDisplays
+    id: EnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
     startLine: 96
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IReadOnlyList<AdlxDisplay> EnumerateAdlxDisplays()
+    content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-    content.vb: Public Function EnumerateAdlxDisplays() As IReadOnlyList(Of AdlxDisplay)
-  overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays*
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateADLXDisplays() As IReadOnlyList(Of ADLXDisplay)
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
   id: GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
@@ -284,76 +284,76 @@ items:
       type: ADLXWrapper.DisplayInfo
     content.vb: Public Function GetDisplayInfo(display As IADLXDisplay*) As DisplayInfo
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo*
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(System.Int32)
-  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(System.Int32)
-  id: EnumerateAdlxDisplaysForGpu(System.Int32)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)
+  id: EnumerateADLXDisplaysForGpu(System.Int32)
   parent: ADLXWrapper.ADLXDisplayServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateAdlxDisplaysForGpu(int)
-  nameWithType: ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(int)
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(int)
+  name: EnumerateADLXDisplaysForGpu(int)
+  nameWithType: ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(int)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateAdlxDisplaysForGpu
+    id: EnumerateADLXDisplaysForGpu
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
     startLine: 108
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IReadOnlyList<AdlxDisplay> EnumerateAdlxDisplaysForGpu(int gpuUniqueId)
+    content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplaysForGpu(int gpuUniqueId)
     parameters:
     - id: gpuUniqueId
       type: System.Int32
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-    content.vb: Public Function EnumerateAdlxDisplaysForGpu(gpuUniqueId As Integer) As IReadOnlyList(Of AdlxDisplay)
-  overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu*
-  nameWithType.vb: ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(Integer)
-  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu(Integer)
-  name.vb: EnumerateAdlxDisplaysForGpu(Integer)
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
-  id: CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateADLXDisplaysForGpu(gpuUniqueId As Integer) As IReadOnlyList(Of ADLXDisplay)
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu*
+  nameWithType.vb: ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(Integer)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(Integer)
+  name.vb: EnumerateADLXDisplaysForGpu(Integer)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: CreateADLXDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)
   parent: ADLXWrapper.ADLXDisplayServicesHelper
   langs:
   - csharp
   - vb
-  name: CreateAdlxDisplay(IADLXDisplay*, bool)
-  nameWithType: ADLXDisplayServicesHelper.CreateAdlxDisplay(IADLXDisplay*, bool)
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*, bool)
+  name: CreateADLXDisplay(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.CreateADLXDisplay(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: CreateAdlxDisplay
+    id: CreateADLXDisplay
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
     startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxDisplay CreateAdlxDisplay(IADLXDisplay* pDisplay, bool addRef = true)
+    content: public ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
     parameters:
     - id: pDisplay
       type: ADLXWrapper.IADLXDisplay*
     - id: addRef
       type: System.Boolean
     return:
-      type: ADLXWrapper.AdlxDisplay
-    content.vb: Public Function CreateAdlxDisplay(pDisplay As IADLXDisplay*, addRef As Boolean = True) As AdlxDisplay
-  overload: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay*
-  nameWithType.vb: ADLXDisplayServicesHelper.CreateAdlxDisplay(IADLXDisplay*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay(ADLXWrapper.IADLXDisplay*, Boolean)
-  name.vb: CreateAdlxDisplay(IADLXDisplay*, Boolean)
+      type: ADLXWrapper.ADLXDisplay
+    content.vb: Public Function CreateADLXDisplay(pDisplay As IADLXDisplay*, addRef As Boolean = True) As ADLXDisplay
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay*
+  nameWithType.vb: ADLXDisplayServicesHelper.CreateADLXDisplay(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: CreateADLXDisplay(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative
   id: GetDisplayListNative
@@ -2424,26 +2424,26 @@ references:
   name: EnumerateDisplays
   nameWithType: ADLXDisplayServicesHelper.EnumerateDisplays
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
-- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<AdlxDisplay>
-  nameWithType: IReadOnlyList<AdlxDisplay>
-  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AdlxDisplay>
-  nameWithType.vb: IReadOnlyList(Of AdlxDisplay)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AdlxDisplay)
-  name.vb: IReadOnlyList(Of AdlxDisplay)
+  name: IReadOnlyList<ADLXDisplay>
+  nameWithType: IReadOnlyList<ADLXDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
+  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
+  name.vb: IReadOnlyList(Of ADLXDisplay)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
     name: IReadOnlyList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -2453,9 +2453,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: )
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1
@@ -2522,12 +2522,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays*
-  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateAdlxDisplays
-  name: EnumerateAdlxDisplays
-  nameWithType: ADLXDisplayServicesHelper.EnumerateAdlxDisplays
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateADLXDisplays
+  name: EnumerateADLXDisplays
+  nameWithType: ADLXDisplayServicesHelper.EnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayInfo_ADLXWrapper_IADLXDisplay__
@@ -2557,12 +2557,12 @@ references:
   name: DisplayInfo
   nameWithType: DisplayInfo
   fullName: ADLXWrapper.DisplayInfo
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu*
-  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateAdlxDisplaysForGpu_System_Int32_
-  name: EnumerateAdlxDisplaysForGpu
-  nameWithType: ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateAdlxDisplaysForGpu
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateADLXDisplaysForGpu_System_Int32_
+  name: EnumerateADLXDisplaysForGpu
+  nameWithType: ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -2574,19 +2574,19 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay*
-  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_CreateAdlxDisplay_ADLXWrapper_IADLXDisplay__System_Boolean_
-  name: CreateAdlxDisplay
-  nameWithType: ADLXDisplayServicesHelper.CreateAdlxDisplay
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.CreateAdlxDisplay
-- uid: ADLXWrapper.AdlxDisplay
-  commentId: T:ADLXWrapper.AdlxDisplay
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_CreateADLXDisplay_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: CreateADLXDisplay
+  nameWithType: ADLXDisplayServicesHelper.CreateADLXDisplay
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay
+- uid: ADLXWrapper.ADLXDisplay
+  commentId: T:ADLXWrapper.ADLXDisplay
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxDisplay.html
-  name: AdlxDisplay
-  nameWithType: AdlxDisplay
-  fullName: ADLXWrapper.AdlxDisplay
+  href: ADLXWrapper.ADLXDisplay.html
+  name: ADLXDisplay
+  nameWithType: ADLXDisplay
+  fullName: ADLXWrapper.ADLXDisplay
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayListNative

@@ -1,41 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.AdlxDesktop
-  commentId: T:ADLXWrapper.AdlxDesktop
-  id: AdlxDesktop
+- uid: ADLXWrapper.ADLXDesktop
+  commentId: T:ADLXWrapper.ADLXDesktop
+  id: ADLXDesktop
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.AdlxDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
-  - ADLXWrapper.AdlxDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
-  - ADLXWrapper.AdlxDesktop.Dispose
-  - ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  - ADLXWrapper.AdlxDesktop.EnumerateDisplays
-  - ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays
-  - ADLXWrapper.AdlxDesktop.GetDisplayListNative
-  - ADLXWrapper.AdlxDesktop.GetEyefinityGridSize
-  - ADLXWrapper.AdlxDesktop.Height
-  - ADLXWrapper.AdlxDesktop.Identity
-  - ADLXWrapper.AdlxDesktop.IsEyefinity
-  - ADLXWrapper.AdlxDesktop.Orientation
-  - ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
-  - ADLXWrapper.AdlxDesktop.TopLeftX
-  - ADLXWrapper.AdlxDesktop.TopLeftY
-  - ADLXWrapper.AdlxDesktop.Type
-  - ADLXWrapper.AdlxDesktop.Width
+  - ADLXWrapper.ADLXDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
+  - ADLXWrapper.ADLXDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
+  - ADLXWrapper.ADLXDesktop.Dispose
+  - ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+  - ADLXWrapper.ADLXDesktop.EnumerateDisplays
+  - ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
+  - ADLXWrapper.ADLXDesktop.GetDisplayListNative
+  - ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
+  - ADLXWrapper.ADLXDesktop.Height
+  - ADLXWrapper.ADLXDesktop.Identity
+  - ADLXWrapper.ADLXDesktop.IsEyefinity
+  - ADLXWrapper.ADLXDesktop.Orientation
+  - ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
+  - ADLXWrapper.ADLXDesktop.TopLeftX
+  - ADLXWrapper.ADLXDesktop.TopLeftY
+  - ADLXWrapper.ADLXDesktop.Type
+  - ADLXWrapper.ADLXDesktop.Width
   langs:
   - csharp
   - vb
-  name: AdlxDesktop
-  nameWithType: AdlxDesktop
-  fullName: ADLXWrapper.AdlxDesktop
+  name: ADLXDesktop
+  nameWithType: ADLXDesktop
+  fullName: ADLXWrapper.ADLXDesktop
   type: Class
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: AdlxDesktop
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    id: ADLXDesktop
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -43,8 +43,8 @@ items:
   summary: Flattened desktop façade with identity metadata and display enumeration helpers.
   example: []
   syntax:
-    content: 'public sealed class AdlxDesktop : IDisposable'
-    content.vb: Public NotInheritable Class AdlxDesktop Implements IDisposable
+    content: 'public sealed class ADLXDesktop : IDisposable'
+    content.vb: Public NotInheritable Class ADLXDesktop Implements IDisposable
   inheritance:
   - System.Object
   implements:
@@ -56,30 +56,30 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.AdlxDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
-  commentId: M:ADLXWrapper.AdlxDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
+- uid: ADLXWrapper.ADLXDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
+  commentId: M:ADLXWrapper.ADLXDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
   id: '#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)'
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
-  name: AdlxDesktop(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
-  nameWithType: AdlxDesktop.AdlxDesktop(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
-  fullName: ADLXWrapper.AdlxDesktop.AdlxDesktop(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDesktop*, ADLXWrapper.IADLXDisplayServices*)
+  name: ADLXDesktop(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
+  nameWithType: ADLXDesktop.ADLXDesktop(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
+  fullName: ADLXWrapper.ADLXDesktop.ADLXDesktop(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDesktop*, ADLXWrapper.IADLXDisplayServices*)
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 16
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
+    content: public ADLXDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
     parameters:
     - id: pDesktopServices
       type: ADLXWrapper.IADLXDesktopServices*
@@ -88,28 +88,28 @@ items:
     - id: pDisplayServices
       type: ADLXWrapper.IADLXDisplayServices*
     content.vb: Public Sub New(pDesktopServices As IADLXDesktopServices*, pDesktop As IADLXDesktop*, pDisplayServices As IADLXDisplayServices* = Nothing)
-  overload: ADLXWrapper.AdlxDesktop.#ctor*
-  nameWithType.vb: AdlxDesktop.New(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
-  fullName.vb: ADLXWrapper.AdlxDesktop.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDesktop*, ADLXWrapper.IADLXDisplayServices*)
+  overload: ADLXWrapper.ADLXDesktop.#ctor*
+  nameWithType.vb: ADLXDesktop.New(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
+  fullName.vb: ADLXWrapper.ADLXDesktop.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDesktop*, ADLXWrapper.IADLXDisplayServices*)
   name.vb: New(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
-- uid: ADLXWrapper.AdlxDesktop.Identity
-  commentId: P:ADLXWrapper.AdlxDesktop.Identity
+- uid: ADLXWrapper.ADLXDesktop.Identity
+  commentId: P:ADLXWrapper.ADLXDesktop.Identity
   id: Identity
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Identity
-  nameWithType: AdlxDesktop.Identity
-  fullName: ADLXWrapper.AdlxDesktop.Identity
+  nameWithType: ADLXDesktop.Identity
+  fullName: ADLXWrapper.ADLXDesktop.Identity
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 31
   assemblies:
   - ADLXWrapper
@@ -120,25 +120,25 @@ items:
     return:
       type: ADLXWrapper.DesktopInfo
     content.vb: Public ReadOnly Property Identity As DesktopInfo
-  overload: ADLXWrapper.AdlxDesktop.Identity*
-- uid: ADLXWrapper.AdlxDesktop.Type
-  commentId: P:ADLXWrapper.AdlxDesktop.Type
+  overload: ADLXWrapper.ADLXDesktop.Identity*
+- uid: ADLXWrapper.ADLXDesktop.Type
+  commentId: P:ADLXWrapper.ADLXDesktop.Type
   id: Type
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Type
-  nameWithType: AdlxDesktop.Type
-  fullName: ADLXWrapper.AdlxDesktop.Type
+  nameWithType: ADLXDesktop.Type
+  fullName: ADLXWrapper.ADLXDesktop.Type
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 32
   assemblies:
   - ADLXWrapper
@@ -149,25 +149,25 @@ items:
     return:
       type: ADLXWrapper.ADLX_DESKTOP_TYPE
     content.vb: Public ReadOnly Property Type As ADLX_DESKTOP_TYPE
-  overload: ADLXWrapper.AdlxDesktop.Type*
-- uid: ADLXWrapper.AdlxDesktop.Width
-  commentId: P:ADLXWrapper.AdlxDesktop.Width
+  overload: ADLXWrapper.ADLXDesktop.Type*
+- uid: ADLXWrapper.ADLXDesktop.Width
+  commentId: P:ADLXWrapper.ADLXDesktop.Width
   id: Width
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Width
-  nameWithType: AdlxDesktop.Width
-  fullName: ADLXWrapper.AdlxDesktop.Width
+  nameWithType: ADLXDesktop.Width
+  fullName: ADLXWrapper.ADLXDesktop.Width
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 33
   assemblies:
   - ADLXWrapper
@@ -178,25 +178,25 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property Width As Integer
-  overload: ADLXWrapper.AdlxDesktop.Width*
-- uid: ADLXWrapper.AdlxDesktop.Height
-  commentId: P:ADLXWrapper.AdlxDesktop.Height
+  overload: ADLXWrapper.ADLXDesktop.Width*
+- uid: ADLXWrapper.ADLXDesktop.Height
+  commentId: P:ADLXWrapper.ADLXDesktop.Height
   id: Height
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Height
-  nameWithType: AdlxDesktop.Height
-  fullName: ADLXWrapper.AdlxDesktop.Height
+  nameWithType: ADLXDesktop.Height
+  fullName: ADLXWrapper.ADLXDesktop.Height
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 34
   assemblies:
   - ADLXWrapper
@@ -207,25 +207,25 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property Height As Integer
-  overload: ADLXWrapper.AdlxDesktop.Height*
-- uid: ADLXWrapper.AdlxDesktop.TopLeftX
-  commentId: P:ADLXWrapper.AdlxDesktop.TopLeftX
+  overload: ADLXWrapper.ADLXDesktop.Height*
+- uid: ADLXWrapper.ADLXDesktop.TopLeftX
+  commentId: P:ADLXWrapper.ADLXDesktop.TopLeftX
   id: TopLeftX
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: TopLeftX
-  nameWithType: AdlxDesktop.TopLeftX
-  fullName: ADLXWrapper.AdlxDesktop.TopLeftX
+  nameWithType: ADLXDesktop.TopLeftX
+  fullName: ADLXWrapper.ADLXDesktop.TopLeftX
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 35
   assemblies:
   - ADLXWrapper
@@ -236,25 +236,25 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property TopLeftX As Integer
-  overload: ADLXWrapper.AdlxDesktop.TopLeftX*
-- uid: ADLXWrapper.AdlxDesktop.TopLeftY
-  commentId: P:ADLXWrapper.AdlxDesktop.TopLeftY
+  overload: ADLXWrapper.ADLXDesktop.TopLeftX*
+- uid: ADLXWrapper.ADLXDesktop.TopLeftY
+  commentId: P:ADLXWrapper.ADLXDesktop.TopLeftY
   id: TopLeftY
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: TopLeftY
-  nameWithType: AdlxDesktop.TopLeftY
-  fullName: ADLXWrapper.AdlxDesktop.TopLeftY
+  nameWithType: ADLXDesktop.TopLeftY
+  fullName: ADLXWrapper.ADLXDesktop.TopLeftY
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 36
   assemblies:
   - ADLXWrapper
@@ -265,25 +265,25 @@ items:
     return:
       type: System.Int32
     content.vb: Public ReadOnly Property TopLeftY As Integer
-  overload: ADLXWrapper.AdlxDesktop.TopLeftY*
-- uid: ADLXWrapper.AdlxDesktop.Orientation
-  commentId: P:ADLXWrapper.AdlxDesktop.Orientation
+  overload: ADLXWrapper.ADLXDesktop.TopLeftY*
+- uid: ADLXWrapper.ADLXDesktop.Orientation
+  commentId: P:ADLXWrapper.ADLXDesktop.Orientation
   id: Orientation
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Orientation
-  nameWithType: AdlxDesktop.Orientation
-  fullName: ADLXWrapper.AdlxDesktop.Orientation
+  nameWithType: ADLXDesktop.Orientation
+  fullName: ADLXWrapper.ADLXDesktop.Orientation
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -294,25 +294,25 @@ items:
     return:
       type: ADLXWrapper.ADLX_ORIENTATION
     content.vb: Public ReadOnly Property Orientation As ADLX_ORIENTATION
-  overload: ADLXWrapper.AdlxDesktop.Orientation*
-- uid: ADLXWrapper.AdlxDesktop.IsEyefinity
-  commentId: P:ADLXWrapper.AdlxDesktop.IsEyefinity
+  overload: ADLXWrapper.ADLXDesktop.Orientation*
+- uid: ADLXWrapper.ADLXDesktop.IsEyefinity
+  commentId: P:ADLXWrapper.ADLXDesktop.IsEyefinity
   id: IsEyefinity
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: IsEyefinity
-  nameWithType: AdlxDesktop.IsEyefinity
-  fullName: ADLXWrapper.AdlxDesktop.IsEyefinity
+  nameWithType: ADLXDesktop.IsEyefinity
+  fullName: ADLXWrapper.ADLXDesktop.IsEyefinity
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 38
   assemblies:
   - ADLXWrapper
@@ -323,92 +323,86 @@ items:
     return:
       type: System.Boolean
     content.vb: Public ReadOnly Property IsEyefinity As Boolean
-  overload: ADLXWrapper.AdlxDesktop.IsEyefinity*
-- uid: ADLXWrapper.AdlxDesktop.EnumerateDisplays
-  commentId: M:ADLXWrapper.AdlxDesktop.EnumerateDisplays
+  overload: ADLXWrapper.ADLXDesktop.IsEyefinity*
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplays
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplays
   id: EnumerateDisplays
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: EnumerateDisplays()
-  nameWithType: AdlxDesktop.EnumerateDisplays()
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateDisplays()
+  nameWithType: ADLXDesktop.EnumerateDisplays()
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplays()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Managed enumeration of displays on this desktop.
+  summary: Managed enumeration of display identities on this desktop.
   example: []
   syntax:
-    content: public IEnumerable<DisplayInfo> EnumerateDisplays()
+    content: public IReadOnlyList<DisplayInfo> EnumerateDisplays()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateDisplays() As IEnumerable(Of DisplayInfo)
-  overload: ADLXWrapper.AdlxDesktop.EnumerateDisplays*
-- uid: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  commentId: M:ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  id: EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  parent: ADLXWrapper.AdlxDesktop
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of DisplayInfo)
+  overload: ADLXWrapper.ADLXDesktop.EnumerateDisplays*
+- uid: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+  id: EnumerateADLXDisplays
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
-  name: EnumerateAdlxDisplays(ADLXDisplayServicesHelper?)
-  nameWithType: AdlxDesktop.EnumerateAdlxDisplays(ADLXDisplayServicesHelper?)
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper?)
+  name: EnumerateADLXDisplays()
+  nameWithType: ADLXDesktop.EnumerateADLXDisplays()
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateAdlxDisplays
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    id: EnumerateADLXDisplays
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Façade enumeration of displays on this desktop.
+  summary: Façade enumeration of displays on this desktop (pointer-free).
   example: []
   syntax:
-    content: public IEnumerable<AdlxDisplay> EnumerateAdlxDisplays(ADLXDisplayServicesHelper? displayHelper = null)
-    parameters:
-    - id: displayHelper
-      type: ADLXWrapper.ADLXDisplayServicesHelper
+    content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDisplay}
-    content.vb: Public Function EnumerateAdlxDisplays(displayHelper As ADLXDisplayServicesHelper = Nothing) As IEnumerable(Of AdlxDisplay)
-  overload: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays*
-  nameWithType.vb: AdlxDesktop.EnumerateAdlxDisplays(ADLXDisplayServicesHelper)
-  fullName.vb: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  name.vb: EnumerateAdlxDisplays(ADLXDisplayServicesHelper)
-- uid: ADLXWrapper.AdlxDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
-  commentId: M:ADLXWrapper.AdlxDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateADLXDisplays() As IReadOnlyList(Of ADLXDisplay)
+  overload: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays*
+- uid: ADLXWrapper.ADLXDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
+  commentId: M:ADLXWrapper.ADLXDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   id: AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: AddDesktopListEventListener(OnDesktopListChanged)
-  nameWithType: AdlxDesktop.AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged)
-  fullName: ADLXWrapper.AdlxDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
+  nameWithType: ADLXDesktop.AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged)
+  fullName: ADLXWrapper.ADLXDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 97
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 84
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -422,26 +416,26 @@ items:
     return:
       type: ADLXWrapper.DesktopListListenerHandle
     content.vb: Public Function AddDesktopListEventListener(callback As DesktopListListenerHandle.OnDesktopListChanged) As DesktopListListenerHandle
-  overload: ADLXWrapper.AdlxDesktop.AddDesktopListEventListener*
-- uid: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
-  commentId: M:ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
+  overload: ADLXWrapper.ADLXDesktop.AddDesktopListEventListener*
+- uid: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
   id: RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
-  nameWithType: AdlxDesktop.RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
-  fullName: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle, bool)
+  nameWithType: ADLXDesktop.RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
+  fullName: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle, bool)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 104
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -453,29 +447,29 @@ items:
     - id: disposeHandle
       type: System.Boolean
     content.vb: Public Sub RemoveDesktopListEventListener(handle As DesktopListListenerHandle, disposeHandle As Boolean = True)
-  overload: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener*
-  nameWithType.vb: AdlxDesktop.RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
-  fullName.vb: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle, Boolean)
+  overload: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener*
+  nameWithType.vb: ADLXDesktop.RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle, Boolean)
   name.vb: RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
-- uid: ADLXWrapper.AdlxDesktop.GetEyefinityGridSize
-  commentId: M:ADLXWrapper.AdlxDesktop.GetEyefinityGridSize
+- uid: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
+  commentId: M:ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   id: GetEyefinityGridSize
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: GetEyefinityGridSize()
-  nameWithType: AdlxDesktop.GetEyefinityGridSize()
-  fullName: ADLXWrapper.AdlxDesktop.GetEyefinityGridSize()
+  nameWithType: ADLXDesktop.GetEyefinityGridSize()
+  fullName: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 115
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 102
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -486,56 +480,56 @@ items:
     return:
       type: System.ValueTuple{System.UInt32,System.UInt32}
     content.vb: Public Function GetEyefinityGridSize() As (rows As UInteger, cols As UInteger)
-  overload: ADLXWrapper.AdlxDesktop.GetEyefinityGridSize*
-- uid: ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays
-  commentId: M:ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays
+  overload: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize*
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
   id: EnumerateEyefinityDisplays
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: EnumerateEyefinityDisplays()
-  nameWithType: AdlxDesktop.EnumerateEyefinityDisplays()
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays()
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplays()
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplays
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 126
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 113
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Enumerate displays that compose this Eyefinity desktop.
   example: []
   syntax:
-    content: public IEnumerable<DisplayInfo> EnumerateEyefinityDisplays()
+    content: public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateEyefinityDisplays() As IEnumerable(Of DisplayInfo)
-  overload: ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays*
-- uid: ADLXWrapper.AdlxDesktop.GetDisplayListNative
-  commentId: M:ADLXWrapper.AdlxDesktop.GetDisplayListNative
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+    content.vb: Public Function EnumerateEyefinityDisplays() As IReadOnlyList(Of DisplayInfo)
+  overload: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays*
+- uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative
+  commentId: M:ADLXWrapper.ADLXDesktop.GetDisplayListNative
   id: GetDisplayListNative
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: GetDisplayListNative()
-  nameWithType: AdlxDesktop.GetDisplayListNative()
-  fullName: ADLXWrapper.AdlxDesktop.GetDisplayListNative()
+  nameWithType: ADLXDesktop.GetDisplayListNative()
+  fullName: ADLXWrapper.ADLXDesktop.GetDisplayListNative()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 154
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 141
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -546,26 +540,26 @@ items:
     return:
       type: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
     content.vb: Public Function GetDisplayListNative() As ComPtr(Of IADLXDisplayList)
-  overload: ADLXWrapper.AdlxDesktop.GetDisplayListNative*
-- uid: ADLXWrapper.AdlxDesktop.Dispose
-  commentId: M:ADLXWrapper.AdlxDesktop.Dispose
+  overload: ADLXWrapper.ADLXDesktop.GetDisplayListNative*
+- uid: ADLXWrapper.ADLXDesktop.Dispose
+  commentId: M:ADLXWrapper.ADLXDesktop.Dispose
   id: Dispose
-  parent: ADLXWrapper.AdlxDesktop
+  parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
   name: Dispose()
-  nameWithType: AdlxDesktop.Dispose()
-  fullName: ADLXWrapper.AdlxDesktop.Dispose()
+  nameWithType: ADLXDesktop.Dispose()
+  fullName: ADLXWrapper.ADLXDesktop.Dispose()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
+      path: ADLXWrapper/ADLXDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 166
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 153
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -574,7 +568,7 @@ items:
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose()
-  overload: ADLXWrapper.AdlxDesktop.Dispose*
+  overload: ADLXWrapper.ADLXDesktop.Dispose*
   implements:
   - System.IDisposable.Dispose
 references:
@@ -805,14 +799,14 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ADLXWrapper.AdlxDesktop.#ctor*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.#ctor
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDesktop__ADLXWrapper_IADLXDisplayServices__
-  name: AdlxDesktop
-  nameWithType: AdlxDesktop.AdlxDesktop
-  fullName: ADLXWrapper.AdlxDesktop.AdlxDesktop
-  nameWithType.vb: AdlxDesktop.New
-  fullName.vb: ADLXWrapper.AdlxDesktop.New
+- uid: ADLXWrapper.ADLXDesktop.#ctor*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.#ctor
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDesktop__ADLXWrapper_IADLXDisplayServices__
+  name: ADLXDesktop
+  nameWithType: ADLXDesktop.ADLXDesktop
+  fullName: ADLXWrapper.ADLXDesktop.ADLXDesktop
+  nameWithType.vb: ADLXDesktop.New
+  fullName.vb: ADLXWrapper.ADLXDesktop.New
   name.vb: New
 - uid: ADLXWrapper.IADLXDesktopServices*
   isExternal: true
@@ -862,12 +856,12 @@ references:
     name: IADLXDisplayServices
     href: ADLXWrapper.IADLXDisplayServices.html
   - name: '*'
-- uid: ADLXWrapper.AdlxDesktop.Identity*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Identity
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Identity
+- uid: ADLXWrapper.ADLXDesktop.Identity*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Identity
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Identity
   name: Identity
-  nameWithType: AdlxDesktop.Identity
-  fullName: ADLXWrapper.AdlxDesktop.Identity
+  nameWithType: ADLXDesktop.Identity
+  fullName: ADLXWrapper.ADLXDesktop.Identity
 - uid: ADLXWrapper.DesktopInfo
   commentId: T:ADLXWrapper.DesktopInfo
   parent: ADLXWrapper
@@ -875,12 +869,12 @@ references:
   name: DesktopInfo
   nameWithType: DesktopInfo
   fullName: ADLXWrapper.DesktopInfo
-- uid: ADLXWrapper.AdlxDesktop.Type*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Type
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Type
+- uid: ADLXWrapper.ADLXDesktop.Type*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Type
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Type
   name: Type
-  nameWithType: AdlxDesktop.Type
-  fullName: ADLXWrapper.AdlxDesktop.Type
+  nameWithType: ADLXDesktop.Type
+  fullName: ADLXWrapper.ADLXDesktop.Type
 - uid: ADLXWrapper.ADLX_DESKTOP_TYPE
   commentId: T:ADLXWrapper.ADLX_DESKTOP_TYPE
   parent: ADLXWrapper
@@ -888,12 +882,12 @@ references:
   name: ADLX_DESKTOP_TYPE
   nameWithType: ADLX_DESKTOP_TYPE
   fullName: ADLXWrapper.ADLX_DESKTOP_TYPE
-- uid: ADLXWrapper.AdlxDesktop.Width*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Width
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Width
+- uid: ADLXWrapper.ADLXDesktop.Width*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Width
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Width
   name: Width
-  nameWithType: AdlxDesktop.Width
-  fullName: ADLXWrapper.AdlxDesktop.Width
+  nameWithType: ADLXDesktop.Width
+  fullName: ADLXWrapper.ADLXDesktop.Width
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -905,30 +899,30 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.AdlxDesktop.Height*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Height
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Height
+- uid: ADLXWrapper.ADLXDesktop.Height*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Height
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Height
   name: Height
-  nameWithType: AdlxDesktop.Height
-  fullName: ADLXWrapper.AdlxDesktop.Height
-- uid: ADLXWrapper.AdlxDesktop.TopLeftX*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.TopLeftX
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_TopLeftX
+  nameWithType: ADLXDesktop.Height
+  fullName: ADLXWrapper.ADLXDesktop.Height
+- uid: ADLXWrapper.ADLXDesktop.TopLeftX*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.TopLeftX
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_TopLeftX
   name: TopLeftX
-  nameWithType: AdlxDesktop.TopLeftX
-  fullName: ADLXWrapper.AdlxDesktop.TopLeftX
-- uid: ADLXWrapper.AdlxDesktop.TopLeftY*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.TopLeftY
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_TopLeftY
+  nameWithType: ADLXDesktop.TopLeftX
+  fullName: ADLXWrapper.ADLXDesktop.TopLeftX
+- uid: ADLXWrapper.ADLXDesktop.TopLeftY*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.TopLeftY
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_TopLeftY
   name: TopLeftY
-  nameWithType: AdlxDesktop.TopLeftY
-  fullName: ADLXWrapper.AdlxDesktop.TopLeftY
-- uid: ADLXWrapper.AdlxDesktop.Orientation*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Orientation
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Orientation
+  nameWithType: ADLXDesktop.TopLeftY
+  fullName: ADLXWrapper.ADLXDesktop.TopLeftY
+- uid: ADLXWrapper.ADLXDesktop.Orientation*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Orientation
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Orientation
   name: Orientation
-  nameWithType: AdlxDesktop.Orientation
-  fullName: ADLXWrapper.AdlxDesktop.Orientation
+  nameWithType: ADLXDesktop.Orientation
+  fullName: ADLXWrapper.ADLXDesktop.Orientation
 - uid: ADLXWrapper.ADLX_ORIENTATION
   commentId: T:ADLXWrapper.ADLX_ORIENTATION
   parent: ADLXWrapper
@@ -936,12 +930,12 @@ references:
   name: ADLX_ORIENTATION
   nameWithType: ADLX_ORIENTATION
   fullName: ADLXWrapper.ADLX_ORIENTATION
-- uid: ADLXWrapper.AdlxDesktop.IsEyefinity*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.IsEyefinity
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_IsEyefinity
+- uid: ADLXWrapper.ADLXDesktop.IsEyefinity*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.IsEyefinity
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_IsEyefinity
   name: IsEyefinity
-  nameWithType: AdlxDesktop.IsEyefinity
-  fullName: ADLXWrapper.AdlxDesktop.IsEyefinity
+  nameWithType: ADLXDesktop.IsEyefinity
+  fullName: ADLXWrapper.ADLXDesktop.IsEyefinity
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -953,38 +947,38 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.AdlxDesktop.EnumerateDisplays*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.EnumerateDisplays
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_EnumerateDisplays
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplays
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplays
   name: EnumerateDisplays
-  nameWithType: AdlxDesktop.EnumerateDisplays
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateDisplays
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+  nameWithType: ADLXDesktop.EnumerateDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplays
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<DisplayInfo>
-  nameWithType: IEnumerable<DisplayInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayInfo>
-  nameWithType.vb: IEnumerable(Of DisplayInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayInfo)
-  name.vb: IEnumerable(Of DisplayInfo)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DisplayInfo>
+  nameWithType: IReadOnlyList<DisplayInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DisplayInfo>
+  nameWithType.vb: IReadOnlyList(Of DisplayInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DisplayInfo)
+  name.vb: IReadOnlyList(Of DisplayInfo)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: ADLXWrapper.DisplayInfo
     name: DisplayInfo
     href: ADLXWrapper.DisplayInfo.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -992,29 +986,29 @@ references:
     name: DisplayInfo
     href: ADLXWrapper.DisplayInfo.html
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -1057,58 +1051,51 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_EnumerateAdlxDisplays_ADLXWrapper_ADLXDisplayServicesHelper_
-  name: EnumerateAdlxDisplays
-  nameWithType: AdlxDesktop.EnumerateAdlxDisplays
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateAdlxDisplays
-- uid: ADLXWrapper.ADLXDisplayServicesHelper
-  commentId: T:ADLXWrapper.ADLXDisplayServicesHelper
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html
-  name: ADLXDisplayServicesHelper
-  nameWithType: ADLXDisplayServicesHelper
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDisplay}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDisplay}
+- uid: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateADLXDisplays
+  name: EnumerateADLXDisplays
+  nameWithType: ADLXDesktop.EnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<AdlxDisplay>
-  nameWithType: IEnumerable<AdlxDisplay>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.AdlxDisplay>
-  nameWithType.vb: IEnumerable(Of AdlxDisplay)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.AdlxDisplay)
-  name.vb: IEnumerable(Of AdlxDisplay)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDisplay>
+  nameWithType: IReadOnlyList<ADLXDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
+  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
+  name.vb: IReadOnlyList(Of ADLXDisplay)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: )
-- uid: ADLXWrapper.AdlxDesktop.AddDesktopListEventListener*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.AddDesktopListEventListener
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_
+- uid: ADLXWrapper.ADLXDesktop.AddDesktopListEventListener*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.AddDesktopListEventListener
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_
   name: AddDesktopListEventListener
-  nameWithType: AdlxDesktop.AddDesktopListEventListener
-  fullName: ADLXWrapper.AdlxDesktop.AddDesktopListEventListener
+  nameWithType: ADLXDesktop.AddDesktopListEventListener
+  fullName: ADLXWrapper.ADLXDesktop.AddDesktopListEventListener
 - uid: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
   commentId: T:ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
   parent: ADLXWrapper
@@ -1139,18 +1126,18 @@ references:
   name: DesktopListListenerHandle
   nameWithType: DesktopListListenerHandle
   fullName: ADLXWrapper.DesktopListListenerHandle
-- uid: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_
+- uid: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_
   name: RemoveDesktopListEventListener
-  nameWithType: AdlxDesktop.RemoveDesktopListEventListener
-  fullName: ADLXWrapper.AdlxDesktop.RemoveDesktopListEventListener
-- uid: ADLXWrapper.AdlxDesktop.GetEyefinityGridSize*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.GetEyefinityGridSize
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_GetEyefinityGridSize
+  nameWithType: ADLXDesktop.RemoveDesktopListEventListener
+  fullName: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener
+- uid: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetEyefinityGridSize
   name: GetEyefinityGridSize
-  nameWithType: AdlxDesktop.GetEyefinityGridSize
-  fullName: ADLXWrapper.AdlxDesktop.GetEyefinityGridSize
+  nameWithType: ADLXDesktop.GetEyefinityGridSize
+  fullName: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
 - uid: System.ValueTuple{System.UInt32,System.UInt32}
   commentId: T:System.ValueTuple{System.UInt32,System.UInt32}
   parent: System
@@ -1227,18 +1214,18 @@ references:
   - name: " "
   - name: T2
   - name: )
-- uid: ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_EnumerateEyefinityDisplays
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplays
   name: EnumerateEyefinityDisplays
-  nameWithType: AdlxDesktop.EnumerateEyefinityDisplays
-  fullName: ADLXWrapper.AdlxDesktop.EnumerateEyefinityDisplays
-- uid: ADLXWrapper.AdlxDesktop.GetDisplayListNative*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.GetDisplayListNative
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_GetDisplayListNative
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
+- uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetDisplayListNative
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetDisplayListNative
   name: GetDisplayListNative
-  nameWithType: AdlxDesktop.GetDisplayListNative
-  fullName: ADLXWrapper.AdlxDesktop.GetDisplayListNative
+  nameWithType: ADLXDesktop.GetDisplayListNative
+  fullName: ADLXWrapper.ADLXDesktop.GetDisplayListNative
 - uid: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
   commentId: T:ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
   parent: ADLXWrapper
@@ -1296,12 +1283,12 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ADLXWrapper.AdlxDesktop.Dispose*
-  commentId: Overload:ADLXWrapper.AdlxDesktop.Dispose
-  href: ADLXWrapper.AdlxDesktop.html#ADLXWrapper_AdlxDesktop_Dispose
+- uid: ADLXWrapper.ADLXDesktop.Dispose*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Dispose
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Dispose
   name: Dispose
-  nameWithType: AdlxDesktop.Dispose
-  fullName: ADLXWrapper.AdlxDesktop.Dispose
+  nameWithType: ADLXDesktop.Dispose
+  fullName: ADLXWrapper.ADLXDesktop.Dispose
 - uid: System.IDisposable.Dispose
   commentId: M:System.IDisposable.Dispose
   parent: System.IDisposable

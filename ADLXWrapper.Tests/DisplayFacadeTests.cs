@@ -14,7 +14,7 @@ namespace ADLXWrapper.Tests
         private readonly ITestOutputHelper _output;
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
-        private readonly AdlxDisplay? _display;
+        private readonly ADLXDisplay? _display;
         private readonly string _skipReason = string.Empty;
 
         public DisplayFacadeTests(ITestOutputHelper output)

@@ -13,14 +13,23 @@ items:
   - uid: ADLXWrapper.ADLXApiHelper
     name: ADLXApiHelper
     type: Class
+  - uid: ADLXWrapper.ADLXDesktop
+    name: ADLXDesktop
+    type: Class
   - uid: ADLXWrapper.ADLXDesktopServicesHelper
     name: ADLXDesktopServicesHelper
+    type: Class
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
     type: Class
   - uid: ADLXWrapper.ADLXDisplayServicesHelper
     name: ADLXDisplayServicesHelper
     type: Class
   - uid: ADLXWrapper.ADLXException
     name: ADLXException
+    type: Class
+  - uid: ADLXWrapper.ADLXGPU
+    name: ADLXGPU
     type: Class
   - uid: ADLXWrapper.ADLXGPUTuningServicesHelper
     name: ADLXGPUTuningServicesHelper
@@ -214,15 +223,6 @@ items:
   - uid: ADLXWrapper.ADLX_WHITE_POINT
     name: ADLX_WHITE_POINT
     type: Enum
-  - uid: ADLXWrapper.AdlxDesktop
-    name: AdlxDesktop
-    type: Class
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    type: Class
-  - uid: ADLXWrapper.AdlxGpu
-    name: AdlxGpu
-    type: Class
   - uid: ADLXWrapper.AdlxInterfaceHandle
     name: AdlxInterfaceHandle
     type: Struct

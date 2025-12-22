@@ -7,15 +7,15 @@ items:
   children:
   - ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
   - ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
-  - ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
+  - ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
   - ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
   - ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
   - ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops
   - ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)
   - ADLXWrapper.ADLXDesktopServicesHelper.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)
   - ADLXWrapper.ADLXDesktopServicesHelper.Dispose
-  - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-  - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(System.Int32)
+  - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
+  - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)
   - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopDisplays(ADLXWrapper.IADLXDesktop*)
   - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopHandles
   - ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops
@@ -182,109 +182,109 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<DesktopInfo> EnumerateDesktops()
+    content: public IReadOnlyList<DesktopInfo> EnumerateDesktops()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
-    content.vb: Public Function EnumerateDesktops() As IEnumerable(Of DesktopInfo)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}
+    content.vb: Public Function EnumerateDesktops() As IReadOnlyList(Of DesktopInfo)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops*
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-  id: EnumerateAdlxDesktops
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
+  id: EnumerateADLXDesktops
   parent: ADLXWrapper.ADLXDesktopServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateAdlxDesktops()
-  nameWithType: ADLXDesktopServicesHelper.EnumerateAdlxDesktops()
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops()
+  name: EnumerateADLXDesktops()
+  nameWithType: ADLXDesktopServicesHelper.EnumerateADLXDesktops()
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateAdlxDesktops
+    id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
     startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<AdlxDesktop> EnumerateAdlxDesktops()
+    content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDesktop}
-    content.vb: Public Function EnumerateAdlxDesktops() As IEnumerable(Of AdlxDesktop)
-  overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops*
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(System.Int32)
-  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(System.Int32)
-  id: EnumerateAdlxDesktopsForGpu(System.Int32)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    content.vb: Public Function EnumerateADLXDesktops() As IReadOnlyList(Of ADLXDesktop)
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops*
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)
+  id: EnumerateADLXDesktopsForGpu(System.Int32)
   parent: ADLXWrapper.ADLXDesktopServicesHelper
   langs:
   - csharp
   - vb
-  name: EnumerateAdlxDesktopsForGpu(int)
-  nameWithType: ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(int)
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(int)
+  name: EnumerateADLXDesktopsForGpu(int)
+  nameWithType: ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(int)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateAdlxDesktopsForGpu
+    id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
     startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<AdlxDesktop> EnumerateAdlxDesktopsForGpu(int gpuUniqueId)
+    content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktopsForGpu(int gpuUniqueId)
     parameters:
     - id: gpuUniqueId
       type: System.Int32
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDesktop}
-    content.vb: Public Function EnumerateAdlxDesktopsForGpu(gpuUniqueId As Integer) As IEnumerable(Of AdlxDesktop)
-  overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu*
-  nameWithType.vb: ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(Integer)
-  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu(Integer)
-  name.vb: EnumerateAdlxDesktopsForGpu(Integer)
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
-  id: CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    content.vb: Public Function EnumerateADLXDesktopsForGpu(gpuUniqueId As Integer) As IReadOnlyList(Of ADLXDesktop)
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu*
+  nameWithType.vb: ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(Integer)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(Integer)
+  name.vb: EnumerateADLXDesktopsForGpu(Integer)
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
+  id: CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
   parent: ADLXWrapper.ADLXDesktopServicesHelper
   langs:
   - csharp
   - vb
-  name: CreateAdlxDesktop(IADLXDesktop*, bool)
-  nameWithType: ADLXDesktopServicesHelper.CreateAdlxDesktop(IADLXDesktop*, bool)
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*, bool)
+  name: CreateADLXDesktop(IADLXDesktop*, bool)
+  nameWithType: ADLXDesktopServicesHelper.CreateADLXDesktop(IADLXDesktop*, bool)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: CreateAdlxDesktop
+    id: CreateADLXDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
     startLine: 165
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxDesktop CreateAdlxDesktop(IADLXDesktop* pDesktop, bool addRef = true)
+    content: public ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
     parameters:
     - id: pDesktop
       type: ADLXWrapper.IADLXDesktop*
     - id: addRef
       type: System.Boolean
     return:
-      type: ADLXWrapper.AdlxDesktop
-    content.vb: Public Function CreateAdlxDesktop(pDesktop As IADLXDesktop*, addRef As Boolean = True) As AdlxDesktop
-  overload: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop*
-  nameWithType.vb: ADLXDesktopServicesHelper.CreateAdlxDesktop(IADLXDesktop*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop(ADLXWrapper.IADLXDesktop*, Boolean)
-  name.vb: CreateAdlxDesktop(IADLXDesktop*, Boolean)
+      type: ADLXWrapper.ADLXDesktop
+    content.vb: Public Function CreateADLXDesktop(pDesktop As IADLXDesktop*, addRef As Boolean = True) As ADLXDesktop
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop*
+  nameWithType.vb: ADLXDesktopServicesHelper.CreateADLXDesktop(IADLXDesktop*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*, Boolean)
+  name.vb: CreateADLXDesktop(IADLXDesktop*, Boolean)
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
   id: CreateEyefinityDesktop
@@ -747,13 +747,13 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
+    content: public IReadOnlyList<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
     parameters:
     - id: desktop
       type: ADLXWrapper.IADLXDesktop*
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateDesktopDisplays(desktop As IADLXDesktop*) As IEnumerable(Of DisplayInfo)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+    content.vb: Public Function EnumerateDesktopDisplays(desktop As IADLXDesktop*) As IReadOnlyList(Of DisplayInfo)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopDisplays*
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)
@@ -809,13 +809,13 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
+    content: public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
     parameters:
     - id: eyefinityDesktop
       type: ADLXWrapper.IADLXEyefinityDesktop*
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateEyefinityDisplays(eyefinityDesktop As IADLXEyefinityDesktop*) As IEnumerable(Of DisplayInfo)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+    content.vb: Public Function EnumerateEyefinityDisplays(eyefinityDesktop As IADLXEyefinityDesktop*) As IReadOnlyList(Of DisplayInfo)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateEyefinityDisplays*
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.Finalize
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.Finalize
@@ -1151,32 +1151,32 @@ references:
   name: EnumerateDesktops
   nameWithType: ADLXDesktopServicesHelper.EnumerateDesktops
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DesktopInfo}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<DesktopInfo>
-  nameWithType: IEnumerable<DesktopInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DesktopInfo>
-  nameWithType.vb: IEnumerable(Of DesktopInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DesktopInfo)
-  name.vb: IEnumerable(Of DesktopInfo)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DesktopInfo>
+  nameWithType: IReadOnlyList<DesktopInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DesktopInfo>
+  nameWithType.vb: IReadOnlyList(Of DesktopInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DesktopInfo)
+  name.vb: IReadOnlyList(Of DesktopInfo)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: ADLXWrapper.DesktopInfo
     name: DesktopInfo
     href: ADLXWrapper.DesktopInfo.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -1184,29 +1184,29 @@ references:
     name: DesktopInfo
     href: ADLXWrapper.DesktopInfo.html
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -1249,51 +1249,51 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops*
-  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateAdlxDesktops
-  name: EnumerateAdlxDesktops
-  nameWithType: ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktops
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDesktop}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.AdlxDesktop}
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktops
+  name: EnumerateADLXDesktops
+  nameWithType: ADLXDesktopServicesHelper.EnumerateADLXDesktops
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<AdlxDesktop>
-  nameWithType: IEnumerable<AdlxDesktop>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.AdlxDesktop>
-  nameWithType.vb: IEnumerable(Of AdlxDesktop)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.AdlxDesktop)
-  name.vb: IEnumerable(Of AdlxDesktop)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDesktop>
+  nameWithType: IReadOnlyList<ADLXDesktop>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>
+  nameWithType.vb: IReadOnlyList(Of ADLXDesktop)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop)
+  name.vb: IReadOnlyList(Of ADLXDesktop)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.AdlxDesktop
-    name: AdlxDesktop
-    href: ADLXWrapper.AdlxDesktop.html
+  - uid: ADLXWrapper.ADLXDesktop
+    name: ADLXDesktop
+    href: ADLXWrapper.ADLXDesktop.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.AdlxDesktop
-    name: AdlxDesktop
-    href: ADLXWrapper.AdlxDesktop.html
+  - uid: ADLXWrapper.ADLXDesktop
+    name: ADLXDesktop
+    href: ADLXWrapper.ADLXDesktop.html
   - name: )
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu*
-  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu
-  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateAdlxDesktopsForGpu_System_Int32_
-  name: EnumerateAdlxDesktopsForGpu
-  nameWithType: ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateAdlxDesktopsForGpu
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktopsForGpu_System_Int32_
+  name: EnumerateADLXDesktopsForGpu
+  nameWithType: ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1305,12 +1305,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop*
-  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop
-  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_CreateAdlxDesktop_ADLXWrapper_IADLXDesktop__System_Boolean_
-  name: CreateAdlxDesktop
-  nameWithType: ADLXDesktopServicesHelper.CreateAdlxDesktop
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.CreateAdlxDesktop
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_CreateADLXDesktop_ADLXWrapper_IADLXDesktop__System_Boolean_
+  name: CreateADLXDesktop
+  nameWithType: ADLXDesktopServicesHelper.CreateADLXDesktop
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop
 - uid: ADLXWrapper.IADLXDesktop*
   isExternal: true
   href: ADLXWrapper.IADLXDesktop.html
@@ -1327,13 +1327,13 @@ references:
     name: IADLXDesktop
     href: ADLXWrapper.IADLXDesktop.html
   - name: '*'
-- uid: ADLXWrapper.AdlxDesktop
-  commentId: T:ADLXWrapper.AdlxDesktop
+- uid: ADLXWrapper.ADLXDesktop
+  commentId: T:ADLXWrapper.ADLXDesktop
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxDesktop.html
-  name: AdlxDesktop
-  nameWithType: AdlxDesktop
-  fullName: ADLXWrapper.AdlxDesktop
+  href: ADLXWrapper.ADLXDesktop.html
+  name: ADLXDesktop
+  nameWithType: ADLXDesktop
+  fullName: ADLXWrapper.ADLXDesktop
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_CreateEyefinityDesktop
@@ -1585,32 +1585,32 @@ references:
   name: EnumerateDesktopDisplays
   nameWithType: ADLXDesktopServicesHelper.EnumerateDesktopDisplays
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopDisplays
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayInfo}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<DisplayInfo>
-  nameWithType: IEnumerable<DisplayInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayInfo>
-  nameWithType.vb: IEnumerable(Of DisplayInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayInfo)
-  name.vb: IEnumerable(Of DisplayInfo)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<DisplayInfo>
+  nameWithType: IReadOnlyList<DisplayInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DisplayInfo>
+  nameWithType.vb: IReadOnlyList(Of DisplayInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DisplayInfo)
+  name.vb: IReadOnlyList(Of DisplayInfo)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: ADLXWrapper.DisplayInfo
     name: DisplayInfo
     href: ADLXWrapper.DisplayInfo.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "

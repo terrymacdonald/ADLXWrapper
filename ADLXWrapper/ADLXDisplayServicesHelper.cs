@@ -60,7 +60,7 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
-        public IReadOnlyList<AdlxDisplay> EnumerateDisplays()
+        public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
         {
             ThrowIfDisposed();
             var services = GetHighestDisplayServices();
@@ -74,7 +74,7 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate displays");
 
-            var displays = new List<AdlxDisplay>();
+            var displays = new List<ADLXDisplay>();
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
             var count = displayList.Get()->Size();
             for (uint i = 0; i < count; i++)
@@ -88,13 +88,13 @@ namespace ADLXWrapper
                     throw new ADLXException(itemResult, "Failed to access display from list");
                 }
 
-                displays.Add(CreateAdlxDisplay(pDisplay, addRef: false));
+                displays.Add(CreateADLXDisplay(pDisplay, addRef: false));
             }
 
             return displays;
         }
 
-        public IReadOnlyList<AdlxDisplay> EnumerateAdlxDisplays()
+        public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
         {
             return EnumerateDisplays();
         }
@@ -106,11 +106,11 @@ namespace ADLXWrapper
             return new DisplayInfo(display);
         }
 
-        public IReadOnlyList<AdlxDisplay> EnumerateAdlxDisplaysForGpu(int gpuUniqueId)
+        public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplaysForGpu(int gpuUniqueId)
         {
             ThrowIfDisposed();
             var allDisplays = EnumerateDisplays();
-            var filtered = new List<AdlxDisplay>();
+            var filtered = new List<ADLXDisplay>();
             foreach (var display in allDisplays)
             {
                 if (display.GpuUniqueId == gpuUniqueId)
@@ -125,7 +125,7 @@ namespace ADLXWrapper
             return filtered;
         }
 
-        public AdlxDisplay CreateAdlxDisplay(IADLXDisplay* pDisplay, bool addRef = true)
+        public ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
         {
             ThrowIfDisposed();
             if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -139,7 +139,7 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
 
             var desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
-            return new AdlxDisplay(services, pDisplay, desktopServices);
+            return new ADLXDisplay(services, pDisplay, desktopServices);
         }
 
         public IADLXDisplayList* GetDisplayListNative()

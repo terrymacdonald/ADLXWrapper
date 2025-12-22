@@ -6,7 +6,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.
     /// </summary>
-    public sealed unsafe class AdlxGpu : IDisposable
+    public sealed unsafe class ADLXGPU : IDisposable
     {
         private ComPtr<IADLXGPU> _gpu;
         private ComPtr<IADLXDisplayServices>? _displayServices;
@@ -14,7 +14,7 @@ namespace ADLXWrapper
         private readonly GpuInfo _identity;
         private bool _disposed;
 
-        public AdlxGpu(IADLXGPU* pGpu, IADLXDisplayServices* pDisplayServices = null, IADLXDesktopServices* pDesktopServices = null)
+        public ADLXGPU(IADLXGPU* pGpu, IADLXDisplayServices* pDisplayServices = null, IADLXDesktopServices* pDesktopServices = null)
         {
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
             _gpu = new ComPtr<IADLXGPU>(pGpu);
@@ -46,7 +46,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate façade displays driven by this GPU.
         /// </summary>
-        public IEnumerable<AdlxDisplay> EnumerateAdlxDisplays(ADLXDisplayServicesHelper? displayHelper = null)
+        public IEnumerable<ADLXDisplay> EnumerateADLXDisplays(ADLXDisplayServicesHelper? displayHelper = null)
         {
             ThrowIfDisposed();
             var ownsHelper = false;
@@ -61,7 +61,7 @@ namespace ADLXWrapper
 
             try
             {
-                return displayHelper.EnumerateAdlxDisplaysForGpu(_identity.UniqueId);
+                return displayHelper.EnumerateADLXDisplaysForGpu(_identity.UniqueId);
             }
             finally
             {
@@ -73,7 +73,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate façade desktops containing displays from this GPU.
         /// </summary>
-        public IEnumerable<AdlxDesktop> EnumerateAdlxDesktops(ADLXDesktopServicesHelper? desktopHelper = null)
+        public IEnumerable<ADLXDesktop> EnumerateADLXDesktops(ADLXDesktopServicesHelper? desktopHelper = null)
         {
             ThrowIfDisposed();
             var ownsHelper = false;
@@ -88,7 +88,7 @@ namespace ADLXWrapper
 
             try
             {
-                return desktopHelper.EnumerateAdlxDesktopsForGpu(_identity.UniqueId);
+                return desktopHelper.EnumerateADLXDesktopsForGpu(_identity.UniqueId);
             }
             finally
             {
@@ -135,7 +135,7 @@ namespace ADLXWrapper
 
         private void ThrowIfDisposed()
         {
-            if (_disposed) throw new ObjectDisposedException(nameof(AdlxGpu));
+            if (_disposed) throw new ObjectDisposedException(nameof(ADLXGPU));
         }
 
         public void Dispose()

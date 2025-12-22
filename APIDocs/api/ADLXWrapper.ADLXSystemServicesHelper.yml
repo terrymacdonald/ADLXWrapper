@@ -887,10 +887,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IReadOnlyList<AdlxDisplay> EnumerateDisplays()
+    content: public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of AdlxDisplay)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
@@ -1698,26 +1698,26 @@ references:
   name: EnumerateDisplays
   nameWithType: ADLXSystemServicesHelper.EnumerateDisplays
   fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
-- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
-  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.AdlxDisplay}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<AdlxDisplay>
-  nameWithType: IReadOnlyList<AdlxDisplay>
-  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.AdlxDisplay>
-  nameWithType.vb: IReadOnlyList(Of AdlxDisplay)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.AdlxDisplay)
-  name.vb: IReadOnlyList(Of AdlxDisplay)
+  name: IReadOnlyList<ADLXDisplay>
+  nameWithType: IReadOnlyList<ADLXDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
+  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
+  name.vb: IReadOnlyList(Of ADLXDisplay)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
     name: IReadOnlyList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -1727,9 +1727,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.AdlxDisplay
-    name: AdlxDisplay
-    href: ADLXWrapper.AdlxDisplay.html
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
   - name: )
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1

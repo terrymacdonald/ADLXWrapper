@@ -132,13 +132,13 @@ namespace ADLXWrapper.Tests
             _gpuList->At(0, &pGpu);
 
             ADLXUtils.AddRefInterface((IntPtr)pGpu);
-            using var gpuFacade = new AdlxGpu(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            using var gpuFacade = new ADLXGPU(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
             try
             {
-                var displays = gpuFacade.EnumerateAdlxDisplays().ToList();
+                var displays = gpuFacade.EnumerateADLXDisplays().ToList();
                 foreach (var d in displays) d.Dispose();
 
-                var desktops = gpuFacade.EnumerateAdlxDesktops().ToList();
+                var desktops = gpuFacade.EnumerateADLXDesktops().ToList();
                 foreach (var d in desktops) d.Dispose();
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
@@ -156,7 +156,7 @@ namespace ADLXWrapper.Tests
             _gpuList->At(0, &pGpu);
 
             ADLXUtils.AddRefInterface((IntPtr)pGpu);
-            using var gpuFacade = new AdlxGpu(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            using var gpuFacade = new ADLXGPU(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
             try
             {
                 var dHandle = gpuFacade.AddDisplayListEventListener(_ => false);

@@ -27,7 +27,7 @@ using var system = adlx.GetSystemServices();
 // Facade-first: enumerate managed displays (no pointer handling needed)
 var displays = system.EnumerateDisplays();
 foreach (var display in displays)
-using (display) // AdlxDisplay is IDisposable
+using (display) // ADLXDisplay is IDisposable
 {
     Console.WriteLine($"Display {display.Name} on GPU {display.GpuUniqueId}: " +
                       $"{display.Width}x{display.Height} @ {display.RefreshRate:F2} Hz");

@@ -1001,7 +1001,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "ADLXWrapper.AdlxDesktop",
+      "Title": "ADLXWrapper.ADLXDesktop",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDesktop.yml\" sourcestartlinenumber=\"1\">Flattened desktop façade with identity metadata and display enumeration helpers.</p>\n"
     },
     {
@@ -1015,7 +1015,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "ADLXWrapper.AdlxDisplay",
+      "Title": "ADLXWrapper.ADLXDisplay",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDisplay.yml\" sourcestartlinenumber=\"1\">Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.</p>\n"
     },
     {
@@ -1029,7 +1029,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "ADLXWrapper.AdlxGpu",
+      "Title": "ADLXWrapper.ADLXGPU",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxGpu.yml\" sourcestartlinenumber=\"1\">Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.</p>\n"
     },
     {

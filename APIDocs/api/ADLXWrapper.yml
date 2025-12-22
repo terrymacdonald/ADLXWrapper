@@ -7,9 +7,12 @@ items:
   - ADLXWrapper.ADLX
   - ADLXWrapper.ADLX3DSettingsServicesHelper
   - ADLXWrapper.ADLXApiHelper
+  - ADLXWrapper.ADLXDesktop
   - ADLXWrapper.ADLXDesktopServicesHelper
+  - ADLXWrapper.ADLXDisplay
   - ADLXWrapper.ADLXDisplayServicesHelper
   - ADLXWrapper.ADLXException
+  - ADLXWrapper.ADLXGPU
   - ADLXWrapper.ADLXGPUTuningServicesHelper
   - ADLXWrapper.ADLXHardwareDetection
   - ADLXWrapper.ADLXListHelpers
@@ -74,9 +77,6 @@ items:
   - ADLXWrapper.ADLX_UINT16_RGB
   - ADLXWrapper.ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
   - ADLXWrapper.ADLX_WHITE_POINT
-  - ADLXWrapper.AdlxDesktop
-  - ADLXWrapper.AdlxDisplay
-  - ADLXWrapper.AdlxGpu
   - ADLXWrapper.AdlxInterfaceHandle
   - ADLXWrapper.All3DSettingsInfo
   - ADLXWrapper.AllMetricsSnapshotInfo
@@ -410,13 +410,13 @@ references:
   name: ADLXApiHelper
   nameWithType: ADLXApiHelper
   fullName: ADLXWrapper.ADLXApiHelper
-- uid: ADLXWrapper.AdlxDesktop
-  commentId: T:ADLXWrapper.AdlxDesktop
+- uid: ADLXWrapper.ADLXDesktop
+  commentId: T:ADLXWrapper.ADLXDesktop
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxDesktop.html
-  name: AdlxDesktop
-  nameWithType: AdlxDesktop
-  fullName: ADLXWrapper.AdlxDesktop
+  href: ADLXWrapper.ADLXDesktop.html
+  name: ADLXDesktop
+  nameWithType: ADLXDesktop
+  fullName: ADLXWrapper.ADLXDesktop
 - uid: ADLXWrapper.ADLXDesktopServicesHelper
   commentId: T:ADLXWrapper.ADLXDesktopServicesHelper
   parent: ADLXWrapper
@@ -475,13 +475,13 @@ references:
   - uid: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
     name: OnDesktopListChanged
     href: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged.html
-- uid: ADLXWrapper.AdlxDisplay
-  commentId: T:ADLXWrapper.AdlxDisplay
+- uid: ADLXWrapper.ADLXDisplay
+  commentId: T:ADLXWrapper.ADLXDisplay
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxDisplay.html
-  name: AdlxDisplay
-  nameWithType: AdlxDisplay
-  fullName: ADLXWrapper.AdlxDisplay
+  href: ADLXWrapper.ADLXDisplay.html
+  name: ADLXDisplay
+  nameWithType: ADLXDisplay
+  fullName: ADLXWrapper.ADLXDisplay
 - uid: ADLXWrapper.VariBrightMode
   commentId: T:ADLXWrapper.VariBrightMode
   parent: ADLXWrapper
@@ -702,13 +702,13 @@ references:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     name: OnDisplaySettingsChanged
     href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
-- uid: ADLXWrapper.AdlxGpu
-  commentId: T:ADLXWrapper.AdlxGpu
+- uid: ADLXWrapper.ADLXGPU
+  commentId: T:ADLXWrapper.ADLXGPU
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxGpu.html
-  name: AdlxGpu
-  nameWithType: AdlxGpu
-  fullName: ADLXWrapper.AdlxGpu
+  href: ADLXWrapper.ADLXGPU.html
+  name: ADLXGPU
+  nameWithType: ADLXGPU
+  fullName: ADLXWrapper.ADLXGPU
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper
   commentId: T:ADLXWrapper.ADLXGPUTuningServicesHelper
   parent: ADLXWrapper

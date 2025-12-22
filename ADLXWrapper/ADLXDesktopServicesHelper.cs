@@ -47,7 +47,7 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
         }
 
-        public IEnumerable<DesktopInfo> EnumerateDesktops()
+        public IReadOnlyList<DesktopInfo> EnumerateDesktops()
         {
             ThrowIfDisposed();
             var services = _desktopServices.Get();
@@ -74,7 +74,7 @@ namespace ADLXWrapper
             return desktops;
         }
 
-        public IEnumerable<AdlxDesktop> EnumerateAdlxDesktops()
+        public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
         {
             ThrowIfDisposed();
             var services = _desktopServices.Get();
@@ -88,7 +88,7 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate desktops");
 
-            var desktops = new List<AdlxDesktop>();
+            var desktops = new List<ADLXDesktop>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
@@ -101,13 +101,13 @@ namespace ADLXWrapper
                     throw new ADLXException(itemResult, "Failed to access desktop from list");
                 }
 
-                desktops.Add(CreateAdlxDesktop(pDesktop, addRef: false));
+                desktops.Add(CreateADLXDesktop(pDesktop, addRef: false));
             }
 
             return desktops;
         }
 
-        public IEnumerable<AdlxDesktop> EnumerateAdlxDesktopsForGpu(int gpuUniqueId)
+        public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktopsForGpu(int gpuUniqueId)
         {
             ThrowIfDisposed();
             var services = _desktopServices.Get();
@@ -121,7 +121,7 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate desktops");
 
-            var desktops = new List<AdlxDesktop>();
+            var desktops = new List<ADLXDesktop>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
@@ -152,7 +152,7 @@ namespace ADLXWrapper
 
                 if (hasMatch)
                 {
-                    desktops.Add(CreateAdlxDesktop(pDesktop, addRef: false));
+                    desktops.Add(CreateADLXDesktop(pDesktop, addRef: false));
                 }
                 else
                 {
@@ -163,7 +163,7 @@ namespace ADLXWrapper
             return desktops;
         }
 
-        public AdlxDesktop CreateAdlxDesktop(IADLXDesktop* pDesktop, bool addRef = true)
+        public ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
         {
             ThrowIfDisposed();
             if (pDesktop == null) throw new ArgumentNullException(nameof(pDesktop));
@@ -177,7 +177,7 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
 
             var displayServices = _displayServices.HasValue ? _displayServices.Value.Get() : null;
-            return new AdlxDesktop(services, pDesktop, displayServices);
+            return new ADLXDesktop(services, pDesktop, displayServices);
         }
 
         public EyefinityDesktopInfo CreateEyefinityDesktop()
@@ -402,7 +402,7 @@ namespace ADLXWrapper
             return list;
         }
 
-        public IEnumerable<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
+        public IReadOnlyList<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
         {
             ThrowIfDisposed();
             if (desktop == null) return Array.Empty<DisplayInfo>();
@@ -433,7 +433,7 @@ namespace ADLXWrapper
             return (rows, cols);
         }
 
-        public IEnumerable<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
+        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
         {
             ThrowIfDisposed();
             if (eyefinityDesktop == null) return Array.Empty<DisplayInfo>();

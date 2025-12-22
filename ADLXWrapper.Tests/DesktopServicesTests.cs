@@ -67,13 +67,13 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
-        public void CanEnumerateAdlxDesktops()
+        public void CanEnumerateADLXDesktops()
         {
             Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
 
             try
             {
-                var desktops = _desktopHelper.EnumerateAdlxDesktops().ToList();
+                var desktops = _desktopHelper.EnumerateADLXDesktops().ToList();
                 _output.WriteLine($"Found {desktops.Count} desktop façade(s).");
                 foreach (var d in desktops)
                 {

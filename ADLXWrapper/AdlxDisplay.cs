@@ -6,7 +6,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.
     /// </summary>
-    public sealed unsafe class AdlxDisplay : IDisposable
+    public sealed unsafe class ADLXDisplay : IDisposable
     {
         private ComPtr<IADLXDisplayServices> _displayServices;
         private ComPtr<IADLXDisplay> _display;
@@ -14,7 +14,7 @@ namespace ADLXWrapper
         private readonly DisplayInfo _identity;
         private bool _disposed;
 
-        public AdlxDisplay(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay, IADLXDesktopServices* pDesktopServices = null)
+        public ADLXDisplay(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay, IADLXDesktopServices* pDesktopServices = null)
         {
             if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
             if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -427,7 +427,7 @@ namespace ADLXWrapper
         /// <summary>
         /// GPU that drives this display.
         /// </summary>
-        public AdlxGpu GetGpu()
+        public ADLXGPU GetGpu()
         {
             ThrowIfDisposed();
             IADLXGPU* pGpu = null;
@@ -438,13 +438,13 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to resolve GPU for display");
 
             IADLXDesktopServices* desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
-            return new AdlxGpu(pGpu, _displayServices.Get(), desktopServices);
+            return new ADLXGPU(pGpu, _displayServices.Get(), desktopServices);
         }
 
         /// <summary>
         /// Desktop that contains this display (requires desktop services supplied to the display instance).
         /// </summary>
-        public AdlxDesktop GetDesktop()
+        public ADLXDesktop GetDesktop()
         {
             ThrowIfDisposed();
             if (!_desktopServices.HasValue || _desktopServices.Value.Get() == null)
@@ -493,7 +493,7 @@ namespace ADLXWrapper
 
                 if (match)
                 {
-                    return new AdlxDesktop(desktopServices, pDesktop);
+                    return new ADLXDesktop(desktopServices, pDesktop);
                 }
 
                 ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
@@ -504,7 +504,7 @@ namespace ADLXWrapper
 
         private void ThrowIfDisposed()
         {
-            if (_disposed) throw new ObjectDisposedException(nameof(AdlxDisplay));
+            if (_disposed) throw new ObjectDisposedException(nameof(ADLXDisplay));
         }
 
         public void Dispose()

@@ -1,4 +1,4 @@
-﻿# ADLXWrapper
+# ADLXWrapper
 
 A modern, high-performance C# wrapper for the AMD Display Library Extensions (ADLX) SDK, generated using ClangSharp.
 

@@ -7,7 +7,7 @@ IMPORTANT: These instructions guide the AI in generating code for the ADLXWrappe
 - **DLL loading**: `ADLXApi` dynamically loads `amdadlx64.dll` via `LoadLibraryEx` with search flags. If you change DLL names or search paths, keep `ADLXNative.GetDllName()` and `ADLXApi.LoadADLXDll()` consistent. Surface errors via `ADLXException`.
 - **Vtable interop**: Manual vtable layouts live in `ADLXVTables.cs`; generated interfaces/enums in `cs_generated/`. When calling vtable functions directly, cast through delegates with `Marshal.GetDelegateForFunctionPointer` and respect `StdCall` calling convention.
 - **Helpers & data shapes**: Use existing helpers as patterns:
-  - GPUs: `ADLXGpuHelpers.EnumerateAllGpus` → `GpuInfo` (serializable via Newtonsoft.Json) with fields like `Name`, `UniqueId`, `TotalVRAM`, `VRAMType`, `PNPString`.
+  - GPUs: `ADLXGPUHelpers.EnumerateAllGpus` → `GpuInfo` (serializable via Newtonsoft.Json) with fields like `Name`, `UniqueId`, `TotalVRAM`, `VRAMType`, `PNPString`.
   - Displays: `ADLXDisplayHelpers.EnumerateAllDisplays` → `DisplayInfo` with EDID, connector/scan type, refresh, GPU linkage.
   - Lists: `ADLXListHelpers` offers `GetListSize`, `GetListItemAt`; callers must dispose returned pointers (prefer `ComPtr`).
 - **Disposal rules**: `ComPtr<T>` auto-calls `Release()` on dispose; do not manually release raw pointers owned by a `ComPtr`. `ADLXApi.Dispose` calls `ADLXTerminate` then frees the DLL; after disposal any API call should throw `ObjectDisposedException` (tests assert this).

@@ -6,7 +6,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Flattened desktop façade with identity metadata and display enumeration helpers.
     /// </summary>
-    public sealed unsafe class AdlxDesktop : IDisposable
+    public sealed unsafe class ADLXDesktop : IDisposable
     {
         private ComPtr<IADLXDesktopServices> _desktopServices;
         private ComPtr<IADLXDesktop> _desktop;
@@ -14,7 +14,7 @@ namespace ADLXWrapper
         private readonly DesktopInfo _identity;
         private bool _disposed;
 
-        public AdlxDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
+        public ADLXDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
         {
             if (pDesktopServices == null) throw new ArgumentNullException(nameof(pDesktopServices));
             if (pDesktop == null) throw new ArgumentNullException(nameof(pDesktop));
@@ -39,9 +39,9 @@ namespace ADLXWrapper
         public bool IsEyefinity { get { ThrowIfDisposed(); return _identity.Type == ADLX_DESKTOP_TYPE.DESKTOP_EYEFINITY; } }
 
         /// <summary>
-        /// Managed enumeration of displays on this desktop.
+        /// Managed enumeration of display identities on this desktop.
         /// </summary>
-        public IEnumerable<DisplayInfo> EnumerateDisplays()
+        public IReadOnlyList<DisplayInfo> EnumerateDisplays()
         {
             ThrowIfDisposed();
             using var helper = CreateDesktopServicesHelper();
@@ -49,47 +49,34 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Façade enumeration of displays on this desktop.
+        /// Façade enumeration of displays on this desktop (pointer-free).
         /// </summary>
-        public IEnumerable<AdlxDisplay> EnumerateAdlxDisplays(ADLXDisplayServicesHelper? displayHelper = null)
+        public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
         {
             ThrowIfDisposed();
-            var ownsHelper = false;
             using var desktopHelper = CreateDesktopServicesHelper();
-            if (displayHelper == null)
-            {
-                if (!_displayServices.HasValue)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services were not provided for this desktop instance");
-                displayHelper = new ADLXDisplayServicesHelper(_displayServices.Value.Get(), _desktopServices.Get());
-                ownsHelper = true;
-            }
+            if (!_displayServices.HasValue || _displayServices.Value.Get() == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services were not provided for this desktop instance");
 
-            try
+            var displayServices = _displayServices.Value.Get();
+            using var displayList = new ComPtr<IADLXDisplayList>(desktopHelper.GetDesktopDisplayListNative(_desktop.Get()));
+            var count = displayList.Get()->Size();
+            var displays = new List<ADLXDisplay>((int)count);
+            for (uint i = 0; i < count; i++)
             {
-                using var displayList = new ComPtr<IADLXDisplayList>(desktopHelper.GetDesktopDisplayListNative(_desktop.Get()));
-                var count = displayList.Get()->Size();
-                var displays = new List<AdlxDisplay>((int)count);
-                for (uint i = 0; i < count; i++)
+                IADLXDisplay* pDisplay = null;
+                var itemResult = displayList.Get()->At(i, &pDisplay);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
                 {
-                    IADLXDisplay* pDisplay = null;
-                    var itemResult = displayList.Get()->At(i, &pDisplay);
-                    if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
-                    {
-                        if (pDisplay != null)
-                            ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
-                        throw new ADLXException(itemResult, "Failed to access display from desktop list");
-                    }
-
-                    displays.Add(displayHelper.CreateAdlxDisplay(pDisplay, addRef: false));
+                    if (pDisplay != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                    throw new ADLXException(itemResult, "Failed to access display from desktop list");
                 }
 
-                return displays;
+                displays.Add(new ADLXDisplay(displayServices, pDisplay, _desktopServices.Get()));
             }
-            finally
-            {
-                if (ownsHelper)
-                    displayHelper.Dispose();
-            }
+
+            return displays;
         }
 
         /// <summary>
@@ -124,7 +111,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate displays that compose this Eyefinity desktop.
         /// </summary>
-        public IEnumerable<DisplayInfo> EnumerateEyefinityDisplays()
+        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays()
         {
             ThrowIfDisposed();
             using var eyefinity = GetEyefinityDesktop();
@@ -161,7 +148,7 @@ namespace ADLXWrapper
 
         private void ThrowIfDisposed()
         {
-            if (_disposed) throw new ObjectDisposedException(nameof(AdlxDesktop));
+            if (_disposed) throw new ObjectDisposedException(nameof(ADLXDesktop));
         }
 
         public void Dispose()

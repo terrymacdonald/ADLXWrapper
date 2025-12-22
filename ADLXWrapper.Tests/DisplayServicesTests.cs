@@ -63,13 +63,13 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
-        public void CanEnumerateAdlxDisplayFacades()
+        public void CanEnumerateADLXDisplayFacades()
         {
             Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
 
             try
             {
-                var facades = _displayServices.EnumerateAdlxDisplays().ToList();
+                var facades = _displayServices.EnumerateADLXDisplays().ToList();
                 _output.WriteLine($"Found {facades.Count} display façade(s).");
                 foreach (var d in facades)
                 {

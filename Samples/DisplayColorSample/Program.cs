@@ -18,7 +18,7 @@ unsafe
     try
     {
         using var displayHandle = displays[0];
-        using var display = displayHelper.CreateAdlxDisplay(displayHandle.As<IADLXDisplay>());
+        using var display = displayHelper.CreateADLXDisplay(displayHandle.As<IADLXDisplay>());
         Console.WriteLine($"Using display: {display.Name}");
 
         var gamma = display.GetGamma();
