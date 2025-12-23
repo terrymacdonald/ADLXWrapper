@@ -51,6 +51,32 @@ To verify the build and check hardware compatibility, run the test script.
 ./test_adlx.ps1
 ```
 
+## Using ADLXWrapper in another project
+
+### Option A: add the project (preferred)
+- Keep this repo as a sibling folder or git submodule, run `./prepare_adlx.ps1` once, then `dotnet add <your>.csproj reference ..\ADLXWrapper\ADLXWrapper.csproj`.
+- Build normally; the `cs_generated` bindings are produced automatically, so you do not need to copy them manually.
+
+### Option B: drop in the prebuilt DLL
+- Build a Release copy (`dotnet build ADLXWrapper/ADLXWrapper.csproj -c Release`) or use the release ZIP built by `./create_adlx_release_zip.ps1`.
+- Add a file reference to `ADLXWrapper.dll` (for example in your `.csproj`):
+
+```xml
+<ItemGroup>
+  <Reference Include="ADLXWrapper">
+    <HintPath>lib/ADLXWrapper.dll</HintPath>
+  </Reference>
+</ItemGroup>
+```
+
+- Only the managed DLL is required for consumers; all public helpers (`ADLXApiHelper`, service helpers, facades, DTOs) live in that assembly.
+- The ADLX native runtime ships with AMD drivers, so you do not need to redistribute SDK headers or binaries.
+- Do **not** cherry-pick files if you embed sources. Copy the entire `ADLXWrapper/` folder (all `ADLX*.cs` plus `cs_generated/` after running `prepare_adlx.ps1`) so the helper implementations and generated bindings stay in sync.
+
+## Packaging a release ZIP
+- Run `./prepare_adlx.ps1` once, then execute `./create_adlx_release_zip.ps1` (defaults to Release build). The script builds the wrapper and drops `artifacts/adlxwrapper-<version>-Release.zip`.
+- Contents: `ADLXWrapper.dll`, `ADLXWrapper.pdb`, `ADLXWrapper.deps.json`, XML docs (`ADLXWrapper.xml`), top-level `README.md`/`LICENSE`, and (optionally) sources + `cs_generated` when run with `-IncludeSources`.
+
 ## Detailed Usage and Examples
 
 ### Quick sample (facade-first)

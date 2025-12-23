@@ -7,6 +7,7 @@
 		<RootNamespace>ADLXWrapper</RootNamespace>
 		<AssemblyName>ADLXWrapper</AssemblyName>
 		<PlatformTarget>x64</PlatformTarget>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<ClangSharpGeneratedDir>$(MSBuildProjectDirectory)\cs_generated</ClangSharpGeneratedDir>
