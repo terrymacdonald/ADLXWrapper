@@ -432,7 +432,7 @@ namespace ADLXWrapper
         /// <summary>
         /// GPU that drives this display.
         /// </summary>
-        public ADLXGPU GetGpu()
+        public ADLXGPU GetGPU()
         {
             ThrowIfDisposed();
             IADLXGPU* pGpu = null;

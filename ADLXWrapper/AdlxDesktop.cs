@@ -36,6 +36,7 @@ namespace ADLXWrapper
         public int TopLeftY { get { ThrowIfDisposed(); return _identity.TopLeftY; } }
         public ADLX_ORIENTATION Orientation { get { ThrowIfDisposed(); return _identity.Orientation; } }
         public bool IsEyefinity { get { ThrowIfDisposed(); return _identity.Type == ADLX_DESKTOP_TYPE.DESKTOP_EYEFINITY; } }
+        public DesktopInfo Identity { get { ThrowIfDisposed(); return _identity; } }
 
         /// <summary>
         /// Managed enumeration of display identities on this desktop.
@@ -122,6 +123,37 @@ namespace ADLXWrapper
             using var eyefinity = GetEyefinityDesktop();
             using var helper = CreateDesktopServicesHelper();
             return helper.EnumerateEyefinityDisplays(eyefinity.Get());
+        }
+
+        /// <summary>
+        /// GPU that drives this desktop (first GPU owning any display on the desktop).
+        /// </summary>
+        public ADLXGPU GetGPU()
+        {
+            ThrowIfDisposed();
+            using var helper = CreateDesktopServicesHelper();
+            using var displayList = new ComPtr<IADLXDisplayList>(helper.GetDesktopDisplayListNative(_desktop.Get()));
+            if (displayList.Get()->Size() == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop has no displays to resolve GPU");
+
+            IADLXDisplay* pDisplay = null;
+            var itemResult = displayList.Get()->At(0, &pDisplay);
+            if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
+            {
+                if (pDisplay != null) ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                throw new ADLXException(itemResult, "Failed to access display while resolving desktop GPU");
+            }
+
+            IADLXGPU* pGpu = null;
+            var gpuResult = pDisplay->GetGPU(&pGpu);
+            ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+            if (gpuResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpu == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU lookup for desktop not supported by this ADLX system");
+            if (gpuResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(gpuResult, "Failed to resolve GPU for desktop");
+
+            var displayServices = _displayServices.HasValue ? _displayServices.Value.Get() : null;
+            return new ADLXGPU(pGpu, displayServices, _desktopServices.Get());
         }
 
         private ComPtr<IADLXEyefinityDesktop> GetEyefinityDesktop()
