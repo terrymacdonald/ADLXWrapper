@@ -41,7 +41,6 @@ namespace ADLXWrapper
         public ADLX_DISPLAY_SCAN_TYPE ScanType { get { ThrowIfDisposed(); return _identity.ScanType; } }
         public ulong UniqueId { get { ThrowIfDisposed(); return _identity.UniqueId; } }
         public int GpuUniqueId { get { ThrowIfDisposed(); return _identity.GpuUniqueId; } }
-        public DisplayInfo Identity { get { ThrowIfDisposed(); return _identity; } }
 
         /// <summary>
         /// Query FreeSync support/enabled state.
@@ -80,6 +79,12 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             return CreateDisplayServicesHelper().GetScalingMode(_display.Get());
+        }
+
+        public DisplayInfo GetDisplayInfo()
+        {
+            ThrowIfDisposed();
+            return _identity;
         }
 
         public void SetScalingMode(ADLX_SCALE_MODE mode)
@@ -500,6 +505,15 @@ namespace ADLXWrapper
             }
 
             throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop containing display was not found");
+        }
+
+        /// <summary>
+        /// Desktop identity that contains this display (requires desktop services supplied to the display instance).
+        /// </summary>
+        public DesktopInfo GetDesktopInfo()
+        {
+            using var desktop = GetDesktop();
+            return desktop.Identity;
         }
 
         private void ThrowIfDisposed()

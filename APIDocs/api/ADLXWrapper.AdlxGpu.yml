@@ -11,8 +11,8 @@ items:
   - ADLXWrapper.ADLXGPU.DeviceId
   - ADLXWrapper.ADLXGPU.Dispose
   - ADLXWrapper.ADLXGPU.DriverPath
-  - ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  - ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  - ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  - ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   - ADLXWrapper.ADLXGPU.HasDesktops
   - ADLXWrapper.ADLXGPU.Identity
   - ADLXWrapper.ADLXGPU.IsExternal
@@ -413,23 +413,23 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property DriverPath As String
   overload: ADLXWrapper.ADLXGPU.DriverPath*
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  id: EnumerateADLXDisplays
+- uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  id: EnumerateDisplaysForGPU
   parent: ADLXWrapper.ADLXGPU
   langs:
   - csharp
   - vb
-  name: EnumerateADLXDisplays()
-  nameWithType: ADLXGPU.EnumerateADLXDisplays()
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays()
+  name: EnumerateDisplaysForGPU()
+  nameWithType: ADLXGPU.EnumerateDisplaysForGPU()
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPU.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateADLXDisplays
+    id: EnumerateDisplaysForGPU
     path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 48
   assemblies:
@@ -438,28 +438,28 @@ items:
   summary: Enumerate façade displays driven by this GPU.
   example: []
   syntax:
-    content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
+    content: public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
-    content.vb: Public Function EnumerateADLXDisplays() As IReadOnlyList(Of ADLXDisplay)
-  overload: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  id: EnumerateADLXDesktops
+    content.vb: Public Function EnumerateDisplaysForGPU() As IReadOnlyList(Of ADLXDisplay)
+  overload: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU*
+- uid: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  id: EnumerateDesktopsForGPU
   parent: ADLXWrapper.ADLXGPU
   langs:
   - csharp
   - vb
-  name: EnumerateADLXDesktops()
-  nameWithType: ADLXGPU.EnumerateADLXDesktops()
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops()
+  name: EnumerateDesktopsForGPU()
+  nameWithType: ADLXGPU.EnumerateDesktopsForGPU()
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPU.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateADLXDesktops
+    id: EnumerateDesktopsForGPU
     path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 58
   assemblies:
@@ -468,11 +468,11 @@ items:
   summary: Enumerate façade desktops containing displays from this GPU.
   example: []
   syntax:
-    content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
+    content: public IReadOnlyList<ADLXDesktop> EnumerateDesktopsForGPU()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
-    content.vb: Public Function EnumerateADLXDesktops() As IReadOnlyList(Of ADLXDesktop)
-  overload: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
+    content.vb: Public Function EnumerateDesktopsForGPU() As IReadOnlyList(Of ADLXDesktop)
+  overload: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU*
 - uid: ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   commentId: M:ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   id: AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
@@ -1039,12 +1039,12 @@ references:
   name: DriverPath
   nameWithType: ADLXGPU.DriverPath
   fullName: ADLXWrapper.ADLXGPU.DriverPath
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
-  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays
-  name: EnumerateADLXDisplays
-  nameWithType: ADLXGPU.EnumerateADLXDisplays
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+- uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU*
+  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU
+  name: EnumerateDisplaysForGPU
+  nameWithType: ADLXGPU.EnumerateDisplaysForGPU
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
 - uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   parent: System.Collections.Generic
@@ -1143,12 +1143,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
-  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops
-  name: EnumerateADLXDesktops
-  nameWithType: ADLXGPU.EnumerateADLXDesktops
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+- uid: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU*
+  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateDesktopsForGPU
+  name: EnumerateDesktopsForGPU
+  nameWithType: ADLXGPU.EnumerateDesktopsForGPU
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
 - uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
   commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
   parent: System.Collections.Generic

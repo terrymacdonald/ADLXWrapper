@@ -636,45 +636,58 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDesktop.Dispose
   nameWithType: ADLXDesktop.Dispose
-- uid: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
-  name: EnumerateADLXDisplays()
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateADLXDisplays
-  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays()
-  nameWithType: ADLXDesktop.EnumerateADLXDisplays()
-- uid: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays*
-  name: EnumerateADLXDisplays
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateADLXDisplays_
-  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
+  name: EnumerateDisplayInfosForDesktop()
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplayInfosForDesktop
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop()
+  nameWithType: ADLXDesktop.EnumerateDisplayInfosForDesktop()
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop*
+  name: EnumerateDisplayInfosForDesktop
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplayInfosForDesktop_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateADLXDisplays
-  nameWithType: ADLXDesktop.EnumerateADLXDisplays
-- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplays
-  name: EnumerateDisplays()
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplays
-  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplays
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplays()
-  nameWithType: ADLXDesktop.EnumerateDisplays()
-- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplays*
-  name: EnumerateDisplays
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplays_
-  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
+  nameWithType: ADLXDesktop.EnumerateDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
+  name: EnumerateDisplaysForDesktop()
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplaysForDesktop
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop()
+  nameWithType: ADLXDesktop.EnumerateDisplaysForDesktop()
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop*
+  name: EnumerateDisplaysForDesktop
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplaysForDesktop_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplays
-  nameWithType: ADLXDesktop.EnumerateDisplays
-- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
-  name: EnumerateEyefinityDisplays()
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplays
-  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays()
-  nameWithType: ADLXDesktop.EnumerateEyefinityDisplays()
-- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays*
-  name: EnumerateEyefinityDisplays
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplays_
-  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
+  nameWithType: ADLXDesktop.EnumerateDisplaysForDesktop
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+  name: EnumerateEyefinityDisplayInfosForDesktop()
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplayInfosForDesktop
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop()
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop()
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop*
+  name: EnumerateEyefinityDisplayInfosForDesktop
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplayInfosForDesktop_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplays
-  nameWithType: ADLXDesktop.EnumerateEyefinityDisplays
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.GetDesktopInfo
+  name: GetDesktopInfo()
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_GetDesktopInfo
+  commentId: M:ADLXWrapper.ADLXDesktop.GetDesktopInfo
+  fullName: ADLXWrapper.ADLXDesktop.GetDesktopInfo()
+  nameWithType: ADLXDesktop.GetDesktopInfo()
+- uid: ADLXWrapper.ADLXDesktop.GetDesktopInfo*
+  name: GetDesktopInfo
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_GetDesktopInfo_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetDesktopInfo
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktop.GetDesktopInfo
+  nameWithType: ADLXDesktop.GetDesktopInfo
 - uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative
   name: GetDisplayListNative()
   href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_GetDisplayListNative
@@ -714,19 +727,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDesktop.Height
   nameWithType: ADLXDesktop.Height
-- uid: ADLXWrapper.ADLXDesktop.Identity
-  name: Identity
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_Identity
-  commentId: P:ADLXWrapper.ADLXDesktop.Identity
-  fullName: ADLXWrapper.ADLXDesktop.Identity
-  nameWithType: ADLXDesktop.Identity
-- uid: ADLXWrapper.ADLXDesktop.Identity*
-  name: Identity
-  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_Identity_
-  commentId: Overload:ADLXWrapper.ADLXDesktop.Identity
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXDesktop.Identity
-  nameWithType: ADLXDesktop.Identity
 - uid: ADLXWrapper.ADLXDesktop.IsEyefinity
   name: IsEyefinity
   href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_IsEyefinity
@@ -1402,6 +1402,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.GetDesktop
   nameWithType: ADLXDisplay.GetDesktop
+- uid: ADLXWrapper.ADLXDisplay.GetDesktopInfo
+  name: GetDesktopInfo()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDesktopInfo
+  commentId: M:ADLXWrapper.ADLXDisplay.GetDesktopInfo
+  fullName: ADLXWrapper.ADLXDisplay.GetDesktopInfo()
+  nameWithType: ADLXDisplay.GetDesktopInfo()
+- uid: ADLXWrapper.ADLXDisplay.GetDesktopInfo*
+  name: GetDesktopInfo
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDesktopInfo_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDesktopInfo
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.GetDesktopInfo
+  nameWithType: ADLXDisplay.GetDesktopInfo
 - uid: ADLXWrapper.ADLXDisplay.GetDisplayBlankingState
   name: GetDisplayBlankingState()
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDisplayBlankingState
@@ -1415,6 +1428,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.GetDisplayBlankingState
   nameWithType: ADLXDisplay.GetDisplayBlankingState
+- uid: ADLXWrapper.ADLXDisplay.GetDisplayInfo
+  name: GetDisplayInfo()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDisplayInfo
+  commentId: M:ADLXWrapper.ADLXDisplay.GetDisplayInfo
+  fullName: ADLXWrapper.ADLXDisplay.GetDisplayInfo()
+  nameWithType: ADLXDisplay.GetDisplayInfo()
+- uid: ADLXWrapper.ADLXDisplay.GetDisplayInfo*
+  name: GetDisplayInfo
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDisplayInfo_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDisplayInfo
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.GetDisplayInfo
+  nameWithType: ADLXDisplay.GetDisplayInfo
 - uid: ADLXWrapper.ADLXDisplay.GetDynamicRefreshRateControlState
   name: GetDynamicRefreshRateControlState()
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetDynamicRefreshRateControlState
@@ -1623,19 +1649,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.Height
   nameWithType: ADLXDisplay.Height
-- uid: ADLXWrapper.ADLXDisplay.Identity
-  name: Identity
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Identity
-  commentId: P:ADLXWrapper.ADLXDisplay.Identity
-  fullName: ADLXWrapper.ADLXDisplay.Identity
-  nameWithType: ADLXDisplay.Identity
-- uid: ADLXWrapper.ADLXDisplay.Identity*
-  name: Identity
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Identity_
-  commentId: Overload:ADLXWrapper.ADLXDisplay.Identity
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXDisplay.Identity
-  nameWithType: ADLXDisplay.Identity
 - uid: ADLXWrapper.ADLXDisplay.ManufacturerId
   name: ManufacturerId
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ManufacturerId
@@ -3110,32 +3123,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.DriverPath
   nameWithType: ADLXGPU.DriverPath
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  name: EnumerateADLXDesktops()
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops()
-  nameWithType: ADLXGPU.EnumerateADLXDesktops()
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
-  name: EnumerateADLXDesktops
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_
-  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+- uid: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  name: EnumerateDesktopsForGPU()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateDesktopsForGPU
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU()
+  nameWithType: ADLXGPU.EnumerateDesktopsForGPU()
+- uid: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU*
+  name: EnumerateDesktopsForGPU
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateDesktopsForGPU_
+  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  nameWithType: ADLXGPU.EnumerateADLXDesktops
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  name: EnumerateADLXDisplays()
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays()
-  nameWithType: ADLXGPU.EnumerateADLXDisplays()
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
-  name: EnumerateADLXDisplays
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_
-  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
+  nameWithType: ADLXGPU.EnumerateDesktopsForGPU
+- uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  name: EnumerateDisplaysForGPU()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU()
+  nameWithType: ADLXGPU.EnumerateDisplaysForGPU()
+- uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU*
+  name: EnumerateDisplaysForGPU
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU_
+  commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   isSpec: "True"
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  nameWithType: ADLXGPU.EnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
+  nameWithType: ADLXGPU.EnumerateDisplaysForGPU
 - uid: ADLXWrapper.ADLXGPU.HasDesktops
   name: HasDesktops
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_HasDesktops

@@ -29,7 +29,6 @@ namespace ADLXWrapper
             _identity = new DesktopInfo(pDesktop);
         }
 
-        public DesktopInfo Identity { get { ThrowIfDisposed(); return _identity; } }
         public ADLX_DESKTOP_TYPE Type { get { ThrowIfDisposed(); return _identity.Type; } }
         public int Width { get { ThrowIfDisposed(); return _identity.Width; } }
         public int Height { get { ThrowIfDisposed(); return _identity.Height; } }
@@ -41,7 +40,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Managed enumeration of display identities on this desktop.
         /// </summary>
-        public IReadOnlyList<DisplayInfo> EnumerateDisplays()
+        public IReadOnlyList<DisplayInfo> EnumerateDisplayInfosForDesktop()
         {
             ThrowIfDisposed();
             using var helper = CreateDesktopServicesHelper();
@@ -51,7 +50,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Façade enumeration of displays on this desktop (pointer-free).
         /// </summary>
-        public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
+        public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForDesktop()
         {
             ThrowIfDisposed();
             using var desktopHelper = CreateDesktopServicesHelper();
@@ -97,6 +96,12 @@ namespace ADLXWrapper
             helper.RemoveDesktopListEventListener(handle, disposeHandle);
         }
 
+        public DesktopInfo GetDesktopInfo()
+        {   
+            ThrowIfDisposed();
+            return _identity;
+        }
+
         /// <summary>
         /// Eyefinity grid size (rows, columns) for Eyefinity desktops.
         /// </summary>
@@ -111,7 +116,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate displays that compose this Eyefinity desktop.
         /// </summary>
-        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays()
+        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplayInfosForDesktop()
         {
             ThrowIfDisposed();
             using var eyefinity = GetEyefinityDesktop();
