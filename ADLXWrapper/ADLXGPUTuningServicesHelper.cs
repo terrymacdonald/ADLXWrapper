@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
 namespace ADLXWrapper
@@ -58,6 +60,37 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetGPUTuningChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetGPUTuningChangedHandlingNative(), addRef: true);
+        }
+
+        public GpuTuningListenerHandle AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback callback)
+        {
+            ThrowIfDisposed();
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
+
+            var handling = GetGPUTuningChangedHandlingNative();
+            var handle = GpuTuningListenerHandle.Create(callback);
+            var result = handling->AddGPUTuningEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add GPU tuning event listener");
+            }
+
+            return handle;
+        }
+
+        public void RemoveGPUTuningEventListener(GpuTuningListenerHandle handle, bool disposeHandle = true)
+        {
+            ThrowIfDisposed();
+            if (handle == null || handle.IsInvalid) return;
+
+            var handling = GetGPUTuningChangedHandlingNative();
+            handling->RemoveGPUTuningEventListener(handle.GetListener());
+
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
         }
 
         public GpuTuningCapabilitiesInfo GetCapabilities(IADLXGPU* gpu)
@@ -486,15 +519,57 @@ namespace ADLXWrapper
     }
 
     /// <summary>
-    /// Safe handle for an unmanaged IADLXGPUTuningEventListener backed by a managed delegate.
+    /// Safe handle for an unmanaged IADLXGPUTuningChangedListener backed by a managed delegate.
     /// </summary>
     public sealed unsafe class GpuTuningListenerHandle : SafeHandle
     {
-        private GpuTuningListenerHandle() : base(IntPtr.Zero, true) { handle = IntPtr.Zero; }
-        public static GpuTuningListenerHandle Create(delegate* unmanaged<void> _ = null) => new();
-        public IntPtr GetListener() => IntPtr.Zero;
-        protected override bool ReleaseHandle() => true;
+        public delegate bool GpuTuningChangedCallback(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, GpuTuningChangedCallback> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnGPUTuningChanged;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private GpuTuningListenerHandle(GpuTuningChangedCallback cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static GpuTuningListenerHandle Create(GpuTuningChangedCallback cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new GpuTuningListenerHandle(cb);
+        }
+
+        public IADLXGPUTuningChangedListener* GetListener() => (IADLXGPUTuningChangedListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
         public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnGPUTuningChanged(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
     }
 }
 

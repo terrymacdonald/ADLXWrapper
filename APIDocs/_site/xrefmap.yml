@@ -307,12 +307,12 @@ references:
   fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.New
   nameWithType: ADLX3DSettingsServicesHelper.ADLX3DSettingsServicesHelper
   nameWithType.vb: ADLX3DSettingsServicesHelper.New
-- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  name: Add3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_
-  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  nameWithType: ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ThreeDSettingsListenerHandle)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  name: Add3DSettingsEventListener(ThreeDSettingsChangedCallback)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_ThreeDSettingsChangedCallback_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  nameWithType: ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener*
   name: Add3DSettingsEventListener
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_
@@ -427,12 +427,15 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.GetAll3DSettings
-- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  name: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_
-  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
+  name: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_System_Boolean_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
+  name.vb: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, Boolean)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle, bool)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle, Boolean)
+  nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener*
   name: Remove3DSettingsEventListener
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_
@@ -714,6 +717,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   nameWithType: ADLXDesktop.GetEyefinityGridSize
+- uid: ADLXWrapper.ADLXDesktop.GetGPU
+  name: GetGPU()
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_GetGPU
+  commentId: M:ADLXWrapper.ADLXDesktop.GetGPU
+  fullName: ADLXWrapper.ADLXDesktop.GetGPU()
+  nameWithType: ADLXDesktop.GetGPU()
+- uid: ADLXWrapper.ADLXDesktop.GetGPU*
+  name: GetGPU
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_GetGPU_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetGPU
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktop.GetGPU
+  nameWithType: ADLXDesktop.GetGPU
 - uid: ADLXWrapper.ADLXDesktop.Height
   name: Height
   href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_Height
@@ -727,6 +743,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDesktop.Height
   nameWithType: ADLXDesktop.Height
+- uid: ADLXWrapper.ADLXDesktop.Identity
+  name: Identity
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_Identity
+  commentId: P:ADLXWrapper.ADLXDesktop.Identity
+  fullName: ADLXWrapper.ADLXDesktop.Identity
+  nameWithType: ADLXDesktop.Identity
+- uid: ADLXWrapper.ADLXDesktop.Identity*
+  name: Identity
+  href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_Identity_
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Identity
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktop.Identity
+  nameWithType: ADLXDesktop.Identity
 - uid: ADLXWrapper.ADLXDesktop.IsEyefinity
   name: IsEyefinity
   href: api/ADLXWrapper.AdlxDesktop.html#ADLXWrapper_ADLXDesktop_IsEyefinity
@@ -1480,6 +1509,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.GetFreeSyncState
   nameWithType: ADLXDisplay.GetFreeSyncState
+- uid: ADLXWrapper.ADLXDisplay.GetGPU
+  name: GetGPU()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGPU
+  commentId: M:ADLXWrapper.ADLXDisplay.GetGPU
+  fullName: ADLXWrapper.ADLXDisplay.GetGPU()
+  nameWithType: ADLXDisplay.GetGPU()
+- uid: ADLXWrapper.ADLXDisplay.GetGPU*
+  name: GetGPU
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGPU_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetGPU
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.GetGPU
+  nameWithType: ADLXDisplay.GetGPU
 - uid: ADLXWrapper.ADLXDisplay.GetGamma
   name: GetGamma()
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGamma
@@ -1506,19 +1548,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.GetGamut
   nameWithType: ADLXDisplay.GetGamut
-- uid: ADLXWrapper.ADLXDisplay.GetGpu
-  name: GetGpu()
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGpu
-  commentId: M:ADLXWrapper.ADLXDisplay.GetGpu
-  fullName: ADLXWrapper.ADLXDisplay.GetGpu()
-  nameWithType: ADLXDisplay.GetGpu()
-- uid: ADLXWrapper.ADLXDisplay.GetGpu*
-  name: GetGpu
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGpu_
-  commentId: Overload:ADLXWrapper.ADLXDisplay.GetGpu
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXDisplay.GetGpu
-  nameWithType: ADLXDisplay.GetGpu
 - uid: ADLXWrapper.ADLXDisplay.GetGpuScalingState
   name: GetGpuScalingState()
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_GetGpuScalingState

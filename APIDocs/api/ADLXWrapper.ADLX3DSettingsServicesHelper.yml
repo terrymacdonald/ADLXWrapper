@@ -6,7 +6,7 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor(ADLXWrapper.IADLX3DSettingsServices*,System.Boolean)
-  - ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize
@@ -15,7 +15,7 @@ items:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesNative
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   langs:
   - csharp
   - vb
@@ -196,16 +196,16 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function Get3DSettingsChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsChangedHandling*
-- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  id: Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  id: Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   parent: ADLXWrapper.ADLX3DSettingsServicesHelper
   langs:
   - csharp
   - vb
-  name: Add3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  nameWithType: ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+  name: Add3DSettingsEventListener(ThreeDSettingsChangedCallback)
+  nameWithType: ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   type: Method
   source:
     remote:
@@ -219,22 +219,24 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void Add3DSettingsEventListener(ThreeDSettingsListenerHandle listener)
+    content: public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
     parameters:
-    - id: listener
+    - id: callback
+      type: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+    return:
       type: ADLXWrapper.ThreeDSettingsListenerHandle
-    content.vb: Public Sub Add3DSettingsEventListener(listener As ThreeDSettingsListenerHandle)
+    content.vb: Public Function Add3DSettingsEventListener(callback As ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback) As ThreeDSettingsListenerHandle
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener*
-- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
-  id: Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
+  id: Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   parent: ADLXWrapper.ADLX3DSettingsServicesHelper
   langs:
   - csharp
   - vb
-  name: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle)
-  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle)
+  name: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
+  nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle, bool)
   type: Method
   source:
     remote:
@@ -243,17 +245,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 70
+    startLine: 80
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void Remove3DSettingsEventListener(ThreeDSettingsListenerHandle listener)
+    content: public void Remove3DSettingsEventListener(ThreeDSettingsListenerHandle handle, bool disposeHandle = true)
     parameters:
-    - id: listener
+    - id: handle
       type: ADLXWrapper.ThreeDSettingsListenerHandle
-    content.vb: Public Sub Remove3DSettingsEventListener(listener As ThreeDSettingsListenerHandle)
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub Remove3DSettingsEventListener(handle As ThreeDSettingsListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle, Boolean)
+  name.vb: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(ADLXWrapper.IADLXGPU*)
   commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(ADLXWrapper.IADLXGPU*)
   id: GetAll3DSettings(ADLXWrapper.IADLXGPU*)
@@ -272,7 +279,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 77
+    startLine: 94
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -303,7 +310,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 84
+    startLine: 101
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -334,7 +341,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 100
+    startLine: 117
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -364,7 +371,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 117
+    startLine: 134
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -688,10 +695,33 @@ references:
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsChangedHandling
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener*
   commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener
-  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_ThreeDSettingsChangedCallback_
   name: Add3DSettingsEventListener
   nameWithType: ADLX3DSettingsServicesHelper.Add3DSettingsEventListener
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener
+- uid: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+  commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.ThreeDSettingsListenerHandle.html
+  name: ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+  nameWithType: ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+  fullName: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+  spec.csharp:
+  - uid: ADLXWrapper.ThreeDSettingsListenerHandle
+    name: ThreeDSettingsListenerHandle
+    href: ADLXWrapper.ThreeDSettingsListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+    name: ThreeDSettingsChangedCallback
+    href: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.ThreeDSettingsListenerHandle
+    name: ThreeDSettingsListenerHandle
+    href: ADLXWrapper.ThreeDSettingsListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
+    name: ThreeDSettingsChangedCallback
+    href: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback.html
 - uid: ADLXWrapper.ThreeDSettingsListenerHandle
   commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle
   parent: ADLXWrapper
@@ -701,7 +731,7 @@ references:
   fullName: ADLXWrapper.ThreeDSettingsListenerHandle
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener*
   commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener
-  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_System_Boolean_
   name: Remove3DSettingsEventListener
   nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener

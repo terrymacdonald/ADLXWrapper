@@ -61,18 +61,35 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
         }
 
-        public void Add3DSettingsEventListener(ThreeDSettingsListenerHandle listener)
+        public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
         {
             ThrowIfDisposed();
-            if (listener == null || listener.IsInvalid) return;
-            Get3DSettingsChangedHandlingNative()->Add3DSettingsEventListener(listener.GetListener());
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
+
+            var handling = Get3DSettingsChangedHandlingNative();
+            var handle = ThreeDSettingsListenerHandle.Create(callback);
+            var result = handling->Add3DSettingsEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add 3D settings event listener");
+            }
+
+            return handle;
         }
 
-        public void Remove3DSettingsEventListener(ThreeDSettingsListenerHandle listener)
+        public void Remove3DSettingsEventListener(ThreeDSettingsListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
-            if (listener == null || listener.IsInvalid) return;
-            Get3DSettingsChangedHandlingNative()->Remove3DSettingsEventListener(listener.GetListener());
+            if (handle == null || handle.IsInvalid) return;
+
+            var handling = Get3DSettingsChangedHandlingNative();
+            handling->Remove3DSettingsEventListener(handle.GetListener());
+
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
         }
 
         public All3DSettingsInfo GetAll3DSettings(IADLXGPU* gpu)

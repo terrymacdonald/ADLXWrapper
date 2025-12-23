@@ -14,7 +14,9 @@ items:
   - ADLXWrapper.ADLXDesktop.GetDesktopInfo
   - ADLXWrapper.ADLXDesktop.GetDisplayListNative
   - ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
+  - ADLXWrapper.ADLXDesktop.GetGPU
   - ADLXWrapper.ADLXDesktop.Height
+  - ADLXWrapper.ADLXDesktop.Identity
   - ADLXWrapper.ADLXDesktop.IsEyefinity
   - ADLXWrapper.ADLXDesktop.Orientation
   - ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
@@ -295,6 +297,35 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property IsEyefinity As Boolean
   overload: ADLXWrapper.ADLXDesktop.IsEyefinity*
+- uid: ADLXWrapper.ADLXDesktop.Identity
+  commentId: P:ADLXWrapper.ADLXDesktop.Identity
+  id: Identity
+  parent: ADLXWrapper.ADLXDesktop
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: ADLXDesktop.Identity
+  fullName: ADLXWrapper.ADLXDesktop.Identity
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Identity
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 38
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public DesktopInfo Identity { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.DesktopInfo
+    content.vb: Public ReadOnly Property Identity As DesktopInfo
+  overload: ADLXWrapper.ADLXDesktop.Identity*
 - uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
   commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
   id: EnumerateDisplayInfosForDesktop
@@ -313,7 +344,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayInfosForDesktop
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -343,7 +374,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 52
+    startLine: 53
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -373,7 +404,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -406,7 +437,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 90
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -440,7 +471,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 98
+    startLine: 99
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -468,7 +499,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 107
+    startLine: 108
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -498,7 +529,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplayInfosForDesktop
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -510,6 +541,36 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
     content.vb: Public Function EnumerateEyefinityDisplayInfosForDesktop() As IReadOnlyList(Of DisplayInfo)
   overload: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop*
+- uid: ADLXWrapper.ADLXDesktop.GetGPU
+  commentId: M:ADLXWrapper.ADLXDesktop.GetGPU
+  id: GetGPU
+  parent: ADLXWrapper.ADLXDesktop
+  langs:
+  - csharp
+  - vb
+  name: GetGPU()
+  nameWithType: ADLXDesktop.GetGPU()
+  fullName: ADLXWrapper.ADLXDesktop.GetGPU()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGPU
+    path: ../ADLXWrapper/ADLXDesktop.cs
+    startLine: 130
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: GPU that drives this desktop (first GPU owning any display on the desktop).
+  example: []
+  syntax:
+    content: public ADLXGPU GetGPU()
+    return:
+      type: ADLXWrapper.ADLXGPU
+    content.vb: Public Function GetGPU() As ADLXGPU
+  overload: ADLXWrapper.ADLXDesktop.GetGPU*
 - uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative
   commentId: M:ADLXWrapper.ADLXDesktop.GetDisplayListNative
   id: GetDisplayListNative
@@ -528,7 +589,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 146
+    startLine: 178
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -558,7 +619,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 158
+    startLine: 190
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -933,6 +994,19 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ADLXWrapper.ADLXDesktop.Identity*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.Identity
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Identity
+  name: Identity
+  nameWithType: ADLXDesktop.Identity
+  fullName: ADLXWrapper.ADLXDesktop.Identity
+- uid: ADLXWrapper.DesktopInfo
+  commentId: T:ADLXWrapper.DesktopInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.DesktopInfo.html
+  name: DesktopInfo
+  nameWithType: DesktopInfo
+  fullName: ADLXWrapper.DesktopInfo
 - uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop*
   commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplayInfosForDesktop
@@ -1124,13 +1198,6 @@ references:
   name: GetDesktopInfo
   nameWithType: ADLXDesktop.GetDesktopInfo
   fullName: ADLXWrapper.ADLXDesktop.GetDesktopInfo
-- uid: ADLXWrapper.DesktopInfo
-  commentId: T:ADLXWrapper.DesktopInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.DesktopInfo.html
-  name: DesktopInfo
-  nameWithType: DesktopInfo
-  fullName: ADLXWrapper.DesktopInfo
 - uid: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize*
   commentId: Overload:ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetEyefinityGridSize
@@ -1219,6 +1286,19 @@ references:
   name: EnumerateEyefinityDisplayInfosForDesktop
   nameWithType: ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
   fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.GetGPU*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetGPU
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetGPU
+  name: GetGPU
+  nameWithType: ADLXDesktop.GetGPU
+  fullName: ADLXWrapper.ADLXDesktop.GetGPU
+- uid: ADLXWrapper.ADLXGPU
+  commentId: T:ADLXWrapper.ADLXGPU
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXGPU.html
+  name: ADLXGPU
+  nameWithType: ADLXGPU
+  fullName: ADLXWrapper.ADLXGPU
 - uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative*
   commentId: Overload:ADLXWrapper.ADLXDesktop.GetDisplayListNative
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetDisplayListNative

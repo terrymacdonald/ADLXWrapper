@@ -28,9 +28,9 @@ items:
   - ADLXWrapper.ADLXDisplay.GetDynamicRefreshRateControlState
   - ADLXWrapper.ADLXDisplay.GetFreeSyncColorAccuracyState
   - ADLXWrapper.ADLXDisplay.GetFreeSyncState
+  - ADLXWrapper.ADLXDisplay.GetGPU
   - ADLXWrapper.ADLXDisplay.GetGamma
   - ADLXWrapper.ADLXDisplay.GetGamut
-  - ADLXWrapper.ADLXDisplay.GetGpu
   - ADLXWrapper.ADLXDisplay.GetGpuScalingState
   - ADLXWrapper.ADLXDisplay.GetHdcpState
   - ADLXWrapper.ADLXDisplay.GetIntegerScalingState
@@ -1933,23 +1933,23 @@ items:
   nameWithType.vb: ADLXDisplay.RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplay.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle, Boolean)
   name.vb: RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
-- uid: ADLXWrapper.ADLXDisplay.GetGpu
-  commentId: M:ADLXWrapper.ADLXDisplay.GetGpu
-  id: GetGpu
+- uid: ADLXWrapper.ADLXDisplay.GetGPU
+  commentId: M:ADLXWrapper.ADLXDisplay.GetGPU
+  id: GetGPU
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: GetGpu()
-  nameWithType: ADLXDisplay.GetGpu()
-  fullName: ADLXWrapper.ADLXDisplay.GetGpu()
+  name: GetGPU()
+  nameWithType: ADLXDisplay.GetGPU()
+  fullName: ADLXWrapper.ADLXDisplay.GetGPU()
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDisplay.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGpu
+    id: GetGPU
     path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 434
   assemblies:
@@ -1958,11 +1958,11 @@ items:
   summary: GPU that drives this display.
   example: []
   syntax:
-    content: public ADLXGPU GetGpu()
+    content: public ADLXGPU GetGPU()
     return:
       type: ADLXWrapper.ADLXGPU
-    content.vb: Public Function GetGpu() As ADLXGPU
-  overload: ADLXWrapper.ADLXDisplay.GetGpu*
+    content.vb: Public Function GetGPU() As ADLXGPU
+  overload: ADLXWrapper.ADLXDisplay.GetGPU*
 - uid: ADLXWrapper.ADLXDisplay.GetDesktop
   commentId: M:ADLXWrapper.ADLXDisplay.GetDesktop
   id: GetDesktop
@@ -3497,12 +3497,12 @@ references:
   name: RemoveDisplayListEventListener
   nameWithType: ADLXDisplay.RemoveDisplayListEventListener
   fullName: ADLXWrapper.ADLXDisplay.RemoveDisplayListEventListener
-- uid: ADLXWrapper.ADLXDisplay.GetGpu*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.GetGpu
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetGpu
-  name: GetGpu
-  nameWithType: ADLXDisplay.GetGpu
-  fullName: ADLXWrapper.ADLXDisplay.GetGpu
+- uid: ADLXWrapper.ADLXDisplay.GetGPU*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetGPU
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetGPU
+  name: GetGPU
+  nameWithType: ADLXDisplay.GetGPU
+  fullName: ADLXWrapper.ADLXDisplay.GetGPU
 - uid: ADLXWrapper.ADLXGPU
   commentId: T:ADLXWrapper.ADLXGPU
   parent: ADLXWrapper

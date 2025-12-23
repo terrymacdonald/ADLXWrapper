@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDSettingsListenerHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 628
+    startLine: 645
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -73,7 +73,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 649
+    startLine: 666
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -104,7 +104,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 655
+    startLine: 672
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 657
+    startLine: 674
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -164,7 +164,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 666
+    startLine: 683
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
