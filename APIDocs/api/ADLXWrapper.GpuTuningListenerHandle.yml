@@ -5,7 +5,7 @@ items:
   id: GpuTuningListenerHandle
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.GpuTuningListenerHandle.Create()
+  - ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   - ADLXWrapper.GpuTuningListenerHandle.GetListener
   - ADLXWrapper.GpuTuningListenerHandle.IsInvalid
   - ADLXWrapper.GpuTuningListenerHandle.ReleaseHandle
@@ -23,11 +23,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningListenerHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 490
+    startLine: 523
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Safe handle for an unmanaged IADLXGPUTuningEventListener backed by a managed delegate.
+  summary: Safe handle for an unmanaged IADLXGPUTuningChangedListener backed by a managed delegate.
   example: []
   syntax:
     content: 'public sealed class GpuTuningListenerHandle : SafeHandle, IDisposable'
@@ -52,16 +52,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.GpuTuningListenerHandle.Create()
-  commentId: M:ADLXWrapper.GpuTuningListenerHandle.Create()
-  id: Create()
+- uid: ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  commentId: M:ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  id: Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   parent: ADLXWrapper.GpuTuningListenerHandle
   langs:
   - csharp
   - vb
-  name: Create(delegate* unmanaged<void>)
-  nameWithType: GpuTuningListenerHandle.Create(delegate* unmanaged<void>)
-  fullName: ADLXWrapper.GpuTuningListenerHandle.Create(delegate* unmanaged<void>)
+  name: Create(GpuTuningChangedCallback)
+  nameWithType: GpuTuningListenerHandle.Create(GpuTuningListenerHandle.GpuTuningChangedCallback)
+  fullName: ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   type: Method
   source:
     remote:
@@ -70,22 +70,19 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 493
+    startLine: 544
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public static GpuTuningListenerHandle Create(delegate* unmanaged<void> _ = default)
+    content: public static GpuTuningListenerHandle Create(GpuTuningListenerHandle.GpuTuningChangedCallback cb)
     parameters:
-    - id: _
-      type: delegate* unmanaged<void>
+    - id: cb
+      type: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
     return:
       type: ADLXWrapper.GpuTuningListenerHandle
-    content.vb: Public Shared Function Create(_ As  = Nothing) As GpuTuningListenerHandle
+    content.vb: Public Shared Function Create(cb As GpuTuningListenerHandle.GpuTuningChangedCallback) As GpuTuningListenerHandle
   overload: ADLXWrapper.GpuTuningListenerHandle.Create*
-  nameWithType.vb: GpuTuningListenerHandle.Create()
-  fullName.vb: ADLXWrapper.GpuTuningListenerHandle.Create()
-  name.vb: Create()
 - uid: ADLXWrapper.GpuTuningListenerHandle.GetListener
   commentId: M:ADLXWrapper.GpuTuningListenerHandle.GetListener
   id: GetListener
@@ -104,15 +101,15 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 494
+    startLine: 550
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public nint GetListener()
+    content: public IADLXGPUTuningChangedListener* GetListener()
     return:
-      type: System.IntPtr
-    content.vb: Public Function GetListener() As IntPtr
+      type: ADLXWrapper.IADLXGPUTuningChangedListener*
+    content.vb: Public Function GetListener() As IADLXGPUTuningChangedListener*
   overload: ADLXWrapper.GpuTuningListenerHandle.GetListener*
 - uid: ADLXWrapper.GpuTuningListenerHandle.ReleaseHandle
   commentId: M:ADLXWrapper.GpuTuningListenerHandle.ReleaseHandle
@@ -132,7 +129,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 495
+    startLine: 552
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -164,7 +161,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 496
+    startLine: 561
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -652,27 +649,33 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.runtime.interopservices
 - uid: ADLXWrapper.GpuTuningListenerHandle.Create*
   commentId: Overload:ADLXWrapper.GpuTuningListenerHandle.Create
-  href: ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_Create__
+  href: ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_Create_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_
   name: Create
   nameWithType: GpuTuningListenerHandle.Create
   fullName: ADLXWrapper.GpuTuningListenerHandle.Create
-- uid: delegate* unmanaged<void>
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.void
-  name: delegate* unmanaged<void>
-  nameWithType: delegate* unmanaged<void>
-  fullName: delegate* unmanaged<void>
+- uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuTuningListenerHandle.html
+  name: GpuTuningListenerHandle.GpuTuningChangedCallback
+  nameWithType: GpuTuningListenerHandle.GpuTuningChangedCallback
+  fullName: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
   spec.csharp:
-  - name: delegate
-  - name: '*'
-  - name: " "
-  - name: unmanaged
-  - name: <
-  - uid: System.Void
-    name: void
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.void
-  - name: '>'
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
 - uid: ADLXWrapper.GpuTuningListenerHandle
   commentId: T:ADLXWrapper.GpuTuningListenerHandle
   parent: ADLXWrapper
@@ -686,17 +689,22 @@ references:
   name: GetListener
   nameWithType: GpuTuningListenerHandle.GetListener
   fullName: ADLXWrapper.GpuTuningListenerHandle.GetListener
-- uid: System.IntPtr
-  commentId: T:System.IntPtr
-  parent: System
+- uid: ADLXWrapper.IADLXGPUTuningChangedListener*
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.intptr
-  name: nint
-  nameWithType: nint
-  fullName: nint
-  nameWithType.vb: IntPtr
-  fullName.vb: System.IntPtr
-  name.vb: IntPtr
+  href: ADLXWrapper.IADLXGPUTuningChangedListener.html
+  name: IADLXGPUTuningChangedListener*
+  nameWithType: IADLXGPUTuningChangedListener*
+  fullName: ADLXWrapper.IADLXGPUTuningChangedListener*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUTuningChangedListener
+    name: IADLXGPUTuningChangedListener
+    href: ADLXWrapper.IADLXGPUTuningChangedListener.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUTuningChangedListener
+    name: IADLXGPUTuningChangedListener
+    href: ADLXWrapper.IADLXGPUTuningChangedListener.html
+  - name: '*'
 - uid: System.Runtime.InteropServices.SafeHandle.ReleaseHandle
   commentId: M:System.Runtime.InteropServices.SafeHandle.ReleaseHandle
   parent: System.Runtime.InteropServices.SafeHandle

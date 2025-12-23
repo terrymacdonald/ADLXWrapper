@@ -6,6 +6,7 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   - ADLXWrapper.ADLXGPUTuningServicesHelper.Finalize
   - ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
@@ -23,6 +24,7 @@ items:
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
   langs:
   - csharp
   - vb
@@ -37,7 +39,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPUTuningServicesHelper
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -75,7 +77,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -109,7 +111,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -137,7 +139,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,7 +167,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 40
+    startLine: 42
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -193,7 +195,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningChangedHandling
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -203,6 +205,71 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetGPUTuningChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling*
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  id: AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: AddGPUTuningEventListener(GpuTuningChangedCallback)
+  nameWithType: ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AddGPUTuningEventListener
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 64
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GpuTuningListenerHandle AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback callback)
+    parameters:
+    - id: callback
+      type: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    return:
+      type: ADLXWrapper.GpuTuningListenerHandle
+    content.vb: Public Function AddGPUTuningEventListener(callback As GpuTuningListenerHandle.GpuTuningChangedCallback) As GpuTuningListenerHandle
+  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener*
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
+  id: RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
+  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: RemoveGPUTuningEventListener(GpuTuningListenerHandle, bool)
+  nameWithType: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(GpuTuningListenerHandle, bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RemoveGPUTuningEventListener
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 81
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void RemoveGPUTuningEventListener(GpuTuningListenerHandle handle, bool disposeHandle = true)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.GpuTuningListenerHandle
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemoveGPUTuningEventListener(handle As GpuTuningListenerHandle, disposeHandle As Boolean = True)
+  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener*
+  nameWithType.vb: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle, Boolean)
+  name.vb: RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
   commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
   id: GetCapabilities(ADLXWrapper.IADLXGPU*)
@@ -221,7 +288,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCapabilities
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 62
+    startLine: 95
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -252,7 +319,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 69
+    startLine: 102
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -283,7 +350,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 83
+    startLine: 116
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -314,7 +381,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 97
+    startLine: 130
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -345,7 +412,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 111
+    startLine: 144
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -376,7 +443,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 125
+    startLine: 158
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -407,7 +474,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 139
+    startLine: 172
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -438,7 +505,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 153
+    startLine: 186
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -469,7 +536,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 168
+    startLine: 201
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -500,7 +567,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 183
+    startLine: 216
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -531,7 +598,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 198
+    startLine: 231
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -562,7 +629,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 213
+    startLine: 246
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -592,7 +659,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 229
+    startLine: 262
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -914,6 +981,48 @@ references:
   name: GetGPUTuningChangedHandling
   nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener*
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_AddGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_
+  name: AddGPUTuningEventListener
+  nameWithType: ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
+- uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuTuningListenerHandle.html
+  name: GpuTuningListenerHandle.GpuTuningChangedCallback
+  nameWithType: GpuTuningListenerHandle.GpuTuningChangedCallback
+  fullName: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  spec.csharp:
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
+- uid: ADLXWrapper.GpuTuningListenerHandle
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuTuningListenerHandle.html
+  name: GpuTuningListenerHandle
+  nameWithType: GpuTuningListenerHandle
+  fullName: ADLXWrapper.GpuTuningListenerHandle
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener*
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_RemoveGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_System_Boolean_
+  name: RemoveGPUTuningEventListener
+  nameWithType: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities
   href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetCapabilities_ADLXWrapper_IADLXGPU__

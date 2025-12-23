@@ -250,7 +250,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -284,7 +284,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscaleNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 89
+    startLine: 90
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -315,7 +315,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 104
+    startLine: 105
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -346,7 +346,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 113
+    startLine: 114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -380,7 +380,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 123
+    startLine: 124
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -414,7 +414,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolutionNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 133
+    startLine: 134
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -445,7 +445,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 148
+    startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -476,7 +476,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 157
+    startLine: 158
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -510,7 +510,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 167
+    startLine: 168
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -540,7 +540,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 291
+    startLine: 292
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

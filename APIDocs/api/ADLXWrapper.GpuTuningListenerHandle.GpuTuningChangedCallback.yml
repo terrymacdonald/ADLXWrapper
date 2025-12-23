@@ -1,36 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  id: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+- uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  id: GpuTuningListenerHandle.GpuTuningChangedCallback
   parent: ADLXWrapper
   children: []
   langs:
   - csharp
   - vb
-  name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  name: GpuTuningListenerHandle.GpuTuningChangedCallback
+  nameWithType: GpuTuningListenerHandle.GpuTuningChangedCallback
+  fullName: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
   type: Delegate
   source:
     remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: MultimediaChangedCallback
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 236
+    id: GpuTuningChangedCallback
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 525
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public delegate bool ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback(nint pEvent)
+    content: public delegate bool GpuTuningListenerHandle.GpuTuningChangedCallback(nint pEvent)
     parameters:
     - id: pEvent
       type: System.IntPtr
     return:
       type: System.Boolean
-    content.vb: Public Delegate Function ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback(pEvent As IntPtr) As Boolean
+    content.vb: Public Delegate Function GpuTuningListenerHandle.GpuTuningChangedCallback(pEvent As IntPtr) As Boolean
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper

@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VideoSuperResolutionInfo
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 211
+    startLine: 212
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 213
+    startLine: 214
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 214
+    startLine: 215
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 216
+    startLine: 217
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

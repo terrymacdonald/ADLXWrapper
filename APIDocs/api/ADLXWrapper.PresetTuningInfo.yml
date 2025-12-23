@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 421
+    startLine: 454
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -55,7 +55,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 423
+    startLine: 456
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -84,7 +84,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentPreset
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 424
+    startLine: 457
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -113,7 +113,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SupportedPresets
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 425
+    startLine: 458
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 427
+    startLine: 460
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

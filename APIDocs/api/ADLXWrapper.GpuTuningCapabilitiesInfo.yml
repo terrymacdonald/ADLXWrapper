@@ -27,7 +27,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningCapabilitiesInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 255
+    startLine: 288
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -59,7 +59,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 257
+    startLine: 290
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,7 +88,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 258
+    startLine: 291
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -117,7 +117,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualGFXTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 259
+    startLine: 292
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -146,7 +146,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualVRAMTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 260
+    startLine: 293
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -175,7 +175,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 261
+    startLine: 294
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -204,7 +204,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 262
+    startLine: 295
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -233,7 +233,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 264
+    startLine: 297
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -285,7 +285,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 275
+    startLine: 308
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

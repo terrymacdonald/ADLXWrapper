@@ -62,6 +62,7 @@ namespace ADLXWrapper
         public MultimediaEventListenerHandle AddMultimediaEventListener(MultimediaEventListenerHandle.MultimediaChangedCallback callback)
         {
             ThrowIfDisposed();
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
             var handling = GetMultimediaChangedHandlingNative();
             var handle = MultimediaEventListenerHandle.Create(callback);
             var result = handling->AddMultimediaEventListener(handle.GetListener());

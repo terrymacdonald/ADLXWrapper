@@ -3352,6 +3352,19 @@ references:
   fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.New
   nameWithType: ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper
   nameWithType.vb: ADLXGPUTuningServicesHelper.New
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  name: AddGPUTuningEventListener(GpuTuningChangedCallback)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_AddGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  nameWithType: ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener*
+  name: AddGPUTuningEventListener
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_AddGPUTuningEventListener_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
+  nameWithType: ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   name: Dispose()
   href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_Dispose
@@ -3576,6 +3589,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsPresetTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
+  name: RemoveGPUTuningEventListener(GpuTuningListenerHandle, bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_RemoveGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
+  name.vb: RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle, bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(GpuTuningListenerHandle, bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener*
+  name: RemoveGPUTuningEventListener
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_RemoveGPUTuningEventListener_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
+  nameWithType: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
 - uid: ADLXWrapper.ADLXHardwareDetection
   name: ADLXHardwareDetection
   href: api/ADLXWrapper.ADLXHardwareDetection.html
@@ -4562,12 +4591,12 @@ references:
   fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.New
   nameWithType: ADLXPowerTuningServicesHelper.ADLXPowerTuningServicesHelper
   nameWithType.vb: ADLXPowerTuningServicesHelper.New
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  name: AddPowerTuningEventListener(PowerTuningListenerHandle)
-  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  nameWithType: ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(PowerTuningListenerHandle)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
+  name: AddPowerTuningEventListener(PowerTuningChangedCallback)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_PowerTuningChangedCallback_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
+  nameWithType: ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener*
   name: AddPowerTuningEventListener
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_
@@ -4792,12 +4821,15 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   nameWithType: ADLXPowerTuningServicesHelper.IsGPUConnectSupported
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  name: RemovePowerTuningEventListener(PowerTuningListenerHandle)
-  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
+  name: RemovePowerTuningEventListener(PowerTuningListenerHandle, bool)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
+  name.vb: RemovePowerTuningEventListener(PowerTuningListenerHandle, Boolean)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle, bool)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle, Boolean)
+  nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle, bool)
+  nameWithType.vb: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener*
   name: RemovePowerTuningEventListener
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_
@@ -9989,15 +10021,12 @@ references:
   commentId: T:ADLXWrapper.GpuTuningListenerHandle
   fullName: ADLXWrapper.GpuTuningListenerHandle
   nameWithType: GpuTuningListenerHandle
-- uid: ADLXWrapper.GpuTuningListenerHandle.Create()
-  name: Create(delegate* unmanaged<void>)
-  href: api/ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_Create__
-  commentId: M:ADLXWrapper.GpuTuningListenerHandle.Create()
-  name.vb: Create()
-  fullName: ADLXWrapper.GpuTuningListenerHandle.Create(delegate* unmanaged<void>)
-  fullName.vb: ADLXWrapper.GpuTuningListenerHandle.Create()
-  nameWithType: GpuTuningListenerHandle.Create(delegate* unmanaged<void>)
-  nameWithType.vb: GpuTuningListenerHandle.Create()
+- uid: ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  name: Create(GpuTuningChangedCallback)
+  href: api/ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_Create_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_
+  commentId: M:ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  fullName: ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
+  nameWithType: GpuTuningListenerHandle.Create(GpuTuningListenerHandle.GpuTuningChangedCallback)
 - uid: ADLXWrapper.GpuTuningListenerHandle.Create*
   name: Create
   href: api/ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_Create_
@@ -10018,6 +10047,12 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuTuningListenerHandle.GetListener
   nameWithType: GpuTuningListenerHandle.GetListener
+- uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  name: GpuTuningListenerHandle.GpuTuningChangedCallback
+  href: api/ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  fullName: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  nameWithType: GpuTuningListenerHandle.GpuTuningChangedCallback
 - uid: ADLXWrapper.GpuTuningListenerHandle.IsInvalid
   name: IsInvalid
   href: api/ADLXWrapper.GpuTuningListenerHandle.html#ADLXWrapper_GpuTuningListenerHandle_IsInvalid

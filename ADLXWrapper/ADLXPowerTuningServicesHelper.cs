@@ -114,18 +114,35 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
         }
 
-        public void AddPowerTuningEventListener(PowerTuningListenerHandle listener)
+        public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
         {
             ThrowIfDisposed();
-            if (listener == null || listener.IsInvalid) return;
-            GetPowerTuningChangedHandlingNative()->AddPowerTuningEventListener(listener.GetListener());
+            if (callback == null) throw new ArgumentNullException(nameof(callback));
+
+            var handling = GetPowerTuningChangedHandlingNative();
+            var handle = PowerTuningListenerHandle.Create(callback);
+            var result = handling->AddPowerTuningEventListener(handle.GetListener());
+            if (result != ADLX_RESULT.ADLX_OK)
+            {
+                handle.Dispose();
+                throw new ADLXException(result, "Failed to add power tuning event listener");
+            }
+
+            return handle;
         }
 
-        public void RemovePowerTuningEventListener(PowerTuningListenerHandle listener)
+        public void RemovePowerTuningEventListener(PowerTuningListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
-            if (listener == null || listener.IsInvalid) return;
-            GetPowerTuningChangedHandlingNative()->RemovePowerTuningEventListener(listener.GetListener());
+            if (handle == null || handle.IsInvalid) return;
+
+            var handling = GetPowerTuningChangedHandlingNative();
+            handling->RemovePowerTuningEventListener(handle.GetListener());
+
+            if (disposeHandle)
+            {
+                handle.Dispose();
+            }
         }
 
         public SmartShiftMaxInfo GetSmartShiftMax()

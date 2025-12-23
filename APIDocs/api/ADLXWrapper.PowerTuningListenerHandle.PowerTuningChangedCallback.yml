@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerTuningChangedCallback
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 462
+    startLine: 479
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -116,6 +116,7 @@ items:
   - ADLXWrapper.GpuMetricsSupportInfo
   - ADLXWrapper.GpuTuningCapabilitiesInfo
   - ADLXWrapper.GpuTuningListenerHandle
+  - ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
   - ADLXWrapper.IADLMapping
   - ADLXWrapper.IADLX3DAMDFluidMotionFrames
   - ADLXWrapper.IADLX3DAnisotropicFiltering
@@ -783,6 +784,29 @@ references:
   name: GpuTuningListenerHandle
   nameWithType: GpuTuningListenerHandle
   fullName: ADLXWrapper.GpuTuningListenerHandle
+- uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  commentId: T:ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuTuningListenerHandle.html
+  name: GpuTuningListenerHandle.GpuTuningChangedCallback
+  nameWithType: GpuTuningListenerHandle.GpuTuningChangedCallback
+  fullName: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+  spec.csharp:
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.GpuTuningListenerHandle
+    name: GpuTuningListenerHandle
+    href: ADLXWrapper.GpuTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningChangedCallback
+    href: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html
 - uid: ADLXWrapper.ADLXHardwareDetection
   commentId: T:ADLXWrapper.ADLXHardwareDetection
   href: ADLXWrapper.ADLXHardwareDetection.html

@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftEcoInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 373
+    startLine: 390
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 375
+    startLine: 392
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 376
+    startLine: 393
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 378
+    startLine: 395
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

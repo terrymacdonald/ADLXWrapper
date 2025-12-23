@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class GpuTuningListenerHandle | ADLXWrapper ">
       
-      <meta name="description" content="Safe handle for an unmanaged IADLXGPUTuningEventListener backed by a managed delegate.">
+      <meta name="description" content="Safe handle for an unmanaged IADLXGPUTuningChangedListener backed by a managed delegate.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_GpuTuningListenerHandle" data-uid="ADLXWrapper.GpuTuningListenerHandle" class="text-break">
-Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L491"><i class="bi bi-code-slash"></i></a>
+Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L524"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
   <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Safe handle for an unmanaged IADLXGPUTuningEventListener backed by a managed delegate.</p>
+  <div class="markdown summary"><p>Safe handle for an unmanaged IADLXGPUTuningChangedListener backed by a managed delegate.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -183,7 +183,7 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ADLXWrapper_GpuTuningListenerHandle_IsInvalid" data-uid="ADLXWrapper.GpuTuningListenerHandle.IsInvalid">
   IsInvalid
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L497"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L562"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>When overridden in a derived class, gets a value indicating whether the handle value is invalid.</p>
@@ -218,21 +218,21 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
 
   <a id="ADLXWrapper_GpuTuningListenerHandle_Create_" data-uid="ADLXWrapper.GpuTuningListenerHandle.Create*"></a>
 
-  <h3 id="ADLXWrapper_GpuTuningListenerHandle_Create__" data-uid="ADLXWrapper.GpuTuningListenerHandle.Create()">
-  Create(delegate* unmanaged&lt;void&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L494"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuTuningListenerHandle_Create_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_" data-uid="ADLXWrapper.GpuTuningListenerHandle.Create(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)">
+  Create(GpuTuningChangedCallback)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L545"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static GpuTuningListenerHandle Create(delegate* unmanaged&lt;void&gt; _ = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static GpuTuningListenerHandle Create(GpuTuningListenerHandle.GpuTuningChangedCallback cb)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>_</code> delegate* unmanaged&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.void">void</a>&gt;</dt>
+    <dt><code>cb</code> <a class="xref" href="ADLXWrapper.GpuTuningListenerHandle.html">GpuTuningListenerHandle</a>.<a class="xref" href="ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html">GpuTuningChangedCallback</a></dt>
     <dd></dd>
   </dl>
 
@@ -256,20 +256,20 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ADLXWrapper_GpuTuningListenerHandle_GetListener" data-uid="ADLXWrapper.GpuTuningListenerHandle.GetListener">
   GetListener()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L495"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L551"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public nint GetListener()</code></pre>
+    <pre><code class="lang-csharp hljs">public IADLXGPUTuningChangedListener* GetListener()</code></pre>
   </div>
 
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dt><a class="xref" href="ADLXWrapper.IADLXGPUTuningChangedListener.html">IADLXGPUTuningChangedListener</a>*</dt>
     <dd></dd>
   </dl>
 
@@ -287,7 +287,7 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ADLXWrapper_GpuTuningListenerHandle_ReleaseHandle" data-uid="ADLXWrapper.GpuTuningListenerHandle.ReleaseHandle">
   ReleaseHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L496"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L553"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>When overridden in a derived class, executes the code required to free the handle.</p>
@@ -320,7 +320,7 @@ Class GpuTuningListenerHandle  <a class="header-action link-secondary" title="Vi
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L491" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L524" class="edit-link">Edit this page</a>
         </div>
 
 

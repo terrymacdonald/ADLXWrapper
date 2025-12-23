@@ -6,7 +6,7 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.#ctor(ADLXWrapper.IADLXPowerTuningServices*,System.Boolean)
-  - ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
@@ -24,7 +24,7 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMax
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative
   - ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
-  - ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
   langs:
   - csharp
   - vb
@@ -289,16 +289,16 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetPowerTuningChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandling*
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  id: AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
+  id: AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
   parent: ADLXWrapper.ADLXPowerTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: AddPowerTuningEventListener(PowerTuningListenerHandle)
-  nameWithType: ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(PowerTuningListenerHandle)
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+  name: AddPowerTuningEventListener(PowerTuningChangedCallback)
+  nameWithType: ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
   type: Method
   source:
     remote:
@@ -312,22 +312,24 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void AddPowerTuningEventListener(PowerTuningListenerHandle listener)
+    content: public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
     parameters:
-    - id: listener
+    - id: callback
+      type: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+    return:
       type: ADLXWrapper.PowerTuningListenerHandle
-    content.vb: Public Sub AddPowerTuningEventListener(listener As PowerTuningListenerHandle)
+    content.vb: Public Function AddPowerTuningEventListener(callback As PowerTuningListenerHandle.PowerTuningChangedCallback) As PowerTuningListenerHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener*
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
-  id: RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
+  id: RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
   parent: ADLXWrapper.ADLXPowerTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: RemovePowerTuningEventListener(PowerTuningListenerHandle)
-  nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle)
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle)
+  name: RemovePowerTuningEventListener(PowerTuningListenerHandle, bool)
+  nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle, bool)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle, bool)
   type: Method
   source:
     remote:
@@ -336,17 +338,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 123
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void RemovePowerTuningEventListener(PowerTuningListenerHandle listener)
+    content: public void RemovePowerTuningEventListener(PowerTuningListenerHandle handle, bool disposeHandle = true)
     parameters:
-    - id: listener
+    - id: handle
       type: ADLXWrapper.PowerTuningListenerHandle
-    content.vb: Public Sub RemovePowerTuningEventListener(listener As PowerTuningListenerHandle)
+    - id: disposeHandle
+      type: System.Boolean
+    content.vb: Public Sub RemovePowerTuningEventListener(handle As PowerTuningListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener*
+  nameWithType.vb: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(PowerTuningListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle, Boolean)
+  name.vb: RemovePowerTuningEventListener(PowerTuningListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMax
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMax
   id: GetSmartShiftMax
@@ -365,7 +372,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 130
+    startLine: 147
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -393,7 +400,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMaxNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 137
+    startLine: 154
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -421,7 +428,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 149
+    startLine: 166
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -450,7 +457,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 157
+    startLine: 174
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -478,7 +485,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 171
+    startLine: 188
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -507,7 +514,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 186
+    startLine: 203
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -540,7 +547,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 202
+    startLine: 219
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -571,7 +578,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 219
+    startLine: 236
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -604,7 +611,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 235
+    startLine: 252
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -634,7 +641,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 251
+    startLine: 268
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1013,10 +1020,33 @@ references:
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandling
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener
-  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_PowerTuningChangedCallback_
   name: AddPowerTuningEventListener
   nameWithType: ADLXPowerTuningServicesHelper.AddPowerTuningEventListener
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener
+- uid: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+  commentId: T:ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+  parent: ADLXWrapper
+  href: ADLXWrapper.PowerTuningListenerHandle.html
+  name: PowerTuningListenerHandle.PowerTuningChangedCallback
+  nameWithType: PowerTuningListenerHandle.PowerTuningChangedCallback
+  fullName: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+  spec.csharp:
+  - uid: ADLXWrapper.PowerTuningListenerHandle
+    name: PowerTuningListenerHandle
+    href: ADLXWrapper.PowerTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+    name: PowerTuningChangedCallback
+    href: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback.html
+  spec.vb:
+  - uid: ADLXWrapper.PowerTuningListenerHandle
+    name: PowerTuningListenerHandle
+    href: ADLXWrapper.PowerTuningListenerHandle.html
+  - name: .
+  - uid: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+    name: PowerTuningChangedCallback
+    href: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback.html
 - uid: ADLXWrapper.PowerTuningListenerHandle
   commentId: T:ADLXWrapper.PowerTuningListenerHandle
   parent: ADLXWrapper
@@ -1026,7 +1056,7 @@ references:
   fullName: ADLXWrapper.PowerTuningListenerHandle
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener
-  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_System_Boolean_
   name: RemovePowerTuningEventListener
   nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener

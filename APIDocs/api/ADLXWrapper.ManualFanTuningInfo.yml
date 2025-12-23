@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualFanTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 296
+    startLine: 329
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 298
+    startLine: 331
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsZeroRPMSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 299
+    startLine: 332
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ZeroRPMEnabled
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 300
+    startLine: 333
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanPoints
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 301
+    startLine: 334
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 303
+    startLine: 336
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

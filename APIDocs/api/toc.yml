@@ -340,6 +340,9 @@ items:
   - uid: ADLXWrapper.GpuTuningListenerHandle
     name: GpuTuningListenerHandle
     type: Class
+  - uid: ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
+    name: GpuTuningListenerHandle.GpuTuningChangedCallback
+    type: Delegate
   - uid: ADLXWrapper.IADLMapping
     name: IADLMapping
     type: Struct

@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualGfxTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 392
+    startLine: 425
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 394
+    startLine: 427
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinFrequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 395
+    startLine: 428
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaxFrequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 396
+    startLine: 429
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 397
+    startLine: 430
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 399
+    startLine: 432
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

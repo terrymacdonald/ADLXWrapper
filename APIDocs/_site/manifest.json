@@ -1580,6 +1580,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GpuTuningListenerHandle.yml",
       "output": {
         ".html": {
@@ -1590,7 +1604,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.GpuTuningListenerHandle",
-      "Summary": "<p sourcefile=\"api/ADLXWrapper.GpuTuningListenerHandle.yml\" sourcestartlinenumber=\"1\">Safe handle for an unmanaged IADLXGPUTuningEventListener backed by a managed delegate.</p>\n"
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.GpuTuningListenerHandle.yml\" sourcestartlinenumber=\"1\">Safe handle for an unmanaged IADLXGPUTuningChangedListener backed by a managed delegate.</p>\n"
     },
     {
       "type": "ManagedReference",
