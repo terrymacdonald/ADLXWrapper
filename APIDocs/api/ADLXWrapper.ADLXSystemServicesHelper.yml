@@ -7,6 +7,8 @@ items:
   children:
   - ADLXWrapper.ADLXSystemServicesHelper.#ctor(ADLXWrapper.IADLXSystem*,System.Boolean)
   - ADLXWrapper.ADLXSystemServicesHelper.Dispose
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
@@ -864,6 +866,34 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetGPUAppsListChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling*
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  id: EnumerateADLXGPUs
+  parent: ADLXWrapper.ADLXSystemServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: EnumerateADLXGPUs()
+  nameWithType: ADLXSystemServicesHelper.EnumerateADLXGPUs()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateADLXGPUs
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 218
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<ADLXGPU> EnumerateADLXGPUs()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXGPU}
+    content.vb: Public Function EnumerateADLXGPUs() As IReadOnlyList(Of ADLXGPU)
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   id: EnumerateDisplays
@@ -882,7 +912,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 218
+    startLine: 244
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -892,6 +922,34 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
     content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  id: EnumerateDesktops
+  parent: ADLXWrapper.ADLXSystemServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: EnumerateDesktops()
+  nameWithType: ADLXSystemServicesHelper.EnumerateDesktops()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateDesktops
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 251
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<ADLXDesktop> EnumerateDesktops()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    content.vb: Public Function EnumerateDesktops() As IReadOnlyList(Of ADLXDesktop)
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops*
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   id: EnumerateGPUsHandle
@@ -910,7 +968,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 225
+    startLine: 258
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -938,7 +996,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 247
+    startLine: 280
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -966,7 +1024,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 264
+    startLine: 297
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -997,7 +1055,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 271
+    startLine: 304
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1025,7 +1083,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 284
+    startLine: 317
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1055,7 +1113,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 311
+    startLine: 344
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1692,32 +1750,32 @@ references:
   name: GetGPUAppsListChangedHandling
   nameWithType: ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling
-- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
-  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
-  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplays
-  name: EnumerateDisplays
-  nameWithType: ADLXSystemServicesHelper.EnumerateDisplays
-  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
-- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
-  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateADLXGPUs
+  name: EnumerateADLXGPUs
+  nameWithType: ADLXSystemServicesHelper.EnumerateADLXGPUs
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXGPU}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXGPU}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<ADLXDisplay>
-  nameWithType: IReadOnlyList<ADLXDisplay>
-  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
-  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
-  name.vb: IReadOnlyList(Of ADLXDisplay)
+  name: IReadOnlyList<ADLXGPU>
+  nameWithType: IReadOnlyList<ADLXGPU>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXGPU>
+  nameWithType.vb: IReadOnlyList(Of ADLXGPU)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXGPU)
+  name.vb: IReadOnlyList(Of ADLXGPU)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
     name: IReadOnlyList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.ADLXDisplay
-    name: ADLXDisplay
-    href: ADLXWrapper.ADLXDisplay.html
+  - uid: ADLXWrapper.ADLXGPU
+    name: ADLXGPU
+    href: ADLXWrapper.ADLXGPU.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -1727,9 +1785,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.ADLXDisplay
-    name: ADLXDisplay
-    href: ADLXWrapper.ADLXDisplay.html
+  - uid: ADLXWrapper.ADLXGPU
+    name: ADLXGPU
+    href: ADLXWrapper.ADLXGPU.html
   - name: )
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1
@@ -1796,6 +1854,84 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplays
+  name: EnumerateDisplays
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplays
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDisplay>
+  nameWithType: IReadOnlyList<ADLXDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
+  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
+  name.vb: IReadOnlyList(Of ADLXDisplay)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.ADLXDisplay
+    name: ADLXDisplay
+    href: ADLXWrapper.ADLXDisplay.html
+  - name: )
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDesktops
+  name: EnumerateDesktops
+  nameWithType: ADLXSystemServicesHelper.EnumerateDesktops
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDesktop>
+  nameWithType: IReadOnlyList<ADLXDesktop>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>
+  nameWithType.vb: IReadOnlyList(Of ADLXDesktop)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop)
+  name.vb: IReadOnlyList(Of ADLXDesktop)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.ADLXDesktop
+    name: ADLXDesktop
+    href: ADLXWrapper.ADLXDesktop.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.ADLXDesktop
+    name: ADLXDesktop
+    href: ADLXWrapper.ADLXDesktop.html
+  - name: )
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
   commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle

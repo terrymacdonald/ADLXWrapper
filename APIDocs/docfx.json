@@ -7,10 +7,11 @@
           "src": "../ADLXWrapper",
           "files": [
             "**/*.csproj"
-          ]
+          ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
         }
       ],
-      "dest": "api"
+      "output": "api"
     }
   ],
   "build": {

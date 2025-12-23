@@ -6,11 +6,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ADLXGPU | ADLXWrapper ">
       
-      <meta name="description" content="Flattened GPU fa&#231;ade with identity metadata. Topology enumeration can be added as needed.">
+      <meta name="description" content="Flattened GPU fa&#231;ade with identity metadata and topology listeners.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:navrel" content="">
       <meta name="docfx:tocrel" content="toc.html">
       
       <meta name="docfx:rel" content="../">
@@ -97,7 +97,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.</p>
+  <div class="markdown summary"><p>Flattened GPU façade with identity metadata and topology listeners.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -544,7 +544,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_" data-uid="ADLXWrapper.ADLXGPU.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)">
   AddDesktopListEventListener(OnDesktopListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Subscribe to desktop list change events. Returns a handle that can be disposed or passed to the remove helper.</p>
@@ -581,7 +581,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_AddDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_OnDisplayListChanged_" data-uid="ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)">
   AddDisplayListEventListener(OnDisplayListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Subscribe to display list change events. Returns a handle that can be disposed or passed to the remove helper.</p>
@@ -618,7 +618,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_Dispose" data-uid="ADLXWrapper.ADLXGPU.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L107"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -643,9 +643,9 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <a id="ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*"></a>
 
-  <h3 id="ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_ADLXWrapper_ADLXDesktopServicesHelper_" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)">
-  EnumerateADLXDesktops(ADLXDesktopServicesHelper?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ADLXGPU_EnumerateADLXDesktops" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDesktops">
+  EnumerateADLXDesktops()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enumerate façade desktops containing displays from this GPU.</p>
@@ -653,18 +653,13 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ADLXDesktop&gt; EnumerateADLXDesktops(ADLXDesktopServicesHelper? desktopHelper = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ADLXDesktop&gt; EnumerateADLXDesktops()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>desktopHelper</code> <a class="xref" href="ADLXWrapper.ADLXDesktopServicesHelper.html">ADLXDesktopServicesHelper</a></dt>
-    <dd></dd>
-  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -680,8 +675,8 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <a id="ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*"></a>
 
-  <h3 id="ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_ADLXWrapper_ADLXDisplayServicesHelper_" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)">
-  EnumerateADLXDisplays(ADLXDisplayServicesHelper?)
+  <h3 id="ADLXWrapper_ADLXGPU_EnumerateADLXDisplays" data-uid="ADLXWrapper.ADLXGPU.EnumerateADLXDisplays">
+  EnumerateADLXDisplays()
   <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -690,18 +685,13 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ADLXDisplay&gt; EnumerateADLXDisplays(ADLXDisplayServicesHelper? displayHelper = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ADLXDisplay&gt; EnumerateADLXDisplays()</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>displayHelper</code> <a class="xref" href="ADLXWrapper.ADLXDisplayServicesHelper.html">ADLXDisplayServicesHelper</a></dt>
-    <dd></dd>
-  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDisplay.html">ADLXDisplay</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDisplay.html">ADLXDisplay</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -719,7 +709,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXGPU.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)">
   RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -752,7 +742,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_RemoveDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXGPU.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)">
   RemoveDisplayListEventListener(DisplayListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

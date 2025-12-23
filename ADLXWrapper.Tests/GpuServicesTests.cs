@@ -124,21 +124,24 @@ namespace ADLXWrapper.Tests
         }
 
         [SkippableFact]
-        public void CanEnumerateAdlxFacadesFromGpu()
+        public void CanEnumerateADLXFacadesFromSystem()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            IADLXGPU* pGpu = null;
-            _gpuList->At(0, &pGpu);
+            var gpus = _system.EnumerateADLXGPUs();
+            if (gpus.Count == 0)
+            {
+                Skip.If(true, "No GPUs found.");
+            }
 
-            ADLXUtils.AddRefInterface((IntPtr)pGpu);
-            using var gpuFacade = new ADLXGPU(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            using var gpuFacade = gpus[0];
+            for (int i = 1; i < gpus.Count; i++) gpus[i].Dispose();
             try
             {
-                var displays = gpuFacade.EnumerateADLXDisplays().ToList();
+                var displays = gpuFacade.EnumerateDisplaysForGPU();
                 foreach (var d in displays) d.Dispose();
 
-                var desktops = gpuFacade.EnumerateADLXDesktops().ToList();
+                var desktops = gpuFacade.EnumerateDesktopsForGPU();
                 foreach (var d in desktops) d.Dispose();
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
@@ -150,13 +153,16 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanAddAndRemoveListListenersViaGpu()
         {
-            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null || _gpuList == null || _gpuList->Size() == 0, _skipReason);
+            Skip.If(!_hasHardware || !_hasDll || _api == null || _system == null, _skipReason);
 
-            IADLXGPU* pGpu = null;
-            _gpuList->At(0, &pGpu);
+            var gpus = _system.EnumerateADLXGPUs();
+            if (gpus.Count == 0)
+            {
+                Skip.If(true, "No GPUs found.");
+            }
 
-            ADLXUtils.AddRefInterface((IntPtr)pGpu);
-            using var gpuFacade = new ADLXGPU(pGpu, _system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
+            using var gpuFacade = gpus[0];
+            for (int i = 1; i < gpus.Count; i++) gpus[i].Dispose();
             try
             {
                 var dHandle = gpuFacade.AddDisplayListEventListener(_ => false);

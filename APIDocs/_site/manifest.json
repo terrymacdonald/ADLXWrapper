@@ -1030,7 +1030,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLXGPU",
-      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxGpu.yml\" sourcestartlinenumber=\"1\">Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.</p>\n"
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxGpu.yml\" sourcestartlinenumber=\"1\">Flattened GPU façade with identity metadata and topology listeners.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4047,19 +4047,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
-        ".json": {
-          "relative_path": "toc.json"
         }
       },
       "version": ""

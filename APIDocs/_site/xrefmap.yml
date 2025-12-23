@@ -3110,15 +3110,12 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.DriverPath
   nameWithType: ADLXGPU.DriverPath
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  name: EnumerateADLXDesktops(ADLXDesktopServicesHelper?)
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_ADLXWrapper_ADLXDesktopServicesHelper_
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  name.vb: EnumerateADLXDesktops(ADLXDesktopServicesHelper)
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper?)
-  fullName.vb: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  nameWithType: ADLXGPU.EnumerateADLXDesktops(ADLXDesktopServicesHelper?)
-  nameWithType.vb: ADLXGPU.EnumerateADLXDesktops(ADLXDesktopServicesHelper)
+- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+  name: EnumerateADLXDesktops()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops()
+  nameWithType: ADLXGPU.EnumerateADLXDesktops()
 - uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
   name: EnumerateADLXDesktops
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_
@@ -3126,15 +3123,12 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
   nameWithType: ADLXGPU.EnumerateADLXDesktops
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  name: EnumerateADLXDisplays(ADLXDisplayServicesHelper?)
-  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_ADLXWrapper_ADLXDisplayServicesHelper_
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  name.vb: EnumerateADLXDisplays(ADLXDisplayServicesHelper)
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper?)
-  fullName.vb: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  nameWithType: ADLXGPU.EnumerateADLXDisplays(ADLXDisplayServicesHelper?)
-  nameWithType.vb: ADLXGPU.EnumerateADLXDisplays(ADLXDisplayServicesHelper)
+- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  name: EnumerateADLXDisplays()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays()
+  nameWithType: ADLXGPU.EnumerateADLXDisplays()
 - uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
   name: EnumerateADLXDisplays
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_
@@ -4807,6 +4801,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.Dispose
   nameWithType: ADLXSystemServicesHelper.Dispose
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  name: EnumerateADLXGPUs()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateADLXGPUs
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs()
+  nameWithType: ADLXSystemServicesHelper.EnumerateADLXGPUs()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs*
+  name: EnumerateADLXGPUs
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateADLXGPUs_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
+  nameWithType: ADLXSystemServicesHelper.EnumerateADLXGPUs
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  name: EnumerateDesktops()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDesktops
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops()
+  nameWithType: ADLXSystemServicesHelper.EnumerateDesktops()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops*
+  name: EnumerateDesktops
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDesktops_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
+  nameWithType: ADLXSystemServicesHelper.EnumerateDesktops
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   name: EnumerateDisplays()
   href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplays

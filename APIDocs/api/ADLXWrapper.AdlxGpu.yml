@@ -11,8 +11,8 @@ items:
   - ADLXWrapper.ADLXGPU.DeviceId
   - ADLXWrapper.ADLXGPU.Dispose
   - ADLXWrapper.ADLXGPU.DriverPath
-  - ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  - ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
+  - ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+  - ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
   - ADLXWrapper.ADLXGPU.HasDesktops
   - ADLXWrapper.ADLXGPU.Identity
   - ADLXWrapper.ADLXGPU.IsExternal
@@ -42,7 +42,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.
+  summary: Flattened GPU façade with identity metadata and topology listeners.
   example: []
   syntax:
     content: 'public sealed class ADLXGPU : IDisposable'
@@ -413,16 +413,16 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property DriverPath As String
   overload: ADLXWrapper.ADLXGPU.DriverPath*
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  id: EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
+- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
+  id: EnumerateADLXDisplays
   parent: ADLXWrapper.ADLXGPU
   langs:
   - csharp
   - vb
-  name: EnumerateADLXDisplays(ADLXDisplayServicesHelper?)
-  nameWithType: ADLXGPU.EnumerateADLXDisplays(ADLXDisplayServicesHelper?)
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper?)
+  name: EnumerateADLXDisplays()
+  nameWithType: ADLXGPU.EnumerateADLXDisplays()
+  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays()
   type: Method
   source:
     remote:
@@ -438,27 +438,21 @@ items:
   summary: Enumerate façade displays driven by this GPU.
   example: []
   syntax:
-    content: public IEnumerable<ADLXDisplay> EnumerateADLXDisplays(ADLXDisplayServicesHelper? displayHelper = null)
-    parameters:
-    - id: displayHelper
-      type: ADLXWrapper.ADLXDisplayServicesHelper
+    content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDisplay}
-    content.vb: Public Function EnumerateADLXDisplays(displayHelper As ADLXDisplayServicesHelper = Nothing) As IEnumerable(Of ADLXDisplay)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    content.vb: Public Function EnumerateADLXDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
-  nameWithType.vb: ADLXGPU.EnumerateADLXDisplays(ADLXDisplayServicesHelper)
-  fullName.vb: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays(ADLXWrapper.ADLXDisplayServicesHelper)
-  name.vb: EnumerateADLXDisplays(ADLXDisplayServicesHelper)
-- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  id: EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
+- uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+  commentId: M:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
+  id: EnumerateADLXDesktops
   parent: ADLXWrapper.ADLXGPU
   langs:
   - csharp
   - vb
-  name: EnumerateADLXDesktops(ADLXDesktopServicesHelper?)
-  nameWithType: ADLXGPU.EnumerateADLXDesktops(ADLXDesktopServicesHelper?)
-  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper?)
+  name: EnumerateADLXDesktops()
+  nameWithType: ADLXGPU.EnumerateADLXDesktops()
+  fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops()
   type: Method
   source:
     remote:
@@ -467,24 +461,18 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 75
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Enumerate façade desktops containing displays from this GPU.
   example: []
   syntax:
-    content: public IEnumerable<ADLXDesktop> EnumerateADLXDesktops(ADLXDesktopServicesHelper? desktopHelper = null)
-    parameters:
-    - id: desktopHelper
-      type: ADLXWrapper.ADLXDesktopServicesHelper
+    content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDesktop}
-    content.vb: Public Function EnumerateADLXDesktops(desktopHelper As ADLXDesktopServicesHelper = Nothing) As IEnumerable(Of ADLXDesktop)
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    content.vb: Public Function EnumerateADLXDesktops() As IReadOnlyList(Of ADLXDesktop)
   overload: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
-  nameWithType.vb: ADLXGPU.EnumerateADLXDesktops(ADLXDesktopServicesHelper)
-  fullName.vb: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops(ADLXWrapper.ADLXDesktopServicesHelper)
-  name.vb: EnumerateADLXDesktops(ADLXDesktopServicesHelper)
 - uid: ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   commentId: M:ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   id: AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
@@ -503,7 +491,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 102
+    startLine: 68
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -536,7 +524,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 109
+    startLine: 75
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -570,7 +558,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 120
+    startLine: 86
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -603,7 +591,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 127
+    startLine: 93
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -637,7 +625,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 140
+    startLine: 106
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1053,43 +1041,36 @@ references:
   fullName: ADLXWrapper.ADLXGPU.DriverPath
 - uid: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays*
   commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays_ADLXWrapper_ADLXDisplayServicesHelper_
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDisplays
   name: EnumerateADLXDisplays
   nameWithType: ADLXGPU.EnumerateADLXDisplays
   fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDisplays
-- uid: ADLXWrapper.ADLXDisplayServicesHelper
-  commentId: T:ADLXWrapper.ADLXDisplayServicesHelper
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html
-  name: ADLXDisplayServicesHelper
-  nameWithType: ADLXDisplayServicesHelper
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDisplay}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDisplay}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<ADLXDisplay>
-  nameWithType: IEnumerable<ADLXDisplay>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.ADLXDisplay>
-  nameWithType.vb: IEnumerable(Of ADLXDisplay)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.ADLXDisplay)
-  name.vb: IEnumerable(Of ADLXDisplay)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDisplay>
+  nameWithType: IReadOnlyList<ADLXDisplay>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>
+  nameWithType.vb: IReadOnlyList(Of ADLXDisplay)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay)
+  name.vb: IReadOnlyList(Of ADLXDisplay)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: ADLXWrapper.ADLXDisplay
     name: ADLXDisplay
     href: ADLXWrapper.ADLXDisplay.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -1097,29 +1078,29 @@ references:
     name: ADLXDisplay
     href: ADLXWrapper.ADLXDisplay.html
   - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "
@@ -1164,43 +1145,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops*
   commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops_ADLXWrapper_ADLXDesktopServicesHelper_
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateADLXDesktops
   name: EnumerateADLXDesktops
   nameWithType: ADLXGPU.EnumerateADLXDesktops
   fullName: ADLXWrapper.ADLXGPU.EnumerateADLXDesktops
-- uid: ADLXWrapper.ADLXDesktopServicesHelper
-  commentId: T:ADLXWrapper.ADLXDesktopServicesHelper
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXDesktopServicesHelper.html
-  name: ADLXDesktopServicesHelper
-  nameWithType: ADLXDesktopServicesHelper
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDesktop}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.ADLXDesktop}
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<ADLXDesktop>
-  nameWithType: IEnumerable<ADLXDesktop>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.ADLXDesktop>
-  nameWithType.vb: IEnumerable(Of ADLXDesktop)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.ADLXDesktop)
-  name.vb: IEnumerable(Of ADLXDesktop)
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLXDesktop>
+  nameWithType: IReadOnlyList<ADLXDesktop>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>
+  nameWithType.vb: IReadOnlyList(Of ADLXDesktop)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop)
+  name.vb: IReadOnlyList(Of ADLXDesktop)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
   - uid: ADLXWrapper.ADLXDesktop
     name: ADLXDesktop
     href: ADLXWrapper.ADLXDesktop.html
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: (
   - name: Of
   - name: " "

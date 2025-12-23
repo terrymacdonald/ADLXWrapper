@@ -216,11 +216,44 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
         }
 
+        public IReadOnlyList<ADLXGPU> EnumerateADLXGPUs()
+        {
+            ThrowIfDisposed();
+            var displayServices = GetDisplayServicesNative();
+            var desktopServices = GetDesktopServicesNative();
+
+            IADLXGPUList* pGpuList = null;
+            var result = _system.Get()->GetGPUs(&pGpuList);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to enumerate GPUs");
+
+            var facades = new List<ADLXGPU>();
+            using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
+            var count = gpuList.Get()->Size();
+            for (uint i = 0; i < count; i++)
+            {
+                IADLXGPU* pGpu = null;
+                gpuList.Get()->At(i, &pGpu);
+                facades.Add(new ADLXGPU(pGpu, displayServices, desktopServices));
+            }
+
+            return facades;
+        }
+
         public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
         {
             ThrowIfDisposed();
             using var displayHelper = GetDisplayServices();
             return displayHelper.EnumerateDisplays();
+        }
+
+        public IReadOnlyList<ADLXDesktop> EnumerateDesktops()
+        {
+            ThrowIfDisposed();
+            using var desktopHelper = GetDesktopServices();
+            return desktopHelper.EnumerateADLXDesktops();
         }
 
         public AdlxInterfaceHandle[] EnumerateGPUsHandle()

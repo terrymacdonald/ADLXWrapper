@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ADLXWrapper
 {
     /// <summary>
-    /// Flattened GPU façade with identity metadata. Topology enumeration can be added as needed.
+    /// Flattened GPU façade with identity metadata and topology listeners.
     /// </summary>
     public sealed unsafe class ADLXGPU : IDisposable
     {
@@ -46,55 +46,21 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate façade displays driven by this GPU.
         /// </summary>
-        public IEnumerable<ADLXDisplay> EnumerateADLXDisplays(ADLXDisplayServicesHelper? displayHelper = null)
+        public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
         {
             ThrowIfDisposed();
-            var ownsHelper = false;
-            if (displayHelper == null)
-            {
-                if (!_displayServices.HasValue)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services were not provided for this GPU instance");
-                IADLXDesktopServices* desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
-                displayHelper = new ADLXDisplayServicesHelper(_displayServices.Value.Get(), desktopServices);
-                ownsHelper = true;
-            }
-
-            try
-            {
-                return displayHelper.EnumerateADLXDisplaysForGpu(_identity.UniqueId);
-            }
-            finally
-            {
-                if (ownsHelper)
-                    displayHelper.Dispose();
-            }
+            using var displayHelper = CreateDisplayServicesHelper();
+            return displayHelper.EnumerateADLXDisplaysForGpu(_identity.UniqueId);
         }
 
         /// <summary>
         /// Enumerate façade desktops containing displays from this GPU.
         /// </summary>
-        public IEnumerable<ADLXDesktop> EnumerateADLXDesktops(ADLXDesktopServicesHelper? desktopHelper = null)
+        public IReadOnlyList<ADLXDesktop> EnumerateDesktopsForGPU()
         {
             ThrowIfDisposed();
-            var ownsHelper = false;
-            if (desktopHelper == null)
-            {
-                if (!_desktopServices.HasValue)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services were not provided for this GPU instance");
-                IADLXDisplayServices* displayServices = _displayServices.HasValue ? _displayServices.Value.Get() : null;
-                desktopHelper = new ADLXDesktopServicesHelper(_desktopServices.Value.Get(), displayServices);
-                ownsHelper = true;
-            }
-
-            try
-            {
-                return desktopHelper.EnumerateADLXDesktopsForGpu(_identity.UniqueId);
-            }
-            finally
-            {
-                if (ownsHelper)
-                    desktopHelper.Dispose();
-            }
+            using var desktopHelper = CreateDesktopServicesHelper();
+            return desktopHelper.EnumerateADLXDesktopsForGpu(_identity.UniqueId);
         }
 
         /// <summary>
