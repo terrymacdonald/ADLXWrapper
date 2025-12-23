@@ -6,7 +6,7 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   - ADLXWrapper.ADLXMultimediaServicesHelper.Dispose
   - ADLXWrapper.ADLXMultimediaServicesHelper.Finalize
   - ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
@@ -17,7 +17,7 @@ items:
   - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
   - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(ADLXWrapper.IADLXGPU*)
   - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
   - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
   - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
   - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
@@ -201,16 +201,16 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetMultimediaChangedHandling() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
-  id: AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  id: AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
   name: AddMultimediaEventListener(MultimediaChangedCallback)
-  nameWithType: ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
+  nameWithType: ADLXMultimediaServicesHelper.AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   type: Method
   source:
     remote:
@@ -224,24 +224,24 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLXMultimediaServicesHelper.MultimediaEventListenerHandle AddMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback callback)
+    content: public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
     parameters:
     - id: callback
-      type: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+      type: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     return:
-      type: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    content.vb: Public Function AddMultimediaEventListener(callback As ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback) As ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
+      type: ADLXWrapper.MultimediaListenerHandle
+    content.vb: Public Function AddMultimediaEventListener(callback As MultimediaListenerHandle.MultimediaChangedCallback) As MultimediaListenerHandle
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
-  id: RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
+  id: RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: RemoveMultimediaEventListener(MultimediaEventListenerHandle, bool)
-  nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, bool)
+  name: RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
+  nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle, bool)
   type: Method
   source:
     remote:
@@ -255,17 +255,17 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle handle, bool disposeHandle = true)
+    content: public void RemoveMultimediaEventListener(MultimediaListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
-      type: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
+      type: ADLXWrapper.MultimediaListenerHandle
     - id: disposeHandle
       type: System.Boolean
-    content.vb: Public Sub RemoveMultimediaEventListener(handle As ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, disposeHandle As Boolean = True)
+    content.vb: Public Sub RemoveMultimediaEventListener(handle As MultimediaListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener*
-  nameWithType.vb: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, Boolean)
-  name.vb: RemoveMultimediaEventListener(MultimediaEventListenerHandle, Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle, Boolean)
+  name.vb: RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
   id: GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
@@ -540,7 +540,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 292
+    startLine: 241
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -864,67 +864,43 @@ references:
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_MultimediaChangedCallback_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_
   name: AddMultimediaEventListener
   nameWithType: ADLXMultimediaServicesHelper.AddMultimediaEventListener
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+- uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+  commentId: T:ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  href: ADLXWrapper.MultimediaListenerHandle.html
+  name: MultimediaListenerHandle.MultimediaChangedCallback
+  nameWithType: MultimediaListenerHandle.MultimediaChangedCallback
+  fullName: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
+  - uid: ADLXWrapper.MultimediaListenerHandle
+    name: MultimediaListenerHandle
+    href: ADLXWrapper.MultimediaListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaChangedCallback
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback.html
+    href: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
   spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
+  - uid: ADLXWrapper.MultimediaListenerHandle
+    name: MultimediaListenerHandle
+    href: ADLXWrapper.MultimediaListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaChangedCallback
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback.html
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
+    href: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
+- uid: ADLXWrapper.MultimediaListenerHandle
+  commentId: T:ADLXWrapper.MultimediaListenerHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
+  href: ADLXWrapper.MultimediaListenerHandle.html
+  name: MultimediaListenerHandle
+  nameWithType: MultimediaListenerHandle
+  fullName: ADLXWrapper.MultimediaListenerHandle
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_System_Boolean_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_System_Boolean_
   name: RemoveMultimediaEventListener
   nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener

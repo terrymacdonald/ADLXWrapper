@@ -43,12 +43,6 @@ items:
   - uid: ADLXWrapper.ADLXMultimediaServicesHelper
     name: ADLXMultimediaServicesHelper
     type: Class
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    type: Class
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-    name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-    type: Delegate
   - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
     name: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
     type: Struct
@@ -808,6 +802,12 @@ items:
   - uid: ADLXWrapper.ManualVramTuningInfo
     name: ManualVramTuningInfo
     type: Struct
+  - uid: ADLXWrapper.MultimediaListenerHandle
+    name: MultimediaListenerHandle
+    type: Class
+  - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+    name: MultimediaListenerHandle.MultimediaChangedCallback
+    type: Delegate
   - uid: ADLXWrapper.PerformanceMonitoringSettingsInfo
     name: PerformanceMonitoringSettingsInfo
     type: Struct

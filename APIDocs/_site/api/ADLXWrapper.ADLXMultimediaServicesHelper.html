@@ -195,7 +195,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <a id="ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener*"></a>
 
-  <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_MultimediaChangedCallback_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)">
+  <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)">
   AddMultimediaEventListener(MultimediaChangedCallback)
   <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -204,18 +204,18 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ADLXMultimediaServicesHelper.MultimediaEventListenerHandle AddMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>callback</code> <a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.html">ADLXMultimediaServicesHelper</a>.<a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html">MultimediaEventListenerHandle</a>.<a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback.html">MultimediaChangedCallback</a></dt>
+    <dt><code>callback</code> <a class="xref" href="ADLXWrapper.MultimediaListenerHandle.html">MultimediaListenerHandle</a>.<a class="xref" href="ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html">MultimediaChangedCallback</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.html">ADLXMultimediaServicesHelper</a>.<a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html">MultimediaEventListenerHandle</a></dt>
+    <dt><a class="xref" href="ADLXWrapper.MultimediaListenerHandle.html">MultimediaListenerHandle</a></dt>
     <dd></dd>
   </dl>
 
@@ -260,7 +260,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.Finalize">
   ~ADLXMultimediaServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -552,8 +552,8 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <a id="ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener*"></a>
 
-  <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)">
-  RemoveMultimediaEventListener(MultimediaEventListenerHandle, bool)
+  <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)">
+  RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
   <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -561,12 +561,12 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle handle, bool disposeHandle = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public void RemoveMultimediaEventListener(MultimediaListenerHandle handle, bool disposeHandle = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>handle</code> <a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.html">ADLXMultimediaServicesHelper</a>.<a class="xref" href="ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html">MultimediaEventListenerHandle</a></dt>
+    <dt><code>handle</code> <a class="xref" href="ADLXWrapper.MultimediaListenerHandle.html">MultimediaListenerHandle</a></dt>
     <dd></dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>

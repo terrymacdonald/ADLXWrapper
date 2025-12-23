@@ -17,8 +17,6 @@ items:
   - ADLXWrapper.ADLXHardwareDetection
   - ADLXWrapper.ADLXListHelpers
   - ADLXWrapper.ADLXMultimediaServicesHelper
-  - ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  - ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
   - ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
   - ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
@@ -272,6 +270,8 @@ items:
   - ADLXWrapper.ManualGfxTuningInfo
   - ADLXWrapper.ManualPowerTuningInfo
   - ADLXWrapper.ManualVramTuningInfo
+  - ADLXWrapper.MultimediaListenerHandle
+  - ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   - ADLXWrapper.PerformanceMonitoringSettingsInfo
   - ADLXWrapper.PowerDistributionSnapshotInfo
   - ADLXWrapper.PowerTuningListenerHandle
@@ -879,60 +879,36 @@ references:
   - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
     name: VideoSuperResolutionInfo
     href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
+- uid: ADLXWrapper.MultimediaListenerHandle
+  commentId: T:ADLXWrapper.MultimediaListenerHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  href: ADLXWrapper.MultimediaListenerHandle.html
+  name: MultimediaListenerHandle
+  nameWithType: MultimediaListenerHandle
+  fullName: ADLXWrapper.MultimediaListenerHandle
+- uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+  commentId: T:ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  href: ADLXWrapper.MultimediaListenerHandle.html
+  name: MultimediaListenerHandle.MultimediaChangedCallback
+  nameWithType: MultimediaListenerHandle.MultimediaChangedCallback
+  fullName: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
+  - uid: ADLXWrapper.MultimediaListenerHandle
+    name: MultimediaListenerHandle
+    href: ADLXWrapper.MultimediaListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaChangedCallback
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback.html
+    href: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
   spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
+  - uid: ADLXWrapper.MultimediaListenerHandle
+    name: MultimediaListenerHandle
+    href: ADLXWrapper.MultimediaListenerHandle.html
   - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle
-    name: MultimediaEventListenerHandle
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback
+  - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaChangedCallback
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback.html
+    href: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   commentId: T:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   parent: ADLXWrapper

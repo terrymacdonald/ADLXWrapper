@@ -59,12 +59,12 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
         }
 
-        public MultimediaEventListenerHandle AddMultimediaEventListener(MultimediaEventListenerHandle.MultimediaChangedCallback callback)
+        public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
         {
             ThrowIfDisposed();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
             var handling = GetMultimediaChangedHandlingNative();
-            var handle = MultimediaEventListenerHandle.Create(callback);
+            var handle = MultimediaListenerHandle.Create(callback);
             var result = handling->AddMultimediaEventListener(handle.GetListener());
             if (result != ADLX_RESULT.ADLX_OK)
             {
@@ -74,7 +74,7 @@ namespace ADLXWrapper
             return handle;
         }
 
-        public void RemoveMultimediaEventListener(MultimediaEventListenerHandle handle, bool disposeHandle = true)
+        public void RemoveMultimediaEventListener(MultimediaListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
             if (handle == null || handle.IsInvalid)
@@ -231,57 +231,6 @@ namespace ADLXWrapper
                 IsEnabled = enabled;
             }
         }
-
-        public sealed unsafe class MultimediaEventListenerHandle : SafeHandle
-        {
-            public delegate bool MultimediaChangedCallback(IntPtr pEvent);
-
-            private static readonly ConcurrentDictionary<IntPtr, MultimediaChangedCallback> _map = new();
-            private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnMultimediaChanged;
-            private readonly GCHandle _gcHandle;
-            private readonly IntPtr _vtbl;
-
-            private MultimediaEventListenerHandle(MultimediaChangedCallback cb) : base(IntPtr.Zero, true)
-            {
-                _gcHandle = GCHandle.Alloc(cb);
-                _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
-                Marshal.WriteIntPtr(_vtbl, _thunkPtr);
-
-                var inst = Marshal.AllocHGlobal(IntPtr.Size);
-                Marshal.WriteIntPtr(inst, _vtbl);
-                handle = inst;
-                _map[inst] = cb;
-            }
-
-            public static MultimediaEventListenerHandle Create(MultimediaChangedCallback cb)
-            {
-                if (cb == null) throw new ArgumentNullException(nameof(cb));
-                return new MultimediaEventListenerHandle(cb);
-            }
-
-            public IADLXMultimediaChangedEventListener* GetListener() => (IADLXMultimediaChangedEventListener*)handle;
-
-            protected override bool ReleaseHandle()
-            {
-                _map.TryRemove(handle, out _);
-                if (_gcHandle.IsAllocated) _gcHandle.Free();
-                if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
-                if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
-                return true;
-            }
-
-            public override bool IsInvalid => handle == IntPtr.Zero;
-
-            [UnmanagedCallersOnly(CallConvs = new[] { typeof(System.Runtime.CompilerServices.CallConvStdcall) })]
-            private static byte OnMultimediaChanged(IntPtr pThis, IntPtr pEvent)
-            {
-                if (_map.TryGetValue(pThis, out var cb))
-                {
-                    return cb(pEvent) ? (byte)1 : (byte)0;
-                }
-                return 0;
-            }
-        }
         #endregion
 
         private void ThrowIfDisposed()
@@ -298,5 +247,57 @@ namespace ADLXWrapper
             }
         }
     }
-}
 
+
+    public sealed unsafe class MultimediaListenerHandle : SafeHandle
+    {
+        public delegate bool MultimediaChangedCallback(IntPtr pEvent);
+
+        private static readonly ConcurrentDictionary<IntPtr, MultimediaChangedCallback> _map = new();
+        private static readonly IntPtr _thunkPtr = (IntPtr)(delegate* unmanaged[Stdcall]<IntPtr, IntPtr, byte>)&OnMultimediaChanged;
+        private readonly GCHandle _gcHandle;
+        private readonly IntPtr _vtbl;
+
+        private MultimediaListenerHandle(MultimediaChangedCallback cb) : base(IntPtr.Zero, true)
+        {
+            _gcHandle = GCHandle.Alloc(cb);
+            _vtbl = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(_vtbl, _thunkPtr);
+
+            var inst = Marshal.AllocHGlobal(IntPtr.Size);
+            Marshal.WriteIntPtr(inst, _vtbl);
+            handle = inst;
+            _map[inst] = cb;
+        }
+
+        public static MultimediaListenerHandle Create(MultimediaChangedCallback cb)
+        {
+            if (cb == null) throw new ArgumentNullException(nameof(cb));
+            return new MultimediaListenerHandle(cb);
+        }
+
+        public IADLXMultimediaChangedEventListener* GetListener() => (IADLXMultimediaChangedEventListener*)handle;
+
+        protected override bool ReleaseHandle()
+        {
+            _map.TryRemove(handle, out _);
+            if (_gcHandle.IsAllocated) _gcHandle.Free();
+            if (_vtbl != IntPtr.Zero) Marshal.FreeHGlobal(_vtbl);
+            if (handle != IntPtr.Zero) Marshal.FreeHGlobal(handle);
+            return true;
+        }
+
+        public override bool IsInvalid => handle == IntPtr.Zero;
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnMultimediaChanged(IntPtr pThis, IntPtr pEvent)
+        {
+            if (_map.TryGetValue(pThis, out var cb))
+            {
+                return cb(pEvent) ? (byte)1 : (byte)0;
+            }
+            return 0;
+        }
+    }
+
+}

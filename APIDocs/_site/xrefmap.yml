@@ -3735,12 +3735,12 @@ references:
   fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.New
   nameWithType: ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper
   nameWithType.vb: ADLXMultimediaServicesHelper.New
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   name: AddMultimediaEventListener(MultimediaChangedCallback)
-  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_MultimediaChangedCallback_
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
-  nameWithType: ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.MultimediaChangedCallback)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  nameWithType: ADLXMultimediaServicesHelper.AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback)
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener*
   name: AddMultimediaEventListener
   href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_
@@ -3945,15 +3945,79 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.ReleaseHandle
   nameWithType: ADLXMultimediaServicesHelper.MultimediaEventListenerHandle.ReleaseHandle
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
-  name: RemoveMultimediaEventListener(MultimediaEventListenerHandle, bool)
-  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaEventListenerHandle_System_Boolean_
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle,System.Boolean)
-  name.vb: RemoveMultimediaEventListener(MultimediaEventListenerHandle, Boolean)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, bool)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, Boolean)
-  nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, bool)
-  nameWithType.vb: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXMultimediaServicesHelper.MultimediaEventListenerHandle, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle
+  name: ADLXMultimediaServicesHelper.MultimediaListenerHandle
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html
+  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback)
+  name: Create(MultimediaChangedCallback)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_Create_ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_MultimediaChangedCallback_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create(ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback)
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create(ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create*
+  name: Create
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_Create_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.Create
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener
+  name: GetListener()
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_GetListener
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener()
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener()
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener*
+  name: GetListener
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_GetListener_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.GetListener
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+  name: IsInvalid
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_IsInvalid
+  commentId: P:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid*
+  name: IsInvalid
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_IsInvalid_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.IsInvalid
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback
+  name: ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback.html
+  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle
+  name: ReleaseHandle()
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_ReleaseHandle
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle()
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle()
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle*
+  name: ReleaseHandle
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html#ADLXWrapper_ADLXMultimediaServicesHelper_MultimediaListenerHandle_ReleaseHandle_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle
+  nameWithType: ADLXMultimediaServicesHelper.MultimediaListenerHandle.ReleaseHandle
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
+  name: RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
+  name.vb: RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle, bool)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle, Boolean)
+  nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
+  nameWithType.vb: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener*
   name: RemoveMultimediaEventListener
   href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_
@@ -35737,6 +35801,70 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ManualVramTuningInfo.States
   nameWithType: ManualVramTuningInfo.States
+- uid: ADLXWrapper.MultimediaListenerHandle
+  name: MultimediaListenerHandle
+  href: api/ADLXWrapper.MultimediaListenerHandle.html
+  commentId: T:ADLXWrapper.MultimediaListenerHandle
+  fullName: ADLXWrapper.MultimediaListenerHandle
+  nameWithType: MultimediaListenerHandle
+- uid: ADLXWrapper.MultimediaListenerHandle.Create(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  name: Create(MultimediaChangedCallback)
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_Create_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_
+  commentId: M:ADLXWrapper.MultimediaListenerHandle.Create(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  fullName: ADLXWrapper.MultimediaListenerHandle.Create(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
+  nameWithType: MultimediaListenerHandle.Create(MultimediaListenerHandle.MultimediaChangedCallback)
+- uid: ADLXWrapper.MultimediaListenerHandle.Create*
+  name: Create
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_Create_
+  commentId: Overload:ADLXWrapper.MultimediaListenerHandle.Create
+  isSpec: "True"
+  fullName: ADLXWrapper.MultimediaListenerHandle.Create
+  nameWithType: MultimediaListenerHandle.Create
+- uid: ADLXWrapper.MultimediaListenerHandle.GetListener
+  name: GetListener()
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_GetListener
+  commentId: M:ADLXWrapper.MultimediaListenerHandle.GetListener
+  fullName: ADLXWrapper.MultimediaListenerHandle.GetListener()
+  nameWithType: MultimediaListenerHandle.GetListener()
+- uid: ADLXWrapper.MultimediaListenerHandle.GetListener*
+  name: GetListener
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_GetListener_
+  commentId: Overload:ADLXWrapper.MultimediaListenerHandle.GetListener
+  isSpec: "True"
+  fullName: ADLXWrapper.MultimediaListenerHandle.GetListener
+  nameWithType: MultimediaListenerHandle.GetListener
+- uid: ADLXWrapper.MultimediaListenerHandle.IsInvalid
+  name: IsInvalid
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_IsInvalid
+  commentId: P:ADLXWrapper.MultimediaListenerHandle.IsInvalid
+  fullName: ADLXWrapper.MultimediaListenerHandle.IsInvalid
+  nameWithType: MultimediaListenerHandle.IsInvalid
+- uid: ADLXWrapper.MultimediaListenerHandle.IsInvalid*
+  name: IsInvalid
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_IsInvalid_
+  commentId: Overload:ADLXWrapper.MultimediaListenerHandle.IsInvalid
+  isSpec: "True"
+  fullName: ADLXWrapper.MultimediaListenerHandle.IsInvalid
+  nameWithType: MultimediaListenerHandle.IsInvalid
+- uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+  name: MultimediaListenerHandle.MultimediaChangedCallback
+  href: api/ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
+  commentId: T:ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+  fullName: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
+  nameWithType: MultimediaListenerHandle.MultimediaChangedCallback
+- uid: ADLXWrapper.MultimediaListenerHandle.ReleaseHandle
+  name: ReleaseHandle()
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_ReleaseHandle
+  commentId: M:ADLXWrapper.MultimediaListenerHandle.ReleaseHandle
+  fullName: ADLXWrapper.MultimediaListenerHandle.ReleaseHandle()
+  nameWithType: MultimediaListenerHandle.ReleaseHandle()
+- uid: ADLXWrapper.MultimediaListenerHandle.ReleaseHandle*
+  name: ReleaseHandle
+  href: api/ADLXWrapper.MultimediaListenerHandle.html#ADLXWrapper_MultimediaListenerHandle_ReleaseHandle_
+  commentId: Overload:ADLXWrapper.MultimediaListenerHandle.ReleaseHandle
+  isSpec: "True"
+  fullName: ADLXWrapper.MultimediaListenerHandle.ReleaseHandle
+  nameWithType: MultimediaListenerHandle.ReleaseHandle
 - uid: ADLXWrapper.PerformanceMonitoringSettingsInfo
   name: PerformanceMonitoringSettingsInfo
   href: api/ADLXWrapper.PerformanceMonitoringSettingsInfo.html

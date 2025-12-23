@@ -166,6 +166,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.MultimediaChangedCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXMultimediaServicesHelper.MultimediaListenerHandle",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.yml",
       "output": {
         ".html": {
@@ -3774,6 +3802,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ManualVramTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.MultimediaListenerHandle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.MultimediaListenerHandle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.MultimediaListenerHandle",
       "Summary": null
     },
     {
