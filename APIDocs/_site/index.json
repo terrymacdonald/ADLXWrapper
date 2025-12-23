@@ -1471,7 +1471,7 @@
   },
   "index.html": {
     "href": "index.html",
-    "title": "This is the HOMEPAGE. | ADLXWrapper",
-    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+    "title": "ADLXWrapper API Docs | ADLXWrapper",
+    "summary": "ADLXWrapper API Docs Welcome to the generated API reference for ADLXWrapper, a C# façade over the AMD ADLX SDK. Use this site to explore the public classes, helpers, and DTOs that make up the wrapper. The goal of ADLXWrapper is to provide a pointer-free, ergonomic API surface while still exposing native handles when needed. Where to Learn More Project overview & usage: See README.md at the repository root or the repo at https://github.com/terrymacdonald/ADLXWrapper for quick-start examples and patterns. ADLX SDK reference: The upstream ADLX SDK official docs are at https://gpuopen.com/manuals/adlx/. ADLX SDK repository: The upstream ADLX SDK repository is at https://github.com/GPUOpen-LibrariesAndSDKs/ADLX Samples: Runnable samples demonstrating display, desktop, GPU, and event-listener flows are under Samples/. Wrapper internals: Core helpers and façades are in ADLXWrapper/ (e.g., ADLXDisplayServicesHelper, ADLXDesktopServicesHelper, ADLXSystemServicesHelper). Regenerating Docs Use .\\refresh_adlx_api_docs.ps1 from the repo root to rebuild the DocFX site and serve it locally on port 8000."
   }
 }
