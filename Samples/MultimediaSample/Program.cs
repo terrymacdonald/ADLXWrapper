@@ -26,7 +26,7 @@ unsafe
 
         try
         {
-            using var listener = MultimediaEventListenerHandle.Create(evtPtr =>
+            using var listener = mmHelper.AddMultimediaEventListener(evtPtr =>
             {
                 if (evtPtr == IntPtr.Zero) return true;
                 var evt = (IADLXMultimediaChangedEvent*)evtPtr;
@@ -37,9 +37,7 @@ unsafe
                 return true; // keep listener active
             });
 
-            mmHelper.AddMultimediaEventListener(listener);
             Console.WriteLine("Registered multimedia change listener (no events expected in this sample run).");
-            mmHelper.RemoveMultimediaEventListener(listener);
         }
         catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
         {

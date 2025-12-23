@@ -53,38 +53,39 @@ To verify the build and check hardware compatibility, run the test script.
 
 ## Detailed Usage and Examples
 
-### Quick sample
+### Quick sample (facade-first)
 
 ```csharp
 using var adlx = ADLXApiHelper.Initialize();
 using var sys = adlx.GetSystemServices();
 
-// Enumerate GPUs and displays
-var gpuHandles = sys.EnumerateGPUsHandle();
-var displayHandles = sys.EnumerateDisplayHandles();
+// Enumerate GPUs and displays (pointer-free)
+var gpus = sys.EnumerateADLXGPUs();
+var displays = sys.EnumerateDisplays();
 
-// Toggle a display feature if supported (e.g., Virtual Super Resolution)
-using var displayHelper = sys.GetDisplayServices();
-var firstDisplay = displayHandles[0].As<IADLXDisplay>();
-var vsr = displayHelper.GetVirtualSuperResolution(firstDisplay);
-if (vsr.IsSupported)
+foreach (var display in displays)
+using (display)
 {
-    using var vsrNative = new ComPtr<IADLXVirtualSuperResolution>(displayHelper.GetVirtualSuperResolutionNative(firstDisplay));
-    displayHelper.SetVirtualSuperResolutionEnabled(vsrNative.Get(), !vsr.IsEnabled);
+    Console.WriteLine($"Display {display.Name} [{display.Width}x{display.Height}] on GPU {display.GpuUniqueId}");
+
+    // Toggle a display feature if supported (e.g., Virtual Super Resolution)
+    var vsr = display.GetVirtualSuperResolutionState();
+    if (vsr.supported && !vsr.enabled)
+    {
+        display.SetVirtualSuperResolution(true);
+    }
 }
 
 // Listen for display settings changes (callbacks occur on ADLX threads)
-using var settingsListener = displayHelper.AddDisplaySettingsEventListener(evtPtr =>
+using var displayServices = sys.GetDisplayServices();
+using var settingsListener = displayServices.AddDisplaySettingsEventListener(evt =>
 {
-    if (evtPtr == IntPtr.Zero) return true;
-    var evt = (IADLXDisplaySettingsChangedEvent*)evtPtr;
-    Console.WriteLine($"[Display settings] origin={evt->GetOrigin()} pixelFormatChanged={evt->IsPixelFormatChanged()}");
+    Console.WriteLine("[Display settings changed]");
     return true; // keep listening
 });
 
-// Always dispose handles/helpers to release native refs
-foreach (var h in gpuHandles) h.Dispose();
-foreach (var h in displayHandles) h.Dispose();
+Console.WriteLine("Listener registered. Press Enter to exit...");
+Console.ReadLine();
 ```
 
 ### Support and disposal notes

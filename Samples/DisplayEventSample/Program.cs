@@ -6,26 +6,16 @@ unsafe
     Console.WriteLine("=== ADLX Display Event Sample (display-changed listener) ===");
 
     using var adlx = ADLXApiHelper.Initialize();
-    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    using var displayHelper = new ADLXDisplayServicesHelper(sysHelper.GetDisplayServicesNative());
-    using var handling = displayHelper.GetDisplayChangedHandling();
+    using var sysHelper = adlx.GetSystemServices();
+    using var displayHelper = sysHelper.GetDisplayServices();
 
-    var listener = DisplaySettingsListenerHandle.Create(evt =>
+    using var listener = displayHelper.AddDisplaySettingsEventListener(evt =>
     {
-        Console.WriteLine($"Display event: 0x{evt.ToInt64():X}");
-        return true; // handled
+        Console.WriteLine("Display settings changed");
+        return true; // keep listening
     });
 
-    try
-    {
-        handling.As<IADLXDisplayChangedHandling>()->AddDisplaySettingsEventListener((IADLXDisplaySettingsChangedListener*)listener.DangerousGetHandle());
-        Console.WriteLine("Listener registered. Press Enter to exit...");
-        Console.ReadLine();
-    }
-    finally
-    {
-        try { handling.As<IADLXDisplayChangedHandling>()->RemoveDisplaySettingsEventListener((IADLXDisplaySettingsChangedListener*)listener.DangerousGetHandle()); } catch { }
-        listener.Dispose();
-    }
+    Console.WriteLine("Listener registered. Press Enter to exit...");
+    Console.ReadLine();
 }
 
