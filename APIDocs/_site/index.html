@@ -74,7 +74,13 @@
 <h1 id="adlxwrapper-api-docs">ADLXWrapper API Docs</h1>
 
 <p>Welcome to the generated API reference for <strong>ADLXWrapper</strong>, a C# façade over the AMD ADLX SDK. Use this site to explore the public classes, helpers, and DTOs that make up the wrapper.</p>
-<p>The goal of ADLXWrapper project is to provide a lightweight, simpler way to access the AMD ADLX API, to read settings and make changes to the AMD GPU settings. The ADLXWrapper project provides Helper objects that provide a pointer-free, simple ergonomic API surface to make suse easy, and it still exposies the native handles if you need to do something advanced.</p>
+<p>The goal of ADLXWrapper project is to provide a lightweight, simpler way to access the AMD ADLX API, to read settings and make changes to the AMD GPU settings. The ADLXWrapper project provides Helper objects that provide a pointer-free, simple ergonomic API surface to make it easy to use, and it still exposies the native handles if you need to do something advanced.</p>
+<h2 id="how-to-use">How to use</h2>
+<ul>
+<li>Start at the API landing page: <a href="/api/ADLXWrapper.html">ADLXWrapper API Reference</a>.</li>
+<li>Navigate by feature: helpers like <code>ADLXDisplayServicesHelper</code>, <code>ADLXDesktopServicesHelper</code>, and <code>ADLXSystemServicesHelper</code> list the available operations and event hooks.</li>
+<li>Façade types (<code>ADLXDisplay</code>, <code>ADLXDesktop</code>, <code>ADLXGPU</code>) show the pointer-free workflows; use the <code>...Native()</code>/<code>...Handle()</code> methods only when you need raw ADLX handles.</li>
+</ul>
 <h2 id="where-to-learn-more">Where to Learn More</h2>
 <ul>
 <li><strong>Project overview &amp; usage</strong>: See <code>README.md</code> at the repository root or the repo at <a href="https://github.com/terrymacdonald/ADLXWrapper">https://github.com/terrymacdonald/ADLXWrapper</a> for quick-start examples and patterns.</li>

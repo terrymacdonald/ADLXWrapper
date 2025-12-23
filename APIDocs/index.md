@@ -6,7 +6,14 @@ _layout: landing
 
 Welcome to the generated API reference for **ADLXWrapper**, a C# façade over the AMD ADLX SDK. Use this site to explore the public classes, helpers, and DTOs that make up the wrapper. 
 
-The goal of ADLXWrapper project is to provide a lightweight, simpler way to access the AMD ADLX API, to read settings and make changes to the AMD GPU settings. The ADLXWrapper project provides Helper objects that provide a pointer-free, simple ergonomic API surface to make suse easy, and it still exposies the native handles if you need to do something advanced.
+The goal of ADLXWrapper project is to provide a lightweight, simpler way to access the AMD ADLX API, to read settings and make changes to the AMD GPU settings. The ADLXWrapper project provides Helper objects that provide a pointer-free, simple ergonomic API surface to make it easy to use, and it still exposies the native handles if you need to do something advanced.
+
+## How to use
+
+- Start at the API landing page: [ADLXWrapper API Reference](/api/ADLXWrapper.html).
+- Navigate by feature: helpers like `ADLXDisplayServicesHelper`, `ADLXDesktopServicesHelper`, and `ADLXSystemServicesHelper` list the available operations and event hooks.
+- Façade types (`ADLXDisplay`, `ADLXDesktop`, `ADLXGPU`) show the pointer-free workflows; use the `...Native()`/`...Handle()` methods only when you need raw ADLX handles.
+
 
 ## Where to Learn More
 
