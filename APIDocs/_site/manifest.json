@@ -4058,6 +4058,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.VideoSuperResolutionInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.VideoSuperResolutionInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.VideoSuperResolutionInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.VideoUpscaleInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.VideoUpscaleInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.VideoUpscaleInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.VramState.yml",
       "output": {
         ".html": {

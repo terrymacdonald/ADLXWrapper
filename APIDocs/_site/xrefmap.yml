@@ -36712,6 +36712,134 @@ references:
   commentId: F:ADLXWrapper.VariBrightMode.Unknown
   fullName: ADLXWrapper.VariBrightMode.Unknown
   nameWithType: VariBrightMode.Unknown
+- uid: ADLXWrapper.VideoSuperResolutionInfo
+  name: VideoSuperResolutionInfo
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html
+  commentId: T:ADLXWrapper.VideoSuperResolutionInfo
+  fullName: ADLXWrapper.VideoSuperResolutionInfo
+  nameWithType: VideoSuperResolutionInfo
+- uid: ADLXWrapper.VideoSuperResolutionInfo.#ctor(System.Boolean,System.Boolean)
+  name: VideoSuperResolutionInfo(bool, bool)
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.VideoSuperResolutionInfo.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.VideoSuperResolutionInfo(bool, bool)
+  fullName.vb: ADLXWrapper.VideoSuperResolutionInfo.New(Boolean, Boolean)
+  nameWithType: VideoSuperResolutionInfo.VideoSuperResolutionInfo(bool, bool)
+  nameWithType.vb: VideoSuperResolutionInfo.New(Boolean, Boolean)
+- uid: ADLXWrapper.VideoSuperResolutionInfo.#ctor*
+  name: VideoSuperResolutionInfo
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo__ctor_
+  commentId: Overload:ADLXWrapper.VideoSuperResolutionInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.VideoSuperResolutionInfo
+  fullName.vb: ADLXWrapper.VideoSuperResolutionInfo.New
+  nameWithType: VideoSuperResolutionInfo.VideoSuperResolutionInfo
+  nameWithType.vb: VideoSuperResolutionInfo.New
+- uid: ADLXWrapper.VideoSuperResolutionInfo.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo_IsEnabled
+  commentId: P:ADLXWrapper.VideoSuperResolutionInfo.IsEnabled
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.IsEnabled
+  nameWithType: VideoSuperResolutionInfo.IsEnabled
+- uid: ADLXWrapper.VideoSuperResolutionInfo.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo_IsEnabled_
+  commentId: Overload:ADLXWrapper.VideoSuperResolutionInfo.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.IsEnabled
+  nameWithType: VideoSuperResolutionInfo.IsEnabled
+- uid: ADLXWrapper.VideoSuperResolutionInfo.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo_IsSupported
+  commentId: P:ADLXWrapper.VideoSuperResolutionInfo.IsSupported
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.IsSupported
+  nameWithType: VideoSuperResolutionInfo.IsSupported
+- uid: ADLXWrapper.VideoSuperResolutionInfo.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.VideoSuperResolutionInfo.html#ADLXWrapper_VideoSuperResolutionInfo_IsSupported_
+  commentId: Overload:ADLXWrapper.VideoSuperResolutionInfo.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoSuperResolutionInfo.IsSupported
+  nameWithType: VideoSuperResolutionInfo.IsSupported
+- uid: ADLXWrapper.VideoUpscaleInfo
+  name: VideoUpscaleInfo
+  href: api/ADLXWrapper.VideoUpscaleInfo.html
+  commentId: T:ADLXWrapper.VideoUpscaleInfo
+  fullName: ADLXWrapper.VideoUpscaleInfo
+  nameWithType: VideoUpscaleInfo
+- uid: ADLXWrapper.VideoUpscaleInfo.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.ADLX_IntRange)
+  name: VideoUpscaleInfo(bool, bool, int, ADLX_IntRange)
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo__ctor_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_ADLX_IntRange_
+  commentId: M:ADLXWrapper.VideoUpscaleInfo.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.ADLX_IntRange)
+  name.vb: New(Boolean, Boolean, Integer, ADLX_IntRange)
+  fullName: ADLXWrapper.VideoUpscaleInfo.VideoUpscaleInfo(bool, bool, int, ADLXWrapper.ADLX_IntRange)
+  fullName.vb: ADLXWrapper.VideoUpscaleInfo.New(Boolean, Boolean, Integer, ADLXWrapper.ADLX_IntRange)
+  nameWithType: VideoUpscaleInfo.VideoUpscaleInfo(bool, bool, int, ADLX_IntRange)
+  nameWithType.vb: VideoUpscaleInfo.New(Boolean, Boolean, Integer, ADLX_IntRange)
+- uid: ADLXWrapper.VideoUpscaleInfo.#ctor*
+  name: VideoUpscaleInfo
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo__ctor_
+  commentId: Overload:ADLXWrapper.VideoUpscaleInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.VideoUpscaleInfo.VideoUpscaleInfo
+  fullName.vb: ADLXWrapper.VideoUpscaleInfo.New
+  nameWithType: VideoUpscaleInfo.VideoUpscaleInfo
+  nameWithType.vb: VideoUpscaleInfo.New
+- uid: ADLXWrapper.VideoUpscaleInfo.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_IsEnabled
+  commentId: P:ADLXWrapper.VideoUpscaleInfo.IsEnabled
+  fullName: ADLXWrapper.VideoUpscaleInfo.IsEnabled
+  nameWithType: VideoUpscaleInfo.IsEnabled
+- uid: ADLXWrapper.VideoUpscaleInfo.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_IsEnabled_
+  commentId: Overload:ADLXWrapper.VideoUpscaleInfo.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoUpscaleInfo.IsEnabled
+  nameWithType: VideoUpscaleInfo.IsEnabled
+- uid: ADLXWrapper.VideoUpscaleInfo.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_IsSupported
+  commentId: P:ADLXWrapper.VideoUpscaleInfo.IsSupported
+  fullName: ADLXWrapper.VideoUpscaleInfo.IsSupported
+  nameWithType: VideoUpscaleInfo.IsSupported
+- uid: ADLXWrapper.VideoUpscaleInfo.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_IsSupported_
+  commentId: Overload:ADLXWrapper.VideoUpscaleInfo.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoUpscaleInfo.IsSupported
+  nameWithType: VideoUpscaleInfo.IsSupported
+- uid: ADLXWrapper.VideoUpscaleInfo.Sharpness
+  name: Sharpness
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_Sharpness
+  commentId: P:ADLXWrapper.VideoUpscaleInfo.Sharpness
+  fullName: ADLXWrapper.VideoUpscaleInfo.Sharpness
+  nameWithType: VideoUpscaleInfo.Sharpness
+- uid: ADLXWrapper.VideoUpscaleInfo.Sharpness*
+  name: Sharpness
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_Sharpness_
+  commentId: Overload:ADLXWrapper.VideoUpscaleInfo.Sharpness
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoUpscaleInfo.Sharpness
+  nameWithType: VideoUpscaleInfo.Sharpness
+- uid: ADLXWrapper.VideoUpscaleInfo.SharpnessRange
+  name: SharpnessRange
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_SharpnessRange
+  commentId: P:ADLXWrapper.VideoUpscaleInfo.SharpnessRange
+  fullName: ADLXWrapper.VideoUpscaleInfo.SharpnessRange
+  nameWithType: VideoUpscaleInfo.SharpnessRange
+- uid: ADLXWrapper.VideoUpscaleInfo.SharpnessRange*
+  name: SharpnessRange
+  href: api/ADLXWrapper.VideoUpscaleInfo.html#ADLXWrapper_VideoUpscaleInfo_SharpnessRange_
+  commentId: Overload:ADLXWrapper.VideoUpscaleInfo.SharpnessRange
+  isSpec: "True"
+  fullName: ADLXWrapper.VideoUpscaleInfo.SharpnessRange
+  nameWithType: VideoUpscaleInfo.SharpnessRange
 - uid: ADLXWrapper.VramState
   name: VramState
   href: api/ADLXWrapper.VramState.html

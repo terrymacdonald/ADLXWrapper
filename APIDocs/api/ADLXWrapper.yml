@@ -17,8 +17,6 @@ items:
   - ADLXWrapper.ADLXHardwareDetection
   - ADLXWrapper.ADLXListHelpers
   - ADLXWrapper.ADLXMultimediaServicesHelper
-  - ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  - ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   - ADLXWrapper.ADLXPowerTuningServicesHelper
   - ADLXWrapper.ADLXSystemServicesHelper
@@ -288,6 +286,8 @@ items:
   - ADLXWrapper.ThreeDSettingsListenerHandle
   - ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
   - ADLXWrapper.VariBrightMode
+  - ADLXWrapper.VideoSuperResolutionInfo
+  - ADLXWrapper.VideoUpscaleInfo
   - ADLXWrapper.VramState
   - ADLXWrapper.WaitForVerticalRefreshInfo
   langs:
@@ -833,52 +833,20 @@ references:
   name: ADLXMultimediaServicesHelper
   nameWithType: ADLXMultimediaServicesHelper
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
+- uid: ADLXWrapper.VideoUpscaleInfo
+  commentId: T:ADLXWrapper.VideoUpscaleInfo
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  nameWithType: ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    name: VideoUpscaleInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    name: VideoUpscaleInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo.html
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
+  href: ADLXWrapper.VideoUpscaleInfo.html
+  name: VideoUpscaleInfo
+  nameWithType: VideoUpscaleInfo
+  fullName: ADLXWrapper.VideoUpscaleInfo
+- uid: ADLXWrapper.VideoSuperResolutionInfo
+  commentId: T:ADLXWrapper.VideoSuperResolutionInfo
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  nameWithType: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    name: VideoSuperResolutionInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    name: VideoSuperResolutionInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
+  href: ADLXWrapper.VideoSuperResolutionInfo.html
+  name: VideoSuperResolutionInfo
+  nameWithType: VideoSuperResolutionInfo
+  fullName: ADLXWrapper.VideoSuperResolutionInfo
 - uid: ADLXWrapper.MultimediaListenerHandle
   commentId: T:ADLXWrapper.MultimediaListenerHandle
   parent: ADLXWrapper

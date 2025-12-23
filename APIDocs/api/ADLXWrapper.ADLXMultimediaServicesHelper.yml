@@ -320,13 +320,13 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLXMultimediaServicesHelper.VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
+    content: public VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
     parameters:
     - id: gpu
       type: ADLXWrapper.IADLXGPU*
     return:
-      type: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    content.vb: Public Function GetVideoUpscale(gpu As IADLXGPU*) As ADLXMultimediaServicesHelper.VideoUpscaleInfo
+      type: ADLXWrapper.VideoUpscaleInfo
+    content.vb: Public Function GetVideoUpscale(gpu As IADLXGPU*) As VideoUpscaleInfo
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale*
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
@@ -450,13 +450,13 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLXMultimediaServicesHelper.VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
+    content: public VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
     parameters:
     - id: gpu
       type: ADLXWrapper.IADLXGPU*
     return:
-      type: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    content.vb: Public Function GetVideoSuperResolution(gpu As IADLXGPU*) As ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
+      type: ADLXWrapper.VideoSuperResolutionInfo
+    content.vb: Public Function GetVideoSuperResolution(gpu As IADLXGPU*) As VideoSuperResolutionInfo
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution*
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
@@ -540,7 +540,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 241
+    startLine: 183
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -948,29 +948,13 @@ references:
   name: GetVideoUpscale
   nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscale
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
+- uid: ADLXWrapper.VideoUpscaleInfo
+  commentId: T:ADLXWrapper.VideoUpscaleInfo
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  nameWithType: ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    name: VideoUpscaleInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    name: VideoUpscaleInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo.html
+  href: ADLXWrapper.VideoUpscaleInfo.html
+  name: VideoUpscaleInfo
+  nameWithType: VideoUpscaleInfo
+  fullName: ADLXWrapper.VideoUpscaleInfo
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
   href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleEnabled_ADLXWrapper_IADLXVideoUpscale__System_Boolean_
@@ -1022,29 +1006,13 @@ references:
   name: GetVideoSuperResolution
   nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolution
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  commentId: T:ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
+- uid: ADLXWrapper.VideoSuperResolutionInfo
+  commentId: T:ADLXWrapper.VideoSuperResolutionInfo
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  name: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  nameWithType: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-  spec.csharp:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    name: VideoSuperResolutionInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
-  spec.vb:
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper
-    name: ADLXMultimediaServicesHelper
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.html
-  - name: .
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    name: VideoSuperResolutionInfo
-    href: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
+  href: ADLXWrapper.VideoSuperResolutionInfo.html
+  name: VideoSuperResolutionInfo
+  nameWithType: VideoSuperResolutionInfo
+  fullName: ADLXWrapper.VideoSuperResolutionInfo
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled
   href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoSuperResolutionEnabled_ADLXWrapper_IADLXVideoSuperResolution__System_Boolean_

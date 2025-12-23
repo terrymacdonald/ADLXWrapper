@@ -173,65 +173,7 @@ namespace ADLXWrapper
             _services.Dispose();
             _disposed = true;
             GC.SuppressFinalize(this);
-        }
-
-        #region Multimedia DTOs and listener handle
-        public readonly struct VideoUpscaleInfo
-        {
-            public bool IsSupported { get; init; }
-            public bool IsEnabled { get; init; }
-            public int Sharpness { get; init; }
-            public ADLX_IntRange SharpnessRange { get; init; }
-
-            [JsonConstructor]
-            public VideoUpscaleInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
-            {
-                IsSupported = isSupported;
-                IsEnabled = isEnabled;
-                Sharpness = sharpness;
-                SharpnessRange = sharpnessRange;
-            }
-
-            internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
-            {
-                bool supported = false, enabled = false;
-                pUpscale->IsSupported(&supported);
-                pUpscale->IsEnabled(&enabled);
-                IsSupported = supported;
-                IsEnabled = enabled;
-
-                int sharpness = 0;
-                pUpscale->GetSharpness(&sharpness);
-                Sharpness = sharpness;
-
-                ADLX_IntRange range = default;
-                pUpscale->GetSharpnessRange(&range);
-                SharpnessRange = range;
-            }
-        }
-
-        public readonly struct VideoSuperResolutionInfo
-        {
-            public bool IsSupported { get; init; }
-            public bool IsEnabled { get; init; }
-
-            [JsonConstructor]
-            public VideoSuperResolutionInfo(bool isSupported, bool isEnabled)
-            {
-                IsSupported = isSupported;
-                IsEnabled = isEnabled;
-            }
-
-            internal unsafe VideoSuperResolutionInfo(IADLXVideoSuperResolution* pVsr)
-            {
-                bool supported = false, enabled = false;
-                pVsr->IsSupported(&supported);
-                pVsr->IsEnabled(&enabled);
-                IsSupported = supported;
-                IsEnabled = enabled;
-            }
-        }
-        #endregion
+        }        
 
         private void ThrowIfDisposed()
         {
@@ -248,6 +190,63 @@ namespace ADLXWrapper
         }
     }
 
+    #region Multimedia DTOs and listener handle
+    public readonly struct VideoUpscaleInfo
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+        public int Sharpness { get; init; }
+        public ADLX_IntRange SharpnessRange { get; init; }
+
+        [JsonConstructor]
+        public VideoUpscaleInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+            Sharpness = sharpness;
+            SharpnessRange = sharpnessRange;
+        }
+
+        internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
+        {
+            bool supported = false, enabled = false;
+            pUpscale->IsSupported(&supported);
+            pUpscale->IsEnabled(&enabled);
+            IsSupported = supported;
+            IsEnabled = enabled;
+
+            int sharpness = 0;
+            pUpscale->GetSharpness(&sharpness);
+            Sharpness = sharpness;
+
+            ADLX_IntRange range = default;
+            pUpscale->GetSharpnessRange(&range);
+            SharpnessRange = range;
+        }
+    }
+
+    public readonly struct VideoSuperResolutionInfo
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public VideoSuperResolutionInfo(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+
+        internal unsafe VideoSuperResolutionInfo(IADLXVideoSuperResolution* pVsr)
+        {
+            bool supported = false, enabled = false;
+            pVsr->IsSupported(&supported);
+            pVsr->IsEnabled(&enabled);
+            IsSupported = supported;
+            IsEnabled = enabled;
+        }
+    }
+    #endregion
 
     public sealed unsafe class MultimediaListenerHandle : SafeHandle
     {

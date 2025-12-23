@@ -43,12 +43,6 @@ items:
   - uid: ADLXWrapper.ADLXMultimediaServicesHelper
     name: ADLXMultimediaServicesHelper
     type: Class
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    name: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
-    type: Struct
-  - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    name: ADLXMultimediaServicesHelper.VideoUpscaleInfo
-    type: Struct
   - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
     name: ADLXPerformanceMonitoringServicesHelper
     type: Class
@@ -856,6 +850,12 @@ items:
   - uid: ADLXWrapper.VariBrightMode
     name: VariBrightMode
     type: Enum
+  - uid: ADLXWrapper.VideoSuperResolutionInfo
+    name: VideoSuperResolutionInfo
+    type: Struct
+  - uid: ADLXWrapper.VideoUpscaleInfo
+    name: VideoUpscaleInfo
+    type: Struct
   - uid: ADLXWrapper.VramState
     name: VramState
     type: Struct

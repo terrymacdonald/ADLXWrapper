@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaListenerHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 251
+    startLine: 250
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -68,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 272
+    startLine: 271
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -99,7 +99,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 278
+    startLine: 277
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 280
+    startLine: 279
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 289
+    startLine: 288
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
