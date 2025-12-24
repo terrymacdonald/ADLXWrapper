@@ -9,6 +9,11 @@ namespace ADLXWrapper
     {
         public ADLX_RESULT Result { get; }
 
+        /// <summary>
+        /// Creates a new exception for a failed ADLX call.
+        /// </summary>
+        /// <param name="result">The ADLX result code returned by the native call.</param>
+        /// <param name="message">Optional message to include; if omitted a default message is used.</param>
         public ADLXException(ADLX_RESULT result, string? message = null)
             : base(message ?? $"ADLX API error: {result}")
         {

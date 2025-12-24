@@ -17,6 +17,13 @@ namespace ADLXWrapper
         private ComPtr<IADLXDesktopChangedHandling>? _desktopChangedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a desktop services helper from native desktop/display services.
+        /// </summary>
+        /// <param name="desktopServices">Native desktop services pointer.</param>
+        /// <param name="displayServices">Optional display services pointer used to build display facades.</param>
+        /// <param name="addRefDesktopServices">True to AddRef the desktop services pointer.</param>
+        /// <param name="addRefDisplayServices">True to AddRef the display services pointer.</param>
         public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true)
         {
             if (desktopServices == null) throw new ArgumentNullException(nameof(desktopServices));
@@ -41,12 +48,22 @@ namespace ADLXWrapper
             return _desktopServices.Get();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the desktop services interface for external ownership.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetDesktopServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Enumerates desktop DTOs (native data marshaled to managed structs).
+        /// </summary>
+        /// <returns>List of desktop info records.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IReadOnlyList<DesktopInfo> EnumerateDesktops()
         {
             ThrowIfDisposed();
@@ -74,6 +91,12 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        /// <summary>
+        /// Enumerates managed desktop facades. Callers must dispose each desktop.
+        /// </summary>
+        /// <returns>List of desktop facades.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
         {
             ThrowIfDisposed();
@@ -107,6 +130,13 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        /// <summary>
+        /// Enumerates managed desktop facades filtered by GPU unique ID. Callers must dispose each desktop.
+        /// </summary>
+        /// <param name="gpuUniqueId">GPU unique ID to filter on.</param>
+        /// <returns>List of desktop facades for the GPU.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktopsForGpu(int gpuUniqueId)
         {
             ThrowIfDisposed();
@@ -163,6 +193,15 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        /// <summary>
+        /// Wraps a native desktop pointer in a managed facade.
+        /// </summary>
+        /// <param name="pDesktop">Native desktop pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this facade.</param>
+        /// <returns>Managed desktop facade.</returns>
+        /// <exception cref="ADLXException">If desktop services are unavailable.</exception>
+        /// <exception cref="ArgumentNullException">If <paramref name="pDesktop"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
         {
             ThrowIfDisposed();
@@ -180,6 +219,12 @@ namespace ADLXWrapper
             return new ADLXDesktop(services, pDesktop, displayServices);
         }
 
+        /// <summary>
+        /// Creates a new Eyefinity desktop using the simple Eyefinity interface.
+        /// </summary>
+        /// <returns>Information about the created Eyefinity desktop.</returns>
+        /// <exception cref="ADLXException">If Eyefinity is unsupported or creation fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public EyefinityDesktopInfo CreateEyefinityDesktop()
         {
             ThrowIfDisposed();
@@ -198,6 +243,11 @@ namespace ADLXWrapper
             return CreateEyefinityDesktop(simple.Get());
         }
 
+        /// <summary>
+        /// Destroys all Eyefinity desktops via the simple Eyefinity interface.
+        /// </summary>
+        /// <exception cref="ADLXException">If Eyefinity is unsupported or destruction fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public void DestroyAllEyefinityDesktops()
         {
             ThrowIfDisposed();
@@ -216,6 +266,13 @@ namespace ADLXWrapper
             DestroyAllEyefinityDesktops(simple.Get());
         }
 
+        /// <summary>
+        /// Adds a desktop list change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when the desktop list changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
         {
             ThrowIfDisposed();
@@ -231,6 +288,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a desktop list change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -245,6 +307,12 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Enumerates native desktop handles (AddRef'd) for advanced/native callers.
+        /// </summary>
+        /// <returns>Array of native desktop handles.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle[] EnumerateDesktopHandles()
         {
             ThrowIfDisposed();
@@ -273,6 +341,12 @@ namespace ADLXWrapper
             return handles;
         }
 
+        /// <summary>
+        /// Returns the native desktop list. Caller must dispose the returned list.
+        /// </summary>
+        /// <returns>Native desktop list pointer.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXDesktopList* GetDesktopListNative()
         {
             ThrowIfDisposed();

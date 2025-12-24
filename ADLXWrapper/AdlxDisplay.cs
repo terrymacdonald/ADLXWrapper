@@ -14,6 +14,12 @@ namespace ADLXWrapper
         private readonly DisplayInfo _identity;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a managed display facade from native display and display services (optional desktop services for ownership queries).
+        /// </summary>
+        /// <param name="pDisplayServices">Native display services pointer.</param>
+        /// <param name="pDisplay">Native display pointer.</param>
+        /// <param name="pDesktopServices">Optional desktop services pointer used to resolve owning desktop.</param>
         public ADLXDisplay(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay, IADLXDesktopServices* pDesktopServices = null)
         {
             if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
@@ -51,6 +57,10 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
         }
 
+        /// <summary>
+        /// Enables or disables FreeSync if supported.
+        /// </summary>
+        /// <param name="enable">True to enable FreeSync.</param>
         public void SetFreeSync(bool enable)
         {
             ThrowIfDisposed();
@@ -66,6 +76,10 @@ namespace ADLXWrapper
             return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
         }
 
+        /// <summary>
+        /// Enables or disables GPU scaling if supported.
+        /// </summary>
+        /// <param name="enable">True to enable GPU scaling.</param>
         public void SetGpuScaling(bool enable)
         {
             ThrowIfDisposed();
@@ -87,6 +101,10 @@ namespace ADLXWrapper
             return _identity;
         }
 
+        /// <summary>
+        /// Sets the display scaling mode if supported.
+        /// </summary>
+        /// <param name="mode">Scaling mode to apply.</param>
         public void SetScalingMode(ADLX_SCALE_MODE mode)
         {
             ThrowIfDisposed();

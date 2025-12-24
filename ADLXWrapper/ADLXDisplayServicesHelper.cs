@@ -29,6 +29,13 @@ namespace ADLXWrapper
         private ComPtr<IADLXDisplayChangedHandling>? _displayChangedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a display services helper from native display/desktop services.
+        /// </summary>
+        /// <param name="displayServices">Native display services pointer.</param>
+        /// <param name="desktopServices">Optional desktop services pointer used to build display facades.</param>
+        /// <param name="addRefDisplayServices">True to AddRef the display services pointer for this helper.</param>
+        /// <param name="addRefDesktopServices">True to AddRef the desktop services pointer for this helper.</param>
         public ADLXDisplayServicesHelper(IADLXDisplayServices* displayServices, IADLXDesktopServices* desktopServices = null, bool addRefDisplayServices = true, bool addRefDesktopServices = true)
         {
             if (displayServices == null) throw new ArgumentNullException(nameof(displayServices));
@@ -48,18 +55,31 @@ namespace ADLXWrapper
             TryUpgradeDisplayServices(displayServices);
         }
 
+        /// <summary>
+        /// Returns the highest available display services interface (3, then 2, then base). Caller must not release it.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXDisplayServices* GetDisplayServicesNative()
         {
             ThrowIfDisposed();
             return GetHighestDisplayServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the current display services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetDisplayServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Enumerates managed display facades. Caller must dispose each display.
+        /// </summary>
+        /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
         {
             ThrowIfDisposed();
@@ -99,6 +119,12 @@ namespace ADLXWrapper
             return EnumerateDisplays();
         }
 
+        /// <summary>
+        /// Builds a display DTO from a native display pointer.
+        /// </summary>
+        /// <param name="display">Native display pointer.</param>
+        /// <exception cref="ArgumentNullException">If <paramref name="display"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DisplayInfo GetDisplayInfo(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -106,6 +132,12 @@ namespace ADLXWrapper
             return new DisplayInfo(display);
         }
 
+        /// <summary>
+        /// Enumerates managed displays filtered by owning GPU unique ID. Disposes non-matching displays.
+        /// </summary>
+        /// <param name="gpuUniqueId">GPU unique ID to filter on.</param>
+        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplaysForGpu(int gpuUniqueId)
         {
             ThrowIfDisposed();
@@ -125,6 +157,14 @@ namespace ADLXWrapper
             return filtered;
         }
 
+        /// <summary>
+        /// Wraps a native display pointer in a managed facade.
+        /// </summary>
+        /// <param name="pDisplay">Native display pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this facade.</param>
+        /// <exception cref="ADLXException">If display services are unavailable.</exception>
+        /// <exception cref="ArgumentNullException">If <paramref name="pDisplay"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
         {
             ThrowIfDisposed();
@@ -142,6 +182,11 @@ namespace ADLXWrapper
             return new ADLXDisplay(services, pDisplay, desktopServices);
         }
 
+        /// <summary>
+        /// Returns the native display list. Caller must dispose the returned list.
+        /// </summary>
+        /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXDisplayList* GetDisplayListNative()
         {
             ThrowIfDisposed();
@@ -159,6 +204,11 @@ namespace ADLXWrapper
             return pDisplayList; // caller must wrap/dispose
         }
 
+        /// <summary>
+        /// Enumerates display handles (AddRef'd) for native consumption.
+        /// </summary>
+        /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle[] EnumerateDisplayHandles()
         {
             ThrowIfDisposed();
@@ -187,6 +237,11 @@ namespace ADLXWrapper
             return handles;
         }
 
+        /// <summary>
+        /// Gets the display change handling interface, caching the result.
+        /// </summary>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXDisplayChangedHandling* GetDisplayChangedHandlingNative()
         {
             ThrowIfDisposed();
@@ -204,11 +259,21 @@ namespace ADLXWrapper
             return handling;
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the display change handling interface.
+        /// </summary>
         public AdlxInterfaceHandle GetDisplayChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetDisplayChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Adds a display list change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when the display list changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
         {
             ThrowIfDisposed();
@@ -223,6 +288,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a display list change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -238,6 +308,13 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Adds a display gamut change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when gamut changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
         {
             ThrowIfDisposed();
@@ -252,6 +329,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a display gamut change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -266,6 +348,13 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Adds a display gamma change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when gamma changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
         {
             ThrowIfDisposed();
@@ -280,6 +369,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a display gamma change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -294,6 +388,13 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Adds a display 3D LUT change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when 3D LUT changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public Display3DLutListenerHandle AddDisplay3DLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
         {
             ThrowIfDisposed();
@@ -308,6 +409,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a display 3D LUT change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplay3DLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -322,6 +428,13 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Adds a display settings change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked when display settings change.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
         {
             ThrowIfDisposed();
@@ -337,6 +450,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a display settings change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();

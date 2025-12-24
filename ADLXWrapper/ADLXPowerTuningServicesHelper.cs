@@ -15,6 +15,11 @@ namespace ADLXWrapper
         private ComPtr<IADLXPowerTuningChangedHandling>? _changedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a power tuning helper from the native services interface, upgrading to v1 when available.
+        /// </summary>
+        /// <param name="services">Native power tuning services pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper.</param>
         public ADLXPowerTuningServicesHelper(IADLXPowerTuningServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -32,12 +37,22 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the highest available power tuning services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetPowerTuningServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Queries whether GPUConnect is supported.
+        /// </summary>
+        /// <returns>True if GPUConnect is supported.</returns>
+        /// <exception cref="ADLXException">If unsupported or query fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public bool IsGPUConnectSupported()
         {
             ThrowIfDisposed();
@@ -77,6 +92,11 @@ namespace ADLXWrapper
             return handles;
         }
 
+        /// <summary>
+        /// Returns the native GPUConnect GPU list (caller must dispose).
+        /// </summary>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXGPU2List* GetGPUConnectGpuListNative()
         {
             ThrowIfDisposed();
@@ -109,11 +129,21 @@ namespace ADLXWrapper
             return handling;
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the power tuning change handling interface.
+        /// </summary>
         public AdlxInterfaceHandle GetPowerTuningChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Adds a power tuning change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked on power tuning changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
         {
             ThrowIfDisposed();
@@ -145,6 +175,11 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Returns SmartShift Max info as a managed DTO.
+        /// </summary>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public SmartShiftMaxInfo GetSmartShiftMax()
         {
             ThrowIfDisposed();
@@ -152,6 +187,12 @@ namespace ADLXWrapper
             return new SmartShiftMaxInfo(ssm.Get());
         }
 
+        /// <summary>
+        /// Gets SmartShift Max interface (native pointer). Caller must dispose.
+        /// </summary>
+        /// <returns>Native SmartShift Max pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXSmartShiftMax* GetSmartShiftMaxNative()
         {
             ThrowIfDisposed();
@@ -172,6 +213,11 @@ namespace ADLXWrapper
             SetSmartShiftMaxBias(ssm.Get(), info.BiasMode, info.BiasValue);
         }
 
+        /// <summary>
+        /// Returns SmartShift Eco info as a managed DTO.
+        /// </summary>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public SmartShiftEcoInfo GetSmartShiftEco()
         {
             ThrowIfDisposed();

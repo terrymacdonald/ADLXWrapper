@@ -14,6 +14,12 @@ namespace ADLXWrapper
         private readonly GpuInfo _identity;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a managed GPU facade from a native GPU pointer, optionally wiring display/desktop services for topology helpers.
+        /// </summary>
+        /// <param name="pGpu">Native GPU pointer.</param>
+        /// <param name="pDisplayServices">Optional display services pointer for display enumeration.</param>
+        /// <param name="pDesktopServices">Optional desktop services pointer for desktop enumeration.</param>
         public ADLXGPU(IADLXGPU* pGpu, IADLXDisplayServices* pDisplayServices = null, IADLXDesktopServices* pDesktopServices = null)
         {
             if (pGpu == null) throw new ArgumentNullException(nameof(pGpu));
@@ -44,7 +50,7 @@ namespace ADLXWrapper
         public string DriverPath { get { ThrowIfDisposed(); return _identity.DriverPath; } }
 
         /// <summary>
-        /// Enumerate façade displays driven by this GPU.
+        /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
         /// </summary>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
         {
@@ -54,7 +60,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Enumerate façade desktops containing displays from this GPU.
+        /// Enumerates managed desktops containing displays from this GPU. Callers must dispose each desktop.
         /// </summary>
         public IReadOnlyList<ADLXDesktop> EnumerateDesktopsForGPU()
         {
@@ -73,6 +79,11 @@ namespace ADLXWrapper
             return helper.AddDisplayListEventListener(callback);
         }
 
+        /// <summary>
+        /// Removes a display list change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -91,6 +102,11 @@ namespace ADLXWrapper
             return helper.AddDesktopListEventListener(callback);
         }
 
+        /// <summary>
+        /// Removes a desktop list change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
@@ -130,3 +146,4 @@ namespace ADLXWrapper
         }
     }
 }
+

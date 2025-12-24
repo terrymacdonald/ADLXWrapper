@@ -23,6 +23,11 @@ namespace ADLXWrapper
         private ComPtr<IADLXGPUAppsListChangedHandling>? _gpuAppsListChangedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a system-services helper from an ADLX system pointer.
+        /// </summary>
+        /// <param name="system">Native ADLX system pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper; false if ownership is already managed.</param>
         public ADLXSystemServicesHelper(IADLXSystem* system, bool addRef = true)
         {
             if (system == null) throw new ArgumentNullException(nameof(system));
@@ -33,6 +38,12 @@ namespace ADLXWrapper
             _system = new ComPtr<IADLXSystem>(system);
         }
 
+        /// <summary>
+        /// Returns the most capable available system interface (IADLXSystem2, then 1, else base).
+        /// Caller must not Release the returned pointer.
+        /// </summary>
+        /// <returns>Native system interface pointer owned by this helper.</returns>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXSystem* GetSystemServicesNative()
         {
             ThrowIfDisposed();
@@ -51,23 +62,46 @@ namespace ADLXWrapper
             return _system.Get();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the system services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native system interface.</returns>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetSystemServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets the native display services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native display services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If display services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXDisplayServices* GetDisplayServicesNative()
         {
             ThrowIfDisposed();
             return EnsureDisplayServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the display services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native display services interface.</returns>
+        /// <exception cref="ADLXException">If display services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetDisplayServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed display-services helper with shared system lifetime.
+        /// </summary>
+        /// <returns>Display services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If display/desktop services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXDisplayServicesHelper GetDisplayServices()
         {
             ThrowIfDisposed();
@@ -78,17 +112,35 @@ namespace ADLXWrapper
             return new ADLXDisplayServicesHelper(displayServices, desktopServices, addRefDisplayServices: false, addRefDesktopServices: false);
         }
 
+        /// <summary>
+        /// Gets the native desktop services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native desktop services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If desktop services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXDesktopServices* GetDesktopServicesNative()
         {
             ThrowIfDisposed();
             return EnsureDesktopServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the desktop services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native desktop services interface.</returns>
+        /// <exception cref="ADLXException">If desktop services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetDesktopServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed desktop-services helper with shared system lifetime.
+        /// </summary>
+        /// <returns>Desktop services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If desktop/display services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXDesktopServicesHelper GetDesktopServices()
         {
             ThrowIfDisposed();
@@ -99,17 +151,35 @@ namespace ADLXWrapper
             return new ADLXDesktopServicesHelper(desktopServices, displayServices, addRefDesktopServices: false);
         }
 
+        /// <summary>
+        /// Gets the native 3D settings services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native 3D settings services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLX3DSettingsServices* Get3DSettingsServicesNative()
         {
             ThrowIfDisposed();
             return Ensure3DSettingsServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the 3D settings services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native 3D settings services interface.</returns>
+        /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle Get3DSettingsServicesHandle()
         {
             return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed 3D settings helper with shared system lifetime.
+        /// </summary>
+        /// <returns>3D settings services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLX3DSettingsServicesHelper Get3DSettingsServices()
         {
             ThrowIfDisposed();
@@ -118,17 +188,35 @@ namespace ADLXWrapper
             return new ADLX3DSettingsServicesHelper(services, addRef: false);
         }
 
+        /// <summary>
+        /// Gets the native GPU tuning services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native GPU tuning services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXGPUTuningServices* GetGPUTuningServicesNative()
         {
             ThrowIfDisposed();
             return EnsureGPUTuningServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the GPU tuning services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native GPU tuning services interface.</returns>
+        /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed GPU tuning helper with shared system lifetime.
+        /// </summary>
+        /// <returns>GPU tuning services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXGPUTuningServicesHelper GetGPUTuningServices()
         {
             ThrowIfDisposed();
@@ -137,17 +225,35 @@ namespace ADLXWrapper
             return new ADLXGPUTuningServicesHelper(services, addRef: false);
         }
 
+        /// <summary>
+        /// Gets the native performance monitoring services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native performance monitoring services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
         {
             ThrowIfDisposed();
             return EnsurePerformanceMonitoringServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the performance monitoring services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native performance monitoring services interface.</returns>
+        /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed performance monitoring helper with shared system lifetime.
+        /// </summary>
+        /// <returns>Performance monitoring services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXPerformanceMonitoringServicesHelper GetPerformanceMonitoringServices()
         {
             ThrowIfDisposed();
@@ -156,17 +262,35 @@ namespace ADLXWrapper
             return new ADLXPerformanceMonitoringServicesHelper(services, addRef: false);
         }
 
+        /// <summary>
+        /// Gets the native power tuning services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native power tuning services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If power tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXPowerTuningServices* GetPowerTuningServicesNative()
         {
             ThrowIfDisposed();
             return EnsurePowerTuningServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the power tuning services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native power tuning services interface.</returns>
+        /// <exception cref="ADLXException">If power tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetPowerTuningServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed power tuning helper with shared system lifetime.
+        /// </summary>
+        /// <returns>Power tuning services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If power tuning services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXPowerTuningServicesHelper GetPowerTuningServices()
         {
             ThrowIfDisposed();
@@ -175,17 +299,35 @@ namespace ADLXWrapper
             return new ADLXPowerTuningServicesHelper(services, addRef: false);
         }
 
+        /// <summary>
+        /// Gets the native multimedia services interface, querying lazily if needed.
+        /// </summary>
+        /// <returns>Native multimedia services pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If multimedia services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXMultimediaServices* GetMultimediaServicesNative()
         {
             ThrowIfDisposed();
             return EnsureMultimediaServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the multimedia services interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native multimedia services interface.</returns>
+        /// <exception cref="ADLXException">If multimedia services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Creates a managed multimedia services helper with shared system lifetime.
+        /// </summary>
+        /// <returns>Multimedia services helper wrapping native interfaces.</returns>
+        /// <exception cref="ADLXException">If multimedia services are unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public ADLXMultimediaServicesHelper GetMultimediaServices()
         {
             ThrowIfDisposed();
@@ -194,28 +336,58 @@ namespace ADLXWrapper
             return new ADLXMultimediaServicesHelper(services, addRef: false);
         }
 
+        /// <summary>
+        /// Gets the native GPU change handling interface (for GPU list/display change events).
+        /// </summary>
+        /// <returns>Native GPU change handling pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If change handling is unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXGPUsChangedHandling* GetGPUsChangedHandlingNative()
         {
             ThrowIfDisposed();
             return EnsureGPUsChangedHandling();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the GPU change handling interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native GPU change handling interface.</returns>
+        /// <exception cref="ADLXException">If change handling is unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetGPUsChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetGPUsChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets the native GPU applications list change handling interface (IADLXSystem2).
+        /// </summary>
+        /// <returns>Native GPU apps list change handling pointer owned by this helper.</returns>
+        /// <exception cref="ADLXException">If the extended interface is unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXGPUAppsListChangedHandling* GetGPUAppsListChangedHandlingNative()
         {
             ThrowIfDisposed();
             return EnsureGPUAppsListChangedHandling();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the GPU applications list change handling interface for external ownership.
+        /// </summary>
+        /// <returns>Managed handle to the native GPU apps list change handling interface.</returns>
+        /// <exception cref="ADLXException">If the extended interface is unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle GetGPUAppsListChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Enumerates GPU facades with display/desktop helpers wired in.
+        /// </summary>
+        /// <returns>List of managed GPU facades. Callers must Dispose each GPU when finished.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXGPU> EnumerateADLXGPUs()
         {
             ThrowIfDisposed();
@@ -242,6 +414,12 @@ namespace ADLXWrapper
             return facades;
         }
 
+        /// <summary>
+        /// Enumerates display facades via the display services helper.
+        /// </summary>
+        /// <returns>List of managed displays.</returns>
+        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
         {
             ThrowIfDisposed();
@@ -249,6 +427,12 @@ namespace ADLXWrapper
             return displayHelper.EnumerateDisplays();
         }
 
+        /// <summary>
+        /// Enumerates desktop facades via the desktop services helper.
+        /// </summary>
+        /// <returns>List of managed desktops.</returns>
+        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXDesktop> EnumerateDesktops()
         {
             ThrowIfDisposed();
@@ -256,6 +440,12 @@ namespace ADLXWrapper
             return desktopHelper.EnumerateADLXDesktops();
         }
 
+        /// <summary>
+        /// Enumerates GPU native handles (AddRef'd for caller ownership).
+        /// </summary>
+        /// <returns>Array of native GPU interface handles.</returns>
+        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public AdlxInterfaceHandle[] EnumerateGPUsHandle()
         {
             ThrowIfDisposed();
@@ -278,6 +468,12 @@ namespace ADLXWrapper
             return handles;
         }
 
+        /// <summary>
+        /// Enumerates GPU DTOs with identity and capability information.
+        /// </summary>
+        /// <returns>Sequence of GPU info records.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IEnumerable<GpuInfo> EnumerateGPUs()
         {
             ThrowIfDisposed();
@@ -295,6 +491,13 @@ namespace ADLXWrapper
             return results;
         }
 
+        /// <summary>
+        /// Builds a GPU info DTO from a native GPU pointer.
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <returns>GPU info record.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public GpuInfo GetGpuInfo(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -302,6 +505,12 @@ namespace ADLXWrapper
             return new GpuInfo(gpu);
         }
 
+        /// <summary>
+        /// Enumerates native GPU interfaces. Caller must dispose the returned list/entries.
+        /// </summary>
+        /// <returns>Native GPU list pointer.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IADLXGPUList* EnumerateGPUsNative()
         {
             ThrowIfDisposed();
@@ -315,6 +524,9 @@ namespace ADLXWrapper
             return pGpuList; // caller must wrap/dispose
         }
 
+        /// <summary>
+        /// Disposes cached COM pointers and releases references.
+        /// </summary>
         public void Dispose()
         {
             if (_disposed) return;

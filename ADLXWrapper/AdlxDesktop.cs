@@ -14,6 +14,12 @@ namespace ADLXWrapper
         private readonly DesktopInfo _identity;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a managed desktop facade from native desktop and services (optionally with display services for ownership queries).
+        /// </summary>
+        /// <param name="pDesktopServices">Native desktop services pointer.</param>
+        /// <param name="pDesktop">Native desktop pointer.</param>
+        /// <param name="pDisplayServices">Optional display services pointer used for display queries.</param>
         public ADLXDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
         {
             if (pDesktopServices == null) throw new ArgumentNullException(nameof(pDesktopServices));
@@ -198,3 +204,6 @@ namespace ADLXWrapper
         }
     }
 }
+
+
+

@@ -12,6 +12,11 @@ namespace ADLXWrapper
         private ComPtr<IADLXPerformanceMonitoringServices> _services;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a performance monitoring helper from the native services interface.
+        /// </summary>
+        /// <param name="services">Native performance monitoring services pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper.</param>
         public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -22,18 +27,34 @@ namespace ADLXWrapper
             _services = new ComPtr<IADLXPerformanceMonitoringServices>(services);
         }
 
+        /// <summary>
+        /// Returns the native performance monitoring services interface owned by this helper.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
         {
             ThrowIfDisposed();
             return _services.Get();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the performance monitoring services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets GPU metrics support (native pointer). Caller must dispose.
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <returns>Native GPU metrics support pointer.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXGPUMetricsSupport* GetGpuMetricsSupportNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -49,6 +70,14 @@ namespace ADLXWrapper
             return support; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Gets GPU metrics support DTO for a GPU.
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <returns>GPU metrics support info.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -58,6 +87,14 @@ namespace ADLXWrapper
             return new GpuMetricsSupportInfo(support.Get());
         }
 
+        /// <summary>
+        /// Gets current GPU metrics (native pointer). Caller must dispose.
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <returns>Native GPU metrics pointer.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXGPUMetrics* GetCurrentGpuMetricsNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -73,6 +110,14 @@ namespace ADLXWrapper
             return metrics; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Gets current GPU metrics as a managed snapshot DTO.
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <returns>GPU metrics snapshot.</returns>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -82,6 +127,12 @@ namespace ADLXWrapper
             return new GpuMetricsSnapshotInfo(metrics.Get());
         }
 
+        /// <summary>
+        /// Gets current system metrics (native pointer). Caller must dispose.
+        /// </summary>
+        /// <returns>Native system metrics pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXSystemMetrics* GetCurrentSystemMetricsNative()
         {
             ThrowIfDisposed();
@@ -95,6 +146,12 @@ namespace ADLXWrapper
             return metrics; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Gets current system metrics as a managed snapshot DTO.
+        /// </summary>
+        /// <returns>System metrics snapshot.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public SystemMetricsSnapshotInfo GetCurrentSystemMetrics()
         {
             ThrowIfDisposed();
@@ -102,6 +159,12 @@ namespace ADLXWrapper
             return new SystemMetricsSnapshotInfo(metrics.Get());
         }
 
+        /// <summary>
+        /// Gets current system+GPU metrics (native pointer). Caller must dispose.
+        /// </summary>
+        /// <returns>Native all-metrics pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXAllMetrics* GetCurrentAllMetricsNative()
         {
             ThrowIfDisposed();
@@ -115,6 +178,12 @@ namespace ADLXWrapper
             return metrics; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Gets current system+GPU metrics as a managed snapshot DTO.
+        /// </summary>
+        /// <returns>All-metrics snapshot.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AllMetricsSnapshotInfo GetCurrentAllMetrics()
         {
             ThrowIfDisposed();
