@@ -2,10 +2,12 @@ using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
+/// <include file='IADLXMultimediaChangedEventListener.xml' path='doc/member[@name="IADLXMultimediaChangedEventListener"]/*' />
 public unsafe partial struct IADLXMultimediaChangedEventListener
 {
     public void** lpVtbl;
 
+    /// <include file='IADLXMultimediaChangedEventListener.xml' path='doc/member[@name="IADLXMultimediaChangedEventListener.OnMultimediaChanged"]/*' />
     [return: NativeTypeName("adlx_bool")]
     public bool OnMultimediaChanged([NativeTypeName("adlx::IADLXMultimediaChangedEvent *")] IADLXMultimediaChangedEvent* pMultimediaChangedEvent)
     {

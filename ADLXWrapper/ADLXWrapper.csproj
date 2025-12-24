@@ -8,6 +8,7 @@
 		<AssemblyName>ADLXWrapper</AssemblyName>
 		<PlatformTarget>x64</PlatformTarget>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);CS1589;CS1591;CS1587</NoWarn>
 
 		<GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 		<ClangSharpGeneratedDir>$(MSBuildProjectDirectory)\cs_generated</ClangSharpGeneratedDir>
@@ -24,6 +25,13 @@
 
 	<ItemGroup>
 		<ClangSharpPInvokeGenerator Include="ClangSharpConfig.rsp" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Suppress doc-include and missing XML warnings for generated interop files only -->
+		<Compile Update="cs_generated\**\*.cs">
+			<NoWarn>CS1589;CS1591</NoWarn>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -107,7 +115,9 @@
 	<Target Name="IncludeBindings" BeforeTargets="BeforeCompile" DependsOnTargets="GenerateBindings">
 		<ItemGroup>
 			<Compile Remove="cs_generated\**\*.cs" />
-			<Compile Include="cs_generated\**\*.cs" />
+			<Compile Include="cs_generated\**\*.cs">
+				<NoWarn>CS1589;CS1591</NoWarn>
+			</Compile>
 			<FileWrites Include="$(ClangSharpGeneratedDir)\**\*" />
 		</ItemGroup>
 	</Target>

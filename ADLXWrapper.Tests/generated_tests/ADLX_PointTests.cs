@@ -27,4 +27,3 @@ public static unsafe partial class ADLX_PointTests
         Assert.Equal(8, sizeof(ADLX_Point));
     }
 }
-

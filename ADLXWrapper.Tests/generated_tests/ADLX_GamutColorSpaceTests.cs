@@ -27,4 +27,3 @@ public static unsafe partial class ADLX_GamutColorSpaceTests
         Assert.Equal(24, sizeof(ADLX_GamutColorSpace));
     }
 }
-

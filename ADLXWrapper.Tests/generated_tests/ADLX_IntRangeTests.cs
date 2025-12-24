@@ -27,4 +27,3 @@ public static unsafe partial class ADLX_IntRangeTests
         Assert.Equal(12, sizeof(ADLX_IntRange));
     }
 }
-

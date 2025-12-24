@@ -27,4 +27,3 @@ public static unsafe partial class ADLX_LUIDTests
         Assert.Equal(8, sizeof(ADLX_LUID));
     }
 }
-

@@ -27,4 +27,3 @@ public static unsafe partial class ADLX_RegammaCoeffTests
         Assert.Equal(20, sizeof(ADLX_RegammaCoeff));
     }
 }
-

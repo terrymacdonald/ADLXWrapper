@@ -2,10 +2,12 @@ using System.Runtime.CompilerServices;
 
 namespace ADLXWrapper;
 
+/// <include file='IADLXGPUAppsListEventListener.xml' path='doc/member[@name="IADLXGPUAppsListEventListener"]/*' />
 public unsafe partial struct IADLXGPUAppsListEventListener
 {
     public void** lpVtbl;
 
+    /// <include file='IADLXGPUAppsListEventListener.xml' path='doc/member[@name="IADLXGPUAppsListEventListener.OnGPUAppsListChanged"]/*' />
     [return: NativeTypeName("adlx_bool")]
     public bool OnGPUAppsListChanged([NativeTypeName("adlx::IADLXGPU2 *")] IADLXGPU2* pGPU, [NativeTypeName("adlx::IADLXApplicationList *")] IADLXApplicationList* pApplications)
     {

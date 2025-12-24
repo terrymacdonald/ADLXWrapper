@@ -5,21 +5,26 @@ namespace ADLXWrapper;
 
 public static unsafe partial class ADLX
 {
+    /// <include file='ADLX.xml' path='doc/member[@name="ADLX.adlx_atomic_inc"]/*' />
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_atomic_inc@@YAJPEAJ@Z", ExactSpelling = true)]
     [return: NativeTypeName("adlx_long")]
     public static extern int adlx_atomic_inc([NativeTypeName("adlx_long *")] int* x);
 
+    /// <include file='ADLX.xml' path='doc/member[@name="ADLX.adlx_atomic_dec"]/*' />
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_atomic_dec@@YAJPEAJ@Z", ExactSpelling = true)]
     [return: NativeTypeName("adlx_long")]
     public static extern int adlx_atomic_dec([NativeTypeName("adlx_long *")] int* x);
 
+    /// <include file='ADLX.xml' path='doc/member[@name="ADLX.adlx_load_library"]/*' />
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_load_library@@YAPEAXPEBD@Z", ExactSpelling = true)]
     [return: NativeTypeName("adlx_handle")]
     public static extern void* adlx_load_library([NativeTypeName("const TCHAR *")] sbyte* filename);
 
+    /// <include file='ADLX.xml' path='doc/member[@name="ADLX.adlx_free_library"]/*' />
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_free_library@@YAHPEAX@Z", ExactSpelling = true)]
     public static extern int adlx_free_library([NativeTypeName("adlx_handle")] void* module);
 
+    /// <include file='ADLX.xml' path='doc/member[@name="ADLX.adlx_get_proc_address"]/*' />
     [DllImport("amdadlx64", CallingConvention = CallingConvention.Cdecl, EntryPoint = "?adlx_get_proc_address@@YAPEAXPEAXPEBD@Z", ExactSpelling = true)]
     public static extern void* adlx_get_proc_address([NativeTypeName("adlx_handle")] void* module, [NativeTypeName("const char *")] sbyte* procName);
 

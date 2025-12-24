@@ -35,4 +35,3 @@ public static unsafe partial class IADLXGPUTuningServicesTests
         }
     }
 }
-
