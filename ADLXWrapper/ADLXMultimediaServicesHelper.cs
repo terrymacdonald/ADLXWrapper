@@ -15,6 +15,11 @@ namespace ADLXWrapper
         private ComPtr<IADLXMultimediaChangedHandling>? _changedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a multimedia services helper from the native services interface.
+        /// </summary>
+        /// <param name="services">Native multimedia services pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper.</param>
         public ADLXMultimediaServicesHelper(IADLXMultimediaServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -25,18 +30,32 @@ namespace ADLXWrapper
             _services = new ComPtr<IADLXMultimediaServices>(services);
         }
 
+        /// <summary>
+        /// Returns the native multimedia services interface owned by this helper.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXMultimediaServices* GetMultimediaServicesNative()
         {
             ThrowIfDisposed();
             return _services.Get();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the multimedia services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets the multimedia change handling interface (native). Cached after first query.
+        /// </summary>
+        /// <returns>Native multimedia change handling pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXMultimediaChangedHandling* GetMultimediaChangedHandlingNative()
         {
             ThrowIfDisposed();

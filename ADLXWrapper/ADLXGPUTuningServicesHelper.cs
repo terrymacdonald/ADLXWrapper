@@ -17,6 +17,11 @@ namespace ADLXWrapper
         private ComPtr<IADLXGPUTuningChangedHandling>? _changedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a GPU tuning helper from the native services interface, upgrading to v1 when available.
+        /// </summary>
+        /// <param name="services">Native GPU tuning services pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper.</param>
         public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -34,12 +39,22 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the highest available GPU tuning services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets the GPU tuning change handling interface (native). Cached after first query.
+        /// </summary>
+        /// <returns>Native change handling pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLXGPUTuningChangedHandling* GetGPUTuningChangedHandlingNative()
         {
             ThrowIfDisposed();
@@ -62,6 +77,13 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(GetGPUTuningChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Adds a GPU tuning change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked on tuning changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public GpuTuningListenerHandle AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback callback)
         {
             ThrowIfDisposed();
@@ -79,6 +101,11 @@ namespace ADLXWrapper
             return handle;
         }
 
+        /// <summary>
+        /// Removes a GPU tuning change listener.
+        /// </summary>
+        /// <param name="handle">Handle returned by add.</param>
+        /// <param name="disposeHandle">True to dispose the handle after removal.</param>
         public void RemoveGPUTuningEventListener(GpuTuningListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();

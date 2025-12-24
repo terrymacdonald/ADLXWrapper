@@ -16,6 +16,11 @@ namespace ADLXWrapper
         private ComPtr<IADLX3DSettingsChangedHandling>? _changedHandling;
         private bool _disposed;
 
+        /// <summary>
+        /// Creates a 3D settings helper from the native services interface, upgrading to v1/v2 when available.
+        /// </summary>
+        /// <param name="services">Native 3D settings services pointer.</param>
+        /// <param name="addRef">True to AddRef the pointer for this helper.</param>
         public ADLX3DSettingsServicesHelper(IADLX3DSettingsServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
@@ -33,12 +38,22 @@ namespace ADLXWrapper
             return GetHighestServices();
         }
 
+        /// <summary>
+        /// Returns an AddRef'd handle to the highest available 3D settings services interface.
+        /// </summary>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public AdlxInterfaceHandle Get3DSettingsServicesHandle()
         {
             ThrowIfDisposed();
             return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Gets the 3D settings change handling interface (native). Cached after first query.
+        /// </summary>
+        /// <returns>Native 3D settings change handling pointer.</returns>
+        /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public IADLX3DSettingsChangedHandling* Get3DSettingsChangedHandlingNative()
         {
             ThrowIfDisposed();
@@ -61,6 +76,13 @@ namespace ADLXWrapper
             return AdlxInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
         }
 
+        /// <summary>
+        /// Adds a 3D settings change listener.
+        /// </summary>
+        /// <param name="callback">Callback invoked on 3D settings changes.</param>
+        /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
+        /// <exception cref="ADLXException">If registration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
         {
             ThrowIfDisposed();
@@ -99,6 +121,14 @@ namespace ADLXWrapper
             return new All3DSettingsInfo(GetHighestServices(), gpu);
         }
 
+        /// <summary>
+        /// Applies all provided 3D settings to a GPU (only non-null fields are applied).
+        /// </summary>
+        /// <param name="gpu">Native GPU pointer.</param>
+        /// <param name="info">Settings to apply.</param>
+        /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
+        /// <exception cref="ADLXException">If any underlying call fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
         public void ApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
         {
             ThrowIfDisposed();
