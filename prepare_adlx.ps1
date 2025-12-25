@@ -131,6 +131,20 @@ Write-Host "Internet connection verified." -ForegroundColor Green
 Write-Host ""
 
 # ============================================================================
+# ClangSharpPInvokeGenerator Nuget Install
+# ============================================================================
+Write-Host "=== Installing ClangSharpPInvokeGenerator Nuget Package ===" -ForegroundColor Cyan
+
+if ($net10Installed) {
+    Write-Host "Running dotnet tool installer" -ForegroundColor Green
+    dotnet tool install --global ClangSharpPInvokeGenerator
+} else {
+    Write-Host "Skipping ClangSharpPInvokeGenerator installation (requires .NET 10.0 SDK)" -ForegroundColor Yellow
+}
+Write-Host ""
+
+
+# ============================================================================
 # ADLX SDK Download
 # ============================================================================
 Write-Host "=== Checking ADLX SDK ===" -ForegroundColor Cyan
@@ -282,6 +296,7 @@ Write-Host ""
 Write-Host "Summary:" -ForegroundColor Cyan
 Write-Host "  - ADLX SDK location: $destinationFolder" -ForegroundColor Cyan
 Write-Host ""
+
 
 if ($net10Installed) {
     Write-Host "Next steps:" -ForegroundColor Green
