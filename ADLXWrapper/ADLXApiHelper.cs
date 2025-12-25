@@ -77,7 +77,7 @@ namespace ADLXWrapper
         /// </summary>
         public static unsafe ADLXApiHelper Initialize()
         {
-            lock (_sync)
+            using (ADLXSync.EnterWrite())
             {
                 if (_globalRefCount == 0)
                 {
@@ -136,7 +136,7 @@ namespace ADLXWrapper
                 throw new ArgumentException("ADL context and memory free function must not be null");
             }
 
-            lock (_sync)
+            using (ADLXSync.EnterWrite())
             {
                 if (_globalRefCount == 0)
                 {
@@ -248,7 +248,7 @@ namespace ADLXWrapper
             if (_disposed)
                 return;
 
-            lock (_sync)
+            using (ADLXSync.EnterWrite())
             {
                 unsafe
                 {

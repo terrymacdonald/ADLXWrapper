@@ -37,6 +37,7 @@ namespace ADLXWrapper
         public IADLXMultimediaServices* GetMultimediaServicesNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return _services.Get();
         }
 
@@ -47,6 +48,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
         }
 
@@ -59,6 +61,7 @@ namespace ADLXWrapper
         public IADLXMultimediaChangedHandling* GetMultimediaChangedHandlingNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (_changedHandling.HasValue)
                 return _changedHandling.Value.Get();
 
@@ -81,6 +84,7 @@ namespace ADLXWrapper
         public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
             var handling = GetMultimediaChangedHandlingNative();
             var handle = MultimediaListenerHandle.Create(callback);
@@ -96,6 +100,7 @@ namespace ADLXWrapper
         public void RemoveMultimediaEventListener(MultimediaListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid)
                 return;
 
@@ -110,6 +115,7 @@ namespace ADLXWrapper
         public IADLXVideoUpscale* GetVideoUpscaleNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXVideoUpscale* upscale = null;
@@ -125,6 +131,7 @@ namespace ADLXWrapper
         public VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var upscale = new ComPtr<IADLXVideoUpscale>(GetVideoUpscaleNative(gpu));
@@ -134,6 +141,7 @@ namespace ADLXWrapper
         public void SetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (upscale == null) throw new ArgumentNullException(nameof(upscale));
 
             var result = upscale->SetEnabled(enable ? (byte)1 : (byte)0);
@@ -144,6 +152,7 @@ namespace ADLXWrapper
         public void SetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (upscale == null) throw new ArgumentNullException(nameof(upscale));
 
             var result = upscale->SetSharpness(sharpness);
@@ -154,6 +163,7 @@ namespace ADLXWrapper
         public IADLXVideoSuperResolution* GetVideoSuperResolutionNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXVideoSuperResolution* vsr = null;
@@ -169,6 +179,7 @@ namespace ADLXWrapper
         public VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var vsr = new ComPtr<IADLXVideoSuperResolution>(GetVideoSuperResolutionNative(gpu));
@@ -178,6 +189,7 @@ namespace ADLXWrapper
         public void SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (vsr == null) throw new ArgumentNullException(nameof(vsr));
 
             var result = vsr->SetEnabled(enable ? (byte)1 : (byte)0);

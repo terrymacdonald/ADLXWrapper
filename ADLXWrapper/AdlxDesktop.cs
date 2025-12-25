@@ -35,14 +35,22 @@ namespace ADLXWrapper
             _identity = new DesktopInfo(pDesktop);
         }
 
-        public ADLX_DESKTOP_TYPE Type { get { ThrowIfDisposed(); return _identity.Type; } }
-        public int Width { get { ThrowIfDisposed(); return _identity.Width; } }
-        public int Height { get { ThrowIfDisposed(); return _identity.Height; } }
-        public int TopLeftX { get { ThrowIfDisposed(); return _identity.TopLeftX; } }
-        public int TopLeftY { get { ThrowIfDisposed(); return _identity.TopLeftY; } }
-        public ADLX_ORIENTATION Orientation { get { ThrowIfDisposed(); return _identity.Orientation; } }
-        public bool IsEyefinity { get { ThrowIfDisposed(); return _identity.Type == ADLX_DESKTOP_TYPE.DESKTOP_EYEFINITY; } }
-        public DesktopInfo Identity { get { ThrowIfDisposed(); return _identity; } }
+        public ADLX_DESKTOP_TYPE Type { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Type; } }
+        public int Width { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Width; } }
+        public int Height { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Height; } }
+        public int TopLeftX { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.TopLeftX; } }
+        public int TopLeftY { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.TopLeftY; } }
+        public ADLX_ORIENTATION Orientation { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Orientation; } }
+        public bool IsEyefinity { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Type == ADLX_DESKTOP_TYPE.DESKTOP_EYEFINITY; } }
+        public DesktopInfo Identity { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity; } }
 
         /// <summary>
         /// Managed enumeration of display identities on this desktop.
@@ -50,6 +58,7 @@ namespace ADLXWrapper
         public IReadOnlyList<DisplayInfo> EnumerateDisplayInfosForDesktop()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDesktopServicesHelper();
             return helper.EnumerateDesktopDisplays(_desktop.Get());
         }
@@ -60,6 +69,7 @@ namespace ADLXWrapper
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForDesktop()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var desktopHelper = CreateDesktopServicesHelper();
             if (!_displayServices.HasValue || _displayServices.Value.Get() == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services were not provided for this desktop instance");
@@ -91,6 +101,7 @@ namespace ADLXWrapper
         public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDesktopServicesHelper();
             return helper.AddDesktopListEventListener(callback);
         }
@@ -98,6 +109,7 @@ namespace ADLXWrapper
         public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDesktopServicesHelper();
             helper.RemoveDesktopListEventListener(handle, disposeHandle);
@@ -106,6 +118,7 @@ namespace ADLXWrapper
         public DesktopInfo GetDesktopInfo()
         {   
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return _identity;
         }
 
@@ -115,6 +128,7 @@ namespace ADLXWrapper
         public (uint rows, uint cols) GetEyefinityGridSize()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var eyefinity = GetEyefinityDesktop();
             using var helper = CreateDesktopServicesHelper();
             return helper.GetEyefinityGridSize(eyefinity.Get());
@@ -126,6 +140,7 @@ namespace ADLXWrapper
         public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplayInfosForDesktop()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var eyefinity = GetEyefinityDesktop();
             using var helper = CreateDesktopServicesHelper();
             return helper.EnumerateEyefinityDisplays(eyefinity.Get());
@@ -137,6 +152,7 @@ namespace ADLXWrapper
         public ADLXGPU GetGPU()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDesktopServicesHelper();
             using var displayList = new ComPtr<IADLXDisplayList>(helper.GetDesktopDisplayListNative(_desktop.Get()));
             if (displayList.Get()->Size() == 0)
@@ -185,6 +201,7 @@ namespace ADLXWrapper
         public ComPtr<IADLXDisplayList> GetDisplayListNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDesktopServicesHelper();
             return new ComPtr<IADLXDisplayList>(helper.GetDesktopDisplayListNative(_desktop.Get()));
         }

@@ -79,7 +79,10 @@ namespace ADLXWrapper
         public IADLXDisplayServices* GetDisplayServicesNative()
         {
             ThrowIfDisposed();
-            return EnsureDisplayServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureDisplayServices();
+            }
         }
 
         /// <summary>
@@ -118,7 +121,10 @@ namespace ADLXWrapper
         public IADLXDesktopServices* GetDesktopServicesNative()
         {
             ThrowIfDisposed();
-            return EnsureDesktopServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureDesktopServices();
+            }
         }
 
         /// <summary>
@@ -157,7 +163,10 @@ namespace ADLXWrapper
         public IADLX3DSettingsServices* Get3DSettingsServicesNative()
         {
             ThrowIfDisposed();
-            return Ensure3DSettingsServices();
+            using (ADLXSync.EnterRead())
+            {
+                return Ensure3DSettingsServices();
+            }
         }
 
         /// <summary>
@@ -194,7 +203,10 @@ namespace ADLXWrapper
         public IADLXGPUTuningServices* GetGPUTuningServicesNative()
         {
             ThrowIfDisposed();
-            return EnsureGPUTuningServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureGPUTuningServices();
+            }
         }
 
         /// <summary>
@@ -231,7 +243,10 @@ namespace ADLXWrapper
         public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
         {
             ThrowIfDisposed();
-            return EnsurePerformanceMonitoringServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsurePerformanceMonitoringServices();
+            }
         }
 
         /// <summary>
@@ -268,7 +283,10 @@ namespace ADLXWrapper
         public IADLXPowerTuningServices* GetPowerTuningServicesNative()
         {
             ThrowIfDisposed();
-            return EnsurePowerTuningServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsurePowerTuningServices();
+            }
         }
 
         /// <summary>
@@ -305,7 +323,10 @@ namespace ADLXWrapper
         public IADLXMultimediaServices* GetMultimediaServicesNative()
         {
             ThrowIfDisposed();
-            return EnsureMultimediaServices();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureMultimediaServices();
+            }
         }
 
         /// <summary>
@@ -342,7 +363,10 @@ namespace ADLXWrapper
         public IADLXGPUsChangedHandling* GetGPUsChangedHandlingNative()
         {
             ThrowIfDisposed();
-            return EnsureGPUsChangedHandling();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureGPUsChangedHandling();
+            }
         }
 
         /// <summary>
@@ -365,7 +389,10 @@ namespace ADLXWrapper
         public IADLXGPUAppsListChangedHandling* GetGPUAppsListChangedHandlingNative()
         {
             ThrowIfDisposed();
-            return EnsureGPUAppsListChangedHandling();
+            using (ADLXSync.EnterRead())
+            {
+                return EnsureGPUAppsListChangedHandling();
+            }
         }
 
         /// <summary>
@@ -511,6 +538,8 @@ namespace ADLXWrapper
         public IADLXGPUList* EnumerateGPUsNative()
         {
             ThrowIfDisposed();
+            using (ADLXSync.EnterRead())
+            {
             IADLXGPUList* pGpuList = null;
             var result = _system->GetGPUs(&pGpuList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
@@ -519,6 +548,7 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to enumerate GPUs");
 
             return pGpuList; // caller must wrap/dispose
+            }
         }
 
         /// <summary>

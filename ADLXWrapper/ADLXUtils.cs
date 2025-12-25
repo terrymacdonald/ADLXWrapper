@@ -38,8 +38,11 @@ namespace ADLXWrapper
             if (pInterface == IntPtr.Zero)
                 return;
 
-            var iface = (IADLXInterface*)pInterface;
-            iface->Release();
+            using (ADLXSync.EnterRead())
+            {
+                var iface = (IADLXInterface*)pInterface;
+                iface->Release();
+            }
         }
 
         /// <summary>
@@ -51,8 +54,11 @@ namespace ADLXWrapper
             if (pInterface == IntPtr.Zero)
                 throw new ArgumentNullException(nameof(pInterface));
 
-            var iface = (IADLXInterface*)pInterface;
-            iface->Acquire();
+            using (ADLXSync.EnterRead())
+            {
+                var iface = (IADLXInterface*)pInterface;
+                iface->Acquire();
+            }
         }
 
         /// <summary>

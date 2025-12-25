@@ -34,6 +34,7 @@ namespace ADLXWrapper
         public IADLXPowerTuningServices* GetPowerTuningServicesNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return GetHighestServices();
         }
 
@@ -44,6 +45,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetPowerTuningServicesHandle()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
         }
 
@@ -56,6 +58,7 @@ namespace ADLXWrapper
         public bool IsGPUConnectSupported()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
             bool supported = false;
             var result = services1->IsGPUConnectSupported(&supported);
@@ -70,6 +73,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle[] EnumerateGPUConnectGpuHandles()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
 
             IADLXGPU2List* pList = null;
@@ -100,6 +104,7 @@ namespace ADLXWrapper
         public IADLXGPU2List* GetGPUConnectGpuListNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
 
             IADLXGPU2List* pList = null;
@@ -115,6 +120,7 @@ namespace ADLXWrapper
         public IADLXPowerTuningChangedHandling* GetPowerTuningChangedHandlingNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (_changedHandling.HasValue)
                 return _changedHandling.Value.Get();
 
@@ -147,6 +153,7 @@ namespace ADLXWrapper
         public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             var handling = GetPowerTuningChangedHandlingNative();
@@ -164,6 +171,7 @@ namespace ADLXWrapper
         public void RemovePowerTuningEventListener(PowerTuningListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
 
             var handling = GetPowerTuningChangedHandlingNative();
@@ -183,6 +191,7 @@ namespace ADLXWrapper
         public SmartShiftMaxInfo GetSmartShiftMax()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
             return new SmartShiftMaxInfo(ssm.Get());
         }
@@ -196,6 +205,7 @@ namespace ADLXWrapper
         public IADLXSmartShiftMax* GetSmartShiftMaxNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             IADLXSmartShiftMax* ssm = null;
             var result = GetHighestServices()->GetSmartShiftMax(&ssm);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || ssm == null)
@@ -208,6 +218,7 @@ namespace ADLXWrapper
         public void ApplySmartShiftMax(SmartShiftMaxInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
             if (!info.IsSupported) return;
             SetSmartShiftMaxBias(ssm.Get(), info.BiasMode, info.BiasValue);
@@ -221,6 +232,7 @@ namespace ADLXWrapper
         public SmartShiftEcoInfo GetSmartShiftEco()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
             IADLXSmartShiftEco* eco = null;
             var result = services1->GetSmartShiftEco(&eco);
@@ -235,6 +247,7 @@ namespace ADLXWrapper
         public void ApplySmartShiftEco(SmartShiftEcoInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
             IADLXSmartShiftEco* eco = null;
             var result = services1->GetSmartShiftEco(&eco);
@@ -250,6 +263,7 @@ namespace ADLXWrapper
         public ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (tuningServices == null) throw new ArgumentNullException(nameof(tuningServices));
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
@@ -266,6 +280,7 @@ namespace ADLXWrapper
         public void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (manualPower == null) throw new ArgumentNullException(nameof(manualPower));
 
             if (info.PowerLimitSupported)
@@ -283,6 +298,7 @@ namespace ADLXWrapper
         public void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (tuningServices == null) throw new ArgumentNullException(nameof(tuningServices));
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 

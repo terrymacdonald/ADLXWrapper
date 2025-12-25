@@ -37,17 +37,28 @@ namespace ADLXWrapper
             _identity = new GpuInfo(pGpu);
         }
 
-        public GpuInfo Identity { get { ThrowIfDisposed(); return _identity; } }
-        public string Name { get { ThrowIfDisposed(); return _identity.Name; } }
-        public string VendorId { get { ThrowIfDisposed(); return _identity.VendorId; } }
-        public int UniqueId { get { ThrowIfDisposed(); return _identity.UniqueId; } }
-        public uint TotalVRAM { get { ThrowIfDisposed(); return _identity.TotalVRAM; } }
-        public string VRAMType { get { ThrowIfDisposed(); return _identity.VRAMType; } }
-        public bool IsExternal { get { ThrowIfDisposed(); return _identity.IsExternal; } }
-        public bool HasDesktops { get { ThrowIfDisposed(); return _identity.HasDesktops; } }
-        public string DeviceId { get { ThrowIfDisposed(); return _identity.DeviceId; } }
-        public string PNPString { get { ThrowIfDisposed(); return _identity.PNPString; } }
-        public string DriverPath { get { ThrowIfDisposed(); return _identity.DriverPath; } }
+        public GpuInfo Identity { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity; } }
+        public string Name { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Name; } }
+        public string VendorId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.VendorId; } }
+        public int UniqueId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.UniqueId; } }
+        public uint TotalVRAM { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.TotalVRAM; } }
+        public string VRAMType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.VRAMType; } }
+        public bool IsExternal { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.IsExternal; } }
+        public bool HasDesktops { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.HasDesktops; } }
+        public string DeviceId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.DeviceId; } }
+        public string PNPString { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.PNPString; } }
+        public string DriverPath { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.DriverPath; } }
 
         /// <summary>
         /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
@@ -55,6 +66,7 @@ namespace ADLXWrapper
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var displayHelper = CreateDisplayServicesHelper();
             return displayHelper.EnumerateADLXDisplaysForGpu(_identity.UniqueId);
         }
@@ -65,6 +77,7 @@ namespace ADLXWrapper
         public IReadOnlyList<ADLXDesktop> EnumerateDesktopsForGPU()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var desktopHelper = CreateDesktopServicesHelper();
             return desktopHelper.EnumerateADLXDesktopsForGpu(_identity.UniqueId);
         }
@@ -75,6 +88,7 @@ namespace ADLXWrapper
         public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplayListEventListener(callback);
         }
@@ -87,6 +101,7 @@ namespace ADLXWrapper
         public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplayListEventListener(handle, disposeHandle);
@@ -98,6 +113,7 @@ namespace ADLXWrapper
         public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDesktopServicesHelper();
             return helper.AddDesktopListEventListener(callback);
         }
@@ -110,6 +126,7 @@ namespace ADLXWrapper
         public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDesktopServicesHelper();
             helper.RemoveDesktopListEventListener(handle, disposeHandle);

@@ -35,18 +35,30 @@ namespace ADLXWrapper
             _identity = new DisplayInfo(pDisplay);
         }
 
-        public string Name { get { ThrowIfDisposed(); return _identity.Name; } }
-        public string Edid { get { ThrowIfDisposed(); return _identity.Edid; } }
-        public int Width { get { ThrowIfDisposed(); return _identity.Width; } }
-        public int Height { get { ThrowIfDisposed(); return _identity.Height; } }
-        public double RefreshRate { get { ThrowIfDisposed(); return _identity.RefreshRate; } }
-        public uint ManufacturerId { get { ThrowIfDisposed(); return _identity.ManufacturerID; } }
-        public uint PixelClock { get { ThrowIfDisposed(); return _identity.PixelClock; } }
-        public ADLX_DISPLAY_TYPE Type { get { ThrowIfDisposed(); return _identity.Type; } }
-        public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get { ThrowIfDisposed(); return _identity.ConnectorType; } }
-        public ADLX_DISPLAY_SCAN_TYPE ScanType { get { ThrowIfDisposed(); return _identity.ScanType; } }
-        public ulong UniqueId { get { ThrowIfDisposed(); return _identity.UniqueId; } }
-        public int GpuUniqueId { get { ThrowIfDisposed(); return _identity.GpuUniqueId; } }
+        public string Name { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Name; } }
+        public string Edid { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Edid; } }
+        public int Width { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Width; } }
+        public int Height { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Height; } }
+        public double RefreshRate { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.RefreshRate; } }
+        public uint ManufacturerId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.ManufacturerID; } }
+        public uint PixelClock { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.PixelClock; } }
+        public ADLX_DISPLAY_TYPE Type { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Type; } }
+        public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.ConnectorType; } }
+        public ADLX_DISPLAY_SCAN_TYPE ScanType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.ScanType; } }
+        public ulong UniqueId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.UniqueId; } }
+        public int GpuUniqueId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.GpuUniqueId; } }
 
         /// <summary>
         /// Query FreeSync support/enabled state.
@@ -54,6 +66,7 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetFreeSyncState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
         }
 
@@ -64,6 +77,7 @@ namespace ADLXWrapper
         public void SetFreeSync(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetFreeSyncEnabled(_display.Get(), enable);
         }
 
@@ -73,6 +87,7 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetGpuScalingState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
         }
 
@@ -83,6 +98,7 @@ namespace ADLXWrapper
         public void SetGpuScaling(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetGPUScalingEnabled(_display.Get(), enable);
         }
 
@@ -92,12 +108,14 @@ namespace ADLXWrapper
         public (bool supported, ADLX_SCALE_MODE mode) GetScalingMode()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetScalingMode(_display.Get());
         }
 
         public DisplayInfo GetDisplayInfo()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return _identity;
         }
 
@@ -108,6 +126,7 @@ namespace ADLXWrapper
         public void SetScalingMode(ADLX_SCALE_MODE mode)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetScalingMode(_display.Get(), mode);
         }
 
@@ -117,6 +136,7 @@ namespace ADLXWrapper
         public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.EnumerateCustomResolutions(_display.Get());
         }
@@ -127,6 +147,7 @@ namespace ADLXWrapper
         public ComPtr<IADLXDisplayResolutionList> GetCustomResolutionListNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return new ComPtr<IADLXDisplayResolutionList>(helper.GetCustomResolutionListNative(_display.Get()));
         }
@@ -137,12 +158,14 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetVirtualSuperResolutionState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetVirtualSuperResolutionState(_display.Get());
         }
 
         public void SetVirtualSuperResolution(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetVirtualSuperResolutionEnabled(_display.Get(), enable);
         }
 
@@ -152,12 +175,14 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetIntegerScalingState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetIntegerScalingState(_display.Get());
         }
 
         public void SetIntegerScaling(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetIntegerScalingEnabled(_display.Get(), enable);
         }
 
@@ -167,12 +192,14 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetHdcpState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetHDCPState(_display.Get());
         }
 
         public void SetHdcp(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetHDCPEnabled(_display.Get(), enable);
         }
 
@@ -182,12 +209,14 @@ namespace ADLXWrapper
         public (bool supported, bool enabled, VariBrightMode mode) GetVariBrightState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetVariBrightState(_display.Get());
         }
 
         public void SetVariBright(bool enable, VariBrightMode mode)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetVariBright(_display.Get(), enable, mode);
         }
 
@@ -197,12 +226,14 @@ namespace ADLXWrapper
         public (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetColorDepthState(_display.Get());
         }
 
         public void SetColorDepth(ADLX_COLOR_DEPTH depth)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetColorDepth(_display.Get(), depth);
         }
 
@@ -212,12 +243,14 @@ namespace ADLXWrapper
         public (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return CreateDisplayServicesHelper().GetPixelFormatState(_display.Get());
         }
 
         public void SetPixelFormat(ADLX_PIXEL_FORMAT format)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             CreateDisplayServicesHelper().SetPixelFormat(_display.Get(), format);
         }
 
@@ -227,6 +260,7 @@ namespace ADLXWrapper
         public CustomColorInfo GetCustomColor()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetCustomColor(_display.Get());
         }
@@ -234,6 +268,7 @@ namespace ADLXWrapper
         public void ApplyCustomColor(CustomColorInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ApplyCustomColor(_display.Get(), info);
         }
@@ -244,6 +279,7 @@ namespace ADLXWrapper
         public GammaInfo GetGamma()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetGamma(_display.Get());
         }
@@ -251,6 +287,7 @@ namespace ADLXWrapper
         public void ReapplyGamma()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ReapplyGamma(_display.Get());
         }
@@ -261,6 +298,7 @@ namespace ADLXWrapper
         public GamutInfo GetGamut()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetGamut(_display.Get());
         }
@@ -268,6 +306,7 @@ namespace ADLXWrapper
         public void ReapplyGamut()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ReapplyGamut(_display.Get());
         }
@@ -278,6 +317,7 @@ namespace ADLXWrapper
         public ThreeDLUTInfo GetThreeDLut()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetThreeDLut(_display.Get());
         }
@@ -285,6 +325,7 @@ namespace ADLXWrapper
         public void ReapplyThreeDLut()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ReapplyThreeDLut(_display.Get());
         }
@@ -295,6 +336,7 @@ namespace ADLXWrapper
         public ConnectivityExperienceInfo GetConnectivityExperience()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetConnectivityExperience(_display.Get());
         }
@@ -302,6 +344,7 @@ namespace ADLXWrapper
         public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ApplyConnectivityExperience(_display.Get(), info);
         }
@@ -312,6 +355,7 @@ namespace ADLXWrapper
         public (bool supported, bool blanked) GetDisplayBlankingState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetDisplayBlankingState(_display.Get());
         }
@@ -319,6 +363,7 @@ namespace ADLXWrapper
         public void SetDisplayBlanked(bool enabled)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.SetDisplayBlanked(_display.Get(), enabled);
         }
@@ -329,6 +374,7 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetFreeSyncColorAccuracyState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetFreeSyncColorAccuracyState(_display.Get());
         }
@@ -336,6 +382,7 @@ namespace ADLXWrapper
         public void SetFreeSyncColorAccuracy(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.SetFreeSyncColorAccuracyEnabled(_display.Get(), enable);
         }
@@ -346,6 +393,7 @@ namespace ADLXWrapper
         public (bool supported, bool enabled) GetDynamicRefreshRateControlState()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.GetDynamicRefreshRateControlState(_display.Get());
         }
@@ -353,6 +401,7 @@ namespace ADLXWrapper
         public void SetDynamicRefreshRateControl(bool enable)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.SetDynamicRefreshRateControlEnabled(_display.Get(), enable);
         }
@@ -363,6 +412,7 @@ namespace ADLXWrapper
         public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplaySettingsEventListener(callback);
         }
@@ -370,6 +420,7 @@ namespace ADLXWrapper
         public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplaySettingsEventListener(handle, disposeHandle);
@@ -381,6 +432,7 @@ namespace ADLXWrapper
         public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplayGammaEventListener(callback);
         }
@@ -388,6 +440,7 @@ namespace ADLXWrapper
         public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplayGammaEventListener(handle, disposeHandle);
@@ -399,6 +452,7 @@ namespace ADLXWrapper
         public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplayGamutEventListener(callback);
         }
@@ -406,6 +460,7 @@ namespace ADLXWrapper
         public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplayGamutEventListener(handle, disposeHandle);
@@ -417,6 +472,7 @@ namespace ADLXWrapper
         public Display3DLutListenerHandle AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplay3DLutEventListener(callback);
         }
@@ -424,6 +480,7 @@ namespace ADLXWrapper
         public void RemoveDisplay3dLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplay3DLutEventListener(handle, disposeHandle);
@@ -435,6 +492,7 @@ namespace ADLXWrapper
         public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             return helper.AddDisplayListEventListener(callback);
         }
@@ -442,6 +500,7 @@ namespace ADLXWrapper
         public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
             using var helper = CreateDisplayServicesHelper();
             helper.RemoveDisplayListEventListener(handle, disposeHandle);
@@ -453,6 +512,7 @@ namespace ADLXWrapper
         public ADLXGPU GetGPU()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             IADLXGPU* pGpu = null;
             var result = _display.Get()->GetGPU(&pGpu);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpu == null)
@@ -470,6 +530,7 @@ namespace ADLXWrapper
         public ADLXDesktop GetDesktop()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (!_desktopServices.HasValue || _desktopServices.Value.Get() == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services were not provided for this display instance");
 

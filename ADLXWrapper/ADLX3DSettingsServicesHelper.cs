@@ -35,6 +35,7 @@ namespace ADLXWrapper
         public IADLX3DSettingsServices* Get3DSettingsServicesNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return GetHighestServices();
         }
 
@@ -45,6 +46,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle Get3DSettingsServicesHandle()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
         }
 
@@ -57,6 +59,7 @@ namespace ADLXWrapper
         public IADLX3DSettingsChangedHandling* Get3DSettingsChangedHandlingNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (_changedHandling.HasValue)
                 return _changedHandling.Value.Get();
 
@@ -86,6 +89,7 @@ namespace ADLXWrapper
         public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             var handling = Get3DSettingsChangedHandlingNative();
@@ -103,6 +107,7 @@ namespace ADLXWrapper
         public void Remove3DSettingsEventListener(ThreeDSettingsListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
 
             var handling = Get3DSettingsChangedHandlingNative();
@@ -117,6 +122,7 @@ namespace ADLXWrapper
         public All3DSettingsInfo GetAll3DSettings(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             return new All3DSettingsInfo(GetHighestServices(), gpu);
         }
@@ -132,6 +138,7 @@ namespace ADLXWrapper
         public void ApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             var services = GetHighestServices();
             if (info.AntiLag.HasValue) ApplyAntiLag(services, gpu, info.AntiLag.Value);

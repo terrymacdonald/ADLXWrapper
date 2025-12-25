@@ -36,6 +36,7 @@ namespace ADLXWrapper
         public IADLXGPUTuningServices* GetGPUTuningServicesNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return GetHighestServices();
         }
 
@@ -46,6 +47,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
         }
 
@@ -58,6 +60,7 @@ namespace ADLXWrapper
         public IADLXGPUTuningChangedHandling* GetGPUTuningChangedHandlingNative()
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (_changedHandling.HasValue)
                 return _changedHandling.Value.Get();
 
@@ -87,6 +90,7 @@ namespace ADLXWrapper
         public GpuTuningListenerHandle AddGPUTuningEventListener(GpuTuningListenerHandle.GpuTuningChangedCallback callback)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             var handling = GetGPUTuningChangedHandlingNative();
@@ -109,6 +113,7 @@ namespace ADLXWrapper
         public void RemoveGPUTuningEventListener(GpuTuningListenerHandle handle, bool disposeHandle = true)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (handle == null || handle.IsInvalid) return;
 
             var handling = GetGPUTuningChangedHandlingNative();
@@ -123,6 +128,7 @@ namespace ADLXWrapper
         public GpuTuningCapabilitiesInfo GetCapabilities(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             return new GpuTuningCapabilitiesInfo(GetHighestServices(), gpu);
         }
@@ -130,6 +136,7 @@ namespace ADLXWrapper
         public bool IsAutoTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -144,6 +151,7 @@ namespace ADLXWrapper
         public bool IsPresetTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -158,6 +166,7 @@ namespace ADLXWrapper
         public bool IsManualGfxTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -172,6 +181,7 @@ namespace ADLXWrapper
         public bool IsManualVramTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -186,6 +196,7 @@ namespace ADLXWrapper
         public bool IsManualFanTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -200,6 +211,7 @@ namespace ADLXWrapper
         public bool IsManualPowerTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported = false;
@@ -214,6 +226,7 @@ namespace ADLXWrapper
         public ManualFanTuningInfo GetManualFanTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXInterface* manualFan = null;
@@ -229,6 +242,7 @@ namespace ADLXWrapper
         public ManualVramTuningInfo GetManualVramTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXInterface* manualVram = null;
@@ -244,6 +258,7 @@ namespace ADLXWrapper
         public ManualGfxTuningInfo GetManualGfxTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXInterface* manualGfx = null;
@@ -259,6 +274,7 @@ namespace ADLXWrapper
         public PresetTuningInfo GetPresetTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             IADLXInterface* preset = null;

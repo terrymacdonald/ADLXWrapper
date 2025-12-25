@@ -20,11 +20,14 @@ namespace ADLXWrapper
         public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
-            if (addRef)
+            using (ADLXSync.EnterRead())
             {
-                ADLXUtils.AddRefInterface((IntPtr)services);
+                if (addRef)
+                {
+                    ADLXUtils.AddRefInterface((IntPtr)services);
+                }
+                _services = new ComPtr<IADLXPerformanceMonitoringServices>(services);
             }
-            _services = new ComPtr<IADLXPerformanceMonitoringServices>(services);
         }
 
         /// <summary>
@@ -34,7 +37,10 @@ namespace ADLXWrapper
         public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
         {
             ThrowIfDisposed();
-            return _services.Get();
+            using (ADLXSync.EnterRead())
+            {
+                return _services.Get();
+            }
         }
 
         /// <summary>
@@ -44,7 +50,10 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             ThrowIfDisposed();
-            return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+            using (ADLXSync.EnterRead())
+            {
+                return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+            }
         }
 
         /// <summary>
@@ -60,14 +69,17 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            IADLXGPUMetricsSupport* support = null;
-            var result = _services.Get()->GetSupportedGPUMetrics(gpu, &support);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || support == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics support not available for this GPU");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get GPU metrics support");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXGPUMetricsSupport* support = null;
+                var result = _services.Get()->GetSupportedGPUMetrics(gpu, &support);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || support == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics support not available for this GPU");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get GPU metrics support");
 
-            return support; // caller wraps/disposes
+                return support; // caller wraps/disposes
+            }
         }
 
         /// <summary>
@@ -100,14 +112,17 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            IADLXGPUMetrics* metrics = null;
-            var result = _services.Get()->GetCurrentGPUMetrics(gpu, &metrics);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics not supported for this GPU");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get current GPU metrics");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXGPUMetrics* metrics = null;
+                var result = _services.Get()->GetCurrentGPUMetrics(gpu, &metrics);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics not supported for this GPU");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get current GPU metrics");
 
-            return metrics; // caller wraps/disposes
+                return metrics; // caller wraps/disposes
+            }
         }
 
         /// <summary>
@@ -136,14 +151,17 @@ namespace ADLXWrapper
         public IADLXSystemMetrics* GetCurrentSystemMetricsNative()
         {
             ThrowIfDisposed();
-            IADLXSystemMetrics* metrics = null;
-            var result = _services.Get()->GetCurrentSystemMetrics(&metrics);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get current system metrics");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXSystemMetrics* metrics = null;
+                var result = _services.Get()->GetCurrentSystemMetrics(&metrics);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics not supported by this ADLX system");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get current system metrics");
 
-            return metrics; // caller wraps/disposes
+                return metrics; // caller wraps/disposes
+            }
         }
 
         /// <summary>
@@ -168,14 +186,17 @@ namespace ADLXWrapper
         public IADLXAllMetrics* GetCurrentAllMetricsNative()
         {
             ThrowIfDisposed();
-            IADLXAllMetrics* metrics = null;
-            var result = _services.Get()->GetCurrentAllMetrics(&metrics);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get current all metrics");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXAllMetrics* metrics = null;
+                var result = _services.Get()->GetCurrentAllMetrics(&metrics);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics not supported by this ADLX system");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get current all metrics");
 
-            return metrics; // caller wraps/disposes
+                return metrics; // caller wraps/disposes
+            }
         }
 
         /// <summary>
@@ -196,14 +217,17 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            IADLXGPUMetricsList* list = null;
-            var result = _services.Get()->GetGPUMetricsHistory(gpu, startMs, stopMs, &list);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics history not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get GPU metrics history");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXGPUMetricsList* list = null;
+                var result = _services.Get()->GetGPUMetricsHistory(gpu, startMs, stopMs, &list);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics history not supported by this ADLX system");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get GPU metrics history");
 
-            return list; // caller wraps/disposes
+                return list; // caller wraps/disposes
+            }
         }
 
         public IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
@@ -228,14 +252,17 @@ namespace ADLXWrapper
         public IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
         {
             ThrowIfDisposed();
-            IADLXSystemMetricsList* list = null;
-            var result = _services.Get()->GetSystemMetricsHistory(startMs, stopMs, &list);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics history not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to get system metrics history");
+            using (ADLXSync.EnterRead())
+            {
+                IADLXSystemMetricsList* list = null;
+                var result = _services.Get()->GetSystemMetricsHistory(startMs, stopMs, &list);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics history not supported by this ADLX system");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get system metrics history");
 
-            return list; // caller wraps/disposes
+                return list; // caller wraps/disposes
+            }
         }
 
         public IEnumerable<SystemMetricsSnapshotInfo> EnumerateSystemMetricsHistory(int startMs, int stopMs)
@@ -386,7 +413,10 @@ namespace ADLXWrapper
         public PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings()
         {
             ThrowIfDisposed();
-            return new PerformanceMonitoringSettingsInfo(_services.Get());
+            using (ADLXSync.EnterRead())
+            {
+                return new PerformanceMonitoringSettingsInfo(_services.Get());
+            }
         }
 
         public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo info)
