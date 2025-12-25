@@ -18,16 +18,25 @@ namespace ADLXWrapper
 
 		public bool IsInvalid => _ptr == IntPtr.Zero;
 
-		public static AdlxInterfaceHandle From(void* ptr, bool addRef = true)
-		{
-			if (ptr == null) throw new ArgumentNullException(nameof(ptr));
-			var intPtr = (IntPtr)ptr;
-			if (addRef)
-			{
-				ADLXUtils.AddRefInterface(intPtr);
-			}
-			return new AdlxInterfaceHandle(intPtr, owns: true);
-		}
+        public static AdlxInterfaceHandle From(void* ptr, bool addRef = true)
+        {
+            if (ptr == null) throw new ArgumentNullException(nameof(ptr));
+            var intPtr = (IntPtr)ptr;
+            if (addRef)
+            {
+                ADLXUtils.AddRefInterface(intPtr);
+            }
+            return new AdlxInterfaceHandle(intPtr, owns: true);
+        }
+
+        /// <summary>
+        /// Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).
+        /// </summary>
+        public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)
+        {
+            if (ptr == null) throw new ArgumentNullException(nameof(ptr));
+            return new AdlxInterfaceHandle((IntPtr)ptr, owns: false);
+        }
 
 		public T* As<T>() where T : unmanaged => (T*)_ptr;
 

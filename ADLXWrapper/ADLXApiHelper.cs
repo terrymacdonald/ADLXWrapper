@@ -53,13 +53,13 @@ namespace ADLXWrapper
     {
         private static readonly object _sync = new();
         private static int _globalRefCount;
-        private static ComPtr<IADLXSystem> _sharedSystem;
+        private static unsafe IADLXSystem* _sharedSystem;
         private static IntPtr _sharedDll;
         private static ADLXNative.ADLXTerminate_Fn? _sharedTerminateFn;
         private static ulong _sharedFullVersion;
         private static string? _sharedVersion;
 
-        private ComPtr<IADLXSystem> _systemServices;
+        private unsafe IADLXSystem* _systemServices;
         private bool _disposed;
 
         private ulong _fullVersion;
@@ -67,7 +67,7 @@ namespace ADLXWrapper
 
         private unsafe ADLXApiHelper(IADLXSystem* pSystemServices, ulong fullVersion, string? version)
         {
-            _systemServices = new ComPtr<IADLXSystem>(pSystemServices);
+            _systemServices = pSystemServices;
             _fullVersion = fullVersion;
             _version = version;
         }
@@ -118,13 +118,11 @@ namespace ADLXWrapper
                         ? Marshal.PtrToStringAnsi((IntPtr)pVersion)
                         : null;
 
-                    _sharedSystem = new ComPtr<IADLXSystem>((IADLXSystem*)pSystem);
+                    _sharedSystem = (IADLXSystem*)pSystem;
                 }
 
-                // AddRef for this instance
-                ADLXUtils.AddRefInterface((IntPtr)_sharedSystem.Get());
                 _globalRefCount++;
-                return new ADLXApiHelper(_sharedSystem.Get(), _sharedFullVersion, _sharedVersion);
+                return new ADLXApiHelper(_sharedSystem, _sharedFullVersion, _sharedVersion);
             }
         }
 
@@ -180,12 +178,11 @@ namespace ADLXWrapper
                         ? Marshal.PtrToStringAnsi((IntPtr)pVersion)
                         : null;
 
-                    _sharedSystem = new ComPtr<IADLXSystem>((IADLXSystem*)pSystem);
+                    _sharedSystem = (IADLXSystem*)pSystem;
                 }
 
-                ADLXUtils.AddRefInterface((IntPtr)_sharedSystem.Get());
                 _globalRefCount++;
-                return new ADLXApiHelper(_sharedSystem.Get(), _sharedFullVersion, _sharedVersion);
+                return new ADLXApiHelper(_sharedSystem, _sharedFullVersion, _sharedVersion);
             }
         }
 
@@ -214,7 +211,7 @@ namespace ADLXWrapper
         public unsafe IADLXSystem* GetSystemServicesNative()
         {
             ThrowIfDisposed();
-            return _systemServices.Get();
+            return _systemServices;
         }
 
         /// <summary>
@@ -223,9 +220,8 @@ namespace ADLXWrapper
         public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
-            var ptr = _systemServices.Get();
-            ADLXUtils.AddRefInterface((IntPtr)ptr);
-            return AdlxInterfaceHandle.From(ptr, addRef: false);
+            var ptr = _systemServices;
+            return AdlxInterfaceHandle.FromNonRefCounted(ptr);
         }
 
         /// <summary>
@@ -234,8 +230,7 @@ namespace ADLXWrapper
         public unsafe ADLXSystemServicesHelper GetSystemServices()
         {
             ThrowIfDisposed();
-            var ptr = _systemServices.Get();
-            ADLXUtils.AddRefInterface((IntPtr)ptr);
+            var ptr = _systemServices;
             return new ADLXSystemServicesHelper(ptr, addRef: false);
         }
 
@@ -248,7 +243,7 @@ namespace ADLXWrapper
             GC.SuppressFinalize(this);
         }
 
-        private void Dispose(bool disposing)
+        private unsafe void Dispose(bool disposing)
         {
             if (_disposed)
                 return;
@@ -257,22 +252,10 @@ namespace ADLXWrapper
             {
                 unsafe
                 {
-                    if (_systemServices.Get() != null)
-                    {
-                        try
-                        {
-                            _systemServices.Dispose(); // Release this instance's ref
-                        }
-                        catch
-                        {
-                            // ignore release errors during cleanup
-                        }
-                    }
-
                     _globalRefCount--;
                     if (_globalRefCount == 0)
                     {
-                        if (_sharedTerminateFn != null && _sharedSystem.Get() != null)
+                        if (_sharedTerminateFn != null && _sharedSystem != null)
                         {
                             try
                             {
@@ -281,18 +264,6 @@ namespace ADLXWrapper
                             catch
                             {
                                 // Ignore errors during cleanup
-                            }
-                        }
-
-                        if (_sharedSystem.Get() != null)
-                        {
-                            try
-                            {
-                                _sharedSystem.Dispose();
-                            }
-                            catch
-                            {
-                                // ignore release errors during cleanup
                             }
                         }
 
@@ -305,12 +276,12 @@ namespace ADLXWrapper
                         _sharedTerminateFn = null;
                         _sharedFullVersion = 0;
                         _sharedVersion = null;
-                        _sharedSystem = default;
+                        _sharedSystem = null;
                     }
                 }
             }
             
-            _systemServices = default; // Clear the ComPtr
+            _systemServices = null;
             _disposed = true;
         }
 

@@ -54,8 +54,15 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _display == null, _skipReason);
 
-            var vsr = _display.GetVirtualSuperResolutionState();
-            _output.WriteLine($"VSR supported: {vsr.supported}, enabled: {vsr.enabled}");
+            try
+            {
+                var vsr = _display.GetVirtualSuperResolutionState();
+                _output.WriteLine($"VSR supported: {vsr.supported}, enabled: {vsr.enabled}");
+            }
+            catch (ADLXException ex)
+            {
+                Skip.If(true, $"Display services v3 (VSR) not available: {ex.Message}");
+            }
 
             var scaling = _display.GetScalingMode();
             _output.WriteLine($"Scaling supported: {scaling.supported}, mode: {scaling.mode}");

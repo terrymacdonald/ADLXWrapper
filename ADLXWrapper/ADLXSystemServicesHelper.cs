@@ -9,7 +9,7 @@ namespace ADLXWrapper
     /// </summary>
     public sealed unsafe class ADLXSystemServicesHelper : IDisposable
     {
-        private ComPtr<IADLXSystem> _system;
+        private readonly IADLXSystem* _system;
         private ComPtr<IADLXSystem1>? _system1;
         private ComPtr<IADLXSystem2>? _system2;
         private ComPtr<IADLXDisplayServices>? _displayServices;
@@ -27,15 +27,12 @@ namespace ADLXWrapper
         /// Creates a system-services helper from an ADLX system pointer.
         /// </summary>
         /// <param name="system">Native ADLX system pointer.</param>
-        /// <param name="addRef">True to AddRef the pointer for this helper; false if ownership is already managed.</param>
-        public ADLXSystemServicesHelper(IADLXSystem* system, bool addRef = true)
+        /// <param name="addRef">Ignored; kept for API compatibility. IADLXSystem is not ref-counted.</param>
+        public ADLXSystemServicesHelper(IADLXSystem* system, bool addRef = false)
         {
             if (system == null) throw new ArgumentNullException(nameof(system));
-            if (addRef)
-            {
-                ADLXUtils.AddRefInterface((IntPtr)system);
-            }
-            _system = new ComPtr<IADLXSystem>(system);
+            // IADLXSystem is a singleton and not ref-counted; do not AddRef/Release.
+            _system = system;
         }
 
         /// <summary>
@@ -59,7 +56,7 @@ namespace ADLXWrapper
                 return (IADLXSystem*)system1;
             }
 
-            return _system.Get();
+            return _system;
         }
 
         /// <summary>
@@ -70,7 +67,7 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
-            return AdlxInterfaceHandle.From(GetSystemServicesNative(), addRef: true);
+            return AdlxInterfaceHandle.FromNonRefCounted(GetSystemServicesNative());
         }
 
         /// <summary>
@@ -395,7 +392,7 @@ namespace ADLXWrapper
             var desktopServices = GetDesktopServicesNative();
 
             IADLXGPUList* pGpuList = null;
-            var result = _system.Get()->GetGPUs(&pGpuList);
+            var result = _system->GetGPUs(&pGpuList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -450,7 +447,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             IADLXGPUList* pGpuList = null;
-            var result = _system.Get()->GetGPUs(&pGpuList);
+            var result = _system->GetGPUs(&pGpuList);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate GPUs");
 
@@ -515,7 +512,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             IADLXGPUList* pGpuList = null;
-            var result = _system.Get()->GetGPUs(&pGpuList);
+            var result = _system->GetGPUs(&pGpuList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -541,7 +538,6 @@ namespace ADLXWrapper
             _displayServices?.Dispose();
             _system2?.Dispose();
             _system1?.Dispose();
-            _system.Dispose();
             _disposed = true;
             GC.SuppressFinalize(this);
         }
@@ -568,7 +564,7 @@ namespace ADLXWrapper
                 return _displayServices.Value.Get();
 
             IADLXDisplayServices* services = null;
-            var result = _system.Get()->GetDisplaysServices(&services);
+            var result = _system->GetDisplaysServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -584,7 +580,7 @@ namespace ADLXWrapper
                 return _desktopServices.Value.Get();
 
             IADLXDesktopServices* services = null;
-            var result = _system.Get()->GetDesktopsServices(&services);
+            var result = _system->GetDesktopsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -600,7 +596,7 @@ namespace ADLXWrapper
                 return _threeDSettingsServices.Value.Get();
 
             IADLX3DSettingsServices* services = null;
-            var result = _system.Get()->Get3DSettingsServices(&services);
+            var result = _system->Get3DSettingsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -616,7 +612,7 @@ namespace ADLXWrapper
                 return _gpuTuningServices.Value.Get();
 
             IADLXGPUTuningServices* services = null;
-            var result = _system.Get()->GetGPUTuningServices(&services);
+            var result = _system->GetGPUTuningServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -632,7 +628,7 @@ namespace ADLXWrapper
                 return _performanceMonitoringServices.Value.Get();
 
             IADLXPerformanceMonitoringServices* services = null;
-            var result = _system.Get()->GetPerformanceMonitoringServices(&services);
+            var result = _system->GetPerformanceMonitoringServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance monitoring services not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -692,7 +688,7 @@ namespace ADLXWrapper
                 return _gpusChangedHandling.Value.Get();
 
             IADLXGPUsChangedHandling* handling = null;
-            var result = _system.Get()->GetGPUsChangedHandling(&handling);
+            var result = _system->GetGPUsChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU change handling not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
@@ -724,7 +720,7 @@ namespace ADLXWrapper
             if (_system1.HasValue)
                 return _system1.Value.Get();
 
-            if (!ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem1), out var pSystem1))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "IADLXSystem1 is not supported by this ADLX system");
 
             _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
@@ -739,7 +735,7 @@ namespace ADLXWrapper
                 return system1 != null;
             }
 
-            if (ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem1), out var pSystem1))
+            if (ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem1), out var pSystem1))
             {
                 _system1 = new ComPtr<IADLXSystem1>((IADLXSystem1*)pSystem1);
                 system1 = _system1.Value.Get();
@@ -755,7 +751,7 @@ namespace ADLXWrapper
             if (_system2.HasValue)
                 return _system2.Value.Get();
 
-            if (!ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem2), out var pSystem2))
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Extended system services not supported by this ADLX system");
 
             _system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
@@ -770,7 +766,7 @@ namespace ADLXWrapper
                 return system2 != null;
             }
 
-            if (ADLXUtils.TryQueryInterface((IntPtr)_system.Get(), nameof(IADLXSystem2), out var pSystem2))
+            if (ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem2), out var pSystem2))
             {
                 _system2 = new ComPtr<IADLXSystem2>((IADLXSystem2*)pSystem2);
                 system2 = _system2.Value.Get();

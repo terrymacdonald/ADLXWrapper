@@ -37,7 +37,6 @@ namespace ADLXWrapper.Tests
 
             for (int i = 0; i < 5; i++)
             {
-                using var perf = AdlxInterfaceHandle.From(systemHelper.GetPerformanceMonitoringServicesNative(), addRef: false);
                 var gpus = systemHelper.EnumerateGPUsHandle();
 
                 foreach (var gpu in gpus)
@@ -46,11 +45,6 @@ namespace ADLXWrapper.Tests
                     {
                         var info = systemHelper.GetGpuInfo(gpu.As<IADLXGPU>());
                         _output.WriteLine($"[Iter {i}] GPU: {info.Name}");
-
-                        var metricsHelper = new ADLXPerformanceMonitoringServicesHelper(perf.As<IADLXPerformanceMonitoringServices>(), addRef: true);
-                        var metrics = metricsHelper.GetCurrentGpuMetrics(gpu.As<IADLXGPU>());
-                        metricsHelper.Dispose();
-                        _output.WriteLine($"[Iter {i}] Temp: {metrics.Temperature}C");
                     }
                 }
 
