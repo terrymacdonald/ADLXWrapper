@@ -11,7 +11,8 @@ namespace ADLXWrapper
     {
         private static readonly ReaderWriterLockSlim _lock = new(LockRecursionPolicy.SupportsRecursion);
 
-        public static IDisposable EnterRead() => new Scope(_lock, read: true);
+        // Use write lock even for "read" operations to fully serialize access to ADLX.
+        public static IDisposable EnterRead() => new Scope(_lock, read: false);
         public static IDisposable EnterWrite() => new Scope(_lock, read: false);
 
         private readonly struct Scope : IDisposable
