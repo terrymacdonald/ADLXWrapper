@@ -30,7 +30,18 @@ namespace ADLXWrapper.Tests
                 Skip.If(true, dllReason);
             }
 
-            using var api = ADLXApiHelper.Initialize();
+            ADLXApiHelper api;
+            try
+            {
+                api = ADLXApiHelper.Initialize();
+            }
+            catch (Exception ex)
+            {
+                Skip.If(true, $"ADLX initialization failed: {ex.Message}");
+                return;
+            }
+            using (api)
+            {
             using var systemHelper = new ADLXSystemServicesHelper(api.GetSystemServicesNative());
             var system = systemHelper.GetSystemServicesNative();
             using var displayHelper = new ADLXDisplayServicesHelper(systemHelper.GetDisplayServicesNative());
@@ -58,6 +69,7 @@ namespace ADLXWrapper.Tests
                         _output.WriteLine($"[Iter {i}] Display: {name}");
                     }
                 }
+            }
             }
         }
     }

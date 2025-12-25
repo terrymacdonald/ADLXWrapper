@@ -253,31 +253,9 @@ namespace ADLXWrapper
                 unsafe
                 {
                     _globalRefCount--;
-                    if (_globalRefCount == 0)
-                    {
-                        if (_sharedTerminateFn != null && _sharedSystem != null)
-                        {
-                            try
-                            {
-                                _sharedTerminateFn();
-                            }
-                            catch
-                            {
-                                // Ignore errors during cleanup
-                            }
-                        }
-
-                        if (_sharedDll != IntPtr.Zero)
-                        {
-                            ADLXNative.FreeLibrary(_sharedDll);
-                            _sharedDll = IntPtr.Zero;
-                        }
-
-                        _sharedTerminateFn = null;
-                        _sharedFullVersion = 0;
-                        _sharedVersion = null;
-                        _sharedSystem = null;
-                    }
+                    // To avoid use-after-free crashes across the process lifetime,
+                    // we intentionally keep the ADLX DLL loaded and leave the
+                    // shared system pointer intact until process exit.
                 }
             }
             
