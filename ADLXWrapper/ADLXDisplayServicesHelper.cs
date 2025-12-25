@@ -117,9 +117,31 @@ namespace ADLXWrapper
             return displays;
         }
 
+        /// <summary>
+        /// Tries to enumerate display facades, returning false if the feature is not supported.
+        /// </summary>
+        public bool TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay> displays)
+        {
+            try
+            {
+                displays = EnumerateDisplays();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                displays = Array.Empty<ADLXDisplay>();
+                return false;
+            }
+        }
+
         public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplays()
         {
             return EnumerateDisplays();
+        }
+
+        public bool TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay> displays)
+        {
+            return TryEnumerateDisplays(out displays);
         }
 
         /// <summary>
@@ -243,6 +265,23 @@ namespace ADLXWrapper
             }
 
             return handles;
+        }
+
+        /// <summary>
+        /// Tries to enumerate display handles; returns false if not supported.
+        /// </summary>
+        public bool TryEnumerateDisplayHandles(out AdlxInterfaceHandle[] handles)
+        {
+            try
+            {
+                handles = EnumerateDisplayHandles();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                handles = Array.Empty<AdlxInterfaceHandle>();
+                return false;
+            }
         }
 
         /// <summary>

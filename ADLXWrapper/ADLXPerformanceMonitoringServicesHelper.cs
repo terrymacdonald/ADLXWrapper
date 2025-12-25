@@ -100,6 +100,23 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to get GPU metrics support info. Returns false if not supported for this GPU/system.
+        /// </summary>
+        public bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportInfo info)
+        {
+            info = default;
+            try
+            {
+                info = GetGpuMetricsSupport(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Gets current GPU metrics (native pointer). Caller must dispose.
         /// </summary>
         /// <param name="gpu">Native GPU pointer.</param>
@@ -140,6 +157,20 @@ namespace ADLXWrapper
 
             using var metrics = new ComPtr<IADLXGPUMetrics>(GetCurrentGpuMetricsNative(gpu));
             return new GpuMetricsSnapshotInfo(metrics.Get());
+        }
+
+        public bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotInfo metrics)
+        {
+            metrics = default;
+            try
+            {
+                metrics = GetCurrentGpuMetrics(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -249,6 +280,20 @@ namespace ADLXWrapper
             return results;
         }
 
+        public bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
+        {
+            history = Array.Empty<GpuMetricsSnapshotInfo>();
+            try
+            {
+                history = EnumerateGpuMetricsHistory(gpu, startMs, stopMs);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
         {
             ThrowIfDisposed();
@@ -310,6 +355,20 @@ namespace ADLXWrapper
             }
 
             return results;
+        }
+
+        public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotInfo> history)
+        {
+            history = Array.Empty<AllMetricsSnapshotInfo>();
+            try
+            {
+                history = EnumerateAllMetricsHistory(startMs, stopMs);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public ADLX_IntRange GetSamplingIntervalRange()

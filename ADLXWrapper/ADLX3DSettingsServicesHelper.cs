@@ -74,6 +74,23 @@ namespace ADLXWrapper
             return handling;
         }
 
+        /// <summary>
+        /// Tries to get 3D settings change handling; returns false when unsupported.
+        /// </summary>
+        public bool TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling* handling)
+        {
+            try
+            {
+                handling = Get3DSettingsChangedHandlingNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                handling = null;
+                return false;
+            }
+        }
+
         public AdlxInterfaceHandle Get3DSettingsChangedHandling()
         {
             return AdlxInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
@@ -125,6 +142,23 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             return new All3DSettingsInfo(GetHighestServices(), gpu);
+        }
+
+        /// <summary>
+        /// Tries to get all 3D settings; returns false when unsupported.
+        /// </summary>
+        public bool TryGetAll3DSettings(IADLXGPU* gpu, out All3DSettingsInfo info)
+        {
+            try
+            {
+                info = GetAll3DSettings(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
         }
 
         /// <summary>

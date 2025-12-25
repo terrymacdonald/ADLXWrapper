@@ -26,7 +26,12 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _perfHelper = new ADLXPerformanceMonitoringServicesHelper(_system.GetPerformanceMonitoringServicesNative());
+                if (!_system.TryGetPerformanceMonitoringServicesNative(out var perfServices))
+                {
+                    _skipReason = "Performance monitoring services not supported by this ADLX system.";
+                    return;
+                }
+                _perfHelper = new ADLXPerformanceMonitoringServicesHelper(perfServices);
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -63,10 +68,16 @@ namespace ADLXWrapper.Tests
             Assert.True(settings.SamplingIntervalMs > 0);
             _output.WriteLine($"Sampling Interval: {settings.SamplingIntervalMs}ms");
 
-            var metrics = _perfHelper!.GetCurrentGpuMetrics(_gpu);
-            // Metrics is a struct; just ensure we read a plausible value
-            Assert.True(metrics.Temperature >= 0);
-            _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");
+            if (_perfHelper!.TryGetCurrentGpuMetrics(_gpu, out var metrics))
+            {
+                // Metrics is a struct; just ensure we read a plausible value
+                Assert.True(metrics.Temperature >= 0);
+                _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");
+            }
+            else
+            {
+                Skip.If(true, "GPU metrics not supported on this system.");
+            }
         }
 
         [SkippableFact]
@@ -93,9 +104,8 @@ namespace ADLXWrapper.Tests
             var stopMs = Math.Min(settings.MaxHistorySizeSec * 1000, settings.SamplingIntervalMs * 20);
             if (stopMs <= 0) stopMs = settings.SamplingIntervalMs * 2;
 
-            try
+            if (_perfHelper.TryEnumerateGpuMetricsHistory(_gpu, 0, stopMs, out var gpuHistory))
             {
-                var gpuHistory = _perfHelper.EnumerateGpuMetricsHistory(_gpu, 0, stopMs);
                 foreach (var snap in gpuHistory)
                 {
                     _output.WriteLine($"History sample: temp={snap.Temperature}C, usage={snap.Usage}%, clock={snap.ClockSpeed}MHz");
@@ -103,22 +113,21 @@ namespace ADLXWrapper.Tests
                     break;
                 }
             }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            else
             {
                 Skip.If(true, "GPU metrics history not supported.");
                 return;
             }
 
-            try
+            if (_perfHelper.TryEnumerateAllMetricsHistory(0, stopMs, out var allHistory))
             {
-                var allHistory = _perfHelper.EnumerateAllMetricsHistory(0, stopMs);
                 foreach (var snap in allHistory)
                 {
                     _output.WriteLine($"All metrics snapshot at {snap.TimestampMs}ms; FPS={snap.FPS?.ToString() ?? "n/a"}");
                     break;
                 }
             }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            else
             {
                 Skip.If(true, "Combined metrics history not supported.");
             }

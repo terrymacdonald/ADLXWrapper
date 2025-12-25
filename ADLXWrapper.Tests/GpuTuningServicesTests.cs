@@ -26,7 +26,12 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _tuningHelper = new ADLXGPUTuningServicesHelper(_system.GetGPUTuningServicesNative());
+                if (!_system.TryGetGPUTuningServicesNative(out var tuningServices))
+                {
+                    _skipReason = "GPU tuning services not supported by this ADLX system.";
+                    return;
+                }
+                _tuningHelper = new ADLXGPUTuningServicesHelper(tuningServices);
 
                 IADLXGPUList* gpuList = null;
                 var result = system->GetGPUs(&gpuList);
@@ -62,14 +67,32 @@ namespace ADLXWrapper.Tests
             var caps = _tuningHelper.GetCapabilities(_gpu);
             _output.WriteLine($"Manual GFX Tuning Supported: {caps.ManualGFXTuningSupported}");
 
-            var fanInfo = _tuningHelper.GetManualFanTuning(_gpu);
-            _output.WriteLine($"Manual Fan Tuning Supported: {fanInfo.IsSupported}");
+            if (_tuningHelper.TryGetManualFanTuning(_gpu, out var fanInfo))
+            {
+                _output.WriteLine($"Manual Fan Tuning Supported: {fanInfo.IsSupported}");
+            }
+            else
+            {
+                Skip.If(true, "Manual Fan Tuning not supported.");
+            }
 
-            var vramInfo = _tuningHelper.GetManualVramTuning(_gpu);
-            _output.WriteLine($"Manual VRAM Tuning Supported: {vramInfo.IsSupported}");
+            if (_tuningHelper.TryGetManualVramTuning(_gpu, out var vramInfo))
+            {
+                _output.WriteLine($"Manual VRAM Tuning Supported: {vramInfo.IsSupported}");
+            }
+            else
+            {
+                Skip.If(true, "Manual VRAM Tuning not supported.");
+            }
 
-            var presetInfo = _tuningHelper.GetPresetTuning(_gpu);
-            _output.WriteLine($"Preset Tuning Supported: {presetInfo.IsSupported}");
+            if (_tuningHelper.TryGetPresetTuning(_gpu, out var presetInfo))
+            {
+                _output.WriteLine($"Preset Tuning Supported: {presetInfo.IsSupported}");
+            }
+            else
+            {
+                Skip.If(true, "Preset Tuning not supported.");
+            }
         }
 
         [SkippableFact]
@@ -77,8 +100,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _tuningHelper == null, _skipReason);
 
-            var fanInfo = _tuningHelper.GetManualFanTuning(_gpu);
-            if (fanInfo.IsSupported && fanInfo.FanPoints.Count > 0)
+            if (_tuningHelper.TryGetManualFanTuning(_gpu, out var fanInfo) && fanInfo.IsSupported && fanInfo.FanPoints.Count > 0)
             {
                 var point = fanInfo.FanPoints[0];
                 _output.WriteLine($"Fan point: {point.FanSpeed} RPM at {point.Temperature}C (ZeroRPM supported={fanInfo.IsZeroRPMSupported})");
@@ -86,8 +108,7 @@ namespace ADLXWrapper.Tests
                 Assert.True(point.Temperature >= 0);
             }
 
-            var vramInfo = _tuningHelper.GetManualVramTuning(_gpu);
-            if (vramInfo.IsSupported && vramInfo.States.Count > 0)
+            if (_tuningHelper.TryGetManualVramTuning(_gpu, out var vramInfo) && vramInfo.IsSupported && vramInfo.States.Count > 0)
             {
                 var state = vramInfo.States[0];
                 _output.WriteLine($"VRAM state: {state.Frequency} MHz @ {state.Voltage} mV");
@@ -95,8 +116,7 @@ namespace ADLXWrapper.Tests
                 Assert.True(state.Voltage >= 0);
             }
 
-            var presetInfo = _tuningHelper.GetPresetTuning(_gpu);
-            if (presetInfo.IsSupported && presetInfo.SupportedPresets.Count > 0)
+            if (_tuningHelper.TryGetPresetTuning(_gpu, out var presetInfo) && presetInfo.IsSupported && presetInfo.SupportedPresets.Count > 0)
             {
                 _output.WriteLine($"Supported presets: {string.Join(", ", presetInfo.SupportedPresets)}; current={presetInfo.CurrentPreset}");
             }

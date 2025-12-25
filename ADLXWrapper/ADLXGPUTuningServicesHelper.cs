@@ -148,6 +148,23 @@ namespace ADLXWrapper
             return supported;
         }
 
+        /// <summary>
+        /// Tries to query auto tuning support; returns false when not supported.
+        /// </summary>
+        public bool TryIsAutoTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsAutoTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public bool IsPresetTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -161,6 +178,20 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to query preset tuning support");
             return supported;
+        }
+
+        public bool TryIsPresetTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsPresetTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public bool IsManualGfxTuningSupported(IADLXGPU* gpu)
@@ -178,6 +209,20 @@ namespace ADLXWrapper
             return supported;
         }
 
+        public bool TryIsManualGfxTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsManualGfxTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public bool IsManualVramTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -191,6 +236,20 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to query manual VRAM tuning support");
             return supported;
+        }
+
+        public bool TryIsManualVramTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsManualVramTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public bool IsManualFanTuningSupported(IADLXGPU* gpu)
@@ -208,6 +267,20 @@ namespace ADLXWrapper
             return supported;
         }
 
+        public bool TryIsManualFanTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsManualFanTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public bool IsManualPowerTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -221,6 +294,20 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to query manual power tuning support");
             return supported;
+        }
+
+        public bool TryIsManualPowerTuningSupported(IADLXGPU* gpu, out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsManualPowerTuningSupported(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public ManualFanTuningInfo GetManualFanTuning(IADLXGPU* gpu)
@@ -239,6 +326,20 @@ namespace ADLXWrapper
             return new ManualFanTuningInfo(fan.Get());
         }
 
+        public bool TryGetManualFanTuning(IADLXGPU* gpu, out ManualFanTuningInfo info)
+        {
+            try
+            {
+                info = GetManualFanTuning(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
         public ManualVramTuningInfo GetManualVramTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -253,6 +354,20 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get manual VRAM tuning interface");
             using var vram = new ComPtr<IADLXManualVRAMTuning1>((IADLXManualVRAMTuning1*)manualVram);
             return new ManualVramTuningInfo(vram.Get());
+        }
+
+        public bool TryGetManualVramTuning(IADLXGPU* gpu, out ManualVramTuningInfo info)
+        {
+            try
+            {
+                info = GetManualVramTuning(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
         }
 
         public ManualGfxTuningInfo GetManualGfxTuning(IADLXGPU* gpu)
@@ -271,6 +386,20 @@ namespace ADLXWrapper
             return new ManualGfxTuningInfo(gfx.Get());
         }
 
+        public bool TryGetManualGfxTuning(IADLXGPU* gpu, out ManualGfxTuningInfo info)
+        {
+            try
+            {
+                info = GetManualGfxTuning(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
         public PresetTuningInfo GetPresetTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -285,6 +414,20 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get preset tuning interface");
             using var tuning = new ComPtr<IADLXGPUPresetTuning>((IADLXGPUPresetTuning*)preset);
             return new PresetTuningInfo(tuning.Get());
+        }
+
+        public bool TryGetPresetTuning(IADLXGPU* gpu, out PresetTuningInfo info)
+        {
+            try
+            {
+                info = GetPresetTuning(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
         }
 
         public void Dispose()

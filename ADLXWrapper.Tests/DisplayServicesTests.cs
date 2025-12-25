@@ -10,6 +10,7 @@ namespace ADLXWrapper.Tests
     /// Tests for basic display enumeration.
     /// </summary>
     [SupportedOSPlatform("windows")]
+    [Collection("DisplaySerial")]
     public unsafe class DisplayServicesTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
@@ -45,21 +46,18 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
 
-            try
-            {
-                var displays = _displayServices.EnumerateDisplays();
-                _output.WriteLine($"Found {displays.Count} display(s).");
-                foreach (var d in displays)
-                {
-                    _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
-                    d.Dispose();
-                }
-                Assert.NotNull(displays);
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            if (!_displayServices.TryEnumerateDisplays(out var displays))
             {
                 Skip.If(true, "Display services are not supported on this system.");
             }
+
+            _output.WriteLine($"Found {displays.Count} display(s).");
+            foreach (var d in displays)
+            {
+                _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
+                d.Dispose();
+            }
+            Assert.NotNull(displays);
         }
 
         [SkippableFact]
@@ -67,19 +65,16 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
 
-            try
-            {
-                var facades = _displayServices.EnumerateADLXDisplays().ToList();
-                _output.WriteLine($"Found {facades.Count} display façade(s).");
-                foreach (var d in facades)
-                {
-                    _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
-                    d.Dispose();
-                }
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            if (!_displayServices.TryEnumerateADLXDisplays(out var facades))
             {
                 Skip.If(true, "Display services are not supported on this system.");
+            }
+
+            _output.WriteLine($"Found {facades.Count} display façade(s).");
+            foreach (var d in facades.ToList())
+            {
+                _output.WriteLine($"Display: {d.Name}, Id: {d.UniqueId}");
+                d.Dispose();
             }
         }
 
@@ -104,28 +99,33 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
 
-            try
-            {
-                var handles = _displayServices.EnumerateDisplayHandles();
-                Skip.If(handles.Length == 0, "No displays found.");
-
-                using var first = handles[0];
-                var info = _displayServices.GetDisplayInfo(first.As<IADLXDisplay>());
-                _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height} @ {info.RefreshRate}Hz, connector={info.ConnectorType}, type={info.Type}");
-
-                Assert.True(info.Width > 0);
-                Assert.True(info.Height > 0);
-                Assert.True(info.RefreshRate > 0);
-
-                for (int i = 1; i < handles.Length; i++)
-                {
-                    handles[i].Dispose();
-                }
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            if (!_displayServices.TryEnumerateDisplayHandles(out var handles))
             {
                 Skip.If(true, "Display services are not supported on this system.");
             }
+
+            Skip.If(handles.Length == 0, "No displays found.");
+
+            using var first = handles[0];
+            var info = _displayServices.GetDisplayInfo(first.As<IADLXDisplay>());
+            _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height} @ {info.RefreshRate}Hz, connector={info.ConnectorType}, type={info.Type}");
+
+            Assert.True(info.Width > 0);
+            Assert.True(info.Height > 0);
+            Assert.True(info.RefreshRate > 0);
+
+            for (int i = 1; i < handles.Length; i++)
+            {
+                handles[i].Dispose();
+            }
         }
+    }
+
+    /// <summary>
+    /// Serializes display enumeration tests to avoid native driver instability when run in parallel.
+    /// </summary>
+    [CollectionDefinition("DisplaySerial", DisableParallelization = true)]
+    public class DisplaySerialDefinition
+    {
     }
 }

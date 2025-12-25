@@ -25,7 +25,14 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                _desktopHelper = new ADLXDesktopServicesHelper(_system.GetDesktopServicesNative(), _system.GetDisplayServicesNative());
+                if (!_system.TryGetDesktopServicesNative(out var desktopServices) ||
+                    !_system.TryGetDisplayServicesNative(out var displayServices))
+                {
+                    _skipReason = "Desktop or display services not supported by this ADLX system.";
+                    return;
+                }
+
+                _desktopHelper = new ADLXDesktopServicesHelper(desktopServices, displayServices);
             }
             catch (Exception ex)
             {

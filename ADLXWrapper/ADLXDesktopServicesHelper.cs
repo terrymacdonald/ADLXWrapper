@@ -94,6 +94,20 @@ namespace ADLXWrapper
             return desktops;
         }
 
+        public bool TryEnumerateDesktops(out IReadOnlyList<DesktopInfo> desktops)
+        {
+            try
+            {
+                desktops = EnumerateDesktops();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                desktops = Array.Empty<DesktopInfo>();
+                return false;
+            }
+        }
+
         /// <summary>
         /// Enumerates managed desktop facades. Callers must dispose each desktop.
         /// </summary>
@@ -132,6 +146,20 @@ namespace ADLXWrapper
             }
 
             return desktops;
+        }
+
+        public bool TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop> desktops)
+        {
+            try
+            {
+                desktops = EnumerateADLXDesktops();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                desktops = Array.Empty<ADLXDesktop>();
+                return false;
+            }
         }
 
         /// <summary>
@@ -196,6 +224,20 @@ namespace ADLXWrapper
             }
 
             return desktops;
+        }
+
+        public bool TryEnumerateADLXDesktopsForGpu(int gpuUniqueId, out IReadOnlyList<ADLXDesktop> desktops)
+        {
+            try
+            {
+                desktops = EnumerateADLXDesktopsForGpu(gpuUniqueId);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                desktops = Array.Empty<ADLXDesktop>();
+                return false;
+            }
         }
 
         /// <summary>

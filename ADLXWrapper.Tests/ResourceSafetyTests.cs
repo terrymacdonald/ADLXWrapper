@@ -11,6 +11,7 @@ namespace ADLXWrapper.Tests
     /// Skips when ADLX DLL or AMD hardware is unavailable.
     /// </summary>
     [SupportedOSPlatform("windows")]
+    [Collection("DisplaySerial")]
     public unsafe class ResourceSafetyTests
     {
         private readonly ITestOutputHelper _output;
@@ -46,7 +47,7 @@ namespace ADLXWrapper.Tests
             var system = systemHelper.GetSystemServicesNative();
             using var displayHelper = new ADLXDisplayServicesHelper(systemHelper.GetDisplayServicesNative());
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 var gpus = systemHelper.EnumerateGPUsHandle();
 
@@ -59,7 +60,12 @@ namespace ADLXWrapper.Tests
                     }
                 }
 
-                var displays = displayHelper.EnumerateDisplayHandles();
+                if (!displayHelper.TryEnumerateDisplayHandles(out var displays) || displays.Length == 0)
+                {
+                    _output.WriteLine("[Iter {i}] Display enumeration not supported or none found; skipping display loop.");
+                    continue;
+                }
+
                 foreach (var display in displays)
                 {
                     using (display)

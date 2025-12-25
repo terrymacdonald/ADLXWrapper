@@ -97,6 +97,24 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to get the native display services interface without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetDisplayServicesNative(out IADLXDisplayServices* services)
+        {
+            try
+            {
+                services = GetDisplayServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Creates a managed display-services helper with shared system lifetime.
         /// </summary>
         /// <returns>Display services helper wrapping native interfaces.</returns>
@@ -136,6 +154,24 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetDesktopServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
+        }
+
+        /// <summary>
+        /// Tries to get the native desktop services interface without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetDesktopServicesNative(out IADLXDesktopServices* services)
+        {
+            try
+            {
+                services = GetDesktopServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
         }
 
         /// <summary>
@@ -181,6 +217,24 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to get the native 3D settings services interface without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGet3DSettingsServicesNative(out IADLX3DSettingsServices* services)
+        {
+            try
+            {
+                services = Get3DSettingsServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Creates a managed 3D settings helper with shared system lifetime.
         /// </summary>
         /// <returns>3D settings services helper wrapping native interfaces.</returns>
@@ -218,6 +272,24 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetGPUTuningServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
+        }
+
+        /// <summary>
+        /// Tries to get the native GPU tuning services interface without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetGPUTuningServicesNative(out IADLXGPUTuningServices* services)
+        {
+            try
+            {
+                services = GetGPUTuningServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
         }
 
         /// <summary>
@@ -261,6 +333,24 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to get the native performance monitoring services without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetPerformanceMonitoringServicesNative(out IADLXPerformanceMonitoringServices* services)
+        {
+            try
+            {
+                services = GetPerformanceMonitoringServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Creates a managed performance monitoring helper with shared system lifetime.
         /// </summary>
         /// <returns>Performance monitoring services helper wrapping native interfaces.</returns>
@@ -301,6 +391,24 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to get the native power tuning services without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetPowerTuningServicesNative(out IADLXPowerTuningServices* services)
+        {
+            try
+            {
+                services = GetPowerTuningServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Creates a managed power tuning helper with shared system lifetime.
         /// </summary>
         /// <returns>Power tuning services helper wrapping native interfaces.</returns>
@@ -338,6 +446,24 @@ namespace ADLXWrapper
         public AdlxInterfaceHandle GetMultimediaServicesHandle()
         {
             return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
+        }
+
+        /// <summary>
+        /// Tries to get the native multimedia services without throwing when unsupported.
+        /// </summary>
+        /// <returns>True if services are available; false when not supported.</returns>
+        public bool TryGetMultimediaServicesNative(out IADLXMultimediaServices* services)
+        {
+            try
+            {
+                services = GetMultimediaServicesNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                services = null;
+                return false;
+            }
         }
 
         /// <summary>

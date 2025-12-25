@@ -29,10 +29,22 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _powerHelper = new ADLXPowerTuningServicesHelper(_system.GetPowerTuningServicesNative());
+                if (!_system.TryGetPowerTuningServicesNative(out var powerServices))
+                {
+                    _skipReason = "Power tuning services not supported by this ADLX system.";
+                    return;
+                }
+
+                if (!_system.TryGetGPUTuningServicesNative(out var tuningServices))
+                {
+                    _skipReason = "GPU tuning services not supported by this ADLX system.";
+                    return;
+                }
+
+                _powerHelper = new ADLXPowerTuningServicesHelper(powerServices);
                 _powerServices = _powerHelper.GetPowerTuningServicesNative();
 
-                _tuningHelper = new ADLXGPUTuningServicesHelper(_system.GetGPUTuningServicesNative());
+                _tuningHelper = new ADLXGPUTuningServicesHelper(tuningServices);
                 _tuningServices = _tuningHelper.GetGPUTuningServicesNative();
 
                 IADLXGPUList* gpuList = null;
@@ -67,14 +79,40 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _powerServices == null || _tuningServices == null, _skipReason);
 
-            var ssm = _powerHelper!.GetSmartShiftMax();
-            _output.WriteLine($"SmartShift Max supported: {ssm.IsSupported}");
+            try
+            {
+                var ssm = _powerHelper!.GetSmartShiftMax();
+                _output.WriteLine($"SmartShift Max supported: {ssm.IsSupported}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                _output.WriteLine("SmartShift Max not supported.");
+            }
 
-            var sse = _powerHelper.GetSmartShiftEco();
-            _output.WriteLine($"SmartShift Eco supported: {sse.IsSupported}");
+            try
+            {
+                var sse = _powerHelper!.GetSmartShiftEco();
+                _output.WriteLine($"SmartShift Eco supported: {sse.IsSupported}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                _output.WriteLine("SmartShift Eco not supported.");
+            }
 
-            var manual = _powerHelper.GetManualPowerTuning(_tuningServices, _gpu);
-            _output.WriteLine($"Manual Power Tuning supported: {manual.PowerLimitSupported}");
+            if (_powerHelper!.TryIsGPUConnectSupported(out _))
+            {
+                _output.WriteLine("GPUConnect supported by power tuning services.");
+            }
+
+            try
+            {
+                var manual = _powerHelper.GetManualPowerTuning(_tuningServices, _gpu);
+                _output.WriteLine($"Manual Power Tuning supported: {manual.PowerLimitSupported}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                _output.WriteLine("Manual Power Tuning not supported.");
+            }
         }
 
         [SkippableFact]
@@ -82,16 +120,14 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _powerHelper == null, _skipReason);
 
-            try
+            if (!_powerHelper.TryIsGPUConnectSupported(out var supported) || !supported)
             {
-                if (!_powerHelper.IsGPUConnectSupported())
-                {
-                    Skip.If(true, "GPUConnect is not supported on this system.");
-                }
+                Skip.If(true, "GPUConnect is not supported on this system.");
+                return;
+            }
 
-                var handles = _powerHelper.EnumerateGPUConnectGpuHandles();
-                Skip.If(handles.Length == 0, "No GPUConnect GPUs returned.");
-
+            if (_powerHelper.TryEnumerateGPUConnectGpuHandles(out var handles) && handles.Length > 0)
+            {
                 using var first = handles[0];
                 var info = _system!.GetGpuInfo(first.As<IADLXGPU>());
                 _output.WriteLine($"GPUConnect GPU: {info.Name}, VRAM={info.TotalVRAM}MB, UniqueId={info.UniqueId}");
@@ -102,9 +138,9 @@ namespace ADLXWrapper.Tests
                     handles[i].Dispose();
                 }
             }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            else
             {
-                Skip.If(true, "GPUConnect enumeration is not supported on this system.");
+                Skip.If(true, "No GPUConnect GPUs returned.");
             }
         }
     }

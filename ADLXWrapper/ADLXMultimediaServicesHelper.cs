@@ -76,6 +76,23 @@ namespace ADLXWrapper
             return handling;
         }
 
+        /// <summary>
+        /// Tries to get multimedia change handling; returns false when unsupported.
+        /// </summary>
+        public bool TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling* handling)
+        {
+            try
+            {
+                handling = GetMultimediaChangedHandlingNative();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                handling = null;
+                return false;
+            }
+        }
+
         public AdlxInterfaceHandle GetMultimediaChangedHandling()
         {
             return AdlxInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
@@ -128,6 +145,23 @@ namespace ADLXWrapper
             return upscale; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Tries to get the native video upscale interface; returns false when unsupported.
+        /// </summary>
+        public bool TryGetVideoUpscaleNative(IADLXGPU* gpu, out IADLXVideoUpscale* upscale)
+        {
+            try
+            {
+                upscale = GetVideoUpscaleNative(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                upscale = null;
+                return false;
+            }
+        }
+
         public VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -136,6 +170,23 @@ namespace ADLXWrapper
 
             using var upscale = new ComPtr<IADLXVideoUpscale>(GetVideoUpscaleNative(gpu));
             return new VideoUpscaleInfo(upscale.Get());
+        }
+
+        /// <summary>
+        /// Tries to query video upscale info; returns false when unsupported.
+        /// </summary>
+        public bool TryGetVideoUpscale(IADLXGPU* gpu, out VideoUpscaleInfo info)
+        {
+            try
+            {
+                info = GetVideoUpscale(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
         }
 
         public void SetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
@@ -176,6 +227,23 @@ namespace ADLXWrapper
             return vsr; // caller wraps/disposes
         }
 
+        /// <summary>
+        /// Tries to get the native video super resolution interface; returns false when unsupported.
+        /// </summary>
+        public bool TryGetVideoSuperResolutionNative(IADLXGPU* gpu, out IADLXVideoSuperResolution* vsr)
+        {
+            try
+            {
+                vsr = GetVideoSuperResolutionNative(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                vsr = null;
+                return false;
+            }
+        }
+
         public VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
@@ -184,6 +252,23 @@ namespace ADLXWrapper
 
             using var vsr = new ComPtr<IADLXVideoSuperResolution>(GetVideoSuperResolutionNative(gpu));
             return new VideoSuperResolutionInfo(vsr.Get());
+        }
+
+        /// <summary>
+        /// Tries to query video super resolution info; returns false when unsupported.
+        /// </summary>
+        public bool TryGetVideoSuperResolution(IADLXGPU* gpu, out VideoSuperResolutionInfo info)
+        {
+            try
+            {
+                info = GetVideoSuperResolution(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
         }
 
         public void SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)

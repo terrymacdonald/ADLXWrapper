@@ -70,6 +70,23 @@ namespace ADLXWrapper
             return supported;
         }
 
+        /// <summary>
+        /// Tries to query GPUConnect support; returns false if the feature is not supported on this system.
+        /// </summary>
+        public bool TryIsGPUConnectSupported(out bool supported)
+        {
+            supported = false;
+            try
+            {
+                supported = IsGPUConnectSupported();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public AdlxInterfaceHandle[] EnumerateGPUConnectGpuHandles()
         {
             ThrowIfDisposed();
@@ -94,6 +111,23 @@ namespace ADLXWrapper
             }
 
             return handles;
+        }
+
+        /// <summary>
+        /// Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.
+        /// </summary>
+        public bool TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[] handles)
+        {
+            try
+            {
+                handles = EnumerateGPUConnectGpuHandles();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                handles = Array.Empty<AdlxInterfaceHandle>();
+                return false;
+            }
         }
 
         /// <summary>

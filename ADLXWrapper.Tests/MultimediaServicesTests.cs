@@ -27,7 +27,13 @@ namespace ADLXWrapper.Tests
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
                 var system = _system.GetSystemServicesNative();
-                _multimediaHelper = new ADLXMultimediaServicesHelper(_system.GetMultimediaServicesNative());
+                if (!_system.TryGetMultimediaServicesNative(out var multimediaServices))
+                {
+                    _skipReason = "Multimedia services not supported by this ADLX system.";
+                    return;
+                }
+
+                _multimediaHelper = new ADLXMultimediaServicesHelper(multimediaServices);
                 _multimediaServices = _multimediaHelper.GetMultimediaServicesNative();
 
                 IADLXGPUList* gpuList = null;
@@ -61,11 +67,23 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _multimediaServices == null, _skipReason);
 
-            var vsr = _multimediaHelper!.GetVideoSuperResolution(_gpu);
-            _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
+            if (_multimediaHelper!.TryGetVideoSuperResolution(_gpu, out var vsr))
+            {
+                _output.WriteLine($"Video Super Resolution supported: {vsr.IsSupported}");
+            }
+            else
+            {
+                Skip.If(true, "Video Super Resolution not supported on this system.");
+            }
 
-            var upscale = _multimediaHelper.GetVideoUpscale(_gpu);
-            _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
+            if (_multimediaHelper.TryGetVideoUpscale(_gpu, out var upscale))
+            {
+                _output.WriteLine($"Video Upscale supported: {upscale.IsSupported}");
+            }
+            else
+            {
+                Skip.If(true, "Video Upscale not supported on this system.");
+            }
         }
 
         [SkippableFact]
@@ -73,12 +91,7 @@ namespace ADLXWrapper.Tests
         {
             Skip.If(_api == null || _system == null || _gpu == null || _multimediaServices == null, _skipReason);
 
-            IADLXMultimediaChangedHandling* handling;
-            try
-            {
-                handling = _multimediaHelper!.GetMultimediaChangedHandlingNative();
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            if (!_multimediaHelper!.TryGetMultimediaChangedHandlingNative(out var handling))
             {
                 Skip.If(true, "Multimedia change handling not supported.");
                 return;
