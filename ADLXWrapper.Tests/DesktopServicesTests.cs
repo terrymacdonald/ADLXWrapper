@@ -102,5 +102,37 @@ namespace ADLXWrapper.Tests
                 Skip.If(true, "Desktop change handling is not supported on this system.");
             }
         }
+
+        [SkippableFact]
+        public void EnumerateDesktopDisplays_ShouldReturnDisplayInfos()
+        {
+            Skip.If(_api == null || _system == null || _desktopHelper == null, _skipReason);
+
+            try
+            {
+                var handles = _desktopHelper.EnumerateDesktopHandles();
+                Skip.If(handles.Length == 0, "No desktops found.");
+
+                using var first = handles[0];
+                var displays = _desktopHelper.EnumerateDesktopDisplays(first.As<IADLXDesktop>());
+                _output.WriteLine($"Desktop has {displays.Count} display(s).");
+                if (displays.Count > 0)
+                {
+                    var info = displays[0];
+                    _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height}, type={info.Type}, connector={info.ConnectorType}");
+                    Assert.True(info.Width > 0);
+                    Assert.True(info.Height > 0);
+                }
+
+                for (int i = 1; i < handles.Length; i++)
+                {
+                    handles[i].Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Desktop services are not supported on this system.");
+            }
+        }
     }
 }

@@ -76,5 +76,36 @@ namespace ADLXWrapper.Tests
             var manual = _powerHelper.GetManualPowerTuning(_tuningServices, _gpu);
             _output.WriteLine($"Manual Power Tuning supported: {manual.PowerLimitSupported}");
         }
+
+        [SkippableFact]
+        public void EnumerateGpuConnectHandles_ShouldProvideGpuIdentity()
+        {
+            Skip.If(_api == null || _system == null || _powerHelper == null, _skipReason);
+
+            try
+            {
+                if (!_powerHelper.IsGPUConnectSupported())
+                {
+                    Skip.If(true, "GPUConnect is not supported on this system.");
+                }
+
+                var handles = _powerHelper.EnumerateGPUConnectGpuHandles();
+                Skip.If(handles.Length == 0, "No GPUConnect GPUs returned.");
+
+                using var first = handles[0];
+                var info = _system!.GetGpuInfo(first.As<IADLXGPU>());
+                _output.WriteLine($"GPUConnect GPU: {info.Name}, VRAM={info.TotalVRAM}MB, UniqueId={info.UniqueId}");
+                Assert.False(string.IsNullOrWhiteSpace(info.Name));
+
+                for (int i = 1; i < handles.Length; i++)
+                {
+                    handles[i].Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "GPUConnect enumeration is not supported on this system.");
+            }
+        }
     }
 }

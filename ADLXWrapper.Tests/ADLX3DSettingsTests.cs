@@ -61,5 +61,34 @@ namespace ADLXWrapper.Tests
             var settings = _settingsHelper.GetAll3DSettings(_gpu);
             _output.WriteLine($"Successfully retrieved 3D settings. Anti-Lag supported: {settings.AntiLag?.IsSupported ?? false}");
         }
+
+        [SkippableFact]
+        public void All3DSettings_ShouldExposeCommonFields()
+        {
+            Skip.If(_api == null || _system == null || _gpu == null || _settingsHelper == null, _skipReason);
+
+            var settings = _settingsHelper.GetAll3DSettings(_gpu);
+
+            if (settings.FrameRateTargetControl.HasValue)
+            {
+                var frtc = settings.FrameRateTargetControl.Value;
+                _output.WriteLine($"FRTC supported={frtc.IsSupported}, enabled={frtc.IsEnabled}, fps={frtc.Fps}");
+                Assert.True(frtc.FpsRange.maxValue >= frtc.FpsRange.minValue);
+            }
+
+            if (settings.Tessellation.HasValue)
+            {
+                var tess = settings.Tessellation.Value;
+                _output.WriteLine($"Tessellation supported={tess.IsSupported}, mode={tess.Mode}, level={tess.Level}");
+            }
+
+            if (settings.ImageSharpening.HasValue)
+            {
+                var ris = settings.ImageSharpening.Value;
+                _output.WriteLine($"RIS supported={ris.IsSupported}, enabled={ris.IsEnabled}, sharpness={ris.Sharpness}");
+            }
+
+            Assert.True(settings.AntiLag.HasValue || settings.Boost.HasValue || settings.ImageSharpening.HasValue || settings.EnhancedSync.HasValue || settings.Tessellation.HasValue);
+        }
     }
 }

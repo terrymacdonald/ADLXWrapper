@@ -71,5 +71,35 @@ namespace ADLXWrapper.Tests
             var presetInfo = _tuningHelper.GetPresetTuning(_gpu);
             _output.WriteLine($"Preset Tuning Supported: {presetInfo.IsSupported}");
         }
+
+        [SkippableFact]
+        public void ManualTuningSnapshots_ShouldExposeDetails()
+        {
+            Skip.If(_api == null || _system == null || _gpu == null || _tuningHelper == null, _skipReason);
+
+            var fanInfo = _tuningHelper.GetManualFanTuning(_gpu);
+            if (fanInfo.IsSupported && fanInfo.FanPoints.Count > 0)
+            {
+                var point = fanInfo.FanPoints[0];
+                _output.WriteLine($"Fan point: {point.FanSpeed} RPM at {point.Temperature}C (ZeroRPM supported={fanInfo.IsZeroRPMSupported})");
+                Assert.True(point.FanSpeed >= 0);
+                Assert.True(point.Temperature >= 0);
+            }
+
+            var vramInfo = _tuningHelper.GetManualVramTuning(_gpu);
+            if (vramInfo.IsSupported && vramInfo.States.Count > 0)
+            {
+                var state = vramInfo.States[0];
+                _output.WriteLine($"VRAM state: {state.Frequency} MHz @ {state.Voltage} mV");
+                Assert.True(state.Frequency >= 0);
+                Assert.True(state.Voltage >= 0);
+            }
+
+            var presetInfo = _tuningHelper.GetPresetTuning(_gpu);
+            if (presetInfo.IsSupported && presetInfo.SupportedPresets.Count > 0)
+            {
+                _output.WriteLine($"Supported presets: {string.Join(", ", presetInfo.SupportedPresets)}; current={presetInfo.CurrentPreset}");
+            }
+        }
     }
 }

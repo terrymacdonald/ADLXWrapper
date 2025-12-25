@@ -25,7 +25,7 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                _displayServices = new ADLXDisplayServicesHelper(_system.GetDisplayServicesNative());
+                _displayServices = new ADLXDisplayServicesHelper(_system.GetDisplayServicesNative(), _system.GetDesktopServicesNative());
             }
             catch (Exception ex)
             {
@@ -96,6 +96,35 @@ namespace ADLXWrapper.Tests
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
                 Skip.If(true, "Display change handling is not supported on this system.");
+            }
+        }
+
+        [SkippableFact]
+        public void EnumerateDisplayInfos_ShouldExposeDimensions()
+        {
+            Skip.If(_api == null || _system == null || _displayServices == null, _skipReason);
+
+            try
+            {
+                var handles = _displayServices.EnumerateDisplayHandles();
+                Skip.If(handles.Length == 0, "No displays found.");
+
+                using var first = handles[0];
+                var info = _displayServices.GetDisplayInfo(first.As<IADLXDisplay>());
+                _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height} @ {info.RefreshRate}Hz, connector={info.ConnectorType}, type={info.Type}");
+
+                Assert.True(info.Width > 0);
+                Assert.True(info.Height > 0);
+                Assert.True(info.RefreshRate > 0);
+
+                for (int i = 1; i < handles.Length; i++)
+                {
+                    handles[i].Dispose();
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Display services are not supported on this system.");
             }
         }
     }

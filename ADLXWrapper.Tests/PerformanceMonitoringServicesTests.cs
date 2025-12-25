@@ -68,5 +68,60 @@ namespace ADLXWrapper.Tests
             Assert.True(metrics.Temperature >= 0);
             _output.WriteLine($"Current GPU Temp: {metrics.Temperature}C");
         }
+
+        [SkippableFact]
+        public void CanEnumerateMetricsHistory()
+        {
+            Skip.If(_api == null || _system == null || _gpu == null || _perfHelper == null, _skipReason);
+
+            PerformanceMonitoringSettingsInfo settings;
+            try
+            {
+                settings = _perfHelper.GetPerformanceMonitoringSettings();
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Performance monitoring not supported.");
+                return;
+            }
+
+            if (settings.MaxHistorySizeSec <= 0)
+            {
+                Skip.If(true, "Performance metrics history unavailable (size <= 0).");
+            }
+
+            var stopMs = Math.Min(settings.MaxHistorySizeSec * 1000, settings.SamplingIntervalMs * 20);
+            if (stopMs <= 0) stopMs = settings.SamplingIntervalMs * 2;
+
+            try
+            {
+                var gpuHistory = _perfHelper.EnumerateGpuMetricsHistory(_gpu, 0, stopMs);
+                foreach (var snap in gpuHistory)
+                {
+                    _output.WriteLine($"History sample: temp={snap.Temperature}C, usage={snap.Usage}%, clock={snap.ClockSpeed}MHz");
+                    Assert.True(snap.Temperature >= 0);
+                    break;
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "GPU metrics history not supported.");
+                return;
+            }
+
+            try
+            {
+                var allHistory = _perfHelper.EnumerateAllMetricsHistory(0, stopMs);
+                foreach (var snap in allHistory)
+                {
+                    _output.WriteLine($"All metrics snapshot at {snap.TimestampMs}ms; FPS={snap.FPS?.ToString() ?? "n/a"}");
+                    break;
+                }
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, "Combined metrics history not supported.");
+            }
+        }
     }
 }
