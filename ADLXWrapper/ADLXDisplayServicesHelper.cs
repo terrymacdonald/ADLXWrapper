@@ -558,6 +558,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetFreeSyncEnabled((IntPtr)fs.Get(), enable);
         }
 
+        public bool TrySetFreeSyncEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetFreeSyncEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, bool enabled) GetGPUScalingState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -574,6 +587,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var scaling = new ComPtr<IADLXDisplayGPUScaling>((IADLXDisplayGPUScaling*)DisplaySettingsOps.GetGPUScalingHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetGPUScalingEnabled((IntPtr)scaling.Get(), enable);
+        }
+
+        public bool TrySetGPUScalingEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetGPUScalingEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public (bool supported, ADLX_SCALE_MODE mode) GetScalingMode(IADLXDisplay* display)
@@ -594,6 +620,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetScalingMode((IntPtr)scalingMode.Get(), mode);
         }
 
+        public bool TrySetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
+        {
+            try
+            {
+                SetScalingMode(display, mode);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, bool enabled) GetVirtualSuperResolutionState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -610,6 +649,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var vsr = new ComPtr<IADLXDisplayVSR>((IADLXDisplayVSR*)DisplaySettingsOps.GetVirtualSuperResolutionHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetVirtualSuperResolutionEnabled((IntPtr)vsr.Get(), enable);
+        }
+
+        public bool TrySetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetVirtualSuperResolutionEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public (bool supported, bool enabled) GetIntegerScalingState(IADLXDisplay* display)
@@ -630,6 +682,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetIntegerScalingEnabled((IntPtr)integerScaling.Get(), enable);
         }
 
+        public bool TrySetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetIntegerScalingEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, bool enabled) GetHDCPState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -646,6 +711,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var hdcp = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)DisplaySettingsOps.GetHDCPHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetHDCPEnabled((IntPtr)hdcp.Get(), enable);
+        }
+
+        public bool TrySetHDCPEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetHDCPEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public (bool supported, bool enabled, VariBrightMode mode) GetVariBrightState(IADLXDisplay* display)
@@ -666,6 +744,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetVariBright((IntPtr)vb.Get(), enable, mode);
         }
 
+        public bool TrySetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
+        {
+            try
+            {
+                SetVariBright(display, enable, mode);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* variBright, bool enable)
         {
             ThrowIfDisposed();
@@ -673,11 +764,37 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetVariBrightBacklightAdaptiveEnabled(variBright, enable);
         }
 
+        public bool TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* variBright, bool enable)
+        {
+            try
+            {
+                SetVariBrightBacklightAdaptiveEnabled(variBright, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1* variBright, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             DisplaySettingsOps.SetVariBrightBatteryLifeEnabled(variBright, enable);
+        }
+
+        public bool TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1* variBright, bool enable)
+        {
+            try
+            {
+                SetVariBrightBatteryLifeEnabled(variBright, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public (bool supported, ADLX_COLOR_DEPTH current) GetColorDepthState(IADLXDisplay* display)
@@ -698,6 +815,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetColorDepth((IntPtr)cd.Get(), depth);
         }
 
+        public bool TrySetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
+        {
+            try
+            {
+                SetColorDepth(display, depth);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, ADLX_PIXEL_FORMAT current) GetPixelFormatState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -714,6 +844,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var pf = new ComPtr<IADLXDisplayPixelFormat>((IADLXDisplayPixelFormat*)DisplaySettingsOps.GetPixelFormatHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetPixelFormat((IntPtr)pf.Get(), format);
+        }
+
+        public bool TrySetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
+        {
+            try
+            {
+                SetPixelFormat(display, format);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public CustomColorInfo GetCustomColor(IADLXDisplay* display)
@@ -737,6 +880,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyCustomColor(customColor.Get(), info);
         }
 
+        public bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+        {
+            try
+            {
+                ApplyCustomColor(display, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public GammaInfo GetGamma(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -756,6 +912,19 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get Gamma interface");
             using var gamma = new ComPtr<IADLXDisplayGamma>(pGamma);
             DisplaySettingsOps.ReapplyGamma(gamma.Get());
+        }
+
+        public bool TryReapplyGamma(IADLXDisplay* display)
+        {
+            try
+            {
+                ReapplyGamma(display);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public GamutInfo GetGamut(IADLXDisplay* display)
@@ -779,6 +948,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.ReapplyGamut(gamut.Get());
         }
 
+        public bool TryReapplyGamut(IADLXDisplay* display)
+        {
+            try
+            {
+                ReapplyGamut(display);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public ThreeDLUTInfo GetThreeDLut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -798,6 +980,19 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get 3DLUT interface");
             using var lut = new ComPtr<IADLXDisplay3DLUT>(pLut);
             DisplaySettingsOps.Reapply3DLUT(lut.Get());
+        }
+
+        public bool TryReapplyThreeDLut(IADLXDisplay* display)
+        {
+            try
+            {
+                ReapplyThreeDLut(display);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public ConnectivityExperienceInfo GetConnectivityExperience(IADLXDisplay* display)
@@ -823,6 +1018,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyDisplayConnectivityExperience(conn.Get(), info);
         }
 
+        public bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+        {
+            try
+            {
+                ApplyConnectivityExperience(display, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, bool blanked) GetDisplayBlankingState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -839,6 +1047,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var blanking = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)DisplaySettingsOps.GetDisplayBlankingHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetDisplayBlanked((IntPtr)blanking.Get(), blank);
+        }
+
+        public bool TrySetDisplayBlanked(IADLXDisplay* display, bool blank)
+        {
+            try
+            {
+                SetDisplayBlanked(display, blank);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public (bool supported, bool enabled) GetFreeSyncColorAccuracyState(IADLXDisplay* display)
@@ -859,6 +1080,19 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetFreeSyncColorAccuracyEnabled((IntPtr)fsca.Get(), enable);
         }
 
+        public bool TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetFreeSyncColorAccuracyEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public (bool supported, bool enabled) GetDynamicRefreshRateControlState(IADLXDisplay* display)
         {
             ThrowIfDisposed();
@@ -875,6 +1109,19 @@ namespace ADLXWrapper
             var services = GetDisplayServices3OrThrow();
             using var drr = new ComPtr<IADLXDisplayDynamicRefreshRateControl>((IADLXDisplayDynamicRefreshRateControl*)DisplaySettingsOps.GetDynamicRefreshRateControlHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetDynamicRefreshRateControlEnabled((IntPtr)drr.Get(), enable);
+        }
+
+        public bool TrySetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
+        {
+            try
+            {
+                SetDynamicRefreshRateControlEnabled(display, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplay* display)
@@ -903,6 +1150,19 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             DisplaySettingsOps.ApplyCustomResolution(customRes, info);
+        }
+
+        public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
+        {
+            try
+            {
+                ApplyCustomResolution(customRes, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
         #endregion
         private static unsafe class DisplaySettingsOps

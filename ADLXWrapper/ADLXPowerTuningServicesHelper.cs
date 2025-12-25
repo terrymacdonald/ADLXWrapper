@@ -259,6 +259,22 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Tries to apply SmartShift Max; returns false when the feature is unsupported.
+        /// </summary>
+        public bool TryApplySmartShiftMax(SmartShiftMaxInfo info)
+        {
+            try
+            {
+                ApplySmartShiftMax(info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Returns SmartShift Eco info as a managed DTO.
         /// </summary>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
@@ -292,6 +308,22 @@ namespace ADLXWrapper
             using var ecoPtr = new ComPtr<IADLXSmartShiftEco>(eco);
             if (!info.IsSupported) return;
             SetSmartShiftEcoEnabled(ecoPtr.Get(), info.IsEnabled);
+        }
+
+        /// <summary>
+        /// Tries to apply SmartShift Eco; returns false when the feature is unsupported.
+        /// </summary>
+        public bool TryApplySmartShiftEco(SmartShiftEcoInfo info)
+        {
+            try
+            {
+                ApplySmartShiftEco(info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
@@ -329,6 +361,22 @@ namespace ADLXWrapper
             }
         }
 
+        /// <summary>
+        /// Tries to apply manual power tuning to an existing interface; returns false when unsupported.
+        /// </summary>
+        public bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+        {
+            try
+            {
+                ApplyManualPowerTuning(manualPower, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
@@ -344,6 +392,22 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get manual power tuning interface");
             using var manualPower = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)manual);
             ApplyManualPowerTuning(manualPower.Get(), info);
+        }
+
+        /// <summary>
+        /// Tries to apply manual power tuning via tuning services; returns false when unsupported.
+        /// </summary>
+        public bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+        {
+            try
+            {
+                ApplyManualPowerTuning(tuningServices, gpu, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public void Dispose()

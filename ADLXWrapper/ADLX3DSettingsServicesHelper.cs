@@ -186,6 +186,22 @@ namespace ADLXWrapper
             if (info.Tessellation.HasValue) ApplyTessellation(services, gpu, info.Tessellation.Value);
         }
 
+        /// <summary>
+        /// Tries to apply all provided 3D settings; returns false when the feature set is unsupported.
+        /// </summary>
+        public bool TryApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
+        {
+            try
+            {
+                ApplyAll3DSettings(gpu, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void Dispose()
         {
             if (_disposed) return;

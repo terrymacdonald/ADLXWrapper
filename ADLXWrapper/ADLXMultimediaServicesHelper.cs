@@ -200,6 +200,22 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to set video upscale enabled");
         }
 
+        /// <summary>
+        /// Tries to set video upscale enabled; returns false when the feature is unsupported.
+        /// </summary>
+        public bool TrySetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
+        {
+            try
+            {
+                SetVideoUpscaleEnabled(upscale, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void SetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
         {
             ThrowIfDisposed();
@@ -209,6 +225,22 @@ namespace ADLXWrapper
             var result = upscale->SetSharpness(sharpness);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video upscale sharpness");
+        }
+
+        /// <summary>
+        /// Tries to set video upscale sharpness; returns false when the feature is unsupported.
+        /// </summary>
+        public bool TrySetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
+        {
+            try
+            {
+                SetVideoUpscaleSharpness(upscale, sharpness);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public IADLXVideoSuperResolution* GetVideoSuperResolutionNative(IADLXGPU* gpu)
@@ -280,6 +312,22 @@ namespace ADLXWrapper
             var result = vsr->SetEnabled(enable ? (byte)1 : (byte)0);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set video super resolution enabled");
+        }
+
+        /// <summary>
+        /// Tries to set video super resolution enabled; returns false when the feature is unsupported.
+        /// </summary>
+        public bool TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
+        {
+            try
+            {
+                SetVideoSuperResolutionEnabled(vsr, enable);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public void Dispose()

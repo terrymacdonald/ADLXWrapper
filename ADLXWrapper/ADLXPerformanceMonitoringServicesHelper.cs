@@ -405,6 +405,19 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to set sampling interval");
         }
 
+        public bool TrySetSamplingInterval(int intervalMs)
+        {
+            try
+            {
+                SetSamplingInterval(intervalMs);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public int GetMaxPerformanceMetricsHistorySize()
         {
             ThrowIfDisposed();
@@ -439,6 +452,19 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to set max performance metrics history size");
         }
 
+        public bool TrySetMaxPerformanceMetricsHistorySize(int sizeSec)
+        {
+            try
+            {
+                SetMaxPerformanceMetricsHistorySize(sizeSec);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void ClearPerformanceMetricsHistory()
         {
             ThrowIfDisposed();
@@ -447,6 +473,19 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to clear performance metrics history");
+        }
+
+        public bool TryClearPerformanceMetricsHistory()
+        {
+            try
+            {
+                ClearPerformanceMetricsHistory();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public void StartPerformanceMetricsTracking()
@@ -459,6 +498,19 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to start performance metrics tracking");
         }
 
+        public bool TryStartPerformanceMetricsTracking()
+        {
+            try
+            {
+                StartPerformanceMetricsTracking();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
+        }
+
         public void StopPerformanceMetricsTracking()
         {
             ThrowIfDisposed();
@@ -467,6 +519,19 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics tracking not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to stop performance metrics tracking");
+        }
+
+        public bool TryStopPerformanceMetricsTracking()
+        {
+            try
+            {
+                StopPerformanceMetricsTracking();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         public PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings()
