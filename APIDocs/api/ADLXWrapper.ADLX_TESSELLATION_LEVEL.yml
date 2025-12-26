@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TESSELLATION_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_OFF
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -76,7 +76,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_2X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_4X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -130,7 +130,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_6X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_8X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_16X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_32X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
@@ -238,7 +238,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_64X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs

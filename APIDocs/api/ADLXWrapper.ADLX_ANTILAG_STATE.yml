@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTILAG_STATE
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ANTILAG
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ANTILAGNEXT
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs

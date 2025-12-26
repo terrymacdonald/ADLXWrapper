@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsChangedListener
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: On3DSettingsChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs

@@ -26,7 +26,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystemMetricsSupport1
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -144,7 +144,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -181,7 +181,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -216,7 +216,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -251,7 +251,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSmartShift
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -286,7 +286,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCPUUsageRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemRAMRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -360,7 +360,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
@@ -397,7 +397,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPowerDistribution
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport1.cs

@@ -26,7 +26,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DP_LINK_RATE
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_RBR
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -106,7 +106,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_2_16GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_2_43GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -160,7 +160,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -187,7 +187,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_4_32GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -214,7 +214,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR2
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -241,7 +241,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR3
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -268,7 +268,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR10
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -295,7 +295,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR13D5
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
@@ -322,7 +322,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR20
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs

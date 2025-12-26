@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: _data_e__FixedBuffer
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: e0
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs

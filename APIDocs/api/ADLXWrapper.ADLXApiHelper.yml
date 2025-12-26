@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXApiHelper
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Initialize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InitializeWithCallerAdl
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFullVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -227,7 +227,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -257,7 +257,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -348,7 +348,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs

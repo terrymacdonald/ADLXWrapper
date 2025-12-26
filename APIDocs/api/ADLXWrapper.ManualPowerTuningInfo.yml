@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualPowerTuningInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -144,7 +144,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -173,7 +173,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -202,7 +202,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -231,7 +231,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitDefaultValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -260,7 +260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs

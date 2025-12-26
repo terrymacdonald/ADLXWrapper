@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayConnectivityExperience
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -91,7 +91,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -186,7 +186,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedDPLink
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -256,7 +256,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabledHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabledHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -326,7 +326,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDPLinkRate
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -358,7 +358,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfActiveLanes
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -393,7 +393,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfTotalLanes
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -428,7 +428,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRelativePreEmphasis
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -463,7 +463,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRelativePreEmphasis
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -498,7 +498,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRelativeVoltageSwing
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -533,7 +533,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRelativeVoltageSwing
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
@@ -568,7 +568,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabledLinkProtection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs

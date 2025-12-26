@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDescription
     path: ../ADLXWrapper/cs_generated/IADLXMemoryTimingDescription.cs

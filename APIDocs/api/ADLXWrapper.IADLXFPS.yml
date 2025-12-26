@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXFPS
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimeStamp
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXFPS.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FPS
     path: ../ADLXWrapper/cs_generated/IADLXFPS.cs

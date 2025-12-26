@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TIMING_POLARITY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: POSITIVE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NEGATIVE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs

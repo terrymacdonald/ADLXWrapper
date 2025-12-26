@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktopServicesHelper
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -188,7 +188,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -260,7 +260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -298,7 +298,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -332,7 +332,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -377,7 +377,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -413,7 +413,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -502,7 +502,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -537,7 +537,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -579,7 +579,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -617,7 +617,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopHandles
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -655,7 +655,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -693,7 +693,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandlingNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -721,7 +721,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandling
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -749,7 +749,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinity
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -777,7 +777,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinityHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -805,7 +805,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -836,7 +836,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -867,7 +867,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -896,7 +896,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -926,7 +926,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDisplayListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -957,7 +957,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -988,7 +988,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -1019,7 +1019,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -1050,7 +1050,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs

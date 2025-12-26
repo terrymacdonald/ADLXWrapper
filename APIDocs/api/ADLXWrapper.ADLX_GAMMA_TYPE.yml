@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GAMMA_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UNKNOW
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DEGAMMA_RAMP
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REGAMMA_RAMP
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DEGAMMA_COEFFICIENTS
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REGAMMA_COEFFICIENTS
     path: ../ADLXWrapper/cs_generated/ADLX_GAMMA_TYPE.cs

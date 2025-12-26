@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplaySettingsChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

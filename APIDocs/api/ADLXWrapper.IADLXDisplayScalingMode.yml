@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayScalingMode
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -212,7 +212,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMode
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
@@ -244,7 +244,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMode
     path: ../ADLXWrapper/cs_generated/IADLXDisplayScalingMode.cs
