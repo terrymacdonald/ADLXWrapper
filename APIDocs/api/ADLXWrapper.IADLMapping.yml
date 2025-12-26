@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLMapping
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXGPUFromBdf
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -125,7 +125,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXGPUFromAdlAdapterIndex
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BdfFromADLXGPU
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -203,7 +203,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AdlAdapterIndexFromADLXGPU
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -240,7 +240,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXDisplayFromADLIds
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLIdsFromADLXDisplay
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -330,7 +330,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXDesktopFromADLIds
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
@@ -375,7 +375,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLMapping.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLIdsFromADLXDesktop
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs

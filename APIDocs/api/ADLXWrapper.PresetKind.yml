@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetKind
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSaver
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Quiet
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Balanced
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Turbo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Rage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs

@@ -33,7 +33,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_RESULT
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_OK
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ALREADY_ENABLED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ALREADY_INITIALIZED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FAIL
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INVALID_ARGS
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_BAD_VER
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_UNKNOWN_INTERFACE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TERMINATED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -275,7 +275,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ADL_INIT_ERROR
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -302,7 +302,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_FOUND
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -329,7 +329,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INVALID_OBJECT
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -356,7 +356,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ORPHAN_OBJECTS
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -383,7 +383,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_SUPPORTED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -410,7 +410,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PENDING_OPERATION
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -437,7 +437,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_INACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_IN_USE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -491,7 +491,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TIMEOUT_OPERATION
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
@@ -518,7 +518,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RESULT.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_ACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs

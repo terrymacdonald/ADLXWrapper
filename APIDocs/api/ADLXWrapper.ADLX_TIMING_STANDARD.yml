@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TIMING_STANDARD
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CVT
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CVT_RB
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GTF
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DMT
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MANUAL
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs

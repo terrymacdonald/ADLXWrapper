@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXException
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Result
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -137,7 +137,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsNotInitializedError
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAlreadyInitializedError
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -197,7 +197,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUInactiveError
     path: ../ADLXWrapper/ADLXApiHelper.cs

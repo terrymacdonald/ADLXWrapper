@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUAutoTuningCompleteEvent
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUndervoltGPUCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -206,7 +206,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsOverclockGPUCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsOverclockVRAMCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs

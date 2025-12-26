@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AdlxInterfaceHandle
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: From
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FromNonRefCounted
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -159,7 +159,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: As
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -222,7 +222,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
@@ -256,7 +256,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs

@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SYNC_ORIGIN
     path: ../ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SYNC_ORIGIN_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SYNC_ORIGIN_INTERNAL
     path: ../ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SYNC_ORIGIN_EXTERNAL
     path: ../ADLXWrapper/cs_generated/ADLX_SYNC_ORIGIN.cs

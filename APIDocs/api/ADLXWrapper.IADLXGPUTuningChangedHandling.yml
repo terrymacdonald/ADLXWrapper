@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUTuningChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddGPUTuningEventListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveGPUTuningEventListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedHandling.cs

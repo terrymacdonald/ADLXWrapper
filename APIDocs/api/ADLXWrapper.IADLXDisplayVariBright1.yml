@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayVariBright1
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -104,7 +104,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -234,7 +234,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -304,7 +304,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentMaximizeBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -339,7 +339,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentOptimizeBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -374,7 +374,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentBalanced
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -409,7 +409,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentOptimizeBattery
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -444,7 +444,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentMaximizeBattery
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -479,7 +479,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaximizeBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -508,7 +508,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetOptimizeBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -537,7 +537,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBalanced
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -566,7 +566,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetOptimizeBattery
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -595,7 +595,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaximizeBattery
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -624,7 +624,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBacklightAdaptiveSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -659,7 +659,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBacklightAdaptiveEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -694,7 +694,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBacklightAdaptiveEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -729,7 +729,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBatteryLifeSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -764,7 +764,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBatteryLifeEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -799,7 +799,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBatteryLifeEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -834,7 +834,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsWindowsPowerModeSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -869,7 +869,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsWindowsPowerModeEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -904,7 +904,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetWindowsPowerModeEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -939,7 +939,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsFullScreenVideoSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -974,7 +974,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsFullScreenVideoEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
@@ -1009,7 +1009,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFullScreenVideoEnabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplayVariBright1.cs

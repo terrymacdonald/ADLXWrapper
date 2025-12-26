@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_COLOR_DEPTH
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_6
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_8
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_10
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_12
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_14
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_16
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs

@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaChangedCallback
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs

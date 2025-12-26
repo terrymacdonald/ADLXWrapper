@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUTuningChangedListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnGPUTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedListener.cs

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanPoint
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs

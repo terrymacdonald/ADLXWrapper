@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDesktopChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDesktopChangedHandling.cs

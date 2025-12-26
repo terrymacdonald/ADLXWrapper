@@ -33,7 +33,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_CONNECTOR_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_VGA
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DVI_D
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DVI_I
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NTSC
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_JPN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NONI2C_JPN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NONI2C_NTSC
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -275,7 +275,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_PROPRIETARY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -302,7 +302,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_HDMI_TYPE_A
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -329,7 +329,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_HDMI_TYPE_B
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -356,7 +356,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_SVIDEO
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -383,7 +383,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_COMPOSITE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -410,7 +410,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_RCA_3COMPONENT
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -437,7 +437,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DISPLAYPORT
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_EDP
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -491,7 +491,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_WIRELESSDISPLAY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
@@ -518,7 +518,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_USB_TYPE_C
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs

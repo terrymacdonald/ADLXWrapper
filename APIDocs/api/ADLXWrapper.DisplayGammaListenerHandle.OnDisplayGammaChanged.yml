@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplayGammaChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

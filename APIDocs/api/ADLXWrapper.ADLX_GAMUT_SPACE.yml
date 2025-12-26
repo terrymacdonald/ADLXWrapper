@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GAMUT_SPACE
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_709
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -74,7 +74,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_601
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_ADOBE_RGB
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CIE_RGB
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_2020
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CUSTOM
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs

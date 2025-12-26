@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayResolution.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayResolution.cs

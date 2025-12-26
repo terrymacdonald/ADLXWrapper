@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXMultimediaServices
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
@@ -243,7 +243,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs

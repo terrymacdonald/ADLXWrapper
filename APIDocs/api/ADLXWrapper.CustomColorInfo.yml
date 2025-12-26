@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CustomColorInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHueSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Hue
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSaturationSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Saturation
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -204,7 +204,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBrightnessSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -233,7 +233,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Brightness
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -262,7 +262,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Contrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTemperatureSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -349,7 +349,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -378,7 +378,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

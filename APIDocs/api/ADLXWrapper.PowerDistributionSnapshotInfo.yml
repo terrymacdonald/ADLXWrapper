@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerDistributionSnapshotInfo
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApuShiftValue
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuShiftValue
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApuShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -168,7 +168,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs

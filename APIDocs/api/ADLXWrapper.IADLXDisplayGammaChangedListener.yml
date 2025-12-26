@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayGammaChangedListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplayGammaChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedListener.cs

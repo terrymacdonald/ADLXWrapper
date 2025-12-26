@@ -26,7 +26,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualVRAMTuning2
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -144,7 +144,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -181,7 +181,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMemoryTiming
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -216,7 +216,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedMemoryTimingDescriptionList
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -280,7 +280,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -312,7 +312,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxVRAMFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -344,7 +344,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxVRAMFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
@@ -379,7 +379,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxVRAMFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs

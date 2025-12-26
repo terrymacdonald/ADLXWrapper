@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_LOG_SEVERITY
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LDEBUG
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LWARNING
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LERROR
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs

@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_UNDEFINED
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_INTEGRATED
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-      branch: main
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_DISCRETE
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs

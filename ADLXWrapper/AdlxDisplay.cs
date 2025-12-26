@@ -298,7 +298,15 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetColorDepthState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetColorDepthState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                // Older systems without display services v3 report color depth as unsupported instead of throwing.
+                return (false, default);
+            }
         }
 
         public void SetColorDepth(ADLX_COLOR_DEPTH depth)
