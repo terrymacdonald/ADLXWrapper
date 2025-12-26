@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsServices1
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAntiLag
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -223,7 +223,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetChill
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -257,7 +257,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBoost
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetImageSharpening
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -325,7 +325,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEnhancedSync
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -359,7 +359,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetWaitForVerticalRefresh
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -393,7 +393,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFrameRateTargetControl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -427,7 +427,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAntiAliasing
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -461,7 +461,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMorphologicalAntiAliasing
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -495,7 +495,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAnisotropicFiltering
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -529,7 +529,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTessellation
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRadeonSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -595,7 +595,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetResetShaderCache
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -629,7 +629,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
@@ -661,7 +661,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAMDFluidMotionFrames
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices1.cs

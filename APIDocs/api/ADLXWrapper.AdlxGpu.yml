@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPU
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -171,7 +171,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -258,7 +258,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -316,7 +316,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -374,7 +374,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -403,7 +403,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -432,7 +432,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -462,7 +462,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -492,7 +492,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -525,7 +525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -596,7 +596,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -634,7 +634,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxGpu.cs

@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDLUTInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceVividGamingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceDynamicContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUser3DLutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -168,7 +168,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

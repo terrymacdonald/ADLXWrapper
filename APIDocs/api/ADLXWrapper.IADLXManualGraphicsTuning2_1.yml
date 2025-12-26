@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualGraphicsTuning2_1
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -91,7 +91,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -186,7 +186,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUMinFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -288,7 +288,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -355,7 +355,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUMaxFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -390,7 +390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -457,7 +457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -492,7 +492,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequencyDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -527,7 +527,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequencyDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
@@ -562,7 +562,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs

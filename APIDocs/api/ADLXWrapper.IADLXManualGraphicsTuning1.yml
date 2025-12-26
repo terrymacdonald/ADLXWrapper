@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualGraphicsTuning1
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningRanges
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEmptyGPUTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -277,7 +277,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValidGPUTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning1.cs

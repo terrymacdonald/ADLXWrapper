@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DESKTOP_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DESKTOP_SINGLE
     path: ../ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DESKTOP_DUPLCATE
     path: ../ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DESKTOP_EYEFINITY
     path: ../ADLXWrapper/cs_generated/ADLX_DESKTOP_TYPE.cs

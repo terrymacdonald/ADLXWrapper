@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplay
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -136,7 +136,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -206,7 +206,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -264,7 +264,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -293,7 +293,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -322,7 +322,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerId
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -351,7 +351,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -380,7 +380,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -409,7 +409,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -438,7 +438,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -467,7 +467,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -496,7 +496,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -525,7 +525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -555,7 +555,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSync
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -590,7 +590,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSync
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -624,7 +624,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuScalingState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -654,7 +654,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGpuScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -689,7 +689,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGpuScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -723,7 +723,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -753,7 +753,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -781,7 +781,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -813,7 +813,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -844,7 +844,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -874,7 +874,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -904,7 +904,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -937,7 +937,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -972,7 +972,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1002,7 +1002,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1034,7 +1034,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1068,7 +1068,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1098,7 +1098,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1130,7 +1130,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1164,7 +1164,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHdcpState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1194,7 +1194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHdcp
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1226,7 +1226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHdcp
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1260,7 +1260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1290,7 +1290,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1324,7 +1324,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1360,7 +1360,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1390,7 +1390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1419,7 +1419,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1450,7 +1450,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1480,7 +1480,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1509,7 +1509,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1540,7 +1540,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1570,7 +1570,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1599,7 +1599,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1630,7 +1630,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1660,7 +1660,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1686,7 +1686,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1714,7 +1714,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1744,7 +1744,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1770,7 +1770,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1798,7 +1798,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1828,7 +1828,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1854,7 +1854,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1882,7 +1882,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1912,7 +1912,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1941,7 +1941,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -1972,7 +1972,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2002,7 +2002,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2034,7 +2034,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2068,7 +2068,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2098,7 +2098,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2130,7 +2130,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2164,7 +2164,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2194,7 +2194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2226,7 +2226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2260,7 +2260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2293,7 +2293,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2327,7 +2327,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2360,7 +2360,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2394,7 +2394,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2427,7 +2427,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2461,7 +2461,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2494,7 +2494,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2528,7 +2528,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2561,7 +2561,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2595,7 +2595,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2625,7 +2625,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2655,7 +2655,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
     path: ../ADLXWrapper/AdlxDisplay.cs
@@ -2685,7 +2685,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxDisplay.cs

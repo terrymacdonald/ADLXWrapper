@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -282,7 +282,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -319,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRGB444Full
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr444
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -389,7 +389,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr422
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -424,7 +424,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRGB444Limited
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
@@ -459,7 +459,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr420
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs

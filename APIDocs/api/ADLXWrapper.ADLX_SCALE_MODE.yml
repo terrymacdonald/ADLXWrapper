@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SCALE_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PRESERVE_ASPECT_RATIO
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FULL_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CENTERED
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs

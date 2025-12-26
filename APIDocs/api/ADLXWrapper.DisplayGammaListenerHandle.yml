@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayGammaListenerHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -95,7 +95,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

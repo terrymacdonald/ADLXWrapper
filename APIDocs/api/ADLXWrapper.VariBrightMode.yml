@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VariBrightMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Unknown
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaximizeBrightness
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OptimizeBrightness
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -124,7 +124,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Balanced
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -150,7 +150,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OptimizeBattery
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaximizeBattery
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

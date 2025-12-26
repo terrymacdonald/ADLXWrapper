@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXPowerTuningChangedEvent1
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -206,7 +206,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSmartShiftMaxChanged
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSmartShiftEcoChanged
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs

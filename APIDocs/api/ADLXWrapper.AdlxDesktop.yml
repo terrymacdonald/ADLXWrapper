@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -171,7 +171,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -258,7 +258,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -316,7 +316,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayInfosForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -375,7 +375,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -405,7 +405,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -438,7 +438,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -472,7 +472,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -500,7 +500,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -530,7 +530,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplayInfosForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -560,7 +560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -590,7 +590,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -620,7 +620,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxDesktop.cs

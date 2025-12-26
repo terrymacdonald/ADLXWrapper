@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDSettingsChangedCallback
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs

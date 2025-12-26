@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftMaxInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasMode
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs

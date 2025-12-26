@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DesktopInfo
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -228,7 +228,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs

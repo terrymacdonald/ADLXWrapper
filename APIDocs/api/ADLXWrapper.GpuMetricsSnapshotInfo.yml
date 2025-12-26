@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSnapshotInfo
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Usage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -204,7 +204,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMUsage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -233,7 +233,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -262,7 +262,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Power
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPower
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -349,7 +349,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimestampMs
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -378,7 +378,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs

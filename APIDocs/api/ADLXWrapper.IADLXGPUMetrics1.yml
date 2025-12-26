@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUMetrics1
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimeStamp
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -224,7 +224,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -259,7 +259,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUVRAMClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -329,7 +329,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -364,7 +364,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUHotspotTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -399,7 +399,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -434,7 +434,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTotalBoardPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -469,7 +469,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -504,7 +504,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -539,7 +539,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -574,7 +574,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUIntakeTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -609,7 +609,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUMemoryTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -644,7 +644,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NPUFrequency
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
@@ -679,7 +679,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NPUActivityLevel
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics1.cs

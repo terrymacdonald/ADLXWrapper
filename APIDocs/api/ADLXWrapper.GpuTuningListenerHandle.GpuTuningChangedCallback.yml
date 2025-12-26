@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningChangedCallback
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs

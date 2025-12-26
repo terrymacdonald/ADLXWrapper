@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPUTuningServicesHelper
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -121,7 +121,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningChangedHandling
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -249,7 +249,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -329,7 +329,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCapabilities
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -360,7 +360,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -391,7 +391,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -429,7 +429,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -460,7 +460,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -496,7 +496,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -527,7 +527,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -594,7 +594,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -630,7 +630,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -661,7 +661,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -697,7 +697,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -728,7 +728,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -764,7 +764,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -795,7 +795,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -831,7 +831,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -862,7 +862,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -898,7 +898,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -929,7 +929,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -965,7 +965,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -996,7 +996,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -1032,7 +1032,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -1062,7 +1062,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs

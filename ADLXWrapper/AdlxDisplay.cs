@@ -466,12 +466,12 @@ namespace ADLXWrapper
             helper.ApplyConnectivityExperience(_display.Get(), info);
         }
 
-        public bool TrySetConnectivityExperience(ConnectivityExperienceInfo info)
+        public bool TryApplyConnectivityExperience(ConnectivityExperienceInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.TrySetConnectivityExperience(_display.Get(), info);
+            return helper.TryApplyConnectivityExperience(_display.Get(), info);
         }
 
         /// <summary>

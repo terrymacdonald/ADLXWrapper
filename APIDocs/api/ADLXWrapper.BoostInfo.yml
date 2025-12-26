@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BoostInfo
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsMinResSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -169,7 +169,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResolutionRange
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -198,7 +198,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs

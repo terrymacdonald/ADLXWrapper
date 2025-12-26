@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_RegammaCoeff
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA0
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA1
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA2
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
@@ -137,7 +137,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA3
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
@@ -165,7 +165,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamma
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs

@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_I2C_LINE
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OD_CONTROL
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM2
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM3
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM4
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM5
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM6
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs

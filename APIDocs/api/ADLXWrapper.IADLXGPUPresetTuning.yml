@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUPresetTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -224,7 +224,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -259,7 +259,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -294,7 +294,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -329,7 +329,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -364,7 +364,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -399,7 +399,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -434,7 +434,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -469,7 +469,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -504,7 +504,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -539,7 +539,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -568,7 +568,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -597,7 +597,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -626,7 +626,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
@@ -655,7 +655,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs

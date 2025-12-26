@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SMARTSHIFT_ECO_INACTIVE_REASON
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INACTIVE_REASON_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INACTIVE_REASON_PRIMARY_DISPLAY_CONNECTED_TO_DGPU
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INACTIVE_REASON_DETACHABLE_GPU_CONNECTED
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INACTIVE_REASON_SESSION_INACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INACTIVE_REASON_MULTIPLE_SESSION_ACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_SMARTSHIFT_ECO_INACTIVE_REASON.cs

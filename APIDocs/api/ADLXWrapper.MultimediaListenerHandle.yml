@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaListenerHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -95,7 +95,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs

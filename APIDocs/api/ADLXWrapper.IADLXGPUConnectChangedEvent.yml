@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUConnectChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -240,7 +240,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUAppsListChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUPowerChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
@@ -298,7 +298,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUPowerChangeError
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedEvent.cs

@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualPowerTuning1
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -215,7 +215,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPowerLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTDCLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -352,7 +352,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -387,7 +387,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerLimitDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
@@ -457,7 +457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTDCLimitDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning1.cs

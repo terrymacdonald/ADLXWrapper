@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystem
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HybridGraphicsType
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUs
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplaysServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopsServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnableLog
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -326,7 +326,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -358,7 +358,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -390,7 +390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalSystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
@@ -457,7 +457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystem.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetI2C
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs

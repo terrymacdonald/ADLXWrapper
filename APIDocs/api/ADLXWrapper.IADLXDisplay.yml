@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplay
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -90,7 +90,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -119,7 +119,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -148,7 +148,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -185,7 +185,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerID
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -220,7 +220,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayType
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -284,7 +284,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -319,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EDID
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -391,7 +391,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -426,7 +426,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -461,7 +461,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -493,7 +493,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs
@@ -525,7 +525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/cs_generated/IADLXDisplay.cs

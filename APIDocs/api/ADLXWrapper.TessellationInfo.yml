@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TessellationInfo
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Level
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentPreset
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SupportedPresets
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: main
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
