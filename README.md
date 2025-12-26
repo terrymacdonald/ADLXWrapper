@@ -1,150 +1,122 @@
-# ADLXCSharpBind
+# ADLXWrapper
 
-ADLX C# wrapper DLL and bindings for [ADLX](https://github.com/GPUOpen-LibrariesAndSDKs/ADLX).
+A modern, high-performance C# wrapper for the AMD Display Library Extensions (ADLX) SDK, generated using ClangSharp.
 
-🔗 **Official ADLX Documentation:** https://gpuopen.com/adlx/
+This wrapper provides a safe, idiomatic, and vtable-based interop layer, allowing .NET applications to interact directly and efficiently with AMD GPU features.
 
-## 📚 Documentation
+## Features
 
-This repository contains comprehensive documentation to help you get started:
+- **Full API Coverage**: Wraps the core ADLX services for System, GPU, Display, Desktop, 3D Settings, Performance Monitoring, Power Tuning, and Multimedia.
+- **Service Helpers**: Per-service helper classes (e.g., `ADLXSystemServicesHelper`, `ADLXDisplayServicesHelper`, `ADLXGPUTuningServicesHelper`) wrap native interfaces with safe enumeration, capability checks, and managed DTOs.
+- **Serializable Data Objects**: All hardware states are read into serializable `Info` structs, perfect for saving configurations to JSON.
+- **Configuration Management**: Includes `Apply` methods to restore hardware states from deserialized `Info` objects.
+- **Real-time Event Handling**: Provides listeners for display, desktop, and GPU tuning changes.
 
-- **[ADLX_CSHARP_WRAPPER_GUIDE.md](ADLX_CSHARP_WRAPPER_GUIDE.md)** - Complete C# wrapper guide with build instructions, API usage, and troubleshooting
-- **[ADLX_GAMMA_RAMP_JSON_GUIDE.md](ADLX_GAMMA_RAMP_JSON_GUIDE.md)** - Gamma ramp JSON serialization guide for .NET 8.0
-- **[implementation_plan.md](implementation_plan.md)** - Development implementation plan and project structure
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Windows 10/11
-- Visual Studio 2022 Community (or higher)
-- AMD graphics drivers with ADLX support
-- Internet connection (for automatic dependency downloads)
-
-### Installation
-1. **Build the wrapper:** Run `rebuild_adlx.bat` to build the C++ wrapper DLL
-2. **Test the wrapper:** Run `test_csharp_netframework48.bat` or `test_csharp_net8.bat` to build and test the C# bindings
-
-### Build Process
-The project automatically handles the following when you build:
-- Downloads and installs SWIG 4.3.1 if not present
-- Downloads the latest ADLX SDK from AMD
-- Generates C# bindings using SWIG
-- Builds a C++ `ADLXWrapper.dll` and associated `.cs` files to make the AMD ADLX library available in C#.
-- Creates test applications for both .NET Framework 4.8 and .NET 8.0
-
-## 🛠️ Build Scripts Reference
-
-### Main Scripts
-| Script | Purpose | Output |
-|--------|---------|--------|
-| `rebuild_adlx.bat` | Build C++ wrapper DLL | `ADLXWrapper.dll` |
-| `test_csharp_netframework48.bat` | Build & run C# test (.NET Framework 4.8) | `IADLXGPU2Test.exe` |
-| `test_csharp_net8.bat` | Build & run C# test (.NET 8.0) | `IADLXGPU2Test_Net8.exe` |
-
-### Native C Test Scripts (`ADLXNativeTest/`)
-| Script | Method | Best For |
-|--------|--------|----------|
-| `build_fixed.bat` | Dynamic compiler detection | **Most systems (recommended)** |
-| `build_vscode.bat` | VSCode-optimized | VSCode development |
-| `build_amd.bat` | AMD vcvars64.bat method | Standard AMD workflow |
-| `build.bat` | Direct compiler path | Known VS2022 installations |
-| `build_simple.bat` | Simplified test | Troubleshooting |
-
-## 🎯 .NET Version Support
-
-### .NET Framework 4.8
-```batch
-.\rebuild_adlx.bat
-.\test_csharp_netframework48.bat
-```
-
-### .NET 8.0
-```batch
-.\rebuild_adlx.bat
-.\test_csharp_net8.bat
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 ADLXWrapper/
-├── 📄 README.md                           # This file
-├── 📄 ADLX_CSHARP_WRAPPER_GUIDE.md       # Complete wrapper guide
-├── 📄 ADLX_GAMMA_RAMP_JSON_GUIDE.md      # Gamma ramp JSON guide
-├── 📄 implementation_plan.md              # Development plan
-├── 🔧 rebuild_adlx.bat                    # Main build script
-├── 🔧 test_csharp_netframework48.bat      # C# test script (.NET Framework 4.8)
-├── 🔧 test_csharp_net8.bat               # C# test script (.NET 8.0)
-├── 📁 ADLXWrapper/                        # C++ wrapper project
-├── 📁 IADLXGPU2Test/                      # C# test projects
-├── 📁 ADLXNativeTest/                     # Native C tests
-├── 📁 ADLX/                               # AMD ADLX SDK
-└── 📁 swigwin/                            # SWIG installation
+|-- ADLX/                     # ADLX SDK headers (downloaded by script)
+|-- ADLXWrapper/              # The main C# wrapper project
+|   |-- ADLX*.cs              # Core helpers/services for each ADLX feature
+|   \-- README.md             # Detailed API documentation and examples
+|-- ADLXWrapper.Tests/        # xUnit test suite
+|-- Samples/                  # Sample console applications
+\-- scripts/                  # Build, test, and preparation scripts
 ```
 
-## 🔧 Usage in Your Application
+## Getting Started
 
-1. **Copy files** to your project:
-   - `ADLXWrapper.dll` (or `ADLXCSharpBind.dll` for .NET Framework 4.8)
-   - All generated `.cs` files from the build process
+### 1. Prepare the Environment
 
-2. **Load the DLL** during application startup
+First, run the preparation script. This will download the required ADLX SDK headers into the `ADLX/` directory.
 
-3. **Import the bindings** and follow the [wrapper guide](ADLX_CSHARP_WRAPPER_GUIDE.md)
+```powershell
+./prepare_adlx.ps1
+```
 
-4. **Reference documentation:**
-   - [AMD ADLX Documentation](https://gpuopen.com/manuals/adlx/adlx-page_guide_init_help/#to-initialize-adlx-in-a-c-application)
-   - [AMD C# Samples](https://gpuopen.com/manuals/adlx/adlx-page_sample_cs/)
+### 2. Build the Solution
 
-## ✨ Key Features
+Once the SDK is in place, you can build the entire solution, including the wrapper, tests, and samples.
 
-- **Full ADLX API Access** - Complete C# wrapper for all ADLX functionality
-- **Dual .NET Support** - Works with both .NET Framework 4.8 and .NET 8.0
-- **GPU Management** - Enumeration, monitoring, and tuning
-- **Display Control** - Resolution, color management, FreeSync settings
-- **Performance Monitoring** - Real-time GPU metrics and system monitoring
-- **Advanced Features** - Gamma ramp JSON serialization (.NET 8.0)
-- **Multiple Build Methods** - Various build scripts for different environments
+```powershell
+./build_adlx.ps1
+```
 
-## 🔍 Advanced Features
+### 3. Run Tests
 
-### Gamma Ramp JSON Serialization (.NET 8.0)
+To verify the build and check hardware compatibility, run the test script.
+
+```powershell
+./test_adlx.ps1
+```
+
+## Using ADLXWrapper in another project
+
+### Option A: add the project (preferred)
+- Keep this repo as a sibling folder or git submodule, run `./prepare_adlx.ps1` once, then `dotnet add <your>.csproj reference ..\ADLXWrapper\ADLXWrapper.csproj`.
+- Build normally; the `cs_generated` bindings are produced automatically, so you do not need to copy them manually.
+
+### Option B: drop in the prebuilt DLL
+- Build a Release copy (`dotnet build ADLXWrapper/ADLXWrapper.csproj -c Release`) or use the release ZIP built by `./create_adlx_release_zip.ps1`.
+- Add a file reference to `ADLXWrapper.dll` (for example in your `.csproj`):
+
+```xml
+<ItemGroup>
+  <Reference Include="ADLXWrapper">
+    <HintPath>lib/ADLXWrapper.dll</HintPath>
+  </Reference>
+</ItemGroup>
+```
+
+- Only the managed DLL is required for consumers; all public helpers (`ADLXApiHelper`, service helpers, facades, DTOs) live in that assembly.
+- The ADLX native runtime ships with AMD drivers, so you do not need to redistribute SDK headers or binaries.
+- Do **not** cherry-pick files if you embed sources. Copy the entire `ADLXWrapper/` folder (all `ADLX*.cs` plus `cs_generated/` after running `prepare_adlx.ps1`) so the helper implementations and generated bindings stay in sync.
+
+## Packaging a release ZIP
+- Run `./prepare_adlx.ps1` once, then execute `./create_adlx_release_zip.ps1` (defaults to Release build). The script builds the wrapper and drops `artifacts/adlxwrapper-<version>-Release.zip`.
+- Contents: `ADLXWrapper.dll`, `ADLXWrapper.pdb`, `ADLXWrapper.deps.json`, XML docs (`ADLXWrapper.xml`), top-level `README.md`/`LICENSE`, and (optionally) sources + `cs_generated` when run with `-IncludeSources`.
+
+## Detailed Usage and Examples
+
+### Quick sample (facade-first)
+
 ```csharp
-// Serialize gamma ramp to JSON
-var serializable = gammaRamp.ToSerializable("My Profile");
-string json = NewtonsoftJsonUtility.ToJson(serializable);
+using var adlx = ADLXApiHelper.Initialize();
+using var sys = adlx.GetSystemServices();
 
-// Load from JSON
-var loaded = NewtonsoftJsonUtility.FromJson(jsonString);
-var restored = loaded.ToADLX();
+// Enumerate GPUs and displays (pointer-free)
+var gpus = sys.EnumerateADLXGPUs();
+var displays = sys.EnumerateDisplays();
+
+foreach (var display in displays)
+using (display)
+{
+    Console.WriteLine($"Display {display.Name} [{display.Width}x{display.Height}] on GPU {display.GpuUniqueId}");
+
+    // Toggle a display feature if supported (e.g., Virtual Super Resolution)
+    var vsr = display.GetVirtualSuperResolutionState();
+    if (vsr.supported && !vsr.enabled)
+    {
+        display.SetVirtualSuperResolution(true);
+    }
+}
+
+// Listen for display settings changes (callbacks occur on ADLX threads)
+using var displayServices = sys.GetDisplayServices();
+using var settingsListener = displayServices.AddDisplaySettingsEventListener(evt =>
+{
+    Console.WriteLine("[Display settings changed]");
+    return true; // keep listening
+});
+
+Console.WriteLine("Listener registered. Press Enter to exit...");
+Console.ReadLine();
 ```
 
-See [ADLX_GAMMA_RAMP_JSON_GUIDE.md](ADLX_GAMMA_RAMP_JSON_GUIDE.md) for complete details.
+### Support and disposal notes
+- Optional features surface support via `IsSupported` or capability objects; unsupported operations throw `ADLX_NOT_SUPPORTED`.
+- Helpers guard against use-after-dispose with `ObjectDisposedException`. Native pointers returned by helpers should be wrapped in `ComPtr` or disposed handles to avoid leaks.
+- Tests and samples may skip on systems without the required AMD hardware/driver.
 
-## 🐛 Troubleshooting
-
-### Common Issues
-- **Build Errors:** Try different build scripts in `ADLXNativeTest/` - use `build_fixed.bat` for most robust compilation
-- **ADLX Runtime Not Available:** Ensure AMD graphics drivers are installed
-- **Wrong DLL Referenced:** .NET Framework 4.8 uses `ADLXCSharpBind.dll`, .NET 8.0 uses `ADLXWrapper.dll`
-
-### Getting Help
-1. Check the [comprehensive wrapper guide](ADLX_CSHARP_WRAPPER_GUIDE.md)
-2. Try different build methods from the scripts reference above
-3. Review the [gamma ramp guide](ADLX_GAMMA_RAMP_JSON_GUIDE.md) for .NET 8.0 specific features
-
-## 📋 Version Information
-
-- **SWIG Version:** 4.3.1
-- **ADLX SDK Version:** 1.4.0.110
-- **Target Frameworks:** .NET Framework 4.8, .NET 8.0
-- **Platform:** x64
-- **Visual Studio:** 2022 Community (recommended)
-
-## 📄 License
-
-This wrapper follows the same licensing terms as the ADLX SDK. See the original ADLX documentation for details.
-
----
-
-**🎯 Ready to get started?** Check out the [ADLX_CSHARP_WRAPPER_GUIDE.md](ADLX_CSHARP_WRAPPER_GUIDE.md) for detailed instructions and examples!
+For additional API documentation and examples, see the **ADLXWrapper Project README** in the `ADLXWrapper/` folder.

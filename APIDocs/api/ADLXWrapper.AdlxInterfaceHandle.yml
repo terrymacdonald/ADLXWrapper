@@ -1,0 +1,651 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  id: AdlxInterfaceHandle
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.AdlxInterfaceHandle.As``1
+  - ADLXWrapper.AdlxInterfaceHandle.Dispose
+  - ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
+  - ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  - ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
+  langs:
+  - csharp
+  - vb
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AdlxInterfaceHandle
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 7
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Lightweight lifetime wrapper for raw ADLX interface pointers.
+  example: []
+  syntax:
+    content: 'public readonly struct AdlxInterfaceHandle : IDisposable'
+    content.vb: Public Structure AdlxInterfaceHandle Implements IDisposable
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  commentId: P:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  id: IsInvalid
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: IsInvalid
+  nameWithType: AdlxInterfaceHandle.IsInvalid
+  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsInvalid
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsInvalid { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsInvalid As Boolean
+  overload: ADLXWrapper.AdlxInterfaceHandle.IsInvalid*
+- uid: ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
+  id: From(System.Void*,System.Boolean)
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: From(void*, bool)
+  nameWithType: AdlxInterfaceHandle.From(void*, bool)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.From(void*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: From
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 20
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static AdlxInterfaceHandle From(void* ptr, bool addRef = true)
+    parameters:
+    - id: ptr
+      type: System.Void*
+    - id: addRef
+      type: System.Boolean
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Shared Function From(ptr As Void*, addRef As Boolean = True) As AdlxInterfaceHandle
+  overload: ADLXWrapper.AdlxInterfaceHandle.From*
+  nameWithType.vb: AdlxInterfaceHandle.From(Void*, Boolean)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.From(Void*, Boolean)
+  name.vb: From(Void*, Boolean)
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  id: FromNonRefCounted(System.Void*)
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: FromNonRefCounted(void*)
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted(void*)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(void*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FromNonRefCounted
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 34
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).
+  example: []
+  syntax:
+    content: public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)
+    parameters:
+    - id: ptr
+      type: System.Void*
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Shared Function FromNonRefCounted(ptr As Void*) As AdlxInterfaceHandle
+  overload: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
+  nameWithType.vb: AdlxInterfaceHandle.FromNonRefCounted(Void*)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(Void*)
+  name.vb: FromNonRefCounted(Void*)
+- uid: ADLXWrapper.AdlxInterfaceHandle.As``1
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.As``1
+  id: As``1
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: As<T>()
+  nameWithType: AdlxInterfaceHandle.As<T>()
+  fullName: ADLXWrapper.AdlxInterfaceHandle.As<T>()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: As
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 40
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: 'public T* As<T>() where T : unmanaged'
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}*'
+    content.vb: Public Function [As](Of T As Structure)() As T*
+  overload: ADLXWrapper.AdlxInterfaceHandle.As*
+  nameWithType.vb: AdlxInterfaceHandle.As(Of T)()
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.As(Of T)()
+  name.vb: As(Of T)()
+- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.Dispose
+  id: Dispose
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AdlxInterfaceHandle.Dispose()
+  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 42
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.AdlxInterfaceHandle.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
+  id: op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: implicit operator nint(AdlxInterfaceHandle)
+  nameWithType: AdlxInterfaceHandle.implicit operator nint(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator nint(ADLXWrapper.AdlxInterfaceHandle)
+  type: Operator
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: op_Implicit
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 50
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static implicit operator nint(AdlxInterfaceHandle handle)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: System.IntPtr
+    content.vb: Public Shared Widening Operator CType(handle As AdlxInterfaceHandle) As IntPtr
+  overload: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
+  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
+  name.vb: CType(AdlxInterfaceHandle)
+- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  id: op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: implicit operator IADLXInterface*(AdlxInterfaceHandle)
+  nameWithType: AdlxInterfaceHandle.implicit operator IADLXInterface*(AdlxInterfaceHandle)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator ADLXWrapper.IADLXInterface*(ADLXWrapper.AdlxInterfaceHandle)
+  type: Operator
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: op_Implicit
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 51
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static implicit operator IADLXInterface*(AdlxInterfaceHandle handle)
+    parameters:
+    - id: handle
+      type: ADLXWrapper.AdlxInterfaceHandle
+    return:
+      type: ADLXWrapper.IADLXInterface*
+    content.vb: Public Shared Widening Operator CType(handle As AdlxInterfaceHandle) As IADLXInterface*
+  overload: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
+  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
+  name.vb: CType(AdlxInterfaceHandle)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_IsInvalid
+  name: IsInvalid
+  nameWithType: AdlxInterfaceHandle.IsInvalid
+  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.AdlxInterfaceHandle.From*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.From
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_From_System_Void__System_Boolean_
+  name: From
+  nameWithType: AdlxInterfaceHandle.From
+  fullName: ADLXWrapper.AdlxInterfaceHandle.From
+- uid: System.Void*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void*
+  nameWithType: void*
+  fullName: void*
+  nameWithType.vb: Void*
+  fullName.vb: Void*
+  name.vb: Void*
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+- uid: ADLXWrapper.AdlxInterfaceHandle
+  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper
+  href: ADLXWrapper.AdlxInterfaceHandle.html
+  name: AdlxInterfaceHandle
+  nameWithType: AdlxInterfaceHandle
+  fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__
+  name: FromNonRefCounted
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
+- uid: ADLXWrapper.AdlxInterfaceHandle.As*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.As
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_As__1
+  name: As
+  nameWithType: AdlxInterfaceHandle.As
+  fullName: ADLXWrapper.AdlxInterfaceHandle.As
+- uid: '{T}*'
+  isExternal: true
+  name: T*
+  nameWithType: T*
+  fullName: T*
+  spec.csharp:
+  - name: T
+  - name: '*'
+  spec.vb:
+  - name: T
+  - name: '*'
+- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.Dispose
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_Dispose
+  name: Dispose
+  nameWithType: AdlxInterfaceHandle.Dispose
+  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.op_Implicit
+  name: implicit operator
+  nameWithType: AdlxInterfaceHandle.implicit operator
+  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator
+  nameWithType.vb: AdlxInterfaceHandle.CType
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: ADLXWrapper.IADLXInterface*
+  isExternal: true
+  href: ADLXWrapper.IADLXInterface.html
+  name: IADLXInterface*
+  nameWithType: IADLXInterface*
+  fullName: ADLXWrapper.IADLXInterface*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXInterface
+    name: IADLXInterface
+    href: ADLXWrapper.IADLXInterface.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXInterface
+    name: IADLXInterface
+    href: ADLXWrapper.IADLXInterface.html
+  - name: '*'

@@ -1,0 +1,56 @@
+using System.Runtime.CompilerServices;
+
+namespace ADLXWrapper;
+
+/// <include file='IADLXDisplay3DLUTChangedEvent.xml' path='doc/member[@name="IADLXDisplay3DLUTChangedEvent"]/*' />
+[NativeTypeName("struct IADLXDisplay3DLUTChangedEvent : adlx::IADLXChangedEvent")]
+public unsafe partial struct IADLXDisplay3DLUTChangedEvent
+{
+    public void** lpVtbl;
+
+    /// <inheritdoc cref="IADLXInterface.Acquire" />
+    [return: NativeTypeName("adlx_long")]
+    public int Acquire()
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, int>)(lpVtbl[0]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IADLXInterface.Release" />
+    [return: NativeTypeName("adlx_long")]
+    public int Release()
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, int>)(lpVtbl[1]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IADLXInterface.QueryInterface" />
+    public ADLX_RESULT QueryInterface([NativeTypeName("const wchar_t *")] ushort* interfaceId, void** ppInterface)
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, ushort*, void**, ADLX_RESULT>)(lpVtbl[2]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this), interfaceId, ppInterface);
+    }
+
+    /// <inheritdoc cref="IADLXChangedEvent.GetOrigin" />
+    public ADLX_SYNC_ORIGIN GetOrigin()
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <include file='IADLXDisplay3DLUTChangedEvent.xml' path='doc/member[@name="IADLXDisplay3DLUTChangedEvent.GetDisplay"]/*' />
+    public ADLX_RESULT GetDisplay(IADLXDisplay** ppDisplay)
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, IADLXDisplay**, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this), ppDisplay);
+    }
+
+    /// <include file='IADLXDisplay3DLUTChangedEvent.xml' path='doc/member[@name="IADLXDisplay3DLUTChangedEvent.IsSCEChanged"]/*' />
+    [return: NativeTypeName("adlx_bool")]
+    public bool IsSCEChanged()
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, byte>)(lpVtbl[5]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this)) != 0;
+    }
+
+    /// <include file='IADLXDisplay3DLUTChangedEvent.xml' path='doc/member[@name="IADLXDisplay3DLUTChangedEvent.IsCustom3DLUTChanged"]/*' />
+    [return: NativeTypeName("adlx_bool")]
+    public bool IsCustom3DLUTChanged()
+    {
+        return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedEvent*, byte>)(lpVtbl[6]))((IADLXDisplay3DLUTChangedEvent*)Unsafe.AsPointer(ref this)) != 0;
+    }
+}
