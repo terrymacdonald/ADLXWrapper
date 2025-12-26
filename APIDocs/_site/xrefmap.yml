@@ -443,6 +443,51 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener
   nameWithType: ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)
+  name: TryApplyAll3DSettings(IADLXGPU*, All3DSettingsInfo)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyAll3DSettings_ADLXWrapper_IADLXGPU__ADLXWrapper_All3DSettingsInfo_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(ADLXWrapper.IADLXGPU*, ADLXWrapper.All3DSettingsInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(IADLXGPU*, All3DSettingsInfo)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings*
+  name: TryApplyAll3DSettings
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyAll3DSettings_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(ADLXWrapper.IADLX3DSettingsChangedHandling*@)
+  name: TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling*)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGet3DSettingsChangedHandlingNative_ADLXWrapper_IADLX3DSettingsChangedHandling___
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(ADLXWrapper.IADLX3DSettingsChangedHandling*@)
+  name.vb: TryGet3DSettingsChangedHandlingNative(IADLX3DSettingsChangedHandling*)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(out ADLXWrapper.IADLX3DSettingsChangedHandling*)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(ADLXWrapper.IADLX3DSettingsChangedHandling*)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling*)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(IADLX3DSettingsChangedHandling*)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative*
+  name: TryGet3DSettingsChangedHandlingNative
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGet3DSettingsChangedHandlingNative_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative
+  nameWithType: ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo@)
+  name: TryGetAll3DSettings(IADLXGPU*, out All3DSettingsInfo)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_ADLXWrapper_IADLXGPU__ADLXWrapper_All3DSettingsInfo__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo@)
+  name.vb: TryGetAll3DSettings(IADLXGPU*, All3DSettingsInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*, out ADLXWrapper.All3DSettingsInfo)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*, ADLXWrapper.All3DSettingsInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetAll3DSettings(IADLXGPU*, out All3DSettingsInfo)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetAll3DSettings(IADLXGPU*, All3DSettingsInfo)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings*
+  name: TryGetAll3DSettings
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetAll3DSettings
 - uid: ADLXWrapper.ADLXApiHelper
   name: ADLXApiHelper
   href: api/ADLXWrapper.ADLXApiHelper.html
@@ -1198,6 +1243,54 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener
   nameWithType: ADLXDesktopServicesHelper.RemoveDesktopListEventListener
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  name: TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop>)
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  name.vb: TryEnumerateADLXDesktops(IReadOnlyList(Of ADLXDesktop))
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop))
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop>)
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(IReadOnlyList(Of ADLXDesktop))
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops*
+  name: TryEnumerateADLXDesktops
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktops_
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  name: TryEnumerateADLXDesktopsForGpu(int, out IReadOnlyList<ADLXDesktop>)
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktopsForGpu_System_Int32_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  name.vb: TryEnumerateADLXDesktopsForGpu(Integer, IReadOnlyList(Of ADLXDesktop))
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(int, out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(Integer, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop))
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(int, out IReadOnlyList<ADLXDesktop>)
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(Integer, IReadOnlyList(Of ADLXDesktop))
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu*
+  name: TryEnumerateADLXDesktopsForGpu
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktopsForGpu_
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
+  name: TryEnumerateDesktops(out IReadOnlyList<DesktopInfo>)
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_DesktopInfo___
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
+  name.vb: TryEnumerateDesktops(IReadOnlyList(Of DesktopInfo))
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.DesktopInfo>)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DesktopInfo))
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateDesktops(out IReadOnlyList<DesktopInfo>)
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateDesktops(IReadOnlyList(Of DesktopInfo))
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops*
+  name: TryEnumerateDesktops
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateDesktops_
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateDesktops
 - uid: ADLXWrapper.ADLXDisplay
   name: ADLXDisplay
   href: api/ADLXWrapper.AdlxDisplay.html
@@ -1314,6 +1407,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.ApplyCustomColor
   nameWithType: ADLXDisplay.ApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  name: ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
+  commentId: M:ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
+  nameWithType: ADLXDisplay.ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+- uid: ADLXWrapper.ADLXDisplay.ApplyCustomResolution*
+  name: ApplyCustomResolution
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ApplyCustomResolution_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyCustomResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomResolution
+  nameWithType: ADLXDisplay.ApplyCustomResolution
 - uid: ADLXWrapper.ADLXDisplay.ConnectorType
   name: ConnectorType
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ConnectorType
@@ -2045,6 +2151,267 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.SetVirtualSuperResolution
   nameWithType: ADLXDisplay.SetVirtualSuperResolution
+- uid: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  name: TryApplyConnectivityExperience(ConnectivityExperienceInfo)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceInfo_
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  nameWithType: ADLXDisplay.TryApplyConnectivityExperience(ConnectivityExperienceInfo)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience*
+  name: TryApplyConnectivityExperience
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyConnectivityExperience_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience
+  nameWithType: ADLXDisplay.TryApplyConnectivityExperience
+- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  name: TryApplyCustomColor(CustomColorInfo)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomColor_ADLXWrapper_CustomColorInfo_
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  nameWithType: ADLXDisplay.TryApplyCustomColor(CustomColorInfo)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomColor*
+  name: TryApplyCustomColor
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomColor_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyCustomColor
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor
+  nameWithType: ADLXDisplay.TryApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  name: TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
+  nameWithType: ADLXDisplay.TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution*
+  name: TryApplyCustomResolution
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomResolution_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyCustomResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution
+  nameWithType: ADLXDisplay.TryApplyCustomResolution
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyGamma
+  name: TryReapplyGamma()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyGamma
+  commentId: M:ADLXWrapper.ADLXDisplay.TryReapplyGamma
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyGamma()
+  nameWithType: ADLXDisplay.TryReapplyGamma()
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyGamma*
+  name: TryReapplyGamma
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyGamma_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryReapplyGamma
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyGamma
+  nameWithType: ADLXDisplay.TryReapplyGamma
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyGamut
+  name: TryReapplyGamut()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyGamut
+  commentId: M:ADLXWrapper.ADLXDisplay.TryReapplyGamut
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyGamut()
+  nameWithType: ADLXDisplay.TryReapplyGamut()
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyGamut*
+  name: TryReapplyGamut
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyGamut_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryReapplyGamut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyGamut
+  nameWithType: ADLXDisplay.TryReapplyGamut
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
+  name: TryReapplyThreeDLut()
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyThreeDLut
+  commentId: M:ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut()
+  nameWithType: ADLXDisplay.TryReapplyThreeDLut()
+- uid: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut*
+  name: TryReapplyThreeDLut
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyThreeDLut_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
+  nameWithType: ADLXDisplay.TryReapplyThreeDLut
+- uid: ADLXWrapper.ADLXDisplay.TrySetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  name: TrySetColorDepth(ADLX_COLOR_DEPTH)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetColorDepth_ADLXWrapper_ADLX_COLOR_DEPTH_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetColorDepth(ADLXWrapper.ADLX_COLOR_DEPTH)
+  nameWithType: ADLXDisplay.TrySetColorDepth(ADLX_COLOR_DEPTH)
+- uid: ADLXWrapper.ADLXDisplay.TrySetColorDepth*
+  name: TrySetColorDepth
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetColorDepth_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetColorDepth
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetColorDepth
+  nameWithType: ADLXDisplay.TrySetColorDepth
+- uid: ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked(System.Boolean)
+  name: TrySetDisplayBlanked(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetDisplayBlanked_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked(System.Boolean)
+  name.vb: TrySetDisplayBlanked(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked(Boolean)
+  nameWithType: ADLXDisplay.TrySetDisplayBlanked(bool)
+  nameWithType.vb: ADLXDisplay.TrySetDisplayBlanked(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked*
+  name: TrySetDisplayBlanked
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetDisplayBlanked_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetDisplayBlanked
+  nameWithType: ADLXDisplay.TrySetDisplayBlanked
+- uid: ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl(System.Boolean)
+  name: TrySetDynamicRefreshRateControl(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetDynamicRefreshRateControl_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl(System.Boolean)
+  name.vb: TrySetDynamicRefreshRateControl(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl(Boolean)
+  nameWithType: ADLXDisplay.TrySetDynamicRefreshRateControl(bool)
+  nameWithType.vb: ADLXDisplay.TrySetDynamicRefreshRateControl(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl*
+  name: TrySetDynamicRefreshRateControl
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetDynamicRefreshRateControl_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetDynamicRefreshRateControl
+  nameWithType: ADLXDisplay.TrySetDynamicRefreshRateControl
+- uid: ADLXWrapper.ADLXDisplay.TrySetFreeSync(System.Boolean)
+  name: TrySetFreeSync(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetFreeSync_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetFreeSync(System.Boolean)
+  name.vb: TrySetFreeSync(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetFreeSync(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetFreeSync(Boolean)
+  nameWithType: ADLXDisplay.TrySetFreeSync(bool)
+  nameWithType.vb: ADLXDisplay.TrySetFreeSync(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetFreeSync*
+  name: TrySetFreeSync
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetFreeSync_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetFreeSync
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetFreeSync
+  nameWithType: ADLXDisplay.TrySetFreeSync
+- uid: ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy(System.Boolean)
+  name: TrySetFreeSyncColorAccuracy(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetFreeSyncColorAccuracy_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy(System.Boolean)
+  name.vb: TrySetFreeSyncColorAccuracy(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy(Boolean)
+  nameWithType: ADLXDisplay.TrySetFreeSyncColorAccuracy(bool)
+  nameWithType.vb: ADLXDisplay.TrySetFreeSyncColorAccuracy(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy*
+  name: TrySetFreeSyncColorAccuracy
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetFreeSyncColorAccuracy_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetFreeSyncColorAccuracy
+  nameWithType: ADLXDisplay.TrySetFreeSyncColorAccuracy
+- uid: ADLXWrapper.ADLXDisplay.TrySetGpuScaling(System.Boolean)
+  name: TrySetGpuScaling(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetGpuScaling_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetGpuScaling(System.Boolean)
+  name.vb: TrySetGpuScaling(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetGpuScaling(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetGpuScaling(Boolean)
+  nameWithType: ADLXDisplay.TrySetGpuScaling(bool)
+  nameWithType.vb: ADLXDisplay.TrySetGpuScaling(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetGpuScaling*
+  name: TrySetGpuScaling
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetGpuScaling_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetGpuScaling
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetGpuScaling
+  nameWithType: ADLXDisplay.TrySetGpuScaling
+- uid: ADLXWrapper.ADLXDisplay.TrySetHdcp(System.Boolean)
+  name: TrySetHdcp(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetHdcp_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetHdcp(System.Boolean)
+  name.vb: TrySetHdcp(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetHdcp(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetHdcp(Boolean)
+  nameWithType: ADLXDisplay.TrySetHdcp(bool)
+  nameWithType.vb: ADLXDisplay.TrySetHdcp(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetHdcp*
+  name: TrySetHdcp
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetHdcp_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetHdcp
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetHdcp
+  nameWithType: ADLXDisplay.TrySetHdcp
+- uid: ADLXWrapper.ADLXDisplay.TrySetIntegerScaling(System.Boolean)
+  name: TrySetIntegerScaling(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetIntegerScaling_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetIntegerScaling(System.Boolean)
+  name.vb: TrySetIntegerScaling(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetIntegerScaling(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetIntegerScaling(Boolean)
+  nameWithType: ADLXDisplay.TrySetIntegerScaling(bool)
+  nameWithType.vb: ADLXDisplay.TrySetIntegerScaling(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetIntegerScaling*
+  name: TrySetIntegerScaling
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetIntegerScaling_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetIntegerScaling
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetIntegerScaling
+  nameWithType: ADLXDisplay.TrySetIntegerScaling
+- uid: ADLXWrapper.ADLXDisplay.TrySetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  name: TrySetPixelFormat(ADLX_PIXEL_FORMAT)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetPixelFormat_ADLXWrapper_ADLX_PIXEL_FORMAT_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetPixelFormat(ADLXWrapper.ADLX_PIXEL_FORMAT)
+  nameWithType: ADLXDisplay.TrySetPixelFormat(ADLX_PIXEL_FORMAT)
+- uid: ADLXWrapper.ADLXDisplay.TrySetPixelFormat*
+  name: TrySetPixelFormat
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetPixelFormat_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetPixelFormat
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetPixelFormat
+  nameWithType: ADLXDisplay.TrySetPixelFormat
+- uid: ADLXWrapper.ADLXDisplay.TrySetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  name: TrySetScalingMode(ADLX_SCALE_MODE)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetScalingMode_ADLXWrapper_ADLX_SCALE_MODE_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
+  nameWithType: ADLXDisplay.TrySetScalingMode(ADLX_SCALE_MODE)
+- uid: ADLXWrapper.ADLXDisplay.TrySetScalingMode*
+  name: TrySetScalingMode
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetScalingMode_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetScalingMode
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetScalingMode
+  nameWithType: ADLXDisplay.TrySetScalingMode
+- uid: ADLXWrapper.ADLXDisplay.TrySetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  name: TrySetVariBright(bool, VariBrightMode)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetVariBright_System_Boolean_ADLXWrapper_VariBrightMode_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
+  name.vb: TrySetVariBright(Boolean, VariBrightMode)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetVariBright(bool, ADLXWrapper.VariBrightMode)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetVariBright(Boolean, ADLXWrapper.VariBrightMode)
+  nameWithType: ADLXDisplay.TrySetVariBright(bool, VariBrightMode)
+  nameWithType.vb: ADLXDisplay.TrySetVariBright(Boolean, VariBrightMode)
+- uid: ADLXWrapper.ADLXDisplay.TrySetVariBright*
+  name: TrySetVariBright
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetVariBright_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetVariBright
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetVariBright
+  nameWithType: ADLXDisplay.TrySetVariBright
+- uid: ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution(System.Boolean)
+  name: TrySetVirtualSuperResolution(bool)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetVirtualSuperResolution_System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution(System.Boolean)
+  name.vb: TrySetVirtualSuperResolution(Boolean)
+  fullName: ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution(bool)
+  fullName.vb: ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution(Boolean)
+  nameWithType: ADLXDisplay.TrySetVirtualSuperResolution(bool)
+  nameWithType.vb: ADLXDisplay.TrySetVirtualSuperResolution(Boolean)
+- uid: ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution*
+  name: TrySetVirtualSuperResolution
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TrySetVirtualSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution
+  nameWithType: ADLXDisplay.TrySetVirtualSuperResolution
 - uid: ADLXWrapper.ADLXDisplay.Type
   name: Type
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Type
@@ -2985,6 +3352,347 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled
   nameWithType: ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  name: TryApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyConnectivityExperience_ADLXWrapper_IADLXDisplay__ADLXWrapper_ConnectivityExperienceInfo_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ConnectivityExperienceInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience*
+  name: TryApplyConnectivityExperience
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyConnectivityExperience_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience
+  nameWithType: ADLXDisplayServicesHelper.TryApplyConnectivityExperience
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  name: TryApplyCustomColor(IADLXDisplay*, CustomColorInfo)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomColor_ADLXWrapper_IADLXDisplay__ADLXWrapper_CustomColorInfo_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*, ADLXWrapper.CustomColorInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomColor(IADLXDisplay*, CustomColorInfo)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor*
+  name: TryApplyCustomColor
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomColor_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  name: TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution*
+  name: TryApplyCustomResolution
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomResolution_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomResolution
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  name: TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay>)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateADLXDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  name.vb: TryEnumerateADLXDisplays(IReadOnlyList(Of ADLXDisplay))
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay))
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay>)
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(IReadOnlyList(Of ADLXDisplay))
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays*
+  name: TryEnumerateADLXDisplays
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateADLXDisplays_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  name: TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_AdlxInterfaceHandle____
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  name.vb: TryEnumerateDisplayHandles(AdlxInterfaceHandle())
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle())
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(AdlxInterfaceHandle())
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
+  name: TryEnumerateDisplayHandles
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  name: TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay>)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  name.vb: TryEnumerateDisplays(IReadOnlyList(Of ADLXDisplay))
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay))
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay>)
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplays(IReadOnlyList(Of ADLXDisplay))
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays*
+  name: TryEnumerateDisplays
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplays_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  name: TryReapplyGamma(IADLXDisplay*)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamma_ADLXWrapper_IADLXDisplay__
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamma(IADLXDisplay*)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma*
+  name: TryReapplyGamma
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamma_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamma
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  name: TryReapplyGamut(IADLXDisplay*)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamut_ADLXWrapper_IADLXDisplay__
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamut(IADLXDisplay*)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut*
+  name: TryReapplyGamut
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamut_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamut
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  name: TryReapplyThreeDLut(IADLXDisplay*)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyThreeDLut_ADLXWrapper_IADLXDisplay__
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyThreeDLut(IADLXDisplay*)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut*
+  name: TryReapplyThreeDLut
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyThreeDLut_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyThreeDLut
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  name: TrySetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetColorDepth_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_COLOR_DEPTH_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_COLOR_DEPTH)
+  nameWithType: ADLXDisplayServicesHelper.TrySetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth*
+  name: TrySetColorDepth
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetColorDepth_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth
+  nameWithType: ADLXDisplayServicesHelper.TrySetColorDepth
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetDisplayBlanked(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDisplayBlanked_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetDisplayBlanked(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetDisplayBlanked(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetDisplayBlanked(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked*
+  name: TrySetDisplayBlanked
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDisplayBlanked_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked
+  nameWithType: ADLXDisplayServicesHelper.TrySetDisplayBlanked
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDynamicRefreshRateControlEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled*
+  name: TrySetDynamicRefreshRateControlEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDynamicRefreshRateControlEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncColorAccuracyEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled*
+  name: TrySetFreeSyncColorAccuracyEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncColorAccuracyEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetFreeSyncEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetFreeSyncEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled*
+  name: TrySetFreeSyncEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetGPUScalingEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetGPUScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetGPUScalingEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled*
+  name: TrySetGPUScalingEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetGPUScalingEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetHDCPEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetHDCPEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetHDCPEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetHDCPEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetHDCPEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled*
+  name: TrySetHDCPEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetHDCPEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetHDCPEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetIntegerScalingEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetIntegerScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetIntegerScalingEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled*
+  name: TrySetIntegerScalingEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetIntegerScalingEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  name: TrySetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetPixelFormat_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_PIXEL_FORMAT_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_PIXEL_FORMAT)
+  nameWithType: ADLXDisplayServicesHelper.TrySetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat*
+  name: TrySetPixelFormat
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetPixelFormat_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat
+  nameWithType: ADLXDisplayServicesHelper.TrySetPixelFormat
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  name: TrySetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetScalingMode_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_SCALE_MODE_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_SCALE_MODE)
+  nameWithType: ADLXDisplayServicesHelper.TrySetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode*
+  name: TrySetScalingMode
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetScalingMode_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode
+  nameWithType: ADLXDisplayServicesHelper.TrySetScalingMode
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  name: TrySetVariBright(IADLXDisplay*, bool, VariBrightMode)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBright_ADLXWrapper_IADLXDisplay__System_Boolean_ADLXWrapper_VariBrightMode_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  name.vb: TrySetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*, bool, ADLXWrapper.VariBrightMode)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*, Boolean, ADLXWrapper.VariBrightMode)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBright(IADLXDisplay*, bool, VariBrightMode)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright*
+  name: TrySetVariBright
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBright_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBright
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  name: TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  name.vb: TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled*
+  name: TrySetVariBrightBacklightAdaptiveEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBacklightAdaptiveEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  name: TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  name.vb: TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled*
+  name: TrySetVariBrightBatteryLifeEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBatteryLifeEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name: TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVirtualSuperResolutionEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  name.vb: TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled*
+  name: TrySetVirtualSuperResolutionEnabled
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVirtualSuperResolutionEnabled_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
 - uid: ADLXWrapper.ADLXException
   name: ADLXException
   href: api/ADLXWrapper.ADLXException.html
@@ -3605,6 +4313,166 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
   nameWithType: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
+  name: TryGetManualFanTuning(IADLXGPU*, out ManualFanTuningInfo)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualFanTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualFanTuningInfo__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
+  name.vb: TryGetManualFanTuning(IADLXGPU*, ManualFanTuningInfo)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualFanTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualFanTuningInfo)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(IADLXGPU*, out ManualFanTuningInfo)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(IADLXGPU*, ManualFanTuningInfo)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning*
+  name: TryGetManualFanTuning
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualFanTuning_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualFanTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
+  name: TryGetManualGfxTuning(IADLXGPU*, out ManualGfxTuningInfo)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualGfxTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualGfxTuningInfo__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
+  name.vb: TryGetManualGfxTuning(IADLXGPU*, ManualGfxTuningInfo)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualGfxTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualGfxTuningInfo)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(IADLXGPU*, out ManualGfxTuningInfo)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(IADLXGPU*, ManualGfxTuningInfo)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning*
+  name: TryGetManualGfxTuning
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualGfxTuning_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
+  name: TryGetManualVramTuning(IADLXGPU*, out ManualVramTuningInfo)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualVramTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualVramTuningInfo__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
+  name.vb: TryGetManualVramTuning(IADLXGPU*, ManualVramTuningInfo)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualVramTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualVramTuningInfo)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(IADLXGPU*, out ManualVramTuningInfo)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(IADLXGPU*, ManualVramTuningInfo)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning*
+  name: TryGetManualVramTuning
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualVramTuning_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualVramTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
+  name: TryGetPresetTuning(IADLXGPU*, out PresetTuningInfo)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetPresetTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_PresetTuningInfo__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
+  name.vb: TryGetPresetTuning(IADLXGPU*, PresetTuningInfo)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.PresetTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.PresetTuningInfo)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning(IADLXGPU*, out PresetTuningInfo)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetPresetTuning(IADLXGPU*, PresetTuningInfo)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning*
+  name: TryGetPresetTuning
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetPresetTuning_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsAutoTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsAutoTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported*
+  name: TryIsAutoTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsManualFanTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualFanTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsManualFanTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported*
+  name: TryIsManualFanTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualFanTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsManualGfxTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualGfxTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsManualGfxTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported*
+  name: TryIsManualGfxTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualGfxTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsManualPowerTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualPowerTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsManualPowerTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported*
+  name: TryIsManualPowerTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualPowerTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsManualVramTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualVramTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsManualVramTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported*
+  name: TryIsManualVramTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualVramTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name: TryIsPresetTuningSupported(IADLXGPU*, out bool)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsPresetTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  name.vb: TryIsPresetTuningSupported(IADLXGPU*, Boolean)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(IADLXGPU*, out bool)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(IADLXGPU*, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported*
+  name: TryIsPresetTuningSupported
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsPresetTuningSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
 - uid: ADLXWrapper.ADLXHardwareDetection
   name: ADLXHardwareDetection
   href: api/ADLXWrapper.ADLXHardwareDetection.html
@@ -4073,6 +4941,134 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
   nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
+  name: TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling*)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetMultimediaChangedHandlingNative_ADLXWrapper_IADLXMultimediaChangedHandling___
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
+  name.vb: TryGetMultimediaChangedHandlingNative(IADLXMultimediaChangedHandling*)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(out ADLXWrapper.IADLXMultimediaChangedHandling*)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling*)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(IADLXMultimediaChangedHandling*)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative*
+  name: TryGetMultimediaChangedHandlingNative
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetMultimediaChangedHandlingNative_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
+  nameWithType: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
+  name: TryGetVideoSuperResolution(IADLXGPU*, out VideoSuperResolutionInfo)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolution_ADLXWrapper_IADLXGPU__ADLXWrapper_VideoSuperResolutionInfo__
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
+  name.vb: TryGetVideoSuperResolution(IADLXGPU*, VideoSuperResolutionInfo)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*, out ADLXWrapper.VideoSuperResolutionInfo)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*, ADLXWrapper.VideoSuperResolutionInfo)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(IADLXGPU*, out VideoSuperResolutionInfo)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(IADLXGPU*, VideoSuperResolutionInfo)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution*
+  name: TryGetVideoSuperResolution
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
+  name: TryGetVideoSuperResolutionNative(IADLXGPU*, out IADLXVideoSuperResolution*)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolutionNative_ADLXWrapper_IADLXGPU__ADLXWrapper_IADLXVideoSuperResolution___
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
+  name.vb: TryGetVideoSuperResolutionNative(IADLXGPU*, IADLXVideoSuperResolution*)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*, out ADLXWrapper.IADLXVideoSuperResolution*)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*, ADLXWrapper.IADLXVideoSuperResolution*)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(IADLXGPU*, out IADLXVideoSuperResolution*)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(IADLXGPU*, IADLXVideoSuperResolution*)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative*
+  name: TryGetVideoSuperResolutionNative
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolutionNative_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
+  name: TryGetVideoUpscale(IADLXGPU*, out VideoUpscaleInfo)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscale_ADLXWrapper_IADLXGPU__ADLXWrapper_VideoUpscaleInfo__
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
+  name.vb: TryGetVideoUpscale(IADLXGPU*, VideoUpscaleInfo)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*, out ADLXWrapper.VideoUpscaleInfo)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*, ADLXWrapper.VideoUpscaleInfo)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale(IADLXGPU*, out VideoUpscaleInfo)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoUpscale(IADLXGPU*, VideoUpscaleInfo)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale*
+  name: TryGetVideoUpscale
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscale_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
+  name: TryGetVideoUpscaleNative(IADLXGPU*, out IADLXVideoUpscale*)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscaleNative_ADLXWrapper_IADLXGPU__ADLXWrapper_IADLXVideoUpscale___
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
+  name.vb: TryGetVideoUpscaleNative(IADLXGPU*, IADLXVideoUpscale*)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*, out ADLXWrapper.IADLXVideoUpscale*)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*, ADLXWrapper.IADLXVideoUpscale*)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(IADLXGPU*, out IADLXVideoUpscale*)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(IADLXGPU*, IADLXVideoUpscale*)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative*
+  name: TryGetVideoUpscaleNative
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscaleNative_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
+  name: TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoSuperResolutionEnabled_ADLXWrapper_IADLXVideoSuperResolution__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
+  name.vb: TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, bool)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, Boolean)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled*
+  name: TrySetVideoSuperResolutionEnabled
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoSuperResolutionEnabled_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
+  name: TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleEnabled_ADLXWrapper_IADLXVideoUpscale__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
+  name.vb: TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, bool)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, Boolean)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled*
+  name: TrySetVideoUpscaleEnabled
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleEnabled_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
+  name: TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleSharpness_ADLXWrapper_IADLXVideoUpscale__System_Int32_
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
+  name.vb: TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, int)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, Integer)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness*
+  name: TrySetVideoUpscaleSharpness
+  href: api/ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleSharpness_
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
   name: ADLXMultimediaServicesHelper.VideoSuperResolutionInfo
   href: api/ADLXWrapper.ADLXMultimediaServicesHelper.VideoSuperResolutionInfo.html
@@ -4630,6 +5626,141 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.StopPerformanceMetricsTracking
   nameWithType: ADLXPerformanceMonitoringServicesHelper.StopPerformanceMetricsTracking
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
+  name: TryClearPerformanceMetricsHistory()
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryClearPerformanceMetricsHistory
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory()
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory()
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory*
+  name: TryClearPerformanceMetricsHistory
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryClearPerformanceMetricsHistory_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
+  name: TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotInfo>)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateAllMetricsHistory_System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_AllMetricsSnapshotInfo___
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
+  name.vb: TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotInfo))
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.AllMetricsSnapshotInfo>)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.AllMetricsSnapshotInfo))
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotInfo>)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotInfo))
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory*
+  name: TryEnumerateAllMetricsHistory
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateAllMetricsHistory_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
+  name: TryEnumerateGpuMetricsHistory(IADLXGPU*, int, int, out IEnumerable<GpuMetricsSnapshotInfo>)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateGpuMetricsHistory_ADLXWrapper_IADLXGPU__System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_GpuMetricsSnapshotInfo___
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
+  name.vb: TryEnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotInfo))
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.GpuMetricsSnapshotInfo>)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.GpuMetricsSnapshotInfo))
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(IADLXGPU*, int, int, out IEnumerable<GpuMetricsSnapshotInfo>)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotInfo))
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory*
+  name: TryEnumerateGpuMetricsHistory
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateGpuMetricsHistory_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
+  name: TryGetCurrentGpuMetrics(IADLXGPU*, out GpuMetricsSnapshotInfo)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetCurrentGpuMetrics_ADLXWrapper_IADLXGPU__ADLXWrapper_GpuMetricsSnapshotInfo__
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
+  name.vb: TryGetCurrentGpuMetrics(IADLXGPU*, GpuMetricsSnapshotInfo)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*, out ADLXWrapper.GpuMetricsSnapshotInfo)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*, ADLXWrapper.GpuMetricsSnapshotInfo)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(IADLXGPU*, out GpuMetricsSnapshotInfo)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(IADLXGPU*, GpuMetricsSnapshotInfo)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics*
+  name: TryGetCurrentGpuMetrics
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetCurrentGpuMetrics_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
+  name: TryGetGpuMetricsSupport(IADLXGPU*, out GpuMetricsSupportInfo)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetGpuMetricsSupport_ADLXWrapper_IADLXGPU__ADLXWrapper_GpuMetricsSupportInfo__
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
+  name.vb: TryGetGpuMetricsSupport(IADLXGPU*, GpuMetricsSupportInfo)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*, out ADLXWrapper.GpuMetricsSupportInfo)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*, ADLXWrapper.GpuMetricsSupportInfo)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(IADLXGPU*, out GpuMetricsSupportInfo)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(IADLXGPU*, GpuMetricsSupportInfo)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport*
+  name: TryGetGpuMetricsSupport
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetGpuMetricsSupport_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(System.Int32)
+  name: TrySetMaxPerformanceMetricsHistorySize(int)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TrySetMaxPerformanceMetricsHistorySize_System_Int32_
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(System.Int32)
+  name.vb: TrySetMaxPerformanceMetricsHistorySize(Integer)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(int)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(Integer)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(int)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(Integer)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize*
+  name: TrySetMaxPerformanceMetricsHistorySize
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TrySetMaxPerformanceMetricsHistorySize_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(System.Int32)
+  name: TrySetSamplingInterval(int)
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TrySetSamplingInterval_System_Int32_
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(System.Int32)
+  name.vb: TrySetSamplingInterval(Integer)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(int)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(Integer)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(int)
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(Integer)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval*
+  name: TrySetSamplingInterval
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TrySetSamplingInterval_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
+  name: TryStartPerformanceMetricsTracking()
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryStartPerformanceMetricsTracking
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking()
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking()
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking*
+  name: TryStartPerformanceMetricsTracking
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryStartPerformanceMetricsTracking_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking
+  name: TryStopPerformanceMetricsTracking()
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryStopPerformanceMetricsTracking
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking()
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking()
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking*
+  name: TryStopPerformanceMetricsTracking
+  href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryStopPerformanceMetricsTracking_
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryStopPerformanceMetricsTracking
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper
   name: ADLXPowerTuningServicesHelper
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html
@@ -4901,6 +6032,83 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener
   nameWithType: ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  name: TryApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__ADLXWrapper_ManualPowerTuningInfo_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*, ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  name: TryApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*, ADLXWrapper.ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*
+  name: TryApplyManualPowerTuning
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  name: TryApplySmartShiftEco(SmartShiftEcoInfo)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftEco_ADLXWrapper_SmartShiftEcoInfo_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(SmartShiftEcoInfo)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco*
+  name: TryApplySmartShiftEco
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftEco_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  name: TryApplySmartShiftMax(SmartShiftMaxInfo)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftMax_ADLXWrapper_SmartShiftMaxInfo_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(SmartShiftMaxInfo)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax*
+  name: TryApplySmartShiftMax
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftMax_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  name: TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_AdlxInterfaceHandle____
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  name.vb: TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle())
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
+  name: TryEnumerateGPUConnectGpuHandles
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
+  name: TryIsGPUConnectSupported(out bool)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_System_Boolean__
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
+  name.vb: TryIsGPUConnectSupported(Boolean)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(out bool)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(Boolean)
+  nameWithType: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(out bool)
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(Boolean)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported*
+  name: TryIsGPUConnectSupported
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
+  nameWithType: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
 - uid: ADLXWrapper.ADLXSystemServicesHelper
   name: ADLXSystemServicesHelper
   href: api/ADLXWrapper.ADLXSystemServicesHelper.html
@@ -5397,6 +6605,118 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetSystemServicesNative
   nameWithType: ADLXSystemServicesHelper.GetSystemServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(ADLXWrapper.IADLX3DSettingsServices*@)
+  name: TryGet3DSettingsServicesNative(out IADLX3DSettingsServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGet3DSettingsServicesNative_ADLXWrapper_IADLX3DSettingsServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(ADLXWrapper.IADLX3DSettingsServices*@)
+  name.vb: TryGet3DSettingsServicesNative(IADLX3DSettingsServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(out ADLXWrapper.IADLX3DSettingsServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(ADLXWrapper.IADLX3DSettingsServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(out IADLX3DSettingsServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGet3DSettingsServicesNative(IADLX3DSettingsServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative*
+  name: TryGet3DSettingsServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGet3DSettingsServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGet3DSettingsServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGet3DSettingsServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative(ADLXWrapper.IADLXDesktopServices*@)
+  name: TryGetDesktopServicesNative(out IADLXDesktopServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetDesktopServicesNative_ADLXWrapper_IADLXDesktopServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative(ADLXWrapper.IADLXDesktopServices*@)
+  name.vb: TryGetDesktopServicesNative(IADLXDesktopServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative(out ADLXWrapper.IADLXDesktopServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative(ADLXWrapper.IADLXDesktopServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetDesktopServicesNative(out IADLXDesktopServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetDesktopServicesNative(IADLXDesktopServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative*
+  name: TryGetDesktopServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetDesktopServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetDesktopServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetDesktopServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative(ADLXWrapper.IADLXDisplayServices*@)
+  name: TryGetDisplayServicesNative(out IADLXDisplayServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetDisplayServicesNative_ADLXWrapper_IADLXDisplayServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative(ADLXWrapper.IADLXDisplayServices*@)
+  name.vb: TryGetDisplayServicesNative(IADLXDisplayServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative(out ADLXWrapper.IADLXDisplayServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative(ADLXWrapper.IADLXDisplayServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetDisplayServicesNative(out IADLXDisplayServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetDisplayServicesNative(IADLXDisplayServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative*
+  name: TryGetDisplayServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetDisplayServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetDisplayServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetDisplayServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(ADLXWrapper.IADLXGPUTuningServices*@)
+  name: TryGetGPUTuningServicesNative(out IADLXGPUTuningServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetGPUTuningServicesNative_ADLXWrapper_IADLXGPUTuningServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(ADLXWrapper.IADLXGPUTuningServices*@)
+  name.vb: TryGetGPUTuningServicesNative(IADLXGPUTuningServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(out ADLXWrapper.IADLXGPUTuningServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(ADLXWrapper.IADLXGPUTuningServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(out IADLXGPUTuningServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetGPUTuningServicesNative(IADLXGPUTuningServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative*
+  name: TryGetGPUTuningServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetGPUTuningServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetGPUTuningServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetGPUTuningServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative(ADLXWrapper.IADLXMultimediaServices*@)
+  name: TryGetMultimediaServicesNative(out IADLXMultimediaServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetMultimediaServicesNative_ADLXWrapper_IADLXMultimediaServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative(ADLXWrapper.IADLXMultimediaServices*@)
+  name.vb: TryGetMultimediaServicesNative(IADLXMultimediaServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative(out ADLXWrapper.IADLXMultimediaServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative(ADLXWrapper.IADLXMultimediaServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetMultimediaServicesNative(out IADLXMultimediaServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetMultimediaServicesNative(IADLXMultimediaServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative*
+  name: TryGetMultimediaServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetMultimediaServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetMultimediaServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetMultimediaServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(ADLXWrapper.IADLXPerformanceMonitoringServices*@)
+  name: TryGetPerformanceMonitoringServicesNative(out IADLXPerformanceMonitoringServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetPerformanceMonitoringServicesNative_ADLXWrapper_IADLXPerformanceMonitoringServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(ADLXWrapper.IADLXPerformanceMonitoringServices*@)
+  name.vb: TryGetPerformanceMonitoringServicesNative(IADLXPerformanceMonitoringServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(out ADLXWrapper.IADLXPerformanceMonitoringServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(ADLXWrapper.IADLXPerformanceMonitoringServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(out IADLXPerformanceMonitoringServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative(IADLXPerformanceMonitoringServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative*
+  name: TryGetPerformanceMonitoringServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetPerformanceMonitoringServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetPerformanceMonitoringServicesNative
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(ADLXWrapper.IADLXPowerTuningServices*@)
+  name: TryGetPowerTuningServicesNative(out IADLXPowerTuningServices*)
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetPowerTuningServicesNative_ADLXWrapper_IADLXPowerTuningServices___
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(ADLXWrapper.IADLXPowerTuningServices*@)
+  name.vb: TryGetPowerTuningServicesNative(IADLXPowerTuningServices*)
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(out ADLXWrapper.IADLXPowerTuningServices*)
+  fullName.vb: ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(ADLXWrapper.IADLXPowerTuningServices*)
+  nameWithType: ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(out IADLXPowerTuningServices*)
+  nameWithType.vb: ADLXSystemServicesHelper.TryGetPowerTuningServicesNative(IADLXPowerTuningServices*)
+- uid: ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative*
+  name: TryGetPowerTuningServicesNative
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_TryGetPowerTuningServicesNative_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.TryGetPowerTuningServicesNative
+  nameWithType: ADLXSystemServicesHelper.TryGetPowerTuningServicesNative
 - uid: ADLXWrapper.ADLXUtils
   name: ADLXUtils
   href: api/ADLXWrapper.ADLXUtils.html
@@ -7462,6 +8782,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.AdlxInterfaceHandle.From
   nameWithType: AdlxInterfaceHandle.From
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  name: FromNonRefCounted(void*)
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  name.vb: FromNonRefCounted(Void*)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(void*)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(Void*)
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted(void*)
+  nameWithType.vb: AdlxInterfaceHandle.FromNonRefCounted(Void*)
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
+  name: FromNonRefCounted
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
+  isSpec: "True"
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted
 - uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
   name: IsInvalid
   href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_IsInvalid

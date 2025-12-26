@@ -23,10 +23,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
     content.vb: Public Enum ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
@@ -48,10 +49,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ALWAYS_OFF
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WFVR_ALWAYS_OFF = 0
     return:
@@ -74,10 +76,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_OFF_UNLESS_APP_SPECIFIES
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WFVR_OFF_UNLESS_APP_SPECIFIES = 1
     return:
@@ -100,10 +103,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ON_UNLESS_APP_SPECIFIES
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WFVR_ON_UNLESS_APP_SPECIFIES = 2
     return:
@@ -126,10 +130,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ALWAYS_ON
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WFVR_ALWAYS_ON = 3
     return:

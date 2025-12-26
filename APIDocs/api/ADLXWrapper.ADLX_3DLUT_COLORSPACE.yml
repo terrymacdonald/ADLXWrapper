@@ -23,10 +23,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_3DLUT_COLORSPACE
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_3DLUT_COLORSPACE
     content.vb: Public Enum ADLX_3DLUT_COLORSPACE
@@ -48,10 +49,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_SRGB
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CS_SRGB = 1
     return:
@@ -74,10 +76,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_BT2020
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CS_BT2020 = 2
     return:
@@ -100,10 +103,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_DCIP3
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CS_DCIP3 = 3
     return:
@@ -126,10 +130,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_NATIVE
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CS_NATIVE = 4
     return:

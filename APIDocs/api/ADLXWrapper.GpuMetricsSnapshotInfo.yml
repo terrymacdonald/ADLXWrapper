@@ -31,7 +31,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSnapshotInfo
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 404
+    startLine: 627
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 406
+    startLine: 629
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 407
+    startLine: 630
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -121,7 +121,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Usage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 408
+    startLine: 631
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 409
+    startLine: 632
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 410
+    startLine: 633
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -208,7 +208,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMUsage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 411
+    startLine: 634
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -237,7 +237,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 412
+    startLine: 635
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -266,7 +266,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Power
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 413
+    startLine: 636
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -295,7 +295,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPower
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 414
+    startLine: 637
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -324,7 +324,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 415
+    startLine: 638
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -353,7 +353,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimestampMs
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 416
+    startLine: 639
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -382,7 +382,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 418
+    startLine: 641
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

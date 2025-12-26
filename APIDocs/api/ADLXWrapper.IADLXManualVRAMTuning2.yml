@@ -30,10 +30,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualVRAMTuning2
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXManualVRAMTuning2
     content.vb: Public Structure IADLXManualVRAMTuning2
@@ -62,7 +63,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -89,10 +90,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -117,10 +119,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -145,10 +148,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -181,10 +185,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMemoryTiming
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedMemoryTiming(bool* supported)
     parameters:
@@ -215,10 +220,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedMemoryTimingDescriptionList
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSupportedMemoryTimingDescriptionList(IADLXMemoryTimingDescriptionList** ppDescriptionList)
     parameters:
@@ -246,10 +252,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMemoryTimingDescription(ADLX_MEMORYTIMING_DESCRIPTION* description)
     parameters:
@@ -277,10 +284,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMemoryTimingDescription(ADLX_MEMORYTIMING_DESCRIPTION description)
     parameters:
@@ -308,10 +316,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxVRAMFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMaxVRAMFrequencyRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -339,10 +348,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxVRAMFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMaxVRAMFrequency(int* freq)
     parameters:
@@ -373,10 +383,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxVRAMFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning2.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMaxVRAMFrequency(int freq)
     parameters:

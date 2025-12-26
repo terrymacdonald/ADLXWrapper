@@ -25,10 +25,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TIMING_LIMITATION
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DISPLAY_TIMING_LIMITATION
     content.vb: Public Enum ADLX_DISPLAY_TIMING_LIMITATION
@@ -50,10 +51,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PIXEL_CLOCK_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PIXEL_CLOCK_MAX = 650000
     return:
@@ -76,10 +78,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PIXEL_CLOCK_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PIXEL_CLOCK_MIN = 0
     return:
@@ -102,10 +105,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REFRESH_RATE_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: REFRESH_RATE_MAX = 200
     return:
@@ -128,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REFRESH_RATE_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: REFRESH_RATE_MIN = 1
     return:
@@ -154,10 +159,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RESOLUTION_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: RESOLUTION_MAX = 9999
     return:
@@ -180,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RESOLUTION_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: RESOLUTION_MIN = 1
     return:

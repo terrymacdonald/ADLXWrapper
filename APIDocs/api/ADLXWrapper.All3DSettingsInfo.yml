@@ -29,7 +29,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: All3DSettingsInfo
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 281
+    startLine: 368
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiLag
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 283
+    startLine: 370
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Boost
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 284
+    startLine: 371
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -121,7 +121,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpening
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 285
+    startLine: 372
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSync
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 286
+    startLine: 373
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WaitForVerticalRefresh
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 287
+    startLine: 374
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -208,7 +208,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FrameRateTargetControl
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 288
+    startLine: 375
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -237,7 +237,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 289
+    startLine: 376
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -266,7 +266,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFiltering
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 290
+    startLine: 377
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -295,7 +295,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Tessellation
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 291
+    startLine: 378
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -324,7 +324,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 293
+    startLine: 380
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

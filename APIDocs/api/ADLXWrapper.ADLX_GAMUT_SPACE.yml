@@ -25,10 +25,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GAMUT_SPACE
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_GAMUT_SPACE
     content.vb: Public Enum ADLX_GAMUT_SPACE
@@ -50,10 +51,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_709
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_CCIR_709 = 0
     return:
@@ -76,10 +78,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_601
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_CCIR_601 = 1
     return:
@@ -102,10 +105,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_ADOBE_RGB
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_ADOBE_RGB = 2
     return:
@@ -128,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CIE_RGB
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_CIE_RGB = 3
     return:
@@ -154,10 +159,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CCIR_2020
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_CCIR_2020 = 4
     return:
@@ -180,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GAMUT_SPACE_CUSTOM
     path: ../ADLXWrapper/cs_generated/ADLX_GAMUT_SPACE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GAMUT_SPACE_CUSTOM = 5
     return:

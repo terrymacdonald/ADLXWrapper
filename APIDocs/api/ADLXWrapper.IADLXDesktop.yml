@@ -29,10 +29,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDesktop
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDesktop
     content.vb: Public Structure IADLXDesktop
@@ -61,7 +62,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,10 +89,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -116,10 +118,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -144,10 +147,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -180,10 +184,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Orientation(ADLX_ORIENTATION* orientation)
     parameters:
@@ -211,10 +216,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Size
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Size(int* width, int* height)
     parameters:
@@ -247,10 +253,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeft
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT TopLeft(ADLX_Point* locationTopLeft)
     parameters:
@@ -278,10 +285,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Type(ADLX_DESKTOP_TYPE* desktopType)
     parameters:
@@ -309,10 +317,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNumberOfDisplays(uint* numDisplays)
     parameters:
@@ -343,10 +352,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplays(IADLXDisplayList** ppDisplays)
     parameters:

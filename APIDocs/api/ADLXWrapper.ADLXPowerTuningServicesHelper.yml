@@ -25,6 +25,12 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative
   - ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   - ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
   langs:
   - csharp
   - vb
@@ -77,17 +83,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 17
+    startLine: 22
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a power tuning helper from the native services interface, upgrading to v1 when available.
+  example: []
   syntax:
     content: public ADLXPowerTuningServicesHelper(IADLXPowerTuningServices* services, bool addRef = true)
     parameters:
     - id: services
       type: ADLXWrapper.IADLXPowerTuningServices*
+      description: Native power tuning services pointer.
     - id: addRef
       type: System.Boolean
+      description: True to AddRef the pointer for this helper.
     content.vb: Public Sub New(services As IADLXPowerTuningServices*, addRef As Boolean = True)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.#ctor*
   nameWithType.vb: ADLXPowerTuningServicesHelper.New(IADLXPowerTuningServices*, Boolean)
@@ -111,7 +121,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 28
+    startLine: 33
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -139,16 +149,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 34
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns an AddRef'd handle to the highest available power tuning services interface.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle GetPowerTuningServicesHandle()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetPowerTuningServicesHandle() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   id: IsGPUConnectSupported
@@ -167,16 +183,62 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 40
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Queries whether GPUConnect is supported.
+  example: []
   syntax:
     content: public bool IsGPUConnectSupported()
     return:
       type: System.Boolean
+      description: True if GPUConnect is supported.
     content.vb: Public Function IsGPUConnectSupported() As Boolean
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or query fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
+  id: TryIsGPUConnectSupported(System.Boolean@)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryIsGPUConnectSupported(out bool)
+  nameWithType: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(out bool)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(out bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryIsGPUConnectSupported
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 75
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to query GPUConnect support; returns false if the feature is not supported on this system.
+  example: []
+  syntax:
+    content: public bool TryIsGPUConnectSupported(out bool supported)
+    parameters:
+    - id: supported
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryIsGPUConnectSupported(supported As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported*
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(Boolean)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(Boolean)
+  name.vb: TryIsGPUConnectSupported(Boolean)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
   id: EnumerateGPUConnectGpuHandles
@@ -195,7 +257,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 54
+    startLine: 89
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -205,6 +267,42 @@ items:
       type: ADLXWrapper.AdlxInterfaceHandle[]
     content.vb: Public Function EnumerateGPUConnectGpuHandles() As AdlxInterfaceHandle()
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  id: TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateGPUConnectGpuHandles
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 118
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.
+  example: []
+  syntax:
+    content: public bool TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[] handles)
+    parameters:
+    - id: handles
+      type: ADLXWrapper.AdlxInterfaceHandle[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateGPUConnectGpuHandles([handles] As AdlxInterfaceHandle()) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle())
+  name.vb: TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   id: GetGPUConnectGpuListNative
@@ -223,16 +321,25 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUConnectGpuListNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 79
+    startLine: 137
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns the native GPUConnect GPU list (caller must dispose).
+  example: []
   syntax:
     content: public IADLXGPU2List* GetGPUConnectGpuListNative()
     return:
       type: ADLXWrapper.IADLXGPU2List*
     content.vb: Public Function GetGPUConnectGpuListNative() As IADLXGPU2List*
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or retrieval fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandlingNative
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandlingNative
   id: GetPowerTuningChangedHandlingNative
@@ -251,7 +358,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 94
+    startLine: 153
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -279,10 +386,12 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandling
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 111
+    startLine: 174
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns an AddRef'd handle to the power tuning change handling interface.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle GetPowerTuningChangedHandling()
     return:
@@ -307,19 +416,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddPowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 116
+    startLine: 186
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a power tuning change listener.
+  example: []
   syntax:
     content: public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
     parameters:
     - id: callback
       type: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
+      description: Callback invoked on power tuning changes.
     return:
       type: ADLXWrapper.PowerTuningListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddPowerTuningEventListener(callback As PowerTuningListenerHandle.PowerTuningChangedCallback) As PowerTuningListenerHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
   id: RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)
@@ -338,7 +458,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 133
+    startLine: 204
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -372,16 +492,25 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 147
+    startLine: 224
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns SmartShift Max info as a managed DTO.
+  example: []
   syntax:
     content: public SmartShiftMaxInfo GetSmartShiftMax()
     return:
       type: ADLXWrapper.SmartShiftMaxInfo
     content.vb: Public Function GetSmartShiftMax() As SmartShiftMaxInfo
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMax*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or retrieval fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative
   id: GetSmartShiftMaxNative
@@ -400,16 +529,26 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMaxNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 154
+    startLine: 238
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets SmartShift Max interface (native pointer). Caller must dispose.
+  example: []
   syntax:
     content: public IADLXSmartShiftMax* GetSmartShiftMaxNative()
     return:
       type: ADLXWrapper.IADLXSmartShiftMax*
+      description: Native SmartShift Max pointer.
     content.vb: Public Function GetSmartShiftMaxNative() As IADLXSmartShiftMax*
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or retrieval fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
   id: ApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
@@ -428,7 +567,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 166
+    startLine: 251
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -439,6 +578,39 @@ items:
       type: ADLXWrapper.SmartShiftMaxInfo
     content.vb: Public Sub ApplySmartShiftMax(info As SmartShiftMaxInfo)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftMax*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  id: TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplySmartShiftMax(SmartShiftMaxInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(SmartShiftMaxInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplySmartShiftMax
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 263
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply SmartShift Max; returns false when the feature is unsupported.
+  example: []
+  syntax:
+    content: public bool TryApplySmartShiftMax(SmartShiftMaxInfo info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.SmartShiftMaxInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplySmartShiftMax(info As SmartShiftMaxInfo) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax*
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco
   id: GetSmartShiftEco
@@ -457,16 +629,25 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 174
+    startLine: 281
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns SmartShift Eco info as a managed DTO.
+  example: []
   syntax:
     content: public SmartShiftEcoInfo GetSmartShiftEco()
     return:
       type: ADLXWrapper.SmartShiftEcoInfo
     content.vb: Public Function GetSmartShiftEco() As SmartShiftEcoInfo
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or retrieval fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
   id: ApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
@@ -485,7 +666,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 188
+    startLine: 296
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -496,6 +677,39 @@ items:
       type: ADLXWrapper.SmartShiftEcoInfo
     content.vb: Public Sub ApplySmartShiftEco(info As SmartShiftEcoInfo)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  id: TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplySmartShiftEco(SmartShiftEcoInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(SmartShiftEcoInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplySmartShiftEco
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 315
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply SmartShift Eco; returns false when the feature is unsupported.
+  example: []
+  syntax:
+    content: public bool TryApplySmartShiftEco(SmartShiftEcoInfo info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.SmartShiftEcoInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplySmartShiftEco(info As SmartShiftEcoInfo) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco*
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
   id: GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
@@ -514,7 +728,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 203
+    startLine: 328
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -547,7 +761,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 219
+    startLine: 345
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -560,6 +774,41 @@ items:
       type: ADLXWrapper.ManualPowerTuningInfo
     content.vb: Public Sub ApplyManualPowerTuning(manualPower As IADLXManualPowerTuning*, info As ManualPowerTuningInfo)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  id: TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*, ADLXWrapper.ManualPowerTuningInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyManualPowerTuning
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 366
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply manual power tuning to an existing interface; returns false when unsupported.
+  example: []
+  syntax:
+    content: public bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+    parameters:
+    - id: manualPower
+      type: ADLXWrapper.IADLXManualPowerTuning*
+    - id: info
+      type: ADLXWrapper.ManualPowerTuningInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyManualPowerTuning(manualPower As IADLXManualPowerTuning*, info As ManualPowerTuningInfo) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
   id: ApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
@@ -578,7 +827,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 236
+    startLine: 379
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -593,6 +842,43 @@ items:
       type: ADLXWrapper.ManualPowerTuningInfo
     content.vb: Public Sub ApplyManualPowerTuning(tuningServices As IADLXGPUTuningServices*, gpu As IADLXGPU*, info As ManualPowerTuningInfo)
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  id: TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*, ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualPowerTuningInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyManualPowerTuning
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 399
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply manual power tuning via tuning services; returns false when unsupported.
+  example: []
+  syntax:
+    content: public bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+    parameters:
+    - id: tuningServices
+      type: ADLXWrapper.IADLXGPUTuningServices*
+    - id: gpu
+      type: ADLXWrapper.IADLXGPU*
+    - id: info
+      type: ADLXWrapper.ManualPowerTuningInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyManualPowerTuning(tuningServices As IADLXGPUTuningServices*, gpu As IADLXGPU*, info As ManualPowerTuningInfo) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.Dispose
   id: Dispose
@@ -611,7 +897,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 252
+    startLine: 412
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -641,7 +927,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 268
+    startLine: 428
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -922,6 +1208,13 @@ references:
   name: GetPowerTuningServicesNative
   nameWithType: ADLXPowerTuningServicesHelper.GetPowerTuningServicesNative
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesNative
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.objectdisposedexception
+  name: ObjectDisposedException
+  nameWithType: ObjectDisposedException
+  fullName: System.ObjectDisposedException
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetPowerTuningServicesHandle
@@ -935,12 +1228,24 @@ references:
   name: AdlxInterfaceHandle
   nameWithType: AdlxInterfaceHandle
   fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_IsGPUConnectSupported
   name: IsGPUConnectSupported
   nameWithType: ADLXPowerTuningServicesHelper.IsGPUConnectSupported
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_System_Boolean__
+  name: TryIsGPUConnectSupported
+  nameWithType: ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_EnumerateGPUConnectGpuHandles
@@ -968,6 +1273,12 @@ references:
     href: ADLXWrapper.AdlxInterfaceHandle.html
   - name: (
   - name: )
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_AdlxInterfaceHandle____
+  name: TryEnumerateGPUConnectGpuHandles
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetGPUConnectGpuListNative
@@ -1101,6 +1412,12 @@ references:
   name: ApplySmartShiftMax
   nameWithType: ADLXPowerTuningServicesHelper.ApplySmartShiftMax
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftMax
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftMax_ADLXWrapper_SmartShiftMaxInfo_
+  name: TryApplySmartShiftMax
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetSmartShiftEco
@@ -1120,6 +1437,12 @@ references:
   name: ApplySmartShiftEco
   nameWithType: ADLXPowerTuningServicesHelper.ApplySmartShiftEco
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftEco_ADLXWrapper_SmartShiftEcoInfo_
+  name: TryApplySmartShiftEco
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__
@@ -1187,6 +1510,12 @@ references:
     name: IADLXManualPowerTuning
     href: ADLXWrapper.IADLXManualPowerTuning.html
   - name: '*'
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_
+  name: TryApplyManualPowerTuning
+  nameWithType: ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.Dispose*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.Dispose
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_Dispose

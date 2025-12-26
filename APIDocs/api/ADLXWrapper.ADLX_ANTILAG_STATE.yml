@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTILAG_STATE
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ANTILAG_STATE
     content.vb: Public Enum ADLX_ANTILAG_STATE
@@ -46,10 +47,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ANTILAG
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ANTILAG = 0
     return:
@@ -72,10 +74,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ANTILAGNEXT
     path: ../ADLXWrapper/cs_generated/ADLX_ANTILAG_STATE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ANTILAGNEXT = 1
     return:

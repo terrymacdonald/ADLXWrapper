@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsChangedListener
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLX3DSettingsChangedListener
     content.vb: Public Structure IADLX3DSettingsChangedListener
@@ -53,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,10 +81,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: On3DSettingsChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedListener.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool On3DSettingsChanged(IADLX3DSettingsChangedEvent* p3DSettingsChangedEvent)
     parameters:

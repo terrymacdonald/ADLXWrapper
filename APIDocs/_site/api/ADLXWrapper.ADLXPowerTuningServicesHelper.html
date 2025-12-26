@@ -160,10 +160,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper__ctor_ADLXWrapper_IADLXPowerTuningServices__System_Boolean_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.#ctor(ADLXWrapper.IADLXPowerTuningServices*,System.Boolean)">
   ADLXPowerTuningServicesHelper(IADLXPowerTuningServices*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a power tuning helper from the native services interface, upgrading to v1 when available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -173,9 +174,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="ADLXWrapper.IADLXPowerTuningServices.html">IADLXPowerTuningServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Native power tuning services pointer.</p>
+</dd>
     <dt><code>addRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the pointer for this helper.</p>
+</dd>
   </dl>
 
 
@@ -197,10 +200,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_AddPowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_PowerTuningChangedCallback_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)">
   AddPowerTuningEventListener(PowerTuningChangedCallback)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L187"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a power tuning change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -210,13 +214,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.PowerTuningListenerHandle.html">PowerTuningListenerHandle</a>.<a class="xref" href="ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback.html">PowerTuningChangedCallback</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked on power tuning changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.PowerTuningListenerHandle.html">PowerTuningListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -226,6 +232,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -233,7 +248,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_ApplyManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__ADLXWrapper_ManualPowerTuningInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)">
   ApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L380"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -268,7 +283,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_ApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)">
   ApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L346"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -301,7 +316,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_ApplySmartShiftEco_ADLXWrapper_SmartShiftEcoInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)">
   ApplySmartShiftEco(SmartShiftEcoInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L297"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -332,7 +347,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_ApplySmartShiftMax_ADLXWrapper_SmartShiftMaxInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.ApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)">
   ApplySmartShiftMax(SmartShiftMaxInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L252"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -363,7 +378,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L413"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -390,7 +405,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_EnumerateGPUConnectGpuHandles" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles">
   EnumerateGPUConnectGpuHandles()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -421,7 +436,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.Finalize">
   ~ADLXPowerTuningServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L429"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -447,10 +462,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetGPUConnectGpuListNative" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative">
   GetGPUConnectGpuListNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L138"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the native GPUConnect GPU list (caller must dispose).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -471,6 +487,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -478,7 +503,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)">
   GetManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L329"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -516,10 +541,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetPowerTuningChangedHandling" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandling">
   GetPowerTuningChangedHandling()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L175"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the power tuning change handling interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -547,7 +573,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetPowerTuningChangedHandlingNative" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandlingNative">
   GetPowerTuningChangedHandlingNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L154"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -578,10 +604,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetPowerTuningServicesHandle" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle">
   GetPowerTuningServicesHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the highest available power tuning services interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -602,6 +629,12 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -609,7 +642,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetPowerTuningServicesNative" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesNative">
   GetPowerTuningServicesNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -640,10 +673,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetSmartShiftEco" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftEco">
   GetSmartShiftEco()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L282"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns SmartShift Eco info as a managed DTO.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -664,6 +698,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -671,10 +714,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetSmartShiftMax" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMax">
   GetSmartShiftMax()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L148"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L225"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns SmartShift Max info as a managed DTO.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -695,6 +739,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -702,10 +755,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_GetSmartShiftMaxNative" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.GetSmartShiftMaxNative">
   GetSmartShiftMaxNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L239"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets SmartShift Max interface (native pointer). Caller must dispose.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -716,7 +770,8 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.IADLXSmartShiftMax.html">IADLXSmartShiftMax</a>*</dt>
-    <dd></dd>
+    <dd><p>Native SmartShift Max pointer.</p>
+</dd>
   </dl>
 
 
@@ -726,6 +781,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -733,10 +797,11 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_IsGPUConnectSupported" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.IsGPUConnectSupported">
   IsGPUConnectSupported()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Queries whether GPUConnect is supported.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -747,7 +812,8 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if GPUConnect is supported.</p>
+</dd>
   </dl>
 
 
@@ -757,6 +823,15 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or query fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -764,7 +839,7 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
 
   <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_RemovePowerTuningEventListener_ADLXWrapper_PowerTuningListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.RemovePowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle,System.Boolean)">
   RemovePowerTuningEventListener(PowerTuningListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -782,6 +857,234 @@ Class ADLXPowerTuningServicesHelper  <a class="header-action link-secondary" tit
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__ADLXWrapper_ManualPowerTuningInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualPowerTuningInfo)">
+  TryApplyManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*, ManualPowerTuningInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L400"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply manual power tuning via tuning services; returns false when unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tuningServices</code> <a class="xref" href="ADLXWrapper.IADLXGPUTuningServices.html">IADLXGPUTuningServices</a>*</dt>
+    <dd></dd>
+    <dt><code>gpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ManualPowerTuningInfo.html">ManualPowerTuningInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)">
+  TryApplyManualPowerTuning(IADLXManualPowerTuning*, ManualPowerTuningInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply manual power tuning to an existing interface; returns false when unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>manualPower</code> <a class="xref" href="ADLXWrapper.IADLXManualPowerTuning.html">IADLXManualPowerTuning</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ManualPowerTuningInfo.html">ManualPowerTuningInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftEco_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftEco_ADLXWrapper_SmartShiftEcoInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)">
+  TryApplySmartShiftEco(SmartShiftEcoInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply SmartShift Eco; returns false when the feature is unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplySmartShiftEco(SmartShiftEcoInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.SmartShiftEcoInfo.html">SmartShiftEcoInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftMax_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryApplySmartShiftMax_ADLXWrapper_SmartShiftMaxInfo_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)">
+  TryApplySmartShiftMax(SmartShiftMaxInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply SmartShift Max; returns false when the feature is unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplySmartShiftMax(SmartShiftMaxInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.SmartShiftMaxInfo.html">SmartShiftMaxInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_AdlxInterfaceHandle____" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)">
+  TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[] handles)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>handles</code> <a class="xref" href="ADLXWrapper.AdlxInterfaceHandle.html">AdlxInterfaceHandle</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported*"></a>
+
+  <h3 id="ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_System_Boolean__" data-uid="ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)">
+  TryIsGPUConnectSupported(out bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXPowerTuningServicesHelper.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to query GPUConnect support; returns false if the feature is not supported on this system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryIsGPUConnectSupported(out bool supported)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>supported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

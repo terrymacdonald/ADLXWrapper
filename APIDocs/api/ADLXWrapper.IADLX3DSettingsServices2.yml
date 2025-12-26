@@ -39,10 +39,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsServices2
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLX3DSettingsServices2
     content.vb: Public Structure IADLX3DSettingsServices2
@@ -71,7 +72,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -98,10 +99,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -126,10 +128,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -154,10 +157,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -190,10 +194,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAntiLag
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAntiLag(IADLXGPU* pGPU, IADLX3DAntiLag** pp3DAntiLag)
     parameters:
@@ -223,10 +228,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetChill
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetChill(IADLXGPU* pGPU, IADLX3DChill** pp3DChill)
     parameters:
@@ -256,10 +262,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBoost
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetBoost(IADLXGPU* pGPU, IADLX3DBoost** pp3DBoost)
     parameters:
@@ -289,10 +296,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetImageSharpening
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetImageSharpening(IADLXGPU* pGPU, IADLX3DImageSharpening** pp3DImageSharpening)
     parameters:
@@ -322,10 +330,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEnhancedSync
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetEnhancedSync(IADLXGPU* pGPU, IADLX3DEnhancedSync** pp3DEnhancedSync)
     parameters:
@@ -355,10 +364,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetWaitForVerticalRefresh
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetWaitForVerticalRefresh(IADLXGPU* pGPU, IADLX3DWaitForVerticalRefresh** pp3DWaitForVerticalRefresh)
     parameters:
@@ -388,10 +398,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFrameRateTargetControl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFrameRateTargetControl(IADLXGPU* pGPU, IADLX3DFrameRateTargetControl** pp3DFrameRateTargetControl)
     parameters:
@@ -421,10 +432,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAntiAliasing
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAntiAliasing(IADLXGPU* pGPU, IADLX3DAntiAliasing** pp3DAntiAliasing)
     parameters:
@@ -454,10 +466,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMorphologicalAntiAliasing
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMorphologicalAntiAliasing(IADLXGPU* pGPU, IADLX3DMorphologicalAntiAliasing** pp3DMorphologicalAntiAliasing)
     parameters:
@@ -487,10 +500,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAnisotropicFiltering
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAnisotropicFiltering(IADLXGPU* pGPU, IADLX3DAnisotropicFiltering** pp3DAnisotropicFiltering)
     parameters:
@@ -520,10 +534,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTessellation
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTessellation(IADLXGPU* pGPU, IADLX3DTessellation** pp3DTessellation)
     parameters:
@@ -553,10 +568,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRadeonSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetRadeonSuperResolution(IADLX3DRadeonSuperResolution** pp3DRadeonSuperResolution)
     parameters:
@@ -584,10 +600,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetResetShaderCache
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetResetShaderCache(IADLXGPU* pGPU, IADLX3DResetShaderCache** pp3DResetShaderCache)
     parameters:
@@ -617,10 +634,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Get3DSettingsChangedHandling(IADLX3DSettingsChangedHandling** pp3DSettingsChangedHandling)
     parameters:
@@ -648,10 +666,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAMDFluidMotionFrames
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAMDFluidMotionFrames(IADLX3DAMDFluidMotionFrames** pp3DAMDFluidMotionFrames)
     parameters:
@@ -679,10 +698,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetImageSharpenDesktop
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsServices2.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetImageSharpenDesktop(IADLXGPU* pGPU, IADLX3DImageSharpenDesktop** pp3DImageSharpenDesktop)
     parameters:

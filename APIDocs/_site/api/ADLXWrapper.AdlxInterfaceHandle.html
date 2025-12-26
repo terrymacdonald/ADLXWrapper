@@ -188,7 +188,7 @@ Struct AdlxInterfaceHandle  <a class="header-action link-secondary" title="View 
 
   <h3 id="ADLXWrapper_AdlxInterfaceHandle_As__1" data-uid="ADLXWrapper.AdlxInterfaceHandle.As``1">
   As&lt;T&gt;()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -224,7 +224,7 @@ Struct AdlxInterfaceHandle  <a class="header-action link-secondary" title="View 
 
   <h3 id="ADLXWrapper_AdlxInterfaceHandle_Dispose" data-uid="ADLXWrapper.AdlxInterfaceHandle.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -285,6 +285,43 @@ Struct AdlxInterfaceHandle  <a class="header-action link-secondary" title="View 
 
 
 
+  <a id="ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_" data-uid="ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*"></a>
+
+  <h3 id="ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__" data-uid="ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)">
+  FromNonRefCounted(void*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ptr</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.void">void</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.AdlxInterfaceHandle.html">AdlxInterfaceHandle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="operators">Operators
 </h2>
 
@@ -293,7 +330,7 @@ Struct AdlxInterfaceHandle  <a class="header-action link-secondary" title="View 
 
   <h3 id="ADLXWrapper_AdlxInterfaceHandle_op_Implicit_ADLXWrapper_AdlxInterfaceHandle__ADLXWrapper_IADLXInterface_" data-uid="ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*">
   implicit operator IADLXInterface*(AdlxInterfaceHandle)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -329,7 +366,7 @@ Struct AdlxInterfaceHandle  <a class="header-action link-secondary" title="View 
 
   <h3 id="ADLXWrapper_AdlxInterfaceHandle_op_Implicit_ADLXWrapper_AdlxInterfaceHandle__System_IntPtr" data-uid="ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr">
   implicit operator nint(AdlxInterfaceHandle)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxInterfaceHandle.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

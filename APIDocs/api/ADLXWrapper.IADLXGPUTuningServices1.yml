@@ -39,10 +39,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUTuningServices1
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUTuningServices1
     content.vb: Public Structure IADLXGPUTuningServices1
@@ -71,7 +72,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -98,10 +99,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -126,10 +128,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -154,10 +157,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -190,10 +194,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUTuningChangedHandling(IADLXGPUTuningChangedHandling** ppGPUTuningChangedHandling)
     parameters:
@@ -221,10 +226,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAtFactory
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsAtFactory(IADLXGPU* pGPU, bool* isFactory)
     parameters:
@@ -257,10 +263,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResetToFactory
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT ResetToFactory(IADLXGPU* pGPU)
     parameters:
@@ -288,10 +295,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedAutoTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedAutoTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -324,10 +332,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPresetTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedPresetTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -360,10 +369,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedManualGFXTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedManualGFXTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -396,10 +406,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedManualVRAMTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedManualVRAMTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -432,10 +443,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedManualFanTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedManualFanTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -468,10 +480,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedManualPowerTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedManualPowerTuning(IADLXGPU* pGPU, bool* supported)
     parameters:
@@ -504,10 +517,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAutoTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAutoTuning(IADLXGPU* pGPU, IADLXInterface** ppAutoTuning)
     parameters:
@@ -537,10 +551,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPresetTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPresetTuning(IADLXGPU* pGPU, IADLXInterface** ppPresetTuning)
     parameters:
@@ -570,10 +585,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualGFXTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetManualGFXTuning(IADLXGPU* pGPU, IADLXInterface** ppManualGFXTuning)
     parameters:
@@ -603,10 +619,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualVRAMTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetManualVRAMTuning(IADLXGPU* pGPU, IADLXInterface** ppManualVRAMTuning)
     parameters:
@@ -636,10 +653,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualFanTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetManualFanTuning(IADLXGPU* pGPU, IADLXInterface** ppManualFanTuning)
     parameters:
@@ -669,10 +687,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetManualPowerTuning(IADLXGPU* pGPU, IADLXInterface** ppManualPowerTuning)
     parameters:
@@ -702,10 +721,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartAccessMemory
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningServices1.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSmartAccessMemory(IADLXGPU* pGPU, IADLXSmartAccessMemory** ppSmartAccessMemory)
     parameters:

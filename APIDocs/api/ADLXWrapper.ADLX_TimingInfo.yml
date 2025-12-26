@@ -30,10 +30,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TimingInfo
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_TimingInfo
     content.vb: Public Structure ADLX_TimingInfo
@@ -62,10 +63,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: timingFlags
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int timingFlags
     return:
@@ -89,10 +91,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hTotal
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int hTotal
     return:
@@ -116,10 +119,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vTotal
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int vTotal
     return:
@@ -143,10 +147,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hDisplay
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int hDisplay
     return:
@@ -170,10 +175,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vDisplay
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 17
+    startLine: 23
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int vDisplay
     return:
@@ -197,10 +203,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hFrontPorch
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 20
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int hFrontPorch
     return:
@@ -224,10 +231,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vFrontPorch
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 23
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int vFrontPorch
     return:
@@ -251,10 +259,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hSyncWidth
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 26
+    startLine: 35
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int hSyncWidth
     return:
@@ -278,10 +287,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vSyncWidth
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 29
+    startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int vSyncWidth
     return:
@@ -305,10 +315,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hPolarity
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 32
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int hPolarity
     return:
@@ -332,10 +343,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vPolarity
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-    startLine: 35
+    startLine: 47
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int vPolarity
     return:

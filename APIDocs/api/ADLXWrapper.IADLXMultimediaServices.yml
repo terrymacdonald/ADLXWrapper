@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXMultimediaServices
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXMultimediaServices
     content.vb: Public Structure IADLXMultimediaServices
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,10 +86,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -113,10 +115,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -141,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -177,10 +181,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMultimediaChangedHandling(IADLXMultimediaChangedHandling** ppMultimediaChangedHandling)
     parameters:
@@ -208,10 +213,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetVideoUpscale(IADLXGPU* pGPU, IADLXVideoUpscale** ppVideoupscale)
     parameters:
@@ -241,10 +247,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLXMultimediaServices.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetVideoSuperResolution(IADLXGPU* pGPU, IADLXVideoSuperResolution** ppVideoSuperResolution)
     parameters:

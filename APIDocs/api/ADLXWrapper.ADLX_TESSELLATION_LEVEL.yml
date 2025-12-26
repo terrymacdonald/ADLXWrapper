@@ -27,10 +27,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TESSELLATION_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_TESSELLATION_LEVEL
     content.vb: Public Enum ADLX_TESSELLATION_LEVEL
@@ -52,10 +53,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_OFF
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_OFF = 1
     return:
@@ -78,10 +80,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_2X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_2X = 2
     return:
@@ -104,10 +107,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_4X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_4X = 4
     return:
@@ -130,10 +134,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_6X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_6X = 6
     return:
@@ -156,10 +161,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_8X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_8X = 8
     return:
@@ -182,10 +188,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_16X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_16X = 16
     return:
@@ -208,10 +215,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_32X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_32X = 32
     return:
@@ -234,10 +242,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_LEVEL_64X
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_LEVEL.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: T_LEVEL_64X = 64
     return:

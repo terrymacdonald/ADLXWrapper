@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTI_ALIASING_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ANTI_ALIASING_LEVEL
     content.vb: Public Enum ADLX_ANTI_ALIASING_LEVEL
@@ -51,10 +52,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_INVALID
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_INVALID = 0
     return:
@@ -77,10 +79,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_2X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_2X = 2
     return:
@@ -103,10 +106,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_2XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_2XEQ = 3
     return:
@@ -129,10 +133,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_4X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_4X = 4
     return:
@@ -155,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_4XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_4XEQ = 5
     return:
@@ -181,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_8X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_8X = 8
     return:
@@ -207,10 +214,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_8XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_LEVEL_8XEQ = 9
     return:

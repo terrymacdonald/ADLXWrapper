@@ -20,10 +20,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_3DLUT_Data
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_3DLUT_Data
     content.vb: Public Structure ADLX_3DLUT_Data
@@ -52,10 +53,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: data
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_3DLUT_Data._data_e__FixedBuffer data
     return:

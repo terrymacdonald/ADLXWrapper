@@ -23,10 +23,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ORIENTATION
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ORIENTATION
     content.vb: Public Enum ADLX_ORIENTATION
@@ -48,10 +49,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_LANDSCAPE
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ORIENTATION_LANDSCAPE = 0
     return:
@@ -74,10 +76,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_PORTRAIT
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ORIENTATION_PORTRAIT = 90
     return:
@@ -100,10 +103,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_LANDSCAPE_FLIPPED
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ORIENTATION_LANDSCAPE_FLIPPED = 180
     return:
@@ -126,10 +130,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_PORTRAIT_FLIPPED
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ORIENTATION_PORTRAIT_FLIPPED = 270
     return:

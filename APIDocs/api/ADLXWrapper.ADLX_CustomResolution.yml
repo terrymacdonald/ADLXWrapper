@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_CustomResolution
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_CustomResolution
     content.vb: Public Structure ADLX_CustomResolution
@@ -58,10 +59,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resWidth
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int resWidth
     return:
@@ -85,10 +87,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resHeight
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int resHeight
     return:
@@ -112,10 +115,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: refreshRate
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int refreshRate
     return:
@@ -139,10 +143,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: presentation
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 13
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_DISPLAY_SCAN_TYPE presentation
     return:
@@ -166,10 +171,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: timingStandard
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 15
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_TIMING_STANDARD timingStandard
     return:
@@ -193,10 +199,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPixelClock
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 18
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int GPixelClock
     return:
@@ -220,10 +227,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: detailedTiming
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 20
+    startLine: 28
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_TimingInfo detailedTiming
     return:

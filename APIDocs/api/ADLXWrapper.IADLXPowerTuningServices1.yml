@@ -28,10 +28,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXPowerTuningServices1
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXPowerTuningServices1
     content.vb: Public Structure IADLXPowerTuningServices1
@@ -60,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,10 +88,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -115,10 +117,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -143,10 +146,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -179,10 +183,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPowerTuningChangedHandling(IADLXPowerTuningChangedHandling** ppPowerTuningChangedHandling)
     parameters:
@@ -210,10 +215,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSmartShiftMax(IADLXSmartShiftMax** ppSmartShiftMax)
     parameters:
@@ -241,10 +247,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSmartShiftEco(IADLXSmartShiftEco** ppSmartShiftEco)
     parameters:
@@ -272,10 +279,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsGPUConnectSupported(bool* supported)
     parameters:
@@ -306,10 +314,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUConnectGPUs
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningServices1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUConnectGPUs(IADLXGPU2List** ppGPUs)
     parameters:

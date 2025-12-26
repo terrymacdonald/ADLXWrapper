@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_I2C_LINE
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_I2C_LINE
     content.vb: Public Enum ADLX_I2C_LINE
@@ -51,10 +52,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM = 1
     return:
@@ -77,10 +79,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OD_CONTROL
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OD_CONTROL = 2
     return:
@@ -103,10 +106,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM2
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM2 = 3
     return:
@@ -129,10 +133,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM3
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM3 = 4
     return:
@@ -155,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM4
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM4 = 5
     return:
@@ -181,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM5
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM5 = 6
     return:
@@ -207,10 +214,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: I2C_LINE_OEM6
     path: ../ADLXWrapper/cs_generated/ADLX_I2C_LINE.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: I2C_LINE_OEM6 = 7
     return:

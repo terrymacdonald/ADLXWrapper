@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SSM_BIAS_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_SSM_BIAS_MODE
     content.vb: Public Enum ADLX_SSM_BIAS_MODE
@@ -46,10 +47,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SSM_BIAS_AUTO
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: SSM_BIAS_AUTO = 0
     return:
@@ -72,10 +74,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SSM_BIAS_MANUAL
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: SSM_BIAS_MANUAL = 1
     return:

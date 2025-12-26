@@ -35,10 +35,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayConnectivityExperience
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplayConnectivityExperience
     content.vb: Public Structure IADLXDisplayConnectivityExperience
@@ -67,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -94,10 +95,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -122,10 +124,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -150,10 +153,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -186,10 +190,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedHDMIQualityDetection(bool* supported)
     parameters:
@@ -220,10 +225,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedDPLink
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedDPLink(bool* supported)
     parameters:
@@ -254,10 +260,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabledHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsEnabledHDMIQualityDetection(bool* enabled)
     parameters:
@@ -288,10 +295,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabledHDMIQualityDetection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetEnabledHDMIQualityDetection(byte enabled)
     parameters:
@@ -322,10 +330,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDPLinkRate
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDPLinkRate(ADLX_DP_LINK_RATE* linkRate)
     parameters:
@@ -353,10 +362,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfActiveLanes
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNumberOfActiveLanes(uint* numActiveLanes)
     parameters:
@@ -387,10 +397,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfTotalLanes
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNumberOfTotalLanes(uint* numTotalLanes)
     parameters:
@@ -421,10 +432,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRelativePreEmphasis
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetRelativePreEmphasis(int* relativePreEmphasis)
     parameters:
@@ -455,10 +467,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRelativePreEmphasis
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetRelativePreEmphasis(int relativePreEmphasis)
     parameters:
@@ -489,10 +502,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRelativeVoltageSwing
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetRelativeVoltageSwing(int* relativeVoltageSwing)
     parameters:
@@ -523,10 +537,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRelativeVoltageSwing
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetRelativeVoltageSwing(int relativeVoltageSwing)
     parameters:
@@ -557,10 +572,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabledLinkProtection
     path: ../ADLXWrapper/cs_generated/IADLXDisplayConnectivityExperience.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsEnabledLinkProtection(bool* enabled)
     parameters:

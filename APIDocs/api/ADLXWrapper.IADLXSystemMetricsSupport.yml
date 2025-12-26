@@ -29,10 +29,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystemMetricsSupport
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXSystemMetricsSupport
     content.vb: Public Structure IADLXSystemMetricsSupport
@@ -61,7 +62,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,10 +89,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -116,10 +118,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -144,10 +147,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -180,10 +184,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedCPUUsage(bool* supported)
     parameters:
@@ -214,10 +219,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedSystemRAM(bool* supported)
     parameters:
@@ -248,10 +254,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSmartShift
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedSmartShift(bool* supported)
     parameters:
@@ -282,10 +289,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCPUUsageRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCPUUsageRange(int* minValue, int* maxValue)
     parameters:
@@ -318,10 +326,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemRAMRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSystemRAMRange(int* minValue, int* maxValue)
     parameters:
@@ -354,10 +363,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftRange
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetricsSupport.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSmartShiftRange(int* minValue, int* maxValue)
     parameters:

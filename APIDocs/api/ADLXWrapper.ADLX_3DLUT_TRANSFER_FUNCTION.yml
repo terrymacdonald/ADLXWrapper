@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_3DLUT_TRANSFER_FUNCTION
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_TRANSFER_FUNCTION.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_3DLUT_TRANSFER_FUNCTION
     content.vb: Public Enum ADLX_3DLUT_TRANSFER_FUNCTION
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TF_SRGB
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_TRANSFER_FUNCTION.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: TF_SRGB = 1
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TF_PQ
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_TRANSFER_FUNCTION.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: TF_PQ = 2
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TF_G22
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_TRANSFER_FUNCTION.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: TF_G22 = 3
     return:

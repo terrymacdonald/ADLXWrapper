@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningChangedCallback
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 525
+    startLine: 711
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

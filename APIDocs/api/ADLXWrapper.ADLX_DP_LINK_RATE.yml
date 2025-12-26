@@ -30,10 +30,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DP_LINK_RATE
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DP_LINK_RATE
     content.vb: Public Enum ADLX_DP_LINK_RATE
@@ -55,10 +56,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_UNKNOWN = 0
     return:
@@ -81,10 +83,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_RBR
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_RBR = 1
     return:
@@ -107,10 +110,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_2_16GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_2_16GBPS = 2
     return:
@@ -133,10 +137,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_2_43GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_2_43GBPS = 3
     return:
@@ -159,10 +164,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_HBR = 4
     return:
@@ -185,10 +191,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_4_32GBPS
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_4_32GBPS = 5
     return:
@@ -211,10 +218,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR2
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_HBR2 = 6
     return:
@@ -237,10 +245,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_HBR3
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_HBR3 = 7
     return:
@@ -263,10 +272,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR10
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_UHBR10 = 8
     return:
@@ -289,10 +299,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR13D5
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 13
+    startLine: 33
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_UHBR13D5 = 9
     return:
@@ -315,10 +326,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DP_LINK_RATE_UHBR20
     path: ../ADLXWrapper/cs_generated/ADLX_DP_LINK_RATE.cs
-    startLine: 14
+    startLine: 36
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DP_LINK_RATE_UHBR20 = 10
     return:

@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DISPLAY_TYPE
     content.vb: Public Enum ADLX_DISPLAY_TYPE
@@ -51,10 +52,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_UNKOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_UNKOWN = 0
     return:
@@ -77,10 +79,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_MONITOR
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_MONITOR = 1
     return:
@@ -103,10 +106,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_TELEVISION
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_TELEVISION = 2
     return:
@@ -129,10 +133,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_LCD_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_LCD_PANEL = 3
     return:
@@ -155,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_DIGITAL_FLAT_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_DIGITAL_FLAT_PANEL = 4
     return:
@@ -181,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_COMPONENT_VIDEO
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_COMPONENT_VIDEO = 5
     return:
@@ -207,10 +214,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_PROJECTOR
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_TYPE_PROJECTOR = 6
     return:

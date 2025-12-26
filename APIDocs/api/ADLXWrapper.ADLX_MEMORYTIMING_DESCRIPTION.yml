@@ -25,10 +25,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_MEMORYTIMING_DESCRIPTION
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_MEMORYTIMING_DESCRIPTION
     content.vb: Public Enum ADLX_MEMORYTIMING_DESCRIPTION
@@ -50,10 +51,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_DEFAULT
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_DEFAULT = 0
     return:
@@ -76,10 +78,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_FAST_TIMING
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_FAST_TIMING = 1
     return:
@@ -102,10 +105,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_FAST_TIMING_LEVEL_2
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_FAST_TIMING_LEVEL_2 = 2
     return:
@@ -128,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_AUTOMATIC
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_AUTOMATIC = 3
     return:
@@ -154,10 +159,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_MEMORYTIMING_LEVEL_1
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_MEMORYTIMING_LEVEL_1 = 4
     return:
@@ -180,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_MEMORYTIMING_LEVEL_2
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MEMORYTIMING_MEMORYTIMING_LEVEL_2 = 5
     return:

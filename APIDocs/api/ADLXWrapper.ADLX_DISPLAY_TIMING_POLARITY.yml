@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TIMING_POLARITY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DISPLAY_TIMING_POLARITY
     content.vb: Public Enum ADLX_DISPLAY_TIMING_POLARITY
@@ -46,10 +47,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: POSITIVE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: POSITIVE = 0
     return:
@@ -72,10 +74,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NEGATIVE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_POLARITY.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: NEGATIVE = 1
     return:

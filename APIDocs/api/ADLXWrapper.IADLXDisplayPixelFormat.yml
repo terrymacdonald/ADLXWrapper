@@ -32,10 +32,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplayPixelFormat
     content.vb: Public Structure IADLXDisplayPixelFormat
@@ -64,7 +65,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -91,10 +92,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -119,10 +121,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -147,10 +150,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -183,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupported(bool* supported)
     parameters:
@@ -217,10 +222,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetValue(ADLX_PIXEL_FORMAT* pixelFormat)
     parameters:
@@ -248,10 +254,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetValue(ADLX_PIXEL_FORMAT pixelFormat)
     parameters:
@@ -279,10 +286,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedPixelFormat(ADLX_PIXEL_FORMAT pixelFormat, bool* supportd)
     parameters:
@@ -315,10 +323,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRGB444Full
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedRGB444Full(bool* supportd)
     parameters:
@@ -349,10 +358,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr444
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedYCbCr444(bool* supportd)
     parameters:
@@ -383,10 +393,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr422
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedYCbCr422(bool* supportd)
     parameters:
@@ -417,10 +428,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRGB444Limited
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedRGB444Limited(bool* supportd)
     parameters:
@@ -451,10 +463,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedYCbCr420
     path: ../ADLXWrapper/cs_generated/IADLXDisplayPixelFormat.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedYCbCr420(bool* supportd)
     parameters:

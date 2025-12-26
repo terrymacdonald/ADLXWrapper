@@ -33,11 +33,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -71,24 +71,29 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 16
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 22
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a managed desktop facade from native desktop and services (optionally with display services for ownership queries).
+  example: []
   syntax:
     content: public ADLXDesktop(IADLXDesktopServices* pDesktopServices, IADLXDesktop* pDesktop, IADLXDisplayServices* pDisplayServices = null)
     parameters:
     - id: pDesktopServices
       type: ADLXWrapper.IADLXDesktopServices*
+      description: Native desktop services pointer.
     - id: pDesktop
       type: ADLXWrapper.IADLXDesktop*
+      description: Native desktop pointer.
     - id: pDisplayServices
       type: ADLXWrapper.IADLXDisplayServices*
+      description: Optional display services pointer used for display queries.
     content.vb: Public Sub New(pDesktopServices As IADLXDesktopServices*, pDesktop As IADLXDesktop*, pDisplayServices As IADLXDisplayServices* = Nothing)
   overload: ADLXWrapper.ADLXDesktop.#ctor*
   nameWithType.vb: ADLXDesktop.New(IADLXDesktopServices*, IADLXDesktop*, IADLXDisplayServices*)
@@ -107,12 +112,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 31
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -136,12 +141,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 32
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,12 +170,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 33
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 41
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -194,12 +199,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 34
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -223,12 +228,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 35
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -252,12 +257,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 36
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 47
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -281,12 +286,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 37
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -310,12 +315,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 38
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -339,12 +344,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayInfosForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 43
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -369,12 +374,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 53
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 68
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -399,12 +404,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 84
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 100
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -432,12 +437,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 91
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 108
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -466,12 +471,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 99
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 117
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -494,12 +499,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 108
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -524,12 +529,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplayInfosForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 119
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -554,12 +559,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 130
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 151
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -584,12 +589,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 178
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 200
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -614,12 +619,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
+      path: ADLXWrapper/AdlxDesktop.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 190
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 213
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

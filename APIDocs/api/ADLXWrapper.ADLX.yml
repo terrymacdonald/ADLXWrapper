@@ -176,6 +176,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public static extern int adlx_atomic_inc(int* x)
     parameters:
@@ -202,6 +203,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public static extern int adlx_atomic_dec(int* x)
     parameters:
@@ -228,6 +230,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public static extern void* adlx_load_library(sbyte* filename)
     parameters:
@@ -254,6 +257,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public static extern int adlx_free_library(void* module)
     parameters:
@@ -280,6 +284,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public static extern void* adlx_get_proc_address(void* module, sbyte* procName)
     parameters:
@@ -312,7 +317,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MAJOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -339,7 +344,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MINOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 29
+    startLine: 34
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -366,7 +371,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_RELEASE
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 32
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -393,7 +398,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_BUILD_NUM
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 35
+    startLine: 40
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -420,7 +425,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FULL_VERSION
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 38
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -447,7 +452,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VERSION_STR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 41
+    startLine: 46
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -474,7 +479,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MAX_USER_3DLUT_NUM_POINTS
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -501,7 +506,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEW
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 47
+    startLine: 52
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -528,7 +533,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEA
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 49
+    startLine: 54
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -557,7 +562,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 52
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -586,7 +591,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_FULL_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 55
+    startLine: 60
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -615,7 +620,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 58
+    startLine: 63
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -644,7 +649,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 61
+    startLine: 66
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -673,7 +678,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 64
+    startLine: 69
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -702,7 +707,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 67
+    startLine: 72
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -731,7 +736,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TERMINATE_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 70
+    startLine: 75
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

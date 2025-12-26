@@ -21,7 +21,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VramState
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 419
+    startLine: 605
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -53,7 +53,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Frequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 421
+    startLine: 607
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -82,7 +82,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 422
+    startLine: 608
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

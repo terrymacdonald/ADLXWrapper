@@ -24,10 +24,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANISOTROPIC_FILTERING_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ANISOTROPIC_FILTERING_LEVEL
     content.vb: Public Enum ADLX_ANISOTROPIC_FILTERING_LEVEL
@@ -49,10 +50,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_INVALID
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AF_LEVEL_INVALID = 0
     return:
@@ -75,10 +77,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X2
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AF_LEVEL_X2 = 2
     return:
@@ -101,10 +104,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X4
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AF_LEVEL_X4 = 4
     return:
@@ -127,10 +131,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X8
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AF_LEVEL_X8 = 8
     return:
@@ -153,10 +158,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X16
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AF_LEVEL_X16 = 16
     return:

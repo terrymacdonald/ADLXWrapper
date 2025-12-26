@@ -24,10 +24,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TIMING_STANDARD
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_TIMING_STANDARD
     content.vb: Public Enum ADLX_TIMING_STANDARD
@@ -49,10 +50,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CVT
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CVT = 0
     return:
@@ -75,10 +77,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CVT_RB
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CVT_RB = 1
     return:
@@ -101,10 +104,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GTF
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GTF = 2
     return:
@@ -127,10 +131,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DMT
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DMT = 3
     return:
@@ -153,10 +158,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MANUAL
     path: ../ADLXWrapper/cs_generated/ADLX_TIMING_STANDARD.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: MANUAL = 4
     return:

@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_SCAN_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_SCAN_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DISPLAY_SCAN_TYPE
     content.vb: Public Enum ADLX_DISPLAY_SCAN_TYPE
@@ -46,10 +47,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PROGRESSIVE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_SCAN_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PROGRESSIVE = 0
     return:
@@ -72,10 +74,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: INTERLACED
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_SCAN_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: INTERLACED = 1
     return:

@@ -24,10 +24,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_RegammaCoeff
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_RegammaCoeff
     content.vb: Public Structure ADLX_RegammaCoeff
@@ -56,10 +57,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA0
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int coefficientA0
     return:
@@ -83,10 +85,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA1
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int coefficientA1
     return:
@@ -110,10 +113,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA2
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int coefficientA2
     return:
@@ -137,10 +141,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: coefficientA3
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int coefficientA3
     return:
@@ -164,10 +169,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamma
     path: ../ADLXWrapper/cs_generated/ADLX_RegammaCoeff.cs
-    startLine: 17
+    startLine: 23
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int gamma
     return:

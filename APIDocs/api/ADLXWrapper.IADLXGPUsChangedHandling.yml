@@ -25,10 +25,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUsChangedHandling
     content.vb: Public Structure IADLXGPUsChangedHandling
@@ -57,7 +58,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -84,10 +85,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -112,10 +114,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -140,10 +143,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -176,10 +180,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddGPUsListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddGPUsListEventListener(IADLXGPUsEventListener* pListener)
     parameters:
@@ -207,10 +212,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveGPUsListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUsChangedHandling.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveGPUsListEventListener(IADLXGPUsEventListener* pListener)
     parameters:

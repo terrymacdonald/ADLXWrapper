@@ -69,6 +69,29 @@ items:
   - ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   - ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   - ADLXWrapper.ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
   langs:
   - csharp
   - vb
@@ -121,21 +144,27 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 31
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a display services helper from native display/desktop services.
+  example: []
   syntax:
     content: public ADLXDisplayServicesHelper(IADLXDisplayServices* displayServices, IADLXDesktopServices* desktopServices = null, bool addRefDisplayServices = true, bool addRefDesktopServices = true)
     parameters:
     - id: displayServices
       type: ADLXWrapper.IADLXDisplayServices*
+      description: Native display services pointer.
     - id: desktopServices
       type: ADLXWrapper.IADLXDesktopServices*
+      description: Optional desktop services pointer used to build display facades.
     - id: addRefDisplayServices
       type: System.Boolean
+      description: True to AddRef the display services pointer for this helper.
     - id: addRefDesktopServices
       type: System.Boolean
+      description: True to AddRef the desktop services pointer for this helper.
     content.vb: Public Sub New(displayServices As IADLXDisplayServices*, desktopServices As IADLXDesktopServices* = Nothing, addRefDisplayServices As Boolean = True, addRefDesktopServices As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.#ctor*
   nameWithType.vb: ADLXDisplayServicesHelper.New(IADLXDisplayServices*, IADLXDesktopServices*, Boolean, Boolean)
@@ -159,16 +188,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 50
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns the highest available display services interface (3, then 2, then base). Caller must not release it.
+  example: []
   syntax:
     content: public IADLXDisplayServices* GetDisplayServicesNative()
     return:
       type: ADLXWrapper.IADLXDisplayServices*
     content.vb: Public Function GetDisplayServicesNative() As IADLXDisplayServices*
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesNative*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle
   id: GetDisplayServicesHandle
@@ -187,16 +222,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 56
+    startLine: 72
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns an AddRef'd handle to the current display services interface.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle GetDisplayServicesHandle()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetDisplayServicesHandle() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
   id: EnumerateDisplays
@@ -215,16 +256,61 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 62
+    startLine: 84
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates managed display facades. Caller must dispose each display.
+  example: []
   syntax:
     content: public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
     content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If display services are unsupported or enumeration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  id: TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay>)
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay>)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateDisplays
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 122
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to enumerate display facades, returning false if the feature is not supported.
+  example: []
+  syntax:
+    content: public bool TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay> displays)
+    parameters:
+    - id: displays
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateDisplays(displays As IReadOnlyList(Of ADLXDisplay)) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays*
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplays(IReadOnlyList(Of ADLXDisplay))
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay))
+  name.vb: TryEnumerateDisplays(IReadOnlyList(Of ADLXDisplay))
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
   id: EnumerateADLXDisplays
@@ -243,7 +329,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 96
+    startLine: 136
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -253,6 +339,40 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
     content.vb: Public Function EnumerateADLXDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  id: TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay>)
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay>)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDisplay>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateADLXDisplays
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 141
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryEnumerateADLXDisplays(out IReadOnlyList<ADLXDisplay> displays)
+    parameters:
+    - id: displays
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateADLXDisplays(displays As IReadOnlyList(Of ADLXDisplay)) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays*
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(IReadOnlyList(Of ADLXDisplay))
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDisplay))
+  name.vb: TryEnumerateADLXDisplays(IReadOnlyList(Of ADLXDisplay))
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
   id: GetDisplayInfo(ADLXWrapper.IADLXDisplay*)
@@ -271,19 +391,29 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 101
+    startLine: 152
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Builds a display DTO from a native display pointer.
+  example: []
   syntax:
     content: public DisplayInfo GetDisplayInfo(IADLXDisplay* display)
     parameters:
     - id: display
       type: ADLXWrapper.IADLXDisplay*
+      description: Native display pointer.
     return:
       type: ADLXWrapper.DisplayInfo
     content.vb: Public Function GetDisplayInfo(display As IADLXDisplay*) As DisplayInfo
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: If <code class="paramref">display</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)
   id: EnumerateADLXDisplaysForGpu(System.Int32)
@@ -302,19 +432,29 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplaysForGpu
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 108
+    startLine: 166
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates managed displays filtered by owning GPU unique ID. Disposes non-matching displays.
+  example: []
   syntax:
     content: public IReadOnlyList<ADLXDisplay> EnumerateADLXDisplaysForGpu(int gpuUniqueId)
     parameters:
     - id: gpuUniqueId
       type: System.Int32
+      description: GPU unique ID to filter on.
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
     content.vb: Public Function EnumerateADLXDisplaysForGpu(gpuUniqueId As Integer) As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
   nameWithType.vb: ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(Integer)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(Integer)
   name.vb: EnumerateADLXDisplaysForGpu(Integer)
@@ -336,21 +476,35 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDisplay
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 127
+    startLine: 194
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Wraps a native display pointer in a managed facade.
+  example: []
   syntax:
     content: public ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
     parameters:
     - id: pDisplay
       type: ADLXWrapper.IADLXDisplay*
+      description: Native display pointer.
     - id: addRef
       type: System.Boolean
+      description: True to AddRef the pointer for this facade.
     return:
       type: ADLXWrapper.ADLXDisplay
     content.vb: Public Function CreateADLXDisplay(pDisplay As IADLXDisplay*, addRef As Boolean = True) As ADLXDisplay
   overload: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If display services are unavailable.
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: If <code class="paramref">pDisplay</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
   nameWithType.vb: ADLXDisplayServicesHelper.CreateADLXDisplay(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: CreateADLXDisplay(IADLXDisplay*, Boolean)
@@ -372,16 +526,25 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 144
+    startLine: 217
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns the native display list. Caller must dispose the returned list.
+  example: []
   syntax:
     content: public IADLXDisplayList* GetDisplayListNative()
     return:
       type: ADLXWrapper.IADLXDisplayList*
     content.vb: Public Function GetDisplayListNative() As IADLXDisplayList*
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If display services are unsupported or enumeration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles
   id: EnumerateDisplayHandles
@@ -400,16 +563,61 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayHandles
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 161
+    startLine: 240
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates display handles (AddRef'd) for native consumption.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle[] EnumerateDisplayHandles()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle[]
     content.vb: Public Function EnumerateDisplayHandles() As AdlxInterfaceHandle()
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If display services are unsupported or enumeration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  id: TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateDisplayHandles
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 272
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to enumerate display handles; returns false if not supported.
+  example: []
+  syntax:
+    content: public bool TryEnumerateDisplayHandles(out AdlxInterfaceHandle[] handles)
+    parameters:
+    - id: handles
+      type: ADLXWrapper.AdlxInterfaceHandle[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateDisplayHandles([handles] As AdlxInterfaceHandle()) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(AdlxInterfaceHandle())
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle())
+  name.vb: TryEnumerateDisplayHandles(AdlxInterfaceHandle())
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative
   id: GetDisplayChangedHandlingNative
@@ -428,16 +636,25 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandlingNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 189
+    startLine: 291
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets the display change handling interface, caching the result.
+  example: []
   syntax:
     content: public IADLXDisplayChangedHandling* GetDisplayChangedHandlingNative()
     return:
       type: ADLXWrapper.IADLXDisplayChangedHandling*
     content.vb: Public Function GetDisplayChangedHandlingNative() As IADLXDisplayChangedHandling*
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If unsupported or retrieval fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandling
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandling
   id: GetDisplayChangedHandling
@@ -456,10 +673,12 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandling
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 206
+    startLine: 312
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns an AddRef'd handle to the display change handling interface.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle GetDisplayChangedHandling()
     return:
@@ -484,19 +703,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 211
+    startLine: 324
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a display list change listener.
+  example: []
   syntax:
     content: public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
+      description: Callback invoked when the display list changes.
     return:
       type: ADLXWrapper.DisplayListListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDisplayListEventListener(callback As DisplayListListenerHandle.OnDisplayListChanged) As DisplayListListenerHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayListEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
   id: RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
@@ -515,17 +745,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 225
+    startLine: 344
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display list change listener.
+  example: []
   syntax:
     content: public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DisplayListListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplayListEventListener(handle As DisplayListListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayListEventListener*
   nameWithType.vb: ADLXDisplayServicesHelper.RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
@@ -549,19 +783,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 240
+    startLine: 367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a display gamut change listener.
+  example: []
   syntax:
     content: public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
+      description: Callback invoked when gamut changes.
     return:
       type: ADLXWrapper.DisplayGamutListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDisplayGamutEventListener(callback As DisplayGamutListenerHandle.OnDisplayGamutChanged) As DisplayGamutListenerHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayGamutEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
   id: RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)
@@ -580,17 +825,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 254
+    startLine: 387
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display gamut change listener.
+  example: []
   syntax:
     content: public void RemoveDisplayGamutEventListener(DisplayGamutListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DisplayGamutListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplayGamutEventListener(handle As DisplayGamutListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGamutEventListener*
   nameWithType.vb: ADLXDisplayServicesHelper.RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, Boolean)
@@ -614,19 +863,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 268
+    startLine: 409
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a display gamma change listener.
+  example: []
   syntax:
     content: public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
+      description: Callback invoked when gamma changes.
     return:
       type: ADLXWrapper.DisplayGammaListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDisplayGammaEventListener(callback As DisplayGammaListenerHandle.OnDisplayGammaChanged) As DisplayGammaListenerHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayGammaEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
   id: RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)
@@ -645,17 +905,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 282
+    startLine: 429
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display gamma change listener.
+  example: []
   syntax:
     content: public void RemoveDisplayGammaEventListener(DisplayGammaListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DisplayGammaListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplayGammaEventListener(handle As DisplayGammaListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGammaEventListener*
   nameWithType.vb: ADLXDisplayServicesHelper.RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, Boolean)
@@ -679,19 +943,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 296
+    startLine: 451
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a display 3D LUT change listener.
+  example: []
   syntax:
     content: public Display3DLutListenerHandle AddDisplay3DLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+      description: Callback invoked when 3D LUT changes.
     return:
       type: ADLXWrapper.Display3DLutListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDisplay3DLutEventListener(callback As Display3DLutListenerHandle.OnDisplay3DLutChanged) As Display3DLutListenerHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplay3DLutEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplay3DLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplay3DLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
   id: RemoveDisplay3DLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)
@@ -710,17 +985,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 310
+    startLine: 471
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display 3D LUT change listener.
+  example: []
   syntax:
     content: public void RemoveDisplay3DLutEventListener(Display3DLutListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.Display3DLutListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplay3DLutEventListener(handle As Display3DLutListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplay3DLutEventListener*
   nameWithType.vb: ADLXDisplayServicesHelper.RemoveDisplay3DLutEventListener(Display3DLutListenerHandle, Boolean)
@@ -744,19 +1023,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 324
+    startLine: 493
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a display settings change listener.
+  example: []
   syntax:
     content: public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
+      description: Callback invoked when display settings change.
     return:
       type: ADLXWrapper.DisplaySettingsListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDisplaySettingsEventListener(callback As DisplaySettingsListenerHandle.OnDisplaySettingsChanged) As DisplaySettingsListenerHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplaySettingsEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
   id: RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)
@@ -775,17 +1065,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 339
+    startLine: 514
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display settings change listener.
+  example: []
   syntax:
     content: public void RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DisplaySettingsListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplaySettingsEventListener(handle As DisplaySettingsListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplaySettingsEventListener*
   nameWithType.vb: ADLXDisplayServicesHelper.RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, Boolean)
@@ -809,7 +1103,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 353
+    startLine: 529
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -839,7 +1133,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 366
+    startLine: 542
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -870,7 +1164,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 374
+    startLine: 551
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -886,6 +1180,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetFreeSyncEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetFreeSyncEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetFreeSyncEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetFreeSyncEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 560
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetFreeSyncEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetFreeSyncEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetFreeSyncEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGPUScalingState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetGPUScalingState(ADLXWrapper.IADLXDisplay*)
   id: GetGPUScalingState(ADLXWrapper.IADLXDisplay*)
@@ -904,7 +1234,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 382
+    startLine: 573
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -935,7 +1265,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 390
+    startLine: 582
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -951,6 +1281,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetGPUScalingEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetGPUScalingEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetGPUScalingEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetGPUScalingEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 591
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetGPUScalingEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetGPUScalingEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetGPUScalingEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetScalingMode(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetScalingMode(ADLXWrapper.IADLXDisplay*)
   id: GetScalingMode(ADLXWrapper.IADLXDisplay*)
@@ -969,7 +1335,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 398
+    startLine: 604
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1000,7 +1366,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 406
+    startLine: 613
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1013,6 +1379,39 @@ items:
       type: ADLXWrapper.ADLX_SCALE_MODE
     content.vb: Public Sub SetScalingMode(display As IADLXDisplay*, mode As ADLX_SCALE_MODE)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.SetScalingMode*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  id: TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
+  nameWithType: ADLXDisplayServicesHelper.TrySetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_SCALE_MODE)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetScalingMode
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 622
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: mode
+      type: ADLXWrapper.ADLX_SCALE_MODE
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetScalingMode(display As IADLXDisplay*, mode As ADLX_SCALE_MODE) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetVirtualSuperResolutionState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetVirtualSuperResolutionState(ADLXWrapper.IADLXDisplay*)
   id: GetVirtualSuperResolutionState(ADLXWrapper.IADLXDisplay*)
@@ -1031,7 +1430,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 414
+    startLine: 635
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1062,7 +1461,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 422
+    startLine: 644
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1078,6 +1477,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetVirtualSuperResolutionEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 653
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetVirtualSuperResolutionEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetIntegerScalingState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetIntegerScalingState(ADLXWrapper.IADLXDisplay*)
   id: GetIntegerScalingState(ADLXWrapper.IADLXDisplay*)
@@ -1096,7 +1531,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 430
+    startLine: 666
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1127,7 +1562,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 438
+    startLine: 675
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1143,6 +1578,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetIntegerScalingEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetIntegerScalingEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetIntegerScalingEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetIntegerScalingEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 684
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetIntegerScalingEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetIntegerScalingEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetHDCPState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetHDCPState(ADLXWrapper.IADLXDisplay*)
   id: GetHDCPState(ADLXWrapper.IADLXDisplay*)
@@ -1161,7 +1632,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDCPState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 446
+    startLine: 697
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1192,7 +1663,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHDCPEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 454
+    startLine: 706
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1208,6 +1679,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetHDCPEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetHDCPEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetHDCPEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetHDCPEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetHDCPEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetHDCPEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 715
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetHDCPEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetHDCPEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetHDCPEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetHDCPEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetVariBrightState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetVariBrightState(ADLXWrapper.IADLXDisplay*)
   id: GetVariBrightState(ADLXWrapper.IADLXDisplay*)
@@ -1226,7 +1733,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 462
+    startLine: 728
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1257,7 +1764,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 470
+    startLine: 737
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1275,6 +1782,44 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBright(ADLXWrapper.IADLXDisplay*, Boolean, ADLXWrapper.VariBrightMode)
   name.vb: SetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  id: TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetVariBright(IADLXDisplay*, bool, VariBrightMode)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBright(IADLXDisplay*, bool, VariBrightMode)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*, bool, ADLXWrapper.VariBrightMode)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetVariBright
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 746
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    - id: mode
+      type: ADLXWrapper.VariBrightMode
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetVariBright(display As IADLXDisplay*, enable As Boolean, mode As VariBrightMode) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*, Boolean, ADLXWrapper.VariBrightMode)
+  name.vb: TrySetVariBright(IADLXDisplay*, Boolean, VariBrightMode)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   id: SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
@@ -1293,7 +1838,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBacklightAdaptiveEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 478
+    startLine: 759
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1309,6 +1854,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
   name.vb: SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  id: TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetVariBrightBacklightAdaptiveEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 766
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* variBright, bool enable)
+    parameters:
+    - id: variBright
+      type: ADLXWrapper.IADLXDisplayVariBright1*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetVariBrightBacklightAdaptiveEnabled(variBright As IADLXDisplayVariBright1*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
+  name.vb: TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
   id: SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
@@ -1327,7 +1908,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBatteryLifeEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 484
+    startLine: 779
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1343,6 +1924,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
   name.vb: SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  id: TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetVariBrightBatteryLifeEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 786
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1* variBright, bool enable)
+    parameters:
+    - id: variBright
+      type: ADLXWrapper.IADLXDisplayVariBright1*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetVariBrightBatteryLifeEnabled(variBright As IADLXDisplayVariBright1*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*, Boolean)
+  name.vb: TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetColorDepthState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetColorDepthState(ADLXWrapper.IADLXDisplay*)
   id: GetColorDepthState(ADLXWrapper.IADLXDisplay*)
@@ -1361,7 +1978,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 490
+    startLine: 799
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1392,7 +2009,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 498
+    startLine: 808
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1405,6 +2022,39 @@ items:
       type: ADLXWrapper.ADLX_COLOR_DEPTH
     content.vb: Public Sub SetColorDepth(display As IADLXDisplay*, depth As ADLX_COLOR_DEPTH)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.SetColorDepth*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  id: TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
+  nameWithType: ADLXDisplayServicesHelper.TrySetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_COLOR_DEPTH)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetColorDepth
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 817
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: depth
+      type: ADLXWrapper.ADLX_COLOR_DEPTH
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetColorDepth(display As IADLXDisplay*, depth As ADLX_COLOR_DEPTH) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetPixelFormatState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetPixelFormatState(ADLXWrapper.IADLXDisplay*)
   id: GetPixelFormatState(ADLXWrapper.IADLXDisplay*)
@@ -1423,7 +2073,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 506
+    startLine: 830
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1454,7 +2104,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 514
+    startLine: 839
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1467,6 +2117,39 @@ items:
       type: ADLXWrapper.ADLX_PIXEL_FORMAT
     content.vb: Public Sub SetPixelFormat(display As IADLXDisplay*, format As ADLX_PIXEL_FORMAT)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.SetPixelFormat*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  id: TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
+  nameWithType: ADLXDisplayServicesHelper.TrySetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ADLX_PIXEL_FORMAT)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetPixelFormat
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 848
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: format
+      type: ADLXWrapper.ADLX_PIXEL_FORMAT
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetPixelFormat(display As IADLXDisplay*, format As ADLX_PIXEL_FORMAT) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetCustomColor(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetCustomColor(ADLXWrapper.IADLXDisplay*)
   id: GetCustomColor(ADLXWrapper.IADLXDisplay*)
@@ -1485,7 +2168,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 522
+    startLine: 861
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1516,7 +2199,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 528
+    startLine: 868
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1529,6 +2212,39 @@ items:
       type: ADLXWrapper.CustomColorInfo
     content.vb: Public Sub ApplyCustomColor(display As IADLXDisplay*, info As CustomColorInfo)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomColor*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  id: TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyCustomColor(IADLXDisplay*, CustomColorInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomColor(IADLXDisplay*, CustomColorInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*, ADLXWrapper.CustomColorInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyCustomColor
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 882
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: info
+      type: ADLXWrapper.CustomColorInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyCustomColor(display As IADLXDisplay*, info As CustomColorInfo) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGamma(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetGamma(ADLXWrapper.IADLXDisplay*)
   id: GetGamma(ADLXWrapper.IADLXDisplay*)
@@ -1547,7 +2263,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 541
+    startLine: 895
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1578,7 +2294,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 547
+    startLine: 902
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1589,6 +2305,37 @@ items:
       type: ADLXWrapper.IADLXDisplay*
     content.vb: Public Sub ReapplyGamma(display As IADLXDisplay*)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamma*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  id: TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryReapplyGamma(IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamma(IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryReapplyGamma
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 916
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryReapplyGamma(IADLXDisplay* display)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryReapplyGamma(display As IADLXDisplay*) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGamut(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetGamut(ADLXWrapper.IADLXDisplay*)
   id: GetGamut(ADLXWrapper.IADLXDisplay*)
@@ -1607,7 +2354,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 560
+    startLine: 929
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1638,7 +2385,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 566
+    startLine: 936
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1649,6 +2396,37 @@ items:
       type: ADLXWrapper.IADLXDisplay*
     content.vb: Public Sub ReapplyGamut(display As IADLXDisplay*)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamut*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  id: TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryReapplyGamut(IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamut(IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryReapplyGamut
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 950
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryReapplyGamut(IADLXDisplay* display)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryReapplyGamut(display As IADLXDisplay*) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetThreeDLut(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetThreeDLut(ADLXWrapper.IADLXDisplay*)
   id: GetThreeDLut(ADLXWrapper.IADLXDisplay*)
@@ -1667,7 +2445,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 579
+    startLine: 963
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1698,7 +2476,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 585
+    startLine: 970
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1709,6 +2487,37 @@ items:
       type: ADLXWrapper.IADLXDisplay*
     content.vb: Public Sub ReapplyThreeDLut(display As IADLXDisplay*)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyThreeDLut*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  id: TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryReapplyThreeDLut(IADLXDisplay*)
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyThreeDLut(IADLXDisplay*)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryReapplyThreeDLut
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 984
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryReapplyThreeDLut(IADLXDisplay* display)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryReapplyThreeDLut(display As IADLXDisplay*) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetConnectivityExperience(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetConnectivityExperience(ADLXWrapper.IADLXDisplay*)
   id: GetConnectivityExperience(ADLXWrapper.IADLXDisplay*)
@@ -1727,7 +2536,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 598
+    startLine: 997
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1758,7 +2567,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 605
+    startLine: 1005
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1771,6 +2580,39 @@ items:
       type: ADLXWrapper.ConnectivityExperienceInfo
     content.vb: Public Sub ApplyConnectivityExperience(display As IADLXDisplay*, info As ConnectivityExperienceInfo)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ApplyConnectivityExperience*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  id: TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*, ADLXWrapper.ConnectivityExperienceInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyConnectivityExperience
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 1020
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: info
+      type: ADLXWrapper.ConnectivityExperienceInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyConnectivityExperience(display As IADLXDisplay*, info As ConnectivityExperienceInfo) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayBlankingState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayBlankingState(ADLXWrapper.IADLXDisplay*)
   id: GetDisplayBlankingState(ADLXWrapper.IADLXDisplay*)
@@ -1789,7 +2631,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 619
+    startLine: 1033
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1820,7 +2662,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 627
+    startLine: 1042
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1836,6 +2678,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetDisplayBlanked(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetDisplayBlanked(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetDisplayBlanked(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetDisplayBlanked(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetDisplayBlanked(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetDisplayBlanked
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 1051
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetDisplayBlanked(IADLXDisplay* display, bool blank)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: blank
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetDisplayBlanked(display As IADLXDisplay*, blank As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetDisplayBlanked(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetDisplayBlanked(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncColorAccuracyState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncColorAccuracyState(ADLXWrapper.IADLXDisplay*)
   id: GetFreeSyncColorAccuracyState(ADLXWrapper.IADLXDisplay*)
@@ -1854,7 +2732,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 635
+    startLine: 1064
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1885,7 +2763,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracyEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 643
+    startLine: 1073
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1901,6 +2779,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetFreeSyncColorAccuracyEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 1082
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetFreeSyncColorAccuracyEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDynamicRefreshRateControlState(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDynamicRefreshRateControlState(ADLXWrapper.IADLXDisplay*)
   id: GetDynamicRefreshRateControlState(ADLXWrapper.IADLXDisplay*)
@@ -1919,7 +2833,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 651
+    startLine: 1095
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1950,7 +2864,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControlEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 659
+    startLine: 1104
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1966,6 +2880,42 @@ items:
   nameWithType.vb: ADLXDisplayServicesHelper.SetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.SetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
   name.vb: SetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  id: TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
+  nameWithType: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*, bool)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TrySetDynamicRefreshRateControlEnabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 1113
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TrySetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
+    parameters:
+    - id: display
+      type: ADLXWrapper.IADLXDisplay*
+    - id: enable
+      type: System.Boolean
+    return:
+      type: System.Boolean
+    content.vb: Public Function TrySetDynamicRefreshRateControlEnabled(display As IADLXDisplay*, enable As Boolean) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled*
+  nameWithType.vb: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*, Boolean)
+  name.vb: TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, Boolean)
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions(ADLXWrapper.IADLXDisplay*)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions(ADLXWrapper.IADLXDisplay*)
   id: EnumerateCustomResolutions(ADLXWrapper.IADLXDisplay*)
@@ -1984,7 +2934,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 667
+    startLine: 1126
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2015,7 +2965,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 673
+    startLine: 1133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2046,7 +2996,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 679
+    startLine: 1140
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2077,7 +3027,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 685
+    startLine: 1147
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2090,6 +3040,39 @@ items:
       type: ADLXWrapper.DisplayResolutionInfo
     content.vb: Public Sub ApplyCustomResolution(customRes As IADLXDisplayCustomResolution*, info As DisplayResolutionInfo)
   overload: ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomResolution*
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  id: TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  parent: ADLXWrapper.ADLXDisplayServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyCustomResolution
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 1154
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
+    parameters:
+    - id: customRes
+      type: ADLXWrapper.IADLXDisplayCustomResolution*
+    - id: info
+      type: ADLXWrapper.DisplayResolutionInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyCustomResolution(customRes As IADLXDisplayCustomResolution*, info As DisplayResolutionInfo) As Boolean
+  overload: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.Finalize
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.Finalize
   id: Finalize
@@ -2108,7 +3091,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1795
+    startLine: 2271
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2399,6 +3382,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.objectdisposedexception
+  name: ObjectDisposedException
+  nameWithType: ObjectDisposedException
+  fullName: System.ObjectDisposedException
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesNative*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesNative
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayServicesNative
@@ -2418,6 +3408,12 @@ references:
   name: AdlxInterfaceHandle
   nameWithType: AdlxInterfaceHandle
   fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateDisplays
@@ -2522,12 +3518,31 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___
+  name: TryEnumerateDisplays
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplays
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateADLXDisplays
   name: EnumerateADLXDisplays
   nameWithType: ADLXDisplayServicesHelper.EnumerateADLXDisplays
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateADLXDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___
+  name: TryEnumerateADLXDisplays
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayInfo_ADLXWrapper_IADLXDisplay__
@@ -2636,6 +3651,12 @@ references:
     href: ADLXWrapper.AdlxInterfaceHandle.html
   - name: (
   - name: )
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_AdlxInterfaceHandle____
+  name: TryEnumerateDisplayHandles
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayChangedHandlingNative
@@ -2990,6 +4011,12 @@ references:
   name: SetFreeSyncEnabled
   nameWithType: ADLXDisplayServicesHelper.SetFreeSyncEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetFreeSyncEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGPUScalingState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetGPUScalingState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetGPUScalingState_ADLXWrapper_IADLXDisplay__
@@ -3002,6 +4029,12 @@ references:
   name: SetGPUScalingEnabled
   nameWithType: ADLXDisplayServicesHelper.SetGPUScalingEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetGPUScalingEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetGPUScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetGPUScalingEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetScalingMode*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetScalingMode
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetScalingMode_ADLXWrapper_IADLXDisplay__
@@ -3076,6 +4109,12 @@ references:
   name: ADLX_SCALE_MODE
   nameWithType: ADLX_SCALE_MODE
   fullName: ADLXWrapper.ADLX_SCALE_MODE
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetScalingMode_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_SCALE_MODE_
+  name: TrySetScalingMode
+  nameWithType: ADLXDisplayServicesHelper.TrySetScalingMode
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetVirtualSuperResolutionState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetVirtualSuperResolutionState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetVirtualSuperResolutionState_ADLXWrapper_IADLXDisplay__
@@ -3088,6 +4127,12 @@ references:
   name: SetVirtualSuperResolutionEnabled
   nameWithType: ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVirtualSuperResolutionEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetVirtualSuperResolutionEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetIntegerScalingState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetIntegerScalingState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetIntegerScalingState_ADLXWrapper_IADLXDisplay__
@@ -3100,6 +4145,12 @@ references:
   name: SetIntegerScalingEnabled
   nameWithType: ADLXDisplayServicesHelper.SetIntegerScalingEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetIntegerScalingEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetIntegerScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetIntegerScalingEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetHDCPState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetHDCPState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetHDCPState_ADLXWrapper_IADLXDisplay__
@@ -3112,6 +4163,12 @@ references:
   name: SetHDCPEnabled
   nameWithType: ADLXDisplayServicesHelper.SetHDCPEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetHDCPEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetHDCPEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetHDCPEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetHDCPEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetVariBrightState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetVariBrightState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetVariBrightState_ADLXWrapper_IADLXDisplay__
@@ -3233,6 +4290,12 @@ references:
   name: VariBrightMode
   nameWithType: VariBrightMode
   fullName: ADLXWrapper.VariBrightMode
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBright_ADLXWrapper_IADLXDisplay__System_Boolean_ADLXWrapper_VariBrightMode_
+  name: TrySetVariBright
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBright
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_SetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
@@ -3255,12 +4318,24 @@ references:
     name: IADLXDisplayVariBright1
     href: ADLXWrapper.IADLXDisplayVariBright1.html
   - name: '*'
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
+  name: TrySetVariBrightBacklightAdaptiveEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_SetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
   name: SetVariBrightBatteryLifeEnabled
   nameWithType: ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_
+  name: TrySetVariBrightBatteryLifeEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetColorDepthState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetColorDepthState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetColorDepthState_ADLXWrapper_IADLXDisplay__
@@ -3335,6 +4410,12 @@ references:
   name: ADLX_COLOR_DEPTH
   nameWithType: ADLX_COLOR_DEPTH
   fullName: ADLXWrapper.ADLX_COLOR_DEPTH
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetColorDepth_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_COLOR_DEPTH_
+  name: TrySetColorDepth
+  nameWithType: ADLXDisplayServicesHelper.TrySetColorDepth
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetPixelFormatState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetPixelFormatState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetPixelFormatState_ADLXWrapper_IADLXDisplay__
@@ -3409,6 +4490,12 @@ references:
   name: ADLX_PIXEL_FORMAT
   nameWithType: ADLX_PIXEL_FORMAT
   fullName: ADLXWrapper.ADLX_PIXEL_FORMAT
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetPixelFormat_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_PIXEL_FORMAT_
+  name: TrySetPixelFormat
+  nameWithType: ADLXDisplayServicesHelper.TrySetPixelFormat
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetCustomColor*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetCustomColor
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetCustomColor_ADLXWrapper_IADLXDisplay__
@@ -3428,6 +4515,12 @@ references:
   name: ApplyCustomColor
   nameWithType: ADLXDisplayServicesHelper.ApplyCustomColor
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomColor_ADLXWrapper_IADLXDisplay__ADLXWrapper_CustomColorInfo_
+  name: TryApplyCustomColor
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomColor
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGamma*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetGamma
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetGamma_ADLXWrapper_IADLXDisplay__
@@ -3447,6 +4540,12 @@ references:
   name: ReapplyGamma
   nameWithType: ADLXDisplayServicesHelper.ReapplyGamma
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamma
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamma_ADLXWrapper_IADLXDisplay__
+  name: TryReapplyGamma
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamma
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetGamut*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetGamut
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetGamut_ADLXWrapper_IADLXDisplay__
@@ -3466,6 +4565,12 @@ references:
   name: ReapplyGamut
   nameWithType: ADLXDisplayServicesHelper.ReapplyGamut
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamut
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamut_ADLXWrapper_IADLXDisplay__
+  name: TryReapplyGamut
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyGamut
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetThreeDLut*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetThreeDLut
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetThreeDLut_ADLXWrapper_IADLXDisplay__
@@ -3485,6 +4590,12 @@ references:
   name: ReapplyThreeDLut
   nameWithType: ADLXDisplayServicesHelper.ReapplyThreeDLut
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.ReapplyThreeDLut
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyThreeDLut_ADLXWrapper_IADLXDisplay__
+  name: TryReapplyThreeDLut
+  nameWithType: ADLXDisplayServicesHelper.TryReapplyThreeDLut
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetConnectivityExperience*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetConnectivityExperience
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetConnectivityExperience_ADLXWrapper_IADLXDisplay__
@@ -3504,6 +4615,12 @@ references:
   name: ApplyConnectivityExperience
   nameWithType: ADLXDisplayServicesHelper.ApplyConnectivityExperience
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.ApplyConnectivityExperience
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyConnectivityExperience_ADLXWrapper_IADLXDisplay__ADLXWrapper_ConnectivityExperienceInfo_
+  name: TryApplyConnectivityExperience
+  nameWithType: ADLXDisplayServicesHelper.TryApplyConnectivityExperience
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayBlankingState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayBlankingState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayBlankingState_ADLXWrapper_IADLXDisplay__
@@ -3516,6 +4633,12 @@ references:
   name: SetDisplayBlanked
   nameWithType: ADLXDisplayServicesHelper.SetDisplayBlanked
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetDisplayBlanked
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDisplayBlanked_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetDisplayBlanked
+  nameWithType: ADLXDisplayServicesHelper.TrySetDisplayBlanked
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncColorAccuracyState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncColorAccuracyState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetFreeSyncColorAccuracyState_ADLXWrapper_IADLXDisplay__
@@ -3528,6 +4651,12 @@ references:
   name: SetFreeSyncColorAccuracyEnabled
   nameWithType: ADLXDisplayServicesHelper.SetFreeSyncColorAccuracyEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncColorAccuracyEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncColorAccuracyEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetFreeSyncColorAccuracyEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDynamicRefreshRateControlState*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.GetDynamicRefreshRateControlState
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_GetDynamicRefreshRateControlState_ADLXWrapper_IADLXDisplay__
@@ -3540,6 +4669,12 @@ references:
   name: SetDynamicRefreshRateControlEnabled
   nameWithType: ADLXDisplayServicesHelper.SetDynamicRefreshRateControlEnabled
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.SetDynamicRefreshRateControlEnabled
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TrySetDynamicRefreshRateControlEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_
+  name: TrySetDynamicRefreshRateControlEnabled
+  nameWithType: ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateCustomResolutions_ADLXWrapper_IADLXDisplay__
@@ -3671,6 +4806,12 @@ references:
   name: DisplayResolutionInfo
   nameWithType: DisplayResolutionInfo
   fullName: ADLXWrapper.DisplayResolutionInfo
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution*
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
+  name: TryApplyCustomResolution
+  nameWithType: ADLXDisplayServicesHelper.TryApplyCustomResolution
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.Finalize*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.Finalize
   href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_Finalize

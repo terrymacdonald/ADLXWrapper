@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_HG_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_HG_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_HG_TYPE
     content.vb: Public Enum ADLX_HG_TYPE
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NONE
     path: ../ADLXWrapper/cs_generated/ADLX_HG_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: NONE = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMD
     path: ../ADLXWrapper/cs_generated/ADLX_HG_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AMD = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OTHER
     path: ../ADLXWrapper/cs_generated/ADLX_HG_TYPE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: OTHER = 2
     return:

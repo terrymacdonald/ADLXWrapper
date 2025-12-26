@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDesktopListChanged
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 538
+    startLine: 673
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

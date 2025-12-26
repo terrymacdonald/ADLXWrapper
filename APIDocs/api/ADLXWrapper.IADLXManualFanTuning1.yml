@@ -48,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualFanTuning1
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXManualFanTuning1
     content.vb: Public Structure IADLXManualFanTuning1
@@ -80,7 +81,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -107,10 +108,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -135,10 +137,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -163,10 +166,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -199,10 +203,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFanTuningRanges
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFanTuningRanges(ADLX_IntRange* speedRange, ADLX_IntRange* temperatureRange)
     parameters:
@@ -232,10 +237,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFanTuningStates(IADLXManualFanTuningStateList** ppStates)
     parameters:
@@ -263,10 +269,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEmptyFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetEmptyFanTuningStates(IADLXManualFanTuningStateList** ppStates)
     parameters:
@@ -294,10 +301,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValidFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsValidFanTuningStates(IADLXManualFanTuningStateList* pStates, int* errorIndex)
     parameters:
@@ -330,10 +338,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetFanTuningStates(IADLXManualFanTuningStateList* pStates)
     parameters:
@@ -361,10 +370,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedZeroRPM
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedZeroRPM(bool* supported)
     parameters:
@@ -395,10 +405,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetZeroRPMState(bool* isSet)
     parameters:
@@ -429,10 +440,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetZeroRPMState(byte set)
     parameters:
@@ -463,10 +475,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedMinAcousticLimit(bool* supported)
     parameters:
@@ -497,10 +510,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinAcousticLimitRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -528,10 +542,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinAcousticLimit(int* value)
     parameters:
@@ -562,10 +577,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMinAcousticLimit(int value)
     parameters:
@@ -596,10 +612,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedMinFanSpeed(bool* supported)
     parameters:
@@ -630,10 +647,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinFanSpeedRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -661,10 +679,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinFanSpeed(int* value)
     parameters:
@@ -695,10 +714,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMinFanSpeed(int value)
     parameters:
@@ -729,10 +749,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedTargetFanSpeed(bool* supported)
     parameters:
@@ -763,10 +784,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTargetFanSpeedRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -794,10 +816,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTargetFanSpeed(int* value)
     parameters:
@@ -828,10 +851,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 121
+    startLine: 145
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetTargetFanSpeed(int value)
     parameters:
@@ -862,10 +886,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDefaultFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 126
+    startLine: 151
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDefaultFanTuningStates(IADLXManualFanTuningStateList** ppStates)
     parameters:
@@ -893,10 +918,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimitDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 131
+    startLine: 157
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinAcousticLimitDefault(int* defaultVal)
     parameters:
@@ -927,10 +953,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeedDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 136
+    startLine: 163
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinFanSpeedDefault(int* defaultVal)
     parameters:
@@ -961,10 +988,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeedDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 141
+    startLine: 169
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTargetFanSpeedDefault(int* defaultVal)
     parameters:
@@ -995,10 +1023,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDefaultZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-    startLine: 146
+    startLine: 175
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDefaultZeroRPMState(bool* defaultVal)
     parameters:

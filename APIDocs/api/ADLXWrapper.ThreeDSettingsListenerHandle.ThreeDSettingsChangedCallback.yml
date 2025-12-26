@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDSettingsChangedCallback
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 647
+    startLine: 734
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

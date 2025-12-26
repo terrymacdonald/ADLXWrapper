@@ -25,10 +25,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PIXEL_FORMAT
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_PIXEL_FORMAT
     content.vb: Public Enum ADLX_PIXEL_FORMAT
@@ -50,10 +51,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FORMAT_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: FORMAT_UNKNOWN = 0
     return:
@@ -76,10 +78,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RGB_444_FULL
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: RGB_444_FULL = 1
     return:
@@ -102,10 +105,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_444
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: YCBCR_444 = 2
     return:
@@ -128,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_422
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: YCBCR_422 = 3
     return:
@@ -154,10 +159,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RGB_444_LIMITED
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: RGB_444_LIMITED = 4
     return:
@@ -180,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_420
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: YCBCR_420 = 5
     return:

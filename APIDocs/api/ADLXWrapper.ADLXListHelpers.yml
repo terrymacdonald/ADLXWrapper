@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXListHelpers
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 161
+    startLine: 167
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListSize
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 166
+    startLine: 172
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -96,7 +96,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsListEmpty
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 176
+    startLine: 182
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListItemAt
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 186
+    startLine: 192
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -170,7 +170,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ListToArray
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 202
+    startLine: 208
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

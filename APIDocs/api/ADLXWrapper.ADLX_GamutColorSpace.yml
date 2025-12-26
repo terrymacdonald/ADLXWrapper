@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GamutColorSpace
     path: ../ADLXWrapper/cs_generated/ADLX_GamutColorSpace.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_GamutColorSpace
     content.vb: Public Structure ADLX_GamutColorSpace
@@ -54,10 +55,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: red
     path: ../ADLXWrapper/cs_generated/ADLX_GamutColorSpace.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_Point red
     return:
@@ -81,10 +83,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: green
     path: ../ADLXWrapper/cs_generated/ADLX_GamutColorSpace.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_Point green
     return:
@@ -108,10 +111,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: blue
     path: ../ADLXWrapper/cs_generated/ADLX_GamutColorSpace.cs
-    startLine: 8
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_Point blue
     return:

@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PCI_BUS_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_PCI_BUS_TYPE
     content.vb: Public Enum ADLX_PCI_BUS_TYPE
@@ -51,10 +52,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UNDEFINED
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: UNDEFINED = 0
     return:
@@ -77,10 +79,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCI
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PCI = 1
     return:
@@ -103,10 +106,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AGP
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AGP = 2
     return:
@@ -129,10 +133,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PCIE = 3
     return:
@@ -155,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_2_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PCIE_2_0 = 4
     return:
@@ -181,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_3_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PCIE_3_0 = 5
     return:
@@ -207,10 +214,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_4_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PCIE_4_0 = 6
     return:

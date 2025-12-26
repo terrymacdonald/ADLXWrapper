@@ -37,10 +37,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_RESULT
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_RESULT
     content.vb: Public Enum ADLX_RESULT
@@ -62,10 +63,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_OK
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_OK = 0
     return:
@@ -88,10 +90,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ALREADY_ENABLED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_ALREADY_ENABLED = 1
     return:
@@ -114,10 +117,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ALREADY_INITIALIZED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_ALREADY_INITIALIZED = 2
     return:
@@ -140,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FAIL
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_FAIL = 3
     return:
@@ -166,10 +171,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INVALID_ARGS
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_INVALID_ARGS = 4
     return:
@@ -192,10 +198,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_BAD_VER
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_BAD_VER = 5
     return:
@@ -218,10 +225,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_UNKNOWN_INTERFACE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_UNKNOWN_INTERFACE = 6
     return:
@@ -244,10 +252,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TERMINATED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_TERMINATED = 7
     return:
@@ -270,10 +279,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ADL_INIT_ERROR
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_ADL_INIT_ERROR = 8
     return:
@@ -296,10 +306,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_FOUND
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 13
+    startLine: 33
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_NOT_FOUND = 9
     return:
@@ -322,10 +333,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INVALID_OBJECT
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 14
+    startLine: 36
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_INVALID_OBJECT = 10
     return:
@@ -348,10 +360,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ORPHAN_OBJECTS
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 15
+    startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_ORPHAN_OBJECTS = 11
     return:
@@ -374,10 +387,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_SUPPORTED
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 16
+    startLine: 42
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_NOT_SUPPORTED = 12
     return:
@@ -400,10 +414,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PENDING_OPERATION
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 17
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_PENDING_OPERATION = 13
     return:
@@ -426,10 +441,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_INACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 18
+    startLine: 48
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_GPU_INACTIVE = 14
     return:
@@ -452,10 +468,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_IN_USE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 19
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_GPU_IN_USE = 15
     return:
@@ -478,10 +495,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TIMEOUT_OPERATION
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 20
+    startLine: 54
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_TIMEOUT_OPERATION = 16
     return:
@@ -504,10 +522,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_NOT_ACTIVE
     path: ../ADLXWrapper/cs_generated/ADLX_RESULT.cs
-    startLine: 21
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: ADLX_NOT_ACTIVE = 17
     return:

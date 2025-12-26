@@ -29,10 +29,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DFrameRateTargetControl
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLX3DFrameRateTargetControl
     content.vb: Public Structure IADLX3DFrameRateTargetControl
@@ -61,7 +62,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,10 +89,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -116,10 +118,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -144,10 +147,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -180,10 +184,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupported(bool* supported)
     parameters:
@@ -214,10 +219,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsEnabled(bool* isEnabled)
     parameters:
@@ -248,10 +254,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPSRange
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFPSRange(ADLX_IntRange* range)
     parameters:
@@ -279,10 +286,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFPS(int* currentFPS)
     parameters:
@@ -313,10 +321,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetEnabled(byte enable)
     parameters:
@@ -347,10 +356,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DFrameRateTargetControl.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetFPS(int maxFPS)
     parameters:

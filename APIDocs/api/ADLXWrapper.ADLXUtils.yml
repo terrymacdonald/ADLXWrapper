@@ -144,7 +144,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddRefInterface
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 48
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -181,7 +181,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUName
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 77
+    startLine: 83
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -215,7 +215,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVendorId
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 85
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -249,7 +249,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTotalVRAM
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 93
+    startLine: 99
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -283,7 +283,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMType
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 101
+    startLine: 107
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -317,7 +317,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUUniqueId
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 109
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -351,7 +351,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUDeviceId
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 117
+    startLine: 123
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -385,7 +385,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUDriverPath
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 125
+    startLine: 131
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -419,7 +419,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUPNPString
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 133
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -453,7 +453,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUExternal
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 141
+    startLine: 147
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -487,7 +487,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasGPUDesktops
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 149
+    startLine: 155
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

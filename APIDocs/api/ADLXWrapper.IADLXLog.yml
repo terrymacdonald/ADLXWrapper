@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXLog
     path: ../ADLXWrapper/cs_generated/IADLXLog.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXLog
     content.vb: Public Structure IADLXLog
@@ -53,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXLog.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,10 +81,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WriteLog
     path: ../ADLXWrapper/cs_generated/IADLXLog.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT WriteLog(ushort* msg)
     parameters:

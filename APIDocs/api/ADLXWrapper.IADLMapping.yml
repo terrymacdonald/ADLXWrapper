@@ -28,10 +28,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLMapping
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLMapping
     content.vb: Public Structure IADLMapping
@@ -60,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,10 +88,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXGPUFromBdf
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetADLXGPUFromBdf(int bus, int device, int function, IADLXGPU** ppGPU)
     parameters:
@@ -127,10 +129,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXGPUFromAdlAdapterIndex
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetADLXGPUFromAdlAdapterIndex(int adlAdapterIndex, IADLXGPU** ppGPU)
     parameters:
@@ -163,10 +166,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BdfFromADLXGPU
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 18
+    startLine: 22
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT BdfFromADLXGPU(IADLXGPU* pGPU, int* bus, int* device, int* function)
     parameters:
@@ -203,10 +207,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AdlAdapterIndexFromADLXGPU
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 23
+    startLine: 28
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AdlAdapterIndexFromADLXGPU(IADLXGPU* pGPU, int* adlAdapterIndex)
     parameters:
@@ -239,10 +244,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXDisplayFromADLIds
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 28
+    startLine: 34
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetADLXDisplayFromADLIds(int adapterIndex, int displayIndex, int bus, int device, int function, IADLXDisplay** ppDisplay)
     parameters:
@@ -283,10 +289,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLIdsFromADLXDisplay
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 33
+    startLine: 40
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT ADLIdsFromADLXDisplay(IADLXDisplay* pDisplay, int* adapterIndex, int* displayIndex, int* bus, int* device, int* function)
     parameters:
@@ -327,10 +334,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetADLXDesktopFromADLIds
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 38
+    startLine: 46
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetADLXDesktopFromADLIds(int adapterIndex, int VidPnSourceId, int bus, int device, int function, IADLXDesktop** ppDesktop)
     parameters:
@@ -371,10 +379,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLIdsFromADLXDesktop
     path: ../ADLXWrapper/cs_generated/IADLMapping.cs
-    startLine: 43
+    startLine: 52
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT ADLIdsFromADLXDesktop(IADLXDesktop* pDesktop, int* adapterIndex, int* VidPnSourceId, int* bus, int* device, int* function)
     parameters:

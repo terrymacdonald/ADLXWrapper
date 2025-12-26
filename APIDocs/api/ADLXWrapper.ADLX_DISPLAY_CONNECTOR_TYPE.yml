@@ -37,10 +37,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_CONNECTOR_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_DISPLAY_CONNECTOR_TYPE
     content.vb: Public Enum ADLX_DISPLAY_CONNECTOR_TYPE
@@ -62,10 +63,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_UNKNOWN = 0
     return:
@@ -88,10 +90,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_VGA
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_VGA = 1
     return:
@@ -114,10 +117,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DVI_D
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_DVI_D = 2
     return:
@@ -140,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DVI_I
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_DVI_I = 3
     return:
@@ -166,10 +171,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NTSC
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_CVDONGLE_NTSC = 4
     return:
@@ -192,10 +198,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_JPN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_CVDONGLE_JPN = 5
     return:
@@ -218,10 +225,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NONI2C_JPN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_CVDONGLE_NONI2C_JPN = 6
     return:
@@ -244,10 +252,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_CVDONGLE_NONI2C_NTSC
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_CVDONGLE_NONI2C_NTSC = 7
     return:
@@ -270,10 +279,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_PROPRIETARY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 12
+    startLine: 30
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_PROPRIETARY = 8
     return:
@@ -296,10 +306,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_HDMI_TYPE_A
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 13
+    startLine: 33
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_HDMI_TYPE_A = 9
     return:
@@ -322,10 +333,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_HDMI_TYPE_B
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 14
+    startLine: 36
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_HDMI_TYPE_B = 10
     return:
@@ -348,10 +360,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_SVIDEO
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 15
+    startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_SVIDEO = 11
     return:
@@ -374,10 +387,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_COMPOSITE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 16
+    startLine: 42
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_COMPOSITE = 12
     return:
@@ -400,10 +414,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_RCA_3COMPONENT
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 17
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_RCA_3COMPONENT = 13
     return:
@@ -426,10 +441,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_DISPLAYPORT
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 18
+    startLine: 48
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_DISPLAYPORT = 14
     return:
@@ -452,10 +468,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_EDP
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 19
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_EDP = 15
     return:
@@ -478,10 +495,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_WIRELESSDISPLAY
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 20
+    startLine: 54
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_WIRELESSDISPLAY = 16
     return:
@@ -504,10 +522,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_CONTYPE_USB_TYPE_C
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_CONNECTOR_TYPE.cs
-    startLine: 21
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: DISPLAY_CONTYPE_USB_TYPE_C = 17
     return:

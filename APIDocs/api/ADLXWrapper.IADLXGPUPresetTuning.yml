@@ -38,10 +38,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUPresetTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUPresetTuning
     content.vb: Public Structure IADLXGPUPresetTuning
@@ -70,7 +71,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -97,10 +98,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -125,10 +127,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -153,10 +156,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -189,10 +193,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedPowerSaver(bool* supported)
     parameters:
@@ -223,10 +228,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedQuiet(bool* supported)
     parameters:
@@ -257,10 +263,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedBalanced(bool* supported)
     parameters:
@@ -291,10 +298,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedTurbo(bool* supported)
     parameters:
@@ -325,10 +333,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedRage(bool* supported)
     parameters:
@@ -359,10 +368,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsCurrentPowerSaver(bool* isPowerSaver)
     parameters:
@@ -393,10 +403,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsCurrentQuiet(bool* isQuiet)
     parameters:
@@ -427,10 +438,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsCurrentBalanced(bool* isBalance)
     parameters:
@@ -461,10 +473,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsCurrentTurbo(bool* isTurbo)
     parameters:
@@ -495,10 +508,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsCurrentRage(bool* isRage)
     parameters:
@@ -529,10 +543,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPowerSaver
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetPowerSaver()
     return:
@@ -557,10 +572,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetQuiet
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetQuiet()
     return:
@@ -585,10 +601,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBalanced
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetBalanced()
     return:
@@ -613,10 +630,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTurbo
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetTurbo()
     return:
@@ -641,10 +659,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetRage
     path: ../ADLXWrapper/cs_generated/IADLXGPUPresetTuning.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetRage()
     return:

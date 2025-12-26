@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplay3DLUTChangedListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedListener.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplay3DLUTChangedListener
     content.vb: Public Structure IADLXDisplay3DLUTChangedListener
@@ -53,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedListener.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,10 +81,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplay3DLUTChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedListener.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool OnDisplay3DLUTChanged(IADLXDisplay3DLUTChangedEvent* pDisplay3DLUTChangedEvent)
     parameters:

@@ -160,10 +160,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper__ctor_ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDesktopServices__System_Boolean_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.#ctor(ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDesktopServices*,System.Boolean,System.Boolean)">
   ADLXDisplayServicesHelper(IADLXDisplayServices*, IADLXDesktopServices*, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a display services helper from native display/desktop services.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -173,13 +174,17 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>displayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Native display services pointer.</p>
+</dd>
     <dt><code>desktopServices</code> <a class="xref" href="ADLXWrapper.IADLXDesktopServices.html">IADLXDesktopServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional desktop services pointer used to build display facades.</p>
+</dd>
     <dt><code>addRefDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the display services pointer for this helper.</p>
+</dd>
     <dt><code>addRefDesktopServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the desktop services pointer for this helper.</p>
+</dd>
   </dl>
 
 
@@ -201,10 +206,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_AddDisplay3DLutEventListener_ADLXWrapper_Display3DLutListenerHandle_OnDisplay3DLutChanged_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.AddDisplay3DLutEventListener(ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged)">
   AddDisplay3DLutEventListener(OnDisplay3DLutChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L452"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a display 3D LUT change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -214,13 +220,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.Display3DLutListenerHandle.html">Display3DLutListenerHandle</a>.<a class="xref" href="ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged.html">OnDisplay3DLutChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when 3D LUT changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.Display3DLutListenerHandle.html">Display3DLutListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -230,6 +238,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -237,10 +254,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_AddDisplayGammaEventListener_ADLXWrapper_DisplayGammaListenerHandle_OnDisplayGammaChanged_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged)">
   AddDisplayGammaEventListener(OnDisplayGammaChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L410"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a display gamma change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -250,13 +268,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.DisplayGammaListenerHandle.html">DisplayGammaListenerHandle</a>.<a class="xref" href="ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged.html">OnDisplayGammaChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when gamma changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.DisplayGammaListenerHandle.html">DisplayGammaListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -266,6 +286,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -273,10 +302,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_AddDisplayGamutEventListener_ADLXWrapper_DisplayGamutListenerHandle_OnDisplayGamutChanged_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)">
   AddDisplayGamutEventListener(OnDisplayGamutChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a display gamut change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -286,13 +316,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.DisplayGamutListenerHandle.html">DisplayGamutListenerHandle</a>.<a class="xref" href="ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged.html">OnDisplayGamutChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when gamut changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.DisplayGamutListenerHandle.html">DisplayGamutListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -302,6 +334,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -309,10 +350,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_AddDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_OnDisplayListChanged_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)">
   AddDisplayListEventListener(OnDisplayListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L325"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a display list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -322,13 +364,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.DisplayListListenerHandle.html">DisplayListListenerHandle</a>.<a class="xref" href="ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged.html">OnDisplayListChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when the display list changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.DisplayListListenerHandle.html">DisplayListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -338,6 +382,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -345,10 +398,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_AddDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_OnDisplaySettingsChanged_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)">
   AddDisplaySettingsEventListener(OnDisplaySettingsChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L325"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L494"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a display settings change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -358,13 +412,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.DisplaySettingsListenerHandle.html">DisplaySettingsListenerHandle</a>.<a class="xref" href="ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html">OnDisplaySettingsChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when display settings change.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.DisplaySettingsListenerHandle.html">DisplaySettingsListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -374,6 +430,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -381,7 +446,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ApplyConnectivityExperience_ADLXWrapper_IADLXDisplay__ADLXWrapper_ConnectivityExperienceInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)">
   ApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L606"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1006"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -414,7 +479,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ApplyCustomColor_ADLXWrapper_IADLXDisplay__ADLXWrapper_CustomColorInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)">
   ApplyCustomColor(IADLXDisplay*, CustomColorInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L529"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L869"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -447,7 +512,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)">
   ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L686"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1148"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -480,10 +545,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_CreateADLXDisplay_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.CreateADLXDisplay(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   CreateADLXDisplay(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L195"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Wraps a native display pointer in a managed facade.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -493,9 +559,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pDisplay</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
-    <dd></dd>
+    <dd><p>Native display pointer.</p>
+</dd>
     <dt><code>addRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the pointer for this facade.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -511,6 +579,18 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If display services are unavailable.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>If <code class="paramref">pDisplay</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -518,7 +598,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L530"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -545,7 +625,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_EnumerateADLXDisplays" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplays">
   EnumerateADLXDisplays()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L137"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -576,10 +656,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_EnumerateADLXDisplaysForGpu_System_Int32_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.EnumerateADLXDisplaysForGpu(System.Int32)">
   EnumerateADLXDisplaysForGpu(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L167"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates managed displays filtered by owning GPU unique ID. Disposes non-matching displays.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -589,7 +670,8 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>GPU unique ID to filter on.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -605,6 +687,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -612,7 +703,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_EnumerateCustomResolutions_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.EnumerateCustomResolutions(ADLXWrapper.IADLXDisplay*)">
   EnumerateCustomResolutions(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L668"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -648,10 +739,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_EnumerateDisplayHandles" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles">
   EnumerateDisplayHandles()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L241"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates display handles (AddRef'd) for native consumption.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -672,6 +764,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If display services are unsupported or enumeration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -679,10 +780,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_EnumerateDisplays" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays">
   EnumerateDisplays()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates managed display facades. Caller must dispose each display.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -703,6 +805,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If display services are unsupported or enumeration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -710,7 +821,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.Finalize">
   ~ADLXDisplayServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1796"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2272"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -736,7 +847,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetColorDepthState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetColorDepthState(ADLXWrapper.IADLXDisplay*)">
   GetColorDepthState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L491"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L800"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -772,7 +883,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetConnectivityExperience_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetConnectivityExperience(ADLXWrapper.IADLXDisplay*)">
   GetConnectivityExperience(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L599"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L998"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -808,7 +919,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetCustomColor_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetCustomColor(ADLXWrapper.IADLXDisplay*)">
   GetCustomColor(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L523"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L862"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -844,7 +955,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetCustomResolution_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetCustomResolution(ADLXWrapper.IADLXDisplay*)">
   GetCustomResolution(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L680"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1141"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -880,7 +991,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetCustomResolutionListNative_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetCustomResolutionListNative(ADLXWrapper.IADLXDisplay*)">
   GetCustomResolutionListNative(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L674"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1134"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -916,7 +1027,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayBlankingState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayBlankingState(ADLXWrapper.IADLXDisplay*)">
   GetDisplayBlankingState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L620"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1034"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -952,10 +1063,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayChangedHandling" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandling">
   GetDisplayChangedHandling()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L313"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the display change handling interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -983,10 +1095,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayChangedHandlingNative" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative">
   GetDisplayChangedHandlingNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L292"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the display change handling interface, caching the result.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1007,6 +1120,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -1014,10 +1136,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayInfo_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayInfo(ADLXWrapper.IADLXDisplay*)">
   GetDisplayInfo(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L153"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Builds a display DTO from a native display pointer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1027,7 +1150,8 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
-    <dd></dd>
+    <dd><p>Native display pointer.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -1043,6 +1167,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>If <code class="paramref">display</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -1050,10 +1183,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayListNative" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayListNative">
   GetDisplayListNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L218"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the native display list. Caller must dispose the returned list.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1074,6 +1208,15 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If display services are unsupported or enumeration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -1081,10 +1224,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayServicesHandle" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle">
   GetDisplayServicesHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the current display services interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1105,6 +1249,12 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -1112,10 +1262,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDisplayServicesNative" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesNative">
   GetDisplayServicesNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the highest available display services interface (3, then 2, then base). Caller must not release it.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1136,6 +1287,12 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -1143,7 +1300,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetDynamicRefreshRateControlState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetDynamicRefreshRateControlState(ADLXWrapper.IADLXDisplay*)">
   GetDynamicRefreshRateControlState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L652"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1096"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1179,7 +1336,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetFreeSyncColorAccuracyState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncColorAccuracyState(ADLXWrapper.IADLXDisplay*)">
   GetFreeSyncColorAccuracyState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L636"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1065"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1215,7 +1372,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetFreeSyncState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetFreeSyncState(ADLXWrapper.IADLXDisplay*)">
   GetFreeSyncState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L543"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1251,7 +1408,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetGPUScalingState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetGPUScalingState(ADLXWrapper.IADLXDisplay*)">
   GetGPUScalingState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L383"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L574"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1287,7 +1444,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetGamma_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetGamma(ADLXWrapper.IADLXDisplay*)">
   GetGamma(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L542"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L896"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1323,7 +1480,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetGamut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetGamut(ADLXWrapper.IADLXDisplay*)">
   GetGamut(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L930"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1359,7 +1516,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetHDCPState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetHDCPState(ADLXWrapper.IADLXDisplay*)">
   GetHDCPState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L447"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L698"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1395,7 +1552,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetIntegerScalingState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetIntegerScalingState(ADLXWrapper.IADLXDisplay*)">
   GetIntegerScalingState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L431"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L667"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1431,7 +1588,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetPixelFormatState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetPixelFormatState(ADLXWrapper.IADLXDisplay*)">
   GetPixelFormatState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L507"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L831"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1467,7 +1624,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetScalingMode_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetScalingMode(ADLXWrapper.IADLXDisplay*)">
   GetScalingMode(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L605"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1503,7 +1660,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetThreeDLut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetThreeDLut(ADLXWrapper.IADLXDisplay*)">
   GetThreeDLut(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L964"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1539,7 +1696,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetVariBrightState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetVariBrightState(ADLXWrapper.IADLXDisplay*)">
   GetVariBrightState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L463"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L729"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1575,7 +1732,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_GetVirtualSuperResolutionState_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.GetVirtualSuperResolutionState(ADLXWrapper.IADLXDisplay*)">
   GetVirtualSuperResolutionState(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L415"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L636"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1611,7 +1768,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ReapplyGamma_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamma(ADLXWrapper.IADLXDisplay*)">
   ReapplyGamma(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L548"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L903"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1642,7 +1799,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ReapplyGamut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ReapplyGamut(ADLXWrapper.IADLXDisplay*)">
   ReapplyGamut(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L567"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L937"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1673,7 +1830,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_ReapplyThreeDLut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.ReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)">
   ReapplyThreeDLut(IADLXDisplay*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L586"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L971"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1704,10 +1861,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_RemoveDisplay3DLutEventListener_ADLXWrapper_Display3DLutListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplay3DLutEventListener(ADLXWrapper.Display3DLutListenerHandle,System.Boolean)">
   RemoveDisplay3DLutEventListener(Display3DLutListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L472"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display 3D LUT change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1717,9 +1875,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.Display3DLutListenerHandle.html">Display3DLutListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -1737,10 +1897,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_RemoveDisplayGammaEventListener_ADLXWrapper_DisplayGammaListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGammaEventListener(ADLXWrapper.DisplayGammaListenerHandle,System.Boolean)">
   RemoveDisplayGammaEventListener(DisplayGammaListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L430"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display gamma change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1750,9 +1911,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DisplayGammaListenerHandle.html">DisplayGammaListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -1770,10 +1933,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_RemoveDisplayGamutEventListener_ADLXWrapper_DisplayGamutListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle,System.Boolean)">
   RemoveDisplayGamutEventListener(DisplayGamutListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L388"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display gamut change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1783,9 +1947,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DisplayGamutListenerHandle.html">DisplayGamutListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -1803,10 +1969,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_RemoveDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)">
   RemoveDisplayListEventListener(DisplayListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L345"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1816,9 +1983,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DisplayListListenerHandle.html">DisplayListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -1836,10 +2005,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_RemoveDisplaySettingsEventListener_ADLXWrapper_DisplaySettingsListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.RemoveDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle,System.Boolean)">
   RemoveDisplaySettingsEventListener(DisplaySettingsListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L515"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display settings change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1849,9 +2019,11 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DisplaySettingsListenerHandle.html">DisplaySettingsListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -1869,7 +2041,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetColorDepth_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_COLOR_DEPTH_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)">
   SetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L499"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L809"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1902,7 +2074,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetDisplayBlanked_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetDisplayBlanked(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L628"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1043"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1935,7 +2107,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetDynamicRefreshRateControlEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L660"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1105"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1968,7 +2140,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetFreeSyncColorAccuracyEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L644"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1074"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2001,7 +2173,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetFreeSyncEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetFreeSyncEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L375"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L552"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2034,7 +2206,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetGPUScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetGPUScalingEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L583"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2067,7 +2239,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetHDCPEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetHDCPEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L455"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L707"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2100,7 +2272,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetIntegerScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetIntegerScalingEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L439"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L676"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2133,7 +2305,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetPixelFormat_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_PIXEL_FORMAT_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)">
   SetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L515"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L840"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2166,7 +2338,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetScalingMode_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_SCALE_MODE_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)">
   SetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L614"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2199,7 +2371,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetVariBright_ADLXWrapper_IADLXDisplay__System_Boolean_ADLXWrapper_VariBrightMode_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)">
   SetVariBright(IADLXDisplay*, bool, VariBrightMode)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L471"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L738"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2234,7 +2406,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
   SetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L479"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L760"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2267,7 +2439,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
   SetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L485"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L780"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2300,7 +2472,7 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_SetVirtualSuperResolutionEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.SetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
   SetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L645"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -2318,6 +2490,872 @@ Class ADLXDisplayServicesHelper  <a class="header-action link-secondary" title="
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyConnectivityExperience_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyConnectivityExperience_ADLXWrapper_IADLXDisplay__ADLXWrapper_ConnectivityExperienceInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyConnectivityExperience(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ConnectivityExperienceInfo)">
+  TryApplyConnectivityExperience(IADLXDisplay*, ConnectivityExperienceInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1021"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.ConnectivityExperienceInfo.html">ConnectivityExperienceInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomColor_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomColor_ADLXWrapper_IADLXDisplay__ADLXWrapper_CustomColorInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)">
+  TryApplyCustomColor(IADLXDisplay*, CustomColorInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L883"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.CustomColorInfo.html">CustomColorInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomResolution_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)">
+  TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>customRes</code> <a class="xref" href="ADLXWrapper.IADLXDisplayCustomResolution.html">IADLXDisplayCustomResolution</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.DisplayResolutionInfo.html">DisplayResolutionInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateADLXDisplays_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateADLXDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)">
+  TryEnumerateADLXDisplays(out IReadOnlyList&lt;ADLXDisplay&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateADLXDisplays(out IReadOnlyList&lt;ADLXDisplay&gt; displays)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDisplay.html">ADLXDisplay</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_AdlxInterfaceHandle____" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)">
+  TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to enumerate display handles; returns false if not supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateDisplayHandles(out AdlxInterfaceHandle[] handles)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>handles</code> <a class="xref" href="ADLXWrapper.AdlxInterfaceHandle.html">AdlxInterfaceHandle</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplays_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplays_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDisplay___" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)">
+  TryEnumerateDisplays(out IReadOnlyList&lt;ADLXDisplay&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to enumerate display facades, returning false if the feature is not supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateDisplays(out IReadOnlyList&lt;ADLXDisplay&gt; displays)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>displays</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDisplay.html">ADLXDisplay</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamma_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamma_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)">
+  TryReapplyGamma(IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L917"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryReapplyGamma(IADLXDisplay* display)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamut_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyGamut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)">
+  TryReapplyGamut(IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L951"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryReapplyGamut(IADLXDisplay* display)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyThreeDLut_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TryReapplyThreeDLut_ADLXWrapper_IADLXDisplay__" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyThreeDLut(ADLXWrapper.IADLXDisplay*)">
+  TryReapplyThreeDLut(IADLXDisplay*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L985"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryReapplyThreeDLut(IADLXDisplay* display)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetColorDepth_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetColorDepth_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_COLOR_DEPTH_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetColorDepth(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_COLOR_DEPTH)">
+  TrySetColorDepth(IADLXDisplay*, ADLX_COLOR_DEPTH)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L818"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>depth</code> <a class="xref" href="ADLXWrapper.ADLX_COLOR_DEPTH.html">ADLX_COLOR_DEPTH</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetDisplayBlanked_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetDisplayBlanked_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetDisplayBlanked(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetDisplayBlanked(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1052"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetDisplayBlanked(IADLXDisplay* display, bool blank)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>blank</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetDynamicRefreshRateControlEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetDynamicRefreshRateControlEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetDynamicRefreshRateControlEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetDynamicRefreshRateControlEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncColorAccuracyEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncColorAccuracyEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncColorAccuracyEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L1083"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetFreeSyncEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetFreeSyncEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetFreeSyncEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetFreeSyncEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetGPUScalingEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetGPUScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetGPUScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetGPUScalingEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L592"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetGPUScalingEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetHDCPEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetHDCPEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetHDCPEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetHDCPEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L716"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetHDCPEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetIntegerScalingEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetIntegerScalingEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetIntegerScalingEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetIntegerScalingEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L685"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetIntegerScalingEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetPixelFormat_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetPixelFormat_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_PIXEL_FORMAT_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetPixelFormat(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_PIXEL_FORMAT)">
+  TrySetPixelFormat(IADLXDisplay*, ADLX_PIXEL_FORMAT)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L849"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>format</code> <a class="xref" href="ADLXWrapper.ADLX_PIXEL_FORMAT.html">ADLX_PIXEL_FORMAT</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetScalingMode_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetScalingMode_ADLXWrapper_IADLXDisplay__ADLXWrapper_ADLX_SCALE_MODE_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetScalingMode(ADLXWrapper.IADLXDisplay*,ADLXWrapper.ADLX_SCALE_MODE)">
+  TrySetScalingMode(IADLXDisplay*, ADLX_SCALE_MODE)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L623"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="ADLXWrapper.ADLX_SCALE_MODE.html">ADLX_SCALE_MODE</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBright_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBright_ADLXWrapper_IADLXDisplay__System_Boolean_ADLXWrapper_VariBrightMode_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBright(ADLXWrapper.IADLXDisplay*,System.Boolean,ADLXWrapper.VariBrightMode)">
+  TrySetVariBright(IADLXDisplay*, bool, VariBrightMode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L747"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>mode</code> <a class="xref" href="ADLXWrapper.VariBrightMode.html">VariBrightMode</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBacklightAdaptiveEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBacklightAdaptiveEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBacklightAdaptiveEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
+  TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L767"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetVariBrightBacklightAdaptiveEnabled(IADLXDisplayVariBright1* variBright, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>variBright</code> <a class="xref" href="ADLXWrapper.IADLXDisplayVariBright1.html">IADLXDisplayVariBright1</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBatteryLifeEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVariBrightBatteryLifeEnabled_ADLXWrapper_IADLXDisplayVariBright1__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVariBrightBatteryLifeEnabled(ADLXWrapper.IADLXDisplayVariBright1*,System.Boolean)">
+  TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L787"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetVariBrightBatteryLifeEnabled(IADLXDisplayVariBright1* variBright, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>variBright</code> <a class="xref" href="ADLXWrapper.IADLXDisplayVariBright1.html">IADLXDisplayVariBright1</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVirtualSuperResolutionEnabled_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDisplayServicesHelper_TrySetVirtualSuperResolutionEnabled_ADLXWrapper_IADLXDisplay__System_Boolean_" data-uid="ADLXWrapper.ADLXDisplayServicesHelper.TrySetVirtualSuperResolutionEnabled(ADLXWrapper.IADLXDisplay*,System.Boolean)">
+  TrySetVirtualSuperResolutionEnabled(IADLXDisplay*, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L654"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>display</code> <a class="xref" href="ADLXWrapper.IADLXDisplay.html">IADLXDisplay</a>*</dt>
+    <dd></dd>
+    <dt><code>enable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

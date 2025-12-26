@@ -30,10 +30,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualPowerTuning
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXManualPowerTuning
     content.vb: Public Structure IADLXManualPowerTuning
@@ -62,7 +63,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -89,10 +90,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -117,10 +119,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -145,10 +148,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -181,10 +185,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPowerLimitRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -212,10 +217,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPowerLimit(int* curVal)
     parameters:
@@ -246,10 +252,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPowerLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetPowerLimit(int curVal)
     parameters:
@@ -280,10 +287,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedTDCLimit(bool* supported)
     parameters:
@@ -314,10 +322,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTDCLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTDCLimitRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -345,10 +354,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTDCLimit(int* curVal)
     parameters:
@@ -379,10 +389,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTDCLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualPowerTuning.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetTDCLimit(int curVal)
     parameters:

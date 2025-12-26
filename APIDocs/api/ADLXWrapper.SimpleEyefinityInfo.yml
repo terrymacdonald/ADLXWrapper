@@ -20,7 +20,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SimpleEyefinityInfo
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 516
+    startLine: 651
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -52,7 +52,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 518
+    startLine: 653
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

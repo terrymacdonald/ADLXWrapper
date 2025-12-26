@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_ADLXGPU" data-uid="ADLXWrapper.ADLXGPU" class="text-break">
-Class ADLXGPU  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L9"><i class="bi bi-code-slash"></i></a>
+Class ADLXGPU  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -160,10 +160,11 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU__ctor_ADLXWrapper_IADLXGPU__ADLXWrapper_IADLXDisplayServices__ADLXWrapper_IADLXDesktopServices__" data-uid="ADLXWrapper.ADLXGPU.#ctor(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDesktopServices*)">
   ADLXGPU(IADLXGPU*, IADLXDisplayServices*, IADLXDesktopServices*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a managed GPU facade from a native GPU pointer, optionally wiring display/desktop services for topology helpers.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -173,11 +174,14 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pGpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
-    <dd></dd>
+    <dd><p>Native GPU pointer.</p>
+</dd>
     <dt><code>pDisplayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional display services pointer for display enumeration.</p>
+</dd>
     <dt><code>pDesktopServices</code> <a class="xref" href="ADLXWrapper.IADLXDesktopServices.html">IADLXDesktopServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional desktop services pointer for desktop enumeration.</p>
+</dd>
   </dl>
 
 
@@ -199,7 +203,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_DeviceId" data-uid="ADLXWrapper.ADLXGPU.DeviceId">
   DeviceId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -230,7 +234,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_DriverPath" data-uid="ADLXWrapper.ADLXGPU.DriverPath">
   DriverPath
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -261,7 +265,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_HasDesktops" data-uid="ADLXWrapper.ADLXGPU.HasDesktops">
   HasDesktops
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -292,7 +296,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_Identity" data-uid="ADLXWrapper.ADLXGPU.Identity">
   Identity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -323,7 +327,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_IsExternal" data-uid="ADLXWrapper.ADLXGPU.IsExternal">
   IsExternal
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -354,7 +358,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_Name" data-uid="ADLXWrapper.ADLXGPU.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -385,7 +389,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_PNPString" data-uid="ADLXWrapper.ADLXGPU.PNPString">
   PNPString
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -416,7 +420,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_TotalVRAM" data-uid="ADLXWrapper.ADLXGPU.TotalVRAM">
   TotalVRAM
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -447,7 +451,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_UniqueId" data-uid="ADLXWrapper.ADLXGPU.UniqueId">
   UniqueId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -478,7 +482,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_VRAMType" data-uid="ADLXWrapper.ADLXGPU.VRAMType">
   VRAMType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -509,7 +513,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_VendorId" data-uid="ADLXWrapper.ADLXGPU.VendorId">
   VendorId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -544,7 +548,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_" data-uid="ADLXWrapper.ADLXGPU.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)">
   AddDesktopListEventListener(OnDesktopListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L113"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Subscribe to desktop list change events. Returns a handle that can be disposed or passed to the remove helper.</p>
@@ -581,7 +585,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_AddDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_OnDisplayListChanged_" data-uid="ADLXWrapper.ADLXGPU.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)">
   AddDisplayListEventListener(OnDisplayListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Subscribe to display list change events. Returns a handle that can be disposed or passed to the remove helper.</p>
@@ -618,7 +622,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_Dispose" data-uid="ADLXWrapper.ADLXGPU.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L140"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -645,10 +649,10 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_EnumerateDesktopsForGPU" data-uid="ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU">
   EnumerateDesktopsForGPU()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Enumerate façade desktops containing displays from this GPU.</p>
+  <div class="markdown level1 summary"><p>Enumerates managed desktops containing displays from this GPU. Callers must dispose each desktop.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -677,10 +681,10 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU" data-uid="ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU">
   EnumerateDisplaysForGPU()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Enumerate façade displays driven by this GPU.</p>
+  <div class="markdown level1 summary"><p>Enumerates managed displays driven by this GPU. Callers must dispose each display.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -709,10 +713,11 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXGPU.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)">
   RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a desktop list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -722,9 +727,11 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DesktopListListenerHandle.html">DesktopListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -742,10 +749,11 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 
   <h3 id="ADLXWrapper_ADLXGPU_RemoveDisplayListEventListener_ADLXWrapper_DisplayListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXGPU.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)">
   RemoveDisplayListEventListener(DisplayListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a display list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -755,9 +763,11 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DisplayListListenerHandle.html">DisplayListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
   </dl>
 
 
@@ -775,7 +785,7 @@ Class ADLXGPU  <a class="header-action link-secondary" title="View source" href=
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXGPU.cs/#L9" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/AdlxGpu.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -33,11 +33,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -71,24 +71,29 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 16
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 22
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a managed GPU facade from a native GPU pointer, optionally wiring display/desktop services for topology helpers.
+  example: []
   syntax:
     content: public ADLXGPU(IADLXGPU* pGpu, IADLXDisplayServices* pDisplayServices = null, IADLXDesktopServices* pDesktopServices = null)
     parameters:
     - id: pGpu
       type: ADLXWrapper.IADLXGPU*
+      description: Native GPU pointer.
     - id: pDisplayServices
       type: ADLXWrapper.IADLXDisplayServices*
+      description: Optional display services pointer for display enumeration.
     - id: pDesktopServices
       type: ADLXWrapper.IADLXDesktopServices*
+      description: Optional desktop services pointer for desktop enumeration.
     content.vb: Public Sub New(pGpu As IADLXGPU*, pDisplayServices As IADLXDisplayServices* = Nothing, pDesktopServices As IADLXDesktopServices* = Nothing)
   overload: ADLXWrapper.ADLXGPU.#ctor*
   nameWithType.vb: ADLXGPU.New(IADLXGPU*, IADLXDisplayServices*, IADLXDesktopServices*)
@@ -107,12 +112,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 33
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -136,12 +141,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 34
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 41
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,12 +170,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 35
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -194,12 +199,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 36
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -223,12 +228,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 37
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 47
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -252,12 +257,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 38
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -281,12 +286,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 39
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -310,12 +315,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 40
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 53
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -339,12 +344,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 41
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -368,12 +373,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 42
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 57
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -397,12 +402,12 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 43
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 59
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -426,16 +431,16 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 48
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 65
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Enumerate façade displays driven by this GPU.
+  summary: Enumerates managed displays driven by this GPU. Callers must dispose each display.
   example: []
   syntax:
     content: public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
@@ -456,16 +461,16 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 58
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Enumerate façade desktops containing displays from this GPU.
+  summary: Enumerates managed desktops containing displays from this GPU. Callers must dispose each desktop.
   example: []
   syntax:
     content: public IReadOnlyList<ADLXDesktop> EnumerateDesktopsForGPU()
@@ -486,12 +491,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 68
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 87
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -519,22 +524,26 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 75
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 100
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a display list change listener.
+  example: []
   syntax:
     content: public void RemoveDisplayListEventListener(DisplayListListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DisplayListListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDisplayListEventListener(handle As DisplayListListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXGPU.RemoveDisplayListEventListener*
   nameWithType.vb: ADLXGPU.RemoveDisplayListEventListener(DisplayListListenerHandle, Boolean)
@@ -553,12 +562,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 86
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 112
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -586,22 +595,26 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 93
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 125
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a desktop list change listener.
+  example: []
   syntax:
     content: public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DesktopListListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDesktopListEventListener(handle As DesktopListListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXGPU.RemoveDesktopListEventListener*
   nameWithType.vb: ADLXGPU.RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
@@ -620,12 +633,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
+      path: ADLXWrapper/AdlxGpu.cs
       branch: feature-api-tweaks-v2
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXGPU.cs
-    startLine: 106
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

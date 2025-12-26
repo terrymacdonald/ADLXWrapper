@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_APP_GPU_DEPENDENCY
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_APP_GPU_DEPENDENCY
     content.vb: Public Enum ADLX_APP_GPU_DEPENDENCY
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: APP_GPU_UNKNOWN = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_BOUND
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: APP_GPU_BOUND = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_NOT_BOUND
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: APP_GPU_NOT_BOUND = 2
     return:

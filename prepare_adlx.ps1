@@ -143,6 +143,19 @@ if ($net10Installed) {
 }
 Write-Host ""
 
+# ============================================================================
+# Docfx Nuget Install
+# ============================================================================
+Write-Host "=== Installing Docfx Nuget Package ===" -ForegroundColor Cyan
+
+if ($net10Installed) {
+    Write-Host "Running dotnet tool installer" -ForegroundColor Green
+    dotnet tool install -g docfx
+} else {
+    Write-Host "Skipping Docfx installation (requires .NET 10.0 SDK)" -ForegroundColor Yellow
+}
+Write-Host ""
+
 
 # ============================================================================
 # ADLX SDK Download

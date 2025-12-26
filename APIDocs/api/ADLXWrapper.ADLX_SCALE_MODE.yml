@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SCALE_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_SCALE_MODE
     content.vb: Public Enum ADLX_SCALE_MODE
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PRESERVE_ASPECT_RATIO
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: PRESERVE_ASPECT_RATIO = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FULL_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: FULL_PANEL = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CENTERED
     path: ../ADLXWrapper/cs_generated/ADLX_SCALE_MODE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: CENTERED = 2
     return:

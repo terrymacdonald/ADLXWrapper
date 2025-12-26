@@ -20,10 +20,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GammaRamp
     path: ../ADLXWrapper/cs_generated/ADLX_GammaRamp.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_GammaRamp
     content.vb: Public Structure ADLX_GammaRamp
@@ -52,10 +53,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamma
     path: ../ADLXWrapper/cs_generated/ADLX_GammaRamp.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_GammaRamp._gamma_e__FixedBuffer gamma
     return:

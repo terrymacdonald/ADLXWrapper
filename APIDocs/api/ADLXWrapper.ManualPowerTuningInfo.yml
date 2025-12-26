@@ -27,7 +27,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualPowerTuningInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 415
+    startLine: 575
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 417
+    startLine: 577
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -90,7 +90,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 418
+    startLine: 578
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -119,7 +119,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerLimitValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 419
+    startLine: 579
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -148,7 +148,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 420
+    startLine: 580
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -177,7 +177,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 421
+    startLine: 581
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -206,7 +206,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 422
+    startLine: 582
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -235,7 +235,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitDefaultValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 423
+    startLine: 583
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -264,7 +264,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 425
+    startLine: 585
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

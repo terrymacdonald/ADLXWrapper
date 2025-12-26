@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GPU_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_GPU_TYPE
     content.vb: Public Enum ADLX_GPU_TYPE
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_UNDEFINED
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GPUTYPE_UNDEFINED = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_INTEGRATED
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GPUTYPE_INTEGRATED = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUTYPE_DISCRETE
     path: ../ADLXWrapper/cs_generated/ADLX_GPU_TYPE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: GPUTYPE_DISCRETE = 2
     return:

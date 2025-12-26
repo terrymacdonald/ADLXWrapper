@@ -160,10 +160,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper__ctor_ADLXWrapper_IADLX3DSettingsServices__System_Boolean_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor(ADLXWrapper.IADLX3DSettingsServices*,System.Boolean)">
   ADLX3DSettingsServicesHelper(IADLX3DSettingsServices*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a 3D settings helper from the native services interface, upgrading to v1/v2 when available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -173,9 +174,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="ADLXWrapper.IADLX3DSettingsServices.html">IADLX3DSettingsServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Native 3D settings services pointer.</p>
+</dd>
     <dt><code>addRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the pointer for this helper.</p>
+</dd>
   </dl>
 
 
@@ -197,10 +200,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_ThreeDSettingsChangedCallback_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)">
   Add3DSettingsEventListener(ThreeDSettingsChangedCallback)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a 3D settings change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -210,13 +214,15 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.ThreeDSettingsListenerHandle.html">ThreeDSettingsListenerHandle</a>.<a class="xref" href="ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback.html">ThreeDSettingsChangedCallback</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked on 3D settings changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.ThreeDSettingsListenerHandle.html">ThreeDSettingsListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -226,6 +232,15 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -233,10 +248,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyAll3DSettings_ADLXWrapper_IADLXGPU__ADLXWrapper_All3DSettingsInfo_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)">
   ApplyAll3DSettings(IADLXGPU*, All3DSettingsInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L172"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Applies all provided 3D settings to a GPU (only non-null fields are applied).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -246,9 +262,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
-    <dd></dd>
+    <dd><p>Native GPU pointer.</p>
+</dd>
     <dt><code>info</code> <a class="xref" href="ADLXWrapper.All3DSettingsInfo.html">All3DSettingsInfo</a></dt>
-    <dd></dd>
+    <dd><p>Settings to apply.</p>
+</dd>
   </dl>
 
 
@@ -259,6 +277,18 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>If <code class="paramref">gpu</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If any underlying call fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -266,7 +296,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Dispose" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L205"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -293,7 +323,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Finalize" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize">
   ~ADLX3DSettingsServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L222"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -319,7 +349,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Get3DSettingsChangedHandling" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsChangedHandling">
   Get3DSettingsChangedHandling()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -350,10 +380,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Get3DSettingsChangedHandlingNative" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsChangedHandlingNative">
   Get3DSettingsChangedHandlingNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the 3D settings change handling interface (native). Cached after first query.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -364,7 +395,8 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.IADLX3DSettingsChangedHandling.html">IADLX3DSettingsChangedHandling</a>*</dt>
-    <dd></dd>
+    <dd><p>Native 3D settings change handling pointer.</p>
+</dd>
   </dl>
 
 
@@ -374,6 +406,15 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If unsupported or retrieval fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -381,10 +422,11 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Get3DSettingsServicesHandle" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle">
   Get3DSettingsServicesHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the highest available 3D settings services interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -405,6 +447,12 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -412,7 +460,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Get3DSettingsServicesNative" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesNative">
   Get3DSettingsServicesNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -443,7 +491,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetAll3DSettings_ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(ADLXWrapper.IADLXGPU*)">
   GetAll3DSettings(IADLXGPU*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -479,7 +527,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)">
   Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -497,6 +545,121 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
     <dd></dd>
   </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyAll3DSettings_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyAll3DSettings_ADLXWrapper_IADLXGPU__ADLXWrapper_All3DSettingsInfo_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)">
+  TryApplyAll3DSettings(IADLXGPU*, All3DSettingsInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply all provided 3D settings; returns false when the feature set is unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.All3DSettingsInfo.html">All3DSettingsInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGet3DSettingsChangedHandlingNative_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGet3DSettingsChangedHandlingNative_ADLXWrapper_IADLX3DSettingsChangedHandling___" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(ADLXWrapper.IADLX3DSettingsChangedHandling*@)">
+  TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling*)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get 3D settings change handling; returns false when unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling* handling)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>handling</code> <a class="xref" href="ADLXWrapper.IADLX3DSettingsChangedHandling.html">IADLX3DSettingsChangedHandling</a>*</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_ADLXWrapper_IADLXGPU__ADLXWrapper_All3DSettingsInfo__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo@)">
+  TryGetAll3DSettings(IADLXGPU*, out All3DSettingsInfo)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get all 3D settings; returns false when unsupported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetAll3DSettings(IADLXGPU* gpu, out All3DSettingsInfo info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpu</code> <a class="xref" href="ADLXWrapper.IADLXGPU.html">IADLXGPU</a>*</dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.All3DSettingsInfo.html">All3DSettingsInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

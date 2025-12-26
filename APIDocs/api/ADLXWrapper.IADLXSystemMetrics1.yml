@@ -28,10 +28,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystemMetrics1
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXSystemMetrics1
     content.vb: Public Structure IADLXSystemMetrics1
@@ -60,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,10 +88,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -115,10 +117,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -143,10 +146,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -179,10 +183,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimeStamp
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT TimeStamp(long* ms)
     parameters:
@@ -213,10 +218,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT CPUUsage(double* data)
     parameters:
@@ -247,10 +253,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SystemRAM(int* data)
     parameters:
@@ -281,10 +288,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShift
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SmartShift(int* data)
     parameters:
@@ -315,10 +323,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerDistribution
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT PowerDistribution(int* apuShiftValue, int* gpuShiftValue, int* apuShiftLimit, int* gpuShiftLimit, int* totalShiftLimit)
     parameters:

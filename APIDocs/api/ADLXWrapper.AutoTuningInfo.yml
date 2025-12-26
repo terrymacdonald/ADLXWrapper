@@ -21,7 +21,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AutoTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 500
+    startLine: 686
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -53,7 +53,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 502
+    startLine: 688
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -82,7 +82,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 504
+    startLine: 690
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

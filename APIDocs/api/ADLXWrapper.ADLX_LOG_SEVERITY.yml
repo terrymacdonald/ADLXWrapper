@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_LOG_SEVERITY
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_LOG_SEVERITY
     content.vb: Public Enum ADLX_LOG_SEVERITY
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LDEBUG
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: LDEBUG = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LWARNING
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: LWARNING = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LERROR
     path: ../ADLXWrapper/cs_generated/ADLX_LOG_SEVERITY.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: LERROR = 2
     return:

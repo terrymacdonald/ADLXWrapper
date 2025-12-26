@@ -21,7 +21,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanPoint
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 377
+    startLine: 563
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -53,7 +53,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 379
+    startLine: 565
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -82,7 +82,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 380
+    startLine: 566
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

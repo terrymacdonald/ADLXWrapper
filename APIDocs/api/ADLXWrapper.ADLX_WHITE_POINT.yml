@@ -24,10 +24,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_WHITE_POINT
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_WHITE_POINT
     content.vb: Public Enum ADLX_WHITE_POINT
@@ -49,10 +50,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_5000K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WHITE_POINT_5000K = 0
     return:
@@ -75,10 +77,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_6500K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WHITE_POINT_6500K = 1
     return:
@@ -101,10 +104,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_7500K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WHITE_POINT_7500K = 2
     return:
@@ -127,10 +131,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_9300K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WHITE_POINT_9300K = 3
     return:
@@ -153,10 +158,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_CUSTOM
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: WHITE_POINT_CUSTOM = 4
     return:

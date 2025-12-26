@@ -35,10 +35,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualGraphicsTuning2_1
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXManualGraphicsTuning2_1
     content.vb: Public Structure IADLXManualGraphicsTuning2_1
@@ -67,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -94,10 +95,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -122,10 +124,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -150,10 +153,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -186,10 +190,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMinFrequencyRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -217,10 +222,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMinFrequency(int* minFreq)
     parameters:
@@ -251,10 +257,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUMinFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetGPUMinFrequency(int minFreq)
     parameters:
@@ -285,10 +292,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMaxFrequencyRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -316,10 +324,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMaxFrequency(int* maxFreq)
     parameters:
@@ -350,10 +359,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUMaxFrequency
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetGPUMaxFrequency(int maxFreq)
     parameters:
@@ -384,10 +394,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageRange
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVoltageRange(ADLX_IntRange* tuningRange)
     parameters:
@@ -415,10 +426,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVoltage(int* volt)
     parameters:
@@ -449,10 +461,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetGPUVoltage(int volt)
     parameters:
@@ -483,10 +496,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMinFrequencyDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMinFrequencyDefault(int* defaultVal)
     parameters:
@@ -517,10 +531,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMaxFrequencyDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMaxFrequencyDefault(int* defaultVal)
     parameters:
@@ -551,10 +566,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualGraphicsTuning2_1.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVoltageDefault(int* defaultVal)
     parameters:

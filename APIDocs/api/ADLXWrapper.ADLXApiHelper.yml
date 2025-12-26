@@ -29,7 +29,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXApiHelper
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 46
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Initialize
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 72
+    startLine: 77
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -100,7 +100,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InitializeWithCallerAdl
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 128
+    startLine: 131
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -138,7 +138,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFullVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 189
+    startLine: 191
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -168,7 +168,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 198
+    startLine: 200
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -198,7 +198,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 208
+    startLine: 210
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -231,7 +231,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 217
+    startLine: 219
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -261,7 +261,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 228
+    startLine: 229
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -321,7 +321,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 314
+    startLine: 268
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -352,7 +352,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 361
+    startLine: 315
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

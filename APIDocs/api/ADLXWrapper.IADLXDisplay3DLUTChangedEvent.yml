@@ -27,10 +27,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplay3DLUTChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplay3DLUTChangedEvent
     content.vb: Public Structure IADLXDisplay3DLUTChangedEvent
@@ -59,7 +60,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -86,10 +87,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -114,10 +116,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -142,10 +145,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -178,10 +182,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_SYNC_ORIGIN GetOrigin()
     return:
@@ -206,10 +211,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplay
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplay(IADLXDisplay** ppDisplay)
     parameters:
@@ -237,10 +243,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSCEChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsSCEChanged()
     return:
@@ -265,10 +272,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustom3DLUTChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUTChangedEvent.cs
-    startLine: 42
+    startLine: 50
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsCustom3DLUTChanged()
     return:

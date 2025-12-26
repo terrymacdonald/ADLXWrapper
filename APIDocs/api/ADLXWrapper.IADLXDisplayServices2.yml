@@ -42,10 +42,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayServices2
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplayServices2
     content.vb: Public Structure IADLXDisplayServices2
@@ -74,7 +75,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -101,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -129,10 +131,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -157,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -193,10 +197,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNumberOfDisplays(uint* numDisplays)
     parameters:
@@ -227,10 +232,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplays(IADLXDisplayList** ppDisplay)
     parameters:
@@ -258,10 +264,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Get3DLUT(IADLXDisplay* pDisplay, IADLXDisplay3DLUT** ppDisp3DLUT)
     parameters:
@@ -291,10 +298,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGamut(IADLXDisplay* pDisplay, IADLXDisplayGamut** ppDispGamut)
     parameters:
@@ -324,10 +332,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGamma(IADLXDisplay* pDisplay, IADLXDisplayGamma** ppDispGamma)
     parameters:
@@ -357,10 +366,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplayChangedHandling(IADLXDisplayChangedHandling** ppDisplayChangedHandling)
     parameters:
@@ -388,10 +398,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSync
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFreeSync(IADLXDisplay* pDisplay, IADLXDisplayFreeSync** ppFreeSync)
     parameters:
@@ -421,10 +432,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetVirtualSuperResolution(IADLXDisplay* pDisplay, IADLXDisplayVSR** ppVSR)
     parameters:
@@ -454,10 +466,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUScaling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUScaling(IADLXDisplay* pDisplay, IADLXDisplayGPUScaling** ppGPUScaling)
     parameters:
@@ -487,10 +500,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetScalingMode(IADLXDisplay* pDisplay, IADLXDisplayScalingMode** ppScalingMode)
     parameters:
@@ -520,10 +534,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScaling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetIntegerScaling(IADLXDisplay* pDisplay, IADLXDisplayIntegerScaling** ppIntegerScaling)
     parameters:
@@ -553,10 +568,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepth
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetColorDepth(IADLXDisplay* pDisplay, IADLXDisplayColorDepth** ppColorDepth)
     parameters:
@@ -586,10 +602,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPixelFormat(IADLXDisplay* pDisplay, IADLXDisplayPixelFormat** ppPixelFormat)
     parameters:
@@ -619,10 +636,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCustomColor(IADLXDisplay* pDisplay, IADLXDisplayCustomColor** ppCustomColor)
     parameters:
@@ -652,10 +670,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDCP
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetHDCP(IADLXDisplay* pDisplay, IADLXDisplayHDCP** ppHDCP)
     parameters:
@@ -685,10 +704,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCustomResolution(IADLXDisplay* pDisplay, IADLXDisplayCustomResolution** ppCustomResolution)
     parameters:
@@ -718,10 +738,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBright
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetVariBright(IADLXDisplay* pDisplay, IADLXDisplayVariBright** ppVariBright)
     parameters:
@@ -751,10 +772,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlanking
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplayBlanking(IADLXDisplay* pDisplay, IADLXDisplayBlanking** ppDisplayBlanking)
     parameters:
@@ -784,10 +806,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayConnectivityExperience
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices2.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplayConnectivityExperience(IADLXDisplay* pDisplay, IADLXDisplayConnectivityExperience** ppDisplayConnectivityExperience)
     parameters:

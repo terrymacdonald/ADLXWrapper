@@ -8,6 +8,7 @@ items:
   - ADLXWrapper.AdlxInterfaceHandle.As``1
   - ADLXWrapper.AdlxInterfaceHandle.Dispose
   - ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
+  - ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
   - ADLXWrapper.AdlxInterfaceHandle.IsInvalid
   - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
   - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
@@ -108,6 +109,42 @@ items:
   nameWithType.vb: AdlxInterfaceHandle.From(Void*, Boolean)
   fullName.vb: ADLXWrapper.AdlxInterfaceHandle.From(Void*, Boolean)
   name.vb: From(Void*, Boolean)
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  commentId: M:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+  id: FromNonRefCounted(System.Void*)
+  parent: ADLXWrapper.AdlxInterfaceHandle
+  langs:
+  - csharp
+  - vb
+  name: FromNonRefCounted(void*)
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted(void*)
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(void*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FromNonRefCounted
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    startLine: 34
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).
+  example: []
+  syntax:
+    content: public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)
+    parameters:
+    - id: ptr
+      type: System.Void*
+    return:
+      type: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Shared Function FromNonRefCounted(ptr As Void*) As AdlxInterfaceHandle
+  overload: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
+  nameWithType.vb: AdlxInterfaceHandle.FromNonRefCounted(Void*)
+  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(Void*)
+  name.vb: FromNonRefCounted(Void*)
 - uid: ADLXWrapper.AdlxInterfaceHandle.As``1
   commentId: M:ADLXWrapper.AdlxInterfaceHandle.As``1
   id: As``1
@@ -126,7 +163,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: As
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
-    startLine: 31
+    startLine: 40
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -159,7 +196,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
-    startLine: 33
+    startLine: 42
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -189,7 +226,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
-    startLine: 41
+    startLine: 50
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -223,7 +260,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
     path: ../ADLXWrapper/AdlxInterfaceHandle.cs
-    startLine: 42
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -522,6 +559,12 @@ references:
   name: AdlxInterfaceHandle
   nameWithType: AdlxInterfaceHandle
   fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
+  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
+  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__
+  name: FromNonRefCounted
+  nameWithType: AdlxInterfaceHandle.FromNonRefCounted
+  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
 - uid: ADLXWrapper.AdlxInterfaceHandle.As*
   commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.As
   href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_As__1

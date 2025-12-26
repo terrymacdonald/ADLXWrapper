@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXPowerTuningChangedEvent1
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXPowerTuningChangedEvent1
     content.vb: Public Structure IADLXPowerTuningChangedEvent1
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,10 +86,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -113,10 +115,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -141,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -177,10 +181,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_SYNC_ORIGIN GetOrigin()
     return:
@@ -205,10 +210,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSmartShiftMaxChanged
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsSmartShiftMaxChanged()
     return:
@@ -233,10 +239,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSmartShiftEcoChanged
     path: ../ADLXWrapper/cs_generated/IADLXPowerTuningChangedEvent1.cs
-    startLine: 37
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsSmartShiftEcoChanged()
     return:

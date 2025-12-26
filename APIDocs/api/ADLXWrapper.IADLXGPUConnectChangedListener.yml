@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUConnectChangedListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedListener.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUConnectChangedListener
     content.vb: Public Structure IADLXGPUConnectChangedListener
@@ -53,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedListener.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,10 +81,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnGPUConnectChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUConnectChangedListener.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool OnGPUConnectChanged(IADLXGPUConnectChangedEvent* pGPUConnectChangedEvent)
     parameters:

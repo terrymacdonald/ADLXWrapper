@@ -31,10 +31,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXList
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXList
     content.vb: Public Structure IADLXList
@@ -63,7 +64,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -90,10 +91,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -118,10 +120,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -146,10 +149,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -182,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Size
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public uint Size()
     return:
@@ -210,10 +215,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Empty
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool Empty()
     return:
@@ -238,10 +244,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Begin
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 38
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public uint Begin()
     return:
@@ -266,10 +273,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: End
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 44
+    startLine: 52
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public uint End()
     return:
@@ -294,10 +302,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: At
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 50
+    startLine: 59
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT At(uint location, IADLXInterface** ppItem)
     parameters:
@@ -330,10 +339,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Clear
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 55
+    startLine: 65
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Clear()
     return:
@@ -358,10 +368,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove_Back
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 60
+    startLine: 71
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Remove_Back()
     return:
@@ -386,10 +397,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add_Back
     path: ../ADLXWrapper/cs_generated/IADLXList.cs
-    startLine: 65
+    startLine: 77
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Add_Back(IADLXInterface* pItem)
     parameters:

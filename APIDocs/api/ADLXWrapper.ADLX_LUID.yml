@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_LUID
     path: ../ADLXWrapper/cs_generated/ADLX_LUID.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_LUID
     content.vb: Public Structure ADLX_LUID
@@ -53,10 +54,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lowPart
     path: ../ADLXWrapper/cs_generated/ADLX_LUID.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public uint lowPart
     return:
@@ -80,10 +82,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: highPart
     path: ../ADLXWrapper/cs_generated/ADLX_LUID.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int highPart
     return:

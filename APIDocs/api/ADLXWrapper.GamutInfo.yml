@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GamutInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1913
+    startLine: 2389
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsWhitePointSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1915
+    startLine: 2391
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGamutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1916
+    startLine: 2392
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1918
+    startLine: 2394
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_COLOR_DEPTH
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_COLOR_DEPTH
     content.vb: Public Enum ADLX_COLOR_DEPTH
@@ -51,10 +52,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_UNKNOWN = 0
     return:
@@ -77,10 +79,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_6
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_6 = 1
     return:
@@ -103,10 +106,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_8
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_8 = 2
     return:
@@ -129,10 +133,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_10
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_10 = 3
     return:
@@ -155,10 +160,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_12
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 8
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_12 = 4
     return:
@@ -181,10 +187,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_14
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 9
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_14 = 5
     return:
@@ -207,10 +214,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BPC_16
     path: ../ADLXWrapper/cs_generated/ADLX_COLOR_DEPTH.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: BPC_16 = 6
     return:

@@ -31,10 +31,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DChill
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLX3DChill
     content.vb: Public Structure IADLX3DChill
@@ -63,7 +64,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -90,10 +91,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -118,10 +120,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -146,10 +149,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -182,10 +186,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupported(bool* supported)
     parameters:
@@ -216,10 +221,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsEnabled(bool* isEnabled)
     parameters:
@@ -250,10 +256,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPSRange
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFPSRange(ADLX_IntRange* range)
     parameters:
@@ -281,10 +288,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMinFPS(int* currentMinFPS)
     parameters:
@@ -315,10 +323,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMaxFPS(int* currentMaxFPS)
     parameters:
@@ -349,10 +358,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetEnabled(byte enable)
     parameters:
@@ -383,10 +393,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMinFPS(int minFPS)
     parameters:
@@ -417,10 +428,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMaxFPS(int maxFPS)
     parameters:

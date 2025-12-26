@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ComPtr
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 228
+    startLine: 234
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -68,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 232
+    startLine: 238
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -100,7 +100,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 237
+    startLine: 243
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -130,7 +130,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 239
+    startLine: 245
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -162,7 +162,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
     path: ../ADLXWrapper/ADLXUtils.cs
-    startLine: 248
+    startLine: 254
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

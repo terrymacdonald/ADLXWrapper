@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DesktopListListenerHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 536
+    startLine: 671
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -68,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 557
+    startLine: 692
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -99,7 +99,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 563
+    startLine: 698
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -127,7 +127,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 565
+    startLine: 700
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 574
+    startLine: 709
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

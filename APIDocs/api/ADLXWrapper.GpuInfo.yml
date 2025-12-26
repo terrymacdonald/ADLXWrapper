@@ -30,7 +30,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 573
+    startLine: 937
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -62,7 +62,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 575
+    startLine: 939
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -91,7 +91,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 576
+    startLine: 940
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -120,7 +120,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 577
+    startLine: 941
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,7 +149,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 578
+    startLine: 942
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -178,7 +178,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 579
+    startLine: 943
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -207,7 +207,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 580
+    startLine: 944
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -236,7 +236,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 581
+    startLine: 945
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -265,7 +265,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 582
+    startLine: 946
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -294,7 +294,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 583
+    startLine: 947
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -323,7 +323,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 584
+    startLine: 948
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -352,7 +352,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 586
+    startLine: 950
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

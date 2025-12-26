@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftMaxInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 351
+    startLine: 511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -58,7 +58,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 353
+    startLine: 513
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,7 +87,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasMode
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 354
+    startLine: 514
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -116,7 +116,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 355
+    startLine: 515
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -145,7 +145,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 356
+    startLine: 516
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -174,7 +174,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 358
+    startLine: 518
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

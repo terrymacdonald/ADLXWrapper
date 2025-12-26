@@ -55,10 +55,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPU2
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPU2
     content.vb: Public Structure IADLXGPU2
@@ -87,7 +88,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,10 +115,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -142,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -170,10 +173,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -206,10 +210,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT VendorId(sbyte** vendorId)
     parameters:
@@ -240,10 +245,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASICFamilyType
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT ASICFamilyType(ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
     parameters:
@@ -271,10 +277,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT Type(ADLX_GPU_TYPE* gpuType)
     parameters:
@@ -302,10 +309,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT IsExternal(bool* isExternal)
     parameters:
@@ -336,10 +344,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT Name(sbyte** name)
     parameters:
@@ -370,10 +379,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT DriverPath(sbyte** driverPath)
     parameters:
@@ -404,10 +414,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT PNPString(sbyte** pnpString)
     parameters:
@@ -438,10 +449,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT HasDesktops(bool* hasDesktops)
     parameters:
@@ -472,10 +484,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT TotalVRAM(uint* vramMB)
     parameters:
@@ -506,10 +519,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT VRAMType(sbyte** type)
     parameters:
@@ -540,10 +554,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BIOSInfo
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT BIOSInfo(sbyte** partNumber, sbyte** version, sbyte** date)
     parameters:
@@ -578,10 +593,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT DeviceId(sbyte** deviceId)
     parameters:
@@ -612,10 +628,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RevisionId(sbyte** revisionId)
     parameters:
@@ -646,10 +663,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SubSystemId(sbyte** subSystemId)
     parameters:
@@ -680,10 +698,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SubSystemVendorId(sbyte** subSystemVendorId)
     parameters:
@@ -714,10 +733,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT UniqueId(int* uniqueId)
     parameters:
@@ -748,10 +768,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusType
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT PCIBusType(ADLX_PCI_BUS_TYPE* busType)
     parameters:
@@ -779,10 +800,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusLaneWidth
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT PCIBusLaneWidth(uint* laneWidth)
     parameters:
@@ -813,10 +835,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGPUMode
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT MultiGPUMode(ADLX_MGPU_MODE* mode)
     parameters:
@@ -844,10 +867,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 121
+    startLine: 145
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public readonly ADLX_RESULT ProductName(sbyte** productName)
     parameters:
@@ -878,10 +902,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 126
+    startLine: 151
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsPowerOff(bool* state)
     parameters:
@@ -912,10 +937,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerOn
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 131
+    startLine: 157
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT PowerOn()
     return:
@@ -940,10 +966,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 136
+    startLine: 163
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT StartPowerOff(IADLXGPUConnectChangedListener* pGPUConnectChangedListener, int timeout)
     parameters:
@@ -976,10 +1003,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AbortPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 141
+    startLine: 169
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AbortPowerOff()
     return:
@@ -1004,10 +1032,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedApplicationList
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 146
+    startLine: 175
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedApplicationList(bool* supported)
     parameters:
@@ -1038,10 +1067,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetApplications
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 151
+    startLine: 181
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetApplications(IADLXApplicationList** ppApplications)
     parameters:
@@ -1069,10 +1099,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareReleaseDate
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 156
+    startLine: 187
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AMDSoftwareReleaseDate(uint* year, uint* month, uint* day)
     parameters:
@@ -1107,10 +1138,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareEdition
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 161
+    startLine: 193
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AMDSoftwareEdition(sbyte** edition)
     parameters:
@@ -1141,10 +1173,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 166
+    startLine: 199
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AMDSoftwareVersion(sbyte** version)
     parameters:
@@ -1175,10 +1208,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 171
+    startLine: 205
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT DriverVersion(sbyte** version)
     parameters:
@@ -1209,10 +1243,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 176
+    startLine: 211
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AMDWindowsDriverVersion(sbyte** version)
     parameters:
@@ -1243,10 +1278,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LUID
     path: ../ADLXWrapper/cs_generated/IADLXGPU2.cs
-    startLine: 181
+    startLine: 217
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT LUID(ADLX_LUID* luid)
     parameters:

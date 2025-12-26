@@ -21,10 +21,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_Point
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_Point
     content.vb: Public Structure ADLX_Point
@@ -53,10 +54,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: x
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int x
     return:
@@ -80,10 +82,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: y
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int y
     return:

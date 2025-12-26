@@ -43,10 +43,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayCustomColor
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplayCustomColor
     content.vb: Public Structure IADLXDisplayCustomColor
@@ -75,7 +76,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -102,10 +103,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -130,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -158,10 +161,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -194,10 +198,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHueSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsHueSupported(bool* supported)
     parameters:
@@ -228,10 +233,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHueRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetHueRange(ADLX_IntRange* range)
     parameters:
@@ -259,10 +265,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetHue(int* currentHue)
     parameters:
@@ -293,10 +300,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetHue(int hue)
     parameters:
@@ -327,10 +335,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSaturationSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSaturationSupported(bool* supported)
     parameters:
@@ -361,10 +370,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSaturationRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSaturationRange(ADLX_IntRange* range)
     parameters:
@@ -392,10 +402,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSaturation
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSaturation(int* currentSaturation)
     parameters:
@@ -426,10 +437,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSaturation
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetSaturation(int saturation)
     parameters:
@@ -460,10 +472,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBrightnessSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsBrightnessSupported(bool* supported)
     parameters:
@@ -494,10 +507,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBrightnessRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetBrightnessRange(ADLX_IntRange* range)
     parameters:
@@ -525,10 +539,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetBrightness(int* currentBrightness)
     parameters:
@@ -559,10 +574,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetBrightness(int brightness)
     parameters:
@@ -593,10 +609,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsContrastSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsContrastSupported(bool* supported)
     parameters:
@@ -627,10 +644,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetContrastRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetContrastRange(ADLX_IntRange* range)
     parameters:
@@ -658,10 +676,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetContrast(int* currentContrast)
     parameters:
@@ -692,10 +711,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetContrast(int contrast)
     parameters:
@@ -726,10 +746,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTemperatureSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsTemperatureSupported(bool* supported)
     parameters:
@@ -760,10 +781,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTemperatureRange(ADLX_IntRange* range)
     parameters:
@@ -791,10 +813,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTemperature
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetTemperature(int* currentTemperature)
     parameters:
@@ -825,10 +848,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTemperature
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-    startLine: 121
+    startLine: 145
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetTemperature(int temperature)
     parameters:

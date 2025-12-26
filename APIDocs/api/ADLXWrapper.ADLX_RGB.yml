@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_RGB
     path: ../ADLXWrapper/cs_generated/ADLX_RGB.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_RGB
     content.vb: Public Structure ADLX_RGB
@@ -54,10 +55,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamutR
     path: ../ADLXWrapper/cs_generated/ADLX_RGB.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public double gamutR
     return:
@@ -81,10 +83,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamutG
     path: ../ADLXWrapper/cs_generated/ADLX_RGB.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public double gamutG
     return:
@@ -108,10 +111,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamutB
     path: ../ADLXWrapper/cs_generated/ADLX_RGB.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public double gamutB
     return:

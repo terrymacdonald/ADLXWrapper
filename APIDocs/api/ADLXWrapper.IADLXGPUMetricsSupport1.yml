@@ -51,10 +51,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUMetricsSupport1
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUMetricsSupport1
     content.vb: Public Structure IADLXGPUMetricsSupport1
@@ -83,7 +84,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -110,10 +111,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -138,10 +140,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -166,10 +169,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -202,10 +206,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUUsage(bool* supported)
     parameters:
@@ -236,10 +241,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUClockSpeed(bool* supported)
     parameters:
@@ -270,10 +276,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVRAMClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUVRAMClockSpeed(bool* supported)
     parameters:
@@ -304,10 +311,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUTemperature(bool* supported)
     parameters:
@@ -338,10 +346,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUHotspotTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUHotspotTemperature(bool* supported)
     parameters:
@@ -372,10 +381,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUPower(bool* supported)
     parameters:
@@ -406,10 +416,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUTotalBoardPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUTotalBoardPower(bool* supported)
     parameters:
@@ -440,10 +451,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUFanSpeed(bool* supported)
     parameters:
@@ -474,10 +486,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUVRAM(bool* supported)
     parameters:
@@ -508,10 +521,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUVoltage(bool* supported)
     parameters:
@@ -542,10 +556,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUUsageRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUUsageRange(int* minValue, int* maxValue)
     parameters:
@@ -578,10 +593,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUClockSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUClockSpeedRange(int* minValue, int* maxValue)
     parameters:
@@ -614,10 +630,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMClockSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVRAMClockSpeedRange(int* minValue, int* maxValue)
     parameters:
@@ -650,10 +667,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUTemperatureRange(int* minValue, int* maxValue)
     parameters:
@@ -686,10 +704,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUHotspotTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUHotspotTemperatureRange(int* minValue, int* maxValue)
     parameters:
@@ -722,10 +741,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUPowerRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUPowerRange(int* minValue, int* maxValue)
     parameters:
@@ -758,10 +778,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUFanSpeedRange(int* minValue, int* maxValue)
     parameters:
@@ -794,10 +815,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVRAMRange(int* minValue, int* maxValue)
     parameters:
@@ -830,10 +852,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUVoltageRange(int* minValue, int* maxValue)
     parameters:
@@ -866,10 +889,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTotalBoardPowerRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 121
+    startLine: 145
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUTotalBoardPowerRange(int* minValue, int* maxValue)
     parameters:
@@ -902,10 +926,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUIntakeTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 126
+    startLine: 151
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUIntakeTemperatureRange(int* minValue, int* maxValue)
     parameters:
@@ -938,10 +963,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUIntakeTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 131
+    startLine: 157
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUIntakeTemperature(bool* supported)
     parameters:
@@ -972,10 +998,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUMemoryTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 136
+    startLine: 163
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedGPUMemoryTemperature(bool* supported)
     parameters:
@@ -1006,10 +1033,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMemoryTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 141
+    startLine: 169
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMemoryTemperatureRange(int* minValue, int* maxValue)
     parameters:
@@ -1042,10 +1070,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedNPUFrequency
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 146
+    startLine: 175
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedNPUFrequency(bool* supported)
     parameters:
@@ -1076,10 +1105,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNPUFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 151
+    startLine: 181
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNPUFrequencyRange(int* minValue, int* maxValue)
     parameters:
@@ -1112,10 +1142,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedNPUActivityLevel
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 156
+    startLine: 187
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT IsSupportedNPUActivityLevel(bool* supported)
     parameters:
@@ -1146,10 +1177,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNPUActivityLevelRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport1.cs
-    startLine: 161
+    startLine: 193
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetNPUActivityLevelRange(int* minValue, int* maxValue)
     parameters:

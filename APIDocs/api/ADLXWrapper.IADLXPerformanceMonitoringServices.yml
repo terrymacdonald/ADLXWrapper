@@ -43,10 +43,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXPerformanceMonitoringServices
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXPerformanceMonitoringServices
     content.vb: Public Structure IADLXPerformanceMonitoringServices
@@ -75,7 +76,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -102,10 +103,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -130,10 +132,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -158,10 +161,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -194,10 +198,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingIntervalRange
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSamplingIntervalRange(ADLX_IntRange* range)
     parameters:
@@ -225,10 +230,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSamplingInterval
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetSamplingInterval(int askedIntervalMs)
     parameters:
@@ -259,10 +265,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingInterval
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSamplingInterval(int* intervalMs)
     parameters:
@@ -293,10 +300,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySizeRange
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMaxPerformanceMetricsHistorySizeRange(ADLX_IntRange* range)
     parameters:
@@ -324,10 +332,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT SetMaxPerformanceMetricsHistorySize(int sizeSec)
     parameters:
@@ -358,10 +367,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetMaxPerformanceMetricsHistorySize(int* sizeSec)
     parameters:
@@ -392,10 +402,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearPerformanceMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT ClearPerformanceMetricsHistory()
     return:
@@ -420,10 +431,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCurrentPerformanceMetricsHistorySize(int* sizeSec)
     parameters:
@@ -454,10 +466,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPerformanceMetricsTracking
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT StartPerformanceMetricsTracking()
     return:
@@ -482,10 +495,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StopPerformanceMetricsTracking
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT StopPerformanceMetricsTracking()
     return:
@@ -510,10 +524,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAllMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 76
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetAllMetricsHistory(int startMs, int stopMs, IADLXAllMetricsList** ppMetricsList)
     parameters:
@@ -548,10 +563,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 81
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUMetricsHistory(IADLXGPU* pGPU, int startMs, int stopMs, IADLXGPUMetricsList** ppMetricsList)
     parameters:
@@ -588,10 +604,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSystemMetricsHistory(int startMs, int stopMs, IADLXSystemMetricsList** ppMetricsList)
     parameters:
@@ -626,10 +643,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPSHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 91
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetFPSHistory(int startMs, int stopMs, IADLXFPSList** ppMetricsList)
     parameters:
@@ -664,10 +682,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAllMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 96
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCurrentAllMetrics(IADLXAllMetrics** ppMetrics)
     parameters:
@@ -695,10 +714,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentGPUMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 101
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCurrentGPUMetrics(IADLXGPU* pGPU, IADLXGPUMetrics** ppMetrics)
     parameters:
@@ -728,10 +748,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentSystemMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 106
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCurrentSystemMetrics(IADLXSystemMetrics** ppMetrics)
     parameters:
@@ -759,10 +780,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentFPS
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 111
+    startLine: 133
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetCurrentFPS(IADLXFPS** ppMetrics)
     parameters:
@@ -790,10 +812,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedGPUMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 116
+    startLine: 139
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSupportedGPUMetrics(IADLXGPU* pGPU, IADLXGPUMetricsSupport** ppMetricsSupported)
     parameters:
@@ -823,10 +846,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedSystemMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-    startLine: 121
+    startLine: 145
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetSupportedSystemMetrics(IADLXSystemMetricsSupport** ppMetricsSupported)
     parameters:

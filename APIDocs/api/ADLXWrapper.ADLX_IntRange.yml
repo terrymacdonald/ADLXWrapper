@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_IntRange
     path: ../ADLXWrapper/cs_generated/ADLX_IntRange.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct ADLX_IntRange
     content.vb: Public Structure ADLX_IntRange
@@ -54,10 +55,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: minValue
     path: ../ADLXWrapper/cs_generated/ADLX_IntRange.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int minValue
     return:
@@ -81,10 +83,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: maxValue
     path: ../ADLXWrapper/cs_generated/ADLX_IntRange.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int maxValue
     return:
@@ -108,10 +111,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: step
     path: ../ADLXWrapper/cs_generated/ADLX_IntRange.cs
-    startLine: 11
+    startLine: 15
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int step
     return:

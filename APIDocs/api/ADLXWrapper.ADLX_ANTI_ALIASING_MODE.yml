@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTI_ALIASING_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_MODE.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ANTI_ALIASING_MODE
     content.vb: Public Enum ADLX_ANTI_ALIASING_MODE
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_MODE_USE_APP_SETTINGS
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_MODE.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_MODE_USE_APP_SETTINGS = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_MODE_ENHANCE_APP_SETTINGS
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_MODE.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_MODE_ENHANCE_APP_SETTINGS = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_MODE_OVERRIDE_APP_SETTINGS
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_MODE.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_MODE_OVERRIDE_APP_SETTINGS = 2
     return:

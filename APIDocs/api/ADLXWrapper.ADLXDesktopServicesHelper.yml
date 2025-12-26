@@ -31,6 +31,9 @@ items:
   - ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity
   - ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinityHandle
   - ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
+  - ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  - ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  - ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
   langs:
   - csharp
   - vb
@@ -83,21 +86,27 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 19
+    startLine: 26
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a desktop services helper from native desktop/display services.
+  example: []
   syntax:
     content: public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true)
     parameters:
     - id: desktopServices
       type: ADLXWrapper.IADLXDesktopServices*
+      description: Native desktop services pointer.
     - id: displayServices
       type: ADLXWrapper.IADLXDisplayServices*
+      description: Optional display services pointer used to build display facades.
     - id: addRefDesktopServices
       type: System.Boolean
+      description: True to AddRef the desktop services pointer.
     - id: addRefDisplayServices
       type: System.Boolean
+      description: True to AddRef the display services pointer.
     content.vb: Public Sub New(desktopServices As IADLXDesktopServices*, displayServices As IADLXDisplayServices* = Nothing, addRefDesktopServices As Boolean = True, addRefDisplayServices As Boolean = True)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.#ctor*
   nameWithType.vb: ADLXDesktopServicesHelper.New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean)
@@ -121,7 +130,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 37
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,16 +158,22 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 43
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns an AddRef'd handle to the desktop services interface for external ownership.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle GetDesktopServicesHandle()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle
     content.vb: Public Function GetDesktopServicesHandle() As AdlxInterfaceHandle
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops
   id: EnumerateDesktops
@@ -177,16 +192,60 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 49
+    startLine: 68
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates desktop DTOs (native data marshaled to managed structs).
+  example: []
   syntax:
     content: public IReadOnlyList<DesktopInfo> EnumerateDesktops()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}
+      description: List of desktop info records.
     content.vb: Public Function EnumerateDesktops() As IReadOnlyList(Of DesktopInfo)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration is unsupported or fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
+  id: TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)
+  parent: ADLXWrapper.ADLXDesktopServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateDesktops(out IReadOnlyList<DesktopInfo>)
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateDesktops(out IReadOnlyList<DesktopInfo>)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.DesktopInfo>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateDesktops
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 96
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryEnumerateDesktops(out IReadOnlyList<DesktopInfo> desktops)
+    parameters:
+    - id: desktops
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateDesktops(desktops As IReadOnlyList(Of DesktopInfo)) As Boolean
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops*
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateDesktops(IReadOnlyList(Of DesktopInfo))
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DesktopInfo))
+  name.vb: TryEnumerateDesktops(IReadOnlyList(Of DesktopInfo))
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
   id: EnumerateADLXDesktops
@@ -205,16 +264,60 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 76
+    startLine: 116
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates managed desktop facades. Callers must dispose each desktop.
+  example: []
   syntax:
     content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktops()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+      description: List of desktop facades.
     content.vb: Public Function EnumerateADLXDesktops() As IReadOnlyList(Of ADLXDesktop)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration is unsupported or fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  id: TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  parent: ADLXWrapper.ADLXDesktopServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop>)
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop>)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateADLXDesktops
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 150
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryEnumerateADLXDesktops(out IReadOnlyList<ADLXDesktop> desktops)
+    parameters:
+    - id: desktops
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateADLXDesktops(desktops As IReadOnlyList(Of ADLXDesktop)) As Boolean
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops*
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(IReadOnlyList(Of ADLXDesktop))
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop))
+  name.vb: TryEnumerateADLXDesktops(IReadOnlyList(Of ADLXDesktop))
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)
   id: EnumerateADLXDesktopsForGpu(System.Int32)
@@ -233,22 +336,69 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 109
+    startLine: 171
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates managed desktop facades filtered by GPU unique ID. Callers must dispose each desktop.
+  example: []
   syntax:
     content: public IReadOnlyList<ADLXDesktop> EnumerateADLXDesktopsForGpu(int gpuUniqueId)
     parameters:
     - id: gpuUniqueId
       type: System.Int32
+      description: GPU unique ID to filter on.
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+      description: List of desktop facades for the GPU.
     content.vb: Public Function EnumerateADLXDesktopsForGpu(gpuUniqueId As Integer) As IReadOnlyList(Of ADLXDesktop)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration is unsupported or fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
   nameWithType.vb: ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(Integer)
   fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(Integer)
   name.vb: EnumerateADLXDesktopsForGpu(Integer)
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  id: TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)
+  parent: ADLXWrapper.ADLXDesktopServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateADLXDesktopsForGpu(int, out IReadOnlyList<ADLXDesktop>)
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(int, out IReadOnlyList<ADLXDesktop>)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(int, out System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLXDesktop>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: feature-api-tweaks-v2
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateADLXDesktopsForGpu
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 228
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryEnumerateADLXDesktopsForGpu(int gpuUniqueId, out IReadOnlyList<ADLXDesktop> desktops)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: desktops
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateADLXDesktopsForGpu(gpuUniqueId As Integer, desktops As IReadOnlyList(Of ADLXDesktop)) As Boolean
+  overload: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu*
+  nameWithType.vb: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(Integer, IReadOnlyList(Of ADLXDesktop))
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(Integer, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLXDesktop))
+  name.vb: TryEnumerateADLXDesktopsForGpu(Integer, IReadOnlyList(Of ADLXDesktop))
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
   id: CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
@@ -267,21 +417,36 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 165
+    startLine: 251
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Wraps a native desktop pointer in a managed facade.
+  example: []
   syntax:
     content: public ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
     parameters:
     - id: pDesktop
       type: ADLXWrapper.IADLXDesktop*
+      description: Native desktop pointer.
     - id: addRef
       type: System.Boolean
+      description: True to AddRef the pointer for this facade.
     return:
       type: ADLXWrapper.ADLXDesktop
+      description: Managed desktop facade.
     content.vb: Public Function CreateADLXDesktop(pDesktop As IADLXDesktop*, addRef As Boolean = True) As ADLXDesktop
   overload: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If desktop services are unavailable.
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: If <code class="paramref">pDesktop</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
   nameWithType.vb: ADLXDesktopServicesHelper.CreateADLXDesktop(IADLXDesktop*, Boolean)
   fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*, Boolean)
   name.vb: CreateADLXDesktop(IADLXDesktop*, Boolean)
@@ -303,16 +468,26 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 182
+    startLine: 275
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a new Eyefinity desktop using the simple Eyefinity interface.
+  example: []
   syntax:
     content: public EyefinityDesktopInfo CreateEyefinityDesktop()
     return:
       type: ADLXWrapper.EyefinityDesktopInfo
+      description: Information about the created Eyefinity desktop.
     content.vb: Public Function CreateEyefinityDesktop() As EyefinityDesktopInfo
   overload: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If Eyefinity is unsupported or creation fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops
   id: DestroyAllEyefinityDesktops
@@ -331,14 +506,23 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 200
+    startLine: 299
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Destroys all Eyefinity desktops via the simple Eyefinity interface.
+  example: []
   syntax:
     content: public void DestroyAllEyefinityDesktops()
     content.vb: Public Sub DestroyAllEyefinityDesktops()
   overload: ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If Eyefinity is unsupported or destruction fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   id: AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
@@ -357,19 +541,30 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 218
+    startLine: 325
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Adds a desktop list change listener.
+  example: []
   syntax:
     content: public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
+      description: Callback invoked when the desktop list changes.
     return:
       type: ADLXWrapper.DesktopListListenerHandle
+      description: Listener handle that must be disposed to unsubscribe.
     content.vb: Public Function AddDesktopListEventListener(callback As DesktopListListenerHandle.OnDesktopListChanged) As DesktopListListenerHandle
   overload: ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If registration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
   id: RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
@@ -388,17 +583,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 233
+    startLine: 346
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Removes a desktop list change listener.
+  example: []
   syntax:
     content: public void RemoveDesktopListEventListener(DesktopListListenerHandle handle, bool disposeHandle = true)
     parameters:
     - id: handle
       type: ADLXWrapper.DesktopListListenerHandle
+      description: Handle returned by add.
     - id: disposeHandle
       type: System.Boolean
+      description: True to dispose the handle after removal.
     content.vb: Public Sub RemoveDesktopListEventListener(handle As DesktopListListenerHandle, disposeHandle As Boolean = True)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener*
   nameWithType.vb: ADLXDesktopServicesHelper.RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
@@ -422,16 +621,26 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopHandles
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 247
+    startLine: 367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Enumerates native desktop handles (AddRef'd) for advanced/native callers.
+  example: []
   syntax:
     content: public AdlxInterfaceHandle[] EnumerateDesktopHandles()
     return:
       type: ADLXWrapper.AdlxInterfaceHandle[]
+      description: Array of native desktop handles.
     content.vb: Public Function EnumerateDesktopHandles() As AdlxInterfaceHandle()
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopHandles*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration is unsupported or fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopListNative
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopListNative
   id: GetDesktopListNative
@@ -450,16 +659,26 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 275
+    startLine: 402
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns the native desktop list. Caller must dispose the returned list.
+  example: []
   syntax:
     content: public IADLXDesktopList* GetDesktopListNative()
     return:
       type: ADLXWrapper.IADLXDesktopList*
+      description: Native desktop list pointer.
     content.vb: Public Function GetDesktopListNative() As IADLXDesktopList*
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopListNative*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration is unsupported or fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopChangedHandlingNative
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopChangedHandlingNative
   id: GetDesktopChangedHandlingNative
@@ -478,7 +697,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandlingNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 292
+    startLine: 420
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -506,7 +725,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandling
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 309
+    startLine: 438
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -534,7 +753,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinity
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 314
+    startLine: 443
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -562,7 +781,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinityHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 328
+    startLine: 458
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -590,7 +809,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 341
+    startLine: 472
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -621,7 +840,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 356
+    startLine: 487
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -652,7 +871,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 368
+    startLine: 499
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -681,7 +900,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 379
+    startLine: 510
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -711,7 +930,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDisplayListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 389
+    startLine: 520
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -742,7 +961,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 404
+    startLine: 536
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -773,7 +992,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 423
+    startLine: 556
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -804,7 +1023,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 435
+    startLine: 569
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -835,7 +1054,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 464
+    startLine: 599
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1132,6 +1351,13 @@ references:
   name: GetDesktopServicesNative
   nameWithType: ADLXDesktopServicesHelper.GetDesktopServicesNative
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.objectdisposedexception
+  name: ObjectDisposedException
+  nameWithType: ObjectDisposedException
+  fullName: System.ObjectDisposedException
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopServicesHandle
@@ -1145,6 +1371,12 @@ references:
   name: AdlxInterfaceHandle
   nameWithType: AdlxInterfaceHandle
   fullName: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateDesktops
@@ -1249,6 +1481,12 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_DesktopInfo___
+  name: TryEnumerateDesktops
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateDesktops
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktops
@@ -1288,6 +1526,12 @@ references:
     name: ADLXDesktop
     href: ADLXWrapper.ADLXDesktop.html
   - name: )
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___
+  name: TryEnumerateADLXDesktops
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktopsForGpu_System_Int32_
@@ -1305,6 +1549,19 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu*
+  commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktopsForGpu_System_Int32_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___
+  name: TryEnumerateADLXDesktopsForGpu
+  nameWithType: ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_CreateADLXDesktop_ADLXWrapper_IADLXDesktop__System_Boolean_

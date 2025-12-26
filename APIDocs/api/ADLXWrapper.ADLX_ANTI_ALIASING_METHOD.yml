@@ -22,10 +22,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTI_ALIASING_METHOD
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_METHOD.cs
-    startLine: 2
+    startLine: 3
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public enum ADLX_ANTI_ALIASING_METHOD
     content.vb: Public Enum ADLX_ANTI_ALIASING_METHOD
@@ -47,10 +48,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_METHOD_MULTISAMPLING
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_METHOD.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_METHOD_MULTISAMPLING = 0
     return:
@@ -73,10 +75,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_METHOD_ADAPTIVE_MULTISAMPLING
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_METHOD.cs
-    startLine: 5
+    startLine: 9
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_METHOD_ADAPTIVE_MULTISAMPLING = 1
     return:
@@ -99,10 +102,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_METHOD_SUPERSAMPLING
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_METHOD.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: AA_METHOD_SUPERSAMPLING = 2
     return:

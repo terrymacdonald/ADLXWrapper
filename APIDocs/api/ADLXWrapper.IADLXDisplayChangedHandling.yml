@@ -33,10 +33,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXDisplayChangedHandling
     content.vb: Public Structure IADLXDisplayChangedHandling
@@ -65,7 +66,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,10 +93,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -120,10 +122,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -148,10 +151,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -184,10 +188,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddDisplayListEventListener(IADLXDisplayListChangedListener* pDisplayListChangedListener)
     parameters:
@@ -215,10 +220,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 31
+    startLine: 37
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveDisplayListEventListener(IADLXDisplayListChangedListener* pDisplayListChangedListener)
     parameters:
@@ -246,10 +252,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 36
+    startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddDisplayGamutEventListener(IADLXDisplayGamutChangedListener* pDisplayGamutChangedListener)
     parameters:
@@ -277,10 +284,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveDisplayGamutEventListener(IADLXDisplayGamutChangedListener* pDisplayGamutChangedListener)
     parameters:
@@ -308,10 +316,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 46
+    startLine: 55
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddDisplayGammaEventListener(IADLXDisplayGammaChangedListener* pDisplayGammaChangedListener)
     parameters:
@@ -339,10 +348,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 51
+    startLine: 61
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveDisplayGammaEventListener(IADLXDisplayGammaChangedListener* pDisplayGammaChangedListener)
     parameters:
@@ -370,10 +380,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3DLUTEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 56
+    startLine: 67
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddDisplay3DLUTEventListener(IADLXDisplay3DLUTChangedListener* pDisplay3DLUTChangedListener)
     parameters:
@@ -401,10 +412,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3DLUTEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveDisplay3DLUTEventListener(IADLXDisplay3DLUTChangedListener* pDisplay3DLUTChangedListener)
     parameters:
@@ -432,10 +444,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 66
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT AddDisplaySettingsEventListener(IADLXDisplaySettingsChangedListener* pDisplaySettingsChangedListener)
     parameters:
@@ -463,10 +476,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/cs_generated/IADLXDisplayChangedHandling.cs
-    startLine: 71
+    startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT RemoveDisplaySettingsEventListener(IADLXDisplaySettingsChangedListener* pDisplaySettingsChangedListener)
     parameters:

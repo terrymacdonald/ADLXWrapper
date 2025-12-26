@@ -26,10 +26,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUAutoTuningCompleteEvent
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXGPUAutoTuningCompleteEvent
     content.vb: Public Structure IADLXGPUAutoTuningCompleteEvent
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,10 +86,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Acquire()
     return:
@@ -113,10 +115,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 15
+    startLine: 18
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public int Release()
     return:
@@ -141,10 +144,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 21
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -177,10 +181,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUndervoltGPUCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 26
+    startLine: 31
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsUndervoltGPUCompleted()
     return:
@@ -205,10 +210,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsOverclockGPUCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsOverclockGPUCompleted()
     return:
@@ -233,10 +239,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsOverclockVRAMCompleted
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuningCompleteEvent.cs
-    startLine: 38
+    startLine: 45
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public bool IsOverclockVRAMCompleted()
     return:

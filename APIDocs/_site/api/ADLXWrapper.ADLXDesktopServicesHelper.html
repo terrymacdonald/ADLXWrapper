@@ -160,10 +160,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDisplayServices__System_Boolean_System_Boolean_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)">
   ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a desktop services helper from native desktop/display services.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -173,13 +174,17 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>desktopServices</code> <a class="xref" href="ADLXWrapper.IADLXDesktopServices.html">IADLXDesktopServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Native desktop services pointer.</p>
+</dd>
     <dt><code>displayServices</code> <a class="xref" href="ADLXWrapper.IADLXDisplayServices.html">IADLXDisplayServices</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional display services pointer used to build display facades.</p>
+</dd>
     <dt><code>addRefDesktopServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the desktop services pointer.</p>
+</dd>
     <dt><code>addRefDisplayServices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the display services pointer.</p>
+</dd>
   </dl>
 
 
@@ -201,10 +206,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)">
   AddDesktopListEventListener(OnDesktopListChanged)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L326"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a desktop list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -214,13 +220,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>callback</code> <a class="xref" href="ADLXWrapper.DesktopListListenerHandle.html">DesktopListListenerHandle</a>.<a class="xref" href="ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged.html">OnDesktopListChanged</a></dt>
-    <dd></dd>
+    <dd><p>Callback invoked when the desktop list changes.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.DesktopListListenerHandle.html">DesktopListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Listener handle that must be disposed to unsubscribe.</p>
+</dd>
   </dl>
 
 
@@ -230,6 +238,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If registration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -237,10 +254,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_CreateADLXDesktop_ADLXWrapper_IADLXDesktop__System_Boolean_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)">
   CreateADLXDesktop(IADLXDesktop*, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L252"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Wraps a native desktop pointer in a managed facade.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -250,15 +268,18 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pDesktop</code> <a class="xref" href="ADLXWrapper.IADLXDesktop.html">IADLXDesktop</a>*</dt>
-    <dd></dd>
+    <dd><p>Native desktop pointer.</p>
+</dd>
     <dt><code>addRef</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True to AddRef the pointer for this facade.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.AdlxDesktop.html">ADLXDesktop</a></dt>
-    <dd></dd>
+    <dd><p>Managed desktop facade.</p>
+</dd>
   </dl>
 
 
@@ -268,6 +289,18 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If desktop services are unavailable.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>If <code class="paramref">pDesktop</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -275,10 +308,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_CreateEyefinityDesktop" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop">
   CreateEyefinityDesktop()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L276"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Creates a new Eyefinity desktop using the simple Eyefinity interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -289,7 +323,8 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.EyefinityDesktopInfo.html">EyefinityDesktopInfo</a></dt>
-    <dd></dd>
+    <dd><p>Information about the created Eyefinity desktop.</p>
+</dd>
   </dl>
 
 
@@ -299,6 +334,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If Eyefinity is unsupported or creation fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -306,7 +350,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_CreateEyefinityDesktop_ADLXWrapper_IADLXSimpleEyefinity__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)">
   CreateEyefinityDesktop(IADLXSimpleEyefinity*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L473"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -342,10 +386,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_DestroyAllEyefinityDesktops" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops">
   DestroyAllEyefinityDesktops()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L300"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Destroys all Eyefinity desktops via the simple Eyefinity interface.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -361,6 +406,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If Eyefinity is unsupported or destruction fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -368,7 +422,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_DestroyAllEyefinityDesktops_ADLXWrapper_IADLXSimpleEyefinity__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops(ADLXWrapper.IADLXSimpleEyefinity*)">
   DestroyAllEyefinityDesktops(IADLXSimpleEyefinity*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L500"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -399,7 +453,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_DestroyEyefinityDesktop_ADLXWrapper_IADLXSimpleEyefinity__ADLXWrapper_IADLXEyefinityDesktop__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.DestroyEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*,ADLXWrapper.IADLXEyefinityDesktop*)">
   DestroyEyefinityDesktop(IADLXSimpleEyefinity*, IADLXEyefinityDesktop*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L357"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L488"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -432,7 +486,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L380"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L511"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -459,10 +513,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktops" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktops">
   EnumerateADLXDesktops()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L117"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates managed desktop facades. Callers must dispose each desktop.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -473,7 +528,8 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>List of desktop facades.</p>
+</dd>
   </dl>
 
 
@@ -483,6 +539,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration is unsupported or fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -490,10 +555,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateADLXDesktopsForGpu_System_Int32_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateADLXDesktopsForGpu(System.Int32)">
   EnumerateADLXDesktopsForGpu(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L172"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates managed desktop facades filtered by GPU unique ID. Callers must dispose each desktop.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -503,13 +569,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dd><p>GPU unique ID to filter on.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>List of desktop facades for the GPU.</p>
+</dd>
   </dl>
 
 
@@ -519,6 +587,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration is unsupported or fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -526,7 +603,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateDesktopDisplays_ADLXWrapper_IADLXDesktop__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopDisplays(ADLXWrapper.IADLXDesktop*)">
   EnumerateDesktopDisplays(IADLXDesktop*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L405"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L537"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -562,10 +639,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateDesktopHandles" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopHandles">
   EnumerateDesktopHandles()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates native desktop handles (AddRef'd) for advanced/native callers.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -576,7 +654,8 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.AdlxInterfaceHandle.html">AdlxInterfaceHandle</a>[]</dt>
-    <dd></dd>
+    <dd><p>Array of native desktop handles.</p>
+</dd>
   </dl>
 
 
@@ -586,6 +665,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration is unsupported or fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -593,10 +681,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateDesktops" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktops">
   EnumerateDesktops()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L69"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Enumerates desktop DTOs (native data marshaled to managed structs).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -607,7 +696,8 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.DesktopInfo.html">DesktopInfo</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>List of desktop info records.</p>
+</dd>
   </dl>
 
 
@@ -617,6 +707,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration is unsupported or fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -624,7 +723,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_EnumerateEyefinityDisplays_ADLXWrapper_IADLXEyefinityDesktop__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.EnumerateEyefinityDisplays(ADLXWrapper.IADLXEyefinityDesktop*)">
   EnumerateEyefinityDisplays(IADLXEyefinityDesktop*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L436"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L570"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -660,7 +759,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.Finalize">
   ~ADLXDesktopServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L465"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L600"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -686,7 +785,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopChangedHandling" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopChangedHandling">
   GetDesktopChangedHandling()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L439"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -717,7 +816,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopChangedHandlingNative" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopChangedHandlingNative">
   GetDesktopChangedHandlingNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L421"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -748,7 +847,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopDisplayListNative_ADLXWrapper_IADLXDesktop__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopDisplayListNative(ADLXWrapper.IADLXDesktop*)">
   GetDesktopDisplayListNative(IADLXDesktop*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L390"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L521"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -784,10 +883,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopListNative" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopListNative">
   GetDesktopListNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L403"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the native desktop list. Caller must dispose the returned list.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -798,7 +898,8 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ADLXWrapper.IADLXDesktopList.html">IADLXDesktopList</a>*</dt>
-    <dd></dd>
+    <dd><p>Native desktop list pointer.</p>
+</dd>
   </dl>
 
 
@@ -808,6 +909,15 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration is unsupported or fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -815,10 +925,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopServicesHandle" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle">
   GetDesktopServicesHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an AddRef'd handle to the desktop services interface for external ownership.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -839,6 +950,12 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If disposed.</p>
+</dd>
+  </dl>
 
 
 
@@ -846,7 +963,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopServicesNative" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative">
   GetDesktopServicesNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -877,7 +994,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetEyefinityGridSize_ADLXWrapper_IADLXEyefinityDesktop__" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetEyefinityGridSize(ADLXWrapper.IADLXEyefinityDesktop*)">
   GetEyefinityGridSize(IADLXEyefinityDesktop*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L424"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L557"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -913,7 +1030,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetSimpleEyefinity" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity">
   GetSimpleEyefinity()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L444"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -944,7 +1061,7 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_GetSimpleEyefinityHandle" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinityHandle">
   GetSimpleEyefinityHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L459"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -975,10 +1092,11 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
 
   <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)">
   RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L347"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a desktop list change listener.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -988,11 +1106,123 @@ Class ADLXDesktopServicesHelper  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>handle</code> <a class="xref" href="ADLXWrapper.DesktopListListenerHandle.html">DesktopListListenerHandle</a></dt>
-    <dd></dd>
+    <dd><p>Handle returned by add.</p>
+</dd>
     <dt><code>disposeHandle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True to dispose the handle after removal.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktops_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)">
+  TryEnumerateADLXDesktops(out IReadOnlyList&lt;ADLXDesktop&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateADLXDesktops(out IReadOnlyList&lt;ADLXDesktop&gt; desktops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desktops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
     <dd></dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktopsForGpu_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateADLXDesktopsForGpu_System_Int32_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLXDesktop___" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateADLXDesktopsForGpu(System.Int32,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}@)">
+  TryEnumerateADLXDesktopsForGpu(int, out IReadOnlyList&lt;ADLXDesktop&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateADLXDesktopsForGpu(int gpuUniqueId, out IReadOnlyList&lt;ADLXDesktop&gt; desktops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>desktops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDesktop.html">ADLXDesktop</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateDesktops_" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops*"></a>
+
+  <h3 id="ADLXWrapper_ADLXDesktopServicesHelper_TryEnumerateDesktops_System_Collections_Generic_IReadOnlyList_ADLXWrapper_DesktopInfo___" data-uid="ADLXWrapper.ADLXDesktopServicesHelper.TryEnumerateDesktops(System.Collections.Generic.IReadOnlyList{ADLXWrapper.DesktopInfo}@)">
+  TryEnumerateDesktops(out IReadOnlyList&lt;DesktopInfo&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-api-tweaks-v2/ADLXWrapper/ADLXDesktopServicesHelper.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryEnumerateDesktops(out IReadOnlyList&lt;DesktopInfo&gt; desktops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>desktops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.DesktopInfo.html">DesktopInfo</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

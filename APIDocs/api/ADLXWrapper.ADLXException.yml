@@ -103,17 +103,21 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 11
+    startLine: 16
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Creates a new exception for a failed ADLX call.
+  example: []
   syntax:
     content: public ADLXException(ADLX_RESULT result, string? message = null)
     parameters:
     - id: result
       type: ADLXWrapper.ADLX_RESULT
+      description: The ADLX result code returned by the native call.
     - id: message
       type: System.String
+      description: Optional message to include; if omitted a default message is used.
     content.vb: Public Sub New(result As ADLX_RESULT, message As String = Nothing)
   overload: ADLXWrapper.ADLXException.#ctor*
   nameWithType.vb: ADLXException.New(ADLX_RESULT, String)
@@ -137,7 +141,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsNotInitializedError
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 20
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -167,7 +171,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAlreadyInitializedError
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 28
+    startLine: 33
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -197,7 +201,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUInactiveError
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 36
+    startLine: 41
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

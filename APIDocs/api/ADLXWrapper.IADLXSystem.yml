@@ -32,10 +32,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystem
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 4
+    startLine: 5
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public struct IADLXSystem
     content.vb: Public Structure IADLXSystem
@@ -64,7 +65,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -91,10 +92,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HybridGraphicsType
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT HybridGraphicsType(ADLX_HG_TYPE* hgType)
     parameters:
@@ -122,10 +124,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUs
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 13
+    startLine: 16
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUs(IADLXGPUList** ppGPUs)
     parameters:
@@ -153,10 +156,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 18
+    startLine: 22
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
     parameters:
@@ -189,10 +193,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplaysServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 23
+    startLine: 28
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDisplaysServices(IADLXDisplayServices** ppDispServices)
     parameters:
@@ -220,10 +225,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopsServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 28
+    startLine: 34
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetDesktopsServices(IADLXDesktopServices** ppDeskServices)
     parameters:
@@ -251,10 +257,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 33
+    startLine: 40
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUsChangedHandling(IADLXGPUsChangedHandling** ppGPUsChangedHandling)
     parameters:
@@ -282,10 +289,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnableLog
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 38
+    startLine: 46
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT EnableLog(ADLX_LOG_DESTINATION mode, ADLX_LOG_SEVERITY severity, IADLXLog* pLogger, ushort* fileName)
     parameters:
@@ -322,10 +330,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 43
+    startLine: 52
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT Get3DSettingsServices(IADLX3DSettingsServices** pp3DSettingsServices)
     parameters:
@@ -353,10 +362,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 48
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetGPUTuningServices(IADLXGPUTuningServices** ppGPUTuningServices)
     parameters:
@@ -384,10 +394,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 53
+    startLine: 64
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetPerformanceMonitoringServices(IADLXPerformanceMonitoringServices** ppPerformanceMonitoringServices)
     parameters:
@@ -415,10 +426,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalSystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 58
+    startLine: 70
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT TotalSystemRAM(uint* ramMB)
     parameters:
@@ -449,10 +461,11 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetI2C
     path: ../ADLXWrapper/cs_generated/IADLXSystem.cs
-    startLine: 63
+    startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  example: []
   syntax:
     content: public ADLX_RESULT GetI2C(IADLXGPU* pGPU, IADLXI2C** ppI2C)
     parameters:
