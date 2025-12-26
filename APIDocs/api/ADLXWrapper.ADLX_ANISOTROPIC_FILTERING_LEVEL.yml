@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANISOTROPIC_FILTERING_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_INVALID
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X2
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X4
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X8
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AF_LEVEL_X16
     path: ../ADLXWrapper/cs_generated/ADLX_ANISOTROPIC_FILTERING_LEVEL.cs

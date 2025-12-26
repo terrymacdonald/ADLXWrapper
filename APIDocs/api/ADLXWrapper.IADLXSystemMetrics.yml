@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSystemMetrics
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimeStamp
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SystemRAM
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSystemMetrics.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShift
     path: ../ADLXWrapper/cs_generated/IADLXSystemMetrics.cs

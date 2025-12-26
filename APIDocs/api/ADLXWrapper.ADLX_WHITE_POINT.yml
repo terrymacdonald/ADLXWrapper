@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_WHITE_POINT
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
@@ -46,7 +46,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_5000K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_6500K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_7500K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_9300K
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WHITE_POINT_CUSTOM
     path: ../ADLXWrapper/cs_generated/ADLX_WHITE_POINT.cs

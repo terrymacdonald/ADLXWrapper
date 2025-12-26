@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EyefinityDesktopInfo
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValid
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs

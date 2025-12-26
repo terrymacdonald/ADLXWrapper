@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayCustomResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -214,7 +214,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetResolutionList
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -246,7 +246,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAppliedResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -278,7 +278,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateNewResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
@@ -310,7 +310,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeleteResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomResolution.cs

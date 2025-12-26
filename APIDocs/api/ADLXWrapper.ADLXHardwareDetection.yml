@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXHardwareDetection
     path: ../ADLXWrapper/ADLXHardwareDetection.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasAMDGPU
     path: ../ADLXWrapper/ADLXHardwareDetection.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAMDGPUNames
     path: ../ADLXWrapper/ADLXHardwareDetection.cs

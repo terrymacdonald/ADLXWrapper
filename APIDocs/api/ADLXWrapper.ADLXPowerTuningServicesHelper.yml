@@ -41,7 +41,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPowerTuningServicesHelper
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -145,7 +145,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -217,7 +217,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -281,7 +281,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUConnectGpuListNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -382,7 +382,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandling
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddPowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -454,7 +454,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -488,7 +488,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -525,7 +525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMaxNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -592,7 +592,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -625,7 +625,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -662,7 +662,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -691,7 +691,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -724,7 +724,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -757,7 +757,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -788,7 +788,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -823,7 +823,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -856,7 +856,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -893,7 +893,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -923,7 +923,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs

@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUAutoTuning
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedUndervoltGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedOverclockGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedOverclockVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -288,7 +288,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentUndervoltGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentOverclockGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -358,7 +358,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentOverclockVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -393,7 +393,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartUndervoltGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -425,7 +425,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartOverclockGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
@@ -457,7 +457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartOverclockVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUAutoTuning.cs

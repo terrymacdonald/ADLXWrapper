@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualFanTuning1
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -104,7 +104,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFanTuningRanges
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -233,7 +233,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -265,7 +265,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEmptyFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -297,7 +297,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValidFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -334,7 +334,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -366,7 +366,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedZeroRPM
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -401,7 +401,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -436,7 +436,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -471,7 +471,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -506,7 +506,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimitRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -538,7 +538,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -573,7 +573,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinAcousticLimit
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -608,7 +608,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -643,7 +643,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -675,7 +675,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -710,7 +710,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -745,7 +745,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -780,7 +780,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -812,7 +812,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -847,7 +847,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTargetFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -882,7 +882,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDefaultFanTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -914,7 +914,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinAcousticLimitDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -949,7 +949,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFanSpeedDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -984,7 +984,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTargetFanSpeedDefault
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
@@ -1019,7 +1019,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDefaultZeroRPMState
     path: ../ADLXWrapper/cs_generated/IADLXManualFanTuning1.cs

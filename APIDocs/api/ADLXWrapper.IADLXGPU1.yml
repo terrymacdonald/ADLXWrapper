@@ -39,7 +39,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPU1
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASICFamilyType
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -293,7 +293,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -328,7 +328,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -363,7 +363,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -398,7 +398,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -433,7 +433,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -468,7 +468,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -503,7 +503,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -538,7 +538,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BIOSInfo
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -577,7 +577,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -612,7 +612,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -647,7 +647,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -682,7 +682,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -717,7 +717,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -752,7 +752,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusType
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -784,7 +784,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusLaneWidth
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -819,7 +819,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGPUMode
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs
@@ -851,7 +851,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU1.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
     path: ../ADLXWrapper/cs_generated/IADLXGPU1.cs

@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayColorDepth
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -219,7 +219,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -251,7 +251,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetValue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedColorDepth
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -320,7 +320,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_6
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -355,7 +355,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_8
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -390,7 +390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_10
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -425,7 +425,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_12
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -460,7 +460,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_14
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
@@ -495,7 +495,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedBPC_16
     path: ../ADLXWrapper/cs_generated/IADLXDisplayColorDepth.cs

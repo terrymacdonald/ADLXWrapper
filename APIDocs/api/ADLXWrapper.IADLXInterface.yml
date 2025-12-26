@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXInterface.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXInterface
     path: ../ADLXWrapper/cs_generated/IADLXInterface.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXInterface.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXInterface.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXInterface.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXInterface.cs
@@ -108,7 +108,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXInterface.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXInterface.cs
@@ -137,7 +137,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXInterface.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXInterface.cs

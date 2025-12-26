@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TESSELLATION_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_MODE_AMD_OPTIMIZED
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_MODE_USE_APP_SETTINGS
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: T_MODE_OVERRIDE_APP_SETTINGS
     path: ../ADLXWrapper/cs_generated/ADLX_TESSELLATION_MODE.cs

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SSM_BIAS_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SSM_BIAS_AUTO
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SSM_BIAS_MANUAL
     path: ../ADLXWrapper/cs_generated/ADLX_SSM_BIAS_MODE.cs

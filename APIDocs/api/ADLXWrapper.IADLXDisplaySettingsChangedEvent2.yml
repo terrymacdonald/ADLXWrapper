@@ -38,7 +38,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplaySettingsChangedEvent2
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -193,7 +193,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -222,7 +222,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplay
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -254,7 +254,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsFreeSyncChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsVSRChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -312,7 +312,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUScalingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -341,7 +341,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsScalingModeChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -370,7 +370,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsIntegerScalingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -399,7 +399,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsColorDepthChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -428,7 +428,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPixelFormatChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -457,7 +457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHDCPChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -486,7 +486,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorHueChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -515,7 +515,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorSaturationChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -544,7 +544,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorBrightnessChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -573,7 +573,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorTemperatureChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -602,7 +602,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorContrastChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -631,7 +631,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomResolutionChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -660,7 +660,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsVariBrightChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -689,7 +689,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDisplayBlankingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -718,7 +718,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDisplayConnectivityExperienceChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AutoTuningInfo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs

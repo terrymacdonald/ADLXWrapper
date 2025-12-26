@@ -39,7 +39,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXPerformanceMonitoringServices
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingIntervalRange
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSamplingInterval
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingInterval
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySizeRange
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -328,7 +328,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -363,7 +363,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -398,7 +398,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearPerformanceMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -427,7 +427,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentPerformanceMetricsHistorySize
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -462,7 +462,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPerformanceMetricsTracking
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -491,7 +491,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StopPerformanceMetricsTracking
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -520,7 +520,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAllMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -559,7 +559,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -600,7 +600,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemMetricsHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -639,7 +639,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPSHistory
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -678,7 +678,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAllMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -710,7 +710,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentGPUMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -744,7 +744,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentSystemMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -776,7 +776,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentFPS
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -808,7 +808,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedGPUMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
@@ -842,7 +842,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedSystemMetrics
     path: ../ADLXWrapper/cs_generated/IADLXPerformanceMonitoringServices.cs

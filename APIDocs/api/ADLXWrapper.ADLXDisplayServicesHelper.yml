@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplayServicesHelper
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -289,7 +289,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -325,7 +325,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -353,7 +353,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -387,7 +387,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -428,7 +428,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplaysForGpu
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -472,7 +472,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDisplay
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -522,7 +522,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -559,7 +559,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayHandles
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -596,7 +596,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDisplayHandles
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -632,7 +632,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandlingNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -669,7 +669,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandling
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -699,7 +699,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -741,7 +741,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -779,7 +779,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -821,7 +821,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -859,7 +859,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -901,7 +901,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -939,7 +939,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -981,7 +981,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1019,7 +1019,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1061,7 +1061,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1099,7 +1099,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1129,7 +1129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1160,7 +1160,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1194,7 +1194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1230,7 +1230,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1261,7 +1261,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1295,7 +1295,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGPUScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1331,7 +1331,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1362,7 +1362,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1393,7 +1393,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1426,7 +1426,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1457,7 +1457,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1491,7 +1491,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1527,7 +1527,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1558,7 +1558,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1592,7 +1592,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1628,7 +1628,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDCPState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1659,7 +1659,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHDCPEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1693,7 +1693,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHDCPEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1729,7 +1729,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1760,7 +1760,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1796,7 +1796,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1834,7 +1834,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBacklightAdaptiveEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1868,7 +1868,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBrightBacklightAdaptiveEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1904,7 +1904,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBatteryLifeEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1938,7 +1938,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBrightBatteryLifeEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1974,7 +1974,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2005,7 +2005,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2036,7 +2036,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2069,7 +2069,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2100,7 +2100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2131,7 +2131,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2164,7 +2164,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2195,7 +2195,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2226,7 +2226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2259,7 +2259,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2290,7 +2290,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2319,7 +2319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2350,7 +2350,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2381,7 +2381,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2410,7 +2410,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2441,7 +2441,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2472,7 +2472,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2501,7 +2501,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2532,7 +2532,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2563,7 +2563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2594,7 +2594,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2627,7 +2627,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2658,7 +2658,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2692,7 +2692,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2728,7 +2728,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2759,7 +2759,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracyEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2793,7 +2793,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracyEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2829,7 +2829,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2860,7 +2860,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControlEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2894,7 +2894,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControlEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2930,7 +2930,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2961,7 +2961,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2992,7 +2992,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3023,7 +3023,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3054,7 +3054,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3087,7 +3087,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

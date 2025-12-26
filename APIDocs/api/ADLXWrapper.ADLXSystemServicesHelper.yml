@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXSystemServicesHelper
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -97,7 +97,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -135,7 +135,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -173,7 +173,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -246,7 +246,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -284,7 +284,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -321,7 +321,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -359,7 +359,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -397,7 +397,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -435,7 +435,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -472,7 +472,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -510,7 +510,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -548,7 +548,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -586,7 +586,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGet3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -623,7 +623,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -661,7 +661,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -699,7 +699,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -737,7 +737,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -774,7 +774,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -812,7 +812,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -850,7 +850,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -888,7 +888,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -925,7 +925,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -963,7 +963,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1001,7 +1001,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1039,7 +1039,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1076,7 +1076,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1114,7 +1114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1152,7 +1152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1190,7 +1190,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1227,7 +1227,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1265,7 +1265,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1303,7 +1303,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1341,7 +1341,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1379,7 +1379,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1417,7 +1417,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1455,7 +1455,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1493,7 +1493,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1531,7 +1531,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1569,7 +1569,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1607,7 +1607,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1649,7 +1649,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1687,7 +1687,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1717,7 +1717,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-api-tweaks-v2
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
