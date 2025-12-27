@@ -13,6 +13,9 @@ This file captures the essential rules and context for agents working on this AD
     - Facade" This level uses Helper functions to abstract away any memory management, and to make it very easy and simple to access the infomration provided by the ADLX SDK.
 
 ## Core Development Rules
+- ALWAYS MAKE SURE THAT YOU TELL THE USER YOUR PLAN BEFORE YOU MAKE ANY CHANGES TO FILES AND GIVE THE USER A CHANCE TO REVIEW. ONLY MAKE CHANGS ONCE THE USER HAS GIVEN THEIR APPROVAL. THe user can tell you to perform multiple steps of a plan if you want to.
+- When PLANNING, if you think you will get confused and lose track of where you are in your plan, then please write it down into a PLAN.md document. Keep the PLAN.md updated as you go, and make sure that the information you store in the PLAN.md is very descriptive and detailed, so that if you lose track in the future you can review the PLAN.md and you will know what to do and will do it well. Do not be overly concise as you lose a lot of nuance that will be important.
+- DO NOT MAKE THINGS UP. Always check the AMD ADLX SDK header files in `ADLX\SDK\Include`, or the AMD ADLX SDK docs in `ADLX\SDKDocs`, or the ADLXWrapper code in `ADLXWrapper` if you need more information. If you are unsure then tell the user. THe user wants you to only use facts - not conjecture. Tune your temperature to the lowest you can. 
 - Naming/patterns: Preserve established helper naming (`ADLX<Feature>ServicesHelper`, `Get<Feature>ServicesNative()`, `Get<Feature>Services()`). Replicate existing helper/test patterns for new features. Consistently of API is key. The user has spent a long time trying to keep everything standard and consistent, so make sure new creations align with existing patterns. Ask for permission for anything that does not align.
 - Platform: Windows-only, x64; relies on AMD Adrenalin drivers. Lightweight check is `IsADLXDllAvailable`.
 
