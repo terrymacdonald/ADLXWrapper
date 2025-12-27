@@ -118,6 +118,108 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Enumerates displays that are part of an active desktop (in use). Callers must dispose each display.
+        /// </summary>
+        /// <exception cref="ADLXException">If display/desktop services are unsupported or enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
+        public IReadOnlyList<ADLXDisplay> EnumerateDisplaysInUse()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            var services = GetHighestDisplayServices();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+            if (!_desktopServices.HasValue || _desktopServices.Value.Get() == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services were not provided for this display helper");
+
+            var desktopServices = _desktopServices.Value.Get();
+            var activeIds = new HashSet<ulong>();
+
+            IADLXDesktopList* pDesktopList = null;
+            var desktopsResult = desktopServices->GetDesktops(&pDesktopList);
+            if (desktopsResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDesktopList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported by this ADLX system");
+            if (desktopsResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(desktopsResult, "Failed to enumerate desktops while filtering displays in use");
+
+            using (var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList))
+            {
+                for (uint i = 0; i < desktopList.Get()->Size(); i++)
+                {
+                    IADLXDesktop* pDesktop = null;
+                    var itemResult = desktopList.Get()->At(i, &pDesktop);
+                    if (itemResult != ADLX_RESULT.ADLX_OK || pDesktop == null)
+                    {
+                        if (pDesktop != null)
+                            ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                        throw new ADLXException(itemResult, "Failed to access desktop while filtering displays in use");
+                    }
+
+                    IADLXDisplayList* pDisplayList = null;
+                    var desktopDisplaysResult = desktopServices->GetDisplays(pDesktop, &pDisplayList);
+                    if (desktopDisplaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                    {
+                        ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                        throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration for desktop not supported by this ADLX system");
+                    }
+                    if (desktopDisplaysResult != ADLX_RESULT.ADLX_OK)
+                    {
+                        ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                        throw new ADLXException(desktopDisplaysResult, "Failed to enumerate displays for desktop");
+                    }
+
+                    using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+                    var displayCount = displayList.Get()->Size();
+                    for (uint d = 0; d < displayCount; d++)
+                    {
+                        IADLXDisplay* pDisplay = null;
+                        displayList.Get()->At(d, &pDisplay);
+                        using var display = new ComPtr<IADLXDisplay>(pDisplay);
+                        nuint uid = 0;
+                        display.Get()->UniqueId(&uid);
+                        activeIds.Add((ulong)uid);
+                    }
+
+                    ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
+                }
+            }
+
+            IADLXDisplayList* pAllDisplays = null;
+            var displaysResult = services->GetDisplays(&pAllDisplays);
+            if (displaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pAllDisplays == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (displaysResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(displaysResult, "Failed to enumerate displays");
+
+            var displaysInUse = new List<ADLXDisplay>();
+            using var allDisplays = new ComPtr<IADLXDisplayList>(pAllDisplays);
+            for (uint i = 0; i < allDisplays.Get()->Size(); i++)
+            {
+                IADLXDisplay* pDisplay = null;
+                var itemResult = allDisplays.Get()->At(i, &pDisplay);
+                if (itemResult != ADLX_RESULT.ADLX_OK || pDisplay == null)
+                {
+                    if (pDisplay != null)
+                        ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                    throw new ADLXException(itemResult, "Failed to access display from list");
+                }
+
+                nuint uid = 0;
+                pDisplay->UniqueId(&uid);
+                if (activeIds.Contains((ulong)uid))
+                {
+                    displaysInUse.Add(CreateADLXDisplay(pDisplay, addRef: false));
+                }
+                else
+                {
+                    ADLXUtils.ReleaseInterface((IntPtr)pDisplay);
+                }
+            }
+
+            return displaysInUse;
+        }
+
+        /// <summary>
         /// Tries to enumerate display facades, returning false if the feature is not supported.
         /// </summary>
         public bool TryEnumerateDisplays(out IReadOnlyList<ADLXDisplay> displays)

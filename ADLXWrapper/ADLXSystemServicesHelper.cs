@@ -578,6 +578,19 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Enumerates displays that are part of an active desktop (in use) via the display services helper.
+        /// </summary>
+        /// <returns>List of managed displays in use.</returns>
+        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
+        public IReadOnlyList<ADLXDisplay> EnumerateDisplaysInUse()
+        {
+            ThrowIfDisposed();
+            using var displayHelper = GetDisplayServices();
+            return displayHelper.EnumerateDisplaysInUse();
+        }
+
+        /// <summary>
         /// Enumerates desktop facades via the desktop services helper.
         /// </summary>
         /// <returns>List of managed desktops.</returns>
