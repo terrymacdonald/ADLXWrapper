@@ -39,10 +39,10 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.Name; } }
         public string Edid { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.Edid; } }
-        public int Width { get { ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead(); return _identity.Width; } }
-        public int Height { get { ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead(); return _identity.Height; } }
+        public int NativeResolutionWidth { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.NativeResolutionWidth; } }
+        public int NativeResolutionHeight { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.NativeResolutionHeight; } }
         public double RefreshRate { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.RefreshRate; } }
         public uint ManufacturerId { get { ThrowIfDisposed();

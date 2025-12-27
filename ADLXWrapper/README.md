@@ -30,7 +30,7 @@ foreach (var display in displays)
 using (display) // ADLXDisplay is IDisposable
 {
     Console.WriteLine($"Display {display.Name} on GPU {display.GpuUniqueId}: " +
-                      $"{display.Width}x{display.Height} @ {display.RefreshRate:F2} Hz");
+                      $"{display.NativeResolutionWidth}x{display.NativeResolutionHeight} @ {display.RefreshRate:F2} Hz");
 
     // Example: toggle VSR if supported
     var vsr = display.GetVirtualSuperResolutionState();

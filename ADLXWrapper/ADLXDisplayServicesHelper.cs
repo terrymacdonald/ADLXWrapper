@@ -2421,8 +2421,8 @@ namespace ADLXWrapper
     public readonly struct DisplayInfo
     {
         public string Name { get; init; }
-        public int Width { get; init; }
-        public int Height { get; init; }
+        public int NativeResolutionWidth { get; init; }
+        public int NativeResolutionHeight { get; init; }
         public double RefreshRate { get; init; }
         public uint ManufacturerID { get; init; }
         public uint PixelClock { get; init; }
@@ -2434,11 +2434,11 @@ namespace ADLXWrapper
         public int GpuUniqueId { get; init; }
 
         [JsonConstructor]
-        public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
+        public DisplayInfo(string name, int nativeResolutionWidth, int nativeResolutionHeight, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
         {
             Name = name;
-            Width = width;
-            Height = height;
+            NativeResolutionWidth = nativeResolutionWidth;
+            NativeResolutionHeight = nativeResolutionHeight;
             RefreshRate = refreshRate;
             ManufacturerID = manufacturerID;
             PixelClock = pixelClock;
@@ -2454,7 +2454,7 @@ namespace ADLXWrapper
         {
             sbyte* namePtr = null; pDisplay->Name(&namePtr); Name = ADLXUtils.MarshalString(&namePtr);
             sbyte* edidPtr = null; pDisplay->EDID(&edidPtr); Edid = ADLXUtils.MarshalString(&edidPtr);
-            int w = 0, h = 0; pDisplay->NativeResolution(&w, &h); Width = w; Height = h;
+            int w = 0, h = 0; pDisplay->NativeResolution(&w, &h); NativeResolutionWidth = w; NativeResolutionHeight = h;
             double rr = 0; pDisplay->RefreshRate(&rr); RefreshRate = rr;
             uint mid = 0; pDisplay->ManufacturerID(&mid); ManufacturerID = mid;
             uint pc = 0; pDisplay->PixelClock(&pc); PixelClock = pc;
