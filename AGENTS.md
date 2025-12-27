@@ -1,0 +1,58 @@
+# AGENTS Guide for ADLXWrapper
+
+This file captures the essential rules and context for agents working on this ADLXWrapper repository. 
+
+## Project Scope
+- Purpose: Safe C# wrapper over AMD ADLX (vtable COM style) for Windows x64 targeting .NET 10.0 and higher.
+- Structure: 
+    - Root `ADLXWrapper/` project (helpers + `cs_generated/` bindings), 
+    - `ADLXWrapper.Tests/` xUnit suite, 
+    - `Samples/`, scripts for prepare/build/test.
+- Two API Levels: There are two levels of ADLXWRapper API available for users to use. 
+    - Native: This level is low level and use the C# equivalent functions in ADLXWrapper that were created by ClangSharpPInvokeGenerator, and are found in `../ADLXWRapper/cs_generated`. These are the functions that are the C# equvalent of the C++ AMD ADLX SDK described in the ../ADLX/SDK/Include files, so please look there if you need to know what they are.
+    - Facade" This level uses Helper functions to abstract away any memory management, and to make it very easy and simple to access the infomration provided by the ADLX SDK.
+
+## Core Development Rules
+- Naming/patterns: Preserve established helper naming (`ADLX<Feature>ServicesHelper`, `Get<Feature>ServicesNative()`, `Get<Feature>Services()`). Replicate existing helper/test patterns for new features. Consistently of API is key. The user has spent a long time trying to keep everything standard and consistent, so make sure new creations align with existing patterns. Ask for permission for anything that does not align.
+- Platform: Windows-only, x64; relies on AMD Adrenalin drivers. Lightweight check is `IsADLXDllAvailable`.
+
+## Core Native-specific Development Rules
+- Follow the usage patterns shown in the AMD ADLX SDK Samples as closely as possible to ensure that the C# Native functions will work. The ADLX SDK Samples can be found in ADLX/Samples. Please also look at the ADLX/Include folder and the ADLX/SDKDoc folder for more information about how the ADLX SDK works. 
+- Generated code: Do not hand-edit `cs_generated/`. Changes come from headers/config used by `ClangSharpPInvokeGenerator` (`GenerateBindings` target in `ADLXWrapper.csproj`).
+- The Native level functions should always be developed and tested first. Those low level functions will be used by Facade level functions, so its important that we make sure that they Native functinos work before moving up to the higher-level Facade functions.
+
+## Core Facade-Specific Development Rules
+- Facade level objects should handle all underlying Native level memory management themselves. The user should not need to worry about it. This includes memory creation, disposal when objects are deleted, and handling functions being called multiple times in threads. Our aim is to never have memory leaks when using Facades.
+- The Facade functions should (in general) return Helper objects that represent the relevant objects within the underlying ADLX SDK, for example ADLXDesktop. Each returned Facade object should have properties that store the information contained within the underlying Native objects e.g. NativeResolutionWidth, and Access to any underlying functions that are offered by the Native objects e.g. ADLXDisplayServicesHelper providing an EnumerateDisplays() function that returns a list of Displays currently known to Windows.
+- The Facade functions can also offer some additional functions that provide an advanced user with access to the underlying Native objects, or Native pointers to the underlying objects if it makes sense to do so. 
+- Initialization: Always create the Facade API via `using var adlx = ADLXApi.Initialize();` (or `InitializeWithCallerAdl` when integrating with existing ADL). Get services through `adlx.GetSystemServices()` and wrap pointers with `ComPtr<T>` for lifetime safety.
+- Disposal: `ComPtr<T>` owns releases; do not manually release raw pointers owned by a `ComPtr`. `ADLXApi.Dispose` calls `ADLXTerminate` then unloads the DLL; any call after disposal should throw `ObjectDisposedException`.
+- Vtable interop: Generated interfaces/enums in `ADLXWrapper/cs_generated/`. When calling vtable functions directly, use `Marshal.GetDelegateForFunctionPointer` with `StdCall`. Make sure that the vtable is up to date and aligns with the generated code created by ClangSharpPInvokeGenerator.
+
+## Build and Scripts
+- Prepare: `./prepare_adlx.ps1` (downloads/validates ADLX SDK headers into `ADLX/`).
+- Build: `./build_adlx.ps1` (restores, cleans, builds solution; version from `VERSION` + git commit count). Direct build: `dotnet build ADLXWrapper/ADLXWrapper.csproj`.
+- Release ZIP: `./create_adlx_release_zip.ps1` (produces artifacts/adlxwrapper-<version>-Release.zip).
+
+## Testing Expectations
+- Suite: xUnit in `ADLXWrapper.Tests` targeting `net10.0`; hardware-aware and read-only (no tuning changes).
+- Run: `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Filter with `--filter "FullyQualifiedName~..."`
+- Native vs Facade tests:
+  - Native (`*NativeTests.cs`): Use only ClangSharp-generated APIs in `ADLXWrapper/cs_generated`; never call facades as they will be tested in the Facade tests. THe Native tests should be able to run and pass successfully even if all the ADLXWrapper Facade functions were removed.
+  - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.
+- Test creation: Write Native tests first to validate low-level APIs, then Facade tests. If ADLX marks features optional or provides `IsSupported`, gate tests accordingly; skip only when unsupported. Fix underlying wrapper bugs rather than skipping failing coverage.
+- Hardware skip: Tests that need AMD GPU/driver or ADLX DLL gracefully skip when missing.
+
+## Usage Notes
+- DLL loading: `ADLXApi` dynamically loads `amdadlx64.dll` via `LoadLibraryEx`; keep `ADLXNative.GetDllName()` and `ADLXApi.LoadADLXDll()` in sync if names/paths change; surface errors via `ADLXException`.
+- Data shapes: Helpers expose serializable `Info` structs (e.g., `GpuInfo`, `DisplayInfo`) and support apply/restore flows.
+- Samples: See `ADLXWrapper/README.md` and `Samples/` for usage patterns (enumeration, capability checks, event listeners).
+
+## Versioning
+- Version scheme: `VERSION` provides MAJOR.MINOR; PATCH computed from git commit count via `SetVersionFromGit` and `build_adlx.ps1`. Update `VERSION` when bumping MAJOR/MINOR.
+
+## Expectations for Agents
+- Keep APIs and helpers consistent with existing conventions; avoid breaking established patterns. Consistentcy is key across the whole codebase. Do not deviate from this consistentcy without first requesting permission from the user. 
+- Respect disposal and pointer ownership rules; ensure safe lifetime handling.
+- Prefer generated enums (e.g., `ADLX_VRAM_TYPE`) over custom ones to align with ADLX updates.
+- Maintain optional-feature gating and hardware skip behavior in tests and helpers.

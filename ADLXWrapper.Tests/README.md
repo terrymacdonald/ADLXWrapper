@@ -23,7 +23,11 @@ xUnit test suite for the ADLXWrapper library (targets `net10.0`).
 - Some file naming examples to help:
     -  ADLXApiHelper.cs in ADLXWrapper is tested by ADLXApiHelperNativeTests.cs (for Native Tests) and ADLXApiHelperFacadeTests.cs (for the Facade Tests) in ADLXWrapper.Tests.
     -  ADLDesktopServicesHelper.cs in ADLXWrapper is tested by ADLXDesktopServicesHelperNativeTests.cs and ADLXDesktopServicesHelperFacadeTests.cs in ADLXWrapper.Tests.
-    - The rest of the ADLXWrapper files are tes
+
+## Creating Tests
+- The point of this tests suite is to find errors in the ADLXWrapper codebase. Do not be surprised if there is an error found. It may not be a hardware problem, but may be a problem with the ADLXWrapper. Do not skip fixing the underlying ADLXWrapper errors if you find them. It is important to find and fix ADLXWrapper bugs and errors.
+- Native Tests should be created first. We want to test at the lowest level first to make sure that the Native functions work, and then tests the higher level Facade functions once we know the underlying Native functions are working correctly. The aim is to build a foundation of working tests that build on the success of the lower level tests, so that we know that all parts of the ADLXWrapper codebase are working as intended.
+- Please note that some features are not available on older hardware and driver versions, meaning that some tests will need to be skipped if the hardware does not support them. Make sure that tests are only skipped if the AMD ADLX SDK says that they are optional or if they provide an 'IsSupported' function. THe IsSupported function is indicative that the function is optional and must be tested before being used. Please add a gated check to functions that are optional so that they are only testsed if supported.
 
 ## Running tests
 ```powershell
