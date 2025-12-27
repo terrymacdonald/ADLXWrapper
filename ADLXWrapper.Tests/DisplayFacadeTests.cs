@@ -67,8 +67,15 @@ namespace ADLXWrapper.Tests
             var scaling = _display.GetScalingMode();
             _output.WriteLine($"Scaling supported: {scaling.supported}, mode: {scaling.mode}");
 
-            var freesync = _display.GetFreeSyncState();
-            _output.WriteLine($"FreeSync supported: {freesync.supported}, enabled: {freesync.enabled}");
+            try
+            {
+                var freesync = _display.GetFreeSyncState();
+                _output.WriteLine($"FreeSync supported: {freesync.supported}, enabled: {freesync.enabled}");
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                Skip.If(true, $"FreeSync not available: {ex.Message}");
+            }
         }
 
         public void Dispose()

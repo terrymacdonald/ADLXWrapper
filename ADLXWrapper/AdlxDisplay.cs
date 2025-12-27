@@ -67,7 +67,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetFreeSyncState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         /// <summary>
@@ -95,7 +102,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetGPUScalingState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         /// <summary>
@@ -123,7 +137,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetScalingMode(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetScalingMode(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, default);
+            }
         }
 
         public DisplayInfo GetDisplayInfo()
@@ -202,7 +223,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetVirtualSuperResolutionState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetVirtualSuperResolutionState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetVirtualSuperResolution(bool enable)
@@ -226,7 +254,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetIntegerScalingState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetIntegerScalingState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetIntegerScaling(bool enable)
@@ -250,7 +285,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetHDCPState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetHDCPState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetHdcp(bool enable)
@@ -274,7 +316,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetVariBrightState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetVariBrightState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false, default);
+            }
         }
 
         public void SetVariBright(bool enable, VariBrightMode mode)
@@ -330,7 +379,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return CreateDisplayServicesHelper().GetPixelFormatState(_display.Get());
+            try
+            {
+                return CreateDisplayServicesHelper().GetPixelFormatState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, default);
+            }
         }
 
         public void SetPixelFormat(ADLX_PIXEL_FORMAT format)
@@ -355,7 +411,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetCustomColor(_display.Get());
+            try
+            {
+                return helper.GetCustomColor(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return default;
+            }
         }
 
         public void ApplyCustomColor(CustomColorInfo info)
@@ -382,7 +445,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetGamma(_display.Get());
+            try
+            {
+                return helper.GetGamma(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return default;
+            }
         }
 
         public void ReapplyGamma()
@@ -409,7 +479,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetGamut(_display.Get());
+            try
+            {
+                return helper.GetGamut(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return default;
+            }
         }
 
         public void ReapplyGamut()
@@ -436,7 +513,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetThreeDLut(_display.Get());
+            try
+            {
+                return helper.GetThreeDLut(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return default;
+            }
         }
 
         public void ReapplyThreeDLut()
@@ -463,7 +547,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetConnectivityExperience(_display.Get());
+            try
+            {
+                return helper.GetConnectivityExperience(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return default;
+            }
         }
 
         public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
@@ -490,7 +581,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetDisplayBlankingState(_display.Get());
+            try
+            {
+                return helper.GetDisplayBlankingState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetDisplayBlanked(bool enabled)
@@ -517,7 +615,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetFreeSyncColorAccuracyState(_display.Get());
+            try
+            {
+                return helper.GetFreeSyncColorAccuracyState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetFreeSyncColorAccuracy(bool enable)
@@ -544,7 +649,14 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
-            return helper.GetDynamicRefreshRateControlState(_display.Get());
+            try
+            {
+                return helper.GetDynamicRefreshRateControlState(_display.Get());
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return (false, false);
+            }
         }
 
         public void SetDynamicRefreshRateControl(bool enable)
