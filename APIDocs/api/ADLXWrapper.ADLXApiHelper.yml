@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXApiHelper
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Initialize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -96,7 +96,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InitializeWithCallerAdl
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFullVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -227,7 +227,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -235,13 +235,13 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Get the system services as an AdlxInterfaceHandle (AddRef'd for caller ownership).
+  summary: Get the system services as an ADLXInterfaceHandle (AddRef'd for caller ownership).
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetSystemServicesHandle()
+    content: public ADLXInterfaceHandle GetSystemServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetSystemServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetSystemServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXApiHelper.GetSystemServicesHandle*
 - uid: ADLXWrapper.ADLXApiHelper.GetSystemServices
   commentId: M:ADLXWrapper.ADLXApiHelper.GetSystemServices
@@ -257,7 +257,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -348,7 +348,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -692,13 +692,13 @@ references:
   name: GetSystemServicesHandle
   nameWithType: ADLXApiHelper.GetSystemServicesHandle
   fullName: ADLXWrapper.ADLXApiHelper.GetSystemServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXApiHelper.GetSystemServices*
   commentId: Overload:ADLXWrapper.ADLXApiHelper.GetSystemServices
   href: ADLXWrapper.ADLXApiHelper.html#ADLXWrapper_ADLXApiHelper_GetSystemServices

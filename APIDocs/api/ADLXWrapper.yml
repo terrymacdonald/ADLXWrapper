@@ -15,6 +15,7 @@ items:
   - ADLXWrapper.ADLXGPU
   - ADLXWrapper.ADLXGPUTuningServicesHelper
   - ADLXWrapper.ADLXHardwareDetection
+  - ADLXWrapper.ADLXInterfaceHandle
   - ADLXWrapper.ADLXListHelpers
   - ADLXWrapper.ADLXMultimediaServicesHelper
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
@@ -73,7 +74,6 @@ items:
   - ADLXWrapper.ADLX_UINT16_RGB
   - ADLXWrapper.ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
   - ADLXWrapper.ADLX_WHITE_POINT
-  - ADLXWrapper.AdlxInterfaceHandle
   - ADLXWrapper.All3DSettingsInfo
   - ADLXWrapper.AllMetricsSnapshotInfo
   - ADLXWrapper.AnisotropicFilteringInfo
@@ -813,13 +813,13 @@ references:
   name: ADLXHardwareDetection
   nameWithType: ADLXHardwareDetection
   fullName: ADLXWrapper.ADLXHardwareDetection
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLX
   commentId: T:ADLXWrapper.ADLX
   href: ADLXWrapper.ADLX.html

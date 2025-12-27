@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_CustomResolution
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resWidth
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resHeight
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: refreshRate
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: presentation
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: timingStandard
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -195,7 +195,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPixelClock
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -223,7 +223,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: detailedTiming
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs

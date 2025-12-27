@@ -43,11 +43,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available 3D settings services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+        public ADLXInterfaceHandle Get3DSettingsServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace ADLXWrapper
             }
         }
 
-        public AdlxInterfaceHandle Get3DSettingsChangedHandling()
+        public ADLXInterfaceHandle Get3DSettingsChangedHandling()
         {
-            return AdlxInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>

@@ -1,31 +1,31 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
-  id: AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
+  id: ADLXInterfaceHandle
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.AdlxInterfaceHandle.As``1
-  - ADLXWrapper.AdlxInterfaceHandle.Dispose
-  - ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
-  - ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
-  - ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  - ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
+  - ADLXWrapper.ADLXInterfaceHandle.As``1
+  - ADLXWrapper.ADLXInterfaceHandle.Dispose
+  - ADLXWrapper.ADLXInterfaceHandle.From(System.Void*,System.Boolean)
+  - ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(System.Void*)
+  - ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  - ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  - ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
   langs:
   - csharp
   - vb
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
   type: Struct
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: AdlxInterfaceHandle
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    id: ADLXInterfaceHandle
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 7
   assemblies:
   - ADLXWrapper
@@ -33,8 +33,8 @@ items:
   summary: Lightweight lifetime wrapper for raw ADLX interface pointers.
   example: []
   syntax:
-    content: 'public readonly struct AdlxInterfaceHandle : IDisposable'
-    content.vb: Public Structure AdlxInterfaceHandle Implements IDisposable
+    content: 'public readonly struct ADLXInterfaceHandle : IDisposable'
+    content.vb: Public Structure ADLXInterfaceHandle Implements IDisposable
   implements:
   - System.IDisposable
   inheritedMembers:
@@ -44,24 +44,24 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  commentId: P:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+- uid: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  commentId: P:ADLXWrapper.ADLXInterfaceHandle.IsInvalid
   id: IsInvalid
-  parent: ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
   name: IsInvalid
-  nameWithType: AdlxInterfaceHandle.IsInvalid
-  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  nameWithType: ADLXInterfaceHandle.IsInvalid
+  fullName: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 18
   assemblies:
   - ADLXWrapper
@@ -72,61 +72,61 @@ items:
     return:
       type: System.Boolean
     content.vb: Public ReadOnly Property IsInvalid As Boolean
-  overload: ADLXWrapper.AdlxInterfaceHandle.IsInvalid*
-- uid: ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
+  overload: ADLXWrapper.ADLXInterfaceHandle.IsInvalid*
+- uid: ADLXWrapper.ADLXInterfaceHandle.From(System.Void*,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.From(System.Void*,System.Boolean)
   id: From(System.Void*,System.Boolean)
-  parent: ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
   name: From(void*, bool)
-  nameWithType: AdlxInterfaceHandle.From(void*, bool)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.From(void*, bool)
+  nameWithType: ADLXInterfaceHandle.From(void*, bool)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.From(void*, bool)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: From
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 20
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public static AdlxInterfaceHandle From(void* ptr, bool addRef = true)
+    content: public static ADLXInterfaceHandle From(void* ptr, bool addRef = true)
     parameters:
     - id: ptr
       type: System.Void*
     - id: addRef
       type: System.Boolean
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Shared Function From(ptr As Void*, addRef As Boolean = True) As AdlxInterfaceHandle
-  overload: ADLXWrapper.AdlxInterfaceHandle.From*
-  nameWithType.vb: AdlxInterfaceHandle.From(Void*, Boolean)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.From(Void*, Boolean)
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Shared Function From(ptr As Void*, addRef As Boolean = True) As ADLXInterfaceHandle
+  overload: ADLXWrapper.ADLXInterfaceHandle.From*
+  nameWithType.vb: ADLXInterfaceHandle.From(Void*, Boolean)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.From(Void*, Boolean)
   name.vb: From(Void*, Boolean)
-- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
+- uid: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(System.Void*)
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(System.Void*)
   id: FromNonRefCounted(System.Void*)
-  parent: ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
   name: FromNonRefCounted(void*)
-  nameWithType: AdlxInterfaceHandle.FromNonRefCounted(void*)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(void*)
+  nameWithType: ADLXInterfaceHandle.FromNonRefCounted(void*)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(void*)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FromNonRefCounted
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 34
   assemblies:
   - ADLXWrapper
@@ -134,35 +134,35 @@ items:
   summary: Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).
   example: []
   syntax:
-    content: public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)
+    content: public static ADLXInterfaceHandle FromNonRefCounted(void* ptr)
     parameters:
     - id: ptr
       type: System.Void*
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Shared Function FromNonRefCounted(ptr As Void*) As AdlxInterfaceHandle
-  overload: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
-  nameWithType.vb: AdlxInterfaceHandle.FromNonRefCounted(Void*)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(Void*)
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Shared Function FromNonRefCounted(ptr As Void*) As ADLXInterfaceHandle
+  overload: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted*
+  nameWithType.vb: ADLXInterfaceHandle.FromNonRefCounted(Void*)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(Void*)
   name.vb: FromNonRefCounted(Void*)
-- uid: ADLXWrapper.AdlxInterfaceHandle.As``1
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.As``1
+- uid: ADLXWrapper.ADLXInterfaceHandle.As``1
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.As``1
   id: As``1
-  parent: ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
   name: As<T>()
-  nameWithType: AdlxInterfaceHandle.As<T>()
-  fullName: ADLXWrapper.AdlxInterfaceHandle.As<T>()
+  nameWithType: ADLXInterfaceHandle.As<T>()
+  fullName: ADLXWrapper.ADLXInterfaceHandle.As<T>()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: As
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 40
   assemblies:
   - ADLXWrapper
@@ -174,28 +174,28 @@ items:
     return:
       type: '{T}*'
     content.vb: Public Function [As](Of T As Structure)() As T*
-  overload: ADLXWrapper.AdlxInterfaceHandle.As*
-  nameWithType.vb: AdlxInterfaceHandle.As(Of T)()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.As(Of T)()
+  overload: ADLXWrapper.ADLXInterfaceHandle.As*
+  nameWithType.vb: ADLXInterfaceHandle.As(Of T)()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.As(Of T)()
   name.vb: As(Of T)()
-- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.Dispose
+- uid: ADLXWrapper.ADLXInterfaceHandle.Dispose
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.Dispose
   id: Dispose
-  parent: ADLXWrapper.AdlxInterfaceHandle
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
   name: Dispose()
-  nameWithType: AdlxInterfaceHandle.Dispose()
-  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose()
+  nameWithType: ADLXInterfaceHandle.Dispose()
+  fullName: ADLXWrapper.ADLXInterfaceHandle.Dispose()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 42
   assemblies:
   - ADLXWrapper
@@ -205,77 +205,77 @@ items:
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose()
-  overload: ADLXWrapper.AdlxInterfaceHandle.Dispose*
+  overload: ADLXWrapper.ADLXInterfaceHandle.Dispose*
   implements:
   - System.IDisposable.Dispose
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
-  id: op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
-  parent: ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
+  id: op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
-  name: implicit operator nint(AdlxInterfaceHandle)
-  nameWithType: AdlxInterfaceHandle.implicit operator nint(AdlxInterfaceHandle)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator nint(ADLXWrapper.AdlxInterfaceHandle)
+  name: implicit operator nint(ADLXInterfaceHandle)
+  nameWithType: ADLXInterfaceHandle.implicit operator nint(ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator nint(ADLXWrapper.ADLXInterfaceHandle)
   type: Operator
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 50
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public static implicit operator nint(AdlxInterfaceHandle handle)
+    content: public static implicit operator nint(ADLXInterfaceHandle handle)
     parameters:
     - id: handle
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
     return:
       type: System.IntPtr
-    content.vb: Public Shared Widening Operator CType(handle As AdlxInterfaceHandle) As IntPtr
-  overload: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
-  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
-  name.vb: CType(AdlxInterfaceHandle)
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  id: op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  parent: ADLXWrapper.AdlxInterfaceHandle
+    content.vb: Public Shared Widening Operator CType(handle As ADLXInterfaceHandle) As IntPtr
+  overload: ADLXWrapper.ADLXInterfaceHandle.op_Implicit*
+  nameWithType.vb: ADLXInterfaceHandle.CType(ADLXInterfaceHandle)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType(ADLXWrapper.ADLXInterfaceHandle)
+  name.vb: CType(ADLXInterfaceHandle)
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  id: op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  parent: ADLXWrapper.ADLXInterfaceHandle
   langs:
   - csharp
   - vb
-  name: implicit operator IADLXInterface*(AdlxInterfaceHandle)
-  nameWithType: AdlxInterfaceHandle.implicit operator IADLXInterface*(AdlxInterfaceHandle)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator ADLXWrapper.IADLXInterface*(ADLXWrapper.AdlxInterfaceHandle)
+  name: implicit operator IADLXInterface*(ADLXInterfaceHandle)
+  nameWithType: ADLXInterfaceHandle.implicit operator IADLXInterface*(ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator ADLXWrapper.IADLXInterface*(ADLXWrapper.ADLXInterfaceHandle)
   type: Operator
   source:
     remote:
-      path: ADLXWrapper/AdlxInterfaceHandle.cs
-      branch: develop
+      path: ADLXWrapper/ADLXInterfaceHandle.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
-    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
+    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public static implicit operator IADLXInterface*(AdlxInterfaceHandle handle)
+    content: public static implicit operator IADLXInterface*(ADLXInterfaceHandle handle)
     parameters:
     - id: handle
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
     return:
       type: ADLXWrapper.IADLXInterface*
-    content.vb: Public Shared Widening Operator CType(handle As AdlxInterfaceHandle) As IADLXInterface*
-  overload: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
-  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
-  name.vb: CType(AdlxInterfaceHandle)
+    content.vb: Public Shared Widening Operator CType(handle As ADLXInterfaceHandle) As IADLXInterface*
+  overload: ADLXWrapper.ADLXInterfaceHandle.op_Implicit*
+  nameWithType.vb: ADLXInterfaceHandle.CType(ADLXInterfaceHandle)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType(ADLXWrapper.ADLXInterfaceHandle)
+  name.vb: CType(ADLXInterfaceHandle)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -508,12 +508,12 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_IsInvalid
+- uid: ADLXWrapper.ADLXInterfaceHandle.IsInvalid*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  href: ADLXWrapper.ADLXInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_IsInvalid
   name: IsInvalid
-  nameWithType: AdlxInterfaceHandle.IsInvalid
-  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
+  nameWithType: ADLXInterfaceHandle.IsInvalid
+  fullName: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -525,12 +525,12 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.AdlxInterfaceHandle.From*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.From
-  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_From_System_Void__System_Boolean_
+- uid: ADLXWrapper.ADLXInterfaceHandle.From*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.From
+  href: ADLXWrapper.ADLXInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_From_System_Void__System_Boolean_
   name: From
-  nameWithType: AdlxInterfaceHandle.From
-  fullName: ADLXWrapper.AdlxInterfaceHandle.From
+  nameWithType: ADLXInterfaceHandle.From
+  fullName: ADLXWrapper.ADLXInterfaceHandle.From
 - uid: System.Void*
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.void
@@ -552,25 +552,25 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.void
   - name: '*'
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
-  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted
+  href: ADLXWrapper.ADLXInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_FromNonRefCounted_System_Void__
   name: FromNonRefCounted
-  nameWithType: AdlxInterfaceHandle.FromNonRefCounted
-  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
-- uid: ADLXWrapper.AdlxInterfaceHandle.As*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.As
-  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_As__1
+  nameWithType: ADLXInterfaceHandle.FromNonRefCounted
+  fullName: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted
+- uid: ADLXWrapper.ADLXInterfaceHandle.As*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.As
+  href: ADLXWrapper.ADLXInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_As__1
   name: As
-  nameWithType: AdlxInterfaceHandle.As
-  fullName: ADLXWrapper.AdlxInterfaceHandle.As
+  nameWithType: ADLXInterfaceHandle.As
+  fullName: ADLXWrapper.ADLXInterfaceHandle.As
 - uid: '{T}*'
   isExternal: true
   name: T*
@@ -582,12 +582,12 @@ references:
   spec.vb:
   - name: T
   - name: '*'
-- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.Dispose
-  href: ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_Dispose
+- uid: ADLXWrapper.ADLXInterfaceHandle.Dispose*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.Dispose
+  href: ADLXWrapper.ADLXInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_Dispose
   name: Dispose
-  nameWithType: AdlxInterfaceHandle.Dispose
-  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose
+  nameWithType: ADLXInterfaceHandle.Dispose
+  fullName: ADLXWrapper.ADLXInterfaceHandle.Dispose
 - uid: System.IDisposable.Dispose
   commentId: M:System.IDisposable.Dispose
   parent: System.IDisposable
@@ -610,13 +610,13 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
   - name: (
   - name: )
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.op_Implicit
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit*
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.op_Implicit
   name: implicit operator
-  nameWithType: AdlxInterfaceHandle.implicit operator
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator
-  nameWithType.vb: AdlxInterfaceHandle.CType
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType
+  nameWithType: ADLXInterfaceHandle.implicit operator
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator
+  nameWithType.vb: ADLXInterfaceHandle.CType
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType
   name.vb: CType
   spec.csharp:
   - name: implicit

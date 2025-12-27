@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSmartShiftMax
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -215,7 +215,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBiasMode
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -247,7 +247,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBiasMode
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -279,7 +279,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBiasRange
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -311,7 +311,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBias
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
@@ -346,7 +346,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBias
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftMax.cs

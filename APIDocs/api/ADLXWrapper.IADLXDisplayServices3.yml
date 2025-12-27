@@ -40,7 +40,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayServices3
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -73,7 +73,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -158,7 +158,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -195,7 +195,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -230,7 +230,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -262,7 +262,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -330,7 +330,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -364,7 +364,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -396,7 +396,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSync
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -430,7 +430,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUScaling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -498,7 +498,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -532,7 +532,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScaling
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -566,7 +566,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepth
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -600,7 +600,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormat
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -634,7 +634,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -668,7 +668,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDCP
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -702,7 +702,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolution
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -736,7 +736,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBright
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -770,7 +770,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlanking
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -804,7 +804,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayConnectivityExperience
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -838,7 +838,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
@@ -872,7 +872,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayServices3.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracy
     path: ../ADLXWrapper/cs_generated/IADLXDisplayServices3.cs

@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX3DSettingsServicesHelper
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -105,7 +105,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -133,7 +133,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -144,10 +144,10 @@ items:
   summary: Returns an AddRef'd handle to the highest available 3D settings services interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+    content: public ADLXInterfaceHandle Get3DSettingsServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function Get3DSettingsServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function Get3DSettingsServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -167,7 +167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandlingNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -205,7 +205,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGet3DSettingsChangedHandlingNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -241,7 +241,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandling
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -250,10 +250,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle Get3DSettingsChangedHandling()
+    content: public ADLXInterfaceHandle Get3DSettingsChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function Get3DSettingsChangedHandling() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function Get3DSettingsChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsChangedHandling*
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -311,7 +311,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -345,7 +345,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -376,7 +376,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -414,7 +414,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -459,7 +459,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -494,7 +494,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -524,7 +524,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -822,13 +822,13 @@ references:
   name: Get3DSettingsServicesHandle
   nameWithType: ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXListHelpers
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListSize
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsListEmpty
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListItemAt
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -166,7 +166,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ListToArray
     path: ../ADLXWrapper/ADLXUtils.cs

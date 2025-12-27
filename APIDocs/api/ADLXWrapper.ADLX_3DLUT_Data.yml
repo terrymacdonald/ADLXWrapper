@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_3DLUT_Data
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: data
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_Data.cs

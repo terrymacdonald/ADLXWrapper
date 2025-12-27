@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDesktopListChanged
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs

@@ -29,7 +29,7 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
-  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
   langs:
   - csharp
@@ -41,7 +41,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPowerTuningServicesHelper
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -79,7 +79,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -145,7 +145,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -156,10 +156,10 @@ items:
   summary: Returns an AddRef'd handle to the highest available power tuning services interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+    content: public ADLXInterfaceHandle GetPowerTuningServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetPowerTuningServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetPowerTuningServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -217,7 +217,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -262,26 +262,26 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle[] EnumerateGPUConnectGpuHandles()
+    content: public ADLXInterfaceHandle[] EnumerateGPUConnectGpuHandles()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle[]
-    content.vb: Public Function EnumerateGPUConnectGpuHandles() As AdlxInterfaceHandle()
+      type: ADLXWrapper.ADLXInterfaceHandle[]
+    content.vb: Public Function EnumerateGPUConnectGpuHandles() As ADLXInterfaceHandle()
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles*
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  id: TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  id: TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
   parent: ADLXWrapper.ADLXPowerTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
-  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  name: TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[])
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[])
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.ADLXInterfaceHandle[])
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -292,17 +292,17 @@ items:
   summary: Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.
   example: []
   syntax:
-    content: public bool TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[] handles)
+    content: public bool TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[] handles)
     parameters:
     - id: handles
-      type: ADLXWrapper.AdlxInterfaceHandle[]
+      type: ADLXWrapper.ADLXInterfaceHandle[]
     return:
       type: System.Boolean
-    content.vb: Public Function TryEnumerateGPUConnectGpuHandles([handles] As AdlxInterfaceHandle()) As Boolean
+    content.vb: Public Function TryEnumerateGPUConnectGpuHandles([handles] As ADLXInterfaceHandle()) As Boolean
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
-  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
-  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle())
-  name.vb: TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXInterfaceHandle())
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle())
+  name.vb: TryEnumerateGPUConnectGpuHandles(ADLXInterfaceHandle())
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   id: GetGPUConnectGpuListNative
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUConnectGpuListNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -382,7 +382,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandling
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -393,10 +393,10 @@ items:
   summary: Returns an AddRef'd handle to the power tuning change handling interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetPowerTuningChangedHandling()
+    content: public ADLXInterfaceHandle GetPowerTuningChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetPowerTuningChangedHandling() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetPowerTuningChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandling*
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.AddPowerTuningEventListener(ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback)
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddPowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -454,7 +454,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -488,7 +488,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -525,7 +525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMaxNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -563,7 +563,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -592,7 +592,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -625,7 +625,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -662,7 +662,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -691,7 +691,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -724,7 +724,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -757,7 +757,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -788,7 +788,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -823,7 +823,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -856,7 +856,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -893,7 +893,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -923,7 +923,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -1221,13 +1221,13 @@ references:
   name: GetPowerTuningServicesHandle
   nameWithType: ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html
@@ -1252,30 +1252,30 @@ references:
   name: EnumerateGPUConnectGpuHandles
   nameWithType: ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
-- uid: ADLXWrapper.AdlxInterfaceHandle[]
+- uid: ADLXWrapper.ADLXInterfaceHandle[]
   isExternal: true
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle[]
-  nameWithType: AdlxInterfaceHandle[]
-  fullName: ADLXWrapper.AdlxInterfaceHandle[]
-  nameWithType.vb: AdlxInterfaceHandle()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle()
-  name.vb: AdlxInterfaceHandle()
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle[]
+  nameWithType: ADLXInterfaceHandle[]
+  fullName: ADLXWrapper.ADLXInterfaceHandle[]
+  nameWithType.vb: ADLXInterfaceHandle()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle()
+  name.vb: ADLXInterfaceHandle()
   spec.csharp:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: '['
   - name: ']'
   spec.vb:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: (
   - name: )
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
-  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_AdlxInterfaceHandle____
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_ADLXInterfaceHandle____
   name: TryEnumerateGPUConnectGpuHandles
   nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles

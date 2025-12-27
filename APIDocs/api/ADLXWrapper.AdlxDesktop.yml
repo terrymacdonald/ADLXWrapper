@@ -33,11 +33,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktop
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -71,11 +71,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -112,11 +112,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -141,11 +141,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -170,11 +170,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -199,11 +199,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -228,11 +228,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -257,11 +257,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -286,11 +286,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -315,11 +315,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -344,11 +344,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayInfosForDesktop
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -374,11 +374,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 68
   assemblies:
   - ADLXWrapper
@@ -404,11 +404,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 100
   assemblies:
   - ADLXWrapper
@@ -437,11 +437,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 108
   assemblies:
   - ADLXWrapper
@@ -471,11 +471,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 117
   assemblies:
   - ADLXWrapper
@@ -499,11 +499,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 127
   assemblies:
   - ADLXWrapper
@@ -529,11 +529,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplayInfosForDesktop
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 139
   assemblies:
   - ADLXWrapper
@@ -559,11 +559,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 151
   assemblies:
   - ADLXWrapper
@@ -589,11 +589,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 200
   assemblies:
   - ADLXWrapper
@@ -619,11 +619,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDesktop.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDesktop.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxDesktop.cs
+    path: ../ADLXWrapper/ADLXDesktop.cs
     startLine: 213
   assemblies:
   - ADLXWrapper

@@ -47,12 +47,12 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the performance monitoring services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+        public ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
             {
-                return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+                return ADLXInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
             }
         }
 

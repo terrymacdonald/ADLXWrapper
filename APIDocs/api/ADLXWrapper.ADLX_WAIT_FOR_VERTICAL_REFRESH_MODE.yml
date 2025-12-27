@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ALWAYS_OFF
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_OFF_UNLESS_APP_SPECIFIES
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ON_UNLESS_APP_SPECIFIES
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WFVR_ALWAYS_ON
     path: ../ADLXWrapper/cs_generated/ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE.cs

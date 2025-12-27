@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_UNKOWN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_MONITOR
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_TELEVISION
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_LCD_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_DIGITAL_FLAT_PANEL
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_COMPONENT_VIDEO
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DISPLAY_TYPE_PROJECTOR
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TYPE.cs

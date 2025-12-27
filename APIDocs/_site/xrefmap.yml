@@ -3420,15 +3420,15 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
   nameWithType: ADLXDisplayServicesHelper.TryEnumerateADLXDisplays
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  name: TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
-  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_AdlxInterfaceHandle____
-  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  name.vb: TryEnumerateDisplayHandles(AdlxInterfaceHandle())
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.AdlxInterfaceHandle[])
-  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle())
-  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
-  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(AdlxInterfaceHandle())
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  name: TryEnumerateDisplayHandles(out ADLXInterfaceHandle[])
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_ADLXInterfaceHandle____
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  name.vb: TryEnumerateDisplayHandles(ADLXInterfaceHandle())
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.ADLXInterfaceHandle[])
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle())
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXInterfaceHandle[])
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXInterfaceHandle())
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
   name: TryEnumerateDisplayHandles
   href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_
@@ -4521,6 +4521,114 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXHardwareDetection.HasAMDGPU
   nameWithType: ADLXHardwareDetection.HasAMDGPU
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  name: ADLXInterfaceHandle
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle.As*
+  name: As
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_As_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.As
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXInterfaceHandle.As
+  nameWithType: ADLXInterfaceHandle.As
+- uid: ADLXWrapper.ADLXInterfaceHandle.As``1
+  name: As<T>()
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_As__1
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.As``1
+  name.vb: As(Of T)()
+  fullName: ADLXWrapper.ADLXInterfaceHandle.As<T>()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.As(Of T)()
+  nameWithType: ADLXInterfaceHandle.As<T>()
+  nameWithType.vb: ADLXInterfaceHandle.As(Of T)()
+- uid: ADLXWrapper.ADLXInterfaceHandle.Dispose
+  name: Dispose()
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_Dispose
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.Dispose
+  fullName: ADLXWrapper.ADLXInterfaceHandle.Dispose()
+  nameWithType: ADLXInterfaceHandle.Dispose()
+- uid: ADLXWrapper.ADLXInterfaceHandle.Dispose*
+  name: Dispose
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_Dispose_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.Dispose
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXInterfaceHandle.Dispose
+  nameWithType: ADLXInterfaceHandle.Dispose
+- uid: ADLXWrapper.ADLXInterfaceHandle.From(System.Void*,System.Boolean)
+  name: From(void*, bool)
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_From_System_Void__System_Boolean_
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.From(System.Void*,System.Boolean)
+  name.vb: From(Void*, Boolean)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.From(void*, bool)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.From(Void*, Boolean)
+  nameWithType: ADLXInterfaceHandle.From(void*, bool)
+  nameWithType.vb: ADLXInterfaceHandle.From(Void*, Boolean)
+- uid: ADLXWrapper.ADLXInterfaceHandle.From*
+  name: From
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_From_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.From
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXInterfaceHandle.From
+  nameWithType: ADLXInterfaceHandle.From
+- uid: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(System.Void*)
+  name: FromNonRefCounted(void*)
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_FromNonRefCounted_System_Void__
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(System.Void*)
+  name.vb: FromNonRefCounted(Void*)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(void*)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted(Void*)
+  nameWithType: ADLXInterfaceHandle.FromNonRefCounted(void*)
+  nameWithType.vb: ADLXInterfaceHandle.FromNonRefCounted(Void*)
+- uid: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted*
+  name: FromNonRefCounted
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_FromNonRefCounted_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXInterfaceHandle.FromNonRefCounted
+  nameWithType: ADLXInterfaceHandle.FromNonRefCounted
+- uid: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  name: IsInvalid
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_IsInvalid
+  commentId: P:ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  fullName: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  nameWithType: ADLXInterfaceHandle.IsInvalid
+- uid: ADLXWrapper.ADLXInterfaceHandle.IsInvalid*
+  name: IsInvalid
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_IsInvalid_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXInterfaceHandle.IsInvalid
+  nameWithType: ADLXInterfaceHandle.IsInvalid
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  name: implicit operator IADLXInterface*(ADLXInterfaceHandle)
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_op_Implicit_ADLXWrapper_ADLXInterfaceHandle__ADLXWrapper_IADLXInterface_
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~ADLXWrapper.IADLXInterface*
+  name.vb: CType(ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator ADLXWrapper.IADLXInterface*(ADLXWrapper.ADLXInterfaceHandle)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType(ADLXWrapper.ADLXInterfaceHandle)
+  nameWithType: ADLXInterfaceHandle.implicit operator IADLXInterface*(ADLXInterfaceHandle)
+  nameWithType.vb: ADLXInterfaceHandle.CType(ADLXInterfaceHandle)
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
+  name: implicit operator nint(ADLXInterfaceHandle)
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_op_Implicit_ADLXWrapper_ADLXInterfaceHandle__System_IntPtr
+  commentId: M:ADLXWrapper.ADLXInterfaceHandle.op_Implicit(ADLXWrapper.ADLXInterfaceHandle)~System.IntPtr
+  name.vb: CType(ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator nint(ADLXWrapper.ADLXInterfaceHandle)
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType(ADLXWrapper.ADLXInterfaceHandle)
+  nameWithType: ADLXInterfaceHandle.implicit operator nint(ADLXInterfaceHandle)
+  nameWithType.vb: ADLXInterfaceHandle.CType(ADLXInterfaceHandle)
+- uid: ADLXWrapper.ADLXInterfaceHandle.op_Implicit*
+  name: implicit operator
+  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_ADLXInterfaceHandle_op_Implicit_
+  commentId: Overload:ADLXWrapper.ADLXInterfaceHandle.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: ADLXWrapper.ADLXInterfaceHandle.implicit operator
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle.CType
+  nameWithType: ADLXInterfaceHandle.implicit operator
+  nameWithType.vb: ADLXInterfaceHandle.CType
 - uid: ADLXWrapper.ADLXListHelpers
   name: ADLXListHelpers
   href: api/ADLXWrapper.ADLXListHelpers.html
@@ -6090,15 +6198,15 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
   nameWithType: ADLXPowerTuningServicesHelper.TryApplySmartShiftMax
-- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  name: TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
-  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_AdlxInterfaceHandle____
-  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  name.vb: TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
-  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.AdlxInterfaceHandle[])
-  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.AdlxInterfaceHandle())
-  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[])
-  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(AdlxInterfaceHandle())
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  name: TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[])
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_ADLXWrapper_ADLXInterfaceHandle____
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  name.vb: TryEnumerateGPUConnectGpuHandles(ADLXInterfaceHandle())
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXWrapper.ADLXInterfaceHandle[])
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle())
+  nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[])
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXInterfaceHandle())
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles*
   name: TryEnumerateGPUConnectGpuHandles
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryEnumerateGPUConnectGpuHandles_
@@ -8757,114 +8865,6 @@ references:
   commentId: F:ADLXWrapper.ADLX_WHITE_POINT.WHITE_POINT_CUSTOM
   fullName: ADLXWrapper.ADLX_WHITE_POINT.WHITE_POINT_CUSTOM
   nameWithType: ADLX_WHITE_POINT.WHITE_POINT_CUSTOM
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  name: AdlxInterfaceHandle
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle.As*
-  name: As
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_As_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.As
-  isSpec: "True"
-  fullName: ADLXWrapper.AdlxInterfaceHandle.As
-  nameWithType: AdlxInterfaceHandle.As
-- uid: ADLXWrapper.AdlxInterfaceHandle.As``1
-  name: As<T>()
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_As__1
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.As``1
-  name.vb: As(Of T)()
-  fullName: ADLXWrapper.AdlxInterfaceHandle.As<T>()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.As(Of T)()
-  nameWithType: AdlxInterfaceHandle.As<T>()
-  nameWithType.vb: AdlxInterfaceHandle.As(Of T)()
-- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose
-  name: Dispose()
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_Dispose
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.Dispose
-  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose()
-  nameWithType: AdlxInterfaceHandle.Dispose()
-- uid: ADLXWrapper.AdlxInterfaceHandle.Dispose*
-  name: Dispose
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_Dispose_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.Dispose
-  isSpec: "True"
-  fullName: ADLXWrapper.AdlxInterfaceHandle.Dispose
-  nameWithType: AdlxInterfaceHandle.Dispose
-- uid: ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
-  name: From(void*, bool)
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_From_System_Void__System_Boolean_
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.From(System.Void*,System.Boolean)
-  name.vb: From(Void*, Boolean)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.From(void*, bool)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.From(Void*, Boolean)
-  nameWithType: AdlxInterfaceHandle.From(void*, bool)
-  nameWithType.vb: AdlxInterfaceHandle.From(Void*, Boolean)
-- uid: ADLXWrapper.AdlxInterfaceHandle.From*
-  name: From
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_From_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.From
-  isSpec: "True"
-  fullName: ADLXWrapper.AdlxInterfaceHandle.From
-  nameWithType: AdlxInterfaceHandle.From
-- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
-  name: FromNonRefCounted(void*)
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_System_Void__
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(System.Void*)
-  name.vb: FromNonRefCounted(Void*)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(void*)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted(Void*)
-  nameWithType: AdlxInterfaceHandle.FromNonRefCounted(void*)
-  nameWithType.vb: AdlxInterfaceHandle.FromNonRefCounted(Void*)
-- uid: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted*
-  name: FromNonRefCounted
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_FromNonRefCounted_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
-  isSpec: "True"
-  fullName: ADLXWrapper.AdlxInterfaceHandle.FromNonRefCounted
-  nameWithType: AdlxInterfaceHandle.FromNonRefCounted
-- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  name: IsInvalid
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_IsInvalid
-  commentId: P:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  nameWithType: AdlxInterfaceHandle.IsInvalid
-- uid: ADLXWrapper.AdlxInterfaceHandle.IsInvalid*
-  name: IsInvalid
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_IsInvalid_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  isSpec: "True"
-  fullName: ADLXWrapper.AdlxInterfaceHandle.IsInvalid
-  nameWithType: AdlxInterfaceHandle.IsInvalid
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  name: implicit operator IADLXInterface*(AdlxInterfaceHandle)
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_op_Implicit_ADLXWrapper_AdlxInterfaceHandle__ADLXWrapper_IADLXInterface_
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~ADLXWrapper.IADLXInterface*
-  name.vb: CType(AdlxInterfaceHandle)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator ADLXWrapper.IADLXInterface*(ADLXWrapper.AdlxInterfaceHandle)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
-  nameWithType: AdlxInterfaceHandle.implicit operator IADLXInterface*(AdlxInterfaceHandle)
-  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
-  name: implicit operator nint(AdlxInterfaceHandle)
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_op_Implicit_ADLXWrapper_AdlxInterfaceHandle__System_IntPtr
-  commentId: M:ADLXWrapper.AdlxInterfaceHandle.op_Implicit(ADLXWrapper.AdlxInterfaceHandle)~System.IntPtr
-  name.vb: CType(AdlxInterfaceHandle)
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator nint(ADLXWrapper.AdlxInterfaceHandle)
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType(ADLXWrapper.AdlxInterfaceHandle)
-  nameWithType: AdlxInterfaceHandle.implicit operator nint(AdlxInterfaceHandle)
-  nameWithType.vb: AdlxInterfaceHandle.CType(AdlxInterfaceHandle)
-- uid: ADLXWrapper.AdlxInterfaceHandle.op_Implicit*
-  name: implicit operator
-  href: api/ADLXWrapper.AdlxInterfaceHandle.html#ADLXWrapper_AdlxInterfaceHandle_op_Implicit_
-  commentId: Overload:ADLXWrapper.AdlxInterfaceHandle.op_Implicit
-  isSpec: "True"
-  name.vb: CType
-  fullName: ADLXWrapper.AdlxInterfaceHandle.implicit operator
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle.CType
-  nameWithType: AdlxInterfaceHandle.implicit operator
-  nameWithType.vb: AdlxInterfaceHandle.CType
 - uid: ADLXWrapper.All3DSettingsInfo
   name: All3DSettingsInfo
   href: api/ADLXWrapper.All3DSettingsInfo.html

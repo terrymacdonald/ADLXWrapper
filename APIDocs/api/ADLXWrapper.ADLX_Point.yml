@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_Point.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_Point
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_Point.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: x
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_Point.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: y
     path: ../ADLXWrapper/cs_generated/ADLX_Point.cs

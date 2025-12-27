@@ -25,12 +25,12 @@ unsafe
         return;
     }
 
-    using var sys2 = AdlxInterfaceHandle.From((void*)sys2Ptr);
+    using var sys2 = ADLXInterfaceHandle.From((void*)sys2Ptr);
     Console.WriteLine("System2 available. Eyefinity create/destroy helpers are accessible, but disabled in this sample by default.");
     Console.WriteLine("Uncomment the block below to experiment (changes user display configuration!).");
 
     /*
-    using var dsk2 = AdlxInterfaceHandle.From(((IADLXSystem2*)sys2.As<IADLXSystem2>())->GetDesktopsServices(&var ds) == ADLX_RESULT.ADLX_OK ? ds : null, addRef: false);
+    using var dsk2 = ADLXInterfaceHandle.From(((IADLXSystem2*)sys2.As<IADLXSystem2>())->GetDesktopsServices(&var ds) == ADLX_RESULT.ADLX_OK ? ds : null, addRef: false);
     using var desktopHelper2 = new ADLXDesktopServicesHelper(dsk2.As<IADLXDesktopServices>());
     // Example: create/destroy a simple Eyefinity desktop
     // var simple = desktopHelper2.GetSimpleEyefinity();

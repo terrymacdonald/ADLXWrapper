@@ -74,7 +74,7 @@ items:
   - ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomColor(ADLXWrapper.IADLXDisplay*,ADLXWrapper.CustomColorInfo)
   - ADLXWrapper.ADLXDisplayServicesHelper.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
   - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateADLXDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
-  - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+  - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
   - ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplays(System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}@)
   - ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamma(ADLXWrapper.IADLXDisplay*)
   - ADLXWrapper.ADLXDisplayServicesHelper.TryReapplyGamut(ADLXWrapper.IADLXDisplay*)
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplayServicesHelper
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -185,7 +185,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -219,7 +219,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -230,10 +230,10 @@ items:
   summary: Returns an AddRef'd handle to the current display services interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetDisplayServicesHandle()
+    content: public ADLXInterfaceHandle GetDisplayServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetDisplayServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetDisplayServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -253,7 +253,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -290,7 +290,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysInUse
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -327,7 +327,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -363,7 +363,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -391,7 +391,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDisplays
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -425,7 +425,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -466,7 +466,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDisplaysForGpu
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -510,7 +510,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDisplay
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -560,7 +560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -597,7 +597,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayHandles
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -608,10 +608,10 @@ items:
   summary: Enumerates display handles (AddRef'd) for native consumption.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle[] EnumerateDisplayHandles()
+    content: public ADLXInterfaceHandle[] EnumerateDisplayHandles()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle[]
-    content.vb: Public Function EnumerateDisplayHandles() As AdlxInterfaceHandle()
+      type: ADLXWrapper.ADLXInterfaceHandle[]
+    content.vb: Public Function EnumerateDisplayHandles() As ADLXInterfaceHandle()
   overload: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -620,21 +620,21 @@ items:
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If disposed.
-- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
-  id: TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle[]@)
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  id: TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
   parent: ADLXWrapper.ADLXDisplayServicesHelper
   langs:
   - csharp
   - vb
-  name: TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
-  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out AdlxInterfaceHandle[])
-  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.AdlxInterfaceHandle[])
+  name: TryEnumerateDisplayHandles(out ADLXInterfaceHandle[])
+  nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXInterfaceHandle[])
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(out ADLXWrapper.ADLXInterfaceHandle[])
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDisplayHandles
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -645,17 +645,17 @@ items:
   summary: Tries to enumerate display handles; returns false if not supported.
   example: []
   syntax:
-    content: public bool TryEnumerateDisplayHandles(out AdlxInterfaceHandle[] handles)
+    content: public bool TryEnumerateDisplayHandles(out ADLXInterfaceHandle[] handles)
     parameters:
     - id: handles
-      type: ADLXWrapper.AdlxInterfaceHandle[]
+      type: ADLXWrapper.ADLXInterfaceHandle[]
     return:
       type: System.Boolean
-    content.vb: Public Function TryEnumerateDisplayHandles([handles] As AdlxInterfaceHandle()) As Boolean
+    content.vb: Public Function TryEnumerateDisplayHandles([handles] As ADLXInterfaceHandle()) As Boolean
   overload: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
-  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(AdlxInterfaceHandle())
-  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.AdlxInterfaceHandle())
-  name.vb: TryEnumerateDisplayHandles(AdlxInterfaceHandle())
+  nameWithType.vb: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXInterfaceHandle())
+  fullName.vb: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles(ADLXWrapper.ADLXInterfaceHandle())
+  name.vb: TryEnumerateDisplayHandles(ADLXInterfaceHandle())
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandlingNative
   id: GetDisplayChangedHandlingNative
@@ -670,7 +670,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandlingNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -707,7 +707,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayChangedHandling
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -718,10 +718,10 @@ items:
   summary: Returns an AddRef'd handle to the display change handling interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetDisplayChangedHandling()
+    content: public ADLXInterfaceHandle GetDisplayChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetDisplayChangedHandling() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetDisplayChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayChangedHandling*
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
@@ -737,7 +737,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -779,7 +779,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -817,7 +817,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -859,7 +859,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -897,7 +897,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -939,7 +939,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -977,7 +977,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1019,7 +1019,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3DLutEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1057,7 +1057,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1099,7 +1099,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1137,7 +1137,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1167,7 +1167,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1198,7 +1198,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1232,7 +1232,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1268,7 +1268,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1299,7 +1299,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGPUScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1333,7 +1333,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGPUScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1369,7 +1369,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1400,7 +1400,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1431,7 +1431,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1464,7 +1464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1495,7 +1495,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1529,7 +1529,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1565,7 +1565,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1596,7 +1596,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1630,7 +1630,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScalingEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1666,7 +1666,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDCPState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1697,7 +1697,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHDCPEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1731,7 +1731,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHDCPEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1767,7 +1767,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1798,7 +1798,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1834,7 +1834,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1872,7 +1872,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBacklightAdaptiveEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1906,7 +1906,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBrightBacklightAdaptiveEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1942,7 +1942,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBrightBatteryLifeEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -1976,7 +1976,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBrightBatteryLifeEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2012,7 +2012,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2043,7 +2043,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2074,7 +2074,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2107,7 +2107,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2138,7 +2138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2169,7 +2169,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2202,7 +2202,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2233,7 +2233,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2264,7 +2264,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2297,7 +2297,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2328,7 +2328,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2357,7 +2357,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2388,7 +2388,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2419,7 +2419,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2448,7 +2448,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2479,7 +2479,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2510,7 +2510,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2539,7 +2539,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2570,7 +2570,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2601,7 +2601,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2632,7 +2632,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2665,7 +2665,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2696,7 +2696,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2730,7 +2730,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2766,7 +2766,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2797,7 +2797,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracyEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2831,7 +2831,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracyEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2867,7 +2867,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2898,7 +2898,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControlEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2932,7 +2932,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControlEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2968,7 +2968,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -2999,7 +2999,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3030,7 +3030,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3061,7 +3061,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3092,7 +3092,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3125,7 +3125,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -3439,13 +3439,13 @@ references:
   name: GetDisplayServicesHandle
   nameWithType: ADLXDisplayServicesHelper.GetDisplayServicesHandle
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.GetDisplayServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html
@@ -3674,30 +3674,30 @@ references:
   name: EnumerateDisplayHandles
   nameWithType: ADLXDisplayServicesHelper.EnumerateDisplayHandles
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplayHandles
-- uid: ADLXWrapper.AdlxInterfaceHandle[]
+- uid: ADLXWrapper.ADLXInterfaceHandle[]
   isExternal: true
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle[]
-  nameWithType: AdlxInterfaceHandle[]
-  fullName: ADLXWrapper.AdlxInterfaceHandle[]
-  nameWithType.vb: AdlxInterfaceHandle()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle()
-  name.vb: AdlxInterfaceHandle()
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle[]
+  nameWithType: ADLXInterfaceHandle[]
+  fullName: ADLXWrapper.ADLXInterfaceHandle[]
+  nameWithType.vb: ADLXInterfaceHandle()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle()
+  name.vb: ADLXInterfaceHandle()
   spec.csharp:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: '['
   - name: ']'
   spec.vb:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: (
   - name: )
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles*
   commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
-  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_AdlxInterfaceHandle____
+  href: ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_TryEnumerateDisplayHandles_ADLXWrapper_ADLXInterfaceHandle____
   name: TryEnumerateDisplayHandles
   nameWithType: ADLXDisplayServicesHelper.TryEnumerateDisplayHandles
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.TryEnumerateDisplayHandles

@@ -1071,7 +1071,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "ADLXWrapper.AdlxInterfaceHandle",
+      "Title": "ADLXWrapper.ADLXInterfaceHandle",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxInterfaceHandle.yml\" sourcestartlinenumber=\"1\">Lightweight lifetime wrapper for raw ADLX interface pointers.</p>\n"
     },
     {

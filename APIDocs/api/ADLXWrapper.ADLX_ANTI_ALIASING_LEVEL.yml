@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ANTI_ALIASING_LEVEL
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_INVALID
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_2X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_2XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_4X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_4XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_8X
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AA_LEVEL_8XEQ
     path: ../ADLXWrapper/cs_generated/ADLX_ANTI_ALIASING_LEVEL.cs
