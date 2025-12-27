@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Runtime.Versioning;
 using Xunit;
 using Xunit.Abstractions;
@@ -7,17 +6,16 @@ using Xunit.Abstractions;
 namespace ADLXWrapper.Tests
 {
     /// <summary>
-    /// Tests for various display settings services.
+    /// Display settings exercised via the display facade.
     /// </summary>
     [SupportedOSPlatform("windows")]
-    public unsafe class DisplaySettingsTests : IDisposable
+    public sealed unsafe class DisplaySettingsTests : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly ADLXApiHelper? _api;
         private readonly ADLXSystemServicesHelper? _system;
+        private readonly ADLXDisplay? _display;
         private readonly string _skipReason = string.Empty;
-        private readonly ADLXDisplayServicesHelper? _displayHelper;
-        private readonly AdlxInterfaceHandle? _displayHandle;
 
         public DisplaySettingsTests(ITestOutputHelper output)
         {
@@ -26,19 +24,17 @@ namespace ADLXWrapper.Tests
             {
                 _api = ADLXApiHelper.Initialize();
                 _system = new ADLXSystemServicesHelper(_api.GetSystemServicesNative());
-                _displayHelper = new ADLXDisplayServicesHelper(_system.GetDisplayServicesNative());
-
-                var displayHandles = _displayHelper.EnumerateDisplayHandles();
-                if (displayHandles.Length == 0)
+                var displays = _system.EnumerateDisplays();
+                if (displays.Count == 0)
                 {
                     _skipReason = "No displays found.";
                     return;
                 }
 
-                _displayHandle = displayHandles[0];
-                for (int i = 1; i < displayHandles.Length; i++)
+                _display = displays[0];
+                for (int i = 1; i < displays.Count; i++)
                 {
-                    displayHandles[i].Dispose();
+                    displays[i].Dispose();
                 }
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
@@ -53,8 +49,7 @@ namespace ADLXWrapper.Tests
 
         public void Dispose()
         {
-            if (_displayHandle.HasValue) _displayHandle.Value.Dispose();
-            _displayHelper?.Dispose();
+            _display?.Dispose();
             _system?.Dispose();
             _api?.Dispose();
         }
@@ -62,17 +57,15 @@ namespace ADLXWrapper.Tests
         [SkippableFact]
         public void CanGetDisplaySettings()
         {
-            Skip.If(_api == null || _system == null || _displayHelper == null || !_displayHandle.HasValue, _skipReason);
+            Skip.If(_api == null || _system == null || _display == null, _skipReason);
 
-            var display = _displayHandle.Value.As<IADLXDisplay>();
-
-            var gamma = _displayHelper.GetGamma(display);
+            var gamma = _display.GetGamma();
             _output.WriteLine($"Gamma supported: {gamma.IsSupported}");
 
-            var gamut = _displayHelper.GetGamut(display);
+            var gamut = _display.GetGamut();
             _output.WriteLine($"Gamut supported: {gamut.IsGamutSupported}");
 
-            var customColor = _displayHelper.GetCustomColor(display);
+            var customColor = _display.GetCustomColor();
             _output.WriteLine($"Custom Color supported: {customColor.IsSupported}");
         }
     }

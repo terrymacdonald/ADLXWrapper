@@ -81,6 +81,14 @@ namespace ADLXWrapper
             {
                 if (_globalRefCount == 0)
                 {
+                    // If ADLX was previously initialized in this process and the shared pointers are still available,
+                    // reuse them to avoid ADLX_ALREADY_INITIALIZED from the native initialize call.
+                    if (_sharedSystem != null)
+                    {
+                        _globalRefCount++;
+                        return new ADLXApiHelper(_sharedSystem, _sharedFullVersion, _sharedVersion);
+                    }
+
                     var hDLL = LoadADLXDll();
 
                     var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
@@ -97,7 +105,7 @@ namespace ADLXWrapper
                     if (result != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, "Failed to query ADLX version");
+                        throw new ADLXException(result, $"Failed to query ADLX version (result={result})");
                     }
 
                     IntPtr pSystem;
@@ -105,7 +113,7 @@ namespace ADLXWrapper
                     if (result != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, "Failed to initialize ADLX");
+                        throw new ADLXException(result, $"Failed to initialize ADLX (result={result})");
                     }
 
                     _sharedDll = hDLL;
@@ -140,6 +148,12 @@ namespace ADLXWrapper
             {
                 if (_globalRefCount == 0)
                 {
+                    if (_sharedSystem != null)
+                    {
+                        _globalRefCount++;
+                        return new ADLXApiHelper(_sharedSystem, _sharedFullVersion, _sharedVersion);
+                    }
+
                     var hDLL = LoadADLXDll();
 
                     var queryFullVersionFn = ADLXNative.GetFunctionPointer<ADLXNative.ADLXQueryFullVersion_Fn>(
@@ -156,7 +170,7 @@ namespace ADLXWrapper
                     if (result != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, "Failed to query ADLX version");
+                        throw new ADLXException(result, $"Failed to query ADLX version (result={result})");
                     }
 
                     IntPtr pSystem;
@@ -165,7 +179,7 @@ namespace ADLXWrapper
                     if (result != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, "Failed to initialize ADLX with ADL context");
+                        throw new ADLXException(result, $"Failed to initialize ADLX with ADL context (result={result})");
                     }
 
                     _sharedDll = hDLL;

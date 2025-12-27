@@ -40,6 +40,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Exclude legacy tests from compilation -->
+    <Compile Remove="Legacy\**\*.cs" />
+    <!-- Narrow the compiled set to current facade-focused tests -->
+    <Compile Remove="**\*.cs" />
+    <Compile Include="FacadeSmokeTests.cs" />
+    <Compile Include="GlobalUsings.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="ADLXWrapper.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

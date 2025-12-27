@@ -44,8 +44,12 @@ namespace ADLXWrapper.Tests
             using (api)
             {
             using var systemHelper = new ADLXSystemServicesHelper(api.GetSystemServicesNative());
+            if (!systemHelper.TryGetDisplayServicesNative(out var displayServices))
+            {
+                Skip.If(true, "Display services not supported on this system.");
+            }
             var system = systemHelper.GetSystemServicesNative();
-            using var displayHelper = new ADLXDisplayServicesHelper(systemHelper.GetDisplayServicesNative());
+            using var displayHelper = new ADLXDisplayServicesHelper(displayServices);
 
             for (int i = 0; i < 3; i++)
             {
@@ -62,7 +66,7 @@ namespace ADLXWrapper.Tests
 
                 if (!displayHelper.TryEnumerateDisplayHandles(out var displays) || displays.Length == 0)
                 {
-                    _output.WriteLine("[Iter {i}] Display enumeration not supported or none found; skipping display loop.");
+                    _output.WriteLine($"[Iter {i}] Display enumeration not supported or none found; skipping display loop.");
                     continue;
                 }
 
