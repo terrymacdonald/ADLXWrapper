@@ -559,7 +559,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSync
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 76
+    startLine: 83
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -594,7 +594,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSync
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 83
+    startLine: 90
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -628,7 +628,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuScalingState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 93
+    startLine: 100
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -658,7 +658,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGpuScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 104
+    startLine: 118
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -693,7 +693,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGpuScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 111
+    startLine: 125
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -727,7 +727,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 121
+    startLine: 135
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -757,7 +757,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 128
+    startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -785,7 +785,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 139
+    startLine: 160
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -817,7 +817,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 146
+    startLine: 167
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -848,7 +848,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 156
+    startLine: 177
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -878,7 +878,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 167
+    startLine: 188
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -908,7 +908,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 178
+    startLine: 199
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -941,7 +941,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 189
+    startLine: 210
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -976,7 +976,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 200
+    startLine: 221
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1006,7 +1006,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 207
+    startLine: 235
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1038,7 +1038,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolution
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 214
+    startLine: 242
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1072,7 +1072,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 224
+    startLine: 252
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1102,7 +1102,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 231
+    startLine: 266
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1134,7 +1134,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScaling
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 238
+    startLine: 273
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1168,7 +1168,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHdcpState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 248
+    startLine: 283
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1198,7 +1198,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHdcp
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 255
+    startLine: 297
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1230,7 +1230,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHdcp
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 262
+    startLine: 304
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1264,7 +1264,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 272
+    startLine: 314
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1294,7 +1294,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 279
+    startLine: 328
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1328,7 +1328,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 286
+    startLine: 335
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1364,7 +1364,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 296
+    startLine: 345
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1394,7 +1394,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 311
+    startLine: 360
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1423,7 +1423,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 318
+    startLine: 367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1454,7 +1454,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 328
+    startLine: 377
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1484,7 +1484,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 335
+    startLine: 391
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1513,7 +1513,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 342
+    startLine: 398
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1544,7 +1544,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 352
+    startLine: 408
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1574,7 +1574,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 360
+    startLine: 423
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1603,7 +1603,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 368
+    startLine: 431
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1634,7 +1634,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 379
+    startLine: 442
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1664,7 +1664,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 387
+    startLine: 457
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1690,7 +1690,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 395
+    startLine: 465
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1718,7 +1718,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 406
+    startLine: 476
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1748,7 +1748,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 414
+    startLine: 491
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1774,7 +1774,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 422
+    startLine: 499
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1802,7 +1802,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 433
+    startLine: 510
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1832,7 +1832,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 441
+    startLine: 525
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1858,7 +1858,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 449
+    startLine: 533
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1886,7 +1886,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 460
+    startLine: 544
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1916,7 +1916,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 468
+    startLine: 559
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1945,7 +1945,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 476
+    startLine: 567
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1976,7 +1976,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 487
+    startLine: 578
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2006,7 +2006,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 495
+    startLine: 593
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2038,7 +2038,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 503
+    startLine: 601
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2072,7 +2072,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 514
+    startLine: 612
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2102,7 +2102,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 522
+    startLine: 627
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2134,7 +2134,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 530
+    startLine: 635
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2168,7 +2168,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 541
+    startLine: 646
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2198,7 +2198,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 549
+    startLine: 661
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2230,7 +2230,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 557
+    startLine: 669
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2264,7 +2264,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 568
+    startLine: 680
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2297,7 +2297,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 576
+    startLine: 688
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2331,7 +2331,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 588
+    startLine: 700
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2364,7 +2364,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 596
+    startLine: 708
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2398,7 +2398,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 608
+    startLine: 720
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2431,7 +2431,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 616
+    startLine: 728
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2465,7 +2465,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 628
+    startLine: 740
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2498,7 +2498,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 636
+    startLine: 748
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2532,7 +2532,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 648
+    startLine: 760
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2565,7 +2565,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 656
+    startLine: 768
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2599,7 +2599,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 668
+    startLine: 780
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2629,7 +2629,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 686
+    startLine: 798
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2659,7 +2659,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 748
+    startLine: 860
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2689,7 +2689,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 759
+    startLine: 871
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
