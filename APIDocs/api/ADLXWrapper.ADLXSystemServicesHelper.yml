@@ -10,6 +10,7 @@ items:
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
+  - ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
   - ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative
@@ -1479,6 +1480,44 @@ items:
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  id: EnumerateDisplaysInUse
+  parent: ADLXWrapper.ADLXSystemServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: EnumerateDisplaysInUse()
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplaysInUse()
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateDisplaysInUse
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 585
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerates displays that are part of an active desktop (in use) via the display services helper.
+  example: []
+  syntax:
+    content: public IReadOnlyList<ADLXDisplay> EnumerateDisplaysInUse()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
+      description: List of managed displays in use.
+    content.vb: Public Function EnumerateDisplaysInUse() As IReadOnlyList(Of ADLXDisplay)
+  overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If enumeration fails.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If the helper has been disposed.
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
   commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
   id: EnumerateDesktops
@@ -1497,7 +1536,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 585
+    startLine: 598
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1535,7 +1574,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 598
+    startLine: 611
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1573,7 +1612,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 626
+    startLine: 639
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1611,7 +1650,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 650
+    startLine: 663
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1653,7 +1692,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 663
+    startLine: 676
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1691,7 +1730,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 682
+    startLine: 695
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1721,7 +1760,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 708
+    startLine: 721
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2556,6 +2595,12 @@ references:
     name: ADLXDisplay
     href: ADLXWrapper.ADLXDisplay.html
   - name: )
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse*
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplaysInUse
+  name: EnumerateDisplaysInUse
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops*
   commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops
   href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDesktops

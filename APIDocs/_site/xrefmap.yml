@@ -1771,19 +1771,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.GpuUniqueId
   nameWithType: ADLXDisplay.GpuUniqueId
-- uid: ADLXWrapper.ADLXDisplay.Height
-  name: Height
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Height
-  commentId: P:ADLXWrapper.ADLXDisplay.Height
-  fullName: ADLXWrapper.ADLXDisplay.Height
-  nameWithType: ADLXDisplay.Height
-- uid: ADLXWrapper.ADLXDisplay.Height*
-  name: Height
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Height_
-  commentId: Overload:ADLXWrapper.ADLXDisplay.Height
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXDisplay.Height
-  nameWithType: ADLXDisplay.Height
 - uid: ADLXWrapper.ADLXDisplay.ManufacturerId
   name: ManufacturerId
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ManufacturerId
@@ -1810,6 +1797,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.Name
   nameWithType: ADLXDisplay.Name
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  name: NativeResolutionHeight
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionHeight
+  commentId: P:ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  nameWithType: ADLXDisplay.NativeResolutionHeight
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionHeight*
+  name: NativeResolutionHeight
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionHeight_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  nameWithType: ADLXDisplay.NativeResolutionHeight
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  name: NativeResolutionWidth
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionWidth
+  commentId: P:ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  nameWithType: ADLXDisplay.NativeResolutionWidth
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionWidth*
+  name: NativeResolutionWidth
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionWidth_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  nameWithType: ADLXDisplay.NativeResolutionWidth
 - uid: ADLXWrapper.ADLXDisplay.PixelClock
   name: PixelClock
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_PixelClock
@@ -2438,19 +2451,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.UniqueId
   nameWithType: ADLXDisplay.UniqueId
-- uid: ADLXWrapper.ADLXDisplay.Width
-  name: Width
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Width
-  commentId: P:ADLXWrapper.ADLXDisplay.Width
-  fullName: ADLXWrapper.ADLXDisplay.Width
-  nameWithType: ADLXDisplay.Width
-- uid: ADLXWrapper.ADLXDisplay.Width*
-  name: Width
-  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_Width_
-  commentId: Overload:ADLXWrapper.ADLXDisplay.Width
-  isSpec: "True"
-  fullName: ADLXWrapper.ADLXDisplay.Width
-  nameWithType: ADLXDisplay.Width
 - uid: ADLXWrapper.ADLXDisplayServicesHelper
   name: ADLXDisplayServicesHelper
   href: api/ADLXWrapper.ADLXDisplayServicesHelper.html
@@ -2677,6 +2677,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplays
   nameWithType: ADLXDisplayServicesHelper.EnumerateDisplays
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse
+  name: EnumerateDisplaysInUse()
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateDisplaysInUse
+  commentId: M:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse()
+  nameWithType: ADLXDisplayServicesHelper.EnumerateDisplaysInUse()
+- uid: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse*
+  name: EnumerateDisplaysInUse
+  href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_EnumerateDisplaysInUse_
+  commentId: Overload:ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplayServicesHelper.EnumerateDisplaysInUse
+  nameWithType: ADLXDisplayServicesHelper.EnumerateDisplaysInUse
 - uid: ADLXWrapper.ADLXDisplayServicesHelper.Finalize
   name: ~ADLXDisplayServicesHelper()
   href: api/ADLXWrapper.ADLXDisplayServicesHelper.html#ADLXWrapper_ADLXDisplayServicesHelper_Finalize
@@ -6186,6 +6199,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays
   nameWithType: ADLXSystemServicesHelper.EnumerateDisplays
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  name: EnumerateDisplaysInUse()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplaysInUse
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse()
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplaysInUse()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse*
+  name: EnumerateDisplaysInUse
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplaysInUse_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse
+  nameWithType: ADLXSystemServicesHelper.EnumerateDisplaysInUse
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs
   name: EnumerateGPUs()
   href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs
@@ -10191,19 +10217,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.DisplayInfo.GpuUniqueId
   nameWithType: DisplayInfo.GpuUniqueId
-- uid: ADLXWrapper.DisplayInfo.Height
-  name: Height
-  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Height
-  commentId: P:ADLXWrapper.DisplayInfo.Height
-  fullName: ADLXWrapper.DisplayInfo.Height
-  nameWithType: DisplayInfo.Height
-- uid: ADLXWrapper.DisplayInfo.Height*
-  name: Height
-  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Height_
-  commentId: Overload:ADLXWrapper.DisplayInfo.Height
-  isSpec: "True"
-  fullName: ADLXWrapper.DisplayInfo.Height
-  nameWithType: DisplayInfo.Height
 - uid: ADLXWrapper.DisplayInfo.ManufacturerID
   name: ManufacturerID
   href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_ManufacturerID
@@ -10230,6 +10243,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.DisplayInfo.Name
   nameWithType: DisplayInfo.Name
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  name: NativeResolutionHeight
+  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionHeight
+  commentId: P:ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  nameWithType: DisplayInfo.NativeResolutionHeight
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionHeight*
+  name: NativeResolutionHeight
+  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionHeight_
+  commentId: Overload:ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  isSpec: "True"
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  nameWithType: DisplayInfo.NativeResolutionHeight
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  name: NativeResolutionWidth
+  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionWidth
+  commentId: P:ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  nameWithType: DisplayInfo.NativeResolutionWidth
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionWidth*
+  name: NativeResolutionWidth
+  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionWidth_
+  commentId: Overload:ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  isSpec: "True"
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  nameWithType: DisplayInfo.NativeResolutionWidth
 - uid: ADLXWrapper.DisplayInfo.PixelClock
   name: PixelClock
   href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_PixelClock
@@ -10295,19 +10334,6 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.DisplayInfo.UniqueId
   nameWithType: DisplayInfo.UniqueId
-- uid: ADLXWrapper.DisplayInfo.Width
-  name: Width
-  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Width
-  commentId: P:ADLXWrapper.DisplayInfo.Width
-  fullName: ADLXWrapper.DisplayInfo.Width
-  nameWithType: DisplayInfo.Width
-- uid: ADLXWrapper.DisplayInfo.Width*
-  name: Width
-  href: api/ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Width_
-  commentId: Overload:ADLXWrapper.DisplayInfo.Width
-  isSpec: "True"
-  fullName: ADLXWrapper.DisplayInfo.Width
-  nameWithType: DisplayInfo.Width
 - uid: ADLXWrapper.DisplayListListenerHandle
   name: DisplayListListenerHandle
   href: api/ADLXWrapper.DisplayListListenerHandle.html

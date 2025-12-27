@@ -9,15 +9,15 @@ items:
   - ADLXWrapper.DisplayInfo.ConnectorType
   - ADLXWrapper.DisplayInfo.Edid
   - ADLXWrapper.DisplayInfo.GpuUniqueId
-  - ADLXWrapper.DisplayInfo.Height
   - ADLXWrapper.DisplayInfo.ManufacturerID
   - ADLXWrapper.DisplayInfo.Name
+  - ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  - ADLXWrapper.DisplayInfo.NativeResolutionWidth
   - ADLXWrapper.DisplayInfo.PixelClock
   - ADLXWrapper.DisplayInfo.RefreshRate
   - ADLXWrapper.DisplayInfo.ScanType
   - ADLXWrapper.DisplayInfo.Type
   - ADLXWrapper.DisplayInfo.UniqueId
-  - ADLXWrapper.DisplayInfo.Width
   langs:
   - csharp
   - vb
@@ -32,7 +32,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2318
+    startLine: 2420
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,7 +66,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2320
+    startLine: 2422
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -77,64 +77,64 @@ items:
       type: System.String
     content.vb: Public Property Name As String
   overload: ADLXWrapper.DisplayInfo.Name*
-- uid: ADLXWrapper.DisplayInfo.Width
-  commentId: P:ADLXWrapper.DisplayInfo.Width
-  id: Width
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  commentId: P:ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  id: NativeResolutionWidth
   parent: ADLXWrapper.DisplayInfo
   langs:
   - csharp
   - vb
-  name: Width
-  nameWithType: DisplayInfo.Width
-  fullName: ADLXWrapper.DisplayInfo.Width
+  name: NativeResolutionWidth
+  nameWithType: DisplayInfo.NativeResolutionWidth
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionWidth
   type: Property
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Width
+    id: NativeResolutionWidth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2321
+    startLine: 2423
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int Width { get; init; }
+    content: public int NativeResolutionWidth { get; init; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property Width As Integer
-  overload: ADLXWrapper.DisplayInfo.Width*
-- uid: ADLXWrapper.DisplayInfo.Height
-  commentId: P:ADLXWrapper.DisplayInfo.Height
-  id: Height
+    content.vb: Public Property NativeResolutionWidth As Integer
+  overload: ADLXWrapper.DisplayInfo.NativeResolutionWidth*
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  commentId: P:ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  id: NativeResolutionHeight
   parent: ADLXWrapper.DisplayInfo
   langs:
   - csharp
   - vb
-  name: Height
-  nameWithType: DisplayInfo.Height
-  fullName: ADLXWrapper.DisplayInfo.Height
+  name: NativeResolutionHeight
+  nameWithType: DisplayInfo.NativeResolutionHeight
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionHeight
   type: Property
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
       branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Height
+    id: NativeResolutionHeight
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2322
+    startLine: 2424
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int Height { get; init; }
+    content: public int NativeResolutionHeight { get; init; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property Height As Integer
-  overload: ADLXWrapper.DisplayInfo.Height*
+    content.vb: Public Property NativeResolutionHeight As Integer
+  overload: ADLXWrapper.DisplayInfo.NativeResolutionHeight*
 - uid: ADLXWrapper.DisplayInfo.RefreshRate
   commentId: P:ADLXWrapper.DisplayInfo.RefreshRate
   id: RefreshRate
@@ -153,7 +153,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2323
+    startLine: 2425
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -182,7 +182,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerID
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2324
+    startLine: 2426
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -211,7 +211,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2325
+    startLine: 2427
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -240,7 +240,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2326
+    startLine: 2428
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -269,7 +269,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2327
+    startLine: 2429
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -298,7 +298,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2328
+    startLine: 2430
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -327,7 +327,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2329
+    startLine: 2431
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -356,7 +356,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2330
+    startLine: 2432
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -385,7 +385,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2331
+    startLine: 2433
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -414,7 +414,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2333
+    startLine: 2435
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -422,13 +422,13 @@ items:
     content: >-
       [JsonConstructor]
 
-      public DisplayInfo(string name, int width, int height, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
+      public DisplayInfo(string name, int nativeResolutionWidth, int nativeResolutionHeight, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
     parameters:
     - id: name
       type: System.String
-    - id: width
+    - id: nativeResolutionWidth
       type: System.Int32
-    - id: height
+    - id: nativeResolutionHeight
       type: System.Int32
     - id: refreshRate
       type: System.Double
@@ -451,7 +451,7 @@ items:
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(name As String, width As Integer, height As Integer, refreshRate As Double, manufacturerID As UInteger, pixelClock As UInteger, type As ADLX_DISPLAY_TYPE, connectorType As ADLX_DISPLAY_CONNECTOR_TYPE, scanType As ADLX_DISPLAY_SCAN_TYPE, uniqueId As ULong, edid As String, gpuUniqueId As Integer)
+      Public Sub New(name As String, nativeResolutionWidth As Integer, nativeResolutionHeight As Integer, refreshRate As Double, manufacturerID As UInteger, pixelClock As UInteger, type As ADLX_DISPLAY_TYPE, connectorType As ADLX_DISPLAY_CONNECTOR_TYPE, scanType As ADLX_DISPLAY_SCAN_TYPE, uniqueId As ULong, edid As String, gpuUniqueId As Integer)
   overload: ADLXWrapper.DisplayInfo.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
@@ -701,12 +701,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ADLXWrapper.DisplayInfo.Width*
-  commentId: Overload:ADLXWrapper.DisplayInfo.Width
-  href: ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Width
-  name: Width
-  nameWithType: DisplayInfo.Width
-  fullName: ADLXWrapper.DisplayInfo.Width
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionWidth*
+  commentId: Overload:ADLXWrapper.DisplayInfo.NativeResolutionWidth
+  href: ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionWidth
+  name: NativeResolutionWidth
+  nameWithType: DisplayInfo.NativeResolutionWidth
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionWidth
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -718,12 +718,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.DisplayInfo.Height*
-  commentId: Overload:ADLXWrapper.DisplayInfo.Height
-  href: ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_Height
-  name: Height
-  nameWithType: DisplayInfo.Height
-  fullName: ADLXWrapper.DisplayInfo.Height
+- uid: ADLXWrapper.DisplayInfo.NativeResolutionHeight*
+  commentId: Overload:ADLXWrapper.DisplayInfo.NativeResolutionHeight
+  href: ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_NativeResolutionHeight
+  name: NativeResolutionHeight
+  nameWithType: DisplayInfo.NativeResolutionHeight
+  fullName: ADLXWrapper.DisplayInfo.NativeResolutionHeight
 - uid: ADLXWrapper.DisplayInfo.RefreshRate*
   commentId: Overload:ADLXWrapper.DisplayInfo.RefreshRate
   href: ADLXWrapper.DisplayInfo.html#ADLXWrapper_DisplayInfo_RefreshRate

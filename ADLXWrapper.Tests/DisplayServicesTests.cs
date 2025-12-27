@@ -108,10 +108,10 @@ namespace ADLXWrapper.Tests
 
             using var first = handles[0];
             var info = _displayServices.GetDisplayInfo(first.As<IADLXDisplay>());
-            _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height} @ {info.RefreshRate}Hz, connector={info.ConnectorType}, type={info.Type}");
+            _output.WriteLine($"Display: {info.Name}, {info.NativeResolutionWidth}x{info.NativeResolutionHeight} @ {info.RefreshRate}Hz, connector={info.ConnectorType}, type={info.Type}");
 
-            Assert.True(info.Width > 0);
-            Assert.True(info.Height > 0);
+            Assert.True(info.NativeResolutionWidth > 0);
+            Assert.True(info.NativeResolutionHeight > 0);
             Assert.True(info.RefreshRate > 0);
 
             for (int i = 1; i < handles.Length; i++)

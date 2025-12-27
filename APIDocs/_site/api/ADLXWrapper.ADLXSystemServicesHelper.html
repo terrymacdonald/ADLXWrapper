@@ -200,7 +200,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXSystemServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L683"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L696"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Disposes cached COM pointers and releases references.</p>
@@ -269,7 +269,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateDesktops" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops">
   EnumerateDesktops()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L586"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L599"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enumerates desktop facades via the desktop services helper.</p>
@@ -349,11 +349,53 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
 
 
+  <a id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplaysInUse_" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse*"></a>
+
+  <h3 id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateDisplaysInUse" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse">
+  EnumerateDisplaysInUse()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L586"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enumerates displays that are part of an active desktop (in use) via the display services helper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ADLXDisplay&gt; EnumerateDisplaysInUse()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLXDisplay.html">ADLXDisplay</a>&gt;</dt>
+    <dd><p>List of managed displays in use.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLXException.html">ADLXException</a></dt>
+    <dd><p>If enumeration fails.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></dt>
+    <dd><p>If the helper has been disposed.</p>
+</dd>
+  </dl>
+
+
+
   <a id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs_" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs*"></a>
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUs" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs">
   EnumerateGPUs()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L627"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L640"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enumerates GPU DTOs with identity and capability information.</p>
@@ -395,7 +437,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsHandle" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle">
   EnumerateGPUsHandle()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L599"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L612"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enumerates GPU native handles (AddRef'd for caller ownership).</p>
@@ -437,7 +479,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_EnumerateGPUsNative" data-uid="ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsNative">
   EnumerateGPUsNative()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L664"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L677"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Enumerates native GPU interfaces. Caller must dispose the returned list/entries.</p>
@@ -479,7 +521,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXSystemServicesHelper.Finalize">
   ~ADLXSystemServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L709"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L722"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1177,7 +1219,7 @@ Class ADLXSystemServicesHelper  <a class="header-action link-secondary" title="V
 
   <h3 id="ADLXWrapper_ADLXSystemServicesHelper_GetGpuInfo_ADLXWrapper_IADLXGPU__" data-uid="ADLXWrapper.ADLXSystemServicesHelper.GetGpuInfo(ADLXWrapper.IADLXGPU*)">
   GetGpuInfo(IADLXGPU*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L651"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L664"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Builds a GPU info DTO from a native GPU pointer.</p>

@@ -31,7 +31,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CustomColorInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2556
+    startLine: 2658
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2558
+    startLine: 2660
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHueSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2559
+    startLine: 2661
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -121,7 +121,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Hue
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2560
+    startLine: 2662
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSaturationSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2561
+    startLine: 2663
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -179,7 +179,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Saturation
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2562
+    startLine: 2664
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -208,7 +208,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBrightnessSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2563
+    startLine: 2665
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -237,7 +237,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Brightness
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2564
+    startLine: 2666
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -266,7 +266,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2565
+    startLine: 2667
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -295,7 +295,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Contrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2566
+    startLine: 2668
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -324,7 +324,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTemperatureSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2567
+    startLine: 2669
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -353,7 +353,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2568
+    startLine: 2670
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -382,7 +382,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2570
+    startLine: 2672
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

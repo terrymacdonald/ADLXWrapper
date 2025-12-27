@@ -41,9 +41,10 @@ items:
   - ADLXWrapper.ADLXDisplay.GetVariBrightState
   - ADLXWrapper.ADLXDisplay.GetVirtualSuperResolutionState
   - ADLXWrapper.ADLXDisplay.GpuUniqueId
-  - ADLXWrapper.ADLXDisplay.Height
   - ADLXWrapper.ADLXDisplay.ManufacturerId
   - ADLXWrapper.ADLXDisplay.Name
+  - ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  - ADLXWrapper.ADLXDisplay.NativeResolutionWidth
   - ADLXWrapper.ADLXDisplay.PixelClock
   - ADLXWrapper.ADLXDisplay.ReapplyGamma
   - ADLXWrapper.ADLXDisplay.ReapplyGamut
@@ -87,7 +88,6 @@ items:
   - ADLXWrapper.ADLXDisplay.TrySetVirtualSuperResolution(System.Boolean)
   - ADLXWrapper.ADLXDisplay.Type
   - ADLXWrapper.ADLXDisplay.UniqueId
-  - ADLXWrapper.ADLXDisplay.Width
   langs:
   - csharp
   - vb
@@ -221,64 +221,64 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property Edid As String
   overload: ADLXWrapper.ADLXDisplay.Edid*
-- uid: ADLXWrapper.ADLXDisplay.Width
-  commentId: P:ADLXWrapper.ADLXDisplay.Width
-  id: Width
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  commentId: P:ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  id: NativeResolutionWidth
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: Width
-  nameWithType: ADLXDisplay.Width
-  fullName: ADLXWrapper.ADLXDisplay.Width
+  name: NativeResolutionWidth
+  nameWithType: ADLXDisplay.NativeResolutionWidth
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
   type: Property
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Width
+    id: NativeResolutionWidth
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int Width { get; }
+    content: public int NativeResolutionWidth { get; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property Width As Integer
-  overload: ADLXWrapper.ADLXDisplay.Width*
-- uid: ADLXWrapper.ADLXDisplay.Height
-  commentId: P:ADLXWrapper.ADLXDisplay.Height
-  id: Height
+    content.vb: Public ReadOnly Property NativeResolutionWidth As Integer
+  overload: ADLXWrapper.ADLXDisplay.NativeResolutionWidth*
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  commentId: P:ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  id: NativeResolutionHeight
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: Height
-  nameWithType: ADLXDisplay.Height
-  fullName: ADLXWrapper.ADLXDisplay.Height
+  name: NativeResolutionHeight
+  nameWithType: ADLXDisplay.NativeResolutionHeight
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
   type: Property
   source:
     remote:
       path: ADLXWrapper/AdlxDisplay.cs
       branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Height
+    id: NativeResolutionHeight
     path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int Height { get; }
+    content: public int NativeResolutionHeight { get; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property Height As Integer
-  overload: ADLXWrapper.ADLXDisplay.Height*
+    content.vb: Public ReadOnly Property NativeResolutionHeight As Integer
+  overload: ADLXWrapper.ADLXDisplay.NativeResolutionHeight*
 - uid: ADLXWrapper.ADLXDisplay.RefreshRate
   commentId: P:ADLXWrapper.ADLXDisplay.RefreshRate
   id: RefreshRate
@@ -3009,12 +3009,12 @@ references:
   name: Edid
   nameWithType: ADLXDisplay.Edid
   fullName: ADLXWrapper.ADLXDisplay.Edid
-- uid: ADLXWrapper.ADLXDisplay.Width*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.Width
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_Width
-  name: Width
-  nameWithType: ADLXDisplay.Width
-  fullName: ADLXWrapper.ADLXDisplay.Width
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionWidth*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.NativeResolutionWidth
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionWidth
+  name: NativeResolutionWidth
+  nameWithType: ADLXDisplay.NativeResolutionWidth
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionWidth
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -3026,12 +3026,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.ADLXDisplay.Height*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.Height
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_Height
-  name: Height
-  nameWithType: ADLXDisplay.Height
-  fullName: ADLXWrapper.ADLXDisplay.Height
+- uid: ADLXWrapper.ADLXDisplay.NativeResolutionHeight*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.NativeResolutionHeight
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_NativeResolutionHeight
+  name: NativeResolutionHeight
+  nameWithType: ADLXDisplay.NativeResolutionHeight
+  fullName: ADLXWrapper.ADLXDisplay.NativeResolutionHeight
 - uid: ADLXWrapper.ADLXDisplay.RefreshRate*
   commentId: Overload:ADLXWrapper.ADLXDisplay.RefreshRate
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_RefreshRate

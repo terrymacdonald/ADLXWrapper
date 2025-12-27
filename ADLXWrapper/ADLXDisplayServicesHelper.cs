@@ -156,7 +156,7 @@ namespace ADLXWrapper
                     }
 
                     IADLXDisplayList* pDisplayList = null;
-                    var desktopDisplaysResult = desktopServices->GetDisplays(pDesktop, &pDisplayList);
+                    var desktopDisplaysResult = pDesktop->GetDisplays(&pDisplayList);
                     if (desktopDisplaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
                     {
                         ADLXUtils.ReleaseInterface((IntPtr)pDesktop);

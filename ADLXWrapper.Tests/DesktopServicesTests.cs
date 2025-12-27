@@ -126,9 +126,9 @@ namespace ADLXWrapper.Tests
                 if (displays.Count > 0)
                 {
                     var info = displays[0];
-                    _output.WriteLine($"Display: {info.Name}, {info.Width}x{info.Height}, type={info.Type}, connector={info.ConnectorType}");
-                    Assert.True(info.Width > 0);
-                    Assert.True(info.Height > 0);
+                    _output.WriteLine($"Display: {info.Name}, {info.NativeResolutionWidth}x{info.NativeResolutionHeight}, type={info.Type}, connector={info.ConnectorType}");
+                    Assert.True(info.NativeResolutionWidth > 0);
+                    Assert.True(info.NativeResolutionHeight > 0);
                 }
 
                 for (int i = 1; i < handles.Length; i++)

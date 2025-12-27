@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplayGammaChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2711
+    startLine: 2813
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
