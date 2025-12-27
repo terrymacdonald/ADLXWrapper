@@ -5,12 +5,12 @@ namespace ADLXWrapper
 	/// <summary>
 	/// Lightweight lifetime wrapper for raw ADLX interface pointers.
 	/// </summary>
-	public readonly unsafe struct AdlxInterfaceHandle : IDisposable
+	public readonly unsafe struct ADLXInterfaceHandle : IDisposable
 	{
 		private readonly IntPtr _ptr;
 		private readonly bool _owns;
 
-		private AdlxInterfaceHandle(IntPtr ptr, bool owns)
+		private ADLXInterfaceHandle(IntPtr ptr, bool owns)
 		{
 			_ptr = ptr;
 			_owns = owns;
@@ -18,7 +18,7 @@ namespace ADLXWrapper
 
 		public bool IsInvalid => _ptr == IntPtr.Zero;
 
-        public static AdlxInterfaceHandle From(void* ptr, bool addRef = true)
+        public static ADLXInterfaceHandle From(void* ptr, bool addRef = true)
         {
             if (ptr == null) throw new ArgumentNullException(nameof(ptr));
             var intPtr = (IntPtr)ptr;
@@ -26,16 +26,16 @@ namespace ADLXWrapper
             {
                 ADLXUtils.AddRefInterface(intPtr);
             }
-            return new AdlxInterfaceHandle(intPtr, owns: true);
+            return new ADLXInterfaceHandle(intPtr, owns: true);
         }
 
         /// <summary>
         /// Create a non-owning handle for interfaces that are not ref-counted (no Acquire/Release).
         /// </summary>
-        public static AdlxInterfaceHandle FromNonRefCounted(void* ptr)
+        public static ADLXInterfaceHandle FromNonRefCounted(void* ptr)
         {
             if (ptr == null) throw new ArgumentNullException(nameof(ptr));
-            return new AdlxInterfaceHandle((IntPtr)ptr, owns: false);
+            return new ADLXInterfaceHandle((IntPtr)ptr, owns: false);
         }
 
 		public T* As<T>() where T : unmanaged => (T*)_ptr;
@@ -48,8 +48,8 @@ namespace ADLXWrapper
 			}
 		}
 
-		public static implicit operator IntPtr(AdlxInterfaceHandle handle) => handle._ptr;
-		public static implicit operator IADLXInterface*(AdlxInterfaceHandle handle) => (IADLXInterface*)handle._ptr;
+		public static implicit operator IntPtr(ADLXInterfaceHandle handle) => handle._ptr;
+		public static implicit operator IADLXInterface*(ADLXInterfaceHandle handle) => (IADLXInterface*)handle._ptr;
 	}
 }
 
