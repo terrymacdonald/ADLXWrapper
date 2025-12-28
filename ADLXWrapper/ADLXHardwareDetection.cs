@@ -7,6 +7,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Hardware detection utilities for AMD GPU presence.
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public static class ADLXHardwareDetection
     {
         private const string AMD_PCI_VENDOR_ID = "1002";
@@ -16,7 +17,6 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="errorMessage">Details about why AMD GPU was not detected.</param>
         /// <returns>True if AMD GPU hardware is detected, false otherwise.</returns>
-        [SupportedOSPlatform("windows")]
         public static bool HasAMDGPU(out string errorMessage)
         {
             try

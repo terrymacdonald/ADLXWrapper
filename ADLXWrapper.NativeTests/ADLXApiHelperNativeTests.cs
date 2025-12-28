@@ -116,7 +116,7 @@ public unsafe class ADLXApiHelperNativeTests
         Skip.If(refreshRate <= 0, "Display refresh rate not reported.");
     }
 
-    private sealed unsafe class NativeSession : IDisposable
+    public sealed unsafe class NativeSession : IDisposable
     {
         private const string ADLX_DLL_NAME_64 = "amdadlx64.dll";
         private const string ADLX_DLL_NAME_32 = "amdadlx32.dll";

@@ -5,12 +5,13 @@ This file captures the essential rules and context for agents working on this AD
 ## Project Scope
 - Purpose: Safe C# wrapper over AMD ADLX (vtable COM style) for Windows x64 targeting .NET 10.0 and higher.
 - Structure: 
-    - Root `ADLXWrapper/` project (helpers + `cs_generated/` bindings), 
-    - `ADLXWrapper.NativeTests/` xUnit native test suite, 
+    - Root `ADLXWrapper/` project (helpers + `cs_generated/` bindings),
+    - `ADLXWrapper.NativeTests/` xUnit native test suite,
+    - `ADLXWrapper.FacadeTests/` xUnit facade test suite,
     - `Samples/`, scripts for prepare/build/test.
 - Two API Levels: There are two levels of ADLXWRapper API available for users to use. 
-    - Native: This level is low level and use the C# equivalent functions in ADLXWrapper that were created by ClangSharpPInvokeGenerator, and are found in `../ADLXWRapper/cs_generated`. These are the functions that are the C# equvalent of the C++ AMD ADLX SDK described in the ../ADLX/SDK/Include files, so please look there if you need to know what they are.
-    - Facade" This level uses Helper functions to abstract away any memory management, and to make it very easy and simple to access the infomration provided by the ADLX SDK.
+    - Native: This level is low level and use the C# equivalent functions in ADLXWrapper that were created by ClangSharpPInvokeGenerator, and are found in `../ADLXWrapper/cs_generated`. These are the functions that are the C# equvalent of the C++ AMD ADLX SDK described in the ../ADLX/SDK/Include files, so please look there if you need to know what they are.
+    - Facade: This level uses helper functions to abstract away any memory management, and to make it very easy and simple to access the information provided by the ADLX SDK.
 
 ## Core Development Rules
 - ALWAYS MAKE SURE THAT YOU TELL THE USER YOUR PLAN BEFORE YOU MAKE ANY CHANGES TO FILES AND GIVE THE USER A CHANCE TO REVIEW. ONLY MAKE CHANGS ONCE THE USER HAS GIVEN THEIR APPROVAL. THe user can tell you to perform multiple steps of a plan if you want to.
@@ -43,12 +44,12 @@ This file captures the essential rules and context for agents working on this AD
 - Release ZIP: `./create_adlx_release_zip.ps1` (produces artifacts/adlxwrapper-<version>-Release.zip).
 
 ## Testing Expectations
-- Suite: xUnit in `ADLXWrapper.NativeTests` targeting `net10.0`; hardware-aware and read-only (no tuning changes).
-- Run: `dotnet test ADLXWrapper.NativeTests/ADLXWrapper.NativeTests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Filter with `--filter "FullyQualifiedName~..."`
+- Suites: xUnit in `ADLXWrapper.NativeTests` (Native) and `ADLXWrapper.FacadeTests` (Facade) targeting `net10.0`; hardware-aware and read-only (no tuning changes). Global xUnit parallelization is disabled.
+- Run (Native first): `dotnet test ADLXWrapper.NativeTests/ADLXWrapper.NativeTests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Then run facades with `dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal`.
 - Native vs Facade tests:
   - Native (`*NativeTests.cs`): Use only ClangSharp-generated APIs in `ADLXWrapper/cs_generated`; never call facades as they will be tested in the Facade tests. THe Native tests should be able to run and pass successfully even if all the ADLXWrapper Facade functions were removed.
   - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.
-- Test creation: Write Native tests first to validate low-level APIs, then Facade tests. If ADLX marks features optional or provides `IsSupported`, gate tests accordingly; skip only when unsupported. Fix underlying wrapper bugs rather than skipping failing coverage.
+- Test creation: Write Native tests first to validate low-level APIs, then Facade tests. If ADLX marks features optional or provides `IsSupported`, gate tests accordingly; skip only when unsupported. Fix underlying wrapper bugs rather than skipping failing coverage. Shared fixtures for bootstrapping ADLX are acceptable; keep initialization/disposal safe across tests.
 - Hardware skip: Tests that need AMD GPU/driver or ADLX DLL gracefully skip when missing.
 
 ## Usage Notes

@@ -20,7 +20,8 @@ ADLXWrapper/
 |-- ADLXWrapper/              # The main C# wrapper project
 |   |-- ADLX*.cs              # Core helpers/services for each ADLX feature
 |   \-- README.md             # Detailed API documentation and examples
-|-- ADLXWrapper.NativeTests/  # xUnit native test suite
+|-- ADLXWrapper.NativeTests/  # xUnit native test suite (raw cs_generated APIs)
+|-- ADLXWrapper.FacadeTests/  # xUnit facade test suite (uses helper/facade APIs)
 |-- Samples/                  # Sample console applications
 \-- scripts/                  # Build, test, and preparation scripts
 ```
@@ -45,10 +46,14 @@ Once the SDK is in place, you can build the entire solution, including the wrapp
 
 ### 3. Run Tests
 
-To verify the build and check hardware compatibility, run the native test script.
+Run the hardware-aware native tests first, then (optionally) the facade tests. Tests skip gracefully on unsupported hardware/driver combos.
 
 ```powershell
+# Native (ClangSharp-generated APIs only)
 ./test_adlx.ps1
+
+# Facade helpers (after native passes)
+dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal
 ```
 
 ## Using ADLXWrapper in another project
