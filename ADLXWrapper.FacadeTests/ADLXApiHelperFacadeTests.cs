@@ -85,6 +85,7 @@ public class ADLXApiHelperFacadeTests
     }
 }
 
+[SupportedOSPlatform("windows")]
 public sealed class FacadeSessionFixture : IDisposable
 {
     public ADLXApiHelper? Api { get; }
