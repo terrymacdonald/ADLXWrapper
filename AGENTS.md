@@ -50,7 +50,7 @@ This file captures the essential rules and context for agents working on this AD
 - Test Filenames should align with each of the feature areas being tested. e.g. 
   - ADLXDesktopServicesNativeTests.cs should be where the Native tests that exercise the IADLXDesktop objects live, and 
   - ADLXDesktopSErvicesHelperFacadeTests.cs should be where the Facade tests that exercise the ADLXServicesDesktopHelper live.
-  - This structure will keep the files small to makle it easier for LLMs to edit them, and make it easier for humans to find the functions when they need fixing.
+  - This structure will keep the files small to make it easier for LLMs to edit them, and make it easier for humans to find the functions when they need fixing.
 - Native vs Facade tests:
   - Native (`*NativeTests.cs`): Use only ClangSharp-generated APIs in `ADLXWrapper/cs_generated`; never call facades as they will be tested in the Facade tests. THe Native tests should be able to run and pass successfully even if all the ADLXWrapper Facade functions were removed.
   - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.
