@@ -15,7 +15,7 @@ Write-Host "Working directory: $scriptRoot" -ForegroundColor Cyan
 Write-Host ""
 
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "ADLXWrapper Test Suite (ClangSharp Implementation)" -ForegroundColor Cyan
+Write-Host "ADLXWrapper Native Test Suite (ClangSharp Implementation)" -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -124,7 +124,7 @@ try {
 # ============================================================================
 # Verify test project exists
 # ============================================================================
-$testProjectPath = Join-Path $scriptRoot "ADLXWrapper.Tests\ADLXWrapper.Tests.csproj"
+$testProjectPath = Join-Path $scriptRoot "ADLXWrapper.NativeTests\ADLXWrapper.NativeTests.csproj"
 
 if (-not (Test-Path $testProjectPath)) {
     Write-Host "ERROR: Test project not found at: $testProjectPath" -ForegroundColor Red

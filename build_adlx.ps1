@@ -241,7 +241,7 @@ Write-Host "====================================================================
 Write-Host ""
 Write-Host "Projects built:" -ForegroundColor Cyan
 Write-Host "  - ADLXWrapper (ClangSharp-based wrapper)" -ForegroundColor Green
-Write-Host "  - ADLXWrapper.Tests (Test suite)" -ForegroundColor Green
+Write-Host "  - ADLXWrapper.NativeTests (Native test suite)" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Cyan
 Write-Host "  - Run tests: .\test_adlx.ps1" -ForegroundColor Gray

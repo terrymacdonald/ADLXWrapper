@@ -148,10 +148,10 @@ ADLX
 --language
 c++
 
-# --- CREATE TESTS IN ADLXWrapper.Tests PROJECT ---
+# --- CREATE TESTS IN ADLXWrapper.NativeTests PROJECT ---
 
 --test-output
-../ADLXWrapper.Tests/generated_tests
+../ADLXWrapper.NativeTests/generated_tests
 
 # --- EXCLUDES ---
 # Function-like macros ClangSharp can't bind; exclude to silence exit code.

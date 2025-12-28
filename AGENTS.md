@@ -6,7 +6,7 @@ This file captures the essential rules and context for agents working on this AD
 - Purpose: Safe C# wrapper over AMD ADLX (vtable COM style) for Windows x64 targeting .NET 10.0 and higher.
 - Structure: 
     - Root `ADLXWrapper/` project (helpers + `cs_generated/` bindings), 
-    - `ADLXWrapper.Tests/` xUnit suite, 
+    - `ADLXWrapper.NativeTests/` xUnit native test suite, 
     - `Samples/`, scripts for prepare/build/test.
 - Two API Levels: There are two levels of ADLXWRapper API available for users to use. 
     - Native: This level is low level and use the C# equivalent functions in ADLXWrapper that were created by ClangSharpPInvokeGenerator, and are found in `../ADLXWRapper/cs_generated`. These are the functions that are the C# equvalent of the C++ AMD ADLX SDK described in the ../ADLX/SDK/Include files, so please look there if you need to know what they are.
@@ -16,8 +16,10 @@ This file captures the essential rules and context for agents working on this AD
 - ALWAYS MAKE SURE THAT YOU TELL THE USER YOUR PLAN BEFORE YOU MAKE ANY CHANGES TO FILES AND GIVE THE USER A CHANCE TO REVIEW. ONLY MAKE CHANGS ONCE THE USER HAS GIVEN THEIR APPROVAL. THe user can tell you to perform multiple steps of a plan if you want to.
 - When PLANNING, if you think you will get confused and lose track of where you are in your plan, then please write it down into a PLAN.md document. Keep the PLAN.md updated as you go, and make sure that the information you store in the PLAN.md is very descriptive and detailed, so that if you lose track in the future you can review the PLAN.md and you will know what to do and will do it well. Do not be overly concise as you lose a lot of nuance that will be important.
 - DO NOT MAKE THINGS UP. Always check the AMD ADLX SDK header files in `ADLX\SDK\Include`, or the AMD ADLX SDK docs in `ADLX\SDKDocs`, or the ADLXWrapper code in `ADLXWrapper` if you need more information. If you are unsure then tell the user. The user wants you to only use facts - not conjecture. Tune your temperature to the lowest you can. 
+- Write code that tries to be robust and cope with problems getting the information requested, but without causing an exception or a crash. 
 - Naming/patterns: Preserve established helper naming (`ADLX<Feature>ServicesHelper`, `Get<Feature>ServicesNative()`, `Get<Feature>Services()`). Replicate existing helper/test patterns for new features. Consistently of API is key. The user has spent a long time trying to keep everything standard and consistent, so make sure new creations align with existing patterns. Ask for permission for anything that does not align.
 - Platform: Windows-only, x64; relies on AMD Adrenalin drivers. Lightweight check is `IsADLXDllAvailable`.
+- Any initialisation code generated needs to avoid it or handle it when getting an ADLX_ALREADY_INITIALIZED exception when trying to initialise ADLX a second time, and avoid or handle ADLX_NOT_SUPPORTED exceptions on optional functions.
 
 ## Core Native-specific Development Rules
 - Follow the usage patterns shown in the AMD ADLX SDK Samples as closely as possible to ensure that the C# Native functions will work. The ADLX SDK Samples can be found in ADLX/Samples. Please also look at the ADLX/Include folder and the ADLX/SDKDoc folder for more information about how the ADLX SDK works. 
@@ -41,8 +43,8 @@ This file captures the essential rules and context for agents working on this AD
 - Release ZIP: `./create_adlx_release_zip.ps1` (produces artifacts/adlxwrapper-<version>-Release.zip).
 
 ## Testing Expectations
-- Suite: xUnit in `ADLXWrapper.Tests` targeting `net10.0`; hardware-aware and read-only (no tuning changes).
-- Run: `dotnet test ADLXWrapper.Tests/ADLXWrapper.Tests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Filter with `--filter "FullyQualifiedName~..."`
+- Suite: xUnit in `ADLXWrapper.NativeTests` targeting `net10.0`; hardware-aware and read-only (no tuning changes).
+- Run: `dotnet test ADLXWrapper.NativeTests/ADLXWrapper.NativeTests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Filter with `--filter "FullyQualifiedName~..."`
 - Native vs Facade tests:
   - Native (`*NativeTests.cs`): Use only ClangSharp-generated APIs in `ADLXWrapper/cs_generated`; never call facades as they will be tested in the Facade tests. THe Native tests should be able to run and pass successfully even if all the ADLXWrapper Facade functions were removed.
   - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.
