@@ -101,6 +101,121 @@ public unsafe class ADLXSystemServicesNativeTests
         Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)handling);
     }
 
+    [SkippableFact]
+    public void System_get_desktop_services_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXDesktopServices* services = null;
+        var result = _session.System->GetDesktopsServices(&services);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var servicesPtr = new ComPtr<IADLXDesktopServices>(services);
+        IADLXDesktopList* list = null;
+        var listResult = services->GetDesktops(&list);
+        Skip.If(listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, listResult);
+
+        using var listPtr = new ComPtr<IADLXDesktopList>(list);
+        var count = list->Size();
+        Skip.If(count == 0, "No desktops returned by ADLX.");
+    }
+
+    [SkippableFact]
+    public void System_get_gpus_changed_handling_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXGPUsChangedHandling* handling = null;
+        var result = _session.System->GetGPUsChangedHandling(&handling);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUs changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var handlingPtr = new ComPtr<IADLXGPUsChangedHandling>(handling);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)handling);
+    }
+
+    [SkippableFact]
+    public void System_get_3d_settings_services_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLX3DSettingsServices* services = null;
+        var result = _session.System->Get3DSettingsServices(&services);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings services not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var servicesPtr = new ComPtr<IADLX3DSettingsServices>(services);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)services);
+    }
+
+    [SkippableFact]
+    public void System_get_gpu_tuning_services_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXGPUTuningServices* services = null;
+        var result = _session.System->GetGPUTuningServices(&services);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var servicesPtr = new ComPtr<IADLXGPUTuningServices>(services);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)services);
+    }
+
+    [SkippableFact]
+    public void System_total_system_ram_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        uint ramMb = 0;
+        var result = _session.System->TotalSystemRAM(&ramMb);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Total system RAM not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+        Assert.NotEqual<uint>(0, ramMb);
+    }
+
+    [SkippableFact]
+    public unsafe void System_get_i2c_first_gpu_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXGPUList* gpuList = null;
+        var listResult = _session.System->GetGPUs(&gpuList);
+        Skip.If(listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, listResult);
+
+        using var gpuListPtr = new ComPtr<IADLXGPUList>(gpuList);
+        var count = gpuList->Size();
+        Skip.If(count == 0, "No GPUs returned by ADLX.");
+
+        IADLXGPU* gpu = null;
+        var gpuResult = gpuList->At(0, &gpu);
+        Skip.If(gpuResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU access not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, gpuResult);
+
+        using var gpuPtr = new ComPtr<IADLXGPU>(gpu);
+        IADLXI2C* i2c = null;
+        var i2cResult = _session.System->GetI2C(gpu, &i2c);
+        Skip.If(i2cResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "I2C not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, i2cResult);
+
+        using var i2cPtr = new ComPtr<IADLXI2C>(i2c);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)i2c);
+    }
+
+    [SkippableFact]
+    public void System_hybrid_graphics_type_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        ADLX_HG_TYPE hgType = 0;
+        var result = _session.System->HybridGraphicsType(&hgType);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Hybrid graphics type not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+    }
+
     private void SkipIfNoAdlxSupport()
     {
         Skip.IfNot(ADLXApiHelper.IsADLXDllAvailable(out var dllError), $"ADLX DLL unavailable: {dllError}");
