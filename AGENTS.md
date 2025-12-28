@@ -46,6 +46,11 @@ This file captures the essential rules and context for agents working on this AD
 ## Testing Expectations
 - Suites: xUnit in `ADLXWrapper.NativeTests` (Native) and `ADLXWrapper.FacadeTests` (Facade) targeting `net10.0`; hardware-aware and read-only (no tuning changes). Global xUnit parallelization is disabled.
 - Run (Native first): `dotnet test ADLXWrapper.NativeTests/ADLXWrapper.NativeTests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Then run facades with `dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal`.
+- Both Native and Facade tests should test the full range of the AMD ADLX API. 
+- Test Filenames should align with each of the feature areas being tested. e.g. 
+  - ADLXDesktopServicesNativeTests.cs should be where the Native tests that exercise the IADLXDesktop objects live, and 
+  - ADLXDesktopSErvicesHelperFacadeTests.cs should be where the Facade tests that exercise the ADLXServicesDesktopHelper live.
+  - This structure will keep the files small to makle it easier for LLMs to edit them, and make it easier for humans to find the functions when they need fixing.
 - Native vs Facade tests:
   - Native (`*NativeTests.cs`): Use only ClangSharp-generated APIs in `ADLXWrapper/cs_generated`; never call facades as they will be tested in the Facade tests. THe Native tests should be able to run and pass successfully even if all the ADLXWrapper Facade functions were removed.
   - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.

@@ -128,4 +128,44 @@ public unsafe class ADLXApiHelperNativeTests
         Skip.If(refreshRate <= 0, "Display refresh rate not reported.");
     }
 
+    [SkippableFact]
+    public unsafe void System_query_interface_system1_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXSystem1* system1 = null;
+        ADLX_RESULT result;
+
+        var iid = "IADLXSystem1\0";
+        fixed (char* iidChars = iid)
+        {
+            result = _session.System->QueryInterface((ushort*)iidChars, (void**)&system1);
+        }
+
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED || result == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE, $"IADLXSystem1 not supported on this hardware/driver: {result}.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+        using var sys1Ptr = new ComPtr<IADLXSystem1>(system1);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)system1);
+    }
+
+    [SkippableFact]
+    public unsafe void System_query_interface_system2_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXSystem2* system2 = null;
+        ADLX_RESULT result;
+
+        var iid = "IADLXSystem2\0";
+        fixed (char* iidChars = iid)
+        {
+            result = _session.System->QueryInterface((ushort*)iidChars, (void**)&system2);
+        }
+
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED || result == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE, $"IADLXSystem2 not supported on this hardware/driver: {result}.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+        using var sys2Ptr = new ComPtr<IADLXSystem2>(system2);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)system2);
+    }
+
 }
