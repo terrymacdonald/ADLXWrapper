@@ -1,4 +1,6 @@
 using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit;
@@ -137,6 +139,27 @@ public unsafe class ADLXSystemServicesNativeTests
     }
 
     [SkippableFact]
+    public void System_gpus_changed_add_remove_listener_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXGPUsChangedHandling* handling = null;
+        var handlingResult = _session.System->GetGPUsChangedHandling(&handling);
+        Skip.If(handlingResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUs changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, handlingResult);
+
+        using var handlingPtr = new ComPtr<IADLXGPUsChangedHandling>(handling);
+        using var listener = new DummyGpuEventListener();
+
+        var addResult = handling->AddGPUsListEventListener(listener.Pointer);
+        Skip.If(addResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU event listeners not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, addResult);
+
+        var removeResult = handling->RemoveGPUsListEventListener(listener.Pointer);
+        Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
+    }
+
+    [SkippableFact]
     public void System_get_3d_settings_services_native()
     {
         SkipIfNoAdlxSupport();
@@ -214,6 +237,41 @@ public unsafe class ADLXSystemServicesNativeTests
         var result = _session.System->HybridGraphicsType(&hgType);
         Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Hybrid graphics type not supported on this hardware/driver.");
         Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+    }
+
+    private sealed unsafe class DummyGpuEventListener : IDisposable
+    {
+        private IntPtr _vtable;
+        private IntPtr _instance;
+
+        public IADLXGPUsEventListener* Pointer => (IADLXGPUsEventListener*)_instance;
+
+        public DummyGpuEventListener()
+        {
+            _vtable = Marshal.AllocHGlobal(IntPtr.Size);
+            *((IntPtr*)_vtable) = (IntPtr)(delegate* unmanaged[Stdcall]<IADLXGPUsEventListener*, IADLXGPUList*, byte>)&OnGpuListChanged;
+
+            _instance = Marshal.AllocHGlobal(sizeof(IADLXGPUsEventListener));
+            ((IADLXGPUsEventListener*)_instance)->lpVtbl = (void**)_vtable;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnGpuListChanged(IADLXGPUsEventListener* self, IADLXGPUList* pNewGPUs) => 1;
+
+        public void Dispose()
+        {
+            if (_instance != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_instance);
+                _instance = IntPtr.Zero;
+            }
+
+            if (_vtable != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_vtable);
+                _vtable = IntPtr.Zero;
+            }
+        }
     }
 
     private void SkipIfNoAdlxSupport()
