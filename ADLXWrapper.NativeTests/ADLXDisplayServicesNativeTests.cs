@@ -178,7 +178,11 @@ public unsafe class ADLXDisplayServicesNativeTests
             if (AcquireDisplayFeatureOrSkip(services->GetFreeSync(display, &freeSync), freeSync))
             {
                 bool supported = false;
-                AssertResultOrContinue(freeSync->IsSupported(&supported));
+                if (AssertResultOrContinue(freeSync->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(freeSync->IsEnabled(&enabled));
+                }
             }
         });
     }
@@ -193,7 +197,11 @@ public unsafe class ADLXDisplayServicesNativeTests
             if (AcquireDisplayFeatureOrSkip(services->GetVirtualSuperResolution(display, &vsr), vsr))
             {
                 bool supported = false;
-                AssertResultOrContinue(vsr->IsSupported(&supported));
+                if (AssertResultOrContinue(vsr->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(vsr->IsEnabled(&enabled));
+                }
             }
         });
     }
@@ -205,13 +213,37 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayGPUScaling* gpuScaling = null;
-            AcquireDisplayFeatureOrSkip(services->GetGPUScaling(display, &gpuScaling), gpuScaling);
+            if (AcquireDisplayFeatureOrSkip(services->GetGPUScaling(display, &gpuScaling), gpuScaling))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(gpuScaling->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(gpuScaling->IsEnabled(&enabled));
+                }
+            }
 
             IADLXDisplayScalingMode* scalingMode = null;
-            AcquireDisplayFeatureOrSkip(services->GetScalingMode(display, &scalingMode), scalingMode);
+            if (AcquireDisplayFeatureOrSkip(services->GetScalingMode(display, &scalingMode), scalingMode))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(scalingMode->IsSupported(&supported)))
+                {
+                    ADLX_SCALE_MODE mode = 0;
+                    AssertResultOrContinue(scalingMode->GetMode(&mode));
+                }
+            }
 
             IADLXDisplayIntegerScaling* integerScaling = null;
-            AcquireDisplayFeatureOrSkip(services->GetIntegerScaling(display, &integerScaling), integerScaling);
+            if (AcquireDisplayFeatureOrSkip(services->GetIntegerScaling(display, &integerScaling), integerScaling))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(integerScaling->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(integerScaling->IsEnabled(&enabled));
+                }
+            }
         });
     }
 
@@ -222,10 +254,26 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayColorDepth* colorDepth = null;
-            AcquireDisplayFeatureOrSkip(services->GetColorDepth(display, &colorDepth), colorDepth);
+            if (AcquireDisplayFeatureOrSkip(services->GetColorDepth(display, &colorDepth), colorDepth))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(colorDepth->IsSupported(&supported)))
+                {
+                    ADLX_COLOR_DEPTH depth = 0;
+                    AssertResultOrContinue(colorDepth->GetValue(&depth));
+                }
+            }
 
             IADLXDisplayPixelFormat* pixelFormat = null;
-            AcquireDisplayFeatureOrSkip(services->GetPixelFormat(display, &pixelFormat), pixelFormat);
+            if (AcquireDisplayFeatureOrSkip(services->GetPixelFormat(display, &pixelFormat), pixelFormat))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(pixelFormat->IsSupported(&supported)))
+                {
+                    ADLX_PIXEL_FORMAT format = 0;
+                    AssertResultOrContinue(pixelFormat->GetValue(&format));
+                }
+            }
         });
     }
 
@@ -236,7 +284,11 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayCustomColor* customColor = null;
-            AcquireDisplayFeatureOrSkip(services->GetCustomColor(display, &customColor), customColor);
+            if (AcquireDisplayFeatureOrSkip(services->GetCustomColor(display, &customColor), customColor))
+            {
+                bool hueSupported = false;
+                AssertResultOrContinue(customColor->IsHueSupported(&hueSupported));
+            }
         });
     }
 
@@ -250,7 +302,11 @@ public unsafe class ADLXDisplayServicesNativeTests
             if (AcquireDisplayFeatureOrSkip(services->GetHDCP(display, &hdcp), hdcp))
             {
                 bool supported = false;
-                AssertResultOrContinue(hdcp->IsSupported(&supported));
+                if (AssertResultOrContinue(hdcp->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(hdcp->IsEnabled(&enabled));
+                }
             }
         });
     }
@@ -262,7 +318,19 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayCustomResolution* customResolution = null;
-            AcquireDisplayFeatureOrSkip(services->GetCustomResolution(display, &customResolution), customResolution);
+            if (AcquireDisplayFeatureOrSkip(services->GetCustomResolution(display, &customResolution), customResolution))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(customResolution->IsSupported(&supported)))
+                {
+                    IADLXDisplayResolutionList* resolutions = null;
+                    if (AssertResultOrContinue(customResolution->GetResolutionList(&resolutions)))
+                    {
+                        using var resPtr = new ComPtr<IADLXDisplayResolutionList>(resolutions);
+                        Assert.True(resolutions->Size() >= 0);
+                    }
+                }
+            }
         });
     }
 
@@ -273,7 +341,15 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayVariBright* variBright = null;
-            AcquireDisplayFeatureOrSkip(services->GetVariBright(display, &variBright), variBright);
+            if (AcquireDisplayFeatureOrSkip(services->GetVariBright(display, &variBright), variBright))
+            {
+                bool supported = false;
+                if (AssertResultOrContinue(variBright->IsSupported(&supported)))
+                {
+                    bool enabled = false;
+                    AssertResultOrContinue(variBright->IsEnabled(&enabled));
+                }
+            }
         });
     }
 
@@ -284,7 +360,11 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplay3DLUT* lut = null;
-            AcquireDisplayFeatureOrSkip(services->Get3DLUT(display, &lut), lut);
+            if (AcquireDisplayFeatureOrSkip(services->Get3DLUT(display, &lut), lut))
+            {
+                bool supportedSce = false;
+                AssertResultOrContinue(lut->IsSupportedSCE(&supportedSce));
+            }
         });
     }
 
@@ -295,7 +375,11 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayGamma* gamma = null;
-            AcquireDisplayFeatureOrSkip(services->GetGamma(display, &gamma), gamma);
+            if (AcquireDisplayFeatureOrSkip(services->GetGamma(display, &gamma), gamma))
+            {
+                bool isReGamma = false;
+                AssertResultOrContinue(gamma->IsCurrentReGammaRamp(&isReGamma));
+            }
         });
     }
 
@@ -306,7 +390,11 @@ public unsafe class ADLXDisplayServicesNativeTests
         ForEachDisplay((services, display, index) =>
         {
             IADLXDisplayGamut* gamut = null;
-            AcquireDisplayFeatureOrSkip(services->GetGamut(display, &gamut), gamut);
+            if (AcquireDisplayFeatureOrSkip(services->GetGamut(display, &gamut), gamut))
+            {
+                bool supported = false;
+                AssertResultOrContinue(gamut->IsSupportedCCIR709ColorSpace(&supported));
+            }
         });
     }
 
