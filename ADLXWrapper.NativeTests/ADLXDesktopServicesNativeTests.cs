@@ -108,14 +108,119 @@ public unsafe class ADLXDesktopServicesNativeTests
         SkipIfNoAdlxSupport();
         ForEachDesktop((services, desktop, index) =>
         {
+            uint displayCount = 0;
+            var countOk = AssertResultOrContinue(desktop->GetNumberOfDisplays(&displayCount));
+
             IADLXDisplayList* displayList = null;
             if (AssertResultOrContinue(desktop->GetDisplays(&displayList)))
             {
                 using var dispListPtr = new ComPtr<IADLXDisplayList>(displayList);
                 var dispSize = displayList->Size();
-                Assert.True(dispSize >= 0);
+                if (countOk)
+                {
+                    Assert.Equal(displayCount, dispSize);
+                }
+                Assert.True(dispSize > 0, "Desktop returned an empty display list.");
             }
         });
+    }
+
+    [SkippableFact]
+    public void Desktop_simple_eyefinity_native()
+    {
+        SkipIfNoAdlxSupport();
+        using var servicesPtr = GetDesktopServicesComPtrOrSkip(out var services);
+
+        IADLXSimpleEyefinity* eyefinity = null;
+        var result = services->GetSimpleEyefinity(&eyefinity);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        // If supported but not active, IsSupported will return false
+        bool supported = false;
+        var supportResult = eyefinity->IsSupported(&supported);
+        Skip.If(supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, supportResult);
+        Skip.If(!supported, "Simple Eyefinity not active on this system (no Eyefinity desktop configured).");
+
+        using var eyefinityPtr = new ComPtr<IADLXSimpleEyefinity>(eyefinity);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)eyefinity);
+    }
+
+    [SkippableFact]
+    public void Eyefinity_desktop_properties_native()
+    {
+        SkipIfNoAdlxSupport();
+        using var servicesPtr = GetDesktopServicesComPtrOrSkip(out var services);
+
+        IADLXSimpleEyefinity* simpleEyefinity = null;
+        var eyefinityResult = services->GetSimpleEyefinity(&simpleEyefinity);
+        Skip.If(eyefinityResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, eyefinityResult);
+
+        bool supported = false;
+        var supportResult = simpleEyefinity->IsSupported(&supported);
+        Skip.If(supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Simple Eyefinity not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, supportResult);
+        Skip.If(!supported, "Eyefinity supported but no Eyefinity desktop configured.");
+
+        using var simpleEyefinityPtr = new ComPtr<IADLXSimpleEyefinity>(simpleEyefinity);
+        using var desktopListPtr = GetDesktopListOrSkip(services, out var desktopList);
+
+        var count = desktopList->Size();
+        Skip.If(count == 0, "No desktops returned by ADLX.");
+
+        bool foundEyefinity = false;
+        for (uint i = 0; i < count; i++)
+        {
+            IADLXDesktop* desktop = null;
+            var atResult = desktopList->At(i, &desktop);
+            if (atResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                continue;
+            Assert.Equal(ADLX_RESULT.ADLX_OK, atResult);
+            using var desktopPtr = new ComPtr<IADLXDesktop>(desktop);
+
+            IADLXEyefinityDesktop* eyefinityDesktop = null;
+            var iidTerminated = nameof(IADLXEyefinityDesktop) + "\0";
+            ADLX_RESULT qiResult;
+            fixed (char* chars = iidTerminated)
+            {
+                qiResult = desktop->QueryInterface((ushort*)chars, (void**)&eyefinityDesktop);
+            }
+
+            if (qiResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || qiResult == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE || eyefinityDesktop == null)
+                continue;
+
+            Assert.Equal(ADLX_RESULT.ADLX_OK, qiResult);
+            foundEyefinity = true;
+            using var eyefinityDesktopPtr = new ComPtr<IADLXEyefinityDesktop>(eyefinityDesktop);
+
+            uint rows = 0, cols = 0;
+            var gridResult = eyefinityDesktop->GridSize(&rows, &cols);
+            Assert.Equal(ADLX_RESULT.ADLX_OK, gridResult);
+            Assert.True(rows > 0 && cols > 0);
+
+            for (uint r = 0; r < rows; r++)
+            {
+                for (uint c = 0; c < cols; c++)
+                {
+                    IADLXDisplay* display = null;
+                    AssertResultOrContinue(eyefinityDesktop->GetDisplay(r, c, &display));
+                    using var dispPtr = new ComPtr<IADLXDisplay>(display);
+
+                    ADLX_Point topLeft = default;
+                    AssertResultOrContinue(eyefinityDesktop->DisplayTopLeft(r, c, &topLeft));
+
+                    int w = 0, h = 0;
+                    if (AssertResultOrContinue(eyefinityDesktop->DisplaySize(r, c, &w, &h)))
+                    {
+                        Assert.True(w > 0 && h > 0);
+                    }
+                }
+            }
+        }
+
+        Skip.If(!foundEyefinity, "Eyefinity supported but no Eyefinity desktop configured.");
     }
 
     [SkippableFact]
