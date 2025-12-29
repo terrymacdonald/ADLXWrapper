@@ -208,6 +208,9 @@ public unsafe class ADLXDesktopServicesNativeTests
                     AssertResultOrContinue(eyefinityDesktop->GetDisplay(r, c, &display));
                     using var dispPtr = new ComPtr<IADLXDisplay>(display);
 
+                    ADLX_ORIENTATION displayOrientation = 0;
+                    AssertResultOrContinue(eyefinityDesktop->DisplayOrientation(r, c, &displayOrientation));
+
                     ADLX_Point topLeft = default;
                     AssertResultOrContinue(eyefinityDesktop->DisplayTopLeft(r, c, &topLeft));
 
