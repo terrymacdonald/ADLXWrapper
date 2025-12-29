@@ -332,6 +332,94 @@ public unsafe class ADLXDisplayServicesNativeTests
         Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
     }
 
+    [SkippableFact]
+    public void Display_events_gamut_listener_native()
+    {
+        SkipIfNoAdlxSupport();
+        var services = GetDisplayServicesOrSkip();
+
+        IADLXDisplayChangedHandling* handling = null;
+        var result = services->GetDisplayChangedHandling(&handling);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var handlingPtr = new ComPtr<IADLXDisplayChangedHandling>(handling);
+        using var listener = new DummyDisplayGamutChangedListener();
+
+        var addResult = handling->AddDisplayGamutEventListener(listener.Pointer);
+        Skip.If(addResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display gamut event listeners not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, addResult);
+
+        var removeResult = handling->RemoveDisplayGamutEventListener(listener.Pointer);
+        Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
+    }
+
+    [SkippableFact]
+    public void Display_events_gamma_listener_native()
+    {
+        SkipIfNoAdlxSupport();
+        var services = GetDisplayServicesOrSkip();
+
+        IADLXDisplayChangedHandling* handling = null;
+        var result = services->GetDisplayChangedHandling(&handling);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var handlingPtr = new ComPtr<IADLXDisplayChangedHandling>(handling);
+        using var listener = new DummyDisplayGammaChangedListener();
+
+        var addResult = handling->AddDisplayGammaEventListener(listener.Pointer);
+        Skip.If(addResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display gamma event listeners not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, addResult);
+
+        var removeResult = handling->RemoveDisplayGammaEventListener(listener.Pointer);
+        Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
+    }
+
+    [SkippableFact]
+    public void Display_events_3dlut_listener_native()
+    {
+        SkipIfNoAdlxSupport();
+        var services = GetDisplayServicesOrSkip();
+
+        IADLXDisplayChangedHandling* handling = null;
+        var result = services->GetDisplayChangedHandling(&handling);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var handlingPtr = new ComPtr<IADLXDisplayChangedHandling>(handling);
+        using var listener = new DummyDisplay3DLUTChangedListener();
+
+        var addResult = handling->AddDisplay3DLUTEventListener(listener.Pointer);
+        Skip.If(addResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display 3DLUT event listeners not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, addResult);
+
+        var removeResult = handling->RemoveDisplay3DLUTEventListener(listener.Pointer);
+        Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
+    }
+
+    [SkippableFact]
+    public void Display_events_settings_listener_native()
+    {
+        SkipIfNoAdlxSupport();
+        var services = GetDisplayServicesOrSkip();
+
+        IADLXDisplayChangedHandling* handling = null;
+        var result = services->GetDisplayChangedHandling(&handling);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display changed handling not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var handlingPtr = new ComPtr<IADLXDisplayChangedHandling>(handling);
+        using var listener = new DummyDisplaySettingsChangedListener();
+
+        var addResult = handling->AddDisplaySettingsEventListener(listener.Pointer);
+        Skip.If(addResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display settings event listeners not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, addResult);
+
+        var removeResult = handling->RemoveDisplaySettingsEventListener(listener.Pointer);
+        Assert.Equal(ADLX_RESULT.ADLX_OK, removeResult);
+    }
+
     private void SkipIfNoAdlxSupport()
     {
         Skip.IfNot(ADLXApiHelper.IsADLXDllAvailable(out var dllError), $"ADLX DLL unavailable: {dllError}");
@@ -449,6 +537,146 @@ public unsafe class ADLXDisplayServicesNativeTests
 
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
         private static byte OnDisplayListChanged(IADLXDisplayListChangedListener* self, IADLXDisplayList* pNewDisplay) => 1;
+
+        public void Dispose()
+        {
+            if (_instance != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_instance);
+                _instance = IntPtr.Zero;
+            }
+
+            if (_vtable != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_vtable);
+                _vtable = IntPtr.Zero;
+            }
+        }
+    }
+
+    private sealed unsafe class DummyDisplayGamutChangedListener : IDisposable
+    {
+        private IntPtr _vtable;
+        private IntPtr _instance;
+
+        public IADLXDisplayGamutChangedListener* Pointer => (IADLXDisplayGamutChangedListener*)_instance;
+
+        public DummyDisplayGamutChangedListener()
+        {
+            _vtable = Marshal.AllocHGlobal(IntPtr.Size);
+            *((IntPtr*)_vtable) = (IntPtr)(delegate* unmanaged[Stdcall]<IADLXDisplayGamutChangedListener*, IADLXDisplayGamutChangedEvent*, byte>)&OnChanged;
+
+            _instance = Marshal.AllocHGlobal(sizeof(IADLXDisplayGamutChangedListener));
+            ((IADLXDisplayGamutChangedListener*)_instance)->lpVtbl = (void**)_vtable;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnChanged(IADLXDisplayGamutChangedListener* self, IADLXDisplayGamutChangedEvent* evt) => 1;
+
+        public void Dispose()
+        {
+            if (_instance != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_instance);
+                _instance = IntPtr.Zero;
+            }
+
+            if (_vtable != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_vtable);
+                _vtable = IntPtr.Zero;
+            }
+        }
+    }
+
+    private sealed unsafe class DummyDisplayGammaChangedListener : IDisposable
+    {
+        private IntPtr _vtable;
+        private IntPtr _instance;
+
+        public IADLXDisplayGammaChangedListener* Pointer => (IADLXDisplayGammaChangedListener*)_instance;
+
+        public DummyDisplayGammaChangedListener()
+        {
+            _vtable = Marshal.AllocHGlobal(IntPtr.Size);
+            *((IntPtr*)_vtable) = (IntPtr)(delegate* unmanaged[Stdcall]<IADLXDisplayGammaChangedListener*, IADLXDisplayGammaChangedEvent*, byte>)&OnChanged;
+
+            _instance = Marshal.AllocHGlobal(sizeof(IADLXDisplayGammaChangedListener));
+            ((IADLXDisplayGammaChangedListener*)_instance)->lpVtbl = (void**)_vtable;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnChanged(IADLXDisplayGammaChangedListener* self, IADLXDisplayGammaChangedEvent* evt) => 1;
+
+        public void Dispose()
+        {
+            if (_instance != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_instance);
+                _instance = IntPtr.Zero;
+            }
+
+            if (_vtable != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_vtable);
+                _vtable = IntPtr.Zero;
+            }
+        }
+    }
+
+    private sealed unsafe class DummyDisplay3DLUTChangedListener : IDisposable
+    {
+        private IntPtr _vtable;
+        private IntPtr _instance;
+
+        public IADLXDisplay3DLUTChangedListener* Pointer => (IADLXDisplay3DLUTChangedListener*)_instance;
+
+        public DummyDisplay3DLUTChangedListener()
+        {
+            _vtable = Marshal.AllocHGlobal(IntPtr.Size);
+            *((IntPtr*)_vtable) = (IntPtr)(delegate* unmanaged[Stdcall]<IADLXDisplay3DLUTChangedListener*, IADLXDisplay3DLUTChangedEvent*, byte>)&OnChanged;
+
+            _instance = Marshal.AllocHGlobal(sizeof(IADLXDisplay3DLUTChangedListener));
+            ((IADLXDisplay3DLUTChangedListener*)_instance)->lpVtbl = (void**)_vtable;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnChanged(IADLXDisplay3DLUTChangedListener* self, IADLXDisplay3DLUTChangedEvent* evt) => 1;
+
+        public void Dispose()
+        {
+            if (_instance != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_instance);
+                _instance = IntPtr.Zero;
+            }
+
+            if (_vtable != IntPtr.Zero)
+            {
+                Marshal.FreeHGlobal(_vtable);
+                _vtable = IntPtr.Zero;
+            }
+        }
+    }
+
+    private sealed unsafe class DummyDisplaySettingsChangedListener : IDisposable
+    {
+        private IntPtr _vtable;
+        private IntPtr _instance;
+
+        public IADLXDisplaySettingsChangedListener* Pointer => (IADLXDisplaySettingsChangedListener*)_instance;
+
+        public DummyDisplaySettingsChangedListener()
+        {
+            _vtable = Marshal.AllocHGlobal(IntPtr.Size);
+            *((IntPtr*)_vtable) = (IntPtr)(delegate* unmanaged[Stdcall]<IADLXDisplaySettingsChangedListener*, IADLXDisplaySettingsChangedEvent*, byte>)&OnChanged;
+
+            _instance = Marshal.AllocHGlobal(sizeof(IADLXDisplaySettingsChangedListener));
+            ((IADLXDisplaySettingsChangedListener*)_instance)->lpVtbl = (void**)_vtable;
+        }
+
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
+        private static byte OnChanged(IADLXDisplaySettingsChangedListener* self, IADLXDisplaySettingsChangedEvent* evt) => 1;
 
         public void Dispose()
         {
