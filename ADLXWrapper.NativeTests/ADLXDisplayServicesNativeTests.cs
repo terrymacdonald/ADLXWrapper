@@ -379,6 +379,42 @@ public unsafe class ADLXDisplayServicesNativeTests
             {
                 bool isReGamma = false;
                 AssertResultOrContinue(gamma->IsCurrentReGammaRamp(&isReGamma));
+
+                bool isDeGamma = false;
+                AssertResultOrContinue(gamma->IsCurrentDeGammaRamp(&isDeGamma));
+
+                bool isCoeff = false;
+                AssertResultOrContinue(gamma->IsCurrentRegammaCoefficient(&isCoeff));
+
+                bool supportedSRGB = false;
+                AssertResultOrContinue(gamma->IsSupportedReGammaSRGB(&supportedSRGB));
+
+                bool supportedBT709 = false;
+                AssertResultOrContinue(gamma->IsSupportedReGammaBT709(&supportedBT709));
+
+                bool supportedPQ = false;
+                AssertResultOrContinue(gamma->IsSupportedReGammaPQ(&supportedPQ));
+
+                bool supportedPQ2084 = false;
+                AssertResultOrContinue(gamma->IsSupportedReGammaPQ2084Interim(&supportedPQ2084));
+
+                bool supported36 = false;
+                AssertResultOrContinue(gamma->IsSupportedReGamma36(&supported36));
+
+                bool isCurrentSRGB = false;
+                AssertResultOrContinue(gamma->IsCurrentReGammaSRGB(&isCurrentSRGB));
+
+                bool isCurrentBT709 = false;
+                AssertResultOrContinue(gamma->IsCurrentReGammaBT709(&isCurrentBT709));
+
+                bool isCurrentPQ = false;
+                AssertResultOrContinue(gamma->IsCurrentReGammaPQ(&isCurrentPQ));
+
+                bool isCurrentPQ2084 = false;
+                AssertResultOrContinue(gamma->IsCurrentReGammaPQ2084Interim(&isCurrentPQ2084));
+
+                bool isCurrent36 = false;
+                AssertResultOrContinue(gamma->IsCurrentReGamma36(&isCurrent36));
             }
         });
     }
@@ -394,6 +430,60 @@ public unsafe class ADLXDisplayServicesNativeTests
             {
                 bool supported = false;
                 AssertResultOrContinue(gamut->IsSupportedCCIR709ColorSpace(&supported));
+
+                bool supported601 = false;
+                AssertResultOrContinue(gamut->IsSupportedCCIR601ColorSpace(&supported601));
+
+                bool supportedAdobe = false;
+                AssertResultOrContinue(gamut->IsSupportedAdobeRgbColorSpace(&supportedAdobe));
+
+                bool supportedCie = false;
+                AssertResultOrContinue(gamut->IsSupportedCIERgbColorSpace(&supportedCie));
+
+                bool supported2020 = false;
+                AssertResultOrContinue(gamut->IsSupportedCCIR2020ColorSpace(&supported2020));
+
+                bool supportedCustom = false;
+                AssertResultOrContinue(gamut->IsSupportedCustomColorSpace(&supportedCustom));
+
+                bool wp5000 = false;
+                AssertResultOrContinue(gamut->IsSupported5000kWhitePoint(&wp5000));
+
+                bool wp6500 = false;
+                AssertResultOrContinue(gamut->IsSupported6500kWhitePoint(&wp6500));
+
+                bool wp7500 = false;
+                AssertResultOrContinue(gamut->IsSupported7500kWhitePoint(&wp7500));
+
+                bool wp9300 = false;
+                AssertResultOrContinue(gamut->IsSupported9300kWhitePoint(&wp9300));
+
+                bool wpCustom = false;
+                AssertResultOrContinue(gamut->IsSupportedCustomWhitePoint(&wpCustom));
+
+                bool isCurrent709 = false;
+                AssertResultOrContinue(gamut->IsCurrentCCIR709ColorSpace(&isCurrent709));
+
+                bool isCurrent601 = false;
+                AssertResultOrContinue(gamut->IsCurrentCCIR601ColorSpace(&isCurrent601));
+
+                bool isCurrentAdobe = false;
+                AssertResultOrContinue(gamut->IsCurrentAdobeRgbColorSpace(&isCurrentAdobe));
+
+                bool isCurrentCie = false;
+                AssertResultOrContinue(gamut->IsCurrentCIERgbColorSpace(&isCurrentCie));
+
+                bool isCurrent2020 = false;
+                AssertResultOrContinue(gamut->IsCurrentCCIR2020ColorSpace(&isCurrent2020));
+
+                bool isCurrentCustom = false;
+                AssertResultOrContinue(gamut->IsCurrentCustomColorSpace(&isCurrentCustom));
+
+                ADLX_Point whitePoint = default;
+                AssertResultOrContinue(gamut->GetWhitePoint(&whitePoint));
+
+                ADLX_GamutColorSpace colorSpace = default;
+                AssertResultOrContinue(gamut->GetGamutColorSpace(&colorSpace));
             }
         });
     }
