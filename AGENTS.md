@@ -45,6 +45,7 @@ This file captures the essential rules and context for agents working on this AD
 
 ## Testing Expectations
 - Suites: xUnit in `ADLXWrapper.NativeTests` (Native) and `ADLXWrapper.FacadeTests` (Facade) targeting `net10.0`; hardware-aware and read-only (no tuning changes). Global xUnit parallelization is disabled.
+- Test one feature per individual test case, as we want to keep good visibility for the user as to which test fails.
 - Run (Native first): `dotnet test ADLXWrapper.NativeTests/ADLXWrapper.NativeTests.csproj --verbosity normal` (or from tests folder), or `./test_adlx.ps1`. Then run facades with `dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal`.
 - Both Native and Facade tests should test the full range of the AMD ADLX API. 
 - Test Filenames should align with each of the feature areas being tested. e.g. 
