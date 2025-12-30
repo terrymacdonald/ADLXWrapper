@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXUtils
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -63,7 +63,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryQueryInterface
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseInterface
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddRefInterface
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -177,7 +177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUName
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVendorId
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTotalVRAM
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -279,7 +279,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMType
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -313,7 +313,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUUniqueId
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -347,7 +347,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUDeviceId
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -381,7 +381,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUDriverPath
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -415,7 +415,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUPNPString
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -449,7 +449,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUExternal
     path: ../ADLXWrapper/ADLXUtils.cs
@@ -483,7 +483,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXUtils.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasGPUDesktops
     path: ../ADLXWrapper/ADLXUtils.cs

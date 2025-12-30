@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_APP_GPU_DEPENDENCY
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_BOUND
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: APP_GPU_NOT_BOUND
     path: ../ADLXWrapper/cs_generated/ADLX_APP_GPU_DEPENDENCY.cs

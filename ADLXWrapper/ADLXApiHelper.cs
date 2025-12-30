@@ -229,13 +229,13 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Get the system services as an AdlxInterfaceHandle (AddRef'd for caller ownership).
+        /// Get the system services as an ADLXInterfaceHandle (AddRef'd for caller ownership).
         /// </summary>
-        public unsafe AdlxInterfaceHandle GetSystemServicesHandle()
+        public unsafe ADLXInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
             var ptr = _systemServices;
-            return AdlxInterfaceHandle.FromNonRefCounted(ptr);
+            return ADLXInterfaceHandle.FromNonRefCounted(ptr);
         }
 
         /// <summary>

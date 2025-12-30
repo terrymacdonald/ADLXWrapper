@@ -97,11 +97,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplay
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -135,11 +135,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -176,11 +176,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -205,11 +205,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -234,11 +234,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionWidth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -263,11 +263,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionHeight
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -292,11 +292,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -321,11 +321,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -350,11 +350,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -379,11 +379,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -408,11 +408,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
@@ -437,11 +437,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 55
   assemblies:
   - ADLXWrapper
@@ -466,11 +466,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -495,11 +495,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 59
   assemblies:
   - ADLXWrapper
@@ -524,11 +524,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 65
   assemblies:
   - ADLXWrapper
@@ -554,11 +554,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSync
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 83
   assemblies:
   - ADLXWrapper
@@ -589,11 +589,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSync
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 90
   assemblies:
   - ADLXWrapper
@@ -623,11 +623,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuScalingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 100
   assemblies:
   - ADLXWrapper
@@ -653,11 +653,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGpuScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 118
   assemblies:
   - ADLXWrapper
@@ -688,11 +688,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGpuScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 125
   assemblies:
   - ADLXWrapper
@@ -722,11 +722,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 135
   assemblies:
   - ADLXWrapper
@@ -752,11 +752,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayInfo
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 149
   assemblies:
   - ADLXWrapper
@@ -780,11 +780,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 160
   assemblies:
   - ADLXWrapper
@@ -812,11 +812,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 167
   assemblies:
   - ADLXWrapper
@@ -843,11 +843,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 177
   assemblies:
   - ADLXWrapper
@@ -873,11 +873,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 188
   assemblies:
   - ADLXWrapper
@@ -903,11 +903,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 199
   assemblies:
   - ADLXWrapper
@@ -936,11 +936,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 210
   assemblies:
   - ADLXWrapper
@@ -971,11 +971,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 221
   assemblies:
   - ADLXWrapper
@@ -1001,11 +1001,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 235
   assemblies:
   - ADLXWrapper
@@ -1033,11 +1033,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 242
   assemblies:
   - ADLXWrapper
@@ -1067,11 +1067,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 252
   assemblies:
   - ADLXWrapper
@@ -1097,11 +1097,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 266
   assemblies:
   - ADLXWrapper
@@ -1129,11 +1129,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 273
   assemblies:
   - ADLXWrapper
@@ -1163,11 +1163,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHdcpState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 283
   assemblies:
   - ADLXWrapper
@@ -1193,11 +1193,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHdcp
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 297
   assemblies:
   - ADLXWrapper
@@ -1225,11 +1225,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHdcp
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 304
   assemblies:
   - ADLXWrapper
@@ -1259,11 +1259,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 314
   assemblies:
   - ADLXWrapper
@@ -1289,11 +1289,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 328
   assemblies:
   - ADLXWrapper
@@ -1323,11 +1323,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 335
   assemblies:
   - ADLXWrapper
@@ -1359,11 +1359,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 345
   assemblies:
   - ADLXWrapper
@@ -1389,11 +1389,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 360
   assemblies:
   - ADLXWrapper
@@ -1418,11 +1418,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 367
   assemblies:
   - ADLXWrapper
@@ -1449,11 +1449,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 377
   assemblies:
   - ADLXWrapper
@@ -1479,11 +1479,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 391
   assemblies:
   - ADLXWrapper
@@ -1508,11 +1508,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 398
   assemblies:
   - ADLXWrapper
@@ -1539,11 +1539,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 408
   assemblies:
   - ADLXWrapper
@@ -1569,11 +1569,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 423
   assemblies:
   - ADLXWrapper
@@ -1598,11 +1598,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 431
   assemblies:
   - ADLXWrapper
@@ -1629,11 +1629,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 442
   assemblies:
   - ADLXWrapper
@@ -1659,11 +1659,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 457
   assemblies:
   - ADLXWrapper
@@ -1685,11 +1685,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 465
   assemblies:
   - ADLXWrapper
@@ -1713,11 +1713,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 476
   assemblies:
   - ADLXWrapper
@@ -1743,11 +1743,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 491
   assemblies:
   - ADLXWrapper
@@ -1769,11 +1769,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 499
   assemblies:
   - ADLXWrapper
@@ -1797,11 +1797,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 510
   assemblies:
   - ADLXWrapper
@@ -1827,11 +1827,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 525
   assemblies:
   - ADLXWrapper
@@ -1853,11 +1853,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 533
   assemblies:
   - ADLXWrapper
@@ -1881,11 +1881,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 544
   assemblies:
   - ADLXWrapper
@@ -1911,11 +1911,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 559
   assemblies:
   - ADLXWrapper
@@ -1940,11 +1940,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 567
   assemblies:
   - ADLXWrapper
@@ -1971,11 +1971,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 578
   assemblies:
   - ADLXWrapper
@@ -2001,11 +2001,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 593
   assemblies:
   - ADLXWrapper
@@ -2033,11 +2033,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 601
   assemblies:
   - ADLXWrapper
@@ -2067,11 +2067,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 612
   assemblies:
   - ADLXWrapper
@@ -2097,11 +2097,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 627
   assemblies:
   - ADLXWrapper
@@ -2129,11 +2129,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 635
   assemblies:
   - ADLXWrapper
@@ -2163,11 +2163,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 646
   assemblies:
   - ADLXWrapper
@@ -2193,11 +2193,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 661
   assemblies:
   - ADLXWrapper
@@ -2225,11 +2225,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 669
   assemblies:
   - ADLXWrapper
@@ -2259,11 +2259,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 680
   assemblies:
   - ADLXWrapper
@@ -2292,11 +2292,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 688
   assemblies:
   - ADLXWrapper
@@ -2326,11 +2326,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 700
   assemblies:
   - ADLXWrapper
@@ -2359,11 +2359,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 708
   assemblies:
   - ADLXWrapper
@@ -2393,11 +2393,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 720
   assemblies:
   - ADLXWrapper
@@ -2426,11 +2426,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 728
   assemblies:
   - ADLXWrapper
@@ -2460,11 +2460,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 740
   assemblies:
   - ADLXWrapper
@@ -2493,11 +2493,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 748
   assemblies:
   - ADLXWrapper
@@ -2527,11 +2527,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 760
   assemblies:
   - ADLXWrapper
@@ -2560,11 +2560,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 768
   assemblies:
   - ADLXWrapper
@@ -2594,11 +2594,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 780
   assemblies:
   - ADLXWrapper
@@ -2624,11 +2624,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 798
   assemblies:
   - ADLXWrapper
@@ -2654,11 +2654,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopInfo
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 860
   assemblies:
   - ADLXWrapper
@@ -2684,11 +2684,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 871
   assemblies:
   - ADLXWrapper

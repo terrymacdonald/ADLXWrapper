@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsChangedHandling
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
@@ -208,7 +208,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedHandling.cs

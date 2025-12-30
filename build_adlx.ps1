@@ -215,9 +215,9 @@ try {
         throw "Rebuild failed with exit code $LASTEXITCODE"
     }
     
-    Write-Host ""
-    Write-Host "Rebuild completed successfully!" -ForegroundColor Green
-    Write-Host ""
+Write-Host ""
+Write-Host "Rebuild completed successfully!" -ForegroundColor Green
+Write-Host ""
 } catch {
     Write-Host ""
     Write-Host "ERROR: Rebuild failed!" -ForegroundColor Red
@@ -241,10 +241,11 @@ Write-Host "====================================================================
 Write-Host ""
 Write-Host "Projects built:" -ForegroundColor Cyan
 Write-Host "  - ADLXWrapper (ClangSharp-based wrapper)" -ForegroundColor Green
-Write-Host "  - ADLXWrapper.Tests (Test suite)" -ForegroundColor Green
+Write-Host "  - ADLXWrapper.NativeTests (Native test suite)" -ForegroundColor Green
+Write-Host "  - ADLXWrapper.FacadeTests (Facade helper test suite)" -ForegroundColor Green
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Cyan
-Write-Host "  - Run tests: .\test_adlx.ps1" -ForegroundColor Gray
+Write-Host "  - Run Native and Facade tests: .\test_adlx.ps1" -ForegroundColor Gray
 Write-Host "  - Use in your project: Add reference to ADLXWrapper\ADLXWrapper.csproj" -ForegroundColor Gray
 Write-Host ""
 Write-Host "Press Enter to exit..."

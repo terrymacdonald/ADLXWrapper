@@ -37,6 +37,9 @@ items:
   - uid: ADLXWrapper.ADLXHardwareDetection
     name: ADLXHardwareDetection
     type: Class
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    type: Struct
   - uid: ADLXWrapper.ADLXListHelpers
     name: ADLXListHelpers
     type: Class
@@ -211,9 +214,6 @@ items:
   - uid: ADLXWrapper.ADLX_WHITE_POINT
     name: ADLX_WHITE_POINT
     type: Enum
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    type: Struct
   - uid: ADLXWrapper.All3DSettingsInfo
     name: All3DSettingsInfo
     type: Struct

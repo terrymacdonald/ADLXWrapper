@@ -1,6 +1,7 @@
 #
 # ADLXWrapper Test Script (PowerShell)
 # Runs unit tests for the ADLXWrapper ClangSharp-based C# bindings
+# Executes the Native test suite first, then the Facade test suite.
 #
 
 # Get the directory where this script is located
@@ -15,7 +16,7 @@ Write-Host "Working directory: $scriptRoot" -ForegroundColor Cyan
 Write-Host ""
 
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "ADLXWrapper Test Suite (ClangSharp Implementation)" -ForegroundColor Cyan
+Write-Host "ADLXWrapper Native Test Suite (ClangSharp Implementation)" -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -122,39 +123,47 @@ try {
 }
 
 # ============================================================================
-# Verify test project exists
+# Verify test projects exist
 # ============================================================================
-$testProjectPath = Join-Path $scriptRoot "ADLXWrapper.Tests\ADLXWrapper.Tests.csproj"
+$nativeTestProjectPath = Join-Path $scriptRoot "ADLXWrapper.NativeTests\ADLXWrapper.NativeTests.csproj"
+$facadeTestProjectPath = Join-Path $scriptRoot "ADLXWrapper.FacadeTests\ADLXWrapper.FacadeTests.csproj"
 
-if (-not (Test-Path $testProjectPath)) {
-    Write-Host "ERROR: Test project not found at: $testProjectPath" -ForegroundColor Red
+if (-not (Test-Path $nativeTestProjectPath)) {
+    Write-Host "ERROR: Native test project not found at: $nativeTestProjectPath" -ForegroundColor Red
     Write-Host ""
     Read-Host "Press Enter to exit"
     exit 1
 }
 
-Write-Host "Test project found: $testProjectPath" -ForegroundColor Green
+if (-not (Test-Path $facadeTestProjectPath)) {
+    Write-Host "ERROR: Facade test project not found at: $facadeTestProjectPath" -ForegroundColor Red
+    Write-Host ""
+    Read-Host "Press Enter to exit"
+    exit 1
+}
+
+Write-Host "Native test project found: $nativeTestProjectPath" -ForegroundColor Green
+Write-Host "Facade test project found: $facadeTestProjectPath" -ForegroundColor Green
 Write-Host ""
 
 # ============================================================================
-# Build and run unit tests
+# Run Native tests first
 # ============================================================================
 Write-Host "============================================================================" -ForegroundColor Cyan
-Write-Host "Building and running ClangSharp-based unit tests..." -ForegroundColor Cyan
+Write-Host "Running Native test suite (ClangSharp-generated APIs)..." -ForegroundColor Cyan
 Write-Host "============================================================================" -ForegroundColor Cyan
 Write-Host ""
 
 try {
     # Run tests with detailed console output
-    Write-Host "dotnet test $testProjectPath --configuration Debug --verbosity normal"
-    dotnet test $testProjectPath --configuration Debug --verbosity normal
+    Write-Host "dotnet test $nativeTestProjectPath --configuration Debug --verbosity normal"
+    dotnet test $nativeTestProjectPath --configuration Debug --verbosity normal
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host ""
         Write-Host "============================================================================" -ForegroundColor Green
-        Write-Host "*** ALL TESTS PASSED! ***" -ForegroundColor Green
+        Write-Host "*** NATIVE TESTS PASSED! ***" -ForegroundColor Green
         Write-Host "============================================================================" -ForegroundColor Green
-        Write-Host "All unit tests completed successfully using .NET 10.0" -ForegroundColor Green
         Write-Host ""
     } else {
         Write-Host ""
@@ -170,6 +179,7 @@ try {
         Write-Host "  - Review test output above for specific failure details" -ForegroundColor Gray
         Write-Host ""
         Write-Host "Tests automatically skip if hardware/drivers don't support them." -ForegroundColor Cyan
+        Write-Host "Facade suite not run; fix Native suite first." -ForegroundColor Gray
         Write-Host ""
         
         Read-Host "Press Enter to exit..."
@@ -183,4 +193,52 @@ try {
     Read-Host "Press Enter to exit..."
     exit 1
 }
+
+# ============================================================================
+# Run Facade tests second
+# ============================================================================
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host "Running Facade test suite (helper/facade APIs)..." -ForegroundColor Cyan
+Write-Host "============================================================================" -ForegroundColor Cyan
+Write-Host ""
+
+try {
+    Write-Host "dotnet test $facadeTestProjectPath --configuration Debug --verbosity normal"
+    dotnet test $facadeTestProjectPath --configuration Debug --verbosity normal
+    
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host ""
+        Write-Host "============================================================================" -ForegroundColor Green
+        Write-Host "*** ALL TESTS PASSED! ***" -ForegroundColor Green
+        Write-Host "============================================================================" -ForegroundColor Green
+        Write-Host "Native + Facade unit tests completed successfully using .NET 10.0" -ForegroundColor Green
+        Write-Host ""
+    } else {
+        Write-Host ""
+        Write-Host "============================================================================" -ForegroundColor Yellow
+        Write-Host "*** FACADE TESTS FAILED OR WERE SKIPPED ***" -ForegroundColor Yellow
+        Write-Host "============================================================================" -ForegroundColor Yellow
+        Write-Host "Exit code: $LASTEXITCODE" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "Troubleshooting tips:" -ForegroundColor Yellow
+        Write-Host "  - Facade tests assume Native bindings are working" -ForegroundColor Gray
+        Write-Host "  - Ensure AMD GPU with ADLX support is present" -ForegroundColor Gray
+        Write-Host "  - Verify AMD Adrenalin drivers are installed (21.10.1 or newer)" -ForegroundColor Gray
+        Write-Host "  - Review test output above for specific failure details" -ForegroundColor Gray
+        Write-Host ""
+        Write-Host "Tests automatically skip if hardware/drivers don't support them." -ForegroundColor Cyan
+        Write-Host ""
+        
+        Read-Host "Press Enter to exit..."
+        exit 1
+    }
+} catch {
+    Write-Host ""
+    Write-Host "ERROR: Failed to run Facade unit tests!" -ForegroundColor Red
+    Write-Host "Error: $_" -ForegroundColor Yellow
+    Write-Host ""
+    Read-Host "Press Enter to exit..."
+    exit 1
+}
+
 Read-Host "Press Enter to exit..."

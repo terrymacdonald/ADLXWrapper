@@ -70,11 +70,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the current display services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetDisplayServicesHandle()
+        public ADLXInterfaceHandle GetDisplayServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle[] EnumerateDisplayHandles()
+        public ADLXInterfaceHandle[] EnumerateDisplayHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -357,13 +357,13 @@ namespace ADLXWrapper
 
             using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
             var count = displayList.Get()->Size();
-            var handles = new AdlxInterfaceHandle[count];
+            var handles = new ADLXInterfaceHandle[count];
 
             for (uint i = 0; i < count; i++)
             {
                 IADLXDisplay* pDisplay = null;
                 displayList.Get()->At(i, &pDisplay);
-                handles[i] = AdlxInterfaceHandle.From(pDisplay, addRef: false);
+                handles[i] = ADLXInterfaceHandle.From(pDisplay, addRef: false);
             }
 
             return handles;
@@ -372,7 +372,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to enumerate display handles; returns false if not supported.
         /// </summary>
-        public bool TryEnumerateDisplayHandles(out AdlxInterfaceHandle[] handles)
+        public bool TryEnumerateDisplayHandles(out ADLXInterfaceHandle[] handles)
         {
             try
             {
@@ -381,7 +381,7 @@ namespace ADLXWrapper
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
-                handles = Array.Empty<AdlxInterfaceHandle>();
+                handles = Array.Empty<ADLXInterfaceHandle>();
                 return false;
             }
         }
@@ -412,9 +412,9 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the display change handling interface.
         /// </summary>
-        public AdlxInterfaceHandle GetDisplayChangedHandling()
+        public ADLXInterfaceHandle GetDisplayChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetDisplayChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDisplayChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>

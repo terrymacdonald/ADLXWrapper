@@ -53,11 +53,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the desktop services interface for external ownership.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetDesktopServicesHandle()
+        public ADLXInterfaceHandle GetDesktopServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -365,7 +365,7 @@ namespace ADLXWrapper
         /// <returns>Array of native desktop handles.</returns>
         /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle[] EnumerateDesktopHandles()
+        public ADLXInterfaceHandle[] EnumerateDesktopHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -382,13 +382,13 @@ namespace ADLXWrapper
 
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
             var count = desktopList.Get()->Size();
-            var handles = new AdlxInterfaceHandle[count];
+            var handles = new ADLXInterfaceHandle[count];
 
             for (uint i = 0; i < count; i++)
             {
                 IADLXDesktop* pDesktop = null;
                 desktopList.Get()->At(i, &pDesktop);
-                handles[i] = AdlxInterfaceHandle.From(pDesktop, addRef: false);
+                handles[i] = ADLXInterfaceHandle.From(pDesktop, addRef: false);
             }
 
             return handles;
@@ -436,9 +436,9 @@ namespace ADLXWrapper
             return handling;
         }
 
-        public AdlxInterfaceHandle GetDesktopChangedHandling()
+        public ADLXInterfaceHandle GetDesktopChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetDesktopChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDesktopChangedHandlingNative(), addRef: true);
         }
 
         public SimpleEyefinityInfo GetSimpleEyefinity()
@@ -456,7 +456,7 @@ namespace ADLXWrapper
             return new SimpleEyefinityInfo(simple.Get());
         }
 
-        public AdlxInterfaceHandle GetSimpleEyefinityHandle()
+        public ADLXInterfaceHandle GetSimpleEyefinityHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -467,7 +467,7 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get simple Eyefinity interface");
 
-            return AdlxInterfaceHandle.From(pSimple, addRef: false);
+            return ADLXInterfaceHandle.From(pSimple, addRef: false);
         }
 
         public EyefinityDesktopInfo CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)

@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXApplication
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -56,7 +56,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProcessID
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -248,7 +248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FullPath
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXApplication.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUDependencyType
     path: ../ADLXWrapper/cs_generated/IADLXApplication.cs

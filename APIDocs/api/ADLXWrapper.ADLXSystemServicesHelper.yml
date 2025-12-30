@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXSystemServicesHelper
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -136,7 +136,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -174,7 +174,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -185,11 +185,11 @@ items:
   summary: Returns an AddRef'd handle to the system services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetSystemServicesHandle()
+    content: public ADLXInterfaceHandle GetSystemServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native system interface.
-    content.vb: Public Function GetSystemServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetSystemServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetSystemServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -247,7 +247,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -258,11 +258,11 @@ items:
   summary: Returns an AddRef'd handle to the display services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetDisplayServicesHandle()
+    content: public ADLXInterfaceHandle GetDisplayServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native display services interface.
-    content.vb: Public Function GetDisplayServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetDisplayServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetDisplayServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -322,7 +322,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -360,7 +360,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -398,7 +398,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -409,11 +409,11 @@ items:
   summary: Returns an AddRef'd handle to the desktop services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetDesktopServicesHandle()
+    content: public ADLXInterfaceHandle GetDesktopServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native desktop services interface.
-    content.vb: Public Function GetDesktopServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetDesktopServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetDesktopServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -436,7 +436,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -473,7 +473,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -511,7 +511,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -549,7 +549,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -560,11 +560,11 @@ items:
   summary: Returns an AddRef'd handle to the 3D settings services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+    content: public ADLXInterfaceHandle Get3DSettingsServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native 3D settings services interface.
-    content.vb: Public Function Get3DSettingsServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function Get3DSettingsServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.Get3DSettingsServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -587,7 +587,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGet3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -624,7 +624,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -662,7 +662,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -700,7 +700,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -711,11 +711,11 @@ items:
   summary: Returns an AddRef'd handle to the GPU tuning services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetGPUTuningServicesHandle()
+    content: public ADLXInterfaceHandle GetGPUTuningServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native GPU tuning services interface.
-    content.vb: Public Function GetGPUTuningServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetGPUTuningServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -738,7 +738,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -775,7 +775,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -813,7 +813,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -851,7 +851,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -862,11 +862,11 @@ items:
   summary: Returns an AddRef'd handle to the performance monitoring services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+    content: public ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native performance monitoring services interface.
-    content.vb: Public Function GetPerformanceMonitoringServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetPerformanceMonitoringServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetPerformanceMonitoringServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -889,7 +889,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -926,7 +926,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -964,7 +964,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1002,7 +1002,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1013,11 +1013,11 @@ items:
   summary: Returns an AddRef'd handle to the power tuning services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+    content: public ADLXInterfaceHandle GetPowerTuningServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native power tuning services interface.
-    content.vb: Public Function GetPowerTuningServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetPowerTuningServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetPowerTuningServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -1040,7 +1040,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1077,7 +1077,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1115,7 +1115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1153,7 +1153,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1164,11 +1164,11 @@ items:
   summary: Returns an AddRef'd handle to the multimedia services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetMultimediaServicesHandle()
+    content: public ADLXInterfaceHandle GetMultimediaServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native multimedia services interface.
-    content.vb: Public Function GetMultimediaServicesHandle() As AdlxInterfaceHandle
+    content.vb: Public Function GetMultimediaServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetMultimediaServicesHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -1191,7 +1191,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1228,7 +1228,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1266,7 +1266,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1304,7 +1304,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1315,11 +1315,11 @@ items:
   summary: Returns an AddRef'd handle to the GPU change handling interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetGPUsChangedHandling()
+    content: public ADLXInterfaceHandle GetGPUsChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native GPU change handling interface.
-    content.vb: Public Function GetGPUsChangedHandling() As AdlxInterfaceHandle
+    content.vb: Public Function GetGPUsChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUsChangedHandling*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -1342,7 +1342,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1380,7 +1380,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1391,11 +1391,11 @@ items:
   summary: Returns an AddRef'd handle to the GPU applications list change handling interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetGPUAppsListChangedHandling()
+    content: public ADLXInterfaceHandle GetGPUAppsListChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
       description: Managed handle to the native GPU apps list change handling interface.
-    content.vb: Public Function GetGPUAppsListChangedHandling() As AdlxInterfaceHandle
+    content.vb: Public Function GetGPUAppsListChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUAppsListChangedHandling*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -1418,7 +1418,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1456,7 +1456,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1494,7 +1494,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysInUse
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1532,7 +1532,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1570,7 +1570,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1581,11 +1581,11 @@ items:
   summary: Enumerates GPU native handles (AddRef'd for caller ownership).
   example: []
   syntax:
-    content: public AdlxInterfaceHandle[] EnumerateGPUsHandle()
+    content: public ADLXInterfaceHandle[] EnumerateGPUsHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle[]
+      type: ADLXWrapper.ADLXInterfaceHandle[]
       description: Array of native GPU interface handles.
-    content.vb: Public Function EnumerateGPUsHandle() As AdlxInterfaceHandle()
+    content.vb: Public Function EnumerateGPUsHandle() As ADLXInterfaceHandle()
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -1608,7 +1608,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1646,7 +1646,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1688,7 +1688,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1726,7 +1726,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -1756,7 +1756,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -2054,13 +2054,13 @@ references:
   name: GetSystemServicesHandle
   nameWithType: ADLXSystemServicesHelper.GetSystemServicesHandle
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetSystemServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html
@@ -2646,25 +2646,25 @@ references:
   name: EnumerateGPUsHandle
   nameWithType: ADLXSystemServicesHelper.EnumerateGPUsHandle
   fullName: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUsHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle[]
+- uid: ADLXWrapper.ADLXInterfaceHandle[]
   isExternal: true
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle[]
-  nameWithType: AdlxInterfaceHandle[]
-  fullName: ADLXWrapper.AdlxInterfaceHandle[]
-  nameWithType.vb: AdlxInterfaceHandle()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle()
-  name.vb: AdlxInterfaceHandle()
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle[]
+  nameWithType: ADLXInterfaceHandle[]
+  fullName: ADLXWrapper.ADLXInterfaceHandle[]
+  nameWithType.vb: ADLXInterfaceHandle()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle()
+  name.vb: ADLXInterfaceHandle()
   spec.csharp:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: '['
   - name: ']'
   spec.vb:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: (
   - name: )
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateGPUs*

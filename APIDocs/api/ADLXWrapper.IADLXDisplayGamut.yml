@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -136,7 +136,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -165,7 +165,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -202,7 +202,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCCIR709ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -237,7 +237,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCCIR601ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -272,7 +272,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedAdobeRgbColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -307,7 +307,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCIERgbColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -342,7 +342,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCCIR2020ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -377,7 +377,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCustomColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported5000kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -447,7 +447,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported6500kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -482,7 +482,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported7500kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -517,7 +517,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported9300kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -552,7 +552,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedCustomWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -587,7 +587,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent5000kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -622,7 +622,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent6500kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -657,7 +657,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent7500kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -692,7 +692,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent9300kWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -727,7 +727,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCustomWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -762,7 +762,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetWhitePoint
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -794,7 +794,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCCIR709ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -829,7 +829,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCCIR601ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -864,7 +864,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentAdobeRgbColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -899,7 +899,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCIERgbColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -934,7 +934,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCCIR2020ColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -969,7 +969,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCustomColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -1004,7 +1004,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamutColorSpace
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -1036,7 +1036,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -1070,7 +1070,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -1104,7 +1104,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
@@ -1138,7 +1138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamut.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGamut
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamut.cs

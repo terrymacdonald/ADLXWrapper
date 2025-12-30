@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DChill
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -116,7 +116,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -145,7 +145,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -217,7 +217,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFPSRange
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -284,7 +284,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMinFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -319,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -389,7 +389,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMinFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs
@@ -424,7 +424,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DChill.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxFPS
     path: ../ADLXWrapper/cs_generated/IADLX3DChill.cs

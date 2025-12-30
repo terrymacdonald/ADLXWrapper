@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktopServicesHelper
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -154,7 +154,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -165,10 +165,10 @@ items:
   summary: Returns an AddRef'd handle to the desktop services interface for external ownership.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetDesktopServicesHandle()
+    content: public ADLXInterfaceHandle GetDesktopServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetDesktopServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetDesktopServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -188,7 +188,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -226,7 +226,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -260,7 +260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -298,7 +298,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -332,7 +332,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -377,7 +377,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -413,7 +413,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -502,7 +502,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -537,7 +537,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -579,7 +579,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -617,7 +617,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopHandles
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -628,11 +628,11 @@ items:
   summary: Enumerates native desktop handles (AddRef'd) for advanced/native callers.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle[] EnumerateDesktopHandles()
+    content: public ADLXInterfaceHandle[] EnumerateDesktopHandles()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle[]
+      type: ADLXWrapper.ADLXInterfaceHandle[]
       description: Array of native desktop handles.
-    content.vb: Public Function EnumerateDesktopHandles() As AdlxInterfaceHandle()
+    content.vb: Public Function EnumerateDesktopHandles() As ADLXInterfaceHandle()
   overload: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopHandles*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -655,7 +655,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -693,7 +693,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandlingNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -721,7 +721,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandling
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -730,10 +730,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle GetDesktopChangedHandling()
+    content: public ADLXInterfaceHandle GetDesktopChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetDesktopChangedHandling() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetDesktopChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopChangedHandling*
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity
@@ -749,7 +749,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinity
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -777,7 +777,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinityHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -786,10 +786,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle GetSimpleEyefinityHandle()
+    content: public ADLXInterfaceHandle GetSimpleEyefinityHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetSimpleEyefinityHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetSimpleEyefinityHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinityHandle*
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop(ADLXWrapper.IADLXSimpleEyefinity*)
@@ -805,7 +805,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -836,7 +836,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -867,7 +867,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -896,7 +896,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -926,7 +926,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDisplayListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -957,7 +957,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -988,7 +988,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -1019,7 +1019,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -1050,7 +1050,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -1364,13 +1364,13 @@ references:
   name: GetDesktopServicesHandle
   nameWithType: ADLXDesktopServicesHelper.GetDesktopServicesHandle
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html
@@ -1658,25 +1658,25 @@ references:
   name: EnumerateDesktopHandles
   nameWithType: ADLXDesktopServicesHelper.EnumerateDesktopHandles
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.EnumerateDesktopHandles
-- uid: ADLXWrapper.AdlxInterfaceHandle[]
+- uid: ADLXWrapper.ADLXInterfaceHandle[]
   isExternal: true
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle[]
-  nameWithType: AdlxInterfaceHandle[]
-  fullName: ADLXWrapper.AdlxInterfaceHandle[]
-  nameWithType.vb: AdlxInterfaceHandle()
-  fullName.vb: ADLXWrapper.AdlxInterfaceHandle()
-  name.vb: AdlxInterfaceHandle()
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle[]
+  nameWithType: ADLXInterfaceHandle[]
+  fullName: ADLXWrapper.ADLXInterfaceHandle[]
+  nameWithType.vb: ADLXInterfaceHandle()
+  fullName.vb: ADLXWrapper.ADLXInterfaceHandle()
+  name.vb: ADLXInterfaceHandle()
   spec.csharp:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: '['
   - name: ']'
   spec.vb:
-  - uid: ADLXWrapper.AdlxInterfaceHandle
-    name: AdlxInterfaceHandle
-    href: ADLXWrapper.AdlxInterfaceHandle.html
+  - uid: ADLXWrapper.ADLXInterfaceHandle
+    name: ADLXInterfaceHandle
+    href: ADLXWrapper.ADLXInterfaceHandle.html
   - name: (
   - name: )
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopListNative*

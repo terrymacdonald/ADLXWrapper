@@ -42,11 +42,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available power tuning services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+        public ADLXInterfaceHandle GetPowerTuningServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace ADLXWrapper
             }
         }
 
-        public AdlxInterfaceHandle[] EnumerateGPUConnectGpuHandles()
+        public ADLXInterfaceHandle[] EnumerateGPUConnectGpuHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -102,12 +102,12 @@ namespace ADLXWrapper
 
             using var list = new ComPtr<IADLXGPU2List>(pList);
             var count = list.Get()->Size();
-            var handles = new AdlxInterfaceHandle[count];
+            var handles = new ADLXInterfaceHandle[count];
             for (uint i = 0; i < count; i++)
             {
                 IADLXGPU2* gpu = null;
                 list.Get()->At(i, &gpu);
-                handles[i] = AdlxInterfaceHandle.From(gpu, addRef: false);
+                handles[i] = ADLXInterfaceHandle.From(gpu, addRef: false);
             }
 
             return handles;
@@ -116,7 +116,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.
         /// </summary>
-        public bool TryEnumerateGPUConnectGpuHandles(out AdlxInterfaceHandle[] handles)
+        public bool TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[] handles)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace ADLXWrapper
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
-                handles = Array.Empty<AdlxInterfaceHandle>();
+                handles = Array.Empty<ADLXInterfaceHandle>();
                 return false;
             }
         }
@@ -172,9 +172,9 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the power tuning change handling interface.
         /// </summary>
-        public AdlxInterfaceHandle GetPowerTuningChangedHandling()
+        public ADLXInterfaceHandle GetPowerTuningChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>

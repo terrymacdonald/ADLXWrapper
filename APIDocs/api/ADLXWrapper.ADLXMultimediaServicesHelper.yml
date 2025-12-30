@@ -39,7 +39,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXMultimediaServicesHelper
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -160,10 +160,10 @@ items:
   summary: Returns an AddRef'd handle to the multimedia services interface.
   example: []
   syntax:
-    content: public AdlxInterfaceHandle GetMultimediaServicesHandle()
+    content: public ADLXInterfaceHandle GetMultimediaServicesHandle()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetMultimediaServicesHandle() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetMultimediaServicesHandle() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle*
   exceptions:
   - type: System.ObjectDisposedException
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaChangedHandlingNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetMultimediaChangedHandlingNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -257,7 +257,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaChangedHandling
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -266,10 +266,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public AdlxInterfaceHandle GetMultimediaChangedHandling()
+    content: public ADLXInterfaceHandle GetMultimediaChangedHandling()
     return:
-      type: ADLXWrapper.AdlxInterfaceHandle
-    content.vb: Public Function GetMultimediaChangedHandling() As AdlxInterfaceHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    content.vb: Public Function GetMultimediaChangedHandling() As ADLXInterfaceHandle
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling*
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -316,7 +316,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -350,7 +350,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscaleNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -381,7 +381,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoUpscaleNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -419,7 +419,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -450,7 +450,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -488,7 +488,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -522,7 +522,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -560,7 +560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -594,7 +594,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -632,7 +632,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolutionNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -663,7 +663,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoSuperResolutionNative
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -701,7 +701,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -732,7 +732,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -770,7 +770,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -804,7 +804,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -842,7 +842,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -872,7 +872,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -1170,13 +1170,13 @@ references:
   name: GetMultimediaServicesHandle
   nameWithType: ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-- uid: ADLXWrapper.AdlxInterfaceHandle
-  commentId: T:ADLXWrapper.AdlxInterfaceHandle
+- uid: ADLXWrapper.ADLXInterfaceHandle
+  commentId: T:ADLXWrapper.ADLXInterfaceHandle
   parent: ADLXWrapper
-  href: ADLXWrapper.AdlxInterfaceHandle.html
-  name: AdlxInterfaceHandle
-  nameWithType: AdlxInterfaceHandle
-  fullName: ADLXWrapper.AdlxInterfaceHandle
+  href: ADLXWrapper.ADLXInterfaceHandle.html
+  name: ADLXInterfaceHandle
+  nameWithType: ADLXInterfaceHandle
+  fullName: ADLXWrapper.ADLXInterfaceHandle
 - uid: ADLXWrapper.ADLXException
   commentId: T:ADLXWrapper.ADLXException
   href: ADLXWrapper.ADLXException.html

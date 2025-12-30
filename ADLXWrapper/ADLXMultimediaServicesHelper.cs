@@ -45,11 +45,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the multimedia services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetMultimediaServicesHandle()
+        public ADLXInterfaceHandle GetMultimediaServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -93,9 +93,9 @@ namespace ADLXWrapper
             }
         }
 
-        public AdlxInterfaceHandle GetMultimediaChangedHandling()
+        public ADLXInterfaceHandle GetMultimediaChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
         }
 
         public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)

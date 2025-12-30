@@ -64,10 +64,10 @@ namespace ADLXWrapper
         /// </summary>
         /// <returns>Managed handle to the native system interface.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetSystemServicesHandle()
+        public ADLXInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
-            return AdlxInterfaceHandle.FromNonRefCounted(GetSystemServicesNative());
+            return ADLXInterfaceHandle.FromNonRefCounted(GetSystemServicesNative());
         }
 
         /// <summary>
@@ -91,9 +91,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native display services interface.</returns>
         /// <exception cref="ADLXException">If display services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetDisplayServicesHandle()
+        public ADLXInterfaceHandle GetDisplayServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -151,9 +151,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native desktop services interface.</returns>
         /// <exception cref="ADLXException">If desktop services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetDesktopServicesHandle()
+        public ADLXInterfaceHandle GetDesktopServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -211,9 +211,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native 3D settings services interface.</returns>
         /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle Get3DSettingsServicesHandle()
+        public ADLXInterfaceHandle Get3DSettingsServicesHandle()
         {
-            return AdlxInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -269,9 +269,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native GPU tuning services interface.</returns>
         /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetGPUTuningServicesHandle()
+        public ADLXInterfaceHandle GetGPUTuningServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -327,9 +327,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native performance monitoring services interface.</returns>
         /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetPerformanceMonitoringServicesHandle()
+        public ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -385,9 +385,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native power tuning services interface.</returns>
         /// <exception cref="ADLXException">If power tuning services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetPowerTuningServicesHandle()
+        public ADLXInterfaceHandle GetPowerTuningServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetPowerTuningServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -443,9 +443,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native multimedia services interface.</returns>
         /// <exception cref="ADLXException">If multimedia services are unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetMultimediaServicesHandle()
+        public ADLXInterfaceHandle GetMultimediaServicesHandle()
         {
-            return AdlxInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetMultimediaServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -501,9 +501,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native GPU change handling interface.</returns>
         /// <exception cref="ADLXException">If change handling is unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetGPUsChangedHandling()
+        public ADLXInterfaceHandle GetGPUsChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetGPUsChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetGPUsChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>
@@ -527,9 +527,9 @@ namespace ADLXWrapper
         /// <returns>Managed handle to the native GPU apps list change handling interface.</returns>
         /// <exception cref="ADLXException">If the extended interface is unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle GetGPUAppsListChangedHandling()
+        public ADLXInterfaceHandle GetGPUAppsListChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>
@@ -609,7 +609,7 @@ namespace ADLXWrapper
         /// <returns>Array of native GPU interface handles.</returns>
         /// <exception cref="ADLXException">If enumeration fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public AdlxInterfaceHandle[] EnumerateGPUsHandle()
+        public ADLXInterfaceHandle[] EnumerateGPUsHandle()
         {
             ThrowIfDisposed();
             IADLXGPUList* pGpuList = null;
@@ -619,13 +619,13 @@ namespace ADLXWrapper
 
             using var gpuList = new ComPtr<IADLXGPUList>(pGpuList);
             var count = gpuList.Get()->Size();
-            var handles = new AdlxInterfaceHandle[count];
+            var handles = new ADLXInterfaceHandle[count];
 
             for (uint i = 0; i < count; i++)
             {
                 IADLXGPU* pGpu = null;
                 gpuList.Get()->At(i, &pGpu);
-                handles[i] = AdlxInterfaceHandle.From(pGpu, addRef: false);
+                handles[i] = ADLXInterfaceHandle.From(pGpu, addRef: false);
             }
 
             return handles;

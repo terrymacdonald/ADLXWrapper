@@ -44,11 +44,11 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available GPU tuning services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AdlxInterfaceHandle GetGPUTuningServicesHandle()
+        public ADLXInterfaceHandle GetGPUTuningServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            return AdlxInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
         }
 
         /// <summary>
@@ -75,9 +75,9 @@ namespace ADLXWrapper
             return handling;
         }
 
-        public AdlxInterfaceHandle GetGPUTuningChangedHandling()
+        public ADLXInterfaceHandle GetGPUTuningChangedHandling()
         {
-            return AdlxInterfaceHandle.From(GetGPUTuningChangedHandlingNative(), addRef: true);
+            return ADLXInterfaceHandle.From(GetGPUTuningChangedHandlingNative(), addRef: true);
         }
 
         /// <summary>

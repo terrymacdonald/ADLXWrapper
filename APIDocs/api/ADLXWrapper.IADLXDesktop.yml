@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDesktop
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -212,7 +212,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Size
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -249,7 +249,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeft
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -281,7 +281,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -313,7 +313,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNumberOfDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
@@ -348,7 +348,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDesktop.cs
-      branch: develop
+      branch: feature-native-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplays
     path: ../ADLXWrapper/cs_generated/IADLXDesktop.cs
