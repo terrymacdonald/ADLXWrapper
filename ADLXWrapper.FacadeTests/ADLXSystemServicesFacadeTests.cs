@@ -124,4 +124,51 @@ public class ADLXSystemServicesFacadeTests
             throw new Xunit.SkipException("Power tuning services not supported on this hardware/driver.");
         }
     }
+
+    [SkippableFact]
+    public void System_gpu_identity_facade()
+    {
+        SkipIfUnavailable();
+        IReadOnlyList<ADLXGPU> gpus;
+        try
+        {
+            gpus = _fixture.System!.EnumerateADLXGPUs();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("GPU enumeration not supported on this hardware/driver.");
+        }
+
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        using var gpu = gpus[0];
+        Assert.False(string.IsNullOrWhiteSpace(gpu.Name));
+        Assert.False(string.IsNullOrWhiteSpace(gpu.VendorId));
+        Assert.True(gpu.UniqueId != 0);
+        Assert.True(gpu.TotalVRAM >= 0);
+        Assert.False(string.IsNullOrWhiteSpace(gpu.VRAMType));
+    }
+
+    [SkippableFact]
+    public void System_display_identity_facade()
+    {
+        SkipIfUnavailable();
+        IReadOnlyList<ADLXDisplay> displays;
+        try
+        {
+            displays = _fixture.System!.EnumerateDisplays();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("Display enumeration not supported on this hardware/driver.");
+        }
+
+        Skip.If(displays.Count == 0, "No displays returned by ADLX.");
+        using var display = displays[0];
+        Assert.False(string.IsNullOrWhiteSpace(display.Name));
+        Assert.False(string.IsNullOrWhiteSpace(display.Edid));
+        Assert.True(display.NativeResolutionWidth > 0);
+        Assert.True(display.NativeResolutionHeight > 0);
+        Assert.True(display.RefreshRate > 0);
+        Assert.NotEqual<uint>(0, display.ManufacturerId);
+    }
 }
