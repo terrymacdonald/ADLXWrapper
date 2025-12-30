@@ -8,11 +8,11 @@ namespace ADLXWrapper.FacadeTests;
 
 [Collection("FacadeSessionCollection")]
 [SupportedOSPlatform("windows")]
-public class ADLXDesktopFacadeTests
+public class ADLXDesktopServicesFacadeTests
 {
     private readonly FacadeSessionFixture _fixture;
 
-    public ADLXDesktopFacadeTests(FacadeSessionFixture fixture)
+    public ADLXDesktopServicesFacadeTests(FacadeSessionFixture fixture)
     {
         _fixture = fixture;
     }

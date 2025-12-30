@@ -7,11 +7,11 @@ namespace ADLXWrapper.FacadeTests;
 
 [Collection("FacadeSessionCollection")]
 [SupportedOSPlatform("windows")]
-public class ADLXGPUTuningFacadeTests
+public class ADLXGPUTuningServicesFacadeTests
 {
     private readonly FacadeSessionFixture _fixture;
 
-    public ADLXGPUTuningFacadeTests(FacadeSessionFixture fixture)
+    public ADLXGPUTuningServicesFacadeTests(FacadeSessionFixture fixture)
     {
         _fixture = fixture;
     }
