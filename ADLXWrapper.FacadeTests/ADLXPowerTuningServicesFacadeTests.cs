@@ -90,27 +90,38 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_manual_power_info_facade()
     {
         using var power = GetPowerOrSkip();
-        using var tuning = _fixture.System!.GetGPUTuningServices();
-
-        unsafe
+        ADLXGPUTuningServicesHelper tuning;
+        try
         {
-            var gpuHandles = _fixture.System.EnumerateGPUsHandle();
-            Skip.If(gpuHandles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = gpuHandles[0];
+            tuning = _fixture.System!.GetGPUTuningServices();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("GPU tuning services not supported on this hardware/driver.");
+        }
+        using (tuning)
+        {
 
-            if (!power.TryGetManualPowerTuning(tuning, gpuHandle, out var info))
-                throw new Xunit.SkipException("Manual power tuning not supported on this GPU.");
-
-            Skip.If(!info.PowerLimitSupported && !info.TdcLimitSupported, "Manual power tuning reported unsupported.");
-
-            if (info.PowerLimitSupported)
+            unsafe
             {
-                Assert.True(info.PowerLimitRange.minValue <= info.PowerLimitValue && info.PowerLimitValue <= info.PowerLimitRange.maxValue);
-            }
+                var gpuHandles = _fixture.System.EnumerateGPUsHandle();
+                Skip.If(gpuHandles.Length == 0, "No GPUs returned by ADLX.");
+                using var gpuHandle = gpuHandles[0];
 
-            if (info.TdcLimitSupported)
-            {
-                Assert.True(info.TdcLimitRange.minValue <= info.TdcLimitValue && info.TdcLimitValue <= info.TdcLimitRange.maxValue);
+                if (!power.TryGetManualPowerTuning(tuning, gpuHandle, out var info))
+                    throw new Xunit.SkipException("Manual power tuning not supported on this GPU.");
+
+                Skip.If(!info.PowerLimitSupported && !info.TdcLimitSupported, "Manual power tuning reported unsupported.");
+
+                if (info.PowerLimitSupported)
+                {
+                    Assert.True(info.PowerLimitRange.minValue <= info.PowerLimitValue && info.PowerLimitValue <= info.PowerLimitRange.maxValue);
+                }
+
+                if (info.TdcLimitSupported)
+                {
+                    Assert.True(info.TdcLimitRange.minValue <= info.TdcLimitValue && info.TdcLimitValue <= info.TdcLimitRange.maxValue);
+                }
             }
         }
     }
