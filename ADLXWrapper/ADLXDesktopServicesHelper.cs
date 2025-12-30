@@ -15,6 +15,7 @@ namespace ADLXWrapper
         private ComPtr<IADLXDesktopServices> _desktopServices;
         private ComPtr<IADLXDisplayServices>? _displayServices;
         private ComPtr<IADLXDesktopChangedHandling>? _desktopChangedHandling;
+        private readonly IADLXSystem* _system; // optional system pointer to reacquire services
         private bool _disposed;
 
         /// <summary>
@@ -24,7 +25,8 @@ namespace ADLXWrapper
         /// <param name="displayServices">Optional display services pointer used to build display facades.</param>
         /// <param name="addRefDesktopServices">True to AddRef the desktop services pointer.</param>
         /// <param name="addRefDisplayServices">True to AddRef the display services pointer.</param>
-        public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true)
+        /// <param name="system">Optional system pointer used to reacquire desktop services per call.</param>
+        public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true, IADLXSystem* system = null)
         {
             if (desktopServices == null) throw new ArgumentNullException(nameof(desktopServices));
             if (addRefDesktopServices)
@@ -40,6 +42,7 @@ namespace ADLXWrapper
                 }
                 _displayServices = new ComPtr<IADLXDisplayServices>(displayServices);
             }
+            _system = system;
         }
 
         public IADLXDesktopServices* GetDesktopServicesNative()
@@ -70,9 +73,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = _desktopServices.Get();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+            using var servicesOwner = AcquireDesktopServices(out var services);
+
+            uint numDesktops = 0;
+            var countResult = services->GetNumberOfDesktops(&numDesktops);
+            if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop count not supported by this ADLX system");
+            if (countResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(countResult, "Failed to get desktop count");
 
             IADLXDesktopList* pDesktopList = null;
             var result = services->GetDesktops(&pDesktopList);
@@ -83,6 +91,8 @@ namespace ADLXWrapper
 
             var desktops = new List<DesktopInfo>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
+            if (desktopList.Get()->Size() == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No desktops returned by ADLX.");
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
                 IADLXDesktop* pDesktop = null;
@@ -118,9 +128,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = _desktopServices.Get();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+            using var servicesOwner = AcquireDesktopServices(out var services);
+
+            uint numDesktops = 0;
+            var countResult = services->GetNumberOfDesktops(&numDesktops);
+            if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop count not supported by this ADLX system");
+            if (countResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(countResult, "Failed to get desktop count");
 
             IADLXDesktopList* pDesktopList = null;
             var result = services->GetDesktops(&pDesktopList);
@@ -131,6 +146,8 @@ namespace ADLXWrapper
 
             var desktops = new List<ADLXDesktop>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
+            if (desktopList.Get()->Size() == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No desktops returned by ADLX.");
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
                 IADLXDesktop* pDesktop = null;
@@ -173,9 +190,14 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = _desktopServices.Get();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+            using var servicesOwner = AcquireDesktopServices(out var services);
+
+            uint numDesktops = 0;
+            var countResult = services->GetNumberOfDesktops(&numDesktops);
+            if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop count not supported by this ADLX system");
+            if (countResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(countResult, "Failed to get desktop count");
 
             IADLXDesktopList* pDesktopList = null;
             var result = services->GetDesktops(&pDesktopList);
@@ -186,6 +208,8 @@ namespace ADLXWrapper
 
             var desktops = new List<ADLXDesktop>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
+            if (desktopList.Get()->Size() == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No desktops returned by ADLX.");
             for (uint i = 0; i < desktopList.Get()->Size(); i++)
             {
                 IADLXDesktop* pDesktop = null;
@@ -589,6 +613,32 @@ namespace ADLXWrapper
             }
 
             return displays;
+        }
+
+        /// <summary>
+        /// Acquire a desktop services pointer for the current call. Uses system to reacquire when available to avoid stale interfaces.
+        /// </summary>
+        private ComPtr<IADLXDesktopServices> AcquireDesktopServices(out IADLXDesktopServices* services)
+        {
+            if (_system != null)
+            {
+                IADLXDesktopServices* fresh = null;
+                var result = _system->GetDesktopsServices(&fresh);
+                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || fresh == null)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, "Failed to get desktop services");
+
+                services = fresh;
+                return new ComPtr<IADLXDesktopServices>(fresh);
+            }
+
+            services = _desktopServices.Get();
+            if (services == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+
+            ADLXUtils.AddRefInterface((IntPtr)services);
+            return new ComPtr<IADLXDesktopServices>(services);
         }
 
         private void ThrowIfDisposed()

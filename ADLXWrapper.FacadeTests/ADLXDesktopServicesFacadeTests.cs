@@ -27,8 +27,7 @@ public class ADLXDesktopServicesFacadeTests
         SkipIfUnavailable();
         try
         {
-            using var desktopHelper = _fixture.System!.GetDesktopServices();
-            var desktops = desktopHelper.EnumerateADLXDesktops();
+            var desktops = _fixture.System!.EnumerateDesktops();
             Skip.If(desktops.Count == 0, "No desktops returned by ADLX.");
             return desktops;
         }
