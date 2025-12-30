@@ -1674,14 +1674,17 @@ namespace ADLXWrapper
                 if (pDisplay == IntPtr.Zero)
                     throw new ArgumentNullException(nameof(pDisplay));
 
-                var services = (IADLXDisplayServices*)pDisplayServices;
+                if (!ADLXUtils.TryQueryInterface(pDisplayServices, nameof(IADLXDisplayServices3), out var pServices3) || pServices3 == IntPtr.Zero)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Blanking requires Display Services v3.");
+
+                using var services = new ComPtr<IADLXDisplayServices3>((IADLXDisplayServices3*)pServices3);
                 IADLXDisplayBlanking* pBlanking;
-                var result = services->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
+                var result = services.Get()->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pBlanking == null)
                     throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Blanking not supported by this ADLX system");
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get Display Blanking interface");
-    
+
                 return (IntPtr)pBlanking;
             }
     
