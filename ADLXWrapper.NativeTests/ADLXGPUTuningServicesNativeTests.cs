@@ -18,6 +18,11 @@ public unsafe class ADLXGPUTuningServicesNativeTests
         _session = fixture.Session;
     }
 
+    private static void AssertRangeHasSpan(ADLX_IntRange range, string name)
+    {
+        Assert.True(range.maxValue >= range.minValue, $"{name} range has inverted bounds.");
+    }
+
     [SkippableFact]
     public void Gpu_tuning_services_acquire_native()
     {
@@ -195,7 +200,10 @@ public unsafe class ADLXGPUTuningServicesNativeTests
                 using var powerTyped = new ComPtr<IADLXManualPowerTuning>(power);
 
                 ADLX_IntRange limitRange = default;
-                AssertResultOrContinue(power->GetPowerLimitRange(&limitRange));
+                if (AssertResultOrContinue(power->GetPowerLimitRange(&limitRange)))
+                {
+                    AssertRangeHasSpan(limitRange, "Power limit");
+                }
 
                 int limit = 0;
                 AssertResultOrContinue(power->GetPowerLimit(&limit));
@@ -205,7 +213,10 @@ public unsafe class ADLXGPUTuningServicesNativeTests
                 if (tdcSupported)
                 {
                     ADLX_IntRange tdcRange = default;
-                    AssertResultOrContinue(power->GetTDCLimitRange(&tdcRange));
+                    if (AssertResultOrContinue(power->GetTDCLimitRange(&tdcRange)))
+                    {
+                        AssertRangeHasSpan(tdcRange, "TDC");
+                    }
                     int tdc = 0;
                     AssertResultOrContinue(power->GetTDCLimit(&tdc));
                 }
@@ -242,7 +253,11 @@ public unsafe class ADLXGPUTuningServicesNativeTests
                 using var fanTyped = new ComPtr<IADLXManualFanTuning1>(fan);
                 ADLX_IntRange speedRange = default;
                 ADLX_IntRange tempRange = default;
-                AssertResultOrContinue(fan->GetFanTuningRanges(&speedRange, &tempRange));
+                if (AssertResultOrContinue(fan->GetFanTuningRanges(&speedRange, &tempRange)))
+                {
+                    AssertRangeHasSpan(speedRange, "Fan speed");
+                    AssertRangeHasSpan(tempRange, "Fan temperature");
+                }
 
                 bool zeroRpm = false;
                 AssertResultOrContinue(fan->GetZeroRPMState(&zeroRpm));
@@ -294,13 +309,17 @@ public unsafe class ADLXGPUTuningServicesNativeTests
                 using var gfxTyped = new ComPtr<IADLXManualGraphicsTuning1>(gfx);
                 ADLX_IntRange freqRange = default;
                 ADLX_IntRange voltRange = default;
-                AssertResultOrContinue(gfx->GetGPUTuningRanges(&freqRange, &voltRange));
+                if (AssertResultOrContinue(gfx->GetGPUTuningRanges(&freqRange, &voltRange)))
+                {
+                    AssertRangeHasSpan(freqRange, "GFX frequency");
+                    AssertRangeHasSpan(voltRange, "GFX voltage");
+                }
 
                 IADLXManualTuningStateList* states = null;
-                AssertResultOrContinue(gfx->GetGPUTuningStates(&states));
-                if (states != null)
+                if (AssertResultOrContinue(gfx->GetGPUTuningStates(&states)) && states != null)
                 {
                     using var statesPtr = new ComPtr<IADLXManualTuningStateList>(states);
+                    Assert.True(states->Size() > 0, "GFX tuning state list returned empty.");
                 }
             }
         });
@@ -344,13 +363,17 @@ public unsafe class ADLXGPUTuningServicesNativeTests
                 using var vramTyped = new ComPtr<IADLXManualVRAMTuning1>(vram);
                 ADLX_IntRange freqRange = default;
                 ADLX_IntRange voltRange = default;
-                AssertResultOrContinue(vram->GetVRAMTuningRanges(&freqRange, &voltRange));
+                if (AssertResultOrContinue(vram->GetVRAMTuningRanges(&freqRange, &voltRange)))
+                {
+                    AssertRangeHasSpan(freqRange, "VRAM frequency");
+                    AssertRangeHasSpan(voltRange, "VRAM voltage");
+                }
 
                 IADLXMemoryTimingDescriptionList* timings = null;
-                AssertResultOrContinue(vram->GetSupportedMemoryTimingDescriptionList(&timings));
-                if (timings != null)
+                if (AssertResultOrContinue(vram->GetSupportedMemoryTimingDescriptionList(&timings)) && timings != null)
                 {
                     using var timingPtr = new ComPtr<IADLXMemoryTimingDescriptionList>(timings);
+                    Assert.True(timings->Size() > 0, "VRAM memory timing description list returned empty.");
                 }
             }
         });

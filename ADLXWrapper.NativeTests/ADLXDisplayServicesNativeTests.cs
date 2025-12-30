@@ -120,6 +120,7 @@ public unsafe class ADLXDisplayServicesNativeTests
             {
                 var edid = Marshal.PtrToStringAnsi((IntPtr)edidPtr) ?? string.Empty;
                 Assert.False(string.IsNullOrWhiteSpace(edid));
+                Assert.True(edid.Length >= 16, "EDID string unexpectedly short.");
             }
         });
     }
@@ -327,7 +328,7 @@ public unsafe class ADLXDisplayServicesNativeTests
                     if (AssertResultOrContinue(customResolution->GetResolutionList(&resolutions)))
                     {
                         using var resPtr = new ComPtr<IADLXDisplayResolutionList>(resolutions);
-                        Assert.True(resolutions->Size() >= 0);
+                        Assert.True(resolutions->Size() > 0, "Custom resolution list is empty.");
                     }
                 }
             }
@@ -432,11 +433,22 @@ public unsafe class ADLXDisplayServicesNativeTests
                 var rampResult = gamma->GetGammaRamp(&ramp);
                 Skip.If(rampResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || rampResult == ADLX_RESULT.ADLX_FAIL, $"Gamma ramp not available on this hardware/driver: {rampResult}.");
                 Assert.Equal(ADLX_RESULT.ADLX_OK, rampResult);
+                var hasNonZeroRamp = false;
+                for (int i = 0; i < 16; i++)
+                {
+                    if (ramp.gamma[i] != 0)
+                    {
+                        hasNonZeroRamp = true;
+                        break;
+                    }
+                }
+                Assert.True(hasNonZeroRamp, "Gamma ramp appears empty (first 16 entries are zero).");
 
                 ADLX_RegammaCoeff coeff = default;
                 var coeffResult = gamma->GetGammaCoefficient(&coeff);
                 Skip.If(coeffResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || coeffResult == ADLX_RESULT.ADLX_FAIL, $"Gamma coefficient not available on this hardware/driver: {coeffResult}.");
                 Assert.Equal(ADLX_RESULT.ADLX_OK, coeffResult);
+                Assert.True(coeff.coefficientA0 != 0 || coeff.coefficientA1 != 0 || coeff.coefficientA2 != 0 || coeff.coefficientA3 != 0 || coeff.gamma != 0, "Gamma coefficients all zero.");
             }
         });
     }

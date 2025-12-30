@@ -105,19 +105,28 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
             if (usageSupported)
             {
                 double gpuUsage = 0;
-                AssertResultOrContinue(metrics->GPUUsage(&gpuUsage));
+                if (AssertResultOrContinue(metrics->GPUUsage(&gpuUsage)))
+                {
+                    Assert.InRange(gpuUsage, 0, 100);
+                }
             }
 
             if (clockSupported)
             {
                 int gpuClock = 0;
-                AssertResultOrContinue(metrics->GPUClockSpeed(&gpuClock));
+                if (AssertResultOrContinue(metrics->GPUClockSpeed(&gpuClock)))
+                {
+                    Assert.True(gpuClock >= 0);
+                }
             }
 
             if (vramClockSupported)
             {
                 int vramClock = 0;
-                AssertResultOrContinue(metrics->GPUVRAMClockSpeed(&vramClock));
+                if (AssertResultOrContinue(metrics->GPUVRAMClockSpeed(&vramClock)))
+                {
+                    Assert.True(vramClock >= 0);
+                }
             }
         });
     }
@@ -151,19 +160,28 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
             if (tempSupported)
             {
                 double gpuTemp = 0;
-                AssertResultOrContinue(metrics->GPUTemperature(&gpuTemp));
+                if (AssertResultOrContinue(metrics->GPUTemperature(&gpuTemp)))
+                {
+                    Assert.True(gpuTemp >= 0);
+                }
             }
 
             if (hotspotSupported)
             {
                 double hotspotTemp = 0;
-                AssertResultOrContinue(metrics->GPUHotspotTemperature(&hotspotTemp));
+                if (AssertResultOrContinue(metrics->GPUHotspotTemperature(&hotspotTemp)))
+                {
+                    Assert.True(hotspotTemp >= 0);
+                }
             }
 
             if (intakeTempSupported)
             {
                 double intakeTemp = 0;
-                AssertResultOrContinue(metrics->GPUIntakeTemperature(&intakeTemp));
+                if (AssertResultOrContinue(metrics->GPUIntakeTemperature(&intakeTemp)))
+                {
+                    Assert.True(intakeTemp >= 0);
+                }
             }
 
             IADLXGPUMetrics1* metrics1 = null;
@@ -179,7 +197,10 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
                     {
                         using var m2Ptr = new ComPtr<IADLXGPUMetrics2>(metrics2);
                         double memTemp = 0;
-                        AssertResultOrContinue(metrics2->GPUMemoryTemperature(&memTemp));
+                        if (AssertResultOrContinue(metrics2->GPUMemoryTemperature(&memTemp)))
+                        {
+                            Assert.True(memTemp >= 0);
+                        }
                     }
                 }
             }
@@ -213,19 +234,28 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
             if (powerSupported)
             {
                 double gpuPower = 0;
-                AssertResultOrContinue(metrics->GPUPower(&gpuPower));
+                if (AssertResultOrContinue(metrics->GPUPower(&gpuPower)))
+                {
+                    Assert.True(gpuPower >= 0);
+                }
             }
 
             if (totalBoardPowerSupported)
             {
                 double boardPower = 0;
-                AssertResultOrContinue(metrics->GPUTotalBoardPower(&boardPower));
+                if (AssertResultOrContinue(metrics->GPUTotalBoardPower(&boardPower)))
+                {
+                    Assert.True(boardPower >= 0);
+                }
             }
 
             if (fanSupported)
             {
                 int fanSpeed = 0;
-                AssertResultOrContinue(metrics->GPUFanSpeed(&fanSpeed));
+                if (AssertResultOrContinue(metrics->GPUFanSpeed(&fanSpeed)))
+                {
+                    Assert.True(fanSpeed >= 0);
+                }
             }
         });
     }
@@ -254,13 +284,19 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
             if (vramSupported)
             {
                 int vram = 0;
-                AssertResultOrContinue(metrics->GPUVRAM(&vram));
+                if (AssertResultOrContinue(metrics->GPUVRAM(&vram)))
+                {
+                    Assert.True(vram >= 0);
+                }
             }
 
             if (voltageSupported)
             {
                 int voltage = 0;
-                AssertResultOrContinue(metrics->GPUVoltage(&voltage));
+                if (AssertResultOrContinue(metrics->GPUVoltage(&voltage)))
+                {
+                    Assert.True(voltage >= 0);
+                }
             }
         });
     }
@@ -283,10 +319,16 @@ public unsafe class ADLXPerformanceMonitoringServicesNativeTests
                 using var m1Ptr = new ComPtr<IADLXGPUMetrics1>(metrics1);
 
                 int npuFreq = 0;
-                AssertResultOrContinue(metrics1->NPUFrequency(&npuFreq));
+                if (AssertResultOrContinue(metrics1->NPUFrequency(&npuFreq)))
+                {
+                    Assert.True(npuFreq >= 0);
+                }
 
                 int npuActivity = 0;
-                AssertResultOrContinue(metrics1->NPUActivityLevel(&npuActivity));
+                if (AssertResultOrContinue(metrics1->NPUActivityLevel(&npuActivity)))
+                {
+                    Assert.InRange(npuActivity, 0, 100);
+                }
             }
         });
     }
