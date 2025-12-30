@@ -86,20 +86,11 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetHighestDisplayServices();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
-
-            IADLXDisplayList* pDisplayList = null;
-            var result = services->GetDisplays(&pDisplayList);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to enumerate displays");
-
             var displays = new List<ADLXDisplay>();
-            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+            using var displayList = new ComPtr<IADLXDisplayList>(GetDisplayListSafe());
             var count = displayList.Get()->Size();
+            if (count == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No displays returned by ADLX.");
             for (uint i = 0; i < count; i++)
             {
                 IADLXDisplay* pDisplay = null;
@@ -185,14 +176,8 @@ namespace ADLXWrapper
             }
 
             IADLXDisplayList* pAllDisplays = null;
-            var displaysResult = services->GetDisplays(&pAllDisplays);
-            if (displaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pAllDisplays == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
-            if (displaysResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(displaysResult, "Failed to enumerate displays");
-
             var displaysInUse = new List<ADLXDisplay>();
-            using var allDisplays = new ComPtr<IADLXDisplayList>(pAllDisplays);
+            using var allDisplays = new ComPtr<IADLXDisplayList>(GetDisplayListSafe());
             for (uint i = 0; i < allDisplays.Get()->Size(); i++)
             {
                 IADLXDisplay* pDisplay = null;
@@ -321,18 +306,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetHighestDisplayServices();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
-
-            IADLXDisplayList* pDisplayList = null;
-            var result = services->GetDisplays(&pDisplayList);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to enumerate displays");
-
-            return pDisplayList; // caller must wrap/dispose
+            return GetDisplayListSafe(); // caller must wrap/dispose
         }
 
         /// <summary>
@@ -344,18 +318,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetHighestDisplayServices();
-            if (services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
-
-            IADLXDisplayList* pDisplayList = null;
-            var result = services->GetDisplays(&pDisplayList);
-            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
-            if (result != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(result, "Failed to enumerate displays");
-
-            using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
+            using var displayList = new ComPtr<IADLXDisplayList>(GetDisplayListSafe());
             var count = displayList.Get()->Size();
             var handles = new ADLXInterfaceHandle[count];
 
@@ -384,6 +347,54 @@ namespace ADLXWrapper
                 handles = Array.Empty<ADLXInterfaceHandle>();
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Enumerates a native display list using the base display services interface with the same call order as the native tests.
+        /// </summary>
+        /// <returns>Raw pointer to an IADLXDisplayList. Caller must wrap/dispose.</returns>
+        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        private IADLXDisplayList* GetDisplayListSafe()
+        {
+            var baseServices = _displayServices.Get();
+            if (baseServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+
+            uint numDisplays = 0;
+            ADLX_RESULT countResult;
+            try
+            {
+                countResult = baseServices->GetNumberOfDisplays(&numDisplays);
+            }
+            catch (AccessViolationException ex)
+            {
+                throw new ADLXException(ADLX_RESULT.ADLX_FAIL, $"ADLX display count crashed: {ex.Message}");
+            }
+
+            if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display count not supported by this ADLX system");
+            if (countResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(countResult, "Failed to get display count");
+            if (numDisplays == 0)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No displays returned by ADLX.");
+
+            IADLXDisplayList* pDisplayList = null;
+            ADLX_RESULT listResult;
+            try
+            {
+                listResult = baseServices->GetDisplays(&pDisplayList);
+            }
+            catch (AccessViolationException ex)
+            {
+                throw new ADLXException(ADLX_RESULT.ADLX_FAIL, $"ADLX display enumeration crashed: {ex.Message}");
+            }
+
+            if (listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            if (listResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(listResult, "Failed to enumerate displays");
+
+            return pDisplayList;
         }
 
         /// <summary>

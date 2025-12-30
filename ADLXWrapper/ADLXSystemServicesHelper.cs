@@ -125,9 +125,7 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var displayServices = GetDisplayServicesNative();
             var desktopServices = GetDesktopServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)displayServices);
-            ADLXUtils.AddRefInterface((IntPtr)desktopServices);
-            return new ADLXDisplayServicesHelper(displayServices, desktopServices, addRefDisplayServices: false, addRefDesktopServices: false);
+            return new ADLXDisplayServicesHelper(displayServices, desktopServices, addRefDisplayServices: true, addRefDesktopServices: true);
         }
 
         /// <summary>
@@ -185,9 +183,7 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var desktopServices = GetDesktopServicesNative();
             var displayServices = GetDisplayServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)desktopServices);
-            ADLXUtils.AddRefInterface((IntPtr)displayServices);
-            return new ADLXDesktopServicesHelper(desktopServices, displayServices, addRefDesktopServices: false);
+            return new ADLXDesktopServicesHelper(desktopServices, displayServices, addRefDesktopServices: true);
         }
 
         /// <summary>
@@ -244,8 +240,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var services = Get3DSettingsServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)services);
-            return new ADLX3DSettingsServicesHelper(services, addRef: false);
+            return new ADLX3DSettingsServicesHelper(services, addRef: true);
         }
 
         /// <summary>
@@ -302,8 +297,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var services = GetGPUTuningServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)services);
-            return new ADLXGPUTuningServicesHelper(services, addRef: false);
+            return new ADLXGPUTuningServicesHelper(services, addRef: true);
         }
 
         /// <summary>
@@ -360,8 +354,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var services = GetPerformanceMonitoringServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)services);
-            return new ADLXPerformanceMonitoringServicesHelper(services, addRef: false);
+            return new ADLXPerformanceMonitoringServicesHelper(services, addRef: true);
         }
 
         /// <summary>
@@ -418,8 +411,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var services = GetPowerTuningServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)services);
-            return new ADLXPowerTuningServicesHelper(services, addRef: false);
+            return new ADLXPowerTuningServicesHelper(services, addRef: true);
         }
 
         /// <summary>
@@ -476,8 +468,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var services = GetMultimediaServicesNative();
-            ADLXUtils.AddRefInterface((IntPtr)services);
-            return new ADLXMultimediaServicesHelper(services, addRef: false);
+            return new ADLXMultimediaServicesHelper(services, addRef: true);
         }
 
         /// <summary>
@@ -574,7 +565,9 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var displayHelper = GetDisplayServices();
-            return displayHelper.EnumerateDisplays();
+            if (!displayHelper.TryEnumerateDisplays(out var displays))
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+            return displays;
         }
 
         /// <summary>
@@ -729,9 +722,8 @@ namespace ADLXWrapper
 
         private IADLXDisplayServices* EnsureDisplayServices()
         {
-            if (_displayServices.HasValue)
-                return _displayServices.Value.Get();
-
+            // Always reacquire to avoid stale pointers (e.g., display hotplug/driver reload).
+            _displayServices?.Dispose();
             IADLXDisplayServices* services = null;
             var result = _system->GetDisplaysServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
@@ -745,9 +737,8 @@ namespace ADLXWrapper
 
         private IADLXDesktopServices* EnsureDesktopServices()
         {
-            if (_desktopServices.HasValue)
-                return _desktopServices.Value.Get();
-
+            // Always reacquire to avoid stale pointers after topology changes.
+            _desktopServices?.Dispose();
             IADLXDesktopServices* services = null;
             var result = _system->GetDesktopsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
@@ -761,9 +752,7 @@ namespace ADLXWrapper
 
         private IADLX3DSettingsServices* Ensure3DSettingsServices()
         {
-            if (_threeDSettingsServices.HasValue)
-                return _threeDSettingsServices.Value.Get();
-
+            _threeDSettingsServices?.Dispose();
             IADLX3DSettingsServices* services = null;
             var result = _system->Get3DSettingsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
@@ -777,9 +766,7 @@ namespace ADLXWrapper
 
         private IADLXGPUTuningServices* EnsureGPUTuningServices()
         {
-            if (_gpuTuningServices.HasValue)
-                return _gpuTuningServices.Value.Get();
-
+            _gpuTuningServices?.Dispose();
             IADLXGPUTuningServices* services = null;
             var result = _system->GetGPUTuningServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
@@ -793,9 +780,7 @@ namespace ADLXWrapper
 
         private IADLXPerformanceMonitoringServices* EnsurePerformanceMonitoringServices()
         {
-            if (_performanceMonitoringServices.HasValue)
-                return _performanceMonitoringServices.Value.Get();
-
+            _performanceMonitoringServices?.Dispose();
             IADLXPerformanceMonitoringServices* services = null;
             var result = _system->GetPerformanceMonitoringServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
@@ -809,9 +794,7 @@ namespace ADLXWrapper
 
         private IADLXPowerTuningServices* EnsurePowerTuningServices()
         {
-            if (_powerTuningServices.HasValue)
-                return _powerTuningServices.Value.Get();
-
+            _powerTuningServices?.Dispose();
             IADLXPowerTuningServices* services = null;
             ADLX_RESULT result;
 
@@ -836,9 +819,7 @@ namespace ADLXWrapper
 
         private IADLXMultimediaServices* EnsureMultimediaServices()
         {
-            if (_multimediaServices.HasValue)
-                return _multimediaServices.Value.Get();
-
+            _multimediaServices?.Dispose();
             var system2 = GetSystem2();
             IADLXMultimediaServices* services = null;
             var result = system2->GetMultimediaServices(&services);
@@ -853,9 +834,7 @@ namespace ADLXWrapper
 
         private IADLXGPUsChangedHandling* EnsureGPUsChangedHandling()
         {
-            if (_gpusChangedHandling.HasValue)
-                return _gpusChangedHandling.Value.Get();
-
+            _gpusChangedHandling?.Dispose();
             IADLXGPUsChangedHandling* handling = null;
             var result = _system->GetGPUsChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
@@ -869,9 +848,7 @@ namespace ADLXWrapper
 
         private IADLXGPUAppsListChangedHandling* EnsureGPUAppsListChangedHandling()
         {
-            if (_gpuAppsListChangedHandling.HasValue)
-                return _gpuAppsListChangedHandling.Value.Get();
-
+            _gpuAppsListChangedHandling?.Dispose();
             var system2 = GetSystem2();
             IADLXGPUAppsListChangedHandling* handling = null;
             var result = system2->GetGPUAppsListChangedHandling(&handling);

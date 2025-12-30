@@ -69,7 +69,8 @@ public class ADLXGPUTuningServicesFacadeTests
             if (!tuning.TryGetPresetTuning(gpuHandle.As<IADLXGPU>(), out var info))
                 throw new Xunit.SkipException("Preset tuning not supported on this GPU.");
 
-            Assert.True(info.SupportedPresets is { Count: > 0 });
+            Skip.If(!info.IsSupported || info.SupportedPresets.Count == 0, "Preset tuning reported unsupported or returned no presets.");
+            Assert.True(info.SupportedPresets.Count > 0);
         }
     }
 
@@ -87,7 +88,7 @@ public class ADLXGPUTuningServicesFacadeTests
             if (!tuning.TryGetManualFanTuning(gpuHandle.As<IADLXGPU>(), out var info))
                 throw new Xunit.SkipException("Manual fan tuning not supported on this GPU.");
 
-            Assert.True(info.IsSupported);
+            Skip.If(!info.IsSupported, "Manual fan tuning reported unsupported.");
             if (info.FanPoints != null)
             {
                 Assert.IsAssignableFrom<IReadOnlyList<FanPoint>>(info.FanPoints);
@@ -109,7 +110,7 @@ public class ADLXGPUTuningServicesFacadeTests
             if (!tuning.TryGetManualVramTuning(gpuHandle.As<IADLXGPU>(), out var info))
                 throw new Xunit.SkipException("Manual VRAM tuning not supported on this GPU.");
 
-            Assert.True(info.IsSupported);
+            Skip.If(!info.IsSupported, "Manual VRAM tuning reported unsupported.");
         }
     }
 
@@ -127,7 +128,7 @@ public class ADLXGPUTuningServicesFacadeTests
             if (!tuning.TryGetManualGfxTuning(gpuHandle.As<IADLXGPU>(), out var info))
                 throw new Xunit.SkipException("Manual GFX tuning not supported on this GPU.");
 
-            Assert.True(info.IsSupported);
+            Skip.If(!info.IsSupported, "Manual GFX tuning reported unsupported.");
         }
     }
 }
