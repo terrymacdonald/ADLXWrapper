@@ -109,11 +109,21 @@ namespace ADLXWrapper
                     }
 
                     IntPtr pSystem;
-                    result = initializeFn(fullVersion, &pSystem);
-                    if (result != ADLX_RESULT.ADLX_OK)
+                    var initResult = initializeFn(fullVersion, &pSystem);
+                    if (initResult == ADLX_RESULT.ADLX_ALREADY_INITIALIZED && pSystem != IntPtr.Zero)
+                    {
+                        // ADLX already initialized elsewhere; reuse the system pointer without failing.
+                    }
+                    else if (initResult != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, $"Failed to initialize ADLX (result={result})");
+                        throw new ADLXException(initResult, $"Failed to initialize ADLX (result={initResult})");
+                    }
+
+                    if (pSystem == IntPtr.Zero)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(ADLX_RESULT.ADLX_ALREADY_INITIALIZED, "ADLX is already initialized by another component and no system pointer was provided.");
                     }
 
                     _sharedDll = hDLL;
@@ -175,11 +185,21 @@ namespace ADLXWrapper
 
                     IntPtr pSystem;
                     IntPtr pAdlMapping;
-                    result = initializeWithCallerAdlFn(fullVersion, &pSystem, &pAdlMapping, adlContext, adlMainMemoryFree);
-                    if (result != ADLX_RESULT.ADLX_OK)
+                    var initResult = initializeWithCallerAdlFn(fullVersion, &pSystem, &pAdlMapping, adlContext, adlMainMemoryFree);
+                    if (initResult == ADLX_RESULT.ADLX_ALREADY_INITIALIZED && pSystem != IntPtr.Zero)
+                    {
+                        // Reuse existing initialization owned elsewhere.
+                    }
+                    else if (initResult != ADLX_RESULT.ADLX_OK)
                     {
                         ADLXNative.FreeLibrary(hDLL);
-                        throw new ADLXException(result, $"Failed to initialize ADLX with ADL context (result={result})");
+                        throw new ADLXException(initResult, $"Failed to initialize ADLX with ADL context (result={initResult})");
+                    }
+
+                    if (pSystem == IntPtr.Zero)
+                    {
+                        ADLXNative.FreeLibrary(hDLL);
+                        throw new ADLXException(ADLX_RESULT.ADLX_ALREADY_INITIALIZED, "ADLX already initialized by another component and no system pointer was provided.");
                     }
 
                     _sharedDll = hDLL;

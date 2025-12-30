@@ -498,18 +498,36 @@ namespace ADLXWrapper
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             bool supported;
-            services->IsSupportedAutoTuning(gpu, &supported);
-            AutoTuningSupported = supported;
-            services->IsSupportedPresetTuning(gpu, &supported);
-            PresetTuningSupported = supported;
-            services->IsSupportedManualGFXTuning(gpu, &supported);
-            ManualGFXTuningSupported = supported;
-            services->IsSupportedManualVRAMTuning(gpu, &supported);
-            ManualVRAMTuningSupported = supported;
-            services->IsSupportedManualFanTuning(gpu, &supported);
-            ManualFanTuningSupported = supported;
-            services->IsSupportedManualPowerTuning(gpu, &supported);
-            ManualPowerTuningSupported = supported;
+
+            ADLX_RESULT result = services->IsSupportedAutoTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query auto tuning support");
+            AutoTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
+
+            result = services->IsSupportedPresetTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query preset tuning support");
+            PresetTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
+
+            result = services->IsSupportedManualGFXTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query manual GFX tuning support");
+            ManualGFXTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
+
+            result = services->IsSupportedManualVRAMTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query manual VRAM tuning support");
+            ManualVRAMTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
+
+            result = services->IsSupportedManualFanTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query manual fan tuning support");
+            ManualFanTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
+
+            result = services->IsSupportedManualPowerTuning(gpu, &supported);
+            if (result != ADLX_RESULT.ADLX_OK && result != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(result, "Failed to query manual power tuning support");
+            ManualPowerTuningSupported = result == ADLX_RESULT.ADLX_OK && supported;
         }
     }
 

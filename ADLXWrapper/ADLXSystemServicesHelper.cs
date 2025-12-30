@@ -978,44 +978,50 @@ namespace ADLXWrapper
 
         internal unsafe GpuInfo(IADLXGPU* pGpu)
         {
+            static void EnsureSuccess(ADLX_RESULT result, string message)
+            {
+                if (result != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(result, message);
+            }
+
             sbyte* namePtr = null;
-            pGpu->Name(&namePtr);
+            EnsureSuccess(pGpu->Name(&namePtr), "Failed to query GPU name");
             Name = ADLXUtils.MarshalString(&namePtr);
 
             sbyte* vendorIdPtr = null;
-            pGpu->VendorId(&vendorIdPtr);
+            EnsureSuccess(pGpu->VendorId(&vendorIdPtr), "Failed to query GPU vendor id");
             VendorId = ADLXUtils.MarshalString(&vendorIdPtr);
 
             int uid = 0;
-            pGpu->UniqueId(&uid);
+            EnsureSuccess(pGpu->UniqueId(&uid), "Failed to query GPU unique id");
             UniqueId = uid;
 
             uint vram = 0;
-            pGpu->TotalVRAM(&vram);
+            EnsureSuccess(pGpu->TotalVRAM(&vram), "Failed to query GPU VRAM total");
             TotalVRAM = vram;
 
             sbyte* vramTypePtr = null;
-            pGpu->VRAMType(&vramTypePtr);
+            EnsureSuccess(pGpu->VRAMType(&vramTypePtr), "Failed to query GPU VRAM type");
             VRAMType = ADLXUtils.MarshalString(&vramTypePtr);
 
             bool isExt = false;
-            pGpu->IsExternal(&isExt);
+            EnsureSuccess(pGpu->IsExternal(&isExt), "Failed to query GPU external flag");
             IsExternal = isExt;
 
             bool hasDesk = false;
-            pGpu->HasDesktops(&hasDesk);
+            EnsureSuccess(pGpu->HasDesktops(&hasDesk), "Failed to query GPU desktop ownership flag");
             HasDesktops = hasDesk;
 
             sbyte* devIdPtr = null;
-            pGpu->DeviceId(&devIdPtr);
+            EnsureSuccess(pGpu->DeviceId(&devIdPtr), "Failed to query GPU device id");
             DeviceId = ADLXUtils.MarshalString(&devIdPtr);
 
             sbyte* pnpPtr = null;
-            pGpu->PNPString(&pnpPtr);
+            EnsureSuccess(pGpu->PNPString(&pnpPtr), "Failed to query GPU PNP string");
             PNPString = ADLXUtils.MarshalString(&pnpPtr);
 
             sbyte* driverPathPtr = null;
-            pGpu->DriverPath(&driverPathPtr);
+            EnsureSuccess(pGpu->DriverPath(&driverPathPtr), "Failed to query GPU driver path");
             DriverPath = ADLXUtils.MarshalString(&driverPathPtr);
         }
     }
