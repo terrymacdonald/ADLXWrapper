@@ -85,4 +85,33 @@ public class ADLXPowerTuningServicesFacadeTests
         Skip.If(!info.IsSupported, "SmartShift Eco reported unsupported.");
         Assert.IsType<bool>(info.IsEnabled);
     }
+
+    [SkippableFact]
+    public void Power_tuning_manual_power_info_facade()
+    {
+        using var power = GetPowerOrSkip();
+        using var tuning = _fixture.System!.GetGPUTuningServices();
+
+        unsafe
+        {
+            var gpuHandles = _fixture.System.EnumerateGPUsHandle();
+            Skip.If(gpuHandles.Length == 0, "No GPUs returned by ADLX.");
+            using var gpuHandle = gpuHandles[0];
+
+            if (!power.TryGetManualPowerTuning(tuning, gpuHandle, out var info))
+                throw new Xunit.SkipException("Manual power tuning not supported on this GPU.");
+
+            Skip.If(!info.PowerLimitSupported && !info.TdcLimitSupported, "Manual power tuning reported unsupported.");
+
+            if (info.PowerLimitSupported)
+            {
+                Assert.True(info.PowerLimitRange.minValue <= info.PowerLimitValue && info.PowerLimitValue <= info.PowerLimitRange.maxValue);
+            }
+
+            if (info.TdcLimitSupported)
+            {
+                Assert.True(info.TdcLimitRange.minValue <= info.TdcLimitValue && info.TdcLimitValue <= info.TdcLimitRange.maxValue);
+            }
+        }
+    }
 }

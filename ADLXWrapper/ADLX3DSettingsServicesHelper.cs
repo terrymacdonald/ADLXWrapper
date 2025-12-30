@@ -141,7 +141,45 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
-            return new All3DSettingsInfo(GetHighestServices(), gpu);
+            var services = GetHighestServices();
+
+            AntiLagInfo? antiLag = null;
+            IADLX3DAntiLag* pAntiLag;
+            if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); antiLag = new AntiLagInfo(c.Get()); }
+
+            BoostInfo? boost = null;
+            IADLX3DBoost* pBoost;
+            if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); boost = new BoostInfo(c.Get()); }
+
+            RadeonImageSharpeningInfo? sharpening = null;
+            IADLX3DImageSharpening* pRis;
+            if (services->GetImageSharpening(gpu, &pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); sharpening = new RadeonImageSharpeningInfo(c.Get()); }
+
+            EnhancedSyncInfo? enhancedSync = null;
+            IADLX3DEnhancedSync* pEs;
+            if (services->GetEnhancedSync(gpu, &pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); enhancedSync = new EnhancedSyncInfo(c.Get()); }
+
+            WaitForVerticalRefreshInfo? vsync = null;
+            IADLX3DWaitForVerticalRefresh* pVsync;
+            if (services->GetWaitForVerticalRefresh(gpu, &pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); vsync = new WaitForVerticalRefreshInfo(c.Get()); }
+
+            FrameRateTargetControlInfo? frtc = null;
+            IADLX3DFrameRateTargetControl* pFrtc;
+            if (services->GetFrameRateTargetControl(gpu, &pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); frtc = new FrameRateTargetControlInfo(c.Get()); }
+
+            AntiAliasingInfo? aa = null;
+            IADLX3DAntiAliasing* pAa;
+            if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); aa = new AntiAliasingInfo(c.Get()); }
+
+            AnisotropicFilteringInfo? af = null;
+            IADLX3DAnisotropicFiltering* pAf;
+            if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); af = new AnisotropicFilteringInfo(c.Get()); }
+
+            TessellationInfo? tess = null;
+            IADLX3DTessellation* pTess;
+            if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); tess = new TessellationInfo(c.Get()); }
+
+            return new All3DSettingsInfo(antiLag, boost, sharpening, enhancedSync, vsync, frtc, aa, af, tess, null, null);
         }
 
         /// <summary>
@@ -357,6 +395,132 @@ namespace ADLXWrapper
                 }
             }
         }
+
+        public FluidMotionFramesInfo GetFluidMotionFrames(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+
+            ADLX_RESULT result;
+            IADLX3DAMDFluidMotionFrames* fmf = null;
+            // Prefer v2, then v1. If neither is present, treat as unsupported.
+            IADLX3DSettingsServices2* s2 = null;
+            IADLX3DSettingsServices1* s1 = null;
+            var services = GetHighestServices();
+
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
+            {
+                s2 = (IADLX3DSettingsServices2*)p2;
+            }
+            else if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices1), out var p1))
+            {
+                s1 = (IADLX3DSettingsServices1*)p1;
+            }
+            else
+            {
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported by this ADLX system");
+            }
+
+            IADLX3DAMDFluidMotionFrames* local = null;
+            if (s2 != null)
+            {
+                using var s2Owner = new ComPtr<IADLX3DSettingsServices2>(s2);
+                result = s2Owner.Get()->GetAMDFluidMotionFrames(&local);
+            }
+            else
+            {
+                using var s1Owner = new ComPtr<IADLX3DSettingsServices1>(s1);
+                result = s1Owner.Get()->GetAMDFluidMotionFrames(&local);
+            }
+            fmf = local;
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || fmf == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get AMD Fluid Motion Frames interface");
+
+            using var fmfPtr = new ComPtr<IADLX3DAMDFluidMotionFrames>(fmf);
+            bool supported = false;
+            var supportResult = fmfPtr.Get()->IsSupported(&supported);
+            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported on this GPU");
+            if (supportResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(supportResult, "Failed to query AMD Fluid Motion Frames support");
+
+            bool enabled = false;
+            var enabledResult = fmfPtr.Get()->IsEnabled(&enabled);
+            if (enabledResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(enabledResult, "Failed to query AMD Fluid Motion Frames state");
+
+            return new FluidMotionFramesInfo(true, enabled);
+        }
+
+        public bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesInfo info)
+        {
+            try
+            {
+                info = GetFluidMotionFrames(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
+        public RadeonSuperResolutionInfo GetRadeonSuperResolution()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+
+            IADLX3DRadeonSuperResolution* rsr = null;
+            var result = GetHighestServices()->GetRadeonSuperResolution(&rsr);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || rsr == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Radeon Super Resolution not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Radeon Super Resolution interface");
+
+            using var rsrPtr = new ComPtr<IADLX3DRadeonSuperResolution>(rsr);
+            bool supported = false;
+            var supportResult = rsrPtr.Get()->IsSupported(&supported);
+            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Radeon Super Resolution not supported on this system");
+            if (supportResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(supportResult, "Failed to query Radeon Super Resolution support");
+
+            bool enabled = false;
+            var enabledResult = rsrPtr.Get()->IsEnabled(&enabled);
+            if (enabledResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(enabledResult, "Failed to query Radeon Super Resolution state");
+
+            ADLX_IntRange range = default;
+            var rangeResult = rsrPtr.Get()->GetSharpnessRange(&range);
+            if (rangeResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(rangeResult, "Failed to query Radeon Super Resolution sharpness range");
+
+            int sharpness = 0;
+            var sharpnessResult = rsrPtr.Get()->GetSharpness(&sharpness);
+            if (sharpnessResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(sharpnessResult, "Failed to query Radeon Super Resolution sharpness");
+
+            return new RadeonSuperResolutionInfo(true, enabled, sharpness, range);
+        }
+
+        public bool TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo info)
+        {
+            try
+            {
+                info = GetRadeonSuperResolution();
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
     }
 
     //================================================================================================
@@ -377,9 +541,11 @@ namespace ADLXWrapper
         public AntiAliasingInfo? AntiAliasing { get; init; }
         public AnisotropicFilteringInfo? AnisotropicFiltering { get; init; }
         public TessellationInfo? Tessellation { get; init; }
+        public FluidMotionFramesInfo? FluidMotionFrames { get; init; }
+        public RadeonSuperResolutionInfo? RadeonSuperResolution { get; init; }
 
         [JsonConstructor]
-        public All3DSettingsInfo(AntiLagInfo? antiLag, BoostInfo? boost, RadeonImageSharpeningInfo? imageSharpening, EnhancedSyncInfo? enhancedSync, WaitForVerticalRefreshInfo? waitForVerticalRefresh, FrameRateTargetControlInfo? frameRateTargetControl, AntiAliasingInfo? antiAliasing, AnisotropicFilteringInfo? anisotropicFiltering, TessellationInfo? tessellation)
+        public All3DSettingsInfo(AntiLagInfo? antiLag, BoostInfo? boost, RadeonImageSharpeningInfo? imageSharpening, EnhancedSyncInfo? enhancedSync, WaitForVerticalRefreshInfo? waitForVerticalRefresh, FrameRateTargetControlInfo? frameRateTargetControl, AntiAliasingInfo? antiAliasing, AnisotropicFilteringInfo? anisotropicFiltering, TessellationInfo? tessellation, FluidMotionFramesInfo? fluidMotionFrames, RadeonSuperResolutionInfo? radeonSuperResolution)
         {
             AntiLag = antiLag;
             Boost = boost;
@@ -390,6 +556,8 @@ namespace ADLXWrapper
             AntiAliasing = antiAliasing;
             AnisotropicFiltering = anisotropicFiltering;
             Tessellation = tessellation;
+            FluidMotionFrames = fluidMotionFrames;
+            RadeonSuperResolution = radeonSuperResolution;
         }
 
         internal unsafe All3DSettingsInfo(IADLX3DSettingsServices* services, IADLXGPU* gpu)
@@ -420,6 +588,10 @@ namespace ADLXWrapper
 
             IADLX3DTessellation* pTess;
             if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationInfo(c.Get()); } else { Tessellation = null; }
+
+            // FMF/RSR not available without helper context; leave null in this constructor.
+            FluidMotionFrames = null;
+            RadeonSuperResolution = null;
         }
     }
 
@@ -723,6 +895,36 @@ namespace ADLXWrapper
                 Mode = default;
                 Level = default;
             }
+        }
+    }
+
+    public readonly struct FluidMotionFramesInfo
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public FluidMotionFramesInfo(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+    }
+
+    public readonly struct RadeonSuperResolutionInfo
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+        public int Sharpness { get; init; }
+        public ADLX_IntRange SharpnessRange { get; init; }
+
+        [JsonConstructor]
+        public RadeonSuperResolutionInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+            Sharpness = sharpness;
+            SharpnessRange = sharpnessRange;
         }
     }
 

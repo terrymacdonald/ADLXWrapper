@@ -343,6 +343,50 @@ namespace ADLXWrapper
             return new ManualPowerTuningInfo(manualPower.Get());
         }
 
+        /// <summary>
+        /// Facade-friendly overload to query manual power tuning using managed helpers and GPU handles.
+        /// </summary>
+        /// <param name="tuningHelper">GPU tuning helper.</param>
+        /// <param name="gpuHandle">GPU handle from facade enumeration.</param>
+        /// <returns>Manual power tuning info.</returns>
+        public ManualPowerTuningInfo GetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (tuningHelper == null) throw new ArgumentNullException(nameof(tuningHelper));
+            if (gpuHandle.IsInvalid) throw new ArgumentNullException(nameof(gpuHandle));
+
+            var tuningServices = tuningHelper.GetGPUTuningServicesNative();
+            if (tuningServices == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not available");
+
+            ADLXUtils.AddRefInterface((IntPtr)tuningServices);
+            using var tuningServicesOwner = new ComPtr<IADLXGPUTuningServices>(tuningServices);
+
+            var gpu = gpuHandle.As<IADLXGPU>();
+            if (gpu == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU handle invalid");
+
+            ADLXUtils.AddRefInterface((IntPtr)gpu);
+            using var gpuOwner = new ComPtr<IADLXGPU>(gpu);
+
+            return GetManualPowerTuning(tuningServicesOwner.Get(), gpuOwner.Get());
+        }
+
+        public bool TryGetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle, out ManualPowerTuningInfo info)
+        {
+            try
+            {
+                info = GetManualPowerTuning(tuningHelper, gpuHandle);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
         public void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
