@@ -40,21 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Exclude legacy tests from compilation -->
-    <Compile Remove="Legacy\**\*.cs" />
-    <!-- Narrow the compiled set to current facade-focused tests -->
-    <Compile Remove="**\*.cs" />
-    <Compile Include="ADLXSystemFacadeTests.cs" />
-    <Compile Include="ADLXDisplayFacadeTests.cs" />
-    <Compile Include="ADLXGpuFacadeTests.cs" />
-    <Compile Include="ADLXDisplayServicesHelperFacadeTests.cs" />
-    <Compile Include="ADLXDesktopServicesHelperFacadeTests.cs" />
-    <Compile Include="ADLXDesktopFacadeTests.cs" />
-    <Compile Include="GlobalUsings.cs" />
-    <Compile Include="AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="ADLXWrapper.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
