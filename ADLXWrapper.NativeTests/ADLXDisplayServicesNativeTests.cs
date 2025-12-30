@@ -369,7 +369,7 @@ public unsafe class ADLXDisplayServicesNativeTests
     }
 
     [SkippableFact]
-    public void Display_feature_gamma_all_displays_native()
+    public void Display_feature_gamma_state_all_displays_native()
     {
         SkipIfNoAdlxSupport();
         ForEachDisplay((services, display, index) =>
@@ -420,7 +420,29 @@ public unsafe class ADLXDisplayServicesNativeTests
     }
 
     [SkippableFact]
-    public void Display_feature_gamut_all_displays_native()
+    public void Display_feature_gamma_ramp_and_coeff_all_displays_native()
+    {
+        SkipIfNoAdlxSupport();
+        ForEachDisplay((services, display, index) =>
+        {
+            IADLXDisplayGamma* gamma = null;
+            if (AcquireDisplayFeatureOrSkip(services->GetGamma(display, &gamma), gamma))
+            {
+                ADLX_GammaRamp ramp = default;
+                var rampResult = gamma->GetGammaRamp(&ramp);
+                Skip.If(rampResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || rampResult == ADLX_RESULT.ADLX_FAIL, $"Gamma ramp not available on this hardware/driver: {rampResult}.");
+                Assert.Equal(ADLX_RESULT.ADLX_OK, rampResult);
+
+                ADLX_RegammaCoeff coeff = default;
+                var coeffResult = gamma->GetGammaCoefficient(&coeff);
+                Skip.If(coeffResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || coeffResult == ADLX_RESULT.ADLX_FAIL, $"Gamma coefficient not available on this hardware/driver: {coeffResult}.");
+                Assert.Equal(ADLX_RESULT.ADLX_OK, coeffResult);
+            }
+        });
+    }
+
+    [SkippableFact]
+    public void Display_feature_gamut_support_all_displays_native()
     {
         SkipIfNoAdlxSupport();
         ForEachDisplay((services, display, index) =>
@@ -460,7 +482,19 @@ public unsafe class ADLXDisplayServicesNativeTests
 
                 bool wpCustom = false;
                 AssertResultOrContinue(gamut->IsSupportedCustomWhitePoint(&wpCustom));
+            }
+        });
+    }
 
+    [SkippableFact]
+    public void Display_feature_gamut_current_all_displays_native()
+    {
+        SkipIfNoAdlxSupport();
+        ForEachDisplay((services, display, index) =>
+        {
+            IADLXDisplayGamut* gamut = null;
+            if (AcquireDisplayFeatureOrSkip(services->GetGamut(display, &gamut), gamut))
+            {
                 bool isCurrent709 = false;
                 AssertResultOrContinue(gamut->IsCurrentCCIR709ColorSpace(&isCurrent709));
 
