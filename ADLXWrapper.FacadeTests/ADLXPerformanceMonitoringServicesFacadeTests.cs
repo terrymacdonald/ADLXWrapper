@@ -109,4 +109,58 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
             throw new Xunit.SkipException("System metrics not supported on this hardware/driver.");
         }
     }
+
+    [SkippableFact]
+    public void Performance_monitoring_sampling_interval_facade()
+    {
+        using var perf = GetPerfOrSkip();
+        ADLX_IntRange range;
+        try
+        {
+            range = perf.GetSamplingIntervalRange();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("Sampling interval not supported on this hardware/driver.");
+        }
+
+        int current;
+        try
+        {
+            current = perf.GetSamplingInterval();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("Sampling interval not supported on this hardware/driver.");
+        }
+
+        // Re-apply the current interval (safe, no behavioral change)
+        var target = current;
+        if (target < range.minValue) target = range.minValue;
+        if (target > range.maxValue) target = range.maxValue;
+
+        Assert.True(perf.TrySetSamplingInterval(target));
+        var after = perf.GetSamplingInterval();
+        Assert.Equal(target, after);
+    }
+
+    [SkippableFact]
+    public void Performance_monitoring_history_size_facade()
+    {
+        using var perf = GetPerfOrSkip();
+        int currentSize;
+        try
+        {
+            currentSize = perf.GetMaxPerformanceMetricsHistorySize();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("Performance metrics history sizing not supported on this hardware/driver.");
+        }
+
+        // Re-apply the current size (safe, no behavioral change)
+        Assert.True(perf.TrySetMaxPerformanceMetricsHistorySize(currentSize));
+        var after = perf.GetMaxPerformanceMetricsHistorySize();
+        Assert.Equal(currentSize, after);
+    }
 }
