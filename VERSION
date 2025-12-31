@@ -16,4 +16,4 @@
 #   3. Run build_adlx.ps1 (or build in Visual Studio) - it will automatically use the new version with current commit count
 
 MAJOR=1
-MINOR=0
+MINOR=1
