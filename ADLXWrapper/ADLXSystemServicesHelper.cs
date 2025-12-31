@@ -1129,9 +1129,13 @@ namespace ADLXWrapper
         public string SubSystemId { get; init; }
         public string SubSystemVendorId { get; init; }
         public string RevisionId { get; init; }
+        public string DriverVersion { get; init; }
+        public string AMDSoftwareVersion { get; init; }
+        public string AMDWindowsDriverVersion { get; init; }
+        public ADLX_LUID Luid { get; init; }
 
         [JsonConstructor]
-        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "")
+        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", ADLX_LUID? luid = null)
         {
             Name = name;
             VendorId = vendorId;
@@ -1152,6 +1156,10 @@ namespace ADLXWrapper
             SubSystemId = subSystemId;
             SubSystemVendorId = subSystemVendorId;
             RevisionId = revisionId;
+            DriverVersion = driverVersion;
+            AMDSoftwareVersion = amdSoftwareVersion;
+            AMDWindowsDriverVersion = amdWindowsDriverVersion;
+            Luid = luid ?? default;
         }
 
         internal unsafe GpuInfo(IADLXGPU* pGpu)
@@ -1212,6 +1220,10 @@ namespace ADLXWrapper
             var subSystemId = string.Empty;
             var subSystemVendorId = string.Empty;
             var revisionId = string.Empty;
+            var driverVersion = string.Empty;
+            var amdSoftwareVersion = string.Empty;
+            var amdWindowsDriverVersion = string.Empty;
+            var luid = default(ADLX_LUID);
 
             if (ADLXUtils.TryQueryInterface((IntPtr)pGpu, nameof(IADLXGPU1), out var pGpu1))
             {
@@ -1246,6 +1258,31 @@ namespace ADLXWrapper
                 }
             }
 
+            if (ADLXUtils.TryQueryInterface((IntPtr)pGpu, nameof(IADLXGPU2), out var pGpu2))
+            {
+                var gpu2 = (IADLXGPU2*)pGpu2;
+                try
+                {
+                    sbyte* drvPtr = null;
+                    if (gpu2->DriverVersion(&drvPtr) == ADLX_RESULT.ADLX_OK)
+                        driverVersion = ADLXUtils.MarshalString(&drvPtr);
+
+                    sbyte* swPtr = null;
+                    if (gpu2->AMDSoftwareVersion(&swPtr) == ADLX_RESULT.ADLX_OK)
+                        amdSoftwareVersion = ADLXUtils.MarshalString(&swPtr);
+
+                    sbyte* winPtr = null;
+                    if (gpu2->AMDWindowsDriverVersion(&winPtr) == ADLX_RESULT.ADLX_OK)
+                        amdWindowsDriverVersion = ADLXUtils.MarshalString(&winPtr);
+
+                    gpu2->LUID(&luid);
+                }
+                finally
+                {
+                    ADLXUtils.ReleaseInterface((IntPtr)gpu2);
+                }
+            }
+
             GPUType = gpuType;
             AsicFamilyType = asicFamilyType;
             PciBusType = pciBusType;
@@ -1255,6 +1292,10 @@ namespace ADLXWrapper
             SubSystemId = subSystemId;
             SubSystemVendorId = subSystemVendorId;
             RevisionId = revisionId;
+            DriverVersion = driverVersion;
+            AMDSoftwareVersion = amdSoftwareVersion;
+            AMDWindowsDriverVersion = amdWindowsDriverVersion;
+            Luid = luid;
         }
     }
     #endregion

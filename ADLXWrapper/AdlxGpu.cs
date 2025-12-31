@@ -77,6 +77,14 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.SubSystemVendorId; } }
         public string RevisionId { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.RevisionId; } }
+        public string DriverVersion { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.DriverVersion; } }
+        public string AMDSoftwareVersion { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareVersion; } }
+        public string AMDWindowsDriverVersion { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDWindowsDriverVersion; } }
+        public ADLX_LUID Luid { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.Luid; } }
 
         /// <summary>
         /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
