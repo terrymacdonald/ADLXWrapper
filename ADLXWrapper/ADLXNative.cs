@@ -7,7 +7,7 @@ namespace ADLXWrapper
     /// Manual P/Invoke declarations for ADLX DLL entry points.
     /// These functions are exported from amdadlx64.dll and must be loaded dynamically.
     /// </summary>
-    internal static unsafe class ADLXNative
+    public static unsafe class ADLXNative
     {
         // DLL name constants
         private const string ADLX_DLL_NAME_64 = "amdadlx64.dll";
