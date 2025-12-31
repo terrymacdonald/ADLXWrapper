@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_MEMORYTIMING_DESCRIPTION
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_DEFAULT
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -74,7 +74,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_FAST_TIMING
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_FAST_TIMING_LEVEL_2
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_AUTOMATIC
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_MEMORYTIMING_LEVEL_1
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MEMORYTIMING_MEMORYTIMING_LEVEL_2
     path: ../ADLXWrapper/cs_generated/ADLX_MEMORYTIMING_DESCRIPTION.cs

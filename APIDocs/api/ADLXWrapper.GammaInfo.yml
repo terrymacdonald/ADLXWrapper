@@ -6,7 +6,18 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.GammaInfo.#ctor(System.Boolean)
+  - ADLXWrapper.GammaInfo.DeGammaRamp
+  - ADLXWrapper.GammaInfo.HasDeGammaRamp
+  - ADLXWrapper.GammaInfo.HasReGammaRamp
+  - ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  - ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  - ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  - ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  - ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  - ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
   - ADLXWrapper.GammaInfo.IsSupported
+  - ADLXWrapper.GammaInfo.ReGammaRamp
+  - ADLXWrapper.GammaInfo.RegammaCoefficient
   langs:
   - csharp
   - vb
@@ -17,11 +28,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GammaInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2473
+    startLine: 2474
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -49,11 +60,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2475
+    startLine: 2476
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,6 +75,325 @@ items:
       type: System.Boolean
     content.vb: Public Property IsSupported As Boolean
   overload: ADLXWrapper.GammaInfo.IsSupported*
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  id: IsCurrentReGammaSRGB
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaSRGB
+  nameWithType: GammaInfo.IsCurrentReGammaSRGB
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaSRGB
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2477
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaSRGB { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaSRGB As Boolean
+  overload: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB*
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  id: IsCurrentReGammaBT709
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaBT709
+  nameWithType: GammaInfo.IsCurrentReGammaBT709
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaBT709
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2478
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaBT709 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaBT709 As Boolean
+  overload: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709*
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  id: IsCurrentReGammaPQ
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaPQ
+  nameWithType: GammaInfo.IsCurrentReGammaPQ
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaPQ
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2479
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaPQ { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaPQ As Boolean
+  overload: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ*
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  id: IsCurrentReGammaPQ2084
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaPQ2084
+  nameWithType: GammaInfo.IsCurrentReGammaPQ2084
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaPQ2084
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2480
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaPQ2084 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaPQ2084 As Boolean
+  overload: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084*
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  id: IsCurrentReGamma36
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGamma36
+  nameWithType: GammaInfo.IsCurrentReGamma36
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGamma36
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2481
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGamma36 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGamma36 As Boolean
+  overload: ADLXWrapper.GammaInfo.IsCurrentReGamma36*
+- uid: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  commentId: P:ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  id: HasRegammaCoefficient
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: HasRegammaCoefficient
+  nameWithType: GammaInfo.HasRegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasRegammaCoefficient
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2482
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasRegammaCoefficient { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasRegammaCoefficient As Boolean
+  overload: ADLXWrapper.GammaInfo.HasRegammaCoefficient*
+- uid: ADLXWrapper.GammaInfo.RegammaCoefficient
+  commentId: P:ADLXWrapper.GammaInfo.RegammaCoefficient
+  id: RegammaCoefficient
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: RegammaCoefficient
+  nameWithType: GammaInfo.RegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.RegammaCoefficient
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RegammaCoefficient
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2483
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_RegammaCoeff RegammaCoefficient { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_RegammaCoeff
+    content.vb: Public Property RegammaCoefficient As ADLX_RegammaCoeff
+  overload: ADLXWrapper.GammaInfo.RegammaCoefficient*
+- uid: ADLXWrapper.GammaInfo.HasReGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.HasReGammaRamp
+  id: HasReGammaRamp
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: HasReGammaRamp
+  nameWithType: GammaInfo.HasReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasReGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasReGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2484
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasReGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasReGammaRamp As Boolean
+  overload: ADLXWrapper.GammaInfo.HasReGammaRamp*
+- uid: ADLXWrapper.GammaInfo.ReGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.ReGammaRamp
+  id: ReGammaRamp
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: ReGammaRamp
+  nameWithType: GammaInfo.ReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.ReGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ReGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2485
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_GammaRamp ReGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_GammaRamp
+    content.vb: Public Property ReGammaRamp As ADLX_GammaRamp
+  overload: ADLXWrapper.GammaInfo.ReGammaRamp*
+- uid: ADLXWrapper.GammaInfo.HasDeGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.HasDeGammaRamp
+  id: HasDeGammaRamp
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: HasDeGammaRamp
+  nameWithType: GammaInfo.HasDeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasDeGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasDeGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2486
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasDeGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasDeGammaRamp As Boolean
+  overload: ADLXWrapper.GammaInfo.HasDeGammaRamp*
+- uid: ADLXWrapper.GammaInfo.DeGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.DeGammaRamp
+  id: DeGammaRamp
+  parent: ADLXWrapper.GammaInfo
+  langs:
+  - csharp
+  - vb
+  name: DeGammaRamp
+  nameWithType: GammaInfo.DeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.DeGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DeGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2487
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_GammaRamp DeGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_GammaRamp
+    content.vb: Public Property DeGammaRamp As ADLX_GammaRamp
+  overload: ADLXWrapper.GammaInfo.DeGammaRamp*
 - uid: ADLXWrapper.GammaInfo.#ctor(System.Boolean)
   commentId: M:ADLXWrapper.GammaInfo.#ctor(System.Boolean)
   id: '#ctor(System.Boolean)'
@@ -78,11 +408,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2477
+    startLine: 2489
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -347,6 +677,86 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB*
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaSRGB
+  name: IsCurrentReGammaSRGB
+  nameWithType: GammaInfo.IsCurrentReGammaSRGB
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709*
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaBT709
+  name: IsCurrentReGammaBT709
+  nameWithType: GammaInfo.IsCurrentReGammaBT709
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ*
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ
+  name: IsCurrentReGammaPQ
+  nameWithType: GammaInfo.IsCurrentReGammaPQ
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084*
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ2084
+  name: IsCurrentReGammaPQ2084
+  nameWithType: GammaInfo.IsCurrentReGammaPQ2084
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGamma36*
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGamma36
+  name: IsCurrentReGamma36
+  nameWithType: GammaInfo.IsCurrentReGamma36
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+- uid: ADLXWrapper.GammaInfo.HasRegammaCoefficient*
+  commentId: Overload:ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasRegammaCoefficient
+  name: HasRegammaCoefficient
+  nameWithType: GammaInfo.HasRegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+- uid: ADLXWrapper.GammaInfo.RegammaCoefficient*
+  commentId: Overload:ADLXWrapper.GammaInfo.RegammaCoefficient
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_RegammaCoefficient
+  name: RegammaCoefficient
+  nameWithType: GammaInfo.RegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.RegammaCoefficient
+- uid: ADLXWrapper.ADLX_RegammaCoeff
+  commentId: T:ADLXWrapper.ADLX_RegammaCoeff
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RegammaCoeff.html
+  name: ADLX_RegammaCoeff
+  nameWithType: ADLX_RegammaCoeff
+  fullName: ADLXWrapper.ADLX_RegammaCoeff
+- uid: ADLXWrapper.GammaInfo.HasReGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaInfo.HasReGammaRamp
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasReGammaRamp
+  name: HasReGammaRamp
+  nameWithType: GammaInfo.HasReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasReGammaRamp
+- uid: ADLXWrapper.GammaInfo.ReGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaInfo.ReGammaRamp
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_ReGammaRamp
+  name: ReGammaRamp
+  nameWithType: GammaInfo.ReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.ReGammaRamp
+- uid: ADLXWrapper.ADLX_GammaRamp
+  commentId: T:ADLXWrapper.ADLX_GammaRamp
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_GammaRamp.html
+  name: ADLX_GammaRamp
+  nameWithType: ADLX_GammaRamp
+  fullName: ADLXWrapper.ADLX_GammaRamp
+- uid: ADLXWrapper.GammaInfo.HasDeGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaInfo.HasDeGammaRamp
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasDeGammaRamp
+  name: HasDeGammaRamp
+  nameWithType: GammaInfo.HasDeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasDeGammaRamp
+- uid: ADLXWrapper.GammaInfo.DeGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaInfo.DeGammaRamp
+  href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_DeGammaRamp
+  name: DeGammaRamp
+  nameWithType: GammaInfo.DeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.DeGammaRamp
 - uid: ADLXWrapper.GammaInfo.#ctor*
   commentId: Overload:ADLXWrapper.GammaInfo.#ctor
   href: ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo__ctor_System_Boolean_

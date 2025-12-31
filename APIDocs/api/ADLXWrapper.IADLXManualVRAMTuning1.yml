@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXManualVRAMTuning1
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -88,7 +88,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -117,7 +117,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -146,7 +146,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedMemoryTiming
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSupportedMemoryTimingDescriptionList
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -282,7 +282,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMemoryTimingDescription
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVRAMTuningRanges
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -348,7 +348,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVRAMTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -380,7 +380,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEmptyVRAMTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValidVRAMTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
@@ -449,7 +449,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVRAMTuningStates
     path: ../ADLXWrapper/cs_generated/IADLXManualVRAMTuning1.cs

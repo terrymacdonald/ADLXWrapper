@@ -15,10 +15,14 @@ items:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesHandle
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Get3DSettingsServicesNative
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGet3DSettingsChangedHandlingNative(ADLXWrapper.IADLX3DSettingsChangedHandling*@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(ADLXWrapper.IADLXGPU*,ADLXWrapper.All3DSettingsInfo@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
   langs:
   - csharp
   - vb
@@ -29,7 +33,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX3DSettingsServicesHelper
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -67,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -105,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -133,7 +137,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -167,7 +171,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandlingNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -205,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGet3DSettingsChangedHandlingNative
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -241,7 +245,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsChangedHandling
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -269,7 +273,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -311,7 +315,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -345,7 +349,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -376,11 +380,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 149
+    startLine: 187
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -414,11 +418,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 171
+    startLine: 209
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -459,11 +463,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 191
+    startLine: 229
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -494,11 +498,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 204
+    startLine: 242
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -524,11 +528,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 221
+    startLine: 259
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -539,6 +543,135 @@ items:
   nameWithType.vb: ''
   fullName.vb: ''
   name.vb: ''
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  id: GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetFluidMotionFrames(IADLXGPU*)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFluidMotionFrames(IADLXGPU*)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFluidMotionFrames
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 398
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public FluidMotionFramesInfo GetFluidMotionFrames(IADLXGPU* gpu)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.IADLXGPU*
+    return:
+      type: ADLXWrapper.FluidMotionFramesInfo
+    content.vb: Public Function GetFluidMotionFrames(gpu As IADLXGPU*) As FluidMotionFramesInfo
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames*
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  id: TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetFluidMotionFrames(IADLXGPU*, out FluidMotionFramesInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(IADLXGPU*, out FluidMotionFramesInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*, out ADLXWrapper.FluidMotionFramesInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetFluidMotionFrames
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 457
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesInfo info)
+    parameters:
+    - id: gpu
+      type: ADLXWrapper.IADLXGPU*
+    - id: info
+      type: ADLXWrapper.FluidMotionFramesInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetFluidMotionFrames(gpu As IADLXGPU*, info As FluidMotionFramesInfo) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(IADLXGPU*, FluidMotionFramesInfo)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*, ADLXWrapper.FluidMotionFramesInfo)
+  name.vb: TryGetFluidMotionFrames(IADLXGPU*, FluidMotionFramesInfo)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  id: GetRadeonSuperResolution
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetRadeonSuperResolution()
+  nameWithType: ADLX3DSettingsServicesHelper.GetRadeonSuperResolution()
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetRadeonSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 471
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public RadeonSuperResolutionInfo GetRadeonSuperResolution()
+    return:
+      type: ADLXWrapper.RadeonSuperResolutionInfo
+    content.vb: Public Function GetRadeonSuperResolution() As RadeonSuperResolutionInfo
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution*
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
+  id: TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(out ADLXWrapper.RadeonSuperResolutionInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetRadeonSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 509
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.RadeonSuperResolutionInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetRadeonSuperResolution(info As RadeonSuperResolutionInfo) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(RadeonSuperResolutionInfo)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo)
+  name.vb: TryGetRadeonSuperResolution(RadeonSuperResolutionInfo)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -1004,3 +1137,41 @@ references:
   - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize*
     name: ADLX3DSettingsServicesHelper
     href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Finalize
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_ADLXWrapper_IADLXGPU__
+  name: GetFluidMotionFrames
+  nameWithType: ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+- uid: ADLXWrapper.FluidMotionFramesInfo
+  commentId: T:ADLXWrapper.FluidMotionFramesInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.FluidMotionFramesInfo.html
+  name: FluidMotionFramesInfo
+  nameWithType: FluidMotionFramesInfo
+  fullName: ADLXWrapper.FluidMotionFramesInfo
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_ADLXWrapper_IADLXGPU__ADLXWrapper_FluidMotionFramesInfo__
+  name: TryGetFluidMotionFrames
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetRadeonSuperResolution
+  name: GetRadeonSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+- uid: ADLXWrapper.RadeonSuperResolutionInfo
+  commentId: T:ADLXWrapper.RadeonSuperResolutionInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.RadeonSuperResolutionInfo.html
+  name: RadeonSuperResolutionInfo
+  nameWithType: RadeonSuperResolutionInfo
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetRadeonSuperResolution_ADLXWrapper_RadeonSuperResolutionInfo__
+  name: TryGetRadeonSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution

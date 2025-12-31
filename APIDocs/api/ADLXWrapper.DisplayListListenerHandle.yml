@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayListListenerHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2711
+    startLine: 2891
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,11 +66,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2731
+    startLine: 2911
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2737
+    startLine: 2917
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -125,11 +125,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2739
+    startLine: 2919
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -157,11 +157,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2758
+    startLine: 2938
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

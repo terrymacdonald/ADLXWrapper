@@ -24,7 +24,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXSmartShiftEco
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -113,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -142,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -179,7 +179,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -214,7 +214,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -249,7 +249,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -284,7 +284,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInactive
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
@@ -319,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetInactiveReason
     path: ../ADLXWrapper/cs_generated/IADLXSmartShiftEco.cs

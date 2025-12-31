@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUTuningChangedEvent1
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -245,7 +245,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutomaticTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -274,7 +274,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -303,7 +303,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGPUCLKTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -332,7 +332,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVRAMTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -361,7 +361,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -390,7 +390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -419,7 +419,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSmartAccessMemoryChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
@@ -448,7 +448,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartAccessMemoryStatus
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent1.cs

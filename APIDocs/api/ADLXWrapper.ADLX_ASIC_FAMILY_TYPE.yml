@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ASIC_FAMILY_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_UNDEFINED
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -75,7 +75,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_RADEON
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_FIREPRO
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -129,7 +129,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_FIREMV
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_FIRESTREAM
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_FUSION
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASIC_EMBEDDED
     path: ../ADLXWrapper/cs_generated/ADLX_ASIC_FAMILY_TYPE.cs

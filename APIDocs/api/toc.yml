@@ -46,6 +46,24 @@ items:
   - uid: ADLXWrapper.ADLXMultimediaServicesHelper
     name: ADLXMultimediaServicesHelper
     type: Class
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    type: Class
+  - uid: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+    name: ADLXNative.ADLXInitializeWithCallerAdl_Fn
+    type: Delegate
+  - uid: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+    name: ADLXNative.ADLXInitialize_Fn
+    type: Delegate
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+    name: ADLXNative.ADLXQueryFullVersion_Fn
+    type: Delegate
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+    name: ADLXNative.ADLXQueryVersion_Fn
+    type: Delegate
+  - uid: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+    name: ADLXNative.ADLXTerminate_Fn
+    type: Delegate
   - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
     name: ADLXPerformanceMonitoringServicesHelper
     type: Class
@@ -300,6 +318,9 @@ items:
     type: Struct
   - uid: ADLXWrapper.FanPoint
     name: FanPoint
+    type: Struct
+  - uid: ADLXWrapper.FluidMotionFramesInfo
+    name: FluidMotionFramesInfo
     type: Struct
   - uid: ADLXWrapper.FrameRateTargetControlInfo
     name: FrameRateTargetControlInfo
@@ -822,6 +843,9 @@ items:
     type: Struct
   - uid: ADLXWrapper.RadeonImageSharpeningInfo
     name: RadeonImageSharpeningInfo
+    type: Struct
+  - uid: ADLXWrapper.RadeonSuperResolutionInfo
+    name: RadeonSuperResolutionInfo
     type: Struct
   - uid: ADLXWrapper.SimpleEyefinityInfo
     name: SimpleEyefinityInfo

@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDesktopListChanged
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 673
+    startLine: 723
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

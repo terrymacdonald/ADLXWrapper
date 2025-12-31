@@ -1,127 +1,88 @@
 # ADLXWrapper
 
-A modern, high-performance C# wrapper for the AMD Display Library Extensions (ADLX) SDK, generated using ClangSharp.
+Facade-first C# access to the AMD ADLX SDK, with native bindings available for low-level control.
 
-This wrapper provides a safe, idiomatic, and vtable-based interop layer, allowing .NET applications to interact directly and efficiently with AMD GPU features.
+## Quick links
+- Facade guide (recommended): `ADLXWrapper/README.md`
+- Native guide: `ADLXWrapper/README.Native.md`
+- Samples (each offers Facade and Native menu options): `Samples/`
+- API docs (local HTML): `APIDocs/_site/index.html`
+- Native tests: `ADLXWrapper.NativeTests/` (raw `cs_generated` APIs only)
+- Facade tests: `ADLXWrapper.FacadeTests/` (helper/facade APIs)
 
-## Features
+## Why facade-first?
+Facades remove pointer management and expose strongly-typed helpers (`ADLXSystemServicesHelper`, `ADLXDisplayServicesHelper`, etc.) that wrap the highest supported ADLX interface version, handle AddRef/Release, and surface DTOs for easy serialization. Use the native layer only when you need direct vtable access or to mirror ADLX SDK samples verbatim.
 
-- **Full API Coverage**: Wraps the core ADLX services for System, GPU, Display, Desktop, 3D Settings, Performance Monitoring, Power Tuning, and Multimedia.
-- **Service Helpers**: Per-service helper classes (e.g., `ADLXSystemServicesHelper`, `ADLXDisplayServicesHelper`, `ADLXGPUTuningServicesHelper`) wrap native interfaces with safe enumeration, capability checks, and managed DTOs.
-- **Serializable Data Objects**: All hardware states are read into serializable `Info` structs, perfect for saving configurations to JSON.
-- **Configuration Management**: Includes `Apply` methods to restore hardware states from deserialized `Info` objects.
-- **Real-time Event Handling**: Provides listeners for display, desktop, and GPU tuning changes.
-
-## Project Structure
-
-```
-ADLXWrapper/
-|-- ADLX/                     # ADLX SDK headers (downloaded by script)
-|-- ADLXWrapper/              # The main C# wrapper project
-|   |-- ADLX*.cs              # Core helpers/services for each ADLX feature
-|   \-- README.md             # Detailed API documentation and examples
-|-- ADLXWrapper.NativeTests/  # xUnit native test suite (raw cs_generated APIs)
-|-- ADLXWrapper.FacadeTests/  # xUnit facade test suite (uses helper/facade APIs)
-|-- Samples/                  # Sample console applications
-\-- scripts/                  # Build, test, and preparation scripts
-```
-
-## Getting Started
-
-### 1. Prepare the Environment
-
-First, run the preparation script. This will download the required ADLX SDK headers into the `ADLX/` directory.
-
+## Getting started
+1) Prepare ADLX headers (once):
 ```powershell
 ./prepare_adlx.ps1
 ```
-
-### 2. Build the Solution
-
-Once the SDK is in place, you can build the entire solution, including the wrapper, tests, and samples.
-
+2) Build everything:
 ```powershell
 ./build_adlx.ps1
 ```
-
-### 3. Run Tests
-
-Run the hardware-aware native tests first, then (optionally) the facade tests. Tests skip gracefully on unsupported hardware/driver combos.
-
+3) Run tests (hardware-aware; native first):
 ```powershell
-# Native (ClangSharp-generated APIs only)
 ./test_adlx.ps1
-
-# Facade helpers (after native passes)
 dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal
 ```
+4) Explore samples: `dotnet run --project Samples/DisplaySample/DisplaySample.csproj` (menus show both Facade and Native flows).
 
-## Using ADLXWrapper in another project
-
-### Option A: add the project (preferred)
-- Keep this repo as a sibling folder or git submodule, run `./prepare_adlx.ps1` once, then `dotnet add <your>.csproj reference ..\ADLXWrapper\ADLXWrapper.csproj`.
-- Build normally; the `cs_generated` bindings are produced automatically, so you do not need to copy them manually.
-
-### Option B: drop in the prebuilt DLL
-- Build a Release copy (`dotnet build ADLXWrapper/ADLXWrapper.csproj -c Release`) or use the release ZIP built by `./create_adlx_release_zip.ps1`.
-- Add a file reference to `ADLXWrapper.dll` (for example in your `.csproj`):
-
-```xml
-<ItemGroup>
-  <Reference Include="ADLXWrapper">
-    <HintPath>lib/ADLXWrapper.dll</HintPath>
-  </Reference>
-</ItemGroup>
-```
-
-- Only the managed DLL is required for consumers; all public helpers (`ADLXApiHelper`, service helpers, facades, DTOs) live in that assembly.
-- The ADLX native runtime ships with AMD drivers, so you do not need to redistribute SDK headers or binaries.
-- Do **not** cherry-pick files if you embed sources. Copy the entire `ADLXWrapper/` folder (all `ADLX*.cs` plus `cs_generated/` after running `prepare_adlx.ps1`) so the helper implementations and generated bindings stay in sync.
-
-## Packaging a release ZIP
-- Run `./prepare_adlx.ps1` once, then execute `./create_adlx_release_zip.ps1` (defaults to Release build). The script builds the wrapper and drops `artifacts/adlxwrapper-<version>-Release.zip`.
-- Contents: `ADLXWrapper.dll`, `ADLXWrapper.pdb`, `ADLXWrapper.deps.json`, XML docs (`ADLXWrapper.xml`), top-level `README.md`/`LICENSE`, and (optionally) sources + `cs_generated` when run with `-IncludeSources`.
-
-## Detailed Usage and Examples
-
-### Quick sample (facade-first)
-
+## Facade quick start
 ```csharp
+using ADLXWrapper;
+
 using var adlx = ADLXApiHelper.Initialize();
 using var sys = adlx.GetSystemServices();
 
-// Enumerate GPUs and displays (pointer-free)
-var gpus = sys.EnumerateADLXGPUs();
+// Displays (pointer-free)
 var displays = sys.EnumerateDisplays();
-
 foreach (var display in displays)
 using (display)
 {
-    Console.WriteLine($"Display {display.Name} [{display.Width}x{display.Height}] on GPU {display.GpuUniqueId}");
-
-    // Toggle a display feature if supported (e.g., Virtual Super Resolution)
+    Console.WriteLine($"{display.Name} {display.NativeResolutionWidth}x{display.NativeResolutionHeight} @ {display.RefreshRate:F2} Hz");
     var vsr = display.GetVirtualSuperResolutionState();
-    if (vsr.supported && !vsr.enabled)
-    {
-        display.SetVirtualSuperResolution(true);
-    }
+    if (vsr.supported && !vsr.enabled) display.SetVirtualSuperResolution(true);
 }
 
-// Listen for display settings changes (callbacks occur on ADLX threads)
-using var displayServices = sys.GetDisplayServices();
-using var settingsListener = displayServices.AddDisplaySettingsEventListener(evt =>
+// GPU identity + metrics
+var gpus = sys.EnumerateADLXGPUs();
+foreach (var gpu in gpus)
+using (gpu)
 {
-    Console.WriteLine("[Display settings changed]");
-    return true; // keep listening
-});
+    var id = gpu.Identity;
+    Console.WriteLine($"{id.Name} ({id.Brand}, {id.VRAMType}, {id.TotalVRAM} MB)");
+}
+```
+More in `ADLXWrapper/README.md` (per-feature examples: Display, Desktop, GPU identity, Perf, 3D settings, Tuning, Power, Color, Multimedia).
 
-Console.WriteLine("Listener registered. Press Enter to exit...");
-Console.ReadLine();
+## Using the release ZIP
+- Build with `./create_adlx_release_zip.ps1` or download from GitHub Releases (artifact name `adlxwrapper-<version>-Release.zip`).
+- Contents: `ADLXWrapper.dll`, `ADLXWrapper.pdb`, `ADLXWrapper.deps.json`, `ADLXWrapper.xml`, top-level README/license; optional sources if built with `-IncludeSources`.
+- Reference in your project:
+```xml
+<ItemGroup>
+  <Reference Include="ADLXWrapper">
+    <HintPath>packages\\adlxwrapper\\ADLXWrapper.dll</HintPath>
+  </Reference>
+</ItemGroup>
+```
+The ADLX runtime ships with AMD drivers; no extra native payload is redistributed here.
+
+## Native path
+If you need vtable-level access, see `ADLXWrapper/README.Native.md` for initialization patterns, lifetime rules, and raw pointer examples that mirror the ADLX SDK samples. Native tests (`ADLXWrapper.NativeTests`) demonstrate direct usage of the generated interfaces in `ADLXWrapper/cs_generated/`.
+
+## Project structure
+```
+ADLXWrapper/
+|-- ADLX/                     # ADLX SDK headers (fetched by prepare script)
+|-- ADLXWrapper/              # Library sources (helpers + cs_generated bindings)
+|-- ADLXWrapper.NativeTests/  # Native xUnit tests
+|-- ADLXWrapper.FacadeTests/  # Facade xUnit tests
+|-- Samples/                  # Console samples (Facade and Native menus)
+|-- APIDocs/_site/            # Generated API HTML docs
+|-- scripts/                  # Prepare/build/test/release scripts
 ```
 
-### Support and disposal notes
-- Optional features surface support via `IsSupported` or capability objects; unsupported operations throw `ADLX_NOT_SUPPORTED`.
-- Helpers guard against use-after-dispose with `ObjectDisposedException`. Native pointers returned by helpers should be wrapped in `ComPtr` or disposed handles to avoid leaks.
-- Tests and samples may skip on systems without the required AMD hardware/driver.
-
-For additional API documentation and examples, see the **ADLXWrapper Project README** in the `ADLXWrapper/` folder.
+Need more? Start with `ADLXWrapper/README.md` for the Facade walkthrough, then branch to the Native guide if you need raw access. APIDocs in `APIDocs/_site/index.html` provide full API surface details.**

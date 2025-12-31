@@ -21,11 +21,11 @@ items:
   type: Struct
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXInterfaceHandle
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 7
   assemblies:
   - ADLXWrapper
@@ -57,11 +57,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 18
   assemblies:
   - ADLXWrapper
@@ -86,11 +86,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: From
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 20
   assemblies:
   - ADLXWrapper
@@ -122,11 +122,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FromNonRefCounted
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 34
   assemblies:
   - ADLXWrapper
@@ -158,11 +158,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: As
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 40
   assemblies:
   - ADLXWrapper
@@ -191,11 +191,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 42
   assemblies:
   - ADLXWrapper
@@ -221,11 +221,11 @@ items:
   type: Operator
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 50
   assemblies:
   - ADLXWrapper
@@ -255,11 +255,11 @@ items:
   type: Operator
   source:
     remote:
-      path: ADLXWrapper/ADLXInterfaceHandle.cs
-      branch: feature-native-tests-v3
+      path: ADLXWrapper/AdlxInterfaceHandle.cs
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: op_Implicit
-    path: ../ADLXWrapper/ADLXInterfaceHandle.cs
+    path: ../ADLXWrapper/AdlxInterfaceHandle.cs
     startLine: 51
   assemblies:
   - ADLXWrapper

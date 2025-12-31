@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GammaRamp.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GammaRamp
     path: ../ADLXWrapper/cs_generated/ADLX_GammaRamp.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GammaRamp.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: gamma
     path: ../ADLXWrapper/cs_generated/ADLX_GammaRamp.cs

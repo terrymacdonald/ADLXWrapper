@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXSystemServicesHelper
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -136,7 +136,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -174,7 +174,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -247,7 +247,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -285,7 +285,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDisplayServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -322,7 +322,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -360,11 +360,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 138
+    startLine: 136
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -398,11 +398,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 153
+    startLine: 151
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -436,11 +436,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetDesktopServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 162
+    startLine: 160
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -473,11 +473,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 182
+    startLine: 180
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -511,11 +511,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 198
+    startLine: 194
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -549,11 +549,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 213
+    startLine: 209
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -587,11 +587,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGet3DSettingsServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 222
+    startLine: 218
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -624,11 +624,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 242
+    startLine: 238
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -662,11 +662,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 256
+    startLine: 251
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -700,11 +700,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 271
+    startLine: 266
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -738,11 +738,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetGPUTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 280
+    startLine: 275
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -775,11 +775,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 300
+    startLine: 295
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -813,11 +813,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 314
+    startLine: 308
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -851,11 +851,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 329
+    startLine: 323
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -889,11 +889,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPerformanceMonitoringServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 338
+    startLine: 332
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -926,11 +926,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 358
+    startLine: 352
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -964,11 +964,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 372
+    startLine: 365
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1002,11 +1002,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 387
+    startLine: 380
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1040,11 +1040,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 396
+    startLine: 389
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1077,11 +1077,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 416
+    startLine: 409
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1115,11 +1115,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 430
+    startLine: 422
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1153,11 +1153,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServicesHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 445
+    startLine: 437
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1191,11 +1191,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetMultimediaServicesNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 454
+    startLine: 446
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1228,11 +1228,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 474
+    startLine: 466
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1266,11 +1266,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 488
+    startLine: 479
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1304,11 +1304,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUsChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 503
+    startLine: 494
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1342,11 +1342,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandlingNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 514
+    startLine: 505
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1380,11 +1380,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUAppsListChangedHandling
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 529
+    startLine: 520
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1418,11 +1418,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 540
+    startLine: 531
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1456,11 +1456,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 572
+    startLine: 563
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1494,11 +1494,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysInUse
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 585
+    startLine: 620
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1532,11 +1532,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 598
+    startLine: 734
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1570,11 +1570,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsHandle
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 611
+    startLine: 787
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1608,11 +1608,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 639
+    startLine: 815
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1646,11 +1646,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuInfo
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 663
+    startLine: 839
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1688,11 +1688,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUsNative
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 676
+    startLine: 852
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1726,11 +1726,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 695
+    startLine: 871
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1756,11 +1756,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 721
+    startLine: 897
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

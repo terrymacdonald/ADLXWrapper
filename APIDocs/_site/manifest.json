@@ -236,6 +236,90 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.ADLXInitialize_Fn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.ADLXInitialize_Fn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative.ADLXInitialize_Fn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.ADLXTerminate_Fn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.ADLXTerminate_Fn.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative.ADLXTerminate_Fn",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXNative.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXNative",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.ADLXNative.yml\" sourcestartlinenumber=\"1\">Manual P/Invoke declarations for ADLX DLL entry points.\nThese functions are exported from amdadlx64.dll and must be loaded dynamically.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.yml",
       "output": {
         ".html": {
@@ -1492,6 +1576,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.FanPoint",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.FluidMotionFramesInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.FluidMotionFramesInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.FluidMotionFramesInfo",
       "Summary": null
     },
     {
@@ -3928,6 +4026,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.RadeonImageSharpeningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.RadeonSuperResolutionInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.RadeonSuperResolutionInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.RadeonSuperResolutionInfo",
       "Summary": null
     },
     {

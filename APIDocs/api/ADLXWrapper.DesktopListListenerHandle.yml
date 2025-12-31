@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DesktopListListenerHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 671
+    startLine: 721
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 692
+    startLine: 742
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 698
+    startLine: 748
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 700
+    startLine: 750
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -155,11 +155,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 709
+    startLine: 759
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

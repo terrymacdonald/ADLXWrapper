@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DImageSharpening
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -215,7 +215,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSharpnessRange
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -282,7 +282,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSharpness
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -317,7 +317,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
@@ -352,7 +352,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSharpness
     path: ../ADLXWrapper/cs_generated/IADLX3DImageSharpening.cs

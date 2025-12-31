@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DISPLAY_TIMING_LIMITATION
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PIXEL_CLOCK_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -74,7 +74,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PIXEL_CLOCK_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REFRESH_RATE_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: REFRESH_RATE_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RESOLUTION_MAX
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RESOLUTION_MIN
     path: ../ADLXWrapper/cs_generated/ADLX_DISPLAY_TIMING_LIMITATION.cs

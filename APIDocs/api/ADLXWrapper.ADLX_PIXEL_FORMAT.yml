@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PIXEL_FORMAT
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -47,7 +47,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FORMAT_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -74,7 +74,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RGB_444_FULL
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -101,7 +101,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_444
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_422
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -155,7 +155,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RGB_444_LIMITED
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: YCBCR_420
     path: ../ADLXWrapper/cs_generated/ADLX_PIXEL_FORMAT.cs

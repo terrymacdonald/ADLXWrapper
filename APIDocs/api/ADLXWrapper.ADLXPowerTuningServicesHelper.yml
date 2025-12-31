@@ -15,6 +15,7 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.EnumerateGPUConnectGpuHandles
   - ADLXWrapper.ADLXPowerTuningServicesHelper.Finalize
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandling
   - ADLXWrapper.ADLXPowerTuningServicesHelper.GetPowerTuningChangedHandlingNative
@@ -30,6 +31,7 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftEco(ADLXWrapper.SmartShiftEcoInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryApplySmartShiftMax(ADLXWrapper.SmartShiftMaxInfo)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles(ADLXWrapper.ADLXInterfaceHandle[]@)
+  - ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
   - ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
   langs:
   - csharp
@@ -41,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPowerTuningServicesHelper
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -79,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -117,7 +119,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -145,7 +147,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServicesHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -179,7 +181,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -217,7 +219,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -253,7 +255,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -281,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateGPUConnectGpuHandles
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -317,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUConnectGpuListNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -354,7 +356,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandlingNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -382,7 +384,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningChangedHandling
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -412,7 +414,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddPowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -454,7 +456,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -488,7 +490,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -525,7 +527,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMaxNative
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -563,7 +565,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -592,7 +594,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -625,7 +627,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -662,7 +664,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -691,7 +693,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -724,7 +726,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -743,6 +745,82 @@ items:
       type: ADLXWrapper.ManualPowerTuningInfo
     content.vb: Public Function GetManualPowerTuning(tuningServices As IADLXGPUTuningServices*, gpu As IADLXGPU*) As ManualPowerTuningInfo
   overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
+  id: GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle)
+  nameWithType: ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetManualPowerTuning
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 351
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Facade-friendly overload to query manual power tuning using managed helpers and GPU handles.
+  example: []
+  syntax:
+    content: public ManualPowerTuningInfo GetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle)
+    parameters:
+    - id: tuningHelper
+      type: ADLXWrapper.ADLXGPUTuningServicesHelper
+      description: GPU tuning helper.
+    - id: gpuHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+      description: GPU handle from facade enumeration.
+    return:
+      type: ADLXWrapper.ManualPowerTuningInfo
+      description: Manual power tuning info.
+    content.vb: Public Function GetManualPowerTuning(tuningHelper As ADLXGPUTuningServicesHelper, gpuHandle As ADLXInterfaceHandle) As ManualPowerTuningInfo
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning*
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
+  id: TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
+  parent: ADLXWrapper.ADLXPowerTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, out ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, out ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle, out ADLXWrapper.ManualPowerTuningInfo)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetManualPowerTuning
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 375
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryGetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle, out ManualPowerTuningInfo info)
+    parameters:
+    - id: tuningHelper
+      type: ADLXWrapper.ADLXGPUTuningServicesHelper
+    - id: gpuHandle
+      type: ADLXWrapper.ADLXInterfaceHandle
+    - id: info
+      type: ADLXWrapper.ManualPowerTuningInfo
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetManualPowerTuning(tuningHelper As ADLXGPUTuningServicesHelper, gpuHandle As ADLXInterfaceHandle, info As ManualPowerTuningInfo) As Boolean
+  overload: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning*
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, ManualPowerTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle, ADLXWrapper.ManualPowerTuningInfo)
+  name.vb: TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, ManualPowerTuningInfo)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
   commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
   id: ApplyManualPowerTuning(ADLXWrapper.IADLXManualPowerTuning*,ADLXWrapper.ManualPowerTuningInfo)
@@ -757,11 +835,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 345
+    startLine: 389
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -788,11 +866,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 366
+    startLine: 410
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -823,11 +901,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 379
+    startLine: 423
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -856,11 +934,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 399
+    startLine: 443
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -893,11 +971,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 412
+    startLine: 456
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -923,11 +1001,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 428
+    startLine: 472
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1488,6 +1566,19 @@ references:
   name: ManualPowerTuningInfo
   nameWithType: ManualPowerTuningInfo
   fullName: ADLXWrapper.ManualPowerTuningInfo
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper
+  commentId: T:ADLXWrapper.ADLXGPUTuningServicesHelper
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html
+  name: ADLXGPUTuningServicesHelper
+  nameWithType: ADLXGPUTuningServicesHelper
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning*
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
+  href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryGetManualPowerTuning_ADLXWrapper_ADLXGPUTuningServicesHelper_ADLXWrapper_ADLXInterfaceHandle_ADLXWrapper_ManualPowerTuningInfo__
+  name: TryGetManualPowerTuning
+  nameWithType: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning*
   commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.ApplyManualPowerTuning
   href: ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_ApplyManualPowerTuning_ADLXWrapper_IADLXManualPowerTuning__ADLXWrapper_ManualPowerTuningInfo_

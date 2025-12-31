@@ -18,6 +18,12 @@ items:
   - ADLXWrapper.ADLXInterfaceHandle
   - ADLXWrapper.ADLXListHelpers
   - ADLXWrapper.ADLXMultimediaServicesHelper
+  - ADLXWrapper.ADLXNative
+  - ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  - ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  - ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  - ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  - ADLXWrapper.ADLXNative.ADLXTerminate_Fn
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   - ADLXWrapper.ADLXPowerTuningServicesHelper
   - ADLXWrapper.ADLXSystemServicesHelper
@@ -103,6 +109,7 @@ items:
   - ADLXWrapper.EnhancedSyncInfo
   - ADLXWrapper.EyefinityDesktopInfo
   - ADLXWrapper.FanPoint
+  - ADLXWrapper.FluidMotionFramesInfo
   - ADLXWrapper.FrameRateTargetControlInfo
   - ADLXWrapper.GammaInfo
   - ADLXWrapper.GamutInfo
@@ -277,6 +284,7 @@ items:
   - ADLXWrapper.PresetKind
   - ADLXWrapper.PresetTuningInfo
   - ADLXWrapper.RadeonImageSharpeningInfo
+  - ADLXWrapper.RadeonSuperResolutionInfo
   - ADLXWrapper.SimpleEyefinityInfo
   - ADLXWrapper.SmartShiftEcoInfo
   - ADLXWrapper.SmartShiftMaxInfo
@@ -368,6 +376,20 @@ references:
   name: TessellationInfo
   nameWithType: TessellationInfo
   fullName: ADLXWrapper.TessellationInfo
+- uid: ADLXWrapper.FluidMotionFramesInfo
+  commentId: T:ADLXWrapper.FluidMotionFramesInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.FluidMotionFramesInfo.html
+  name: FluidMotionFramesInfo
+  nameWithType: FluidMotionFramesInfo
+  fullName: ADLXWrapper.FluidMotionFramesInfo
+- uid: ADLXWrapper.RadeonSuperResolutionInfo
+  commentId: T:ADLXWrapper.RadeonSuperResolutionInfo
+  parent: ADLXWrapper
+  href: ADLXWrapper.RadeonSuperResolutionInfo.html
+  name: RadeonSuperResolutionInfo
+  nameWithType: RadeonSuperResolutionInfo
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo
 - uid: ADLXWrapper.ThreeDSettingsListenerHandle
   commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle
   parent: ADLXWrapper
@@ -877,6 +899,122 @@ references:
   - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaChangedCallback
     href: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback.html
+- uid: ADLXWrapper.ADLXNative
+  commentId: T:ADLXWrapper.ADLXNative
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative
+  nameWithType: ADLXNative
+  fullName: ADLXWrapper.ADLXNative
+- uid: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  commentId: T:ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative.ADLXQueryFullVersion_Fn
+  nameWithType: ADLXNative.ADLXQueryFullVersion_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+    name: ADLXQueryFullVersion_Fn
+    href: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+    name: ADLXQueryFullVersion_Fn
+    href: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn.html
+- uid: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  commentId: T:ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative.ADLXQueryVersion_Fn
+  nameWithType: ADLXNative.ADLXQueryVersion_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+    name: ADLXQueryVersion_Fn
+    href: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+    name: ADLXQueryVersion_Fn
+    href: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn.html
+- uid: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  commentId: T:ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative.ADLXInitialize_Fn
+  nameWithType: ADLXNative.ADLXInitialize_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+    name: ADLXInitialize_Fn
+    href: ADLXWrapper.ADLXNative.ADLXInitialize_Fn.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+    name: ADLXInitialize_Fn
+    href: ADLXWrapper.ADLXNative.ADLXInitialize_Fn.html
+- uid: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  commentId: T:ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  nameWithType: ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+    name: ADLXInitializeWithCallerAdl_Fn
+    href: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+    name: ADLXInitializeWithCallerAdl_Fn
+    href: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn.html
+- uid: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  commentId: T:ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  href: ADLXWrapper.ADLXNative.html
+  name: ADLXNative.ADLXTerminate_Fn
+  nameWithType: ADLXNative.ADLXTerminate_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  spec.csharp:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+    name: ADLXTerminate_Fn
+    href: ADLXWrapper.ADLXNative.ADLXTerminate_Fn.html
+  spec.vb:
+  - uid: ADLXWrapper.ADLXNative
+    name: ADLXNative
+    href: ADLXWrapper.ADLXNative.html
+  - name: .
+  - uid: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+    name: ADLXTerminate_Fn
+    href: ADLXWrapper.ADLXNative.ADLXTerminate_Fn.html
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   commentId: T:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   parent: ADLXWrapper
@@ -1291,6 +1429,7 @@ references:
   fullName: ADLXWrapper.ADLX_LOG_SEVERITY
 - uid: ADLXWrapper.ADLX_LUID
   commentId: T:ADLXWrapper.ADLX_LUID
+  parent: ADLXWrapper
   href: ADLXWrapper.ADLX_LUID.html
   name: ADLX_LUID
   nameWithType: ADLX_LUID

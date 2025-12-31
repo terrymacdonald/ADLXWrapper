@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_ORIENTATION
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_LANDSCAPE
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_PORTRAIT
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_LANDSCAPE_FLIPPED
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ORIENTATION_PORTRAIT_FLIPPED
     path: ../ADLXWrapper/cs_generated/ADLX_ORIENTATION.cs

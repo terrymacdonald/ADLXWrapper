@@ -27,11 +27,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CustomColorInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2658
+    startLine: 2838
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -59,11 +59,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2660
+    startLine: 2840
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,11 +88,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHueSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2661
+    startLine: 2841
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -117,11 +117,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Hue
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2662
+    startLine: 2842
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -146,11 +146,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSaturationSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2663
+    startLine: 2843
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -175,11 +175,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Saturation
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2664
+    startLine: 2844
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -204,11 +204,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBrightnessSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2665
+    startLine: 2845
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -233,11 +233,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Brightness
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2666
+    startLine: 2846
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -262,11 +262,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2667
+    startLine: 2847
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -291,11 +291,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Contrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2668
+    startLine: 2848
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -320,11 +320,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTemperatureSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2669
+    startLine: 2849
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -349,11 +349,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2670
+    startLine: 2850
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -378,11 +378,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2672
+    startLine: 2852
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

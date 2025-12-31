@@ -5,7 +5,7 @@ items:
   id: ADLXDesktopServicesHelper
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
+  - ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)
   - ADLXWrapper.ADLXDesktopServicesHelper.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   - ADLXWrapper.ADLXDesktopServicesHelper.CreateADLXDesktop(ADLXWrapper.IADLXDesktop*,System.Boolean)
   - ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
@@ -44,7 +44,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktopServicesHelper
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -68,32 +68,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
-  id: '#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)'
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)
+  id: '#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)'
   parent: ADLXWrapper.ADLXDesktopServicesHelper
   langs:
   - csharp
   - vb
-  name: ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool)
-  nameWithType: ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool)
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, bool, bool)
+  name: ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool, IADLXSystem*)
+  nameWithType: ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool, IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, bool, bool, ADLXWrapper.IADLXSystem*)
   type: Constructor
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 26
+    startLine: 28
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a desktop services helper from native desktop/display services.
   example: []
   syntax:
-    content: public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true)
+    content: public ADLXDesktopServicesHelper(IADLXDesktopServices* desktopServices, IADLXDisplayServices* displayServices = null, bool addRefDesktopServices = true, bool addRefDisplayServices = true, IADLXSystem* system = null)
     parameters:
     - id: desktopServices
       type: ADLXWrapper.IADLXDesktopServices*
@@ -107,11 +107,14 @@ items:
     - id: addRefDisplayServices
       type: System.Boolean
       description: True to AddRef the display services pointer.
-    content.vb: Public Sub New(desktopServices As IADLXDesktopServices*, displayServices As IADLXDisplayServices* = Nothing, addRefDesktopServices As Boolean = True, addRefDisplayServices As Boolean = True)
+    - id: system
+      type: ADLXWrapper.IADLXSystem*
+      description: Optional system pointer used to reacquire desktop services per call.
+    content.vb: Public Sub New(desktopServices As IADLXDesktopServices*, displayServices As IADLXDisplayServices* = Nothing, addRefDesktopServices As Boolean = True, addRefDisplayServices As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXDesktopServicesHelper.#ctor*
-  nameWithType.vb: ADLXDesktopServicesHelper.New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean)
-  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, Boolean, Boolean)
-  name.vb: New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean)
+  nameWithType.vb: ADLXDesktopServicesHelper.New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean, IADLXSystem*)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, Boolean, Boolean, ADLXWrapper.IADLXSystem*)
+  name.vb: New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean, IADLXSystem*)
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative
   id: GetDesktopServicesNative
@@ -126,11 +129,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -154,11 +157,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServicesHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 55
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -188,11 +191,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 68
+    startLine: 71
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -226,11 +229,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 96
+    startLine: 106
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -260,11 +263,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 116
+    startLine: 126
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -298,11 +301,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 150
+    startLine: 167
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -332,11 +335,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 171
+    startLine: 188
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -377,11 +380,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 228
+    startLine: 252
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -413,11 +416,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateADLXDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 251
+    startLine: 275
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -464,11 +467,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 275
+    startLine: 299
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -502,11 +505,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 299
+    startLine: 323
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -537,11 +540,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 325
+    startLine: 349
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -579,11 +582,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 346
+    startLine: 370
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -617,11 +620,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopHandles
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 367
+    startLine: 391
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -655,11 +658,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 402
+    startLine: 426
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -693,11 +696,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandlingNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 420
+    startLine: 444
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -721,11 +724,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopChangedHandling
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 438
+    startLine: 462
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -749,11 +752,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinity
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 443
+    startLine: 467
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -777,11 +780,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinityHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 458
+    startLine: 482
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -805,11 +808,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 472
+    startLine: 496
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -836,11 +839,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 487
+    startLine: 511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -867,11 +870,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 499
+    startLine: 523
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -896,11 +899,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 510
+    startLine: 534
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -926,11 +929,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDisplayListNative
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 520
+    startLine: 544
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -957,11 +960,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 536
+    startLine: 560
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -988,11 +991,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 556
+    startLine: 580
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1019,11 +1022,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplays
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 569
+    startLine: 593
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1050,11 +1053,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 599
+    startLine: 649
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1295,7 +1298,7 @@ references:
   fullName: System
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.#ctor
-  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDisplayServices__System_Boolean_System_Boolean_
+  href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDisplayServices__System_Boolean_System_Boolean_ADLXWrapper_IADLXSystem__
   name: ADLXDesktopServicesHelper
   nameWithType: ADLXDesktopServicesHelper.ADLXDesktopServicesHelper
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.ADLXDesktopServicesHelper
@@ -1345,6 +1348,22 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.GetDesktopServicesNative
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_GetDesktopServicesNative

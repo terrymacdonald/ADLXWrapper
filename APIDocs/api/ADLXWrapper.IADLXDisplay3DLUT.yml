@@ -39,7 +39,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplay3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSCE
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSCEVividGaming
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -264,7 +264,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSCEDisabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -299,7 +299,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSCEVividGaming
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -334,7 +334,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSCEDisabled
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -363,7 +363,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSCEVividGaming
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -392,7 +392,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedSCEDynamicContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -427,7 +427,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSCEDynamicContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -462,7 +462,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSCEDynamicContrastRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -494,7 +494,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSCEDynamicContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -529,7 +529,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSCEDynamicContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -564,7 +564,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -599,7 +599,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -628,7 +628,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSDRUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -669,7 +669,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSDRUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -710,7 +710,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHDRUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -751,7 +751,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHDRUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -792,7 +792,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAllUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -833,7 +833,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetAllUser3DLUT
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
@@ -874,7 +874,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetUser3DLUTIndex
     path: ../ADLXWrapper/cs_generated/IADLXDisplay3DLUT.cs

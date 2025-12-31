@@ -5,14 +5,16 @@ items:
   id: All3DSettingsInfo
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})
+  - ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})
   - ADLXWrapper.All3DSettingsInfo.AnisotropicFiltering
   - ADLXWrapper.All3DSettingsInfo.AntiAliasing
   - ADLXWrapper.All3DSettingsInfo.AntiLag
   - ADLXWrapper.All3DSettingsInfo.Boost
   - ADLXWrapper.All3DSettingsInfo.EnhancedSync
+  - ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
   - ADLXWrapper.All3DSettingsInfo.FrameRateTargetControl
   - ADLXWrapper.All3DSettingsInfo.ImageSharpening
+  - ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
   - ADLXWrapper.All3DSettingsInfo.Tessellation
   - ADLXWrapper.All3DSettingsInfo.WaitForVerticalRefresh
   langs:
@@ -25,11 +27,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: All3DSettingsInfo
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 368
+    startLine: 532
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -59,11 +61,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiLag
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 370
+    startLine: 534
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -88,11 +90,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Boost
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 371
+    startLine: 535
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -117,11 +119,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpening
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 372
+    startLine: 536
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -146,11 +148,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSync
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 373
+    startLine: 537
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -175,11 +177,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WaitForVerticalRefresh
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 374
+    startLine: 538
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -204,11 +206,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FrameRateTargetControl
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 375
+    startLine: 539
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -233,11 +235,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 376
+    startLine: 540
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -262,11 +264,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFiltering
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 377
+    startLine: 541
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -291,11 +293,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Tessellation
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 378
+    startLine: 542
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -306,25 +308,83 @@ items:
       type: System.Nullable{ADLXWrapper.TessellationInfo}
     content.vb: Public Property Tessellation As TessellationInfo?
   overload: ADLXWrapper.All3DSettingsInfo.Tessellation*
-- uid: ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})
-  commentId: M:ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})
-  id: '#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})'
+- uid: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  commentId: P:ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  id: FluidMotionFrames
   parent: ADLXWrapper.All3DSettingsInfo
   langs:
   - csharp
   - vb
-  name: All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  nameWithType: All3DSettingsInfo.All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  fullName: ADLXWrapper.All3DSettingsInfo.All3DSettingsInfo(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?)
+  name: FluidMotionFrames
+  nameWithType: All3DSettingsInfo.FluidMotionFrames
+  fullName: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FluidMotionFrames
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 543
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public FluidMotionFramesInfo? FluidMotionFrames { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.FluidMotionFramesInfo}
+    content.vb: Public Property FluidMotionFrames As FluidMotionFramesInfo?
+  overload: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames*
+- uid: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  commentId: P:ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  id: RadeonSuperResolution
+  parent: ADLXWrapper.All3DSettingsInfo
+  langs:
+  - csharp
+  - vb
+  name: RadeonSuperResolution
+  nameWithType: All3DSettingsInfo.RadeonSuperResolution
+  fullName: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RadeonSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 544
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public RadeonSuperResolutionInfo? RadeonSuperResolution { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo}
+    content.vb: Public Property RadeonSuperResolution As RadeonSuperResolutionInfo?
+  overload: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution*
+- uid: ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})
+  commentId: M:ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})
+  id: '#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})'
+  parent: ADLXWrapper.All3DSettingsInfo
+  langs:
+  - csharp
+  - vb
+  name: All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  nameWithType: All3DSettingsInfo.All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  fullName: ADLXWrapper.All3DSettingsInfo.All3DSettingsInfo(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?, ADLXWrapper.FluidMotionFramesInfo?, ADLXWrapper.RadeonSuperResolutionInfo?)
   type: Constructor
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 380
+    startLine: 546
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -332,7 +392,7 @@ items:
     content: >-
       [JsonConstructor]
 
-      public All3DSettingsInfo(AntiLagInfo? antiLag, BoostInfo? boost, RadeonImageSharpeningInfo? imageSharpening, EnhancedSyncInfo? enhancedSync, WaitForVerticalRefreshInfo? waitForVerticalRefresh, FrameRateTargetControlInfo? frameRateTargetControl, AntiAliasingInfo? antiAliasing, AnisotropicFilteringInfo? anisotropicFiltering, TessellationInfo? tessellation)
+      public All3DSettingsInfo(AntiLagInfo? antiLag, BoostInfo? boost, RadeonImageSharpeningInfo? imageSharpening, EnhancedSyncInfo? enhancedSync, WaitForVerticalRefreshInfo? waitForVerticalRefresh, FrameRateTargetControlInfo? frameRateTargetControl, AntiAliasingInfo? antiAliasing, AnisotropicFilteringInfo? anisotropicFiltering, TessellationInfo? tessellation, FluidMotionFramesInfo? fluidMotionFrames, RadeonSuperResolutionInfo? radeonSuperResolution)
     parameters:
     - id: antiLag
       type: System.Nullable{ADLXWrapper.AntiLagInfo}
@@ -352,18 +412,22 @@ items:
       type: System.Nullable{ADLXWrapper.AnisotropicFilteringInfo}
     - id: tessellation
       type: System.Nullable{ADLXWrapper.TessellationInfo}
+    - id: fluidMotionFrames
+      type: System.Nullable{ADLXWrapper.FluidMotionFramesInfo}
+    - id: radeonSuperResolution
+      type: System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo}
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(antiLag As AntiLagInfo?, boost As BoostInfo?, imageSharpening As RadeonImageSharpeningInfo?, enhancedSync As EnhancedSyncInfo?, waitForVerticalRefresh As WaitForVerticalRefreshInfo?, frameRateTargetControl As FrameRateTargetControlInfo?, antiAliasing As AntiAliasingInfo?, anisotropicFiltering As AnisotropicFilteringInfo?, tessellation As TessellationInfo?)
+      Public Sub New(antiLag As AntiLagInfo?, boost As BoostInfo?, imageSharpening As RadeonImageSharpeningInfo?, enhancedSync As EnhancedSyncInfo?, waitForVerticalRefresh As WaitForVerticalRefreshInfo?, frameRateTargetControl As FrameRateTargetControlInfo?, antiAliasing As AntiAliasingInfo?, anisotropicFiltering As AnisotropicFilteringInfo?, tessellation As TessellationInfo?, fluidMotionFrames As FluidMotionFramesInfo?, radeonSuperResolution As RadeonSuperResolutionInfo?)
   overload: ADLXWrapper.All3DSettingsInfo.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: All3DSettingsInfo.New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  fullName.vb: ADLXWrapper.All3DSettingsInfo.New(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?)
-  name.vb: New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
+  nameWithType.vb: All3DSettingsInfo.New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  fullName.vb: ADLXWrapper.All3DSettingsInfo.New(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?, ADLXWrapper.FluidMotionFramesInfo?, ADLXWrapper.RadeonSuperResolutionInfo?)
+  name.vb: New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -832,9 +896,57 @@ references:
     name: TessellationInfo
     href: ADLXWrapper.TessellationInfo.html
   - name: '?'
+- uid: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames*
+  commentId: Overload:ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  href: ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_FluidMotionFrames
+  name: FluidMotionFrames
+  nameWithType: All3DSettingsInfo.FluidMotionFrames
+  fullName: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+- uid: System.Nullable{ADLXWrapper.FluidMotionFramesInfo}
+  commentId: T:System.Nullable{ADLXWrapper.FluidMotionFramesInfo}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.FluidMotionFramesInfo.html
+  name: FluidMotionFramesInfo?
+  nameWithType: FluidMotionFramesInfo?
+  fullName: ADLXWrapper.FluidMotionFramesInfo?
+  spec.csharp:
+  - uid: ADLXWrapper.FluidMotionFramesInfo
+    name: FluidMotionFramesInfo
+    href: ADLXWrapper.FluidMotionFramesInfo.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.FluidMotionFramesInfo
+    name: FluidMotionFramesInfo
+    href: ADLXWrapper.FluidMotionFramesInfo.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution*
+  commentId: Overload:ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  href: ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_RadeonSuperResolution
+  name: RadeonSuperResolution
+  nameWithType: All3DSettingsInfo.RadeonSuperResolution
+  fullName: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+- uid: System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo}
+  commentId: T:System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.RadeonSuperResolutionInfo.html
+  name: RadeonSuperResolutionInfo?
+  nameWithType: RadeonSuperResolutionInfo?
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo?
+  spec.csharp:
+  - uid: ADLXWrapper.RadeonSuperResolutionInfo
+    name: RadeonSuperResolutionInfo
+    href: ADLXWrapper.RadeonSuperResolutionInfo.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.RadeonSuperResolutionInfo
+    name: RadeonSuperResolutionInfo
+    href: ADLXWrapper.RadeonSuperResolutionInfo.html
+  - name: '?'
 - uid: ADLXWrapper.All3DSettingsInfo.#ctor*
   commentId: Overload:ADLXWrapper.All3DSettingsInfo.#ctor
-  href: ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo__ctor_System_Nullable_ADLXWrapper_AntiLagInfo__System_Nullable_ADLXWrapper_BoostInfo__System_Nullable_ADLXWrapper_RadeonImageSharpeningInfo__System_Nullable_ADLXWrapper_EnhancedSyncInfo__System_Nullable_ADLXWrapper_WaitForVerticalRefreshInfo__System_Nullable_ADLXWrapper_FrameRateTargetControlInfo__System_Nullable_ADLXWrapper_AntiAliasingInfo__System_Nullable_ADLXWrapper_AnisotropicFilteringInfo__System_Nullable_ADLXWrapper_TessellationInfo__
+  href: ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo__ctor_System_Nullable_ADLXWrapper_AntiLagInfo__System_Nullable_ADLXWrapper_BoostInfo__System_Nullable_ADLXWrapper_RadeonImageSharpeningInfo__System_Nullable_ADLXWrapper_EnhancedSyncInfo__System_Nullable_ADLXWrapper_WaitForVerticalRefreshInfo__System_Nullable_ADLXWrapper_FrameRateTargetControlInfo__System_Nullable_ADLXWrapper_AntiAliasingInfo__System_Nullable_ADLXWrapper_AnisotropicFilteringInfo__System_Nullable_ADLXWrapper_TessellationInfo__System_Nullable_ADLXWrapper_FluidMotionFramesInfo__System_Nullable_ADLXWrapper_RadeonSuperResolutionInfo__
   name: All3DSettingsInfo
   nameWithType: All3DSettingsInfo.All3DSettingsInfo
   fullName: ADLXWrapper.All3DSettingsInfo.All3DSettingsInfo

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXHardwareDetection
     path: ../ADLXWrapper/ADLXHardwareDetection.cs
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasAMDGPU
     path: ../ADLXWrapper/ADLXHardwareDetection.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,7 +92,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXHardwareDetection.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAMDGPUNames
     path: ../ADLXWrapper/ADLXHardwareDetection.cs

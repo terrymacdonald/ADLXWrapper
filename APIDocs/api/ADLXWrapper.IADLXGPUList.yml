@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUList
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -62,7 +62,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -118,7 +118,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -147,7 +147,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Size
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Empty
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -242,7 +242,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Begin
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -271,7 +271,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: End
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -300,7 +300,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: At
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -337,7 +337,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Clear
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -366,7 +366,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove_Back
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -395,7 +395,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add_Back
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -427,7 +427,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: At
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUList.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add_Back
     path: ../ADLXWrapper/cs_generated/IADLXGPUList.cs

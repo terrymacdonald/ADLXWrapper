@@ -28,11 +28,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2420
+    startLine: 2384
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -62,11 +62,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2422
+    startLine: 2386
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -91,11 +91,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionWidth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2423
+    startLine: 2387
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -120,11 +120,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionHeight
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2424
+    startLine: 2388
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,11 +149,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2425
+    startLine: 2389
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -178,11 +178,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerID
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2426
+    startLine: 2390
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -207,11 +207,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2427
+    startLine: 2391
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -236,11 +236,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2428
+    startLine: 2392
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -265,11 +265,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2429
+    startLine: 2393
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -294,11 +294,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2430
+    startLine: 2394
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -323,11 +323,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2431
+    startLine: 2395
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -352,11 +352,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2432
+    startLine: 2396
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -381,11 +381,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2433
+    startLine: 2397
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -410,11 +410,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2435
+    startLine: 2399
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

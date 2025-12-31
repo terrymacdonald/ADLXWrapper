@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanPoint
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 563
+    startLine: 581
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -49,11 +49,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 565
+    startLine: 583
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -78,11 +78,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 566
+    startLine: 584
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

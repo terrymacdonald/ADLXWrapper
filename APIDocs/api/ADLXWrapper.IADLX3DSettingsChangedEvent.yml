@@ -34,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DSettingsChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -123,7 +123,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -189,7 +189,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -218,7 +218,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAntiLagChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -279,7 +279,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsChillChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -308,7 +308,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBoostChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -337,7 +337,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsImageSharpeningChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -366,7 +366,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnhancedSyncChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -395,7 +395,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsWaitForVerticalRefreshChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -424,7 +424,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsFrameRateTargetControlChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -453,7 +453,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAntiAliasingChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -482,7 +482,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsMorphologicalAntiAliasingChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -511,7 +511,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAnisotropicFilteringChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -540,7 +540,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTessellationModeChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -569,7 +569,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsRadeonSuperResolutionChanged
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
@@ -598,7 +598,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsResetShaderCache
     path: ../ADLXWrapper/cs_generated/IADLX3DSettingsChangedEvent.cs

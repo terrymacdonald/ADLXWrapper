@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_3DLUT_COLORSPACE
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_SRGB
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_BT2020
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_DCIP3
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
@@ -126,7 +126,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CS_NATIVE
     path: ../ADLXWrapper/cs_generated/ADLX_3DLUT_COLORSPACE.cs

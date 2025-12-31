@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SimpleEyefinityInfo
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 651
+    startLine: 701
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -48,11 +48,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 653
+    startLine: 703
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXApiHelper
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -66,7 +66,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Initialize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -96,11 +96,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InitializeWithCallerAdl
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 131
+    startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -134,11 +134,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFullVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 191
+    startLine: 225
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -164,11 +164,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 200
+    startLine: 234
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -194,11 +194,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesNative
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 210
+    startLine: 244
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -227,11 +227,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServicesHandle
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 219
+    startLine: 253
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -257,11 +257,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 229
+    startLine: 263
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -287,11 +287,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 239
+    startLine: 273
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -317,11 +317,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 268
+    startLine: 302
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -348,11 +348,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs
-    startLine: 315
+    startLine: 349
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayGamma
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -78,7 +78,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -105,7 +105,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -163,7 +163,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -235,7 +235,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentDeGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -270,7 +270,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentRegammaCoefficient
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -305,7 +305,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -337,7 +337,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGammaCoefficient
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -369,7 +369,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedReGammaSRGB
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -404,7 +404,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedReGammaBT709
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -439,7 +439,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedReGammaPQ
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -474,7 +474,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedReGammaPQ2084Interim
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -509,7 +509,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedReGamma36
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -544,7 +544,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaSRGB
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -579,7 +579,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaBT709
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -614,7 +614,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaPQ
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -649,7 +649,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaPQ2084Interim
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -684,7 +684,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGamma36
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -719,7 +719,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaSRGB
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -748,7 +748,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaBT709
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -777,7 +777,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaPQ
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -806,7 +806,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaPQ2084Interim
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -835,7 +835,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGamma36
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -864,7 +864,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaCoefficient
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -896,7 +896,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDeGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -928,7 +928,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDeGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -963,7 +963,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -995,7 +995,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetReGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
@@ -1030,7 +1030,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGamma.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResetGammaRamp
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGamma.cs

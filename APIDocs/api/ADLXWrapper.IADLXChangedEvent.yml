@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs
@@ -109,7 +109,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs
@@ -175,7 +175,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXChangedEvent.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXChangedEvent.cs

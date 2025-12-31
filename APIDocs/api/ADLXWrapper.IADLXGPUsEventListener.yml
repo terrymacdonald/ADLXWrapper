@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUsEventListener
     path: ../ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs
@@ -50,7 +50,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs
@@ -77,7 +77,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnGPUListChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUsEventListener.cs

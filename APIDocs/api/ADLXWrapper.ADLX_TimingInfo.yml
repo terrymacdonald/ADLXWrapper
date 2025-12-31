@@ -26,7 +26,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TimingInfo
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: timingFlags
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hTotal
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vTotal
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hDisplay
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -171,7 +171,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vDisplay
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -199,7 +199,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hFrontPorch
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -227,7 +227,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vFrontPorch
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -255,7 +255,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hSyncWidth
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vSyncWidth
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -311,7 +311,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: hPolarity
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
@@ -339,7 +339,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_TimingInfo.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: vPolarity
     path: ../ADLXWrapper/cs_generated/ADLX_TimingInfo.cs

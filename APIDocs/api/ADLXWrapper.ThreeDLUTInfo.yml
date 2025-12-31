@@ -6,6 +6,11 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ThreeDLUTInfo.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  - ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  - ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  - ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  - ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  - ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
   - ADLXWrapper.ThreeDLUTInfo.IsSceDynamicContrastSupported
   - ADLXWrapper.ThreeDLUTInfo.IsSceSupported
   - ADLXWrapper.ThreeDLUTInfo.IsSceVividGamingSupported
@@ -20,11 +25,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDLUTInfo
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2513
+    startLine: 2662
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -52,11 +57,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2515
+    startLine: 2664
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -81,11 +86,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceVividGamingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2516
+    startLine: 2665
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -110,11 +115,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceDynamicContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2517
+    startLine: 2666
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -139,11 +144,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUser3DLutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2518
+    startLine: 2667
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -154,6 +159,151 @@ items:
       type: System.Boolean
     content.vb: Public Property IsUser3DLutSupported As Boolean
   overload: ADLXWrapper.ThreeDLUTInfo.IsUser3DLutSupported*
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  id: IsCurrentSceDisabled
+  parent: ADLXWrapper.ThreeDLUTInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentSceDisabled
+  nameWithType: ThreeDLUTInfo.IsCurrentSceDisabled
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentSceDisabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2668
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentSceDisabled { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentSceDisabled As Boolean
+  overload: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled*
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  id: IsCurrentSceVividGaming
+  parent: ADLXWrapper.ThreeDLUTInfo
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTInfo.IsCurrentSceVividGaming
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentSceVividGaming
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2669
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentSceVividGaming { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentSceVividGaming As Boolean
+  overload: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming*
+- uid: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  id: HasDynamicContrast
+  parent: ADLXWrapper.ThreeDLUTInfo
+  langs:
+  - csharp
+  - vb
+  name: HasDynamicContrast
+  nameWithType: ThreeDLUTInfo.HasDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasDynamicContrast
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2670
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasDynamicContrast { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasDynamicContrast As Boolean
+  overload: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast*
+- uid: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  id: CurrentDynamicContrast
+  parent: ADLXWrapper.ThreeDLUTInfo
+  langs:
+  - csharp
+  - vb
+  name: CurrentDynamicContrast
+  nameWithType: ThreeDLUTInfo.CurrentDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CurrentDynamicContrast
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2671
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CurrentDynamicContrast { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentDynamicContrast As Integer
+  overload: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast*
+- uid: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  id: DynamicContrastRange
+  parent: ADLXWrapper.ThreeDLUTInfo
+  langs:
+  - csharp
+  - vb
+  name: DynamicContrastRange
+  nameWithType: ThreeDLUTInfo.DynamicContrastRange
+  fullName: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: feature-facade-tests-v3
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DynamicContrastRange
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2672
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_IntRange DynamicContrastRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_IntRange
+    content.vb: Public Property DynamicContrastRange As ADLX_IntRange
+  overload: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange*
 - uid: ADLXWrapper.ThreeDLUTInfo.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   commentId: M:ADLXWrapper.ThreeDLUTInfo.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)
   id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean)'
@@ -168,11 +318,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2520
+    startLine: 2674
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -461,6 +611,54 @@ references:
   name: IsUser3DLutSupported
   nameWithType: ThreeDLUTInfo.IsUser3DLutSupported
   fullName: ADLXWrapper.ThreeDLUTInfo.IsUser3DLutSupported
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled*
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceDisabled
+  name: IsCurrentSceDisabled
+  nameWithType: ThreeDLUTInfo.IsCurrentSceDisabled
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming*
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceVividGaming
+  name: IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTInfo.IsCurrentSceVividGaming
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+- uid: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast*
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_HasDynamicContrast
+  name: HasDynamicContrast
+  nameWithType: ThreeDLUTInfo.HasDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast*
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_CurrentDynamicContrast
+  name: CurrentDynamicContrast
+  nameWithType: ThreeDLUTInfo.CurrentDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange*
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_DynamicContrastRange
+  name: DynamicContrastRange
+  nameWithType: ThreeDLUTInfo.DynamicContrastRange
+  fullName: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+- uid: ADLXWrapper.ADLX_IntRange
+  commentId: T:ADLXWrapper.ADLX_IntRange
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_IntRange.html
+  name: ADLX_IntRange
+  nameWithType: ADLX_IntRange
+  fullName: ADLXWrapper.ADLX_IntRange
 - uid: ADLXWrapper.ThreeDLUTInfo.#ctor*
   commentId: Overload:ADLXWrapper.ThreeDLUTInfo.#ctor
   href: ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-native-tests-v3/apiSpec/new?filename=ADLXWrapper_GamutInfo.md&amp;value=---%0Auid%3A%20ADLXWrapper.GamutInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-facade-tests-v3/apiSpec/new?filename=ADLXWrapper_GamutInfo.md&amp;value=---%0Auid%3A%20ADLXWrapper.GamutInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_GamutInfo" data-uid="ADLXWrapper.GamutInfo" class="text-break">
-Struct GamutInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-native-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2492"><i class="bi bi-code-slash"></i></a>
+Struct GamutInfo  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2577"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -146,7 +146,7 @@ Struct GamutInfo  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="ADLXWrapper_GamutInfo__ctor_System_Boolean_System_Boolean_" data-uid="ADLXWrapper.GamutInfo.#ctor(System.Boolean,System.Boolean)">
   GamutInfo(bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-native-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2497"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2596"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -180,11 +180,414 @@ public GamutInfo(bool isWhitePointSupported, bool isGamutSupported)</code></pre>
 </h2>
 
 
+  <a id="ADLXWrapper_GamutInfo_CurrentGamutSpace_" data-uid="ADLXWrapper.GamutInfo.CurrentGamutSpace*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_CurrentGamutSpace" data-uid="ADLXWrapper.GamutInfo.CurrentGamutSpace">
+  CurrentGamutSpace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2592"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_GamutColorSpace CurrentGamutSpace { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_GamutColorSpace.html">ADLX_GamutColorSpace</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_HasWhitePoint_" data-uid="ADLXWrapper.GamutInfo.HasWhitePoint*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_HasWhitePoint" data-uid="ADLXWrapper.GamutInfo.HasWhitePoint">
+  HasWhitePoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasWhitePoint { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent2020_" data-uid="ADLXWrapper.GamutInfo.IsCurrent2020*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent2020" data-uid="ADLXWrapper.GamutInfo.IsCurrent2020">
+  IsCurrent2020
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2590"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent2020 { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent5000K_" data-uid="ADLXWrapper.GamutInfo.IsCurrent5000K*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent5000K" data-uid="ADLXWrapper.GamutInfo.IsCurrent5000K">
+  IsCurrent5000K
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2581"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent5000K { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent601_" data-uid="ADLXWrapper.GamutInfo.IsCurrent601*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent601" data-uid="ADLXWrapper.GamutInfo.IsCurrent601">
+  IsCurrent601
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2587"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent601 { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent6500K_" data-uid="ADLXWrapper.GamutInfo.IsCurrent6500K*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent6500K" data-uid="ADLXWrapper.GamutInfo.IsCurrent6500K">
+  IsCurrent6500K
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent6500K { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent709_" data-uid="ADLXWrapper.GamutInfo.IsCurrent709*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent709" data-uid="ADLXWrapper.GamutInfo.IsCurrent709">
+  IsCurrent709
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2586"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent709 { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent7500K_" data-uid="ADLXWrapper.GamutInfo.IsCurrent7500K*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent7500K" data-uid="ADLXWrapper.GamutInfo.IsCurrent7500K">
+  IsCurrent7500K
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2583"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent7500K { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrent9300K_" data-uid="ADLXWrapper.GamutInfo.IsCurrent9300K*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrent9300K" data-uid="ADLXWrapper.GamutInfo.IsCurrent9300K">
+  IsCurrent9300K
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2584"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrent9300K { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrentAdobe_" data-uid="ADLXWrapper.GamutInfo.IsCurrentAdobe*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrentAdobe" data-uid="ADLXWrapper.GamutInfo.IsCurrentAdobe">
+  IsCurrentAdobe
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentAdobe { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrentCieRgb_" data-uid="ADLXWrapper.GamutInfo.IsCurrentCieRgb*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrentCieRgb" data-uid="ADLXWrapper.GamutInfo.IsCurrentCieRgb">
+  IsCurrentCieRgb
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2589"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentCieRgb { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrentCustomColorSpace_" data-uid="ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrentCustomColorSpace" data-uid="ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace">
+  IsCurrentCustomColorSpace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentCustomColorSpace { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GamutInfo_IsCurrentCustomWhitePoint_" data-uid="ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_IsCurrentCustomWhitePoint" data-uid="ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint">
+  IsCurrentCustomWhitePoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCurrentCustomWhitePoint { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_GamutInfo_IsGamutSupported_" data-uid="ADLXWrapper.GamutInfo.IsGamutSupported*"></a>
 
   <h3 id="ADLXWrapper_GamutInfo_IsGamutSupported" data-uid="ADLXWrapper.GamutInfo.IsGamutSupported">
   IsGamutSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-native-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2495"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2580"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -215,7 +618,7 @@ public GamutInfo(bool isWhitePointSupported, bool isGamutSupported)</code></pre>
 
   <h3 id="ADLXWrapper_GamutInfo_IsWhitePointSupported" data-uid="ADLXWrapper.GamutInfo.IsWhitePointSupported">
   IsWhitePointSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-native-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2494"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2579"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,11 +645,42 @@ public GamutInfo(bool isWhitePointSupported, bool isGamutSupported)</code></pre>
 
 
 
+  <a id="ADLXWrapper_GamutInfo_WhitePoint_" data-uid="ADLXWrapper.GamutInfo.WhitePoint*"></a>
+
+  <h3 id="ADLXWrapper_GamutInfo_WhitePoint" data-uid="ADLXWrapper.GamutInfo.WhitePoint">
+  WhitePoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2593"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_Point WhitePoint { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_Point.html">ADLX_Point</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-native-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2492" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-facade-tests-v3/ADLXWrapper/ADLXDisplayServicesHelper.cs/#L2577" class="edit-link">Edit this page</a>
         </div>
 
 

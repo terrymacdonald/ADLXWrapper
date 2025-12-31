@@ -39,7 +39,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayCustomColor
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -72,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -99,7 +99,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -128,7 +128,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -194,7 +194,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHueSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -229,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHueRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHue
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -331,7 +331,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSaturationSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -366,7 +366,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSaturationRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -398,7 +398,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSaturation
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -433,7 +433,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSaturation
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -468,7 +468,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsBrightnessSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -503,7 +503,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBrightnessRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -535,7 +535,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -570,7 +570,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetBrightness
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -605,7 +605,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsContrastSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -640,7 +640,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetContrastRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -672,7 +672,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -707,7 +707,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetContrast
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -742,7 +742,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsTemperatureSupported
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -777,7 +777,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -809,7 +809,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTemperature
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
@@ -844,7 +844,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetTemperature
     path: ../ADLXWrapper/cs_generated/IADLXDisplayCustomColor.cs

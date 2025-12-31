@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftMaxInfo
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 511
+    startLine: 555
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 513
+    startLine: 557
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,11 +83,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasMode
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 514
+    startLine: 558
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,11 +112,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 515
+    startLine: 559
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -141,11 +141,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 516
+    startLine: 560
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -170,11 +170,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 518
+    startLine: 562
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

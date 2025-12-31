@@ -26,7 +26,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSupportInfo
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UsageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -116,7 +116,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -145,7 +145,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -174,7 +174,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -203,7 +203,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -232,7 +232,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -261,7 +261,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -290,7 +290,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VoltageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -319,7 +319,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -348,7 +348,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-native-tests-v3
+      branch: feature-facade-tests-v3
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs

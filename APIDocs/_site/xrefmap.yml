@@ -427,6 +427,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.GetAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  name: GetFluidMotionFrames(IADLXGPU*)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_ADLXWrapper_IADLXGPU__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(ADLXWrapper.IADLXGPU*)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFluidMotionFrames(IADLXGPU*)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames*
+  name: GetFluidMotionFrames
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+  nameWithType: ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  name: GetRadeonSuperResolution()
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetRadeonSuperResolution
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution()
+  nameWithType: ADLX3DSettingsServicesHelper.GetRadeonSuperResolution()
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution*
+  name: GetRadeonSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetRadeonSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   name: Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_System_Boolean_
@@ -488,6 +514,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.TryGetAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  name: TryGetFluidMotionFrames(IADLXGPU*, out FluidMotionFramesInfo)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_ADLXWrapper_IADLXGPU__ADLXWrapper_FluidMotionFramesInfo__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*,ADLXWrapper.FluidMotionFramesInfo@)
+  name.vb: TryGetFluidMotionFrames(IADLXGPU*, FluidMotionFramesInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*, out ADLXWrapper.FluidMotionFramesInfo)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(ADLXWrapper.IADLXGPU*, ADLXWrapper.FluidMotionFramesInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(IADLXGPU*, out FluidMotionFramesInfo)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(IADLXGPU*, FluidMotionFramesInfo)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames*
+  name: TryGetFluidMotionFrames
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
+  name: TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetRadeonSuperResolution_ADLXWrapper_RadeonSuperResolutionInfo__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo@)
+  name.vb: TryGetRadeonSuperResolution(RadeonSuperResolutionInfo)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(out ADLXWrapper.RadeonSuperResolutionInfo)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionInfo)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(RadeonSuperResolutionInfo)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution*
+  name: TryGetRadeonSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetRadeonSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution
 - uid: ADLXWrapper.ADLXApiHelper
   name: ADLXApiHelper
   href: api/ADLXWrapper.ADLXApiHelper.html
@@ -901,15 +959,15 @@ references:
   commentId: T:ADLXWrapper.ADLXDesktopServicesHelper
   fullName: ADLXWrapper.ADLXDesktopServicesHelper
   nameWithType: ADLXDesktopServicesHelper
-- uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
-  name: ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool)
-  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDisplayServices__System_Boolean_System_Boolean_
-  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean)
-  name.vb: New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean)
-  fullName: ADLXWrapper.ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, bool, bool)
-  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, Boolean, Boolean)
-  nameWithType: ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool)
-  nameWithType.vb: ADLXDesktopServicesHelper.New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean)
+- uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)
+  name: ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool, IADLXSystem*)
+  href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper__ctor_ADLXWrapper_IADLXDesktopServices__ADLXWrapper_IADLXDisplayServices__System_Boolean_System_Boolean_ADLXWrapper_IADLXSystem__
+  commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDisplayServices*,System.Boolean,System.Boolean,ADLXWrapper.IADLXSystem*)
+  name.vb: New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean, IADLXSystem*)
+  fullName: ADLXWrapper.ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, bool, bool, ADLXWrapper.IADLXSystem*)
+  fullName.vb: ADLXWrapper.ADLXDesktopServicesHelper.New(ADLXWrapper.IADLXDesktopServices*, ADLXWrapper.IADLXDisplayServices*, Boolean, Boolean, ADLXWrapper.IADLXSystem*)
+  nameWithType: ADLXDesktopServicesHelper.ADLXDesktopServicesHelper(IADLXDesktopServices*, IADLXDisplayServices*, bool, bool, IADLXSystem*)
+  nameWithType.vb: ADLXDesktopServicesHelper.New(IADLXDesktopServices*, IADLXDisplayServices*, Boolean, Boolean, IADLXSystem*)
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.#ctor*
   name: ADLXDesktopServicesHelper
   href: api/ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper__ctor_
@@ -3808,6 +3866,32 @@ references:
   fullName.vb: ADLXWrapper.ADLXGPU.New
   nameWithType: ADLXGPU.ADLXGPU
   nameWithType.vb: ADLXGPU.New
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareVersion
+  name: AMDSoftwareVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareVersion
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareVersion
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareVersion
+  nameWithType: ADLXGPU.AMDSoftwareVersion
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareVersion*
+  name: AMDSoftwareVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareVersion_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareVersion
+  nameWithType: ADLXGPU.AMDSoftwareVersion
+- uid: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+  name: AMDWindowsDriverVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDWindowsDriverVersion
+  commentId: P:ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+  fullName: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+  nameWithType: ADLXGPU.AMDWindowsDriverVersion
+- uid: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion*
+  name: AMDWindowsDriverVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDWindowsDriverVersion_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+  nameWithType: ADLXGPU.AMDWindowsDriverVersion
 - uid: ADLXWrapper.ADLXGPU.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   name: AddDesktopListEventListener(OnDesktopListChanged)
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AddDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_OnDesktopListChanged_
@@ -3834,6 +3918,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.AddDisplayListEventListener
   nameWithType: ADLXGPU.AddDisplayListEventListener
+- uid: ADLXWrapper.ADLXGPU.AsicFamilyType
+  name: AsicFamilyType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AsicFamilyType
+  commentId: P:ADLXWrapper.ADLXGPU.AsicFamilyType
+  fullName: ADLXWrapper.ADLXGPU.AsicFamilyType
+  nameWithType: ADLXGPU.AsicFamilyType
+- uid: ADLXWrapper.ADLXGPU.AsicFamilyType*
+  name: AsicFamilyType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AsicFamilyType_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AsicFamilyType
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AsicFamilyType
+  nameWithType: ADLXGPU.AsicFamilyType
 - uid: ADLXWrapper.ADLXGPU.DeviceId
   name: DeviceId
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_DeviceId
@@ -3873,6 +3970,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.DriverPath
   nameWithType: ADLXGPU.DriverPath
+- uid: ADLXWrapper.ADLXGPU.DriverVersion
+  name: DriverVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_DriverVersion
+  commentId: P:ADLXWrapper.ADLXGPU.DriverVersion
+  fullName: ADLXWrapper.ADLXGPU.DriverVersion
+  nameWithType: ADLXGPU.DriverVersion
+- uid: ADLXWrapper.ADLXGPU.DriverVersion*
+  name: DriverVersion
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_DriverVersion_
+  commentId: Overload:ADLXWrapper.ADLXGPU.DriverVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.DriverVersion
+  nameWithType: ADLXGPU.DriverVersion
 - uid: ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
   name: EnumerateDesktopsForGPU()
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_EnumerateDesktopsForGPU
@@ -3899,6 +4009,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   nameWithType: ADLXGPU.EnumerateDisplaysForGPU
+- uid: ADLXWrapper.ADLXGPU.GPUType
+  name: GPUType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_GPUType
+  commentId: P:ADLXWrapper.ADLXGPU.GPUType
+  fullName: ADLXWrapper.ADLXGPU.GPUType
+  nameWithType: ADLXGPU.GPUType
+- uid: ADLXWrapper.ADLXGPU.GPUType*
+  name: GPUType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_GPUType_
+  commentId: Overload:ADLXWrapper.ADLXGPU.GPUType
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.GPUType
+  nameWithType: ADLXGPU.GPUType
 - uid: ADLXWrapper.ADLXGPU.HasDesktops
   name: HasDesktops
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_HasDesktops
@@ -3938,6 +4061,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.IsExternal
   nameWithType: ADLXGPU.IsExternal
+- uid: ADLXWrapper.ADLXGPU.Luid
+  name: Luid
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_Luid
+  commentId: P:ADLXWrapper.ADLXGPU.Luid
+  fullName: ADLXWrapper.ADLXGPU.Luid
+  nameWithType: ADLXGPU.Luid
+- uid: ADLXWrapper.ADLXGPU.Luid*
+  name: Luid
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_Luid_
+  commentId: Overload:ADLXWrapper.ADLXGPU.Luid
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.Luid
+  nameWithType: ADLXGPU.Luid
+- uid: ADLXWrapper.ADLXGPU.MultiGpuMode
+  name: MultiGpuMode
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_MultiGpuMode
+  commentId: P:ADLXWrapper.ADLXGPU.MultiGpuMode
+  fullName: ADLXWrapper.ADLXGPU.MultiGpuMode
+  nameWithType: ADLXGPU.MultiGpuMode
+- uid: ADLXWrapper.ADLXGPU.MultiGpuMode*
+  name: MultiGpuMode
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_MultiGpuMode_
+  commentId: Overload:ADLXWrapper.ADLXGPU.MultiGpuMode
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.MultiGpuMode
+  nameWithType: ADLXGPU.MultiGpuMode
 - uid: ADLXWrapper.ADLXGPU.Name
   name: Name
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_Name
@@ -3964,6 +4113,45 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.PNPString
   nameWithType: ADLXGPU.PNPString
+- uid: ADLXWrapper.ADLXGPU.PciBusLaneWidth
+  name: PciBusLaneWidth
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_PciBusLaneWidth
+  commentId: P:ADLXWrapper.ADLXGPU.PciBusLaneWidth
+  fullName: ADLXWrapper.ADLXGPU.PciBusLaneWidth
+  nameWithType: ADLXGPU.PciBusLaneWidth
+- uid: ADLXWrapper.ADLXGPU.PciBusLaneWidth*
+  name: PciBusLaneWidth
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_PciBusLaneWidth_
+  commentId: Overload:ADLXWrapper.ADLXGPU.PciBusLaneWidth
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.PciBusLaneWidth
+  nameWithType: ADLXGPU.PciBusLaneWidth
+- uid: ADLXWrapper.ADLXGPU.PciBusType
+  name: PciBusType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_PciBusType
+  commentId: P:ADLXWrapper.ADLXGPU.PciBusType
+  fullName: ADLXWrapper.ADLXGPU.PciBusType
+  nameWithType: ADLXGPU.PciBusType
+- uid: ADLXWrapper.ADLXGPU.PciBusType*
+  name: PciBusType
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_PciBusType_
+  commentId: Overload:ADLXWrapper.ADLXGPU.PciBusType
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.PciBusType
+  nameWithType: ADLXGPU.PciBusType
+- uid: ADLXWrapper.ADLXGPU.ProductName
+  name: ProductName
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_ProductName
+  commentId: P:ADLXWrapper.ADLXGPU.ProductName
+  fullName: ADLXWrapper.ADLXGPU.ProductName
+  nameWithType: ADLXGPU.ProductName
+- uid: ADLXWrapper.ADLXGPU.ProductName*
+  name: ProductName
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_ProductName_
+  commentId: Overload:ADLXWrapper.ADLXGPU.ProductName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.ProductName
+  nameWithType: ADLXGPU.ProductName
 - uid: ADLXWrapper.ADLXGPU.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
   name: RemoveDesktopListEventListener(DesktopListListenerHandle, bool)
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_RemoveDesktopListEventListener_ADLXWrapper_DesktopListListenerHandle_System_Boolean_
@@ -3996,6 +4184,45 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.RemoveDisplayListEventListener
   nameWithType: ADLXGPU.RemoveDisplayListEventListener
+- uid: ADLXWrapper.ADLXGPU.RevisionId
+  name: RevisionId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_RevisionId
+  commentId: P:ADLXWrapper.ADLXGPU.RevisionId
+  fullName: ADLXWrapper.ADLXGPU.RevisionId
+  nameWithType: ADLXGPU.RevisionId
+- uid: ADLXWrapper.ADLXGPU.RevisionId*
+  name: RevisionId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_RevisionId_
+  commentId: Overload:ADLXWrapper.ADLXGPU.RevisionId
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.RevisionId
+  nameWithType: ADLXGPU.RevisionId
+- uid: ADLXWrapper.ADLXGPU.SubSystemId
+  name: SubSystemId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_SubSystemId
+  commentId: P:ADLXWrapper.ADLXGPU.SubSystemId
+  fullName: ADLXWrapper.ADLXGPU.SubSystemId
+  nameWithType: ADLXGPU.SubSystemId
+- uid: ADLXWrapper.ADLXGPU.SubSystemId*
+  name: SubSystemId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_SubSystemId_
+  commentId: Overload:ADLXWrapper.ADLXGPU.SubSystemId
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.SubSystemId
+  nameWithType: ADLXGPU.SubSystemId
+- uid: ADLXWrapper.ADLXGPU.SubSystemVendorId
+  name: SubSystemVendorId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_SubSystemVendorId
+  commentId: P:ADLXWrapper.ADLXGPU.SubSystemVendorId
+  fullName: ADLXWrapper.ADLXGPU.SubSystemVendorId
+  nameWithType: ADLXGPU.SubSystemVendorId
+- uid: ADLXWrapper.ADLXGPU.SubSystemVendorId*
+  name: SubSystemVendorId
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_SubSystemVendorId_
+  commentId: Overload:ADLXWrapper.ADLXGPU.SubSystemVendorId
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.SubSystemVendorId
+  nameWithType: ADLXGPU.SubSystemVendorId
 - uid: ADLXWrapper.ADLXGPU.TotalVRAM
   name: TotalVRAM
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_TotalVRAM
@@ -5318,6 +5545,224 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.VideoUpscaleInfo.SharpnessRange
   nameWithType: ADLXMultimediaServicesHelper.VideoUpscaleInfo.SharpnessRange
+- uid: ADLXWrapper.ADLXNative
+  name: ADLXNative
+  href: api/ADLXWrapper.ADLXNative.html
+  commentId: T:ADLXWrapper.ADLXNative
+  fullName: ADLXWrapper.ADLXNative
+  nameWithType: ADLXNative
+- uid: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  name: ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  href: api/ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn.html
+  commentId: T:ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXInitializeWithCallerAdl_Fn
+  nameWithType: ADLXNative.ADLXInitializeWithCallerAdl_Fn
+- uid: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  name: ADLXNative.ADLXInitialize_Fn
+  href: api/ADLXWrapper.ADLXNative.ADLXInitialize_Fn.html
+  commentId: T:ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXInitialize_Fn
+  nameWithType: ADLXNative.ADLXInitialize_Fn
+- uid: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  name: ADLXNative.ADLXQueryFullVersion_Fn
+  href: api/ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn.html
+  commentId: T:ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXQueryFullVersion_Fn
+  nameWithType: ADLXNative.ADLXQueryFullVersion_Fn
+- uid: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  name: ADLXNative.ADLXQueryVersion_Fn
+  href: api/ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn.html
+  commentId: T:ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXQueryVersion_Fn
+  nameWithType: ADLXNative.ADLXQueryVersion_Fn
+- uid: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  name: ADLXNative.ADLXTerminate_Fn
+  href: api/ADLXWrapper.ADLXNative.ADLXTerminate_Fn.html
+  commentId: T:ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  fullName: ADLXWrapper.ADLXNative.ADLXTerminate_Fn
+  nameWithType: ADLXNative.ADLXTerminate_Fn
+- uid: ADLXWrapper.ADLXNative.ADLX_FULL_VERSION
+  name: ADLX_FULL_VERSION
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_ADLX_FULL_VERSION
+  commentId: F:ADLXWrapper.ADLXNative.ADLX_FULL_VERSION
+  fullName: ADLXWrapper.ADLXNative.ADLX_FULL_VERSION
+  nameWithType: ADLXNative.ADLX_FULL_VERSION
+- uid: ADLXWrapper.ADLXNative.FreeLibrary(System.IntPtr)
+  name: FreeLibrary(nint)
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_FreeLibrary_System_IntPtr_
+  commentId: M:ADLXWrapper.ADLXNative.FreeLibrary(System.IntPtr)
+  name.vb: FreeLibrary(IntPtr)
+  fullName: ADLXWrapper.ADLXNative.FreeLibrary(nint)
+  fullName.vb: ADLXWrapper.ADLXNative.FreeLibrary(System.IntPtr)
+  nameWithType: ADLXNative.FreeLibrary(nint)
+  nameWithType.vb: ADLXNative.FreeLibrary(IntPtr)
+- uid: ADLXWrapper.ADLXNative.FreeLibrary*
+  name: FreeLibrary
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_FreeLibrary_
+  commentId: Overload:ADLXWrapper.ADLXNative.FreeLibrary
+  fullName: ADLXWrapper.ADLXNative.FreeLibrary
+  nameWithType: ADLXNative.FreeLibrary
+- uid: ADLXWrapper.ADLXNative.GetDllName
+  name: GetDllName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetDllName
+  commentId: M:ADLXWrapper.ADLXNative.GetDllName
+  fullName: ADLXWrapper.ADLXNative.GetDllName()
+  nameWithType: ADLXNative.GetDllName()
+- uid: ADLXWrapper.ADLXNative.GetDllName*
+  name: GetDllName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetDllName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetDllName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetDllName
+  nameWithType: ADLXNative.GetDllName
+- uid: ADLXWrapper.ADLXNative.GetFunctionPointer*
+  name: GetFunctionPointer
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetFunctionPointer_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetFunctionPointer
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetFunctionPointer
+  nameWithType: ADLXNative.GetFunctionPointer
+- uid: ADLXWrapper.ADLXNative.GetFunctionPointer``1(System.IntPtr,System.String)
+  name: GetFunctionPointer<T>(nint, string)
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetFunctionPointer__1_System_IntPtr_System_String_
+  commentId: M:ADLXWrapper.ADLXNative.GetFunctionPointer``1(System.IntPtr,System.String)
+  name.vb: GetFunctionPointer(Of T)(IntPtr, String)
+  fullName: ADLXWrapper.ADLXNative.GetFunctionPointer<T>(nint, string)
+  fullName.vb: ADLXWrapper.ADLXNative.GetFunctionPointer(Of T)(System.IntPtr, String)
+  nameWithType: ADLXNative.GetFunctionPointer<T>(nint, string)
+  nameWithType.vb: ADLXNative.GetFunctionPointer(Of T)(IntPtr, String)
+- uid: ADLXWrapper.ADLXNative.GetInitializeFunctionName
+  name: GetInitializeFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetInitializeFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetInitializeFunctionName()
+  nameWithType: ADLXNative.GetInitializeFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetInitializeFunctionName*
+  name: GetInitializeFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetInitializeFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetInitializeFunctionName
+  nameWithType: ADLXNative.GetInitializeFunctionName
+- uid: ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName
+  name: GetInitializeWithCallerAdlFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeWithCallerAdlFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName()
+  nameWithType: ADLXNative.GetInitializeWithCallerAdlFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName*
+  name: GetInitializeWithCallerAdlFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeWithCallerAdlFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetInitializeWithCallerAdlFunctionName
+  nameWithType: ADLXNative.GetInitializeWithCallerAdlFunctionName
+- uid: ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName
+  name: GetInitializeWithIncompatibleDriverFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeWithIncompatibleDriverFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName()
+  nameWithType: ADLXNative.GetInitializeWithIncompatibleDriverFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName*
+  name: GetInitializeWithIncompatibleDriverFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetInitializeWithIncompatibleDriverFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetInitializeWithIncompatibleDriverFunctionName
+  nameWithType: ADLXNative.GetInitializeWithIncompatibleDriverFunctionName
+- uid: ADLXWrapper.ADLXNative.GetProcAddress(System.IntPtr,System.String)
+  name: GetProcAddress(nint, string)
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetProcAddress_System_IntPtr_System_String_
+  commentId: M:ADLXWrapper.ADLXNative.GetProcAddress(System.IntPtr,System.String)
+  name.vb: GetProcAddress(IntPtr, String)
+  fullName: ADLXWrapper.ADLXNative.GetProcAddress(nint, string)
+  fullName.vb: ADLXWrapper.ADLXNative.GetProcAddress(System.IntPtr, String)
+  nameWithType: ADLXNative.GetProcAddress(nint, string)
+  nameWithType.vb: ADLXNative.GetProcAddress(IntPtr, String)
+- uid: ADLXWrapper.ADLXNative.GetProcAddress*
+  name: GetProcAddress
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetProcAddress_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetProcAddress
+  fullName: ADLXWrapper.ADLXNative.GetProcAddress
+  nameWithType: ADLXNative.GetProcAddress
+- uid: ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName
+  name: GetQueryFullVersionFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetQueryFullVersionFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName()
+  nameWithType: ADLXNative.GetQueryFullVersionFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName*
+  name: GetQueryFullVersionFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetQueryFullVersionFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetQueryFullVersionFunctionName
+  nameWithType: ADLXNative.GetQueryFullVersionFunctionName
+- uid: ADLXWrapper.ADLXNative.GetQueryVersionFunctionName
+  name: GetQueryVersionFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetQueryVersionFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetQueryVersionFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetQueryVersionFunctionName()
+  nameWithType: ADLXNative.GetQueryVersionFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetQueryVersionFunctionName*
+  name: GetQueryVersionFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetQueryVersionFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetQueryVersionFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetQueryVersionFunctionName
+  nameWithType: ADLXNative.GetQueryVersionFunctionName
+- uid: ADLXWrapper.ADLXNative.GetTerminateFunctionName
+  name: GetTerminateFunctionName()
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetTerminateFunctionName
+  commentId: M:ADLXWrapper.ADLXNative.GetTerminateFunctionName
+  fullName: ADLXWrapper.ADLXNative.GetTerminateFunctionName()
+  nameWithType: ADLXNative.GetTerminateFunctionName()
+- uid: ADLXWrapper.ADLXNative.GetTerminateFunctionName*
+  name: GetTerminateFunctionName
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_GetTerminateFunctionName_
+  commentId: Overload:ADLXWrapper.ADLXNative.GetTerminateFunctionName
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXNative.GetTerminateFunctionName
+  nameWithType: ADLXNative.GetTerminateFunctionName
+- uid: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+  name: LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+  commentId: F:ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+  fullName: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+  nameWithType: ADLXNative.LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+- uid: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+  name: LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+  commentId: F:ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+  fullName: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+  nameWithType: ADLXNative.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+- uid: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_SYSTEM32
+  name: LOAD_LIBRARY_SEARCH_SYSTEM32
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LOAD_LIBRARY_SEARCH_SYSTEM32
+  commentId: F:ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_SYSTEM32
+  fullName: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_SYSTEM32
+  nameWithType: ADLXNative.LOAD_LIBRARY_SEARCH_SYSTEM32
+- uid: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_USER_DIRS
+  name: LOAD_LIBRARY_SEARCH_USER_DIRS
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LOAD_LIBRARY_SEARCH_USER_DIRS
+  commentId: F:ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_USER_DIRS
+  fullName: ADLXWrapper.ADLXNative.LOAD_LIBRARY_SEARCH_USER_DIRS
+  nameWithType: ADLXNative.LOAD_LIBRARY_SEARCH_USER_DIRS
+- uid: ADLXWrapper.ADLXNative.LoadLibraryEx(System.String,System.IntPtr,System.UInt32)
+  name: LoadLibraryEx(string, nint, uint)
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LoadLibraryEx_System_String_System_IntPtr_System_UInt32_
+  commentId: M:ADLXWrapper.ADLXNative.LoadLibraryEx(System.String,System.IntPtr,System.UInt32)
+  name.vb: LoadLibraryEx(String, IntPtr, UInteger)
+  fullName: ADLXWrapper.ADLXNative.LoadLibraryEx(string, nint, uint)
+  fullName.vb: ADLXWrapper.ADLXNative.LoadLibraryEx(String, System.IntPtr, UInteger)
+  nameWithType: ADLXNative.LoadLibraryEx(string, nint, uint)
+  nameWithType.vb: ADLXNative.LoadLibraryEx(String, IntPtr, UInteger)
+- uid: ADLXWrapper.ADLXNative.LoadLibraryEx*
+  name: LoadLibraryEx
+  href: api/ADLXWrapper.ADLXNative.html#ADLXWrapper_ADLXNative_LoadLibraryEx_
+  commentId: Overload:ADLXWrapper.ADLXNative.LoadLibraryEx
+  fullName: ADLXWrapper.ADLXNative.LoadLibraryEx
+  nameWithType: ADLXNative.LoadLibraryEx
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   name: ADLXPerformanceMonitoringServicesHelper
   href: api/ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html
@@ -6020,6 +6465,12 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
   nameWithType: ADLXPowerTuningServicesHelper.GetGPUConnectGpuListNative
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
+  name: GetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetManualPowerTuning_ADLXWrapper_ADLXGPUTuningServicesHelper_ADLXWrapper_ADLXInterfaceHandle_
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle)
+  nameWithType: ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle)
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.GetManualPowerTuning(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
   name: GetManualPowerTuning(IADLXGPUTuningServices*, IADLXGPU*)
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_GetManualPowerTuning_ADLXWrapper_IADLXGPUTuningServices__ADLXWrapper_IADLXGPU__
@@ -6214,6 +6665,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
   nameWithType: ADLXPowerTuningServicesHelper.TryEnumerateGPUConnectGpuHandles
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
+  name: TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, out ManualPowerTuningInfo)
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryGetManualPowerTuning_ADLXWrapper_ADLXGPUTuningServicesHelper_ADLXWrapper_ADLXInterfaceHandle_ADLXWrapper_ManualPowerTuningInfo__
+  commentId: M:ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper,ADLXWrapper.ADLXInterfaceHandle,ADLXWrapper.ManualPowerTuningInfo@)
+  name.vb: TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, ManualPowerTuningInfo)
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle, out ADLXWrapper.ManualPowerTuningInfo)
+  fullName.vb: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXWrapper.ADLXGPUTuningServicesHelper, ADLXWrapper.ADLXInterfaceHandle, ADLXWrapper.ManualPowerTuningInfo)
+  nameWithType: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, out ManualPowerTuningInfo)
+  nameWithType.vb: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning(ADLXGPUTuningServicesHelper, ADLXInterfaceHandle, ManualPowerTuningInfo)
+- uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning*
+  name: TryGetManualPowerTuning
+  href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryGetManualPowerTuning_
+  commentId: Overload:ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
+  nameWithType: ADLXPowerTuningServicesHelper.TryGetManualPowerTuning
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper.TryIsGPUConnectSupported(System.Boolean@)
   name: TryIsGPUConnectSupported(out bool)
   href: api/ADLXWrapper.ADLXPowerTuningServicesHelper.html#ADLXWrapper_ADLXPowerTuningServicesHelper_TryIsGPUConnectSupported_System_Boolean__
@@ -8871,15 +9338,15 @@ references:
   commentId: T:ADLXWrapper.All3DSettingsInfo
   fullName: ADLXWrapper.All3DSettingsInfo
   nameWithType: All3DSettingsInfo
-- uid: ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})
-  name: All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo__ctor_System_Nullable_ADLXWrapper_AntiLagInfo__System_Nullable_ADLXWrapper_BoostInfo__System_Nullable_ADLXWrapper_RadeonImageSharpeningInfo__System_Nullable_ADLXWrapper_EnhancedSyncInfo__System_Nullable_ADLXWrapper_WaitForVerticalRefreshInfo__System_Nullable_ADLXWrapper_FrameRateTargetControlInfo__System_Nullable_ADLXWrapper_AntiAliasingInfo__System_Nullable_ADLXWrapper_AnisotropicFilteringInfo__System_Nullable_ADLXWrapper_TessellationInfo__
-  commentId: M:ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo})
-  name.vb: New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  fullName: ADLXWrapper.All3DSettingsInfo.All3DSettingsInfo(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?)
-  fullName.vb: ADLXWrapper.All3DSettingsInfo.New(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?)
-  nameWithType: All3DSettingsInfo.All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
-  nameWithType.vb: All3DSettingsInfo.New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?)
+- uid: ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})
+  name: All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo__ctor_System_Nullable_ADLXWrapper_AntiLagInfo__System_Nullable_ADLXWrapper_BoostInfo__System_Nullable_ADLXWrapper_RadeonImageSharpeningInfo__System_Nullable_ADLXWrapper_EnhancedSyncInfo__System_Nullable_ADLXWrapper_WaitForVerticalRefreshInfo__System_Nullable_ADLXWrapper_FrameRateTargetControlInfo__System_Nullable_ADLXWrapper_AntiAliasingInfo__System_Nullable_ADLXWrapper_AnisotropicFilteringInfo__System_Nullable_ADLXWrapper_TessellationInfo__System_Nullable_ADLXWrapper_FluidMotionFramesInfo__System_Nullable_ADLXWrapper_RadeonSuperResolutionInfo__
+  commentId: M:ADLXWrapper.All3DSettingsInfo.#ctor(System.Nullable{ADLXWrapper.AntiLagInfo},System.Nullable{ADLXWrapper.BoostInfo},System.Nullable{ADLXWrapper.RadeonImageSharpeningInfo},System.Nullable{ADLXWrapper.EnhancedSyncInfo},System.Nullable{ADLXWrapper.WaitForVerticalRefreshInfo},System.Nullable{ADLXWrapper.FrameRateTargetControlInfo},System.Nullable{ADLXWrapper.AntiAliasingInfo},System.Nullable{ADLXWrapper.AnisotropicFilteringInfo},System.Nullable{ADLXWrapper.TessellationInfo},System.Nullable{ADLXWrapper.FluidMotionFramesInfo},System.Nullable{ADLXWrapper.RadeonSuperResolutionInfo})
+  name.vb: New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  fullName: ADLXWrapper.All3DSettingsInfo.All3DSettingsInfo(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?, ADLXWrapper.FluidMotionFramesInfo?, ADLXWrapper.RadeonSuperResolutionInfo?)
+  fullName.vb: ADLXWrapper.All3DSettingsInfo.New(ADLXWrapper.AntiLagInfo?, ADLXWrapper.BoostInfo?, ADLXWrapper.RadeonImageSharpeningInfo?, ADLXWrapper.EnhancedSyncInfo?, ADLXWrapper.WaitForVerticalRefreshInfo?, ADLXWrapper.FrameRateTargetControlInfo?, ADLXWrapper.AntiAliasingInfo?, ADLXWrapper.AnisotropicFilteringInfo?, ADLXWrapper.TessellationInfo?, ADLXWrapper.FluidMotionFramesInfo?, ADLXWrapper.RadeonSuperResolutionInfo?)
+  nameWithType: All3DSettingsInfo.All3DSettingsInfo(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
+  nameWithType.vb: All3DSettingsInfo.New(AntiLagInfo?, BoostInfo?, RadeonImageSharpeningInfo?, EnhancedSyncInfo?, WaitForVerticalRefreshInfo?, FrameRateTargetControlInfo?, AntiAliasingInfo?, AnisotropicFilteringInfo?, TessellationInfo?, FluidMotionFramesInfo?, RadeonSuperResolutionInfo?)
 - uid: ADLXWrapper.All3DSettingsInfo.#ctor*
   name: All3DSettingsInfo
   href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo__ctor_
@@ -8955,6 +9422,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.All3DSettingsInfo.EnhancedSync
   nameWithType: All3DSettingsInfo.EnhancedSync
+- uid: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  name: FluidMotionFrames
+  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_FluidMotionFrames
+  commentId: P:ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  fullName: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  nameWithType: All3DSettingsInfo.FluidMotionFrames
+- uid: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames*
+  name: FluidMotionFrames
+  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_FluidMotionFrames_
+  commentId: Overload:ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  isSpec: "True"
+  fullName: ADLXWrapper.All3DSettingsInfo.FluidMotionFrames
+  nameWithType: All3DSettingsInfo.FluidMotionFrames
 - uid: ADLXWrapper.All3DSettingsInfo.FrameRateTargetControl
   name: FrameRateTargetControl
   href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_FrameRateTargetControl
@@ -8981,6 +9461,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.All3DSettingsInfo.ImageSharpening
   nameWithType: All3DSettingsInfo.ImageSharpening
+- uid: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  name: RadeonSuperResolution
+  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_RadeonSuperResolution
+  commentId: P:ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  fullName: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  nameWithType: All3DSettingsInfo.RadeonSuperResolution
+- uid: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution*
+  name: RadeonSuperResolution
+  href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_RadeonSuperResolution_
+  commentId: Overload:ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.All3DSettingsInfo.RadeonSuperResolution
+  nameWithType: All3DSettingsInfo.RadeonSuperResolution
 - uid: ADLXWrapper.All3DSettingsInfo.Tessellation
   name: Tessellation
   href: api/ADLXWrapper.All3DSettingsInfo.html#ADLXWrapper_All3DSettingsInfo_Tessellation
@@ -10634,6 +11127,57 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.FanPoint.Temperature
   nameWithType: FanPoint.Temperature
+- uid: ADLXWrapper.FluidMotionFramesInfo
+  name: FluidMotionFramesInfo
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html
+  commentId: T:ADLXWrapper.FluidMotionFramesInfo
+  fullName: ADLXWrapper.FluidMotionFramesInfo
+  nameWithType: FluidMotionFramesInfo
+- uid: ADLXWrapper.FluidMotionFramesInfo.#ctor(System.Boolean,System.Boolean)
+  name: FluidMotionFramesInfo(bool, bool)
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.FluidMotionFramesInfo.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.FluidMotionFramesInfo.FluidMotionFramesInfo(bool, bool)
+  fullName.vb: ADLXWrapper.FluidMotionFramesInfo.New(Boolean, Boolean)
+  nameWithType: FluidMotionFramesInfo.FluidMotionFramesInfo(bool, bool)
+  nameWithType.vb: FluidMotionFramesInfo.New(Boolean, Boolean)
+- uid: ADLXWrapper.FluidMotionFramesInfo.#ctor*
+  name: FluidMotionFramesInfo
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo__ctor_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.FluidMotionFramesInfo.FluidMotionFramesInfo
+  fullName.vb: ADLXWrapper.FluidMotionFramesInfo.New
+  nameWithType: FluidMotionFramesInfo.FluidMotionFramesInfo
+  nameWithType.vb: FluidMotionFramesInfo.New
+- uid: ADLXWrapper.FluidMotionFramesInfo.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo_IsEnabled
+  commentId: P:ADLXWrapper.FluidMotionFramesInfo.IsEnabled
+  fullName: ADLXWrapper.FluidMotionFramesInfo.IsEnabled
+  nameWithType: FluidMotionFramesInfo.IsEnabled
+- uid: ADLXWrapper.FluidMotionFramesInfo.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo_IsEnabled_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesInfo.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesInfo.IsEnabled
+  nameWithType: FluidMotionFramesInfo.IsEnabled
+- uid: ADLXWrapper.FluidMotionFramesInfo.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo_IsSupported
+  commentId: P:ADLXWrapper.FluidMotionFramesInfo.IsSupported
+  fullName: ADLXWrapper.FluidMotionFramesInfo.IsSupported
+  nameWithType: FluidMotionFramesInfo.IsSupported
+- uid: ADLXWrapper.FluidMotionFramesInfo.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.FluidMotionFramesInfo.html#ADLXWrapper_FluidMotionFramesInfo_IsSupported_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesInfo.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesInfo.IsSupported
+  nameWithType: FluidMotionFramesInfo.IsSupported
 - uid: ADLXWrapper.FrameRateTargetControlInfo
   name: FrameRateTargetControlInfo
   href: api/ADLXWrapper.FrameRateTargetControlInfo.html
@@ -10736,6 +11280,123 @@ references:
   fullName.vb: ADLXWrapper.GammaInfo.New
   nameWithType: GammaInfo.GammaInfo
   nameWithType.vb: GammaInfo.New
+- uid: ADLXWrapper.GammaInfo.DeGammaRamp
+  name: DeGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_DeGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.DeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.DeGammaRamp
+  nameWithType: GammaInfo.DeGammaRamp
+- uid: ADLXWrapper.GammaInfo.DeGammaRamp*
+  name: DeGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_DeGammaRamp_
+  commentId: Overload:ADLXWrapper.GammaInfo.DeGammaRamp
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.DeGammaRamp
+  nameWithType: GammaInfo.DeGammaRamp
+- uid: ADLXWrapper.GammaInfo.HasDeGammaRamp
+  name: HasDeGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasDeGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.HasDeGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasDeGammaRamp
+  nameWithType: GammaInfo.HasDeGammaRamp
+- uid: ADLXWrapper.GammaInfo.HasDeGammaRamp*
+  name: HasDeGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasDeGammaRamp_
+  commentId: Overload:ADLXWrapper.GammaInfo.HasDeGammaRamp
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.HasDeGammaRamp
+  nameWithType: GammaInfo.HasDeGammaRamp
+- uid: ADLXWrapper.GammaInfo.HasReGammaRamp
+  name: HasReGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasReGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.HasReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.HasReGammaRamp
+  nameWithType: GammaInfo.HasReGammaRamp
+- uid: ADLXWrapper.GammaInfo.HasReGammaRamp*
+  name: HasReGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasReGammaRamp_
+  commentId: Overload:ADLXWrapper.GammaInfo.HasReGammaRamp
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.HasReGammaRamp
+  nameWithType: GammaInfo.HasReGammaRamp
+- uid: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  name: HasRegammaCoefficient
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasRegammaCoefficient
+  commentId: P:ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  nameWithType: GammaInfo.HasRegammaCoefficient
+- uid: ADLXWrapper.GammaInfo.HasRegammaCoefficient*
+  name: HasRegammaCoefficient
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_HasRegammaCoefficient_
+  commentId: Overload:ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.HasRegammaCoefficient
+  nameWithType: GammaInfo.HasRegammaCoefficient
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  name: IsCurrentReGamma36
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGamma36
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  nameWithType: GammaInfo.IsCurrentReGamma36
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGamma36*
+  name: IsCurrentReGamma36
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGamma36_
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGamma36
+  nameWithType: GammaInfo.IsCurrentReGamma36
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  name: IsCurrentReGammaBT709
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaBT709
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  nameWithType: GammaInfo.IsCurrentReGammaBT709
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709*
+  name: IsCurrentReGammaBT709
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaBT709_
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaBT709
+  nameWithType: GammaInfo.IsCurrentReGammaBT709
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  name: IsCurrentReGammaPQ
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  nameWithType: GammaInfo.IsCurrentReGammaPQ
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ*
+  name: IsCurrentReGammaPQ
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ_
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ
+  nameWithType: GammaInfo.IsCurrentReGammaPQ
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  name: IsCurrentReGammaPQ2084
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ2084
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  nameWithType: GammaInfo.IsCurrentReGammaPQ2084
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084*
+  name: IsCurrentReGammaPQ2084
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaPQ2084_
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaPQ2084
+  nameWithType: GammaInfo.IsCurrentReGammaPQ2084
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  name: IsCurrentReGammaSRGB
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaSRGB
+  commentId: P:ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  nameWithType: GammaInfo.IsCurrentReGammaSRGB
+- uid: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB*
+  name: IsCurrentReGammaSRGB
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsCurrentReGammaSRGB_
+  commentId: Overload:ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.IsCurrentReGammaSRGB
+  nameWithType: GammaInfo.IsCurrentReGammaSRGB
 - uid: ADLXWrapper.GammaInfo.IsSupported
   name: IsSupported
   href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_IsSupported
@@ -10749,6 +11410,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GammaInfo.IsSupported
   nameWithType: GammaInfo.IsSupported
+- uid: ADLXWrapper.GammaInfo.ReGammaRamp
+  name: ReGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_ReGammaRamp
+  commentId: P:ADLXWrapper.GammaInfo.ReGammaRamp
+  fullName: ADLXWrapper.GammaInfo.ReGammaRamp
+  nameWithType: GammaInfo.ReGammaRamp
+- uid: ADLXWrapper.GammaInfo.ReGammaRamp*
+  name: ReGammaRamp
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_ReGammaRamp_
+  commentId: Overload:ADLXWrapper.GammaInfo.ReGammaRamp
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.ReGammaRamp
+  nameWithType: GammaInfo.ReGammaRamp
+- uid: ADLXWrapper.GammaInfo.RegammaCoefficient
+  name: RegammaCoefficient
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_RegammaCoefficient
+  commentId: P:ADLXWrapper.GammaInfo.RegammaCoefficient
+  fullName: ADLXWrapper.GammaInfo.RegammaCoefficient
+  nameWithType: GammaInfo.RegammaCoefficient
+- uid: ADLXWrapper.GammaInfo.RegammaCoefficient*
+  name: RegammaCoefficient
+  href: api/ADLXWrapper.GammaInfo.html#ADLXWrapper_GammaInfo_RegammaCoefficient_
+  commentId: Overload:ADLXWrapper.GammaInfo.RegammaCoefficient
+  isSpec: "True"
+  fullName: ADLXWrapper.GammaInfo.RegammaCoefficient
+  nameWithType: GammaInfo.RegammaCoefficient
 - uid: ADLXWrapper.GamutInfo
   name: GamutInfo
   href: api/ADLXWrapper.GamutInfo.html
@@ -10774,6 +11461,175 @@ references:
   fullName.vb: ADLXWrapper.GamutInfo.New
   nameWithType: GamutInfo.GamutInfo
   nameWithType.vb: GamutInfo.New
+- uid: ADLXWrapper.GamutInfo.CurrentGamutSpace
+  name: CurrentGamutSpace
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_CurrentGamutSpace
+  commentId: P:ADLXWrapper.GamutInfo.CurrentGamutSpace
+  fullName: ADLXWrapper.GamutInfo.CurrentGamutSpace
+  nameWithType: GamutInfo.CurrentGamutSpace
+- uid: ADLXWrapper.GamutInfo.CurrentGamutSpace*
+  name: CurrentGamutSpace
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_CurrentGamutSpace_
+  commentId: Overload:ADLXWrapper.GamutInfo.CurrentGamutSpace
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.CurrentGamutSpace
+  nameWithType: GamutInfo.CurrentGamutSpace
+- uid: ADLXWrapper.GamutInfo.HasWhitePoint
+  name: HasWhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_HasWhitePoint
+  commentId: P:ADLXWrapper.GamutInfo.HasWhitePoint
+  fullName: ADLXWrapper.GamutInfo.HasWhitePoint
+  nameWithType: GamutInfo.HasWhitePoint
+- uid: ADLXWrapper.GamutInfo.HasWhitePoint*
+  name: HasWhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_HasWhitePoint_
+  commentId: Overload:ADLXWrapper.GamutInfo.HasWhitePoint
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.HasWhitePoint
+  nameWithType: GamutInfo.HasWhitePoint
+- uid: ADLXWrapper.GamutInfo.IsCurrent2020
+  name: IsCurrent2020
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent2020
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent2020
+  fullName: ADLXWrapper.GamutInfo.IsCurrent2020
+  nameWithType: GamutInfo.IsCurrent2020
+- uid: ADLXWrapper.GamutInfo.IsCurrent2020*
+  name: IsCurrent2020
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent2020_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent2020
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent2020
+  nameWithType: GamutInfo.IsCurrent2020
+- uid: ADLXWrapper.GamutInfo.IsCurrent5000K
+  name: IsCurrent5000K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent5000K
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent5000K
+  fullName: ADLXWrapper.GamutInfo.IsCurrent5000K
+  nameWithType: GamutInfo.IsCurrent5000K
+- uid: ADLXWrapper.GamutInfo.IsCurrent5000K*
+  name: IsCurrent5000K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent5000K_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent5000K
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent5000K
+  nameWithType: GamutInfo.IsCurrent5000K
+- uid: ADLXWrapper.GamutInfo.IsCurrent601
+  name: IsCurrent601
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent601
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent601
+  fullName: ADLXWrapper.GamutInfo.IsCurrent601
+  nameWithType: GamutInfo.IsCurrent601
+- uid: ADLXWrapper.GamutInfo.IsCurrent601*
+  name: IsCurrent601
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent601_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent601
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent601
+  nameWithType: GamutInfo.IsCurrent601
+- uid: ADLXWrapper.GamutInfo.IsCurrent6500K
+  name: IsCurrent6500K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent6500K
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent6500K
+  fullName: ADLXWrapper.GamutInfo.IsCurrent6500K
+  nameWithType: GamutInfo.IsCurrent6500K
+- uid: ADLXWrapper.GamutInfo.IsCurrent6500K*
+  name: IsCurrent6500K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent6500K_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent6500K
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent6500K
+  nameWithType: GamutInfo.IsCurrent6500K
+- uid: ADLXWrapper.GamutInfo.IsCurrent709
+  name: IsCurrent709
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent709
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent709
+  fullName: ADLXWrapper.GamutInfo.IsCurrent709
+  nameWithType: GamutInfo.IsCurrent709
+- uid: ADLXWrapper.GamutInfo.IsCurrent709*
+  name: IsCurrent709
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent709_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent709
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent709
+  nameWithType: GamutInfo.IsCurrent709
+- uid: ADLXWrapper.GamutInfo.IsCurrent7500K
+  name: IsCurrent7500K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent7500K
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent7500K
+  fullName: ADLXWrapper.GamutInfo.IsCurrent7500K
+  nameWithType: GamutInfo.IsCurrent7500K
+- uid: ADLXWrapper.GamutInfo.IsCurrent7500K*
+  name: IsCurrent7500K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent7500K_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent7500K
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent7500K
+  nameWithType: GamutInfo.IsCurrent7500K
+- uid: ADLXWrapper.GamutInfo.IsCurrent9300K
+  name: IsCurrent9300K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent9300K
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrent9300K
+  fullName: ADLXWrapper.GamutInfo.IsCurrent9300K
+  nameWithType: GamutInfo.IsCurrent9300K
+- uid: ADLXWrapper.GamutInfo.IsCurrent9300K*
+  name: IsCurrent9300K
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrent9300K_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrent9300K
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrent9300K
+  nameWithType: GamutInfo.IsCurrent9300K
+- uid: ADLXWrapper.GamutInfo.IsCurrentAdobe
+  name: IsCurrentAdobe
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentAdobe
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrentAdobe
+  fullName: ADLXWrapper.GamutInfo.IsCurrentAdobe
+  nameWithType: GamutInfo.IsCurrentAdobe
+- uid: ADLXWrapper.GamutInfo.IsCurrentAdobe*
+  name: IsCurrentAdobe
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentAdobe_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrentAdobe
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrentAdobe
+  nameWithType: GamutInfo.IsCurrentAdobe
+- uid: ADLXWrapper.GamutInfo.IsCurrentCieRgb
+  name: IsCurrentCieRgb
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCieRgb
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrentCieRgb
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCieRgb
+  nameWithType: GamutInfo.IsCurrentCieRgb
+- uid: ADLXWrapper.GamutInfo.IsCurrentCieRgb*
+  name: IsCurrentCieRgb
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCieRgb_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrentCieRgb
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCieRgb
+  nameWithType: GamutInfo.IsCurrentCieRgb
+- uid: ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace
+  name: IsCurrentCustomColorSpace
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCustomColorSpace
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace
+  nameWithType: GamutInfo.IsCurrentCustomColorSpace
+- uid: ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace*
+  name: IsCurrentCustomColorSpace
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCustomColorSpace_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCustomColorSpace
+  nameWithType: GamutInfo.IsCurrentCustomColorSpace
+- uid: ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint
+  name: IsCurrentCustomWhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCustomWhitePoint
+  commentId: P:ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint
+  nameWithType: GamutInfo.IsCurrentCustomWhitePoint
+- uid: ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint*
+  name: IsCurrentCustomWhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsCurrentCustomWhitePoint_
+  commentId: Overload:ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.IsCurrentCustomWhitePoint
+  nameWithType: GamutInfo.IsCurrentCustomWhitePoint
 - uid: ADLXWrapper.GamutInfo.IsGamutSupported
   name: IsGamutSupported
   href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_IsGamutSupported
@@ -10800,21 +11656,34 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GamutInfo.IsWhitePointSupported
   nameWithType: GamutInfo.IsWhitePointSupported
+- uid: ADLXWrapper.GamutInfo.WhitePoint
+  name: WhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_WhitePoint
+  commentId: P:ADLXWrapper.GamutInfo.WhitePoint
+  fullName: ADLXWrapper.GamutInfo.WhitePoint
+  nameWithType: GamutInfo.WhitePoint
+- uid: ADLXWrapper.GamutInfo.WhitePoint*
+  name: WhitePoint
+  href: api/ADLXWrapper.GamutInfo.html#ADLXWrapper_GamutInfo_WhitePoint_
+  commentId: Overload:ADLXWrapper.GamutInfo.WhitePoint
+  isSpec: "True"
+  fullName: ADLXWrapper.GamutInfo.WhitePoint
+  nameWithType: GamutInfo.WhitePoint
 - uid: ADLXWrapper.GpuInfo
   name: GpuInfo
   href: api/ADLXWrapper.GpuInfo.html
   commentId: T:ADLXWrapper.GpuInfo
   fullName: ADLXWrapper.GpuInfo
   nameWithType: GpuInfo
-- uid: ADLXWrapper.GpuInfo.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String)
-  name: GpuInfo(string, string, int, uint, string, bool, bool, string, string, string)
-  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_
-  commentId: M:ADLXWrapper.GpuInfo.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String)
-  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String)
-  fullName: ADLXWrapper.GpuInfo.GpuInfo(string, string, int, uint, string, bool, bool, string, string, string)
-  fullName.vb: ADLXWrapper.GpuInfo.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String)
-  nameWithType: GpuInfo.GpuInfo(string, string, int, uint, string, bool, bool, string, string, string)
-  nameWithType.vb: GpuInfo.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String)
+- uid: ADLXWrapper.GpuInfo.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.ADLX_LUID})
+  name: GpuInfo(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLX_LUID?)
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_ADLX_LUID__
+  commentId: M:ADLXWrapper.GpuInfo.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.ADLX_LUID})
+  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLX_LUID?)
+  fullName: ADLXWrapper.GpuInfo.GpuInfo(string, string, int, uint, string, bool, bool, string, string, string, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, uint, ADLXWrapper.ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLXWrapper.ADLX_LUID?)
+  fullName.vb: ADLXWrapper.GpuInfo.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, UInteger, ADLXWrapper.ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLXWrapper.ADLX_LUID?)
+  nameWithType: GpuInfo.GpuInfo(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLX_LUID?)
+  nameWithType.vb: GpuInfo.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLX_LUID?)
 - uid: ADLXWrapper.GpuInfo.#ctor*
   name: GpuInfo
   href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo__ctor_
@@ -10825,6 +11694,45 @@ references:
   fullName.vb: ADLXWrapper.GpuInfo.New
   nameWithType: GpuInfo.GpuInfo
   nameWithType.vb: GpuInfo.New
+- uid: ADLXWrapper.GpuInfo.AMDSoftwareVersion
+  name: AMDSoftwareVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AMDSoftwareVersion
+  commentId: P:ADLXWrapper.GpuInfo.AMDSoftwareVersion
+  fullName: ADLXWrapper.GpuInfo.AMDSoftwareVersion
+  nameWithType: GpuInfo.AMDSoftwareVersion
+- uid: ADLXWrapper.GpuInfo.AMDSoftwareVersion*
+  name: AMDSoftwareVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AMDSoftwareVersion_
+  commentId: Overload:ADLXWrapper.GpuInfo.AMDSoftwareVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.AMDSoftwareVersion
+  nameWithType: GpuInfo.AMDSoftwareVersion
+- uid: ADLXWrapper.GpuInfo.AMDWindowsDriverVersion
+  name: AMDWindowsDriverVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AMDWindowsDriverVersion
+  commentId: P:ADLXWrapper.GpuInfo.AMDWindowsDriverVersion
+  fullName: ADLXWrapper.GpuInfo.AMDWindowsDriverVersion
+  nameWithType: GpuInfo.AMDWindowsDriverVersion
+- uid: ADLXWrapper.GpuInfo.AMDWindowsDriverVersion*
+  name: AMDWindowsDriverVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AMDWindowsDriverVersion_
+  commentId: Overload:ADLXWrapper.GpuInfo.AMDWindowsDriverVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.AMDWindowsDriverVersion
+  nameWithType: GpuInfo.AMDWindowsDriverVersion
+- uid: ADLXWrapper.GpuInfo.AsicFamilyType
+  name: AsicFamilyType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AsicFamilyType
+  commentId: P:ADLXWrapper.GpuInfo.AsicFamilyType
+  fullName: ADLXWrapper.GpuInfo.AsicFamilyType
+  nameWithType: GpuInfo.AsicFamilyType
+- uid: ADLXWrapper.GpuInfo.AsicFamilyType*
+  name: AsicFamilyType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_AsicFamilyType_
+  commentId: Overload:ADLXWrapper.GpuInfo.AsicFamilyType
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.AsicFamilyType
+  nameWithType: GpuInfo.AsicFamilyType
 - uid: ADLXWrapper.GpuInfo.DeviceId
   name: DeviceId
   href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_DeviceId
@@ -10851,6 +11759,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuInfo.DriverPath
   nameWithType: GpuInfo.DriverPath
+- uid: ADLXWrapper.GpuInfo.DriverVersion
+  name: DriverVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_DriverVersion
+  commentId: P:ADLXWrapper.GpuInfo.DriverVersion
+  fullName: ADLXWrapper.GpuInfo.DriverVersion
+  nameWithType: GpuInfo.DriverVersion
+- uid: ADLXWrapper.GpuInfo.DriverVersion*
+  name: DriverVersion
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_DriverVersion_
+  commentId: Overload:ADLXWrapper.GpuInfo.DriverVersion
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.DriverVersion
+  nameWithType: GpuInfo.DriverVersion
+- uid: ADLXWrapper.GpuInfo.GPUType
+  name: GPUType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_GPUType
+  commentId: P:ADLXWrapper.GpuInfo.GPUType
+  fullName: ADLXWrapper.GpuInfo.GPUType
+  nameWithType: GpuInfo.GPUType
+- uid: ADLXWrapper.GpuInfo.GPUType*
+  name: GPUType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_GPUType_
+  commentId: Overload:ADLXWrapper.GpuInfo.GPUType
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.GPUType
+  nameWithType: GpuInfo.GPUType
 - uid: ADLXWrapper.GpuInfo.HasDesktops
   name: HasDesktops
   href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_HasDesktops
@@ -10877,6 +11811,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuInfo.IsExternal
   nameWithType: GpuInfo.IsExternal
+- uid: ADLXWrapper.GpuInfo.Luid
+  name: Luid
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_Luid
+  commentId: P:ADLXWrapper.GpuInfo.Luid
+  fullName: ADLXWrapper.GpuInfo.Luid
+  nameWithType: GpuInfo.Luid
+- uid: ADLXWrapper.GpuInfo.Luid*
+  name: Luid
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_Luid_
+  commentId: Overload:ADLXWrapper.GpuInfo.Luid
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.Luid
+  nameWithType: GpuInfo.Luid
+- uid: ADLXWrapper.GpuInfo.MultiGpuMode
+  name: MultiGpuMode
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_MultiGpuMode
+  commentId: P:ADLXWrapper.GpuInfo.MultiGpuMode
+  fullName: ADLXWrapper.GpuInfo.MultiGpuMode
+  nameWithType: GpuInfo.MultiGpuMode
+- uid: ADLXWrapper.GpuInfo.MultiGpuMode*
+  name: MultiGpuMode
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_MultiGpuMode_
+  commentId: Overload:ADLXWrapper.GpuInfo.MultiGpuMode
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.MultiGpuMode
+  nameWithType: GpuInfo.MultiGpuMode
 - uid: ADLXWrapper.GpuInfo.Name
   name: Name
   href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_Name
@@ -10903,6 +11863,84 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuInfo.PNPString
   nameWithType: GpuInfo.PNPString
+- uid: ADLXWrapper.GpuInfo.PciBusLaneWidth
+  name: PciBusLaneWidth
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_PciBusLaneWidth
+  commentId: P:ADLXWrapper.GpuInfo.PciBusLaneWidth
+  fullName: ADLXWrapper.GpuInfo.PciBusLaneWidth
+  nameWithType: GpuInfo.PciBusLaneWidth
+- uid: ADLXWrapper.GpuInfo.PciBusLaneWidth*
+  name: PciBusLaneWidth
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_PciBusLaneWidth_
+  commentId: Overload:ADLXWrapper.GpuInfo.PciBusLaneWidth
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.PciBusLaneWidth
+  nameWithType: GpuInfo.PciBusLaneWidth
+- uid: ADLXWrapper.GpuInfo.PciBusType
+  name: PciBusType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_PciBusType
+  commentId: P:ADLXWrapper.GpuInfo.PciBusType
+  fullName: ADLXWrapper.GpuInfo.PciBusType
+  nameWithType: GpuInfo.PciBusType
+- uid: ADLXWrapper.GpuInfo.PciBusType*
+  name: PciBusType
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_PciBusType_
+  commentId: Overload:ADLXWrapper.GpuInfo.PciBusType
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.PciBusType
+  nameWithType: GpuInfo.PciBusType
+- uid: ADLXWrapper.GpuInfo.ProductName
+  name: ProductName
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_ProductName
+  commentId: P:ADLXWrapper.GpuInfo.ProductName
+  fullName: ADLXWrapper.GpuInfo.ProductName
+  nameWithType: GpuInfo.ProductName
+- uid: ADLXWrapper.GpuInfo.ProductName*
+  name: ProductName
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_ProductName_
+  commentId: Overload:ADLXWrapper.GpuInfo.ProductName
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.ProductName
+  nameWithType: GpuInfo.ProductName
+- uid: ADLXWrapper.GpuInfo.RevisionId
+  name: RevisionId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_RevisionId
+  commentId: P:ADLXWrapper.GpuInfo.RevisionId
+  fullName: ADLXWrapper.GpuInfo.RevisionId
+  nameWithType: GpuInfo.RevisionId
+- uid: ADLXWrapper.GpuInfo.RevisionId*
+  name: RevisionId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_RevisionId_
+  commentId: Overload:ADLXWrapper.GpuInfo.RevisionId
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.RevisionId
+  nameWithType: GpuInfo.RevisionId
+- uid: ADLXWrapper.GpuInfo.SubSystemId
+  name: SubSystemId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_SubSystemId
+  commentId: P:ADLXWrapper.GpuInfo.SubSystemId
+  fullName: ADLXWrapper.GpuInfo.SubSystemId
+  nameWithType: GpuInfo.SubSystemId
+- uid: ADLXWrapper.GpuInfo.SubSystemId*
+  name: SubSystemId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_SubSystemId_
+  commentId: Overload:ADLXWrapper.GpuInfo.SubSystemId
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.SubSystemId
+  nameWithType: GpuInfo.SubSystemId
+- uid: ADLXWrapper.GpuInfo.SubSystemVendorId
+  name: SubSystemVendorId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_SubSystemVendorId
+  commentId: P:ADLXWrapper.GpuInfo.SubSystemVendorId
+  fullName: ADLXWrapper.GpuInfo.SubSystemVendorId
+  nameWithType: GpuInfo.SubSystemVendorId
+- uid: ADLXWrapper.GpuInfo.SubSystemVendorId*
+  name: SubSystemVendorId
+  href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_SubSystemVendorId_
+  commentId: Overload:ADLXWrapper.GpuInfo.SubSystemVendorId
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuInfo.SubSystemVendorId
+  nameWithType: GpuInfo.SubSystemVendorId
 - uid: ADLXWrapper.GpuInfo.TotalVRAM
   name: TotalVRAM
   href: api/ADLXWrapper.GpuInfo.html#ADLXWrapper_GpuInfo_TotalVRAM
@@ -37590,6 +38628,83 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.RadeonImageSharpeningInfo.SharpnessRange
   nameWithType: RadeonImageSharpeningInfo.SharpnessRange
+- uid: ADLXWrapper.RadeonSuperResolutionInfo
+  name: RadeonSuperResolutionInfo
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html
+  commentId: T:ADLXWrapper.RadeonSuperResolutionInfo
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo
+  nameWithType: RadeonSuperResolutionInfo
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.ADLX_IntRange)
+  name: RadeonSuperResolutionInfo(bool, bool, int, ADLX_IntRange)
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo__ctor_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_ADLX_IntRange_
+  commentId: M:ADLXWrapper.RadeonSuperResolutionInfo.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.ADLX_IntRange)
+  name.vb: New(Boolean, Boolean, Integer, ADLX_IntRange)
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.RadeonSuperResolutionInfo(bool, bool, int, ADLXWrapper.ADLX_IntRange)
+  fullName.vb: ADLXWrapper.RadeonSuperResolutionInfo.New(Boolean, Boolean, Integer, ADLXWrapper.ADLX_IntRange)
+  nameWithType: RadeonSuperResolutionInfo.RadeonSuperResolutionInfo(bool, bool, int, ADLX_IntRange)
+  nameWithType.vb: RadeonSuperResolutionInfo.New(Boolean, Boolean, Integer, ADLX_IntRange)
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.#ctor*
+  name: RadeonSuperResolutionInfo
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo__ctor_
+  commentId: Overload:ADLXWrapper.RadeonSuperResolutionInfo.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.RadeonSuperResolutionInfo
+  fullName.vb: ADLXWrapper.RadeonSuperResolutionInfo.New
+  nameWithType: RadeonSuperResolutionInfo.RadeonSuperResolutionInfo
+  nameWithType.vb: RadeonSuperResolutionInfo.New
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_IsEnabled
+  commentId: P:ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled
+  nameWithType: RadeonSuperResolutionInfo.IsEnabled
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_IsEnabled_
+  commentId: Overload:ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.IsEnabled
+  nameWithType: RadeonSuperResolutionInfo.IsEnabled
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_IsSupported
+  commentId: P:ADLXWrapper.RadeonSuperResolutionInfo.IsSupported
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.IsSupported
+  nameWithType: RadeonSuperResolutionInfo.IsSupported
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_IsSupported_
+  commentId: Overload:ADLXWrapper.RadeonSuperResolutionInfo.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.IsSupported
+  nameWithType: RadeonSuperResolutionInfo.IsSupported
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.Sharpness
+  name: Sharpness
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_Sharpness
+  commentId: P:ADLXWrapper.RadeonSuperResolutionInfo.Sharpness
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.Sharpness
+  nameWithType: RadeonSuperResolutionInfo.Sharpness
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.Sharpness*
+  name: Sharpness
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_Sharpness_
+  commentId: Overload:ADLXWrapper.RadeonSuperResolutionInfo.Sharpness
+  isSpec: "True"
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.Sharpness
+  nameWithType: RadeonSuperResolutionInfo.Sharpness
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange
+  name: SharpnessRange
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_SharpnessRange
+  commentId: P:ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange
+  nameWithType: RadeonSuperResolutionInfo.SharpnessRange
+- uid: ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange*
+  name: SharpnessRange
+  href: api/ADLXWrapper.RadeonSuperResolutionInfo.html#ADLXWrapper_RadeonSuperResolutionInfo_SharpnessRange_
+  commentId: Overload:ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange
+  isSpec: "True"
+  fullName: ADLXWrapper.RadeonSuperResolutionInfo.SharpnessRange
+  nameWithType: RadeonSuperResolutionInfo.SharpnessRange
 - uid: ADLXWrapper.SimpleEyefinityInfo
   name: SimpleEyefinityInfo
   href: api/ADLXWrapper.SimpleEyefinityInfo.html
@@ -37916,6 +39031,71 @@ references:
   fullName.vb: ADLXWrapper.ThreeDLUTInfo.New
   nameWithType: ThreeDLUTInfo.ThreeDLUTInfo
   nameWithType.vb: ThreeDLUTInfo.New
+- uid: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  name: CurrentDynamicContrast
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_CurrentDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  nameWithType: ThreeDLUTInfo.CurrentDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast*
+  name: CurrentDynamicContrast
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_CurrentDynamicContrast_
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  isSpec: "True"
+  fullName: ADLXWrapper.ThreeDLUTInfo.CurrentDynamicContrast
+  nameWithType: ThreeDLUTInfo.CurrentDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  name: DynamicContrastRange
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_DynamicContrastRange
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  fullName: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  nameWithType: ThreeDLUTInfo.DynamicContrastRange
+- uid: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange*
+  name: DynamicContrastRange
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_DynamicContrastRange_
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  isSpec: "True"
+  fullName: ADLXWrapper.ThreeDLUTInfo.DynamicContrastRange
+  nameWithType: ThreeDLUTInfo.DynamicContrastRange
+- uid: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  name: HasDynamicContrast
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_HasDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  nameWithType: ThreeDLUTInfo.HasDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast*
+  name: HasDynamicContrast
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_HasDynamicContrast_
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  isSpec: "True"
+  fullName: ADLXWrapper.ThreeDLUTInfo.HasDynamicContrast
+  nameWithType: ThreeDLUTInfo.HasDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  name: IsCurrentSceDisabled
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceDisabled
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  nameWithType: ThreeDLUTInfo.IsCurrentSceDisabled
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled*
+  name: IsCurrentSceDisabled
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceDisabled_
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceDisabled
+  nameWithType: ThreeDLUTInfo.IsCurrentSceDisabled
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  name: IsCurrentSceVividGaming
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceVividGaming
+  commentId: P:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTInfo.IsCurrentSceVividGaming
+- uid: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming*
+  name: IsCurrentSceVividGaming
+  href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsCurrentSceVividGaming_
+  commentId: Overload:ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  isSpec: "True"
+  fullName: ADLXWrapper.ThreeDLUTInfo.IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTInfo.IsCurrentSceVividGaming
 - uid: ADLXWrapper.ThreeDLUTInfo.IsSceDynamicContrastSupported
   name: IsSceDynamicContrastSupported
   href: api/ADLXWrapper.ThreeDLUTInfo.html#ADLXWrapper_ThreeDLUTInfo_IsSceDynamicContrastSupported
