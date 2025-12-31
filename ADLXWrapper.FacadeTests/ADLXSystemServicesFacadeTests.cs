@@ -149,6 +149,33 @@ public class ADLXSystemServicesFacadeTests
     }
 
     [SkippableFact]
+    public void System_gpu_identity_deep_facade()
+    {
+        SkipIfUnavailable();
+        IReadOnlyList<ADLXGPU> gpus;
+        try
+        {
+            gpus = _fixture.System!.EnumerateADLXGPUs();
+        }
+        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+        {
+            throw new Xunit.SkipException("GPU enumeration not supported on this hardware/driver.");
+        }
+
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        using var gpu = gpus[0];
+        Assert.True(Enum.IsDefined(typeof(ADLX_GPU_TYPE), gpu.GPUType));
+        Assert.True(Enum.IsDefined(typeof(ADLX_ASIC_FAMILY_TYPE), gpu.AsicFamilyType));
+        Assert.True(Enum.IsDefined(typeof(ADLX_PCI_BUS_TYPE), gpu.PciBusType));
+        Assert.True(gpu.PciBusLaneWidth >= 0);
+        Assert.True(Enum.IsDefined(typeof(ADLX_MGPU_MODE), gpu.MultiGpuMode));
+        Assert.NotNull(gpu.ProductName);
+        Assert.NotNull(gpu.SubSystemId);
+        Assert.NotNull(gpu.SubSystemVendorId);
+        Assert.NotNull(gpu.RevisionId);
+    }
+
+    [SkippableFact]
     public void System_display_identity_facade()
     {
         SkipIfUnavailable();

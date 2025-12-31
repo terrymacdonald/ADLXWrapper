@@ -1120,9 +1120,18 @@ namespace ADLXWrapper
         public string DeviceId { get; init; }
         public string PNPString { get; init; }
         public string DriverPath { get; init; }
+        public ADLX_GPU_TYPE GPUType { get; init; }
+        public ADLX_ASIC_FAMILY_TYPE AsicFamilyType { get; init; }
+        public ADLX_PCI_BUS_TYPE PciBusType { get; init; }
+        public uint PciBusLaneWidth { get; init; }
+        public ADLX_MGPU_MODE MultiGpuMode { get; init; }
+        public string ProductName { get; init; }
+        public string SubSystemId { get; init; }
+        public string SubSystemVendorId { get; init; }
+        public string RevisionId { get; init; }
 
         [JsonConstructor]
-        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath)
+        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "")
         {
             Name = name;
             VendorId = vendorId;
@@ -1134,6 +1143,15 @@ namespace ADLXWrapper
             DeviceId = deviceId;
             PNPString = pnpString;
             DriverPath = driverPath;
+            GPUType = gpuType;
+            AsicFamilyType = asicFamilyType;
+            PciBusType = pciBusType;
+            PciBusLaneWidth = pciBusLaneWidth;
+            MultiGpuMode = multiGpuMode;
+            ProductName = productName;
+            SubSystemId = subSystemId;
+            SubSystemVendorId = subSystemVendorId;
+            RevisionId = revisionId;
         }
 
         internal unsafe GpuInfo(IADLXGPU* pGpu)
@@ -1183,6 +1201,60 @@ namespace ADLXWrapper
             sbyte* driverPathPtr = null;
             EnsureSuccess(pGpu->DriverPath(&driverPathPtr), "Failed to query GPU driver path");
             DriverPath = ADLXUtils.MarshalString(&driverPathPtr);
+
+            // Optional identity details that may require newer interfaces; fall back to defaults when unsupported.
+            var gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED;
+            var asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED;
+            var pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED;
+            uint pciBusLaneWidth = 0;
+            var multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE;
+            var productName = string.Empty;
+            var subSystemId = string.Empty;
+            var subSystemVendorId = string.Empty;
+            var revisionId = string.Empty;
+
+            if (ADLXUtils.TryQueryInterface((IntPtr)pGpu, nameof(IADLXGPU1), out var pGpu1))
+            {
+                var gpu1 = (IADLXGPU1*)pGpu1;
+                try
+                {
+                    _ = gpu1->Type(&gpuType);
+                    _ = gpu1->ASICFamilyType(&asicFamilyType);
+                    _ = gpu1->PCIBusType(&pciBusType);
+                    _ = gpu1->PCIBusLaneWidth(&pciBusLaneWidth);
+                    _ = gpu1->MultiGPUMode(&multiGpuMode);
+
+                    sbyte* productPtr = null;
+                    if (gpu1->ProductName(&productPtr) == ADLX_RESULT.ADLX_OK)
+                        productName = ADLXUtils.MarshalString(&productPtr);
+
+                    sbyte* subIdPtr = null;
+                    if (gpu1->SubSystemId(&subIdPtr) == ADLX_RESULT.ADLX_OK)
+                        subSystemId = ADLXUtils.MarshalString(&subIdPtr);
+
+                    sbyte* subVendorPtr = null;
+                    if (gpu1->SubSystemVendorId(&subVendorPtr) == ADLX_RESULT.ADLX_OK)
+                        subSystemVendorId = ADLXUtils.MarshalString(&subVendorPtr);
+
+                    sbyte* revisionPtr = null;
+                    if (gpu1->RevisionId(&revisionPtr) == ADLX_RESULT.ADLX_OK)
+                        revisionId = ADLXUtils.MarshalString(&revisionPtr);
+                }
+                finally
+                {
+                    ADLXUtils.ReleaseInterface((IntPtr)gpu1);
+                }
+            }
+
+            GPUType = gpuType;
+            AsicFamilyType = asicFamilyType;
+            PciBusType = pciBusType;
+            PciBusLaneWidth = pciBusLaneWidth;
+            MultiGpuMode = multiGpuMode;
+            ProductName = productName;
+            SubSystemId = subSystemId;
+            SubSystemVendorId = subSystemVendorId;
+            RevisionId = revisionId;
         }
     }
     #endregion

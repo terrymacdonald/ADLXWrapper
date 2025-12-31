@@ -59,6 +59,24 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.PNPString; } }
         public string DriverPath { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.DriverPath; } }
+        public ADLX_GPU_TYPE GPUType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.GPUType; } }
+        public ADLX_ASIC_FAMILY_TYPE AsicFamilyType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AsicFamilyType; } }
+        public ADLX_PCI_BUS_TYPE PciBusType { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.PciBusType; } }
+        public uint PciBusLaneWidth { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.PciBusLaneWidth; } }
+        public ADLX_MGPU_MODE MultiGpuMode { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.MultiGpuMode; } }
+        public string ProductName { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.ProductName; } }
+        public string SubSystemId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.SubSystemId; } }
+        public string SubSystemVendorId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.SubSystemVendorId; } }
+        public string RevisionId { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.RevisionId; } }
 
         /// <summary>
         /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
