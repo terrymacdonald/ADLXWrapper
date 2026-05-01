@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using ADLXWrapper;
 
@@ -46,31 +47,29 @@ unsafe
     }
 }
 
-static ADLXInterfaceHandle? GetFirstGpuHandle(ADLXSystemServicesHelper sysHelper)
-{
-    var gpus = sysHelper.EnumerateGPUsHandle();
-    return gpus.Length > 0 ? gpus[0] : null;
-}
-
-static unsafe void RunFacadeMultimedia()
+static void RunFacadeMultimedia()
 {
     using var adlx = ADLXApiHelper.Initialize();
-    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var gpuHandle = GetFirstGpuHandle(sysHelper);
-    if (!gpuHandle.HasValue)
+    using var sys = adlx.GetSystemServices();
+    var gpus = sys.EnumerateGPUs().ToList();
+    if (gpus.Count == 0)
     {
         Console.WriteLine("No AMD GPU found.");
         return;
     }
 
-    using var mmHelper = new ADLXMultimediaServicesHelper(sysHelper.GetMultimediaServicesNative());
-    using var gpu = gpuHandle.Value;
+    using var mm = sys.GetMultimediaServices();
+    int gpuUniqueId = gpus[0].UniqueId;
 
-    var upscale = mmHelper.GetVideoUpscale(gpu.As<IADLXGPU>());
-    Console.WriteLine($"[Facade] Video Upscale: supported={upscale.IsSupported}, enabled={upscale.IsEnabled}, sharpness={upscale.Sharpness}, range=({upscale.SharpnessRange.minValue}-{upscale.SharpnessRange.maxValue})");
+    if (mm.TryGetVideoUpscale(gpuUniqueId, out var upscale))
+        Console.WriteLine($"[Facade] Video Upscale: supported={upscale.IsSupported}, enabled={upscale.IsEnabled}, sharpness={upscale.Sharpness}, range=({upscale.SharpnessRange.MinValue}-{upscale.SharpnessRange.MaxValue})");
+    else
+        Console.WriteLine("[Facade] Video Upscale not available on this GPU.");
 
-    var vsr = mmHelper.GetVideoSuperResolution(gpu.As<IADLXGPU>());
-    Console.WriteLine($"[Facade] Video Super Resolution: supported={vsr.IsSupported}, enabled={vsr.IsEnabled}");
+    if (mm.TryGetVideoSuperResolution(gpuUniqueId, out var vsr))
+        Console.WriteLine($"[Facade] Video Super Resolution: supported={vsr.IsSupported}, enabled={vsr.IsEnabled}");
+    else
+        Console.WriteLine("[Facade] Video Super Resolution not available on this GPU.");
 }
 
 static unsafe void RunNativeMultimedia()

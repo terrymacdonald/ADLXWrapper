@@ -46,14 +46,14 @@ unsafe
     }
 }
 
-static unsafe void RunFacadePower()
+static void RunFacadePower()
 {
     using var adlx = ADLXApiHelper.Initialize();
-    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    using var powerServicesHelper = new ADLXPowerTuningServicesHelper(sysHelper.GetPowerTuningServicesNative());
+    using var sys = adlx.GetSystemServices();
+    using var power = sys.GetPowerTuningServices();
 
-    var ssm = powerServicesHelper.GetSmartShiftMax();
-    Console.WriteLine($"[Facade] SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.minValue}-{ssm.BiasRange.maxValue})");
+    var ssm = power.GetSmartShiftMax();
+    Console.WriteLine($"[Facade] SmartShift Max -> supported={ssm.IsSupported}, biasMode={ssm.BiasMode}, biasValue={ssm.BiasValue}, range=({ssm.BiasRange.MinValue}-{ssm.BiasRange.MaxValue})");
 }
 
 static unsafe void RunNativePower()

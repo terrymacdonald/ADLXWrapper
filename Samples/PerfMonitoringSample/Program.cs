@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using ADLXWrapper;
 
@@ -46,25 +47,27 @@ unsafe
     }
 }
 
-static unsafe void RunFacadePerf()
+static void RunFacadePerf()
 {
     using var adlx = ADLXApiHelper.Initialize();
-    using var sysHelper = new ADLXSystemServicesHelper(adlx.GetSystemServicesNative());
-    var gpus = sysHelper.EnumerateGPUsHandle();
-    if (gpus.Length == 0)
+    using var sys = adlx.GetSystemServices();
+    var gpus = sys.EnumerateGPUs().ToList();
+    if (gpus.Count == 0)
     {
         Console.WriteLine("No AMD GPU found; exiting.");
         return;
     }
 
-    using var perfHelper = new ADLXPerformanceMonitoringServicesHelper(sysHelper.GetPerformanceMonitoringServicesNative());
-    using var gpu = gpus[0];
+    using var perf = sys.GetPerformanceMonitoringServices();
+    int gpuUniqueId = gpus[0].UniqueId;
 
-    var current = perfHelper.GetCurrentGpuMetrics(gpu.As<IADLXGPU>());
-    Console.WriteLine($"[Facade] GPU: Temp={current.Temperature:F1}C, Usage={current.Usage:F1}%, Clock={current.ClockSpeed}MHz, VRAM={current.VRAMUsage}MB");
+    if (perf.TryGetCurrentGpuMetrics(gpuUniqueId, out var current))
+        Console.WriteLine($"[Facade] GPU: Temp={current.Temperature:F1}°C, Usage={current.Usage:F1}%, Clock={current.ClockSpeed} MHz, VRAM={current.VRAMUsage} MB");
+    else
+        Console.WriteLine("[Facade] GPU metrics not available.");
 
-    var sysMetrics = perfHelper.GetCurrentSystemMetrics();
-    Console.WriteLine($"[Facade] System: CPU={sysMetrics.CpuUsage:F1}%, RAM={sysMetrics.SystemRam}MB");
+    var sysMetrics = perf.GetCurrentSystemMetrics();
+    Console.WriteLine($"[Facade] System: CPU={sysMetrics.CpuUsage:F1}%, RAM={sysMetrics.SystemRam} MB");
 }
 
 static unsafe void RunNativePerf()
