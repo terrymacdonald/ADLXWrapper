@@ -92,19 +92,19 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        internal GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXGPU* gpu)
+        internal GpuMetricsSupportDto GetGpuMetricsSupport(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var support = new ComPtr<IADLXGPUMetricsSupport>(GetGpuMetricsSupportNative(gpu));
-            return new GpuMetricsSupportInfo(support.Get());
+            return new GpuMetricsSupportDto(support.Get());
         }
 
         /// <summary>
         /// Tries to get GPU metrics support info. Returns false if not supported for this GPU/system.
         /// </summary>
-        internal bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportInfo info)
+        internal bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportDto info)
         {
             info = default;
             try
@@ -152,16 +152,16 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        internal GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXGPU* gpu)
+        internal GpuMetricsSnapshotDto GetCurrentGpuMetrics(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var metrics = new ComPtr<IADLXGPUMetrics>(GetCurrentGpuMetricsNative(gpu));
-            return new GpuMetricsSnapshotInfo(metrics.Get());
+            return new GpuMetricsSnapshotDto(metrics.Get());
         }
 
-        internal bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotInfo metrics)
+        internal bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotDto metrics)
         {
             metrics = default;
             try
@@ -203,11 +203,11 @@ namespace ADLXWrapper
         /// <returns>System metrics snapshot.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public SystemMetricsSnapshotInfo GetCurrentSystemMetrics()
+        public SystemMetricsSnapshotDto GetCurrentSystemMetrics()
         {
             ThrowIfDisposed();
             using var metrics = new ComPtr<IADLXSystemMetrics>(GetCurrentSystemMetricsNative());
-            return new SystemMetricsSnapshotInfo(metrics.Get());
+            return new SystemMetricsSnapshotDto(metrics.Get());
         }
 
         /// <summary>
@@ -238,11 +238,11 @@ namespace ADLXWrapper
         /// <returns>All-metrics snapshot.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public AllMetricsSnapshotInfo GetCurrentAllMetrics()
+        public AllMetricsSnapshotDto GetCurrentAllMetrics()
         {
             ThrowIfDisposed();
             using var metrics = new ComPtr<IADLXAllMetrics>(GetCurrentAllMetricsNative());
-            return new AllMetricsSnapshotInfo(metrics.Get());
+            return new AllMetricsSnapshotDto(metrics.Get());
         }
 
         internal IADLXGPUMetricsList* GetGpuMetricsHistoryNative(IADLXGPU* gpu, int startMs, int stopMs)
@@ -263,28 +263,28 @@ namespace ADLXWrapper
             }
         }
 
-        internal IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
+        internal IEnumerable<GpuMetricsSnapshotDto> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var list = new ComPtr<IADLXGPUMetricsList>(GetGpuMetricsHistoryNative(gpu, startMs, stopMs));
             var count = list.Get()->Size();
-            var results = new List<GpuMetricsSnapshotInfo>((int)count);
+            var results = new List<GpuMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
             {
                 IADLXGPUMetrics* metrics = null;
                 list.Get()->At(i, &metrics);
                 using var m = new ComPtr<IADLXGPUMetrics>(metrics);
-                results.Add(new GpuMetricsSnapshotInfo(m.Get()));
+                results.Add(new GpuMetricsSnapshotDto(m.Get()));
             }
 
             return results;
         }
 
-        internal bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
+        internal bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotDto> history)
         {
-            history = Array.Empty<GpuMetricsSnapshotInfo>();
+            history = Array.Empty<GpuMetricsSnapshotDto>();
             try
             {
                 history = EnumerateGpuMetricsHistory(gpu, startMs, stopMs);
@@ -312,18 +312,18 @@ namespace ADLXWrapper
             }
         }
 
-        public IEnumerable<SystemMetricsSnapshotInfo> EnumerateSystemMetricsHistory(int startMs, int stopMs)
+        public IEnumerable<SystemMetricsSnapshotDto> EnumerateSystemMetricsHistory(int startMs, int stopMs)
         {
             ThrowIfDisposed();
             using var list = new ComPtr<IADLXSystemMetricsList>(GetSystemMetricsHistoryNative(startMs, stopMs));
             var count = list.Get()->Size();
-            var results = new List<SystemMetricsSnapshotInfo>((int)count);
+            var results = new List<SystemMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
             {
                 IADLXSystemMetrics* metrics = null;
                 list.Get()->At(i, &metrics);
                 using var m = new ComPtr<IADLXSystemMetrics>(metrics);
-                results.Add(new SystemMetricsSnapshotInfo(m.Get()));
+                results.Add(new SystemMetricsSnapshotDto(m.Get()));
             }
 
             return results;
@@ -342,26 +342,26 @@ namespace ADLXWrapper
             return list; // caller wraps/disposes
         }
 
-        public IEnumerable<AllMetricsSnapshotInfo> EnumerateAllMetricsHistory(int startMs, int stopMs)
+        public IEnumerable<AllMetricsSnapshotDto> EnumerateAllMetricsHistory(int startMs, int stopMs)
         {
             ThrowIfDisposed();
             using var list = new ComPtr<IADLXAllMetricsList>(GetAllMetricsHistoryNative(startMs, stopMs));
             var count = list.Get()->Size();
-            var results = new List<AllMetricsSnapshotInfo>((int)count);
+            var results = new List<AllMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
             {
                 IADLXAllMetrics* metrics = null;
                 list.Get()->At(i, &metrics);
                 using var m = new ComPtr<IADLXAllMetrics>(metrics);
-                results.Add(new AllMetricsSnapshotInfo(m.Get()));
+                results.Add(new AllMetricsSnapshotDto(m.Get()));
             }
 
             return results;
         }
 
-        public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotInfo> history)
+        public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotDto> history)
         {
-            history = Array.Empty<AllMetricsSnapshotInfo>();
+            history = Array.Empty<AllMetricsSnapshotDto>();
             try
             {
                 history = EnumerateAllMetricsHistory(startMs, stopMs);
@@ -373,7 +373,7 @@ namespace ADLXWrapper
             }
         }
 
-        public IntRangeInfo GetSamplingIntervalRange()
+        public IntRangeDto GetSamplingIntervalRange()
         {
             ThrowIfDisposed();
             ADLX_IntRange range = default;
@@ -382,7 +382,7 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval range");
-            return IntRangeInfo.FromNative(range);
+            return IntRangeDto.FromNative(range);
         }
 
         public int GetSamplingInterval()
@@ -536,16 +536,16 @@ namespace ADLXWrapper
             }
         }
 
-        public PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings()
+        public PerformanceMonitoringSettingsDto GetPerformanceMonitoringSettings()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
             {
-                return new PerformanceMonitoringSettingsInfo(_services.Get());
+                return new PerformanceMonitoringSettingsDto(_services.Get());
             }
         }
 
-        public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo info)
+        public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsDto info)
         {
             ThrowIfDisposed();
             var intervalRange = GetSamplingIntervalRange();
@@ -564,7 +564,7 @@ namespace ADLXWrapper
         // =====================================================================
 
         /// <summary>Gets GPU metrics support info for the GPU with the specified unique id.</summary>
-        public GpuMetricsSupportInfo GetGpuMetricsSupport(int gpuUniqueId)
+        public GpuMetricsSupportDto GetGpuMetricsSupport(int gpuUniqueId)
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -574,14 +574,14 @@ namespace ADLXWrapper
         }
 
         /// <summary>Tries to get GPU metrics support info for the GPU with the specified unique id.</summary>
-        public bool TryGetGpuMetricsSupport(int gpuUniqueId, out GpuMetricsSupportInfo info)
+        public bool TryGetGpuMetricsSupport(int gpuUniqueId, out GpuMetricsSupportDto info)
         {
             try { info = GetGpuMetricsSupport(gpuUniqueId); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
         /// <summary>Gets current GPU metrics snapshot for the GPU with the specified unique id.</summary>
-        public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(int gpuUniqueId)
+        public GpuMetricsSnapshotDto GetCurrentGpuMetrics(int gpuUniqueId)
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -591,14 +591,14 @@ namespace ADLXWrapper
         }
 
         /// <summary>Tries to get current GPU metrics snapshot for the GPU with the specified unique id.</summary>
-        public bool TryGetCurrentGpuMetrics(int gpuUniqueId, out GpuMetricsSnapshotInfo metrics)
+        public bool TryGetCurrentGpuMetrics(int gpuUniqueId, out GpuMetricsSnapshotDto metrics)
         {
             try { metrics = GetCurrentGpuMetrics(gpuUniqueId); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { metrics = default; return false; }
         }
 
         /// <summary>Enumerates GPU metrics history for the GPU with the specified unique id.</summary>
-        public IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs)
+        public IEnumerable<GpuMetricsSnapshotDto> EnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs)
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -608,10 +608,10 @@ namespace ADLXWrapper
         }
 
         /// <summary>Tries to enumerate GPU metrics history for the GPU with the specified unique id.</summary>
-        public bool TryEnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
+        public bool TryEnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotDto> history)
         {
             try { history = EnumerateGpuMetricsHistory(gpuUniqueId, startMs, stopMs); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { history = Array.Empty<GpuMetricsSnapshotInfo>(); return false; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { history = Array.Empty<GpuMetricsSnapshotDto>(); return false; }
         }
 
         private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
@@ -663,7 +663,7 @@ namespace ADLXWrapper
     }
 
     #region Performance monitoring DTOs
-    public readonly struct GpuMetricsSupportInfo
+    public readonly struct GpuMetricsSupportDto
     {
         public bool UsageSupported { get; init; }
         public bool ClockSpeedSupported { get; init; }
@@ -677,7 +677,7 @@ namespace ADLXWrapper
         public bool TotalBoardPowerSupported { get; init; }
 
         [JsonConstructor]
-        public GpuMetricsSupportInfo(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)
+        public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)
         {
             UsageSupported = usageSupported;
             ClockSpeedSupported = clockSpeedSupported;
@@ -691,7 +691,7 @@ namespace ADLXWrapper
             TotalBoardPowerSupported = totalBoardPowerSupported;
         }
 
-        internal unsafe GpuMetricsSupportInfo(IADLXGPUMetricsSupport* pMetricsSupport)
+        internal unsafe GpuMetricsSupportDto(IADLXGPUMetricsSupport* pMetricsSupport)
         {
             bool supported = false;
             pMetricsSupport->IsSupportedGPUUsage(&supported); UsageSupported = supported;
@@ -707,7 +707,7 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct GpuMetricsSnapshotInfo
+    public readonly struct GpuMetricsSnapshotDto
     {
         public double Temperature { get; init; }
         public double HotspotTemperature { get; init; }
@@ -722,7 +722,7 @@ namespace ADLXWrapper
         public long TimestampMs { get; init; }
 
         [JsonConstructor]
-        public GpuMetricsSnapshotInfo(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
+        public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
         {
             Temperature = temperature;
             HotspotTemperature = hotspotTemperature;
@@ -737,7 +737,7 @@ namespace ADLXWrapper
             TimestampMs = timestampMs;
         }
 
-        internal unsafe GpuMetricsSnapshotInfo(IADLXGPUMetrics* pMetrics)
+        internal unsafe GpuMetricsSnapshotDto(IADLXGPUMetrics* pMetrics)
         {
             long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
             double temp = 0; pMetrics->GPUTemperature(&temp); Temperature = temp;
@@ -753,7 +753,7 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct PowerDistributionSnapshotInfo
+    public readonly struct PowerDistributionSnapshotDto
     {
         public int ApuShiftValue { get; init; }
         public int GpuShiftValue { get; init; }
@@ -762,16 +762,16 @@ namespace ADLXWrapper
         public int TotalShiftLimit { get; init; }
     }
 
-    public readonly struct SystemMetricsSnapshotInfo
+    public readonly struct SystemMetricsSnapshotDto
     {
         public long TimestampMs { get; init; }
         public double CpuUsage { get; init; }
         public int SystemRam { get; init; }
         public int SmartShift { get; init; }
-        public PowerDistributionSnapshotInfo? PowerDistribution { get; init; }
+        public PowerDistributionSnapshotDto? PowerDistribution { get; init; }
 
         [JsonConstructor]
-        public SystemMetricsSnapshotInfo(long timestampMs, double cpuUsage, int systemRam, int smartShift, PowerDistributionSnapshotInfo? powerDistribution)
+        public SystemMetricsSnapshotDto(long timestampMs, double cpuUsage, int systemRam, int smartShift, PowerDistributionSnapshotDto? powerDistribution)
         {
             TimestampMs = timestampMs;
             CpuUsage = cpuUsage;
@@ -780,7 +780,7 @@ namespace ADLXWrapper
             PowerDistribution = powerDistribution;
         }
 
-        internal unsafe SystemMetricsSnapshotInfo(IADLXSystemMetrics* pMetrics)
+        internal unsafe SystemMetricsSnapshotDto(IADLXSystemMetrics* pMetrics)
         {
             long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
             double cpu = 0; pMetrics->CPUUsage(&cpu); CpuUsage = cpu;
@@ -794,7 +794,7 @@ namespace ADLXWrapper
                 int apu = 0, gpu = 0, apuLimit = 0, gpuLimit = 0, total = 0;
                 if (metrics1.Get()->PowerDistribution(&apu, &gpu, &apuLimit, &gpuLimit, &total) == ADLX_RESULT.ADLX_OK)
                 {
-                    PowerDistribution = new PowerDistributionSnapshotInfo
+                    PowerDistribution = new PowerDistributionSnapshotDto
                     {
                         ApuShiftValue = apu,
                         GpuShiftValue = gpu,
@@ -807,28 +807,28 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct GpuMetricsEntryInfo
+    public readonly struct GpuMetricsEntryDto
     {
         public int GpuUniqueId { get; init; }
-        public GpuMetricsSnapshotInfo Metrics { get; init; }
+        public GpuMetricsSnapshotDto Metrics { get; init; }
 
         [JsonConstructor]
-        public GpuMetricsEntryInfo(int gpuUniqueId, GpuMetricsSnapshotInfo metrics)
+        public GpuMetricsEntryDto(int gpuUniqueId, GpuMetricsSnapshotDto metrics)
         {
             GpuUniqueId = gpuUniqueId;
             Metrics = metrics;
         }
     }
 
-    public readonly struct AllMetricsSnapshotInfo
+    public readonly struct AllMetricsSnapshotDto
     {
         public long TimestampMs { get; init; }
-        public SystemMetricsSnapshotInfo? System { get; init; }
+        public SystemMetricsSnapshotDto? System { get; init; }
         public int? FPS { get; init; }
-        public GpuMetricsEntryInfo[] GpuMetrics { get; init; }
+        public GpuMetricsEntryDto[] GpuMetrics { get; init; }
 
         [JsonConstructor]
-        public AllMetricsSnapshotInfo(long timestampMs, SystemMetricsSnapshotInfo? system, int? fps, GpuMetricsEntryInfo[] gpuMetrics)
+        public AllMetricsSnapshotDto(long timestampMs, SystemMetricsSnapshotDto? system, int? fps, GpuMetricsEntryDto[] gpuMetrics)
         {
             TimestampMs = timestampMs;
             System = system;
@@ -836,7 +836,7 @@ namespace ADLXWrapper
             GpuMetrics = gpuMetrics;
         }
 
-        internal unsafe AllMetricsSnapshotInfo(IADLXAllMetrics* pMetrics)
+        internal unsafe AllMetricsSnapshotDto(IADLXAllMetrics* pMetrics)
         {
             long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
 
@@ -845,7 +845,7 @@ namespace ADLXWrapper
             if (pMetrics->GetSystemMetrics(&pSys) == ADLX_RESULT.ADLX_OK && pSys != null)
             {
                 using var sysMetrics = new ComPtr<IADLXSystemMetrics>(pSys);
-                System = new SystemMetricsSnapshotInfo(sysMetrics.Get());
+                System = new SystemMetricsSnapshotDto(sysMetrics.Get());
             }
 
             FPS = null;
@@ -860,23 +860,23 @@ namespace ADLXWrapper
                 }
             }
 
-            GpuMetrics = Array.Empty<GpuMetricsEntryInfo>();
+            GpuMetrics = Array.Empty<GpuMetricsEntryDto>();
         }
     }
 
-    public readonly struct PerformanceMonitoringSettingsInfo
+    public readonly struct PerformanceMonitoringSettingsDto
     {
         public int SamplingIntervalMs { get; init; }
         public int MaxHistorySizeSec { get; init; }
 
         [JsonConstructor]
-        public PerformanceMonitoringSettingsInfo(int samplingIntervalMs, int maxHistorySizeSec)
+        public PerformanceMonitoringSettingsDto(int samplingIntervalMs, int maxHistorySizeSec)
         {
             SamplingIntervalMs = samplingIntervalMs;
             MaxHistorySizeSec = maxHistorySizeSec;
         }
 
-        internal unsafe PerformanceMonitoringSettingsInfo(IADLXPerformanceMonitoringServices* pServices)
+        internal unsafe PerformanceMonitoringSettingsDto(IADLXPerformanceMonitoringServices* pServices)
         {
             int interval = 0;
             pServices->GetSamplingInterval(&interval);

@@ -164,20 +164,20 @@ namespace ADLXWrapper
             }
         }
 
-        internal VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
+        internal VideoUpscaleDto GetVideoUpscale(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var upscale = new ComPtr<IADLXVideoUpscale>(GetVideoUpscaleNative(gpu));
-            return new VideoUpscaleInfo(upscale.Get());
+            return new VideoUpscaleDto(upscale.Get());
         }
 
         /// <summary>
         /// Tries to query video upscale info; returns false when unsupported.
         /// </summary>
-        internal bool TryGetVideoUpscale(IADLXGPU* gpu, out VideoUpscaleInfo info)
+        internal bool TryGetVideoUpscale(IADLXGPU* gpu, out VideoUpscaleDto info)
         {
             try
             {
@@ -278,20 +278,20 @@ namespace ADLXWrapper
             }
         }
 
-        internal VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
+        internal VideoSuperResolutionDto GetVideoSuperResolution(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
             using var vsr = new ComPtr<IADLXVideoSuperResolution>(GetVideoSuperResolutionNative(gpu));
-            return new VideoSuperResolutionInfo(vsr.Get());
+            return new VideoSuperResolutionDto(vsr.Get());
         }
 
         /// <summary>
         /// Tries to query video super resolution info; returns false when unsupported.
         /// </summary>
-        internal bool TryGetVideoSuperResolution(IADLXGPU* gpu, out VideoSuperResolutionInfo info)
+        internal bool TryGetVideoSuperResolution(IADLXGPU* gpu, out VideoSuperResolutionDto info)
         {
             try
             {
@@ -337,7 +337,7 @@ namespace ADLXWrapper
         // =====================================================================
 
         /// <summary>Gets video upscale info for the GPU with the specified unique id.</summary>
-        public VideoUpscaleInfo GetVideoUpscale(int gpuUniqueId)
+        public VideoUpscaleDto GetVideoUpscale(int gpuUniqueId)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -345,7 +345,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>Tries to get video upscale info for the GPU with the specified unique id.</summary>
-        public bool TryGetVideoUpscale(int gpuUniqueId, out VideoUpscaleInfo info)
+        public bool TryGetVideoUpscale(int gpuUniqueId, out VideoUpscaleDto info)
         {
             try { info = GetVideoUpscale(gpuUniqueId); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
@@ -402,7 +402,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>Gets video super resolution info for the GPU with the specified unique id.</summary>
-        public VideoSuperResolutionInfo GetVideoSuperResolution(int gpuUniqueId)
+        public VideoSuperResolutionDto GetVideoSuperResolution(int gpuUniqueId)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -410,7 +410,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>Tries to get video super resolution info for the GPU with the specified unique id.</summary>
-        public bool TryGetVideoSuperResolution(int gpuUniqueId, out VideoSuperResolutionInfo info)
+        public bool TryGetVideoSuperResolution(int gpuUniqueId, out VideoSuperResolutionDto info)
         {
             try { info = GetVideoSuperResolution(gpuUniqueId); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
@@ -491,15 +491,15 @@ namespace ADLXWrapper
     }
 
     #region Multimedia DTOs and listener handle
-    public readonly struct VideoUpscaleInfo
+    public readonly struct VideoUpscaleDto
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
         public int Sharpness { get; init; }
-        public IntRangeInfo SharpnessRange { get; init; }
+        public IntRangeDto SharpnessRange { get; init; }
 
         [JsonConstructor]
-        public VideoUpscaleInfo(bool isSupported, bool isEnabled, int sharpness, IntRangeInfo sharpnessRange)
+        public VideoUpscaleDto(bool isSupported, bool isEnabled, int sharpness, IntRangeDto sharpnessRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
@@ -507,7 +507,7 @@ namespace ADLXWrapper
             SharpnessRange = sharpnessRange;
         }
 
-        internal unsafe VideoUpscaleInfo(IADLXVideoUpscale* pUpscale)
+        internal unsafe VideoUpscaleDto(IADLXVideoUpscale* pUpscale)
         {
             bool supported = false, enabled = false;
             pUpscale->IsSupported(&supported);
@@ -521,23 +521,23 @@ namespace ADLXWrapper
 
             ADLX_IntRange range = default;
             pUpscale->GetSharpnessRange(&range);
-            SharpnessRange = IntRangeInfo.FromNative(range);
+            SharpnessRange = IntRangeDto.FromNative(range);
         }
     }
 
-    public readonly struct VideoSuperResolutionInfo
+    public readonly struct VideoSuperResolutionDto
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
 
         [JsonConstructor]
-        public VideoSuperResolutionInfo(bool isSupported, bool isEnabled)
+        public VideoSuperResolutionDto(bool isSupported, bool isEnabled)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
         }
 
-        internal unsafe VideoSuperResolutionInfo(IADLXVideoSuperResolution* pVsr)
+        internal unsafe VideoSuperResolutionDto(IADLXVideoSuperResolution* pVsr)
         {
             bool supported = false, enabled = false;
             pVsr->IsSupported(&supported);

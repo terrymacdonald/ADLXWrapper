@@ -37,7 +37,7 @@ public class ADLX3DSettingsServicesFacadeTests
         }
     }
 
-    private All3DSettingsInfo GetAll3DSettingsOrSkip(ADLX3DSettingsServicesHelper helper)
+    private All3DSettingsDto GetAll3DSettingsOrSkip(ADLX3DSettingsServicesHelper helper)
     {
         var gpus = _fixture.System!.EnumerateGPUs().ToList();
         Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");

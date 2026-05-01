@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace ADLXWrapper
 {
     /// <summary>
-    /// Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.
+    /// Flattened display faÃ§ade with identity metadata, support-guarded feature accessors, and native list exposure.
     /// </summary>
     public sealed unsafe class ADLXDisplay : IDisposable
     {
         private ComPtr<IADLXDisplayServices> _displayServices;
         private ComPtr<IADLXDisplay> _display;
         private ComPtr<IADLXDesktopServices>? _desktopServices;
-        private readonly DisplayInfo _identity;
+        private readonly DisplayDto _identity;
         private bool _disposed;
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace ADLXWrapper
                 ADLXUtils.AddRefInterface((IntPtr)pDesktopServices);
                 _desktopServices = new ComPtr<IADLXDesktopServices>(pDesktopServices);
             }
-            _identity = new DisplayInfo(pDisplay);
+            _identity = new DisplayDto(pDisplay);
         }
 
         public string Name { get { ThrowIfDisposed();
@@ -147,7 +147,7 @@ namespace ADLXWrapper
             }
         }
 
-        public DisplayInfo GetDisplayInfo()
+        public DisplayDto GetDisplayDto()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -175,7 +175,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate custom resolutions as managed DTOs.
         /// </summary>
-        public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions()
+        public IEnumerable<DisplayResolutionDto> EnumerateCustomResolutions()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -373,7 +373,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Custom color info and application.
         /// </summary>
-        public CustomColorInfo GetCustomColor()
+        public CustomColorDto GetCustomColor()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -388,7 +388,7 @@ namespace ADLXWrapper
             }
         }
 
-        public void ApplyCustomColor(CustomColorInfo info)
+        public void ApplyCustomColor(CustomColorDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -396,7 +396,7 @@ namespace ADLXWrapper
             helper.ApplyCustomColor(_display.Get(), info);
         }
 
-        public bool TryApplyCustomColor(CustomColorInfo info)
+        public bool TryApplyCustomColor(CustomColorDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -407,7 +407,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Gamma info and reapply.
         /// </summary>
-        public GammaInfo GetGamma()
+        public GammaDto GetGamma()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -441,7 +441,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Gamut info and reapply.
         /// </summary>
-        public GamutInfo GetGamut()
+        public GamutDto GetGamut()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -475,7 +475,7 @@ namespace ADLXWrapper
         /// <summary>
         /// 3DLUT info and reapply.
         /// </summary>
-        public ThreeDLUTInfo GetThreeDLut()
+        public ThreeDLUTDto GetThreeDLut()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -509,7 +509,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Display connectivity experience info and application.
         /// </summary>
-        public ConnectivityExperienceInfo GetConnectivityExperience()
+        public ConnectivityExperienceDto GetConnectivityExperience()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -524,7 +524,7 @@ namespace ADLXWrapper
             }
         }
 
-        public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
+        public void ApplyConnectivityExperience(ConnectivityExperienceDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -532,7 +532,7 @@ namespace ADLXWrapper
             helper.ApplyConnectivityExperience(_display.Get(), info);
         }
 
-        public bool TryApplyConnectivityExperience(ConnectivityExperienceInfo info)
+        public bool TryApplyConnectivityExperience(ConnectivityExperienceDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -825,7 +825,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Desktop identity that contains this display (requires desktop services supplied to the display instance).
         /// </summary>
-        public DesktopInfo GetDesktopInfo()
+        public DesktopDto GetDesktopDto()
         {
             using var desktop = GetDesktop();
             return desktop.Identity;
@@ -848,7 +848,7 @@ namespace ADLXWrapper
         private ADLXDisplayServicesHelper CreateDisplayServicesHelper()
         {
             IADLXDesktopServices* desktopServices = _desktopServices.HasValue ? _desktopServices.Value.Get() : null;
-            // Helpers AddRef their inputs; safe to dispose helper without affecting this façade.
+            // Helpers AddRef their inputs; safe to dispose helper without affecting this faÃ§ade.
             return new ADLXDisplayServicesHelper(_displayServices.Get(), desktopServices);
         }
     }

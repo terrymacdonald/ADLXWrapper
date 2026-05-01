@@ -109,7 +109,7 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
     public void Performance_monitoring_sampling_interval_facade()
     {
         using var perf = GetPerfOrSkip();
-        IntRangeInfo range;
+        IntRangeDto range;
         try
         {
             range = perf.GetSamplingIntervalRange();

@@ -6,47 +6,47 @@ namespace ADLXWrapper
     /// <summary>
     /// Managed equivalent of ADLX_IntRange. Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct IntRangeInfo
+    public readonly struct IntRangeDto
     {
         public int MinValue { get; init; }
         public int MaxValue { get; init; }
         public int Step { get; init; }
 
         [JsonConstructor]
-        public IntRangeInfo(int minValue, int maxValue, int step)
+        public IntRangeDto(int minValue, int maxValue, int step)
         {
             MinValue = minValue;
             MaxValue = maxValue;
             Step = step;
         }
 
-        internal static IntRangeInfo FromNative(ADLX_IntRange r) =>
-            new IntRangeInfo(r.minValue, r.maxValue, r.step);
+        internal static IntRangeDto FromNative(ADLX_IntRange r) =>
+            new IntRangeDto(r.minValue, r.maxValue, r.step);
     }
 
     /// <summary>
     /// Managed equivalent of ADLX_LUID. Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct LuidInfo
+    public readonly struct LuidDto
     {
         public uint LowPart { get; init; }
         public int HighPart { get; init; }
 
         [JsonConstructor]
-        public LuidInfo(uint lowPart, int highPart)
+        public LuidDto(uint lowPart, int highPart)
         {
             LowPart = lowPart;
             HighPart = highPart;
         }
 
-        internal static LuidInfo FromNative(ADLX_LUID l) =>
-            new LuidInfo(l.lowPart, l.highPart);
+        internal static LuidDto FromNative(ADLX_LUID l) =>
+            new LuidDto(l.lowPart, l.highPart);
     }
 
     /// <summary>
     /// Managed equivalent of ADLX_RegammaCoeff. Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct RegammaCoeffInfo
+    public readonly struct RegammaCoeffDto
     {
         public int CoefficientA0 { get; init; }
         public int CoefficientA1 { get; init; }
@@ -55,7 +55,7 @@ namespace ADLXWrapper
         public int Gamma { get; init; }
 
         [JsonConstructor]
-        public RegammaCoeffInfo(int coefficientA0, int coefficientA1, int coefficientA2, int coefficientA3, int gamma)
+        public RegammaCoeffDto(int coefficientA0, int coefficientA1, int coefficientA2, int coefficientA3, int gamma)
         {
             CoefficientA0 = coefficientA0;
             CoefficientA1 = coefficientA1;
@@ -64,8 +64,8 @@ namespace ADLXWrapper
             Gamma = gamma;
         }
 
-        internal static RegammaCoeffInfo FromNative(ADLX_RegammaCoeff c) =>
-            new RegammaCoeffInfo(c.coefficientA0, c.coefficientA1, c.coefficientA2, c.coefficientA3, c.gamma);
+        internal static RegammaCoeffDto FromNative(ADLX_RegammaCoeff c) =>
+            new RegammaCoeffDto(c.coefficientA0, c.coefficientA1, c.coefficientA2, c.coefficientA3, c.gamma);
 
         internal ADLX_RegammaCoeff ToNative() => new ADLX_RegammaCoeff
         {
@@ -80,7 +80,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Managed equivalent of ADLX_GammaRamp (768-entry ushort LUT). Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct GammaRampInfo
+    public readonly struct GammaRampDto
     {
         private readonly IReadOnlyList<ushort> _values;
 
@@ -90,17 +90,17 @@ namespace ADLXWrapper
         public IReadOnlyList<ushort> Values => _values ?? System.Array.Empty<ushort>();
 
         [JsonConstructor]
-        public GammaRampInfo(IReadOnlyList<ushort> values)
+        public GammaRampDto(IReadOnlyList<ushort> values)
         {
             _values = values;
         }
 
-        internal static GammaRampInfo FromNative(ADLX_GammaRamp ramp)
+        internal static GammaRampDto FromNative(ADLX_GammaRamp ramp)
         {
             var values = new List<ushort>(768);
             for (int i = 0; i < 768; i++)
                 values.Add(ramp.gamma[i]);
-            return new GammaRampInfo(values);
+            return new GammaRampDto(values);
         }
 
         internal ADLX_GammaRamp ToNative()
@@ -117,20 +117,20 @@ namespace ADLXWrapper
     /// <summary>
     /// Managed equivalent of ADLX_Point. Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct PointInfo
+    public readonly struct PointDto
     {
         public int X { get; init; }
         public int Y { get; init; }
 
         [JsonConstructor]
-        public PointInfo(int x, int y)
+        public PointDto(int x, int y)
         {
             X = x;
             Y = y;
         }
 
-        internal static PointInfo FromNative(ADLX_Point p) =>
-            new PointInfo(p.x, p.y);
+        internal static PointDto FromNative(ADLX_Point p) =>
+            new PointDto(p.x, p.y);
 
         internal ADLX_Point ToNative() => new ADLX_Point { x = X, y = Y };
     }
@@ -138,25 +138,25 @@ namespace ADLXWrapper
     /// <summary>
     /// Managed equivalent of ADLX_GamutColorSpace. Safe for JSON serialisation; contains no native pointers.
     /// </summary>
-    public readonly struct GamutColorSpaceInfo
+    public readonly struct GamutColorSpaceDto
     {
-        public PointInfo Red { get; init; }
-        public PointInfo Green { get; init; }
-        public PointInfo Blue { get; init; }
+        public PointDto Red { get; init; }
+        public PointDto Green { get; init; }
+        public PointDto Blue { get; init; }
 
         [JsonConstructor]
-        public GamutColorSpaceInfo(PointInfo red, PointInfo green, PointInfo blue)
+        public GamutColorSpaceDto(PointDto red, PointDto green, PointDto blue)
         {
             Red = red;
             Green = green;
             Blue = blue;
         }
 
-        internal static GamutColorSpaceInfo FromNative(ADLX_GamutColorSpace cs) =>
-            new GamutColorSpaceInfo(
-                PointInfo.FromNative(cs.red),
-                PointInfo.FromNative(cs.green),
-                PointInfo.FromNative(cs.blue));
+        internal static GamutColorSpaceDto FromNative(ADLX_GamutColorSpace cs) =>
+            new GamutColorSpaceDto(
+                PointDto.FromNative(cs.red),
+                PointDto.FromNative(cs.green),
+                PointDto.FromNative(cs.blue));
 
         internal ADLX_GamutColorSpace ToNative() => new ADLX_GamutColorSpace
         {

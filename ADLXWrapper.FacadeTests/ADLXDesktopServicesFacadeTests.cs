@@ -98,7 +98,7 @@ public class ADLXDesktopServicesFacadeTests
         using var desktop = desktops[0];
         DisposeRest(desktops);
 
-        var infos = desktop.EnumerateDisplayInfosForDesktop();
+        var infos = desktop.EnumerateDisplayDtosForDesktop();
         Skip.If(infos.Count == 0, "No display infos on this desktop.");
         Assert.True(infos.All(i => i.NativeResolutionWidth > 0 && i.NativeResolutionHeight > 0));
     }

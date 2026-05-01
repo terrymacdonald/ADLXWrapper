@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace ADLXWrapper
 {
     /// <summary>
-    /// Flattened desktop façade with identity metadata and display enumeration helpers.
+    /// Flattened desktop faÃ§ade with identity metadata and display enumeration helpers.
     /// </summary>
     public sealed unsafe class ADLXDesktop : IDisposable
     {
         private ComPtr<IADLXDesktopServices> _desktopServices;
         private ComPtr<IADLXDesktop> _desktop;
         private ComPtr<IADLXDisplayServices>? _displayServices;
-        private readonly DesktopInfo _identity;
+        private readonly DesktopDto _identity;
         private bool _disposed;
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace ADLXWrapper
                 ADLXUtils.AddRefInterface((IntPtr)pDisplayServices);
                 _displayServices = new ComPtr<IADLXDisplayServices>(pDisplayServices);
             }
-            _identity = new DesktopInfo(pDesktop);
+            _identity = new DesktopDto(pDesktop);
         }
 
         public ADLX_DESKTOP_TYPE Type { get { ThrowIfDisposed();
@@ -49,13 +49,13 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.Orientation; } }
         public bool IsEyefinity { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.Type == ADLX_DESKTOP_TYPE.DESKTOP_EYEFINITY; } }
-        public DesktopInfo Identity { get { ThrowIfDisposed();
+        public DesktopDto Identity { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity; } }
 
         /// <summary>
         /// Managed enumeration of display identities on this desktop.
         /// </summary>
-        public IReadOnlyList<DisplayInfo> EnumerateDisplayInfosForDesktop()
+        public IReadOnlyList<DisplayDto> EnumerateDisplayDtosForDesktop()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -64,7 +64,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Façade enumeration of displays on this desktop (pointer-free).
+        /// FaÃ§ade enumeration of displays on this desktop (pointer-free).
         /// </summary>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForDesktop()
         {
@@ -115,7 +115,7 @@ namespace ADLXWrapper
             helper.RemoveDesktopListEventListener(handle, disposeHandle);
         }
 
-        public DesktopInfo GetDesktopInfo()
+        public DesktopDto GetDesktopDto()
         {   
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -137,7 +137,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerate displays that compose this Eyefinity desktop.
         /// </summary>
-        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplayInfosForDesktop()
+        public IReadOnlyList<DisplayDto> EnumerateEyefinityDisplayDtosForDesktop()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();

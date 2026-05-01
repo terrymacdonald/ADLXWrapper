@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace ADLXWrapper
 {
     /// <summary>
-    /// Flattened GPU façade with identity metadata and topology listeners.
+    /// Flattened GPU faÃ§ade with identity metadata and topology listeners.
     /// </summary>
     public sealed unsafe class ADLXGPU : IDisposable
     {
         private ComPtr<IADLXGPU> _gpu;
         private ComPtr<IADLXDisplayServices>? _displayServices;
         private ComPtr<IADLXDesktopServices>? _desktopServices;
-        private readonly GpuInfo _identity;
+        private readonly GpuDto _identity;
         private bool _disposed;
 
         /// <summary>
@@ -34,10 +34,10 @@ namespace ADLXWrapper
                 ADLXUtils.AddRefInterface((IntPtr)pDesktopServices);
                 _desktopServices = new ComPtr<IADLXDesktopServices>(pDesktopServices);
             }
-            _identity = new GpuInfo(pGpu);
+            _identity = new GpuDto(pGpu);
         }
 
-        public GpuInfo Identity { get { ThrowIfDisposed();
+        public GpuDto Identity { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity; } }
         public string Name { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.Name; } }
@@ -83,7 +83,7 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareVersion; } }
         public string AMDWindowsDriverVersion { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.AMDWindowsDriverVersion; } }
-        public LuidInfo Luid { get { ThrowIfDisposed();
+        public LuidDto Luid { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.Luid; } }
 
         /// <summary>

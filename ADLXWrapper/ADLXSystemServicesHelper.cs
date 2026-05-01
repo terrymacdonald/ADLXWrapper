@@ -813,18 +813,18 @@ namespace ADLXWrapper
         /// <returns>Sequence of GPU info records.</returns>
         /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public IEnumerable<GpuInfo> EnumerateGPUs()
+        public IEnumerable<GpuDto> EnumerateGPUs()
         {
             ThrowIfDisposed();
             using var gpuList = new ComPtr<IADLXGPUList>(EnumerateGPUsNative());
             var count = gpuList.Get()->Size();
-            var results = new List<GpuInfo>((int)count);
+            var results = new List<GpuDto>((int)count);
             for (uint i = 0; i < count; i++)
             {
                 IADLXGPU* pGpu = null;
                 gpuList.Get()->At(i, &pGpu);
                 using var gpu = new ComPtr<IADLXGPU>(pGpu);
-                results.Add(new GpuInfo(gpu.Get()));
+                results.Add(new GpuDto(gpu.Get()));
             }
 
             return results;
@@ -837,11 +837,11 @@ namespace ADLXWrapper
         /// <returns>GPU info record.</returns>
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        internal GpuInfo GetGpuInfo(IADLXGPU* gpu)
+        internal GpuDto GetGpuDto(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
-            return new GpuInfo(gpu);
+            return new GpuDto(gpu);
         }
 
         /// <summary>
@@ -1108,7 +1108,7 @@ namespace ADLXWrapper
     }
 
     #region GPU DTO
-    public readonly struct GpuInfo
+    public readonly struct GpuDto
     {
         public string Name { get; init; }
         public string VendorId { get; init; }
@@ -1132,10 +1132,10 @@ namespace ADLXWrapper
         public string DriverVersion { get; init; }
         public string AMDSoftwareVersion { get; init; }
         public string AMDWindowsDriverVersion { get; init; }
-        public LuidInfo Luid { get; init; }
+        public LuidDto Luid { get; init; }
 
         [JsonConstructor]
-        public GpuInfo(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidInfo? luid = null)
+        public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidDto? luid = null)
         {
             Name = name;
             VendorId = vendorId;
@@ -1162,7 +1162,7 @@ namespace ADLXWrapper
             Luid = luid ?? default;
         }
 
-        internal unsafe GpuInfo(IADLXGPU* pGpu)
+        internal unsafe GpuDto(IADLXGPU* pGpu)
         {
             static void EnsureSuccess(ADLX_RESULT result, string message)
             {
@@ -1295,7 +1295,7 @@ namespace ADLXWrapper
             DriverVersion = driverVersion;
             AMDSoftwareVersion = amdSoftwareVersion;
             AMDWindowsDriverVersion = amdWindowsDriverVersion;
-            Luid = LuidInfo.FromNative(luid);
+            Luid = LuidDto.FromNative(luid);
         }
     }
     #endregion

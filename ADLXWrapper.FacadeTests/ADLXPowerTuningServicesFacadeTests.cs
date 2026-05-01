@@ -49,7 +49,7 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_smart_shift_max_facade()
     {
         using var power = GetPowerOrSkip();
-        SmartShiftMaxInfo info;
+        SmartShiftMaxDto info;
         try
         {
             info = power.GetSmartShiftMax();
@@ -67,7 +67,7 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_smart_shift_eco_facade()
     {
         using var power = GetPowerOrSkip();
-        SmartShiftEcoInfo info;
+        SmartShiftEcoDto info;
         try
         {
             info = power.GetSmartShiftEco();

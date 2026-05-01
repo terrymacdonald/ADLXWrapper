@@ -222,12 +222,12 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public SmartShiftMaxInfo GetSmartShiftMax()
+        public SmartShiftMaxDto GetSmartShiftMax()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
-            return new SmartShiftMaxInfo(ssm.Get());
+            return new SmartShiftMaxDto(ssm.Get());
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace ADLXWrapper
             return ssm; // caller wraps/disposes
         }
 
-        public void ApplySmartShiftMax(SmartShiftMaxInfo info)
+        public void ApplySmartShiftMax(SmartShiftMaxDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -261,7 +261,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply SmartShift Max; returns false when the feature is unsupported.
         /// </summary>
-        public bool TryApplySmartShiftMax(SmartShiftMaxInfo info)
+        public bool TryApplySmartShiftMax(SmartShiftMaxDto info)
         {
             try
             {
@@ -279,7 +279,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public SmartShiftEcoInfo GetSmartShiftEco()
+        public SmartShiftEcoDto GetSmartShiftEco()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -291,10 +291,10 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Eco interface");
             using var ecoPtr = new ComPtr<IADLXSmartShiftEco>(eco);
-            return new SmartShiftEcoInfo(ecoPtr.Get());
+            return new SmartShiftEcoDto(ecoPtr.Get());
         }
 
-        public void ApplySmartShiftEco(SmartShiftEcoInfo info)
+        public void ApplySmartShiftEco(SmartShiftEcoDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -313,7 +313,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply SmartShift Eco; returns false when the feature is unsupported.
         /// </summary>
-        public bool TryApplySmartShiftEco(SmartShiftEcoInfo info)
+        public bool TryApplySmartShiftEco(SmartShiftEcoDto info)
         {
             try
             {
@@ -326,7 +326,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
+        internal ManualPowerTuningDto GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -340,13 +340,13 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get manual power tuning interface");
             using var manualPower = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)manual);
-            return new ManualPowerTuningInfo(manualPower.Get());
+            return new ManualPowerTuningDto(manualPower.Get());
         }
 
         /// <summary>
         /// Gets manual power tuning info for the GPU with the specified unique id.
         /// </summary>
-        public ManualPowerTuningInfo GetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper)
+        public ManualPowerTuningDto GetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -358,13 +358,13 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to get manual power tuning info for the GPU with the specified unique id.
         /// </summary>
-        public bool TryGetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, out ManualPowerTuningInfo info)
+        public bool TryGetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, out ManualPowerTuningDto info)
         {
             try { info = GetManualPowerTuning(gpuUniqueId, tuningHelper); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
-        internal void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+        internal void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -385,7 +385,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply manual power tuning to an existing interface; returns false when unsupported.
         /// </summary>
-        internal bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+        internal bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningDto info)
         {
             try
             {
@@ -398,7 +398,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+        internal void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -418,7 +418,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply manual power tuning via tuning services; returns false when unsupported.
         /// </summary>
-        internal bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+        internal bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningDto info)
         {
             try
             {
@@ -434,7 +434,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Applies manual power tuning settings for the GPU with the specified unique id.
         /// </summary>
-        public void ApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningInfo info)
+        public void ApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -449,7 +449,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply manual power tuning settings for the GPU with the specified unique id; returns false when unsupported.
         /// </summary>
-        public bool TryApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningInfo info)
+        public bool TryApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningDto info)
         {
             try { ApplyManualPowerTuning(gpuUniqueId, tuningHelper, info); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
@@ -554,15 +554,15 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for SmartShift Max.
     /// </summary>
-    public readonly struct SmartShiftMaxInfo
+    public readonly struct SmartShiftMaxDto
     {
         public bool IsSupported { get; init; }
         public ADLX_SSM_BIAS_MODE BiasMode { get; init; }
-        public IntRangeInfo BiasRange { get; init; }
+        public IntRangeDto BiasRange { get; init; }
         public int BiasValue { get; init; }
 
         [JsonConstructor]
-        public SmartShiftMaxInfo(bool isSupported, ADLX_SSM_BIAS_MODE biasMode, IntRangeInfo biasRange, int biasValue)
+        public SmartShiftMaxDto(bool isSupported, ADLX_SSM_BIAS_MODE biasMode, IntRangeDto biasRange, int biasValue)
         {
             IsSupported = isSupported;
             BiasMode = biasMode;
@@ -570,7 +570,7 @@ namespace ADLXWrapper
             BiasValue = biasValue;
         }
 
-        internal unsafe SmartShiftMaxInfo(IADLXSmartShiftMax* smartShiftMax)
+        internal unsafe SmartShiftMaxDto(IADLXSmartShiftMax* smartShiftMax)
         {
             bool supported = false;
             smartShiftMax->IsSupported(&supported);
@@ -582,7 +582,7 @@ namespace ADLXWrapper
 
             ADLX_IntRange range = default;
             smartShiftMax->GetBiasRange(&range);
-            BiasRange = IntRangeInfo.FromNative(range);
+            BiasRange = IntRangeDto.FromNative(range);
 
             int bias = 0;
             smartShiftMax->GetBias(&bias);
@@ -593,19 +593,19 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for SmartShift Eco.
     /// </summary>
-    public readonly struct SmartShiftEcoInfo
+    public readonly struct SmartShiftEcoDto
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
 
         [JsonConstructor]
-        public SmartShiftEcoInfo(bool isSupported, bool isEnabled)
+        public SmartShiftEcoDto(bool isSupported, bool isEnabled)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
         }
 
-        internal unsafe SmartShiftEcoInfo(IADLXSmartShiftEco* smartShiftEco)
+        internal unsafe SmartShiftEcoDto(IADLXSmartShiftEco* smartShiftEco)
         {
             bool supported = false, enabled = false;
             smartShiftEco->IsSupported(&supported);
@@ -618,18 +618,18 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for Manual Power Tuning.
     /// </summary>
-    public readonly struct ManualPowerTuningInfo
+    public readonly struct ManualPowerTuningDto
     {
         public bool PowerLimitSupported { get; init; }
-        public IntRangeInfo PowerLimitRange { get; init; }
+        public IntRangeDto PowerLimitRange { get; init; }
         public int PowerLimitValue { get; init; }
         public bool TdcLimitSupported { get; init; }
-        public IntRangeInfo TdcLimitRange { get; init; }
+        public IntRangeDto TdcLimitRange { get; init; }
         public int TdcLimitValue { get; init; }
         public int TdcLimitDefaultValue { get; init; }
 
         [JsonConstructor]
-        public ManualPowerTuningInfo(bool powerLimitSupported, IntRangeInfo powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeInfo tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
+        public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
         {
             PowerLimitSupported = powerLimitSupported;
             PowerLimitRange = powerLimitRange;
@@ -640,14 +640,14 @@ namespace ADLXWrapper
             TdcLimitDefaultValue = tdcLimitDefaultValue;
         }
 
-        internal unsafe ManualPowerTuningInfo(IADLXManualPowerTuning* manualPower)
+        internal unsafe ManualPowerTuningDto(IADLXManualPowerTuning* manualPower)
         {
             ADLX_IntRange powerRange = default;
             int powerValue = 0;
             var r1 = manualPower->GetPowerLimitRange(&powerRange);
             var r2 = manualPower->GetPowerLimit(&powerValue);
             PowerLimitSupported = r1 == ADLX_RESULT.ADLX_OK && r2 == ADLX_RESULT.ADLX_OK;
-            PowerLimitRange = IntRangeInfo.FromNative(powerRange);
+            PowerLimitRange = IntRangeDto.FromNative(powerRange);
             PowerLimitValue = powerValue;
 
             if (ADLXUtils.TryQueryInterface((IntPtr)manualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
@@ -662,7 +662,7 @@ namespace ADLXWrapper
                 manualPower1.Get()->GetTDCLimitRange(&tdcRange);
                 manualPower1.Get()->GetTDCLimit(&tdcValue);
                 manualPower1.Get()->GetTDCLimitDefault(&tdcDefault);
-                TdcLimitRange = IntRangeInfo.FromNative(tdcRange);
+                TdcLimitRange = IntRangeDto.FromNative(tdcRange);
                 TdcLimitValue = tdcValue;
                 TdcLimitDefaultValue = tdcDefault;
             }

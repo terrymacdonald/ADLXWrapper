@@ -237,12 +237,12 @@ namespace ADLXWrapper
         /// <param name="display">Native display pointer.</param>
         /// <exception cref="ArgumentNullException">If <paramref name="display"/> is null.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        internal DisplayInfo GetDisplayInfo(IADLXDisplay* display)
+        internal DisplayDto GetDisplayDto(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (display == null) throw new ArgumentNullException(nameof(display));
-            return new DisplayInfo(display);
+            return new DisplayDto(display);
         }
 
         /// <summary>
@@ -972,14 +972,14 @@ namespace ADLXWrapper
             }
         }
 
-        internal CustomColorInfo GetCustomColor(IADLXDisplay* display)
+        internal CustomColorDto GetCustomColor(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.GetCustomColor(GetHighestDisplayServices(), display);
         }
 
-        internal void ApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+        internal void ApplyCustomColor(IADLXDisplay* display, CustomColorDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -993,7 +993,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyCustomColor(customColor.Get(), info);
         }
 
-        internal bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+        internal bool TryApplyCustomColor(IADLXDisplay* display, CustomColorDto info)
         {
             try
             {
@@ -1006,7 +1006,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal GammaInfo GetGamma(IADLXDisplay* display)
+        internal GammaDto GetGamma(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1040,7 +1040,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal GamutInfo GetGamut(IADLXDisplay* display)
+        internal GamutDto GetGamut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1074,7 +1074,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal ThreeDLUTInfo GetThreeDLut(IADLXDisplay* display)
+        internal ThreeDLUTDto GetThreeDLut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1108,7 +1108,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal ConnectivityExperienceInfo GetConnectivityExperience(IADLXDisplay* display)
+        internal ConnectivityExperienceDto GetConnectivityExperience(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1116,7 +1116,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetDisplayConnectivityExperience((IADLXDisplayServices*)services, display);
         }
 
-        internal void ApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+        internal void ApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1131,7 +1131,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyDisplayConnectivityExperience(conn.Get(), info);
         }
 
-        internal bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+        internal bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceDto info)
         {
             try
             {
@@ -1237,7 +1237,7 @@ namespace ADLXWrapper
             }
         }
 
-        internal IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplay* display)
+        internal IEnumerable<DisplayResolutionDto> EnumerateCustomResolutions(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1251,21 +1251,21 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetCustomResolutionListNative(GetHighestDisplayServices(), display);
         }
 
-        internal CustomResolutionInfo GetCustomResolution(IADLXDisplay* display)
+        internal CustomResolutionDto GetCustomResolution(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.GetCustomResolution(GetHighestDisplayServices(), display);
         }
 
-        public void ApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
+        public void ApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionDto info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             DisplaySettingsOps.ApplyCustomResolution(customRes, info);
         }
 
-        public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
+        public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionDto info)
         {
             try
             {
@@ -1283,7 +1283,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Gamma settings for a specific display.
             /// </summary>
-            internal static GammaInfo GetGamma(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static GammaDto GetGamma(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1295,13 +1295,13 @@ namespace ADLXWrapper
                 if (result != ADLX_RESULT.ADLX_OK) 
                     throw new ADLXException(result, "Failed to get Gamma interface");
                 using var gamma = new ComPtr<IADLXDisplayGamma>(pGamma);
-                return new GammaInfo(gamma.Get());
+                return new GammaDto(gamma.Get());
             }
     
             /// <summary>
-            /// Applies the settings from a GammaInfo object to the hardware.
+            /// Applies the settings from a GammaDto object to the hardware.
             /// </summary>
-            public static void ApplyGamma(IADLXDisplayGamma* pGamma, GammaInfo info)
+            public static void ApplyGamma(IADLXDisplayGamma* pGamma, GammaDto info)
             {
                 if (pGamma == null) throw new ArgumentNullException(nameof(pGamma));
                 if (info.IsSupported == false) return;
@@ -1328,13 +1328,13 @@ namespace ADLXWrapper
             public static void ReapplyGamma(IADLXDisplayGamma* pGamma)
             {
                 if (pGamma == null) throw new ArgumentNullException(nameof(pGamma));
-                ApplyGamma(pGamma, new GammaInfo(pGamma));
+                ApplyGamma(pGamma, new GammaDto(pGamma));
             }
     
             /// <summary>
             /// Gets the Gamut settings for a specific display.
             /// </summary>
-            internal static GamutInfo GetGamut(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static GamutDto GetGamut(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1346,13 +1346,13 @@ namespace ADLXWrapper
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get Gamut interface");
                 using var gamut = new ComPtr<IADLXDisplayGamut>(pGamut);
-                return new GamutInfo(gamut.Get());
+                return new GamutDto(gamut.Get());
             }
     
             /// <summary>
-            /// Applies the settings from a GamutInfo object to the hardware.
+            /// Applies the settings from a GamutDto object to the hardware.
             /// </summary>
-            public static void ApplyGamut(IADLXDisplayGamut* pGamut, GamutInfo info)
+            public static void ApplyGamut(IADLXDisplayGamut* pGamut, GamutDto info)
             {
                 if (pGamut == null) throw new ArgumentNullException(nameof(pGamut));
                 if (info.IsGamutSupported == false && info.IsWhitePointSupported == false) return;
@@ -1416,13 +1416,13 @@ namespace ADLXWrapper
             {
                 if (pGamut == null) throw new ArgumentNullException(nameof(pGamut));
 
-                ApplyGamut(pGamut, new GamutInfo(pGamut));
+                ApplyGamut(pGamut, new GamutDto(pGamut));
             }
     
             /// <summary>
             /// Gets the 3DLUT settings for a specific display.
             /// </summary>
-            internal static ThreeDLUTInfo Get3DLUT(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static ThreeDLUTDto Get3DLUT(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1434,13 +1434,13 @@ namespace ADLXWrapper
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get 3DLUT interface");
                 using var lut = new ComPtr<IADLXDisplay3DLUT>(pLut);
-                return new ThreeDLUTInfo(lut.Get());
+                return new ThreeDLUTDto(lut.Get());
             }
     
             /// <summary>
-            /// Applies the settings from a ThreeDLUTInfo object to the hardware.
+            /// Applies the settings from a ThreeDLUTDto object to the hardware.
             /// </summary>
-            public static void Apply3DLUT(IADLXDisplay3DLUT* p3dLut, ThreeDLUTInfo info)
+            public static void Apply3DLUT(IADLXDisplay3DLUT* p3dLut, ThreeDLUTDto info)
             {
                 if (p3dLut == null) throw new ArgumentNullException(nameof(p3dLut));
                 if (info.IsSceSupported == false && info.IsSceVividGamingSupported == false && info.IsSceDynamicContrastSupported == false) return;
@@ -1476,13 +1476,13 @@ namespace ADLXWrapper
             public static void Reapply3DLUT(IADLXDisplay3DLUT* p3dLut)
             {
                 if (p3dLut == null) throw new ArgumentNullException(nameof(p3dLut));
-                Apply3DLUT(p3dLut, new ThreeDLUTInfo(p3dLut));
+                Apply3DLUT(p3dLut, new ThreeDLUTDto(p3dLut));
             }
     
             /// <summary>
             /// Gets the Display Connectivity Experience settings for a specific display.
             /// </summary>
-            internal static ConnectivityExperienceInfo GetDisplayConnectivityExperience(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static ConnectivityExperienceDto GetDisplayConnectivityExperience(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1496,13 +1496,13 @@ namespace ADLXWrapper
                     throw new ADLXException(result, "Failed to get Display Connectivity Experience interface");
     
                 using var connectivity = new ComPtr<IADLXDisplayConnectivityExperience>(pConn);
-                return new ConnectivityExperienceInfo(connectivity.Get());
+                return new ConnectivityExperienceDto(connectivity.Get());
             }
     
             /// <summary>
-            /// Applies the settings from a ConnectivityExperienceInfo object to the hardware.
+            /// Applies the settings from a ConnectivityExperienceDto object to the hardware.
             /// </summary>
-            public static void ApplyDisplayConnectivityExperience(IADLXDisplayConnectivityExperience* pConnectivity, ConnectivityExperienceInfo info)
+            public static void ApplyDisplayConnectivityExperience(IADLXDisplayConnectivityExperience* pConnectivity, ConnectivityExperienceDto info)
             {
                 if (pConnectivity == null) throw new ArgumentNullException(nameof(pConnectivity));
     
@@ -1548,7 +1548,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Custom Resolution settings for a specific display.
             /// </summary>
-            internal static CustomResolutionInfo GetCustomResolution(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static CustomResolutionDto GetCustomResolution(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1561,7 +1561,7 @@ namespace ADLXWrapper
                     throw new ADLXException(result, "Failed to get Custom Resolution interface");
     
                 using var customRes = new ComPtr<IADLXDisplayCustomResolution>(pCustomRes);
-                return new CustomResolutionInfo(customRes.Get());
+                return new CustomResolutionDto(customRes.Get());
             }
     
             /// <summary>
@@ -1593,19 +1593,19 @@ namespace ADLXWrapper
             /// <summary>
             /// Enumerates custom resolutions for a display.
             /// </summary>
-            internal static IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static IEnumerable<DisplayResolutionDto> EnumerateCustomResolutions(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
-                if (pDisplayServices == null || pDisplay == null) return Array.Empty<DisplayResolutionInfo>();
+                if (pDisplayServices == null || pDisplay == null) return Array.Empty<DisplayResolutionDto>();
     
                 using var list = new ComPtr<IADLXDisplayResolutionList>(GetCustomResolutionListNative(pDisplayServices, pDisplay));
                 var count = list.Get()->Size();
-                var resolutions = new List<DisplayResolutionInfo>((int)count);
+                var resolutions = new List<DisplayResolutionDto>((int)count);
                 for (uint i = 0; i < count; i++)
                 {
                     IADLXDisplayResolution* pRes;
                     list.Get()->At(i, &pRes);
                     using var res = new ComPtr<IADLXDisplayResolution>(pRes);
-                    resolutions.Add(new DisplayResolutionInfo(res.Get()));
+                    resolutions.Add(new DisplayResolutionDto(res.Get()));
                 }
     
                 return resolutions;
@@ -1614,7 +1614,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Applies a custom resolution.
             /// </summary>
-            public static void ApplyCustomResolution(IADLXDisplayCustomResolution* pCustomRes, DisplayResolutionInfo info)
+            public static void ApplyCustomResolution(IADLXDisplayCustomResolution* pCustomRes, DisplayResolutionDto info)
             {
                 if (pCustomRes == null) throw new ArgumentNullException(nameof(pCustomRes));
     
@@ -1647,7 +1647,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Custom Color settings for a specific display.
             /// </summary>
-            internal static CustomColorInfo GetCustomColor(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static CustomColorDto GetCustomColor(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1660,13 +1660,13 @@ namespace ADLXWrapper
                     throw new ADLXException(result, "Failed to get Custom Color interface");
     
                 using var customColor = new ComPtr<IADLXDisplayCustomColor>(pCustomColor);
-                return new CustomColorInfo(customColor.Get());
+                return new CustomColorDto(customColor.Get());
             }
     
             /// <summary>
-            /// Applies the settings from a CustomColorInfo object to the hardware.
+            /// Applies the settings from a CustomColorDto object to the hardware.
             /// </summary>
-            public static void ApplyCustomColor(IADLXDisplayCustomColor* pCustomColor, CustomColorInfo info)
+            public static void ApplyCustomColor(IADLXDisplayCustomColor* pCustomColor, CustomColorDto info)
             {
                 if (pCustomColor == null) throw new ArgumentNullException(nameof(pCustomColor));
                 if (info.IsSupported == false) return;
@@ -2382,7 +2382,7 @@ namespace ADLXWrapper
     /// <summary>
     /// Represents the collected information for a display.
     /// </summary>
-    public readonly struct DisplayInfo
+    public readonly struct DisplayDto
     {
         public string Name { get; init; }
         public int NativeResolutionWidth { get; init; }
@@ -2398,7 +2398,7 @@ namespace ADLXWrapper
         public int GpuUniqueId { get; init; }
 
         [JsonConstructor]
-        public DisplayInfo(string name, int nativeResolutionWidth, int nativeResolutionHeight, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
+        public DisplayDto(string name, int nativeResolutionWidth, int nativeResolutionHeight, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
         {
             Name = name;
             NativeResolutionWidth = nativeResolutionWidth;
@@ -2414,7 +2414,7 @@ namespace ADLXWrapper
             GpuUniqueId = gpuUniqueId;
         }
 
-        internal unsafe DisplayInfo(IADLXDisplay* pDisplay)
+        internal unsafe DisplayDto(IADLXDisplay* pDisplay)
         {
             static void EnsureSuccess(ADLX_RESULT result, string message)
             {
@@ -2472,7 +2472,7 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct GammaInfo
+    public readonly struct GammaDto
     {
         public bool IsSupported { get; init; }
         public bool IsCurrentReGammaSRGB { get; init; }
@@ -2481,14 +2481,14 @@ namespace ADLXWrapper
         public bool IsCurrentReGammaPQ2084 { get; init; }
         public bool IsCurrentReGamma36 { get; init; }
         public bool HasRegammaCoefficient { get; init; }
-        public RegammaCoeffInfo RegammaCoefficient { get; init; }
+        public RegammaCoeffDto RegammaCoefficient { get; init; }
         public bool HasReGammaRamp { get; init; }
-        public GammaRampInfo ReGammaRamp { get; init; }
+        public GammaRampDto ReGammaRamp { get; init; }
         public bool HasDeGammaRamp { get; init; }
-        public GammaRampInfo DeGammaRamp { get; init; }
+        public GammaRampDto DeGammaRamp { get; init; }
 
         [JsonConstructor]
-        public GammaInfo(bool isSupported, bool isCurrentReGammaSRGB, bool isCurrentReGammaBT709, bool isCurrentReGammaPQ, bool isCurrentReGammaPQ2084, bool isCurrentReGamma36, bool hasRegammaCoefficient, RegammaCoeffInfo regammaCoefficient, bool hasReGammaRamp, GammaRampInfo reGammaRamp, bool hasDeGammaRamp, GammaRampInfo deGammaRamp)
+        public GammaDto(bool isSupported, bool isCurrentReGammaSRGB, bool isCurrentReGammaBT709, bool isCurrentReGammaPQ, bool isCurrentReGammaPQ2084, bool isCurrentReGamma36, bool hasRegammaCoefficient, RegammaCoeffDto regammaCoefficient, bool hasReGammaRamp, GammaRampDto reGammaRamp, bool hasDeGammaRamp, GammaRampDto deGammaRamp)
         {
             IsSupported = isSupported;
             IsCurrentReGammaSRGB = isCurrentReGammaSRGB;
@@ -2504,7 +2504,7 @@ namespace ADLXWrapper
             DeGammaRamp = deGammaRamp;
         }
 
-        internal unsafe GammaInfo(IADLXDisplayGamma* pGamma)
+        internal unsafe GammaDto(IADLXDisplayGamma* pGamma)
         {
             if (pGamma == null) throw new ArgumentNullException(nameof(pGamma));
 
@@ -2542,7 +2542,7 @@ namespace ADLXWrapper
                 ADLX_RegammaCoeff coeff = default;
                 if (pGamma->GetGammaCoefficient(&coeff) == ADLX_RESULT.ADLX_OK)
                 {
-                    RegammaCoefficient = RegammaCoeffInfo.FromNative(coeff);
+                    RegammaCoefficient = RegammaCoeffDto.FromNative(coeff);
                 }
             }
 
@@ -2559,7 +2559,7 @@ namespace ADLXWrapper
                 ADLX_GammaRamp ramp = default;
                 if (pGamma->GetGammaRamp(&ramp) == ADLX_RESULT.ADLX_OK)
                 {
-                    ReGammaRamp = GammaRampInfo.FromNative(ramp);
+                    ReGammaRamp = GammaRampDto.FromNative(ramp);
                 }
             }
 
@@ -2568,13 +2568,13 @@ namespace ADLXWrapper
                 ADLX_GammaRamp ramp = default;
                 if (pGamma->GetGammaRamp(&ramp) == ADLX_RESULT.ADLX_OK)
                 {
-                    DeGammaRamp = GammaRampInfo.FromNative(ramp);
+                    DeGammaRamp = GammaRampDto.FromNative(ramp);
                 }
             }
         }
     }
 
-    public readonly struct GamutInfo
+    public readonly struct GamutDto
     {
         public bool IsWhitePointSupported { get; init; }
         public bool IsGamutSupported { get; init; }
@@ -2589,12 +2589,12 @@ namespace ADLXWrapper
         public bool IsCurrentCieRgb { get; init; }
         public bool IsCurrent2020 { get; init; }
         public bool IsCurrentCustomColorSpace { get; init; }
-        public GamutColorSpaceInfo CurrentGamutSpace { get; init; }
-        public PointInfo WhitePoint { get; init; }
+        public GamutColorSpaceDto CurrentGamutSpace { get; init; }
+        public PointDto WhitePoint { get; init; }
         public bool HasWhitePoint { get; init; }
 
         [JsonConstructor]
-        public GamutInfo(bool isWhitePointSupported, bool isGamutSupported, bool isCurrent5000K, bool isCurrent6500K, bool isCurrent7500K, bool isCurrent9300K, bool isCurrentCustomWhitePoint, bool isCurrent709, bool isCurrent601, bool isCurrentAdobe, bool isCurrentCieRgb, bool isCurrent2020, bool isCurrentCustomColorSpace, GamutColorSpaceInfo currentGamutSpace, PointInfo whitePoint, bool hasWhitePoint)
+        public GamutDto(bool isWhitePointSupported, bool isGamutSupported, bool isCurrent5000K, bool isCurrent6500K, bool isCurrent7500K, bool isCurrent9300K, bool isCurrentCustomWhitePoint, bool isCurrent709, bool isCurrent601, bool isCurrentAdobe, bool isCurrentCieRgb, bool isCurrent2020, bool isCurrentCustomColorSpace, GamutColorSpaceDto currentGamutSpace, PointDto whitePoint, bool hasWhitePoint)
         {
             IsWhitePointSupported = isWhitePointSupported;
             IsGamutSupported = isGamutSupported;
@@ -2614,7 +2614,7 @@ namespace ADLXWrapper
             HasWhitePoint = hasWhitePoint;
         }
 
-        internal unsafe GamutInfo(IADLXDisplayGamut* pGamut)
+        internal unsafe GamutDto(IADLXDisplayGamut* pGamut)
         {
             if (pGamut == null) throw new ArgumentNullException(nameof(pGamut));
 
@@ -2652,15 +2652,15 @@ namespace ADLXWrapper
 
             ADLX_GamutColorSpace currentSpace = default;
             pGamut->GetGamutColorSpace(&currentSpace);
-            CurrentGamutSpace = GamutColorSpaceInfo.FromNative(currentSpace);
+            CurrentGamutSpace = GamutColorSpaceDto.FromNative(currentSpace);
 
             ADLX_Point whitePoint = default;
             HasWhitePoint = pGamut->GetWhitePoint(&whitePoint) == ADLX_RESULT.ADLX_OK;
-            WhitePoint = PointInfo.FromNative(whitePoint);
+            WhitePoint = PointDto.FromNative(whitePoint);
         }
     }
 
-    public readonly struct ThreeDLUTInfo
+    public readonly struct ThreeDLUTDto
     {
         public bool IsSceSupported { get; init; }
         public bool IsSceVividGamingSupported { get; init; }
@@ -2670,10 +2670,10 @@ namespace ADLXWrapper
         public bool IsCurrentSceVividGaming { get; init; }
         public bool HasDynamicContrast { get; init; }
         public int CurrentDynamicContrast { get; init; }
-        public IntRangeInfo DynamicContrastRange { get; init; }
+        public IntRangeDto DynamicContrastRange { get; init; }
 
         [JsonConstructor]
-        public ThreeDLUTInfo(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported, bool isCurrentSceDisabled, bool isCurrentSceVividGaming, bool hasDynamicContrast, int currentDynamicContrast, IntRangeInfo dynamicContrastRange)
+        public ThreeDLUTDto(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported, bool isCurrentSceDisabled, bool isCurrentSceVividGaming, bool hasDynamicContrast, int currentDynamicContrast, IntRangeDto dynamicContrastRange)
         {
             IsSceSupported = isSceSupported;
             IsSceVividGamingSupported = isSceVividGamingSupported;
@@ -2686,7 +2686,7 @@ namespace ADLXWrapper
             DynamicContrastRange = dynamicContrastRange;
         }
 
-        internal unsafe ThreeDLUTInfo(IADLXDisplay3DLUT* p3dLut)
+        internal unsafe ThreeDLUTDto(IADLXDisplay3DLUT* p3dLut)
         {
             bool sce = false, vivid = false, dynamic = false, user = false;
             p3dLut->IsSupportedSCE(&sce);
@@ -2714,14 +2714,14 @@ namespace ADLXWrapper
                 if (p3dLut->GetSCEDynamicContrast(&currentContrast) == ADLX_RESULT.ADLX_OK)
                 {
                     HasDynamicContrast = true;
-                    DynamicContrastRange = IntRangeInfo.FromNative(range);
+                    DynamicContrastRange = IntRangeDto.FromNative(range);
                     CurrentDynamicContrast = currentContrast;
                 }
             }
         }
     }
 
-    public readonly struct ConnectivityExperienceInfo
+    public readonly struct ConnectivityExperienceDto
     {
         public bool IsHdmiQualityDetectionSupported { get; init; }
         public bool IsHdmiQualityDetectionEnabled { get; init; }
@@ -2733,7 +2733,7 @@ namespace ADLXWrapper
         public int RelativeVoltageSwing { get; init; }
 
         [JsonConstructor]
-        public ConnectivityExperienceInfo(bool isHdmiQualityDetectionSupported, bool isHdmiQualityDetectionEnabled, bool isDpLinkRateSupported, ADLX_DP_LINK_RATE dpLinkRate, bool isRelativePreEmphasisSupported, int relativePreEmphasis, bool isRelativeVoltageSwingSupported, int relativeVoltageSwing)
+        public ConnectivityExperienceDto(bool isHdmiQualityDetectionSupported, bool isHdmiQualityDetectionEnabled, bool isDpLinkRateSupported, ADLX_DP_LINK_RATE dpLinkRate, bool isRelativePreEmphasisSupported, int relativePreEmphasis, bool isRelativeVoltageSwingSupported, int relativeVoltageSwing)
         {
             IsHdmiQualityDetectionSupported = isHdmiQualityDetectionSupported;
             IsHdmiQualityDetectionEnabled = isHdmiQualityDetectionEnabled;
@@ -2745,7 +2745,7 @@ namespace ADLXWrapper
             RelativeVoltageSwing = relativeVoltageSwing;
         }
 
-        internal unsafe ConnectivityExperienceInfo(IADLXDisplayConnectivityExperience* pConn)
+        internal unsafe ConnectivityExperienceDto(IADLXDisplayConnectivityExperience* pConn)
         {
             bool supported = false, enabled = false;
             pConn->IsSupportedHDMIQualityDetection(&supported);
@@ -2776,25 +2776,25 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct CustomResolutionInfo
+    public readonly struct CustomResolutionDto
     {
         public bool IsSupported { get; init; }
-        public IReadOnlyList<DisplayResolutionInfo> Resolutions { get; init; }
+        public IReadOnlyList<DisplayResolutionDto> Resolutions { get; init; }
 
         [JsonConstructor]
-        public CustomResolutionInfo(bool isSupported, IReadOnlyList<DisplayResolutionInfo> resolutions)
+        public CustomResolutionDto(bool isSupported, IReadOnlyList<DisplayResolutionDto> resolutions)
         {
             IsSupported = isSupported;
             Resolutions = resolutions;
         }
 
-        internal unsafe CustomResolutionInfo(IADLXDisplayCustomResolution* pCustomRes)
+        internal unsafe CustomResolutionDto(IADLXDisplayCustomResolution* pCustomRes)
         {
             bool supported = false;
             pCustomRes->IsSupported(&supported);
             IsSupported = supported;
 
-            var resolutions = new List<DisplayResolutionInfo>();
+            var resolutions = new List<DisplayResolutionDto>();
             if (IsSupported)
             {
                 IADLXDisplayResolutionList* pResList;
@@ -2805,28 +2805,28 @@ namespace ADLXWrapper
                     IADLXDisplayResolution* pRes;
                     resList.Get()->At(i, &pRes);
                     using var res = new ComPtr<IADLXDisplayResolution>(pRes);
-                    resolutions.Add(new DisplayResolutionInfo(res.Get()));
+                    resolutions.Add(new DisplayResolutionDto(res.Get()));
                 }
             }
             Resolutions = resolutions;
         }
     }
 
-    public readonly struct DisplayResolutionInfo
+    public readonly struct DisplayResolutionDto
     {
         public int ResWidth { get; init; }
         public int ResHeight { get; init; }
         public int RefreshRate { get; init; }
 
         [JsonConstructor]
-        public DisplayResolutionInfo(int resWidth, int resHeight, int refreshRate)
+        public DisplayResolutionDto(int resWidth, int resHeight, int refreshRate)
         {
             ResWidth = resWidth;
             ResHeight = resHeight;
             RefreshRate = refreshRate;
         }
 
-        internal unsafe DisplayResolutionInfo(IADLXDisplayResolution* pRes)
+        internal unsafe DisplayResolutionDto(IADLXDisplayResolution* pRes)
         {
             ADLX_CustomResolution res = default;
             pRes->GetValue(&res);
@@ -2836,7 +2836,7 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct CustomColorInfo
+    public readonly struct CustomColorDto
     {
         public bool IsSupported { get; init; }
         public bool IsHueSupported { get; init; }
@@ -2851,7 +2851,7 @@ namespace ADLXWrapper
         public int Temperature { get; init; }
 
         [JsonConstructor]
-        public CustomColorInfo(bool isSupported, bool isHueSupported, int hue, bool isSaturationSupported, int saturation, bool isBrightnessSupported, int brightness, bool isContrastSupported, int contrast, bool isTemperatureSupported, int temperature)
+        public CustomColorDto(bool isSupported, bool isHueSupported, int hue, bool isSaturationSupported, int saturation, bool isBrightnessSupported, int brightness, bool isContrastSupported, int contrast, bool isTemperatureSupported, int temperature)
         {
             IsSupported = isSupported; IsHueSupported = isHueSupported; Hue = hue;
             IsSaturationSupported = isSaturationSupported; Saturation = saturation;
@@ -2860,7 +2860,7 @@ namespace ADLXWrapper
             IsTemperatureSupported = isTemperatureSupported; Temperature = temperature;
         }
 
-        internal unsafe CustomColorInfo(IADLXDisplayCustomColor* pCustomColor)
+        internal unsafe CustomColorDto(IADLXDisplayCustomColor* pCustomColor)
         {
             bool supported = false;
             pCustomColor->IsHueSupported(&supported); IsHueSupported = supported;

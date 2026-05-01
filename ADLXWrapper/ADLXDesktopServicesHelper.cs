@@ -69,7 +69,7 @@ namespace ADLXWrapper
         /// <returns>List of desktop info records.</returns>
         /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IReadOnlyList<DesktopInfo> EnumerateDesktops()
+        public IReadOnlyList<DesktopDto> EnumerateDesktops()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -89,7 +89,7 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate desktops");
 
-            var desktops = new List<DesktopInfo>();
+            var desktops = new List<DesktopDto>();
             using var desktopList = new ComPtr<IADLXDesktopList>(pDesktopList);
             if (desktopList.Get()->Size() == 0)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No desktops returned by ADLX.");
@@ -98,13 +98,13 @@ namespace ADLXWrapper
                 IADLXDesktop* pDesktop = null;
                 desktopList.Get()->At(i, &pDesktop);
                 using var desktop = new ComPtr<IADLXDesktop>(pDesktop);
-                desktops.Add(new DesktopInfo(desktop.Get()));
+                desktops.Add(new DesktopDto(desktop.Get()));
             }
 
             return desktops;
         }
 
-        public bool TryEnumerateDesktops(out IReadOnlyList<DesktopInfo> desktops)
+        public bool TryEnumerateDesktops(out IReadOnlyList<DesktopDto> desktops)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace ADLXWrapper
             }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
             {
-                desktops = Array.Empty<DesktopInfo>();
+                desktops = Array.Empty<DesktopDto>();
                 return false;
             }
         }
@@ -230,7 +230,7 @@ namespace ADLXWrapper
                     IADLXDisplay* pDisplay = null;
                     displayList.Get()->At(d, &pDisplay);
                     using var display = new ComPtr<IADLXDisplay>(pDisplay);
-                    var info = new DisplayInfo(display.Get());
+                    var info = new DisplayDto(display.Get());
                     if (info.GpuUniqueId == gpuUniqueId)
                     {
                         hasMatch = true;
@@ -297,7 +297,7 @@ namespace ADLXWrapper
         /// <returns>Information about the created Eyefinity desktop.</returns>
         /// <exception cref="ADLXException">If Eyefinity is unsupported or creation fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public EyefinityDesktopInfo CreateEyefinityDesktop()
+        public EyefinityDesktopDto CreateEyefinityDesktop()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -465,7 +465,7 @@ namespace ADLXWrapper
             return ADLXInterfaceHandle.From(GetDesktopChangedHandlingNative(), addRef: true);
         }
 
-        public SimpleEyefinityInfo GetSimpleEyefinity()
+        public SimpleEyefinityDto GetSimpleEyefinity()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -477,7 +477,7 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to get simple Eyefinity interface");
 
             using var simple = new ComPtr<IADLXSimpleEyefinity>(pSimple);
-            return new SimpleEyefinityInfo(simple.Get());
+            return new SimpleEyefinityDto(simple.Get());
         }
 
         internal ADLXInterfaceHandle GetSimpleEyefinityHandle()
@@ -494,7 +494,7 @@ namespace ADLXWrapper
             return ADLXInterfaceHandle.From(pSimple, addRef: false);
         }
 
-        internal EyefinityDesktopInfo CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)
+        internal EyefinityDesktopDto CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)
         {
             if (pSimpleEyefinity == null) throw new ArgumentNullException(nameof(pSimpleEyefinity));
 
@@ -506,7 +506,7 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to create Eyefinity desktop");
 
             using var desktop = new ComPtr<IADLXEyefinityDesktop>(pDesktop);
-            return new EyefinityDesktopInfo(desktop.Get());
+            return new EyefinityDesktopDto(desktop.Get());
         }
 
         internal void DestroyEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity, IADLXEyefinityDesktop* pEyefinityDesktop)
@@ -558,21 +558,21 @@ namespace ADLXWrapper
             return list;
         }
 
-        internal IReadOnlyList<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
+        internal IReadOnlyList<DisplayDto> EnumerateDesktopDisplays(IADLXDesktop* desktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            if (desktop == null) return Array.Empty<DisplayInfo>();
+            if (desktop == null) return Array.Empty<DisplayDto>();
 
             using var list = new ComPtr<IADLXDisplayList>(GetDesktopDisplayListNative(desktop));
             var count = list.Get()->Size();
-            var displays = new List<DisplayInfo>((int)count);
+            var displays = new List<DisplayDto>((int)count);
             for (uint i = 0; i < count; i++)
             {
                 IADLXDisplay* display = null;
                 list.Get()->At(i, &display);
                 using var d = new ComPtr<IADLXDisplay>(display);
-                displays.Add(new DisplayInfo(d.Get()));
+                displays.Add(new DisplayDto(d.Get()));
             }
 
             return displays;
@@ -591,13 +591,13 @@ namespace ADLXWrapper
             return (rows, cols);
         }
 
-        internal IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
+        internal IReadOnlyList<DisplayDto> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            if (eyefinityDesktop == null) return Array.Empty<DisplayInfo>();
+            if (eyefinityDesktop == null) return Array.Empty<DisplayDto>();
 
-            var displays = new List<DisplayInfo>();
+            var displays = new List<DisplayDto>();
             var (rows, cols) = GetEyefinityGridSize(eyefinityDesktop);
             for (uint r = 0; r < rows; r++)
             {
@@ -608,7 +608,7 @@ namespace ADLXWrapper
                     if (getResult != ADLX_RESULT.ADLX_OK)
                         throw new ADLXException(getResult, $"Failed to get Eyefinity display at {r},{c}");
                     using var display = new ComPtr<IADLXDisplay>(pDisplay);
-                    displays.Add(new DisplayInfo(display.Get()));
+                    displays.Add(new DisplayDto(display.Get()));
                 }
             }
 
@@ -657,7 +657,7 @@ namespace ADLXWrapper
     }
 
     #region Desktop DTOs and listener handles
-    public readonly struct DesktopInfo
+    public readonly struct DesktopDto
     {
         public ADLX_DESKTOP_TYPE Type { get; init; }
         public int Width { get; init; }
@@ -667,7 +667,7 @@ namespace ADLXWrapper
         public ADLX_ORIENTATION Orientation { get; init; }
 
         [JsonConstructor]
-        public DesktopInfo(ADLX_DESKTOP_TYPE type, int width, int height, int topLeftX, int topLeftY, ADLX_ORIENTATION orientation)
+        public DesktopDto(ADLX_DESKTOP_TYPE type, int width, int height, int topLeftX, int topLeftY, ADLX_ORIENTATION orientation)
         {
             Type = type;
             Width = width;
@@ -677,7 +677,7 @@ namespace ADLXWrapper
             Orientation = orientation;
         }
 
-        internal unsafe DesktopInfo(IADLXDesktop* pDesktop)
+        internal unsafe DesktopDto(IADLXDesktop* pDesktop)
         {
             ADLX_DESKTOP_TYPE type = default;
             pDesktop->Type(&type);
@@ -699,21 +699,21 @@ namespace ADLXWrapper
         }
     }
 
-    public readonly struct SimpleEyefinityInfo
+    public readonly struct SimpleEyefinityDto
     {
         public bool IsSupported { get; init; }
 
-        internal unsafe SimpleEyefinityInfo(IADLXSimpleEyefinity* p)
+        internal unsafe SimpleEyefinityDto(IADLXSimpleEyefinity* p)
         {
             IsSupported = p != null;
         }
     }
 
-    public readonly struct EyefinityDesktopInfo
+    public readonly struct EyefinityDesktopDto
     {
         public bool IsValid { get; init; }
 
-        internal unsafe EyefinityDesktopInfo(IADLXEyefinityDesktop* p)
+        internal unsafe EyefinityDesktopDto(IADLXEyefinityDesktop* p)
         {
             IsValid = p != null;
         }
