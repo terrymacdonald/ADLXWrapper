@@ -8,11 +8,10 @@ items:
   - ADLXWrapper.ADLXDesktop.#ctor(ADLXWrapper.IADLXDesktopServices*,ADLXWrapper.IADLXDesktop*,ADLXWrapper.IADLXDisplayServices*)
   - ADLXWrapper.ADLXDesktop.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
   - ADLXWrapper.ADLXDesktop.Dispose
-  - ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
+  - ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop
   - ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
-  - ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
-  - ADLXWrapper.ADLXDesktop.GetDesktopInfo
-  - ADLXWrapper.ADLXDesktop.GetDisplayListNative
+  - ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+  - ADLXWrapper.ADLXDesktop.GetDesktopDto
   - ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   - ADLXWrapper.ADLXDesktop.GetGPU
   - ADLXWrapper.ADLXDesktop.Height
@@ -33,16 +32,16 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Flattened desktop façade with identity metadata and display enumeration helpers.
+  summary: Flattened desktop faÃ§ade with identity metadata and display enumeration helpers.
   example: []
   syntax:
     content: 'public sealed class ADLXDesktop : IDisposable'
@@ -71,11 +70,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -112,11 +111,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -141,11 +140,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -170,11 +169,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -199,11 +198,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -228,11 +227,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -257,11 +256,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -286,11 +285,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -315,40 +314,40 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public DesktopInfo Identity { get; }
+    content: public DesktopDto Identity { get; }
     parameters: []
     return:
-      type: ADLXWrapper.DesktopInfo
-    content.vb: Public ReadOnly Property Identity As DesktopInfo
+      type: ADLXWrapper.DesktopDto
+    content.vb: Public ReadOnly Property Identity As DesktopDto
   overload: ADLXWrapper.ADLXDesktop.Identity*
-- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
-  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
-  id: EnumerateDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop
+  id: EnumerateDisplayDtosForDesktop
   parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
-  name: EnumerateDisplayInfosForDesktop()
-  nameWithType: ADLXDesktop.EnumerateDisplayInfosForDesktop()
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop()
+  name: EnumerateDisplayDtosForDesktop()
+  nameWithType: ADLXDesktop.EnumerateDisplayDtosForDesktop()
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateDisplayInfosForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    id: EnumerateDisplayDtosForDesktop
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -356,11 +355,11 @@ items:
   summary: Managed enumeration of display identities on this desktop.
   example: []
   syntax:
-    content: public IReadOnlyList<DisplayInfo> EnumerateDisplayInfosForDesktop()
+    content: public IReadOnlyList<DisplayDto> EnumerateDisplayDtosForDesktop()
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateDisplayInfosForDesktop() As IReadOnlyList(Of DisplayInfo)
-  overload: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop*
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayDto}
+    content.vb: Public Function EnumerateDisplayDtosForDesktop() As IReadOnlyList(Of DisplayDto)
+  overload: ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop*
 - uid: ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
   commentId: M:ADLXWrapper.ADLXDesktop.EnumerateDisplaysForDesktop
   id: EnumerateDisplaysForDesktop
@@ -374,16 +373,16 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 68
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Façade enumeration of displays on this desktop (pointer-free).
+  summary: FaÃ§ade enumeration of displays on this desktop (pointer-free).
   example: []
   syntax:
     content: public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForDesktop()
@@ -404,11 +403,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 100
   assemblies:
   - ADLXWrapper
@@ -437,11 +436,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 108
   assemblies:
   - ADLXWrapper
@@ -458,34 +457,34 @@ items:
   nameWithType.vb: ADLXDesktop.RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
   fullName.vb: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle, Boolean)
   name.vb: RemoveDesktopListEventListener(DesktopListListenerHandle, Boolean)
-- uid: ADLXWrapper.ADLXDesktop.GetDesktopInfo
-  commentId: M:ADLXWrapper.ADLXDesktop.GetDesktopInfo
-  id: GetDesktopInfo
+- uid: ADLXWrapper.ADLXDesktop.GetDesktopDto
+  commentId: M:ADLXWrapper.ADLXDesktop.GetDesktopDto
+  id: GetDesktopDto
   parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
-  name: GetDesktopInfo()
-  nameWithType: ADLXDesktop.GetDesktopInfo()
-  fullName: ADLXWrapper.ADLXDesktop.GetDesktopInfo()
+  name: GetDesktopDto()
+  nameWithType: ADLXDesktop.GetDesktopDto()
+  fullName: ADLXWrapper.ADLXDesktop.GetDesktopDto()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetDesktopInfo
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    id: GetDesktopDto
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 117
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public DesktopInfo GetDesktopInfo()
+    content: public DesktopDto GetDesktopDto()
     return:
-      type: ADLXWrapper.DesktopInfo
-    content.vb: Public Function GetDesktopInfo() As DesktopInfo
-  overload: ADLXWrapper.ADLXDesktop.GetDesktopInfo*
+      type: ADLXWrapper.DesktopDto
+    content.vb: Public Function GetDesktopDto() As DesktopDto
+  overload: ADLXWrapper.ADLXDesktop.GetDesktopDto*
 - uid: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   commentId: M:ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   id: GetEyefinityGridSize
@@ -499,11 +498,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 127
   assemblies:
   - ADLXWrapper
@@ -516,24 +515,24 @@ items:
       type: System.ValueTuple{System.UInt32,System.UInt32}
     content.vb: Public Function GetEyefinityGridSize() As (rows As UInteger, cols As UInteger)
   overload: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize*
-- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
-  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
-  id: EnumerateEyefinityDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+  commentId: M:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+  id: EnumerateEyefinityDisplayDtosForDesktop
   parent: ADLXWrapper.ADLXDesktop
   langs:
   - csharp
   - vb
-  name: EnumerateEyefinityDisplayInfosForDesktop()
-  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop()
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop()
+  name: EnumerateEyefinityDisplayDtosForDesktop()
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop()
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateEyefinityDisplayInfosForDesktop
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    id: EnumerateEyefinityDisplayDtosForDesktop
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 139
   assemblies:
   - ADLXWrapper
@@ -541,11 +540,11 @@ items:
   summary: Enumerate displays that compose this Eyefinity desktop.
   example: []
   syntax:
-    content: public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplayInfosForDesktop()
+    content: public IReadOnlyList<DisplayDto> EnumerateEyefinityDisplayDtosForDesktop()
     return:
-      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
-    content.vb: Public Function EnumerateEyefinityDisplayInfosForDesktop() As IReadOnlyList(Of DisplayInfo)
-  overload: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop*
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayDto}
+    content.vb: Public Function EnumerateEyefinityDisplayDtosForDesktop() As IReadOnlyList(Of DisplayDto)
+  overload: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop*
 - uid: ADLXWrapper.ADLXDesktop.GetGPU
   commentId: M:ADLXWrapper.ADLXDesktop.GetGPU
   id: GetGPU
@@ -559,11 +558,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/ADLXDesktop.cs
+    path: ../ADLXWrapper/AdlxDesktop.cs
     startLine: 151
   assemblies:
   - ADLXWrapper
@@ -576,36 +575,6 @@ items:
       type: ADLXWrapper.ADLXGPU
     content.vb: Public Function GetGPU() As ADLXGPU
   overload: ADLXWrapper.ADLXDesktop.GetGPU*
-- uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative
-  commentId: M:ADLXWrapper.ADLXDesktop.GetDisplayListNative
-  id: GetDisplayListNative
-  parent: ADLXWrapper.ADLXDesktop
-  langs:
-  - csharp
-  - vb
-  name: GetDisplayListNative()
-  nameWithType: ADLXDesktop.GetDisplayListNative()
-  fullName: ADLXWrapper.ADLXDesktop.GetDisplayListNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetDisplayListNative
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 200
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Native display list accessor. Caller must dispose returned ComPtr and any retained items.
-  example: []
-  syntax:
-    content: public ComPtr<IADLXDisplayList> GetDisplayListNative()
-    return:
-      type: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
-    content.vb: Public Function GetDisplayListNative() As ComPtr(Of IADLXDisplayList)
-  overload: ADLXWrapper.ADLXDesktop.GetDisplayListNative*
 - uid: ADLXWrapper.ADLXDesktop.Dispose
   commentId: M:ADLXWrapper.ADLXDesktop.Dispose
   id: Dispose
@@ -619,12 +588,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDesktop.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXDesktop.cs
-    startLine: 213
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 202
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1005,39 +974,39 @@ references:
   name: Identity
   nameWithType: ADLXDesktop.Identity
   fullName: ADLXWrapper.ADLXDesktop.Identity
-- uid: ADLXWrapper.DesktopInfo
-  commentId: T:ADLXWrapper.DesktopInfo
+- uid: ADLXWrapper.DesktopDto
+  commentId: T:ADLXWrapper.DesktopDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DesktopInfo.html
-  name: DesktopInfo
-  nameWithType: DesktopInfo
-  fullName: ADLXWrapper.DesktopInfo
-- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop*
-  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
-  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplayInfosForDesktop
-  name: EnumerateDisplayInfosForDesktop
-  nameWithType: ADLXDesktop.EnumerateDisplayInfosForDesktop
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayInfosForDesktop
-- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
-  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayInfo}
+  href: ADLXWrapper.DesktopDto.html
+  name: DesktopDto
+  nameWithType: DesktopDto
+  fullName: ADLXWrapper.DesktopDto
+- uid: ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateDisplayDtosForDesktop
+  name: EnumerateDisplayDtosForDesktop
+  nameWithType: ADLXDesktop.EnumerateDisplayDtosForDesktop
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateDisplayDtosForDesktop
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayDto}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayDto}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IReadOnlyList`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
-  name: IReadOnlyList<DisplayInfo>
-  nameWithType: IReadOnlyList<DisplayInfo>
-  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DisplayInfo>
-  nameWithType.vb: IReadOnlyList(Of DisplayInfo)
-  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DisplayInfo)
-  name.vb: IReadOnlyList(Of DisplayInfo)
+  name: IReadOnlyList<DisplayDto>
+  nameWithType: IReadOnlyList<DisplayDto>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.DisplayDto>
+  nameWithType.vb: IReadOnlyList(Of DisplayDto)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.DisplayDto)
+  name.vb: IReadOnlyList(Of DisplayDto)
   spec.csharp:
   - uid: System.Collections.Generic.IReadOnlyList`1
     name: IReadOnlyList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
   - name: <
-  - uid: ADLXWrapper.DisplayInfo
-    name: DisplayInfo
-    href: ADLXWrapper.DisplayInfo.html
+  - uid: ADLXWrapper.DisplayDto
+    name: DisplayDto
+    href: ADLXWrapper.DisplayDto.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IReadOnlyList`1
@@ -1047,9 +1016,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.DisplayInfo
-    name: DisplayInfo
-    href: ADLXWrapper.DisplayInfo.html
+  - uid: ADLXWrapper.DisplayDto
+    name: DisplayDto
+    href: ADLXWrapper.DisplayDto.html
   - name: )
 - uid: System.Collections.Generic.IReadOnlyList`1
   commentId: T:System.Collections.Generic.IReadOnlyList`1
@@ -1197,12 +1166,12 @@ references:
   name: RemoveDesktopListEventListener
   nameWithType: ADLXDesktop.RemoveDesktopListEventListener
   fullName: ADLXWrapper.ADLXDesktop.RemoveDesktopListEventListener
-- uid: ADLXWrapper.ADLXDesktop.GetDesktopInfo*
-  commentId: Overload:ADLXWrapper.ADLXDesktop.GetDesktopInfo
-  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetDesktopInfo
-  name: GetDesktopInfo
-  nameWithType: ADLXDesktop.GetDesktopInfo
-  fullName: ADLXWrapper.ADLXDesktop.GetDesktopInfo
+- uid: ADLXWrapper.ADLXDesktop.GetDesktopDto*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetDesktopDto
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetDesktopDto
+  name: GetDesktopDto
+  nameWithType: ADLXDesktop.GetDesktopDto
+  fullName: ADLXWrapper.ADLXDesktop.GetDesktopDto
 - uid: ADLXWrapper.ADLXDesktop.GetEyefinityGridSize*
   commentId: Overload:ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetEyefinityGridSize
@@ -1285,12 +1254,12 @@ references:
   - name: " "
   - name: T2
   - name: )
-- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop*
-  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
-  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplayInfosForDesktop
-  name: EnumerateEyefinityDisplayInfosForDesktop
-  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
-  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayInfosForDesktop
+- uid: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_EnumerateEyefinityDisplayDtosForDesktop
+  name: EnumerateEyefinityDisplayDtosForDesktop
+  nameWithType: ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+  fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
 - uid: ADLXWrapper.ADLXDesktop.GetGPU*
   commentId: Overload:ADLXWrapper.ADLXDesktop.GetGPU
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetGPU
@@ -1304,69 +1273,6 @@ references:
   name: ADLXGPU
   nameWithType: ADLXGPU
   fullName: ADLXWrapper.ADLXGPU
-- uid: ADLXWrapper.ADLXDesktop.GetDisplayListNative*
-  commentId: Overload:ADLXWrapper.ADLXDesktop.GetDisplayListNative
-  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetDisplayListNative
-  name: GetDisplayListNative
-  nameWithType: ADLXDesktop.GetDisplayListNative
-  fullName: ADLXWrapper.ADLXDesktop.GetDisplayListNative
-- uid: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
-  commentId: T:ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayList}
-  parent: ADLXWrapper
-  definition: ADLXWrapper.ComPtr`1
-  href: ADLXWrapper.ComPtr-1.html
-  name: ComPtr<IADLXDisplayList>
-  nameWithType: ComPtr<IADLXDisplayList>
-  fullName: ADLXWrapper.ComPtr<ADLXWrapper.IADLXDisplayList>
-  nameWithType.vb: ComPtr(Of IADLXDisplayList)
-  fullName.vb: ADLXWrapper.ComPtr(Of ADLXWrapper.IADLXDisplayList)
-  name.vb: ComPtr(Of IADLXDisplayList)
-  spec.csharp:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: <
-  - uid: ADLXWrapper.IADLXDisplayList
-    name: IADLXDisplayList
-    href: ADLXWrapper.IADLXDisplayList.html
-  - name: '>'
-  spec.vb:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ADLXWrapper.IADLXDisplayList
-    name: IADLXDisplayList
-    href: ADLXWrapper.IADLXDisplayList.html
-  - name: )
-- uid: ADLXWrapper.ComPtr`1
-  commentId: T:ADLXWrapper.ComPtr`1
-  parent: ADLXWrapper
-  href: ADLXWrapper.ComPtr-1.html
-  name: ComPtr<T>
-  nameWithType: ComPtr<T>
-  fullName: ADLXWrapper.ComPtr<T>
-  nameWithType.vb: ComPtr(Of T)
-  fullName.vb: ADLXWrapper.ComPtr(Of T)
-  name.vb: ComPtr(Of T)
-  spec.csharp:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: ADLXWrapper.ADLXDesktop.Dispose*
   commentId: Overload:ADLXWrapper.ADLXDesktop.Dispose
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_Dispose

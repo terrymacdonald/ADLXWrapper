@@ -15,7 +15,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXQueryVersion_Fn
     path: ../ADLXWrapper/ADLXNative.cs

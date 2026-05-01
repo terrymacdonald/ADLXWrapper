@@ -5,36 +5,32 @@ items:
   id: ADLXGPUTuningServicesHelper
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   - ADLXWrapper.ADLXGPUTuningServicesHelper.Finalize
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(System.Int32,ADLXWrapper.ManualFanTuningDto@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(System.Int32,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(System.Int32,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(System.Int32,System.Boolean@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(System.Int32,System.Boolean@)
   langs:
   - csharp
   - vb
@@ -45,7 +41,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPUTuningServicesHelper
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
@@ -69,32 +65,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean)
-  id: '#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean)'
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  id: '#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean,ADLXWrapper.IADLXSystem*)'
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: ADLXGPUTuningServicesHelper(IADLXGPUTuningServices*, bool)
-  nameWithType: ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper(IADLXGPUTuningServices*, bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper(ADLXWrapper.IADLXGPUTuningServices*, bool)
+  name: ADLXGPUTuningServicesHelper(IADLXGPUTuningServices*, bool, IADLXSystem*)
+  nameWithType: ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper(IADLXGPUTuningServices*, bool, IADLXSystem*)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper(ADLXWrapper.IADLXGPUTuningServices*, bool, ADLXWrapper.IADLXSystem*)
   type: Constructor
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a GPU tuning helper from the native services interface, upgrading to v1 when available.
   example: []
   syntax:
-    content: public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true)
+    content: public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true, IADLXSystem* system = null)
     parameters:
     - id: services
       type: ADLXWrapper.IADLXGPUTuningServices*
@@ -102,139 +98,13 @@ items:
     - id: addRef
       type: System.Boolean
       description: True to AddRef the pointer for this helper.
-    content.vb: Public Sub New(services As IADLXGPUTuningServices*, addRef As Boolean = True)
+    - id: system
+      type: ADLXWrapper.IADLXSystem*
+    content.vb: Public Sub New(services As IADLXGPUTuningServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.New(IADLXGPUTuningServices*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.New(ADLXWrapper.IADLXGPUTuningServices*, Boolean)
-  name.vb: New(IADLXGPUTuningServices*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
-  id: GetGPUTuningServicesNative
-  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGPUTuningServicesNative()
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative()
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGPUTuningServicesNative
-    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 35
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXGPUTuningServices* GetGPUTuningServicesNative()
-    return:
-      type: ADLXWrapper.IADLXGPUTuningServices*
-    content.vb: Public Function GetGPUTuningServicesNative() As IADLXGPUTuningServices*
-  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-  id: GetGPUTuningServicesHandle
-  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGPUTuningServicesHandle()
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle()
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGPUTuningServicesHandle
-    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 46
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Returns an AddRef'd handle to the highest available GPU tuning services interface.
-  example: []
-  syntax:
-    content: public ADLXInterfaceHandle GetGPUTuningServicesHandle()
-    return:
-      type: ADLXWrapper.ADLXInterfaceHandle
-    content.vb: Public Function GetGPUTuningServicesHandle() As ADLXInterfaceHandle
-  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle*
-  exceptions:
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-  id: GetGPUTuningChangedHandlingNative
-  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGPUTuningChangedHandlingNative()
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative()
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGPUTuningChangedHandlingNative
-    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 59
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets the GPU tuning change handling interface (native). Cached after first query.
-  example: []
-  syntax:
-    content: public IADLXGPUTuningChangedHandling* GetGPUTuningChangedHandlingNative()
-    return:
-      type: ADLXWrapper.IADLXGPUTuningChangedHandling*
-      description: Native change handling pointer.
-    content.vb: Public Function GetGPUTuningChangedHandlingNative() As IADLXGPUTuningChangedHandling*
-  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative*
-  exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
-  id: GetGPUTuningChangedHandling
-  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGPUTuningChangedHandling()
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling()
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGPUTuningChangedHandling
-    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 77
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public ADLXInterfaceHandle GetGPUTuningChangedHandling()
-    return:
-      type: ADLXWrapper.ADLXInterfaceHandle
-    content.vb: Public Function GetGPUTuningChangedHandling() As ADLXInterfaceHandle
-  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling*
+  nameWithType.vb: ADLXGPUTuningServicesHelper.New(IADLXGPUTuningServices*, Boolean, IADLXSystem*)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.New(ADLXWrapper.IADLXGPUTuningServices*, Boolean, ADLXWrapper.IADLXSystem*)
+  name.vb: New(IADLXGPUTuningServices*, Boolean, IADLXSystem*)
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
   id: AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)
@@ -249,11 +119,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 89
+    startLine: 91
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -291,11 +161,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 112
+    startLine: 114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -315,709 +185,782 @@ items:
   nameWithType.vb: ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
   fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle, Boolean)
   name.vb: RemoveGPUTuningEventListener(GpuTuningListenerHandle, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
-  id: GetCapabilities(ADLXWrapper.IADLXGPU*)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(System.Int32)
+  id: GetCapabilities(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: GetCapabilities(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.GetCapabilities(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(ADLXWrapper.IADLXGPU*)
+  name: GetCapabilities(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetCapabilities(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCapabilities
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 127
+    startLine: 439
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets GPU tuning capabilities for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public GpuTuningCapabilitiesInfo GetCapabilities(IADLXGPU* gpu)
+    content: public GpuTuningCapabilitiesDto GetCapabilities(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.GpuTuningCapabilitiesInfo
-    content.vb: Public Function GetCapabilities(gpu As IADLXGPU*) As GpuTuningCapabilitiesInfo
+      type: ADLXWrapper.GpuTuningCapabilitiesDto
+    content.vb: Public Function GetCapabilities(gpuUniqueId As Integer) As GpuTuningCapabilitiesDto
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsAutoTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetCapabilities(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(Integer)
+  name.vb: GetCapabilities(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)
+  id: IsAutoTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsAutoTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsAutoTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsAutoTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsAutoTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 135
+    startLine: 447
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when auto tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsAutoTuningSupported(IADLXGPU* gpu)
+    content: public bool IsAutoTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsAutoTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsAutoTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsAutoTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(Integer)
+  name.vb: IsAutoTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsAutoTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsAutoTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsAutoTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 153
+    startLine: 455
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to query auto tuning support; returns false when not supported.
+  summary: Tries to query auto tuning support for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TryIsAutoTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsAutoTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsAutoTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsAutoTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsAutoTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(Integer, Boolean)
+  name.vb: TryIsAutoTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(System.Int32)
+  id: IsPresetTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsPresetTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsPresetTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsPresetTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsPresetTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 167
+    startLine: 462
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when preset tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsPresetTuningSupported(IADLXGPU* gpu)
+    content: public bool IsPresetTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsPresetTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsPresetTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsPresetTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(Integer)
+  name.vb: IsPresetTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsPresetTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsPresetTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsPresetTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 182
+    startLine: 470
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to query preset tuning support for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryIsPresetTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsPresetTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsPresetTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsPresetTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsPresetTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(Integer, Boolean)
+  name.vb: TryIsPresetTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(System.Int32)
+  id: IsManualGfxTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsManualGfxTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsManualGfxTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 196
+    startLine: 477
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when manual GFX tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsManualGfxTuningSupported(IADLXGPU* gpu)
+    content: public bool IsManualGfxTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsManualGfxTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsManualGfxTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(Integer)
+  name.vb: IsManualGfxTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsManualGfxTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsManualGfxTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 211
+    startLine: 485
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to query manual GFX tuning support for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryIsManualGfxTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsManualGfxTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsManualGfxTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsManualGfxTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsManualGfxTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(Integer, Boolean)
+  name.vb: TryIsManualGfxTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(System.Int32)
+  id: IsManualVramTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsManualVramTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsManualVramTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 225
+    startLine: 492
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when manual VRAM tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsManualVramTuningSupported(IADLXGPU* gpu)
+    content: public bool IsManualVramTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsManualVramTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsManualVramTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(Integer)
+  name.vb: IsManualVramTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsManualVramTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsManualVramTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsManualVramTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 240
+    startLine: 500
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to query manual VRAM tuning support for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryIsManualVramTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsManualVramTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsManualVramTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsManualVramTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsManualVramTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsManualFanTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(Integer, Boolean)
+  name.vb: TryIsManualVramTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(System.Int32)
+  id: IsManualFanTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsManualFanTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsManualFanTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 254
+    startLine: 507
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when manual fan tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsManualFanTuningSupported(IADLXGPU* gpu)
+    content: public bool IsManualFanTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsManualFanTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsManualFanTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(Integer)
+  name.vb: IsManualFanTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsManualFanTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsManualFanTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsManualFanTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 269
+    startLine: 515
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to query manual fan tuning support for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryIsManualFanTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsManualFanTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsManualFanTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsManualFanTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsManualFanTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
-  id: IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(Integer, Boolean)
+  name.vb: TryIsManualFanTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(System.Int32)
+  id: IsManualPowerTuningSupported(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: IsManualPowerTuningSupported(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*)
+  name: IsManualPowerTuningSupported(int)
+  nameWithType: ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 283
+    startLine: 522
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Returns true when manual power tuning is supported for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool IsManualPowerTuningSupported(IADLXGPU* gpu)
+    content: public bool IsManualPowerTuningSupported(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function IsManualPowerTuningSupported(gpu As IADLXGPU*) As Boolean
+    content.vb: Public Function IsManualPowerTuningSupported(gpuUniqueId As Integer) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
-  id: TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*,System.Boolean@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(Integer)
+  name.vb: IsManualPowerTuningSupported(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(System.Int32,System.Boolean@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(System.Int32,System.Boolean@)
+  id: TryIsManualPowerTuningSupported(System.Int32,System.Boolean@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryIsManualPowerTuningSupported(IADLXGPU*, out bool)
-  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(IADLXGPU*, out bool)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*, out bool)
+  name: TryIsManualPowerTuningSupported(int, out bool)
+  nameWithType: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(int, out bool)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(int, out bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 298
+    startLine: 530
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to query manual power tuning support for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryIsManualPowerTuningSupported(IADLXGPU* gpu, out bool supported)
+    content: public bool TryIsManualPowerTuningSupported(int gpuUniqueId, out bool supported)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: supported
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TryIsManualPowerTuningSupported(gpu As IADLXGPU*, supported As Boolean) As Boolean
+    content.vb: Public Function TryIsManualPowerTuningSupported(gpuUniqueId As Integer, supported As Boolean) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(IADLXGPU*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(ADLXWrapper.IADLXGPU*, Boolean)
-  name.vb: TryIsManualPowerTuningSupported(IADLXGPU*, Boolean)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(ADLXWrapper.IADLXGPU*)
-  id: GetManualFanTuning(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(Integer, Boolean)
+  name.vb: TryIsManualPowerTuningSupported(Integer, Boolean)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(System.Int32)
+  id: GetManualFanTuning(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: GetManualFanTuning(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.GetManualFanTuning(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(ADLXWrapper.IADLXGPU*)
+  name: GetManualFanTuning(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetManualFanTuning(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 312
+    startLine: 537
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets manual fan tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public ManualFanTuningInfo GetManualFanTuning(IADLXGPU* gpu)
+    content: public ManualFanTuningDto GetManualFanTuning(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.ManualFanTuningInfo
-    content.vb: Public Function GetManualFanTuning(gpu As IADLXGPU*) As ManualFanTuningInfo
+      type: ADLXWrapper.ManualFanTuningDto
+    content.vb: Public Function GetManualFanTuning(gpuUniqueId As Integer) As ManualFanTuningDto
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
-  id: TryGetManualFanTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualFanTuningInfo@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetManualFanTuning(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(Integer)
+  name.vb: GetManualFanTuning(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(System.Int32,ADLXWrapper.ManualFanTuningDto@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(System.Int32,ADLXWrapper.ManualFanTuningDto@)
+  id: TryGetManualFanTuning(System.Int32,ADLXWrapper.ManualFanTuningDto@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetManualFanTuning(IADLXGPU*, out ManualFanTuningInfo)
-  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(IADLXGPU*, out ManualFanTuningInfo)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualFanTuningInfo)
+  name: TryGetManualFanTuning(int, out ManualFanTuningDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(int, out ManualFanTuningDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(int, out ADLXWrapper.ManualFanTuningDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 328
+    startLine: 545
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to get manual fan tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryGetManualFanTuning(IADLXGPU* gpu, out ManualFanTuningInfo info)
+    content: public bool TryGetManualFanTuning(int gpuUniqueId, out ManualFanTuningDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.ManualFanTuningInfo
+      type: ADLXWrapper.ManualFanTuningDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetManualFanTuning(gpu As IADLXGPU*, info As ManualFanTuningInfo) As Boolean
+    content.vb: Public Function TryGetManualFanTuning(gpuUniqueId As Integer, info As ManualFanTuningDto) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(IADLXGPU*, ManualFanTuningInfo)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualFanTuningInfo)
-  name.vb: TryGetManualFanTuning(IADLXGPU*, ManualFanTuningInfo)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(ADLXWrapper.IADLXGPU*)
-  id: GetManualVramTuning(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualFanTuning(Integer, ManualFanTuningDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(Integer, ADLXWrapper.ManualFanTuningDto)
+  name.vb: TryGetManualFanTuning(Integer, ManualFanTuningDto)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(System.Int32)
+  id: GetManualVramTuning(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: GetManualVramTuning(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.GetManualVramTuning(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(ADLXWrapper.IADLXGPU*)
+  name: GetManualVramTuning(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetManualVramTuning(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 342
+    startLine: 552
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets manual VRAM tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public ManualVramTuningInfo GetManualVramTuning(IADLXGPU* gpu)
+    content: public ManualVramTuningDto GetManualVramTuning(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.ManualVramTuningInfo
-    content.vb: Public Function GetManualVramTuning(gpu As IADLXGPU*) As ManualVramTuningInfo
+      type: ADLXWrapper.ManualVramTuningDto
+    content.vb: Public Function GetManualVramTuning(gpuUniqueId As Integer) As ManualVramTuningDto
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
-  id: TryGetManualVramTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualVramTuningInfo@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetManualVramTuning(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(Integer)
+  name.vb: GetManualVramTuning(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)
+  id: TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetManualVramTuning(IADLXGPU*, out ManualVramTuningInfo)
-  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(IADLXGPU*, out ManualVramTuningInfo)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualVramTuningInfo)
+  name: TryGetManualVramTuning(int, out ManualVramTuningDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(int, out ManualVramTuningDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(int, out ADLXWrapper.ManualVramTuningDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 358
+    startLine: 560
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to get manual VRAM tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryGetManualVramTuning(IADLXGPU* gpu, out ManualVramTuningInfo info)
+    content: public bool TryGetManualVramTuning(int gpuUniqueId, out ManualVramTuningDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.ManualVramTuningInfo
+      type: ADLXWrapper.ManualVramTuningDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetManualVramTuning(gpu As IADLXGPU*, info As ManualVramTuningInfo) As Boolean
+    content.vb: Public Function TryGetManualVramTuning(gpuUniqueId As Integer, info As ManualVramTuningDto) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(IADLXGPU*, ManualVramTuningInfo)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualVramTuningInfo)
-  name.vb: TryGetManualVramTuning(IADLXGPU*, ManualVramTuningInfo)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(ADLXWrapper.IADLXGPU*)
-  id: GetManualGfxTuning(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualVramTuning(Integer, ManualVramTuningDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(Integer, ADLXWrapper.ManualVramTuningDto)
+  name.vb: TryGetManualVramTuning(Integer, ManualVramTuningDto)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(System.Int32)
+  id: GetManualGfxTuning(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: GetManualGfxTuning(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.GetManualGfxTuning(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(ADLXWrapper.IADLXGPU*)
+  name: GetManualGfxTuning(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetManualGfxTuning(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 372
+    startLine: 567
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets manual GFX tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public ManualGfxTuningInfo GetManualGfxTuning(IADLXGPU* gpu)
+    content: public ManualGfxTuningDto GetManualGfxTuning(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.ManualGfxTuningInfo
-    content.vb: Public Function GetManualGfxTuning(gpu As IADLXGPU*) As ManualGfxTuningInfo
+      type: ADLXWrapper.ManualGfxTuningDto
+    content.vb: Public Function GetManualGfxTuning(gpuUniqueId As Integer) As ManualGfxTuningDto
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
-  id: TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.ManualGfxTuningInfo@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetManualGfxTuning(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(Integer)
+  name.vb: GetManualGfxTuning(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)
+  id: TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetManualGfxTuning(IADLXGPU*, out ManualGfxTuningInfo)
-  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(IADLXGPU*, out ManualGfxTuningInfo)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.ManualGfxTuningInfo)
+  name: TryGetManualGfxTuning(int, out ManualGfxTuningDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(int, out ManualGfxTuningDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(int, out ADLXWrapper.ManualGfxTuningDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 388
+    startLine: 575
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to get manual GFX tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryGetManualGfxTuning(IADLXGPU* gpu, out ManualGfxTuningInfo info)
+    content: public bool TryGetManualGfxTuning(int gpuUniqueId, out ManualGfxTuningDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.ManualGfxTuningInfo
+      type: ADLXWrapper.ManualGfxTuningDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetManualGfxTuning(gpu As IADLXGPU*, info As ManualGfxTuningInfo) As Boolean
+    content.vb: Public Function TryGetManualGfxTuning(gpuUniqueId As Integer, info As ManualGfxTuningDto) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(IADLXGPU*, ManualGfxTuningInfo)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.ManualGfxTuningInfo)
-  name.vb: TryGetManualGfxTuning(IADLXGPU*, ManualGfxTuningInfo)
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(ADLXWrapper.IADLXGPU*)
-  id: GetPresetTuning(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(Integer, ManualGfxTuningDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(Integer, ADLXWrapper.ManualGfxTuningDto)
+  name.vb: TryGetManualGfxTuning(Integer, ManualGfxTuningDto)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(System.Int32)
+  id: GetPresetTuning(System.Int32)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: GetPresetTuning(IADLXGPU*)
-  nameWithType: ADLXGPUTuningServicesHelper.GetPresetTuning(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(ADLXWrapper.IADLXGPU*)
+  name: GetPresetTuning(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetPresetTuning(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 402
+    startLine: 582
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets preset tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public PresetTuningInfo GetPresetTuning(IADLXGPU* gpu)
+    content: public PresetTuningDto GetPresetTuning(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.PresetTuningInfo
-    content.vb: Public Function GetPresetTuning(gpu As IADLXGPU*) As PresetTuningInfo
+      type: ADLXWrapper.PresetTuningDto
+    content.vb: Public Function GetPresetTuning(gpuUniqueId As Integer) As PresetTuningDto
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning*
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
-  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
-  id: TryGetPresetTuning(ADLXWrapper.IADLXGPU*,ADLXWrapper.PresetTuningInfo@)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetPresetTuning(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(Integer)
+  name.vb: GetPresetTuning(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)
+  id: TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)
   parent: ADLXWrapper.ADLXGPUTuningServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetPresetTuning(IADLXGPU*, out PresetTuningInfo)
-  nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning(IADLXGPU*, out PresetTuningInfo)
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*, out ADLXWrapper.PresetTuningInfo)
+  name: TryGetPresetTuning(int, out PresetTuningDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning(int, out PresetTuningDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(int, out ADLXWrapper.PresetTuningDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 418
+    startLine: 590
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Tries to get preset tuning info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public bool TryGetPresetTuning(IADLXGPU* gpu, out PresetTuningInfo info)
+    content: public bool TryGetPresetTuning(int gpuUniqueId, out PresetTuningDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.PresetTuningInfo
+      type: ADLXWrapper.PresetTuningDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetPresetTuning(gpu As IADLXGPU*, info As PresetTuningInfo) As Boolean
+    content.vb: Public Function TryGetPresetTuning(gpuUniqueId As Integer, info As PresetTuningDto) As Boolean
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning*
-  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetPresetTuning(IADLXGPU*, PresetTuningInfo)
-  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(ADLXWrapper.IADLXGPU*, ADLXWrapper.PresetTuningInfo)
-  name.vb: TryGetPresetTuning(IADLXGPU*, PresetTuningInfo)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetPresetTuning(Integer, PresetTuningDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(Integer, ADLXWrapper.PresetTuningDto)
+  name.vb: TryGetPresetTuning(Integer, PresetTuningDto)
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   id: Dispose
@@ -1032,11 +975,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 432
+    startLine: 628
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1062,11 +1005,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 448
+    startLine: 644
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1307,7 +1250,7 @@ references:
   fullName: System
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper__ctor_ADLXWrapper_IADLXGPUTuningServices__System_Boolean_
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper__ctor_ADLXWrapper_IADLXGPUTuningServices__System_Boolean_ADLXWrapper_IADLXSystem__
   name: ADLXGPUTuningServicesHelper
   nameWithType: ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.ADLXGPUTuningServicesHelper
@@ -1341,12 +1284,28 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative*
-  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetGPUTuningServicesNative
-  name: GetGPUTuningServicesNative
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesNative
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: System.ObjectDisposedException
   commentId: T:System.ObjectDisposedException
   isExternal: true
@@ -1354,53 +1313,6 @@ references:
   name: ObjectDisposedException
   nameWithType: ObjectDisposedException
   fullName: System.ObjectDisposedException
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle*
-  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetGPUTuningServicesHandle
-  name: GetGPUTuningServicesHandle
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningServicesHandle
-- uid: ADLXWrapper.ADLXInterfaceHandle
-  commentId: T:ADLXWrapper.ADLXInterfaceHandle
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXInterfaceHandle.html
-  name: ADLXInterfaceHandle
-  nameWithType: ADLXInterfaceHandle
-  fullName: ADLXWrapper.ADLXInterfaceHandle
-- uid: ADLXWrapper.ADLXException
-  commentId: T:ADLXWrapper.ADLXException
-  href: ADLXWrapper.ADLXException.html
-  name: ADLXException
-  nameWithType: ADLXException
-  fullName: ADLXWrapper.ADLXException
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative*
-  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetGPUTuningChangedHandlingNative
-  name: GetGPUTuningChangedHandlingNative
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandlingNative
-- uid: ADLXWrapper.IADLXGPUTuningChangedHandling*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPUTuningChangedHandling.html
-  name: IADLXGPUTuningChangedHandling*
-  nameWithType: IADLXGPUTuningChangedHandling*
-  fullName: ADLXWrapper.IADLXGPUTuningChangedHandling*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPUTuningChangedHandling
-    name: IADLXGPUTuningChangedHandling
-    href: ADLXWrapper.IADLXGPUTuningChangedHandling.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPUTuningChangedHandling
-    name: IADLXGPUTuningChangedHandling
-    href: ADLXWrapper.IADLXGPUTuningChangedHandling.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling*
-  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetGPUTuningChangedHandling
-  name: GetGPUTuningChangedHandling
-  nameWithType: ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
-  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetGPUTuningChangedHandling
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener
   href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_AddGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_
@@ -1445,178 +1357,173 @@ references:
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetCapabilities_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetCapabilities_System_Int32_
   name: GetCapabilities
   nameWithType: ADLXGPUTuningServicesHelper.GetCapabilities
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities
-- uid: ADLXWrapper.IADLXGPU*
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
   isExternal: true
-  href: ADLXWrapper.IADLXGPU.html
-  name: IADLXGPU*
-  nameWithType: IADLXGPU*
-  fullName: ADLXWrapper.IADLXGPU*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-- uid: ADLXWrapper.GpuTuningCapabilitiesInfo
-  commentId: T:ADLXWrapper.GpuTuningCapabilitiesInfo
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto
+  commentId: T:ADLXWrapper.GpuTuningCapabilitiesDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuTuningCapabilitiesInfo.html
-  name: GpuTuningCapabilitiesInfo
-  nameWithType: GpuTuningCapabilitiesInfo
-  fullName: ADLXWrapper.GpuTuningCapabilitiesInfo
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html
+  name: GpuTuningCapabilitiesDto
+  nameWithType: GpuTuningCapabilitiesDto
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsAutoTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsAutoTuningSupported_System_Int32_
   name: IsAutoTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsAutoTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_System_Int32_System_Boolean__
   name: TryIsAutoTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsPresetTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsPresetTuningSupported_System_Int32_
   name: IsPresetTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsPresetTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsPresetTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsPresetTuningSupported_System_Int32_System_Boolean__
   name: TryIsPresetTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualGfxTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualGfxTuningSupported_System_Int32_
   name: IsManualGfxTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualGfxTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualGfxTuningSupported_System_Int32_System_Boolean__
   name: TryIsManualGfxTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualVramTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualVramTuningSupported_System_Int32_
   name: IsManualVramTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsManualVramTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualVramTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualVramTuningSupported_System_Int32_System_Boolean__
   name: TryIsManualVramTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualFanTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualFanTuningSupported_System_Int32_
   name: IsManualFanTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsManualFanTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualFanTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualFanTuningSupported_System_Int32_System_Boolean__
   name: TryIsManualFanTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualPowerTuningSupported_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualPowerTuningSupported_System_Int32_
   name: IsManualPowerTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualPowerTuningSupported_ADLXWrapper_IADLXGPU__System_Boolean__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualPowerTuningSupported_System_Int32_System_Boolean__
   name: TryIsManualPowerTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualFanTuning_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualFanTuning_System_Int32_
   name: GetManualFanTuning
   nameWithType: ADLXGPUTuningServicesHelper.GetManualFanTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning
-- uid: ADLXWrapper.ManualFanTuningInfo
-  commentId: T:ADLXWrapper.ManualFanTuningInfo
+- uid: ADLXWrapper.ManualFanTuningDto
+  commentId: T:ADLXWrapper.ManualFanTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualFanTuningInfo.html
-  name: ManualFanTuningInfo
-  nameWithType: ManualFanTuningInfo
-  fullName: ADLXWrapper.ManualFanTuningInfo
+  href: ADLXWrapper.ManualFanTuningDto.html
+  name: ManualFanTuningDto
+  nameWithType: ManualFanTuningDto
+  fullName: ADLXWrapper.ManualFanTuningDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualFanTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualFanTuningInfo__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualFanTuning_System_Int32_ADLXWrapper_ManualFanTuningDto__
   name: TryGetManualFanTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetManualFanTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualVramTuning_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualVramTuning_System_Int32_
   name: GetManualVramTuning
   nameWithType: ADLXGPUTuningServicesHelper.GetManualVramTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning
-- uid: ADLXWrapper.ManualVramTuningInfo
-  commentId: T:ADLXWrapper.ManualVramTuningInfo
+- uid: ADLXWrapper.ManualVramTuningDto
+  commentId: T:ADLXWrapper.ManualVramTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualVramTuningInfo.html
-  name: ManualVramTuningInfo
-  nameWithType: ManualVramTuningInfo
-  fullName: ADLXWrapper.ManualVramTuningInfo
+  href: ADLXWrapper.ManualVramTuningDto.html
+  name: ManualVramTuningDto
+  nameWithType: ManualVramTuningDto
+  fullName: ADLXWrapper.ManualVramTuningDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualVramTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualVramTuningInfo__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualVramTuning_System_Int32_ADLXWrapper_ManualVramTuningDto__
   name: TryGetManualVramTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetManualVramTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualGfxTuning_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualGfxTuning_System_Int32_
   name: GetManualGfxTuning
   nameWithType: ADLXGPUTuningServicesHelper.GetManualGfxTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning
-- uid: ADLXWrapper.ManualGfxTuningInfo
-  commentId: T:ADLXWrapper.ManualGfxTuningInfo
+- uid: ADLXWrapper.ManualGfxTuningDto
+  commentId: T:ADLXWrapper.ManualGfxTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualGfxTuningInfo.html
-  name: ManualGfxTuningInfo
-  nameWithType: ManualGfxTuningInfo
-  fullName: ADLXWrapper.ManualGfxTuningInfo
+  href: ADLXWrapper.ManualGfxTuningDto.html
+  name: ManualGfxTuningDto
+  nameWithType: ManualGfxTuningDto
+  fullName: ADLXWrapper.ManualGfxTuningDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualGfxTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_ManualGfxTuningInfo__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualGfxTuning_System_Int32_ADLXWrapper_ManualGfxTuningDto__
   name: TryGetManualGfxTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetPresetTuning_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetPresetTuning_System_Int32_
   name: GetPresetTuning
   nameWithType: ADLXGPUTuningServicesHelper.GetPresetTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning
-- uid: ADLXWrapper.PresetTuningInfo
-  commentId: T:ADLXWrapper.PresetTuningInfo
+- uid: ADLXWrapper.PresetTuningDto
+  commentId: T:ADLXWrapper.PresetTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.PresetTuningInfo.html
-  name: PresetTuningInfo
-  nameWithType: PresetTuningInfo
-  fullName: ADLXWrapper.PresetTuningInfo
+  href: ADLXWrapper.PresetTuningDto.html
+  name: PresetTuningDto
+  nameWithType: PresetTuningDto
+  fullName: ADLXWrapper.PresetTuningDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning
-  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetPresetTuning_ADLXWrapper_IADLXGPU__ADLXWrapper_PresetTuningInfo__
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetPresetTuning_System_Int32_ADLXWrapper_PresetTuningDto__
   name: TryGetPresetTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning

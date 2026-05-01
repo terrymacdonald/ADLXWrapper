@@ -1,0 +1,955 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.All3DSettingsDto
+  commentId: T:ADLXWrapper.All3DSettingsDto
+  id: All3DSettingsDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
+  - ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+  - ADLXWrapper.All3DSettingsDto.AntiAliasing
+  - ADLXWrapper.All3DSettingsDto.AntiLag
+  - ADLXWrapper.All3DSettingsDto.Boost
+  - ADLXWrapper.All3DSettingsDto.EnhancedSync
+  - ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+  - ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  - ADLXWrapper.All3DSettingsDto.ImageSharpening
+  - ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+  - ADLXWrapper.All3DSettingsDto.Tessellation
+  - ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+  langs:
+  - csharp
+  - vb
+  name: All3DSettingsDto
+  nameWithType: All3DSettingsDto
+  fullName: ADLXWrapper.All3DSettingsDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: All3DSettingsDto
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 608
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Represents a complete snapshot of all 3D settings for a GPU.
+  example: []
+  syntax:
+    content: public readonly struct All3DSettingsDto
+    content.vb: Public Structure All3DSettingsDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.All3DSettingsDto.AntiLag
+  commentId: P:ADLXWrapper.All3DSettingsDto.AntiLag
+  id: AntiLag
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: AntiLag
+  nameWithType: All3DSettingsDto.AntiLag
+  fullName: ADLXWrapper.All3DSettingsDto.AntiLag
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AntiLag
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 610
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AntiLagDto? AntiLag { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.AntiLagDto}
+    content.vb: Public Property AntiLag As AntiLagDto?
+  overload: ADLXWrapper.All3DSettingsDto.AntiLag*
+- uid: ADLXWrapper.All3DSettingsDto.Boost
+  commentId: P:ADLXWrapper.All3DSettingsDto.Boost
+  id: Boost
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: Boost
+  nameWithType: All3DSettingsDto.Boost
+  fullName: ADLXWrapper.All3DSettingsDto.Boost
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Boost
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 611
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public BoostDto? Boost { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.BoostDto}
+    content.vb: Public Property Boost As BoostDto?
+  overload: ADLXWrapper.All3DSettingsDto.Boost*
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpening
+  commentId: P:ADLXWrapper.All3DSettingsDto.ImageSharpening
+  id: ImageSharpening
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: ImageSharpening
+  nameWithType: All3DSettingsDto.ImageSharpening
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpening
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ImageSharpening
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 612
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public RadeonImageSharpeningDto? ImageSharpening { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.RadeonImageSharpeningDto}
+    content.vb: Public Property ImageSharpening As RadeonImageSharpeningDto?
+  overload: ADLXWrapper.All3DSettingsDto.ImageSharpening*
+- uid: ADLXWrapper.All3DSettingsDto.EnhancedSync
+  commentId: P:ADLXWrapper.All3DSettingsDto.EnhancedSync
+  id: EnhancedSync
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: EnhancedSync
+  nameWithType: All3DSettingsDto.EnhancedSync
+  fullName: ADLXWrapper.All3DSettingsDto.EnhancedSync
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnhancedSync
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 613
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public EnhancedSyncDto? EnhancedSync { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.EnhancedSyncDto}
+    content.vb: Public Property EnhancedSync As EnhancedSyncDto?
+  overload: ADLXWrapper.All3DSettingsDto.EnhancedSync*
+- uid: ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+  commentId: P:ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+  id: WaitForVerticalRefresh
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: WaitForVerticalRefresh
+  nameWithType: All3DSettingsDto.WaitForVerticalRefresh
+  fullName: ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: WaitForVerticalRefresh
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 614
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public WaitForVerticalRefreshDto? WaitForVerticalRefresh { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto}
+    content.vb: Public Property WaitForVerticalRefresh As WaitForVerticalRefreshDto?
+  overload: ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh*
+- uid: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  commentId: P:ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  id: FrameRateTargetControl
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: FrameRateTargetControl
+  nameWithType: All3DSettingsDto.FrameRateTargetControl
+  fullName: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FrameRateTargetControl
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 615
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public FrameRateTargetControlDto? FrameRateTargetControl { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.FrameRateTargetControlDto}
+    content.vb: Public Property FrameRateTargetControl As FrameRateTargetControlDto?
+  overload: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl*
+- uid: ADLXWrapper.All3DSettingsDto.AntiAliasing
+  commentId: P:ADLXWrapper.All3DSettingsDto.AntiAliasing
+  id: AntiAliasing
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: AntiAliasing
+  nameWithType: All3DSettingsDto.AntiAliasing
+  fullName: ADLXWrapper.All3DSettingsDto.AntiAliasing
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 616
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AntiAliasingDto? AntiAliasing { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.AntiAliasingDto}
+    content.vb: Public Property AntiAliasing As AntiAliasingDto?
+  overload: ADLXWrapper.All3DSettingsDto.AntiAliasing*
+- uid: ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+  commentId: P:ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+  id: AnisotropicFiltering
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: AnisotropicFiltering
+  nameWithType: All3DSettingsDto.AnisotropicFiltering
+  fullName: ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AnisotropicFiltering
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 617
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public AnisotropicFilteringDto? AnisotropicFiltering { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.AnisotropicFilteringDto}
+    content.vb: Public Property AnisotropicFiltering As AnisotropicFilteringDto?
+  overload: ADLXWrapper.All3DSettingsDto.AnisotropicFiltering*
+- uid: ADLXWrapper.All3DSettingsDto.Tessellation
+  commentId: P:ADLXWrapper.All3DSettingsDto.Tessellation
+  id: Tessellation
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: Tessellation
+  nameWithType: All3DSettingsDto.Tessellation
+  fullName: ADLXWrapper.All3DSettingsDto.Tessellation
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Tessellation
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 618
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public TessellationDto? Tessellation { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.TessellationDto}
+    content.vb: Public Property Tessellation As TessellationDto?
+  overload: ADLXWrapper.All3DSettingsDto.Tessellation*
+- uid: ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+  commentId: P:ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+  id: FluidMotionFrames
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: FluidMotionFrames
+  nameWithType: All3DSettingsDto.FluidMotionFrames
+  fullName: ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FluidMotionFrames
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 619
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public FluidMotionFramesDto? FluidMotionFrames { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.FluidMotionFramesDto}
+    content.vb: Public Property FluidMotionFrames As FluidMotionFramesDto?
+  overload: ADLXWrapper.All3DSettingsDto.FluidMotionFrames*
+- uid: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+  commentId: P:ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+  id: RadeonSuperResolution
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: RadeonSuperResolution
+  nameWithType: All3DSettingsDto.RadeonSuperResolution
+  fullName: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RadeonSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 620
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public RadeonSuperResolutionDto? RadeonSuperResolution { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
+    content.vb: Public Property RadeonSuperResolution As RadeonSuperResolutionDto?
+  overload: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution*
+- uid: ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
+  commentId: M:ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
+  id: '#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})'
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+  nameWithType: All3DSettingsDto.All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 622
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public All3DSettingsDto(AntiLagDto? antiLag, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution)
+    parameters:
+    - id: antiLag
+      type: System.Nullable{ADLXWrapper.AntiLagDto}
+    - id: boost
+      type: System.Nullable{ADLXWrapper.BoostDto}
+    - id: imageSharpening
+      type: System.Nullable{ADLXWrapper.RadeonImageSharpeningDto}
+    - id: enhancedSync
+      type: System.Nullable{ADLXWrapper.EnhancedSyncDto}
+    - id: waitForVerticalRefresh
+      type: System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto}
+    - id: frameRateTargetControl
+      type: System.Nullable{ADLXWrapper.FrameRateTargetControlDto}
+    - id: antiAliasing
+      type: System.Nullable{ADLXWrapper.AntiAliasingDto}
+    - id: anisotropicFiltering
+      type: System.Nullable{ADLXWrapper.AnisotropicFilteringDto}
+    - id: tessellation
+      type: System.Nullable{ADLXWrapper.TessellationDto}
+    - id: fluidMotionFrames
+      type: System.Nullable{ADLXWrapper.FluidMotionFramesDto}
+    - id: radeonSuperResolution
+      type: System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(antiLag As AntiLagDto?, boost As BoostDto?, imageSharpening As RadeonImageSharpeningDto?, enhancedSync As EnhancedSyncDto?, waitForVerticalRefresh As WaitForVerticalRefreshDto?, frameRateTargetControl As FrameRateTargetControlDto?, antiAliasing As AntiAliasingDto?, anisotropicFiltering As AnisotropicFilteringDto?, tessellation As TessellationDto?, fluidMotionFrames As FluidMotionFramesDto?, radeonSuperResolution As RadeonSuperResolutionDto?)
+  overload: ADLXWrapper.All3DSettingsDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: All3DSettingsDto.New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+  fullName.vb: ADLXWrapper.All3DSettingsDto.New(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
+  name.vb: New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.All3DSettingsDto.AntiLag*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.AntiLag
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_AntiLag
+  name: AntiLag
+  nameWithType: All3DSettingsDto.AntiLag
+  fullName: ADLXWrapper.All3DSettingsDto.AntiLag
+- uid: System.Nullable{ADLXWrapper.AntiLagDto}
+  commentId: T:System.Nullable{ADLXWrapper.AntiLagDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.AntiLagDto.html
+  name: AntiLagDto?
+  nameWithType: AntiLagDto?
+  fullName: ADLXWrapper.AntiLagDto?
+  spec.csharp:
+  - uid: ADLXWrapper.AntiLagDto
+    name: AntiLagDto
+    href: ADLXWrapper.AntiLagDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.AntiLagDto
+    name: AntiLagDto
+    href: ADLXWrapper.AntiLagDto.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.All3DSettingsDto.Boost*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.Boost
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_Boost
+  name: Boost
+  nameWithType: All3DSettingsDto.Boost
+  fullName: ADLXWrapper.All3DSettingsDto.Boost
+- uid: System.Nullable{ADLXWrapper.BoostDto}
+  commentId: T:System.Nullable{ADLXWrapper.BoostDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.BoostDto.html
+  name: BoostDto?
+  nameWithType: BoostDto?
+  fullName: ADLXWrapper.BoostDto?
+  spec.csharp:
+  - uid: ADLXWrapper.BoostDto
+    name: BoostDto
+    href: ADLXWrapper.BoostDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.BoostDto
+    name: BoostDto
+    href: ADLXWrapper.BoostDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpening*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.ImageSharpening
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_ImageSharpening
+  name: ImageSharpening
+  nameWithType: All3DSettingsDto.ImageSharpening
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpening
+- uid: System.Nullable{ADLXWrapper.RadeonImageSharpeningDto}
+  commentId: T:System.Nullable{ADLXWrapper.RadeonImageSharpeningDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.RadeonImageSharpeningDto.html
+  name: RadeonImageSharpeningDto?
+  nameWithType: RadeonImageSharpeningDto?
+  fullName: ADLXWrapper.RadeonImageSharpeningDto?
+  spec.csharp:
+  - uid: ADLXWrapper.RadeonImageSharpeningDto
+    name: RadeonImageSharpeningDto
+    href: ADLXWrapper.RadeonImageSharpeningDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.RadeonImageSharpeningDto
+    name: RadeonImageSharpeningDto
+    href: ADLXWrapper.RadeonImageSharpeningDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.EnhancedSync*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.EnhancedSync
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_EnhancedSync
+  name: EnhancedSync
+  nameWithType: All3DSettingsDto.EnhancedSync
+  fullName: ADLXWrapper.All3DSettingsDto.EnhancedSync
+- uid: System.Nullable{ADLXWrapper.EnhancedSyncDto}
+  commentId: T:System.Nullable{ADLXWrapper.EnhancedSyncDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.EnhancedSyncDto.html
+  name: EnhancedSyncDto?
+  nameWithType: EnhancedSyncDto?
+  fullName: ADLXWrapper.EnhancedSyncDto?
+  spec.csharp:
+  - uid: ADLXWrapper.EnhancedSyncDto
+    name: EnhancedSyncDto
+    href: ADLXWrapper.EnhancedSyncDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.EnhancedSyncDto
+    name: EnhancedSyncDto
+    href: ADLXWrapper.EnhancedSyncDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_WaitForVerticalRefresh
+  name: WaitForVerticalRefresh
+  nameWithType: All3DSettingsDto.WaitForVerticalRefresh
+  fullName: ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
+- uid: System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto}
+  commentId: T:System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.WaitForVerticalRefreshDto.html
+  name: WaitForVerticalRefreshDto?
+  nameWithType: WaitForVerticalRefreshDto?
+  fullName: ADLXWrapper.WaitForVerticalRefreshDto?
+  spec.csharp:
+  - uid: ADLXWrapper.WaitForVerticalRefreshDto
+    name: WaitForVerticalRefreshDto
+    href: ADLXWrapper.WaitForVerticalRefreshDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.WaitForVerticalRefreshDto
+    name: WaitForVerticalRefreshDto
+    href: ADLXWrapper.WaitForVerticalRefreshDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_FrameRateTargetControl
+  name: FrameRateTargetControl
+  nameWithType: All3DSettingsDto.FrameRateTargetControl
+  fullName: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+- uid: System.Nullable{ADLXWrapper.FrameRateTargetControlDto}
+  commentId: T:System.Nullable{ADLXWrapper.FrameRateTargetControlDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.FrameRateTargetControlDto.html
+  name: FrameRateTargetControlDto?
+  nameWithType: FrameRateTargetControlDto?
+  fullName: ADLXWrapper.FrameRateTargetControlDto?
+  spec.csharp:
+  - uid: ADLXWrapper.FrameRateTargetControlDto
+    name: FrameRateTargetControlDto
+    href: ADLXWrapper.FrameRateTargetControlDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.FrameRateTargetControlDto
+    name: FrameRateTargetControlDto
+    href: ADLXWrapper.FrameRateTargetControlDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.AntiAliasing*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.AntiAliasing
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_AntiAliasing
+  name: AntiAliasing
+  nameWithType: All3DSettingsDto.AntiAliasing
+  fullName: ADLXWrapper.All3DSettingsDto.AntiAliasing
+- uid: System.Nullable{ADLXWrapper.AntiAliasingDto}
+  commentId: T:System.Nullable{ADLXWrapper.AntiAliasingDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.AntiAliasingDto.html
+  name: AntiAliasingDto?
+  nameWithType: AntiAliasingDto?
+  fullName: ADLXWrapper.AntiAliasingDto?
+  spec.csharp:
+  - uid: ADLXWrapper.AntiAliasingDto
+    name: AntiAliasingDto
+    href: ADLXWrapper.AntiAliasingDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.AntiAliasingDto
+    name: AntiAliasingDto
+    href: ADLXWrapper.AntiAliasingDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.AnisotropicFiltering*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_AnisotropicFiltering
+  name: AnisotropicFiltering
+  nameWithType: All3DSettingsDto.AnisotropicFiltering
+  fullName: ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
+- uid: System.Nullable{ADLXWrapper.AnisotropicFilteringDto}
+  commentId: T:System.Nullable{ADLXWrapper.AnisotropicFilteringDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.AnisotropicFilteringDto.html
+  name: AnisotropicFilteringDto?
+  nameWithType: AnisotropicFilteringDto?
+  fullName: ADLXWrapper.AnisotropicFilteringDto?
+  spec.csharp:
+  - uid: ADLXWrapper.AnisotropicFilteringDto
+    name: AnisotropicFilteringDto
+    href: ADLXWrapper.AnisotropicFilteringDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.AnisotropicFilteringDto
+    name: AnisotropicFilteringDto
+    href: ADLXWrapper.AnisotropicFilteringDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.Tessellation*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.Tessellation
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_Tessellation
+  name: Tessellation
+  nameWithType: All3DSettingsDto.Tessellation
+  fullName: ADLXWrapper.All3DSettingsDto.Tessellation
+- uid: System.Nullable{ADLXWrapper.TessellationDto}
+  commentId: T:System.Nullable{ADLXWrapper.TessellationDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.TessellationDto.html
+  name: TessellationDto?
+  nameWithType: TessellationDto?
+  fullName: ADLXWrapper.TessellationDto?
+  spec.csharp:
+  - uid: ADLXWrapper.TessellationDto
+    name: TessellationDto
+    href: ADLXWrapper.TessellationDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.TessellationDto
+    name: TessellationDto
+    href: ADLXWrapper.TessellationDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.FluidMotionFrames*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_FluidMotionFrames
+  name: FluidMotionFrames
+  nameWithType: All3DSettingsDto.FluidMotionFrames
+  fullName: ADLXWrapper.All3DSettingsDto.FluidMotionFrames
+- uid: System.Nullable{ADLXWrapper.FluidMotionFramesDto}
+  commentId: T:System.Nullable{ADLXWrapper.FluidMotionFramesDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.FluidMotionFramesDto.html
+  name: FluidMotionFramesDto?
+  nameWithType: FluidMotionFramesDto?
+  fullName: ADLXWrapper.FluidMotionFramesDto?
+  spec.csharp:
+  - uid: ADLXWrapper.FluidMotionFramesDto
+    name: FluidMotionFramesDto
+    href: ADLXWrapper.FluidMotionFramesDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.FluidMotionFramesDto
+    name: FluidMotionFramesDto
+    href: ADLXWrapper.FluidMotionFramesDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_RadeonSuperResolution
+  name: RadeonSuperResolution
+  nameWithType: All3DSettingsDto.RadeonSuperResolution
+  fullName: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
+- uid: System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
+  commentId: T:System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.RadeonSuperResolutionDto.html
+  name: RadeonSuperResolutionDto?
+  nameWithType: RadeonSuperResolutionDto?
+  fullName: ADLXWrapper.RadeonSuperResolutionDto?
+  spec.csharp:
+  - uid: ADLXWrapper.RadeonSuperResolutionDto
+    name: RadeonSuperResolutionDto
+    href: ADLXWrapper.RadeonSuperResolutionDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.RadeonSuperResolutionDto
+    name: RadeonSuperResolutionDto
+    href: ADLXWrapper.RadeonSuperResolutionDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.#ctor*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.#ctor
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_System_Nullable_ADLXWrapper_AntiLagDto__System_Nullable_ADLXWrapper_BoostDto__System_Nullable_ADLXWrapper_RadeonImageSharpeningDto__System_Nullable_ADLXWrapper_EnhancedSyncDto__System_Nullable_ADLXWrapper_WaitForVerticalRefreshDto__System_Nullable_ADLXWrapper_FrameRateTargetControlDto__System_Nullable_ADLXWrapper_AntiAliasingDto__System_Nullable_ADLXWrapper_AnisotropicFilteringDto__System_Nullable_ADLXWrapper_TessellationDto__System_Nullable_ADLXWrapper_FluidMotionFramesDto__System_Nullable_ADLXWrapper_RadeonSuperResolutionDto__
+  name: All3DSettingsDto
+  nameWithType: All3DSettingsDto.All3DSettingsDto
+  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto
+  nameWithType.vb: All3DSettingsDto.New
+  fullName.vb: ADLXWrapper.All3DSettingsDto.New
+  name.vb: New

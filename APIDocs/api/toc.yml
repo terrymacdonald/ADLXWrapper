@@ -232,41 +232,41 @@ items:
   - uid: ADLXWrapper.ADLX_WHITE_POINT
     name: ADLX_WHITE_POINT
     type: Enum
-  - uid: ADLXWrapper.All3DSettingsInfo
-    name: All3DSettingsInfo
+  - uid: ADLXWrapper.All3DSettingsDto
+    name: All3DSettingsDto
     type: Struct
-  - uid: ADLXWrapper.AllMetricsSnapshotInfo
-    name: AllMetricsSnapshotInfo
+  - uid: ADLXWrapper.AllMetricsSnapshotDto
+    name: AllMetricsSnapshotDto
     type: Struct
-  - uid: ADLXWrapper.AnisotropicFilteringInfo
-    name: AnisotropicFilteringInfo
+  - uid: ADLXWrapper.AnisotropicFilteringDto
+    name: AnisotropicFilteringDto
     type: Struct
-  - uid: ADLXWrapper.AntiAliasingInfo
-    name: AntiAliasingInfo
+  - uid: ADLXWrapper.AntiAliasingDto
+    name: AntiAliasingDto
     type: Struct
-  - uid: ADLXWrapper.AntiLagInfo
-    name: AntiLagInfo
+  - uid: ADLXWrapper.AntiLagDto
+    name: AntiLagDto
     type: Struct
-  - uid: ADLXWrapper.AutoTuningInfo
-    name: AutoTuningInfo
+  - uid: ADLXWrapper.AutoTuningDto
+    name: AutoTuningDto
     type: Struct
-  - uid: ADLXWrapper.BoostInfo
-    name: BoostInfo
+  - uid: ADLXWrapper.BoostDto
+    name: BoostDto
     type: Struct
   - uid: ADLXWrapper.ComPtr`1
     name: ComPtr<T>
     type: Struct
-  - uid: ADLXWrapper.ConnectivityExperienceInfo
-    name: ConnectivityExperienceInfo
+  - uid: ADLXWrapper.ConnectivityExperienceDto
+    name: ConnectivityExperienceDto
     type: Struct
-  - uid: ADLXWrapper.CustomColorInfo
-    name: CustomColorInfo
+  - uid: ADLXWrapper.CustomColorDto
+    name: CustomColorDto
     type: Struct
-  - uid: ADLXWrapper.CustomResolutionInfo
-    name: CustomResolutionInfo
+  - uid: ADLXWrapper.CustomResolutionDto
+    name: CustomResolutionDto
     type: Struct
-  - uid: ADLXWrapper.DesktopInfo
-    name: DesktopInfo
+  - uid: ADLXWrapper.DesktopDto
+    name: DesktopDto
     type: Struct
   - uid: ADLXWrapper.DesktopListListenerHandle
     name: DesktopListListenerHandle
@@ -280,6 +280,9 @@ items:
   - uid: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
     name: Display3DLutListenerHandle.OnDisplay3DLutChanged
     type: Delegate
+  - uid: ADLXWrapper.DisplayDto
+    name: DisplayDto
+    type: Struct
   - uid: ADLXWrapper.DisplayGammaListenerHandle
     name: DisplayGammaListenerHandle
     type: Class
@@ -292,17 +295,14 @@ items:
   - uid: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
     name: DisplayGamutListenerHandle.OnDisplayGamutChanged
     type: Delegate
-  - uid: ADLXWrapper.DisplayInfo
-    name: DisplayInfo
-    type: Struct
   - uid: ADLXWrapper.DisplayListListenerHandle
     name: DisplayListListenerHandle
     type: Class
   - uid: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
     name: DisplayListListenerHandle.OnDisplayListChanged
     type: Delegate
-  - uid: ADLXWrapper.DisplayResolutionInfo
-    name: DisplayResolutionInfo
+  - uid: ADLXWrapper.DisplayResolutionDto
+    name: DisplayResolutionDto
     type: Struct
   - uid: ADLXWrapper.DisplaySettingsListenerHandle
     name: DisplaySettingsListenerHandle
@@ -310,41 +310,47 @@ items:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     name: DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     type: Delegate
-  - uid: ADLXWrapper.EnhancedSyncInfo
-    name: EnhancedSyncInfo
+  - uid: ADLXWrapper.EnhancedSyncDto
+    name: EnhancedSyncDto
     type: Struct
-  - uid: ADLXWrapper.EyefinityDesktopInfo
-    name: EyefinityDesktopInfo
+  - uid: ADLXWrapper.EyefinityDesktopDto
+    name: EyefinityDesktopDto
     type: Struct
   - uid: ADLXWrapper.FanPoint
     name: FanPoint
     type: Struct
-  - uid: ADLXWrapper.FluidMotionFramesInfo
-    name: FluidMotionFramesInfo
+  - uid: ADLXWrapper.FluidMotionFramesDto
+    name: FluidMotionFramesDto
     type: Struct
-  - uid: ADLXWrapper.FrameRateTargetControlInfo
-    name: FrameRateTargetControlInfo
+  - uid: ADLXWrapper.FrameRateTargetControlDto
+    name: FrameRateTargetControlDto
     type: Struct
-  - uid: ADLXWrapper.GammaInfo
-    name: GammaInfo
+  - uid: ADLXWrapper.GammaDto
+    name: GammaDto
     type: Struct
-  - uid: ADLXWrapper.GamutInfo
-    name: GamutInfo
+  - uid: ADLXWrapper.GammaRampDto
+    name: GammaRampDto
     type: Struct
-  - uid: ADLXWrapper.GpuInfo
-    name: GpuInfo
+  - uid: ADLXWrapper.GamutColorSpaceDto
+    name: GamutColorSpaceDto
     type: Struct
-  - uid: ADLXWrapper.GpuMetricsEntryInfo
-    name: GpuMetricsEntryInfo
+  - uid: ADLXWrapper.GamutDto
+    name: GamutDto
     type: Struct
-  - uid: ADLXWrapper.GpuMetricsSnapshotInfo
-    name: GpuMetricsSnapshotInfo
+  - uid: ADLXWrapper.GpuDto
+    name: GpuDto
     type: Struct
-  - uid: ADLXWrapper.GpuMetricsSupportInfo
-    name: GpuMetricsSupportInfo
+  - uid: ADLXWrapper.GpuMetricsEntryDto
+    name: GpuMetricsEntryDto
     type: Struct
-  - uid: ADLXWrapper.GpuTuningCapabilitiesInfo
-    name: GpuTuningCapabilitiesInfo
+  - uid: ADLXWrapper.GpuMetricsSnapshotDto
+    name: GpuMetricsSnapshotDto
+    type: Struct
+  - uid: ADLXWrapper.GpuMetricsSupportDto
+    name: GpuMetricsSupportDto
+    type: Struct
+  - uid: ADLXWrapper.GpuTuningCapabilitiesDto
+    name: GpuTuningCapabilitiesDto
     type: Struct
   - uid: ADLXWrapper.GpuTuningListenerHandle
     name: GpuTuningListenerHandle
@@ -805,17 +811,23 @@ items:
   - uid: ADLXWrapper.IADLXVideoUpscale
     name: IADLXVideoUpscale
     type: Struct
-  - uid: ADLXWrapper.ManualFanTuningInfo
-    name: ManualFanTuningInfo
+  - uid: ADLXWrapper.IntRangeDto
+    name: IntRangeDto
     type: Struct
-  - uid: ADLXWrapper.ManualGfxTuningInfo
-    name: ManualGfxTuningInfo
+  - uid: ADLXWrapper.LuidDto
+    name: LuidDto
     type: Struct
-  - uid: ADLXWrapper.ManualPowerTuningInfo
-    name: ManualPowerTuningInfo
+  - uid: ADLXWrapper.ManualFanTuningDto
+    name: ManualFanTuningDto
     type: Struct
-  - uid: ADLXWrapper.ManualVramTuningInfo
-    name: ManualVramTuningInfo
+  - uid: ADLXWrapper.ManualGfxTuningDto
+    name: ManualGfxTuningDto
+    type: Struct
+  - uid: ADLXWrapper.ManualPowerTuningDto
+    name: ManualPowerTuningDto
+    type: Struct
+  - uid: ADLXWrapper.ManualVramTuningDto
+    name: ManualVramTuningDto
     type: Struct
   - uid: ADLXWrapper.MultimediaListenerHandle
     name: MultimediaListenerHandle
@@ -823,11 +835,14 @@ items:
   - uid: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
     name: MultimediaListenerHandle.MultimediaChangedCallback
     type: Delegate
-  - uid: ADLXWrapper.PerformanceMonitoringSettingsInfo
-    name: PerformanceMonitoringSettingsInfo
+  - uid: ADLXWrapper.PerformanceMonitoringSettingsDto
+    name: PerformanceMonitoringSettingsDto
     type: Struct
-  - uid: ADLXWrapper.PowerDistributionSnapshotInfo
-    name: PowerDistributionSnapshotInfo
+  - uid: ADLXWrapper.PointDto
+    name: PointDto
+    type: Struct
+  - uid: ADLXWrapper.PowerDistributionSnapshotDto
+    name: PowerDistributionSnapshotDto
     type: Struct
   - uid: ADLXWrapper.PowerTuningListenerHandle
     name: PowerTuningListenerHandle
@@ -838,32 +853,35 @@ items:
   - uid: ADLXWrapper.PresetKind
     name: PresetKind
     type: Enum
-  - uid: ADLXWrapper.PresetTuningInfo
-    name: PresetTuningInfo
+  - uid: ADLXWrapper.PresetTuningDto
+    name: PresetTuningDto
     type: Struct
-  - uid: ADLXWrapper.RadeonImageSharpeningInfo
-    name: RadeonImageSharpeningInfo
+  - uid: ADLXWrapper.RadeonImageSharpeningDto
+    name: RadeonImageSharpeningDto
     type: Struct
-  - uid: ADLXWrapper.RadeonSuperResolutionInfo
-    name: RadeonSuperResolutionInfo
+  - uid: ADLXWrapper.RadeonSuperResolutionDto
+    name: RadeonSuperResolutionDto
     type: Struct
-  - uid: ADLXWrapper.SimpleEyefinityInfo
-    name: SimpleEyefinityInfo
+  - uid: ADLXWrapper.RegammaCoeffDto
+    name: RegammaCoeffDto
     type: Struct
-  - uid: ADLXWrapper.SmartShiftEcoInfo
-    name: SmartShiftEcoInfo
+  - uid: ADLXWrapper.SimpleEyefinityDto
+    name: SimpleEyefinityDto
     type: Struct
-  - uid: ADLXWrapper.SmartShiftMaxInfo
-    name: SmartShiftMaxInfo
+  - uid: ADLXWrapper.SmartShiftEcoDto
+    name: SmartShiftEcoDto
     type: Struct
-  - uid: ADLXWrapper.SystemMetricsSnapshotInfo
-    name: SystemMetricsSnapshotInfo
+  - uid: ADLXWrapper.SmartShiftMaxDto
+    name: SmartShiftMaxDto
     type: Struct
-  - uid: ADLXWrapper.TessellationInfo
-    name: TessellationInfo
+  - uid: ADLXWrapper.SystemMetricsSnapshotDto
+    name: SystemMetricsSnapshotDto
     type: Struct
-  - uid: ADLXWrapper.ThreeDLUTInfo
-    name: ThreeDLUTInfo
+  - uid: ADLXWrapper.TessellationDto
+    name: TessellationDto
+    type: Struct
+  - uid: ADLXWrapper.ThreeDLUTDto
+    name: ThreeDLUTDto
     type: Struct
   - uid: ADLXWrapper.ThreeDSettingsListenerHandle
     name: ThreeDSettingsListenerHandle
@@ -874,16 +892,16 @@ items:
   - uid: ADLXWrapper.VariBrightMode
     name: VariBrightMode
     type: Enum
-  - uid: ADLXWrapper.VideoSuperResolutionInfo
-    name: VideoSuperResolutionInfo
+  - uid: ADLXWrapper.VideoSuperResolutionDto
+    name: VideoSuperResolutionDto
     type: Struct
-  - uid: ADLXWrapper.VideoUpscaleInfo
-    name: VideoUpscaleInfo
+  - uid: ADLXWrapper.VideoUpscaleDto
+    name: VideoUpscaleDto
     type: Struct
   - uid: ADLXWrapper.VramState
     name: VramState
     type: Struct
-  - uid: ADLXWrapper.WaitForVerticalRefreshInfo
-    name: WaitForVerticalRefreshInfo
+  - uid: ADLXWrapper.WaitForVerticalRefreshDto
+    name: WaitForVerticalRefreshDto
     type: Struct
 memberLayout: SamePage

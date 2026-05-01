@@ -1,0 +1,843 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.DisplayDto
+  commentId: T:ADLXWrapper.DisplayDto
+  id: DisplayDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.DisplayDto.#ctor(System.String,System.Int32,System.Int32,System.Double,System.UInt32,System.UInt32,ADLXWrapper.ADLX_DISPLAY_TYPE,ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE,ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE,System.UInt64,System.String,System.Int32)
+  - ADLXWrapper.DisplayDto.ConnectorType
+  - ADLXWrapper.DisplayDto.Edid
+  - ADLXWrapper.DisplayDto.GpuUniqueId
+  - ADLXWrapper.DisplayDto.ManufacturerID
+  - ADLXWrapper.DisplayDto.Name
+  - ADLXWrapper.DisplayDto.NativeResolutionHeight
+  - ADLXWrapper.DisplayDto.NativeResolutionWidth
+  - ADLXWrapper.DisplayDto.PixelClock
+  - ADLXWrapper.DisplayDto.RefreshRate
+  - ADLXWrapper.DisplayDto.ScanType
+  - ADLXWrapper.DisplayDto.Type
+  - ADLXWrapper.DisplayDto.UniqueId
+  langs:
+  - csharp
+  - vb
+  name: DisplayDto
+  nameWithType: DisplayDto
+  fullName: ADLXWrapper.DisplayDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DisplayDto
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2384
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Represents the collected information for a display.
+  example: []
+  syntax:
+    content: public readonly struct DisplayDto
+    content.vb: Public Structure DisplayDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.DisplayDto.Name
+  commentId: P:ADLXWrapper.DisplayDto.Name
+  id: Name
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: DisplayDto.Name
+  fullName: ADLXWrapper.DisplayDto.Name
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Name
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2386
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: ADLXWrapper.DisplayDto.Name*
+- uid: ADLXWrapper.DisplayDto.NativeResolutionWidth
+  commentId: P:ADLXWrapper.DisplayDto.NativeResolutionWidth
+  id: NativeResolutionWidth
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: NativeResolutionWidth
+  nameWithType: DisplayDto.NativeResolutionWidth
+  fullName: ADLXWrapper.DisplayDto.NativeResolutionWidth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NativeResolutionWidth
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2387
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int NativeResolutionWidth { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property NativeResolutionWidth As Integer
+  overload: ADLXWrapper.DisplayDto.NativeResolutionWidth*
+- uid: ADLXWrapper.DisplayDto.NativeResolutionHeight
+  commentId: P:ADLXWrapper.DisplayDto.NativeResolutionHeight
+  id: NativeResolutionHeight
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: NativeResolutionHeight
+  nameWithType: DisplayDto.NativeResolutionHeight
+  fullName: ADLXWrapper.DisplayDto.NativeResolutionHeight
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NativeResolutionHeight
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2388
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int NativeResolutionHeight { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property NativeResolutionHeight As Integer
+  overload: ADLXWrapper.DisplayDto.NativeResolutionHeight*
+- uid: ADLXWrapper.DisplayDto.RefreshRate
+  commentId: P:ADLXWrapper.DisplayDto.RefreshRate
+  id: RefreshRate
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: RefreshRate
+  nameWithType: DisplayDto.RefreshRate
+  fullName: ADLXWrapper.DisplayDto.RefreshRate
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RefreshRate
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2389
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double RefreshRate { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property RefreshRate As Double
+  overload: ADLXWrapper.DisplayDto.RefreshRate*
+- uid: ADLXWrapper.DisplayDto.ManufacturerID
+  commentId: P:ADLXWrapper.DisplayDto.ManufacturerID
+  id: ManufacturerID
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: ManufacturerID
+  nameWithType: DisplayDto.ManufacturerID
+  fullName: ADLXWrapper.DisplayDto.ManufacturerID
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManufacturerID
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2390
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint ManufacturerID { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property ManufacturerID As UInteger
+  overload: ADLXWrapper.DisplayDto.ManufacturerID*
+- uid: ADLXWrapper.DisplayDto.PixelClock
+  commentId: P:ADLXWrapper.DisplayDto.PixelClock
+  id: PixelClock
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: PixelClock
+  nameWithType: DisplayDto.PixelClock
+  fullName: ADLXWrapper.DisplayDto.PixelClock
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PixelClock
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2391
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint PixelClock { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property PixelClock As UInteger
+  overload: ADLXWrapper.DisplayDto.PixelClock*
+- uid: ADLXWrapper.DisplayDto.Type
+  commentId: P:ADLXWrapper.DisplayDto.Type
+  id: Type
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: DisplayDto.Type
+  fullName: ADLXWrapper.DisplayDto.Type
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Type
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2392
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_TYPE Type { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_TYPE
+    content.vb: Public Property Type As ADLX_DISPLAY_TYPE
+  overload: ADLXWrapper.DisplayDto.Type*
+- uid: ADLXWrapper.DisplayDto.ConnectorType
+  commentId: P:ADLXWrapper.DisplayDto.ConnectorType
+  id: ConnectorType
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: ConnectorType
+  nameWithType: DisplayDto.ConnectorType
+  fullName: ADLXWrapper.DisplayDto.ConnectorType
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ConnectorType
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2393
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_CONNECTOR_TYPE ConnectorType { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+    content.vb: Public Property ConnectorType As ADLX_DISPLAY_CONNECTOR_TYPE
+  overload: ADLXWrapper.DisplayDto.ConnectorType*
+- uid: ADLXWrapper.DisplayDto.ScanType
+  commentId: P:ADLXWrapper.DisplayDto.ScanType
+  id: ScanType
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: ScanType
+  nameWithType: DisplayDto.ScanType
+  fullName: ADLXWrapper.DisplayDto.ScanType
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ScanType
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2394
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DISPLAY_SCAN_TYPE ScanType { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+    content.vb: Public Property ScanType As ADLX_DISPLAY_SCAN_TYPE
+  overload: ADLXWrapper.DisplayDto.ScanType*
+- uid: ADLXWrapper.DisplayDto.UniqueId
+  commentId: P:ADLXWrapper.DisplayDto.UniqueId
+  id: UniqueId
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: UniqueId
+  nameWithType: DisplayDto.UniqueId
+  fullName: ADLXWrapper.DisplayDto.UniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: UniqueId
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2395
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ulong UniqueId { get; init; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public Property UniqueId As ULong
+  overload: ADLXWrapper.DisplayDto.UniqueId*
+- uid: ADLXWrapper.DisplayDto.Edid
+  commentId: P:ADLXWrapper.DisplayDto.Edid
+  id: Edid
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: Edid
+  nameWithType: DisplayDto.Edid
+  fullName: ADLXWrapper.DisplayDto.Edid
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Edid
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2396
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string Edid { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Edid As String
+  overload: ADLXWrapper.DisplayDto.Edid*
+- uid: ADLXWrapper.DisplayDto.GpuUniqueId
+  commentId: P:ADLXWrapper.DisplayDto.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: GpuUniqueId
+  nameWithType: DisplayDto.GpuUniqueId
+  fullName: ADLXWrapper.DisplayDto.GpuUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuUniqueId
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2397
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int GpuUniqueId { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuUniqueId As Integer
+  overload: ADLXWrapper.DisplayDto.GpuUniqueId*
+- uid: ADLXWrapper.DisplayDto.#ctor(System.String,System.Int32,System.Int32,System.Double,System.UInt32,System.UInt32,ADLXWrapper.ADLX_DISPLAY_TYPE,ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE,ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE,System.UInt64,System.String,System.Int32)
+  commentId: M:ADLXWrapper.DisplayDto.#ctor(System.String,System.Int32,System.Int32,System.Double,System.UInt32,System.UInt32,ADLXWrapper.ADLX_DISPLAY_TYPE,ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE,ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE,System.UInt64,System.String,System.Int32)
+  id: '#ctor(System.String,System.Int32,System.Int32,System.Double,System.UInt32,System.UInt32,ADLXWrapper.ADLX_DISPLAY_TYPE,ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE,ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE,System.UInt64,System.String,System.Int32)'
+  parent: ADLXWrapper.DisplayDto
+  langs:
+  - csharp
+  - vb
+  name: DisplayDto(string, int, int, double, uint, uint, ADLX_DISPLAY_TYPE, ADLX_DISPLAY_CONNECTOR_TYPE, ADLX_DISPLAY_SCAN_TYPE, ulong, string, int)
+  nameWithType: DisplayDto.DisplayDto(string, int, int, double, uint, uint, ADLX_DISPLAY_TYPE, ADLX_DISPLAY_CONNECTOR_TYPE, ADLX_DISPLAY_SCAN_TYPE, ulong, string, int)
+  fullName: ADLXWrapper.DisplayDto.DisplayDto(string, int, int, double, uint, uint, ADLXWrapper.ADLX_DISPLAY_TYPE, ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE, ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE, ulong, string, int)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2399
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public DisplayDto(string name, int nativeResolutionWidth, int nativeResolutionHeight, double refreshRate, uint manufacturerID, uint pixelClock, ADLX_DISPLAY_TYPE type, ADLX_DISPLAY_CONNECTOR_TYPE connectorType, ADLX_DISPLAY_SCAN_TYPE scanType, ulong uniqueId, string edid, int gpuUniqueId)
+    parameters:
+    - id: name
+      type: System.String
+    - id: nativeResolutionWidth
+      type: System.Int32
+    - id: nativeResolutionHeight
+      type: System.Int32
+    - id: refreshRate
+      type: System.Double
+    - id: manufacturerID
+      type: System.UInt32
+    - id: pixelClock
+      type: System.UInt32
+    - id: type
+      type: ADLXWrapper.ADLX_DISPLAY_TYPE
+    - id: connectorType
+      type: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+    - id: scanType
+      type: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+    - id: uniqueId
+      type: System.UInt64
+    - id: edid
+      type: System.String
+    - id: gpuUniqueId
+      type: System.Int32
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(name As String, nativeResolutionWidth As Integer, nativeResolutionHeight As Integer, refreshRate As Double, manufacturerID As UInteger, pixelClock As UInteger, type As ADLX_DISPLAY_TYPE, connectorType As ADLX_DISPLAY_CONNECTOR_TYPE, scanType As ADLX_DISPLAY_SCAN_TYPE, uniqueId As ULong, edid As String, gpuUniqueId As Integer)
+  overload: ADLXWrapper.DisplayDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: DisplayDto.New(String, Integer, Integer, Double, UInteger, UInteger, ADLX_DISPLAY_TYPE, ADLX_DISPLAY_CONNECTOR_TYPE, ADLX_DISPLAY_SCAN_TYPE, ULong, String, Integer)
+  fullName.vb: ADLXWrapper.DisplayDto.New(String, Integer, Integer, Double, UInteger, UInteger, ADLXWrapper.ADLX_DISPLAY_TYPE, ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE, ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE, ULong, String, Integer)
+  name.vb: New(String, Integer, Integer, Double, UInteger, UInteger, ADLX_DISPLAY_TYPE, ADLX_DISPLAY_CONNECTOR_TYPE, ADLX_DISPLAY_SCAN_TYPE, ULong, String, Integer)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.DisplayDto.Name*
+  commentId: Overload:ADLXWrapper.DisplayDto.Name
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_Name
+  name: Name
+  nameWithType: DisplayDto.Name
+  fullName: ADLXWrapper.DisplayDto.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.DisplayDto.NativeResolutionWidth*
+  commentId: Overload:ADLXWrapper.DisplayDto.NativeResolutionWidth
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_NativeResolutionWidth
+  name: NativeResolutionWidth
+  nameWithType: DisplayDto.NativeResolutionWidth
+  fullName: ADLXWrapper.DisplayDto.NativeResolutionWidth
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.DisplayDto.NativeResolutionHeight*
+  commentId: Overload:ADLXWrapper.DisplayDto.NativeResolutionHeight
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_NativeResolutionHeight
+  name: NativeResolutionHeight
+  nameWithType: DisplayDto.NativeResolutionHeight
+  fullName: ADLXWrapper.DisplayDto.NativeResolutionHeight
+- uid: ADLXWrapper.DisplayDto.RefreshRate*
+  commentId: Overload:ADLXWrapper.DisplayDto.RefreshRate
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_RefreshRate
+  name: RefreshRate
+  nameWithType: DisplayDto.RefreshRate
+  fullName: ADLXWrapper.DisplayDto.RefreshRate
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: ADLXWrapper.DisplayDto.ManufacturerID*
+  commentId: Overload:ADLXWrapper.DisplayDto.ManufacturerID
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_ManufacturerID
+  name: ManufacturerID
+  nameWithType: DisplayDto.ManufacturerID
+  fullName: ADLXWrapper.DisplayDto.ManufacturerID
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.DisplayDto.PixelClock*
+  commentId: Overload:ADLXWrapper.DisplayDto.PixelClock
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_PixelClock
+  name: PixelClock
+  nameWithType: DisplayDto.PixelClock
+  fullName: ADLXWrapper.DisplayDto.PixelClock
+- uid: ADLXWrapper.DisplayDto.Type*
+  commentId: Overload:ADLXWrapper.DisplayDto.Type
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_Type
+  name: Type
+  nameWithType: DisplayDto.Type
+  fullName: ADLXWrapper.DisplayDto.Type
+- uid: ADLXWrapper.ADLX_DISPLAY_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_TYPE.html
+  name: ADLX_DISPLAY_TYPE
+  nameWithType: ADLX_DISPLAY_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_TYPE
+- uid: ADLXWrapper.DisplayDto.ConnectorType*
+  commentId: Overload:ADLXWrapper.DisplayDto.ConnectorType
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_ConnectorType
+  name: ConnectorType
+  nameWithType: DisplayDto.ConnectorType
+  fullName: ADLXWrapper.DisplayDto.ConnectorType
+- uid: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE.html
+  name: ADLX_DISPLAY_CONNECTOR_TYPE
+  nameWithType: ADLX_DISPLAY_CONNECTOR_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_CONNECTOR_TYPE
+- uid: ADLXWrapper.DisplayDto.ScanType*
+  commentId: Overload:ADLXWrapper.DisplayDto.ScanType
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_ScanType
+  name: ScanType
+  nameWithType: DisplayDto.ScanType
+  fullName: ADLXWrapper.DisplayDto.ScanType
+- uid: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+  commentId: T:ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE.html
+  name: ADLX_DISPLAY_SCAN_TYPE
+  nameWithType: ADLX_DISPLAY_SCAN_TYPE
+  fullName: ADLXWrapper.ADLX_DISPLAY_SCAN_TYPE
+- uid: ADLXWrapper.DisplayDto.UniqueId*
+  commentId: Overload:ADLXWrapper.DisplayDto.UniqueId
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_UniqueId
+  name: UniqueId
+  nameWithType: DisplayDto.UniqueId
+  fullName: ADLXWrapper.DisplayDto.UniqueId
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: ADLXWrapper.DisplayDto.Edid*
+  commentId: Overload:ADLXWrapper.DisplayDto.Edid
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_Edid
+  name: Edid
+  nameWithType: DisplayDto.Edid
+  fullName: ADLXWrapper.DisplayDto.Edid
+- uid: ADLXWrapper.DisplayDto.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.DisplayDto.GpuUniqueId
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: DisplayDto.GpuUniqueId
+  fullName: ADLXWrapper.DisplayDto.GpuUniqueId
+- uid: ADLXWrapper.DisplayDto.#ctor*
+  commentId: Overload:ADLXWrapper.DisplayDto.#ctor
+  href: ADLXWrapper.DisplayDto.html#ADLXWrapper_DisplayDto__ctor_System_String_System_Int32_System_Int32_System_Double_System_UInt32_System_UInt32_ADLXWrapper_ADLX_DISPLAY_TYPE_ADLXWrapper_ADLX_DISPLAY_CONNECTOR_TYPE_ADLXWrapper_ADLX_DISPLAY_SCAN_TYPE_System_UInt64_System_String_System_Int32_
+  name: DisplayDto
+  nameWithType: DisplayDto.DisplayDto
+  fullName: ADLXWrapper.DisplayDto.DisplayDto
+  nameWithType.vb: DisplayDto.New
+  fullName.vb: ADLXWrapper.DisplayDto.New
+  name.vb: New

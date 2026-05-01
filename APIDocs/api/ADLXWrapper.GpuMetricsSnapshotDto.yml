@@ -1,0 +1,760 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GpuMetricsSnapshotDto
+  commentId: T:ADLXWrapper.GpuMetricsSnapshotDto
+  id: GpuMetricsSnapshotDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
+  - ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+  - ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+  - ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  - ADLXWrapper.GpuMetricsSnapshotDto.Power
+  - ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+  - ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+  - ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+  - ADLXWrapper.GpuMetricsSnapshotDto.Usage
+  - ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+  - ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+  - ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsSnapshotDto
+  nameWithType: GpuMetricsSnapshotDto
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuMetricsSnapshotDto
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 709
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GpuMetricsSnapshotDto
+    content.vb: Public Structure GpuMetricsSnapshotDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+  id: Temperature
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: Temperature
+  nameWithType: GpuMetricsSnapshotDto.Temperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Temperature
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 711
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double Temperature { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Temperature As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.Temperature*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  id: HotspotTemperature
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: HotspotTemperature
+  nameWithType: GpuMetricsSnapshotDto.HotspotTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HotspotTemperature
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 712
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double HotspotTemperature { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property HotspotTemperature As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Usage
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.Usage
+  id: Usage
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: Usage
+  nameWithType: GpuMetricsSnapshotDto.Usage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Usage
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Usage
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 713
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double Usage { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Usage As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.Usage*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+  id: ClockSpeed
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: ClockSpeed
+  nameWithType: GpuMetricsSnapshotDto.ClockSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ClockSpeed
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 714
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int ClockSpeed { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ClockSpeed As Integer
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+  id: VRAMClockSpeed
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: VRAMClockSpeed
+  nameWithType: GpuMetricsSnapshotDto.VRAMClockSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMClockSpeed
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 715
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int VRAMClockSpeed { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property VRAMClockSpeed As Integer
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+  id: VRAMUsage
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: VRAMUsage
+  nameWithType: GpuMetricsSnapshotDto.VRAMUsage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMUsage
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 716
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int VRAMUsage { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property VRAMUsage As Integer
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+  id: FanSpeed
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: FanSpeed
+  nameWithType: GpuMetricsSnapshotDto.FanSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FanSpeed
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 717
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int FanSpeed { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property FanSpeed As Integer
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Power
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.Power
+  id: Power
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: Power
+  nameWithType: GpuMetricsSnapshotDto.Power
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Power
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Power
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 718
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double Power { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Power As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.Power*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+  id: TotalBoardPower
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: TotalBoardPower
+  nameWithType: GpuMetricsSnapshotDto.TotalBoardPower
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TotalBoardPower
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 719
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double TotalBoardPower { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property TotalBoardPower As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+  id: Voltage
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: Voltage
+  nameWithType: GpuMetricsSnapshotDto.Voltage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Voltage
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 720
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Voltage { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Voltage As Integer
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.Voltage*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+  id: TimestampMs
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: TimestampMs
+  nameWithType: GpuMetricsSnapshotDto.TimestampMs
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TimestampMs
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 721
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public long TimestampMs { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property TimestampMs As Long
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
+  commentId: M:ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
+  id: '#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)'
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
+  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 723
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
+    parameters:
+    - id: temperature
+      type: System.Double
+    - id: hotspotTemperature
+      type: System.Double
+    - id: usage
+      type: System.Double
+    - id: clockSpeed
+      type: System.Int32
+    - id: vramClockSpeed
+      type: System.Int32
+    - id: vramUsage
+      type: System.Int32
+    - id: fanSpeed
+      type: System.Int32
+    - id: power
+      type: System.Double
+    - id: totalBoardPower
+      type: System.Double
+    - id: voltage
+      type: System.Int32
+    - id: timestampMs
+      type: System.Int64
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(temperature As Double, hotspotTemperature As Double, usage As Double, clockSpeed As Integer, vramClockSpeed As Integer, vramUsage As Integer, fanSpeed As Integer, power As Double, totalBoardPower As Double, voltage As Integer, timestampMs As Long)
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
+  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
+  name.vb: New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Temperature*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Temperature
+  name: Temperature
+  nameWithType: GpuMetricsSnapshotDto.Temperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Temperature
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_HotspotTemperature
+  name: HotspotTemperature
+  nameWithType: GpuMetricsSnapshotDto.HotspotTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Usage*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.Usage
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Usage
+  name: Usage
+  nameWithType: GpuMetricsSnapshotDto.Usage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Usage
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_ClockSpeed
+  name: ClockSpeed
+  nameWithType: GpuMetricsSnapshotDto.ClockSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_VRAMClockSpeed
+  name: VRAMClockSpeed
+  nameWithType: GpuMetricsSnapshotDto.VRAMClockSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_VRAMUsage
+  name: VRAMUsage
+  nameWithType: GpuMetricsSnapshotDto.VRAMUsage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_FanSpeed
+  name: FanSpeed
+  nameWithType: GpuMetricsSnapshotDto.FanSpeed
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Power*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.Power
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Power
+  name: Power
+  nameWithType: GpuMetricsSnapshotDto.Power
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Power
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_TotalBoardPower
+  name: TotalBoardPower
+  nameWithType: GpuMetricsSnapshotDto.TotalBoardPower
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.Voltage*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Voltage
+  name: Voltage
+  nameWithType: GpuMetricsSnapshotDto.Voltage
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.Voltage
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_TimestampMs
+  name: TimestampMs
+  nameWithType: GpuMetricsSnapshotDto.TimestampMs
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.#ctor
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_
+  name: GpuMetricsSnapshotDto
+  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto
+  nameWithType.vb: GpuMetricsSnapshotDto.New
+  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New
+  name.vb: New

@@ -5,41 +5,32 @@ items:
   id: ADLXPerformanceMonitoringServicesHelper
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsInfo)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsDto)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ClearPerformanceMetricsHistory
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Dispose
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory(System.Int32,System.Int32)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Finalize
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(System.Int32,System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentPerformanceMetricsHistorySize
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetMaxPerformanceMetricsHistorySize
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringSettings
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingInterval
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(System.Int32,System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.SetMaxPerformanceMetricsHistorySize(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.SetSamplingInterval(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.StartPerformanceMetricsTracking
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.StopPerformanceMetricsTracking
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryClearPerformanceMetricsHistory
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
-  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}@)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}@)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto@)
+  - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(System.Int32,ADLXWrapper.GpuMetricsSupportDto@)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetMaxPerformanceMetricsHistorySize(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TrySetSamplingInterval(System.Int32)
   - ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryStartPerformanceMetricsTracking
@@ -54,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPerformanceMonitoringServicesHelper
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -78,32 +69,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean)
-  id: '#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean)'
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  id: '#ctor(ADLXWrapper.IADLXPerformanceMonitoringServices*,System.Boolean,ADLXWrapper.IADLXSystem*)'
   parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   langs:
   - csharp
   - vb
-  name: ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices*, bool)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices*, bool)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper(ADLXWrapper.IADLXPerformanceMonitoringServices*, bool)
+  name: ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices*, bool, IADLXSystem*)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices*, bool, IADLXSystem*)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper(ADLXWrapper.IADLXPerformanceMonitoringServices*, bool, ADLXWrapper.IADLXSystem*)
   type: Constructor
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a performance monitoring helper from the native services interface.
   example: []
   syntax:
-    content: public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true)
+    content: public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true, IADLXSystem* system = null)
     parameters:
     - id: services
       type: ADLXWrapper.IADLXPerformanceMonitoringServices*
@@ -111,371 +102,13 @@ items:
     - id: addRef
       type: System.Boolean
       description: True to AddRef the pointer for this helper.
-    content.vb: Public Sub New(services As IADLXPerformanceMonitoringServices*, addRef As Boolean = True)
+    - id: system
+      type: ADLXWrapper.IADLXSystem*
+    content.vb: Public Sub New(services As IADLXPerformanceMonitoringServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.New(IADLXPerformanceMonitoringServices*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.New(ADLXWrapper.IADLXPerformanceMonitoringServices*, Boolean)
-  name.vb: New(IADLXPerformanceMonitoringServices*, Boolean)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
-  id: GetPerformanceMonitoringServicesNative
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetPerformanceMonitoringServicesNative()
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative()
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetPerformanceMonitoringServicesNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 36
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Returns the native performance monitoring services interface owned by this helper.
-  example: []
-  syntax:
-    content: public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
-    return:
-      type: ADLXWrapper.IADLXPerformanceMonitoringServices*
-    content.vb: Public Function GetPerformanceMonitoringServicesNative() As IADLXPerformanceMonitoringServices*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative*
-  exceptions:
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-  id: GetPerformanceMonitoringServicesHandle
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetPerformanceMonitoringServicesHandle()
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle()
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetPerformanceMonitoringServicesHandle
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 49
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Returns an AddRef'd handle to the performance monitoring services interface.
-  example: []
-  syntax:
-    content: public ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
-    return:
-      type: ADLXWrapper.ADLXInterfaceHandle
-    content.vb: Public Function GetPerformanceMonitoringServicesHandle() As ADLXInterfaceHandle
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle*
-  exceptions:
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative(ADLXWrapper.IADLXGPU*)
-  id: GetGpuMetricsSupportNative(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGpuMetricsSupportNative(IADLXGPU*)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGpuMetricsSupportNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 66
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets GPU metrics support (native pointer). Caller must dispose.
-  example: []
-  syntax:
-    content: public IADLXGPUMetricsSupport* GetGpuMetricsSupportNative(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-      description: Native GPU pointer.
-    return:
-      type: ADLXWrapper.IADLXGPUMetricsSupport*
-      description: Native GPU metrics support pointer.
-    content.vb: Public Function GetGpuMetricsSupportNative(gpu As IADLXGPU*) As IADLXGPUMetricsSupport*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: If <code class="paramref">gpu</code> is null.
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(ADLXWrapper.IADLXGPU*)
-  id: GetGpuMetricsSupport(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGpuMetricsSupport(IADLXGPU*)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGpuMetricsSupport
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 92
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets GPU metrics support DTO for a GPU.
-  example: []
-  syntax:
-    content: public GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-      description: Native GPU pointer.
-    return:
-      type: ADLXWrapper.GpuMetricsSupportInfo
-      description: GPU metrics support info.
-    content.vb: Public Function GetGpuMetricsSupport(gpu As IADLXGPU*) As GpuMetricsSupportInfo
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: If <code class="paramref">gpu</code> is null.
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
-  id: TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSupportInfo@)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryGetGpuMetricsSupport(IADLXGPU*, out GpuMetricsSupportInfo)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(IADLXGPU*, out GpuMetricsSupportInfo)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*, out ADLXWrapper.GpuMetricsSupportInfo)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryGetGpuMetricsSupport
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 104
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Tries to get GPU metrics support info. Returns false if not supported for this GPU/system.
-  example: []
-  syntax:
-    content: public bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportInfo info)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: info
-      type: ADLXWrapper.GpuMetricsSupportInfo
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryGetGpuMetricsSupport(gpu As IADLXGPU*, info As GpuMetricsSupportInfo) As Boolean
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(IADLXGPU*, GpuMetricsSupportInfo)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(ADLXWrapper.IADLXGPU*, ADLXWrapper.GpuMetricsSupportInfo)
-  name.vb: TryGetGpuMetricsSupport(IADLXGPU*, GpuMetricsSupportInfo)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative(ADLXWrapper.IADLXGPU*)
-  id: GetCurrentGpuMetricsNative(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetCurrentGpuMetricsNative(IADLXGPU*)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetCurrentGpuMetricsNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 126
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets current GPU metrics (native pointer). Caller must dispose.
-  example: []
-  syntax:
-    content: public IADLXGPUMetrics* GetCurrentGpuMetricsNative(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-      description: Native GPU pointer.
-    return:
-      type: ADLXWrapper.IADLXGPUMetrics*
-      description: Native GPU metrics pointer.
-    content.vb: Public Function GetCurrentGpuMetricsNative(gpu As IADLXGPU*) As IADLXGPUMetrics*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: If <code class="paramref">gpu</code> is null.
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*)
-  id: GetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetCurrentGpuMetrics(IADLXGPU*)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetCurrentGpuMetrics
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 152
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets current GPU metrics as a managed snapshot DTO.
-  example: []
-  syntax:
-    content: public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-      description: Native GPU pointer.
-    return:
-      type: ADLXWrapper.GpuMetricsSnapshotInfo
-      description: GPU metrics snapshot.
-    content.vb: Public Function GetCurrentGpuMetrics(gpu As IADLXGPU*) As GpuMetricsSnapshotInfo
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: If <code class="paramref">gpu</code> is null.
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
-  id: TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*,ADLXWrapper.GpuMetricsSnapshotInfo@)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryGetCurrentGpuMetrics(IADLXGPU*, out GpuMetricsSnapshotInfo)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(IADLXGPU*, out GpuMetricsSnapshotInfo)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*, out ADLXWrapper.GpuMetricsSnapshotInfo)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryGetCurrentGpuMetrics
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 161
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotInfo metrics)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: metrics
-      type: ADLXWrapper.GpuMetricsSnapshotInfo
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryGetCurrentGpuMetrics(gpu As IADLXGPU*, metrics As GpuMetricsSnapshotInfo) As Boolean
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(IADLXGPU*, GpuMetricsSnapshotInfo)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(ADLXWrapper.IADLXGPU*, ADLXWrapper.GpuMetricsSnapshotInfo)
-  name.vb: TryGetCurrentGpuMetrics(IADLXGPU*, GpuMetricsSnapshotInfo)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-  id: GetCurrentSystemMetricsNative
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetCurrentSystemMetricsNative()
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative()
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetCurrentSystemMetricsNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 181
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets current system metrics (native pointer). Caller must dispose.
-  example: []
-  syntax:
-    content: public IADLXSystemMetrics* GetCurrentSystemMetricsNative()
-    return:
-      type: ADLXWrapper.IADLXSystemMetrics*
-      description: Native system metrics pointer.
-    content.vb: Public Function GetCurrentSystemMetricsNative() As IADLXSystemMetrics*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative*
-  exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.New(IADLXPerformanceMonitoringServices*, Boolean, IADLXSystem*)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.New(ADLXWrapper.IADLXPerformanceMonitoringServices*, Boolean, ADLXWrapper.IADLXSystem*)
+  name.vb: New(IADLXPerformanceMonitoringServices*, Boolean, IADLXSystem*)
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
   id: GetCurrentSystemMetrics
@@ -490,61 +123,23 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentSystemMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 203
+    startLine: 205
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Gets current system metrics as a managed snapshot DTO.
   example: []
   syntax:
-    content: public SystemMetricsSnapshotInfo GetCurrentSystemMetrics()
+    content: public SystemMetricsSnapshotDto GetCurrentSystemMetrics()
     return:
-      type: ADLXWrapper.SystemMetricsSnapshotInfo
+      type: ADLXWrapper.SystemMetricsSnapshotDto
       description: System metrics snapshot.
-    content.vb: Public Function GetCurrentSystemMetrics() As SystemMetricsSnapshotInfo
+    content.vb: Public Function GetCurrentSystemMetrics() As SystemMetricsSnapshotDto
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics*
-  exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-  id: GetCurrentAllMetricsNative
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetCurrentAllMetricsNative()
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative()
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetCurrentAllMetricsNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 216
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets current system+GPU metrics (native pointer). Caller must dispose.
-  example: []
-  syntax:
-    content: public IADLXAllMetrics* GetCurrentAllMetricsNative()
-    return:
-      type: ADLXWrapper.IADLXAllMetrics*
-      description: Native all-metrics pointer.
-    content.vb: Public Function GetCurrentAllMetricsNative() As IADLXAllMetrics*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative*
   exceptions:
   - type: ADLXWrapper.ADLXException
     commentId: T:ADLXWrapper.ADLXException
@@ -566,22 +161,22 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAllMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 238
+    startLine: 240
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Gets current system+GPU metrics as a managed snapshot DTO.
   example: []
   syntax:
-    content: public AllMetricsSnapshotInfo GetCurrentAllMetrics()
+    content: public AllMetricsSnapshotDto GetCurrentAllMetrics()
     return:
-      type: ADLXWrapper.AllMetricsSnapshotInfo
+      type: ADLXWrapper.AllMetricsSnapshotDto
       description: All-metrics snapshot.
-    content.vb: Public Function GetCurrentAllMetrics() As AllMetricsSnapshotInfo
+    content.vb: Public Function GetCurrentAllMetrics() As AllMetricsSnapshotDto
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -590,158 +185,6 @@ items:
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If disposed.
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  id: GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetGpuMetricsHistoryNative(IADLXGPU*, int, int)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(IADLXGPU*, int, int)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*, int, int)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetGpuMetricsHistoryNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 245
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXGPUMetricsList* GetGpuMetricsHistoryNative(IADLXGPU* gpu, int startMs, int stopMs)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: startMs
-      type: System.Int32
-    - id: stopMs
-      type: System.Int32
-    return:
-      type: ADLXWrapper.IADLXGPUMetricsList*
-    content.vb: Public Function GetGpuMetricsHistoryNative(gpu As IADLXGPU*, startMs As Integer, stopMs As Integer) As IADLXGPUMetricsList*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(IADLXGPU*, Integer, Integer)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative(ADLXWrapper.IADLXGPU*, Integer, Integer)
-  name.vb: GetGpuMetricsHistoryNative(IADLXGPU*, Integer, Integer)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  id: EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: EnumerateGpuMetricsHistory(IADLXGPU*, int, int)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(IADLXGPU*, int, int)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, int, int)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: EnumerateGpuMetricsHistory
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 263
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: startMs
-      type: System.Int32
-    - id: stopMs
-      type: System.Int32
-    return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}
-    content.vb: Public Function EnumerateGpuMetricsHistory(gpu As IADLXGPU*, startMs As Integer, stopMs As Integer) As IEnumerable(Of GpuMetricsSnapshotInfo)
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, Integer, Integer)
-  name.vb: EnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
-  id: TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}@)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryEnumerateGpuMetricsHistory(IADLXGPU*, int, int, out IEnumerable<GpuMetricsSnapshotInfo>)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(IADLXGPU*, int, int, out IEnumerable<GpuMetricsSnapshotInfo>)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.GpuMetricsSnapshotInfo>)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryEnumerateGpuMetricsHistory
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 282
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: startMs
-      type: System.Int32
-    - id: stopMs
-      type: System.Int32
-    - id: history
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryEnumerateGpuMetricsHistory(gpu As IADLXGPU*, startMs As Integer, stopMs As Integer, history As IEnumerable(Of GpuMetricsSnapshotInfo)) As Boolean
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotInfo))
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(ADLXWrapper.IADLXGPU*, Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.GpuMetricsSnapshotInfo))
-  name.vb: TryEnumerateGpuMetricsHistory(IADLXGPU*, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotInfo))
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(System.Int32,System.Int32)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(System.Int32,System.Int32)
-  id: GetSystemMetricsHistoryNative(System.Int32,System.Int32)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetSystemMetricsHistoryNative(int, int)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(int, int)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(int, int)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetSystemMetricsHistoryNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 296
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
-    parameters:
-    - id: startMs
-      type: System.Int32
-    - id: stopMs
-      type: System.Int32
-    return:
-      type: ADLXWrapper.IADLXSystemMetricsList*
-    content.vb: Public Function GetSystemMetricsHistoryNative(startMs As Integer, stopMs As Integer) As IADLXSystemMetricsList*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(Integer, Integer)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative(Integer, Integer)
-  name.vb: GetSystemMetricsHistoryNative(Integer, Integer)
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory(System.Int32,System.Int32)
   id: EnumerateSystemMetricsHistory(System.Int32,System.Int32)
@@ -756,64 +199,28 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateSystemMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 312
+    startLine: 314
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<SystemMetricsSnapshotInfo> EnumerateSystemMetricsHistory(int startMs, int stopMs)
+    content: public IEnumerable<SystemMetricsSnapshotDto> EnumerateSystemMetricsHistory(int startMs, int stopMs)
     parameters:
     - id: startMs
       type: System.Int32
     - id: stopMs
       type: System.Int32
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotInfo}
-    content.vb: Public Function EnumerateSystemMetricsHistory(startMs As Integer, stopMs As Integer) As IEnumerable(Of SystemMetricsSnapshotInfo)
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotDto}
+    content.vb: Public Function EnumerateSystemMetricsHistory(startMs As Integer, stopMs As Integer) As IEnumerable(Of SystemMetricsSnapshotDto)
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory*
   nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory(Integer, Integer)
   fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory(Integer, Integer)
   name.vb: EnumerateSystemMetricsHistory(Integer, Integer)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(System.Int32,System.Int32)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(System.Int32,System.Int32)
-  id: GetAllMetricsHistoryNative(System.Int32,System.Int32)
-  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetAllMetricsHistoryNative(int, int)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(int, int)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(int, int)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetAllMetricsHistoryNative
-    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 329
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXAllMetricsList* GetAllMetricsHistoryNative(int startMs, int stopMs)
-    parameters:
-    - id: startMs
-      type: System.Int32
-    - id: stopMs
-      type: System.Int32
-    return:
-      type: ADLXWrapper.IADLXAllMetricsList*
-    content.vb: Public Function GetAllMetricsHistoryNative(startMs As Integer, stopMs As Integer) As IADLXAllMetricsList*
-  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(Integer, Integer)
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative(Integer, Integer)
-  name.vb: GetAllMetricsHistoryNative(Integer, Integer)
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory(System.Int32,System.Int32)
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory(System.Int32,System.Int32)
   id: EnumerateAllMetricsHistory(System.Int32,System.Int32)
@@ -828,66 +235,66 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 342
+    startLine: 344
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public IEnumerable<AllMetricsSnapshotInfo> EnumerateAllMetricsHistory(int startMs, int stopMs)
+    content: public IEnumerable<AllMetricsSnapshotDto> EnumerateAllMetricsHistory(int startMs, int stopMs)
     parameters:
     - id: startMs
       type: System.Int32
     - id: stopMs
       type: System.Int32
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}
-    content.vb: Public Function EnumerateAllMetricsHistory(startMs As Integer, stopMs As Integer) As IEnumerable(Of AllMetricsSnapshotInfo)
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}
+    content.vb: Public Function EnumerateAllMetricsHistory(startMs As Integer, stopMs As Integer) As IEnumerable(Of AllMetricsSnapshotDto)
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory*
   nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory(Integer, Integer)
   fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory(Integer, Integer)
   name.vb: EnumerateAllMetricsHistory(Integer, Integer)
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
-  id: TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}@)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}@)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}@)
+  id: TryEnumerateAllMetricsHistory(System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}@)
   parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   langs:
   - csharp
   - vb
-  name: TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotInfo>)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotInfo>)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.AllMetricsSnapshotInfo>)
+  name: TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotDto>)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out IEnumerable<AllMetricsSnapshotDto>)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.AllMetricsSnapshotDto>)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 359
+    startLine: 361
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotInfo> history)
+    content: public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotDto> history)
     parameters:
     - id: startMs
       type: System.Int32
     - id: stopMs
       type: System.Int32
     - id: history
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}
     return:
       type: System.Boolean
-    content.vb: Public Function TryEnumerateAllMetricsHistory(startMs As Integer, stopMs As Integer, history As IEnumerable(Of AllMetricsSnapshotInfo)) As Boolean
+    content.vb: Public Function TryEnumerateAllMetricsHistory(startMs As Integer, stopMs As Integer, history As IEnumerable(Of AllMetricsSnapshotDto)) As Boolean
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory*
-  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotInfo))
-  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.AllMetricsSnapshotInfo))
-  name.vb: TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotInfo))
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotDto))
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory(Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.AllMetricsSnapshotDto))
+  name.vb: TryEnumerateAllMetricsHistory(Integer, Integer, IEnumerable(Of AllMetricsSnapshotDto))
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange
   id: GetSamplingIntervalRange
@@ -902,19 +309,19 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingIntervalRange
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 373
+    startLine: 375
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLX_IntRange GetSamplingIntervalRange()
+    content: public IntRangeDto GetSamplingIntervalRange()
     return:
-      type: ADLXWrapper.ADLX_IntRange
-    content.vb: Public Function GetSamplingIntervalRange() As ADLX_IntRange
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Function GetSamplingIntervalRange() As IntRangeDto
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange*
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingInterval
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingInterval
@@ -930,11 +337,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 385
+    startLine: 387
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -958,11 +365,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 397
+    startLine: 399
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -990,11 +397,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 407
+    startLine: 409
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1024,11 +431,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 420
+    startLine: 422
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1052,11 +459,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 432
+    startLine: 434
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1080,11 +487,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 444
+    startLine: 446
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1112,11 +519,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 454
+    startLine: 456
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1146,11 +553,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 467
+    startLine: 469
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1172,11 +579,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 477
+    startLine: 479
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1200,11 +607,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 490
+    startLine: 492
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1226,11 +633,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 500
+    startLine: 502
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1254,11 +661,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 513
+    startLine: 515
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1280,11 +687,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 523
+    startLine: 525
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1308,49 +715,279 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 536
+    startLine: 538
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public PerformanceMonitoringSettingsInfo GetPerformanceMonitoringSettings()
+    content: public PerformanceMonitoringSettingsDto GetPerformanceMonitoringSettings()
     return:
-      type: ADLXWrapper.PerformanceMonitoringSettingsInfo
-    content.vb: Public Function GetPerformanceMonitoringSettings() As PerformanceMonitoringSettingsInfo
+      type: ADLXWrapper.PerformanceMonitoringSettingsDto
+    content.vb: Public Function GetPerformanceMonitoringSettings() As PerformanceMonitoringSettingsDto
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringSettings*
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsInfo)
-  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsInfo)
-  id: ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsInfo)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsDto)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsDto)
+  id: ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsDto)
   parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
   langs:
   - csharp
   - vb
-  name: ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo)
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo)
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsInfo)
+  name: ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsDto)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsDto)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings(ADLXWrapper.PerformanceMonitoringSettingsDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 545
+    startLine: 547
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsInfo info)
+    content: public void ApplyPerformanceMonitoringSettings(PerformanceMonitoringSettingsDto info)
     parameters:
     - id: info
-      type: ADLXWrapper.PerformanceMonitoringSettingsInfo
-    content.vb: Public Sub ApplyPerformanceMonitoringSettings(info As PerformanceMonitoringSettingsInfo)
+      type: ADLXWrapper.PerformanceMonitoringSettingsDto
+    content.vb: Public Sub ApplyPerformanceMonitoringSettings(info As PerformanceMonitoringSettingsDto)
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings*
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(System.Int32)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(System.Int32)
+  id: GetGpuMetricsSupport(System.Int32)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetGpuMetricsSupport(int)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(int)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpuMetricsSupport
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 566
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets GPU metrics support info for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public GpuMetricsSupportDto GetGpuMetricsSupport(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.GpuMetricsSupportDto
+    content.vb: Public Function GetGpuMetricsSupport(gpuUniqueId As Integer) As GpuMetricsSupportDto
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(Integer)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport(Integer)
+  name.vb: GetGpuMetricsSupport(Integer)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(System.Int32,ADLXWrapper.GpuMetricsSupportDto@)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(System.Int32,ADLXWrapper.GpuMetricsSupportDto@)
+  id: TryGetGpuMetricsSupport(System.Int32,ADLXWrapper.GpuMetricsSupportDto@)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetGpuMetricsSupport(int, out GpuMetricsSupportDto)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(int, out GpuMetricsSupportDto)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(int, out ADLXWrapper.GpuMetricsSupportDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetGpuMetricsSupport
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 576
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get GPU metrics support info for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetGpuMetricsSupport(int gpuUniqueId, out GpuMetricsSupportDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.GpuMetricsSupportDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetGpuMetricsSupport(gpuUniqueId As Integer, info As GpuMetricsSupportDto) As Boolean
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(Integer, GpuMetricsSupportDto)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport(Integer, ADLXWrapper.GpuMetricsSupportDto)
+  name.vb: TryGetGpuMetricsSupport(Integer, GpuMetricsSupportDto)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(System.Int32)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(System.Int32)
+  id: GetCurrentGpuMetrics(System.Int32)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentGpuMetrics(int)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(int)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetCurrentGpuMetrics
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 583
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets current GPU metrics snapshot for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public GpuMetricsSnapshotDto GetCurrentGpuMetrics(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.GpuMetricsSnapshotDto
+    content.vb: Public Function GetCurrentGpuMetrics(gpuUniqueId As Integer) As GpuMetricsSnapshotDto
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(Integer)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics(Integer)
+  name.vb: GetCurrentGpuMetrics(Integer)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto@)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto@)
+  id: TryGetCurrentGpuMetrics(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto@)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetCurrentGpuMetrics(int, out GpuMetricsSnapshotDto)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(int, out GpuMetricsSnapshotDto)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(int, out ADLXWrapper.GpuMetricsSnapshotDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetCurrentGpuMetrics
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 593
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get current GPU metrics snapshot for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetCurrentGpuMetrics(int gpuUniqueId, out GpuMetricsSnapshotDto metrics)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: metrics
+      type: ADLXWrapper.GpuMetricsSnapshotDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetCurrentGpuMetrics(gpuUniqueId As Integer, metrics As GpuMetricsSnapshotDto) As Boolean
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(Integer, GpuMetricsSnapshotDto)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics(Integer, ADLXWrapper.GpuMetricsSnapshotDto)
+  name.vb: TryGetCurrentGpuMetrics(Integer, GpuMetricsSnapshotDto)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32)
+  id: EnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: EnumerateGpuMetricsHistory(int, int, int)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(int, int, int)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(int, int, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EnumerateGpuMetricsHistory
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 600
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Enumerates GPU metrics history for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public IEnumerable<GpuMetricsSnapshotDto> EnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: startMs
+      type: System.Int32
+    - id: stopMs
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}
+    content.vb: Public Function EnumerateGpuMetricsHistory(gpuUniqueId As Integer, startMs As Integer, stopMs As Integer) As IEnumerable(Of GpuMetricsSnapshotDto)
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(Integer, Integer, Integer)
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory(Integer, Integer, Integer)
+  name.vb: EnumerateGpuMetricsHistory(Integer, Integer, Integer)
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}@)
+  commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}@)
+  id: TryEnumerateGpuMetricsHistory(System.Int32,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}@)
+  parent: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryEnumerateGpuMetricsHistory(int, int, int, out IEnumerable<GpuMetricsSnapshotDto>)
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(int, int, int, out IEnumerable<GpuMetricsSnapshotDto>)
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(int, int, int, out System.Collections.Generic.IEnumerable<ADLXWrapper.GpuMetricsSnapshotDto>)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryEnumerateGpuMetricsHistory
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 610
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to enumerate GPU metrics history for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryEnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotDto> history)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: startMs
+      type: System.Int32
+    - id: stopMs
+      type: System.Int32
+    - id: history
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryEnumerateGpuMetricsHistory(gpuUniqueId As Integer, startMs As Integer, stopMs As Integer, history As IEnumerable(Of GpuMetricsSnapshotDto)) As Boolean
+  overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory*
+  nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(Integer, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotDto))
+  fullName.vb: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory(Integer, Integer, Integer, System.Collections.Generic.IEnumerable(Of ADLXWrapper.GpuMetricsSnapshotDto))
+  name.vb: TryEnumerateGpuMetricsHistory(Integer, Integer, Integer, IEnumerable(Of GpuMetricsSnapshotDto))
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Dispose
   id: Dispose
@@ -1365,11 +1002,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 559
+    startLine: 641
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1395,11 +1032,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 573
+    startLine: 655
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1640,7 +1277,7 @@ references:
   fullName: System
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper__ctor_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Boolean_
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper__ctor_ADLXWrapper_IADLXPerformanceMonitoringServices__System_Boolean_ADLXWrapper_IADLXSystem__
   name: ADLXPerformanceMonitoringServicesHelper
   nameWithType: ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ADLXPerformanceMonitoringServicesHelper
@@ -1674,6 +1311,28 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ADLXWrapper.IADLXSystem*
+  isExternal: true
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
+  - name: '*'
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: System.ObjectDisposedException
   commentId: T:System.ObjectDisposedException
   isExternal: true
@@ -1681,212 +1340,38 @@ references:
   name: ObjectDisposedException
   nameWithType: ObjectDisposedException
   fullName: System.ObjectDisposedException
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetPerformanceMonitoringServicesNative
-  name: GetPerformanceMonitoringServicesNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesNative
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetPerformanceMonitoringServicesHandle
-  name: GetPerformanceMonitoringServicesHandle
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringServicesHandle
-- uid: ADLXWrapper.ADLXInterfaceHandle
-  commentId: T:ADLXWrapper.ADLXInterfaceHandle
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXInterfaceHandle.html
-  name: ADLXInterfaceHandle
-  nameWithType: ADLXInterfaceHandle
-  fullName: ADLXWrapper.ADLXInterfaceHandle
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
-  name: ArgumentNullException
-  nameWithType: ArgumentNullException
-  fullName: System.ArgumentNullException
-- uid: ADLXWrapper.ADLXException
-  commentId: T:ADLXWrapper.ADLXException
-  href: ADLXWrapper.ADLXException.html
-  name: ADLXException
-  nameWithType: ADLXException
-  fullName: ADLXWrapper.ADLXException
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetGpuMetricsSupportNative_ADLXWrapper_IADLXGPU__
-  name: GetGpuMetricsSupportNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupportNative
-- uid: ADLXWrapper.IADLXGPU*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPU.html
-  name: IADLXGPU*
-  nameWithType: IADLXGPU*
-  fullName: ADLXWrapper.IADLXGPU*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-- uid: ADLXWrapper.IADLXGPUMetricsSupport*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPUMetricsSupport.html
-  name: IADLXGPUMetricsSupport*
-  nameWithType: IADLXGPUMetricsSupport*
-  fullName: ADLXWrapper.IADLXGPUMetricsSupport*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPUMetricsSupport
-    name: IADLXGPUMetricsSupport
-    href: ADLXWrapper.IADLXGPUMetricsSupport.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPUMetricsSupport
-    name: IADLXGPUMetricsSupport
-    href: ADLXWrapper.IADLXGPUMetricsSupport.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetGpuMetricsSupport_ADLXWrapper_IADLXGPU__
-  name: GetGpuMetricsSupport
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
-- uid: ADLXWrapper.GpuMetricsSupportInfo
-  commentId: T:ADLXWrapper.GpuMetricsSupportInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.GpuMetricsSupportInfo.html
-  name: GpuMetricsSupportInfo
-  nameWithType: GpuMetricsSupportInfo
-  fullName: ADLXWrapper.GpuMetricsSupportInfo
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetGpuMetricsSupport_ADLXWrapper_IADLXGPU__ADLXWrapper_GpuMetricsSupportInfo__
-  name: TryGetGpuMetricsSupport
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentGpuMetricsNative_ADLXWrapper_IADLXGPU__
-  name: GetCurrentGpuMetricsNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetricsNative
-- uid: ADLXWrapper.IADLXGPUMetrics*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPUMetrics.html
-  name: IADLXGPUMetrics*
-  nameWithType: IADLXGPUMetrics*
-  fullName: ADLXWrapper.IADLXGPUMetrics*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPUMetrics
-    name: IADLXGPUMetrics
-    href: ADLXWrapper.IADLXGPUMetrics.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPUMetrics
-    name: IADLXGPUMetrics
-    href: ADLXWrapper.IADLXGPUMetrics.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentGpuMetrics_ADLXWrapper_IADLXGPU__
-  name: GetCurrentGpuMetrics
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
-- uid: ADLXWrapper.GpuMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.GpuMetricsSnapshotInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.GpuMetricsSnapshotInfo.html
-  name: GpuMetricsSnapshotInfo
-  nameWithType: GpuMetricsSnapshotInfo
-  fullName: ADLXWrapper.GpuMetricsSnapshotInfo
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetCurrentGpuMetrics_ADLXWrapper_IADLXGPU__ADLXWrapper_GpuMetricsSnapshotInfo__
-  name: TryGetCurrentGpuMetrics
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentSystemMetricsNative
-  name: GetCurrentSystemMetricsNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetricsNative
-- uid: ADLXWrapper.IADLXSystemMetrics*
-  isExternal: true
-  href: ADLXWrapper.IADLXSystemMetrics.html
-  name: IADLXSystemMetrics*
-  nameWithType: IADLXSystemMetrics*
-  fullName: ADLXWrapper.IADLXSystemMetrics*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXSystemMetrics
-    name: IADLXSystemMetrics
-    href: ADLXWrapper.IADLXSystemMetrics.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXSystemMetrics
-    name: IADLXSystemMetrics
-    href: ADLXWrapper.IADLXSystemMetrics.html
-  - name: '*'
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
   href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentSystemMetrics
   name: GetCurrentSystemMetrics
   nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentSystemMetrics
-- uid: ADLXWrapper.SystemMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.SystemMetricsSnapshotInfo
+- uid: ADLXWrapper.SystemMetricsSnapshotDto
+  commentId: T:ADLXWrapper.SystemMetricsSnapshotDto
   parent: ADLXWrapper
-  href: ADLXWrapper.SystemMetricsSnapshotInfo.html
-  name: SystemMetricsSnapshotInfo
-  nameWithType: SystemMetricsSnapshotInfo
-  fullName: ADLXWrapper.SystemMetricsSnapshotInfo
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentAllMetricsNative
-  name: GetCurrentAllMetricsNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetricsNative
-- uid: ADLXWrapper.IADLXAllMetrics*
-  isExternal: true
-  href: ADLXWrapper.IADLXAllMetrics.html
-  name: IADLXAllMetrics*
-  nameWithType: IADLXAllMetrics*
-  fullName: ADLXWrapper.IADLXAllMetrics*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXAllMetrics
-    name: IADLXAllMetrics
-    href: ADLXWrapper.IADLXAllMetrics.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXAllMetrics
-    name: IADLXAllMetrics
-    href: ADLXWrapper.IADLXAllMetrics.html
-  - name: '*'
+  href: ADLXWrapper.SystemMetricsSnapshotDto.html
+  name: SystemMetricsSnapshotDto
+  nameWithType: SystemMetricsSnapshotDto
+  fullName: ADLXWrapper.SystemMetricsSnapshotDto
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics
   href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentAllMetrics
   name: GetCurrentAllMetrics
   nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentAllMetrics
-- uid: ADLXWrapper.AllMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.AllMetricsSnapshotInfo
+- uid: ADLXWrapper.AllMetricsSnapshotDto
+  commentId: T:ADLXWrapper.AllMetricsSnapshotDto
   parent: ADLXWrapper
-  href: ADLXWrapper.AllMetricsSnapshotInfo.html
-  name: AllMetricsSnapshotInfo
-  nameWithType: AllMetricsSnapshotInfo
-  fullName: ADLXWrapper.AllMetricsSnapshotInfo
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetGpuMetricsHistoryNative_ADLXWrapper_IADLXGPU__System_Int32_System_Int32_
-  name: GetGpuMetricsHistoryNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsHistoryNative
+  href: ADLXWrapper.AllMetricsSnapshotDto.html
+  name: AllMetricsSnapshotDto
+  nameWithType: AllMetricsSnapshotDto
+  fullName: ADLXWrapper.AllMetricsSnapshotDto
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_EnumerateSystemMetricsHistory_System_Int32_System_Int32_
+  name: EnumerateSystemMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1898,48 +1383,26 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.IADLXGPUMetricsList*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPUMetricsList.html
-  name: IADLXGPUMetricsList*
-  nameWithType: IADLXGPUMetricsList*
-  fullName: ADLXWrapper.IADLXGPUMetricsList*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPUMetricsList
-    name: IADLXGPUMetricsList
-    href: ADLXWrapper.IADLXGPUMetricsList.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPUMetricsList
-    name: IADLXGPUMetricsList
-    href: ADLXWrapper.IADLXGPUMetricsList.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_EnumerateGpuMetricsHistory_ADLXWrapper_IADLXGPU__System_Int32_System_Int32_
-  name: EnumerateGpuMetricsHistory
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotInfo}
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotDto}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotDto}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<GpuMetricsSnapshotInfo>
-  nameWithType: IEnumerable<GpuMetricsSnapshotInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.GpuMetricsSnapshotInfo>
-  nameWithType.vb: IEnumerable(Of GpuMetricsSnapshotInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.GpuMetricsSnapshotInfo)
-  name.vb: IEnumerable(Of GpuMetricsSnapshotInfo)
+  name: IEnumerable<SystemMetricsSnapshotDto>
+  nameWithType: IEnumerable<SystemMetricsSnapshotDto>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.SystemMetricsSnapshotDto>
+  nameWithType.vb: IEnumerable(Of SystemMetricsSnapshotDto)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.SystemMetricsSnapshotDto)
+  name.vb: IEnumerable(Of SystemMetricsSnapshotDto)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ADLXWrapper.GpuMetricsSnapshotInfo
-    name: GpuMetricsSnapshotInfo
-    href: ADLXWrapper.GpuMetricsSnapshotInfo.html
+  - uid: ADLXWrapper.SystemMetricsSnapshotDto
+    name: SystemMetricsSnapshotDto
+    href: ADLXWrapper.SystemMetricsSnapshotDto.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -1949,9 +1412,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.GpuMetricsSnapshotInfo
-    name: GpuMetricsSnapshotInfo
-    href: ADLXWrapper.GpuMetricsSnapshotInfo.html
+  - uid: ADLXWrapper.SystemMetricsSnapshotDto
+    name: SystemMetricsSnapshotDto
+    href: ADLXWrapper.SystemMetricsSnapshotDto.html
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -2018,121 +1481,32 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateGpuMetricsHistory_ADLXWrapper_IADLXGPU__System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_GpuMetricsSnapshotInfo___
-  name: TryEnumerateGpuMetricsHistory
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetSystemMetricsHistoryNative_System_Int32_System_Int32_
-  name: GetSystemMetricsHistoryNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSystemMetricsHistoryNative
-- uid: ADLXWrapper.IADLXSystemMetricsList*
-  isExternal: true
-  href: ADLXWrapper.IADLXSystemMetricsList.html
-  name: IADLXSystemMetricsList*
-  nameWithType: IADLXSystemMetricsList*
-  fullName: ADLXWrapper.IADLXSystemMetricsList*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXSystemMetricsList
-    name: IADLXSystemMetricsList
-    href: ADLXWrapper.IADLXSystemMetricsList.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXSystemMetricsList
-    name: IADLXSystemMetricsList
-    href: ADLXWrapper.IADLXSystemMetricsList.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_EnumerateSystemMetricsHistory_System_Int32_System_Int32_
-  name: EnumerateSystemMetricsHistory
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateSystemMetricsHistory
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.SystemMetricsSnapshotInfo}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<SystemMetricsSnapshotInfo>
-  nameWithType: IEnumerable<SystemMetricsSnapshotInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.SystemMetricsSnapshotInfo>
-  nameWithType.vb: IEnumerable(Of SystemMetricsSnapshotInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.SystemMetricsSnapshotInfo)
-  name.vb: IEnumerable(Of SystemMetricsSnapshotInfo)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: ADLXWrapper.SystemMetricsSnapshotInfo
-    name: SystemMetricsSnapshotInfo
-    href: ADLXWrapper.SystemMetricsSnapshotInfo.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ADLXWrapper.SystemMetricsSnapshotInfo
-    name: SystemMetricsSnapshotInfo
-    href: ADLXWrapper.SystemMetricsSnapshotInfo.html
-  - name: )
-- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative*
-  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetAllMetricsHistoryNative_System_Int32_System_Int32_
-  name: GetAllMetricsHistoryNative
-  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative
-  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetAllMetricsHistoryNative
-- uid: ADLXWrapper.IADLXAllMetricsList*
-  isExternal: true
-  href: ADLXWrapper.IADLXAllMetricsList.html
-  name: IADLXAllMetricsList*
-  nameWithType: IADLXAllMetricsList*
-  fullName: ADLXWrapper.IADLXAllMetricsList*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXAllMetricsList
-    name: IADLXAllMetricsList
-    href: ADLXWrapper.IADLXAllMetricsList.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXAllMetricsList
-    name: IADLXAllMetricsList
-    href: ADLXWrapper.IADLXAllMetricsList.html
-  - name: '*'
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory
   href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_EnumerateAllMetricsHistory_System_Int32_System_Int32_
   name: EnumerateAllMetricsHistory
   nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateAllMetricsHistory
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotInfo}
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.AllMetricsSnapshotDto}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<AllMetricsSnapshotInfo>
-  nameWithType: IEnumerable<AllMetricsSnapshotInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.AllMetricsSnapshotInfo>
-  nameWithType.vb: IEnumerable(Of AllMetricsSnapshotInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.AllMetricsSnapshotInfo)
-  name.vb: IEnumerable(Of AllMetricsSnapshotInfo)
+  name: IEnumerable<AllMetricsSnapshotDto>
+  nameWithType: IEnumerable<AllMetricsSnapshotDto>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.AllMetricsSnapshotDto>
+  nameWithType.vb: IEnumerable(Of AllMetricsSnapshotDto)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.AllMetricsSnapshotDto)
+  name.vb: IEnumerable(Of AllMetricsSnapshotDto)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ADLXWrapper.AllMetricsSnapshotInfo
-    name: AllMetricsSnapshotInfo
-    href: ADLXWrapper.AllMetricsSnapshotInfo.html
+  - uid: ADLXWrapper.AllMetricsSnapshotDto
+    name: AllMetricsSnapshotDto
+    href: ADLXWrapper.AllMetricsSnapshotDto.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -2142,13 +1516,13 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.AllMetricsSnapshotInfo
-    name: AllMetricsSnapshotInfo
-    href: ADLXWrapper.AllMetricsSnapshotInfo.html
+  - uid: ADLXWrapper.AllMetricsSnapshotDto
+    name: AllMetricsSnapshotDto
+    href: ADLXWrapper.AllMetricsSnapshotDto.html
   - name: )
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateAllMetricsHistory_System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_AllMetricsSnapshotInfo___
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateAllMetricsHistory_System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_AllMetricsSnapshotDto___
   name: TryEnumerateAllMetricsHistory
   nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateAllMetricsHistory
@@ -2158,13 +1532,13 @@ references:
   name: GetSamplingIntervalRange
   nameWithType: ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingIntervalRange
-- uid: ADLXWrapper.ADLX_IntRange
-  commentId: T:ADLXWrapper.ADLX_IntRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLX_IntRange.html
-  name: ADLX_IntRange
-  nameWithType: ADLX_IntRange
-  fullName: ADLXWrapper.ADLX_IntRange
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingInterval*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetSamplingInterval
   href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetSamplingInterval
@@ -2249,19 +1623,102 @@ references:
   name: GetPerformanceMonitoringSettings
   nameWithType: ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringSettings
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetPerformanceMonitoringSettings
-- uid: ADLXWrapper.PerformanceMonitoringSettingsInfo
-  commentId: T:ADLXWrapper.PerformanceMonitoringSettingsInfo
+- uid: ADLXWrapper.PerformanceMonitoringSettingsDto
+  commentId: T:ADLXWrapper.PerformanceMonitoringSettingsDto
   parent: ADLXWrapper
-  href: ADLXWrapper.PerformanceMonitoringSettingsInfo.html
-  name: PerformanceMonitoringSettingsInfo
-  nameWithType: PerformanceMonitoringSettingsInfo
-  fullName: ADLXWrapper.PerformanceMonitoringSettingsInfo
+  href: ADLXWrapper.PerformanceMonitoringSettingsDto.html
+  name: PerformanceMonitoringSettingsDto
+  nameWithType: PerformanceMonitoringSettingsDto
+  fullName: ADLXWrapper.PerformanceMonitoringSettingsDto
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings
-  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_ApplyPerformanceMonitoringSettings_ADLXWrapper_PerformanceMonitoringSettingsInfo_
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_ApplyPerformanceMonitoringSettings_ADLXWrapper_PerformanceMonitoringSettingsDto_
   name: ApplyPerformanceMonitoringSettings
   nameWithType: ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.ApplyPerformanceMonitoringSettings
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetGpuMetricsSupport_System_Int32_
+  name: GetGpuMetricsSupport
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetGpuMetricsSupport
+- uid: ADLXWrapper.GpuMetricsSupportDto
+  commentId: T:ADLXWrapper.GpuMetricsSupportDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuMetricsSupportDto.html
+  name: GpuMetricsSupportDto
+  nameWithType: GpuMetricsSupportDto
+  fullName: ADLXWrapper.GpuMetricsSupportDto
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetGpuMetricsSupport_System_Int32_ADLXWrapper_GpuMetricsSupportDto__
+  name: TryGetGpuMetricsSupport
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetGpuMetricsSupport
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_GetCurrentGpuMetrics_System_Int32_
+  name: GetCurrentGpuMetrics
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.GetCurrentGpuMetrics
+- uid: ADLXWrapper.GpuMetricsSnapshotDto
+  commentId: T:ADLXWrapper.GpuMetricsSnapshotDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html
+  name: GpuMetricsSnapshotDto
+  nameWithType: GpuMetricsSnapshotDto
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryGetCurrentGpuMetrics_System_Int32_ADLXWrapper_GpuMetricsSnapshotDto__
+  name: TryGetCurrentGpuMetrics
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryGetCurrentGpuMetrics
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_EnumerateGpuMetricsHistory_System_Int32_System_Int32_System_Int32_
+  name: EnumerateGpuMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.EnumerateGpuMetricsHistory
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.GpuMetricsSnapshotDto}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<GpuMetricsSnapshotDto>
+  nameWithType: IEnumerable<GpuMetricsSnapshotDto>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.GpuMetricsSnapshotDto>
+  nameWithType.vb: IEnumerable(Of GpuMetricsSnapshotDto)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.GpuMetricsSnapshotDto)
+  name.vb: IEnumerable(Of GpuMetricsSnapshotDto)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ADLXWrapper.GpuMetricsSnapshotDto
+    name: GpuMetricsSnapshotDto
+    href: ADLXWrapper.GpuMetricsSnapshotDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.GpuMetricsSnapshotDto
+    name: GpuMetricsSnapshotDto
+    href: ADLXWrapper.GpuMetricsSnapshotDto.html
+  - name: )
+- uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory*
+  commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
+  href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_TryEnumerateGpuMetricsHistory_System_Int32_System_Int32_System_Int32_System_Collections_Generic_IEnumerable_ADLXWrapper_GpuMetricsSnapshotDto___
+  name: TryEnumerateGpuMetricsHistory
+  nameWithType: ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
+  fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.TryEnumerateGpuMetricsHistory
 - uid: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Dispose*
   commentId: Overload:ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.Dispose
   href: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.html#ADLXWrapper_ADLXPerformanceMonitoringServicesHelper_Dispose

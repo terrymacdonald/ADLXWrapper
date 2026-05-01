@@ -80,44 +80,46 @@ items:
   - ADLXWrapper.ADLX_UINT16_RGB
   - ADLXWrapper.ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
   - ADLXWrapper.ADLX_WHITE_POINT
-  - ADLXWrapper.All3DSettingsInfo
-  - ADLXWrapper.AllMetricsSnapshotInfo
-  - ADLXWrapper.AnisotropicFilteringInfo
-  - ADLXWrapper.AntiAliasingInfo
-  - ADLXWrapper.AntiLagInfo
-  - ADLXWrapper.AutoTuningInfo
-  - ADLXWrapper.BoostInfo
+  - ADLXWrapper.All3DSettingsDto
+  - ADLXWrapper.AllMetricsSnapshotDto
+  - ADLXWrapper.AnisotropicFilteringDto
+  - ADLXWrapper.AntiAliasingDto
+  - ADLXWrapper.AntiLagDto
+  - ADLXWrapper.AutoTuningDto
+  - ADLXWrapper.BoostDto
   - ADLXWrapper.ComPtr`1
-  - ADLXWrapper.ConnectivityExperienceInfo
-  - ADLXWrapper.CustomColorInfo
-  - ADLXWrapper.CustomResolutionInfo
-  - ADLXWrapper.DesktopInfo
+  - ADLXWrapper.ConnectivityExperienceDto
+  - ADLXWrapper.CustomColorDto
+  - ADLXWrapper.CustomResolutionDto
+  - ADLXWrapper.DesktopDto
   - ADLXWrapper.DesktopListListenerHandle
   - ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
   - ADLXWrapper.Display3DLutListenerHandle
   - ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
+  - ADLXWrapper.DisplayDto
   - ADLXWrapper.DisplayGammaListenerHandle
   - ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
   - ADLXWrapper.DisplayGamutListenerHandle
   - ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
-  - ADLXWrapper.DisplayInfo
   - ADLXWrapper.DisplayListListenerHandle
   - ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
-  - ADLXWrapper.DisplayResolutionInfo
+  - ADLXWrapper.DisplayResolutionDto
   - ADLXWrapper.DisplaySettingsListenerHandle
   - ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
-  - ADLXWrapper.EnhancedSyncInfo
-  - ADLXWrapper.EyefinityDesktopInfo
+  - ADLXWrapper.EnhancedSyncDto
+  - ADLXWrapper.EyefinityDesktopDto
   - ADLXWrapper.FanPoint
-  - ADLXWrapper.FluidMotionFramesInfo
-  - ADLXWrapper.FrameRateTargetControlInfo
-  - ADLXWrapper.GammaInfo
-  - ADLXWrapper.GamutInfo
-  - ADLXWrapper.GpuInfo
-  - ADLXWrapper.GpuMetricsEntryInfo
-  - ADLXWrapper.GpuMetricsSnapshotInfo
-  - ADLXWrapper.GpuMetricsSupportInfo
-  - ADLXWrapper.GpuTuningCapabilitiesInfo
+  - ADLXWrapper.FluidMotionFramesDto
+  - ADLXWrapper.FrameRateTargetControlDto
+  - ADLXWrapper.GammaDto
+  - ADLXWrapper.GammaRampDto
+  - ADLXWrapper.GamutColorSpaceDto
+  - ADLXWrapper.GamutDto
+  - ADLXWrapper.GpuDto
+  - ADLXWrapper.GpuMetricsEntryDto
+  - ADLXWrapper.GpuMetricsSnapshotDto
+  - ADLXWrapper.GpuMetricsSupportDto
+  - ADLXWrapper.GpuTuningCapabilitiesDto
   - ADLXWrapper.GpuTuningListenerHandle
   - ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
   - ADLXWrapper.IADLMapping
@@ -271,33 +273,37 @@ items:
   - ADLXWrapper.IADLXSystemMetricsSupport1
   - ADLXWrapper.IADLXVideoSuperResolution
   - ADLXWrapper.IADLXVideoUpscale
-  - ADLXWrapper.ManualFanTuningInfo
-  - ADLXWrapper.ManualGfxTuningInfo
-  - ADLXWrapper.ManualPowerTuningInfo
-  - ADLXWrapper.ManualVramTuningInfo
+  - ADLXWrapper.IntRangeDto
+  - ADLXWrapper.LuidDto
+  - ADLXWrapper.ManualFanTuningDto
+  - ADLXWrapper.ManualGfxTuningDto
+  - ADLXWrapper.ManualPowerTuningDto
+  - ADLXWrapper.ManualVramTuningDto
   - ADLXWrapper.MultimediaListenerHandle
   - ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
-  - ADLXWrapper.PerformanceMonitoringSettingsInfo
-  - ADLXWrapper.PowerDistributionSnapshotInfo
+  - ADLXWrapper.PerformanceMonitoringSettingsDto
+  - ADLXWrapper.PointDto
+  - ADLXWrapper.PowerDistributionSnapshotDto
   - ADLXWrapper.PowerTuningListenerHandle
   - ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
   - ADLXWrapper.PresetKind
-  - ADLXWrapper.PresetTuningInfo
-  - ADLXWrapper.RadeonImageSharpeningInfo
-  - ADLXWrapper.RadeonSuperResolutionInfo
-  - ADLXWrapper.SimpleEyefinityInfo
-  - ADLXWrapper.SmartShiftEcoInfo
-  - ADLXWrapper.SmartShiftMaxInfo
-  - ADLXWrapper.SystemMetricsSnapshotInfo
-  - ADLXWrapper.TessellationInfo
-  - ADLXWrapper.ThreeDLUTInfo
+  - ADLXWrapper.PresetTuningDto
+  - ADLXWrapper.RadeonImageSharpeningDto
+  - ADLXWrapper.RadeonSuperResolutionDto
+  - ADLXWrapper.RegammaCoeffDto
+  - ADLXWrapper.SimpleEyefinityDto
+  - ADLXWrapper.SmartShiftEcoDto
+  - ADLXWrapper.SmartShiftMaxDto
+  - ADLXWrapper.SystemMetricsSnapshotDto
+  - ADLXWrapper.TessellationDto
+  - ADLXWrapper.ThreeDLUTDto
   - ADLXWrapper.ThreeDSettingsListenerHandle
   - ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
   - ADLXWrapper.VariBrightMode
-  - ADLXWrapper.VideoSuperResolutionInfo
-  - ADLXWrapper.VideoUpscaleInfo
+  - ADLXWrapper.VideoSuperResolutionDto
+  - ADLXWrapper.VideoUpscaleDto
   - ADLXWrapper.VramState
-  - ADLXWrapper.WaitForVerticalRefreshInfo
+  - ADLXWrapper.WaitForVerticalRefreshDto
   langs:
   - csharp
   - vb
@@ -315,81 +321,81 @@ references:
   name: ADLX3DSettingsServicesHelper
   nameWithType: ADLX3DSettingsServicesHelper
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper
-- uid: ADLXWrapper.All3DSettingsInfo
-  commentId: T:ADLXWrapper.All3DSettingsInfo
+- uid: ADLXWrapper.All3DSettingsDto
+  commentId: T:ADLXWrapper.All3DSettingsDto
   parent: ADLXWrapper
-  href: ADLXWrapper.All3DSettingsInfo.html
-  name: All3DSettingsInfo
-  nameWithType: All3DSettingsInfo
-  fullName: ADLXWrapper.All3DSettingsInfo
-- uid: ADLXWrapper.AntiLagInfo
-  commentId: T:ADLXWrapper.AntiLagInfo
-  href: ADLXWrapper.AntiLagInfo.html
-  name: AntiLagInfo
-  nameWithType: AntiLagInfo
-  fullName: ADLXWrapper.AntiLagInfo
-- uid: ADLXWrapper.BoostInfo
-  commentId: T:ADLXWrapper.BoostInfo
-  href: ADLXWrapper.BoostInfo.html
-  name: BoostInfo
-  nameWithType: BoostInfo
-  fullName: ADLXWrapper.BoostInfo
-- uid: ADLXWrapper.RadeonImageSharpeningInfo
-  commentId: T:ADLXWrapper.RadeonImageSharpeningInfo
-  href: ADLXWrapper.RadeonImageSharpeningInfo.html
-  name: RadeonImageSharpeningInfo
-  nameWithType: RadeonImageSharpeningInfo
-  fullName: ADLXWrapper.RadeonImageSharpeningInfo
-- uid: ADLXWrapper.EnhancedSyncInfo
-  commentId: T:ADLXWrapper.EnhancedSyncInfo
-  href: ADLXWrapper.EnhancedSyncInfo.html
-  name: EnhancedSyncInfo
-  nameWithType: EnhancedSyncInfo
-  fullName: ADLXWrapper.EnhancedSyncInfo
-- uid: ADLXWrapper.WaitForVerticalRefreshInfo
-  commentId: T:ADLXWrapper.WaitForVerticalRefreshInfo
-  href: ADLXWrapper.WaitForVerticalRefreshInfo.html
-  name: WaitForVerticalRefreshInfo
-  nameWithType: WaitForVerticalRefreshInfo
-  fullName: ADLXWrapper.WaitForVerticalRefreshInfo
-- uid: ADLXWrapper.FrameRateTargetControlInfo
-  commentId: T:ADLXWrapper.FrameRateTargetControlInfo
-  href: ADLXWrapper.FrameRateTargetControlInfo.html
-  name: FrameRateTargetControlInfo
-  nameWithType: FrameRateTargetControlInfo
-  fullName: ADLXWrapper.FrameRateTargetControlInfo
-- uid: ADLXWrapper.AntiAliasingInfo
-  commentId: T:ADLXWrapper.AntiAliasingInfo
-  href: ADLXWrapper.AntiAliasingInfo.html
-  name: AntiAliasingInfo
-  nameWithType: AntiAliasingInfo
-  fullName: ADLXWrapper.AntiAliasingInfo
-- uid: ADLXWrapper.AnisotropicFilteringInfo
-  commentId: T:ADLXWrapper.AnisotropicFilteringInfo
-  href: ADLXWrapper.AnisotropicFilteringInfo.html
-  name: AnisotropicFilteringInfo
-  nameWithType: AnisotropicFilteringInfo
-  fullName: ADLXWrapper.AnisotropicFilteringInfo
-- uid: ADLXWrapper.TessellationInfo
-  commentId: T:ADLXWrapper.TessellationInfo
-  href: ADLXWrapper.TessellationInfo.html
-  name: TessellationInfo
-  nameWithType: TessellationInfo
-  fullName: ADLXWrapper.TessellationInfo
-- uid: ADLXWrapper.FluidMotionFramesInfo
-  commentId: T:ADLXWrapper.FluidMotionFramesInfo
+  href: ADLXWrapper.All3DSettingsDto.html
+  name: All3DSettingsDto
+  nameWithType: All3DSettingsDto
+  fullName: ADLXWrapper.All3DSettingsDto
+- uid: ADLXWrapper.AntiLagDto
+  commentId: T:ADLXWrapper.AntiLagDto
+  href: ADLXWrapper.AntiLagDto.html
+  name: AntiLagDto
+  nameWithType: AntiLagDto
+  fullName: ADLXWrapper.AntiLagDto
+- uid: ADLXWrapper.BoostDto
+  commentId: T:ADLXWrapper.BoostDto
+  href: ADLXWrapper.BoostDto.html
+  name: BoostDto
+  nameWithType: BoostDto
+  fullName: ADLXWrapper.BoostDto
+- uid: ADLXWrapper.RadeonImageSharpeningDto
+  commentId: T:ADLXWrapper.RadeonImageSharpeningDto
+  href: ADLXWrapper.RadeonImageSharpeningDto.html
+  name: RadeonImageSharpeningDto
+  nameWithType: RadeonImageSharpeningDto
+  fullName: ADLXWrapper.RadeonImageSharpeningDto
+- uid: ADLXWrapper.EnhancedSyncDto
+  commentId: T:ADLXWrapper.EnhancedSyncDto
+  href: ADLXWrapper.EnhancedSyncDto.html
+  name: EnhancedSyncDto
+  nameWithType: EnhancedSyncDto
+  fullName: ADLXWrapper.EnhancedSyncDto
+- uid: ADLXWrapper.WaitForVerticalRefreshDto
+  commentId: T:ADLXWrapper.WaitForVerticalRefreshDto
+  href: ADLXWrapper.WaitForVerticalRefreshDto.html
+  name: WaitForVerticalRefreshDto
+  nameWithType: WaitForVerticalRefreshDto
+  fullName: ADLXWrapper.WaitForVerticalRefreshDto
+- uid: ADLXWrapper.FrameRateTargetControlDto
+  commentId: T:ADLXWrapper.FrameRateTargetControlDto
+  href: ADLXWrapper.FrameRateTargetControlDto.html
+  name: FrameRateTargetControlDto
+  nameWithType: FrameRateTargetControlDto
+  fullName: ADLXWrapper.FrameRateTargetControlDto
+- uid: ADLXWrapper.AntiAliasingDto
+  commentId: T:ADLXWrapper.AntiAliasingDto
+  href: ADLXWrapper.AntiAliasingDto.html
+  name: AntiAliasingDto
+  nameWithType: AntiAliasingDto
+  fullName: ADLXWrapper.AntiAliasingDto
+- uid: ADLXWrapper.AnisotropicFilteringDto
+  commentId: T:ADLXWrapper.AnisotropicFilteringDto
+  href: ADLXWrapper.AnisotropicFilteringDto.html
+  name: AnisotropicFilteringDto
+  nameWithType: AnisotropicFilteringDto
+  fullName: ADLXWrapper.AnisotropicFilteringDto
+- uid: ADLXWrapper.TessellationDto
+  commentId: T:ADLXWrapper.TessellationDto
+  href: ADLXWrapper.TessellationDto.html
+  name: TessellationDto
+  nameWithType: TessellationDto
+  fullName: ADLXWrapper.TessellationDto
+- uid: ADLXWrapper.FluidMotionFramesDto
+  commentId: T:ADLXWrapper.FluidMotionFramesDto
   parent: ADLXWrapper
-  href: ADLXWrapper.FluidMotionFramesInfo.html
-  name: FluidMotionFramesInfo
-  nameWithType: FluidMotionFramesInfo
-  fullName: ADLXWrapper.FluidMotionFramesInfo
-- uid: ADLXWrapper.RadeonSuperResolutionInfo
-  commentId: T:ADLXWrapper.RadeonSuperResolutionInfo
+  href: ADLXWrapper.FluidMotionFramesDto.html
+  name: FluidMotionFramesDto
+  nameWithType: FluidMotionFramesDto
+  fullName: ADLXWrapper.FluidMotionFramesDto
+- uid: ADLXWrapper.RadeonSuperResolutionDto
+  commentId: T:ADLXWrapper.RadeonSuperResolutionDto
   parent: ADLXWrapper
-  href: ADLXWrapper.RadeonSuperResolutionInfo.html
-  name: RadeonSuperResolutionInfo
-  nameWithType: RadeonSuperResolutionInfo
-  fullName: ADLXWrapper.RadeonSuperResolutionInfo
+  href: ADLXWrapper.RadeonSuperResolutionDto.html
+  name: RadeonSuperResolutionDto
+  nameWithType: RadeonSuperResolutionDto
+  fullName: ADLXWrapper.RadeonSuperResolutionDto
 - uid: ADLXWrapper.ThreeDSettingsListenerHandle
   commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle
   parent: ADLXWrapper
@@ -447,27 +453,27 @@ references:
   name: ADLXDesktopServicesHelper
   nameWithType: ADLXDesktopServicesHelper
   fullName: ADLXWrapper.ADLXDesktopServicesHelper
-- uid: ADLXWrapper.DesktopInfo
-  commentId: T:ADLXWrapper.DesktopInfo
+- uid: ADLXWrapper.DesktopDto
+  commentId: T:ADLXWrapper.DesktopDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DesktopInfo.html
-  name: DesktopInfo
-  nameWithType: DesktopInfo
-  fullName: ADLXWrapper.DesktopInfo
-- uid: ADLXWrapper.SimpleEyefinityInfo
-  commentId: T:ADLXWrapper.SimpleEyefinityInfo
+  href: ADLXWrapper.DesktopDto.html
+  name: DesktopDto
+  nameWithType: DesktopDto
+  fullName: ADLXWrapper.DesktopDto
+- uid: ADLXWrapper.SimpleEyefinityDto
+  commentId: T:ADLXWrapper.SimpleEyefinityDto
   parent: ADLXWrapper
-  href: ADLXWrapper.SimpleEyefinityInfo.html
-  name: SimpleEyefinityInfo
-  nameWithType: SimpleEyefinityInfo
-  fullName: ADLXWrapper.SimpleEyefinityInfo
-- uid: ADLXWrapper.EyefinityDesktopInfo
-  commentId: T:ADLXWrapper.EyefinityDesktopInfo
+  href: ADLXWrapper.SimpleEyefinityDto.html
+  name: SimpleEyefinityDto
+  nameWithType: SimpleEyefinityDto
+  fullName: ADLXWrapper.SimpleEyefinityDto
+- uid: ADLXWrapper.EyefinityDesktopDto
+  commentId: T:ADLXWrapper.EyefinityDesktopDto
   parent: ADLXWrapper
-  href: ADLXWrapper.EyefinityDesktopInfo.html
-  name: EyefinityDesktopInfo
-  nameWithType: EyefinityDesktopInfo
-  fullName: ADLXWrapper.EyefinityDesktopInfo
+  href: ADLXWrapper.EyefinityDesktopDto.html
+  name: EyefinityDesktopDto
+  nameWithType: EyefinityDesktopDto
+  fullName: ADLXWrapper.EyefinityDesktopDto
 - uid: ADLXWrapper.DesktopListListenerHandle
   commentId: T:ADLXWrapper.DesktopListListenerHandle
   parent: ADLXWrapper
@@ -500,7 +506,6 @@ references:
     href: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged.html
 - uid: ADLXWrapper.ADLXDisplay
   commentId: T:ADLXWrapper.ADLXDisplay
-  parent: ADLXWrapper
   href: ADLXWrapper.ADLXDisplay.html
   name: ADLXDisplay
   nameWithType: ADLXDisplay
@@ -519,62 +524,61 @@ references:
   name: ADLXDisplayServicesHelper
   nameWithType: ADLXDisplayServicesHelper
   fullName: ADLXWrapper.ADLXDisplayServicesHelper
-- uid: ADLXWrapper.DisplayInfo
-  commentId: T:ADLXWrapper.DisplayInfo
+- uid: ADLXWrapper.DisplayDto
+  commentId: T:ADLXWrapper.DisplayDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DisplayInfo.html
-  name: DisplayInfo
-  nameWithType: DisplayInfo
-  fullName: ADLXWrapper.DisplayInfo
-- uid: ADLXWrapper.GammaInfo
-  commentId: T:ADLXWrapper.GammaInfo
+  href: ADLXWrapper.DisplayDto.html
+  name: DisplayDto
+  nameWithType: DisplayDto
+  fullName: ADLXWrapper.DisplayDto
+- uid: ADLXWrapper.GammaDto
+  commentId: T:ADLXWrapper.GammaDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GammaInfo.html
-  name: GammaInfo
-  nameWithType: GammaInfo
-  fullName: ADLXWrapper.GammaInfo
-- uid: ADLXWrapper.GamutInfo
-  commentId: T:ADLXWrapper.GamutInfo
+  href: ADLXWrapper.GammaDto.html
+  name: GammaDto
+  nameWithType: GammaDto
+  fullName: ADLXWrapper.GammaDto
+- uid: ADLXWrapper.GamutDto
+  commentId: T:ADLXWrapper.GamutDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GamutInfo.html
-  name: GamutInfo
-  nameWithType: GamutInfo
-  fullName: ADLXWrapper.GamutInfo
-- uid: ADLXWrapper.ThreeDLUTInfo
-  commentId: T:ADLXWrapper.ThreeDLUTInfo
+  href: ADLXWrapper.GamutDto.html
+  name: GamutDto
+  nameWithType: GamutDto
+  fullName: ADLXWrapper.GamutDto
+- uid: ADLXWrapper.ThreeDLUTDto
+  commentId: T:ADLXWrapper.ThreeDLUTDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ThreeDLUTInfo.html
-  name: ThreeDLUTInfo
-  nameWithType: ThreeDLUTInfo
-  fullName: ADLXWrapper.ThreeDLUTInfo
-- uid: ADLXWrapper.ConnectivityExperienceInfo
-  commentId: T:ADLXWrapper.ConnectivityExperienceInfo
+  href: ADLXWrapper.ThreeDLUTDto.html
+  name: ThreeDLUTDto
+  nameWithType: ThreeDLUTDto
+  fullName: ADLXWrapper.ThreeDLUTDto
+- uid: ADLXWrapper.ConnectivityExperienceDto
+  commentId: T:ADLXWrapper.ConnectivityExperienceDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ConnectivityExperienceInfo.html
-  name: ConnectivityExperienceInfo
-  nameWithType: ConnectivityExperienceInfo
-  fullName: ADLXWrapper.ConnectivityExperienceInfo
-- uid: ADLXWrapper.CustomResolutionInfo
-  commentId: T:ADLXWrapper.CustomResolutionInfo
+  href: ADLXWrapper.ConnectivityExperienceDto.html
+  name: ConnectivityExperienceDto
+  nameWithType: ConnectivityExperienceDto
+  fullName: ADLXWrapper.ConnectivityExperienceDto
+- uid: ADLXWrapper.CustomResolutionDto
+  commentId: T:ADLXWrapper.CustomResolutionDto
+  href: ADLXWrapper.CustomResolutionDto.html
+  name: CustomResolutionDto
+  nameWithType: CustomResolutionDto
+  fullName: ADLXWrapper.CustomResolutionDto
+- uid: ADLXWrapper.DisplayResolutionDto
+  commentId: T:ADLXWrapper.DisplayResolutionDto
   parent: ADLXWrapper
-  href: ADLXWrapper.CustomResolutionInfo.html
-  name: CustomResolutionInfo
-  nameWithType: CustomResolutionInfo
-  fullName: ADLXWrapper.CustomResolutionInfo
-- uid: ADLXWrapper.DisplayResolutionInfo
-  commentId: T:ADLXWrapper.DisplayResolutionInfo
+  href: ADLXWrapper.DisplayResolutionDto.html
+  name: DisplayResolutionDto
+  nameWithType: DisplayResolutionDto
+  fullName: ADLXWrapper.DisplayResolutionDto
+- uid: ADLXWrapper.CustomColorDto
+  commentId: T:ADLXWrapper.CustomColorDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DisplayResolutionInfo.html
-  name: DisplayResolutionInfo
-  nameWithType: DisplayResolutionInfo
-  fullName: ADLXWrapper.DisplayResolutionInfo
-- uid: ADLXWrapper.CustomColorInfo
-  commentId: T:ADLXWrapper.CustomColorInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.CustomColorInfo.html
-  name: CustomColorInfo
-  nameWithType: CustomColorInfo
-  fullName: ADLXWrapper.CustomColorInfo
+  href: ADLXWrapper.CustomColorDto.html
+  name: CustomColorDto
+  nameWithType: CustomColorDto
+  fullName: ADLXWrapper.CustomColorDto
 - uid: ADLXWrapper.DisplayListListenerHandle
   commentId: T:ADLXWrapper.DisplayListListenerHandle
   parent: ADLXWrapper
@@ -725,6 +729,48 @@ references:
   - uid: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
     name: OnDisplaySettingsChanged
     href: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged.html
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.LuidDto
+  commentId: T:ADLXWrapper.LuidDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.LuidDto.html
+  name: LuidDto
+  nameWithType: LuidDto
+  fullName: ADLXWrapper.LuidDto
+- uid: ADLXWrapper.RegammaCoeffDto
+  commentId: T:ADLXWrapper.RegammaCoeffDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.RegammaCoeffDto.html
+  name: RegammaCoeffDto
+  nameWithType: RegammaCoeffDto
+  fullName: ADLXWrapper.RegammaCoeffDto
+- uid: ADLXWrapper.GammaRampDto
+  commentId: T:ADLXWrapper.GammaRampDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GammaRampDto.html
+  name: GammaRampDto
+  nameWithType: GammaRampDto
+  fullName: ADLXWrapper.GammaRampDto
+- uid: ADLXWrapper.PointDto
+  commentId: T:ADLXWrapper.PointDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.PointDto.html
+  name: PointDto
+  nameWithType: PointDto
+  fullName: ADLXWrapper.PointDto
+- uid: ADLXWrapper.GamutColorSpaceDto
+  commentId: T:ADLXWrapper.GamutColorSpaceDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GamutColorSpaceDto.html
+  name: GamutColorSpaceDto
+  nameWithType: GamutColorSpaceDto
+  fullName: ADLXWrapper.GamutColorSpaceDto
 - uid: ADLXWrapper.ADLXGPU
   commentId: T:ADLXWrapper.ADLXGPU
   parent: ADLXWrapper
@@ -739,53 +785,53 @@ references:
   name: ADLXGPUTuningServicesHelper
   nameWithType: ADLXGPUTuningServicesHelper
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper
-- uid: ADLXWrapper.GpuTuningCapabilitiesInfo
-  commentId: T:ADLXWrapper.GpuTuningCapabilitiesInfo
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto
+  commentId: T:ADLXWrapper.GpuTuningCapabilitiesDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuTuningCapabilitiesInfo.html
-  name: GpuTuningCapabilitiesInfo
-  nameWithType: GpuTuningCapabilitiesInfo
-  fullName: ADLXWrapper.GpuTuningCapabilitiesInfo
-- uid: ADLXWrapper.ManualFanTuningInfo
-  commentId: T:ADLXWrapper.ManualFanTuningInfo
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html
+  name: GpuTuningCapabilitiesDto
+  nameWithType: GpuTuningCapabilitiesDto
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto
+- uid: ADLXWrapper.ManualFanTuningDto
+  commentId: T:ADLXWrapper.ManualFanTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualFanTuningInfo.html
-  name: ManualFanTuningInfo
-  nameWithType: ManualFanTuningInfo
-  fullName: ADLXWrapper.ManualFanTuningInfo
+  href: ADLXWrapper.ManualFanTuningDto.html
+  name: ManualFanTuningDto
+  nameWithType: ManualFanTuningDto
+  fullName: ADLXWrapper.ManualFanTuningDto
 - uid: ADLXWrapper.FanPoint
   commentId: T:ADLXWrapper.FanPoint
   href: ADLXWrapper.FanPoint.html
   name: FanPoint
   nameWithType: FanPoint
   fullName: ADLXWrapper.FanPoint
-- uid: ADLXWrapper.ManualVramTuningInfo
-  commentId: T:ADLXWrapper.ManualVramTuningInfo
+- uid: ADLXWrapper.ManualVramTuningDto
+  commentId: T:ADLXWrapper.ManualVramTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualVramTuningInfo.html
-  name: ManualVramTuningInfo
-  nameWithType: ManualVramTuningInfo
-  fullName: ADLXWrapper.ManualVramTuningInfo
+  href: ADLXWrapper.ManualVramTuningDto.html
+  name: ManualVramTuningDto
+  nameWithType: ManualVramTuningDto
+  fullName: ADLXWrapper.ManualVramTuningDto
 - uid: ADLXWrapper.VramState
   commentId: T:ADLXWrapper.VramState
   href: ADLXWrapper.VramState.html
   name: VramState
   nameWithType: VramState
   fullName: ADLXWrapper.VramState
-- uid: ADLXWrapper.ManualGfxTuningInfo
-  commentId: T:ADLXWrapper.ManualGfxTuningInfo
+- uid: ADLXWrapper.ManualGfxTuningDto
+  commentId: T:ADLXWrapper.ManualGfxTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualGfxTuningInfo.html
-  name: ManualGfxTuningInfo
-  nameWithType: ManualGfxTuningInfo
-  fullName: ADLXWrapper.ManualGfxTuningInfo
-- uid: ADLXWrapper.PresetTuningInfo
-  commentId: T:ADLXWrapper.PresetTuningInfo
+  href: ADLXWrapper.ManualGfxTuningDto.html
+  name: ManualGfxTuningDto
+  nameWithType: ManualGfxTuningDto
+  fullName: ADLXWrapper.ManualGfxTuningDto
+- uid: ADLXWrapper.PresetTuningDto
+  commentId: T:ADLXWrapper.PresetTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.PresetTuningInfo.html
-  name: PresetTuningInfo
-  nameWithType: PresetTuningInfo
-  fullName: ADLXWrapper.PresetTuningInfo
+  href: ADLXWrapper.PresetTuningDto.html
+  name: PresetTuningDto
+  nameWithType: PresetTuningDto
+  fullName: ADLXWrapper.PresetTuningDto
 - uid: ADLXWrapper.PresetKind
   commentId: T:ADLXWrapper.PresetKind
   parent: ADLXWrapper
@@ -793,12 +839,12 @@ references:
   name: PresetKind
   nameWithType: PresetKind
   fullName: ADLXWrapper.PresetKind
-- uid: ADLXWrapper.AutoTuningInfo
-  commentId: T:ADLXWrapper.AutoTuningInfo
-  href: ADLXWrapper.AutoTuningInfo.html
-  name: AutoTuningInfo
-  nameWithType: AutoTuningInfo
-  fullName: ADLXWrapper.AutoTuningInfo
+- uid: ADLXWrapper.AutoTuningDto
+  commentId: T:ADLXWrapper.AutoTuningDto
+  href: ADLXWrapper.AutoTuningDto.html
+  name: AutoTuningDto
+  nameWithType: AutoTuningDto
+  fullName: ADLXWrapper.AutoTuningDto
 - uid: ADLXWrapper.GpuTuningListenerHandle
   commentId: T:ADLXWrapper.GpuTuningListenerHandle
   parent: ADLXWrapper
@@ -855,20 +901,20 @@ references:
   name: ADLXMultimediaServicesHelper
   nameWithType: ADLXMultimediaServicesHelper
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper
-- uid: ADLXWrapper.VideoUpscaleInfo
-  commentId: T:ADLXWrapper.VideoUpscaleInfo
+- uid: ADLXWrapper.VideoUpscaleDto
+  commentId: T:ADLXWrapper.VideoUpscaleDto
   parent: ADLXWrapper
-  href: ADLXWrapper.VideoUpscaleInfo.html
-  name: VideoUpscaleInfo
-  nameWithType: VideoUpscaleInfo
-  fullName: ADLXWrapper.VideoUpscaleInfo
-- uid: ADLXWrapper.VideoSuperResolutionInfo
-  commentId: T:ADLXWrapper.VideoSuperResolutionInfo
+  href: ADLXWrapper.VideoUpscaleDto.html
+  name: VideoUpscaleDto
+  nameWithType: VideoUpscaleDto
+  fullName: ADLXWrapper.VideoUpscaleDto
+- uid: ADLXWrapper.VideoSuperResolutionDto
+  commentId: T:ADLXWrapper.VideoSuperResolutionDto
   parent: ADLXWrapper
-  href: ADLXWrapper.VideoSuperResolutionInfo.html
-  name: VideoSuperResolutionInfo
-  nameWithType: VideoSuperResolutionInfo
-  fullName: ADLXWrapper.VideoSuperResolutionInfo
+  href: ADLXWrapper.VideoSuperResolutionDto.html
+  name: VideoSuperResolutionDto
+  nameWithType: VideoSuperResolutionDto
+  fullName: ADLXWrapper.VideoSuperResolutionDto
 - uid: ADLXWrapper.MultimediaListenerHandle
   commentId: T:ADLXWrapper.MultimediaListenerHandle
   parent: ADLXWrapper
@@ -1022,53 +1068,53 @@ references:
   name: ADLXPerformanceMonitoringServicesHelper
   nameWithType: ADLXPerformanceMonitoringServicesHelper
   fullName: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-- uid: ADLXWrapper.GpuMetricsSupportInfo
-  commentId: T:ADLXWrapper.GpuMetricsSupportInfo
+- uid: ADLXWrapper.GpuMetricsSupportDto
+  commentId: T:ADLXWrapper.GpuMetricsSupportDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuMetricsSupportInfo.html
-  name: GpuMetricsSupportInfo
-  nameWithType: GpuMetricsSupportInfo
-  fullName: ADLXWrapper.GpuMetricsSupportInfo
-- uid: ADLXWrapper.GpuMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.GpuMetricsSnapshotInfo
+  href: ADLXWrapper.GpuMetricsSupportDto.html
+  name: GpuMetricsSupportDto
+  nameWithType: GpuMetricsSupportDto
+  fullName: ADLXWrapper.GpuMetricsSupportDto
+- uid: ADLXWrapper.GpuMetricsSnapshotDto
+  commentId: T:ADLXWrapper.GpuMetricsSnapshotDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuMetricsSnapshotInfo.html
-  name: GpuMetricsSnapshotInfo
-  nameWithType: GpuMetricsSnapshotInfo
-  fullName: ADLXWrapper.GpuMetricsSnapshotInfo
-- uid: ADLXWrapper.PowerDistributionSnapshotInfo
-  commentId: T:ADLXWrapper.PowerDistributionSnapshotInfo
-  href: ADLXWrapper.PowerDistributionSnapshotInfo.html
-  name: PowerDistributionSnapshotInfo
-  nameWithType: PowerDistributionSnapshotInfo
-  fullName: ADLXWrapper.PowerDistributionSnapshotInfo
-- uid: ADLXWrapper.SystemMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.SystemMetricsSnapshotInfo
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html
+  name: GpuMetricsSnapshotDto
+  nameWithType: GpuMetricsSnapshotDto
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto
+- uid: ADLXWrapper.PowerDistributionSnapshotDto
+  commentId: T:ADLXWrapper.PowerDistributionSnapshotDto
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html
+  name: PowerDistributionSnapshotDto
+  nameWithType: PowerDistributionSnapshotDto
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto
+- uid: ADLXWrapper.SystemMetricsSnapshotDto
+  commentId: T:ADLXWrapper.SystemMetricsSnapshotDto
   parent: ADLXWrapper
-  href: ADLXWrapper.SystemMetricsSnapshotInfo.html
-  name: SystemMetricsSnapshotInfo
-  nameWithType: SystemMetricsSnapshotInfo
-  fullName: ADLXWrapper.SystemMetricsSnapshotInfo
-- uid: ADLXWrapper.GpuMetricsEntryInfo
-  commentId: T:ADLXWrapper.GpuMetricsEntryInfo
-  href: ADLXWrapper.GpuMetricsEntryInfo.html
-  name: GpuMetricsEntryInfo
-  nameWithType: GpuMetricsEntryInfo
-  fullName: ADLXWrapper.GpuMetricsEntryInfo
-- uid: ADLXWrapper.AllMetricsSnapshotInfo
-  commentId: T:ADLXWrapper.AllMetricsSnapshotInfo
+  href: ADLXWrapper.SystemMetricsSnapshotDto.html
+  name: SystemMetricsSnapshotDto
+  nameWithType: SystemMetricsSnapshotDto
+  fullName: ADLXWrapper.SystemMetricsSnapshotDto
+- uid: ADLXWrapper.GpuMetricsEntryDto
+  commentId: T:ADLXWrapper.GpuMetricsEntryDto
+  href: ADLXWrapper.GpuMetricsEntryDto.html
+  name: GpuMetricsEntryDto
+  nameWithType: GpuMetricsEntryDto
+  fullName: ADLXWrapper.GpuMetricsEntryDto
+- uid: ADLXWrapper.AllMetricsSnapshotDto
+  commentId: T:ADLXWrapper.AllMetricsSnapshotDto
   parent: ADLXWrapper
-  href: ADLXWrapper.AllMetricsSnapshotInfo.html
-  name: AllMetricsSnapshotInfo
-  nameWithType: AllMetricsSnapshotInfo
-  fullName: ADLXWrapper.AllMetricsSnapshotInfo
-- uid: ADLXWrapper.PerformanceMonitoringSettingsInfo
-  commentId: T:ADLXWrapper.PerformanceMonitoringSettingsInfo
+  href: ADLXWrapper.AllMetricsSnapshotDto.html
+  name: AllMetricsSnapshotDto
+  nameWithType: AllMetricsSnapshotDto
+  fullName: ADLXWrapper.AllMetricsSnapshotDto
+- uid: ADLXWrapper.PerformanceMonitoringSettingsDto
+  commentId: T:ADLXWrapper.PerformanceMonitoringSettingsDto
   parent: ADLXWrapper
-  href: ADLXWrapper.PerformanceMonitoringSettingsInfo.html
-  name: PerformanceMonitoringSettingsInfo
-  nameWithType: PerformanceMonitoringSettingsInfo
-  fullName: ADLXWrapper.PerformanceMonitoringSettingsInfo
+  href: ADLXWrapper.PerformanceMonitoringSettingsDto.html
+  name: PerformanceMonitoringSettingsDto
+  nameWithType: PerformanceMonitoringSettingsDto
+  fullName: ADLXWrapper.PerformanceMonitoringSettingsDto
 - uid: ADLXWrapper.ADLXPowerTuningServicesHelper
   commentId: T:ADLXWrapper.ADLXPowerTuningServicesHelper
   parent: ADLXWrapper
@@ -1076,27 +1122,27 @@ references:
   name: ADLXPowerTuningServicesHelper
   nameWithType: ADLXPowerTuningServicesHelper
   fullName: ADLXWrapper.ADLXPowerTuningServicesHelper
-- uid: ADLXWrapper.SmartShiftMaxInfo
-  commentId: T:ADLXWrapper.SmartShiftMaxInfo
+- uid: ADLXWrapper.SmartShiftMaxDto
+  commentId: T:ADLXWrapper.SmartShiftMaxDto
   parent: ADLXWrapper
-  href: ADLXWrapper.SmartShiftMaxInfo.html
-  name: SmartShiftMaxInfo
-  nameWithType: SmartShiftMaxInfo
-  fullName: ADLXWrapper.SmartShiftMaxInfo
-- uid: ADLXWrapper.SmartShiftEcoInfo
-  commentId: T:ADLXWrapper.SmartShiftEcoInfo
+  href: ADLXWrapper.SmartShiftMaxDto.html
+  name: SmartShiftMaxDto
+  nameWithType: SmartShiftMaxDto
+  fullName: ADLXWrapper.SmartShiftMaxDto
+- uid: ADLXWrapper.SmartShiftEcoDto
+  commentId: T:ADLXWrapper.SmartShiftEcoDto
   parent: ADLXWrapper
-  href: ADLXWrapper.SmartShiftEcoInfo.html
-  name: SmartShiftEcoInfo
-  nameWithType: SmartShiftEcoInfo
-  fullName: ADLXWrapper.SmartShiftEcoInfo
-- uid: ADLXWrapper.ManualPowerTuningInfo
-  commentId: T:ADLXWrapper.ManualPowerTuningInfo
+  href: ADLXWrapper.SmartShiftEcoDto.html
+  name: SmartShiftEcoDto
+  nameWithType: SmartShiftEcoDto
+  fullName: ADLXWrapper.SmartShiftEcoDto
+- uid: ADLXWrapper.ManualPowerTuningDto
+  commentId: T:ADLXWrapper.ManualPowerTuningDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ManualPowerTuningInfo.html
-  name: ManualPowerTuningInfo
-  nameWithType: ManualPowerTuningInfo
-  fullName: ADLXWrapper.ManualPowerTuningInfo
+  href: ADLXWrapper.ManualPowerTuningDto.html
+  name: ManualPowerTuningDto
+  nameWithType: ManualPowerTuningDto
+  fullName: ADLXWrapper.ManualPowerTuningDto
 - uid: ADLXWrapper.PowerTuningListenerHandle
   commentId: T:ADLXWrapper.PowerTuningListenerHandle
   parent: ADLXWrapper
@@ -1134,13 +1180,13 @@ references:
   name: ADLXSystemServicesHelper
   nameWithType: ADLXSystemServicesHelper
   fullName: ADLXWrapper.ADLXSystemServicesHelper
-- uid: ADLXWrapper.GpuInfo
-  commentId: T:ADLXWrapper.GpuInfo
+- uid: ADLXWrapper.GpuDto
+  commentId: T:ADLXWrapper.GpuDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuInfo.html
-  name: GpuInfo
-  nameWithType: GpuInfo
-  fullName: ADLXWrapper.GpuInfo
+  href: ADLXWrapper.GpuDto.html
+  name: GpuDto
+  nameWithType: GpuDto
+  fullName: ADLXWrapper.GpuDto
 - uid: ADLXWrapper.ADLXUtils
   commentId: T:ADLXWrapper.ADLXUtils
   href: ADLXWrapper.ADLXUtils.html
@@ -1408,7 +1454,6 @@ references:
   fullName: ADLXWrapper.ADLX_I2C_LINE
 - uid: ADLXWrapper.ADLX_IntRange
   commentId: T:ADLXWrapper.ADLX_IntRange
-  parent: ADLXWrapper
   href: ADLXWrapper.ADLX_IntRange.html
   name: ADLX_IntRange
   nameWithType: ADLX_IntRange
@@ -1429,7 +1474,6 @@ references:
   fullName: ADLXWrapper.ADLX_LOG_SEVERITY
 - uid: ADLXWrapper.ADLX_LUID
   commentId: T:ADLXWrapper.ADLX_LUID
-  parent: ADLXWrapper
   href: ADLXWrapper.ADLX_LUID.html
   name: ADLX_LUID
   nameWithType: ADLX_LUID

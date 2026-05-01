@@ -11,9 +11,8 @@ items:
   - ADLXWrapper.ADLXDisplay.AddDisplayGamutEventListener(ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged)
   - ADLXWrapper.ADLXDisplay.AddDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged)
   - ADLXWrapper.ADLXDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
-  - ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  - ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  - ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  - ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  - ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorDto)
   - ADLXWrapper.ADLXDisplay.ConnectorType
   - ADLXWrapper.ADLXDisplay.Dispose
   - ADLXWrapper.ADLXDisplay.Edid
@@ -21,11 +20,10 @@ items:
   - ADLXWrapper.ADLXDisplay.GetColorDepthState
   - ADLXWrapper.ADLXDisplay.GetConnectivityExperience
   - ADLXWrapper.ADLXDisplay.GetCustomColor
-  - ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative
   - ADLXWrapper.ADLXDisplay.GetDesktop
-  - ADLXWrapper.ADLXDisplay.GetDesktopInfo
+  - ADLXWrapper.ADLXDisplay.GetDesktopDto
   - ADLXWrapper.ADLXDisplay.GetDisplayBlankingState
-  - ADLXWrapper.ADLXDisplay.GetDisplayInfo
+  - ADLXWrapper.ADLXDisplay.GetDisplayDto
   - ADLXWrapper.ADLXDisplay.GetDynamicRefreshRateControlState
   - ADLXWrapper.ADLXDisplay.GetFreeSyncColorAccuracyState
   - ADLXWrapper.ADLXDisplay.GetFreeSyncState
@@ -68,9 +66,8 @@ items:
   - ADLXWrapper.ADLXDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
   - ADLXWrapper.ADLXDisplay.SetVariBright(System.Boolean,ADLXWrapper.VariBrightMode)
   - ADLXWrapper.ADLXDisplay.SetVirtualSuperResolution(System.Boolean)
-  - ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  - ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  - ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
+  - ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  - ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorDto)
   - ADLXWrapper.ADLXDisplay.TryReapplyGamma
   - ADLXWrapper.ADLXDisplay.TryReapplyGamut
   - ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
@@ -97,16 +94,16 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplay
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.
+  summary: Flattened display faÃ§ade with identity metadata, support-guarded feature accessors, and native list exposure.
   example: []
   syntax:
     content: 'public sealed class ADLXDisplay : IDisposable'
@@ -135,11 +132,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -176,11 +173,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -205,11 +202,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -234,11 +231,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionWidth
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -263,11 +260,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionHeight
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -292,11 +289,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -321,11 +318,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerId
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -350,11 +347,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -379,11 +376,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -408,11 +405,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
@@ -437,11 +434,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 55
   assemblies:
   - ADLXWrapper
@@ -466,11 +463,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -495,11 +492,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 59
   assemblies:
   - ADLXWrapper
@@ -524,11 +521,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 65
   assemblies:
   - ADLXWrapper
@@ -554,11 +551,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSync
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 83
   assemblies:
   - ADLXWrapper
@@ -589,11 +586,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSync
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 90
   assemblies:
   - ADLXWrapper
@@ -623,11 +620,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuScalingState
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 100
   assemblies:
   - ADLXWrapper
@@ -653,11 +650,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGpuScaling
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 118
   assemblies:
   - ADLXWrapper
@@ -688,11 +685,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGpuScaling
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 125
   assemblies:
   - ADLXWrapper
@@ -722,11 +719,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 135
   assemblies:
   - ADLXWrapper
@@ -739,34 +736,34 @@ items:
       type: System.ValueTuple{System.Boolean,ADLXWrapper.ADLX_SCALE_MODE}
     content.vb: Public Function GetScalingMode() As (supported As Boolean, mode As ADLX_SCALE_MODE)
   overload: ADLXWrapper.ADLXDisplay.GetScalingMode*
-- uid: ADLXWrapper.ADLXDisplay.GetDisplayInfo
-  commentId: M:ADLXWrapper.ADLXDisplay.GetDisplayInfo
-  id: GetDisplayInfo
+- uid: ADLXWrapper.ADLXDisplay.GetDisplayDto
+  commentId: M:ADLXWrapper.ADLXDisplay.GetDisplayDto
+  id: GetDisplayDto
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: GetDisplayInfo()
-  nameWithType: ADLXDisplay.GetDisplayInfo()
-  fullName: ADLXWrapper.ADLXDisplay.GetDisplayInfo()
+  name: GetDisplayDto()
+  nameWithType: ADLXDisplay.GetDisplayDto()
+  fullName: ADLXWrapper.ADLXDisplay.GetDisplayDto()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetDisplayInfo
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    id: GetDisplayDto
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public DisplayInfo GetDisplayInfo()
+    content: public DisplayDto GetDisplayDto()
     return:
-      type: ADLXWrapper.DisplayInfo
-    content.vb: Public Function GetDisplayInfo() As DisplayInfo
-  overload: ADLXWrapper.ADLXDisplay.GetDisplayInfo*
+      type: ADLXWrapper.DisplayDto
+    content.vb: Public Function GetDisplayDto() As DisplayDto
+  overload: ADLXWrapper.ADLXDisplay.GetDisplayDto*
 - uid: ADLXWrapper.ADLXDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
   commentId: M:ADLXWrapper.ADLXDisplay.SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
   id: SetScalingMode(ADLXWrapper.ADLX_SCALE_MODE)
@@ -780,11 +777,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 160
   assemblies:
   - ADLXWrapper
@@ -812,11 +809,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 167
   assemblies:
   - ADLXWrapper
@@ -843,11 +840,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
-    path: ../ADLXWrapper/ADLXDisplay.cs
+    path: ../ADLXWrapper/AdlxDisplay.cs
     startLine: 177
   assemblies:
   - ADLXWrapper
@@ -855,109 +852,11 @@ items:
   summary: Enumerate custom resolutions as managed DTOs.
   example: []
   syntax:
-    content: public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions()
+    content: public IEnumerable<DisplayResolutionDto> EnumerateCustomResolutions()
     return:
-      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
-    content.vb: Public Function EnumerateCustomResolutions() As IEnumerable(Of DisplayResolutionInfo)
+      type: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionDto}
+    content.vb: Public Function EnumerateCustomResolutions() As IEnumerable(Of DisplayResolutionDto)
   overload: ADLXWrapper.ADLXDisplay.EnumerateCustomResolutions*
-- uid: ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative
-  commentId: M:ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative
-  id: GetCustomResolutionListNative
-  parent: ADLXWrapper.ADLXDisplay
-  langs:
-  - csharp
-  - vb
-  name: GetCustomResolutionListNative()
-  nameWithType: ADLXDisplay.GetCustomResolutionListNative()
-  fullName: ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetCustomResolutionListNative
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 188
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Native custom resolution list accessor. Caller must dispose the returned ComPtr and any retained items.
-  example: []
-  syntax:
-    content: public ComPtr<IADLXDisplayResolutionList> GetCustomResolutionListNative()
-    return:
-      type: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
-    content.vb: Public Function GetCustomResolutionListNative() As ComPtr(Of IADLXDisplayResolutionList)
-  overload: ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative*
-- uid: ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  id: ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  parent: ADLXWrapper.ADLXDisplay
-  langs:
-  - csharp
-  - vb
-  name: ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
-  nameWithType: ADLXDisplay.ApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
-  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: ApplyCustomResolution
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 199
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Applies a custom resolution using a provided native custom resolution interface.
-  example: []
-  syntax:
-    content: public void ApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
-    parameters:
-    - id: customRes
-      type: ADLXWrapper.IADLXDisplayCustomResolution*
-    - id: info
-      type: ADLXWrapper.DisplayResolutionInfo
-    content.vb: Public Sub ApplyCustomResolution(customRes As IADLXDisplayCustomResolution*, info As DisplayResolutionInfo)
-  overload: ADLXWrapper.ADLXDisplay.ApplyCustomResolution*
-- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  id: TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*,ADLXWrapper.DisplayResolutionInfo)
-  parent: ADLXWrapper.ADLXDisplay
-  langs:
-  - csharp
-  - vb
-  name: TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
-  nameWithType: ADLXDisplay.TryApplyCustomResolution(IADLXDisplayCustomResolution*, DisplayResolutionInfo)
-  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution(ADLXWrapper.IADLXDisplayCustomResolution*, ADLXWrapper.DisplayResolutionInfo)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryApplyCustomResolution
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 210
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Tries to apply a custom resolution; returns false when unsupported.
-  example: []
-  syntax:
-    content: public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
-    parameters:
-    - id: customRes
-      type: ADLXWrapper.IADLXDisplayCustomResolution*
-    - id: info
-      type: ADLXWrapper.DisplayResolutionInfo
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryApplyCustomResolution(customRes As IADLXDisplayCustomResolution*, info As DisplayResolutionInfo) As Boolean
-  overload: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution*
 - uid: ADLXWrapper.ADLXDisplay.GetVirtualSuperResolutionState
   commentId: M:ADLXWrapper.ADLXDisplay.GetVirtualSuperResolutionState
   id: GetVirtualSuperResolutionState
@@ -971,12 +870,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 221
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 188
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1001,12 +900,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolution
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 235
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 202
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1033,12 +932,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolution
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 242
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 209
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1067,12 +966,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 252
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 219
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1097,12 +996,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScaling
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 266
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 233
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1129,12 +1028,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScaling
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 273
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 240
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1163,12 +1062,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHdcpState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 283
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 250
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1193,12 +1092,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHdcp
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 297
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 264
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1225,12 +1124,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHdcp
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 304
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 271
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1259,12 +1158,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 314
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 281
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1289,12 +1188,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 328
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 295
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1323,12 +1222,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 335
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 302
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1359,12 +1258,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 345
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 312
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1389,12 +1288,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 360
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 327
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1418,12 +1317,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 367
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 334
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1449,12 +1348,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 377
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 344
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1479,12 +1378,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 391
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 358
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1508,12 +1407,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 398
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 365
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1539,82 +1438,82 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 408
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 375
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Custom color info and application.
   example: []
   syntax:
-    content: public CustomColorInfo GetCustomColor()
+    content: public CustomColorDto GetCustomColor()
     return:
-      type: ADLXWrapper.CustomColorInfo
-    content.vb: Public Function GetCustomColor() As CustomColorInfo
+      type: ADLXWrapper.CustomColorDto
+    content.vb: Public Function GetCustomColor() As CustomColorDto
   overload: ADLXWrapper.ADLXDisplay.GetCustomColor*
-- uid: ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  id: ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+- uid: ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorDto)
+  id: ApplyCustomColor(ADLXWrapper.CustomColorDto)
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: ApplyCustomColor(CustomColorInfo)
-  nameWithType: ADLXDisplay.ApplyCustomColor(CustomColorInfo)
-  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  name: ApplyCustomColor(CustomColorDto)
+  nameWithType: ADLXDisplay.ApplyCustomColor(CustomColorDto)
+  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorDto)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 423
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 390
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void ApplyCustomColor(CustomColorInfo info)
+    content: public void ApplyCustomColor(CustomColorDto info)
     parameters:
     - id: info
-      type: ADLXWrapper.CustomColorInfo
-    content.vb: Public Sub ApplyCustomColor(info As CustomColorInfo)
+      type: ADLXWrapper.CustomColorDto
+    content.vb: Public Sub ApplyCustomColor(info As CustomColorDto)
   overload: ADLXWrapper.ADLXDisplay.ApplyCustomColor*
-- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
-  id: TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorDto)
+  id: TryApplyCustomColor(ADLXWrapper.CustomColorDto)
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: TryApplyCustomColor(CustomColorInfo)
-  nameWithType: ADLXDisplay.TryApplyCustomColor(CustomColorInfo)
-  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorInfo)
+  name: TryApplyCustomColor(CustomColorDto)
+  nameWithType: ADLXDisplay.TryApplyCustomColor(CustomColorDto)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorDto)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 431
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 398
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool TryApplyCustomColor(CustomColorInfo info)
+    content: public bool TryApplyCustomColor(CustomColorDto info)
     parameters:
     - id: info
-      type: ADLXWrapper.CustomColorInfo
+      type: ADLXWrapper.CustomColorDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryApplyCustomColor(info As CustomColorInfo) As Boolean
+    content.vb: Public Function TryApplyCustomColor(info As CustomColorDto) As Boolean
   overload: ADLXWrapper.ADLXDisplay.TryApplyCustomColor*
 - uid: ADLXWrapper.ADLXDisplay.GetGamma
   commentId: M:ADLXWrapper.ADLXDisplay.GetGamma
@@ -1629,22 +1528,22 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 442
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 409
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Gamma info and reapply.
   example: []
   syntax:
-    content: public GammaInfo GetGamma()
+    content: public GammaDto GetGamma()
     return:
-      type: ADLXWrapper.GammaInfo
-    content.vb: Public Function GetGamma() As GammaInfo
+      type: ADLXWrapper.GammaDto
+    content.vb: Public Function GetGamma() As GammaDto
   overload: ADLXWrapper.ADLXDisplay.GetGamma*
 - uid: ADLXWrapper.ADLXDisplay.ReapplyGamma
   commentId: M:ADLXWrapper.ADLXDisplay.ReapplyGamma
@@ -1659,12 +1558,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 457
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 424
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1685,12 +1584,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 465
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 432
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1713,22 +1612,22 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 476
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 443
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Gamut info and reapply.
   example: []
   syntax:
-    content: public GamutInfo GetGamut()
+    content: public GamutDto GetGamut()
     return:
-      type: ADLXWrapper.GamutInfo
-    content.vb: Public Function GetGamut() As GamutInfo
+      type: ADLXWrapper.GamutDto
+    content.vb: Public Function GetGamut() As GamutDto
   overload: ADLXWrapper.ADLXDisplay.GetGamut*
 - uid: ADLXWrapper.ADLXDisplay.ReapplyGamut
   commentId: M:ADLXWrapper.ADLXDisplay.ReapplyGamut
@@ -1743,12 +1642,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 491
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 458
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1769,12 +1668,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 499
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 466
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1797,22 +1696,22 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 510
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 477
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: 3DLUT info and reapply.
   example: []
   syntax:
-    content: public ThreeDLUTInfo GetThreeDLut()
+    content: public ThreeDLUTDto GetThreeDLut()
     return:
-      type: ADLXWrapper.ThreeDLUTInfo
-    content.vb: Public Function GetThreeDLut() As ThreeDLUTInfo
+      type: ADLXWrapper.ThreeDLUTDto
+    content.vb: Public Function GetThreeDLut() As ThreeDLUTDto
   overload: ADLXWrapper.ADLXDisplay.GetThreeDLut*
 - uid: ADLXWrapper.ADLXDisplay.ReapplyThreeDLut
   commentId: M:ADLXWrapper.ADLXDisplay.ReapplyThreeDLut
@@ -1827,12 +1726,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 525
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 492
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1853,12 +1752,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 533
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 500
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1881,82 +1780,82 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 544
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Display connectivity experience info and application.
   example: []
   syntax:
-    content: public ConnectivityExperienceInfo GetConnectivityExperience()
+    content: public ConnectivityExperienceDto GetConnectivityExperience()
     return:
-      type: ADLXWrapper.ConnectivityExperienceInfo
-    content.vb: Public Function GetConnectivityExperience() As ConnectivityExperienceInfo
+      type: ADLXWrapper.ConnectivityExperienceDto
+    content.vb: Public Function GetConnectivityExperience() As ConnectivityExperienceDto
   overload: ADLXWrapper.ADLXDisplay.GetConnectivityExperience*
-- uid: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  id: ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+- uid: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  id: ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: ApplyConnectivityExperience(ConnectivityExperienceInfo)
-  nameWithType: ADLXDisplay.ApplyConnectivityExperience(ConnectivityExperienceInfo)
-  fullName: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  name: ApplyConnectivityExperience(ConnectivityExperienceDto)
+  nameWithType: ADLXDisplay.ApplyConnectivityExperience(ConnectivityExperienceDto)
+  fullName: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 559
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 526
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public void ApplyConnectivityExperience(ConnectivityExperienceInfo info)
+    content: public void ApplyConnectivityExperience(ConnectivityExperienceDto info)
     parameters:
     - id: info
-      type: ADLXWrapper.ConnectivityExperienceInfo
-    content.vb: Public Sub ApplyConnectivityExperience(info As ConnectivityExperienceInfo)
+      type: ADLXWrapper.ConnectivityExperienceDto
+    content.vb: Public Sub ApplyConnectivityExperience(info As ConnectivityExperienceDto)
   overload: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience*
-- uid: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
-  id: TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
+  id: TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: TryApplyConnectivityExperience(ConnectivityExperienceInfo)
-  nameWithType: ADLXDisplay.TryApplyConnectivityExperience(ConnectivityExperienceInfo)
-  fullName: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceInfo)
+  name: TryApplyConnectivityExperience(ConnectivityExperienceDto)
+  nameWithType: ADLXDisplay.TryApplyConnectivityExperience(ConnectivityExperienceDto)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 567
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 534
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool TryApplyConnectivityExperience(ConnectivityExperienceInfo info)
+    content: public bool TryApplyConnectivityExperience(ConnectivityExperienceDto info)
     parameters:
     - id: info
-      type: ADLXWrapper.ConnectivityExperienceInfo
+      type: ADLXWrapper.ConnectivityExperienceDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryApplyConnectivityExperience(info As ConnectivityExperienceInfo) As Boolean
+    content.vb: Public Function TryApplyConnectivityExperience(info As ConnectivityExperienceDto) As Boolean
   overload: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience*
 - uid: ADLXWrapper.ADLXDisplay.GetDisplayBlankingState
   commentId: M:ADLXWrapper.ADLXDisplay.GetDisplayBlankingState
@@ -1971,12 +1870,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 578
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 545
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2001,12 +1900,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 593
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 560
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2033,12 +1932,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 601
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 568
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2067,12 +1966,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 612
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 579
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2097,12 +1996,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 627
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 594
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2129,12 +2028,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 635
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 602
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2163,12 +2062,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 646
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 613
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2193,12 +2092,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 661
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 628
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2225,12 +2124,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 669
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 636
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2259,12 +2158,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 680
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 647
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2292,12 +2191,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 688
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 655
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2326,12 +2225,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 700
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 667
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2359,12 +2258,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 708
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 675
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2393,12 +2292,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 720
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 687
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2426,12 +2325,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 728
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 695
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2460,12 +2359,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 740
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 707
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2493,12 +2392,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 748
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 715
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2527,12 +2426,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 760
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 727
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2560,12 +2459,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 768
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 735
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2594,12 +2493,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 780
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 747
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2624,12 +2523,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 798
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 765
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2641,36 +2540,36 @@ items:
       type: ADLXWrapper.ADLXDesktop
     content.vb: Public Function GetDesktop() As ADLXDesktop
   overload: ADLXWrapper.ADLXDisplay.GetDesktop*
-- uid: ADLXWrapper.ADLXDisplay.GetDesktopInfo
-  commentId: M:ADLXWrapper.ADLXDisplay.GetDesktopInfo
-  id: GetDesktopInfo
+- uid: ADLXWrapper.ADLXDisplay.GetDesktopDto
+  commentId: M:ADLXWrapper.ADLXDisplay.GetDesktopDto
+  id: GetDesktopDto
   parent: ADLXWrapper.ADLXDisplay
   langs:
   - csharp
   - vb
-  name: GetDesktopInfo()
-  nameWithType: ADLXDisplay.GetDesktopInfo()
-  fullName: ADLXWrapper.ADLXDisplay.GetDesktopInfo()
+  name: GetDesktopDto()
+  nameWithType: ADLXDisplay.GetDesktopDto()
+  fullName: ADLXWrapper.ADLXDisplay.GetDesktopDto()
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetDesktopInfo
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 860
+    id: GetDesktopDto
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 827
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Desktop identity that contains this display (requires desktop services supplied to the display instance).
   example: []
   syntax:
-    content: public DesktopInfo GetDesktopInfo()
+    content: public DesktopDto GetDesktopDto()
     return:
-      type: ADLXWrapper.DesktopInfo
-    content.vb: Public Function GetDesktopInfo() As DesktopInfo
-  overload: ADLXWrapper.ADLXDisplay.GetDesktopInfo*
+      type: ADLXWrapper.DesktopDto
+    content.vb: Public Function GetDesktopDto() As DesktopDto
+  overload: ADLXWrapper.ADLXDisplay.GetDesktopDto*
 - uid: ADLXWrapper.ADLXDisplay.Dispose
   commentId: M:ADLXWrapper.ADLXDisplay.Dispose
   id: Dispose
@@ -2684,12 +2583,12 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXDisplay.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXDisplay.cs
-    startLine: 871
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 838
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -3318,19 +3217,19 @@ references:
     name: ADLX_SCALE_MODE
     href: ADLXWrapper.ADLX_SCALE_MODE.html
   - name: )
-- uid: ADLXWrapper.ADLXDisplay.GetDisplayInfo*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDisplayInfo
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetDisplayInfo
-  name: GetDisplayInfo
-  nameWithType: ADLXDisplay.GetDisplayInfo
-  fullName: ADLXWrapper.ADLXDisplay.GetDisplayInfo
-- uid: ADLXWrapper.DisplayInfo
-  commentId: T:ADLXWrapper.DisplayInfo
+- uid: ADLXWrapper.ADLXDisplay.GetDisplayDto*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDisplayDto
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetDisplayDto
+  name: GetDisplayDto
+  nameWithType: ADLXDisplay.GetDisplayDto
+  fullName: ADLXWrapper.ADLXDisplay.GetDisplayDto
+- uid: ADLXWrapper.DisplayDto
+  commentId: T:ADLXWrapper.DisplayDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DisplayInfo.html
-  name: DisplayInfo
-  nameWithType: DisplayInfo
-  fullName: ADLXWrapper.DisplayInfo
+  href: ADLXWrapper.DisplayDto.html
+  name: DisplayDto
+  nameWithType: DisplayDto
+  fullName: ADLXWrapper.DisplayDto
 - uid: ADLXWrapper.ADLXDisplay.SetScalingMode*
   commentId: Overload:ADLXWrapper.ADLXDisplay.SetScalingMode
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_SetScalingMode_ADLXWrapper_ADLX_SCALE_MODE_
@@ -3356,26 +3255,26 @@ references:
   name: EnumerateCustomResolutions
   nameWithType: ADLXDisplay.EnumerateCustomResolutions
   fullName: ADLXWrapper.ADLXDisplay.EnumerateCustomResolutions
-- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
-  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionInfo}
+- uid: System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionDto}
+  commentId: T:System.Collections.Generic.IEnumerable{ADLXWrapper.DisplayResolutionDto}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<DisplayResolutionInfo>
-  nameWithType: IEnumerable<DisplayResolutionInfo>
-  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayResolutionInfo>
-  nameWithType.vb: IEnumerable(Of DisplayResolutionInfo)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayResolutionInfo)
-  name.vb: IEnumerable(Of DisplayResolutionInfo)
+  name: IEnumerable<DisplayResolutionDto>
+  nameWithType: IEnumerable<DisplayResolutionDto>
+  fullName: System.Collections.Generic.IEnumerable<ADLXWrapper.DisplayResolutionDto>
+  nameWithType.vb: IEnumerable(Of DisplayResolutionDto)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ADLXWrapper.DisplayResolutionDto)
+  name.vb: IEnumerable(Of DisplayResolutionDto)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - uid: ADLXWrapper.DisplayResolutionInfo
-    name: DisplayResolutionInfo
-    href: ADLXWrapper.DisplayResolutionInfo.html
+  - uid: ADLXWrapper.DisplayResolutionDto
+    name: DisplayResolutionDto
+    href: ADLXWrapper.DisplayResolutionDto.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -3385,9 +3284,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ADLXWrapper.DisplayResolutionInfo
-    name: DisplayResolutionInfo
-    href: ADLXWrapper.DisplayResolutionInfo.html
+  - uid: ADLXWrapper.DisplayResolutionDto
+    name: DisplayResolutionDto
+    href: ADLXWrapper.DisplayResolutionDto.html
   - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
@@ -3454,104 +3353,6 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetCustomResolutionListNative
-  name: GetCustomResolutionListNative
-  nameWithType: ADLXDisplay.GetCustomResolutionListNative
-  fullName: ADLXWrapper.ADLXDisplay.GetCustomResolutionListNative
-- uid: ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
-  commentId: T:ADLXWrapper.ComPtr{ADLXWrapper.IADLXDisplayResolutionList}
-  parent: ADLXWrapper
-  definition: ADLXWrapper.ComPtr`1
-  href: ADLXWrapper.ComPtr-1.html
-  name: ComPtr<IADLXDisplayResolutionList>
-  nameWithType: ComPtr<IADLXDisplayResolutionList>
-  fullName: ADLXWrapper.ComPtr<ADLXWrapper.IADLXDisplayResolutionList>
-  nameWithType.vb: ComPtr(Of IADLXDisplayResolutionList)
-  fullName.vb: ADLXWrapper.ComPtr(Of ADLXWrapper.IADLXDisplayResolutionList)
-  name.vb: ComPtr(Of IADLXDisplayResolutionList)
-  spec.csharp:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: <
-  - uid: ADLXWrapper.IADLXDisplayResolutionList
-    name: IADLXDisplayResolutionList
-    href: ADLXWrapper.IADLXDisplayResolutionList.html
-  - name: '>'
-  spec.vb:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ADLXWrapper.IADLXDisplayResolutionList
-    name: IADLXDisplayResolutionList
-    href: ADLXWrapper.IADLXDisplayResolutionList.html
-  - name: )
-- uid: ADLXWrapper.ComPtr`1
-  commentId: T:ADLXWrapper.ComPtr`1
-  parent: ADLXWrapper
-  href: ADLXWrapper.ComPtr-1.html
-  name: ComPtr<T>
-  nameWithType: ComPtr<T>
-  fullName: ADLXWrapper.ComPtr<T>
-  nameWithType.vb: ComPtr(Of T)
-  fullName.vb: ADLXWrapper.ComPtr(Of T)
-  name.vb: ComPtr(Of T)
-  spec.csharp:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ADLXWrapper.ComPtr`1
-    name: ComPtr
-    href: ADLXWrapper.ComPtr-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ADLXWrapper.ADLXDisplay.ApplyCustomResolution*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyCustomResolution
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
-  name: ApplyCustomResolution
-  nameWithType: ADLXDisplay.ApplyCustomResolution
-  fullName: ADLXWrapper.ADLXDisplay.ApplyCustomResolution
-- uid: ADLXWrapper.IADLXDisplayCustomResolution*
-  isExternal: true
-  href: ADLXWrapper.IADLXDisplayCustomResolution.html
-  name: IADLXDisplayCustomResolution*
-  nameWithType: IADLXDisplayCustomResolution*
-  fullName: ADLXWrapper.IADLXDisplayCustomResolution*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXDisplayCustomResolution
-    name: IADLXDisplayCustomResolution
-    href: ADLXWrapper.IADLXDisplayCustomResolution.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXDisplayCustomResolution
-    name: IADLXDisplayCustomResolution
-    href: ADLXWrapper.IADLXDisplayCustomResolution.html
-  - name: '*'
-- uid: ADLXWrapper.DisplayResolutionInfo
-  commentId: T:ADLXWrapper.DisplayResolutionInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.DisplayResolutionInfo.html
-  name: DisplayResolutionInfo
-  nameWithType: DisplayResolutionInfo
-  fullName: ADLXWrapper.DisplayResolutionInfo
-- uid: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyCustomResolution
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomResolution_ADLXWrapper_IADLXDisplayCustomResolution__ADLXWrapper_DisplayResolutionInfo_
-  name: TryApplyCustomResolution
-  nameWithType: ADLXDisplay.TryApplyCustomResolution
-  fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomResolution
 - uid: ADLXWrapper.ADLXDisplay.GetVirtualSuperResolutionState*
   commentId: Overload:ADLXWrapper.ADLXDisplay.GetVirtualSuperResolutionState
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetVirtualSuperResolutionState
@@ -3899,22 +3700,22 @@ references:
   name: GetCustomColor
   nameWithType: ADLXDisplay.GetCustomColor
   fullName: ADLXWrapper.ADLXDisplay.GetCustomColor
-- uid: ADLXWrapper.CustomColorInfo
-  commentId: T:ADLXWrapper.CustomColorInfo
+- uid: ADLXWrapper.CustomColorDto
+  commentId: T:ADLXWrapper.CustomColorDto
   parent: ADLXWrapper
-  href: ADLXWrapper.CustomColorInfo.html
-  name: CustomColorInfo
-  nameWithType: CustomColorInfo
-  fullName: ADLXWrapper.CustomColorInfo
+  href: ADLXWrapper.CustomColorDto.html
+  name: CustomColorDto
+  nameWithType: CustomColorDto
+  fullName: ADLXWrapper.CustomColorDto
 - uid: ADLXWrapper.ADLXDisplay.ApplyCustomColor*
   commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyCustomColor
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyCustomColor_ADLXWrapper_CustomColorInfo_
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyCustomColor_ADLXWrapper_CustomColorDto_
   name: ApplyCustomColor
   nameWithType: ADLXDisplay.ApplyCustomColor
   fullName: ADLXWrapper.ADLXDisplay.ApplyCustomColor
 - uid: ADLXWrapper.ADLXDisplay.TryApplyCustomColor*
   commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyCustomColor
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomColor_ADLXWrapper_CustomColorInfo_
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyCustomColor_ADLXWrapper_CustomColorDto_
   name: TryApplyCustomColor
   nameWithType: ADLXDisplay.TryApplyCustomColor
   fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor
@@ -3924,13 +3725,13 @@ references:
   name: GetGamma
   nameWithType: ADLXDisplay.GetGamma
   fullName: ADLXWrapper.ADLXDisplay.GetGamma
-- uid: ADLXWrapper.GammaInfo
-  commentId: T:ADLXWrapper.GammaInfo
+- uid: ADLXWrapper.GammaDto
+  commentId: T:ADLXWrapper.GammaDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GammaInfo.html
-  name: GammaInfo
-  nameWithType: GammaInfo
-  fullName: ADLXWrapper.GammaInfo
+  href: ADLXWrapper.GammaDto.html
+  name: GammaDto
+  nameWithType: GammaDto
+  fullName: ADLXWrapper.GammaDto
 - uid: ADLXWrapper.ADLXDisplay.ReapplyGamma*
   commentId: Overload:ADLXWrapper.ADLXDisplay.ReapplyGamma
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ReapplyGamma
@@ -3949,13 +3750,13 @@ references:
   name: GetGamut
   nameWithType: ADLXDisplay.GetGamut
   fullName: ADLXWrapper.ADLXDisplay.GetGamut
-- uid: ADLXWrapper.GamutInfo
-  commentId: T:ADLXWrapper.GamutInfo
+- uid: ADLXWrapper.GamutDto
+  commentId: T:ADLXWrapper.GamutDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GamutInfo.html
-  name: GamutInfo
-  nameWithType: GamutInfo
-  fullName: ADLXWrapper.GamutInfo
+  href: ADLXWrapper.GamutDto.html
+  name: GamutDto
+  nameWithType: GamutDto
+  fullName: ADLXWrapper.GamutDto
 - uid: ADLXWrapper.ADLXDisplay.ReapplyGamut*
   commentId: Overload:ADLXWrapper.ADLXDisplay.ReapplyGamut
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ReapplyGamut
@@ -3974,13 +3775,13 @@ references:
   name: GetThreeDLut
   nameWithType: ADLXDisplay.GetThreeDLut
   fullName: ADLXWrapper.ADLXDisplay.GetThreeDLut
-- uid: ADLXWrapper.ThreeDLUTInfo
-  commentId: T:ADLXWrapper.ThreeDLUTInfo
+- uid: ADLXWrapper.ThreeDLUTDto
+  commentId: T:ADLXWrapper.ThreeDLUTDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ThreeDLUTInfo.html
-  name: ThreeDLUTInfo
-  nameWithType: ThreeDLUTInfo
-  fullName: ADLXWrapper.ThreeDLUTInfo
+  href: ADLXWrapper.ThreeDLUTDto.html
+  name: ThreeDLUTDto
+  nameWithType: ThreeDLUTDto
+  fullName: ADLXWrapper.ThreeDLUTDto
 - uid: ADLXWrapper.ADLXDisplay.ReapplyThreeDLut*
   commentId: Overload:ADLXWrapper.ADLXDisplay.ReapplyThreeDLut
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ReapplyThreeDLut
@@ -3999,22 +3800,22 @@ references:
   name: GetConnectivityExperience
   nameWithType: ADLXDisplay.GetConnectivityExperience
   fullName: ADLXWrapper.ADLXDisplay.GetConnectivityExperience
-- uid: ADLXWrapper.ConnectivityExperienceInfo
-  commentId: T:ADLXWrapper.ConnectivityExperienceInfo
+- uid: ADLXWrapper.ConnectivityExperienceDto
+  commentId: T:ADLXWrapper.ConnectivityExperienceDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ConnectivityExperienceInfo.html
-  name: ConnectivityExperienceInfo
-  nameWithType: ConnectivityExperienceInfo
-  fullName: ADLXWrapper.ConnectivityExperienceInfo
+  href: ADLXWrapper.ConnectivityExperienceDto.html
+  name: ConnectivityExperienceDto
+  nameWithType: ConnectivityExperienceDto
+  fullName: ADLXWrapper.ConnectivityExperienceDto
 - uid: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience*
   commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceInfo_
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceDto_
   name: ApplyConnectivityExperience
   nameWithType: ADLXDisplay.ApplyConnectivityExperience
   fullName: ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience
 - uid: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience*
   commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceInfo_
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyConnectivityExperience_ADLXWrapper_ConnectivityExperienceDto_
   name: TryApplyConnectivityExperience
   nameWithType: ADLXDisplay.TryApplyConnectivityExperience
   fullName: ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience
@@ -4308,19 +4109,19 @@ references:
   name: ADLXDesktop
   nameWithType: ADLXDesktop
   fullName: ADLXWrapper.ADLXDesktop
-- uid: ADLXWrapper.ADLXDisplay.GetDesktopInfo*
-  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDesktopInfo
-  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetDesktopInfo
-  name: GetDesktopInfo
-  nameWithType: ADLXDisplay.GetDesktopInfo
-  fullName: ADLXWrapper.ADLXDisplay.GetDesktopInfo
-- uid: ADLXWrapper.DesktopInfo
-  commentId: T:ADLXWrapper.DesktopInfo
+- uid: ADLXWrapper.ADLXDisplay.GetDesktopDto*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.GetDesktopDto
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_GetDesktopDto
+  name: GetDesktopDto
+  nameWithType: ADLXDisplay.GetDesktopDto
+  fullName: ADLXWrapper.ADLXDisplay.GetDesktopDto
+- uid: ADLXWrapper.DesktopDto
+  commentId: T:ADLXWrapper.DesktopDto
   parent: ADLXWrapper
-  href: ADLXWrapper.DesktopInfo.html
-  name: DesktopInfo
-  nameWithType: DesktopInfo
-  fullName: ADLXWrapper.DesktopInfo
+  href: ADLXWrapper.DesktopDto.html
+  name: DesktopDto
+  nameWithType: DesktopDto
+  fullName: ADLXWrapper.DesktopDto
 - uid: ADLXWrapper.ADLXDisplay.Dispose*
   commentId: Overload:ADLXWrapper.ADLXDisplay.Dispose
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_Dispose

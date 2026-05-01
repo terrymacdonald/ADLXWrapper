@@ -1,0 +1,436 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  id: IntRangeDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IntRangeDto.#ctor(System.Int32,System.Int32,System.Int32)
+  - ADLXWrapper.IntRangeDto.MaxValue
+  - ADLXWrapper.IntRangeDto.MinValue
+  - ADLXWrapper.IntRangeDto.Step
+  langs:
+  - csharp
+  - vb
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IntRangeDto
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Managed equivalent of ADLX_IntRange. Safe for JSON serialisation; contains no native pointers.
+  example: []
+  syntax:
+    content: public readonly struct IntRangeDto
+    content.vb: Public Structure IntRangeDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IntRangeDto.MinValue
+  commentId: P:ADLXWrapper.IntRangeDto.MinValue
+  id: MinValue
+  parent: ADLXWrapper.IntRangeDto
+  langs:
+  - csharp
+  - vb
+  name: MinValue
+  nameWithType: IntRangeDto.MinValue
+  fullName: ADLXWrapper.IntRangeDto.MinValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinValue
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 10
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinValue As Integer
+  overload: ADLXWrapper.IntRangeDto.MinValue*
+- uid: ADLXWrapper.IntRangeDto.MaxValue
+  commentId: P:ADLXWrapper.IntRangeDto.MaxValue
+  id: MaxValue
+  parent: ADLXWrapper.IntRangeDto
+  langs:
+  - csharp
+  - vb
+  name: MaxValue
+  nameWithType: IntRangeDto.MaxValue
+  fullName: ADLXWrapper.IntRangeDto.MaxValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxValue
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MaxValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxValue As Integer
+  overload: ADLXWrapper.IntRangeDto.MaxValue*
+- uid: ADLXWrapper.IntRangeDto.Step
+  commentId: P:ADLXWrapper.IntRangeDto.Step
+  id: Step
+  parent: ADLXWrapper.IntRangeDto
+  langs:
+  - csharp
+  - vb
+  name: Step
+  nameWithType: IntRangeDto.Step
+  fullName: ADLXWrapper.IntRangeDto.Step
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Step
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Step { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property [Step] As Integer
+  overload: ADLXWrapper.IntRangeDto.Step*
+- uid: ADLXWrapper.IntRangeDto.#ctor(System.Int32,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.IntRangeDto.#ctor(System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32)'
+  parent: ADLXWrapper.IntRangeDto
+  langs:
+  - csharp
+  - vb
+  name: IntRangeDto(int, int, int)
+  nameWithType: IntRangeDto.IntRangeDto(int, int, int)
+  fullName: ADLXWrapper.IntRangeDto.IntRangeDto(int, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 14
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public IntRangeDto(int minValue, int maxValue, int step)
+    parameters:
+    - id: minValue
+      type: System.Int32
+    - id: maxValue
+      type: System.Int32
+    - id: step
+      type: System.Int32
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(minValue As Integer, maxValue As Integer, [step] As Integer)
+  overload: ADLXWrapper.IntRangeDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: IntRangeDto.New(Integer, Integer, Integer)
+  fullName.vb: ADLXWrapper.IntRangeDto.New(Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.IntRangeDto.MinValue*
+  commentId: Overload:ADLXWrapper.IntRangeDto.MinValue
+  href: ADLXWrapper.IntRangeDto.html#ADLXWrapper_IntRangeDto_MinValue
+  name: MinValue
+  nameWithType: IntRangeDto.MinValue
+  fullName: ADLXWrapper.IntRangeDto.MinValue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IntRangeDto.MaxValue*
+  commentId: Overload:ADLXWrapper.IntRangeDto.MaxValue
+  href: ADLXWrapper.IntRangeDto.html#ADLXWrapper_IntRangeDto_MaxValue
+  name: MaxValue
+  nameWithType: IntRangeDto.MaxValue
+  fullName: ADLXWrapper.IntRangeDto.MaxValue
+- uid: ADLXWrapper.IntRangeDto.Step*
+  commentId: Overload:ADLXWrapper.IntRangeDto.Step
+  href: ADLXWrapper.IntRangeDto.html#ADLXWrapper_IntRangeDto_Step
+  name: Step
+  nameWithType: IntRangeDto.Step
+  fullName: ADLXWrapper.IntRangeDto.Step
+- uid: ADLXWrapper.IntRangeDto.#ctor*
+  commentId: Overload:ADLXWrapper.IntRangeDto.#ctor
+  href: ADLXWrapper.IntRangeDto.html#ADLXWrapper_IntRangeDto__ctor_System_Int32_System_Int32_System_Int32_
+  name: IntRangeDto
+  nameWithType: IntRangeDto.IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto.IntRangeDto
+  nameWithType.vb: IntRangeDto.New
+  fullName.vb: ADLXWrapper.IntRangeDto.New
+  name.vb: New

@@ -1,0 +1,562 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.DesktopDto
+  commentId: T:ADLXWrapper.DesktopDto
+  id: DesktopDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.DesktopDto.#ctor(ADLXWrapper.ADLX_DESKTOP_TYPE,System.Int32,System.Int32,System.Int32,System.Int32,ADLXWrapper.ADLX_ORIENTATION)
+  - ADLXWrapper.DesktopDto.Height
+  - ADLXWrapper.DesktopDto.Orientation
+  - ADLXWrapper.DesktopDto.TopLeftX
+  - ADLXWrapper.DesktopDto.TopLeftY
+  - ADLXWrapper.DesktopDto.Type
+  - ADLXWrapper.DesktopDto.Width
+  langs:
+  - csharp
+  - vb
+  name: DesktopDto
+  nameWithType: DesktopDto
+  fullName: ADLXWrapper.DesktopDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DesktopDto
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 659
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct DesktopDto
+    content.vb: Public Structure DesktopDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.DesktopDto.Type
+  commentId: P:ADLXWrapper.DesktopDto.Type
+  id: Type
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: DesktopDto.Type
+  fullName: ADLXWrapper.DesktopDto.Type
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Type
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 661
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_DESKTOP_TYPE Type { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_DESKTOP_TYPE
+    content.vb: Public Property Type As ADLX_DESKTOP_TYPE
+  overload: ADLXWrapper.DesktopDto.Type*
+- uid: ADLXWrapper.DesktopDto.Width
+  commentId: P:ADLXWrapper.DesktopDto.Width
+  id: Width
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: DesktopDto.Width
+  fullName: ADLXWrapper.DesktopDto.Width
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Width
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 662
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Width { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Width As Integer
+  overload: ADLXWrapper.DesktopDto.Width*
+- uid: ADLXWrapper.DesktopDto.Height
+  commentId: P:ADLXWrapper.DesktopDto.Height
+  id: Height
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: DesktopDto.Height
+  fullName: ADLXWrapper.DesktopDto.Height
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Height
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 663
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Height { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Height As Integer
+  overload: ADLXWrapper.DesktopDto.Height*
+- uid: ADLXWrapper.DesktopDto.TopLeftX
+  commentId: P:ADLXWrapper.DesktopDto.TopLeftX
+  id: TopLeftX
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: TopLeftX
+  nameWithType: DesktopDto.TopLeftX
+  fullName: ADLXWrapper.DesktopDto.TopLeftX
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TopLeftX
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 664
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TopLeftX { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TopLeftX As Integer
+  overload: ADLXWrapper.DesktopDto.TopLeftX*
+- uid: ADLXWrapper.DesktopDto.TopLeftY
+  commentId: P:ADLXWrapper.DesktopDto.TopLeftY
+  id: TopLeftY
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: TopLeftY
+  nameWithType: DesktopDto.TopLeftY
+  fullName: ADLXWrapper.DesktopDto.TopLeftY
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TopLeftY
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 665
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TopLeftY { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TopLeftY As Integer
+  overload: ADLXWrapper.DesktopDto.TopLeftY*
+- uid: ADLXWrapper.DesktopDto.Orientation
+  commentId: P:ADLXWrapper.DesktopDto.Orientation
+  id: Orientation
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: Orientation
+  nameWithType: DesktopDto.Orientation
+  fullName: ADLXWrapper.DesktopDto.Orientation
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Orientation
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 666
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_ORIENTATION Orientation { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_ORIENTATION
+    content.vb: Public Property Orientation As ADLX_ORIENTATION
+  overload: ADLXWrapper.DesktopDto.Orientation*
+- uid: ADLXWrapper.DesktopDto.#ctor(ADLXWrapper.ADLX_DESKTOP_TYPE,System.Int32,System.Int32,System.Int32,System.Int32,ADLXWrapper.ADLX_ORIENTATION)
+  commentId: M:ADLXWrapper.DesktopDto.#ctor(ADLXWrapper.ADLX_DESKTOP_TYPE,System.Int32,System.Int32,System.Int32,System.Int32,ADLXWrapper.ADLX_ORIENTATION)
+  id: '#ctor(ADLXWrapper.ADLX_DESKTOP_TYPE,System.Int32,System.Int32,System.Int32,System.Int32,ADLXWrapper.ADLX_ORIENTATION)'
+  parent: ADLXWrapper.DesktopDto
+  langs:
+  - csharp
+  - vb
+  name: DesktopDto(ADLX_DESKTOP_TYPE, int, int, int, int, ADLX_ORIENTATION)
+  nameWithType: DesktopDto.DesktopDto(ADLX_DESKTOP_TYPE, int, int, int, int, ADLX_ORIENTATION)
+  fullName: ADLXWrapper.DesktopDto.DesktopDto(ADLXWrapper.ADLX_DESKTOP_TYPE, int, int, int, int, ADLXWrapper.ADLX_ORIENTATION)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDesktopServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
+    startLine: 668
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public DesktopDto(ADLX_DESKTOP_TYPE type, int width, int height, int topLeftX, int topLeftY, ADLX_ORIENTATION orientation)
+    parameters:
+    - id: type
+      type: ADLXWrapper.ADLX_DESKTOP_TYPE
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    - id: topLeftX
+      type: System.Int32
+    - id: topLeftY
+      type: System.Int32
+    - id: orientation
+      type: ADLXWrapper.ADLX_ORIENTATION
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(type As ADLX_DESKTOP_TYPE, width As Integer, height As Integer, topLeftX As Integer, topLeftY As Integer, orientation As ADLX_ORIENTATION)
+  overload: ADLXWrapper.DesktopDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: DesktopDto.New(ADLX_DESKTOP_TYPE, Integer, Integer, Integer, Integer, ADLX_ORIENTATION)
+  fullName.vb: ADLXWrapper.DesktopDto.New(ADLXWrapper.ADLX_DESKTOP_TYPE, Integer, Integer, Integer, Integer, ADLXWrapper.ADLX_ORIENTATION)
+  name.vb: New(ADLX_DESKTOP_TYPE, Integer, Integer, Integer, Integer, ADLX_ORIENTATION)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.DesktopDto.Type*
+  commentId: Overload:ADLXWrapper.DesktopDto.Type
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_Type
+  name: Type
+  nameWithType: DesktopDto.Type
+  fullName: ADLXWrapper.DesktopDto.Type
+- uid: ADLXWrapper.ADLX_DESKTOP_TYPE
+  commentId: T:ADLXWrapper.ADLX_DESKTOP_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_DESKTOP_TYPE.html
+  name: ADLX_DESKTOP_TYPE
+  nameWithType: ADLX_DESKTOP_TYPE
+  fullName: ADLXWrapper.ADLX_DESKTOP_TYPE
+- uid: ADLXWrapper.DesktopDto.Width*
+  commentId: Overload:ADLXWrapper.DesktopDto.Width
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_Width
+  name: Width
+  nameWithType: DesktopDto.Width
+  fullName: ADLXWrapper.DesktopDto.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.DesktopDto.Height*
+  commentId: Overload:ADLXWrapper.DesktopDto.Height
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_Height
+  name: Height
+  nameWithType: DesktopDto.Height
+  fullName: ADLXWrapper.DesktopDto.Height
+- uid: ADLXWrapper.DesktopDto.TopLeftX*
+  commentId: Overload:ADLXWrapper.DesktopDto.TopLeftX
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_TopLeftX
+  name: TopLeftX
+  nameWithType: DesktopDto.TopLeftX
+  fullName: ADLXWrapper.DesktopDto.TopLeftX
+- uid: ADLXWrapper.DesktopDto.TopLeftY*
+  commentId: Overload:ADLXWrapper.DesktopDto.TopLeftY
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_TopLeftY
+  name: TopLeftY
+  nameWithType: DesktopDto.TopLeftY
+  fullName: ADLXWrapper.DesktopDto.TopLeftY
+- uid: ADLXWrapper.DesktopDto.Orientation*
+  commentId: Overload:ADLXWrapper.DesktopDto.Orientation
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto_Orientation
+  name: Orientation
+  nameWithType: DesktopDto.Orientation
+  fullName: ADLXWrapper.DesktopDto.Orientation
+- uid: ADLXWrapper.ADLX_ORIENTATION
+  commentId: T:ADLXWrapper.ADLX_ORIENTATION
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_ORIENTATION.html
+  name: ADLX_ORIENTATION
+  nameWithType: ADLX_ORIENTATION
+  fullName: ADLXWrapper.ADLX_ORIENTATION
+- uid: ADLXWrapper.DesktopDto.#ctor*
+  commentId: Overload:ADLXWrapper.DesktopDto.#ctor
+  href: ADLXWrapper.DesktopDto.html#ADLXWrapper_DesktopDto__ctor_ADLXWrapper_ADLX_DESKTOP_TYPE_System_Int32_System_Int32_System_Int32_System_Int32_ADLXWrapper_ADLX_ORIENTATION_
+  name: DesktopDto
+  nameWithType: DesktopDto.DesktopDto
+  fullName: ADLXWrapper.DesktopDto.DesktopDto
+  nameWithType.vb: DesktopDto.New
+  fullName.vb: ADLXWrapper.DesktopDto.New
+  name.vb: New

@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningListenerHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 727
+    startLine: 923
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,11 +66,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 748
+    startLine: 944
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 754
+    startLine: 950
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -125,11 +125,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 756
+    startLine: 952
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -157,11 +157,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 765
+    startLine: 961
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

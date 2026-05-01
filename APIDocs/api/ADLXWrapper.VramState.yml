@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VramState
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 623
+    startLine: 819
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -49,11 +49,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Frequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 625
+    startLine: 821
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -78,11 +78,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 626
+    startLine: 822
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

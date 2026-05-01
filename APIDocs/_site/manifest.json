@@ -1,5 +1,5 @@
 {
-  "source_base_path": "D:/visual-studio-projects/ADLXWrapper/APIDocs",
+  "source_base_path": "C:/vs-code/ADLXWrapper/APIDocs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1114,7 +1114,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLXDesktop",
-      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDesktop.yml\" sourcestartlinenumber=\"1\">Flattened desktop façade with identity metadata and display enumeration helpers.</p>\n"
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDesktop.yml\" sourcestartlinenumber=\"1\">Flattened desktop faÃ§ade with identity metadata and display enumeration helpers.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1128,7 +1128,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLXDisplay",
-      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDisplay.yml\" sourcestartlinenumber=\"1\">Flattened display façade with identity metadata, support-guarded feature accessors, and native list exposure.</p>\n"
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxDisplay.yml\" sourcestartlinenumber=\"1\">Flattened display faÃ§ade with identity metadata, support-guarded feature accessors, and native list exposure.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1142,7 +1142,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLXGPU",
-      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxGpu.yml\" sourcestartlinenumber=\"1\">Flattened GPU façade with identity metadata and topology listeners.</p>\n"
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.AdlxGpu.yml\" sourcestartlinenumber=\"1\">Flattened GPU faÃ§ade with identity metadata and topology listeners.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1160,6 +1160,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.All3DSettingsDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.All3DSettingsDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.All3DSettingsDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.All3DSettingsDto.yml\" sourcestartlinenumber=\"1\">Represents a complete snapshot of all 3D settings for a GPU.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.All3DSettingsInfo.yml",
       "output": {
         ".html": {
@@ -1174,6 +1188,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.AllMetricsSnapshotDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.AllMetricsSnapshotDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.AllMetricsSnapshotDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.AllMetricsSnapshotInfo.yml",
       "output": {
         ".html": {
@@ -1184,6 +1212,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.AllMetricsSnapshotInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.AnisotropicFilteringDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.AnisotropicFilteringDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.AnisotropicFilteringDto",
       "Summary": null
     },
     {
@@ -1202,6 +1244,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.AntiAliasingDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.AntiAliasingDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.AntiAliasingDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.AntiAliasingInfo.yml",
       "output": {
         ".html": {
@@ -1212,6 +1268,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.AntiAliasingInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.AntiLagDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.AntiLagDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.AntiLagDto",
       "Summary": null
     },
     {
@@ -1230,6 +1300,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.AutoTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.AutoTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.AutoTuningDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.AutoTuningInfo.yml",
       "output": {
         ".html": {
@@ -1240,6 +1324,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.AutoTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.BoostDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.BoostDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.BoostDto",
       "Summary": null
     },
     {
@@ -1272,6 +1370,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ConnectivityExperienceDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ConnectivityExperienceDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ConnectivityExperienceDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ConnectivityExperienceInfo.yml",
       "output": {
         ".html": {
@@ -1282,6 +1394,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ConnectivityExperienceInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.CustomColorDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.CustomColorDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.CustomColorDto",
       "Summary": null
     },
     {
@@ -1300,6 +1426,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.CustomResolutionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.CustomResolutionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.CustomResolutionDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.CustomResolutionInfo.yml",
       "output": {
         ".html": {
@@ -1310,6 +1450,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.CustomResolutionInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.DesktopDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.DesktopDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.DesktopDto",
       "Summary": null
     },
     {
@@ -1381,6 +1535,20 @@
       "IsMRef": true,
       "Title": "ADLXWrapper.Display3DLutListenerHandle",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.DisplayDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.DisplayDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.DisplayDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.DisplayDto.yml\" sourcestartlinenumber=\"1\">Represents the collected information for a display.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1482,6 +1650,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.DisplayResolutionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.DisplayResolutionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.DisplayResolutionDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.DisplayResolutionInfo.yml",
       "output": {
         ".html": {
@@ -1538,6 +1720,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.EnhancedSyncDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.EnhancedSyncDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.EnhancedSyncDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.EnhancedSyncInfo.yml",
       "output": {
         ".html": {
@@ -1548,6 +1744,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.EnhancedSyncInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.EyefinityDesktopDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.EyefinityDesktopDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.EyefinityDesktopDto",
       "Summary": null
     },
     {
@@ -1580,6 +1790,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.FluidMotionFramesDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.FluidMotionFramesDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.FluidMotionFramesDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.FluidMotionFramesInfo.yml",
       "output": {
         ".html": {
@@ -1590,6 +1814,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.FluidMotionFramesInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.FrameRateTargetControlDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.FrameRateTargetControlDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.FrameRateTargetControlDto",
       "Summary": null
     },
     {
@@ -1608,6 +1846,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GammaDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GammaDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GammaDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GammaInfo.yml",
       "output": {
         ".html": {
@@ -1618,6 +1870,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.GammaInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GammaRampDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GammaRampDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GammaRampDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.GammaRampDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_GammaRamp (768-entry ushort LUT). Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GamutColorSpaceDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GamutColorSpaceDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GamutColorSpaceDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.GamutColorSpaceDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_GamutColorSpace. Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GamutDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GamutDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GamutDto",
       "Summary": null
     },
     {
@@ -1636,6 +1930,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GpuInfo.yml",
       "output": {
         ".html": {
@@ -1646,6 +1954,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.GpuInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuMetricsEntryDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuMetricsEntryDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuMetricsEntryDto",
       "Summary": null
     },
     {
@@ -1664,6 +1986,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuMetricsSnapshotDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuMetricsSnapshotDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuMetricsSnapshotDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GpuMetricsSnapshotInfo.yml",
       "output": {
         ".html": {
@@ -1678,6 +2014,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuMetricsSupportDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuMetricsSupportDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuMetricsSupportDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GpuMetricsSupportInfo.yml",
       "output": {
         ".html": {
@@ -1688,6 +2038,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.GpuMetricsSupportInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuTuningCapabilitiesDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuTuningCapabilitiesDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuTuningCapabilitiesDto",
       "Summary": null
     },
     {
@@ -3848,6 +4212,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IntRangeDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IntRangeDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IntRangeDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.IntRangeDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_IntRange. Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.LuidDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.LuidDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.LuidDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.LuidDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_LUID. Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ManualFanTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ManualFanTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ManualFanTuningDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ManualFanTuningInfo.yml",
       "output": {
         ".html": {
@@ -3858,6 +4264,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ManualFanTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ManualGfxTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ManualGfxTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ManualGfxTuningDto",
       "Summary": null
     },
     {
@@ -3876,6 +4296,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ManualPowerTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ManualPowerTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ManualPowerTuningDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.ManualPowerTuningDto.yml\" sourcestartlinenumber=\"1\">Represents the collected information for Manual Power Tuning.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ManualPowerTuningInfo.yml",
       "output": {
         ".html": {
@@ -3887,6 +4321,20 @@
       "IsMRef": true,
       "Title": "ADLXWrapper.ManualPowerTuningInfo",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.ManualPowerTuningInfo.yml\" sourcestartlinenumber=\"1\">Represents the collected information for Manual Power Tuning.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ManualVramTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ManualVramTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ManualVramTuningDto",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -3932,6 +4380,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.PerformanceMonitoringSettingsDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.PerformanceMonitoringSettingsDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.PerformanceMonitoringSettingsDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.PerformanceMonitoringSettingsInfo.yml",
       "output": {
         ".html": {
@@ -3942,6 +4404,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.PerformanceMonitoringSettingsInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.PointDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.PointDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.PointDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.PointDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_Point. Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.PowerDistributionSnapshotDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.PowerDistributionSnapshotDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.PowerDistributionSnapshotDto",
       "Summary": null
     },
     {
@@ -4002,6 +4492,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.PresetTuningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.PresetTuningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.PresetTuningDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.PresetTuningInfo.yml",
       "output": {
         ".html": {
@@ -4012,6 +4516,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.PresetTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.RadeonImageSharpeningDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.RadeonImageSharpeningDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.RadeonImageSharpeningDto",
       "Summary": null
     },
     {
@@ -4030,6 +4548,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.RadeonSuperResolutionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.RadeonSuperResolutionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.RadeonSuperResolutionDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.RadeonSuperResolutionInfo.yml",
       "output": {
         ".html": {
@@ -4040,6 +4572,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.RadeonSuperResolutionInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.RegammaCoeffDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.RegammaCoeffDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.RegammaCoeffDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.RegammaCoeffDto.yml\" sourcestartlinenumber=\"1\">Managed equivalent of ADLX_RegammaCoeff. Safe for JSON serialisation; contains no native pointers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.SimpleEyefinityDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.SimpleEyefinityDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.SimpleEyefinityDto",
       "Summary": null
     },
     {
@@ -4058,6 +4618,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.SmartShiftEcoDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.SmartShiftEcoDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.SmartShiftEcoDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.SmartShiftEcoDto.yml\" sourcestartlinenumber=\"1\">Represents the collected information for SmartShift Eco.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.SmartShiftEcoInfo.yml",
       "output": {
         ".html": {
@@ -4069,6 +4643,20 @@
       "IsMRef": true,
       "Title": "ADLXWrapper.SmartShiftEcoInfo",
       "Summary": "<p sourcefile=\"api/ADLXWrapper.SmartShiftEcoInfo.yml\" sourcestartlinenumber=\"1\">Represents the collected information for SmartShift Eco.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.SmartShiftMaxDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.SmartShiftMaxDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.SmartShiftMaxDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.SmartShiftMaxDto.yml\" sourcestartlinenumber=\"1\">Represents the collected information for SmartShift Max.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4086,6 +4674,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.SystemMetricsSnapshotDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.SystemMetricsSnapshotDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.SystemMetricsSnapshotDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.SystemMetricsSnapshotInfo.yml",
       "output": {
         ".html": {
@@ -4100,6 +4702,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.TessellationDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.TessellationDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.TessellationDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.TessellationInfo.yml",
       "output": {
         ".html": {
@@ -4110,6 +4726,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.TessellationInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ThreeDLUTDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ThreeDLUTDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ThreeDLUTDto",
       "Summary": null
     },
     {
@@ -4170,6 +4800,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.VideoSuperResolutionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.VideoSuperResolutionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.VideoSuperResolutionDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.VideoSuperResolutionInfo.yml",
       "output": {
         ".html": {
@@ -4180,6 +4824,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.VideoSuperResolutionInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.VideoUpscaleDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.VideoUpscaleDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.VideoUpscaleDto",
       "Summary": null
     },
     {
@@ -4208,6 +4866,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.VramState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.WaitForVerticalRefreshDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.WaitForVerticalRefreshDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.WaitForVerticalRefreshDto",
       "Summary": null
     },
     {

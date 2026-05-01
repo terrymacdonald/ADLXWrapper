@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaListenerHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 414
+    startLine: 550
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 435
+    startLine: 571
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 441
+    startLine: 577
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 443
+    startLine: 579
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -155,11 +155,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 452
+    startLine: 588
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

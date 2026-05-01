@@ -1,0 +1,942 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GamutDto
+  commentId: T:ADLXWrapper.GamutDto
+  id: GamutDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GamutDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.GamutColorSpaceDto,ADLXWrapper.PointDto,System.Boolean)
+  - ADLXWrapper.GamutDto.CurrentGamutSpace
+  - ADLXWrapper.GamutDto.HasWhitePoint
+  - ADLXWrapper.GamutDto.IsCurrent2020
+  - ADLXWrapper.GamutDto.IsCurrent5000K
+  - ADLXWrapper.GamutDto.IsCurrent601
+  - ADLXWrapper.GamutDto.IsCurrent6500K
+  - ADLXWrapper.GamutDto.IsCurrent709
+  - ADLXWrapper.GamutDto.IsCurrent7500K
+  - ADLXWrapper.GamutDto.IsCurrent9300K
+  - ADLXWrapper.GamutDto.IsCurrentAdobe
+  - ADLXWrapper.GamutDto.IsCurrentCieRgb
+  - ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+  - ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+  - ADLXWrapper.GamutDto.IsGamutSupported
+  - ADLXWrapper.GamutDto.IsWhitePointSupported
+  - ADLXWrapper.GamutDto.WhitePoint
+  langs:
+  - csharp
+  - vb
+  name: GamutDto
+  nameWithType: GamutDto
+  fullName: ADLXWrapper.GamutDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GamutDto
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2576
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GamutDto
+    content.vb: Public Structure GamutDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GamutDto.IsWhitePointSupported
+  commentId: P:ADLXWrapper.GamutDto.IsWhitePointSupported
+  id: IsWhitePointSupported
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsWhitePointSupported
+  nameWithType: GamutDto.IsWhitePointSupported
+  fullName: ADLXWrapper.GamutDto.IsWhitePointSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsWhitePointSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2578
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsWhitePointSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsWhitePointSupported As Boolean
+  overload: ADLXWrapper.GamutDto.IsWhitePointSupported*
+- uid: ADLXWrapper.GamutDto.IsGamutSupported
+  commentId: P:ADLXWrapper.GamutDto.IsGamutSupported
+  id: IsGamutSupported
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsGamutSupported
+  nameWithType: GamutDto.IsGamutSupported
+  fullName: ADLXWrapper.GamutDto.IsGamutSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsGamutSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2579
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsGamutSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsGamutSupported As Boolean
+  overload: ADLXWrapper.GamutDto.IsGamutSupported*
+- uid: ADLXWrapper.GamutDto.IsCurrent5000K
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent5000K
+  id: IsCurrent5000K
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent5000K
+  nameWithType: GamutDto.IsCurrent5000K
+  fullName: ADLXWrapper.GamutDto.IsCurrent5000K
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent5000K
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2580
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent5000K { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent5000K As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent5000K*
+- uid: ADLXWrapper.GamutDto.IsCurrent6500K
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent6500K
+  id: IsCurrent6500K
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent6500K
+  nameWithType: GamutDto.IsCurrent6500K
+  fullName: ADLXWrapper.GamutDto.IsCurrent6500K
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent6500K
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2581
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent6500K { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent6500K As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent6500K*
+- uid: ADLXWrapper.GamutDto.IsCurrent7500K
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent7500K
+  id: IsCurrent7500K
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent7500K
+  nameWithType: GamutDto.IsCurrent7500K
+  fullName: ADLXWrapper.GamutDto.IsCurrent7500K
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent7500K
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2582
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent7500K { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent7500K As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent7500K*
+- uid: ADLXWrapper.GamutDto.IsCurrent9300K
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent9300K
+  id: IsCurrent9300K
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent9300K
+  nameWithType: GamutDto.IsCurrent9300K
+  fullName: ADLXWrapper.GamutDto.IsCurrent9300K
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent9300K
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2583
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent9300K { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent9300K As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent9300K*
+- uid: ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+  commentId: P:ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+  id: IsCurrentCustomWhitePoint
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentCustomWhitePoint
+  nameWithType: GamutDto.IsCurrentCustomWhitePoint
+  fullName: ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentCustomWhitePoint
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2584
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentCustomWhitePoint { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentCustomWhitePoint As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint*
+- uid: ADLXWrapper.GamutDto.IsCurrent709
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent709
+  id: IsCurrent709
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent709
+  nameWithType: GamutDto.IsCurrent709
+  fullName: ADLXWrapper.GamutDto.IsCurrent709
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent709
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2585
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent709 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent709 As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent709*
+- uid: ADLXWrapper.GamutDto.IsCurrent601
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent601
+  id: IsCurrent601
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent601
+  nameWithType: GamutDto.IsCurrent601
+  fullName: ADLXWrapper.GamutDto.IsCurrent601
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent601
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2586
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent601 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent601 As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent601*
+- uid: ADLXWrapper.GamutDto.IsCurrentAdobe
+  commentId: P:ADLXWrapper.GamutDto.IsCurrentAdobe
+  id: IsCurrentAdobe
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentAdobe
+  nameWithType: GamutDto.IsCurrentAdobe
+  fullName: ADLXWrapper.GamutDto.IsCurrentAdobe
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentAdobe
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2587
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentAdobe { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentAdobe As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrentAdobe*
+- uid: ADLXWrapper.GamutDto.IsCurrentCieRgb
+  commentId: P:ADLXWrapper.GamutDto.IsCurrentCieRgb
+  id: IsCurrentCieRgb
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentCieRgb
+  nameWithType: GamutDto.IsCurrentCieRgb
+  fullName: ADLXWrapper.GamutDto.IsCurrentCieRgb
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentCieRgb
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2588
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentCieRgb { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentCieRgb As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrentCieRgb*
+- uid: ADLXWrapper.GamutDto.IsCurrent2020
+  commentId: P:ADLXWrapper.GamutDto.IsCurrent2020
+  id: IsCurrent2020
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent2020
+  nameWithType: GamutDto.IsCurrent2020
+  fullName: ADLXWrapper.GamutDto.IsCurrent2020
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrent2020
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2589
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrent2020 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrent2020 As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrent2020*
+- uid: ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+  commentId: P:ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+  id: IsCurrentCustomColorSpace
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentCustomColorSpace
+  nameWithType: GamutDto.IsCurrentCustomColorSpace
+  fullName: ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentCustomColorSpace
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2590
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentCustomColorSpace { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentCustomColorSpace As Boolean
+  overload: ADLXWrapper.GamutDto.IsCurrentCustomColorSpace*
+- uid: ADLXWrapper.GamutDto.CurrentGamutSpace
+  commentId: P:ADLXWrapper.GamutDto.CurrentGamutSpace
+  id: CurrentGamutSpace
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: CurrentGamutSpace
+  nameWithType: GamutDto.CurrentGamutSpace
+  fullName: ADLXWrapper.GamutDto.CurrentGamutSpace
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CurrentGamutSpace
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2591
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GamutColorSpaceDto CurrentGamutSpace { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GamutColorSpaceDto
+    content.vb: Public Property CurrentGamutSpace As GamutColorSpaceDto
+  overload: ADLXWrapper.GamutDto.CurrentGamutSpace*
+- uid: ADLXWrapper.GamutDto.WhitePoint
+  commentId: P:ADLXWrapper.GamutDto.WhitePoint
+  id: WhitePoint
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: WhitePoint
+  nameWithType: GamutDto.WhitePoint
+  fullName: ADLXWrapper.GamutDto.WhitePoint
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: WhitePoint
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2592
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public PointDto WhitePoint { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.PointDto
+    content.vb: Public Property WhitePoint As PointDto
+  overload: ADLXWrapper.GamutDto.WhitePoint*
+- uid: ADLXWrapper.GamutDto.HasWhitePoint
+  commentId: P:ADLXWrapper.GamutDto.HasWhitePoint
+  id: HasWhitePoint
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: HasWhitePoint
+  nameWithType: GamutDto.HasWhitePoint
+  fullName: ADLXWrapper.GamutDto.HasWhitePoint
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasWhitePoint
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2593
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasWhitePoint { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasWhitePoint As Boolean
+  overload: ADLXWrapper.GamutDto.HasWhitePoint*
+- uid: ADLXWrapper.GamutDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.GamutColorSpaceDto,ADLXWrapper.PointDto,System.Boolean)
+  commentId: M:ADLXWrapper.GamutDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.GamutColorSpaceDto,ADLXWrapper.PointDto,System.Boolean)
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.GamutColorSpaceDto,ADLXWrapper.PointDto,System.Boolean)'
+  parent: ADLXWrapper.GamutDto
+  langs:
+  - csharp
+  - vb
+  name: GamutDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, GamutColorSpaceDto, PointDto, bool)
+  nameWithType: GamutDto.GamutDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, GamutColorSpaceDto, PointDto, bool)
+  fullName: ADLXWrapper.GamutDto.GamutDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, ADLXWrapper.GamutColorSpaceDto, ADLXWrapper.PointDto, bool)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2595
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GamutDto(bool isWhitePointSupported, bool isGamutSupported, bool isCurrent5000K, bool isCurrent6500K, bool isCurrent7500K, bool isCurrent9300K, bool isCurrentCustomWhitePoint, bool isCurrent709, bool isCurrent601, bool isCurrentAdobe, bool isCurrentCieRgb, bool isCurrent2020, bool isCurrentCustomColorSpace, GamutColorSpaceDto currentGamutSpace, PointDto whitePoint, bool hasWhitePoint)
+    parameters:
+    - id: isWhitePointSupported
+      type: System.Boolean
+    - id: isGamutSupported
+      type: System.Boolean
+    - id: isCurrent5000K
+      type: System.Boolean
+    - id: isCurrent6500K
+      type: System.Boolean
+    - id: isCurrent7500K
+      type: System.Boolean
+    - id: isCurrent9300K
+      type: System.Boolean
+    - id: isCurrentCustomWhitePoint
+      type: System.Boolean
+    - id: isCurrent709
+      type: System.Boolean
+    - id: isCurrent601
+      type: System.Boolean
+    - id: isCurrentAdobe
+      type: System.Boolean
+    - id: isCurrentCieRgb
+      type: System.Boolean
+    - id: isCurrent2020
+      type: System.Boolean
+    - id: isCurrentCustomColorSpace
+      type: System.Boolean
+    - id: currentGamutSpace
+      type: ADLXWrapper.GamutColorSpaceDto
+    - id: whitePoint
+      type: ADLXWrapper.PointDto
+    - id: hasWhitePoint
+      type: System.Boolean
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(isWhitePointSupported As Boolean, isGamutSupported As Boolean, isCurrent5000K As Boolean, isCurrent6500K As Boolean, isCurrent7500K As Boolean, isCurrent9300K As Boolean, isCurrentCustomWhitePoint As Boolean, isCurrent709 As Boolean, isCurrent601 As Boolean, isCurrentAdobe As Boolean, isCurrentCieRgb As Boolean, isCurrent2020 As Boolean, isCurrentCustomColorSpace As Boolean, currentGamutSpace As GamutColorSpaceDto, whitePoint As PointDto, hasWhitePoint As Boolean)
+  overload: ADLXWrapper.GamutDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GamutDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, GamutColorSpaceDto, PointDto, Boolean)
+  fullName.vb: ADLXWrapper.GamutDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, ADLXWrapper.GamutColorSpaceDto, ADLXWrapper.PointDto, Boolean)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, GamutColorSpaceDto, PointDto, Boolean)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GamutDto.IsWhitePointSupported*
+  commentId: Overload:ADLXWrapper.GamutDto.IsWhitePointSupported
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsWhitePointSupported
+  name: IsWhitePointSupported
+  nameWithType: GamutDto.IsWhitePointSupported
+  fullName: ADLXWrapper.GamutDto.IsWhitePointSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.GamutDto.IsGamutSupported*
+  commentId: Overload:ADLXWrapper.GamutDto.IsGamutSupported
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsGamutSupported
+  name: IsGamutSupported
+  nameWithType: GamutDto.IsGamutSupported
+  fullName: ADLXWrapper.GamutDto.IsGamutSupported
+- uid: ADLXWrapper.GamutDto.IsCurrent5000K*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent5000K
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent5000K
+  name: IsCurrent5000K
+  nameWithType: GamutDto.IsCurrent5000K
+  fullName: ADLXWrapper.GamutDto.IsCurrent5000K
+- uid: ADLXWrapper.GamutDto.IsCurrent6500K*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent6500K
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent6500K
+  name: IsCurrent6500K
+  nameWithType: GamutDto.IsCurrent6500K
+  fullName: ADLXWrapper.GamutDto.IsCurrent6500K
+- uid: ADLXWrapper.GamutDto.IsCurrent7500K*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent7500K
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent7500K
+  name: IsCurrent7500K
+  nameWithType: GamutDto.IsCurrent7500K
+  fullName: ADLXWrapper.GamutDto.IsCurrent7500K
+- uid: ADLXWrapper.GamutDto.IsCurrent9300K*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent9300K
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent9300K
+  name: IsCurrent9300K
+  nameWithType: GamutDto.IsCurrent9300K
+  fullName: ADLXWrapper.GamutDto.IsCurrent9300K
+- uid: ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrentCustomWhitePoint
+  name: IsCurrentCustomWhitePoint
+  nameWithType: GamutDto.IsCurrentCustomWhitePoint
+  fullName: ADLXWrapper.GamutDto.IsCurrentCustomWhitePoint
+- uid: ADLXWrapper.GamutDto.IsCurrent709*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent709
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent709
+  name: IsCurrent709
+  nameWithType: GamutDto.IsCurrent709
+  fullName: ADLXWrapper.GamutDto.IsCurrent709
+- uid: ADLXWrapper.GamutDto.IsCurrent601*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent601
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent601
+  name: IsCurrent601
+  nameWithType: GamutDto.IsCurrent601
+  fullName: ADLXWrapper.GamutDto.IsCurrent601
+- uid: ADLXWrapper.GamutDto.IsCurrentAdobe*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrentAdobe
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrentAdobe
+  name: IsCurrentAdobe
+  nameWithType: GamutDto.IsCurrentAdobe
+  fullName: ADLXWrapper.GamutDto.IsCurrentAdobe
+- uid: ADLXWrapper.GamutDto.IsCurrentCieRgb*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrentCieRgb
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrentCieRgb
+  name: IsCurrentCieRgb
+  nameWithType: GamutDto.IsCurrentCieRgb
+  fullName: ADLXWrapper.GamutDto.IsCurrentCieRgb
+- uid: ADLXWrapper.GamutDto.IsCurrent2020*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrent2020
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrent2020
+  name: IsCurrent2020
+  nameWithType: GamutDto.IsCurrent2020
+  fullName: ADLXWrapper.GamutDto.IsCurrent2020
+- uid: ADLXWrapper.GamutDto.IsCurrentCustomColorSpace*
+  commentId: Overload:ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_IsCurrentCustomColorSpace
+  name: IsCurrentCustomColorSpace
+  nameWithType: GamutDto.IsCurrentCustomColorSpace
+  fullName: ADLXWrapper.GamutDto.IsCurrentCustomColorSpace
+- uid: ADLXWrapper.GamutDto.CurrentGamutSpace*
+  commentId: Overload:ADLXWrapper.GamutDto.CurrentGamutSpace
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_CurrentGamutSpace
+  name: CurrentGamutSpace
+  nameWithType: GamutDto.CurrentGamutSpace
+  fullName: ADLXWrapper.GamutDto.CurrentGamutSpace
+- uid: ADLXWrapper.GamutColorSpaceDto
+  commentId: T:ADLXWrapper.GamutColorSpaceDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GamutColorSpaceDto.html
+  name: GamutColorSpaceDto
+  nameWithType: GamutColorSpaceDto
+  fullName: ADLXWrapper.GamutColorSpaceDto
+- uid: ADLXWrapper.GamutDto.WhitePoint*
+  commentId: Overload:ADLXWrapper.GamutDto.WhitePoint
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_WhitePoint
+  name: WhitePoint
+  nameWithType: GamutDto.WhitePoint
+  fullName: ADLXWrapper.GamutDto.WhitePoint
+- uid: ADLXWrapper.PointDto
+  commentId: T:ADLXWrapper.PointDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.PointDto.html
+  name: PointDto
+  nameWithType: PointDto
+  fullName: ADLXWrapper.PointDto
+- uid: ADLXWrapper.GamutDto.HasWhitePoint*
+  commentId: Overload:ADLXWrapper.GamutDto.HasWhitePoint
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto_HasWhitePoint
+  name: HasWhitePoint
+  nameWithType: GamutDto.HasWhitePoint
+  fullName: ADLXWrapper.GamutDto.HasWhitePoint
+- uid: ADLXWrapper.GamutDto.#ctor*
+  commentId: Overload:ADLXWrapper.GamutDto.#ctor
+  href: ADLXWrapper.GamutDto.html#ADLXWrapper_GamutDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_GamutColorSpaceDto_ADLXWrapper_PointDto_System_Boolean_
+  name: GamutDto
+  nameWithType: GamutDto.GamutDto
+  fullName: ADLXWrapper.GamutDto.GamutDto
+  nameWithType.vb: GamutDto.New
+  fullName.vb: ADLXWrapper.GamutDto.New
+  name.vb: New

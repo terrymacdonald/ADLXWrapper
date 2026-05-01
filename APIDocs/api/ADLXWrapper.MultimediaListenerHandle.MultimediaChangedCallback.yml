@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaChangedCallback
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 416
+    startLine: 552
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

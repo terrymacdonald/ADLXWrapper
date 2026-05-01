@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetKind
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 695
+    startLine: 891
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -45,11 +45,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSaver
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 697
+    startLine: 893
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -71,11 +71,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Quiet
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 698
+    startLine: 894
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Balanced
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 699
+    startLine: 895
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Turbo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 700
+    startLine: 896
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,11 +149,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Rage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 701
+    startLine: 897
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

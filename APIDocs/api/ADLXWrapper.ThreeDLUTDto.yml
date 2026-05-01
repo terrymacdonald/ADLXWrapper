@@ -1,0 +1,680 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ThreeDLUTDto
+  commentId: T:ADLXWrapper.ThreeDLUTDto
+  id: ThreeDLUTDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ThreeDLUTDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
+  - ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+  - ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+  - ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+  - ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+  - ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+  - ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+  - ADLXWrapper.ThreeDLUTDto.IsSceSupported
+  - ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+  - ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+  langs:
+  - csharp
+  - vb
+  name: ThreeDLUTDto
+  nameWithType: ThreeDLUTDto
+  fullName: ADLXWrapper.ThreeDLUTDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ThreeDLUTDto
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2662
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct ThreeDLUTDto
+    content.vb: Public Structure ThreeDLUTDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceSupported
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsSceSupported
+  id: IsSceSupported
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsSceSupported
+  nameWithType: ThreeDLUTDto.IsSceSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSceSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2664
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsSceSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSceSupported As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsSceSupported*
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+  id: IsSceVividGamingSupported
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsSceVividGamingSupported
+  nameWithType: ThreeDLUTDto.IsSceVividGamingSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSceVividGamingSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2665
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsSceVividGamingSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSceVividGamingSupported As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported*
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+  id: IsSceDynamicContrastSupported
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsSceDynamicContrastSupported
+  nameWithType: ThreeDLUTDto.IsSceDynamicContrastSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSceDynamicContrastSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2666
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsSceDynamicContrastSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSceDynamicContrastSupported As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported*
+- uid: ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+  id: IsUser3DLutSupported
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsUser3DLutSupported
+  nameWithType: ThreeDLUTDto.IsUser3DLutSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsUser3DLutSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2667
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsUser3DLutSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsUser3DLutSupported As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported*
+- uid: ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+  id: IsCurrentSceDisabled
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentSceDisabled
+  nameWithType: ThreeDLUTDto.IsCurrentSceDisabled
+  fullName: ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentSceDisabled
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2668
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentSceDisabled { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentSceDisabled As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled*
+- uid: ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+  commentId: P:ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+  id: IsCurrentSceVividGaming
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTDto.IsCurrentSceVividGaming
+  fullName: ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentSceVividGaming
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2669
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentSceVividGaming { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentSceVividGaming As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming*
+- uid: ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+  id: HasDynamicContrast
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: HasDynamicContrast
+  nameWithType: ThreeDLUTDto.HasDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasDynamicContrast
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2670
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasDynamicContrast { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasDynamicContrast As Boolean
+  overload: ADLXWrapper.ThreeDLUTDto.HasDynamicContrast*
+- uid: ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+  commentId: P:ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+  id: CurrentDynamicContrast
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: CurrentDynamicContrast
+  nameWithType: ThreeDLUTDto.CurrentDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CurrentDynamicContrast
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2671
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CurrentDynamicContrast { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentDynamicContrast As Integer
+  overload: ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast*
+- uid: ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+  commentId: P:ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+  id: DynamicContrastRange
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: DynamicContrastRange
+  nameWithType: ThreeDLUTDto.DynamicContrastRange
+  fullName: ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DynamicContrastRange
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2672
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto DynamicContrastRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property DynamicContrastRange As IntRangeDto
+  overload: ADLXWrapper.ThreeDLUTDto.DynamicContrastRange*
+- uid: ADLXWrapper.ThreeDLUTDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
+  commentId: M:ADLXWrapper.ThreeDLUTDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)'
+  parent: ADLXWrapper.ThreeDLUTDto
+  langs:
+  - csharp
+  - vb
+  name: ThreeDLUTDto(bool, bool, bool, bool, bool, bool, bool, int, IntRangeDto)
+  nameWithType: ThreeDLUTDto.ThreeDLUTDto(bool, bool, bool, bool, bool, bool, bool, int, IntRangeDto)
+  fullName: ADLXWrapper.ThreeDLUTDto.ThreeDLUTDto(bool, bool, bool, bool, bool, bool, bool, int, ADLXWrapper.IntRangeDto)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2674
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public ThreeDLUTDto(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported, bool isCurrentSceDisabled, bool isCurrentSceVividGaming, bool hasDynamicContrast, int currentDynamicContrast, IntRangeDto dynamicContrastRange)
+    parameters:
+    - id: isSceSupported
+      type: System.Boolean
+    - id: isSceVividGamingSupported
+      type: System.Boolean
+    - id: isSceDynamicContrastSupported
+      type: System.Boolean
+    - id: isUser3DLutSupported
+      type: System.Boolean
+    - id: isCurrentSceDisabled
+      type: System.Boolean
+    - id: isCurrentSceVividGaming
+      type: System.Boolean
+    - id: hasDynamicContrast
+      type: System.Boolean
+    - id: currentDynamicContrast
+      type: System.Int32
+    - id: dynamicContrastRange
+      type: ADLXWrapper.IntRangeDto
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(isSceSupported As Boolean, isSceVividGamingSupported As Boolean, isSceDynamicContrastSupported As Boolean, isUser3DLutSupported As Boolean, isCurrentSceDisabled As Boolean, isCurrentSceVividGaming As Boolean, hasDynamicContrast As Boolean, currentDynamicContrast As Integer, dynamicContrastRange As IntRangeDto)
+  overload: ADLXWrapper.ThreeDLUTDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: ThreeDLUTDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Integer, IntRangeDto)
+  fullName.vb: ADLXWrapper.ThreeDLUTDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Integer, ADLXWrapper.IntRangeDto)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Integer, IntRangeDto)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceSupported*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsSceSupported
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsSceSupported
+  name: IsSceSupported
+  nameWithType: ThreeDLUTDto.IsSceSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsSceVividGamingSupported
+  name: IsSceVividGamingSupported
+  nameWithType: ThreeDLUTDto.IsSceVividGamingSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceVividGamingSupported
+- uid: ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsSceDynamicContrastSupported
+  name: IsSceDynamicContrastSupported
+  nameWithType: ThreeDLUTDto.IsSceDynamicContrastSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsSceDynamicContrastSupported
+- uid: ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsUser3DLutSupported
+  name: IsUser3DLutSupported
+  nameWithType: ThreeDLUTDto.IsUser3DLutSupported
+  fullName: ADLXWrapper.ThreeDLUTDto.IsUser3DLutSupported
+- uid: ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsCurrentSceDisabled
+  name: IsCurrentSceDisabled
+  nameWithType: ThreeDLUTDto.IsCurrentSceDisabled
+  fullName: ADLXWrapper.ThreeDLUTDto.IsCurrentSceDisabled
+- uid: ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_IsCurrentSceVividGaming
+  name: IsCurrentSceVividGaming
+  nameWithType: ThreeDLUTDto.IsCurrentSceVividGaming
+  fullName: ADLXWrapper.ThreeDLUTDto.IsCurrentSceVividGaming
+- uid: ADLXWrapper.ThreeDLUTDto.HasDynamicContrast*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_HasDynamicContrast
+  name: HasDynamicContrast
+  nameWithType: ThreeDLUTDto.HasDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTDto.HasDynamicContrast
+- uid: ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_CurrentDynamicContrast
+  name: CurrentDynamicContrast
+  nameWithType: ThreeDLUTDto.CurrentDynamicContrast
+  fullName: ADLXWrapper.ThreeDLUTDto.CurrentDynamicContrast
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ThreeDLUTDto.DynamicContrastRange*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto_DynamicContrastRange
+  name: DynamicContrastRange
+  nameWithType: ThreeDLUTDto.DynamicContrastRange
+  fullName: ADLXWrapper.ThreeDLUTDto.DynamicContrastRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.ThreeDLUTDto.#ctor*
+  commentId: Overload:ADLXWrapper.ThreeDLUTDto.#ctor
+  href: ADLXWrapper.ThreeDLUTDto.html#ADLXWrapper_ThreeDLUTDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_
+  name: ThreeDLUTDto
+  nameWithType: ThreeDLUTDto.ThreeDLUTDto
+  fullName: ADLXWrapper.ThreeDLUTDto.ThreeDLUTDto
+  nameWithType.vb: ThreeDLUTDto.New
+  fullName.vb: ADLXWrapper.ThreeDLUTDto.New
+  name.vb: New

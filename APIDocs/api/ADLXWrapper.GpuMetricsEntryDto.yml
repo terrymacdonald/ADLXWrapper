@@ -1,0 +1,403 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GpuMetricsEntryDto
+  commentId: T:ADLXWrapper.GpuMetricsEntryDto
+  id: GpuMetricsEntryDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GpuMetricsEntryDto.#ctor(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto)
+  - ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+  - ADLXWrapper.GpuMetricsEntryDto.Metrics
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsEntryDto
+  nameWithType: GpuMetricsEntryDto
+  fullName: ADLXWrapper.GpuMetricsEntryDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuMetricsEntryDto
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 809
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GpuMetricsEntryDto
+    content.vb: Public Structure GpuMetricsEntryDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+  commentId: P:ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.GpuMetricsEntryDto
+  langs:
+  - csharp
+  - vb
+  name: GpuUniqueId
+  nameWithType: GpuMetricsEntryDto.GpuUniqueId
+  fullName: ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuUniqueId
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 811
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int GpuUniqueId { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuUniqueId As Integer
+  overload: ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId*
+- uid: ADLXWrapper.GpuMetricsEntryDto.Metrics
+  commentId: P:ADLXWrapper.GpuMetricsEntryDto.Metrics
+  id: Metrics
+  parent: ADLXWrapper.GpuMetricsEntryDto
+  langs:
+  - csharp
+  - vb
+  name: Metrics
+  nameWithType: GpuMetricsEntryDto.Metrics
+  fullName: ADLXWrapper.GpuMetricsEntryDto.Metrics
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Metrics
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 812
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GpuMetricsSnapshotDto Metrics { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GpuMetricsSnapshotDto
+    content.vb: Public Property Metrics As GpuMetricsSnapshotDto
+  overload: ADLXWrapper.GpuMetricsEntryDto.Metrics*
+- uid: ADLXWrapper.GpuMetricsEntryDto.#ctor(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto)
+  commentId: M:ADLXWrapper.GpuMetricsEntryDto.#ctor(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto)
+  id: '#ctor(System.Int32,ADLXWrapper.GpuMetricsSnapshotDto)'
+  parent: ADLXWrapper.GpuMetricsEntryDto
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsEntryDto(int, GpuMetricsSnapshotDto)
+  nameWithType: GpuMetricsEntryDto.GpuMetricsEntryDto(int, GpuMetricsSnapshotDto)
+  fullName: ADLXWrapper.GpuMetricsEntryDto.GpuMetricsEntryDto(int, ADLXWrapper.GpuMetricsSnapshotDto)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 814
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GpuMetricsEntryDto(int gpuUniqueId, GpuMetricsSnapshotDto metrics)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: metrics
+      type: ADLXWrapper.GpuMetricsSnapshotDto
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(gpuUniqueId As Integer, metrics As GpuMetricsSnapshotDto)
+  overload: ADLXWrapper.GpuMetricsEntryDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GpuMetricsEntryDto.New(Integer, GpuMetricsSnapshotDto)
+  fullName.vb: ADLXWrapper.GpuMetricsEntryDto.New(Integer, ADLXWrapper.GpuMetricsSnapshotDto)
+  name.vb: New(Integer, GpuMetricsSnapshotDto)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+  href: ADLXWrapper.GpuMetricsEntryDto.html#ADLXWrapper_GpuMetricsEntryDto_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: GpuMetricsEntryDto.GpuUniqueId
+  fullName: ADLXWrapper.GpuMetricsEntryDto.GpuUniqueId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.GpuMetricsEntryDto.Metrics*
+  commentId: Overload:ADLXWrapper.GpuMetricsEntryDto.Metrics
+  href: ADLXWrapper.GpuMetricsEntryDto.html#ADLXWrapper_GpuMetricsEntryDto_Metrics
+  name: Metrics
+  nameWithType: GpuMetricsEntryDto.Metrics
+  fullName: ADLXWrapper.GpuMetricsEntryDto.Metrics
+- uid: ADLXWrapper.GpuMetricsSnapshotDto
+  commentId: T:ADLXWrapper.GpuMetricsSnapshotDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html
+  name: GpuMetricsSnapshotDto
+  nameWithType: GpuMetricsSnapshotDto
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto
+- uid: ADLXWrapper.GpuMetricsEntryDto.#ctor*
+  commentId: Overload:ADLXWrapper.GpuMetricsEntryDto.#ctor
+  href: ADLXWrapper.GpuMetricsEntryDto.html#ADLXWrapper_GpuMetricsEntryDto__ctor_System_Int32_ADLXWrapper_GpuMetricsSnapshotDto_
+  name: GpuMetricsEntryDto
+  nameWithType: GpuMetricsEntryDto.GpuMetricsEntryDto
+  fullName: ADLXWrapper.GpuMetricsEntryDto.GpuMetricsEntryDto
+  nameWithType.vb: GpuMetricsEntryDto.New
+  fullName.vb: ADLXWrapper.GpuMetricsEntryDto.New
+  name.vb: New

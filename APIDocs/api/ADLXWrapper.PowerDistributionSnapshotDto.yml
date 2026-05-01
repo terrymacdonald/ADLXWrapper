@@ -1,0 +1,450 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.PowerDistributionSnapshotDto
+  commentId: T:ADLXWrapper.PowerDistributionSnapshotDto
+  id: PowerDistributionSnapshotDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+  - ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+  - ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+  - ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+  - ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit
+  langs:
+  - csharp
+  - vb
+  name: PowerDistributionSnapshotDto
+  nameWithType: PowerDistributionSnapshotDto
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerDistributionSnapshotDto
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 755
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct PowerDistributionSnapshotDto
+    content.vb: Public Structure PowerDistributionSnapshotDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+  commentId: P:ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+  id: ApuShiftValue
+  parent: ADLXWrapper.PowerDistributionSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: ApuShiftValue
+  nameWithType: PowerDistributionSnapshotDto.ApuShiftValue
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApuShiftValue
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 757
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int ApuShiftValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ApuShiftValue As Integer
+  overload: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue*
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+  commentId: P:ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+  id: GpuShiftValue
+  parent: ADLXWrapper.PowerDistributionSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: GpuShiftValue
+  nameWithType: PowerDistributionSnapshotDto.GpuShiftValue
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuShiftValue
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 758
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int GpuShiftValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuShiftValue As Integer
+  overload: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue*
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+  commentId: P:ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+  id: ApuShiftLimit
+  parent: ADLXWrapper.PowerDistributionSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: ApuShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.ApuShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApuShiftLimit
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 759
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int ApuShiftLimit { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ApuShiftLimit As Integer
+  overload: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit*
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+  commentId: P:ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+  id: GpuShiftLimit
+  parent: ADLXWrapper.PowerDistributionSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: GpuShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.GpuShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuShiftLimit
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 760
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int GpuShiftLimit { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuShiftLimit As Integer
+  overload: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit*
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit
+  commentId: P:ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit
+  id: TotalShiftLimit
+  parent: ADLXWrapper.PowerDistributionSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: TotalShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.TotalShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TotalShiftLimit
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 761
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TotalShiftLimit { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalShiftLimit As Integer
+  overload: ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit*
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue*
+  commentId: Overload:ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html#ADLXWrapper_PowerDistributionSnapshotDto_ApuShiftValue
+  name: ApuShiftValue
+  nameWithType: PowerDistributionSnapshotDto.ApuShiftValue
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftValue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue*
+  commentId: Overload:ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html#ADLXWrapper_PowerDistributionSnapshotDto_GpuShiftValue
+  name: GpuShiftValue
+  nameWithType: PowerDistributionSnapshotDto.GpuShiftValue
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftValue
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit*
+  commentId: Overload:ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html#ADLXWrapper_PowerDistributionSnapshotDto_ApuShiftLimit
+  name: ApuShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.ApuShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.ApuShiftLimit
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit*
+  commentId: Overload:ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html#ADLXWrapper_PowerDistributionSnapshotDto_GpuShiftLimit
+  name: GpuShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.GpuShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.GpuShiftLimit
+- uid: ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit*
+  commentId: Overload:ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit
+  href: ADLXWrapper.PowerDistributionSnapshotDto.html#ADLXWrapper_PowerDistributionSnapshotDto_TotalShiftLimit
+  name: TotalShiftLimit
+  nameWithType: PowerDistributionSnapshotDto.TotalShiftLimit
+  fullName: ADLXWrapper.PowerDistributionSnapshotDto.TotalShiftLimit

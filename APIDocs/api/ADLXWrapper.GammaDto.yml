@@ -1,0 +1,790 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GammaDto
+  commentId: T:ADLXWrapper.GammaDto
+  id: GammaDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GammaDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.RegammaCoeffDto,System.Boolean,ADLXWrapper.GammaRampDto,System.Boolean,ADLXWrapper.GammaRampDto)
+  - ADLXWrapper.GammaDto.DeGammaRamp
+  - ADLXWrapper.GammaDto.HasDeGammaRamp
+  - ADLXWrapper.GammaDto.HasReGammaRamp
+  - ADLXWrapper.GammaDto.HasRegammaCoefficient
+  - ADLXWrapper.GammaDto.IsCurrentReGamma36
+  - ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+  - ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+  - ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+  - ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+  - ADLXWrapper.GammaDto.IsSupported
+  - ADLXWrapper.GammaDto.ReGammaRamp
+  - ADLXWrapper.GammaDto.RegammaCoefficient
+  langs:
+  - csharp
+  - vb
+  name: GammaDto
+  nameWithType: GammaDto
+  fullName: ADLXWrapper.GammaDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GammaDto
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2474
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GammaDto
+    content.vb: Public Structure GammaDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GammaDto.IsSupported
+  commentId: P:ADLXWrapper.GammaDto.IsSupported
+  id: IsSupported
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsSupported
+  nameWithType: GammaDto.IsSupported
+  fullName: ADLXWrapper.GammaDto.IsSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSupported
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2476
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSupported As Boolean
+  overload: ADLXWrapper.GammaDto.IsSupported*
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+  commentId: P:ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+  id: IsCurrentReGammaSRGB
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaSRGB
+  nameWithType: GammaDto.IsCurrentReGammaSRGB
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaSRGB
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2477
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaSRGB { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaSRGB As Boolean
+  overload: ADLXWrapper.GammaDto.IsCurrentReGammaSRGB*
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+  commentId: P:ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+  id: IsCurrentReGammaBT709
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaBT709
+  nameWithType: GammaDto.IsCurrentReGammaBT709
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaBT709
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2478
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaBT709 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaBT709 As Boolean
+  overload: ADLXWrapper.GammaDto.IsCurrentReGammaBT709*
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+  commentId: P:ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+  id: IsCurrentReGammaPQ
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaPQ
+  nameWithType: GammaDto.IsCurrentReGammaPQ
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaPQ
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2479
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaPQ { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaPQ As Boolean
+  overload: ADLXWrapper.GammaDto.IsCurrentReGammaPQ*
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+  commentId: P:ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+  id: IsCurrentReGammaPQ2084
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGammaPQ2084
+  nameWithType: GammaDto.IsCurrentReGammaPQ2084
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGammaPQ2084
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2480
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGammaPQ2084 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGammaPQ2084 As Boolean
+  overload: ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084*
+- uid: ADLXWrapper.GammaDto.IsCurrentReGamma36
+  commentId: P:ADLXWrapper.GammaDto.IsCurrentReGamma36
+  id: IsCurrentReGamma36
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: IsCurrentReGamma36
+  nameWithType: GammaDto.IsCurrentReGamma36
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGamma36
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCurrentReGamma36
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2481
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsCurrentReGamma36 { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsCurrentReGamma36 As Boolean
+  overload: ADLXWrapper.GammaDto.IsCurrentReGamma36*
+- uid: ADLXWrapper.GammaDto.HasRegammaCoefficient
+  commentId: P:ADLXWrapper.GammaDto.HasRegammaCoefficient
+  id: HasRegammaCoefficient
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: HasRegammaCoefficient
+  nameWithType: GammaDto.HasRegammaCoefficient
+  fullName: ADLXWrapper.GammaDto.HasRegammaCoefficient
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasRegammaCoefficient
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2482
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasRegammaCoefficient { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasRegammaCoefficient As Boolean
+  overload: ADLXWrapper.GammaDto.HasRegammaCoefficient*
+- uid: ADLXWrapper.GammaDto.RegammaCoefficient
+  commentId: P:ADLXWrapper.GammaDto.RegammaCoefficient
+  id: RegammaCoefficient
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: RegammaCoefficient
+  nameWithType: GammaDto.RegammaCoefficient
+  fullName: ADLXWrapper.GammaDto.RegammaCoefficient
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RegammaCoefficient
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2483
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public RegammaCoeffDto RegammaCoefficient { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.RegammaCoeffDto
+    content.vb: Public Property RegammaCoefficient As RegammaCoeffDto
+  overload: ADLXWrapper.GammaDto.RegammaCoefficient*
+- uid: ADLXWrapper.GammaDto.HasReGammaRamp
+  commentId: P:ADLXWrapper.GammaDto.HasReGammaRamp
+  id: HasReGammaRamp
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: HasReGammaRamp
+  nameWithType: GammaDto.HasReGammaRamp
+  fullName: ADLXWrapper.GammaDto.HasReGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasReGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2484
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasReGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasReGammaRamp As Boolean
+  overload: ADLXWrapper.GammaDto.HasReGammaRamp*
+- uid: ADLXWrapper.GammaDto.ReGammaRamp
+  commentId: P:ADLXWrapper.GammaDto.ReGammaRamp
+  id: ReGammaRamp
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: ReGammaRamp
+  nameWithType: GammaDto.ReGammaRamp
+  fullName: ADLXWrapper.GammaDto.ReGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ReGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2485
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GammaRampDto ReGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GammaRampDto
+    content.vb: Public Property ReGammaRamp As GammaRampDto
+  overload: ADLXWrapper.GammaDto.ReGammaRamp*
+- uid: ADLXWrapper.GammaDto.HasDeGammaRamp
+  commentId: P:ADLXWrapper.GammaDto.HasDeGammaRamp
+  id: HasDeGammaRamp
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: HasDeGammaRamp
+  nameWithType: GammaDto.HasDeGammaRamp
+  fullName: ADLXWrapper.GammaDto.HasDeGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasDeGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2486
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool HasDeGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HasDeGammaRamp As Boolean
+  overload: ADLXWrapper.GammaDto.HasDeGammaRamp*
+- uid: ADLXWrapper.GammaDto.DeGammaRamp
+  commentId: P:ADLXWrapper.GammaDto.DeGammaRamp
+  id: DeGammaRamp
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: DeGammaRamp
+  nameWithType: GammaDto.DeGammaRamp
+  fullName: ADLXWrapper.GammaDto.DeGammaRamp
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DeGammaRamp
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2487
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GammaRampDto DeGammaRamp { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.GammaRampDto
+    content.vb: Public Property DeGammaRamp As GammaRampDto
+  overload: ADLXWrapper.GammaDto.DeGammaRamp*
+- uid: ADLXWrapper.GammaDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.RegammaCoeffDto,System.Boolean,ADLXWrapper.GammaRampDto,System.Boolean,ADLXWrapper.GammaRampDto)
+  commentId: M:ADLXWrapper.GammaDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.RegammaCoeffDto,System.Boolean,ADLXWrapper.GammaRampDto,System.Boolean,ADLXWrapper.GammaRampDto)
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.RegammaCoeffDto,System.Boolean,ADLXWrapper.GammaRampDto,System.Boolean,ADLXWrapper.GammaRampDto)'
+  parent: ADLXWrapper.GammaDto
+  langs:
+  - csharp
+  - vb
+  name: GammaDto(bool, bool, bool, bool, bool, bool, bool, RegammaCoeffDto, bool, GammaRampDto, bool, GammaRampDto)
+  nameWithType: GammaDto.GammaDto(bool, bool, bool, bool, bool, bool, bool, RegammaCoeffDto, bool, GammaRampDto, bool, GammaRampDto)
+  fullName: ADLXWrapper.GammaDto.GammaDto(bool, bool, bool, bool, bool, bool, bool, ADLXWrapper.RegammaCoeffDto, bool, ADLXWrapper.GammaRampDto, bool, ADLXWrapper.GammaRampDto)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDisplayServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
+    startLine: 2489
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GammaDto(bool isSupported, bool isCurrentReGammaSRGB, bool isCurrentReGammaBT709, bool isCurrentReGammaPQ, bool isCurrentReGammaPQ2084, bool isCurrentReGamma36, bool hasRegammaCoefficient, RegammaCoeffDto regammaCoefficient, bool hasReGammaRamp, GammaRampDto reGammaRamp, bool hasDeGammaRamp, GammaRampDto deGammaRamp)
+    parameters:
+    - id: isSupported
+      type: System.Boolean
+    - id: isCurrentReGammaSRGB
+      type: System.Boolean
+    - id: isCurrentReGammaBT709
+      type: System.Boolean
+    - id: isCurrentReGammaPQ
+      type: System.Boolean
+    - id: isCurrentReGammaPQ2084
+      type: System.Boolean
+    - id: isCurrentReGamma36
+      type: System.Boolean
+    - id: hasRegammaCoefficient
+      type: System.Boolean
+    - id: regammaCoefficient
+      type: ADLXWrapper.RegammaCoeffDto
+    - id: hasReGammaRamp
+      type: System.Boolean
+    - id: reGammaRamp
+      type: ADLXWrapper.GammaRampDto
+    - id: hasDeGammaRamp
+      type: System.Boolean
+    - id: deGammaRamp
+      type: ADLXWrapper.GammaRampDto
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(isSupported As Boolean, isCurrentReGammaSRGB As Boolean, isCurrentReGammaBT709 As Boolean, isCurrentReGammaPQ As Boolean, isCurrentReGammaPQ2084 As Boolean, isCurrentReGamma36 As Boolean, hasRegammaCoefficient As Boolean, regammaCoefficient As RegammaCoeffDto, hasReGammaRamp As Boolean, reGammaRamp As GammaRampDto, hasDeGammaRamp As Boolean, deGammaRamp As GammaRampDto)
+  overload: ADLXWrapper.GammaDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GammaDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, RegammaCoeffDto, Boolean, GammaRampDto, Boolean, GammaRampDto)
+  fullName.vb: ADLXWrapper.GammaDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, ADLXWrapper.RegammaCoeffDto, Boolean, ADLXWrapper.GammaRampDto, Boolean, ADLXWrapper.GammaRampDto)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, RegammaCoeffDto, Boolean, GammaRampDto, Boolean, GammaRampDto)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GammaDto.IsSupported*
+  commentId: Overload:ADLXWrapper.GammaDto.IsSupported
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsSupported
+  name: IsSupported
+  nameWithType: GammaDto.IsSupported
+  fullName: ADLXWrapper.GammaDto.IsSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaSRGB*
+  commentId: Overload:ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsCurrentReGammaSRGB
+  name: IsCurrentReGammaSRGB
+  nameWithType: GammaDto.IsCurrentReGammaSRGB
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaSRGB
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaBT709*
+  commentId: Overload:ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsCurrentReGammaBT709
+  name: IsCurrentReGammaBT709
+  nameWithType: GammaDto.IsCurrentReGammaBT709
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaBT709
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaPQ*
+  commentId: Overload:ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsCurrentReGammaPQ
+  name: IsCurrentReGammaPQ
+  nameWithType: GammaDto.IsCurrentReGammaPQ
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaPQ
+- uid: ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084*
+  commentId: Overload:ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsCurrentReGammaPQ2084
+  name: IsCurrentReGammaPQ2084
+  nameWithType: GammaDto.IsCurrentReGammaPQ2084
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGammaPQ2084
+- uid: ADLXWrapper.GammaDto.IsCurrentReGamma36*
+  commentId: Overload:ADLXWrapper.GammaDto.IsCurrentReGamma36
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_IsCurrentReGamma36
+  name: IsCurrentReGamma36
+  nameWithType: GammaDto.IsCurrentReGamma36
+  fullName: ADLXWrapper.GammaDto.IsCurrentReGamma36
+- uid: ADLXWrapper.GammaDto.HasRegammaCoefficient*
+  commentId: Overload:ADLXWrapper.GammaDto.HasRegammaCoefficient
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_HasRegammaCoefficient
+  name: HasRegammaCoefficient
+  nameWithType: GammaDto.HasRegammaCoefficient
+  fullName: ADLXWrapper.GammaDto.HasRegammaCoefficient
+- uid: ADLXWrapper.GammaDto.RegammaCoefficient*
+  commentId: Overload:ADLXWrapper.GammaDto.RegammaCoefficient
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_RegammaCoefficient
+  name: RegammaCoefficient
+  nameWithType: GammaDto.RegammaCoefficient
+  fullName: ADLXWrapper.GammaDto.RegammaCoefficient
+- uid: ADLXWrapper.RegammaCoeffDto
+  commentId: T:ADLXWrapper.RegammaCoeffDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.RegammaCoeffDto.html
+  name: RegammaCoeffDto
+  nameWithType: RegammaCoeffDto
+  fullName: ADLXWrapper.RegammaCoeffDto
+- uid: ADLXWrapper.GammaDto.HasReGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaDto.HasReGammaRamp
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_HasReGammaRamp
+  name: HasReGammaRamp
+  nameWithType: GammaDto.HasReGammaRamp
+  fullName: ADLXWrapper.GammaDto.HasReGammaRamp
+- uid: ADLXWrapper.GammaDto.ReGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaDto.ReGammaRamp
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_ReGammaRamp
+  name: ReGammaRamp
+  nameWithType: GammaDto.ReGammaRamp
+  fullName: ADLXWrapper.GammaDto.ReGammaRamp
+- uid: ADLXWrapper.GammaRampDto
+  commentId: T:ADLXWrapper.GammaRampDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.GammaRampDto.html
+  name: GammaRampDto
+  nameWithType: GammaRampDto
+  fullName: ADLXWrapper.GammaRampDto
+- uid: ADLXWrapper.GammaDto.HasDeGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaDto.HasDeGammaRamp
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_HasDeGammaRamp
+  name: HasDeGammaRamp
+  nameWithType: GammaDto.HasDeGammaRamp
+  fullName: ADLXWrapper.GammaDto.HasDeGammaRamp
+- uid: ADLXWrapper.GammaDto.DeGammaRamp*
+  commentId: Overload:ADLXWrapper.GammaDto.DeGammaRamp
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto_DeGammaRamp
+  name: DeGammaRamp
+  nameWithType: GammaDto.DeGammaRamp
+  fullName: ADLXWrapper.GammaDto.DeGammaRamp
+- uid: ADLXWrapper.GammaDto.#ctor*
+  commentId: Overload:ADLXWrapper.GammaDto.#ctor
+  href: ADLXWrapper.GammaDto.html#ADLXWrapper_GammaDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_RegammaCoeffDto_System_Boolean_ADLXWrapper_GammaRampDto_System_Boolean_ADLXWrapper_GammaRampDto_
+  name: GammaDto
+  nameWithType: GammaDto.GammaDto
+  fullName: ADLXWrapper.GammaDto.GammaDto
+  nameWithType.vb: GammaDto.New
+  fullName.vb: ADLXWrapper.GammaDto.New
+  name.vb: New

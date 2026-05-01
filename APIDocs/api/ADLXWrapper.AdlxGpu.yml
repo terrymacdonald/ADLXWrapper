@@ -46,16 +46,16 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Flattened GPU façade with identity metadata and topology listeners.
+  summary: Flattened GPU faÃ§ade with identity metadata and topology listeners.
   example: []
   syntax:
     content: 'public sealed class ADLXGPU : IDisposable'
@@ -84,11 +84,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -125,21 +125,21 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public GpuInfo Identity { get; }
+    content: public GpuDto Identity { get; }
     parameters: []
     return:
-      type: ADLXWrapper.GpuInfo
-    content.vb: Public ReadOnly Property Identity As GpuInfo
+      type: ADLXWrapper.GpuDto
+    content.vb: Public ReadOnly Property Identity As GpuDto
   overload: ADLXWrapper.ADLXGPU.Identity*
 - uid: ADLXWrapper.ADLXGPU.Name
   commentId: P:ADLXWrapper.ADLXGPU.Name
@@ -154,11 +154,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -183,11 +183,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -212,11 +212,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -241,11 +241,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -270,11 +270,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -299,11 +299,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -328,11 +328,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
@@ -357,11 +357,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 55
   assemblies:
   - ADLXWrapper
@@ -386,11 +386,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -415,11 +415,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 59
   assemblies:
   - ADLXWrapper
@@ -444,11 +444,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUType
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 61
   assemblies:
   - ADLXWrapper
@@ -473,11 +473,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AsicFamilyType
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 63
   assemblies:
   - ADLXWrapper
@@ -502,11 +502,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusType
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 65
   assemblies:
   - ADLXWrapper
@@ -531,11 +531,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusLaneWidth
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 67
   assemblies:
   - ADLXWrapper
@@ -560,11 +560,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGpuMode
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 69
   assemblies:
   - ADLXWrapper
@@ -589,11 +589,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 71
   assemblies:
   - ADLXWrapper
@@ -618,11 +618,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 73
   assemblies:
   - ADLXWrapper
@@ -647,11 +647,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 75
   assemblies:
   - ADLXWrapper
@@ -676,11 +676,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 77
   assemblies:
   - ADLXWrapper
@@ -705,11 +705,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 79
   assemblies:
   - ADLXWrapper
@@ -734,11 +734,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 81
   assemblies:
   - ADLXWrapper
@@ -763,11 +763,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 83
   assemblies:
   - ADLXWrapper
@@ -792,21 +792,21 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 85
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLX_LUID Luid { get; }
+    content: public LuidDto Luid { get; }
     parameters: []
     return:
-      type: ADLXWrapper.ADLX_LUID
-    content.vb: Public ReadOnly Property Luid As ADLX_LUID
+      type: ADLXWrapper.LuidDto
+    content.vb: Public ReadOnly Property Luid As LuidDto
   overload: ADLXWrapper.ADLXGPU.Luid*
 - uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   commentId: M:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
@@ -821,11 +821,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 91
   assemblies:
   - ADLXWrapper
@@ -851,11 +851,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 102
   assemblies:
   - ADLXWrapper
@@ -881,11 +881,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 113
   assemblies:
   - ADLXWrapper
@@ -914,11 +914,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 126
   assemblies:
   - ADLXWrapper
@@ -952,11 +952,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 138
   assemblies:
   - ADLXWrapper
@@ -985,11 +985,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 151
   assemblies:
   - ADLXWrapper
@@ -1023,11 +1023,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/ADLXGPU.cs
-      branch: feature-facade-tests-v3
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/ADLXGPU.cs
+    path: ../ADLXWrapper/AdlxGpu.cs
     startLine: 165
   assemblies:
   - ADLXWrapper
@@ -1331,13 +1331,13 @@ references:
   name: Identity
   nameWithType: ADLXGPU.Identity
   fullName: ADLXWrapper.ADLXGPU.Identity
-- uid: ADLXWrapper.GpuInfo
-  commentId: T:ADLXWrapper.GpuInfo
+- uid: ADLXWrapper.GpuDto
+  commentId: T:ADLXWrapper.GpuDto
   parent: ADLXWrapper
-  href: ADLXWrapper.GpuInfo.html
-  name: GpuInfo
-  nameWithType: GpuInfo
-  fullName: ADLXWrapper.GpuInfo
+  href: ADLXWrapper.GpuDto.html
+  name: GpuDto
+  nameWithType: GpuDto
+  fullName: ADLXWrapper.GpuDto
 - uid: ADLXWrapper.ADLXGPU.Name*
   commentId: Overload:ADLXWrapper.ADLXGPU.Name
   href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_Name
@@ -1548,13 +1548,13 @@ references:
   name: Luid
   nameWithType: ADLXGPU.Luid
   fullName: ADLXWrapper.ADLXGPU.Luid
-- uid: ADLXWrapper.ADLX_LUID
-  commentId: T:ADLXWrapper.ADLX_LUID
+- uid: ADLXWrapper.LuidDto
+  commentId: T:ADLXWrapper.LuidDto
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLX_LUID.html
-  name: ADLX_LUID
-  nameWithType: ADLX_LUID
-  fullName: ADLXWrapper.ADLX_LUID
+  href: ADLXWrapper.LuidDto.html
+  name: LuidDto
+  nameWithType: LuidDto
+  fullName: ADLXWrapper.LuidDto
 - uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU*
   commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU

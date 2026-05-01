@@ -1,0 +1,615 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto
+  commentId: T:ADLXWrapper.GpuTuningCapabilitiesDto
+  id: GpuTuningCapabilitiesDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  - ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+  - ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  - ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  - ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  - ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  - ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+  langs:
+  - csharp
+  - vb
+  name: GpuTuningCapabilitiesDto
+  nameWithType: GpuTuningCapabilitiesDto
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuTuningCapabilitiesDto
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 670
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public readonly struct GpuTuningCapabilitiesDto
+    content.vb: Public Structure GpuTuningCapabilitiesDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+  id: AutoTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: AutoTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.AutoTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AutoTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 672
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool AutoTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutoTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+  id: PresetTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: PresetTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.PresetTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PresetTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 673
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool PresetTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property PresetTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  id: ManualGFXTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: ManualGFXTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManualGFXTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 674
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool ManualGFXTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualGFXTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  id: ManualVRAMTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: ManualVRAMTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManualVRAMTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 675
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool ManualVRAMTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualVRAMTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  id: ManualFanTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: ManualFanTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManualFanTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 676
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool ManualFanTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualFanTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  commentId: P:ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  id: ManualPowerTuningSupported
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: ManualPowerTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManualPowerTuningSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 677
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool ManualPowerTuningSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualPowerTuningSupported As Boolean
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported*
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  commentId: M:ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)'
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: GpuTuningCapabilitiesDto(bool, bool, bool, bool, bool, bool)
+  nameWithType: GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto(bool, bool, bool, bool, bool, bool)
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto(bool, bool, bool, bool, bool, bool)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 679
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public GpuTuningCapabilitiesDto(bool autoTuningSupported, bool presetTuningSupported, bool manualGFXTuningSupported, bool manualVRAMTuningSupported, bool manualFanTuningSupported, bool manualPowerTuningSupported)
+    parameters:
+    - id: autoTuningSupported
+      type: System.Boolean
+    - id: presetTuningSupported
+      type: System.Boolean
+    - id: manualGFXTuningSupported
+      type: System.Boolean
+    - id: manualVRAMTuningSupported
+      type: System.Boolean
+    - id: manualFanTuningSupported
+      type: System.Boolean
+    - id: manualPowerTuningSupported
+      type: System.Boolean
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(autoTuningSupported As Boolean, presetTuningSupported As Boolean, manualGFXTuningSupported As Boolean, manualVRAMTuningSupported As Boolean, manualFanTuningSupported As Boolean, manualPowerTuningSupported As Boolean)
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: GpuTuningCapabilitiesDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
+  fullName.vb: ADLXWrapper.GpuTuningCapabilitiesDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  commentId: M:ADLXWrapper.GpuTuningCapabilitiesDto.#ctor(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)
+  id: '#ctor(ADLXWrapper.IADLXGPUTuningServices*,ADLXWrapper.IADLXGPU*)'
+  parent: ADLXWrapper.GpuTuningCapabilitiesDto
+  langs:
+  - csharp
+  - vb
+  name: GpuTuningCapabilitiesDto(IADLXGPUTuningServices*, IADLXGPU*)
+  nameWithType: GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto(IADLXGPUTuningServices*, IADLXGPU*)
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto(ADLXWrapper.IADLXGPUTuningServices*, ADLXWrapper.IADLXGPU*)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 690
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public GpuTuningCapabilitiesDto(IADLXGPUTuningServices* services, IADLXGPU* gpu)
+    parameters:
+    - id: services
+      type: ADLXWrapper.IADLXGPUTuningServices*
+    - id: gpu
+      type: ADLXWrapper.IADLXGPU*
+    content.vb: Public Sub New(services As IADLXGPUTuningServices*, gpu As IADLXGPU*)
+  overload: ADLXWrapper.GpuTuningCapabilitiesDto.#ctor*
+  nameWithType.vb: GpuTuningCapabilitiesDto.New(IADLXGPUTuningServices*, IADLXGPU*)
+  fullName.vb: ADLXWrapper.GpuTuningCapabilitiesDto.New(ADLXWrapper.IADLXGPUTuningServices*, ADLXWrapper.IADLXGPU*)
+  name.vb: New(IADLXGPUTuningServices*, IADLXGPU*)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_AutoTuningSupported
+  name: AutoTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.AutoTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.AutoTuningSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_PresetTuningSupported
+  name: PresetTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.PresetTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.PresetTuningSupported
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_ManualGFXTuningSupported
+  name: ManualGFXTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualGFXTuningSupported
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_ManualVRAMTuningSupported
+  name: ManualVRAMTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualVRAMTuningSupported
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_ManualFanTuningSupported
+  name: ManualFanTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualFanTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualFanTuningSupported
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto_ManualPowerTuningSupported
+  name: ManualPowerTuningSupported
+  nameWithType: GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.ManualPowerTuningSupported
+- uid: ADLXWrapper.GpuTuningCapabilitiesDto.#ctor*
+  commentId: Overload:ADLXWrapper.GpuTuningCapabilitiesDto.#ctor
+  href: ADLXWrapper.GpuTuningCapabilitiesDto.html#ADLXWrapper_GpuTuningCapabilitiesDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  name: GpuTuningCapabilitiesDto
+  nameWithType: GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto
+  fullName: ADLXWrapper.GpuTuningCapabilitiesDto.GpuTuningCapabilitiesDto
+  nameWithType.vb: GpuTuningCapabilitiesDto.New
+  fullName.vb: ADLXWrapper.GpuTuningCapabilitiesDto.New
+  name.vb: New
+- uid: ADLXWrapper.IADLXGPUTuningServices*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPUTuningServices.html
+  name: IADLXGPUTuningServices*
+  nameWithType: IADLXGPUTuningServices*
+  fullName: ADLXWrapper.IADLXGPUTuningServices*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUTuningServices
+    name: IADLXGPUTuningServices
+    href: ADLXWrapper.IADLXGPUTuningServices.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUTuningServices
+    name: IADLXGPUTuningServices
+    href: ADLXWrapper.IADLXGPUTuningServices.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPU.html
+  name: IADLXGPU*
+  nameWithType: IADLXGPU*
+  fullName: ADLXWrapper.IADLXGPU*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPU
+    name: IADLXGPU
+    href: ADLXWrapper.IADLXGPU.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPU
+    name: IADLXGPU
+    href: ADLXWrapper.IADLXGPU.html
+  - name: '*'

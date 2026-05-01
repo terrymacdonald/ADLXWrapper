@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.RegammaCoeffDto
+  commentId: T:ADLXWrapper.RegammaCoeffDto
+  id: RegammaCoeffDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.RegammaCoeffDto.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  - ADLXWrapper.RegammaCoeffDto.CoefficientA0
+  - ADLXWrapper.RegammaCoeffDto.CoefficientA1
+  - ADLXWrapper.RegammaCoeffDto.CoefficientA2
+  - ADLXWrapper.RegammaCoeffDto.CoefficientA3
+  - ADLXWrapper.RegammaCoeffDto.Gamma
+  langs:
+  - csharp
+  - vb
+  name: RegammaCoeffDto
+  nameWithType: RegammaCoeffDto
+  fullName: ADLXWrapper.RegammaCoeffDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RegammaCoeffDto
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 48
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Managed equivalent of ADLX_RegammaCoeff. Safe for JSON serialisation; contains no native pointers.
+  example: []
+  syntax:
+    content: public readonly struct RegammaCoeffDto
+    content.vb: Public Structure RegammaCoeffDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA0
+  commentId: P:ADLXWrapper.RegammaCoeffDto.CoefficientA0
+  id: CoefficientA0
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: CoefficientA0
+  nameWithType: RegammaCoeffDto.CoefficientA0
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA0
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CoefficientA0
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 50
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CoefficientA0 { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CoefficientA0 As Integer
+  overload: ADLXWrapper.RegammaCoeffDto.CoefficientA0*
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA1
+  commentId: P:ADLXWrapper.RegammaCoeffDto.CoefficientA1
+  id: CoefficientA1
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: CoefficientA1
+  nameWithType: RegammaCoeffDto.CoefficientA1
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA1
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CoefficientA1
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 51
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CoefficientA1 { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CoefficientA1 As Integer
+  overload: ADLXWrapper.RegammaCoeffDto.CoefficientA1*
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA2
+  commentId: P:ADLXWrapper.RegammaCoeffDto.CoefficientA2
+  id: CoefficientA2
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: CoefficientA2
+  nameWithType: RegammaCoeffDto.CoefficientA2
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA2
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CoefficientA2
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 52
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CoefficientA2 { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CoefficientA2 As Integer
+  overload: ADLXWrapper.RegammaCoeffDto.CoefficientA2*
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA3
+  commentId: P:ADLXWrapper.RegammaCoeffDto.CoefficientA3
+  id: CoefficientA3
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: CoefficientA3
+  nameWithType: RegammaCoeffDto.CoefficientA3
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA3
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: CoefficientA3
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 53
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int CoefficientA3 { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CoefficientA3 As Integer
+  overload: ADLXWrapper.RegammaCoeffDto.CoefficientA3*
+- uid: ADLXWrapper.RegammaCoeffDto.Gamma
+  commentId: P:ADLXWrapper.RegammaCoeffDto.Gamma
+  id: Gamma
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: Gamma
+  nameWithType: RegammaCoeffDto.Gamma
+  fullName: ADLXWrapper.RegammaCoeffDto.Gamma
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Gamma
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 54
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Gamma { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Gamma As Integer
+  overload: ADLXWrapper.RegammaCoeffDto.Gamma*
+- uid: ADLXWrapper.RegammaCoeffDto.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.RegammaCoeffDto.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: ADLXWrapper.RegammaCoeffDto
+  langs:
+  - csharp
+  - vb
+  name: RegammaCoeffDto(int, int, int, int, int)
+  nameWithType: RegammaCoeffDto.RegammaCoeffDto(int, int, int, int, int)
+  fullName: ADLXWrapper.RegammaCoeffDto.RegammaCoeffDto(int, int, int, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXDTOTypes.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXDTOTypes.cs
+    startLine: 56
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public RegammaCoeffDto(int coefficientA0, int coefficientA1, int coefficientA2, int coefficientA3, int gamma)
+    parameters:
+    - id: coefficientA0
+      type: System.Int32
+    - id: coefficientA1
+      type: System.Int32
+    - id: coefficientA2
+      type: System.Int32
+    - id: coefficientA3
+      type: System.Int32
+    - id: gamma
+      type: System.Int32
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(coefficientA0 As Integer, coefficientA1 As Integer, coefficientA2 As Integer, coefficientA3 As Integer, gamma As Integer)
+  overload: ADLXWrapper.RegammaCoeffDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: RegammaCoeffDto.New(Integer, Integer, Integer, Integer, Integer)
+  fullName.vb: ADLXWrapper.RegammaCoeffDto.New(Integer, Integer, Integer, Integer, Integer)
+  name.vb: New(Integer, Integer, Integer, Integer, Integer)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA0*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.CoefficientA0
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto_CoefficientA0
+  name: CoefficientA0
+  nameWithType: RegammaCoeffDto.CoefficientA0
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA0
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA1*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.CoefficientA1
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto_CoefficientA1
+  name: CoefficientA1
+  nameWithType: RegammaCoeffDto.CoefficientA1
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA1
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA2*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.CoefficientA2
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto_CoefficientA2
+  name: CoefficientA2
+  nameWithType: RegammaCoeffDto.CoefficientA2
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA2
+- uid: ADLXWrapper.RegammaCoeffDto.CoefficientA3*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.CoefficientA3
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto_CoefficientA3
+  name: CoefficientA3
+  nameWithType: RegammaCoeffDto.CoefficientA3
+  fullName: ADLXWrapper.RegammaCoeffDto.CoefficientA3
+- uid: ADLXWrapper.RegammaCoeffDto.Gamma*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.Gamma
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto_Gamma
+  name: Gamma
+  nameWithType: RegammaCoeffDto.Gamma
+  fullName: ADLXWrapper.RegammaCoeffDto.Gamma
+- uid: ADLXWrapper.RegammaCoeffDto.#ctor*
+  commentId: Overload:ADLXWrapper.RegammaCoeffDto.#ctor
+  href: ADLXWrapper.RegammaCoeffDto.html#ADLXWrapper_RegammaCoeffDto__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: RegammaCoeffDto
+  nameWithType: RegammaCoeffDto.RegammaCoeffDto
+  fullName: ADLXWrapper.RegammaCoeffDto.RegammaCoeffDto
+  nameWithType.vb: RegammaCoeffDto.New
+  fullName.vb: ADLXWrapper.RegammaCoeffDto.New
+  name.vb: New

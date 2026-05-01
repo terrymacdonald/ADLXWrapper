@@ -5,30 +5,21 @@ items:
   id: ADLXMultimediaServicesHelper
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
   - ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   - ADLXWrapper.ADLXMultimediaServicesHelper.Dispose
   - ADLXWrapper.ADLXMultimediaServicesHelper.Finalize
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(ADLXWrapper.IADLXGPU*)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(System.Int32)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(System.Int32)
   - ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(System.Int32,System.Int32)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(System.Int32,ADLXWrapper.VideoSuperResolutionDto@)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(System.Int32,ADLXWrapper.VideoUpscaleDto@)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  - ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -39,7 +30,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXMultimediaServicesHelper
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -63,32 +54,32 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean)
-  id: '#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean)'
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
+  id: '#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean,ADLXWrapper.IADLXSystem*)'
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: ADLXMultimediaServicesHelper(IADLXMultimediaServices*, bool)
-  nameWithType: ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper(IADLXMultimediaServices*, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper(ADLXWrapper.IADLXMultimediaServices*, bool)
+  name: ADLXMultimediaServicesHelper(IADLXMultimediaServices*, bool, IADLXSystem*)
+  nameWithType: ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper(IADLXMultimediaServices*, bool, IADLXSystem*)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper(ADLXWrapper.IADLXMultimediaServices*, bool, ADLXWrapper.IADLXSystem*)
   type: Constructor
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a multimedia services helper from the native services interface.
   example: []
   syntax:
-    content: public ADLXMultimediaServicesHelper(IADLXMultimediaServices* services, bool addRef = true)
+    content: public ADLXMultimediaServicesHelper(IADLXMultimediaServices* services, bool addRef = true, IADLXSystem* system = null)
     parameters:
     - id: services
       type: ADLXWrapper.IADLXMultimediaServices*
@@ -96,181 +87,13 @@ items:
     - id: addRef
       type: System.Boolean
       description: True to AddRef the pointer for this helper.
-    content.vb: Public Sub New(services As IADLXMultimediaServices*, addRef As Boolean = True)
+    - id: system
+      type: ADLXWrapper.IADLXSystem*
+    content.vb: Public Sub New(services As IADLXMultimediaServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor*
-  nameWithType.vb: ADLXMultimediaServicesHelper.New(IADLXMultimediaServices*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.New(ADLXWrapper.IADLXMultimediaServices*, Boolean)
-  name.vb: New(IADLXMultimediaServices*, Boolean)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-  id: GetMultimediaServicesNative
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetMultimediaServicesNative()
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaServicesNative()
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetMultimediaServicesNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 36
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Returns the native multimedia services interface owned by this helper.
-  example: []
-  syntax:
-    content: public IADLXMultimediaServices* GetMultimediaServicesNative()
-    return:
-      type: ADLXWrapper.IADLXMultimediaServices*
-    content.vb: Public Function GetMultimediaServicesNative() As IADLXMultimediaServices*
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative*
-  exceptions:
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-  id: GetMultimediaServicesHandle
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetMultimediaServicesHandle()
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaServicesHandle()
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetMultimediaServicesHandle
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 47
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Returns an AddRef'd handle to the multimedia services interface.
-  example: []
-  syntax:
-    content: public ADLXInterfaceHandle GetMultimediaServicesHandle()
-    return:
-      type: ADLXWrapper.ADLXInterfaceHandle
-    content.vb: Public Function GetMultimediaServicesHandle() As ADLXInterfaceHandle
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle*
-  exceptions:
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-  id: GetMultimediaChangedHandlingNative
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetMultimediaChangedHandlingNative()
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative()
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetMultimediaChangedHandlingNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 60
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Gets the multimedia change handling interface (native). Cached after first query.
-  example: []
-  syntax:
-    content: public IADLXMultimediaChangedHandling* GetMultimediaChangedHandlingNative()
-    return:
-      type: ADLXWrapper.IADLXMultimediaChangedHandling*
-      description: Native multimedia change handling pointer.
-    content.vb: Public Function GetMultimediaChangedHandlingNative() As IADLXMultimediaChangedHandling*
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative*
-  exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If unsupported or retrieval fails.
-  - type: System.ObjectDisposedException
-    commentId: T:System.ObjectDisposedException
-    description: If disposed.
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
-  id: TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*@)
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling*)
-  nameWithType: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(out ADLXWrapper.IADLXMultimediaChangedHandling*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryGetMultimediaChangedHandlingNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 81
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Tries to get multimedia change handling; returns false when unsupported.
-  example: []
-  syntax:
-    content: public bool TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling* handling)
-    parameters:
-    - id: handling
-      type: ADLXWrapper.IADLXMultimediaChangedHandling*
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryGetMultimediaChangedHandlingNative(handling As IADLXMultimediaChangedHandling*) As Boolean
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(IADLXMultimediaChangedHandling*)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative(ADLXWrapper.IADLXMultimediaChangedHandling*)
-  name.vb: TryGetMultimediaChangedHandlingNative(IADLXMultimediaChangedHandling*)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
-  id: GetMultimediaChangedHandling
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetMultimediaChangedHandling()
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaChangedHandling()
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling()
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetMultimediaChangedHandling
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 95
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public ADLXInterfaceHandle GetMultimediaChangedHandling()
-    return:
-      type: ADLXWrapper.ADLXInterfaceHandle
-    content.vb: Public Function GetMultimediaChangedHandling() As ADLXInterfaceHandle
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling*
+  nameWithType.vb: ADLXMultimediaServicesHelper.New(IADLXMultimediaServices*, Boolean, IADLXSystem*)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.New(ADLXWrapper.IADLXMultimediaServices*, Boolean, ADLXWrapper.IADLXSystem*)
+  name.vb: New(IADLXMultimediaServices*, Boolean, IADLXSystem*)
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
   id: AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)
@@ -285,11 +108,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 100
+    startLine: 102
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -316,11 +139,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 116
+    startLine: 118
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -336,498 +159,376 @@ items:
   nameWithType.vb: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
   fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle, Boolean)
   name.vb: RemoveMultimediaEventListener(MultimediaListenerHandle, Boolean)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
-  id: GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(System.Int32)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(System.Int32)
+  id: GetVideoUpscale(System.Int32)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: GetVideoUpscaleNative(IADLXGPU*)
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscaleNative(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative(ADLXWrapper.IADLXGPU*)
+  name: GetVideoUpscale(int)
+  nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscale(int)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetVideoUpscaleNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 131
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXVideoUpscale* GetVideoUpscaleNative(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    return:
-      type: ADLXWrapper.IADLXVideoUpscale*
-    content.vb: Public Function GetVideoUpscaleNative(gpu As IADLXGPU*) As IADLXVideoUpscale*
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
-  id: TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoUpscale*@)
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryGetVideoUpscaleNative(IADLXGPU*, out IADLXVideoUpscale*)
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(IADLXGPU*, out IADLXVideoUpscale*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*, out ADLXWrapper.IADLXVideoUpscale*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryGetVideoUpscaleNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 150
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Tries to get the native video upscale interface; returns false when unsupported.
-  example: []
-  syntax:
-    content: public bool TryGetVideoUpscaleNative(IADLXGPU* gpu, out IADLXVideoUpscale* upscale)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: upscale
-      type: ADLXWrapper.IADLXVideoUpscale*
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryGetVideoUpscaleNative(gpu As IADLXGPU*, upscale As IADLXVideoUpscale*) As Boolean
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(IADLXGPU*, IADLXVideoUpscale*)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative(ADLXWrapper.IADLXGPU*, ADLXWrapper.IADLXVideoUpscale*)
-  name.vb: TryGetVideoUpscaleNative(IADLXGPU*, IADLXVideoUpscale*)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(ADLXWrapper.IADLXGPU*)
-  id: GetVideoUpscale(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetVideoUpscale(IADLXGPU*)
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscale(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 164
+    startLine: 339
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets video upscale info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public VideoUpscaleInfo GetVideoUpscale(IADLXGPU* gpu)
+    content: public VideoUpscaleDto GetVideoUpscale(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.VideoUpscaleInfo
-    content.vb: Public Function GetVideoUpscale(gpu As IADLXGPU*) As VideoUpscaleInfo
+      type: ADLXWrapper.VideoUpscaleDto
+    content.vb: Public Function GetVideoUpscale(gpuUniqueId As Integer) As VideoUpscaleDto
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
-  id: TryGetVideoUpscale(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoUpscaleInfo@)
+  nameWithType.vb: ADLXMultimediaServicesHelper.GetVideoUpscale(Integer)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(Integer)
+  name.vb: GetVideoUpscale(Integer)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(System.Int32,ADLXWrapper.VideoUpscaleDto@)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(System.Int32,ADLXWrapper.VideoUpscaleDto@)
+  id: TryGetVideoUpscale(System.Int32,ADLXWrapper.VideoUpscaleDto@)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetVideoUpscale(IADLXGPU*, out VideoUpscaleInfo)
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale(IADLXGPU*, out VideoUpscaleInfo)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*, out ADLXWrapper.VideoUpscaleInfo)
+  name: TryGetVideoUpscale(int, out VideoUpscaleDto)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale(int, out VideoUpscaleDto)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(int, out ADLXWrapper.VideoUpscaleDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 177
+    startLine: 347
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to query video upscale info; returns false when unsupported.
+  summary: Tries to get video upscale info for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TryGetVideoUpscale(IADLXGPU* gpu, out VideoUpscaleInfo info)
+    content: public bool TryGetVideoUpscale(int gpuUniqueId, out VideoUpscaleDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.VideoUpscaleInfo
+      type: ADLXWrapper.VideoUpscaleDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetVideoUpscale(gpu As IADLXGPU*, info As VideoUpscaleInfo) As Boolean
+    content.vb: Public Function TryGetVideoUpscale(gpuUniqueId As Integer, info As VideoUpscaleDto) As Boolean
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoUpscale(IADLXGPU*, VideoUpscaleInfo)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(ADLXWrapper.IADLXGPU*, ADLXWrapper.VideoUpscaleInfo)
-  name.vb: TryGetVideoUpscale(IADLXGPU*, VideoUpscaleInfo)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  id: SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoUpscale(Integer, VideoUpscaleDto)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(Integer, ADLXWrapper.VideoUpscaleDto)
+  name.vb: TryGetVideoUpscale(Integer, VideoUpscaleDto)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  id: SetVideoUpscaleEnabled(System.Int32,System.Boolean)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: SetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
-  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, bool)
+  name: SetVideoUpscaleEnabled(int, bool)
+  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(int, bool)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(int, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 191
+    startLine: 354
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Sets video upscale enabled state for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public void SetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
+    content: public void SetVideoUpscaleEnabled(int gpuUniqueId, bool enable)
     parameters:
-    - id: upscale
-      type: ADLXWrapper.IADLXVideoUpscale*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetVideoUpscaleEnabled(upscale As IADLXVideoUpscale*, enable As Boolean)
+    content.vb: Public Sub SetVideoUpscaleEnabled(gpuUniqueId As Integer, enable As Boolean)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled*
-  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, Boolean)
-  name.vb: SetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
-  id: TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*,System.Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(Integer, Boolean)
+  name.vb: SetVideoUpscaleEnabled(Integer, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(System.Int32,System.Boolean)
+  id: TrySetVideoUpscaleEnabled(System.Int32,System.Boolean)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
-  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, bool)
+  name: TrySetVideoUpscaleEnabled(int, bool)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(int, bool)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(int, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 205
+    startLine: 372
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to set video upscale enabled; returns false when the feature is unsupported.
+  summary: Tries to set video upscale enabled state for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TrySetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
+    content: public bool TrySetVideoUpscaleEnabled(int gpuUniqueId, bool enable)
     parameters:
-    - id: upscale
-      type: ADLXWrapper.IADLXVideoUpscale*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: enable
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TrySetVideoUpscaleEnabled(upscale As IADLXVideoUpscale*, enable As Boolean) As Boolean
+    content.vb: Public Function TrySetVideoUpscaleEnabled(gpuUniqueId As Integer, enable As Boolean) As Boolean
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(ADLXWrapper.IADLXVideoUpscale*, Boolean)
-  name.vb: TrySetVideoUpscaleEnabled(IADLXVideoUpscale*, Boolean)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
-  id: SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(Integer, Boolean)
+  name.vb: TrySetVideoUpscaleEnabled(Integer, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(System.Int32,System.Int32)
+  id: SetVideoUpscaleSharpness(System.Int32,System.Int32)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: SetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
-  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, int)
+  name: SetVideoUpscaleSharpness(int, int)
+  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(int, int)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(int, int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 218
+    startLine: 379
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Sets video upscale sharpness for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public void SetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
+    content: public void SetVideoUpscaleSharpness(int gpuUniqueId, int sharpness)
     parameters:
-    - id: upscale
-      type: ADLXWrapper.IADLXVideoUpscale*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: sharpness
       type: System.Int32
-    content.vb: Public Sub SetVideoUpscaleSharpness(upscale As IADLXVideoUpscale*, sharpness As Integer)
+    content.vb: Public Sub SetVideoUpscaleSharpness(gpuUniqueId As Integer, sharpness As Integer)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness*
-  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, Integer)
-  name.vb: SetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
-  id: TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*,System.Int32)
+  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(Integer, Integer)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(Integer, Integer)
+  name.vb: SetVideoUpscaleSharpness(Integer, Integer)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(System.Int32,System.Int32)
+  id: TrySetVideoUpscaleSharpness(System.Int32,System.Int32)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
-  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, int)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, int)
+  name: TrySetVideoUpscaleSharpness(int, int)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(int, int)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(int, int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 232
+    startLine: 397
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to set video upscale sharpness; returns false when the feature is unsupported.
+  summary: Tries to set video upscale sharpness for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TrySetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
+    content: public bool TrySetVideoUpscaleSharpness(int gpuUniqueId, int sharpness)
     parameters:
-    - id: upscale
-      type: ADLXWrapper.IADLXVideoUpscale*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: sharpness
       type: System.Int32
     return:
       type: System.Boolean
-    content.vb: Public Function TrySetVideoUpscaleSharpness(upscale As IADLXVideoUpscale*, sharpness As Integer) As Boolean
+    content.vb: Public Function TrySetVideoUpscaleSharpness(gpuUniqueId As Integer, sharpness As Integer) As Boolean
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(ADLXWrapper.IADLXVideoUpscale*, Integer)
-  name.vb: TrySetVideoUpscaleSharpness(IADLXVideoUpscale*, Integer)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
-  id: GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(Integer, Integer)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(Integer, Integer)
+  name.vb: TrySetVideoUpscaleSharpness(Integer, Integer)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(System.Int32)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(System.Int32)
+  id: GetVideoSuperResolution(System.Int32)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: GetVideoSuperResolutionNative(IADLXGPU*)
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*)
+  name: GetVideoSuperResolution(int)
+  nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolution(int)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(int)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: GetVideoSuperResolutionNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 245
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IADLXVideoSuperResolution* GetVideoSuperResolutionNative(IADLXGPU* gpu)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    return:
-      type: ADLXWrapper.IADLXVideoSuperResolution*
-    content.vb: Public Function GetVideoSuperResolutionNative(gpu As IADLXGPU*) As IADLXVideoSuperResolution*
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
-  id: TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXVideoSuperResolution*@)
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: TryGetVideoSuperResolutionNative(IADLXGPU*, out IADLXVideoSuperResolution*)
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(IADLXGPU*, out IADLXVideoSuperResolution*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*, out ADLXWrapper.IADLXVideoSuperResolution*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: TryGetVideoSuperResolutionNative
-    path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 264
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  summary: Tries to get the native video super resolution interface; returns false when unsupported.
-  example: []
-  syntax:
-    content: public bool TryGetVideoSuperResolutionNative(IADLXGPU* gpu, out IADLXVideoSuperResolution* vsr)
-    parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
-    - id: vsr
-      type: ADLXWrapper.IADLXVideoSuperResolution*
-    return:
-      type: System.Boolean
-    content.vb: Public Function TryGetVideoSuperResolutionNative(gpu As IADLXGPU*, vsr As IADLXVideoSuperResolution*) As Boolean
-  overload: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(IADLXGPU*, IADLXVideoSuperResolution*)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative(ADLXWrapper.IADLXGPU*, ADLXWrapper.IADLXVideoSuperResolution*)
-  name.vb: TryGetVideoSuperResolutionNative(IADLXGPU*, IADLXVideoSuperResolution*)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(ADLXWrapper.IADLXGPU*)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(ADLXWrapper.IADLXGPU*)
-  id: GetVideoSuperResolution(ADLXWrapper.IADLXGPU*)
-  parent: ADLXWrapper.ADLXMultimediaServicesHelper
-  langs:
-  - csharp
-  - vb
-  name: GetVideoSuperResolution(IADLXGPU*)
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolution(IADLXGPU*)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(ADLXWrapper.IADLXGPU*)
-  type: Method
-  source:
-    remote:
-      path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 278
+    startLine: 404
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Gets video super resolution info for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public VideoSuperResolutionInfo GetVideoSuperResolution(IADLXGPU* gpu)
+    content: public VideoSuperResolutionDto GetVideoSuperResolution(int gpuUniqueId)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     return:
-      type: ADLXWrapper.VideoSuperResolutionInfo
-    content.vb: Public Function GetVideoSuperResolution(gpu As IADLXGPU*) As VideoSuperResolutionInfo
+      type: ADLXWrapper.VideoSuperResolutionDto
+    content.vb: Public Function GetVideoSuperResolution(gpuUniqueId As Integer) As VideoSuperResolutionDto
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution*
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
-  id: TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*,ADLXWrapper.VideoSuperResolutionInfo@)
+  nameWithType.vb: ADLXMultimediaServicesHelper.GetVideoSuperResolution(Integer)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(Integer)
+  name.vb: GetVideoSuperResolution(Integer)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(System.Int32,ADLXWrapper.VideoSuperResolutionDto@)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(System.Int32,ADLXWrapper.VideoSuperResolutionDto@)
+  id: TryGetVideoSuperResolution(System.Int32,ADLXWrapper.VideoSuperResolutionDto@)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: TryGetVideoSuperResolution(IADLXGPU*, out VideoSuperResolutionInfo)
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(IADLXGPU*, out VideoSuperResolutionInfo)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*, out ADLXWrapper.VideoSuperResolutionInfo)
+  name: TryGetVideoSuperResolution(int, out VideoSuperResolutionDto)
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(int, out VideoSuperResolutionDto)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(int, out ADLXWrapper.VideoSuperResolutionDto)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 291
+    startLine: 412
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to query video super resolution info; returns false when unsupported.
+  summary: Tries to get video super resolution info for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TryGetVideoSuperResolution(IADLXGPU* gpu, out VideoSuperResolutionInfo info)
+    content: public bool TryGetVideoSuperResolution(int gpuUniqueId, out VideoSuperResolutionDto info)
     parameters:
-    - id: gpu
-      type: ADLXWrapper.IADLXGPU*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: info
-      type: ADLXWrapper.VideoSuperResolutionInfo
+      type: ADLXWrapper.VideoSuperResolutionDto
     return:
       type: System.Boolean
-    content.vb: Public Function TryGetVideoSuperResolution(gpu As IADLXGPU*, info As VideoSuperResolutionInfo) As Boolean
+    content.vb: Public Function TryGetVideoSuperResolution(gpuUniqueId As Integer, info As VideoSuperResolutionDto) As Boolean
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(IADLXGPU*, VideoSuperResolutionInfo)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(ADLXWrapper.IADLXGPU*, ADLXWrapper.VideoSuperResolutionInfo)
-  name.vb: TryGetVideoSuperResolution(IADLXGPU*, VideoSuperResolutionInfo)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  id: SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(Integer, VideoSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(Integer, ADLXWrapper.VideoSuperResolutionDto)
+  name.vb: TryGetVideoSuperResolution(Integer, VideoSuperResolutionDto)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  id: SetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
-  nameWithType: ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, bool)
+  name: SetVideoSuperResolutionEnabled(int, bool)
+  nameWithType: ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(int, bool)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(int, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 305
+    startLine: 419
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Sets video super resolution enabled state for the GPU with the specified unique id.
+  example: []
   syntax:
-    content: public void SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
+    content: public void SetVideoSuperResolutionEnabled(int gpuUniqueId, bool enable)
     parameters:
-    - id: vsr
-      type: ADLXWrapper.IADLXVideoSuperResolution*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: enable
       type: System.Boolean
-    content.vb: Public Sub SetVideoSuperResolutionEnabled(vsr As IADLXVideoSuperResolution*, enable As Boolean)
+    content.vb: Public Sub SetVideoSuperResolutionEnabled(gpuUniqueId As Integer, enable As Boolean)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled*
-  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, Boolean)
-  name.vb: SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
-  id: TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*,System.Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(Integer, Boolean)
+  name.vb: SetVideoSuperResolutionEnabled(Integer, Boolean)
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
+  id: TrySetVideoSuperResolutionEnabled(System.Int32,System.Boolean)
   parent: ADLXWrapper.ADLXMultimediaServicesHelper
   langs:
   - csharp
   - vb
-  name: TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
-  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, bool)
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, bool)
+  name: TrySetVideoSuperResolutionEnabled(int, bool)
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(int, bool)
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(int, bool)
   type: Method
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 319
+    startLine: 437
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: Tries to set video super resolution enabled; returns false when the feature is unsupported.
+  summary: Tries to set video super resolution enabled state for the GPU with the specified unique id.
   example: []
   syntax:
-    content: public bool TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
+    content: public bool TrySetVideoSuperResolutionEnabled(int gpuUniqueId, bool enable)
     parameters:
-    - id: vsr
-      type: ADLXWrapper.IADLXVideoSuperResolution*
+    - id: gpuUniqueId
+      type: System.Int32
     - id: enable
       type: System.Boolean
     return:
       type: System.Boolean
-    content.vb: Public Function TrySetVideoSuperResolutionEnabled(vsr As IADLXVideoSuperResolution*, enable As Boolean) As Boolean
+    content.vb: Public Function TrySetVideoSuperResolutionEnabled(gpuUniqueId As Integer, enable As Boolean) As Boolean
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled*
-  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
-  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(ADLXWrapper.IADLXVideoSuperResolution*, Boolean)
-  name.vb: TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution*, Boolean)
+  nameWithType.vb: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(Integer, Boolean)
+  fullName.vb: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(Integer, Boolean)
+  name.vb: TrySetVideoSuperResolutionEnabled(Integer, Boolean)
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXMultimediaServicesHelper.Dispose
   id: Dispose
@@ -842,11 +543,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 332
+    startLine: 468
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -872,11 +573,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: feature-facade-tests-v3
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 347
+    startLine: 483
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1117,7 +818,7 @@ references:
   fullName: System
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.#ctor
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper__ctor_ADLXWrapper_IADLXMultimediaServices__System_Boolean_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper__ctor_ADLXWrapper_IADLXMultimediaServices__System_Boolean_ADLXWrapper_IADLXSystem__
   name: ADLXMultimediaServicesHelper
   nameWithType: ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.ADLXMultimediaServicesHelper
@@ -1151,72 +852,22 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: System.ObjectDisposedException
-  commentId: T:System.ObjectDisposedException
+- uid: ADLXWrapper.IADLXSystem*
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.objectdisposedexception
-  name: ObjectDisposedException
-  nameWithType: ObjectDisposedException
-  fullName: System.ObjectDisposedException
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetMultimediaServicesNative
-  name: GetMultimediaServicesNative
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesNative
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetMultimediaServicesHandle
-  name: GetMultimediaServicesHandle
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaServicesHandle
-- uid: ADLXWrapper.ADLXInterfaceHandle
-  commentId: T:ADLXWrapper.ADLXInterfaceHandle
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLXInterfaceHandle.html
-  name: ADLXInterfaceHandle
-  nameWithType: ADLXInterfaceHandle
-  fullName: ADLXWrapper.ADLXInterfaceHandle
-- uid: ADLXWrapper.ADLXException
-  commentId: T:ADLXWrapper.ADLXException
-  href: ADLXWrapper.ADLXException.html
-  name: ADLXException
-  nameWithType: ADLXException
-  fullName: ADLXWrapper.ADLXException
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetMultimediaChangedHandlingNative
-  name: GetMultimediaChangedHandlingNative
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandlingNative
-- uid: ADLXWrapper.IADLXMultimediaChangedHandling*
-  isExternal: true
-  href: ADLXWrapper.IADLXMultimediaChangedHandling.html
-  name: IADLXMultimediaChangedHandling*
-  nameWithType: IADLXMultimediaChangedHandling*
-  fullName: ADLXWrapper.IADLXMultimediaChangedHandling*
+  href: ADLXWrapper.IADLXSystem.html
+  name: IADLXSystem*
+  nameWithType: IADLXSystem*
+  fullName: ADLXWrapper.IADLXSystem*
   spec.csharp:
-  - uid: ADLXWrapper.IADLXMultimediaChangedHandling
-    name: IADLXMultimediaChangedHandling
-    href: ADLXWrapper.IADLXMultimediaChangedHandling.html
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
   - name: '*'
   spec.vb:
-  - uid: ADLXWrapper.IADLXMultimediaChangedHandling
-    name: IADLXMultimediaChangedHandling
-    href: ADLXWrapper.IADLXMultimediaChangedHandling.html
+  - uid: ADLXWrapper.IADLXSystem
+    name: IADLXSystem
+    href: ADLXWrapper.IADLXSystem.html
   - name: '*'
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetMultimediaChangedHandlingNative_ADLXWrapper_IADLXMultimediaChangedHandling___
-  name: TryGetMultimediaChangedHandlingNative
-  nameWithType: ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetMultimediaChangedHandlingNative
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetMultimediaChangedHandling
-  name: GetMultimediaChangedHandling
-  nameWithType: ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetMultimediaChangedHandling
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener
   href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_
@@ -1259,87 +910,12 @@ references:
   name: RemoveMultimediaEventListener
   nameWithType: ADLXMultimediaServicesHelper.RemoveMultimediaEventListener
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoUpscaleNative_ADLXWrapper_IADLXGPU__
-  name: GetVideoUpscaleNative
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscaleNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscaleNative
-- uid: ADLXWrapper.IADLXGPU*
-  isExternal: true
-  href: ADLXWrapper.IADLXGPU.html
-  name: IADLXGPU*
-  nameWithType: IADLXGPU*
-  fullName: ADLXWrapper.IADLXGPU*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXGPU
-    name: IADLXGPU
-    href: ADLXWrapper.IADLXGPU.html
-  - name: '*'
-- uid: ADLXWrapper.IADLXVideoUpscale*
-  isExternal: true
-  href: ADLXWrapper.IADLXVideoUpscale.html
-  name: IADLXVideoUpscale*
-  nameWithType: IADLXVideoUpscale*
-  fullName: ADLXWrapper.IADLXVideoUpscale*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXVideoUpscale
-    name: IADLXVideoUpscale
-    href: ADLXWrapper.IADLXVideoUpscale.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXVideoUpscale
-    name: IADLXVideoUpscale
-    href: ADLXWrapper.IADLXVideoUpscale.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscaleNative_ADLXWrapper_IADLXGPU__ADLXWrapper_IADLXVideoUpscale___
-  name: TryGetVideoUpscaleNative
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscaleNative
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoUpscale_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoUpscale_System_Int32_
   name: GetVideoUpscale
   nameWithType: ADLXMultimediaServicesHelper.GetVideoUpscale
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale
-- uid: ADLXWrapper.VideoUpscaleInfo
-  commentId: T:ADLXWrapper.VideoUpscaleInfo
-  parent: ADLXWrapper
-  href: ADLXWrapper.VideoUpscaleInfo.html
-  name: VideoUpscaleInfo
-  nameWithType: VideoUpscaleInfo
-  fullName: ADLXWrapper.VideoUpscaleInfo
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscale_ADLXWrapper_IADLXGPU__ADLXWrapper_VideoUpscaleInfo__
-  name: TryGetVideoUpscale
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleEnabled_ADLXWrapper_IADLXVideoUpscale__System_Boolean_
-  name: SetVideoUpscaleEnabled
-  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleEnabled_ADLXWrapper_IADLXVideoUpscale__System_Boolean_
-  name: TrySetVideoUpscaleEnabled
-  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleSharpness_ADLXWrapper_IADLXVideoUpscale__System_Int32_
-  name: SetVideoUpscaleSharpness
-  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1351,68 +927,71 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: ADLXWrapper.VideoUpscaleDto
+  commentId: T:ADLXWrapper.VideoUpscaleDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.VideoUpscaleDto.html
+  name: VideoUpscaleDto
+  nameWithType: VideoUpscaleDto
+  fullName: ADLXWrapper.VideoUpscaleDto
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale*
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscale_System_Int32_ADLXWrapper_VideoUpscaleDto__
+  name: TryGetVideoUpscale
+  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoUpscale
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled*
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleEnabled_System_Int32_System_Boolean_
+  name: SetVideoUpscaleEnabled
+  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled*
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleEnabled_System_Int32_System_Boolean_
+  name: TrySetVideoUpscaleEnabled
+  nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled
+- uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness*
+  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleSharpness_System_Int32_System_Int32_
+  name: SetVideoUpscaleSharpness
+  nameWithType: ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
+  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleSharpness_ADLXWrapper_IADLXVideoUpscale__System_Int32_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleSharpness_System_Int32_System_Int32_
   name: TrySetVideoUpscaleSharpness
   nameWithType: ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoSuperResolutionNative_ADLXWrapper_IADLXGPU__
-  name: GetVideoSuperResolutionNative
-  nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolutionNative
-- uid: ADLXWrapper.IADLXVideoSuperResolution*
-  isExternal: true
-  href: ADLXWrapper.IADLXVideoSuperResolution.html
-  name: IADLXVideoSuperResolution*
-  nameWithType: IADLXVideoSuperResolution*
-  fullName: ADLXWrapper.IADLXVideoSuperResolution*
-  spec.csharp:
-  - uid: ADLXWrapper.IADLXVideoSuperResolution
-    name: IADLXVideoSuperResolution
-    href: ADLXWrapper.IADLXVideoSuperResolution.html
-  - name: '*'
-  spec.vb:
-  - uid: ADLXWrapper.IADLXVideoSuperResolution
-    name: IADLXVideoSuperResolution
-    href: ADLXWrapper.IADLXVideoSuperResolution.html
-  - name: '*'
-- uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative*
-  commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolutionNative_ADLXWrapper_IADLXGPU__ADLXWrapper_IADLXVideoSuperResolution___
-  name: TryGetVideoSuperResolutionNative
-  nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
-  fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolutionNative
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoSuperResolution_ADLXWrapper_IADLXGPU__
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoSuperResolution_System_Int32_
   name: GetVideoSuperResolution
   nameWithType: ADLXMultimediaServicesHelper.GetVideoSuperResolution
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution
-- uid: ADLXWrapper.VideoSuperResolutionInfo
-  commentId: T:ADLXWrapper.VideoSuperResolutionInfo
+- uid: ADLXWrapper.VideoSuperResolutionDto
+  commentId: T:ADLXWrapper.VideoSuperResolutionDto
   parent: ADLXWrapper
-  href: ADLXWrapper.VideoSuperResolutionInfo.html
-  name: VideoSuperResolutionInfo
-  nameWithType: VideoSuperResolutionInfo
-  fullName: ADLXWrapper.VideoSuperResolutionInfo
+  href: ADLXWrapper.VideoSuperResolutionDto.html
+  name: VideoSuperResolutionDto
+  nameWithType: VideoSuperResolutionDto
+  fullName: ADLXWrapper.VideoSuperResolutionDto
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolution_ADLXWrapper_IADLXGPU__ADLXWrapper_VideoSuperResolutionInfo__
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolution_System_Int32_ADLXWrapper_VideoSuperResolutionDto__
   name: TryGetVideoSuperResolution
   nameWithType: ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoSuperResolutionEnabled_ADLXWrapper_IADLXVideoSuperResolution__System_Boolean_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoSuperResolutionEnabled_System_Int32_System_Boolean_
   name: SetVideoSuperResolutionEnabled
   nameWithType: ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled
 - uid: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled*
   commentId: Overload:ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled
-  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoSuperResolutionEnabled_ADLXWrapper_IADLXVideoSuperResolution__System_Boolean_
+  href: ADLXWrapper.ADLXMultimediaServicesHelper.html#ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoSuperResolutionEnabled_System_Int32_System_Boolean_
   name: TrySetVideoSuperResolutionEnabled
   nameWithType: ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled

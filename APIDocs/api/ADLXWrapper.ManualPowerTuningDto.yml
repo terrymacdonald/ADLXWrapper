@@ -1,0 +1,606 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ManualPowerTuningDto
+  commentId: T:ADLXWrapper.ManualPowerTuningDto
+  id: ManualPowerTuningDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  - ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+  - ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+  - ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+  - ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+  - ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+  - ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+  - ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+  langs:
+  - csharp
+  - vb
+  name: ManualPowerTuningDto
+  nameWithType: ManualPowerTuningDto
+  fullName: ADLXWrapper.ManualPowerTuningDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ManualPowerTuningDto
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 620
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Represents the collected information for Manual Power Tuning.
+  example: []
+  syntax:
+    content: public readonly struct ManualPowerTuningDto
+    content.vb: Public Structure ManualPowerTuningDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+  id: PowerLimitSupported
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: PowerLimitSupported
+  nameWithType: ManualPowerTuningDto.PowerLimitSupported
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerLimitSupported
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 622
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool PowerLimitSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property PowerLimitSupported As Boolean
+  overload: ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported*
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+  id: PowerLimitRange
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: PowerLimitRange
+  nameWithType: ManualPowerTuningDto.PowerLimitRange
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerLimitRange
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 623
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto PowerLimitRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property PowerLimitRange As IntRangeDto
+  overload: ADLXWrapper.ManualPowerTuningDto.PowerLimitRange*
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+  id: PowerLimitValue
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: PowerLimitValue
+  nameWithType: ManualPowerTuningDto.PowerLimitValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerLimitValue
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 624
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int PowerLimitValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PowerLimitValue As Integer
+  overload: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue*
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+  id: TdcLimitSupported
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TdcLimitSupported
+  nameWithType: ManualPowerTuningDto.TdcLimitSupported
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TdcLimitSupported
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 625
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TdcLimitSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property TdcLimitSupported As Boolean
+  overload: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported*
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+  id: TdcLimitRange
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TdcLimitRange
+  nameWithType: ManualPowerTuningDto.TdcLimitRange
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TdcLimitRange
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 626
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto TdcLimitRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property TdcLimitRange As IntRangeDto
+  overload: ADLXWrapper.ManualPowerTuningDto.TdcLimitRange*
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+  id: TdcLimitValue
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TdcLimitValue
+  nameWithType: ManualPowerTuningDto.TdcLimitValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TdcLimitValue
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 627
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TdcLimitValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TdcLimitValue As Integer
+  overload: ADLXWrapper.ManualPowerTuningDto.TdcLimitValue*
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+  id: TdcLimitDefaultValue
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TdcLimitDefaultValue
+  nameWithType: ManualPowerTuningDto.TdcLimitDefaultValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TdcLimitDefaultValue
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 628
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TdcLimitDefaultValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TdcLimitDefaultValue As Integer
+  overload: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue*
+- uid: ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  id: '#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)'
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: ManualPowerTuningDto(bool, IntRangeDto, int, bool, IntRangeDto, int, int)
+  nameWithType: ManualPowerTuningDto.ManualPowerTuningDto(bool, IntRangeDto, int, bool, IntRangeDto, int, int)
+  fullName: ADLXWrapper.ManualPowerTuningDto.ManualPowerTuningDto(bool, ADLXWrapper.IntRangeDto, int, bool, ADLXWrapper.IntRangeDto, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 630
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: >-
+      [JsonConstructor]
+
+      public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
+    parameters:
+    - id: powerLimitSupported
+      type: System.Boolean
+    - id: powerLimitRange
+      type: ADLXWrapper.IntRangeDto
+    - id: powerLimitValue
+      type: System.Int32
+    - id: tdcLimitSupported
+      type: System.Boolean
+    - id: tdcLimitRange
+      type: ADLXWrapper.IntRangeDto
+    - id: tdcLimitValue
+      type: System.Int32
+    - id: tdcLimitDefaultValue
+      type: System.Int32
+    content.vb: >-
+      <JsonConstructor>
+
+      Public Sub New(powerLimitSupported As Boolean, powerLimitRange As IntRangeDto, powerLimitValue As Integer, tdcLimitSupported As Boolean, tdcLimitRange As IntRangeDto, tdcLimitValue As Integer, tdcLimitDefaultValue As Integer)
+  overload: ADLXWrapper.ManualPowerTuningDto.#ctor*
+  attributes:
+  - type: Newtonsoft.Json.JsonConstructorAttribute
+    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
+    arguments: []
+  nameWithType.vb: ManualPowerTuningDto.New(Boolean, IntRangeDto, Integer, Boolean, IntRangeDto, Integer, Integer)
+  fullName.vb: ADLXWrapper.ManualPowerTuningDto.New(Boolean, ADLXWrapper.IntRangeDto, Integer, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer)
+  name.vb: New(Boolean, IntRangeDto, Integer, Boolean, IntRangeDto, Integer, Integer)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_PowerLimitSupported
+  name: PowerLimitSupported
+  nameWithType: ManualPowerTuningDto.PowerLimitSupported
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitRange*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_PowerLimitRange
+  name: PowerLimitRange
+  nameWithType: ManualPowerTuningDto.PowerLimitRange
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_PowerLimitValue
+  name: PowerLimitValue
+  nameWithType: ManualPowerTuningDto.PowerLimitValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_TdcLimitSupported
+  name: TdcLimitSupported
+  nameWithType: ManualPowerTuningDto.TdcLimitSupported
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitRange*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_TdcLimitRange
+  name: TdcLimitRange
+  nameWithType: ManualPowerTuningDto.TdcLimitRange
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitRange
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitValue*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_TdcLimitValue
+  name: TdcLimitValue
+  nameWithType: ManualPowerTuningDto.TdcLimitValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitValue
+- uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_TdcLimitDefaultValue
+  name: TdcLimitDefaultValue
+  nameWithType: ManualPowerTuningDto.TdcLimitDefaultValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
+- uid: ADLXWrapper.ManualPowerTuningDto.#ctor*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.#ctor
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto__ctor_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_
+  name: ManualPowerTuningDto
+  nameWithType: ManualPowerTuningDto.ManualPowerTuningDto
+  fullName: ADLXWrapper.ManualPowerTuningDto.ManualPowerTuningDto
+  nameWithType.vb: ManualPowerTuningDto.New
+  fullName.vb: ADLXWrapper.ManualPowerTuningDto.New
+  name.vb: New
