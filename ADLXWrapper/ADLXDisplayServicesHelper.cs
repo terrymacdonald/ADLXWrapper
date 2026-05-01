@@ -59,7 +59,7 @@ namespace ADLXWrapper
         /// Returns the highest available display services interface (3, then 2, then base). Caller must not release it.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXDisplayServices* GetDisplayServicesNative()
+        internal IADLXDisplayServices* GetDisplayServicesNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -70,7 +70,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the current display services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle GetDisplayServicesHandle()
+        internal ADLXInterfaceHandle GetDisplayServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -237,7 +237,7 @@ namespace ADLXWrapper
         /// <param name="display">Native display pointer.</param>
         /// <exception cref="ArgumentNullException">If <paramref name="display"/> is null.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public DisplayInfo GetDisplayInfo(IADLXDisplay* display)
+        internal DisplayInfo GetDisplayInfo(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -279,7 +279,7 @@ namespace ADLXWrapper
         /// <exception cref="ADLXException">If display services are unavailable.</exception>
         /// <exception cref="ArgumentNullException">If <paramref name="pDisplay"/> is null.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
+        internal ADLXDisplay CreateADLXDisplay(IADLXDisplay* pDisplay, bool addRef = true)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -302,7 +302,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXDisplayList* GetDisplayListNative()
+        internal IADLXDisplayList* GetDisplayListNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -314,7 +314,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If display services are unsupported or enumeration fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle[] EnumerateDisplayHandles()
+        internal ADLXInterfaceHandle[] EnumerateDisplayHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -335,7 +335,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to enumerate display handles; returns false if not supported.
         /// </summary>
-        public bool TryEnumerateDisplayHandles(out ADLXInterfaceHandle[] handles)
+        internal bool TryEnumerateDisplayHandles(out ADLXInterfaceHandle[] handles)
         {
             try
             {
@@ -402,7 +402,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXDisplayChangedHandling* GetDisplayChangedHandlingNative()
+        internal IADLXDisplayChangedHandling* GetDisplayChangedHandlingNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -662,7 +662,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetFreeSyncState((IntPtr)fs.Get());
         }
 
-        public void SetFreeSyncEnabled(IADLXDisplay* display, bool enable)
+        internal void SetFreeSyncEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -671,7 +671,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetFreeSyncEnabled((IntPtr)fs.Get(), enable);
         }
 
-        public bool TrySetFreeSyncEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetFreeSyncEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -693,7 +693,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetGPUScalingState((IntPtr)scaling.Get());
         }
 
-        public void SetGPUScalingEnabled(IADLXDisplay* display, bool enable)
+        internal void SetGPUScalingEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -702,7 +702,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetGPUScalingEnabled((IntPtr)scaling.Get(), enable);
         }
 
-        public bool TrySetGPUScalingEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetGPUScalingEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -724,7 +724,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetScalingMode((IntPtr)scalingMode.Get());
         }
 
-        public void SetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
+        internal void SetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -733,7 +733,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetScalingMode((IntPtr)scalingMode.Get(), mode);
         }
 
-        public bool TrySetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
+        internal bool TrySetScalingMode(IADLXDisplay* display, ADLX_SCALE_MODE mode)
         {
             try
             {
@@ -755,7 +755,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetVirtualSuperResolutionState((IntPtr)vsr.Get());
         }
 
-        public void SetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
+        internal void SetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -764,7 +764,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetVirtualSuperResolutionEnabled((IntPtr)vsr.Get(), enable);
         }
 
-        public bool TrySetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetVirtualSuperResolutionEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -786,7 +786,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetIntegerScalingState((IntPtr)integerScaling.Get());
         }
 
-        public void SetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
+        internal void SetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -795,7 +795,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetIntegerScalingEnabled((IntPtr)integerScaling.Get(), enable);
         }
 
-        public bool TrySetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetIntegerScalingEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -817,7 +817,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetHDCPState((IntPtr)hdcp.Get());
         }
 
-        public void SetHDCPEnabled(IADLXDisplay* display, bool enable)
+        internal void SetHDCPEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -826,7 +826,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetHDCPEnabled((IntPtr)hdcp.Get(), enable);
         }
 
-        public bool TrySetHDCPEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetHDCPEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -848,7 +848,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetVariBrightState((IntPtr)vb.Get());
         }
 
-        public void SetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
+        internal void SetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -857,7 +857,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetVariBright((IntPtr)vb.Get(), enable, mode);
         }
 
-        public bool TrySetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
+        internal bool TrySetVariBright(IADLXDisplay* display, bool enable, VariBrightMode mode)
         {
             try
             {
@@ -919,7 +919,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetColorDepthState((IntPtr)cd.Get());
         }
 
-        public void SetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
+        internal void SetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -928,7 +928,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetColorDepth((IntPtr)cd.Get(), depth);
         }
 
-        public bool TrySetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
+        internal bool TrySetColorDepth(IADLXDisplay* display, ADLX_COLOR_DEPTH depth)
         {
             try
             {
@@ -950,7 +950,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetPixelFormatState((IntPtr)pf.Get());
         }
 
-        public void SetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
+        internal void SetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -959,7 +959,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetPixelFormat((IntPtr)pf.Get(), format);
         }
 
-        public bool TrySetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
+        internal bool TrySetPixelFormat(IADLXDisplay* display, ADLX_PIXEL_FORMAT format)
         {
             try
             {
@@ -972,14 +972,14 @@ namespace ADLXWrapper
             }
         }
 
-        public CustomColorInfo GetCustomColor(IADLXDisplay* display)
+        internal CustomColorInfo GetCustomColor(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.GetCustomColor(GetHighestDisplayServices(), display);
         }
 
-        public void ApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+        internal void ApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -993,7 +993,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyCustomColor(customColor.Get(), info);
         }
 
-        public bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
+        internal bool TryApplyCustomColor(IADLXDisplay* display, CustomColorInfo info)
         {
             try
             {
@@ -1006,14 +1006,14 @@ namespace ADLXWrapper
             }
         }
 
-        public GammaInfo GetGamma(IADLXDisplay* display)
+        internal GammaInfo GetGamma(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.GetGamma(GetHighestDisplayServices(), display);
         }
 
-        public void ReapplyGamma(IADLXDisplay* display)
+        internal void ReapplyGamma(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1027,7 +1027,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ReapplyGamma(gamma.Get());
         }
 
-        public bool TryReapplyGamma(IADLXDisplay* display)
+        internal bool TryReapplyGamma(IADLXDisplay* display)
         {
             try
             {
@@ -1040,14 +1040,14 @@ namespace ADLXWrapper
             }
         }
 
-        public GamutInfo GetGamut(IADLXDisplay* display)
+        internal GamutInfo GetGamut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.GetGamut(GetHighestDisplayServices(), display);
         }
 
-        public void ReapplyGamut(IADLXDisplay* display)
+        internal void ReapplyGamut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1061,7 +1061,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ReapplyGamut(gamut.Get());
         }
 
-        public bool TryReapplyGamut(IADLXDisplay* display)
+        internal bool TryReapplyGamut(IADLXDisplay* display)
         {
             try
             {
@@ -1074,14 +1074,14 @@ namespace ADLXWrapper
             }
         }
 
-        public ThreeDLUTInfo GetThreeDLut(IADLXDisplay* display)
+        internal ThreeDLUTInfo GetThreeDLut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             return DisplaySettingsOps.Get3DLUT(GetHighestDisplayServices(), display);
         }
 
-        public void ReapplyThreeDLut(IADLXDisplay* display)
+        internal void ReapplyThreeDLut(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1095,7 +1095,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.Reapply3DLUT(lut.Get());
         }
 
-        public bool TryReapplyThreeDLut(IADLXDisplay* display)
+        internal bool TryReapplyThreeDLut(IADLXDisplay* display)
         {
             try
             {
@@ -1108,7 +1108,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ConnectivityExperienceInfo GetConnectivityExperience(IADLXDisplay* display)
+        internal ConnectivityExperienceInfo GetConnectivityExperience(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1116,7 +1116,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetDisplayConnectivityExperience((IADLXDisplayServices*)services, display);
         }
 
-        public void ApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+        internal void ApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1131,7 +1131,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.ApplyDisplayConnectivityExperience(conn.Get(), info);
         }
 
-        public bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
+        internal bool TryApplyConnectivityExperience(IADLXDisplay* display, ConnectivityExperienceInfo info)
         {
             try
             {
@@ -1153,7 +1153,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetDisplayBlankingState((IntPtr)blanking.Get());
         }
 
-        public void SetDisplayBlanked(IADLXDisplay* display, bool blank)
+        internal void SetDisplayBlanked(IADLXDisplay* display, bool blank)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1162,7 +1162,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetDisplayBlanked((IntPtr)blanking.Get(), blank);
         }
 
-        public bool TrySetDisplayBlanked(IADLXDisplay* display, bool blank)
+        internal bool TrySetDisplayBlanked(IADLXDisplay* display, bool blank)
         {
             try
             {
@@ -1184,7 +1184,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetFreeSyncColorAccuracyState((IntPtr)fsca.Get());
         }
 
-        public void SetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
+        internal void SetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1193,7 +1193,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetFreeSyncColorAccuracyEnabled((IntPtr)fsca.Get(), enable);
         }
 
-        public bool TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetFreeSyncColorAccuracyEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -1215,7 +1215,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetDynamicRefreshRateControlState((IntPtr)drr.Get());
         }
 
-        public void SetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
+        internal void SetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1224,7 +1224,7 @@ namespace ADLXWrapper
             DisplaySettingsOps.SetDynamicRefreshRateControlEnabled((IntPtr)drr.Get(), enable);
         }
 
-        public bool TrySetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
+        internal bool TrySetDynamicRefreshRateControlEnabled(IADLXDisplay* display, bool enable)
         {
             try
             {
@@ -1237,7 +1237,7 @@ namespace ADLXWrapper
             }
         }
 
-        public IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplay* display)
+        internal IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1251,7 +1251,7 @@ namespace ADLXWrapper
             return DisplaySettingsOps.GetCustomResolutionListNative(GetHighestDisplayServices(), display);
         }
 
-        public CustomResolutionInfo GetCustomResolution(IADLXDisplay* display)
+        internal CustomResolutionInfo GetCustomResolution(IADLXDisplay* display)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -1283,7 +1283,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Gamma settings for a specific display.
             /// </summary>
-            public static GammaInfo GetGamma(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static GammaInfo GetGamma(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1313,9 +1313,9 @@ namespace ADLXWrapper
                 else if (info.IsCurrentReGammaPQ) { r = pGamma->SetReGammaPQ(); }
                 else if (info.IsCurrentReGammaPQ2084) { r = pGamma->SetReGammaPQ2084Interim(); }
                 else if (info.IsCurrentReGamma36) { r = pGamma->SetReGamma36(); }
-                else if (info.HasRegammaCoefficient) { r = pGamma->SetReGammaCoefficient(info.RegammaCoefficient); }
-                else if (info.HasReGammaRamp) { r = pGamma->SetReGammaRamp(info.ReGammaRamp); }
-                else if (info.HasDeGammaRamp) { r = pGamma->SetDeGammaRamp(info.DeGammaRamp); }
+                else if (info.HasRegammaCoefficient) { r = pGamma->SetReGammaCoefficient(info.RegammaCoefficient.ToNative()); }
+                else if (info.HasReGammaRamp) { r = pGamma->SetReGammaRamp(info.ReGammaRamp.ToNative()); }
+                else if (info.HasDeGammaRamp) { r = pGamma->SetDeGammaRamp(info.DeGammaRamp.ToNative()); }
                 else { r = pGamma->ResetGammaRamp(); }
 
                 if (r != ADLX_RESULT.ADLX_OK && r != ADLX_RESULT.ADLX_NOT_SUPPORTED)
@@ -1334,7 +1334,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Gamut settings for a specific display.
             /// </summary>
-            public static GamutInfo GetGamut(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static GamutInfo GetGamut(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1383,7 +1383,7 @@ namespace ADLXWrapper
                     }
                     else if (hasCustomWhitePoint)
                     {
-                        ADLX_RGB white = new ADLX_RGB { gamutR = info.WhitePoint.x, gamutG = info.WhitePoint.y, gamutB = 0 };
+                        ADLX_RGB white = new ADLX_RGB { gamutR = info.WhitePoint.X, gamutG = info.WhitePoint.Y, gamutB = 0 };
                         r = pGamut->SetGamut(white, gamutSpace.Value);
                     }
                     else
@@ -1393,12 +1393,12 @@ namespace ADLXWrapper
                 }
                 else if (wp.HasValue)
                 {
-                    r = pGamut->SetGamut(wp.Value, info.CurrentGamutSpace);
+                    r = pGamut->SetGamut(wp.Value, info.CurrentGamutSpace.ToNative());
                 }
                 else if (hasCustomWhitePoint)
                 {
-                    ADLX_RGB white = new ADLX_RGB { gamutR = info.WhitePoint.x, gamutG = info.WhitePoint.y, gamutB = 0 };
-                    r = pGamut->SetGamut(white, info.CurrentGamutSpace);
+                    ADLX_RGB white = new ADLX_RGB { gamutR = info.WhitePoint.X, gamutG = info.WhitePoint.Y, gamutB = 0 };
+                    r = pGamut->SetGamut(white, info.CurrentGamutSpace.ToNative());
                 }
                 else
                 {
@@ -1422,7 +1422,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the 3DLUT settings for a specific display.
             /// </summary>
-            public static ThreeDLUTInfo Get3DLUT(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static ThreeDLUTInfo Get3DLUT(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1463,7 +1463,7 @@ namespace ADLXWrapper
 
                 if (info.IsSceDynamicContrastSupported && info.HasDynamicContrast)
                 {
-                    int clamped = Math.Clamp(info.CurrentDynamicContrast, info.DynamicContrastRange.minValue, info.DynamicContrastRange.maxValue);
+                    int clamped = Math.Clamp(info.CurrentDynamicContrast, info.DynamicContrastRange.MinValue, info.DynamicContrastRange.MaxValue);
                     var r = p3dLut->SetSCEDynamicContrast(clamped);
                     if (r != ADLX_RESULT.ADLX_OK && r != ADLX_RESULT.ADLX_NOT_SUPPORTED)
                         throw new ADLXException(r, "Failed to apply SCE dynamic contrast");
@@ -1482,7 +1482,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Display Connectivity Experience settings for a specific display.
             /// </summary>
-            public static ConnectivityExperienceInfo GetDisplayConnectivityExperience(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static ConnectivityExperienceInfo GetDisplayConnectivityExperience(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1548,7 +1548,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Custom Resolution settings for a specific display.
             /// </summary>
-            public static CustomResolutionInfo GetCustomResolution(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static CustomResolutionInfo GetCustomResolution(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -1593,7 +1593,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Enumerates custom resolutions for a display.
             /// </summary>
-            public static IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static IEnumerable<DisplayResolutionInfo> EnumerateCustomResolutions(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null || pDisplay == null) return Array.Empty<DisplayResolutionInfo>();
     
@@ -1647,7 +1647,7 @@ namespace ADLXWrapper
             /// <summary>
             /// Gets the Custom Color settings for a specific display.
             /// </summary>
-            public static CustomColorInfo GetCustomColor(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
+            internal static CustomColorInfo GetCustomColor(IADLXDisplayServices* pDisplayServices, IADLXDisplay* pDisplay)
             {
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
@@ -2481,27 +2481,27 @@ namespace ADLXWrapper
         public bool IsCurrentReGammaPQ2084 { get; init; }
         public bool IsCurrentReGamma36 { get; init; }
         public bool HasRegammaCoefficient { get; init; }
-        public ADLX_RegammaCoeff RegammaCoefficient { get; init; }
+        public RegammaCoeffInfo RegammaCoefficient { get; init; }
         public bool HasReGammaRamp { get; init; }
-        public ADLX_GammaRamp ReGammaRamp { get; init; }
+        public GammaRampInfo ReGammaRamp { get; init; }
         public bool HasDeGammaRamp { get; init; }
-        public ADLX_GammaRamp DeGammaRamp { get; init; }
+        public GammaRampInfo DeGammaRamp { get; init; }
 
         [JsonConstructor]
-        public GammaInfo(bool isSupported)
+        public GammaInfo(bool isSupported, bool isCurrentReGammaSRGB, bool isCurrentReGammaBT709, bool isCurrentReGammaPQ, bool isCurrentReGammaPQ2084, bool isCurrentReGamma36, bool hasRegammaCoefficient, RegammaCoeffInfo regammaCoefficient, bool hasReGammaRamp, GammaRampInfo reGammaRamp, bool hasDeGammaRamp, GammaRampInfo deGammaRamp)
         {
             IsSupported = isSupported;
-            IsCurrentReGammaSRGB = false;
-            IsCurrentReGammaBT709 = false;
-            IsCurrentReGammaPQ = false;
-            IsCurrentReGammaPQ2084 = false;
-            IsCurrentReGamma36 = false;
-            HasRegammaCoefficient = false;
-            RegammaCoefficient = default;
-            HasReGammaRamp = false;
-            ReGammaRamp = default;
-            HasDeGammaRamp = false;
-            DeGammaRamp = default;
+            IsCurrentReGammaSRGB = isCurrentReGammaSRGB;
+            IsCurrentReGammaBT709 = isCurrentReGammaBT709;
+            IsCurrentReGammaPQ = isCurrentReGammaPQ;
+            IsCurrentReGammaPQ2084 = isCurrentReGammaPQ2084;
+            IsCurrentReGamma36 = isCurrentReGamma36;
+            HasRegammaCoefficient = hasRegammaCoefficient;
+            RegammaCoefficient = regammaCoefficient;
+            HasReGammaRamp = hasReGammaRamp;
+            ReGammaRamp = reGammaRamp;
+            HasDeGammaRamp = hasDeGammaRamp;
+            DeGammaRamp = deGammaRamp;
         }
 
         internal unsafe GammaInfo(IADLXDisplayGamma* pGamma)
@@ -2542,7 +2542,7 @@ namespace ADLXWrapper
                 ADLX_RegammaCoeff coeff = default;
                 if (pGamma->GetGammaCoefficient(&coeff) == ADLX_RESULT.ADLX_OK)
                 {
-                    RegammaCoefficient = coeff;
+                    RegammaCoefficient = RegammaCoeffInfo.FromNative(coeff);
                 }
             }
 
@@ -2559,7 +2559,7 @@ namespace ADLXWrapper
                 ADLX_GammaRamp ramp = default;
                 if (pGamma->GetGammaRamp(&ramp) == ADLX_RESULT.ADLX_OK)
                 {
-                    ReGammaRamp = ramp;
+                    ReGammaRamp = GammaRampInfo.FromNative(ramp);
                 }
             }
 
@@ -2568,7 +2568,7 @@ namespace ADLXWrapper
                 ADLX_GammaRamp ramp = default;
                 if (pGamma->GetGammaRamp(&ramp) == ADLX_RESULT.ADLX_OK)
                 {
-                    DeGammaRamp = ramp;
+                    DeGammaRamp = GammaRampInfo.FromNative(ramp);
                 }
             }
         }
@@ -2589,29 +2589,29 @@ namespace ADLXWrapper
         public bool IsCurrentCieRgb { get; init; }
         public bool IsCurrent2020 { get; init; }
         public bool IsCurrentCustomColorSpace { get; init; }
-        public ADLX_GamutColorSpace CurrentGamutSpace { get; init; }
-        public ADLX_Point WhitePoint { get; init; }
+        public GamutColorSpaceInfo CurrentGamutSpace { get; init; }
+        public PointInfo WhitePoint { get; init; }
         public bool HasWhitePoint { get; init; }
 
         [JsonConstructor]
-        public GamutInfo(bool isWhitePointSupported, bool isGamutSupported)
+        public GamutInfo(bool isWhitePointSupported, bool isGamutSupported, bool isCurrent5000K, bool isCurrent6500K, bool isCurrent7500K, bool isCurrent9300K, bool isCurrentCustomWhitePoint, bool isCurrent709, bool isCurrent601, bool isCurrentAdobe, bool isCurrentCieRgb, bool isCurrent2020, bool isCurrentCustomColorSpace, GamutColorSpaceInfo currentGamutSpace, PointInfo whitePoint, bool hasWhitePoint)
         {
             IsWhitePointSupported = isWhitePointSupported;
             IsGamutSupported = isGamutSupported;
-            IsCurrent5000K = false;
-            IsCurrent6500K = false;
-            IsCurrent7500K = false;
-            IsCurrent9300K = false;
-            IsCurrentCustomWhitePoint = false;
-            IsCurrent709 = false;
-            IsCurrent601 = false;
-            IsCurrentAdobe = false;
-            IsCurrentCieRgb = false;
-            IsCurrent2020 = false;
-            IsCurrentCustomColorSpace = false;
-            CurrentGamutSpace = default;
-            WhitePoint = default;
-            HasWhitePoint = false;
+            IsCurrent5000K = isCurrent5000K;
+            IsCurrent6500K = isCurrent6500K;
+            IsCurrent7500K = isCurrent7500K;
+            IsCurrent9300K = isCurrent9300K;
+            IsCurrentCustomWhitePoint = isCurrentCustomWhitePoint;
+            IsCurrent709 = isCurrent709;
+            IsCurrent601 = isCurrent601;
+            IsCurrentAdobe = isCurrentAdobe;
+            IsCurrentCieRgb = isCurrentCieRgb;
+            IsCurrent2020 = isCurrent2020;
+            IsCurrentCustomColorSpace = isCurrentCustomColorSpace;
+            CurrentGamutSpace = currentGamutSpace;
+            WhitePoint = whitePoint;
+            HasWhitePoint = hasWhitePoint;
         }
 
         internal unsafe GamutInfo(IADLXDisplayGamut* pGamut)
@@ -2652,11 +2652,11 @@ namespace ADLXWrapper
 
             ADLX_GamutColorSpace currentSpace = default;
             pGamut->GetGamutColorSpace(&currentSpace);
-            CurrentGamutSpace = currentSpace;
+            CurrentGamutSpace = GamutColorSpaceInfo.FromNative(currentSpace);
 
             ADLX_Point whitePoint = default;
             HasWhitePoint = pGamut->GetWhitePoint(&whitePoint) == ADLX_RESULT.ADLX_OK;
-            WhitePoint = whitePoint;
+            WhitePoint = PointInfo.FromNative(whitePoint);
         }
     }
 
@@ -2670,20 +2670,20 @@ namespace ADLXWrapper
         public bool IsCurrentSceVividGaming { get; init; }
         public bool HasDynamicContrast { get; init; }
         public int CurrentDynamicContrast { get; init; }
-        public ADLX_IntRange DynamicContrastRange { get; init; }
+        public IntRangeInfo DynamicContrastRange { get; init; }
 
         [JsonConstructor]
-        public ThreeDLUTInfo(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported)
+        public ThreeDLUTInfo(bool isSceSupported, bool isSceVividGamingSupported, bool isSceDynamicContrastSupported, bool isUser3DLutSupported, bool isCurrentSceDisabled, bool isCurrentSceVividGaming, bool hasDynamicContrast, int currentDynamicContrast, IntRangeInfo dynamicContrastRange)
         {
             IsSceSupported = isSceSupported;
             IsSceVividGamingSupported = isSceVividGamingSupported;
             IsSceDynamicContrastSupported = isSceDynamicContrastSupported;
             IsUser3DLutSupported = isUser3DLutSupported;
-            IsCurrentSceDisabled = false;
-            IsCurrentSceVividGaming = false;
-            HasDynamicContrast = false;
-            CurrentDynamicContrast = 0;
-            DynamicContrastRange = default;
+            IsCurrentSceDisabled = isCurrentSceDisabled;
+            IsCurrentSceVividGaming = isCurrentSceVividGaming;
+            HasDynamicContrast = hasDynamicContrast;
+            CurrentDynamicContrast = currentDynamicContrast;
+            DynamicContrastRange = dynamicContrastRange;
         }
 
         internal unsafe ThreeDLUTInfo(IADLXDisplay3DLUT* p3dLut)
@@ -2714,7 +2714,7 @@ namespace ADLXWrapper
                 if (p3dLut->GetSCEDynamicContrast(&currentContrast) == ADLX_RESULT.ADLX_OK)
                 {
                     HasDynamicContrast = true;
-                    DynamicContrastRange = range;
+                    DynamicContrastRange = IntRangeInfo.FromNative(range);
                     CurrentDynamicContrast = currentContrast;
                 }
             }

@@ -15,6 +15,7 @@ namespace ADLXWrapper
         private ComPtr<IADLXGPUTuningServices> _services;
         private ComPtr<IADLXGPUTuningServices1>? _services1;
         private ComPtr<IADLXGPUTuningChangedHandling>? _changedHandling;
+        private readonly IADLXSystem* _system;
         private bool _disposed;
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native GPU tuning services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
-        public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true)
+        public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (addRef)
@@ -30,10 +31,11 @@ namespace ADLXWrapper
                 ADLXUtils.AddRefInterface((IntPtr)services);
             }
             _services = new ComPtr<IADLXGPUTuningServices>(services);
+            _system = system; // IADLXSystem is not ref-counted; safe to store as raw pointer
             TryUpgradeServices(services);
         }
 
-        public IADLXGPUTuningServices* GetGPUTuningServicesNative()
+        internal IADLXGPUTuningServices* GetGPUTuningServicesNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -44,7 +46,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available GPU tuning services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle GetGPUTuningServicesHandle()
+        internal ADLXInterfaceHandle GetGPUTuningServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -57,7 +59,7 @@ namespace ADLXWrapper
         /// <returns>Native change handling pointer.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXGPUTuningChangedHandling* GetGPUTuningChangedHandlingNative()
+        internal IADLXGPUTuningChangedHandling* GetGPUTuningChangedHandlingNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -75,7 +77,7 @@ namespace ADLXWrapper
             return handling;
         }
 
-        public ADLXInterfaceHandle GetGPUTuningChangedHandling()
+        internal ADLXInterfaceHandle GetGPUTuningChangedHandling()
         {
             return ADLXInterfaceHandle.From(GetGPUTuningChangedHandlingNative(), addRef: true);
         }
@@ -125,7 +127,7 @@ namespace ADLXWrapper
             }
         }
 
-        public GpuTuningCapabilitiesInfo GetCapabilities(IADLXGPU* gpu)
+        internal GpuTuningCapabilitiesInfo GetCapabilities(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -133,7 +135,7 @@ namespace ADLXWrapper
             return new GpuTuningCapabilitiesInfo(GetHighestServices(), gpu);
         }
 
-        public bool IsAutoTuningSupported(IADLXGPU* gpu)
+        internal bool IsAutoTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -151,7 +153,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to query auto tuning support; returns false when not supported.
         /// </summary>
-        public bool TryIsAutoTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsAutoTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -165,7 +167,7 @@ namespace ADLXWrapper
             }
         }
 
-        public bool IsPresetTuningSupported(IADLXGPU* gpu)
+        internal bool IsPresetTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -180,7 +182,7 @@ namespace ADLXWrapper
             return supported;
         }
 
-        public bool TryIsPresetTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsPresetTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -194,7 +196,7 @@ namespace ADLXWrapper
             }
         }
 
-        public bool IsManualGfxTuningSupported(IADLXGPU* gpu)
+        internal bool IsManualGfxTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -209,7 +211,7 @@ namespace ADLXWrapper
             return supported;
         }
 
-        public bool TryIsManualGfxTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsManualGfxTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -223,7 +225,7 @@ namespace ADLXWrapper
             }
         }
 
-        public bool IsManualVramTuningSupported(IADLXGPU* gpu)
+        internal bool IsManualVramTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -238,7 +240,7 @@ namespace ADLXWrapper
             return supported;
         }
 
-        public bool TryIsManualVramTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsManualVramTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -252,7 +254,7 @@ namespace ADLXWrapper
             }
         }
 
-        public bool IsManualFanTuningSupported(IADLXGPU* gpu)
+        internal bool IsManualFanTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -267,7 +269,7 @@ namespace ADLXWrapper
             return supported;
         }
 
-        public bool TryIsManualFanTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsManualFanTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -281,7 +283,7 @@ namespace ADLXWrapper
             }
         }
 
-        public bool IsManualPowerTuningSupported(IADLXGPU* gpu)
+        internal bool IsManualPowerTuningSupported(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -296,7 +298,7 @@ namespace ADLXWrapper
             return supported;
         }
 
-        public bool TryIsManualPowerTuningSupported(IADLXGPU* gpu, out bool supported)
+        internal bool TryIsManualPowerTuningSupported(IADLXGPU* gpu, out bool supported)
         {
             supported = false;
             try
@@ -310,7 +312,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ManualFanTuningInfo GetManualFanTuning(IADLXGPU* gpu)
+        internal ManualFanTuningInfo GetManualFanTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -326,7 +328,7 @@ namespace ADLXWrapper
             return new ManualFanTuningInfo(fan.Get());
         }
 
-        public bool TryGetManualFanTuning(IADLXGPU* gpu, out ManualFanTuningInfo info)
+        internal bool TryGetManualFanTuning(IADLXGPU* gpu, out ManualFanTuningInfo info)
         {
             try
             {
@@ -340,7 +342,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ManualVramTuningInfo GetManualVramTuning(IADLXGPU* gpu)
+        internal ManualVramTuningInfo GetManualVramTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -356,7 +358,7 @@ namespace ADLXWrapper
             return new ManualVramTuningInfo(vram.Get());
         }
 
-        public bool TryGetManualVramTuning(IADLXGPU* gpu, out ManualVramTuningInfo info)
+        internal bool TryGetManualVramTuning(IADLXGPU* gpu, out ManualVramTuningInfo info)
         {
             try
             {
@@ -370,7 +372,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ManualGfxTuningInfo GetManualGfxTuning(IADLXGPU* gpu)
+        internal ManualGfxTuningInfo GetManualGfxTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -386,7 +388,7 @@ namespace ADLXWrapper
             return new ManualGfxTuningInfo(gfx.Get());
         }
 
-        public bool TryGetManualGfxTuning(IADLXGPU* gpu, out ManualGfxTuningInfo info)
+        internal bool TryGetManualGfxTuning(IADLXGPU* gpu, out ManualGfxTuningInfo info)
         {
             try
             {
@@ -400,7 +402,7 @@ namespace ADLXWrapper
             }
         }
 
-        public PresetTuningInfo GetPresetTuning(IADLXGPU* gpu)
+        internal PresetTuningInfo GetPresetTuning(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -416,7 +418,7 @@ namespace ADLXWrapper
             return new PresetTuningInfo(tuning.Get());
         }
 
-        public bool TryGetPresetTuning(IADLXGPU* gpu, out PresetTuningInfo info)
+        internal bool TryGetPresetTuning(IADLXGPU* gpu, out PresetTuningInfo info)
         {
             try
             {
@@ -428,6 +430,200 @@ namespace ADLXWrapper
                 info = default;
                 return false;
             }
+        }
+
+        // =====================================================================
+        // Public per-GPU overloads (by unique id)
+        // =====================================================================
+
+        /// <summary>Gets GPU tuning capabilities for the GPU with the specified unique id.</summary>
+        public GpuTuningCapabilitiesInfo GetCapabilities(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetCapabilities((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Returns true when auto tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsAutoTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsAutoTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query auto tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsAutoTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsAutoTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Returns true when preset tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsPresetTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsPresetTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query preset tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsPresetTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsPresetTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Returns true when manual GFX tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsManualGfxTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsManualGfxTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query manual GFX tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsManualGfxTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsManualGfxTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Returns true when manual VRAM tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsManualVramTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsManualVramTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query manual VRAM tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsManualVramTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsManualVramTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Returns true when manual fan tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsManualFanTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsManualFanTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query manual fan tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsManualFanTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsManualFanTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Returns true when manual power tuning is supported for the GPU with the specified unique id.</summary>
+        public bool IsManualPowerTuningSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => IsManualPowerTuningSupported((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to query manual power tuning support for the GPU with the specified unique id.</summary>
+        public bool TryIsManualPowerTuningSupported(int gpuUniqueId, out bool supported)
+        {
+            try { supported = IsManualPowerTuningSupported(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { supported = false; return false; }
+        }
+
+        /// <summary>Gets manual fan tuning info for the GPU with the specified unique id.</summary>
+        public ManualFanTuningInfo GetManualFanTuning(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetManualFanTuning((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get manual fan tuning info for the GPU with the specified unique id.</summary>
+        public bool TryGetManualFanTuning(int gpuUniqueId, out ManualFanTuningInfo info)
+        {
+            try { info = GetManualFanTuning(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Gets manual VRAM tuning info for the GPU with the specified unique id.</summary>
+        public ManualVramTuningInfo GetManualVramTuning(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetManualVramTuning((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get manual VRAM tuning info for the GPU with the specified unique id.</summary>
+        public bool TryGetManualVramTuning(int gpuUniqueId, out ManualVramTuningInfo info)
+        {
+            try { info = GetManualVramTuning(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Gets manual GFX tuning info for the GPU with the specified unique id.</summary>
+        public ManualGfxTuningInfo GetManualGfxTuning(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetManualGfxTuning((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get manual GFX tuning info for the GPU with the specified unique id.</summary>
+        public bool TryGetManualGfxTuning(int gpuUniqueId, out ManualGfxTuningInfo info)
+        {
+            try { info = GetManualGfxTuning(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Gets preset tuning info for the GPU with the specified unique id.</summary>
+        public PresetTuningInfo GetPresetTuning(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetPresetTuning((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get preset tuning info for the GPU with the specified unique id.</summary>
+        public bool TryGetPresetTuning(int gpuUniqueId, out PresetTuningInfo info)
+        {
+            try { info = GetPresetTuning(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>
+        /// Executes an action with the GPU matching the specified unique id.
+        /// Internal bridge allowing other helpers (e.g. ADLXPowerTuningServicesHelper) to delegate GPU lookup.
+        /// </summary>
+        internal T ExecuteWithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
+            => WithGpuByUniqueId(gpuUniqueId, action);
+
+        private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
+        {
+            if (_system == null) throw new InvalidOperationException("System not available for GPU lookup by unique id. Ensure this helper was obtained via ADLXSystemServicesHelper.");
+            IADLXGPUList* pList = null;
+            var result = _system->GetGPUs(&pList);
+            if (result != ADLX_RESULT.ADLX_OK || pList == null)
+                throw new ADLXException(result != ADLX_RESULT.ADLX_OK ? result : ADLX_RESULT.ADLX_FAIL, "Failed to enumerate GPUs for unique id lookup");
+            using var list = new ComPtr<IADLXGPUList>(pList);
+            uint size = list.Get()->Size();
+            for (uint i = 0; i < size; i++)
+            {
+                IADLXGPU* pGpu = null;
+                if (list.Get()->At(i, &pGpu) != ADLX_RESULT.ADLX_OK || pGpu == null) continue;
+                int uid = 0;
+                pGpu->UniqueId(&uid);
+                if (uid == gpuUniqueId)
+                {
+                    using var gpuOwner = new ComPtr<IADLXGPU>(pGpu);
+                    return action((IntPtr)gpuOwner.Get());
+                }
+                ADLXUtils.ReleaseInterface((IntPtr)pGpu);
+            }
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_FOUND, $"GPU with unique id {gpuUniqueId} not found");
         }
 
         public void Dispose()

@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit;
@@ -35,13 +37,13 @@ public class ADLX3DSettingsServicesFacadeTests
         }
     }
 
-    private unsafe All3DSettingsInfo GetAll3DSettingsOrSkip(ADLX3DSettingsServicesHelper helper)
+    private All3DSettingsInfo GetAll3DSettingsOrSkip(ADLX3DSettingsServicesHelper helper)
     {
-        var handles = _fixture.System!.EnumerateGPUsHandle();
-        Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-        using var gpuHandle = handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
 
-        if (!helper.TryGetAll3DSettings(gpuHandle.As<IADLXGPU>(), out var info))
+        if (!helper.TryGetAll3DSettings(gpuUniqueId, out var info))
             throw new Xunit.SkipException("3D settings not supported on this GPU.");
 
         return info;
@@ -72,12 +74,12 @@ public class ADLX3DSettingsServicesFacadeTests
 
         if (info.Boost is { } boost && boost.IsSupported)
         {
-            Assert.True(boost.ResolutionRange.minValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.maxValue);
+            Assert.True(boost.ResolutionRange.MinValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.MaxValue);
         }
 
         if (info.ImageSharpening is { } sharpening && sharpening.IsSupported)
         {
-            Assert.True(sharpening.SharpnessRange.minValue <= sharpening.Sharpness && sharpening.Sharpness <= sharpening.SharpnessRange.maxValue);
+            Assert.True(sharpening.SharpnessRange.MinValue <= sharpening.Sharpness && sharpening.Sharpness <= sharpening.SharpnessRange.MaxValue);
         }
 
         if (info.EnhancedSync is { } enhancedSync && enhancedSync.IsSupported)
@@ -92,7 +94,7 @@ public class ADLX3DSettingsServicesFacadeTests
 
         if (info.FrameRateTargetControl is { } frtc && frtc.IsSupported)
         {
-            Assert.True(frtc.FpsRange.minValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.maxValue);
+            Assert.True(frtc.FpsRange.MinValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.MaxValue);
         }
 
         if (info.AntiAliasing is { } aa && aa.IsSupported)
@@ -131,7 +133,7 @@ public class ADLX3DSettingsServicesFacadeTests
 
         Skip.If(!info.Boost.HasValue || !info.Boost.Value.IsSupported, "Boost not supported on this GPU.");
         var boost = info.Boost!.Value;
-        Assert.True(boost.ResolutionRange.minValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.maxValue);
+        Assert.True(boost.ResolutionRange.MinValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.MaxValue);
     }
 
     [SkippableFact]
@@ -142,7 +144,7 @@ public class ADLX3DSettingsServicesFacadeTests
 
         Skip.If(!info.ImageSharpening.HasValue || !info.ImageSharpening.Value.IsSupported, "Image sharpening not supported on this GPU.");
         var ris = info.ImageSharpening!.Value;
-        Assert.True(ris.SharpnessRange.minValue <= ris.Sharpness && ris.Sharpness <= ris.SharpnessRange.maxValue);
+        Assert.True(ris.SharpnessRange.MinValue <= ris.Sharpness && ris.Sharpness <= ris.SharpnessRange.MaxValue);
     }
 
     [SkippableFact]
@@ -173,7 +175,7 @@ public class ADLX3DSettingsServicesFacadeTests
 
         Skip.If(!info.FrameRateTargetControl.HasValue || !info.FrameRateTargetControl.Value.IsSupported, "Frame Rate Target Control not supported on this GPU.");
         var frtc = info.FrameRateTargetControl!.Value;
-        Assert.True(frtc.FpsRange.minValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.maxValue);
+        Assert.True(frtc.FpsRange.MinValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.MaxValue);
     }
 
     [SkippableFact]
@@ -212,24 +214,21 @@ public class ADLX3DSettingsServicesFacadeTests
     public void Three_d_fluid_motion_frames_facade()
     {
         using var helper = Get3DHelperOrSkip();
-        unsafe
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
+
+        try
         {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
+            if (!helper.TryGetFluidMotionFrames(gpuUniqueId, out var info))
+                throw new Xunit.SkipException("AMD Fluid Motion Frames not supported on this GPU.");
 
-            try
-            {
-                if (!helper.TryGetFluidMotionFrames(gpuHandle.As<IADLXGPU>(), out var info))
-                    throw new Xunit.SkipException("AMD Fluid Motion Frames not supported on this GPU.");
-
-                Skip.If(!info.IsSupported, "AMD Fluid Motion Frames reported unsupported.");
-                Assert.IsType<bool>(info.IsEnabled);
-            }
-            catch (SEHException ex)
-            {
-                throw new Xunit.SkipException($"AMD Fluid Motion Frames call failed (SEH), treating as unsupported: {ex.Message}");
-            }
+            Skip.If(!info.IsSupported, "AMD Fluid Motion Frames reported unsupported.");
+            Assert.IsType<bool>(info.IsEnabled);
+        }
+        catch (SEHException ex)
+        {
+            throw new Xunit.SkipException($"AMD Fluid Motion Frames call failed (SEH), treating as unsupported: {ex.Message}");
         }
     }
 
@@ -243,7 +242,7 @@ public class ADLX3DSettingsServicesFacadeTests
                 throw new Xunit.SkipException("Radeon Super Resolution not supported on this system.");
 
             Skip.If(!info.IsSupported, "Radeon Super Resolution reported unsupported.");
-            Assert.True(info.SharpnessRange.minValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.maxValue);
+            Assert.True(info.SharpnessRange.MinValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.MaxValue);
         }
         catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
         {

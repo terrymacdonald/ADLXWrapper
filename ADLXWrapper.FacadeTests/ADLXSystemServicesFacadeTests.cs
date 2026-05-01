@@ -180,13 +180,13 @@ public class ADLXSystemServicesFacadeTests
         var hasDriverStrings = !string.IsNullOrEmpty(gpu.DriverVersion) ||
                                !string.IsNullOrEmpty(gpu.AMDSoftwareVersion) ||
                                !string.IsNullOrEmpty(gpu.AMDWindowsDriverVersion);
-        var hasLuid = gpu.Luid.lowPart != 0 || gpu.Luid.highPart != 0;
+        var hasLuid = gpu.Luid.LowPart != 0 || gpu.Luid.HighPart != 0;
 
         Skip.If(!hasDriverStrings && !hasLuid, "Driver/LUID identity not exposed by this ADLX/driver version.");
 
         if (hasLuid)
         {
-            Assert.True(gpu.Luid.lowPart != 0 || gpu.Luid.highPart != 0);
+            Assert.True(gpu.Luid.LowPart != 0 || gpu.Luid.HighPart != 0);
         }
     }
 

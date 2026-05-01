@@ -184,39 +184,6 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Native custom resolution list accessor. Caller must dispose the returned ComPtr and any retained items.
-        /// </summary>
-        public ComPtr<IADLXDisplayResolutionList> GetCustomResolutionListNative()
-        {
-            ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead();
-            using var helper = CreateDisplayServicesHelper();
-            return new ComPtr<IADLXDisplayResolutionList>(helper.GetCustomResolutionListNative(_display.Get()));
-        }
-
-        /// <summary>
-        /// Applies a custom resolution using a provided native custom resolution interface.
-        /// </summary>
-        public void ApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
-        {
-            ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead();
-            using var helper = CreateDisplayServicesHelper();
-            helper.ApplyCustomResolution(customRes, info);
-        }
-
-        /// <summary>
-        /// Tries to apply a custom resolution; returns false when unsupported.
-        /// </summary>
-        public bool TryApplyCustomResolution(IADLXDisplayCustomResolution* customRes, DisplayResolutionInfo info)
-        {
-            ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead();
-            using var helper = CreateDisplayServicesHelper();
-            return helper.TryApplyCustomResolution(customRes, info);
-        }
-
-        /// <summary>
         /// Virtual Super Resolution support/enabled state.
         /// </summary>
         public (bool supported, bool enabled) GetVirtualSuperResolutionState()

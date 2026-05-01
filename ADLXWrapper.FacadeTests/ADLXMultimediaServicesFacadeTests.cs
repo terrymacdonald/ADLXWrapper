@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit;
@@ -33,40 +34,34 @@ public class ADLXMultimediaServicesFacadeTests
         }
     }
 
-    private unsafe ADLXInterfaceHandle GetFirstGpuHandleOrSkip()
+    private int GetFirstGpuUniqueIdOrSkip()
     {
-        var handles = _fixture.System!.EnumerateGPUsHandle();
-        Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-        return handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        return gpus[0].UniqueId;
     }
 
     [SkippableFact]
     public void Multimedia_video_upscale_facade()
     {
         using var multimedia = GetMultimediaOrSkip();
-        unsafe
-        {
-            using var gpuHandle = GetFirstGpuHandleOrSkip();
-            if (!multimedia.TryGetVideoUpscale(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Video upscale not supported on this GPU.");
+        var gpuUniqueId = GetFirstGpuUniqueIdOrSkip();
+        if (!multimedia.TryGetVideoUpscale(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Video upscale not supported on this GPU.");
 
-            Skip.If(!info.IsSupported, "Video upscale reported unsupported.");
-            Assert.True(info.SharpnessRange.minValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.maxValue);
-        }
+        Skip.If(!info.IsSupported, "Video upscale reported unsupported.");
+        Assert.True(info.SharpnessRange.MinValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.MaxValue);
     }
 
     [SkippableFact]
     public void Multimedia_video_super_resolution_facade()
     {
         using var multimedia = GetMultimediaOrSkip();
-        unsafe
-        {
-            using var gpuHandle = GetFirstGpuHandleOrSkip();
-            if (!multimedia.TryGetVideoSuperResolution(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Video super resolution not supported on this GPU.");
+        var gpuUniqueId = GetFirstGpuUniqueIdOrSkip();
+        if (!multimedia.TryGetVideoSuperResolution(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Video super resolution not supported on this GPU.");
 
-            Skip.If(!info.IsSupported, "Video super resolution reported unsupported.");
-            Assert.IsType<bool>(info.IsEnabled);
-        }
+        Skip.If(!info.IsSupported, "Video super resolution reported unsupported.");
+        Assert.IsType<bool>(info.IsEnabled);
     }
 }

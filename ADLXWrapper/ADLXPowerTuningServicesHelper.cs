@@ -31,7 +31,7 @@ namespace ADLXWrapper
             TryUpgradeServices(services);
         }
 
-        public IADLXPowerTuningServices* GetPowerTuningServicesNative()
+        internal IADLXPowerTuningServices* GetPowerTuningServicesNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -42,7 +42,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available power tuning services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle GetPowerTuningServicesHandle()
+        internal ADLXInterfaceHandle GetPowerTuningServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -87,7 +87,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ADLXInterfaceHandle[] EnumerateGPUConnectGpuHandles()
+        internal ADLXInterfaceHandle[] EnumerateGPUConnectGpuHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -116,7 +116,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to enumerate GPUConnect-capable GPUs; returns false if not supported.
         /// </summary>
-        public bool TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[] handles)
+        internal bool TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[] handles)
         {
             try
             {
@@ -135,7 +135,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXGPU2List* GetGPUConnectGpuListNative()
+        internal IADLXGPU2List* GetGPUConnectGpuListNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -151,7 +151,7 @@ namespace ADLXWrapper
             return pList; // caller must wrap in ComPtr and dispose
         }
 
-        public IADLXPowerTuningChangedHandling* GetPowerTuningChangedHandlingNative()
+        internal IADLXPowerTuningChangedHandling* GetPowerTuningChangedHandlingNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -172,7 +172,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the power tuning change handling interface.
         /// </summary>
-        public ADLXInterfaceHandle GetPowerTuningChangedHandling()
+        internal ADLXInterfaceHandle GetPowerTuningChangedHandling()
         {
             return ADLXInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
         }
@@ -236,7 +236,7 @@ namespace ADLXWrapper
         /// <returns>Native SmartShift Max pointer.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXSmartShiftMax* GetSmartShiftMaxNative()
+        internal IADLXSmartShiftMax* GetSmartShiftMaxNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -326,7 +326,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
+        internal ManualPowerTuningInfo GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -344,50 +344,27 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Facade-friendly overload to query manual power tuning using managed helpers and GPU handles.
+        /// Gets manual power tuning info for the GPU with the specified unique id.
         /// </summary>
-        /// <param name="tuningHelper">GPU tuning helper.</param>
-        /// <param name="gpuHandle">GPU handle from facade enumeration.</param>
-        /// <returns>Manual power tuning info.</returns>
-        public ManualPowerTuningInfo GetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle)
+        public ManualPowerTuningInfo GetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (tuningHelper == null) throw new ArgumentNullException(nameof(tuningHelper));
-            if (gpuHandle.IsInvalid) throw new ArgumentNullException(nameof(gpuHandle));
-
-            var tuningServices = tuningHelper.GetGPUTuningServicesNative();
-            if (tuningServices == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not available");
-
-            ADLXUtils.AddRefInterface((IntPtr)tuningServices);
-            using var tuningServicesOwner = new ComPtr<IADLXGPUTuningServices>(tuningServices);
-
-            var gpu = gpuHandle.As<IADLXGPU>();
-            if (gpu == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU handle invalid");
-
-            ADLXUtils.AddRefInterface((IntPtr)gpu);
-            using var gpuOwner = new ComPtr<IADLXGPU>(gpu);
-
-            return GetManualPowerTuning(tuningServicesOwner.Get(), gpuOwner.Get());
+            return tuningHelper.ExecuteWithGpuByUniqueId(gpuUniqueId, ptrGpu =>
+                GetManualPowerTuning(tuningHelper.GetGPUTuningServicesNative(), (IADLXGPU*)ptrGpu));
         }
 
-        public bool TryGetManualPowerTuning(ADLXGPUTuningServicesHelper tuningHelper, ADLXInterfaceHandle gpuHandle, out ManualPowerTuningInfo info)
+        /// <summary>
+        /// Tries to get manual power tuning info for the GPU with the specified unique id.
+        /// </summary>
+        public bool TryGetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, out ManualPowerTuningInfo info)
         {
-            try
-            {
-                info = GetManualPowerTuning(tuningHelper, gpuHandle);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            try { info = GetManualPowerTuning(gpuUniqueId, tuningHelper); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
-        public void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+        internal void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -408,7 +385,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply manual power tuning to an existing interface; returns false when unsupported.
         /// </summary>
-        public bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
+        internal bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningInfo info)
         {
             try
             {
@@ -421,7 +398,7 @@ namespace ADLXWrapper
             }
         }
 
-        public void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+        internal void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -441,7 +418,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply manual power tuning via tuning services; returns false when unsupported.
         /// </summary>
-        public bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
+        internal bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningInfo info)
         {
             try
             {
@@ -452,6 +429,30 @@ namespace ADLXWrapper
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Applies manual power tuning settings for the GPU with the specified unique id.
+        /// </summary>
+        public void ApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningInfo info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (tuningHelper == null) throw new ArgumentNullException(nameof(tuningHelper));
+            tuningHelper.ExecuteWithGpuByUniqueId(gpuUniqueId, ptrGpu =>
+            {
+                ApplyManualPowerTuning(tuningHelper.GetGPUTuningServicesNative(), (IADLXGPU*)ptrGpu, info);
+                return 0;
+            });
+        }
+
+        /// <summary>
+        /// Tries to apply manual power tuning settings for the GPU with the specified unique id; returns false when unsupported.
+        /// </summary>
+        public bool TryApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningInfo info)
+        {
+            try { ApplyManualPowerTuning(gpuUniqueId, tuningHelper, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
         }
 
         public void Dispose()
@@ -557,11 +558,11 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public ADLX_SSM_BIAS_MODE BiasMode { get; init; }
-        public ADLX_IntRange BiasRange { get; init; }
+        public IntRangeInfo BiasRange { get; init; }
         public int BiasValue { get; init; }
 
         [JsonConstructor]
-        public SmartShiftMaxInfo(bool isSupported, ADLX_SSM_BIAS_MODE biasMode, ADLX_IntRange biasRange, int biasValue)
+        public SmartShiftMaxInfo(bool isSupported, ADLX_SSM_BIAS_MODE biasMode, IntRangeInfo biasRange, int biasValue)
         {
             IsSupported = isSupported;
             BiasMode = biasMode;
@@ -581,7 +582,7 @@ namespace ADLXWrapper
 
             ADLX_IntRange range = default;
             smartShiftMax->GetBiasRange(&range);
-            BiasRange = range;
+            BiasRange = IntRangeInfo.FromNative(range);
 
             int bias = 0;
             smartShiftMax->GetBias(&bias);
@@ -620,15 +621,15 @@ namespace ADLXWrapper
     public readonly struct ManualPowerTuningInfo
     {
         public bool PowerLimitSupported { get; init; }
-        public ADLX_IntRange PowerLimitRange { get; init; }
+        public IntRangeInfo PowerLimitRange { get; init; }
         public int PowerLimitValue { get; init; }
         public bool TdcLimitSupported { get; init; }
-        public ADLX_IntRange TdcLimitRange { get; init; }
+        public IntRangeInfo TdcLimitRange { get; init; }
         public int TdcLimitValue { get; init; }
         public int TdcLimitDefaultValue { get; init; }
 
         [JsonConstructor]
-        public ManualPowerTuningInfo(bool powerLimitSupported, ADLX_IntRange powerLimitRange, int powerLimitValue, bool tdcLimitSupported, ADLX_IntRange tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
+        public ManualPowerTuningInfo(bool powerLimitSupported, IntRangeInfo powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeInfo tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
         {
             PowerLimitSupported = powerLimitSupported;
             PowerLimitRange = powerLimitRange;
@@ -646,7 +647,7 @@ namespace ADLXWrapper
             var r1 = manualPower->GetPowerLimitRange(&powerRange);
             var r2 = manualPower->GetPowerLimit(&powerValue);
             PowerLimitSupported = r1 == ADLX_RESULT.ADLX_OK && r2 == ADLX_RESULT.ADLX_OK;
-            PowerLimitRange = powerRange;
+            PowerLimitRange = IntRangeInfo.FromNative(powerRange);
             PowerLimitValue = powerValue;
 
             if (ADLXUtils.TryQueryInterface((IntPtr)manualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
@@ -661,7 +662,7 @@ namespace ADLXWrapper
                 manualPower1.Get()->GetTDCLimitRange(&tdcRange);
                 manualPower1.Get()->GetTDCLimit(&tdcValue);
                 manualPower1.Get()->GetTDCLimitDefault(&tdcDefault);
-                TdcLimitRange = tdcRange;
+                TdcLimitRange = IntRangeInfo.FromNative(tdcRange);
                 TdcLimitValue = tdcValue;
                 TdcLimitDefaultValue = tdcDefault;
             }

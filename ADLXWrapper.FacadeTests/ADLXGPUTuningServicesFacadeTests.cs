@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit;
@@ -39,20 +40,17 @@ public class ADLXGPUTuningServicesFacadeTests
     {
         using var tuning = GetTuningHelperOrSkip();
 
-        unsafe
-        {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
 
-            var caps = tuning.GetCapabilities(gpuHandle.As<IADLXGPU>());
-            Assert.IsType<bool>(caps.AutoTuningSupported);
-            Assert.IsType<bool>(caps.PresetTuningSupported);
-            Assert.IsType<bool>(caps.ManualGFXTuningSupported);
-            Assert.IsType<bool>(caps.ManualVRAMTuningSupported);
-            Assert.IsType<bool>(caps.ManualFanTuningSupported);
-            Assert.IsType<bool>(caps.ManualPowerTuningSupported);
-        }
+        var caps = tuning.GetCapabilities(gpuUniqueId);
+        Assert.IsType<bool>(caps.AutoTuningSupported);
+        Assert.IsType<bool>(caps.PresetTuningSupported);
+        Assert.IsType<bool>(caps.ManualGFXTuningSupported);
+        Assert.IsType<bool>(caps.ManualVRAMTuningSupported);
+        Assert.IsType<bool>(caps.ManualFanTuningSupported);
+        Assert.IsType<bool>(caps.ManualPowerTuningSupported);
     }
 
     [SkippableFact]
@@ -60,18 +58,15 @@ public class ADLXGPUTuningServicesFacadeTests
     {
         using var tuning = GetTuningHelperOrSkip();
 
-        unsafe
-        {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
 
-            if (!tuning.TryGetPresetTuning(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Preset tuning not supported on this GPU.");
+        if (!tuning.TryGetPresetTuning(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Preset tuning not supported on this GPU.");
 
-            Skip.If(!info.IsSupported || info.SupportedPresets.Count == 0, "Preset tuning reported unsupported or returned no presets.");
-            Assert.True(info.SupportedPresets.Count > 0);
-        }
+        Skip.If(!info.IsSupported || info.SupportedPresets.Count == 0, "Preset tuning reported unsupported or returned no presets.");
+        Assert.True(info.SupportedPresets.Count > 0);
     }
 
     [SkippableFact]
@@ -79,20 +74,17 @@ public class ADLXGPUTuningServicesFacadeTests
     {
         using var tuning = GetTuningHelperOrSkip();
 
-        unsafe
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
+
+        if (!tuning.TryGetManualFanTuning(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Manual fan tuning not supported on this GPU.");
+
+        Skip.If(!info.IsSupported, "Manual fan tuning reported unsupported.");
+        if (info.FanPoints != null)
         {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
-
-            if (!tuning.TryGetManualFanTuning(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Manual fan tuning not supported on this GPU.");
-
-            Skip.If(!info.IsSupported, "Manual fan tuning reported unsupported.");
-            if (info.FanPoints != null)
-            {
-                Assert.IsAssignableFrom<IReadOnlyList<FanPoint>>(info.FanPoints);
-            }
+            Assert.IsAssignableFrom<IReadOnlyList<FanPoint>>(info.FanPoints);
         }
     }
 
@@ -101,17 +93,14 @@ public class ADLXGPUTuningServicesFacadeTests
     {
         using var tuning = GetTuningHelperOrSkip();
 
-        unsafe
-        {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
 
-            if (!tuning.TryGetManualVramTuning(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Manual VRAM tuning not supported on this GPU.");
+        if (!tuning.TryGetManualVramTuning(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Manual VRAM tuning not supported on this GPU.");
 
-            Skip.If(!info.IsSupported, "Manual VRAM tuning reported unsupported.");
-        }
+        Skip.If(!info.IsSupported, "Manual VRAM tuning reported unsupported.");
     }
 
     [SkippableFact]
@@ -119,16 +108,13 @@ public class ADLXGPUTuningServicesFacadeTests
     {
         using var tuning = GetTuningHelperOrSkip();
 
-        unsafe
-        {
-            var handles = _fixture.System!.EnumerateGPUsHandle();
-            Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-            using var gpuHandle = handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
 
-            if (!tuning.TryGetManualGfxTuning(gpuHandle.As<IADLXGPU>(), out var info))
-                throw new Xunit.SkipException("Manual GFX tuning not supported on this GPU.");
+        if (!tuning.TryGetManualGfxTuning(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Manual GFX tuning not supported on this GPU.");
 
-            Skip.If(!info.IsSupported, "Manual GFX tuning reported unsupported.");
-        }
+        Skip.If(!info.IsSupported, "Manual GFX tuning reported unsupported.");
     }
 }

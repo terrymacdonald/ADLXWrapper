@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Runtime.Versioning;
 using ADLXWrapper;
 using Xunit;
@@ -33,65 +34,59 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
         }
     }
 
-    private unsafe ADLXInterfaceHandle GetFirstGpuHandleOrSkip()
+    private int GetFirstGpuUniqueIdOrSkip()
     {
-        var handles = _fixture.System!.EnumerateGPUsHandle();
-        Skip.If(handles.Length == 0, "No GPUs returned by ADLX.");
-        return handles[0];
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        return gpus[0].UniqueId;
     }
 
     [SkippableFact]
     public void Performance_monitoring_gpu_support_facade()
     {
         using var perf = GetPerfOrSkip();
-        unsafe
-        {
-            using var gpuHandle = GetFirstGpuHandleOrSkip();
-            if (!perf.TryGetGpuMetricsSupport(gpuHandle.As<IADLXGPU>(), out var support))
-                throw new Xunit.SkipException("GPU metrics support query failed or unsupported on this GPU.");
+        var gpuUniqueId = GetFirstGpuUniqueIdOrSkip();
+        if (!perf.TryGetGpuMetricsSupport(gpuUniqueId, out var support))
+            throw new Xunit.SkipException("GPU metrics support query failed or unsupported on this GPU.");
 
-            Assert.IsType<bool>(support.UsageSupported);
-            Assert.IsType<bool>(support.ClockSpeedSupported);
-            Assert.IsType<bool>(support.TemperatureSupported);
-            Assert.IsType<bool>(support.PowerSupported);
-        }
+        Assert.IsType<bool>(support.UsageSupported);
+        Assert.IsType<bool>(support.ClockSpeedSupported);
+        Assert.IsType<bool>(support.TemperatureSupported);
+        Assert.IsType<bool>(support.PowerSupported);
     }
 
     [SkippableFact]
     public void Performance_monitoring_gpu_metrics_snapshot_facade()
     {
         using var perf = GetPerfOrSkip();
-        unsafe
-        {
-            using var gpuHandle = GetFirstGpuHandleOrSkip();
-            if (!perf.TryGetGpuMetricsSupport(gpuHandle.As<IADLXGPU>(), out var support))
-                throw new Xunit.SkipException("GPU metrics support query failed or unsupported on this GPU.");
+        var gpuUniqueId = GetFirstGpuUniqueIdOrSkip();
+        if (!perf.TryGetGpuMetricsSupport(gpuUniqueId, out var support))
+            throw new Xunit.SkipException("GPU metrics support query failed or unsupported on this GPU.");
 
-            if (!perf.TryGetCurrentGpuMetrics(gpuHandle.As<IADLXGPU>(), out var metrics))
-                throw new Xunit.SkipException("GPU metrics not available on this GPU.");
+        if (!perf.TryGetCurrentGpuMetrics(gpuUniqueId, out var metrics))
+            throw new Xunit.SkipException("GPU metrics not available on this GPU.");
 
-            Assert.True(metrics.TimestampMs >= 0);
-            if (support.UsageSupported)
-                Assert.True(metrics.Usage >= 0);
-            if (support.TemperatureSupported)
-                Assert.True(metrics.Temperature >= 0);
-            if (support.HotspotTemperatureSupported)
-                Assert.True(metrics.HotspotTemperature >= 0);
-            if (support.ClockSpeedSupported)
-                Assert.True(metrics.ClockSpeed >= 0);
-            if (support.VRAMClockSpeedSupported)
-                Assert.True(metrics.VRAMClockSpeed >= 0);
-            if (support.VRAMSupported)
-                Assert.True(metrics.VRAMUsage >= 0);
-            if (support.FanSpeedSupported)
-                Assert.True(metrics.FanSpeed >= 0);
-            if (support.PowerSupported)
-                Assert.True(metrics.Power >= 0);
-            if (support.TotalBoardPowerSupported)
-                Assert.True(metrics.TotalBoardPower >= 0);
-            if (support.VoltageSupported)
-                Assert.True(metrics.Voltage >= 0);
-        }
+        Assert.True(metrics.TimestampMs >= 0);
+        if (support.UsageSupported)
+            Assert.True(metrics.Usage >= 0);
+        if (support.TemperatureSupported)
+            Assert.True(metrics.Temperature >= 0);
+        if (support.HotspotTemperatureSupported)
+            Assert.True(metrics.HotspotTemperature >= 0);
+        if (support.ClockSpeedSupported)
+            Assert.True(metrics.ClockSpeed >= 0);
+        if (support.VRAMClockSpeedSupported)
+            Assert.True(metrics.VRAMClockSpeed >= 0);
+        if (support.VRAMSupported)
+            Assert.True(metrics.VRAMUsage >= 0);
+        if (support.FanSpeedSupported)
+            Assert.True(metrics.FanSpeed >= 0);
+        if (support.PowerSupported)
+            Assert.True(metrics.Power >= 0);
+        if (support.TotalBoardPowerSupported)
+            Assert.True(metrics.TotalBoardPower >= 0);
+        if (support.VoltageSupported)
+            Assert.True(metrics.Voltage >= 0);
     }
 
     [SkippableFact]
@@ -114,7 +109,7 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
     public void Performance_monitoring_sampling_interval_facade()
     {
         using var perf = GetPerfOrSkip();
-        ADLX_IntRange range;
+        IntRangeInfo range;
         try
         {
             range = perf.GetSamplingIntervalRange();
@@ -136,8 +131,8 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
 
         // Re-apply the current interval (safe, no behavioral change)
         var target = current;
-        if (target < range.minValue) target = range.minValue;
-        if (target > range.maxValue) target = range.maxValue;
+        if (target < range.MinValue) target = range.MinValue;
+        if (target > range.MaxValue) target = range.MaxValue;
 
         Assert.True(perf.TrySetSamplingInterval(target));
         var after = perf.GetSamplingInterval();

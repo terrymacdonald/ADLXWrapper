@@ -195,17 +195,6 @@ namespace ADLXWrapper
             return new ADLXDesktopServicesHelper(_desktopServices.Get(), displayServices);
         }
 
-        /// <summary>
-        /// Native display list accessor. Caller must dispose returned ComPtr and any retained items.
-        /// </summary>
-        public ComPtr<IADLXDisplayList> GetDisplayListNative()
-        {
-            ThrowIfDisposed();
-            using var _sync = ADLXSync.EnterRead();
-            using var helper = CreateDesktopServicesHelper();
-            return new ComPtr<IADLXDisplayList>(helper.GetDesktopDisplayListNative(_desktop.Get()));
-        }
-
         private void ThrowIfDisposed()
         {
             if (_disposed) throw new ObjectDisposedException(nameof(ADLXDesktop));

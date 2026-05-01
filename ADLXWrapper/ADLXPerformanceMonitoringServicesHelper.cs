@@ -10,6 +10,7 @@ namespace ADLXWrapper
     public sealed unsafe class ADLXPerformanceMonitoringServicesHelper : IDisposable
     {
         private ComPtr<IADLXPerformanceMonitoringServices> _services;
+        private readonly IADLXSystem* _system;
         private bool _disposed;
 
         /// <summary>
@@ -17,7 +18,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native performance monitoring services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
-        public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true)
+        public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             using (ADLXSync.EnterRead())
@@ -28,13 +29,14 @@ namespace ADLXWrapper
                 }
                 _services = new ComPtr<IADLXPerformanceMonitoringServices>(services);
             }
+            _system = system; // IADLXSystem is not ref-counted; safe to store as raw pointer
         }
 
         /// <summary>
         /// Returns the native performance monitoring services interface owned by this helper.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
+        internal IADLXPerformanceMonitoringServices* GetPerformanceMonitoringServicesNative()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -47,7 +49,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the performance monitoring services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
+        internal ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -64,7 +66,7 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXGPUMetricsSupport* GetGpuMetricsSupportNative(IADLXGPU* gpu)
+        internal IADLXGPUMetricsSupport* GetGpuMetricsSupportNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -90,7 +92,7 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXGPU* gpu)
+        internal GpuMetricsSupportInfo GetGpuMetricsSupport(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -102,7 +104,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to get GPU metrics support info. Returns false if not supported for this GPU/system.
         /// </summary>
-        public bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportInfo info)
+        internal bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportInfo info)
         {
             info = default;
             try
@@ -124,7 +126,7 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXGPUMetrics* GetCurrentGpuMetricsNative(IADLXGPU* gpu)
+        internal IADLXGPUMetrics* GetCurrentGpuMetricsNative(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -150,7 +152,7 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXGPU* gpu)
+        internal GpuMetricsSnapshotInfo GetCurrentGpuMetrics(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -159,7 +161,7 @@ namespace ADLXWrapper
             return new GpuMetricsSnapshotInfo(metrics.Get());
         }
 
-        public bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotInfo metrics)
+        internal bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotInfo metrics)
         {
             metrics = default;
             try
@@ -179,7 +181,7 @@ namespace ADLXWrapper
         /// <returns>Native system metrics pointer.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXSystemMetrics* GetCurrentSystemMetricsNative()
+        internal IADLXSystemMetrics* GetCurrentSystemMetricsNative()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -214,7 +216,7 @@ namespace ADLXWrapper
         /// <returns>Native all-metrics pointer.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXAllMetrics* GetCurrentAllMetricsNative()
+        internal IADLXAllMetrics* GetCurrentAllMetricsNative()
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -243,7 +245,7 @@ namespace ADLXWrapper
             return new AllMetricsSnapshotInfo(metrics.Get());
         }
 
-        public IADLXGPUMetricsList* GetGpuMetricsHistoryNative(IADLXGPU* gpu, int startMs, int stopMs)
+        internal IADLXGPUMetricsList* GetGpuMetricsHistoryNative(IADLXGPU* gpu, int startMs, int stopMs)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -261,7 +263,7 @@ namespace ADLXWrapper
             }
         }
 
-        public IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
+        internal IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs)
         {
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
@@ -280,7 +282,7 @@ namespace ADLXWrapper
             return results;
         }
 
-        public bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
+        internal bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
         {
             history = Array.Empty<GpuMetricsSnapshotInfo>();
             try
@@ -294,7 +296,7 @@ namespace ADLXWrapper
             }
         }
 
-        public IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
+        internal IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
         {
             ThrowIfDisposed();
             using (ADLXSync.EnterRead())
@@ -327,7 +329,7 @@ namespace ADLXWrapper
             return results;
         }
 
-        public IADLXAllMetricsList* GetAllMetricsHistoryNative(int startMs, int stopMs)
+        internal IADLXAllMetricsList* GetAllMetricsHistoryNative(int startMs, int stopMs)
         {
             ThrowIfDisposed();
             IADLXAllMetricsList* list = null;
@@ -371,7 +373,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ADLX_IntRange GetSamplingIntervalRange()
+        public IntRangeInfo GetSamplingIntervalRange()
         {
             ThrowIfDisposed();
             ADLX_IntRange range = default;
@@ -380,7 +382,7 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval range");
-            return range;
+            return IntRangeInfo.FromNative(range);
         }
 
         public int GetSamplingInterval()
@@ -547,7 +549,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var intervalRange = GetSamplingIntervalRange();
-            if (info.SamplingIntervalMs >= intervalRange.minValue && info.SamplingIntervalMs <= intervalRange.maxValue)
+            if (info.SamplingIntervalMs >= intervalRange.MinValue && info.SamplingIntervalMs <= intervalRange.MaxValue)
             {
                 SetSamplingInterval(info.SamplingIntervalMs);
             }
@@ -555,6 +557,86 @@ namespace ADLXWrapper
             var maxHistory = GetMaxPerformanceMetricsHistorySize();
             var clampedHistory = Math.Min(info.MaxHistorySizeSec, maxHistory);
             SetMaxPerformanceMetricsHistorySize(clampedHistory);
+        }
+
+        // =====================================================================
+        // Public per-GPU overloads (by unique id)
+        // =====================================================================
+
+        /// <summary>Gets GPU metrics support info for the GPU with the specified unique id.</summary>
+        public GpuMetricsSupportInfo GetGpuMetricsSupport(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using (ADLXSync.EnterRead())
+            {
+                return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetGpuMetricsSupport((IADLXGPU*)ptrGpu));
+            }
+        }
+
+        /// <summary>Tries to get GPU metrics support info for the GPU with the specified unique id.</summary>
+        public bool TryGetGpuMetricsSupport(int gpuUniqueId, out GpuMetricsSupportInfo info)
+        {
+            try { info = GetGpuMetricsSupport(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Gets current GPU metrics snapshot for the GPU with the specified unique id.</summary>
+        public GpuMetricsSnapshotInfo GetCurrentGpuMetrics(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using (ADLXSync.EnterRead())
+            {
+                return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetCurrentGpuMetrics((IADLXGPU*)ptrGpu));
+            }
+        }
+
+        /// <summary>Tries to get current GPU metrics snapshot for the GPU with the specified unique id.</summary>
+        public bool TryGetCurrentGpuMetrics(int gpuUniqueId, out GpuMetricsSnapshotInfo metrics)
+        {
+            try { metrics = GetCurrentGpuMetrics(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { metrics = default; return false; }
+        }
+
+        /// <summary>Enumerates GPU metrics history for the GPU with the specified unique id.</summary>
+        public IEnumerable<GpuMetricsSnapshotInfo> EnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs)
+        {
+            ThrowIfDisposed();
+            using (ADLXSync.EnterRead())
+            {
+                return WithGpuByUniqueId(gpuUniqueId, ptrGpu => EnumerateGpuMetricsHistory((IADLXGPU*)ptrGpu, startMs, stopMs));
+            }
+        }
+
+        /// <summary>Tries to enumerate GPU metrics history for the GPU with the specified unique id.</summary>
+        public bool TryEnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotInfo> history)
+        {
+            try { history = EnumerateGpuMetricsHistory(gpuUniqueId, startMs, stopMs); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { history = Array.Empty<GpuMetricsSnapshotInfo>(); return false; }
+        }
+
+        private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
+        {
+            if (_system == null) throw new InvalidOperationException("System not available for GPU lookup by unique id. Ensure this helper was obtained via ADLXSystemServicesHelper.");
+            IADLXGPUList* pList = null;
+            var result = _system->GetGPUs(&pList);
+            if (result != ADLX_RESULT.ADLX_OK || pList == null)
+                throw new ADLXException(result != ADLX_RESULT.ADLX_OK ? result : ADLX_RESULT.ADLX_FAIL, "Failed to enumerate GPUs for unique id lookup");
+            using var list = new ComPtr<IADLXGPUList>(pList);
+            uint size = list.Get()->Size();
+            for (uint i = 0; i < size; i++)
+            {
+                IADLXGPU* pGpu = null;
+                if (list.Get()->At(i, &pGpu) != ADLX_RESULT.ADLX_OK || pGpu == null) continue;
+                int uid = 0;
+                pGpu->UniqueId(&uid);
+                if (uid == gpuUniqueId)
+                {
+                    using var gpuOwner = new ComPtr<IADLXGPU>(pGpu);
+                    return action((IntPtr)gpuOwner.Get());
+                }
+                ADLXUtils.ReleaseInterface((IntPtr)pGpu);
+            }
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_FOUND, $"GPU with unique id {gpuUniqueId} not found");
         }
 
         public void Dispose()

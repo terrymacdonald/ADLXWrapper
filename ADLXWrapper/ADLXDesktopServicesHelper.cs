@@ -45,7 +45,7 @@ namespace ADLXWrapper
             _system = system;
         }
 
-        public IADLXDesktopServices* GetDesktopServicesNative()
+        internal IADLXDesktopServices* GetDesktopServicesNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -56,7 +56,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the desktop services interface for external ownership.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle GetDesktopServicesHandle()
+        internal ADLXInterfaceHandle GetDesktopServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -273,7 +273,7 @@ namespace ADLXWrapper
         /// <exception cref="ADLXException">If desktop services are unavailable.</exception>
         /// <exception cref="ArgumentNullException">If <paramref name="pDesktop"/> is null.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
+        internal ADLXDesktop CreateADLXDesktop(IADLXDesktop* pDesktop, bool addRef = true)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -389,7 +389,7 @@ namespace ADLXWrapper
         /// <returns>Array of native desktop handles.</returns>
         /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle[] EnumerateDesktopHandles()
+        internal ADLXInterfaceHandle[] EnumerateDesktopHandles()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -424,7 +424,7 @@ namespace ADLXWrapper
         /// <returns>Native desktop list pointer.</returns>
         /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLXDesktopList* GetDesktopListNative()
+        internal IADLXDesktopList* GetDesktopListNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -442,7 +442,7 @@ namespace ADLXWrapper
             return pDesktopList; // caller must wrap/dispose
         }
 
-        public IADLXDesktopChangedHandling* GetDesktopChangedHandlingNative()
+        internal IADLXDesktopChangedHandling* GetDesktopChangedHandlingNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -460,7 +460,7 @@ namespace ADLXWrapper
             return handling;
         }
 
-        public ADLXInterfaceHandle GetDesktopChangedHandling()
+        internal ADLXInterfaceHandle GetDesktopChangedHandling()
         {
             return ADLXInterfaceHandle.From(GetDesktopChangedHandlingNative(), addRef: true);
         }
@@ -480,7 +480,7 @@ namespace ADLXWrapper
             return new SimpleEyefinityInfo(simple.Get());
         }
 
-        public ADLXInterfaceHandle GetSimpleEyefinityHandle()
+        internal ADLXInterfaceHandle GetSimpleEyefinityHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -494,7 +494,7 @@ namespace ADLXWrapper
             return ADLXInterfaceHandle.From(pSimple, addRef: false);
         }
 
-        public EyefinityDesktopInfo CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)
+        internal EyefinityDesktopInfo CreateEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity)
         {
             if (pSimpleEyefinity == null) throw new ArgumentNullException(nameof(pSimpleEyefinity));
 
@@ -509,7 +509,7 @@ namespace ADLXWrapper
             return new EyefinityDesktopInfo(desktop.Get());
         }
 
-        public void DestroyEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity, IADLXEyefinityDesktop* pEyefinityDesktop)
+        internal void DestroyEyefinityDesktop(IADLXSimpleEyefinity* pSimpleEyefinity, IADLXEyefinityDesktop* pEyefinityDesktop)
         {
             if (pSimpleEyefinity == null) throw new ArgumentNullException(nameof(pSimpleEyefinity));
             if (pEyefinityDesktop == null) throw new ArgumentNullException(nameof(pEyefinityDesktop));
@@ -521,7 +521,7 @@ namespace ADLXWrapper
             }
         }
 
-        public void DestroyAllEyefinityDesktops(IADLXSimpleEyefinity* pSimpleEyefinity)
+        internal void DestroyAllEyefinityDesktops(IADLXSimpleEyefinity* pSimpleEyefinity)
         {
             if (pSimpleEyefinity == null) throw new ArgumentNullException(nameof(pSimpleEyefinity));
 
@@ -542,7 +542,7 @@ namespace ADLXWrapper
             GC.SuppressFinalize(this);
         }
 
-        public IADLXDisplayList* GetDesktopDisplayListNative(IADLXDesktop* desktop)
+        internal IADLXDisplayList* GetDesktopDisplayListNative(IADLXDesktop* desktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -558,7 +558,7 @@ namespace ADLXWrapper
             return list;
         }
 
-        public IReadOnlyList<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
+        internal IReadOnlyList<DisplayInfo> EnumerateDesktopDisplays(IADLXDesktop* desktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -578,7 +578,7 @@ namespace ADLXWrapper
             return displays;
         }
 
-        public (uint rows, uint cols) GetEyefinityGridSize(IADLXEyefinityDesktop* eyefinityDesktop)
+        internal (uint rows, uint cols) GetEyefinityGridSize(IADLXEyefinityDesktop* eyefinityDesktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -591,7 +591,7 @@ namespace ADLXWrapper
             return (rows, cols);
         }
 
-        public IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
+        internal IReadOnlyList<DisplayInfo> EnumerateEyefinityDisplays(IADLXEyefinityDesktop* eyefinityDesktop)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();

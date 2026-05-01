@@ -242,7 +242,7 @@ namespace ADLXWrapper
         /// Get the system services native pointer (lifetime owned by this API helper).
         /// Callers must not Release() it directly.
         /// </summary>
-        public unsafe IADLXSystem* GetSystemServicesNative()
+        internal unsafe IADLXSystem* GetSystemServicesNative()
         {
             ThrowIfDisposed();
             return _systemServices;
@@ -251,7 +251,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Get the system services as an ADLXInterfaceHandle (AddRef'd for caller ownership).
         /// </summary>
-        public unsafe ADLXInterfaceHandle GetSystemServicesHandle()
+        internal unsafe ADLXInterfaceHandle GetSystemServicesHandle()
         {
             ThrowIfDisposed();
             var ptr = _systemServices;

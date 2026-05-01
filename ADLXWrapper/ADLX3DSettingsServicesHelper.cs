@@ -14,6 +14,7 @@ namespace ADLXWrapper
         private ComPtr<IADLX3DSettingsServices1>? _services1;
         private ComPtr<IADLX3DSettingsServices2>? _services2;
         private ComPtr<IADLX3DSettingsChangedHandling>? _changedHandling;
+        private readonly IADLXSystem* _system;
         private bool _disposed;
 
         /// <summary>
@@ -21,7 +22,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native 3D settings services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
-        public ADLX3DSettingsServicesHelper(IADLX3DSettingsServices* services, bool addRef = true)
+        public ADLX3DSettingsServicesHelper(IADLX3DSettingsServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (addRef)
@@ -30,9 +31,10 @@ namespace ADLXWrapper
             }
             _services = new ComPtr<IADLX3DSettingsServices>(services);
             TryUpgradeServices(services);
+            _system = system; // IADLXSystem is not ref-counted; safe to store as raw pointer
         }
 
-        public IADLX3DSettingsServices* Get3DSettingsServicesNative()
+        internal IADLX3DSettingsServices* Get3DSettingsServicesNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -43,7 +45,7 @@ namespace ADLXWrapper
         /// Returns an AddRef'd handle to the highest available 3D settings services interface.
         /// </summary>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ADLXInterfaceHandle Get3DSettingsServicesHandle()
+        internal ADLXInterfaceHandle Get3DSettingsServicesHandle()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -56,7 +58,7 @@ namespace ADLXWrapper
         /// <returns>Native 3D settings change handling pointer.</returns>
         /// <exception cref="ADLXException">If unsupported or retrieval fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public IADLX3DSettingsChangedHandling* Get3DSettingsChangedHandlingNative()
+        internal IADLX3DSettingsChangedHandling* Get3DSettingsChangedHandlingNative()
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -77,7 +79,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to get 3D settings change handling; returns false when unsupported.
         /// </summary>
-        public bool TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling* handling)
+        internal bool TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling* handling)
         {
             try
             {
@@ -91,7 +93,7 @@ namespace ADLXWrapper
             }
         }
 
-        public ADLXInterfaceHandle Get3DSettingsChangedHandling()
+        internal ADLXInterfaceHandle Get3DSettingsChangedHandling()
         {
             return ADLXInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
         }
@@ -136,7 +138,7 @@ namespace ADLXWrapper
             }
         }
 
-        public All3DSettingsInfo GetAll3DSettings(IADLXGPU* gpu)
+        internal All3DSettingsInfo GetAll3DSettings(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -185,7 +187,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to get all 3D settings; returns false when unsupported.
         /// </summary>
-        public bool TryGetAll3DSettings(IADLXGPU* gpu, out All3DSettingsInfo info)
+        internal bool TryGetAll3DSettings(IADLXGPU* gpu, out All3DSettingsInfo info)
         {
             try
             {
@@ -207,7 +209,7 @@ namespace ADLXWrapper
         /// <exception cref="ArgumentNullException">If <paramref name="gpu"/> is null.</exception>
         /// <exception cref="ADLXException">If any underlying call fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public void ApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
+        internal void ApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -227,7 +229,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Tries to apply all provided 3D settings; returns false when the feature set is unsupported.
         /// </summary>
-        public bool TryApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
+        internal bool TryApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsInfo info)
         {
             try
             {
@@ -238,6 +240,80 @@ namespace ADLXWrapper
             {
                 return false;
             }
+        }
+
+        // =====================================================================
+        // Public per-GPU overloads (by unique id)
+        // =====================================================================
+
+        /// <summary>Gets all 3D settings for the GPU with the specified unique id.</summary>
+        public All3DSettingsInfo GetAll3DSettings(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetAll3DSettings((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get all 3D settings for the GPU with the specified unique id.</summary>
+        public bool TryGetAll3DSettings(int gpuUniqueId, out All3DSettingsInfo info)
+        {
+            try { info = GetAll3DSettings(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies all 3D settings to the GPU with the specified unique id.</summary>
+        public void ApplyAll3DSettings(int gpuUniqueId, All3DSettingsInfo info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyAll3DSettings((IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply all 3D settings to the GPU with the specified unique id.</summary>
+        public bool TryApplyAll3DSettings(int gpuUniqueId, All3DSettingsInfo info)
+        {
+            try { ApplyAll3DSettings(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
+        /// <summary>Gets Fluid Motion Frames state for the GPU with the specified unique id.</summary>
+        public FluidMotionFramesInfo GetFluidMotionFrames(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetFluidMotionFrames((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get Fluid Motion Frames state for the GPU with the specified unique id.</summary>
+        public bool TryGetFluidMotionFrames(int gpuUniqueId, out FluidMotionFramesInfo info)
+        {
+            try { info = GetFluidMotionFrames(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
+        {
+            if (_system == null) throw new InvalidOperationException("System not available for GPU lookup by unique id. Ensure this helper was obtained via ADLXSystemServicesHelper.");
+            IADLXGPUList* pList = null;
+            var result = _system->GetGPUs(&pList);
+            if (result != ADLX_RESULT.ADLX_OK || pList == null)
+                throw new ADLXException(result != ADLX_RESULT.ADLX_OK ? result : ADLX_RESULT.ADLX_FAIL, "Failed to enumerate GPUs for unique id lookup");
+            using var list = new ComPtr<IADLXGPUList>(pList);
+            uint size = list.Get()->Size();
+            for (uint i = 0; i < size; i++)
+            {
+                IADLXGPU* pGpu = null;
+                if (list.Get()->At(i, &pGpu) != ADLX_RESULT.ADLX_OK || pGpu == null) continue;
+                int uid = 0;
+                pGpu->UniqueId(&uid);
+                if (uid == gpuUniqueId)
+                {
+                    using var gpuOwner = new ComPtr<IADLXGPU>(pGpu);
+                    return action((IntPtr)gpuOwner.Get());
+                }
+                ADLXUtils.ReleaseInterface((IntPtr)pGpu);
+            }
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_FOUND, $"GPU with unique id {gpuUniqueId} not found");
         }
 
         public void Dispose()
@@ -396,7 +472,7 @@ namespace ADLXWrapper
             }
         }
 
-        public FluidMotionFramesInfo GetFluidMotionFrames(IADLXGPU* gpu)
+        internal FluidMotionFramesInfo GetFluidMotionFrames(IADLXGPU* gpu)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -455,7 +531,7 @@ namespace ADLXWrapper
             return new FluidMotionFramesInfo(true, enabled);
         }
 
-        public bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesInfo info)
+        internal bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesInfo info)
         {
             try
             {
@@ -504,7 +580,7 @@ namespace ADLXWrapper
             if (sharpnessResult != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(sharpnessResult, "Failed to query Radeon Super Resolution sharpness");
 
-            return new RadeonSuperResolutionInfo(true, enabled, sharpness, range);
+            return new RadeonSuperResolutionInfo(true, enabled, sharpness, IntRangeInfo.FromNative(range));
         }
 
         public bool TryGetRadeonSuperResolution(out RadeonSuperResolutionInfo info)
@@ -625,10 +701,10 @@ namespace ADLXWrapper
         public bool IsEnabled { get; init; }
         public bool IsMinResSupported { get; init; }
         public int MinResolution { get; init; }
-        public ADLX_IntRange ResolutionRange { get; init; }
+        public IntRangeInfo ResolutionRange { get; init; }
 
         [JsonConstructor]
-        public BoostInfo(bool isSupported, bool isEnabled, bool isMinResSupported, int minResolution, ADLX_IntRange resolutionRange)
+        public BoostInfo(bool isSupported, bool isEnabled, bool isMinResSupported, int minResolution, IntRangeInfo resolutionRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
@@ -651,7 +727,7 @@ namespace ADLXWrapper
 
                 ADLX_IntRange range = default;
                 boost->GetResolutionRange(&range);
-                ResolutionRange = range;
+                ResolutionRange = IntRangeInfo.FromNative(range);
 
                 int minRes = 0;
                 boost->GetResolution(&minRes);
@@ -673,10 +749,10 @@ namespace ADLXWrapper
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
         public int Sharpness { get; init; }
-        public ADLX_IntRange SharpnessRange { get; init; }
+        public IntRangeInfo SharpnessRange { get; init; }
 
         [JsonConstructor]
-        public RadeonImageSharpeningInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
+        public RadeonImageSharpeningInfo(bool isSupported, bool isEnabled, int sharpness, IntRangeInfo sharpnessRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
@@ -702,7 +778,7 @@ namespace ADLXWrapper
 
                 ADLX_IntRange range = default;
                 sharpening->GetSharpnessRange(&range);
-                SharpnessRange = range;
+                SharpnessRange = IntRangeInfo.FromNative(range);
             }
             else
             {
@@ -773,10 +849,10 @@ namespace ADLXWrapper
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
         public int Fps { get; init; }
-        public ADLX_IntRange FpsRange { get; init; }
+        public IntRangeInfo FpsRange { get; init; }
 
         [JsonConstructor]
-        public FrameRateTargetControlInfo(bool isSupported, bool isEnabled, int fps, ADLX_IntRange fpsRange)
+        public FrameRateTargetControlInfo(bool isSupported, bool isEnabled, int fps, IntRangeInfo fpsRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
@@ -802,7 +878,7 @@ namespace ADLXWrapper
 
                 ADLX_IntRange range = default;
                 frtc->GetFPSRange(&range);
-                FpsRange = range;
+                FpsRange = IntRangeInfo.FromNative(range);
             }
             else
             {
@@ -916,10 +992,10 @@ namespace ADLXWrapper
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
         public int Sharpness { get; init; }
-        public ADLX_IntRange SharpnessRange { get; init; }
+        public IntRangeInfo SharpnessRange { get; init; }
 
         [JsonConstructor]
-        public RadeonSuperResolutionInfo(bool isSupported, bool isEnabled, int sharpness, ADLX_IntRange sharpnessRange)
+        public RadeonSuperResolutionInfo(bool isSupported, bool isEnabled, int sharpness, IntRangeInfo sharpnessRange)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
