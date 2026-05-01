@@ -187,7 +187,6 @@ log-visited-files
 #log-exclusions
 log-potential-typedef-remappings
 windows-types 
-generate-helper-types
 multi-file
 generate-macro-bindings
 generate-file-scoped-namespaces
