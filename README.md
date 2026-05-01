@@ -11,7 +11,7 @@ Facade-first C# access to the AMD ADLX SDK, with native bindings available for l
 - Facade tests: `ADLXWrapper.FacadeTests/` (helper/facade APIs)
 
 ## Why facade-first?
-Facades remove pointer management and expose strongly-typed helpers (`ADLXSystemServicesHelper`, `ADLXDisplayServicesHelper`, etc.) that wrap the highest supported ADLX interface version, handle AddRef/Release, and surface DTOs for easy serialization. Use the native layer only when you need direct vtable access or to mirror ADLX SDK samples verbatim.
+Facades remove all pointer and memory management and expose strongly-typed helpers (`ADLXSystemServicesHelper`, `ADLXDisplayServicesHelper`, etc.) that wrap the highest supported ADLX interface version, handle AddRef/Release, and return `*Dto` objects for easy serialization (e.g. to JSON). No `unsafe` code is required. Use the native layer only when you need direct vtable access or to mirror ADLX SDK samples verbatim.
 
 ## Getting started
 1) Prepare ADLX headers (once):
@@ -36,7 +36,7 @@ using ADLXWrapper;
 using var adlx = ADLXApiHelper.Initialize();
 using var sys = adlx.GetSystemServices();
 
-// Displays (pointer-free)
+// Enumerate displays — fully pointer-free, no unsafe required
 var displays = sys.EnumerateDisplays();
 foreach (var display in displays)
 using (display)
@@ -46,16 +46,22 @@ using (display)
     if (vsr.supported && !vsr.enabled) display.SetVirtualSuperResolution(true);
 }
 
-// GPU identity + metrics
-var gpus = sys.EnumerateADLXGPUs();
-foreach (var gpu in gpus)
-using (gpu)
+// GPU identity — EnumerateGPUs() returns IEnumerable<GpuDto> (plain DTOs, no disposal needed)
+foreach (var gpu in sys.EnumerateGPUs())
+    Console.WriteLine($"{gpu.Name} ({gpu.VRAMType}, {gpu.TotalVRAM} MB, UniqueId={gpu.UniqueId})");
+
+// GPU-specific features use int gpuUniqueId — no pointers or handles
+using var perf = sys.GetPerformanceMonitoringServices();
+foreach (var gpu in sys.EnumerateGPUs())
 {
-    var id = gpu.Identity;
-    Console.WriteLine($"{id.Name} ({id.Brand}, {id.VRAMType}, {id.TotalVRAM} MB)");
+    if (perf.TryGetCurrentGpuMetrics(gpu.UniqueId, out var m))
+        Console.WriteLine($"{gpu.Name}: {m.Temperature:F1}°C, {m.Usage:F1}% usage, {m.ClockSpeed} MHz");
 }
 ```
 More in `ADLXWrapper/README.md` (per-feature examples: Display, Desktop, GPU identity, Perf, 3D settings, Tuning, Power, Color, Multimedia).
+
+## DTO naming
+All data objects returned by the Facade layer follow the `*Dto` suffix convention (e.g. `GpuDto`, `DisplayDto`, `GammaDto`, `GpuMetricsSnapshotDto`). DTOs are `readonly struct`s with `init` properties and `[JsonConstructor]` support for round-trip JSON serialisation.
 
 ## Using the release ZIP
 - Build with `./create_adlx_release_zip.ps1` or download from GitHub Releases (artifact name `adlxwrapper-<version>-Release.zip`).
@@ -85,4 +91,4 @@ ADLXWrapper/
 |-- scripts/                  # Prepare/build/test/release scripts
 ```
 
-Need more? Start with `ADLXWrapper/README.md` for the Facade walkthrough, then branch to the Native guide if you need raw access. APIDocs in `APIDocs/_site/index.html` provide full API surface details.**
+Need more? Start with `ADLXWrapper/README.md` for the Facade walkthrough, then branch to the Native guide if you need raw access. APIDocs in `APIDocs/_site/index.html` provide full API surface details.
