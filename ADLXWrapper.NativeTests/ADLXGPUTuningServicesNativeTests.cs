@@ -380,6 +380,39 @@ public unsafe class ADLXGPUTuningServicesNativeTests
     }
 
     [SkippableFact]
+    public void Gpu_tuning_smart_access_memory_all_gpus_native()
+    {
+        SkipIfNoAdlxSupport();
+        using var servicesPtr = GetTuningServicesComPtrOrSkip(out var services);
+
+        IADLXGPUTuningServices1* services1 = null;
+        var qiResult = QueryInterface((IADLXInterface*)services, nameof(IADLXGPUTuningServices1), (void**)&services1);
+        Skip.If(qiResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || qiResult == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE || services1 == null,
+            "IADLXGPUTuningServices1 not supported on this driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, qiResult);
+        using var services1Ptr = new ComPtr<IADLXGPUTuningServices1>(services1);
+
+        using var gpuListPtr = GetGpuListOrSkip(out var gpuList);
+
+        ForEachGpu(gpuList, gpu =>
+        {
+            IADLXSmartAccessMemory* sam = null;
+            var result = services1->GetSmartAccessMemory(gpu, &sam);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || result == ADLX_RESULT.ADLX_INVALID_OBJECT || sam == null)
+                return;
+            Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+            using var samPtr = new ComPtr<IADLXSmartAccessMemory>(sam);
+
+            bool supported = false;
+            AssertResultOrContinue(sam->IsSupported(&supported));
+
+            bool enabled = false;
+            if (supported)
+                AssertResultOrContinue(sam->IsEnabled(&enabled));
+        });
+    }
+
+    [SkippableFact]
     public void Gpu_tuning_change_listener_native()
     {
         SkipIfNoAdlxSupport();

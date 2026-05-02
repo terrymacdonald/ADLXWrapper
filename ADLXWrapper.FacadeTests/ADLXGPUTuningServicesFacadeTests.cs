@@ -117,4 +117,20 @@ public class ADLXGPUTuningServicesFacadeTests
 
         Skip.If(!info.IsSupported, "Manual GFX tuning reported unsupported.");
     }
+
+    [SkippableFact]
+    public void Gpu_tuning_smart_access_memory_facade()
+    {
+        using var tuning = GetTuningHelperOrSkip();
+
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
+
+        if (!tuning.TryGetSmartAccessMemory(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("AMD SmartAccess Memory not supported on this GPU or driver.");
+
+        Assert.IsType<bool>(info.IsSupported);
+        Assert.IsType<bool>(info.IsEnabled);
+    }
 }

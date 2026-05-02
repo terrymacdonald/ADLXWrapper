@@ -432,6 +432,39 @@ namespace ADLXWrapper
             }
         }
 
+        internal SmartAccessMemoryDto GetSmartAccessMemory(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+            if (!_services1.HasValue)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD SmartAccess Memory requires IADLXGPUTuningServices1 which is not available on this driver");
+
+            IADLXSmartAccessMemory* pSam = null;
+            var result = _services1.Value.Get()->GetSmartAccessMemory(gpu, &pSam);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pSam == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD SmartAccess Memory not supported on this GPU");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get AMD SmartAccess Memory interface");
+
+            using var samPtr = new ComPtr<IADLXSmartAccessMemory>(pSam);
+            return new SmartAccessMemoryDto(samPtr.Get());
+        }
+
+        internal bool TryGetSmartAccessMemory(IADLXGPU* gpu, out SmartAccessMemoryDto info)
+        {
+            try
+            {
+                info = GetSmartAccessMemory(gpu);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                info = default;
+                return false;
+            }
+        }
+
         // =====================================================================
         // Public per-GPU overloads (by unique id)
         // =====================================================================
@@ -591,6 +624,21 @@ namespace ADLXWrapper
         public bool TryGetPresetTuning(int gpuUniqueId, out PresetTuningDto info)
         {
             try { info = GetPresetTuning(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Gets AMD SmartAccess Memory info for the GPU with the specified unique id.</summary>
+        public SmartAccessMemoryDto GetSmartAccessMemory(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetSmartAccessMemory((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get AMD SmartAccess Memory info for the GPU with the specified unique id.</summary>
+        public bool TryGetSmartAccessMemory(int gpuUniqueId, out SmartAccessMemoryDto info)
+        {
+            try { info = GetSmartAccessMemory(gpuUniqueId); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
@@ -896,6 +944,30 @@ namespace ADLXWrapper
         Balanced,
         Turbo,
         Rage
+    }
+
+    public readonly struct SmartAccessMemoryDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public SmartAccessMemoryDto(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+
+        internal unsafe SmartAccessMemoryDto(IADLXSmartAccessMemory* sam)
+        {
+            bool supported = false;
+            sam->IsSupported(&supported);
+            IsSupported = supported;
+
+            bool enabled = false;
+            if (IsSupported) sam->IsEnabled(&enabled);
+            IsEnabled = enabled;
+        }
     }
 
     public readonly struct AutoTuningDto
