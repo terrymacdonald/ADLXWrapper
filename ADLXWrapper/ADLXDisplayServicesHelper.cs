@@ -23,6 +23,7 @@ namespace ADLXWrapper
     public sealed unsafe class ADLXDisplayServicesHelper : IDisposable
     {
         private ComPtr<IADLXDisplayServices> _displayServices;
+        private ComPtr<IADLXDisplayServices1>? _displayServices1;
         private ComPtr<IADLXDisplayServices2>? _displayServices2;
         private ComPtr<IADLXDisplayServices3>? _displayServices3;
         private ComPtr<IADLXDesktopServices>? _desktopServices;
@@ -647,6 +648,7 @@ namespace ADLXWrapper
             _desktopServices?.Dispose();
             _displayServices3?.Dispose();
             _displayServices2?.Dispose();
+            _displayServices1?.Dispose();
             _displayServices.Dispose();
             _disposed = true;
             GC.SuppressFinalize(this);
@@ -812,7 +814,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServicesForSettings();
             using var hdcp = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)DisplaySettingsOps.GetHDCPHandle((IntPtr)services, (IntPtr)display));
             return DisplaySettingsOps.GetHDCPState((IntPtr)hdcp.Get());
         }
@@ -821,7 +823,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServicesForSettings();
             using var hdcp = new ComPtr<IADLXDisplayHDCP>((IADLXDisplayHDCP*)DisplaySettingsOps.GetHDCPHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetHDCPEnabled((IntPtr)hdcp.Get(), enable);
         }
@@ -843,7 +845,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServicesForSettings();
             using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)DisplaySettingsOps.GetVariBrightHandle((IntPtr)services, (IntPtr)display));
             return DisplaySettingsOps.GetVariBrightState((IntPtr)vb.Get());
         }
@@ -852,7 +854,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServicesForSettings();
             using var vb = new ComPtr<IADLXDisplayVariBright>((IADLXDisplayVariBright*)DisplaySettingsOps.GetVariBrightHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetVariBright((IntPtr)vb.Get(), enable, mode);
         }
@@ -1112,7 +1114,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServices2OrThrow();
             return DisplaySettingsOps.GetDisplayConnectivityExperience((IADLXDisplayServices*)services, display);
         }
 
@@ -1121,7 +1123,7 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             IADLXDisplayConnectivityExperience* pConn;
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServices2OrThrow();
             var result = services->GetDisplayConnectivityExperience(display, &pConn);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pConn == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Connectivity Experience not supported by this ADLX system");
@@ -1148,7 +1150,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServices1OrThrow();
             using var blanking = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)DisplaySettingsOps.GetDisplayBlankingHandle((IntPtr)services, (IntPtr)display));
             return DisplaySettingsOps.GetDisplayBlankingState((IntPtr)blanking.Get());
         }
@@ -1157,7 +1159,7 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            var services = GetDisplayServices3OrThrow();
+            var services = GetDisplayServices1OrThrow();
             using var blanking = new ComPtr<IADLXDisplayBlanking>((IADLXDisplayBlanking*)DisplaySettingsOps.GetDisplayBlankingHandle((IntPtr)services, (IntPtr)display));
             DisplaySettingsOps.SetDisplayBlanked((IntPtr)blanking.Get(), blank);
         }
@@ -1487,9 +1489,9 @@ namespace ADLXWrapper
                 if (pDisplayServices == null) throw new ArgumentNullException(nameof(pDisplayServices));
                 if (pDisplay == null) throw new ArgumentNullException(nameof(pDisplay));
     
-                var services3 = (IADLXDisplayServices3*)pDisplayServices;
+                var services2 = (IADLXDisplayServices2*)pDisplayServices;
                 IADLXDisplayConnectivityExperience* pConn;
-                var result = services3->GetDisplayConnectivityExperience(pDisplay, &pConn);
+                var result = services2->GetDisplayConnectivityExperience(pDisplay, &pConn);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pConn == null)
                     throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Connectivity Experience not supported by this ADLX system");
                 if (result != ADLX_RESULT.ADLX_OK)
@@ -1685,10 +1687,10 @@ namespace ADLXWrapper
                 if (pDisplay == IntPtr.Zero)
                     throw new ArgumentNullException(nameof(pDisplay));
 
-                if (!ADLXUtils.TryQueryInterface(pDisplayServices, nameof(IADLXDisplayServices3), out var pServices3) || pServices3 == IntPtr.Zero)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Blanking requires Display Services v3.");
+                if (!ADLXUtils.TryQueryInterface(pDisplayServices, nameof(IADLXDisplayServices1), out var pServices1) || pServices1 == IntPtr.Zero)
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display Blanking requires Display Services v1.");
 
-                using var services = new ComPtr<IADLXDisplayServices3>((IADLXDisplayServices3*)pServices3);
+                using var services = new ComPtr<IADLXDisplayServices1>((IADLXDisplayServices1*)pServices1);
                 IADLXDisplayBlanking* pBlanking;
                 var result = services.Get()->GetDisplayBlanking((IADLXDisplay*)pDisplay, &pBlanking);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pBlanking == null)
@@ -2349,6 +2351,12 @@ namespace ADLXWrapper
             if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices2), out var pServices2))
             {
                 _displayServices2 = new ComPtr<IADLXDisplayServices2>((IADLXDisplayServices2*)pServices2);
+                return;
+            }
+
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLXDisplayServices1), out var pServices1))
+            {
+                _displayServices1 = new ComPtr<IADLXDisplayServices1>((IADLXDisplayServices1*)pServices1);
             }
         }
 
@@ -2358,6 +2366,28 @@ namespace ADLXWrapper
             if (services == null)
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
             return services;
+        }
+
+        private IADLXDisplayServices1* GetDisplayServices1OrThrow()
+        {
+            if (_displayServices3.HasValue)
+                return (IADLXDisplayServices1*)_displayServices3.Value.Get();
+            if (_displayServices2.HasValue)
+                return (IADLXDisplayServices1*)_displayServices2.Value.Get();
+            if (_displayServices1.HasValue)
+                return _displayServices1.Value.Get();
+
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services v1 not supported by this ADLX system");
+        }
+
+        private IADLXDisplayServices2* GetDisplayServices2OrThrow()
+        {
+            if (_displayServices3.HasValue)
+                return (IADLXDisplayServices2*)_displayServices3.Value.Get();
+            if (_displayServices2.HasValue)
+                return _displayServices2.Value.Get();
+
+            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services v2 not supported by this ADLX system");
         }
 
         private IADLXDisplayServices3* GetDisplayServices3OrThrow()
