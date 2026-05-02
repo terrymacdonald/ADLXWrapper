@@ -670,26 +670,36 @@ namespace ADLXWrapper
         public bool ClockSpeedSupported { get; init; }
         public bool TemperatureSupported { get; init; }
         public bool HotspotTemperatureSupported { get; init; }
+        public bool IntakeTemperatureSupported { get; init; }
         public bool PowerSupported { get; init; }
         public bool FanSpeedSupported { get; init; }
         public bool VRAMSupported { get; init; }
         public bool VRAMClockSpeedSupported { get; init; }
         public bool VoltageSupported { get; init; }
         public bool TotalBoardPowerSupported { get; init; }
+        public bool? MemoryTemperatureSupported { get; init; }
+        public bool? NPUFrequencySupported { get; init; }
+        public bool? NPUActivityLevelSupported { get; init; }
+        public bool? SharedMemorySupported { get; init; }
 
         [JsonConstructor]
-        public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)
+        public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool intakeTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported, bool? memoryTemperatureSupported = null, bool? nPUFrequencySupported = null, bool? nPUActivityLevelSupported = null, bool? sharedMemorySupported = null)
         {
             UsageSupported = usageSupported;
             ClockSpeedSupported = clockSpeedSupported;
             TemperatureSupported = temperatureSupported;
             HotspotTemperatureSupported = hotspotTemperatureSupported;
+            IntakeTemperatureSupported = intakeTemperatureSupported;
             PowerSupported = powerSupported;
             FanSpeedSupported = fanSpeedSupported;
             VRAMSupported = vRAMSupported;
             VRAMClockSpeedSupported = vRAMClockSpeedSupported;
             VoltageSupported = voltageSupported;
             TotalBoardPowerSupported = totalBoardPowerSupported;
+            MemoryTemperatureSupported = memoryTemperatureSupported;
+            NPUFrequencySupported = nPUFrequencySupported;
+            NPUActivityLevelSupported = nPUActivityLevelSupported;
+            SharedMemorySupported = sharedMemorySupported;
         }
 
         internal unsafe GpuMetricsSupportDto(IADLXGPUMetricsSupport* pMetricsSupport)
@@ -699,12 +709,35 @@ namespace ADLXWrapper
             pMetricsSupport->IsSupportedGPUClockSpeed(&supported); ClockSpeedSupported = supported;
             pMetricsSupport->IsSupportedGPUTemperature(&supported); TemperatureSupported = supported;
             pMetricsSupport->IsSupportedGPUHotspotTemperature(&supported); HotspotTemperatureSupported = supported;
+            pMetricsSupport->IsSupportedGPUIntakeTemperature(&supported); IntakeTemperatureSupported = supported;
             pMetricsSupport->IsSupportedGPUPower(&supported); PowerSupported = supported;
             pMetricsSupport->IsSupportedGPUFanSpeed(&supported); FanSpeedSupported = supported;
             pMetricsSupport->IsSupportedGPUVRAM(&supported); VRAMSupported = supported;
             pMetricsSupport->IsSupportedGPUVRAMClockSpeed(&supported); VRAMClockSpeedSupported = supported;
             pMetricsSupport->IsSupportedGPUVoltage(&supported); VoltageSupported = supported;
             pMetricsSupport->IsSupportedGPUTotalBoardPower(&supported); TotalBoardPowerSupported = supported;
+
+            MemoryTemperatureSupported = null;
+            NPUFrequencySupported = null;
+            NPUActivityLevelSupported = null;
+            SharedMemorySupported = null;
+
+            // v1 support flags: MemoryTemperature, NPUFrequency, NPUActivityLevel
+            if (ADLXUtils.TryQueryInterface((IntPtr)pMetricsSupport, nameof(IADLXGPUMetricsSupport1), out var p1Ptr))
+            {
+                using var s1 = new ComPtr<IADLXGPUMetricsSupport1>((IADLXGPUMetricsSupport1*)p1Ptr);
+                bool v = false;
+                if (s1.Get()->IsSupportedGPUMemoryTemperature(&v) == ADLX_RESULT.ADLX_OK) MemoryTemperatureSupported = v;
+                if (s1.Get()->IsSupportedNPUFrequency(&v) == ADLX_RESULT.ADLX_OK) NPUFrequencySupported = v;
+                if (s1.Get()->IsSupportedNPUActivityLevel(&v) == ADLX_RESULT.ADLX_OK) NPUActivityLevelSupported = v;
+
+                // v2 support flags: SharedMemory (extends v1)
+                if (ADLXUtils.TryQueryInterface((IntPtr)s1.Get(), nameof(IADLXGPUMetricsSupport2), out var p2Ptr))
+                {
+                    using var s2 = new ComPtr<IADLXGPUMetricsSupport2>((IADLXGPUMetricsSupport2*)p2Ptr);
+                    if (s2.Get()->IsSupportedGPUSharedMemory(&v) == ADLX_RESULT.ADLX_OK) SharedMemorySupported = v;
+                }
+            }
         }
     }
 
@@ -712,6 +745,7 @@ namespace ADLXWrapper
     {
         public double Temperature { get; init; }
         public double HotspotTemperature { get; init; }
+        public double IntakeTemperature { get; init; }
         public double Usage { get; init; }
         public int ClockSpeed { get; init; }
         public int VRAMClockSpeed { get; init; }
@@ -721,12 +755,17 @@ namespace ADLXWrapper
         public double TotalBoardPower { get; init; }
         public int Voltage { get; init; }
         public long TimestampMs { get; init; }
+        public double? MemoryTemperature { get; init; }
+        public int? NPUFrequency { get; init; }
+        public int? NPUActivityLevel { get; init; }
+        public int? SharedMemory { get; init; }
 
         [JsonConstructor]
-        public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
+        public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double intakeTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs, double? memoryTemperature = null, int? nPUFrequency = null, int? nPUActivityLevel = null, int? sharedMemory = null)
         {
             Temperature = temperature;
             HotspotTemperature = hotspotTemperature;
+            IntakeTemperature = intakeTemperature;
             Usage = usage;
             ClockSpeed = clockSpeed;
             VRAMClockSpeed = vramClockSpeed;
@@ -736,6 +775,10 @@ namespace ADLXWrapper
             TotalBoardPower = totalBoardPower;
             Voltage = voltage;
             TimestampMs = timestampMs;
+            MemoryTemperature = memoryTemperature;
+            NPUFrequency = nPUFrequency;
+            NPUActivityLevel = nPUActivityLevel;
+            SharedMemory = sharedMemory;
         }
 
         internal unsafe GpuMetricsSnapshotDto(IADLXGPUMetrics* pMetrics)
@@ -743,6 +786,7 @@ namespace ADLXWrapper
             long ts = 0; pMetrics->TimeStamp(&ts); TimestampMs = ts;
             double temp = 0; pMetrics->GPUTemperature(&temp); Temperature = temp;
             double hot = 0; pMetrics->GPUHotspotTemperature(&hot); HotspotTemperature = hot;
+            double intake = 0; pMetrics->GPUIntakeTemperature(&intake); IntakeTemperature = intake;
             double usage = 0; pMetrics->GPUUsage(&usage); Usage = usage;
             int clock = 0; pMetrics->GPUClockSpeed(&clock); ClockSpeed = clock;
             int vramClock = 0; pMetrics->GPUVRAMClockSpeed(&vramClock); VRAMClockSpeed = vramClock;
@@ -751,6 +795,31 @@ namespace ADLXWrapper
             double power = 0; pMetrics->GPUPower(&power); Power = power;
             double totalPower = 0; pMetrics->GPUTotalBoardPower(&totalPower); TotalBoardPower = totalPower;
             int voltage = 0; pMetrics->GPUVoltage(&voltage); Voltage = voltage;
+
+            MemoryTemperature = null;
+            NPUFrequency = null;
+            NPUActivityLevel = null;
+            SharedMemory = null;
+
+            // v1 metrics: MemoryTemperature, NPUFrequency, NPUActivityLevel (IADLXGPUMetrics1)
+            if (ADLXUtils.TryQueryInterface((IntPtr)pMetrics, nameof(IADLXGPUMetrics1), out var p1Ptr))
+            {
+                using var m1 = new ComPtr<IADLXGPUMetrics1>((IADLXGPUMetrics1*)p1Ptr);
+                double memTemp = 0;
+                if (m1.Get()->GPUMemoryTemperature(&memTemp) == ADLX_RESULT.ADLX_OK) MemoryTemperature = memTemp;
+                int npuFreq = 0;
+                if (m1.Get()->NPUFrequency(&npuFreq) == ADLX_RESULT.ADLX_OK) NPUFrequency = npuFreq;
+                int npuActivity = 0;
+                if (m1.Get()->NPUActivityLevel(&npuActivity) == ADLX_RESULT.ADLX_OK) NPUActivityLevel = npuActivity;
+
+                // v2 metrics: SharedMemory (IADLXGPUMetrics2 extends IADLXGPUMetrics1)
+                if (ADLXUtils.TryQueryInterface((IntPtr)m1.Get(), nameof(IADLXGPUMetrics2), out var p2Ptr))
+                {
+                    using var m2 = new ComPtr<IADLXGPUMetrics2>((IADLXGPUMetrics2*)p2Ptr);
+                    int shared = 0;
+                    if (m2.Get()->GPUSharedMemory(&shared) == ADLX_RESULT.ADLX_OK) SharedMemory = shared;
+                }
+            }
         }
     }
 

@@ -150,6 +150,10 @@ namespace ADLXWrapper
             IADLX3DAntiLag* pAntiLag;
             if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); antiLag = new AntiLagDto(c.Get()); }
 
+            ChillDto? chill = null;
+            IADLX3DChill* pChill;
+            if (services->GetChill(gpu, &pChill) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DChill>(pChill); chill = new ChillDto(c.Get()); }
+
             BoostDto? boost = null;
             IADLX3DBoost* pBoost;
             if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); boost = new BoostDto(c.Get()); }
@@ -174,6 +178,10 @@ namespace ADLXWrapper
             IADLX3DAntiAliasing* pAa;
             if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); aa = new AntiAliasingDto(c.Get()); }
 
+            MorphologicalAntiAliasingDto? morphAa = null;
+            IADLX3DMorphologicalAntiAliasing* pMorphAa;
+            if (services->GetMorphologicalAntiAliasing(gpu, &pMorphAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa); morphAa = new MorphologicalAntiAliasingDto(c.Get()); }
+
             AnisotropicFilteringDto? af = null;
             IADLX3DAnisotropicFiltering* pAf;
             if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); af = new AnisotropicFilteringDto(c.Get()); }
@@ -182,7 +190,14 @@ namespace ADLXWrapper
             IADLX3DTessellation* pTess;
             if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); tess = new TessellationDto(c.Get()); }
 
-            return new All3DSettingsDto(antiLag, boost, sharpening, enhancedSync, vsync, frtc, aa, af, tess, null, null);
+            ImageSharpenDesktopDto? imageSharpenDesktop = null;
+            if (_services2.HasValue)
+            {
+                IADLX3DImageSharpenDesktop* pIsd;
+                if (_services2.Value.Get()->GetImageSharpenDesktop(gpu, &pIsd) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpenDesktop>(pIsd); imageSharpenDesktop = new ImageSharpenDesktopDto(c.Get()); }
+            }
+
+            return new All3DSettingsDto(antiLag, chill, boost, sharpening, enhancedSync, vsync, frtc, aa, morphAa, af, tess, null, null, imageSharpenDesktop);
         }
 
         /// <summary>
@@ -217,14 +232,17 @@ namespace ADLXWrapper
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             var services = GetHighestServices();
             if (info.AntiLag.HasValue) ApplyAntiLag(services, gpu, info.AntiLag.Value);
+            if (info.Chill.HasValue) ApplyChill(services, gpu, info.Chill.Value);
             if (info.Boost.HasValue) ApplyBoost(services, gpu, info.Boost.Value);
             if (info.ImageSharpening.HasValue) ApplyRadeonImageSharpening(services, gpu, info.ImageSharpening.Value);
             if (info.EnhancedSync.HasValue) ApplyEnhancedSync(services, gpu, info.EnhancedSync.Value);
             if (info.WaitForVerticalRefresh.HasValue) ApplyWaitForVerticalRefresh(services, gpu, info.WaitForVerticalRefresh.Value);
             if (info.FrameRateTargetControl.HasValue) ApplyFrameRateTargetControl(services, gpu, info.FrameRateTargetControl.Value);
             if (info.AntiAliasing.HasValue) ApplyAntiAliasing(services, gpu, info.AntiAliasing.Value);
+            if (info.MorphologicalAntiAliasing.HasValue) ApplyMorphologicalAntiAliasing(services, gpu, info.MorphologicalAntiAliasing.Value);
             if (info.AnisotropicFiltering.HasValue) ApplyAnisotropicFiltering(services, gpu, info.AnisotropicFiltering.Value);
             if (info.Tessellation.HasValue) ApplyTessellation(services, gpu, info.Tessellation.Value);
+            if (info.ImageSharpenDesktop.HasValue && _services2.HasValue) ApplyImageSharpenDesktop(_services2.Value.Get(), gpu, info.ImageSharpenDesktop.Value);
         }
 
         /// <summary>
@@ -274,6 +292,97 @@ namespace ADLXWrapper
         public bool TryApplyAll3DSettings(int gpuUniqueId, All3DSettingsDto info)
         {
             try { ApplyAll3DSettings(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
+        /// <summary>Gets Chill state for the GPU with the specified unique id.</summary>
+        public ChillDto GetChill(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetChill((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get Chill state for the GPU with the specified unique id.</summary>
+        public bool TryGetChill(int gpuUniqueId, out ChillDto info)
+        {
+            try { info = GetChill(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies Chill settings to the GPU with the specified unique id.</summary>
+        public void ApplyChill(int gpuUniqueId, ChillDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyChill(GetHighestServices(), (IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply Chill settings to the GPU with the specified unique id.</summary>
+        public bool TryApplyChill(int gpuUniqueId, ChillDto info)
+        {
+            try { ApplyChill(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
+        /// <summary>Gets MorphologicalAntiAliasing state for the GPU with the specified unique id.</summary>
+        public MorphologicalAntiAliasingDto GetMorphologicalAntiAliasing(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetMorphologicalAntiAliasing((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get MorphologicalAntiAliasing state for the GPU with the specified unique id.</summary>
+        public bool TryGetMorphologicalAntiAliasing(int gpuUniqueId, out MorphologicalAntiAliasingDto info)
+        {
+            try { info = GetMorphologicalAntiAliasing(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies MorphologicalAntiAliasing settings to the GPU with the specified unique id.</summary>
+        public void ApplyMorphologicalAntiAliasing(int gpuUniqueId, MorphologicalAntiAliasingDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyMorphologicalAntiAliasing(GetHighestServices(), (IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply MorphologicalAntiAliasing settings to the GPU with the specified unique id.</summary>
+        public bool TryApplyMorphologicalAntiAliasing(int gpuUniqueId, MorphologicalAntiAliasingDto info)
+        {
+            try { ApplyMorphologicalAntiAliasing(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
+        /// <summary>Gets ImageSharpenDesktop state for the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.</summary>
+        public ImageSharpenDesktopDto GetImageSharpenDesktop(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetImageSharpenDesktop((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get ImageSharpenDesktop state for the GPU with the specified unique id.</summary>
+        public bool TryGetImageSharpenDesktop(int gpuUniqueId, out ImageSharpenDesktopDto info)
+        {
+            try { info = GetImageSharpenDesktop(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies ImageSharpenDesktop settings to the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.</summary>
+        public void ApplyImageSharpenDesktop(int gpuUniqueId, ImageSharpenDesktopDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (!_services2.HasValue) throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "ImageSharpenDesktop requires IADLX3DSettingsServices2 which is not available on this driver");
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyImageSharpenDesktop(_services2.Value.Get(), (IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply ImageSharpenDesktop settings to the GPU with the specified unique id.</summary>
+        public bool TryApplyImageSharpenDesktop(int gpuUniqueId, ImageSharpenDesktopDto info)
+        {
+            try { ApplyImageSharpenDesktop(gpuUniqueId, info); return true; }
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
         }
 
@@ -373,6 +482,49 @@ namespace ADLXWrapper
             if (services->GetAntiLag(gpu, &p) == ADLX_RESULT.ADLX_OK)
             {
                 using var c = new ComPtr<IADLX3DAntiLag>(p);
+                if (info.IsSupported)
+                {
+                    c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+                    if (info.Level.HasValue && ADLXUtils.TryQueryInterface((IntPtr)c.Get(), nameof(IADLX3DAntiLag1), out var p1Ptr))
+                    {
+                        using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1Ptr);
+                        al1.Get()->SetLevel(info.Level.Value);
+                    }
+                }
+            }
+        }
+
+        private static void ApplyChill(IADLX3DSettingsServices* services, IADLXGPU* gpu, ChillDto info)
+        {
+            IADLX3DChill* p;
+            if (services->GetChill(gpu, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DChill>(p);
+                if (info.IsSupported)
+                {
+                    c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+                    c.Get()->SetMinFPS(info.MinFPS);
+                    c.Get()->SetMaxFPS(info.MaxFPS);
+                }
+            }
+        }
+
+        private static void ApplyMorphologicalAntiAliasing(IADLX3DSettingsServices* services, IADLXGPU* gpu, MorphologicalAntiAliasingDto info)
+        {
+            IADLX3DMorphologicalAntiAliasing* p;
+            if (services->GetMorphologicalAntiAliasing(gpu, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(p);
+                if (info.IsSupported) c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+            }
+        }
+
+        private static void ApplyImageSharpenDesktop(IADLX3DSettingsServices2* services2, IADLXGPU* gpu, ImageSharpenDesktopDto info)
+        {
+            IADLX3DImageSharpenDesktop* p;
+            if (services2->GetImageSharpenDesktop(gpu, &p) == ADLX_RESULT.ADLX_OK)
+            {
+                using var c = new ComPtr<IADLX3DImageSharpenDesktop>(p);
                 if (info.IsSupported) c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
             }
         }
@@ -471,6 +623,73 @@ namespace ADLXWrapper
                     c.Get()->SetLevel(info.Level);
                 }
             }
+        }
+
+        internal ChillDto GetChill(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+            var services = GetHighestServices();
+            IADLX3DChill* pChill = null;
+            var result = services->GetChill(gpu, &pChill);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pChill == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Chill not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Chill interface");
+            using var chillPtr = new ComPtr<IADLX3DChill>(pChill);
+            return new ChillDto(chillPtr.Get());
+        }
+
+        internal bool TryGetChill(IADLXGPU* gpu, out ChillDto info)
+        {
+            try { info = GetChill(gpu); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        internal MorphologicalAntiAliasingDto GetMorphologicalAntiAliasing(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+            var services = GetHighestServices();
+            IADLX3DMorphologicalAntiAliasing* pMorphAa = null;
+            var result = services->GetMorphologicalAntiAliasing(gpu, &pMorphAa);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pMorphAa == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "MorphologicalAntiAliasing not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get MorphologicalAntiAliasing interface");
+            using var morphAaPtr = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa);
+            return new MorphologicalAntiAliasingDto(morphAaPtr.Get());
+        }
+
+        internal bool TryGetMorphologicalAntiAliasing(IADLXGPU* gpu, out MorphologicalAntiAliasingDto info)
+        {
+            try { info = GetMorphologicalAntiAliasing(gpu); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        internal ImageSharpenDesktopDto GetImageSharpenDesktop(IADLXGPU* gpu)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            if (gpu == null) throw new ArgumentNullException(nameof(gpu));
+            if (!_services2.HasValue)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "ImageSharpenDesktop requires IADLX3DSettingsServices2 which is not available on this driver");
+            IADLX3DImageSharpenDesktop* pIsd = null;
+            var result = _services2.Value.Get()->GetImageSharpenDesktop(gpu, &pIsd);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pIsd == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "ImageSharpenDesktop not supported by this GPU");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get ImageSharpenDesktop interface");
+            using var isdPtr = new ComPtr<IADLX3DImageSharpenDesktop>(pIsd);
+            return new ImageSharpenDesktopDto(isdPtr.Get());
+        }
+
+        internal bool TryGetImageSharpenDesktop(IADLXGPU* gpu, out ImageSharpenDesktopDto info)
+        {
+            try { info = GetImageSharpenDesktop(gpu); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
         internal FluidMotionFramesDto GetFluidMotionFrames(IADLXGPU* gpu)
@@ -610,37 +829,46 @@ namespace ADLXWrapper
     public readonly struct All3DSettingsDto
     {
         public AntiLagDto? AntiLag { get; init; }
+        public ChillDto? Chill { get; init; }
         public BoostDto? Boost { get; init; }
         public RadeonImageSharpeningDto? ImageSharpening { get; init; }
         public EnhancedSyncDto? EnhancedSync { get; init; }
         public WaitForVerticalRefreshDto? WaitForVerticalRefresh { get; init; }
         public FrameRateTargetControlDto? FrameRateTargetControl { get; init; }
         public AntiAliasingDto? AntiAliasing { get; init; }
+        public MorphologicalAntiAliasingDto? MorphologicalAntiAliasing { get; init; }
         public AnisotropicFilteringDto? AnisotropicFiltering { get; init; }
         public TessellationDto? Tessellation { get; init; }
         public FluidMotionFramesDto? FluidMotionFrames { get; init; }
         public RadeonSuperResolutionDto? RadeonSuperResolution { get; init; }
+        public ImageSharpenDesktopDto? ImageSharpenDesktop { get; init; }
 
         [JsonConstructor]
-        public All3DSettingsDto(AntiLagDto? antiLag, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution)
+        public All3DSettingsDto(AntiLagDto? antiLag, ChillDto? chill, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, MorphologicalAntiAliasingDto? morphologicalAntiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution, ImageSharpenDesktopDto? imageSharpenDesktop = null)
         {
             AntiLag = antiLag;
+            Chill = chill;
             Boost = boost;
             ImageSharpening = imageSharpening;
             EnhancedSync = enhancedSync;
             WaitForVerticalRefresh = waitForVerticalRefresh;
             FrameRateTargetControl = frameRateTargetControl;
             AntiAliasing = antiAliasing;
+            MorphologicalAntiAliasing = morphologicalAntiAliasing;
             AnisotropicFiltering = anisotropicFiltering;
             Tessellation = tessellation;
             FluidMotionFrames = fluidMotionFrames;
             RadeonSuperResolution = radeonSuperResolution;
+            ImageSharpenDesktop = imageSharpenDesktop;
         }
 
         internal unsafe All3DSettingsDto(IADLX3DSettingsServices* services, IADLXGPU* gpu)
         {
             IADLX3DAntiLag* pAntiLag;
             if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagDto(c.Get()); } else { AntiLag = null; }
+
+            IADLX3DChill* pChill;
+            if (services->GetChill(gpu, &pChill) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DChill>(pChill); Chill = new ChillDto(c.Get()); } else { Chill = null; }
 
             IADLX3DBoost* pBoost;
             if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostDto(c.Get()); } else { Boost = null; }
@@ -660,15 +888,19 @@ namespace ADLXWrapper
             IADLX3DAntiAliasing* pAa;
             if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); AntiAliasing = new AntiAliasingDto(c.Get()); } else { AntiAliasing = null; }
 
+            IADLX3DMorphologicalAntiAliasing* pMorphAa;
+            if (services->GetMorphologicalAntiAliasing(gpu, &pMorphAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa); MorphologicalAntiAliasing = new MorphologicalAntiAliasingDto(c.Get()); } else { MorphologicalAntiAliasing = null; }
+
             IADLX3DAnisotropicFiltering* pAf;
             if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); AnisotropicFiltering = new AnisotropicFilteringDto(c.Get()); } else { AnisotropicFiltering = null; }
 
             IADLX3DTessellation* pTess;
             if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationDto(c.Get()); } else { Tessellation = null; }
 
-            // FMF/RSR not available without helper context; leave null in this constructor.
+            // FMF/RSR/ImageSharpenDesktop not available without helper context; leave null in this constructor.
             FluidMotionFrames = null;
             RadeonSuperResolution = null;
+            ImageSharpenDesktop = null;
         }
     }
 
@@ -676,12 +908,14 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
+        public ADLX_ANTILAG_STATE? Level { get; init; }
 
         [JsonConstructor]
-        public AntiLagDto(bool isSupported, bool isEnabled)
+        public AntiLagDto(bool isSupported, bool isEnabled, ADLX_ANTILAG_STATE? level = null)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
+            Level = level;
         }
 
         internal unsafe AntiLagDto(IADLX3DAntiLag* antiLag)
@@ -692,6 +926,115 @@ namespace ADLXWrapper
 
             bool enabled = false;
             if (IsSupported) antiLag->IsEnabled(&enabled);
+            IsEnabled = enabled;
+
+            Level = null;
+            if (ADLXUtils.TryQueryInterface((IntPtr)antiLag, nameof(IADLX3DAntiLag1), out var p1Ptr))
+            {
+                using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1Ptr);
+                ADLX_ANTILAG_STATE level = default;
+                if (al1.Get()->GetLevel(&level) == ADLX_RESULT.ADLX_OK)
+                    Level = level;
+            }
+        }
+    }
+
+    public readonly struct ChillDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+        public int MinFPS { get; init; }
+        public int MaxFPS { get; init; }
+        public IntRangeDto FPSRange { get; init; }
+
+        [JsonConstructor]
+        public ChillDto(bool isSupported, bool isEnabled, int minFPS, int maxFPS, IntRangeDto fpsRange)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+            MinFPS = minFPS;
+            MaxFPS = maxFPS;
+            FPSRange = fpsRange;
+        }
+
+        internal unsafe ChillDto(IADLX3DChill* chill)
+        {
+            bool supported = false;
+            chill->IsSupported(&supported);
+            IsSupported = supported;
+
+            if (IsSupported)
+            {
+                bool enabled = false;
+                chill->IsEnabled(&enabled);
+                IsEnabled = enabled;
+
+                ADLX_IntRange range = default;
+                chill->GetFPSRange(&range);
+                FPSRange = IntRangeDto.FromNative(range);
+
+                int minFps = 0;
+                chill->GetMinFPS(&minFps);
+                MinFPS = minFps;
+
+                int maxFps = 0;
+                chill->GetMaxFPS(&maxFps);
+                MaxFPS = maxFps;
+            }
+            else
+            {
+                IsEnabled = false;
+                MinFPS = 0;
+                MaxFPS = 0;
+                FPSRange = default;
+            }
+        }
+    }
+
+    public readonly struct MorphologicalAntiAliasingDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public MorphologicalAntiAliasingDto(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+
+        internal unsafe MorphologicalAntiAliasingDto(IADLX3DMorphologicalAntiAliasing* morphAa)
+        {
+            bool supported = false;
+            morphAa->IsSupported(&supported);
+            IsSupported = supported;
+
+            bool enabled = false;
+            if (IsSupported) morphAa->IsEnabled(&enabled);
+            IsEnabled = enabled;
+        }
+    }
+
+    public readonly struct ImageSharpenDesktopDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public ImageSharpenDesktopDto(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+
+        internal unsafe ImageSharpenDesktopDto(IADLX3DImageSharpenDesktop* isd)
+        {
+            bool supported = false;
+            isd->IsSupported(&supported);
+            IsSupported = supported;
+
+            bool enabled = false;
+            if (IsSupported) isd->IsEnabled(&enabled);
             IsEnabled = enabled;
         }
     }

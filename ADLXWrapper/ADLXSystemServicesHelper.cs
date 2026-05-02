@@ -1132,10 +1132,14 @@ namespace ADLXWrapper
         public string DriverVersion { get; init; }
         public string AMDSoftwareVersion { get; init; }
         public string AMDWindowsDriverVersion { get; init; }
+        public string AMDSoftwareEdition { get; init; }
+        public uint AMDSoftwareReleaseYear { get; init; }
+        public uint AMDSoftwareReleaseMonth { get; init; }
+        public uint AMDSoftwareReleaseDay { get; init; }
         public LuidDto Luid { get; init; }
 
         [JsonConstructor]
-        public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidDto? luid = null)
+        public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidDto? luid = null, string amdSoftwareEdition = "", uint amdSoftwareReleaseYear = 0, uint amdSoftwareReleaseMonth = 0, uint amdSoftwareReleaseDay = 0)
         {
             Name = name;
             VendorId = vendorId;
@@ -1160,6 +1164,10 @@ namespace ADLXWrapper
             AMDSoftwareVersion = amdSoftwareVersion;
             AMDWindowsDriverVersion = amdWindowsDriverVersion;
             Luid = luid ?? default;
+            AMDSoftwareEdition = amdSoftwareEdition;
+            AMDSoftwareReleaseYear = amdSoftwareReleaseYear;
+            AMDSoftwareReleaseMonth = amdSoftwareReleaseMonth;
+            AMDSoftwareReleaseDay = amdSoftwareReleaseDay;
         }
 
         internal unsafe GpuDto(IADLXGPU* pGpu)
@@ -1223,6 +1231,10 @@ namespace ADLXWrapper
             var driverVersion = string.Empty;
             var amdSoftwareVersion = string.Empty;
             var amdWindowsDriverVersion = string.Empty;
+            var amdSoftwareEdition = string.Empty;
+            uint amdSoftwareReleaseYear = 0;
+            uint amdSoftwareReleaseMonth = 0;
+            uint amdSoftwareReleaseDay = 0;
             var luid = default(ADLX_LUID);
 
             if (ADLXUtils.TryQueryInterface((IntPtr)pGpu, nameof(IADLXGPU1), out var pGpu1))
@@ -1275,6 +1287,18 @@ namespace ADLXWrapper
                     if (gpu2->AMDWindowsDriverVersion(&winPtr) == ADLX_RESULT.ADLX_OK)
                         amdWindowsDriverVersion = ADLXUtils.MarshalString(&winPtr);
 
+                    sbyte* edPtr = null;
+                    if (gpu2->AMDSoftwareEdition(&edPtr) == ADLX_RESULT.ADLX_OK)
+                        amdSoftwareEdition = ADLXUtils.MarshalString(&edPtr);
+
+                    uint year = 0, month = 0, day = 0;
+                    if (gpu2->AMDSoftwareReleaseDate(&year, &month, &day) == ADLX_RESULT.ADLX_OK)
+                    {
+                        amdSoftwareReleaseYear = year;
+                        amdSoftwareReleaseMonth = month;
+                        amdSoftwareReleaseDay = day;
+                    }
+
                     gpu2->LUID(&luid);
                 }
                 finally
@@ -1295,6 +1319,10 @@ namespace ADLXWrapper
             DriverVersion = driverVersion;
             AMDSoftwareVersion = amdSoftwareVersion;
             AMDWindowsDriverVersion = amdWindowsDriverVersion;
+            AMDSoftwareEdition = amdSoftwareEdition;
+            AMDSoftwareReleaseYear = amdSoftwareReleaseYear;
+            AMDSoftwareReleaseMonth = amdSoftwareReleaseMonth;
+            AMDSoftwareReleaseDay = amdSoftwareReleaseDay;
             Luid = LuidDto.FromNative(luid);
         }
     }
