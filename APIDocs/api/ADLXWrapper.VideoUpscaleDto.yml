@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VideoUpscaleDto
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 493
+    startLine: 494
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 495
+    startLine: 496
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 496
+    startLine: 497
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Sharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 497
+    startLine: 498
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SharpnessRange
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 498
+    startLine: 499
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 500
+    startLine: 501
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

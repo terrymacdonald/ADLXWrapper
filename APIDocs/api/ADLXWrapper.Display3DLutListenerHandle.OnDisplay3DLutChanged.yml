@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplay3DLutChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 3043
+    startLine: 3073
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

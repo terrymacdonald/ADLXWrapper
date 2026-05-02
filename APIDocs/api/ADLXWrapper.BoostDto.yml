@@ -25,7 +25,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BoostDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 697
+    startLine: 1041
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -57,7 +57,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 699
+    startLine: 1043
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -86,7 +86,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 700
+    startLine: 1044
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -115,7 +115,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsMinResSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 701
+    startLine: 1045
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -144,7 +144,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 702
+    startLine: 1046
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -173,7 +173,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResolutionRange
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 703
+    startLine: 1047
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -202,7 +202,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 705
+    startLine: 1049
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerDistributionSnapshotDto
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 755
+    startLine: 825
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApuShiftValue
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 757
+    startLine: 827
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuShiftValue
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 758
+    startLine: 828
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApuShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 759
+    startLine: 829
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 760
+    startLine: 830
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalShiftLimit
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 761
+    startLine: 831
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

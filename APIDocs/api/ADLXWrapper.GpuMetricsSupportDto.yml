@@ -5,11 +5,16 @@ items:
   id: GpuMetricsSupportDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
+  - ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
   - ADLXWrapper.GpuMetricsSupportDto.ClockSpeedSupported
   - ADLXWrapper.GpuMetricsSupportDto.FanSpeedSupported
   - ADLXWrapper.GpuMetricsSupportDto.HotspotTemperatureSupported
+  - ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  - ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  - ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  - ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
   - ADLXWrapper.GpuMetricsSupportDto.PowerSupported
+  - ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
   - ADLXWrapper.GpuMetricsSupportDto.TemperatureSupported
   - ADLXWrapper.GpuMetricsSupportDto.TotalBoardPowerSupported
   - ADLXWrapper.GpuMetricsSupportDto.UsageSupported
@@ -30,7 +35,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSupportDto
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 665
+    startLine: 666
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -62,7 +67,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UsageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 667
+    startLine: 668
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -91,7 +96,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 668
+    startLine: 669
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -120,7 +125,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 669
+    startLine: 670
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,7 +154,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 670
+    startLine: 671
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -160,6 +165,35 @@ items:
       type: System.Boolean
     content.vb: Public Property HotspotTemperatureSupported As Boolean
   overload: ADLXWrapper.GpuMetricsSupportDto.HotspotTemperatureSupported*
+- uid: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  id: IntakeTemperatureSupported
+  parent: ADLXWrapper.GpuMetricsSupportDto
+  langs:
+  - csharp
+  - vb
+  name: IntakeTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.IntakeTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IntakeTemperatureSupported
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 672
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IntakeTemperatureSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IntakeTemperatureSupported As Boolean
+  overload: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported*
 - uid: ADLXWrapper.GpuMetricsSupportDto.PowerSupported
   commentId: P:ADLXWrapper.GpuMetricsSupportDto.PowerSupported
   id: PowerSupported
@@ -178,7 +212,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 671
+    startLine: 673
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -207,7 +241,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 672
+    startLine: 674
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -236,7 +270,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 673
+    startLine: 675
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -265,7 +299,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 674
+    startLine: 676
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -294,7 +328,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VoltageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 675
+    startLine: 677
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -323,7 +357,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 676
+    startLine: 678
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -334,16 +368,132 @@ items:
       type: System.Boolean
     content.vb: Public Property TotalBoardPowerSupported As Boolean
   overload: ADLXWrapper.GpuMetricsSupportDto.TotalBoardPowerSupported*
-- uid: ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  commentId: M:ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)'
+- uid: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  id: MemoryTemperatureSupported
   parent: ADLXWrapper.GpuMetricsSupportDto
   langs:
   - csharp
   - vb
-  name: GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  nameWithType: GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  fullName: ADLXWrapper.GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
+  name: MemoryTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.MemoryTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MemoryTemperatureSupported
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 679
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool? MemoryTemperatureSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property MemoryTemperatureSupported As Boolean?
+  overload: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported*
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  id: NPUFrequencySupported
+  parent: ADLXWrapper.GpuMetricsSupportDto
+  langs:
+  - csharp
+  - vb
+  name: NPUFrequencySupported
+  nameWithType: GpuMetricsSupportDto.NPUFrequencySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUFrequencySupported
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 680
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool? NPUFrequencySupported { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property NPUFrequencySupported As Boolean?
+  overload: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported*
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  id: NPUActivityLevelSupported
+  parent: ADLXWrapper.GpuMetricsSupportDto
+  langs:
+  - csharp
+  - vb
+  name: NPUActivityLevelSupported
+  nameWithType: GpuMetricsSupportDto.NPUActivityLevelSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUActivityLevelSupported
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 681
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool? NPUActivityLevelSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property NPUActivityLevelSupported As Boolean?
+  overload: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported*
+- uid: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  id: SharedMemorySupported
+  parent: ADLXWrapper.GpuMetricsSupportDto
+  langs:
+  - csharp
+  - vb
+  name: SharedMemorySupported
+  nameWithType: GpuMetricsSupportDto.SharedMemorySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SharedMemorySupported
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 682
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool? SharedMemorySupported { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property SharedMemorySupported As Boolean?
+  overload: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported*
+- uid: ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  commentId: M:ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})'
+  parent: ADLXWrapper.GpuMetricsSupportDto
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  nameWithType: GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  fullName: ADLXWrapper.GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
   type: Constructor
   source:
     remote:
@@ -352,7 +502,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 678
+    startLine: 684
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -360,7 +510,7 @@ items:
     content: >-
       [JsonConstructor]
 
-      public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)
+      public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool intakeTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported, bool? memoryTemperatureSupported = null, bool? nPUFrequencySupported = null, bool? nPUActivityLevelSupported = null, bool? sharedMemorySupported = null)
     parameters:
     - id: usageSupported
       type: System.Boolean
@@ -369,6 +519,8 @@ items:
     - id: temperatureSupported
       type: System.Boolean
     - id: hotspotTemperatureSupported
+      type: System.Boolean
+    - id: intakeTemperatureSupported
       type: System.Boolean
     - id: powerSupported
       type: System.Boolean
@@ -382,18 +534,26 @@ items:
       type: System.Boolean
     - id: totalBoardPowerSupported
       type: System.Boolean
+    - id: memoryTemperatureSupported
+      type: System.Nullable{System.Boolean}
+    - id: nPUFrequencySupported
+      type: System.Nullable{System.Boolean}
+    - id: nPUActivityLevelSupported
+      type: System.Nullable{System.Boolean}
+    - id: sharedMemorySupported
+      type: System.Nullable{System.Boolean}
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(usageSupported As Boolean, clockSpeedSupported As Boolean, temperatureSupported As Boolean, hotspotTemperatureSupported As Boolean, powerSupported As Boolean, fanSpeedSupported As Boolean, vRAMSupported As Boolean, vRAMClockSpeedSupported As Boolean, voltageSupported As Boolean, totalBoardPowerSupported As Boolean)
+      Public Sub New(usageSupported As Boolean, clockSpeedSupported As Boolean, temperatureSupported As Boolean, hotspotTemperatureSupported As Boolean, intakeTemperatureSupported As Boolean, powerSupported As Boolean, fanSpeedSupported As Boolean, vRAMSupported As Boolean, vRAMClockSpeedSupported As Boolean, voltageSupported As Boolean, totalBoardPowerSupported As Boolean, memoryTemperatureSupported As Boolean? = Nothing, nPUFrequencySupported As Boolean? = Nothing, nPUActivityLevelSupported As Boolean? = Nothing, sharedMemorySupported As Boolean? = Nothing)
   overload: ADLXWrapper.GpuMetricsSupportDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
-  fullName.vb: ADLXWrapper.GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
-  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
+  nameWithType.vb: GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
+  fullName.vb: ADLXWrapper.GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -653,6 +813,12 @@ references:
   name: HotspotTemperatureSupported
   nameWithType: GpuMetricsSupportDto.HotspotTemperatureSupported
   fullName: ADLXWrapper.GpuMetricsSupportDto.HotspotTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported*
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_IntakeTemperatureSupported
+  name: IntakeTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.IntakeTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
 - uid: ADLXWrapper.GpuMetricsSupportDto.PowerSupported*
   commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.PowerSupported
   href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_PowerSupported
@@ -689,9 +855,84 @@ references:
   name: TotalBoardPowerSupported
   nameWithType: GpuMetricsSupportDto.TotalBoardPowerSupported
   fullName: ADLXWrapper.GpuMetricsSupportDto.TotalBoardPowerSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported*
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_MemoryTemperatureSupported
+  name: MemoryTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.MemoryTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported*
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUFrequencySupported
+  name: NPUFrequencySupported
+  nameWithType: GpuMetricsSupportDto.NPUFrequencySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported*
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUActivityLevelSupported
+  name: NPUActivityLevelSupported
+  nameWithType: GpuMetricsSupportDto.NPUActivityLevelSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported*
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_SharedMemorySupported
+  name: SharedMemorySupported
+  nameWithType: GpuMetricsSupportDto.SharedMemorySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
 - uid: ADLXWrapper.GpuMetricsSupportDto.#ctor*
   commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.#ctor
-  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
+  href: ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__
   name: GpuMetricsSupportDto
   nameWithType: GpuMetricsSupportDto.GpuMetricsSupportDto
   fullName: ADLXWrapper.GpuMetricsSupportDto.GpuMetricsSupportDto

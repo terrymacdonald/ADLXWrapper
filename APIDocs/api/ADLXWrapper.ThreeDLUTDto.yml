@@ -29,7 +29,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDLUTDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2662
+    startLine: 2692
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2664
+    startLine: 2694
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -90,7 +90,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceVividGamingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2665
+    startLine: 2695
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -119,7 +119,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceDynamicContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2666
+    startLine: 2696
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -148,7 +148,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUser3DLutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2667
+    startLine: 2697
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -177,7 +177,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSceDisabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2668
+    startLine: 2698
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -206,7 +206,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSceVividGaming
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2669
+    startLine: 2699
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -235,7 +235,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDynamicContrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2670
+    startLine: 2700
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -264,7 +264,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentDynamicContrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2671
+    startLine: 2701
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -293,7 +293,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DynamicContrastRange
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2672
+    startLine: 2702
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -322,7 +322,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2674
+    startLine: 2704
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

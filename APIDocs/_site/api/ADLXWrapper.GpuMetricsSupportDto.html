@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_GpuMetricsSupportDto" data-uid="ADLXWrapper.GpuMetricsSupportDto" class="text-break">
-Struct GpuMetricsSupportDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L666"><i class="bi bi-code-slash"></i></a>
+Struct GpuMetricsSupportDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L667"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,9 +144,9 @@ Struct GpuMetricsSupportDto  <a class="header-action link-secondary" title="View
 
   <a id="ADLXWrapper_GpuMetricsSupportDto__ctor_" data-uid="ADLXWrapper.GpuMetricsSupportDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_" data-uid="ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
-  GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L679"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__" data-uid="ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+  GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L685"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct GpuMetricsSupportDto  <a class="header-action link-secondary" title="View
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported)</code></pre>
+public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool temperatureSupported, bool hotspotTemperatureSupported, bool intakeTemperatureSupported, bool powerSupported, bool fanSpeedSupported, bool vRAMSupported, bool vRAMClockSpeedSupported, bool voltageSupported, bool totalBoardPowerSupported, bool? memoryTemperatureSupported = null, bool? nPUFrequencySupported = null, bool? nPUActivityLevelSupported = null, bool? sharedMemorySupported = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -167,6 +167,8 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
     <dd></dd>
     <dt><code>hotspotTemperatureSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
+    <dt><code>intakeTemperatureSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
     <dt><code>powerSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
     <dt><code>fanSpeedSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
@@ -178,6 +180,14 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
     <dt><code>voltageSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
     <dt><code>totalBoardPowerSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>memoryTemperatureSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>nPUFrequencySupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>nPUActivityLevelSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>sharedMemorySupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -200,7 +210,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_ClockSpeedSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.ClockSpeedSupported">
   ClockSpeedSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L669"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L670"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -231,7 +241,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_FanSpeedSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.FanSpeedSupported">
   FanSpeedSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L673"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L675"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -262,7 +272,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_HotspotTemperatureSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.HotspotTemperatureSupported">
   HotspotTemperatureSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L671"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L672"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -289,11 +299,135 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
 
 
+  <a id="ADLXWrapper_GpuMetricsSupportDto_IntakeTemperatureSupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto_IntakeTemperatureSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported">
+  IntakeTemperatureSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L673"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IntakeTemperatureSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSupportDto_MemoryTemperatureSupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto_MemoryTemperatureSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported">
+  MemoryTemperatureSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L680"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MemoryTemperatureSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSupportDto_NPUActivityLevelSupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto_NPUActivityLevelSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported">
+  NPUActivityLevelSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L682"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NPUActivityLevelSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSupportDto_NPUFrequencySupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto_NPUFrequencySupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported">
+  NPUFrequencySupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L681"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NPUFrequencySupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_GpuMetricsSupportDto_PowerSupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.PowerSupported*"></a>
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_PowerSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.PowerSupported">
   PowerSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L672"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L674"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -320,11 +454,42 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
 
 
+  <a id="ADLXWrapper_GpuMetricsSupportDto_SharedMemorySupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSupportDto_SharedMemorySupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported">
+  SharedMemorySupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L683"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SharedMemorySupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_GpuMetricsSupportDto_TemperatureSupported_" data-uid="ADLXWrapper.GpuMetricsSupportDto.TemperatureSupported*"></a>
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_TemperatureSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.TemperatureSupported">
   TemperatureSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L670"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L671"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -355,7 +520,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_TotalBoardPowerSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.TotalBoardPowerSupported">
   TotalBoardPowerSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L677"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L679"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -386,7 +551,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_UsageSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.UsageSupported">
   UsageSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L668"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L669"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -417,7 +582,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_VRAMClockSpeedSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.VRAMClockSpeedSupported">
   VRAMClockSpeedSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L675"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L677"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -448,7 +613,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_VRAMSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.VRAMSupported">
   VRAMSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L674"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L676"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -479,7 +644,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 
   <h3 id="ADLXWrapper_GpuMetricsSupportDto_VoltageSupported" data-uid="ADLXWrapper.GpuMetricsSupportDto.VoltageSupported">
   VoltageSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L676"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L678"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -510,7 +675,7 @@ public GpuMetricsSupportDto(bool usageSupported, bool clockSpeedSupported, bool 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L666" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L667" class="edit-link">Edit this page</a>
         </div>
 
 

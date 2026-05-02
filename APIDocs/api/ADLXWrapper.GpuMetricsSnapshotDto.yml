@@ -5,11 +5,16 @@ items:
   id: GpuMetricsSnapshotDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
+  - ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
   - ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed
   - ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed
   - ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+  - ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  - ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  - ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  - ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
   - ADLXWrapper.GpuMetricsSnapshotDto.Power
+  - ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
   - ADLXWrapper.GpuMetricsSnapshotDto.Temperature
   - ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs
   - ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower
@@ -31,7 +36,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSnapshotDto
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 709
+    startLine: 743
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -63,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 711
+    startLine: 745
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -92,7 +97,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperature
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 712
+    startLine: 746
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -103,6 +108,35 @@ items:
       type: System.Double
     content.vb: Public Property HotspotTemperature As Double
   overload: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  id: IntakeTemperature
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: IntakeTemperature
+  nameWithType: GpuMetricsSnapshotDto.IntakeTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IntakeTemperature
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 747
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double IntakeTemperature { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property IntakeTemperature As Double
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature*
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.Usage
   commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.Usage
   id: Usage
@@ -121,7 +155,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Usage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 713
+    startLine: 748
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -150,7 +184,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 714
+    startLine: 749
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -179,7 +213,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 715
+    startLine: 750
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -208,7 +242,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMUsage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 716
+    startLine: 751
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -237,7 +271,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 717
+    startLine: 752
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -266,7 +300,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Power
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 718
+    startLine: 753
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -295,7 +329,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPower
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 719
+    startLine: 754
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -324,7 +358,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 720
+    startLine: 755
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -353,7 +387,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimestampMs
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 721
+    startLine: 756
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -364,16 +398,132 @@ items:
       type: System.Int64
     content.vb: Public Property TimestampMs As Long
   overload: ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs*
-- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
-  commentId: M:ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
-  id: '#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)'
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  id: MemoryTemperature
   parent: ADLXWrapper.GpuMetricsSnapshotDto
   langs:
   - csharp
   - vb
-  name: GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
+  name: MemoryTemperature
+  nameWithType: GpuMetricsSnapshotDto.MemoryTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MemoryTemperature
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 757
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public double? MemoryTemperature { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Double}
+    content.vb: Public Property MemoryTemperature As Double?
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  id: NPUFrequency
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: NPUFrequency
+  nameWithType: GpuMetricsSnapshotDto.NPUFrequency
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUFrequency
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 758
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int? NPUFrequency { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property NPUFrequency As Integer?
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  id: NPUActivityLevel
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: NPUActivityLevel
+  nameWithType: GpuMetricsSnapshotDto.NPUActivityLevel
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUActivityLevel
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 759
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int? NPUActivityLevel { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property NPUActivityLevel As Integer?
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  id: SharedMemory
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: SharedMemory
+  nameWithType: GpuMetricsSnapshotDto.SharedMemory
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SharedMemory
+    path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
+    startLine: 760
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int? SharedMemory { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property SharedMemory As Integer?
+  overload: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory*
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
+  commentId: M:ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
+  id: '#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})'
+  parent: ADLXWrapper.GpuMetricsSnapshotDto
+  langs:
+  - csharp
+  - vb
+  name: GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
   type: Constructor
   source:
     remote:
@@ -382,7 +532,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 723
+    startLine: 762
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -390,11 +540,13 @@ items:
     content: >-
       [JsonConstructor]
 
-      public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)
+      public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double intakeTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs, double? memoryTemperature = null, int? nPUFrequency = null, int? nPUActivityLevel = null, int? sharedMemory = null)
     parameters:
     - id: temperature
       type: System.Double
     - id: hotspotTemperature
+      type: System.Double
+    - id: intakeTemperature
       type: System.Double
     - id: usage
       type: System.Double
@@ -414,18 +566,26 @@ items:
       type: System.Int32
     - id: timestampMs
       type: System.Int64
+    - id: memoryTemperature
+      type: System.Nullable{System.Double}
+    - id: nPUFrequency
+      type: System.Nullable{System.Int32}
+    - id: nPUActivityLevel
+      type: System.Nullable{System.Int32}
+    - id: sharedMemory
+      type: System.Nullable{System.Int32}
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(temperature As Double, hotspotTemperature As Double, usage As Double, clockSpeed As Integer, vramClockSpeed As Integer, vramUsage As Integer, fanSpeed As Integer, power As Double, totalBoardPower As Double, voltage As Integer, timestampMs As Long)
+      Public Sub New(temperature As Double, hotspotTemperature As Double, intakeTemperature As Double, usage As Double, clockSpeed As Integer, vramClockSpeed As Integer, vramUsage As Integer, fanSpeed As Integer, power As Double, totalBoardPower As Double, voltage As Integer, timestampMs As Long, memoryTemperature As Double? = Nothing, nPUFrequency As Integer? = Nothing, nPUActivityLevel As Integer? = Nothing, sharedMemory As Integer? = Nothing)
   overload: ADLXWrapper.GpuMetricsSnapshotDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
-  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
-  name.vb: New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
+  nameWithType.vb: GpuMetricsSnapshotDto.New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
+  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
+  name.vb: New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -673,6 +833,12 @@ references:
   name: HotspotTemperature
   nameWithType: GpuMetricsSnapshotDto.HotspotTemperature
   fullName: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_IntakeTemperature
+  name: IntakeTemperature
+  nameWithType: GpuMetricsSnapshotDto.IntakeTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.Usage*
   commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.Usage
   href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Usage
@@ -749,9 +915,107 @@ references:
   nameWithType.vb: Long
   fullName.vb: Long
   name.vb: Long
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_MemoryTemperature
+  name: MemoryTemperature
+  nameWithType: GpuMetricsSnapshotDto.MemoryTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double?
+  nameWithType: double?
+  fullName: double?
+  nameWithType.vb: Double?
+  fullName.vb: Double?
+  name.vb: Double?
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUFrequency
+  name: NPUFrequency
+  nameWithType: GpuMetricsSnapshotDto.NPUFrequency
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUActivityLevel
+  name: NPUActivityLevel
+  nameWithType: GpuMetricsSnapshotDto.NPUActivityLevel
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory*
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_SharedMemory
+  name: SharedMemory
+  nameWithType: GpuMetricsSnapshotDto.SharedMemory
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor*
   commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.#ctor
-  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_
+  href: ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_System_Nullable_System_Double__System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__
   name: GpuMetricsSnapshotDto
   nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto
   fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto

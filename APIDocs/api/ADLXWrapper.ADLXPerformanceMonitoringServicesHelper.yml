@@ -87,7 +87,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -104,6 +104,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional system pointer for GPU lookup by unique id. Not ref-counted.
     content.vb: Public Sub New(services As IADLXPerformanceMonitoringServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper.#ctor*
   nameWithType.vb: ADLXPerformanceMonitoringServicesHelper.New(IADLXPerformanceMonitoringServices*, Boolean, IADLXSystem*)
@@ -127,7 +128,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentSystemMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 205
+    startLine: 206
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,7 +166,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAllMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 240
+    startLine: 241
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -203,7 +204,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateSystemMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 314
+    startLine: 315
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -239,7 +240,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 344
+    startLine: 345
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -275,7 +276,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 361
+    startLine: 362
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -313,7 +314,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingIntervalRange
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 375
+    startLine: 376
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -341,7 +342,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 387
+    startLine: 388
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -369,7 +370,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 399
+    startLine: 400
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -401,7 +402,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 409
+    startLine: 410
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -435,7 +436,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 422
+    startLine: 423
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -463,7 +464,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 434
+    startLine: 435
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -491,7 +492,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 446
+    startLine: 447
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -523,7 +524,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 456
+    startLine: 457
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -557,7 +558,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 469
+    startLine: 470
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -583,7 +584,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 479
+    startLine: 480
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -611,7 +612,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 492
+    startLine: 493
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -637,7 +638,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 502
+    startLine: 503
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -665,7 +666,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 515
+    startLine: 516
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -691,7 +692,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 525
+    startLine: 526
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -719,7 +720,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 538
+    startLine: 539
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -747,7 +748,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 547
+    startLine: 548
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -776,7 +777,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuMetricsSupport
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 566
+    startLine: 567
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -812,7 +813,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetGpuMetricsSupport
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 576
+    startLine: 577
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -850,7 +851,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentGpuMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 583
+    startLine: 584
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -886,7 +887,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetCurrentGpuMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 593
+    startLine: 594
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -924,7 +925,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGpuMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 600
+    startLine: 601
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -964,7 +965,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateGpuMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 610
+    startLine: 611
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1006,7 +1007,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 641
+    startLine: 642
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1036,7 +1037,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 655
+    startLine: 656
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -32,7 +32,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GammaDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2474
+    startLine: 2504
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,7 +64,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2476
+    startLine: 2506
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -93,7 +93,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaSRGB
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2477
+    startLine: 2507
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -122,7 +122,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaBT709
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2478
+    startLine: 2508
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -151,7 +151,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaPQ
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2479
+    startLine: 2509
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -180,7 +180,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGammaPQ2084
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2480
+    startLine: 2510
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -209,7 +209,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentReGamma36
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2481
+    startLine: 2511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -238,7 +238,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasRegammaCoefficient
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2482
+    startLine: 2512
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -267,7 +267,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RegammaCoefficient
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2483
+    startLine: 2513
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -296,7 +296,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasReGammaRamp
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2484
+    startLine: 2514
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -325,7 +325,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReGammaRamp
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2485
+    startLine: 2515
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -354,7 +354,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDeGammaRamp
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2486
+    startLine: 2516
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -383,7 +383,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeGammaRamp
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2487
+    startLine: 2517
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -412,7 +412,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2489
+    startLine: 2519
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

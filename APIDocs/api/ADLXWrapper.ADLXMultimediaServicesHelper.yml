@@ -72,7 +72,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -89,6 +89,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional system pointer for GPU lookup by unique id. Not ref-counted.
     content.vb: Public Sub New(services As IADLXMultimediaServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor*
   nameWithType.vb: ADLXMultimediaServicesHelper.New(IADLXMultimediaServices*, Boolean, IADLXSystem*)
@@ -112,7 +113,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 102
+    startLine: 103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +144,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 118
+    startLine: 119
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -177,7 +178,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 339
+    startLine: 340
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -213,7 +214,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 347
+    startLine: 348
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -251,7 +252,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 354
+    startLine: 355
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -287,7 +288,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 372
+    startLine: 373
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -325,7 +326,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 379
+    startLine: 380
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -361,7 +362,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 397
+    startLine: 398
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -399,7 +400,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 404
+    startLine: 405
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -435,7 +436,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 412
+    startLine: 413
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -473,7 +474,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 419
+    startLine: 420
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -509,7 +510,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 437
+    startLine: 438
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -547,7 +548,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 468
+    startLine: 469
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -577,7 +578,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 483
+    startLine: 484
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

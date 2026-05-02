@@ -5,7 +5,11 @@ items:
   id: GpuDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})
+  - ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)
+  - ADLXWrapper.GpuDto.AMDSoftwareEdition
+  - ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  - ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  - ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
   - ADLXWrapper.GpuDto.AMDSoftwareVersion
   - ADLXWrapper.GpuDto.AMDWindowsDriverVersion
   - ADLXWrapper.GpuDto.AsicFamilyType
@@ -695,6 +699,122 @@ items:
       type: System.String
     content.vb: Public Property AMDWindowsDriverVersion As String
   overload: ADLXWrapper.GpuDto.AMDWindowsDriverVersion*
+- uid: ADLXWrapper.GpuDto.AMDSoftwareEdition
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareEdition
+  id: AMDSoftwareEdition
+  parent: ADLXWrapper.GpuDto
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareEdition
+  nameWithType: GpuDto.AMDSoftwareEdition
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareEdition
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareEdition
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 1134
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string AMDSoftwareEdition { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AMDSoftwareEdition As String
+  overload: ADLXWrapper.GpuDto.AMDSoftwareEdition*
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  id: AMDSoftwareReleaseYear
+  parent: ADLXWrapper.GpuDto
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseYear
+  nameWithType: GpuDto.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseYear
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 1135
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseYear { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property AMDSoftwareReleaseYear As UInteger
+  overload: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear*
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  id: AMDSoftwareReleaseMonth
+  parent: ADLXWrapper.GpuDto
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseMonth
+  nameWithType: GpuDto.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseMonth
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 1136
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseMonth { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property AMDSoftwareReleaseMonth As UInteger
+  overload: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth*
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  id: AMDSoftwareReleaseDay
+  parent: ADLXWrapper.GpuDto
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseDay
+  nameWithType: GpuDto.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXSystemServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseDay
+    path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
+    startLine: 1137
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseDay { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property AMDSoftwareReleaseDay As UInteger
+  overload: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay*
 - uid: ADLXWrapper.GpuDto.Luid
   commentId: P:ADLXWrapper.GpuDto.Luid
   id: Luid
@@ -713,7 +833,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1134
+    startLine: 1138
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -724,16 +844,16 @@ items:
       type: ADLXWrapper.LuidDto
     content.vb: Public Property Luid As LuidDto
   overload: ADLXWrapper.GpuDto.Luid*
-- uid: ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})
-  commentId: M:ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})
-  id: '#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})'
+- uid: ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)
+  commentId: M:ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)
+  id: '#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)'
   parent: ADLXWrapper.GpuDto
   langs:
   - csharp
   - vb
-  name: GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?)
-  nameWithType: GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?)
-  fullName: ADLXWrapper.GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, uint, ADLXWrapper.ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLXWrapper.LuidDto?)
+  name: GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?, string, uint, uint, uint)
+  nameWithType: GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?, string, uint, uint, uint)
+  fullName: ADLXWrapper.GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, uint, ADLXWrapper.ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLXWrapper.LuidDto?, string, uint, uint, uint)
   type: Constructor
   source:
     remote:
@@ -742,7 +862,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1136
+    startLine: 1140
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -750,7 +870,7 @@ items:
     content: >-
       [JsonConstructor]
 
-      public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidDto? luid = null)
+      public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = "", string subSystemId = "", string subSystemVendorId = "", string revisionId = "", string driverVersion = "", string amdSoftwareVersion = "", string amdWindowsDriverVersion = "", LuidDto? luid = null, string amdSoftwareEdition = "", uint amdSoftwareReleaseYear = 0, uint amdSoftwareReleaseMonth = 0, uint amdSoftwareReleaseDay = 0)
     parameters:
     - id: name
       type: System.String
@@ -798,18 +918,26 @@ items:
       type: System.String
     - id: luid
       type: System.Nullable{ADLXWrapper.LuidDto}
+    - id: amdSoftwareEdition
+      type: System.String
+    - id: amdSoftwareReleaseYear
+      type: System.UInt32
+    - id: amdSoftwareReleaseMonth
+      type: System.UInt32
+    - id: amdSoftwareReleaseDay
+      type: System.UInt32
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(name As String, vendorId As String, uniqueId As Integer, totalVRAM As UInteger, vramType As String, isExternal As Boolean, hasDesktops As Boolean, deviceId As String, pnpString As String, driverPath As String, gpuType As ADLX_GPU_TYPE = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, asicFamilyType As ADLX_ASIC_FAMILY_TYPE = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, pciBusType As ADLX_PCI_BUS_TYPE = ADLX_PCI_BUS_TYPE.UNDEFINED, pciBusLaneWidth As UInteger = 0, multiGpuMode As ADLX_MGPU_MODE = ADLX_MGPU_MODE.MGPU_NONE, productName As String = "", subSystemId As String = "", subSystemVendorId As String = "", revisionId As String = "", driverVersion As String = "", amdSoftwareVersion As String = "", amdWindowsDriverVersion As String = "", luid As LuidDto? = Nothing)
+      Public Sub New(name As String, vendorId As String, uniqueId As Integer, totalVRAM As UInteger, vramType As String, isExternal As Boolean, hasDesktops As Boolean, deviceId As String, pnpString As String, driverPath As String, gpuType As ADLX_GPU_TYPE = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, asicFamilyType As ADLX_ASIC_FAMILY_TYPE = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, pciBusType As ADLX_PCI_BUS_TYPE = ADLX_PCI_BUS_TYPE.UNDEFINED, pciBusLaneWidth As UInteger = 0, multiGpuMode As ADLX_MGPU_MODE = ADLX_MGPU_MODE.MGPU_NONE, productName As String = "", subSystemId As String = "", subSystemVendorId As String = "", revisionId As String = "", driverVersion As String = "", amdSoftwareVersion As String = "", amdWindowsDriverVersion As String = "", luid As LuidDto? = Nothing, amdSoftwareEdition As String = "", amdSoftwareReleaseYear As UInteger = 0, amdSoftwareReleaseMonth As UInteger = 0, amdSoftwareReleaseDay As UInteger = 0)
   overload: ADLXWrapper.GpuDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?)
-  fullName.vb: ADLXWrapper.GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, UInteger, ADLXWrapper.ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLXWrapper.LuidDto?)
-  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?)
+  nameWithType.vb: GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?, String, UInteger, UInteger, UInteger)
+  fullName.vb: ADLXWrapper.GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, UInteger, ADLXWrapper.ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLXWrapper.LuidDto?, String, UInteger, UInteger, UInteger)
+  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?, String, UInteger, UInteger, UInteger)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -1238,6 +1366,30 @@ references:
   name: AMDWindowsDriverVersion
   nameWithType: GpuDto.AMDWindowsDriverVersion
   fullName: ADLXWrapper.GpuDto.AMDWindowsDriverVersion
+- uid: ADLXWrapper.GpuDto.AMDSoftwareEdition*
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareEdition
+  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareEdition
+  name: AMDSoftwareEdition
+  nameWithType: GpuDto.AMDSoftwareEdition
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareEdition
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear*
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseYear
+  name: AMDSoftwareReleaseYear
+  nameWithType: GpuDto.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth*
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseMonth
+  name: AMDSoftwareReleaseMonth
+  nameWithType: GpuDto.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay*
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseDay
+  name: AMDSoftwareReleaseDay
+  nameWithType: GpuDto.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
 - uid: ADLXWrapper.GpuDto.Luid*
   commentId: Overload:ADLXWrapper.GpuDto.Luid
   href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_Luid
@@ -1253,7 +1405,7 @@ references:
   fullName: ADLXWrapper.LuidDto
 - uid: ADLXWrapper.GpuDto.#ctor*
   commentId: Overload:ADLXWrapper.GpuDto.#ctor
-  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__
+  href: ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__System_String_System_UInt32_System_UInt32_System_UInt32_
   name: GpuDto
   nameWithType: GpuDto.GpuDto
   fullName: ADLXWrapper.GpuDto.GpuDto

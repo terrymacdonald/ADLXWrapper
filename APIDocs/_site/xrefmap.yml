@@ -336,6 +336,54 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.ApplyAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  name: ApplyChill(int, ChillDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyChill_System_Int32_ADLXWrapper_ChillDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  name.vb: ApplyChill(Integer, ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(int, ADLXWrapper.ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(Integer, ADLXWrapper.ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyChill(int, ChillDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill*
+  name: ApplyChill
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyChill_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  name: ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  name.vb: ApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(int, ADLXWrapper.ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop*
+  name: ApplyImageSharpenDesktop
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  name: ApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  name.vb: ApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(int, ADLXWrapper.MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing*
+  name: ApplyMorphologicalAntiAliasing
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyMorphologicalAntiAliasing_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   name: Dispose()
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Dispose
@@ -381,6 +429,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.GetAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
+  name: GetChill(int)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetChill_System_Int32_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
+  name.vb: GetChill(Integer)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(int)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(Integer)
+  nameWithType: ADLX3DSettingsServicesHelper.GetChill(int)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetChill(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill*
+  name: GetChill
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetChill_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill
+  nameWithType: ADLX3DSettingsServicesHelper.GetChill
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
   name: GetFluidMotionFrames(int)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_System_Int32_
@@ -397,6 +461,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
   nameWithType: ADLX3DSettingsServicesHelper.GetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
+  name: GetImageSharpenDesktop(int)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetImageSharpenDesktop_System_Int32_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
+  name.vb: GetImageSharpenDesktop(Integer)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(int)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(Integer)
+  nameWithType: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(int)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop*
+  name: GetImageSharpenDesktop
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetImageSharpenDesktop_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
+  name: GetMorphologicalAntiAliasing(int)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetMorphologicalAntiAliasing_System_Int32_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
+  name.vb: GetMorphologicalAntiAliasing(Integer)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(int)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(Integer)
+  nameWithType: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(int)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing*
+  name: GetMorphologicalAntiAliasing
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetMorphologicalAntiAliasing_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
   name: GetRadeonSuperResolution()
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetRadeonSuperResolution
@@ -442,6 +538,54 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  name: TryApplyChill(int, ChillDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyChill_System_Int32_ADLXWrapper_ChillDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  name.vb: TryApplyChill(Integer, ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(int, ADLXWrapper.ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(Integer, ADLXWrapper.ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyChill(int, ChillDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill*
+  name: TryApplyChill
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyChill_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  name: TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  name.vb: TryApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(int, ADLXWrapper.ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop*
+  name: TryApplyImageSharpenDesktop
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  name: TryApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  name.vb: TryApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(int, ADLXWrapper.MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing*
+  name: TryApplyMorphologicalAntiAliasing
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyMorphologicalAntiAliasing_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto@)
   name: TryGetAll3DSettings(int, out All3DSettingsDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_System_Int32_ADLXWrapper_All3DSettingsDto__
@@ -458,6 +602,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.TryGetAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  name: TryGetChill(int, out ChillDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetChill_System_Int32_ADLXWrapper_ChillDto__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  name.vb: TryGetChill(Integer, ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(int, out ADLXWrapper.ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(Integer, ADLXWrapper.ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetChill(int, out ChillDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill*
+  name: TryGetChill
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetChill_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetChill
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(System.Int32,ADLXWrapper.FluidMotionFramesDto@)
   name: TryGetFluidMotionFrames(int, out FluidMotionFramesDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_System_Int32_ADLXWrapper_FluidMotionFramesDto__
@@ -474,6 +634,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
   nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  name: TryGetImageSharpenDesktop(int, out ImageSharpenDesktopDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  name.vb: TryGetImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(int, out ADLXWrapper.ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(int, out ImageSharpenDesktopDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop*
+  name: TryGetImageSharpenDesktop
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetImageSharpenDesktop_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
+  name: TryGetMorphologicalAntiAliasing(int, out MorphologicalAntiAliasingDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
+  name.vb: TryGetMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(int, out ADLXWrapper.MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(int, out MorphologicalAntiAliasingDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing*
+  name: TryGetMorphologicalAntiAliasing
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetMorphologicalAntiAliasing_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionDto@)
   name: TryGetRadeonSuperResolution(out RadeonSuperResolutionDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetRadeonSuperResolution_ADLXWrapper_RadeonSuperResolutionDto__
@@ -2851,6 +3043,58 @@ references:
   fullName.vb: ADLXWrapper.ADLXGPU.New
   nameWithType: ADLXGPU.ADLXGPU
   nameWithType.vb: ADLXGPU.New
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  name: AMDSoftwareEdition
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareEdition
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  nameWithType: ADLXGPU.AMDSoftwareEdition
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareEdition*
+  name: AMDSoftwareEdition
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareEdition_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  nameWithType: ADLXGPU.AMDSoftwareEdition
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  name: AMDSoftwareReleaseDay
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseDay
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  nameWithType: ADLXGPU.AMDSoftwareReleaseDay
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay*
+  name: AMDSoftwareReleaseDay
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseDay_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  nameWithType: ADLXGPU.AMDSoftwareReleaseDay
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  name: AMDSoftwareReleaseMonth
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseMonth
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  nameWithType: ADLXGPU.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth*
+  name: AMDSoftwareReleaseMonth
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseMonth_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  nameWithType: ADLXGPU.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  name: AMDSoftwareReleaseYear
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseYear
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  nameWithType: ADLXGPU.AMDSoftwareReleaseYear
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear*
+  name: AMDSoftwareReleaseYear
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseYear_
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  nameWithType: ADLXGPU.AMDSoftwareReleaseYear
 - uid: ADLXWrapper.ADLXGPU.AMDSoftwareVersion
   name: AMDSoftwareVersion
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_AMDSoftwareVersion
@@ -3407,6 +3651,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning
   nameWithType: ADLXGPUTuningServicesHelper.GetPresetTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)
+  name: GetSmartAccessMemory(int)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetSmartAccessMemory_System_Int32_
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)
+  name.vb: GetSmartAccessMemory(Integer)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(int)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(Integer)
+  nameWithType: ADLXGPUTuningServicesHelper.GetSmartAccessMemory(int)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetSmartAccessMemory(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory*
+  name: GetSmartAccessMemory
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetSmartAccessMemory_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory
+  nameWithType: ADLXGPUTuningServicesHelper.GetSmartAccessMemory
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)
   name: IsAutoTuningSupported(int)
   href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_IsAutoTuningSupported_System_Int32_
@@ -3583,6 +3843,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
+  name: TryGetSmartAccessMemory(int, out SmartAccessMemoryDto)
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetSmartAccessMemory_System_Int32_ADLXWrapper_SmartAccessMemoryDto__
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
+  name.vb: TryGetSmartAccessMemory(Integer, SmartAccessMemoryDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(int, out ADLXWrapper.SmartAccessMemoryDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(Integer, ADLXWrapper.SmartAccessMemoryDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(int, out SmartAccessMemoryDto)
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(Integer, SmartAccessMemoryDto)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory*
+  name: TryGetSmartAccessMemory
+  href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetSmartAccessMemory_
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)
   name: TryIsAutoTuningSupported(int, out bool)
   href: api/ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_System_Int32_System_Boolean__
@@ -7537,15 +7813,15 @@ references:
   commentId: T:ADLXWrapper.All3DSettingsDto
   fullName: ADLXWrapper.All3DSettingsDto
   nameWithType: All3DSettingsDto
-- uid: ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
-  name: All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_System_Nullable_ADLXWrapper_AntiLagDto__System_Nullable_ADLXWrapper_BoostDto__System_Nullable_ADLXWrapper_RadeonImageSharpeningDto__System_Nullable_ADLXWrapper_EnhancedSyncDto__System_Nullable_ADLXWrapper_WaitForVerticalRefreshDto__System_Nullable_ADLXWrapper_FrameRateTargetControlDto__System_Nullable_ADLXWrapper_AntiAliasingDto__System_Nullable_ADLXWrapper_AnisotropicFilteringDto__System_Nullable_ADLXWrapper_TessellationDto__System_Nullable_ADLXWrapper_FluidMotionFramesDto__System_Nullable_ADLXWrapper_RadeonSuperResolutionDto__
-  commentId: M:ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
-  name.vb: New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
-  fullName.vb: ADLXWrapper.All3DSettingsDto.New(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
-  nameWithType: All3DSettingsDto.All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  nameWithType.vb: All3DSettingsDto.New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+- uid: ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})
+  name: All3DSettingsDto(AntiLagDto?, ChillDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, MorphologicalAntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ImageSharpenDesktopDto?)
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_System_Nullable_ADLXWrapper_AntiLagDto__System_Nullable_ADLXWrapper_ChillDto__System_Nullable_ADLXWrapper_BoostDto__System_Nullable_ADLXWrapper_RadeonImageSharpeningDto__System_Nullable_ADLXWrapper_EnhancedSyncDto__System_Nullable_ADLXWrapper_WaitForVerticalRefreshDto__System_Nullable_ADLXWrapper_FrameRateTargetControlDto__System_Nullable_ADLXWrapper_AntiAliasingDto__System_Nullable_ADLXWrapper_MorphologicalAntiAliasingDto__System_Nullable_ADLXWrapper_AnisotropicFilteringDto__System_Nullable_ADLXWrapper_TessellationDto__System_Nullable_ADLXWrapper_FluidMotionFramesDto__System_Nullable_ADLXWrapper_RadeonSuperResolutionDto__System_Nullable_ADLXWrapper_ImageSharpenDesktopDto__
+  commentId: M:ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})
+  name.vb: New(AntiLagDto?, ChillDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, MorphologicalAntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ImageSharpenDesktopDto?)
+  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto(ADLXWrapper.AntiLagDto?, ADLXWrapper.ChillDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.MorphologicalAntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?, ADLXWrapper.ImageSharpenDesktopDto?)
+  fullName.vb: ADLXWrapper.All3DSettingsDto.New(ADLXWrapper.AntiLagDto?, ADLXWrapper.ChillDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.MorphologicalAntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?, ADLXWrapper.ImageSharpenDesktopDto?)
+  nameWithType: All3DSettingsDto.All3DSettingsDto(AntiLagDto?, ChillDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, MorphologicalAntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ImageSharpenDesktopDto?)
+  nameWithType.vb: All3DSettingsDto.New(AntiLagDto?, ChillDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, MorphologicalAntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ImageSharpenDesktopDto?)
 - uid: ADLXWrapper.All3DSettingsDto.#ctor*
   name: All3DSettingsDto
   href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_
@@ -7608,6 +7884,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.All3DSettingsDto.Boost
   nameWithType: All3DSettingsDto.Boost
+- uid: ADLXWrapper.All3DSettingsDto.Chill
+  name: Chill
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_Chill
+  commentId: P:ADLXWrapper.All3DSettingsDto.Chill
+  fullName: ADLXWrapper.All3DSettingsDto.Chill
+  nameWithType: All3DSettingsDto.Chill
+- uid: ADLXWrapper.All3DSettingsDto.Chill*
+  name: Chill
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_Chill_
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.Chill
+  isSpec: "True"
+  fullName: ADLXWrapper.All3DSettingsDto.Chill
+  nameWithType: All3DSettingsDto.Chill
 - uid: ADLXWrapper.All3DSettingsDto.EnhancedSync
   name: EnhancedSync
   href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_EnhancedSync
@@ -7647,6 +7936,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
   nameWithType: All3DSettingsDto.FrameRateTargetControl
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  name: ImageSharpenDesktop
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_ImageSharpenDesktop
+  commentId: P:ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  nameWithType: All3DSettingsDto.ImageSharpenDesktop
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop*
+  name: ImageSharpenDesktop
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_ImageSharpenDesktop_
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  isSpec: "True"
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  nameWithType: All3DSettingsDto.ImageSharpenDesktop
 - uid: ADLXWrapper.All3DSettingsDto.ImageSharpening
   name: ImageSharpening
   href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_ImageSharpening
@@ -7660,6 +7962,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.All3DSettingsDto.ImageSharpening
   nameWithType: All3DSettingsDto.ImageSharpening
+- uid: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  name: MorphologicalAntiAliasing
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_MorphologicalAntiAliasing
+  commentId: P:ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  fullName: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  nameWithType: All3DSettingsDto.MorphologicalAntiAliasing
+- uid: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing*
+  name: MorphologicalAntiAliasing
+  href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_MorphologicalAntiAliasing_
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  isSpec: "True"
+  fullName: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  nameWithType: All3DSettingsDto.MorphologicalAntiAliasing
 - uid: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
   name: RadeonSuperResolution
   href: api/ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_RadeonSuperResolution
@@ -8231,15 +8546,15 @@ references:
   commentId: T:ADLXWrapper.AntiLagDto
   fullName: ADLXWrapper.AntiLagDto
   nameWithType: AntiLagDto
-- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)
-  name: AntiLagDto(bool, bool)
-  href: api/ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_
-  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)
-  name.vb: New(Boolean, Boolean)
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool)
-  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean)
-  nameWithType: AntiLagDto.AntiLagDto(bool, bool)
-  nameWithType.vb: AntiLagDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})
+  name: AntiLagDto(bool, bool, ADLX_ANTILAG_STATE?)
+  href: api/ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Nullable_ADLXWrapper_ADLX_ANTILAG_STATE__
+  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})
+  name.vb: New(Boolean, Boolean, ADLX_ANTILAG_STATE?)
+  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool, ADLXWrapper.ADLX_ANTILAG_STATE?)
+  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean, ADLXWrapper.ADLX_ANTILAG_STATE?)
+  nameWithType: AntiLagDto.AntiLagDto(bool, bool, ADLX_ANTILAG_STATE?)
+  nameWithType.vb: AntiLagDto.New(Boolean, Boolean, ADLX_ANTILAG_STATE?)
 - uid: ADLXWrapper.AntiLagDto.#ctor*
   name: AntiLagDto
   href: api/ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_
@@ -8276,6 +8591,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.AntiLagDto.IsSupported
   nameWithType: AntiLagDto.IsSupported
+- uid: ADLXWrapper.AntiLagDto.Level
+  name: Level
+  href: api/ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_Level
+  commentId: P:ADLXWrapper.AntiLagDto.Level
+  fullName: ADLXWrapper.AntiLagDto.Level
+  nameWithType: AntiLagDto.Level
+- uid: ADLXWrapper.AntiLagDto.Level*
+  name: Level
+  href: api/ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_Level_
+  commentId: Overload:ADLXWrapper.AntiLagDto.Level
+  isSpec: "True"
+  fullName: ADLXWrapper.AntiLagDto.Level
+  nameWithType: AntiLagDto.Level
 - uid: ADLXWrapper.AntiLagInfo
   name: AntiLagInfo
   href: api/ADLXWrapper.AntiLagInfo.html
@@ -8583,6 +8911,96 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.BoostInfo.ResolutionRange
   nameWithType: BoostInfo.ResolutionRange
+- uid: ADLXWrapper.ChillDto
+  name: ChillDto
+  href: api/ADLXWrapper.ChillDto.html
+  commentId: T:ADLXWrapper.ChillDto
+  fullName: ADLXWrapper.ChillDto
+  nameWithType: ChillDto
+- uid: ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)
+  name: ChillDto(bool, bool, int, int, IntRangeDto)
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto__ctor_System_Boolean_System_Boolean_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_
+  commentId: M:ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)
+  name.vb: New(Boolean, Boolean, Integer, Integer, IntRangeDto)
+  fullName: ADLXWrapper.ChillDto.ChillDto(bool, bool, int, int, ADLXWrapper.IntRangeDto)
+  fullName.vb: ADLXWrapper.ChillDto.New(Boolean, Boolean, Integer, Integer, ADLXWrapper.IntRangeDto)
+  nameWithType: ChillDto.ChillDto(bool, bool, int, int, IntRangeDto)
+  nameWithType.vb: ChillDto.New(Boolean, Boolean, Integer, Integer, IntRangeDto)
+- uid: ADLXWrapper.ChillDto.#ctor*
+  name: ChillDto
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto__ctor_
+  commentId: Overload:ADLXWrapper.ChillDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.ChillDto.ChillDto
+  fullName.vb: ADLXWrapper.ChillDto.New
+  nameWithType: ChillDto.ChillDto
+  nameWithType.vb: ChillDto.New
+- uid: ADLXWrapper.ChillDto.FPSRange
+  name: FPSRange
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_FPSRange
+  commentId: P:ADLXWrapper.ChillDto.FPSRange
+  fullName: ADLXWrapper.ChillDto.FPSRange
+  nameWithType: ChillDto.FPSRange
+- uid: ADLXWrapper.ChillDto.FPSRange*
+  name: FPSRange
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_FPSRange_
+  commentId: Overload:ADLXWrapper.ChillDto.FPSRange
+  isSpec: "True"
+  fullName: ADLXWrapper.ChillDto.FPSRange
+  nameWithType: ChillDto.FPSRange
+- uid: ADLXWrapper.ChillDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsEnabled
+  commentId: P:ADLXWrapper.ChillDto.IsEnabled
+  fullName: ADLXWrapper.ChillDto.IsEnabled
+  nameWithType: ChillDto.IsEnabled
+- uid: ADLXWrapper.ChillDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.ChillDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ChillDto.IsEnabled
+  nameWithType: ChillDto.IsEnabled
+- uid: ADLXWrapper.ChillDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsSupported
+  commentId: P:ADLXWrapper.ChillDto.IsSupported
+  fullName: ADLXWrapper.ChillDto.IsSupported
+  nameWithType: ChillDto.IsSupported
+- uid: ADLXWrapper.ChillDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsSupported_
+  commentId: Overload:ADLXWrapper.ChillDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ChillDto.IsSupported
+  nameWithType: ChillDto.IsSupported
+- uid: ADLXWrapper.ChillDto.MaxFPS
+  name: MaxFPS
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MaxFPS
+  commentId: P:ADLXWrapper.ChillDto.MaxFPS
+  fullName: ADLXWrapper.ChillDto.MaxFPS
+  nameWithType: ChillDto.MaxFPS
+- uid: ADLXWrapper.ChillDto.MaxFPS*
+  name: MaxFPS
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MaxFPS_
+  commentId: Overload:ADLXWrapper.ChillDto.MaxFPS
+  isSpec: "True"
+  fullName: ADLXWrapper.ChillDto.MaxFPS
+  nameWithType: ChillDto.MaxFPS
+- uid: ADLXWrapper.ChillDto.MinFPS
+  name: MinFPS
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MinFPS
+  commentId: P:ADLXWrapper.ChillDto.MinFPS
+  fullName: ADLXWrapper.ChillDto.MinFPS
+  nameWithType: ChillDto.MinFPS
+- uid: ADLXWrapper.ChillDto.MinFPS*
+  name: MinFPS
+  href: api/ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MinFPS_
+  commentId: Overload:ADLXWrapper.ChillDto.MinFPS
+  isSpec: "True"
+  fullName: ADLXWrapper.ChillDto.MinFPS
+  nameWithType: ChillDto.MinFPS
 - uid: ADLXWrapper.ComPtr`1
   name: ComPtr<T>
   href: api/ADLXWrapper.ComPtr-1.html
@@ -11810,15 +12228,15 @@ references:
   commentId: T:ADLXWrapper.GpuDto
   fullName: ADLXWrapper.GpuDto
   nameWithType: GpuDto
-- uid: ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})
-  name: GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?)
-  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__
-  commentId: M:ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})
-  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?)
-  fullName: ADLXWrapper.GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, uint, ADLXWrapper.ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLXWrapper.LuidDto?)
-  fullName.vb: ADLXWrapper.GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, UInteger, ADLXWrapper.ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLXWrapper.LuidDto?)
-  nameWithType: GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?)
-  nameWithType.vb: GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?)
+- uid: ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)
+  name: GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?, string, uint, uint, uint)
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__System_String_System_UInt32_System_UInt32_System_UInt32_
+  commentId: M:ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)
+  name.vb: New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?, String, UInteger, UInteger, UInteger)
+  fullName: ADLXWrapper.GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, uint, ADLXWrapper.ADLX_MGPU_MODE, string, string, string, string, string, string, string, ADLXWrapper.LuidDto?, string, uint, uint, uint)
+  fullName.vb: ADLXWrapper.GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLXWrapper.ADLX_GPU_TYPE, ADLXWrapper.ADLX_ASIC_FAMILY_TYPE, ADLXWrapper.ADLX_PCI_BUS_TYPE, UInteger, ADLXWrapper.ADLX_MGPU_MODE, String, String, String, String, String, String, String, ADLXWrapper.LuidDto?, String, UInteger, UInteger, UInteger)
+  nameWithType: GpuDto.GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?, string, uint, uint, uint)
+  nameWithType.vb: GpuDto.New(String, String, Integer, UInteger, String, Boolean, Boolean, String, String, String, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, UInteger, ADLX_MGPU_MODE, String, String, String, String, String, String, String, LuidDto?, String, UInteger, UInteger, UInteger)
 - uid: ADLXWrapper.GpuDto.#ctor*
   name: GpuDto
   href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto__ctor_
@@ -11829,6 +12247,58 @@ references:
   fullName.vb: ADLXWrapper.GpuDto.New
   nameWithType: GpuDto.GpuDto
   nameWithType.vb: GpuDto.New
+- uid: ADLXWrapper.GpuDto.AMDSoftwareEdition
+  name: AMDSoftwareEdition
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareEdition
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareEdition
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareEdition
+  nameWithType: GpuDto.AMDSoftwareEdition
+- uid: ADLXWrapper.GpuDto.AMDSoftwareEdition*
+  name: AMDSoftwareEdition
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareEdition_
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareEdition
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareEdition
+  nameWithType: GpuDto.AMDSoftwareEdition
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  name: AMDSoftwareReleaseDay
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseDay
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  nameWithType: GpuDto.AMDSoftwareReleaseDay
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay*
+  name: AMDSoftwareReleaseDay
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseDay_
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseDay
+  nameWithType: GpuDto.AMDSoftwareReleaseDay
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  name: AMDSoftwareReleaseMonth
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseMonth
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  nameWithType: GpuDto.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth*
+  name: AMDSoftwareReleaseMonth
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseMonth_
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth
+  nameWithType: GpuDto.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  name: AMDSoftwareReleaseYear
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseYear
+  commentId: P:ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  nameWithType: GpuDto.AMDSoftwareReleaseYear
+- uid: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear*
+  name: AMDSoftwareReleaseYear
+  href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareReleaseYear_
+  commentId: Overload:ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuDto.AMDSoftwareReleaseYear
+  nameWithType: GpuDto.AMDSoftwareReleaseYear
 - uid: ADLXWrapper.GpuDto.AMDSoftwareVersion
   name: AMDSoftwareVersion
   href: api/ADLXWrapper.GpuDto.html#ADLXWrapper_GpuDto_AMDSoftwareVersion
@@ -12560,15 +13030,15 @@ references:
   commentId: T:ADLXWrapper.GpuMetricsSnapshotDto
   fullName: ADLXWrapper.GpuMetricsSnapshotDto
   nameWithType: GpuMetricsSnapshotDto
-- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
-  name: GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_
-  commentId: M:ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)
-  name.vb: New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
-  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
-  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  nameWithType.vb: GpuMetricsSnapshotDto.New(Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long)
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
+  name: GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_System_Nullable_System_Double__System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__
+  commentId: M:ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
+  name.vb: New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  fullName.vb: ADLXWrapper.GpuMetricsSnapshotDto.New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
+  nameWithType: GpuMetricsSnapshotDto.GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  nameWithType.vb: GpuMetricsSnapshotDto.New(Double, Double, Double, Double, Integer, Integer, Integer, Integer, Double, Double, Integer, Long, Double?, Integer?, Integer?, Integer?)
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.#ctor*
   name: GpuMetricsSnapshotDto
   href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto__ctor_
@@ -12618,6 +13088,58 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature
   nameWithType: GpuMetricsSnapshotDto.HotspotTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  name: IntakeTemperature
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_IntakeTemperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  nameWithType: GpuMetricsSnapshotDto.IntakeTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature*
+  name: IntakeTemperature
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_IntakeTemperature_
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature
+  nameWithType: GpuMetricsSnapshotDto.IntakeTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  name: MemoryTemperature
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_MemoryTemperature
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  nameWithType: GpuMetricsSnapshotDto.MemoryTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature*
+  name: MemoryTemperature
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_MemoryTemperature_
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature
+  nameWithType: GpuMetricsSnapshotDto.MemoryTemperature
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  name: NPUActivityLevel
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUActivityLevel
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  nameWithType: GpuMetricsSnapshotDto.NPUActivityLevel
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel*
+  name: NPUActivityLevel
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUActivityLevel_
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel
+  nameWithType: GpuMetricsSnapshotDto.NPUActivityLevel
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  name: NPUFrequency
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUFrequency
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  nameWithType: GpuMetricsSnapshotDto.NPUFrequency
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency*
+  name: NPUFrequency
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_NPUFrequency_
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency
+  nameWithType: GpuMetricsSnapshotDto.NPUFrequency
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.Power
   name: Power
   href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Power
@@ -12631,6 +13153,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuMetricsSnapshotDto.Power
   nameWithType: GpuMetricsSnapshotDto.Power
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  name: SharedMemory
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_SharedMemory
+  commentId: P:ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  nameWithType: GpuMetricsSnapshotDto.SharedMemory
+- uid: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory*
+  name: SharedMemory
+  href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_SharedMemory_
+  commentId: Overload:ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory
+  nameWithType: GpuMetricsSnapshotDto.SharedMemory
 - uid: ADLXWrapper.GpuMetricsSnapshotDto.Temperature
   name: Temperature
   href: api/ADLXWrapper.GpuMetricsSnapshotDto.html#ADLXWrapper_GpuMetricsSnapshotDto_Temperature
@@ -12896,15 +13431,15 @@ references:
   commentId: T:ADLXWrapper.GpuMetricsSupportDto
   fullName: ADLXWrapper.GpuMetricsSupportDto
   nameWithType: GpuMetricsSupportDto
-- uid: ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  name: GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)
-  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
-  fullName: ADLXWrapper.GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  fullName.vb: ADLXWrapper.GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
-  nameWithType: GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool)
-  nameWithType.vb: GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean)
+- uid: ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  name: GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Boolean_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__
+  commentId: M:ADLXWrapper.GpuMetricsSupportDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})
+  name.vb: New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
+  fullName: ADLXWrapper.GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  fullName.vb: ADLXWrapper.GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
+  nameWithType: GpuMetricsSupportDto.GpuMetricsSupportDto(bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool?, bool?, bool?, bool?)
+  nameWithType.vb: GpuMetricsSupportDto.New(Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean, Boolean?, Boolean?, Boolean?, Boolean?)
 - uid: ADLXWrapper.GpuMetricsSupportDto.#ctor*
   name: GpuMetricsSupportDto
   href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto__ctor_
@@ -12954,6 +13489,58 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuMetricsSupportDto.HotspotTemperatureSupported
   nameWithType: GpuMetricsSupportDto.HotspotTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  name: IntakeTemperatureSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_IntakeTemperatureSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.IntakeTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported*
+  name: IntakeTemperatureSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_IntakeTemperatureSupported_
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSupportDto.IntakeTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.IntakeTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  name: MemoryTemperatureSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_MemoryTemperatureSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.MemoryTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported*
+  name: MemoryTemperatureSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_MemoryTemperatureSupported_
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSupportDto.MemoryTemperatureSupported
+  nameWithType: GpuMetricsSupportDto.MemoryTemperatureSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  name: NPUActivityLevelSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUActivityLevelSupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  nameWithType: GpuMetricsSupportDto.NPUActivityLevelSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported*
+  name: NPUActivityLevelSupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUActivityLevelSupported_
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUActivityLevelSupported
+  nameWithType: GpuMetricsSupportDto.NPUActivityLevelSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  name: NPUFrequencySupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUFrequencySupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  nameWithType: GpuMetricsSupportDto.NPUFrequencySupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported*
+  name: NPUFrequencySupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_NPUFrequencySupported_
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSupportDto.NPUFrequencySupported
+  nameWithType: GpuMetricsSupportDto.NPUFrequencySupported
 - uid: ADLXWrapper.GpuMetricsSupportDto.PowerSupported
   name: PowerSupported
   href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_PowerSupported
@@ -12967,6 +13554,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuMetricsSupportDto.PowerSupported
   nameWithType: GpuMetricsSupportDto.PowerSupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  name: SharedMemorySupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_SharedMemorySupported
+  commentId: P:ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  fullName: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  nameWithType: GpuMetricsSupportDto.SharedMemorySupported
+- uid: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported*
+  name: SharedMemorySupported
+  href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_SharedMemorySupported_
+  commentId: Overload:ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuMetricsSupportDto.SharedMemorySupported
+  nameWithType: GpuMetricsSupportDto.SharedMemorySupported
 - uid: ADLXWrapper.GpuMetricsSupportDto.TemperatureSupported
   name: TemperatureSupported
   href: api/ADLXWrapper.GpuMetricsSupportDto.html#ADLXWrapper_GpuMetricsSupportDto_TemperatureSupported
@@ -38825,6 +39425,57 @@ references:
   commentId: F:ADLXWrapper.IADLXVideoUpscale.lpVtbl
   fullName: ADLXWrapper.IADLXVideoUpscale.lpVtbl
   nameWithType: IADLXVideoUpscale.lpVtbl
+- uid: ADLXWrapper.ImageSharpenDesktopDto
+  name: ImageSharpenDesktopDto
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html
+  commentId: T:ADLXWrapper.ImageSharpenDesktopDto
+  fullName: ADLXWrapper.ImageSharpenDesktopDto
+  nameWithType: ImageSharpenDesktopDto
+- uid: ADLXWrapper.ImageSharpenDesktopDto.#ctor(System.Boolean,System.Boolean)
+  name: ImageSharpenDesktopDto(bool, bool)
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.ImageSharpenDesktopDto.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.ImageSharpenDesktopDto(bool, bool)
+  fullName.vb: ADLXWrapper.ImageSharpenDesktopDto.New(Boolean, Boolean)
+  nameWithType: ImageSharpenDesktopDto.ImageSharpenDesktopDto(bool, bool)
+  nameWithType.vb: ImageSharpenDesktopDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.ImageSharpenDesktopDto.#ctor*
+  name: ImageSharpenDesktopDto
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto__ctor_
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.ImageSharpenDesktopDto
+  fullName.vb: ADLXWrapper.ImageSharpenDesktopDto.New
+  nameWithType: ImageSharpenDesktopDto.ImageSharpenDesktopDto
+  nameWithType.vb: ImageSharpenDesktopDto.New
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsEnabled
+  commentId: P:ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  nameWithType: ImageSharpenDesktopDto.IsEnabled
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  nameWithType: ImageSharpenDesktopDto.IsEnabled
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsSupported
+  commentId: P:ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  nameWithType: ImageSharpenDesktopDto.IsSupported
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsSupported_
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  nameWithType: ImageSharpenDesktopDto.IsSupported
 - uid: ADLXWrapper.IntRangeDto
   name: IntRangeDto
   href: api/ADLXWrapper.IntRangeDto.html
@@ -39582,6 +40233,57 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ManualVramTuningInfo.States
   nameWithType: ManualVramTuningInfo.States
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto
+  name: MorphologicalAntiAliasingDto
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html
+  commentId: T:ADLXWrapper.MorphologicalAntiAliasingDto
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto
+  nameWithType: MorphologicalAntiAliasingDto
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.#ctor(System.Boolean,System.Boolean)
+  name: MorphologicalAntiAliasingDto(bool, bool)
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.MorphologicalAntiAliasingDto.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.MorphologicalAntiAliasingDto(bool, bool)
+  fullName.vb: ADLXWrapper.MorphologicalAntiAliasingDto.New(Boolean, Boolean)
+  nameWithType: MorphologicalAntiAliasingDto.MorphologicalAntiAliasingDto(bool, bool)
+  nameWithType.vb: MorphologicalAntiAliasingDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.#ctor*
+  name: MorphologicalAntiAliasingDto
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto__ctor_
+  commentId: Overload:ADLXWrapper.MorphologicalAntiAliasingDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.MorphologicalAntiAliasingDto
+  fullName.vb: ADLXWrapper.MorphologicalAntiAliasingDto.New
+  nameWithType: MorphologicalAntiAliasingDto.MorphologicalAntiAliasingDto
+  nameWithType.vb: MorphologicalAntiAliasingDto.New
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto_IsEnabled
+  commentId: P:ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled
+  nameWithType: MorphologicalAntiAliasingDto.IsEnabled
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.IsEnabled
+  nameWithType: MorphologicalAntiAliasingDto.IsEnabled
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto_IsSupported
+  commentId: P:ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported
+  nameWithType: MorphologicalAntiAliasingDto.IsSupported
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.MorphologicalAntiAliasingDto.html#ADLXWrapper_MorphologicalAntiAliasingDto_IsSupported_
+  commentId: Overload:ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto.IsSupported
+  nameWithType: MorphologicalAntiAliasingDto.IsSupported
 - uid: ADLXWrapper.MultimediaListenerHandle
   name: MultimediaListenerHandle
   href: api/ADLXWrapper.MultimediaListenerHandle.html
@@ -40605,6 +41307,57 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.SimpleEyefinityInfo.IsSupported
   nameWithType: SimpleEyefinityInfo.IsSupported
+- uid: ADLXWrapper.SmartAccessMemoryDto
+  name: SmartAccessMemoryDto
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html
+  commentId: T:ADLXWrapper.SmartAccessMemoryDto
+  fullName: ADLXWrapper.SmartAccessMemoryDto
+  nameWithType: SmartAccessMemoryDto
+- uid: ADLXWrapper.SmartAccessMemoryDto.#ctor(System.Boolean,System.Boolean)
+  name: SmartAccessMemoryDto(bool, bool)
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.SmartAccessMemoryDto.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.SmartAccessMemoryDto.SmartAccessMemoryDto(bool, bool)
+  fullName.vb: ADLXWrapper.SmartAccessMemoryDto.New(Boolean, Boolean)
+  nameWithType: SmartAccessMemoryDto.SmartAccessMemoryDto(bool, bool)
+  nameWithType.vb: SmartAccessMemoryDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.SmartAccessMemoryDto.#ctor*
+  name: SmartAccessMemoryDto
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto__ctor_
+  commentId: Overload:ADLXWrapper.SmartAccessMemoryDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.SmartAccessMemoryDto.SmartAccessMemoryDto
+  fullName.vb: ADLXWrapper.SmartAccessMemoryDto.New
+  nameWithType: SmartAccessMemoryDto.SmartAccessMemoryDto
+  nameWithType.vb: SmartAccessMemoryDto.New
+- uid: ADLXWrapper.SmartAccessMemoryDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto_IsEnabled
+  commentId: P:ADLXWrapper.SmartAccessMemoryDto.IsEnabled
+  fullName: ADLXWrapper.SmartAccessMemoryDto.IsEnabled
+  nameWithType: SmartAccessMemoryDto.IsEnabled
+- uid: ADLXWrapper.SmartAccessMemoryDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.SmartAccessMemoryDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.SmartAccessMemoryDto.IsEnabled
+  nameWithType: SmartAccessMemoryDto.IsEnabled
+- uid: ADLXWrapper.SmartAccessMemoryDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto_IsSupported
+  commentId: P:ADLXWrapper.SmartAccessMemoryDto.IsSupported
+  fullName: ADLXWrapper.SmartAccessMemoryDto.IsSupported
+  nameWithType: SmartAccessMemoryDto.IsSupported
+- uid: ADLXWrapper.SmartAccessMemoryDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.SmartAccessMemoryDto.html#ADLXWrapper_SmartAccessMemoryDto_IsSupported_
+  commentId: Overload:ADLXWrapper.SmartAccessMemoryDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.SmartAccessMemoryDto.IsSupported
+  nameWithType: SmartAccessMemoryDto.IsSupported
 - uid: ADLXWrapper.SmartShiftEcoDto
   name: SmartShiftEcoDto
   href: api/ADLXWrapper.SmartShiftEcoDto.html

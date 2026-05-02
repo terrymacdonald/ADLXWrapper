@@ -28,7 +28,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectivityExperienceDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2723
+    startLine: 2753
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHdmiQualityDetectionSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2725
+    startLine: 2755
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -89,7 +89,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHdmiQualityDetectionEnabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2726
+    startLine: 2756
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -118,7 +118,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDpLinkRateSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2727
+    startLine: 2757
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -147,7 +147,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DpLinkRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2728
+    startLine: 2758
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -176,7 +176,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsRelativePreEmphasisSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2729
+    startLine: 2759
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -205,7 +205,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RelativePreEmphasis
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2730
+    startLine: 2760
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -234,7 +234,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsRelativeVoltageSwingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2731
+    startLine: 2761
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -263,7 +263,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RelativeVoltageSwing
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2732
+    startLine: 2762
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -292,7 +292,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2734
+    startLine: 2764
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

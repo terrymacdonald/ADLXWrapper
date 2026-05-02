@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/vs-code/ADLXWrapper/APIDocs",
+  "source_base_path": "D:/visual-studio-projects/ADLXWrapper/APIDocs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1352,6 +1352,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.BoostInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ChillDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ChillDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ChillDto",
       "Summary": null
     },
     {
@@ -4212,6 +4226,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ImageSharpenDesktopDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ImageSharpenDesktopDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ImageSharpenDesktopDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IntRangeDto.yml",
       "output": {
         ".html": {
@@ -4348,6 +4376,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ManualVramTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.MorphologicalAntiAliasingDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.MorphologicalAntiAliasingDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.MorphologicalAntiAliasingDto",
       "Summary": null
     },
     {
@@ -4614,6 +4656,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.SimpleEyefinityInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.SmartAccessMemoryDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.SmartAccessMemoryDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.SmartAccessMemoryDto",
       "Summary": null
     },
     {

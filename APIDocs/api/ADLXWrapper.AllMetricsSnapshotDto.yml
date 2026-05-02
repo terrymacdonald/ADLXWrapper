@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AllMetricsSnapshotDto
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 822
+    startLine: 892
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TimestampMs
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 824
+    startLine: 894
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: System
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 825
+    startLine: 895
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FPS
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 826
+    startLine: 896
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 827
+    startLine: 897
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 829
+    startLine: 899
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

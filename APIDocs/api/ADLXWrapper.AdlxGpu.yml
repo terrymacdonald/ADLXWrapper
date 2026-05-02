@@ -6,6 +6,10 @@ items:
   parent: ADLXWrapper
   children:
   - ADLXWrapper.ADLXGPU.#ctor(ADLXWrapper.IADLXGPU*,ADLXWrapper.IADLXDisplayServices*,ADLXWrapper.IADLXDesktopServices*)
+  - ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  - ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  - ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  - ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
   - ADLXWrapper.ADLXGPU.AMDSoftwareVersion
   - ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
   - ADLXWrapper.ADLXGPU.AddDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged)
@@ -779,6 +783,122 @@ items:
       type: System.String
     content.vb: Public ReadOnly Property AMDWindowsDriverVersion As String
   overload: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion*
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  id: AMDSoftwareEdition
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareEdition
+  nameWithType: ADLXGPU.AMDSoftwareEdition
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareEdition
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 85
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string AMDSoftwareEdition { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property AMDSoftwareEdition As String
+  overload: ADLXWrapper.ADLXGPU.AMDSoftwareEdition*
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  id: AMDSoftwareReleaseYear
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseYear
+  nameWithType: ADLXGPU.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseYear
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 87
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseYear { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property AMDSoftwareReleaseYear As UInteger
+  overload: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear*
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  id: AMDSoftwareReleaseMonth
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseMonth
+  nameWithType: ADLXGPU.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseMonth
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 89
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseMonth { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property AMDSoftwareReleaseMonth As UInteger
+  overload: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth*
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  commentId: P:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  id: AMDSoftwareReleaseDay
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseDay
+  nameWithType: ADLXGPU.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseDay
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 91
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint AMDSoftwareReleaseDay { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property AMDSoftwareReleaseDay As UInteger
+  overload: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay*
 - uid: ADLXWrapper.ADLXGPU.Luid
   commentId: P:ADLXWrapper.ADLXGPU.Luid
   id: Luid
@@ -797,7 +917,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 85
+    startLine: 93
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -826,7 +946,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 91
+    startLine: 99
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -856,7 +976,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 102
+    startLine: 110
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -886,7 +1006,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 113
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -919,7 +1039,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 126
+    startLine: 134
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -957,7 +1077,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 138
+    startLine: 146
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -990,7 +1110,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 151
+    startLine: 159
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1028,7 +1148,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 165
+    startLine: 173
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1542,6 +1662,30 @@ references:
   name: AMDWindowsDriverVersion
   nameWithType: ADLXGPU.AMDWindowsDriverVersion
   fullName: ADLXWrapper.ADLXGPU.AMDWindowsDriverVersion
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareEdition*
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_AMDSoftwareEdition
+  name: AMDSoftwareEdition
+  nameWithType: ADLXGPU.AMDSoftwareEdition
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareEdition
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear*
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseYear
+  name: AMDSoftwareReleaseYear
+  nameWithType: ADLXGPU.AMDSoftwareReleaseYear
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseYear
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth*
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseMonth
+  name: AMDSoftwareReleaseMonth
+  nameWithType: ADLXGPU.AMDSoftwareReleaseMonth
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseMonth
+- uid: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay*
+  commentId: Overload:ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_AMDSoftwareReleaseDay
+  name: AMDSoftwareReleaseDay
+  nameWithType: ADLXGPU.AMDSoftwareReleaseDay
+  fullName: ADLXWrapper.ADLXGPU.AMDSoftwareReleaseDay
 - uid: ADLXWrapper.ADLXGPU.Luid*
   commentId: Overload:ADLXWrapper.ADLXGPU.Luid
   href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_Luid

@@ -144,9 +144,9 @@ Struct GpuDto  <a class="header-action link-secondary" title="View source" href=
 
   <a id="ADLXWrapper_GpuDto__ctor_" data-uid="ADLXWrapper.GpuDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__" data-uid="ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto})">
-  GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1137"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuDto__ctor_System_String_System_String_System_Int32_System_UInt32_System_String_System_Boolean_System_Boolean_System_String_System_String_System_String_ADLXWrapper_ADLX_GPU_TYPE_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE_ADLXWrapper_ADLX_PCI_BUS_TYPE_System_UInt32_ADLXWrapper_ADLX_MGPU_MODE_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_ADLXWrapper_LuidDto__System_String_System_UInt32_System_UInt32_System_UInt32_" data-uid="ADLXWrapper.GpuDto.#ctor(System.String,System.String,System.Int32,System.UInt32,System.String,System.Boolean,System.Boolean,System.String,System.String,System.String,ADLXWrapper.ADLX_GPU_TYPE,ADLXWrapper.ADLX_ASIC_FAMILY_TYPE,ADLXWrapper.ADLX_PCI_BUS_TYPE,System.UInt32,ADLXWrapper.ADLX_MGPU_MODE,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{ADLXWrapper.LuidDto},System.String,System.UInt32,System.UInt32,System.UInt32)">
+  GpuDto(string, string, int, uint, string, bool, bool, string, string, string, ADLX_GPU_TYPE, ADLX_ASIC_FAMILY_TYPE, ADLX_PCI_BUS_TYPE, uint, ADLX_MGPU_MODE, string, string, string, string, string, string, string, LuidDto?, string, uint, uint, uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1141"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct GpuDto  <a class="header-action link-secondary" title="View source" href=
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = &quot;&quot;, string subSystemId = &quot;&quot;, string subSystemVendorId = &quot;&quot;, string revisionId = &quot;&quot;, string driverVersion = &quot;&quot;, string amdSoftwareVersion = &quot;&quot;, string amdWindowsDriverVersion = &quot;&quot;, LuidDto? luid = null)</code></pre>
+public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string vramType, bool isExternal, bool hasDesktops, string deviceId, string pnpString, string driverPath, ADLX_GPU_TYPE gpuType = ADLX_GPU_TYPE.GPUTYPE_UNDEFINED, ADLX_ASIC_FAMILY_TYPE asicFamilyType = ADLX_ASIC_FAMILY_TYPE.ASIC_UNDEFINED, ADLX_PCI_BUS_TYPE pciBusType = ADLX_PCI_BUS_TYPE.UNDEFINED, uint pciBusLaneWidth = 0, ADLX_MGPU_MODE multiGpuMode = ADLX_MGPU_MODE.MGPU_NONE, string productName = &quot;&quot;, string subSystemId = &quot;&quot;, string subSystemVendorId = &quot;&quot;, string revisionId = &quot;&quot;, string driverVersion = &quot;&quot;, string amdSoftwareVersion = &quot;&quot;, string amdWindowsDriverVersion = &quot;&quot;, LuidDto? luid = null, string amdSoftwareEdition = &quot;&quot;, uint amdSoftwareReleaseYear = 0, uint amdSoftwareReleaseMonth = 0, uint amdSoftwareReleaseDay = 0)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -205,6 +205,14 @@ public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string
     <dd></dd>
     <dt><code>luid</code> <a class="xref" href="ADLXWrapper.LuidDto.html">LuidDto</a>?</dt>
     <dd></dd>
+    <dt><code>amdSoftwareEdition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>amdSoftwareReleaseYear</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>amdSoftwareReleaseMonth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+    <dt><code>amdSoftwareReleaseDay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
   </dl>
 
 
@@ -220,6 +228,130 @@ public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string
 
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="ADLXWrapper_GpuDto_AMDSoftwareEdition_" data-uid="ADLXWrapper.GpuDto.AMDSoftwareEdition*"></a>
+
+  <h3 id="ADLXWrapper_GpuDto_AMDSoftwareEdition" data-uid="ADLXWrapper.GpuDto.AMDSoftwareEdition">
+  AMDSoftwareEdition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AMDSoftwareEdition { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuDto_AMDSoftwareReleaseDay_" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseDay*"></a>
+
+  <h3 id="ADLXWrapper_GpuDto_AMDSoftwareReleaseDay" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseDay">
+  AMDSoftwareReleaseDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint AMDSoftwareReleaseDay { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuDto_AMDSoftwareReleaseMonth_" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth*"></a>
+
+  <h3 id="ADLXWrapper_GpuDto_AMDSoftwareReleaseMonth" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseMonth">
+  AMDSoftwareReleaseMonth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint AMDSoftwareReleaseMonth { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuDto_AMDSoftwareReleaseYear_" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseYear*"></a>
+
+  <h3 id="ADLXWrapper_GpuDto_AMDSoftwareReleaseYear" data-uid="ADLXWrapper.GpuDto.AMDSoftwareReleaseYear">
+  AMDSoftwareReleaseYear
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint AMDSoftwareReleaseYear { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="ADLXWrapper_GpuDto_AMDSoftwareVersion_" data-uid="ADLXWrapper.GpuDto.AMDSoftwareVersion*"></a>
@@ -505,7 +637,7 @@ public GpuDto(string name, string vendorId, int uniqueId, uint totalVRAM, string
 
   <h3 id="ADLXWrapper_GpuDto_Luid" data-uid="ADLXWrapper.GpuDto.Luid">
   Luid
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1135"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXSystemServicesHelper.cs/#L1139"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

@@ -8,15 +8,27 @@ items:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor(ADLXWrapper.IADLX3DSettingsServices*,System.Boolean,ADLXWrapper.IADLXSystem*)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(System.Int32)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(System.Int32,ADLXWrapper.FluidMotionFramesDto@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionDto@)
   langs:
   - csharp
@@ -70,7 +82,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,6 +99,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional system pointer for GPU lookup by unique id. Not ref-counted.
     content.vb: Public Sub New(services As IADLX3DSettingsServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor*
   nameWithType.vb: ADLX3DSettingsServicesHelper.New(IADLX3DSettingsServices*, Boolean, IADLXSystem*)
@@ -110,7 +123,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 107
+    startLine: 108
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -152,7 +165,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 125
+    startLine: 126
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -186,7 +199,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 249
+    startLine: 268
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -222,7 +235,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 257
+    startLine: 276
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -260,7 +273,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 264
+    startLine: 283
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -296,7 +309,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 272
+    startLine: 291
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -316,6 +329,450 @@ items:
   nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(Integer, All3DSettingsDto)
   fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(Integer, ADLXWrapper.All3DSettingsDto)
   name.vb: TryApplyAll3DSettings(Integer, All3DSettingsDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
+  id: GetChill(System.Int32)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetChill(int)
+  nameWithType: ADLX3DSettingsServicesHelper.GetChill(int)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetChill
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 298
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets Chill state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public ChillDto GetChill(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.ChillDto
+    content.vb: Public Function GetChill(gpuUniqueId As Integer) As ChillDto
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetChill(Integer)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(Integer)
+  name.vb: GetChill(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  id: TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetChill(int, out ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetChill(int, out ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(int, out ADLXWrapper.ChillDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetChill
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 306
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get Chill state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetChill(int gpuUniqueId, out ChillDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ChillDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetChill(gpuUniqueId As Integer, info As ChillDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetChill(Integer, ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(Integer, ADLXWrapper.ChillDto)
+  name.vb: TryGetChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  id: ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: ApplyChill(int, ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyChill(int, ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(int, ADLXWrapper.ChillDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyChill
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 313
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies Chill settings to the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public void ApplyChill(int gpuUniqueId, ChillDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ChillDto
+    content.vb: Public Sub ApplyChill(gpuUniqueId As Integer, info As ChillDto)
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyChill(Integer, ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(Integer, ADLXWrapper.ChillDto)
+  name.vb: ApplyChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  id: TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyChill(int, ChillDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyChill(int, ChillDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(int, ADLXWrapper.ChillDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyChill
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 321
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply Chill settings to the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryApplyChill(int gpuUniqueId, ChillDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ChillDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyChill(gpuUniqueId As Integer, info As ChillDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyChill(Integer, ChillDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(Integer, ADLXWrapper.ChillDto)
+  name.vb: TryApplyChill(Integer, ChillDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
+  id: GetMorphologicalAntiAliasing(System.Int32)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetMorphologicalAntiAliasing(int)
+  nameWithType: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(int)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetMorphologicalAntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 328
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets MorphologicalAntiAliasing state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public MorphologicalAntiAliasingDto GetMorphologicalAntiAliasing(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.MorphologicalAntiAliasingDto
+    content.vb: Public Function GetMorphologicalAntiAliasing(gpuUniqueId As Integer) As MorphologicalAntiAliasingDto
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(Integer)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(Integer)
+  name.vb: GetMorphologicalAntiAliasing(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
+  id: TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetMorphologicalAntiAliasing(int, out MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(int, out MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(int, out ADLXWrapper.MorphologicalAntiAliasingDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetMorphologicalAntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 336
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get MorphologicalAntiAliasing state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetMorphologicalAntiAliasing(int gpuUniqueId, out MorphologicalAntiAliasingDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.MorphologicalAntiAliasingDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetMorphologicalAntiAliasing(gpuUniqueId As Integer, info As MorphologicalAntiAliasingDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  name.vb: TryGetMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  id: ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: ApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(int, ADLXWrapper.MorphologicalAntiAliasingDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyMorphologicalAntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 343
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies MorphologicalAntiAliasing settings to the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public void ApplyMorphologicalAntiAliasing(int gpuUniqueId, MorphologicalAntiAliasingDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.MorphologicalAntiAliasingDto
+    content.vb: Public Sub ApplyMorphologicalAntiAliasing(gpuUniqueId As Integer, info As MorphologicalAntiAliasingDto)
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  name.vb: ApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  id: TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(int, ADLXWrapper.MorphologicalAntiAliasingDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyMorphologicalAntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 351
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply MorphologicalAntiAliasing settings to the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryApplyMorphologicalAntiAliasing(int gpuUniqueId, MorphologicalAntiAliasingDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.MorphologicalAntiAliasingDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyMorphologicalAntiAliasing(gpuUniqueId As Integer, info As MorphologicalAntiAliasingDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(Integer, ADLXWrapper.MorphologicalAntiAliasingDto)
+  name.vb: TryApplyMorphologicalAntiAliasing(Integer, MorphologicalAntiAliasingDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
+  id: GetImageSharpenDesktop(System.Int32)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetImageSharpenDesktop(int)
+  nameWithType: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(int)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetImageSharpenDesktop
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 358
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets ImageSharpenDesktop state for the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.
+  example: []
+  syntax:
+    content: public ImageSharpenDesktopDto GetImageSharpenDesktop(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.ImageSharpenDesktopDto
+    content.vb: Public Function GetImageSharpenDesktop(gpuUniqueId As Integer) As ImageSharpenDesktopDto
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(Integer)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(Integer)
+  name.vb: GetImageSharpenDesktop(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  id: TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetImageSharpenDesktop(int, out ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(int, out ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(int, out ADLXWrapper.ImageSharpenDesktopDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetImageSharpenDesktop
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 366
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get ImageSharpenDesktop state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetImageSharpenDesktop(int gpuUniqueId, out ImageSharpenDesktopDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ImageSharpenDesktopDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetImageSharpenDesktop(gpuUniqueId As Integer, info As ImageSharpenDesktopDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  name.vb: TryGetImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  id: ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(int, ADLXWrapper.ImageSharpenDesktopDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyImageSharpenDesktop
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 373
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies ImageSharpenDesktop settings to the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.
+  example: []
+  syntax:
+    content: public void ApplyImageSharpenDesktop(int gpuUniqueId, ImageSharpenDesktopDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ImageSharpenDesktopDto
+    content.vb: Public Sub ApplyImageSharpenDesktop(gpuUniqueId As Integer, info As ImageSharpenDesktopDto)
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  name.vb: ApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  id: TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(int, ADLXWrapper.ImageSharpenDesktopDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyImageSharpenDesktop
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 382
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply ImageSharpenDesktop settings to the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryApplyImageSharpenDesktop(int gpuUniqueId, ImageSharpenDesktopDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.ImageSharpenDesktopDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyImageSharpenDesktop(gpuUniqueId As Integer, info As ImageSharpenDesktopDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(Integer, ADLXWrapper.ImageSharpenDesktopDto)
+  name.vb: TryApplyImageSharpenDesktop(Integer, ImageSharpenDesktopDto)
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
   commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
   id: GetFluidMotionFrames(System.Int32)
@@ -334,7 +791,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 279
+    startLine: 389
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -370,7 +827,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 287
+    startLine: 397
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -408,7 +865,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 318
+    startLine: 428
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -438,7 +895,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 335
+    startLine: 445
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -467,7 +924,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 547
+    startLine: 767
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -495,7 +952,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 585
+    startLine: 805
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -888,6 +1345,99 @@ references:
   name: TryApplyAll3DSettings
   nameWithType: ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetChill_System_Int32_
+  name: GetChill
+  nameWithType: ADLX3DSettingsServicesHelper.GetChill
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill
+- uid: ADLXWrapper.ChillDto
+  commentId: T:ADLXWrapper.ChillDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.ChillDto.html
+  name: ChillDto
+  nameWithType: ChillDto
+  fullName: ADLXWrapper.ChillDto
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetChill_System_Int32_ADLXWrapper_ChillDto__
+  name: TryGetChill
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetChill
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyChill_System_Int32_ADLXWrapper_ChillDto_
+  name: ApplyChill
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyChill
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyChill_System_Int32_ADLXWrapper_ChillDto_
+  name: TryApplyChill
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyChill
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetMorphologicalAntiAliasing_System_Int32_
+  name: GetMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto
+  commentId: T:ADLXWrapper.MorphologicalAntiAliasingDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.MorphologicalAntiAliasingDto.html
+  name: MorphologicalAntiAliasingDto
+  nameWithType: MorphologicalAntiAliasingDto
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto__
+  name: TryGetMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_
+  name: ApplyMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_
+  name: TryApplyMorphologicalAntiAliasing
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetImageSharpenDesktop_System_Int32_
+  name: GetImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop
+- uid: ADLXWrapper.ImageSharpenDesktopDto
+  commentId: T:ADLXWrapper.ImageSharpenDesktopDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.ImageSharpenDesktopDto.html
+  name: ImageSharpenDesktopDto
+  nameWithType: ImageSharpenDesktopDto
+  fullName: ADLXWrapper.ImageSharpenDesktopDto
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto__
+  name: TryGetImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
+  name: ApplyImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
+  name: TryApplyImageSharpenDesktop
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames*
   commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames
   href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_System_Int32_

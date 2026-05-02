@@ -160,7 +160,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper__ctor_ADLXWrapper_IADLXGPUTuningServices__System_Boolean_ADLXWrapper_IADLXSystem__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor(ADLXWrapper.IADLXGPUTuningServices*,System.Boolean,ADLXWrapper.IADLXSystem*)">
   ADLXGPUTuningServicesHelper(IADLXGPUTuningServices*, bool, IADLXSystem*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a GPU tuning helper from the native services interface, upgrading to v1 when available.</p>
@@ -180,7 +180,8 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
     <dd><p>True to AddRef the pointer for this helper.</p>
 </dd>
     <dt><code>system</code> <a class="xref" href="ADLXWrapper.IADLXSystem.html">IADLXSystem</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional system pointer for GPU lookup by unique id. Not ref-counted.</p>
+</dd>
   </dl>
 
 
@@ -202,7 +203,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_AddGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_GpuTuningChangedCallback_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.AddGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback)">
   AddGPUTuningEventListener(GpuTuningChangedCallback)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a GPU tuning change listener.</p>
@@ -250,7 +251,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L629"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L678"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -277,7 +278,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.Finalize">
   ~ADLXGPUTuningServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L645"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L694"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -303,7 +304,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetCapabilities_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetCapabilities(System.Int32)">
   GetCapabilities(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L440"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L474"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets GPU tuning capabilities for the GPU with the specified unique id.</p>
@@ -340,7 +341,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualFanTuning_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualFanTuning(System.Int32)">
   GetManualFanTuning(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L572"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets manual fan tuning info for the GPU with the specified unique id.</p>
@@ -377,7 +378,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualGfxTuning_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(System.Int32)">
   GetManualGfxTuning(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L568"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L602"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets manual GFX tuning info for the GPU with the specified unique id.</p>
@@ -414,7 +415,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetManualVramTuning_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(System.Int32)">
   GetManualVramTuning(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L553"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L587"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets manual VRAM tuning info for the GPU with the specified unique id.</p>
@@ -451,7 +452,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetPresetTuning_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(System.Int32)">
   GetPresetTuning(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L583"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L617"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets preset tuning info for the GPU with the specified unique id.</p>
@@ -484,11 +485,48 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
 
 
+  <a id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetSmartAccessMemory_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_GetSmartAccessMemory_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)">
+  GetSmartAccessMemory(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L632"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets AMD SmartAccess Memory info for the GPU with the specified unique id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SmartAccessMemoryDto GetSmartAccessMemory(int gpuUniqueId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.SmartAccessMemoryDto.html">SmartAccessMemoryDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsAutoTuningSupported_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported*"></a>
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsAutoTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)">
   IsAutoTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L448"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L482"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when auto tuning is supported for the GPU with the specified unique id.</p>
@@ -525,7 +563,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualFanTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(System.Int32)">
   IsManualFanTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L508"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L542"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when manual fan tuning is supported for the GPU with the specified unique id.</p>
@@ -562,7 +600,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualGfxTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(System.Int32)">
   IsManualGfxTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L478"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L512"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when manual GFX tuning is supported for the GPU with the specified unique id.</p>
@@ -599,7 +637,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualPowerTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualPowerTuningSupported(System.Int32)">
   IsManualPowerTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L523"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L557"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when manual power tuning is supported for the GPU with the specified unique id.</p>
@@ -636,7 +674,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsManualVramTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualVramTuningSupported(System.Int32)">
   IsManualVramTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L527"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when manual VRAM tuning is supported for the GPU with the specified unique id.</p>
@@ -673,7 +711,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_IsPresetTuningSupported_System_Int32_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.IsPresetTuningSupported(System.Int32)">
   IsPresetTuningSupported(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L463"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L497"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns true when preset tuning is supported for the GPU with the specified unique id.</p>
@@ -710,7 +748,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_RemoveGPUTuningEventListener_ADLXWrapper_GpuTuningListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.RemoveGPUTuningEventListener(ADLXWrapper.GpuTuningListenerHandle,System.Boolean)">
   RemoveGPUTuningEventListener(GpuTuningListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes a GPU tuning change listener.</p>
@@ -746,7 +784,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualFanTuning_System_Int32_ADLXWrapper_ManualFanTuningDto__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualFanTuning(System.Int32,ADLXWrapper.ManualFanTuningDto@)">
   TryGetManualFanTuning(int, out ManualFanTuningDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L546"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L580"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get manual fan tuning info for the GPU with the specified unique id.</p>
@@ -785,7 +823,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualGfxTuning_System_Int32_ADLXWrapper_ManualGfxTuningDto__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)">
   TryGetManualGfxTuning(int, out ManualGfxTuningDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L576"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L610"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get manual GFX tuning info for the GPU with the specified unique id.</p>
@@ -824,7 +862,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetManualVramTuning_System_Int32_ADLXWrapper_ManualVramTuningDto__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)">
   TryGetManualVramTuning(int, out ManualVramTuningDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L595"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get manual VRAM tuning info for the GPU with the specified unique id.</p>
@@ -863,7 +901,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetPresetTuning_System_Int32_ADLXWrapper_PresetTuningDto__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)">
   TryGetPresetTuning(int, out PresetTuningDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L591"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L625"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get preset tuning info for the GPU with the specified unique id.</p>
@@ -898,11 +936,50 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
 
 
+  <a id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetSmartAccessMemory_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory*"></a>
+
+  <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetSmartAccessMemory_System_Int32_ADLXWrapper_SmartAccessMemoryDto__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)">
+  TryGetSmartAccessMemory(int, out SmartAccessMemoryDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L640"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get AMD SmartAccess Memory info for the GPU with the specified unique id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetSmartAccessMemory(int gpuUniqueId, out SmartAccessMemoryDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.SmartAccessMemoryDto.html">SmartAccessMemoryDto</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported*"></a>
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsAutoTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)">
   TryIsAutoTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L456"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L490"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query auto tuning support for the GPU with the specified unique id.</p>
@@ -941,7 +1018,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualFanTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(System.Int32,System.Boolean@)">
   TryIsManualFanTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L516"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L550"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query manual fan tuning support for the GPU with the specified unique id.</p>
@@ -980,7 +1057,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualGfxTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)">
   TryIsManualGfxTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L486"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L520"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query manual GFX tuning support for the GPU with the specified unique id.</p>
@@ -1019,7 +1096,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualPowerTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualPowerTuningSupported(System.Int32,System.Boolean@)">
   TryIsManualPowerTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L531"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L565"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query manual power tuning support for the GPU with the specified unique id.</p>
@@ -1058,7 +1135,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsManualVramTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualVramTuningSupported(System.Int32,System.Boolean@)">
   TryIsManualVramTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L501"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L535"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query manual VRAM tuning support for the GPU with the specified unique id.</p>
@@ -1097,7 +1174,7 @@ Class ADLXGPUTuningServicesHelper  <a class="header-action link-secondary" title
 
   <h3 id="ADLXWrapper_ADLXGPUTuningServicesHelper_TryIsPresetTuningSupported_System_Int32_System_Boolean__" data-uid="ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported(System.Int32,System.Boolean@)">
   TryIsPresetTuningSupported(int, out bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L471"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L505"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to query preset tuning support for the GPU with the specified unique id.</p>

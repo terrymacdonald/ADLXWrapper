@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_GpuMetricsSnapshotDto" data-uid="ADLXWrapper.GpuMetricsSnapshotDto" class="text-break">
-Struct GpuMetricsSnapshotDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L710"><i class="bi bi-code-slash"></i></a>
+Struct GpuMetricsSnapshotDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L744"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,9 +144,9 @@ Struct GpuMetricsSnapshotDto  <a class="header-action link-secondary" title="Vie
 
   <a id="ADLXWrapper_GpuMetricsSnapshotDto__ctor_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64)">
-  GpuMetricsSnapshotDto(double, double, double, int, int, int, int, double, double, int, long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L724"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto__ctor_System_Double_System_Double_System_Double_System_Double_System_Int32_System_Int32_System_Int32_System_Int32_System_Double_System_Double_System_Int32_System_Int64_System_Nullable_System_Double__System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.#ctor(System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Int32,System.Int32,System.Double,System.Double,System.Int32,System.Int64,System.Nullable{System.Double},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+  GpuMetricsSnapshotDto(double, double, double, double, int, int, int, int, double, double, int, long, double?, int?, int?, int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L763"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct GpuMetricsSnapshotDto  <a class="header-action link-secondary" title="Vie
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs)</code></pre>
+public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, double intakeTemperature, double usage, int clockSpeed, int vramClockSpeed, int vramUsage, int fanSpeed, double power, double totalBoardPower, int voltage, long timestampMs, double? memoryTemperature = null, int? nPUFrequency = null, int? nPUActivityLevel = null, int? sharedMemory = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -162,6 +162,8 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
     <dt><code>temperature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
     <dt><code>hotspotTemperature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+    <dt><code>intakeTemperature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
     <dt><code>usage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
     <dd></dd>
@@ -180,6 +182,14 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
     <dt><code>voltage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
     <dt><code>timestampMs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>memoryTemperature</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>nPUFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>nPUActivityLevel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>sharedMemory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -202,7 +212,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_ClockSpeed" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.ClockSpeed">
   ClockSpeed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L715"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L750"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -233,7 +243,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_FanSpeed" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.FanSpeed">
   FanSpeed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L718"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L753"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -264,7 +274,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_HotspotTemperature" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.HotspotTemperature">
   HotspotTemperature
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L713"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L747"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -291,11 +301,135 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
 
 
+  <a id="ADLXWrapper_GpuMetricsSnapshotDto_IntakeTemperature_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_IntakeTemperature" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.IntakeTemperature">
+  IntakeTemperature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L748"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double IntakeTemperature { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSnapshotDto_MemoryTemperature_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_MemoryTemperature" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.MemoryTemperature">
+  MemoryTemperature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L758"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? MemoryTemperature { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSnapshotDto_NPUActivityLevel_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_NPUActivityLevel" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.NPUActivityLevel">
+  NPUActivityLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L760"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? NPUActivityLevel { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_GpuMetricsSnapshotDto_NPUFrequency_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_NPUFrequency" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.NPUFrequency">
+  NPUFrequency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L759"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? NPUFrequency { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_GpuMetricsSnapshotDto_Power_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Power*"></a>
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_Power" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Power">
   Power
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L719"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L754"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -322,11 +456,42 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
 
 
+  <a id="ADLXWrapper_GpuMetricsSnapshotDto_SharedMemory_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory*"></a>
+
+  <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_SharedMemory" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.SharedMemory">
+  SharedMemory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L761"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? SharedMemory { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_GpuMetricsSnapshotDto_Temperature_" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Temperature*"></a>
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_Temperature" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Temperature">
   Temperature
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L712"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L746"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -357,7 +522,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_TimestampMs" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.TimestampMs">
   TimestampMs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L722"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L757"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -388,7 +553,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_TotalBoardPower" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.TotalBoardPower">
   TotalBoardPower
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L720"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L755"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -419,7 +584,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_Usage" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Usage">
   Usage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L714"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L749"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -450,7 +615,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_VRAMClockSpeed" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.VRAMClockSpeed">
   VRAMClockSpeed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L716"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L751"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -481,7 +646,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_VRAMUsage" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.VRAMUsage">
   VRAMUsage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L717"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L752"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -512,7 +677,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 
   <h3 id="ADLXWrapper_GpuMetricsSnapshotDto_Voltage" data-uid="ADLXWrapper.GpuMetricsSnapshotDto.Voltage">
   Voltage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L721"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L756"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -543,7 +708,7 @@ public GpuMetricsSnapshotDto(double temperature, double hotspotTemperature, doub
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L710" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs/#L744" class="edit-link">Edit this page</a>
         </div>
 
 

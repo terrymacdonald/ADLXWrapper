@@ -19,7 +19,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplayGamutChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2943
+    startLine: 2973
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

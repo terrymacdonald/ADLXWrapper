@@ -14,6 +14,7 @@ items:
   - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualGfxTuning(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.GetManualVramTuning(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.GetPresetTuning(System.Int32)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsAutoTuningSupported(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualFanTuningSupported(System.Int32)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.IsManualGfxTuningSupported(System.Int32)
@@ -25,6 +26,7 @@ items:
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualGfxTuning(System.Int32,ADLXWrapper.ManualGfxTuningDto@)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetManualVramTuning(System.Int32,ADLXWrapper.ManualVramTuningDto@)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(System.Int32,ADLXWrapper.PresetTuningDto@)
+  - ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsAutoTuningSupported(System.Int32,System.Boolean@)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualFanTuningSupported(System.Int32,System.Boolean@)
   - ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsManualGfxTuningSupported(System.Int32,System.Boolean@)
@@ -83,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -100,6 +102,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional system pointer for GPU lookup by unique id. Not ref-counted.
     content.vb: Public Sub New(services As IADLXGPUTuningServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXGPUTuningServicesHelper.#ctor*
   nameWithType.vb: ADLXGPUTuningServicesHelper.New(IADLXGPUTuningServices*, Boolean, IADLXSystem*)
@@ -123,7 +126,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,7 +168,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveGPUTuningEventListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 114
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -203,7 +206,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCapabilities
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 439
+    startLine: 473
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -239,7 +242,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 447
+    startLine: 481
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -275,7 +278,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsAutoTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 455
+    startLine: 489
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -313,7 +316,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 462
+    startLine: 496
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -349,7 +352,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsPresetTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 470
+    startLine: 504
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -387,7 +390,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 477
+    startLine: 511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -423,7 +426,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualGfxTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 485
+    startLine: 519
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -461,7 +464,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 492
+    startLine: 526
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -497,7 +500,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualVramTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 500
+    startLine: 534
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -535,7 +538,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 507
+    startLine: 541
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -571,7 +574,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualFanTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 515
+    startLine: 549
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -609,7 +612,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 522
+    startLine: 556
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -645,7 +648,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsManualPowerTuningSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 530
+    startLine: 564
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -683,7 +686,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 537
+    startLine: 571
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -719,7 +722,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualFanTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 545
+    startLine: 579
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -757,7 +760,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 552
+    startLine: 586
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -793,7 +796,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualVramTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 560
+    startLine: 594
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -831,7 +834,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 567
+    startLine: 601
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -867,7 +870,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualGfxTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 575
+    startLine: 609
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -905,7 +908,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 582
+    startLine: 616
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -941,7 +944,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetPresetTuning
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 590
+    startLine: 624
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -961,6 +964,80 @@ items:
   nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetPresetTuning(Integer, PresetTuningDto)
   fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning(Integer, ADLXWrapper.PresetTuningDto)
   name.vb: TryGetPresetTuning(Integer, PresetTuningDto)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(System.Int32)
+  id: GetSmartAccessMemory(System.Int32)
+  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetSmartAccessMemory(int)
+  nameWithType: ADLXGPUTuningServicesHelper.GetSmartAccessMemory(int)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSmartAccessMemory
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 631
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets AMD SmartAccess Memory info for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public SmartAccessMemoryDto GetSmartAccessMemory(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.SmartAccessMemoryDto
+    content.vb: Public Function GetSmartAccessMemory(gpuUniqueId As Integer) As SmartAccessMemoryDto
+  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory*
+  nameWithType.vb: ADLXGPUTuningServicesHelper.GetSmartAccessMemory(Integer)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory(Integer)
+  name.vb: GetSmartAccessMemory(Integer)
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
+  commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
+  id: TryGetSmartAccessMemory(System.Int32,ADLXWrapper.SmartAccessMemoryDto@)
+  parent: ADLXWrapper.ADLXGPUTuningServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetSmartAccessMemory(int, out SmartAccessMemoryDto)
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(int, out SmartAccessMemoryDto)
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(int, out ADLXWrapper.SmartAccessMemoryDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetSmartAccessMemory
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 639
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get AMD SmartAccess Memory info for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public bool TryGetSmartAccessMemory(int gpuUniqueId, out SmartAccessMemoryDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.SmartAccessMemoryDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetSmartAccessMemory(gpuUniqueId As Integer, info As SmartAccessMemoryDto) As Boolean
+  overload: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory*
+  nameWithType.vb: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(Integer, SmartAccessMemoryDto)
+  fullName.vb: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory(Integer, ADLXWrapper.SmartAccessMemoryDto)
+  name.vb: TryGetSmartAccessMemory(Integer, SmartAccessMemoryDto)
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   id: Dispose
@@ -979,7 +1056,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 628
+    startLine: 677
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1009,7 +1086,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 644
+    startLine: 693
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1527,6 +1604,25 @@ references:
   name: TryGetPresetTuning
   nameWithType: ADLXGPUTuningServicesHelper.TryGetPresetTuning
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetPresetTuning
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory*
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_GetSmartAccessMemory_System_Int32_
+  name: GetSmartAccessMemory
+  nameWithType: ADLXGPUTuningServicesHelper.GetSmartAccessMemory
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.GetSmartAccessMemory
+- uid: ADLXWrapper.SmartAccessMemoryDto
+  commentId: T:ADLXWrapper.SmartAccessMemoryDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.SmartAccessMemoryDto.html
+  name: SmartAccessMemoryDto
+  nameWithType: SmartAccessMemoryDto
+  fullName: ADLXWrapper.SmartAccessMemoryDto
+- uid: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory*
+  commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
+  href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_TryGetSmartAccessMemory_System_Int32_ADLXWrapper_SmartAccessMemoryDto__
+  name: TryGetSmartAccessMemory
+  nameWithType: ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
+  fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryGetSmartAccessMemory
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose*
   commentId: Overload:ADLXWrapper.ADLXGPUTuningServicesHelper.Dispose
   href: ADLXWrapper.ADLXGPUTuningServicesHelper.html#ADLXWrapper_ADLXGPUTuningServicesHelper_Dispose
