@@ -23,6 +23,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native GPU tuning services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
+        /// <param name="system">Optional system pointer for GPU lookup by unique id. Not ref-counted.</param>
         public ADLXGPUTuningServicesHelper(IADLXGPUTuningServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));

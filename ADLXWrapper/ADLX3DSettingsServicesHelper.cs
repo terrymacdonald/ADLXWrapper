@@ -22,6 +22,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native 3D settings services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
+        /// <param name="system">Optional system pointer for GPU lookup by unique id. Not ref-counted.</param>
         public ADLX3DSettingsServicesHelper(IADLX3DSettingsServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
