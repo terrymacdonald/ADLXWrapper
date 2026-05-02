@@ -53,6 +53,12 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
         Assert.IsType<bool>(support.ClockSpeedSupported);
         Assert.IsType<bool>(support.TemperatureSupported);
         Assert.IsType<bool>(support.PowerSupported);
+        Assert.IsType<bool>(support.IntakeTemperatureSupported);
+        // Nullable v1/v2 flags — present if driver supports the versioned interface, null otherwise
+        _ = support.MemoryTemperatureSupported;
+        _ = support.NPUFrequencySupported;
+        _ = support.NPUActivityLevelSupported;
+        _ = support.SharedMemorySupported;
     }
 
     [SkippableFact]
@@ -87,6 +93,17 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
             Assert.True(metrics.TotalBoardPower >= 0);
         if (support.VoltageSupported)
             Assert.True(metrics.Voltage >= 0);
+        // IntakeTemperature is on base interface
+        Assert.IsType<double>(metrics.IntakeTemperature);
+        // Nullable v1/v2 fields — present if driver supports the versioned interface
+        if (metrics.MemoryTemperature.HasValue)
+            Assert.True(metrics.MemoryTemperature.Value >= 0);
+        if (metrics.NPUFrequency.HasValue)
+            Assert.True(metrics.NPUFrequency.Value >= 0);
+        if (metrics.NPUActivityLevel.HasValue)
+            Assert.True(metrics.NPUActivityLevel.Value >= 0);
+        if (metrics.SharedMemory.HasValue)
+            Assert.True(metrics.SharedMemory.Value >= 0);
     }
 
     [SkippableFact]

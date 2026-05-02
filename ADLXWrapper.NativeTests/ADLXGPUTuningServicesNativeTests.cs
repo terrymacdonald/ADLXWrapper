@@ -391,13 +391,15 @@ public unsafe class ADLXGPUTuningServicesNativeTests
             "IADLXGPUTuningServices1 not supported on this driver.");
         Assert.Equal(ADLX_RESULT.ADLX_OK, qiResult);
         using var services1Ptr = new ComPtr<IADLXGPUTuningServices1>(services1);
+        nint services1Addr = (nint)services1;
 
         using var gpuListPtr = GetGpuListOrSkip(out var gpuList);
 
         ForEachGpu(gpuList, gpu =>
         {
+            var svc1 = (IADLXGPUTuningServices1*)services1Addr;
             IADLXSmartAccessMemory* sam = null;
-            var result = services1->GetSmartAccessMemory(gpu, &sam);
+            var result = svc1->GetSmartAccessMemory(gpu, &sam);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || result == ADLX_RESULT.ADLX_INVALID_OBJECT || sam == null)
                 return;
             Assert.Equal(ADLX_RESULT.ADLX_OK, result);

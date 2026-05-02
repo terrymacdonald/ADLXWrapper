@@ -83,6 +83,14 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareVersion; } }
         public string AMDWindowsDriverVersion { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.AMDWindowsDriverVersion; } }
+        public string AMDSoftwareEdition { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareEdition; } }
+        public uint AMDSoftwareReleaseYear { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareReleaseYear; } }
+        public uint AMDSoftwareReleaseMonth { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareReleaseMonth; } }
+        public uint AMDSoftwareReleaseDay { get { ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead(); return _identity.AMDSoftwareReleaseDay; } }
         public LuidDto Luid { get { ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead(); return _identity.Luid; } }
 

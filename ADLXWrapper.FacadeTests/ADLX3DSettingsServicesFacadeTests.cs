@@ -122,7 +122,10 @@ public class ADLX3DSettingsServicesFacadeTests
         var info = GetAll3DSettingsOrSkip(helper);
 
         Skip.If(!info.AntiLag.HasValue || !info.AntiLag.Value.IsSupported, "Anti-Lag not supported on this GPU.");
-        Assert.IsType<bool>(info.AntiLag!.Value.IsEnabled);
+        var antiLag = info.AntiLag!.Value;
+        Assert.IsType<bool>(antiLag.IsEnabled);
+        // Level is nullable — null means driver does not support IADLX3DAntiLag1; either value is valid.
+        _ = antiLag.Level; // property must be accessible (may be null on older drivers)
     }
 
     [SkippableFact]
@@ -252,5 +255,47 @@ public class ADLX3DSettingsServicesFacadeTests
         {
             throw new Xunit.SkipException($"Radeon Super Resolution call failed (SEH), treating as unsupported: {ex.Message}");
         }
+    }
+
+    [SkippableFact]
+    public void Three_d_chill_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
+        if (!helper.TryGetChill(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("Chill not supported on this GPU.");
+
+        Skip.If(!info.IsSupported, "Chill reported unsupported.");
+        Assert.True(info.FPSRange.MinValue <= info.MinFPS && info.MinFPS <= info.FPSRange.MaxValue,
+            $"MinFPS {info.MinFPS} is outside FPSRange [{info.FPSRange.MinValue},{info.FPSRange.MaxValue}]");
+        Assert.True(info.FPSRange.MinValue <= info.MaxFPS && info.MaxFPS <= info.FPSRange.MaxValue,
+            $"MaxFPS {info.MaxFPS} is outside FPSRange [{info.FPSRange.MinValue},{info.FPSRange.MaxValue}]");
+    }
+
+    [SkippableFact]
+    public void Three_d_morphological_anti_aliasing_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var info = GetAll3DSettingsOrSkip(helper);
+
+        Skip.If(!info.MorphologicalAntiAliasing.HasValue || !info.MorphologicalAntiAliasing.Value.IsSupported,
+            "Morphological Anti-Aliasing not supported on this GPU.");
+        Assert.IsType<bool>(info.MorphologicalAntiAliasing!.Value.IsEnabled);
+    }
+
+    [SkippableFact]
+    public void Three_d_image_sharpen_desktop_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var gpus = _fixture.System!.EnumerateGPUs().ToList();
+        Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
+        var gpuUniqueId = gpus[0].UniqueId;
+        if (!helper.TryGetImageSharpenDesktop(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("ImageSharpenDesktop not supported on this system (IADLX3DSettingsServices2 not available or GPU unsupported).");
+
+        Skip.If(!info.IsSupported, "ImageSharpenDesktop reported unsupported.");
+        Assert.IsType<bool>(info.IsEnabled);
     }
 }

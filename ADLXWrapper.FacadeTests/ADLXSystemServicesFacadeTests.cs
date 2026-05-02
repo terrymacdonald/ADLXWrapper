@@ -176,6 +176,7 @@ public class ADLXSystemServicesFacadeTests
         Assert.NotNull(gpu.DriverVersion);
         Assert.NotNull(gpu.AMDSoftwareVersion);
         Assert.NotNull(gpu.AMDWindowsDriverVersion);
+        Assert.NotNull(gpu.AMDSoftwareEdition);
 
         var hasDriverStrings = !string.IsNullOrEmpty(gpu.DriverVersion) ||
                                !string.IsNullOrEmpty(gpu.AMDSoftwareVersion) ||
@@ -188,6 +189,14 @@ public class ADLXSystemServicesFacadeTests
         {
             Assert.True(gpu.Luid.LowPart != 0 || gpu.Luid.HighPart != 0);
         }
+
+        // AMDSoftwareReleaseDate fields — 0 if IADLXGPU2 not supported or driver doesn't populate them
+        Assert.True(gpu.AMDSoftwareReleaseYear == 0 || gpu.AMDSoftwareReleaseYear >= 2020,
+            $"Unexpected AMDSoftwareReleaseYear: {gpu.AMDSoftwareReleaseYear}");
+        Assert.True(gpu.AMDSoftwareReleaseMonth == 0 || (gpu.AMDSoftwareReleaseMonth >= 1 && gpu.AMDSoftwareReleaseMonth <= 12),
+            $"AMDSoftwareReleaseMonth out of range: {gpu.AMDSoftwareReleaseMonth}");
+        Assert.True(gpu.AMDSoftwareReleaseDay == 0 || (gpu.AMDSoftwareReleaseDay >= 1 && gpu.AMDSoftwareReleaseDay <= 31),
+            $"AMDSoftwareReleaseDay out of range: {gpu.AMDSoftwareReleaseDay}");
     }
 
     [SkippableFact]
