@@ -76,7 +76,7 @@ namespace ADLXWrapper
                 IADLXGPUMetricsSupport* support = null;
                 var result = _services.Get()->GetSupportedGPUMetrics(gpu, &support);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || support == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics support not available for this GPU");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get GPU metrics support");
 
@@ -97,7 +97,9 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            using var support = new ComPtr<IADLXGPUMetricsSupport>(GetGpuMetricsSupportNative(gpu));
+            var native = GetGpuMetricsSupportNative(gpu);
+            if (native == null) return default;
+            using var support = new ComPtr<IADLXGPUMetricsSupport>(native);
             return new GpuMetricsSupportDto(support.Get());
         }
 
@@ -106,16 +108,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetGpuMetricsSupport(IADLXGPU* gpu, out GpuMetricsSupportDto info)
         {
-            info = default;
-            try
-            {
-                info = GetGpuMetricsSupport(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            info = GetGpuMetricsSupport(gpu);
+            return true;
         }
 
         /// <summary>
@@ -136,7 +130,7 @@ namespace ADLXWrapper
                 IADLXGPUMetrics* metrics = null;
                 var result = _services.Get()->GetCurrentGPUMetrics(gpu, &metrics);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics not supported for this GPU");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get current GPU metrics");
 
@@ -157,22 +151,16 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            using var metrics = new ComPtr<IADLXGPUMetrics>(GetCurrentGpuMetricsNative(gpu));
+            var native = GetCurrentGpuMetricsNative(gpu);
+            if (native == null) return default;
+            using var metrics = new ComPtr<IADLXGPUMetrics>(native);
             return new GpuMetricsSnapshotDto(metrics.Get());
         }
 
         internal bool TryGetCurrentGpuMetrics(IADLXGPU* gpu, out GpuMetricsSnapshotDto metrics)
         {
-            metrics = default;
-            try
-            {
-                metrics = GetCurrentGpuMetrics(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            metrics = GetCurrentGpuMetrics(gpu);
+            return true;
         }
 
         /// <summary>
@@ -189,7 +177,7 @@ namespace ADLXWrapper
                 IADLXSystemMetrics* metrics = null;
                 var result = _services.Get()->GetCurrentSystemMetrics(&metrics);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics not supported by this ADLX system");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get current system metrics");
 
@@ -206,7 +194,9 @@ namespace ADLXWrapper
         public SystemMetricsSnapshotDto GetCurrentSystemMetrics()
         {
             ThrowIfDisposed();
-            using var metrics = new ComPtr<IADLXSystemMetrics>(GetCurrentSystemMetricsNative());
+            var native = GetCurrentSystemMetricsNative();
+            if (native == null) return default;
+            using var metrics = new ComPtr<IADLXSystemMetrics>(native);
             return new SystemMetricsSnapshotDto(metrics.Get());
         }
 
@@ -224,7 +214,7 @@ namespace ADLXWrapper
                 IADLXAllMetrics* metrics = null;
                 var result = _services.Get()->GetCurrentAllMetrics(&metrics);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || metrics == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics not supported by this ADLX system");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get current all metrics");
 
@@ -241,7 +231,9 @@ namespace ADLXWrapper
         public AllMetricsSnapshotDto GetCurrentAllMetrics()
         {
             ThrowIfDisposed();
-            using var metrics = new ComPtr<IADLXAllMetrics>(GetCurrentAllMetricsNative());
+            var native = GetCurrentAllMetricsNative();
+            if (native == null) return default;
+            using var metrics = new ComPtr<IADLXAllMetrics>(native);
             return new AllMetricsSnapshotDto(metrics.Get());
         }
 
@@ -255,7 +247,7 @@ namespace ADLXWrapper
                 IADLXGPUMetricsList* list = null;
                 var result = _services.Get()->GetGPUMetricsHistory(gpu, startMs, stopMs, &list);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU metrics history not supported by this ADLX system");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get GPU metrics history");
 
@@ -268,7 +260,9 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            using var list = new ComPtr<IADLXGPUMetricsList>(GetGpuMetricsHistoryNative(gpu, startMs, stopMs));
+            var nativeList = GetGpuMetricsHistoryNative(gpu, startMs, stopMs);
+            if (nativeList == null) return Array.Empty<GpuMetricsSnapshotDto>();
+            using var list = new ComPtr<IADLXGPUMetricsList>(nativeList);
             var count = list.Get()->Size();
             var results = new List<GpuMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
@@ -284,16 +278,8 @@ namespace ADLXWrapper
 
         internal bool TryEnumerateGpuMetricsHistory(IADLXGPU* gpu, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotDto> history)
         {
-            history = Array.Empty<GpuMetricsSnapshotDto>();
-            try
-            {
-                history = EnumerateGpuMetricsHistory(gpu, startMs, stopMs);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            history = EnumerateGpuMetricsHistory(gpu, startMs, stopMs);
+            return true;
         }
 
         internal IADLXSystemMetricsList* GetSystemMetricsHistoryNative(int startMs, int stopMs)
@@ -304,7 +290,7 @@ namespace ADLXWrapper
                 IADLXSystemMetricsList* list = null;
                 var result = _services.Get()->GetSystemMetricsHistory(startMs, stopMs, &list);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "System metrics history not supported by this ADLX system");
+                    return null;
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get system metrics history");
 
@@ -315,7 +301,9 @@ namespace ADLXWrapper
         public IEnumerable<SystemMetricsSnapshotDto> EnumerateSystemMetricsHistory(int startMs, int stopMs)
         {
             ThrowIfDisposed();
-            using var list = new ComPtr<IADLXSystemMetricsList>(GetSystemMetricsHistoryNative(startMs, stopMs));
+            var nativeList = GetSystemMetricsHistoryNative(startMs, stopMs);
+            if (nativeList == null) return Array.Empty<SystemMetricsSnapshotDto>();
+            using var list = new ComPtr<IADLXSystemMetricsList>(nativeList);
             var count = list.Get()->Size();
             var results = new List<SystemMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
@@ -335,7 +323,7 @@ namespace ADLXWrapper
             IADLXAllMetricsList* list = null;
             var result = _services.Get()->GetAllMetricsHistory(startMs, stopMs, &list);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || list == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "All metrics history not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get all metrics history");
 
@@ -345,7 +333,9 @@ namespace ADLXWrapper
         public IEnumerable<AllMetricsSnapshotDto> EnumerateAllMetricsHistory(int startMs, int stopMs)
         {
             ThrowIfDisposed();
-            using var list = new ComPtr<IADLXAllMetricsList>(GetAllMetricsHistoryNative(startMs, stopMs));
+            var nativeList = GetAllMetricsHistoryNative(startMs, stopMs);
+            if (nativeList == null) return Array.Empty<AllMetricsSnapshotDto>();
+            using var list = new ComPtr<IADLXAllMetricsList>(nativeList);
             var count = list.Get()->Size();
             var results = new List<AllMetricsSnapshotDto>((int)count);
             for (uint i = 0; i < count; i++)
@@ -361,16 +351,8 @@ namespace ADLXWrapper
 
         public bool TryEnumerateAllMetricsHistory(int startMs, int stopMs, out IEnumerable<AllMetricsSnapshotDto> history)
         {
-            history = Array.Empty<AllMetricsSnapshotDto>();
-            try
-            {
-                history = EnumerateAllMetricsHistory(startMs, stopMs);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            history = EnumerateAllMetricsHistory(startMs, stopMs);
+            return true;
         }
 
         public IntRangeDto GetSamplingIntervalRange()
@@ -379,7 +361,7 @@ namespace ADLXWrapper
             ADLX_IntRange range = default;
             var result = _services.Get()->GetSamplingIntervalRange(&range);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
+                return default;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval range");
             return IntRangeDto.FromNative(range);
@@ -391,7 +373,7 @@ namespace ADLXWrapper
             int interval = 0;
             var result = _services.Get()->GetSamplingInterval(&interval);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
+                return 0;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get sampling interval");
             return interval;
@@ -402,22 +384,15 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var result = _services.Get()->SetSamplingInterval(intervalMs);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Sampling interval not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set sampling interval");
         }
 
         public bool TrySetSamplingInterval(int intervalMs)
         {
-            try
-            {
-                SetSamplingInterval(intervalMs);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            SetSamplingInterval(intervalMs);
+            return true;
         }
 
         public int GetMaxPerformanceMetricsHistorySize()
@@ -426,7 +401,7 @@ namespace ADLXWrapper
             int size = 0;
             var result = _services.Get()->GetMaxPerformanceMetricsHistorySize(&size);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
+                return 0;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get max performance metrics history size");
             return size;
@@ -438,7 +413,7 @@ namespace ADLXWrapper
             int size = 0;
             var result = _services.Get()->GetCurrentPerformanceMetricsHistorySize(&size);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
+                return 0;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get current performance metrics history size");
             return size;
@@ -449,22 +424,15 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var result = _services.Get()->SetMaxPerformanceMetricsHistorySize(sizeSec);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to set max performance metrics history size");
         }
 
         public bool TrySetMaxPerformanceMetricsHistorySize(int sizeSec)
         {
-            try
-            {
-                SetMaxPerformanceMetricsHistorySize(sizeSec);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            SetMaxPerformanceMetricsHistorySize(sizeSec);
+            return true;
         }
 
         public void ClearPerformanceMetricsHistory()
@@ -472,22 +440,15 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var result = _services.Get()->ClearPerformanceMetricsHistory();
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics history not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to clear performance metrics history");
         }
 
         public bool TryClearPerformanceMetricsHistory()
         {
-            try
-            {
-                ClearPerformanceMetricsHistory();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ClearPerformanceMetricsHistory();
+            return true;
         }
 
         public void StartPerformanceMetricsTracking()
@@ -495,22 +456,15 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var result = _services.Get()->StartPerformanceMetricsTracking();
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics tracking not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to start performance metrics tracking");
         }
 
         public bool TryStartPerformanceMetricsTracking()
         {
-            try
-            {
-                StartPerformanceMetricsTracking();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            StartPerformanceMetricsTracking();
+            return true;
         }
 
         public void StopPerformanceMetricsTracking()
@@ -518,22 +472,15 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var result = _services.Get()->StopPerformanceMetricsTracking();
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance metrics tracking not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to stop performance metrics tracking");
         }
 
         public bool TryStopPerformanceMetricsTracking()
         {
-            try
-            {
-                StopPerformanceMetricsTracking();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            StopPerformanceMetricsTracking();
+            return true;
         }
 
         public PerformanceMonitoringSettingsDto GetPerformanceMonitoringSettings()
@@ -549,14 +496,17 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             var intervalRange = GetSamplingIntervalRange();
-            if (info.SamplingIntervalMs >= intervalRange.MinValue && info.SamplingIntervalMs <= intervalRange.MaxValue)
+            if (intervalRange.MaxValue > 0 && info.SamplingIntervalMs >= intervalRange.MinValue && info.SamplingIntervalMs <= intervalRange.MaxValue)
             {
                 SetSamplingInterval(info.SamplingIntervalMs);
             }
 
             var maxHistory = GetMaxPerformanceMetricsHistorySize();
-            var clampedHistory = Math.Min(info.MaxHistorySizeSec, maxHistory);
-            SetMaxPerformanceMetricsHistorySize(clampedHistory);
+            if (maxHistory > 0)
+            {
+                var clampedHistory = Math.Min(info.MaxHistorySizeSec, maxHistory);
+                SetMaxPerformanceMetricsHistorySize(clampedHistory);
+            }
         }
 
         // =====================================================================
@@ -576,8 +526,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get GPU metrics support info for the GPU with the specified unique id.</summary>
         public bool TryGetGpuMetricsSupport(int gpuUniqueId, out GpuMetricsSupportDto info)
         {
-            try { info = GetGpuMetricsSupport(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetGpuMetricsSupport(gpuUniqueId);
+            return true;
         }
 
         /// <summary>Gets current GPU metrics snapshot for the GPU with the specified unique id.</summary>
@@ -593,8 +543,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get current GPU metrics snapshot for the GPU with the specified unique id.</summary>
         public bool TryGetCurrentGpuMetrics(int gpuUniqueId, out GpuMetricsSnapshotDto metrics)
         {
-            try { metrics = GetCurrentGpuMetrics(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { metrics = default; return false; }
+            metrics = GetCurrentGpuMetrics(gpuUniqueId);
+            return true;
         }
 
         /// <summary>Enumerates GPU metrics history for the GPU with the specified unique id.</summary>
@@ -610,8 +560,8 @@ namespace ADLXWrapper
         /// <summary>Tries to enumerate GPU metrics history for the GPU with the specified unique id.</summary>
         public bool TryEnumerateGpuMetricsHistory(int gpuUniqueId, int startMs, int stopMs, out IEnumerable<GpuMetricsSnapshotDto> history)
         {
-            try { history = EnumerateGpuMetricsHistory(gpuUniqueId, startMs, stopMs); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { history = Array.Empty<GpuMetricsSnapshotDto>(); return false; }
+            history = EnumerateGpuMetricsHistory(gpuUniqueId, startMs, stopMs);
+            return true;
         }
 
         private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)

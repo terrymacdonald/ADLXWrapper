@@ -111,7 +111,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to display list change events. Returns a handle that can be disposed or passed to the remove helper.
         /// </summary>
-        public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+        public DisplayListListenerHandle? AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -136,7 +136,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to desktop list change events. Returns a handle that can be disposed or passed to the remove helper.
         /// </summary>
-        public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
+        public DesktopListListenerHandle? AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();

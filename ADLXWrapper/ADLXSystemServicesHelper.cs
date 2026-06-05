@@ -88,12 +88,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the display services interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native display services interface.</returns>
-        /// <exception cref="ADLXException">If display services are unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native display services interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetDisplayServicesHandle()
         {
-            return ADLXInterfaceHandle.From(GetDisplayServicesNative(), addRef: true);
+            var native = GetDisplayServicesNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -102,28 +102,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetDisplayServicesNative(out IADLXDisplayServices* services)
         {
-            try
-            {
-                services = GetDisplayServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetDisplayServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed display-services helper with shared system lifetime.
         /// </summary>
-        /// <returns>Display services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If display/desktop services are unsupported or retrieval fails.</exception>
+        /// <returns>Display services helper wrapping native interfaces, or <c>null</c> if display services are not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXDisplayServicesHelper GetDisplayServices()
+        public ADLXDisplayServicesHelper? GetDisplayServices()
         {
             ThrowIfDisposed();
             var displayServices = GetDisplayServicesNative();
+            if (displayServices == null)
+                return null;
             var desktopServices = GetDesktopServicesNative();
             return new ADLXDisplayServicesHelper(displayServices, desktopServices, addRefDisplayServices: true, addRefDesktopServices: true);
         }
@@ -146,12 +139,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the desktop services interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native desktop services interface.</returns>
-        /// <exception cref="ADLXException">If desktop services are unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native desktop services interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetDesktopServicesHandle()
         {
-            return ADLXInterfaceHandle.From(GetDesktopServicesNative(), addRef: true);
+            var native = GetDesktopServicesNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -160,28 +153,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetDesktopServicesNative(out IADLXDesktopServices* services)
         {
-            try
-            {
-                services = GetDesktopServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetDesktopServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed desktop-services helper with shared system lifetime.
         /// </summary>
-        /// <returns>Desktop services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If desktop/display services are unsupported or retrieval fails.</exception>
+        /// <returns>Desktop services helper wrapping native interfaces, or <c>null</c> if desktop services are not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXDesktopServicesHelper GetDesktopServices()
+        public ADLXDesktopServicesHelper? GetDesktopServices()
         {
             ThrowIfDisposed();
             var desktopServices = GetDesktopServicesNative();
+            if (desktopServices == null)
+                return null;
             var displayServices = GetDisplayServicesNative();
             return new ADLXDesktopServicesHelper(desktopServices, displayServices, addRefDesktopServices: true, addRefDisplayServices: true, system: _system);
         }
@@ -204,12 +190,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the 3D settings services interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native 3D settings services interface.</returns>
-        /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native 3D settings services interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle Get3DSettingsServicesHandle()
         {
-            return ADLXInterfaceHandle.From(Get3DSettingsServicesNative(), addRef: true);
+            var native = Get3DSettingsServicesNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -218,28 +204,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGet3DSettingsServicesNative(out IADLX3DSettingsServices* services)
         {
-            try
-            {
-                services = Get3DSettingsServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = Get3DSettingsServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed 3D settings helper with shared system lifetime.
         /// </summary>
-        /// <returns>3D settings services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If 3D settings services are unsupported or retrieval fails.</exception>
+        /// <returns>3D settings services helper wrapping native interfaces, or <c>null</c> if 3D settings services are not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLX3DSettingsServicesHelper Get3DSettingsServices()
+        public ADLX3DSettingsServicesHelper? Get3DSettingsServices()
         {
             ThrowIfDisposed();
             var services = Get3DSettingsServicesNative();
+            if (services == null)
+                return null;
             return new ADLX3DSettingsServicesHelper(services, addRef: true, system: _system);
         }
 
@@ -261,12 +240,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the GPU tuning services interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native GPU tuning services interface.</returns>
-        /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native GPU tuning services interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetGPUTuningServicesHandle()
         {
-            return ADLXInterfaceHandle.From(GetGPUTuningServicesNative(), addRef: true);
+            var native = GetGPUTuningServicesNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -275,28 +254,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetGPUTuningServicesNative(out IADLXGPUTuningServices* services)
         {
-            try
-            {
-                services = GetGPUTuningServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetGPUTuningServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed GPU tuning helper with shared system lifetime.
         /// </summary>
-        /// <returns>GPU tuning services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If GPU tuning services are unsupported or retrieval fails.</exception>
+        /// <returns>GPU tuning services helper wrapping native interfaces, or <c>null</c> if GPU tuning services are not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXGPUTuningServicesHelper GetGPUTuningServices()
+        public ADLXGPUTuningServicesHelper? GetGPUTuningServices()
         {
             ThrowIfDisposed();
             var services = GetGPUTuningServicesNative();
+            if (services == null)
+                return null;
             return new ADLXGPUTuningServicesHelper(services, addRef: true, system: _system);
         }
 
@@ -318,12 +290,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the performance monitoring services interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native performance monitoring services interface.</returns>
-        /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native performance monitoring services interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetPerformanceMonitoringServicesHandle()
         {
-            return ADLXInterfaceHandle.From(GetPerformanceMonitoringServicesNative(), addRef: true);
+            var native = GetPerformanceMonitoringServicesNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -332,28 +304,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetPerformanceMonitoringServicesNative(out IADLXPerformanceMonitoringServices* services)
         {
-            try
-            {
-                services = GetPerformanceMonitoringServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetPerformanceMonitoringServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed performance monitoring helper with shared system lifetime.
         /// </summary>
-        /// <returns>Performance monitoring services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If performance monitoring services are unsupported or retrieval fails.</exception>
+        /// <returns>Performance monitoring services helper wrapping native interfaces, or <c>null</c> if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXPerformanceMonitoringServicesHelper GetPerformanceMonitoringServices()
+        public ADLXPerformanceMonitoringServicesHelper? GetPerformanceMonitoringServices()
         {
             ThrowIfDisposed();
             var services = GetPerformanceMonitoringServicesNative();
+            if (services == null)
+                return null;
             return new ADLXPerformanceMonitoringServicesHelper(services, addRef: true, system: _system);
         }
 
@@ -389,28 +354,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetPowerTuningServicesNative(out IADLXPowerTuningServices* services)
         {
-            try
-            {
-                services = GetPowerTuningServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetPowerTuningServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed power tuning helper with shared system lifetime.
         /// </summary>
-        /// <returns>Power tuning services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If power tuning services are unsupported or retrieval fails.</exception>
+        /// <returns>Power tuning services helper wrapping native interfaces, or <c>null</c> if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXPowerTuningServicesHelper GetPowerTuningServices()
+        public ADLXPowerTuningServicesHelper? GetPowerTuningServices()
         {
             ThrowIfDisposed();
             var services = GetPowerTuningServicesNative();
+            if (services == null)
+                return null;
             return new ADLXPowerTuningServicesHelper(services, addRef: true);
         }
 
@@ -446,28 +404,21 @@ namespace ADLXWrapper
         /// <returns>True if services are available; false when not supported.</returns>
         internal bool TryGetMultimediaServicesNative(out IADLXMultimediaServices* services)
         {
-            try
-            {
-                services = GetMultimediaServicesNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                services = null;
-                return false;
-            }
+            services = GetMultimediaServicesNative();
+            return services != null;
         }
 
         /// <summary>
         /// Creates a managed multimedia services helper with shared system lifetime.
         /// </summary>
-        /// <returns>Multimedia services helper wrapping native interfaces.</returns>
-        /// <exception cref="ADLXException">If multimedia services are unsupported or retrieval fails.</exception>
+        /// <returns>Multimedia services helper wrapping native interfaces, or <c>null</c> if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
-        public ADLXMultimediaServicesHelper GetMultimediaServices()
+        public ADLXMultimediaServicesHelper? GetMultimediaServices()
         {
             ThrowIfDisposed();
             var services = GetMultimediaServicesNative();
+            if (services == null)
+                return null;
             return new ADLXMultimediaServicesHelper(services, addRef: true, system: _system);
         }
 
@@ -489,12 +440,12 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the GPU change handling interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native GPU change handling interface.</returns>
-        /// <exception cref="ADLXException">If change handling is unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native GPU change handling interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetGPUsChangedHandling()
         {
-            return ADLXInterfaceHandle.From(GetGPUsChangedHandlingNative(), addRef: true);
+            var native = GetGPUsChangedHandlingNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -515,19 +466,20 @@ namespace ADLXWrapper
         /// <summary>
         /// Returns an AddRef'd handle to the GPU applications list change handling interface for external ownership.
         /// </summary>
-        /// <returns>Managed handle to the native GPU apps list change handling interface.</returns>
-        /// <exception cref="ADLXException">If the extended interface is unsupported or retrieval fails.</exception>
+        /// <returns>Managed handle to the native GPU apps list change handling interface, or a default invalid handle if not supported.</returns>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal ADLXInterfaceHandle GetGPUAppsListChangedHandling()
         {
-            return ADLXInterfaceHandle.From(GetGPUAppsListChangedHandlingNative(), addRef: true);
+            var native = GetGPUAppsListChangedHandlingNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
         /// Enumerates GPU facades with display/desktop helpers wired in.
         /// </summary>
-        /// <returns>List of managed GPU facades. Callers must Dispose each GPU when finished.</returns>
-        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <returns>List of managed GPU facades. Callers must Dispose each GPU when finished.
+        /// Returns an empty list if GPU enumeration is not supported by this ADLX system.</returns>
+        /// <exception cref="ADLXException">If enumeration fails with an unexpected error.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXGPU> EnumerateADLXGPUs()
         {
@@ -538,7 +490,7 @@ namespace ADLXWrapper
             IADLXGPUList* pGpuList = null;
             var result = _system->GetGPUs(&pGpuList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
+                return Array.Empty<ADLXGPU>();
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate GPUs");
 
@@ -558,8 +510,9 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates display facades via the display services helper.
         /// </summary>
-        /// <returns>List of managed displays.</returns>
-        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <returns>List of managed displays. Returns an empty list if display services are not
+        /// supported or no displays are connected.</returns>
+        /// <exception cref="ADLXException">If enumeration fails with an unexpected error.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
         {
@@ -570,30 +523,49 @@ namespace ADLXWrapper
                 IADLXDisplayServices* services = null;
                 var result = _system->GetDisplaysServices(&services);
                 if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+                    return Array.Empty<ADLXDisplay>();
                 if (result != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(result, "Failed to get display services");
 
                 uint numDisplays = 0;
-                result = services->GetNumberOfDisplays(&numDisplays);
-                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display count not supported by this ADLX system");
-                if (result != ADLX_RESULT.ADLX_OK)
-                    throw new ADLXException(result, "Failed to get display count");
+                ADLX_RESULT countResult;
+                try
+                {
+                    countResult = services->GetNumberOfDisplays(&numDisplays);
+                }
+                catch (AccessViolationException ex)
+                {
+                    throw new ADLXException(ADLX_RESULT.ADLX_FAIL, $"ADLX display count crashed: {ex.Message}");
+                }
+                if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                    return Array.Empty<ADLXDisplay>();
+                if (countResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(countResult, "Failed to get display count");
+                if (numDisplays == 0)
+                    return Array.Empty<ADLXDisplay>();
 
                 IADLXDisplayList* pDisplayList = null;
-                result = services->GetDisplays(&pDisplayList);
-                if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
-                if (result != ADLX_RESULT.ADLX_OK)
-                    throw new ADLXException(result, "Failed to enumerate displays");
+                ADLX_RESULT listResult;
+                try
+                {
+                    listResult = services->GetDisplays(&pDisplayList);
+                }
+                catch (AccessViolationException ex)
+                {
+                    throw new ADLXException(ADLX_RESULT.ADLX_FAIL, $"ADLX display enumeration crashed: {ex.Message}");
+                }
+                if (listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
+                    return Array.Empty<ADLXDisplay>();
+                if (listResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(listResult, "Failed to enumerate displays");
 
                 var displays = new List<ADLXDisplay>();
                 using var displayList = new ComPtr<IADLXDisplayList>(pDisplayList);
                 var count = displayList.Get()->Size();
                 if (count == 0)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "No displays returned by ADLX.");
+                    return Array.Empty<ADLXDisplay>();
 
+                var desktopServices = GetDesktopServicesNative();
                 for (uint i = 0; i < count; i++)
                 {
                     IADLXDisplay* pDisplay = null;
@@ -605,7 +577,7 @@ namespace ADLXWrapper
                         throw new ADLXException(atResult, "Failed to access display from list");
                     }
 
-                    displays.Add(new ADLXDisplay(services, pDisplay, GetDesktopServicesNative()));
+                    displays.Add(new ADLXDisplay(services, pDisplay, desktopServices));
                 }
 
                 return displays;
@@ -615,8 +587,8 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates displays that are part of an active desktop (in use) via the display services helper.
         /// </summary>
-        /// <returns>List of managed displays in use.</returns>
-        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <returns>List of managed displays in use. Returns an empty list if services are not supported.</returns>
+        /// <exception cref="ADLXException">If enumeration fails with an unexpected error.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysInUse()
         {
@@ -627,14 +599,14 @@ namespace ADLXWrapper
                 IADLXDisplayServices* displayServices = null;
                 var dispResult = _system->GetDisplaysServices(&displayServices);
                 if (dispResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || displayServices == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+                    return Array.Empty<ADLXDisplay>();
                 if (dispResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(dispResult, "Failed to get display services");
 
                 IADLXDesktopServices* desktopServices = null;
                 var deskResult = _system->GetDesktopsServices(&desktopServices);
                 if (deskResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || desktopServices == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+                    return Array.Empty<ADLXDisplay>();
                 if (deskResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(deskResult, "Failed to get desktop services");
 
@@ -643,7 +615,7 @@ namespace ADLXWrapper
                 IADLXDesktopList* pDesktopList = null;
                 var desktopsResult = desktopServices->GetDesktops(&pDesktopList);
                 if (desktopsResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDesktopList == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported by this ADLX system");
+                    return Array.Empty<ADLXDisplay>();
                 if (desktopsResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(desktopsResult, "Failed to enumerate desktops while filtering displays in use");
 
@@ -665,7 +637,7 @@ namespace ADLXWrapper
                         if (desktopDisplaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDisplayList == null)
                         {
                             ADLXUtils.ReleaseInterface((IntPtr)pDesktop);
-                            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration for desktop not supported by this ADLX system");
+                            continue;
                         }
                         if (desktopDisplaysResult != ADLX_RESULT.ADLX_OK)
                         {
@@ -693,7 +665,7 @@ namespace ADLXWrapper
                 IADLXDisplayList* pAllDisplays = null;
                 var displaysResult = displayServices->GetDisplays(&pAllDisplays);
                 if (displaysResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pAllDisplays == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display enumeration not supported by this ADLX system");
+                    return Array.Empty<ADLXDisplay>();
                 if (displaysResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(displaysResult, "Failed to enumerate displays");
 
@@ -729,8 +701,8 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates desktop facades via the desktop services helper.
         /// </summary>
-        /// <returns>List of managed desktops.</returns>
-        /// <exception cref="ADLXException">If enumeration fails.</exception>
+        /// <returns>List of managed desktops. Returns an empty list if desktop services are not supported.</returns>
+        /// <exception cref="ADLXException">If enumeration fails with an unexpected error.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         public IReadOnlyList<ADLXDesktop> EnumerateDesktops()
         {
@@ -740,21 +712,21 @@ namespace ADLXWrapper
                 IADLXDesktopServices* desktopServices = null;
                 var deskResult = _system->GetDesktopsServices(&desktopServices);
                 if (deskResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || desktopServices == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+                    return Array.Empty<ADLXDesktop>();
                 if (deskResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(deskResult, "Failed to get desktop services");
 
                 uint numDesktops = 0;
                 var countResult = desktopServices->GetNumberOfDesktops(&numDesktops);
                 if (countResult == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop count not supported by this ADLX system");
+                    return Array.Empty<ADLXDesktop>();
                 if (countResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(countResult, "Failed to get desktop count");
 
                 IADLXDesktopList* pDesktopList = null;
                 var listResult = desktopServices->GetDesktops(&pDesktopList);
                 if (listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || pDesktopList == null)
-                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop enumeration not supported by this ADLX system");
+                    return Array.Empty<ADLXDesktop>();
                 if (listResult != ADLX_RESULT.ADLX_OK)
                     throw new ADLXException(listResult, "Failed to enumerate desktops");
 
@@ -816,7 +788,10 @@ namespace ADLXWrapper
         public IEnumerable<GpuDto> EnumerateGPUs()
         {
             ThrowIfDisposed();
-            using var gpuList = new ComPtr<IADLXGPUList>(EnumerateGPUsNative());
+            var rawList = EnumerateGPUsNative();
+            if (rawList == null)
+                return Array.Empty<GpuDto>();
+            using var gpuList = new ComPtr<IADLXGPUList>(rawList);
             var count = gpuList.Get()->Size();
             var results = new List<GpuDto>((int)count);
             for (uint i = 0; i < count; i++)
@@ -847,8 +822,8 @@ namespace ADLXWrapper
         /// <summary>
         /// Enumerates native GPU interfaces. Caller must dispose the returned list/entries.
         /// </summary>
-        /// <returns>Native GPU list pointer.</returns>
-        /// <exception cref="ADLXException">If enumeration is unsupported or fails.</exception>
+        /// <returns>Native GPU list pointer, or <c>null</c> if GPU enumeration is not supported.</returns>
+        /// <exception cref="ADLXException">If enumeration fails with an unexpected error.</exception>
         /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
         internal IADLXGPUList* EnumerateGPUsNative()
         {
@@ -858,7 +833,7 @@ namespace ADLXWrapper
             IADLXGPUList* pGpuList = null;
             var result = _system->GetGPUs(&pGpuList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pGpuList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate GPUs");
 
@@ -910,7 +885,7 @@ namespace ADLXWrapper
             IADLXDisplayServices* services = null;
             var result = _system->GetDisplaysServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Display services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get display services");
 
@@ -925,7 +900,7 @@ namespace ADLXWrapper
             IADLXDesktopServices* services = null;
             var result = _system->GetDesktopsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get desktop services");
 
@@ -939,7 +914,7 @@ namespace ADLXWrapper
             IADLX3DSettingsServices* services = null;
             var result = _system->Get3DSettingsServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get 3D settings services");
 
@@ -953,7 +928,7 @@ namespace ADLXWrapper
             IADLXGPUTuningServices* services = null;
             var result = _system->GetGPUTuningServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU tuning services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU tuning services");
 
@@ -967,7 +942,7 @@ namespace ADLXWrapper
             IADLXPerformanceMonitoringServices* services = null;
             var result = _system->GetPerformanceMonitoringServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Performance monitoring services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get performance monitoring services");
 
@@ -985,14 +960,17 @@ namespace ADLXWrapper
             {
                 result = system2->GetPowerTuningServices(&services);
             }
+            else if (TryGetSystem1(out var system1))
+            {
+                result = system1->GetPowerTuningServices(&services);
+            }
             else
             {
-                var system1 = GetSystem1();
-                result = system1->GetPowerTuningServices(&services);
+                return null;
             }
 
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Power tuning services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get power tuning services");
 
@@ -1003,11 +981,12 @@ namespace ADLXWrapper
         private IADLXMultimediaServices* EnsureMultimediaServices()
         {
             _multimediaServices?.Dispose();
-            var system2 = GetSystem2();
+            if (!TryGetSystem2(out var system2))
+                return null;
             IADLXMultimediaServices* services = null;
             var result = system2->GetMultimediaServices(&services);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || services == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia services not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia services");
 
@@ -1021,7 +1000,7 @@ namespace ADLXWrapper
             IADLXGPUsChangedHandling* handling = null;
             var result = _system->GetGPUsChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU change handling not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU change handling");
 
@@ -1032,11 +1011,12 @@ namespace ADLXWrapper
         private IADLXGPUAppsListChangedHandling* EnsureGPUAppsListChangedHandling()
         {
             _gpuAppsListChangedHandling?.Dispose();
-            var system2 = GetSystem2();
+            if (!TryGetSystem2(out var system2))
+                return null;
             IADLXGPUAppsListChangedHandling* handling = null;
             var result = system2->GetGPUAppsListChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU applications list handling not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get GPU applications list handling");
 

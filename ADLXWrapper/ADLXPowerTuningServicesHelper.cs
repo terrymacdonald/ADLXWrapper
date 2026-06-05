@@ -60,10 +60,11 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
+            if (services1 == null) return false;
             bool supported = false;
             var result = services1->IsGPUConnectSupported(&supported);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUConnect not supported by this ADLX system");
+                return false;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to query GPUConnect support");
 
@@ -75,16 +76,8 @@ namespace ADLXWrapper
         /// </summary>
         public bool TryIsGPUConnectSupported(out bool supported)
         {
-            supported = false;
-            try
-            {
-                supported = IsGPUConnectSupported();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            supported = IsGPUConnectSupported();
+            return true;
         }
 
         internal ADLXInterfaceHandle[] EnumerateGPUConnectGpuHandles()
@@ -92,11 +85,12 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
+            if (services1 == null) return Array.Empty<ADLXInterfaceHandle>();
 
             IADLXGPU2List* pList = null;
             var result = services1->GetGPUConnectGPUs(&pList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUConnect GPU enumeration not supported by this ADLX system");
+                return Array.Empty<ADLXInterfaceHandle>();
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate GPUConnect-capable GPUs");
 
@@ -118,16 +112,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryEnumerateGPUConnectGpuHandles(out ADLXInterfaceHandle[] handles)
         {
-            try
-            {
-                handles = EnumerateGPUConnectGpuHandles();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                handles = Array.Empty<ADLXInterfaceHandle>();
-                return false;
-            }
+            handles = EnumerateGPUConnectGpuHandles();
+            return true;
         }
 
         /// <summary>
@@ -140,11 +126,12 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
+            if (services1 == null) return null;
 
             IADLXGPU2List* pList = null;
             var result = services1->GetGPUConnectGPUs(&pList);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || pList == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPUConnect GPU enumeration not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to enumerate GPUConnect-capable GPUs");
 
@@ -161,7 +148,7 @@ namespace ADLXWrapper
             IADLXPowerTuningChangedHandling* handling = null;
             var result = GetHighestServices()->GetPowerTuningChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Power tuning change handling not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get power tuning change handling");
 
@@ -174,7 +161,8 @@ namespace ADLXWrapper
         /// </summary>
         internal ADLXInterfaceHandle GetPowerTuningChangedHandling()
         {
-            return ADLXInterfaceHandle.From(GetPowerTuningChangedHandlingNative(), addRef: true);
+            var native = GetPowerTuningChangedHandlingNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -184,13 +172,15 @@ namespace ADLXWrapper
         /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
         /// <exception cref="ADLXException">If registration fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
+        public PowerTuningListenerHandle? AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             var handling = GetPowerTuningChangedHandlingNative();
+            if (handling == null)
+                return null;
             var handle = PowerTuningListenerHandle.Create(callback);
             var result = handling->AddPowerTuningEventListener(handle.GetListener());
             if (result != ADLX_RESULT.ADLX_OK)
@@ -209,6 +199,7 @@ namespace ADLXWrapper
             if (handle == null || handle.IsInvalid) return;
 
             var handling = GetPowerTuningChangedHandlingNative();
+            if (handling == null) return;
             handling->RemovePowerTuningEventListener(handle.GetListener());
 
             if (disposeHandle)
@@ -226,7 +217,9 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
+            var native = GetSmartShiftMaxNative();
+            if (native == null) return default;
+            using var ssm = new ComPtr<IADLXSmartShiftMax>(native);
             return new SmartShiftMaxDto(ssm.Get());
         }
 
@@ -243,7 +236,7 @@ namespace ADLXWrapper
             IADLXSmartShiftMax* ssm = null;
             var result = GetHighestServices()->GetSmartShiftMax(&ssm);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || ssm == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Max not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Max interface");
             return ssm; // caller wraps/disposes
@@ -253,7 +246,9 @@ namespace ADLXWrapper
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
-            using var ssm = new ComPtr<IADLXSmartShiftMax>(GetSmartShiftMaxNative());
+            var native = GetSmartShiftMaxNative();
+            if (native == null) return;
+            using var ssm = new ComPtr<IADLXSmartShiftMax>(native);
             if (!info.IsSupported) return;
             SetSmartShiftMaxBias(ssm.Get(), info.BiasMode, info.BiasValue);
         }
@@ -263,15 +258,8 @@ namespace ADLXWrapper
         /// </summary>
         public bool TryApplySmartShiftMax(SmartShiftMaxDto info)
         {
-            try
-            {
-                ApplySmartShiftMax(info);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ApplySmartShiftMax(info);
+            return true;
         }
 
         /// <summary>
@@ -284,10 +272,11 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
+            if (services1 == null) return default;
             IADLXSmartShiftEco* eco = null;
             var result = services1->GetSmartShiftEco(&eco);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || eco == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Eco not supported by this ADLX system");
+                return default;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Eco interface");
             using var ecoPtr = new ComPtr<IADLXSmartShiftEco>(eco);
@@ -299,10 +288,11 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             var services1 = GetPowerTuningServices1();
+            if (services1 == null) return;
             IADLXSmartShiftEco* eco = null;
             var result = services1->GetSmartShiftEco(&eco);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || eco == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "SmartShift Eco not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get SmartShift Eco interface");
             using var ecoPtr = new ComPtr<IADLXSmartShiftEco>(eco);
@@ -315,15 +305,8 @@ namespace ADLXWrapper
         /// </summary>
         public bool TryApplySmartShiftEco(SmartShiftEcoDto info)
         {
-            try
-            {
-                ApplySmartShiftEco(info);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ApplySmartShiftEco(info);
+            return true;
         }
 
         internal ManualPowerTuningDto GetManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu)
@@ -336,7 +319,7 @@ namespace ADLXWrapper
             IADLXInterface* manual = null;
             var result = tuningServices->GetManualPowerTuning(gpu, &manual);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || manual == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Manual power tuning not supported by this ADLX system");
+                return default;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get manual power tuning interface");
             using var manualPower = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)manual);
@@ -360,8 +343,8 @@ namespace ADLXWrapper
         /// </summary>
         public bool TryGetManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, out ManualPowerTuningDto info)
         {
-            try { info = GetManualPowerTuning(gpuUniqueId, tuningHelper); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetManualPowerTuning(gpuUniqueId, tuningHelper);
+            return true;
         }
 
         internal void ApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningDto info)
@@ -387,15 +370,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryApplyManualPowerTuning(IADLXManualPowerTuning* manualPower, ManualPowerTuningDto info)
         {
-            try
-            {
-                ApplyManualPowerTuning(manualPower, info);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ApplyManualPowerTuning(manualPower, info);
+            return true;
         }
 
         internal void ApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningDto info)
@@ -408,7 +384,7 @@ namespace ADLXWrapper
             IADLXInterface* manual = null;
             var result = tuningServices->GetManualPowerTuning(gpu, &manual);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || manual == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Manual power tuning not supported by this ADLX system");
+                return;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get manual power tuning interface");
             using var manualPower = new ComPtr<IADLXManualPowerTuning>((IADLXManualPowerTuning*)manual);
@@ -420,15 +396,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryApplyManualPowerTuning(IADLXGPUTuningServices* tuningServices, IADLXGPU* gpu, ManualPowerTuningDto info)
         {
-            try
-            {
-                ApplyManualPowerTuning(tuningServices, gpu, info);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ApplyManualPowerTuning(tuningServices, gpu, info);
+            return true;
         }
 
         /// <summary>
@@ -451,8 +420,8 @@ namespace ADLXWrapper
         /// </summary>
         public bool TryApplyManualPowerTuning(int gpuUniqueId, ADLXGPUTuningServicesHelper tuningHelper, ManualPowerTuningDto info)
         {
-            try { ApplyManualPowerTuning(gpuUniqueId, tuningHelper, info); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+            ApplyManualPowerTuning(gpuUniqueId, tuningHelper, info);
+            return true;
         }
 
         public void Dispose()
@@ -500,7 +469,7 @@ namespace ADLXWrapper
                 return _services1.Value.Get();
             }
 
-            throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Extended power tuning services not supported by this ADLX system");
+            return null;
         }
 
         private IADLXPowerTuningServices* GetHighestServices()

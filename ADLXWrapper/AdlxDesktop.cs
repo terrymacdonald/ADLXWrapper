@@ -98,7 +98,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to desktop list change events. Returns a handle the caller can dispose (or pass to remove) to unsubscribe.
         /// </summary>
-        public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
+        public DesktopListListenerHandle? AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();

@@ -645,7 +645,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
         /// </summary>
-        public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
+        public DisplaySettingsListenerHandle? AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -665,7 +665,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to gamma change events.
         /// </summary>
-        public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
+        public DisplayGammaListenerHandle? AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -685,7 +685,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to gamut change events.
         /// </summary>
-        public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
+        public DisplayGamutListenerHandle? AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -705,7 +705,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to 3DLUT change events.
         /// </summary>
-        public Display3DLutListenerHandle AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
+        public Display3DLutListenerHandle? AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
@@ -725,7 +725,7 @@ namespace ADLXWrapper
         /// <summary>
         /// Subscribe to display list change events.
         /// </summary>
-        public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+        public DisplayListListenerHandle? AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();

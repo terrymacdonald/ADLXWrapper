@@ -70,7 +70,7 @@ namespace ADLXWrapper
             IADLXMultimediaChangedHandling* handling = null;
             var result = _services.Get()->GetMultimediaChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Multimedia change handling not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get multimedia change handling");
 
@@ -83,29 +83,24 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetMultimediaChangedHandlingNative(out IADLXMultimediaChangedHandling* handling)
         {
-            try
-            {
-                handling = GetMultimediaChangedHandlingNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                handling = null;
-                return false;
-            }
+            handling = GetMultimediaChangedHandlingNative();
+            return handling != null;
         }
 
         internal ADLXInterfaceHandle GetMultimediaChangedHandling()
         {
-            return ADLXInterfaceHandle.From(GetMultimediaChangedHandlingNative(), addRef: true);
+            var native = GetMultimediaChangedHandlingNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
-        public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
+        public MultimediaListenerHandle? AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
             var handling = GetMultimediaChangedHandlingNative();
+            if (handling == null)
+                return null;
             var handle = MultimediaListenerHandle.Create(callback);
             var result = handling->AddMultimediaEventListener(handle.GetListener());
             if (result != ADLX_RESULT.ADLX_OK)
@@ -124,6 +119,7 @@ namespace ADLXWrapper
                 return;
 
             var handling = GetMultimediaChangedHandlingNative();
+            if (handling == null) return;
             handling->RemoveMultimediaEventListener(handle.GetListener());
             if (disposeHandle)
             {
@@ -140,7 +136,7 @@ namespace ADLXWrapper
             IADLXVideoUpscale* upscale = null;
             var result = _services.Get()->GetVideoUpscale(gpu, &upscale);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || upscale == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Video upscale not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video upscale");
 
@@ -152,16 +148,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetVideoUpscaleNative(IADLXGPU* gpu, out IADLXVideoUpscale* upscale)
         {
-            try
-            {
-                upscale = GetVideoUpscaleNative(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                upscale = null;
-                return false;
-            }
+            upscale = GetVideoUpscaleNative(gpu);
+            return upscale != null;
         }
 
         internal VideoUpscaleDto GetVideoUpscale(IADLXGPU* gpu)
@@ -170,7 +158,9 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            using var upscale = new ComPtr<IADLXVideoUpscale>(GetVideoUpscaleNative(gpu));
+            var native = GetVideoUpscaleNative(gpu);
+            if (native == null) return default;
+            using var upscale = new ComPtr<IADLXVideoUpscale>(native);
             return new VideoUpscaleDto(upscale.Get());
         }
 
@@ -179,16 +169,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetVideoUpscale(IADLXGPU* gpu, out VideoUpscaleDto info)
         {
-            try
-            {
-                info = GetVideoUpscale(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            info = GetVideoUpscale(gpu);
+            return true;
         }
 
         internal void SetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
@@ -207,15 +189,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TrySetVideoUpscaleEnabled(IADLXVideoUpscale* upscale, bool enable)
         {
-            try
-            {
-                SetVideoUpscaleEnabled(upscale, enable);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            SetVideoUpscaleEnabled(upscale, enable);
+            return true;
         }
 
         internal void SetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
@@ -234,15 +209,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TrySetVideoUpscaleSharpness(IADLXVideoUpscale* upscale, int sharpness)
         {
-            try
-            {
-                SetVideoUpscaleSharpness(upscale, sharpness);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            SetVideoUpscaleSharpness(upscale, sharpness);
+            return true;
         }
 
         internal IADLXVideoSuperResolution* GetVideoSuperResolutionNative(IADLXGPU* gpu)
@@ -254,7 +222,7 @@ namespace ADLXWrapper
             IADLXVideoSuperResolution* vsr = null;
             var result = _services.Get()->GetVideoSuperResolution(gpu, &vsr);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || vsr == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Video super resolution not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get video super resolution");
 
@@ -266,16 +234,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetVideoSuperResolutionNative(IADLXGPU* gpu, out IADLXVideoSuperResolution* vsr)
         {
-            try
-            {
-                vsr = GetVideoSuperResolutionNative(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                vsr = null;
-                return false;
-            }
+            vsr = GetVideoSuperResolutionNative(gpu);
+            return vsr != null;
         }
 
         internal VideoSuperResolutionDto GetVideoSuperResolution(IADLXGPU* gpu)
@@ -284,7 +244,9 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            using var vsr = new ComPtr<IADLXVideoSuperResolution>(GetVideoSuperResolutionNative(gpu));
+            var native = GetVideoSuperResolutionNative(gpu);
+            if (native == null) return default;
+            using var vsr = new ComPtr<IADLXVideoSuperResolution>(native);
             return new VideoSuperResolutionDto(vsr.Get());
         }
 
@@ -293,16 +255,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetVideoSuperResolution(IADLXGPU* gpu, out VideoSuperResolutionDto info)
         {
-            try
-            {
-                info = GetVideoSuperResolution(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            info = GetVideoSuperResolution(gpu);
+            return true;
         }
 
         internal void SetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
@@ -316,20 +270,11 @@ namespace ADLXWrapper
                 throw new ADLXException(result, "Failed to set video super resolution enabled");
         }
 
-        /// <summary>
-        /// Tries to set video super resolution enabled; returns false when the feature is unsupported.
-        /// </summary>
+        /// <summary>Tries to set video super resolution enabled; returns false when the feature is unsupported.</summary>
         internal bool TrySetVideoSuperResolutionEnabled(IADLXVideoSuperResolution* vsr, bool enable)
         {
-            try
-            {
-                SetVideoSuperResolutionEnabled(vsr, enable);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            SetVideoSuperResolutionEnabled(vsr, enable);
+            return true;
         }
 
         // =====================================================================
@@ -347,8 +292,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get video upscale info for the GPU with the specified unique id.</summary>
         public bool TryGetVideoUpscale(int gpuUniqueId, out VideoUpscaleDto info)
         {
-            try { info = GetVideoUpscale(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetVideoUpscale(gpuUniqueId);
+            return true;
         }
 
         /// <summary>Sets video upscale enabled state for the GPU with the specified unique id.</summary>
@@ -360,8 +305,9 @@ namespace ADLXWrapper
             {
                 IADLXVideoUpscale* upscale = null;
                 var r = _services.Get()->GetVideoUpscale((IADLXGPU*)ptrGpu, &upscale);
-                if (r != ADLX_RESULT.ADLX_OK || upscale == null)
-                    throw new ADLXException(r != ADLX_RESULT.ADLX_OK ? r : ADLX_RESULT.ADLX_FAIL, "Failed to get video upscale for GPU");
+                if (r == ADLX_RESULT.ADLX_NOT_SUPPORTED || upscale == null) return 0;
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to get video upscale for GPU");
                 using var u = new ComPtr<IADLXVideoUpscale>(upscale);
                 var r2 = u.Get()->SetEnabled(enable ? (byte)1 : (byte)0);
                 if (r2 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r2, "Failed to set video upscale enabled");
@@ -372,8 +318,8 @@ namespace ADLXWrapper
         /// <summary>Tries to set video upscale enabled state for the GPU with the specified unique id.</summary>
         public bool TrySetVideoUpscaleEnabled(int gpuUniqueId, bool enable)
         {
-            try { SetVideoUpscaleEnabled(gpuUniqueId, enable); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+            SetVideoUpscaleEnabled(gpuUniqueId, enable);
+            return true;
         }
 
         /// <summary>Sets video upscale sharpness for the GPU with the specified unique id.</summary>
@@ -385,8 +331,9 @@ namespace ADLXWrapper
             {
                 IADLXVideoUpscale* upscale = null;
                 var r = _services.Get()->GetVideoUpscale((IADLXGPU*)ptrGpu, &upscale);
-                if (r != ADLX_RESULT.ADLX_OK || upscale == null)
-                    throw new ADLXException(r != ADLX_RESULT.ADLX_OK ? r : ADLX_RESULT.ADLX_FAIL, "Failed to get video upscale for GPU");
+                if (r == ADLX_RESULT.ADLX_NOT_SUPPORTED || upscale == null) return 0;
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to get video upscale for GPU");
                 using var u = new ComPtr<IADLXVideoUpscale>(upscale);
                 var r2 = u.Get()->SetSharpness(sharpness);
                 if (r2 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r2, "Failed to set video upscale sharpness");
@@ -397,8 +344,8 @@ namespace ADLXWrapper
         /// <summary>Tries to set video upscale sharpness for the GPU with the specified unique id.</summary>
         public bool TrySetVideoUpscaleSharpness(int gpuUniqueId, int sharpness)
         {
-            try { SetVideoUpscaleSharpness(gpuUniqueId, sharpness); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+            SetVideoUpscaleSharpness(gpuUniqueId, sharpness);
+            return true;
         }
 
         /// <summary>Gets video super resolution info for the GPU with the specified unique id.</summary>
@@ -412,8 +359,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get video super resolution info for the GPU with the specified unique id.</summary>
         public bool TryGetVideoSuperResolution(int gpuUniqueId, out VideoSuperResolutionDto info)
         {
-            try { info = GetVideoSuperResolution(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetVideoSuperResolution(gpuUniqueId);
+            return true;
         }
 
         /// <summary>Sets video super resolution enabled state for the GPU with the specified unique id.</summary>
@@ -425,8 +372,9 @@ namespace ADLXWrapper
             {
                 IADLXVideoSuperResolution* vsr = null;
                 var r = _services.Get()->GetVideoSuperResolution((IADLXGPU*)ptrGpu, &vsr);
-                if (r != ADLX_RESULT.ADLX_OK || vsr == null)
-                    throw new ADLXException(r != ADLX_RESULT.ADLX_OK ? r : ADLX_RESULT.ADLX_FAIL, "Failed to get video super resolution for GPU");
+                if (r == ADLX_RESULT.ADLX_NOT_SUPPORTED || vsr == null) return 0;
+                if (r != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(r, "Failed to get video super resolution for GPU");
                 using var v = new ComPtr<IADLXVideoSuperResolution>(vsr);
                 var r2 = v.Get()->SetEnabled(enable ? (byte)1 : (byte)0);
                 if (r2 != ADLX_RESULT.ADLX_OK) throw new ADLXException(r2, "Failed to set video super resolution enabled");
@@ -437,8 +385,8 @@ namespace ADLXWrapper
         /// <summary>Tries to set video super resolution enabled state for the GPU with the specified unique id.</summary>
         public bool TrySetVideoSuperResolutionEnabled(int gpuUniqueId, bool enable)
         {
-            try { SetVideoSuperResolutionEnabled(gpuUniqueId, enable); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+            SetVideoSuperResolutionEnabled(gpuUniqueId, enable);
+            return true;
         }
 
         private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)

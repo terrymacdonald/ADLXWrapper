@@ -68,7 +68,7 @@ namespace ADLXWrapper
             IADLX3DSettingsChangedHandling* handling = null;
             var result = GetHighestServices()->Get3DSettingsChangedHandling(&handling);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || handling == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "3D settings change handling not supported by this ADLX system");
+                return null;
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get 3D settings change handling");
 
@@ -81,21 +81,14 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGet3DSettingsChangedHandlingNative(out IADLX3DSettingsChangedHandling* handling)
         {
-            try
-            {
-                handling = Get3DSettingsChangedHandlingNative();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                handling = null;
-                return false;
-            }
+            handling = Get3DSettingsChangedHandlingNative();
+            return handling != null;
         }
 
         internal ADLXInterfaceHandle Get3DSettingsChangedHandling()
         {
-            return ADLXInterfaceHandle.From(Get3DSettingsChangedHandlingNative(), addRef: true);
+            var native = Get3DSettingsChangedHandlingNative();
+            return native != null ? ADLXInterfaceHandle.From(native, addRef: true) : default;
         }
 
         /// <summary>
@@ -105,13 +98,15 @@ namespace ADLXWrapper
         /// <returns>Listener handle that must be disposed to unsubscribe.</returns>
         /// <exception cref="ADLXException">If registration fails.</exception>
         /// <exception cref="ObjectDisposedException">If disposed.</exception>
-        public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
+        public ThreeDSettingsListenerHandle? Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
         {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
             var handling = Get3DSettingsChangedHandlingNative();
+            if (handling == null)
+                return null;
             var handle = ThreeDSettingsListenerHandle.Create(callback);
             var result = handling->Add3DSettingsEventListener(handle.GetListener());
             if (result != ADLX_RESULT.ADLX_OK)
@@ -130,6 +125,7 @@ namespace ADLXWrapper
             if (handle == null || handle.IsInvalid) return;
 
             var handling = Get3DSettingsChangedHandlingNative();
+            if (handling == null) return;
             handling->Remove3DSettingsEventListener(handle.GetListener());
 
             if (disposeHandle)
@@ -189,16 +185,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryGetAll3DSettings(IADLXGPU* gpu, out All3DSettingsDto info)
         {
-            try
-            {
-                info = GetAll3DSettings(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            info = GetAll3DSettings(gpu);
+            return true;
         }
 
         /// <summary>
@@ -231,15 +219,8 @@ namespace ADLXWrapper
         /// </summary>
         internal bool TryApplyAll3DSettings(IADLXGPU* gpu, All3DSettingsDto info)
         {
-            try
-            {
-                ApplyAll3DSettings(gpu, info);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                return false;
-            }
+            ApplyAll3DSettings(gpu, info);
+            return true;
         }
 
         // =====================================================================
@@ -257,8 +238,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get all 3D settings for the GPU with the specified unique id.</summary>
         public bool TryGetAll3DSettings(int gpuUniqueId, out All3DSettingsDto info)
         {
-            try { info = GetAll3DSettings(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetAll3DSettings(gpuUniqueId);
+            return true;
         }
 
         /// <summary>Applies all 3D settings to the GPU with the specified unique id.</summary>
@@ -272,8 +253,8 @@ namespace ADLXWrapper
         /// <summary>Tries to apply all 3D settings to the GPU with the specified unique id.</summary>
         public bool TryApplyAll3DSettings(int gpuUniqueId, All3DSettingsDto info)
         {
-            try { ApplyAll3DSettings(gpuUniqueId, info); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+            ApplyAll3DSettings(gpuUniqueId, info);
+            return true;
         }
 
         /// <summary>Gets Fluid Motion Frames state for the GPU with the specified unique id.</summary>
@@ -287,8 +268,8 @@ namespace ADLXWrapper
         /// <summary>Tries to get Fluid Motion Frames state for the GPU with the specified unique id.</summary>
         public bool TryGetFluidMotionFrames(int gpuUniqueId, out FluidMotionFramesDto info)
         {
-            try { info = GetFluidMotionFrames(gpuUniqueId); return true; }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+            info = GetFluidMotionFrames(gpuUniqueId);
+            return true;
         }
 
         private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
@@ -478,7 +459,6 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
 
-            ADLX_RESULT result;
             IADLX3DAMDFluidMotionFrames* fmf = null;
             // Prefer v2, then v1. If neither is present, treat as unsupported.
             IADLX3DSettingsServices2* s2 = null;
@@ -495,9 +475,10 @@ namespace ADLXWrapper
             }
             else
             {
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported by this ADLX system");
+                return new FluidMotionFramesDto(false, false);
             }
 
+            ADLX_RESULT result;
             IADLX3DAMDFluidMotionFrames* local = null;
             if (s2 != null)
             {
@@ -511,38 +492,37 @@ namespace ADLXWrapper
             }
             fmf = local;
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || fmf == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported by this ADLX system");
+                return new FluidMotionFramesDto(false, false);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get AMD Fluid Motion Frames interface");
 
-            using var fmfPtr = new ComPtr<IADLX3DAMDFluidMotionFrames>(fmf);
-            bool supported = false;
-            var supportResult = fmfPtr.Get()->IsSupported(&supported);
-            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "AMD Fluid Motion Frames not supported on this GPU");
-            if (supportResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(supportResult, "Failed to query AMD Fluid Motion Frames support");
+            try
+            {
+                using var fmfPtr = new ComPtr<IADLX3DAMDFluidMotionFrames>(fmf);
+                bool supported = false;
+                var supportResult = fmfPtr.Get()->IsSupported(&supported);
+                if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                    return new FluidMotionFramesDto(false, false);
+                if (supportResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(supportResult, "Failed to query AMD Fluid Motion Frames support");
 
-            bool enabled = false;
-            var enabledResult = fmfPtr.Get()->IsEnabled(&enabled);
-            if (enabledResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(enabledResult, "Failed to query AMD Fluid Motion Frames state");
+                bool enabled = false;
+                var enabledResult = fmfPtr.Get()->IsEnabled(&enabled);
+                if (enabledResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(enabledResult, "Failed to query AMD Fluid Motion Frames state");
 
-            return new FluidMotionFramesDto(true, enabled);
+                return new FluidMotionFramesDto(true, enabled);
+            }
+            catch (System.Runtime.InteropServices.SEHException)
+            {
+                return new FluidMotionFramesDto(false, false);
+            }
         }
 
         internal bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesDto info)
         {
-            try
-            {
-                info = GetFluidMotionFrames(gpu);
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            info = GetFluidMotionFrames(gpu);
+            return info.IsSupported;
         }
 
         public RadeonSuperResolutionDto GetRadeonSuperResolution()
@@ -553,48 +533,47 @@ namespace ADLXWrapper
             IADLX3DRadeonSuperResolution* rsr = null;
             var result = GetHighestServices()->GetRadeonSuperResolution(&rsr);
             if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || rsr == null)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Radeon Super Resolution not supported by this ADLX system");
+                return new RadeonSuperResolutionDto(false, false, 0, default);
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get Radeon Super Resolution interface");
 
-            using var rsrPtr = new ComPtr<IADLX3DRadeonSuperResolution>(rsr);
-            bool supported = false;
-            var supportResult = rsrPtr.Get()->IsSupported(&supported);
-            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
-                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Radeon Super Resolution not supported on this system");
-            if (supportResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(supportResult, "Failed to query Radeon Super Resolution support");
+            try
+            {
+                using var rsrPtr = new ComPtr<IADLX3DRadeonSuperResolution>(rsr);
+                bool supported = false;
+                var supportResult = rsrPtr.Get()->IsSupported(&supported);
+                if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                    return new RadeonSuperResolutionDto(false, false, 0, default);
+                if (supportResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(supportResult, "Failed to query Radeon Super Resolution support");
 
-            bool enabled = false;
-            var enabledResult = rsrPtr.Get()->IsEnabled(&enabled);
-            if (enabledResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(enabledResult, "Failed to query Radeon Super Resolution state");
+                bool enabled = false;
+                var enabledResult = rsrPtr.Get()->IsEnabled(&enabled);
+                if (enabledResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(enabledResult, "Failed to query Radeon Super Resolution state");
 
-            ADLX_IntRange range = default;
-            var rangeResult = rsrPtr.Get()->GetSharpnessRange(&range);
-            if (rangeResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(rangeResult, "Failed to query Radeon Super Resolution sharpness range");
+                ADLX_IntRange range = default;
+                var rangeResult = rsrPtr.Get()->GetSharpnessRange(&range);
+                if (rangeResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(rangeResult, "Failed to query Radeon Super Resolution sharpness range");
 
-            int sharpness = 0;
-            var sharpnessResult = rsrPtr.Get()->GetSharpness(&sharpness);
-            if (sharpnessResult != ADLX_RESULT.ADLX_OK)
-                throw new ADLXException(sharpnessResult, "Failed to query Radeon Super Resolution sharpness");
+                int sharpness = 0;
+                var sharpnessResult = rsrPtr.Get()->GetSharpness(&sharpness);
+                if (sharpnessResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(sharpnessResult, "Failed to query Radeon Super Resolution sharpness");
 
-            return new RadeonSuperResolutionDto(true, enabled, sharpness, IntRangeDto.FromNative(range));
+                return new RadeonSuperResolutionDto(true, enabled, sharpness, IntRangeDto.FromNative(range));
+            }
+            catch (System.Runtime.InteropServices.SEHException)
+            {
+                return new RadeonSuperResolutionDto(false, false, 0, default);
+            }
         }
 
         public bool TryGetRadeonSuperResolution(out RadeonSuperResolutionDto info)
         {
-            try
-            {
-                info = GetRadeonSuperResolution();
-                return true;
-            }
-            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-            {
-                info = default;
-                return false;
-            }
+            info = GetRadeonSuperResolution();
+            return info.IsSupported;
         }
 
     }
