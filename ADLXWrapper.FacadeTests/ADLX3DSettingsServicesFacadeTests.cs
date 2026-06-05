@@ -27,14 +27,9 @@ public class ADLX3DSettingsServicesFacadeTests
     private ADLX3DSettingsServicesHelper Get3DHelperOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            return _fixture.System!.Get3DSettingsServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("3D settings services not supported on this hardware/driver.");
-        }
+        var helper = _fixture.System!.Get3DSettingsServices();
+        Skip.If(helper == null, "3D settings services not supported on this hardware/driver.");
+        return helper!;
     }
 
     private All3DSettingsDto GetAll3DSettingsOrSkip(ADLX3DSettingsServicesHelper helper)
@@ -218,39 +213,21 @@ public class ADLX3DSettingsServicesFacadeTests
         Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
         var gpuUniqueId = gpus[0].UniqueId;
 
-        try
-        {
-            if (!helper.TryGetFluidMotionFrames(gpuUniqueId, out var info))
-                throw new Xunit.SkipException("AMD Fluid Motion Frames not supported on this GPU.");
+        if (!helper.TryGetFluidMotionFrames(gpuUniqueId, out var info))
+            throw new Xunit.SkipException("AMD Fluid Motion Frames not supported on this GPU.");
 
-            Skip.If(!info.IsSupported, "AMD Fluid Motion Frames reported unsupported.");
-            Assert.IsType<bool>(info.IsEnabled);
-        }
-        catch (SEHException ex)
-        {
-            throw new Xunit.SkipException($"AMD Fluid Motion Frames call failed (SEH), treating as unsupported: {ex.Message}");
-        }
+        Skip.If(!info.IsSupported, "AMD Fluid Motion Frames reported unsupported.");
+        Assert.IsType<bool>(info.IsEnabled);
     }
 
     [SkippableFact]
     public void Three_d_radeon_super_resolution_facade()
     {
         using var helper = Get3DHelperOrSkip();
-        try
-        {
-            if (!helper.TryGetRadeonSuperResolution(out var info))
-                throw new Xunit.SkipException("Radeon Super Resolution not supported on this system.");
+        if (!helper.TryGetRadeonSuperResolution(out var info))
+            throw new Xunit.SkipException("Radeon Super Resolution not supported on this system.");
 
-            Skip.If(!info.IsSupported, "Radeon Super Resolution reported unsupported.");
-            Assert.True(info.SharpnessRange.MinValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.MaxValue);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException($"Radeon Super Resolution not supported: {ex.Result}");
-        }
-        catch (SEHException ex)
-        {
-            throw new Xunit.SkipException($"Radeon Super Resolution call failed (SEH), treating as unsupported: {ex.Message}");
-        }
+        Skip.If(!info.IsSupported, "Radeon Super Resolution reported unsupported.");
+        Assert.True(info.SharpnessRange.MinValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.MaxValue);
     }
 }

@@ -24,121 +24,70 @@ public class ADLXSystemServicesFacadeTests
     public void System_get_display_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetDisplayServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetDisplayServices();
+        Skip.If(helper == null, "Display services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_desktop_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetDesktopServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Desktop services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetDesktopServices();
+        Skip.If(helper == null, "Desktop services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_gpu_tuning_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetGPUTuningServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU tuning services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetGPUTuningServices();
+        Skip.If(helper == null, "GPU tuning services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_three_d_settings_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.Get3DSettingsServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("3D settings services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.Get3DSettingsServices();
+        Skip.If(helper == null, "3D settings services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_multimedia_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetMultimediaServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Multimedia services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetMultimediaServices();
+        Skip.If(helper == null, "Multimedia services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_performance_monitoring_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetPerformanceMonitoringServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Performance monitoring services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetPerformanceMonitoringServices();
+        Skip.If(helper == null, "Performance monitoring services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_get_power_tuning_services_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetPowerTuningServices();
-            Assert.NotNull(helper);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Power tuning services not supported on this hardware/driver.");
-        }
+        using var helper = _fixture.System!.GetPowerTuningServices();
+        Skip.If(helper == null, "Power tuning services not supported on this hardware/driver.");
+        Assert.NotNull(helper);
     }
 
     [SkippableFact]
     public void System_gpu_identity_facade()
     {
         SkipIfUnavailable();
-        IReadOnlyList<ADLXGPU> gpus;
-        try
-        {
-            gpus = _fixture.System!.EnumerateADLXGPUs();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU enumeration not supported on this hardware/driver.");
-        }
-
+        var gpus = _fixture.System!.EnumerateADLXGPUs();
         Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
         using var gpu = gpus[0];
         Assert.False(string.IsNullOrWhiteSpace(gpu.Name));
@@ -152,16 +101,7 @@ public class ADLXSystemServicesFacadeTests
     public void System_gpu_identity_deep_facade()
     {
         SkipIfUnavailable();
-        IReadOnlyList<ADLXGPU> gpus;
-        try
-        {
-            gpus = _fixture.System!.EnumerateADLXGPUs();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU enumeration not supported on this hardware/driver.");
-        }
-
+        var gpus = _fixture.System!.EnumerateADLXGPUs();
         Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
         using var gpu = gpus[0];
         Assert.True(Enum.IsDefined(typeof(ADLX_GPU_TYPE), gpu.GPUType));
@@ -194,16 +134,7 @@ public class ADLXSystemServicesFacadeTests
     public void System_display_identity_facade()
     {
         SkipIfUnavailable();
-        IReadOnlyList<ADLXDisplay> displays;
-        try
-        {
-            displays = _fixture.System!.EnumerateDisplays();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display enumeration not supported on this hardware/driver.");
-        }
-
+        var displays = _fixture.System!.EnumerateDisplays();
         Skip.If(displays.Count == 0, "No displays returned by ADLX.");
         using var display = displays[0];
         Assert.False(string.IsNullOrWhiteSpace(display.Name));
@@ -218,16 +149,7 @@ public class ADLXSystemServicesFacadeTests
     public void System_display_identity_extras_facade()
     {
         SkipIfUnavailable();
-        IReadOnlyList<ADLXDisplay> displays;
-        try
-        {
-            displays = _fixture.System!.EnumerateDisplays();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display enumeration not supported on this hardware/driver.");
-        }
-
+        var displays = _fixture.System!.EnumerateDisplays();
         Skip.If(displays.Count == 0, "No displays returned by ADLX.");
         using var display = displays[0];
         Assert.True(Enum.IsDefined(typeof(ADLX_DISPLAY_TYPE), display.Type));

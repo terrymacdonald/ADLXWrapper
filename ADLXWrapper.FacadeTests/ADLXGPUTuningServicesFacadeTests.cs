@@ -25,14 +25,9 @@ public class ADLXGPUTuningServicesFacadeTests
     private ADLXGPUTuningServicesHelper GetTuningHelperOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            return _fixture.System!.GetGPUTuningServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU tuning services not supported on this hardware/driver.");
-        }
+        var helper = _fixture.System!.GetGPUTuningServices();
+        Skip.If(helper == null, "GPU tuning services not supported on this hardware/driver.");
+        return helper!;
     }
 
     [SkippableFact]

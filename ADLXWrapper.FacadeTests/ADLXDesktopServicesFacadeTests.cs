@@ -25,16 +25,9 @@ public class ADLXDesktopServicesFacadeTests
     private IReadOnlyList<ADLXDesktop> GetDesktopsOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            var desktops = _fixture.System!.EnumerateDesktops();
-            Skip.If(desktops.Count == 0, "No desktops returned by ADLX.");
-            return desktops;
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Desktop services not supported on this hardware/driver.");
-        }
+        var desktops = _fixture.System!.EnumerateDesktops();
+        Skip.If(desktops.Count == 0, "No desktops returned by ADLX.");
+        return desktops;
     }
 
     private static void DisposeRest(IReadOnlyList<ADLXDesktop> desktops, int startAt = 1)
@@ -74,16 +67,7 @@ public class ADLXDesktopServicesFacadeTests
         using var desktop = desktops[0];
         DisposeRest(desktops);
 
-        IReadOnlyList<ADLXDisplay> displays;
-        try
-        {
-            displays = desktop.EnumerateDisplaysForDesktop();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display enumeration for desktop not supported.");
-        }
-
+        var displays = desktop.EnumerateDisplaysForDesktop();
         Skip.If(displays.Count == 0, "No displays on this desktop.");
 
         using var firstDisplay = displays[0];
@@ -110,15 +94,8 @@ public class ADLXDesktopServicesFacadeTests
         using var desktop = desktops[0];
         DisposeRest(desktops);
 
-        ADLXGPU gpu;
-        try
-        {
-            gpu = desktop.GetGPU();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Resolving GPU for desktop not supported.");
-        }
+        var gpu = desktop.GetGPU();
+        Skip.If(gpu == null, "Resolving GPU for desktop not supported.");
 
         using (gpu)
         {

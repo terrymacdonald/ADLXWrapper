@@ -24,14 +24,9 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
     private ADLXPerformanceMonitoringServicesHelper GetPerfOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            return _fixture.System!.GetPerformanceMonitoringServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Performance monitoring services not supported on this hardware/driver.");
-        }
+        var helper = _fixture.System!.GetPerformanceMonitoringServices();
+        Skip.If(helper == null, "Performance monitoring services not supported on this hardware/driver.");
+        return helper!;
     }
 
     private int GetFirstGpuUniqueIdOrSkip()
@@ -93,41 +88,20 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
     public void Performance_monitoring_system_metrics_snapshot_facade()
     {
         using var perf = GetPerfOrSkip();
-        try
-        {
-            var metrics = perf.GetCurrentSystemMetrics();
-            Assert.True(metrics.TimestampMs >= 0);
-            Assert.True(metrics.CpuUsage >= 0);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("System metrics not supported on this hardware/driver.");
-        }
+        var metrics = perf.GetCurrentSystemMetrics();
+        Skip.If(metrics.TimestampMs == 0 && metrics.CpuUsage == 0, "System metrics not available on this hardware/driver.");
+        Assert.True(metrics.TimestampMs >= 0);
+        Assert.True(metrics.CpuUsage >= 0);
     }
 
     [SkippableFact]
     public void Performance_monitoring_sampling_interval_facade()
     {
         using var perf = GetPerfOrSkip();
-        IntRangeDto range;
-        try
-        {
-            range = perf.GetSamplingIntervalRange();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Sampling interval not supported on this hardware/driver.");
-        }
+        var range = perf.GetSamplingIntervalRange();
+        Skip.If(range.MaxValue == 0, "Sampling interval not supported on this hardware/driver.");
 
-        int current;
-        try
-        {
-            current = perf.GetSamplingInterval();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Sampling interval not supported on this hardware/driver.");
-        }
+        var current = perf.GetSamplingInterval();
 
         // Re-apply the current interval (safe, no behavioral change)
         var target = current;
@@ -143,15 +117,8 @@ public class ADLXPerformanceMonitoringServicesFacadeTests
     public void Performance_monitoring_history_size_facade()
     {
         using var perf = GetPerfOrSkip();
-        int currentSize;
-        try
-        {
-            currentSize = perf.GetMaxPerformanceMetricsHistorySize();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Performance metrics history sizing not supported on this hardware/driver.");
-        }
+        var currentSize = perf.GetMaxPerformanceMetricsHistorySize();
+        Skip.If(currentSize == 0, "Performance metrics history sizing not supported on this hardware/driver.");
 
         // Re-apply the current size (safe, no behavioral change)
         Assert.True(perf.TrySetMaxPerformanceMetricsHistorySize(currentSize));

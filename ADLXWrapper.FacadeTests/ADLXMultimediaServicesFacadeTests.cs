@@ -24,14 +24,9 @@ public class ADLXMultimediaServicesFacadeTests
     private ADLXMultimediaServicesHelper GetMultimediaOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            return _fixture.System!.GetMultimediaServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Multimedia services not supported on this hardware/driver.");
-        }
+        var helper = _fixture.System!.GetMultimediaServices();
+        Skip.If(helper == null, "Multimedia services not supported on this hardware/driver.");
+        return helper!;
     }
 
     private int GetFirstGpuUniqueIdOrSkip()

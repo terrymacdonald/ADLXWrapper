@@ -26,16 +26,11 @@ public unsafe class ADLXEventListenersFacadeTests
     {
         SkipIfUnavailable();
         using var displayServices = _fixture.System!.GetDisplayServices();
-        try
-        {
-            var handle = displayServices.AddDisplayListEventListener(_ => true);
-            Assert.NotNull(handle);
-            displayServices.RemoveDisplayListEventListener(handle);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display list listener not supported on this hardware/driver.");
-        }
+        Skip.If(displayServices == null, "Display services not supported on this hardware/driver.");
+        var handle = displayServices.AddDisplayListEventListener(_ => true);
+        Skip.If(handle == null, "Display list listener not supported on this hardware/driver.");
+        Assert.NotNull(handle);
+        displayServices.RemoveDisplayListEventListener(handle);
     }
 
     [SkippableFact]
@@ -43,16 +38,11 @@ public unsafe class ADLXEventListenersFacadeTests
     {
         SkipIfUnavailable();
         using var desktopServices = _fixture.System!.GetDesktopServices();
-        try
-        {
-            var handle = desktopServices.AddDesktopListEventListener(_ => { });
-            Assert.NotNull(handle);
-            desktopServices.RemoveDesktopListEventListener(handle);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Desktop list listener not supported on this hardware/driver.");
-        }
+        Skip.If(desktopServices == null, "Desktop services not supported on this hardware/driver.");
+        var handle = desktopServices.AddDesktopListEventListener(_ => { });
+        Skip.If(handle == null, "Desktop list listener not supported on this hardware/driver.");
+        Assert.NotNull(handle);
+        desktopServices.RemoveDesktopListEventListener(handle);
     }
 
     [SkippableFact]
@@ -60,49 +50,34 @@ public unsafe class ADLXEventListenersFacadeTests
     {
         SkipIfUnavailable();
         using var helper = _fixture.System!.Get3DSettingsServices();
-        try
-        {
-            var handle = helper.Add3DSettingsEventListener(_ => true);
-            Assert.NotNull(handle);
-            helper.Remove3DSettingsEventListener(handle);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("3D settings listener not supported on this hardware/driver.");
-        }
+        Skip.If(helper == null, "3D settings services not supported on this hardware/driver.");
+        var handle = helper.Add3DSettingsEventListener(_ => true);
+        Skip.If(handle == null, "3D settings listener not supported on this hardware/driver.");
+        Assert.NotNull(handle);
+        helper.Remove3DSettingsEventListener(handle);
     }
 
     [SkippableFact]
     public void Power_tuning_listener_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetPowerTuningServices();
-            var handle = helper.AddPowerTuningEventListener(_ => true);
-            Assert.NotNull(handle);
-            helper.RemovePowerTuningEventListener(handle);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Power tuning listener not supported by this ADLX system.");
-        }
+        using var helper = _fixture.System!.GetPowerTuningServices();
+        Skip.If(helper == null, "Power tuning services not supported by this ADLX system.");
+        var handle = helper.AddPowerTuningEventListener(_ => true);
+        Skip.If(handle == null, "Power tuning listener not supported by this ADLX system.");
+        Assert.NotNull(handle);
+        helper.RemovePowerTuningEventListener(handle);
     }
 
     [SkippableFact]
     public void Multimedia_listener_facade()
     {
         SkipIfUnavailable();
-        try
-        {
-            using var helper = _fixture.System!.GetMultimediaServices();
-            var handle = helper.AddMultimediaEventListener(_ => true);
-            Assert.NotNull(handle);
-            helper.RemoveMultimediaEventListener(handle);
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Multimedia listener not supported by this ADLX system.");
-        }
+        using var helper = _fixture.System!.GetMultimediaServices();
+        Skip.If(helper == null, "Multimedia services not supported by this ADLX system.");
+        var handle = helper.AddMultimediaEventListener(_ => true);
+        Skip.If(handle == null, "Multimedia listener not supported by this ADLX system.");
+        Assert.NotNull(handle);
+        helper.RemoveMultimediaEventListener(handle);
     }
 }

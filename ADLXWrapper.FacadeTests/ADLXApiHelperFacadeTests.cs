@@ -39,17 +39,7 @@ public class ADLXApiHelperFacadeTests
         SkipIfUnavailable();
 
         var system = _fixture.System!;
-        IReadOnlyList<ADLXGPU> gpus;
-
-        try
-        {
-            gpus = system.EnumerateADLXGPUs();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU enumeration not supported on this hardware/driver.");
-        }
-
+        var gpus = system.EnumerateADLXGPUs();
         Skip.If(gpus.Count == 0, "No GPUs returned by ADLX.");
 
         using var gpu = gpus[0];
@@ -64,17 +54,7 @@ public class ADLXApiHelperFacadeTests
         SkipIfUnavailable();
 
         var system = _fixture.System!;
-        IReadOnlyList<ADLXDisplay> displays;
-
-        try
-        {
-            displays = system.EnumerateDisplays();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display enumeration not supported on this hardware/driver.");
-        }
-
+        var displays = system.EnumerateDisplays();
         Skip.If(displays.Count == 0, "No displays returned by ADLX.");
 
         using var display = displays[0];

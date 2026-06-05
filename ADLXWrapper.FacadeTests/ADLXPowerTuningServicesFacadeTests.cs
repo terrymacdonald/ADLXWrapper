@@ -24,14 +24,9 @@ public class ADLXPowerTuningServicesFacadeTests
     private ADLXPowerTuningServicesHelper GetPowerOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            return _fixture.System!.GetPowerTuningServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Power tuning services not supported on this hardware/driver.");
-        }
+        var helper = _fixture.System!.GetPowerTuningServices();
+        Skip.If(helper == null, "Power tuning services not supported on this hardware/driver.");
+        return helper!;
     }
 
     [SkippableFact]
@@ -49,17 +44,8 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_smart_shift_max_facade()
     {
         using var power = GetPowerOrSkip();
-        SmartShiftMaxDto info;
-        try
-        {
-            info = power.GetSmartShiftMax();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("SmartShift Max not supported on this hardware/driver.");
-        }
-
-        Skip.If(!info.IsSupported, "SmartShift Max reported unsupported.");
+        var info = power.GetSmartShiftMax();
+        Skip.If(!info.IsSupported, "SmartShift Max not supported on this hardware/driver.");
         Assert.True(info.BiasRange.MinValue <= info.BiasValue && info.BiasValue <= info.BiasRange.MaxValue);
     }
 
@@ -67,17 +53,8 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_smart_shift_eco_facade()
     {
         using var power = GetPowerOrSkip();
-        SmartShiftEcoDto info;
-        try
-        {
-            info = power.GetSmartShiftEco();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("SmartShift Eco not supported on this hardware/driver.");
-        }
-
-        Skip.If(!info.IsSupported, "SmartShift Eco reported unsupported.");
+        var info = power.GetSmartShiftEco();
+        Skip.If(!info.IsSupported, "SmartShift Eco not supported on this hardware/driver.");
         Assert.IsType<bool>(info.IsEnabled);
     }
 
@@ -85,15 +62,8 @@ public class ADLXPowerTuningServicesFacadeTests
     public void Power_tuning_manual_power_info_facade()
     {
         using var power = GetPowerOrSkip();
-        ADLXGPUTuningServicesHelper tuning;
-        try
-        {
-            tuning = _fixture.System!.GetGPUTuningServices();
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("GPU tuning services not supported on this hardware/driver.");
-        }
+        var tuning = _fixture.System!.GetGPUTuningServices();
+        Skip.If(tuning == null, "GPU tuning services not supported on this hardware/driver.");
         using (tuning)
         {
             var gpus = _fixture.System!.EnumerateGPUs().ToList();

@@ -26,20 +26,9 @@ public class ADLXDisplayServicesFacadeTests
     private IReadOnlyList<ADLXDisplay> GetDisplaysOrSkip()
     {
         SkipIfUnavailable();
-        try
-        {
-            var displays = _fixture.System!.EnumerateDisplays();
-            Skip.If(displays.Count == 0, "No displays returned by ADLX.");
-            return displays;
-        }
-        catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
-        {
-            throw new Xunit.SkipException("Display enumeration not supported on this hardware/driver.");
-        }
-        catch (AccessViolationException ex)
-        {
-            throw new Xunit.SkipException($"Display enumeration crashed (likely unsupported environment): {ex.Message}");
-        }
+        var displays = _fixture.System!.EnumerateDisplays();
+        Skip.If(displays.Count == 0, "No displays returned by ADLX.");
+        return displays;
     }
 
     private static void DisposeRest(IReadOnlyList<ADLXDisplay> displays, int startAt = 1)
