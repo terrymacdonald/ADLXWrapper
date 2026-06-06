@@ -11,7 +11,8 @@ using var adlx = ADLXApiHelper.Initialize();
 // Always dispose system services before disposing adlx
 using var sys = adlx.GetSystemServices();
 ```
-- Optional features throw `ADLX_NOT_SUPPORTED` via `ADLXException`. Many helpers also expose `Try*` patterns or capability DTOs.
+- Optional features return `null` (for helper objects), `default` (for DTOs), `false` (for boolean queries), or an empty collection — they **do not throw** for unsupported hardware. Only genuine unexpected driver failures throw `ADLXException`.
+- Service factory methods (`GetDisplayServices()`, `Get3DSettingsServices()`, etc.) return a nullable helper — check for `null` before use.
 - All facades/helpers are `IDisposable`. Dispose them (or use `using`) to release native references. Use-after-dispose throws `ObjectDisposedException`.
 
 ## DTO naming convention
@@ -79,6 +80,11 @@ int id = gpus[0].UniqueId;
 ## Performance monitoring
 ```csharp
 using var perf = sys.GetPerformanceMonitoringServices();
+if (perf == null)
+{
+    Console.WriteLine("Performance monitoring not supported on this hardware.");
+    return;
+}
 int gpuId = sys.EnumerateGPUs().First().UniqueId;
 
 if (perf.TryGetCurrentGpuMetrics(gpuId, out GpuMetricsSnapshotDto metrics))
@@ -87,15 +93,21 @@ if (perf.TryGetCurrentGpuMetrics(gpuId, out GpuMetricsSnapshotDto metrics))
 SystemMetricsSnapshotDto systemMetrics = perf.GetCurrentSystemMetrics();
 Console.WriteLine($"CPU: {systemMetrics.CpuUsage:F1}%, RAM: {systemMetrics.SystemRam} MB");
 
-// Sampling interval range is an IntRangeDto
+// GetSamplingIntervalRange() returns default(IntRangeDto) when not supported
 IntRangeDto range = perf.GetSamplingIntervalRange();
-Console.WriteLine($"Sampling interval: {range.MinValue}–{range.MaxValue} ms (step {range.Step})");
+if (range.MaxValue > 0)
+    Console.WriteLine($"Sampling interval: {range.MinValue}–{range.MaxValue} ms (step {range.Step})");
 ```
 
 ## 3D settings
 Access Anti-Lag, Boost, RSR, Chill, Sharpening, and more. Optional features are safely gated.
 ```csharp
 using var settings = sys.Get3DSettingsServices();
+if (settings == null)
+{
+    Console.WriteLine("3D settings services not supported on this hardware.");
+    return;
+}
 int gpuId = sys.EnumerateGPUs().First().UniqueId;
 
 All3DSettingsDto all = settings.GetAll3DSettings(gpuId);
@@ -108,6 +120,11 @@ if (settings.TryGetFluidMotionFrames(gpuId, out FluidMotionFramesDto fmf) && fmf
 ## GPU tuning (read-only patterns shown)
 ```csharp
 using var tuning = sys.GetGPUTuningServices();
+if (tuning == null)
+{
+    Console.WriteLine("GPU tuning services not supported on this hardware.");
+    return;
+}
 int gpuId = sys.EnumerateGPUs().First().UniqueId;
 
 GpuTuningCapabilitiesDto caps = tuning.GetCapabilities(gpuId);
@@ -123,23 +140,39 @@ if (tuning.TryGetManualFanTuning(gpuId, out ManualFanTuningDto fan))
 ## Power tuning (SmartShift Max/Eco, GPUConnect)
 ```csharp
 using var power = sys.GetPowerTuningServices();
+if (power == null)
+{
+    Console.WriteLine("Power tuning services not supported on this hardware.");
+    return;
+}
 
+// GetSmartShiftMax/Eco return default(Dto) when unsupported — check IsSupported
 SmartShiftMaxDto ssm = power.GetSmartShiftMax();
-Console.WriteLine($"SmartShift Max supported={ssm.IsSupported}, mode={ssm.BiasMode}, value={ssm.BiasValue}, range=({ssm.BiasRange.MinValue}–{ssm.BiasRange.MaxValue})");
+if (ssm.IsSupported)
+    Console.WriteLine($"SmartShift Max: mode={ssm.BiasMode}, value={ssm.BiasValue}, range=({ssm.BiasRange.MinValue}–{ssm.BiasRange.MaxValue})");
 
 SmartShiftEcoDto eco = power.GetSmartShiftEco();
-Console.WriteLine($"SmartShift Eco supported={eco.IsSupported}, enabled={eco.IsEnabled}");
+if (eco.IsSupported)
+    Console.WriteLine($"SmartShift Eco enabled={eco.IsEnabled}");
 
 // Manual power tuning requires both the power helper and a GPU tuning helper
 using var tuning = sys.GetGPUTuningServices();
-int gpuId = sys.EnumerateGPUs().First().UniqueId;
-if (power.TryGetManualPowerTuning(gpuId, tuning, out ManualPowerTuningDto mpt))
-    Console.WriteLine($"Power limit: {mpt.PowerLimitValue} (range {mpt.PowerLimitRange.MinValue}–{mpt.PowerLimitRange.MaxValue})");
+if (tuning != null)
+{
+    int gpuId = sys.EnumerateGPUs().First().UniqueId;
+    if (power.TryGetManualPowerTuning(gpuId, tuning, out ManualPowerTuningDto mpt))
+        Console.WriteLine($"Power limit: {mpt.PowerLimitValue} (range {mpt.PowerLimitRange.MinValue}–{mpt.PowerLimitRange.MaxValue})");
+}
 ```
 
 ## Multimedia (Video Upscale, Video Super Resolution)
 ```csharp
 using var mm = sys.GetMultimediaServices();
+if (mm == null)
+{
+    Console.WriteLine("Multimedia services not supported on this hardware.");
+    return;
+}
 int gpuId = sys.EnumerateGPUs().First().UniqueId;
 
 if (mm.TryGetVideoUpscale(gpuId, out VideoUpscaleDto upscale) && upscale.IsSupported)
@@ -148,6 +181,19 @@ if (mm.TryGetVideoUpscale(gpuId, out VideoUpscaleDto upscale) && upscale.IsSuppo
 if (mm.TryGetVideoSuperResolution(gpuId, out VideoSuperResolutionDto vsr) && vsr.IsSupported)
     Console.WriteLine($"Video Super Resolution enabled={vsr.IsEnabled}");
 ```
+
+## "Not supported" behaviour
+ADLXWrapper follows Microsoft .NET Framework Design Guidelines: optional features that are absent on the current hardware are **not communicated via exceptions**. Instead:
+
+| Return type | Not-supported value |
+|---|---|
+| Service helper (`ADLXDisplayServicesHelper?` etc.) | `null` |
+| Boolean query (`IsXxxSupported()`) | `false` |
+| DTO (`SmartShiftMaxDto`, `GpuMetricsSnapshotDto`, etc.) | `default` (check `IsSupported` flag where present) |
+| Collection (`EnumerateDisplays()` etc.) | empty list / `Array.Empty<T>()` |
+| Event listener handle (`DisplayListListenerHandle?` etc.) | `null` |
+
+`TryXxx` methods always return `true` now that the underlying methods no longer throw for unsupported hardware — they exist for API symmetry and forward-compatible code. Only genuine unexpected driver failures throw `ADLXException`.
 
 ## Initialization patterns and disposal rules
 - Always scope `ADLXApiHelper` outermost, then system services, then per-feature helpers/facades.

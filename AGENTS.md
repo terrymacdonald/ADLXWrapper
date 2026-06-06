@@ -20,7 +20,7 @@ This file captures the essential rules and context for agents working on this AD
 - Write code that tries to be robust and cope with problems getting the information requested, but without causing an exception or a crash. 
 - Naming/patterns: Preserve established helper naming (`ADLX<Feature>ServicesHelper`, `Get<Feature>ServicesNative()`, `Get<Feature>Services()`). Replicate existing helper/test patterns for new features. Consistently of API is key. The user has spent a long time trying to keep everything standard and consistent, so make sure new creations align with existing patterns. Ask for permission for anything that does not align.
 - Platform: Windows-only, x64; relies on AMD Adrenalin drivers. Lightweight check is `IsADLXDllAvailable`.
-- Any initialisation code generated needs to avoid it or handle it when getting an ADLX_ALREADY_INITIALIZED exception when trying to initialise ADLX a second time, and avoid or handle ADLX_NOT_SUPPORTED exceptions on optional functions.
+- Any initialisation code generated needs to avoid or handle `ADLX_ALREADY_INITIALIZED` when initialising ADLX a second time. For optional features that return `ADLX_NOT_SUPPORTED`, absorb this internally and return `null` / `false` / `default` / `Array.Empty<T>()` to the caller — do **not** throw or bubble up `ADLXException(ADLX_NOT_SUPPORTED)` as a normal code-flow signal.
 
 ## Core Native-specific Development Rules
 - Follow the usage patterns shown in the AMD ADLX SDK Samples as closely as possible to ensure that the C# Native functions will work. The ADLX SDK Samples can be found in ADLX/Samples. Please also look at the ADLX/Include folder and the ADLX/SDKDoc folder for more information about how the ADLX SDK works. 
@@ -37,6 +37,15 @@ This file captures the essential rules and context for agents working on this AD
 - Initialization (Facade): Use `using var adlx = ADLXApiHelper.Initialize();` as the standard entry point. Retrieve system services via `using var system = adlx.GetSystemServices();` and work with facade helpers (pointer-free for consumers).
 - Disposal (Facade): Dispose facade system services and returned facade objects before disposing `adlx`. Underlying `ComPtr` ownership is handled internally; do not manually release native pointers owned by helpers. `ADLXApiHelper` disposal should result in `ObjectDisposedException` on use-after-dispose.
 - Vtable interop: Generated interfaces/enums in `ADLXWrapper/cs_generated/`. When calling vtable functions directly, use `Marshal.GetDelegateForFunctionPointer` with `StdCall`. Make sure that the vtable is up to date and aligns with the generated code created by ClangSharpPInvokeGenerator.
+- **Not-supported return convention**: Follow Microsoft .NET Framework Design Guidelines — `ADLX_NOT_SUPPORTED` from the driver is a normal expected condition and must **not** be propagated as an exception. Handle it internally in each method and return the appropriate not-supported value:
+  - Service factory methods (`GetDisplayServices()`, `Get3DSettingsServices()`, etc.) → return `null`
+  - Boolean support queries (`IsXxxSupported()`) → return `false`
+  - DTO-returning methods (`GetSmartShiftMax()`, `GetManualFanTuning()`, etc.) → return `default`
+  - Collection-returning methods (`EnumerateDisplays()`, `EnumerateGpuMetricsHistory()`, etc.) → return `Array.Empty<T>()`
+  - Event listener registration methods (`AddXxxEventListener()`) → return `null` (nullable handle type)
+  - `void` mutator methods (`SetSamplingInterval()`, `SetMaxPerformanceMetricsHistorySize()`, etc.) → return silently
+  - `TryXxx` methods → call the underlying method directly; no try-catch needed since underlying methods no longer throw for NOT_SUPPORTED
+  - Only genuine unexpected driver failures (non-OK results that are not NOT_SUPPORTED) should throw `ADLXException`.
 
 ## Build and Scripts
 - Prepare: `./prepare_adlx.ps1` (downloads/validates ADLX SDK headers into `ADLX/`).
@@ -57,11 +66,17 @@ This file captures the essential rules and context for agents working on this AD
   - Facade (`*FacadeTests.cs`): Exercise helper/facade ergonomics built on native APIs.
 - Test creation: Write Native tests first to validate low-level APIs, then Facade tests. If ADLX marks features optional or provides `IsSupported`, gate tests accordingly; skip only when unsupported. Fix underlying wrapper bugs rather than skipping failing coverage. Shared fixtures for bootstrapping ADLX are acceptable; keep initialization/disposal safe across tests.
 - Hardware skip: Tests that need AMD GPU/driver or ADLX DLL gracefully skip when missing.
+- **Facade test skip pattern**: Do not use `catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)` in tests. Instead, check for `null` service helpers, empty collections, or `IsSupported == false` on DTOs, and call `Skip.If(...)` accordingly. Example:
+  ```csharp
+  using var helper = _fixture.System!.Get3DSettingsServices();
+  Skip.If(helper == null, "3D settings not supported on this hardware.");
+  ```
 
 ## Usage Notes
 - DLL loading: `ADLXApi` dynamically loads `amdadlx64.dll` via `LoadLibraryEx`; keep `ADLXNative.GetDllName()` and `ADLXApi.LoadADLXDll()` in sync if names/paths change; surface errors via `ADLXException`.
-- Data shapes: Helpers expose serializable `Info` structs (e.g., `GpuInfo`, `DisplayInfo`) and support apply/restore flows.
-- Samples: See `ADLXWrapper/README.md` and `Samples/` for usage patterns (enumeration, capability checks, event listeners).
+- Data shapes: Helpers expose serializable `*Dto` structs (e.g. `GpuDto`, `DisplayDto`, `GpuMetricsSnapshotDto`) and support apply/restore flows. DTOs are `readonly struct` with `init` properties and `[JsonConstructor]` support.
+- Not-supported values: service factory methods return `null`; boolean queries return `false`; DTO methods return `default`; collections return empty. Never rely on `ADLXException(ADLX_NOT_SUPPORTED)` as a signal in Facade-level code.
+- Samples: See `ADLXWrapper/README.md` and `Samples/` for usage patterns (enumeration, capability checks, null guards, event listeners).
 
 ## Versioning
 - Version scheme: `VERSION` provides MAJOR.MINOR; PATCH computed from git commit count via `SetVersionFromGit` and `build_adlx.ps1`. Update `VERSION` when bumping MAJOR/MINOR.

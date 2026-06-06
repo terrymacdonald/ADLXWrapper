@@ -50,12 +50,15 @@ using (display)
 foreach (var gpu in sys.EnumerateGPUs())
     Console.WriteLine($"{gpu.Name} ({gpu.VRAMType}, {gpu.TotalVRAM} MB, UniqueId={gpu.UniqueId})");
 
-// GPU-specific features use int gpuUniqueId — no pointers or handles
+// Service helpers return null when the feature is not supported on this hardware
 using var perf = sys.GetPerformanceMonitoringServices();
-foreach (var gpu in sys.EnumerateGPUs())
+if (perf != null)
 {
-    if (perf.TryGetCurrentGpuMetrics(gpu.UniqueId, out var m))
-        Console.WriteLine($"{gpu.Name}: {m.Temperature:F1}°C, {m.Usage:F1}% usage, {m.ClockSpeed} MHz");
+    foreach (var gpu in sys.EnumerateGPUs())
+    {
+        if (perf.TryGetCurrentGpuMetrics(gpu.UniqueId, out var m))
+            Console.WriteLine($"{gpu.Name}: {m.Temperature:F1}°C, {m.Usage:F1}% usage, {m.ClockSpeed} MHz");
+    }
 }
 ```
 More in `ADLXWrapper/README.md` (per-feature examples: Display, Desktop, GPU identity, Perf, 3D settings, Tuning, Power, Color, Multimedia).
