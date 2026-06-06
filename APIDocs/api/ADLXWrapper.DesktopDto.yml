@@ -22,11 +22,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DesktopDto
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 659
+    startLine: 645
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 661
+    startLine: 647
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,11 +83,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 662
+    startLine: 648
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,11 +112,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 663
+    startLine: 649
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -141,11 +141,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 664
+    startLine: 650
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -170,11 +170,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 665
+    startLine: 651
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -199,11 +199,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 666
+    startLine: 652
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -228,11 +228,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 668
+    startLine: 654
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

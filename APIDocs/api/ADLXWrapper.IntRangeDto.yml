@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDTOTypes.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IntRangeDto
     path: ../ADLXWrapper/ADLXDTOTypes.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDTOTypes.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinValue
     path: ../ADLXWrapper/ADLXDTOTypes.cs
@@ -82,7 +82,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDTOTypes.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaxValue
     path: ../ADLXWrapper/ADLXDTOTypes.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDTOTypes.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Step
     path: ../ADLXWrapper/ADLXDTOTypes.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDTOTypes.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDTOTypes.cs

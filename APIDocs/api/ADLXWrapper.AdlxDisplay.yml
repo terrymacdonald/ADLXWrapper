@@ -94,11 +94,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDisplay
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -132,11 +132,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -173,11 +173,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 37
   assemblies:
   - ADLXWrapper
@@ -202,11 +202,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Edid
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -231,11 +231,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionWidth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -260,11 +260,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: NativeResolutionHeight
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -289,11 +289,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -318,11 +318,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManufacturerId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -347,11 +347,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PixelClock
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -376,11 +376,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -405,11 +405,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ConnectorType
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
@@ -434,11 +434,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ScanType
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 55
   assemblies:
   - ADLXWrapper
@@ -463,11 +463,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -492,11 +492,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 59
   assemblies:
   - ADLXWrapper
@@ -521,11 +521,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 65
   assemblies:
   - ADLXWrapper
@@ -551,11 +551,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSync
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 83
   assemblies:
   - ADLXWrapper
@@ -586,11 +586,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSync
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 90
   assemblies:
   - ADLXWrapper
@@ -620,11 +620,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuScalingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 100
   assemblies:
   - ADLXWrapper
@@ -650,11 +650,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetGpuScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 118
   assemblies:
   - ADLXWrapper
@@ -685,11 +685,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetGpuScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 125
   assemblies:
   - ADLXWrapper
@@ -719,11 +719,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 135
   assemblies:
   - ADLXWrapper
@@ -749,11 +749,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayDto
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 149
   assemblies:
   - ADLXWrapper
@@ -777,11 +777,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 160
   assemblies:
   - ADLXWrapper
@@ -809,11 +809,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetScalingMode
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 167
   assemblies:
   - ADLXWrapper
@@ -840,11 +840,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateCustomResolutions
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 177
   assemblies:
   - ADLXWrapper
@@ -870,11 +870,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVirtualSuperResolutionState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 188
   assemblies:
   - ADLXWrapper
@@ -900,11 +900,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVirtualSuperResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 202
   assemblies:
   - ADLXWrapper
@@ -932,11 +932,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVirtualSuperResolution
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 209
   assemblies:
   - ADLXWrapper
@@ -966,11 +966,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetIntegerScalingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 219
   assemblies:
   - ADLXWrapper
@@ -996,11 +996,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetIntegerScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 233
   assemblies:
   - ADLXWrapper
@@ -1028,11 +1028,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetIntegerScaling
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 240
   assemblies:
   - ADLXWrapper
@@ -1062,11 +1062,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetHdcpState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 250
   assemblies:
   - ADLXWrapper
@@ -1092,11 +1092,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetHdcp
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 264
   assemblies:
   - ADLXWrapper
@@ -1124,11 +1124,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetHdcp
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 271
   assemblies:
   - ADLXWrapper
@@ -1158,11 +1158,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVariBrightState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 281
   assemblies:
   - ADLXWrapper
@@ -1188,11 +1188,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVariBright
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 295
   assemblies:
   - ADLXWrapper
@@ -1222,11 +1222,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVariBright
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 302
   assemblies:
   - ADLXWrapper
@@ -1258,11 +1258,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetColorDepthState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 312
   assemblies:
   - ADLXWrapper
@@ -1288,11 +1288,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetColorDepth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 327
   assemblies:
   - ADLXWrapper
@@ -1317,11 +1317,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetColorDepth
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 334
   assemblies:
   - ADLXWrapper
@@ -1348,11 +1348,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPixelFormatState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 344
   assemblies:
   - ADLXWrapper
@@ -1378,11 +1378,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPixelFormat
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 358
   assemblies:
   - ADLXWrapper
@@ -1407,11 +1407,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetPixelFormat
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 365
   assemblies:
   - ADLXWrapper
@@ -1438,11 +1438,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 375
   assemblies:
   - ADLXWrapper
@@ -1468,11 +1468,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 390
   assemblies:
   - ADLXWrapper
@@ -1497,11 +1497,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomColor
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 398
   assemblies:
   - ADLXWrapper
@@ -1528,11 +1528,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 409
   assemblies:
   - ADLXWrapper
@@ -1558,11 +1558,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 424
   assemblies:
   - ADLXWrapper
@@ -1584,11 +1584,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamma
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 432
   assemblies:
   - ADLXWrapper
@@ -1612,11 +1612,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 443
   assemblies:
   - ADLXWrapper
@@ -1642,11 +1642,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 458
   assemblies:
   - ADLXWrapper
@@ -1668,11 +1668,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyGamut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 466
   assemblies:
   - ADLXWrapper
@@ -1696,11 +1696,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 477
   assemblies:
   - ADLXWrapper
@@ -1726,11 +1726,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReapplyThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 492
   assemblies:
   - ADLXWrapper
@@ -1752,11 +1752,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 500
   assemblies:
   - ADLXWrapper
@@ -1780,11 +1780,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 511
   assemblies:
   - ADLXWrapper
@@ -1810,11 +1810,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 526
   assemblies:
   - ADLXWrapper
@@ -1839,11 +1839,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 534
   assemblies:
   - ADLXWrapper
@@ -1870,11 +1870,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 545
   assemblies:
   - ADLXWrapper
@@ -1900,11 +1900,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 560
   assemblies:
   - ADLXWrapper
@@ -1932,11 +1932,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 568
   assemblies:
   - ADLXWrapper
@@ -1966,11 +1966,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 579
   assemblies:
   - ADLXWrapper
@@ -1996,11 +1996,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 594
   assemblies:
   - ADLXWrapper
@@ -2028,11 +2028,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 602
   assemblies:
   - ADLXWrapper
@@ -2062,11 +2062,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 613
   assemblies:
   - ADLXWrapper
@@ -2092,11 +2092,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 628
   assemblies:
   - ADLXWrapper
@@ -2124,11 +2124,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 636
   assemblies:
   - ADLXWrapper
@@ -2158,11 +2158,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 647
   assemblies:
   - ADLXWrapper
@@ -2170,7 +2170,7 @@ items:
   summary: Subscribe to display settings change events. Returns a handle the caller must dispose (or call the remove helper) to unsubscribe.
   example: []
   syntax:
-    content: public DisplaySettingsListenerHandle AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
+    content: public DisplaySettingsListenerHandle? AddDisplaySettingsEventListener(DisplaySettingsListenerHandle.OnDisplaySettingsChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
@@ -2191,11 +2191,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 655
   assemblies:
   - ADLXWrapper
@@ -2225,11 +2225,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 667
   assemblies:
   - ADLXWrapper
@@ -2237,7 +2237,7 @@ items:
   summary: Subscribe to gamma change events.
   example: []
   syntax:
-    content: public DisplayGammaListenerHandle AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
+    content: public DisplayGammaListenerHandle? AddDisplayGammaEventListener(DisplayGammaListenerHandle.OnDisplayGammaChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayGammaListenerHandle.OnDisplayGammaChanged
@@ -2258,11 +2258,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 675
   assemblies:
   - ADLXWrapper
@@ -2292,11 +2292,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 687
   assemblies:
   - ADLXWrapper
@@ -2304,7 +2304,7 @@ items:
   summary: Subscribe to gamut change events.
   example: []
   syntax:
-    content: public DisplayGamutListenerHandle AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
+    content: public DisplayGamutListenerHandle? AddDisplayGamutEventListener(DisplayGamutListenerHandle.OnDisplayGamutChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayGamutListenerHandle.OnDisplayGamutChanged
@@ -2325,11 +2325,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 695
   assemblies:
   - ADLXWrapper
@@ -2359,11 +2359,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 707
   assemblies:
   - ADLXWrapper
@@ -2371,7 +2371,7 @@ items:
   summary: Subscribe to 3DLUT change events.
   example: []
   syntax:
-    content: public Display3DLutListenerHandle AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
+    content: public Display3DLutListenerHandle? AddDisplay3dLutEventListener(Display3DLutListenerHandle.OnDisplay3DLutChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.Display3DLutListenerHandle.OnDisplay3DLutChanged
@@ -2392,11 +2392,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 715
   assemblies:
   - ADLXWrapper
@@ -2426,11 +2426,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 727
   assemblies:
   - ADLXWrapper
@@ -2438,7 +2438,7 @@ items:
   summary: Subscribe to display list change events.
   example: []
   syntax:
-    content: public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+    content: public DisplayListListenerHandle? AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
@@ -2459,11 +2459,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 735
   assemblies:
   - ADLXWrapper
@@ -2493,11 +2493,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 747
   assemblies:
   - ADLXWrapper
@@ -2523,11 +2523,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 765
   assemblies:
   - ADLXWrapper
@@ -2553,11 +2553,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDto
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 827
   assemblies:
   - ADLXWrapper
@@ -2583,11 +2583,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxDisplay.cs
-      branch: develop
+      path: ADLXWrapper/ADLXDisplay.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxDisplay.cs
+    path: ../ADLXWrapper/ADLXDisplay.cs
     startLine: 838
   assemblies:
   - ADLXWrapper

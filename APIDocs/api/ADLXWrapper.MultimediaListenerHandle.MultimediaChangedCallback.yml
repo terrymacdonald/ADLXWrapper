@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaChangedCallback
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 552
+    startLine: 501
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXApiHelper
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Initialize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -94,7 +94,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InitializeWithCallerAdl
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -132,7 +132,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFullVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVersion
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -192,7 +192,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSystemServices
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -222,7 +222,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -252,7 +252,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXApiHelper.cs
@@ -283,7 +283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXApiHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsADLXDllAvailable
     path: ../ADLXWrapper/ADLXApiHelper.cs

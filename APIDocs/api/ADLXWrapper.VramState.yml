@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VramState
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 819
+    startLine: 733
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -49,11 +49,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Frequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 821
+    startLine: 735
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -78,11 +78,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 822
+    startLine: 736
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

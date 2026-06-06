@@ -26,11 +26,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuMetricsSupportDto
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 665
+    startLine: 616
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -58,11 +58,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UsageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 667
+    startLine: 618
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,11 +87,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 668
+    startLine: 619
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -116,11 +116,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 669
+    startLine: 620
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -145,11 +145,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HotspotTemperatureSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 670
+    startLine: 621
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -174,11 +174,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 671
+    startLine: 622
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -203,11 +203,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 672
+    startLine: 623
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -232,11 +232,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 673
+    startLine: 624
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -261,11 +261,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMClockSpeedSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 674
+    startLine: 625
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -290,11 +290,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VoltageSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 675
+    startLine: 626
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -319,11 +319,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalBoardPowerSupported
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 676
+    startLine: 627
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -348,11 +348,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-    startLine: 678
+    startLine: 629
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

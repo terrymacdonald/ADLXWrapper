@@ -46,11 +46,11 @@ items:
   type: Class
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXGPU
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 8
   assemblies:
   - ADLXWrapper
@@ -84,11 +84,11 @@ items:
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 22
   assemblies:
   - ADLXWrapper
@@ -125,11 +125,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 39
   assemblies:
   - ADLXWrapper
@@ -154,11 +154,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 41
   assemblies:
   - ADLXWrapper
@@ -183,11 +183,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 43
   assemblies:
   - ADLXWrapper
@@ -212,11 +212,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 45
   assemblies:
   - ADLXWrapper
@@ -241,11 +241,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 47
   assemblies:
   - ADLXWrapper
@@ -270,11 +270,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 49
   assemblies:
   - ADLXWrapper
@@ -299,11 +299,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 51
   assemblies:
   - ADLXWrapper
@@ -328,11 +328,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 53
   assemblies:
   - ADLXWrapper
@@ -357,11 +357,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 55
   assemblies:
   - ADLXWrapper
@@ -386,11 +386,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 57
   assemblies:
   - ADLXWrapper
@@ -415,11 +415,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 59
   assemblies:
   - ADLXWrapper
@@ -444,11 +444,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUType
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 61
   assemblies:
   - ADLXWrapper
@@ -473,11 +473,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AsicFamilyType
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 63
   assemblies:
   - ADLXWrapper
@@ -502,11 +502,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusType
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 65
   assemblies:
   - ADLXWrapper
@@ -531,11 +531,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusLaneWidth
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 67
   assemblies:
   - ADLXWrapper
@@ -560,11 +560,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGpuMode
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 69
   assemblies:
   - ADLXWrapper
@@ -589,11 +589,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 71
   assemblies:
   - ADLXWrapper
@@ -618,11 +618,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 73
   assemblies:
   - ADLXWrapper
@@ -647,11 +647,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 75
   assemblies:
   - ADLXWrapper
@@ -676,11 +676,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 77
   assemblies:
   - ADLXWrapper
@@ -705,11 +705,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 79
   assemblies:
   - ADLXWrapper
@@ -734,11 +734,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 81
   assemblies:
   - ADLXWrapper
@@ -763,11 +763,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 83
   assemblies:
   - ADLXWrapper
@@ -792,11 +792,11 @@ items:
   type: Property
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 85
   assemblies:
   - ADLXWrapper
@@ -821,11 +821,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 91
   assemblies:
   - ADLXWrapper
@@ -851,11 +851,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 102
   assemblies:
   - ADLXWrapper
@@ -881,11 +881,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 113
   assemblies:
   - ADLXWrapper
@@ -893,7 +893,7 @@ items:
   summary: Subscribe to display list change events. Returns a handle that can be disposed or passed to the remove helper.
   example: []
   syntax:
-    content: public DisplayListListenerHandle AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
+    content: public DisplayListListenerHandle? AddDisplayListEventListener(DisplayListListenerHandle.OnDisplayListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DisplayListListenerHandle.OnDisplayListChanged
@@ -914,11 +914,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 126
   assemblies:
   - ADLXWrapper
@@ -952,11 +952,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 138
   assemblies:
   - ADLXWrapper
@@ -964,7 +964,7 @@ items:
   summary: Subscribe to desktop list change events. Returns a handle that can be disposed or passed to the remove helper.
   example: []
   syntax:
-    content: public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
+    content: public DesktopListListenerHandle? AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
@@ -985,11 +985,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 151
   assemblies:
   - ADLXWrapper
@@ -1023,11 +1023,11 @@ items:
   type: Method
   source:
     remote:
-      path: ADLXWrapper/AdlxGpu.cs
-      branch: develop
+      path: ADLXWrapper/ADLXGPU.cs
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
-    path: ../ADLXWrapper/AdlxGpu.cs
+    path: ../ADLXWrapper/ADLXGPU.cs
     startLine: 165
   assemblies:
   - ADLXWrapper

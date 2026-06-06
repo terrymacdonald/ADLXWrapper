@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXSystemServicesHelper
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -68,7 +68,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
@@ -106,27 +106,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 122
+    startLine: 113
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed display-services helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXDisplayServicesHelper GetDisplayServices()
+    content: public ADLXDisplayServicesHelper? GetDisplayServices()
     return:
       type: ADLXWrapper.ADLXDisplayServicesHelper
-      description: Display services helper wrapping native interfaces.
+      description: Display services helper wrapping native interfaces, or <code>null</code> if display services are not supported.
     content.vb: Public Function GetDisplayServices() As ADLXDisplayServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetDisplayServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If display/desktop services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -144,27 +141,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 180
+    startLine: 164
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed desktop-services helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXDesktopServicesHelper GetDesktopServices()
+    content: public ADLXDesktopServicesHelper? GetDesktopServices()
     return:
       type: ADLXWrapper.ADLXDesktopServicesHelper
-      description: Desktop services helper wrapping native interfaces.
+      description: Desktop services helper wrapping native interfaces, or <code>null</code> if desktop services are not supported.
     content.vb: Public Function GetDesktopServices() As ADLXDesktopServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetDesktopServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If desktop/display services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -182,27 +176,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Get3DSettingsServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 238
+    startLine: 215
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed 3D settings helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLX3DSettingsServicesHelper Get3DSettingsServices()
+    content: public ADLX3DSettingsServicesHelper? Get3DSettingsServices()
     return:
       type: ADLXWrapper.ADLX3DSettingsServicesHelper
-      description: 3D settings services helper wrapping native interfaces.
+      description: 3D settings services helper wrapping native interfaces, or <code>null</code> if 3D settings services are not supported.
     content.vb: Public Function Get3DSettingsServices() As ADLX3DSettingsServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.Get3DSettingsServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If 3D settings services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -220,27 +211,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 295
+    startLine: 265
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed GPU tuning helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXGPUTuningServicesHelper GetGPUTuningServices()
+    content: public ADLXGPUTuningServicesHelper? GetGPUTuningServices()
     return:
       type: ADLXWrapper.ADLXGPUTuningServicesHelper
-      description: GPU tuning services helper wrapping native interfaces.
+      description: GPU tuning services helper wrapping native interfaces, or <code>null</code> if GPU tuning services are not supported.
     content.vb: Public Function GetGPUTuningServices() As ADLXGPUTuningServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetGPUTuningServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If GPU tuning services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -258,27 +246,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 352
+    startLine: 315
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed performance monitoring helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXPerformanceMonitoringServicesHelper GetPerformanceMonitoringServices()
+    content: public ADLXPerformanceMonitoringServicesHelper? GetPerformanceMonitoringServices()
     return:
       type: ADLXWrapper.ADLXPerformanceMonitoringServicesHelper
-      description: Performance monitoring services helper wrapping native interfaces.
+      description: Performance monitoring services helper wrapping native interfaces, or <code>null</code> if not supported.
     content.vb: Public Function GetPerformanceMonitoringServices() As ADLXPerformanceMonitoringServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetPerformanceMonitoringServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If performance monitoring services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -296,27 +281,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPowerTuningServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 409
+    startLine: 365
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed power tuning helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXPowerTuningServicesHelper GetPowerTuningServices()
+    content: public ADLXPowerTuningServicesHelper? GetPowerTuningServices()
     return:
       type: ADLXWrapper.ADLXPowerTuningServicesHelper
-      description: Power tuning services helper wrapping native interfaces.
+      description: Power tuning services helper wrapping native interfaces, or <code>null</code> if not supported.
     content.vb: Public Function GetPowerTuningServices() As ADLXPowerTuningServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetPowerTuningServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If power tuning services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -334,27 +316,24 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMultimediaServices
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 466
+    startLine: 415
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a managed multimedia services helper with shared system lifetime.
   example: []
   syntax:
-    content: public ADLXMultimediaServicesHelper GetMultimediaServices()
+    content: public ADLXMultimediaServicesHelper? GetMultimediaServices()
     return:
       type: ADLXWrapper.ADLXMultimediaServicesHelper
-      description: Multimedia services helper wrapping native interfaces.
+      description: Multimedia services helper wrapping native interfaces, or <code>null</code> if not supported.
     content.vb: Public Function GetMultimediaServices() As ADLXMultimediaServicesHelper
   overload: ADLXWrapper.ADLXSystemServicesHelper.GetMultimediaServices*
   exceptions:
-  - type: ADLXWrapper.ADLXException
-    commentId: T:ADLXWrapper.ADLXException
-    description: If multimedia services are unsupported or retrieval fails.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -372,11 +351,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 531
+    startLine: 483
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -386,13 +365,15 @@ items:
     content: public IReadOnlyList<ADLXGPU> EnumerateADLXGPUs()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXGPU}
-      description: List of managed GPU facades. Callers must Dispose each GPU when finished.
+      description: >-
+        List of managed GPU facades. Callers must Dispose each GPU when finished.
+            Returns an empty list if GPU enumeration is not supported by this ADLX system.
     content.vb: Public Function EnumerateADLXGPUs() As IReadOnlyList(Of ADLXGPU)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs*
   exceptions:
   - type: ADLXWrapper.ADLXException
     commentId: T:ADLXWrapper.ADLXException
-    description: If enumeration is unsupported or fails.
+    description: If enumeration fails with an unexpected error.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -410,11 +391,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplays
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 563
+    startLine: 516
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -424,13 +405,15 @@ items:
     content: public IReadOnlyList<ADLXDisplay> EnumerateDisplays()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
-      description: List of managed displays.
+      description: >-
+        List of managed displays. Returns an empty list if display services are not
+            supported or no displays are connected.
     content.vb: Public Function EnumerateDisplays() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplays*
   exceptions:
   - type: ADLXWrapper.ADLXException
     commentId: T:ADLXWrapper.ADLXException
-    description: If enumeration fails.
+    description: If enumeration fails with an unexpected error.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -448,11 +431,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysInUse
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 620
+    startLine: 592
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -462,13 +445,13 @@ items:
     content: public IReadOnlyList<ADLXDisplay> EnumerateDisplaysInUse()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDisplay}
-      description: List of managed displays in use.
+      description: List of managed displays in use. Returns an empty list if services are not supported.
     content.vb: Public Function EnumerateDisplaysInUse() As IReadOnlyList(Of ADLXDisplay)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDisplaysInUse*
   exceptions:
   - type: ADLXWrapper.ADLXException
     commentId: T:ADLXWrapper.ADLXException
-    description: If enumeration fails.
+    description: If enumeration fails with an unexpected error.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -486,11 +469,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 734
+    startLine: 706
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -500,13 +483,13 @@ items:
     content: public IReadOnlyList<ADLXDesktop> EnumerateDesktops()
     return:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLXDesktop}
-      description: List of managed desktops.
+      description: List of managed desktops. Returns an empty list if desktop services are not supported.
     content.vb: Public Function EnumerateDesktops() As IReadOnlyList(Of ADLXDesktop)
   overload: ADLXWrapper.ADLXSystemServicesHelper.EnumerateDesktops*
   exceptions:
   - type: ADLXWrapper.ADLXException
     commentId: T:ADLXWrapper.ADLXException
-    description: If enumeration fails.
+    description: If enumeration fails with an unexpected error.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: If the helper has been disposed.
@@ -524,11 +507,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGPUs
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 815
+    startLine: 787
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -562,11 +545,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 871
+    startLine: 846
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -592,11 +575,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 897
+    startLine: 872
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -871,12 +854,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.ADLXException
-  commentId: T:ADLXWrapper.ADLXException
-  href: ADLXWrapper.ADLXException.html
-  name: ADLXException
-  nameWithType: ADLXException
-  fullName: ADLXWrapper.ADLXException
 - uid: System.ObjectDisposedException
   commentId: T:System.ObjectDisposedException
   isExternal: true
@@ -975,6 +952,12 @@ references:
   name: ADLXMultimediaServicesHelper
   nameWithType: ADLXMultimediaServicesHelper
   fullName: ADLXWrapper.ADLXMultimediaServicesHelper
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
 - uid: ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs*
   commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.EnumerateADLXGPUs
   href: ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_EnumerateADLXGPUs

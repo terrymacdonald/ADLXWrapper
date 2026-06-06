@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXNative
     path: ../ADLXWrapper/ADLXNative.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDllName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -183,7 +183,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LOAD_LIBRARY_SEARCH_USER_DIRS
     path: ../ADLXWrapper/ADLXNative.cs
@@ -210,7 +210,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LOAD_LIBRARY_SEARCH_APPLICATION_DIR
     path: ../ADLXWrapper/ADLXNative.cs
@@ -237,7 +237,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
     path: ../ADLXWrapper/ADLXNative.cs
@@ -264,7 +264,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LOAD_LIBRARY_SEARCH_SYSTEM32
     path: ../ADLXWrapper/ADLXNative.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FULL_VERSION
     path: ../ADLXWrapper/ADLXNative.cs
@@ -318,7 +318,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFunctionPointer
     path: ../ADLXWrapper/ADLXNative.cs
@@ -356,7 +356,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetQueryFullVersionFunctionName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -384,7 +384,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetQueryVersionFunctionName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetInitializeFunctionName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -440,7 +440,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetInitializeWithCallerAdlFunctionName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -468,7 +468,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetInitializeWithIncompatibleDriverFunctionName
     path: ../ADLXWrapper/ADLXNative.cs
@@ -496,7 +496,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXNative.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetTerminateFunctionName
     path: ../ADLXWrapper/ADLXNative.cs

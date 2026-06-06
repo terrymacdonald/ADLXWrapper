@@ -39,11 +39,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuDto
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1110
+    startLine: 1090
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -71,11 +71,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1112
+    startLine: 1092
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -100,11 +100,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1113
+    startLine: 1093
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -129,11 +129,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1114
+    startLine: 1094
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -158,11 +158,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1115
+    startLine: 1095
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -187,11 +187,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1116
+    startLine: 1096
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -216,11 +216,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1117
+    startLine: 1097
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -245,11 +245,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1118
+    startLine: 1098
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -274,11 +274,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1119
+    startLine: 1099
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -303,11 +303,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1120
+    startLine: 1100
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -332,11 +332,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1121
+    startLine: 1101
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -361,11 +361,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUType
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1122
+    startLine: 1102
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -390,11 +390,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AsicFamilyType
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1123
+    startLine: 1103
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -419,11 +419,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusType
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1124
+    startLine: 1104
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -448,11 +448,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusLaneWidth
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1125
+    startLine: 1105
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -477,11 +477,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGpuMode
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1126
+    startLine: 1106
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -506,11 +506,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1127
+    startLine: 1107
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -535,11 +535,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1128
+    startLine: 1108
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -564,11 +564,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1129
+    startLine: 1109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -593,11 +593,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1130
+    startLine: 1110
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -622,11 +622,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1131
+    startLine: 1111
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -651,11 +651,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1132
+    startLine: 1112
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -680,11 +680,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1133
+    startLine: 1113
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -709,11 +709,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1134
+    startLine: 1114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -738,11 +738,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXSystemServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXSystemServicesHelper.cs
-    startLine: 1136
+    startLine: 1116
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

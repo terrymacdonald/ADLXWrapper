@@ -17,11 +17,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanPoint
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 777
+    startLine: 691
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -49,11 +49,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FanSpeed
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 779
+    startLine: 693
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -78,11 +78,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Temperature
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 780
+    startLine: 694
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

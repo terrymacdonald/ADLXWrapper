@@ -25,11 +25,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDLUTDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2662
+    startLine: 2501
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -57,11 +57,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2664
+    startLine: 2503
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -86,11 +86,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceVividGamingSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2665
+    startLine: 2504
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -115,11 +115,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSceDynamicContrastSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2666
+    startLine: 2505
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -144,11 +144,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsUser3DLutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2667
+    startLine: 2506
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -173,11 +173,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSceDisabled
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2668
+    startLine: 2507
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -202,11 +202,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentSceVividGaming
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2669
+    startLine: 2508
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -231,11 +231,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDynamicContrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2670
+    startLine: 2509
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -260,11 +260,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentDynamicContrast
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2671
+    startLine: 2510
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -289,11 +289,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DynamicContrastRange
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2672
+    startLine: 2511
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -318,11 +318,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2674
+    startLine: 2513
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

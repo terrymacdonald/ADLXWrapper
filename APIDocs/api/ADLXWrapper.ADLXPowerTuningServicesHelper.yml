@@ -32,7 +32,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPowerTuningServicesHelper
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -108,7 +108,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
@@ -146,11 +146,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryIsGPUConnectSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -182,18 +182,18 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddPowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 186
+    startLine: 174
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Adds a power tuning change listener.
   example: []
   syntax:
-    content: public PowerTuningListenerHandle AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
+    content: public PowerTuningListenerHandle? AddPowerTuningEventListener(PowerTuningListenerHandle.PowerTuningChangedCallback callback)
     parameters:
     - id: callback
       type: ADLXWrapper.PowerTuningListenerHandle.PowerTuningChangedCallback
@@ -224,11 +224,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemovePowerTuningEventListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 204
+    startLine: 194
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -258,11 +258,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 224
+    startLine: 215
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -295,11 +295,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 251
+    startLine: 244
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -324,11 +324,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftMax
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 263
+    startLine: 258
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -357,11 +357,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 281
+    startLine: 269
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -394,11 +394,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 296
+    startLine: 285
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -423,11 +423,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplySmartShiftEco
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 315
+    startLine: 305
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -456,11 +456,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 348
+    startLine: 331
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -494,11 +494,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 360
+    startLine: 343
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -534,11 +534,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 436
+    startLine: 405
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -572,11 +572,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyManualPowerTuning
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 451
+    startLine: 420
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -612,11 +612,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 457
+    startLine: 426
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -642,11 +642,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 473
+    startLine: 442
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

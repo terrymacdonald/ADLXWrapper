@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ThreeDSettingsListenerHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1010
+    startLine: 990
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -69,11 +69,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1031
+    startLine: 1011
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -100,11 +100,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1037
+    startLine: 1017
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -128,11 +128,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1039
+    startLine: 1019
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -160,11 +160,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1048
+    startLine: 1028
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

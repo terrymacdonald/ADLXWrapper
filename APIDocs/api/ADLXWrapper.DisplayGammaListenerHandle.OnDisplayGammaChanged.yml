@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDisplayGammaChanged
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2993
+    startLine: 2832
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

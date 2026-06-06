@@ -22,6 +22,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native 3D settings services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
+        /// <param name="system">Optional native system pointer used to upgrade to v1/v2 interfaces.</param>
         public ADLX3DSettingsServicesHelper(IADLX3DSettingsServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));

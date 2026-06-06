@@ -18,6 +18,7 @@ namespace ADLXWrapper
         /// </summary>
         /// <param name="services">Native performance monitoring services pointer.</param>
         /// <param name="addRef">True to AddRef the pointer for this helper.</param>
+        /// <param name="system">Optional native system pointer used to upgrade to extended interfaces.</param>
         public ADLXPerformanceMonitoringServicesHelper(IADLXPerformanceMonitoringServices* services, bool addRef = true, IADLXSystem* system = null)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));

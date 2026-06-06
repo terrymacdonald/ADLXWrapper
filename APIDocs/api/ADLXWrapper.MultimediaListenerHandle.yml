@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultimediaListenerHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 550
+    startLine: 499
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 571
+    startLine: 520
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 577
+    startLine: 526
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 579
+    startLine: 528
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -155,11 +155,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 588
+    startLine: 537
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

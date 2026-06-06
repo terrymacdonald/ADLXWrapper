@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DisplayResolutionDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2814
+    startLine: 2653
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -51,11 +51,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResWidth
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2816
+    startLine: 2655
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,11 +80,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ResHeight
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2817
+    startLine: 2656
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -109,11 +109,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RefreshRate
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2818
+    startLine: 2657
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -138,11 +138,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2820
+    startLine: 2659
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

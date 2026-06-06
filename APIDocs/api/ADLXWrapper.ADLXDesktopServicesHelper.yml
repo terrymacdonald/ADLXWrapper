@@ -29,7 +29,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktopServicesHelper
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -67,7 +67,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -152,7 +152,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
@@ -186,11 +186,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 126
+    startLine: 118
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -224,11 +224,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 167
+    startLine: 159
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -258,11 +258,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 188
+    startLine: 172
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -303,11 +303,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateADLXDesktopsForGpu
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 252
+    startLine: 239
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -339,22 +339,22 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CreateEyefinityDesktop
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 299
+    startLine: 275
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Creates a new Eyefinity desktop using the simple Eyefinity interface.
   example: []
   syntax:
-    content: public EyefinityDesktopDto CreateEyefinityDesktop()
+    content: public EyefinityDesktopDto? CreateEyefinityDesktop()
     return:
-      type: ADLXWrapper.EyefinityDesktopDto
+      type: System.Nullable{ADLXWrapper.EyefinityDesktopDto}
       description: Information about the created Eyefinity desktop.
-    content.vb: Public Function CreateEyefinityDesktop() As EyefinityDesktopDto
+    content.vb: Public Function CreateEyefinityDesktop() As EyefinityDesktopDto?
   overload: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop*
   exceptions:
   - type: ADLXWrapper.ADLXException
@@ -377,11 +377,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DestroyAllEyefinityDesktops
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 323
+    startLine: 299
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -412,18 +412,18 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 349
+    startLine: 325
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Adds a desktop list change listener.
   example: []
   syntax:
-    content: public DesktopListListenerHandle AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
+    content: public DesktopListListenerHandle? AddDesktopListEventListener(DesktopListListenerHandle.OnDesktopListChanged callback)
     parameters:
     - id: callback
       type: ADLXWrapper.DesktopListListenerHandle.OnDesktopListChanged
@@ -454,11 +454,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 370
+    startLine: 348
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -492,19 +492,19 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSimpleEyefinity
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 467
+    startLine: 448
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public SimpleEyefinityDto GetSimpleEyefinity()
+    content: public SimpleEyefinityDto? GetSimpleEyefinity()
     return:
-      type: ADLXWrapper.SimpleEyefinityDto
-    content.vb: Public Function GetSimpleEyefinity() As SimpleEyefinityDto
+      type: System.Nullable{ADLXWrapper.SimpleEyefinityDto}
+    content.vb: Public Function GetSimpleEyefinity() As SimpleEyefinityDto?
   overload: ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity*
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLXDesktopServicesHelper.Dispose
@@ -520,11 +520,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 534
+    startLine: 515
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -550,11 +550,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 649
+    startLine: 635
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1058,13 +1058,52 @@ references:
   name: CreateEyefinityDesktop
   nameWithType: ADLXDesktopServicesHelper.CreateEyefinityDesktop
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.CreateEyefinityDesktop
-- uid: ADLXWrapper.EyefinityDesktopDto
-  commentId: T:ADLXWrapper.EyefinityDesktopDto
-  parent: ADLXWrapper
+- uid: System.Nullable{ADLXWrapper.EyefinityDesktopDto}
+  commentId: T:System.Nullable{ADLXWrapper.EyefinityDesktopDto}
+  parent: System
+  definition: System.Nullable`1
   href: ADLXWrapper.EyefinityDesktopDto.html
-  name: EyefinityDesktopDto
-  nameWithType: EyefinityDesktopDto
-  fullName: ADLXWrapper.EyefinityDesktopDto
+  name: EyefinityDesktopDto?
+  nameWithType: EyefinityDesktopDto?
+  fullName: ADLXWrapper.EyefinityDesktopDto?
+  spec.csharp:
+  - uid: ADLXWrapper.EyefinityDesktopDto
+    name: EyefinityDesktopDto
+    href: ADLXWrapper.EyefinityDesktopDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.EyefinityDesktopDto
+    name: EyefinityDesktopDto
+    href: ADLXWrapper.EyefinityDesktopDto.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.DestroyAllEyefinityDesktops
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_DestroyAllEyefinityDesktops
@@ -1119,13 +1158,24 @@ references:
   name: GetSimpleEyefinity
   nameWithType: ADLXDesktopServicesHelper.GetSimpleEyefinity
   fullName: ADLXWrapper.ADLXDesktopServicesHelper.GetSimpleEyefinity
-- uid: ADLXWrapper.SimpleEyefinityDto
-  commentId: T:ADLXWrapper.SimpleEyefinityDto
-  parent: ADLXWrapper
+- uid: System.Nullable{ADLXWrapper.SimpleEyefinityDto}
+  commentId: T:System.Nullable{ADLXWrapper.SimpleEyefinityDto}
+  parent: System
+  definition: System.Nullable`1
   href: ADLXWrapper.SimpleEyefinityDto.html
-  name: SimpleEyefinityDto
-  nameWithType: SimpleEyefinityDto
-  fullName: ADLXWrapper.SimpleEyefinityDto
+  name: SimpleEyefinityDto?
+  nameWithType: SimpleEyefinityDto?
+  fullName: ADLXWrapper.SimpleEyefinityDto?
+  spec.csharp:
+  - uid: ADLXWrapper.SimpleEyefinityDto
+    name: SimpleEyefinityDto
+    href: ADLXWrapper.SimpleEyefinityDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.SimpleEyefinityDto
+    name: SimpleEyefinityDto
+    href: ADLXWrapper.SimpleEyefinityDto.html
+  - name: '?'
 - uid: ADLXWrapper.ADLXDesktopServicesHelper.Dispose*
   commentId: Overload:ADLXWrapper.ADLXDesktopServicesHelper.Dispose
   href: ADLXWrapper.ADLXDesktopServicesHelper.html#ADLXWrapper_ADLXDesktopServicesHelper_Dispose

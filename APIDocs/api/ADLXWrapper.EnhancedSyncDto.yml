@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSyncDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 791
+    startLine: 771
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -50,11 +50,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 793
+    startLine: 773
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -79,11 +79,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 794
+    startLine: 774
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -108,11 +108,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 796
+    startLine: 776
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

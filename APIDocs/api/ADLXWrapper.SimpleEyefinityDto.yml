@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SimpleEyefinityDto
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 701
+    startLine: 687
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -48,11 +48,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 703
+    startLine: 689
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DesktopListListenerHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 721
+    startLine: 707
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -64,11 +64,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 742
+    startLine: 728
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,11 +95,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 748
+    startLine: 734
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 750
+    startLine: 736
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -155,11 +155,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 759
+    startLine: 745
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningChangedCallback
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 925
+    startLine: 839
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -28,7 +28,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX3DSettingsServicesHelper
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -66,11 +66,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -87,6 +87,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional native system pointer used to upgrade to v1/v2 interfaces.
     content.vb: Public Sub New(services As IADLX3DSettingsServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor*
   nameWithType.vb: ADLX3DSettingsServicesHelper.New(IADLX3DSettingsServices*, Boolean, IADLXSystem*)
@@ -106,18 +107,18 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 107
+    startLine: 101
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   summary: Adds a 3D settings change listener.
   example: []
   syntax:
-    content: public ThreeDSettingsListenerHandle Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
+    content: public ThreeDSettingsListenerHandle? Add3DSettingsEventListener(ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback callback)
     parameters:
     - id: callback
       type: ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
@@ -148,11 +149,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 125
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -182,11 +183,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 249
+    startLine: 231
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -218,11 +219,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 257
+    startLine: 239
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -256,11 +257,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 264
+    startLine: 246
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -292,11 +293,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 272
+    startLine: 254
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -330,11 +331,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 279
+    startLine: 261
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -366,11 +367,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 287
+    startLine: 269
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -404,11 +405,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 318
+    startLine: 300
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -434,11 +435,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 335
+    startLine: 317
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -463,11 +464,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 547
+    startLine: 528
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -491,11 +492,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 585
+    startLine: 573
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftMaxDto
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 556
+    startLine: 525
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,11 +54,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 558
+    startLine: 527
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,11 +83,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasMode
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 559
+    startLine: 528
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,11 +112,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 560
+    startLine: 529
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -141,11 +141,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BiasValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 561
+    startLine: 530
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -170,11 +170,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 563
+    startLine: 532
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

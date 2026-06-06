@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VideoUpscaleDto
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 493
+    startLine: 442
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -52,11 +52,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 495
+    startLine: 444
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -81,11 +81,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 496
+    startLine: 445
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -110,11 +110,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Sharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 497
+    startLine: 446
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -139,11 +139,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SharpnessRange
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 498
+    startLine: 447
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -168,11 +168,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 500
+    startLine: 449
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

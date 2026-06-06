@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SmartShiftEcoDto
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 595
+    startLine: 564
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -52,11 +52,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 597
+    startLine: 566
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -81,11 +81,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 598
+    startLine: 567
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -110,11 +110,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 600
+    startLine: 569
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

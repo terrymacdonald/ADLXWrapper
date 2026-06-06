@@ -19,11 +19,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetTuningDto
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 854
+    startLine: 768
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -51,11 +51,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 856
+    startLine: 770
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -80,11 +80,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentPreset
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 857
+    startLine: 771
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -109,11 +109,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SupportedPresets
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 858
+    startLine: 772
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -138,11 +138,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 860
+    startLine: 774
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

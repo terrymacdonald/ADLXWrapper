@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDesktopListChanged
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 723
+    startLine: 709
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

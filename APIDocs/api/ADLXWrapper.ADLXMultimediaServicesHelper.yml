@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXMultimediaServicesHelper
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
@@ -68,11 +68,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -89,6 +89,7 @@ items:
       description: True to AddRef the pointer for this helper.
     - id: system
       type: ADLXWrapper.IADLXSystem*
+      description: Optional native system pointer used to upgrade to extended interfaces.
     content.vb: Public Sub New(services As IADLXMultimediaServices*, addRef As Boolean = True, system As IADLXSystem* = Nothing)
   overload: ADLXWrapper.ADLXMultimediaServicesHelper.#ctor*
   nameWithType.vb: ADLXMultimediaServicesHelper.New(IADLXMultimediaServices*, Boolean, IADLXSystem*)
@@ -108,16 +109,16 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 102
+    startLine: 96
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
+    content: public MultimediaListenerHandle? AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)
     parameters:
     - id: callback
       type: ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
@@ -139,11 +140,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveMultimediaEventListener
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 118
+    startLine: 114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -173,11 +174,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 339
+    startLine: 285
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -209,11 +210,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoUpscale
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 347
+    startLine: 293
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -247,11 +248,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 354
+    startLine: 300
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -283,11 +284,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 372
+    startLine: 319
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -321,11 +322,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 379
+    startLine: 326
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -357,11 +358,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoUpscaleSharpness
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 397
+    startLine: 345
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -395,11 +396,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 404
+    startLine: 352
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -431,11 +432,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetVideoSuperResolution
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 412
+    startLine: 360
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -469,11 +470,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 419
+    startLine: 367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -505,11 +506,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetVideoSuperResolutionEnabled
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 437
+    startLine: 386
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -543,11 +544,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 468
+    startLine: 417
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -573,11 +574,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMultimediaServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXMultimediaServicesHelper.cs
-    startLine: 483
+    startLine: 432
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

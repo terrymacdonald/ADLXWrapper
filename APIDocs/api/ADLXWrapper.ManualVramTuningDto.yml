@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualVramTuningDto
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 783
+    startLine: 697
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -50,11 +50,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 785
+    startLine: 699
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -79,11 +79,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: States
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 786
+    startLine: 700
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -108,11 +108,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 788
+    startLine: 702
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

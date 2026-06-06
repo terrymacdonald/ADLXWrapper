@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasingDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 891
+    startLine: 871
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -50,11 +50,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 893
+    startLine: 873
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -79,11 +79,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 894
+    startLine: 874
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -108,11 +108,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 896
+    startLine: 876
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

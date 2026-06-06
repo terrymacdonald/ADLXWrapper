@@ -462,14 +462,12 @@ references:
   fullName: ADLXWrapper.DesktopDto
 - uid: ADLXWrapper.SimpleEyefinityDto
   commentId: T:ADLXWrapper.SimpleEyefinityDto
-  parent: ADLXWrapper
   href: ADLXWrapper.SimpleEyefinityDto.html
   name: SimpleEyefinityDto
   nameWithType: SimpleEyefinityDto
   fullName: ADLXWrapper.SimpleEyefinityDto
 - uid: ADLXWrapper.EyefinityDesktopDto
   commentId: T:ADLXWrapper.EyefinityDesktopDto
-  parent: ADLXWrapper
   href: ADLXWrapper.EyefinityDesktopDto.html
   name: EyefinityDesktopDto
   nameWithType: EyefinityDesktopDto

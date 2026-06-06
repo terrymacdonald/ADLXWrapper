@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/develop/apiSpec/new?filename=ADLXWrapper_ADLXMultimediaServicesHelper.md&amp;value=---%0Auid%3A%20ADLXWrapper.ADLXMultimediaServicesHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-reduced-exceptions/apiSpec/new?filename=ADLXWrapper_ADLXMultimediaServicesHelper.md&amp;value=---%0Auid%3A%20ADLXWrapper.ADLXMultimediaServicesHelper%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_ADLXMultimediaServicesHelper" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper" class="text-break">
-Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L12"><i class="bi bi-code-slash"></i></a>
+Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -160,7 +160,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper__ctor_ADLXWrapper_IADLXMultimediaServices__System_Boolean_ADLXWrapper_IADLXSystem__" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.#ctor(ADLXWrapper.IADLXMultimediaServices*,System.Boolean,ADLXWrapper.IADLXSystem*)">
   ADLXMultimediaServicesHelper(IADLXMultimediaServices*, bool, IADLXSystem*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a multimedia services helper from the native services interface.</p>
@@ -180,7 +180,8 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
     <dd><p>True to AddRef the pointer for this helper.</p>
 </dd>
     <dt><code>system</code> <a class="xref" href="ADLXWrapper.IADLXSystem.html">IADLXSystem</a>*</dt>
-    <dd></dd>
+    <dd><p>Optional native system pointer used to upgrade to extended interfaces.</p>
+</dd>
   </dl>
 
 
@@ -202,14 +203,14 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_AddMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_MultimediaChangedCallback_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.AddMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback)">
   AddMultimediaEventListener(MultimediaChangedCallback)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MultimediaListenerHandle AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)</code></pre>
+    <pre><code class="lang-csharp hljs">public MultimediaListenerHandle? AddMultimediaEventListener(MultimediaListenerHandle.MultimediaChangedCallback callback)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -238,7 +239,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_Dispose" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L469"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L418"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -265,7 +266,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_Finalize" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.Finalize">
   ~ADLXMultimediaServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L484"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L433"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -291,7 +292,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoSuperResolution_System_Int32_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoSuperResolution(System.Int32)">
   GetVideoSuperResolution(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L405"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L353"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets video super resolution info for the GPU with the specified unique id.</p>
@@ -328,7 +329,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_GetVideoUpscale_System_Int32_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.GetVideoUpscale(System.Int32)">
   GetVideoUpscale(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L286"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets video upscale info for the GPU with the specified unique id.</p>
@@ -365,7 +366,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_RemoveMultimediaEventListener_ADLXWrapper_MultimediaListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.RemoveMultimediaEventListener(ADLXWrapper.MultimediaListenerHandle,System.Boolean)">
   RemoveMultimediaEventListener(MultimediaListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -398,7 +399,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoSuperResolutionEnabled_System_Int32_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoSuperResolutionEnabled(System.Int32,System.Boolean)">
   SetVideoSuperResolutionEnabled(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L420"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets video super resolution enabled state for the GPU with the specified unique id.</p>
@@ -432,7 +433,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleEnabled_System_Int32_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleEnabled(System.Int32,System.Boolean)">
   SetVideoUpscaleEnabled(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L355"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L301"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets video upscale enabled state for the GPU with the specified unique id.</p>
@@ -466,7 +467,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_SetVideoUpscaleSharpness_System_Int32_System_Int32_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.SetVideoUpscaleSharpness(System.Int32,System.Int32)">
   SetVideoUpscaleSharpness(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L380"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L327"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sets video upscale sharpness for the GPU with the specified unique id.</p>
@@ -500,7 +501,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoSuperResolution_System_Int32_ADLXWrapper_VideoSuperResolutionDto__" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoSuperResolution(System.Int32,ADLXWrapper.VideoSuperResolutionDto@)">
   TryGetVideoSuperResolution(int, out VideoSuperResolutionDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L413"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L361"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get video super resolution info for the GPU with the specified unique id.</p>
@@ -539,7 +540,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_TryGetVideoUpscale_System_Int32_ADLXWrapper_VideoUpscaleDto__" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.TryGetVideoUpscale(System.Int32,ADLXWrapper.VideoUpscaleDto@)">
   TryGetVideoUpscale(int, out VideoUpscaleDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L294"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get video upscale info for the GPU with the specified unique id.</p>
@@ -578,7 +579,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoSuperResolutionEnabled_System_Int32_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoSuperResolutionEnabled(System.Int32,System.Boolean)">
   TrySetVideoSuperResolutionEnabled(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L438"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L387"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to set video super resolution enabled state for the GPU with the specified unique id.</p>
@@ -617,7 +618,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleEnabled_System_Int32_System_Boolean_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleEnabled(System.Int32,System.Boolean)">
   TrySetVideoUpscaleEnabled(int, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L373"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L320"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to set video upscale enabled state for the GPU with the specified unique id.</p>
@@ -656,7 +657,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLXMultimediaServicesHelper_TrySetVideoUpscaleSharpness_System_Int32_System_Int32_" data-uid="ADLXWrapper.ADLXMultimediaServicesHelper.TrySetVideoUpscaleSharpness(System.Int32,System.Int32)">
   TrySetVideoUpscaleSharpness(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L398"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L346"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to set video upscale sharpness for the GPU with the specified unique id.</p>
@@ -695,7 +696,7 @@ Class ADLXMultimediaServicesHelper  <a class="header-action link-secondary" titl
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/develop/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L12" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXMultimediaServicesHelper.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

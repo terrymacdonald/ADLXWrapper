@@ -18,11 +18,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFilteringDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 915
+    startLine: 895
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -50,11 +50,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 917
+    startLine: 897
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -79,11 +79,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Level
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 918
+    startLine: 898
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -108,11 +108,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 920
+    startLine: 900
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

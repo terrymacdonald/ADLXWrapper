@@ -20,11 +20,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PresetKind
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 891
+    startLine: 805
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -45,11 +45,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerSaver
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 893
+    startLine: 807
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -71,11 +71,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Quiet
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 894
+    startLine: 808
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -97,11 +97,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Balanced
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 895
+    startLine: 809
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,11 +123,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Turbo
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 896
+    startLine: 810
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -149,11 +149,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-      branch: develop
+      branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Rage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 897
+    startLine: 811
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
