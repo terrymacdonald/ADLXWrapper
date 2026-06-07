@@ -144,9 +144,9 @@ Struct ManualFanTuningDto  <a class="header-action link-secondary" title="View s
 
   <a id="ADLXWrapper_ManualFanTuningDto__ctor_" data-uid="ADLXWrapper.ManualFanTuningDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_ManualFanTuningDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_FanPoint__" data-uid="ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint})">
-  ManualFanTuningDto(bool, bool, bool, IReadOnlyList&lt;FanPoint&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L651"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ManualFanTuningDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_FanPoint__ADLXWrapper_IntRangeDto_ADLXWrapper_IntRangeDto_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_" data-uid="ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint},ADLXWrapper.IntRangeDto,ADLXWrapper.IntRangeDto,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)">
+  ManualFanTuningDto(bool, bool, bool, IReadOnlyList&lt;FanPoint&gt;, IntRangeDto, IntRangeDto, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L668"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct ManualFanTuningDto  <a class="header-action link-secondary" title="View s
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList&lt;FanPoint&gt; fanPoints)</code></pre>
+public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList&lt;FanPoint&gt; fanPoints, IntRangeDto speedRange, IntRangeDto temperatureRange, bool isMinAcousticLimitSupported, IntRangeDto minAcousticLimitRange, int minAcousticLimit, int minAcousticLimitDefault, bool isMinFanSpeedSupported, IntRangeDto minFanSpeedRange, int minFanSpeed, int minFanSpeedDefault, bool isTargetFanSpeedSupported, IntRangeDto targetFanSpeedRange, int targetFanSpeed, int targetFanSpeedDefault)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -166,6 +166,34 @@ public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRP
     <dt><code>zeroRPMEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
     <dt><code>fanPoints</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.FanPoint.html">FanPoint</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>speedRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>temperatureRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>isMinAcousticLimitSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>minAcousticLimitRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>minAcousticLimit</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>minAcousticLimitDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>isMinFanSpeedSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>minFanSpeedRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>minFanSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>minFanSpeedDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>isTargetFanSpeedSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>targetFanSpeedRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>targetFanSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>targetFanSpeedDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -215,6 +243,68 @@ public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRP
 
 
 
+  <a id="ADLXWrapper_ManualFanTuningDto_IsMinAcousticLimitSupported_" data-uid="ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_IsMinAcousticLimitSupported" data-uid="ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported">
+  IsMinAcousticLimitSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L655"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMinAcousticLimitSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_IsMinFanSpeedSupported_" data-uid="ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_IsMinFanSpeedSupported" data-uid="ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported">
+  IsMinFanSpeedSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L659"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMinFanSpeedSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ManualFanTuningDto_IsSupported_" data-uid="ADLXWrapper.ManualFanTuningDto.IsSupported*"></a>
 
   <h3 id="ADLXWrapper_ManualFanTuningDto_IsSupported" data-uid="ADLXWrapper.ManualFanTuningDto.IsSupported">
@@ -227,6 +317,37 @@ public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRP
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_IsTargetFanSpeedSupported_" data-uid="ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_IsTargetFanSpeedSupported" data-uid="ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported">
+  IsTargetFanSpeedSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L663"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTargetFanSpeedSupported { get; init; }</code></pre>
   </div>
 
 
@@ -267,6 +388,349 @@ public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRP
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimit_" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimit*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimit" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimit">
+  MinAcousticLimit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L657"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinAcousticLimit { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimitDefault_" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimitDefault" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault">
+  MinAcousticLimitDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L658"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinAcousticLimitDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimitRange_" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinAcousticLimitRange" data-uid="ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange">
+  MinAcousticLimitRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L656"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto MinAcousticLimitRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinFanSpeed_" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeed*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinFanSpeed" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeed">
+  MinFanSpeed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L661"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinFanSpeed { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinFanSpeedDefault_" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinFanSpeedDefault" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault">
+  MinFanSpeedDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L662"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinFanSpeedDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_MinFanSpeedRange_" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_MinFanSpeedRange" data-uid="ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange">
+  MinFanSpeedRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L660"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto MinFanSpeedRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_SpeedRange_" data-uid="ADLXWrapper.ManualFanTuningDto.SpeedRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_SpeedRange" data-uid="ADLXWrapper.ManualFanTuningDto.SpeedRange">
+  SpeedRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L651"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Valid speed range for fan curve points (percent).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto SpeedRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeed_" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeed*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeed" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeed">
+  TargetFanSpeed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L665"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TargetFanSpeed { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeedDefault_" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeedDefault" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault">
+  TargetFanSpeedDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L666"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TargetFanSpeedDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeedRange_" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_TargetFanSpeedRange" data-uid="ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange">
+  TargetFanSpeedRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L664"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto TargetFanSpeedRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualFanTuningDto_TemperatureRange_" data-uid="ADLXWrapper.ManualFanTuningDto.TemperatureRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualFanTuningDto_TemperatureRange" data-uid="ADLXWrapper.ManualFanTuningDto.TemperatureRange">
+  TemperatureRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L653"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Valid temperature range for fan curve points (degrees Celsius).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto TemperatureRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
   </dl>
 

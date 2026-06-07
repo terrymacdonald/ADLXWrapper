@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Struct BoostDto | ADLXWrapper </title>
+      <title>Struct ChillDto | ADLXWrapper </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Struct BoostDto | ADLXWrapper ">
+      <meta name="title" content="Struct ChillDto | ADLXWrapper ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-reduced-exceptions/apiSpec/new?filename=ADLXWrapper_BoostDto.md&amp;value=---%0Auid%3A%20ADLXWrapper.BoostDto%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-reduced-exceptions/apiSpec/new?filename=ADLXWrapper_ChillDto.md&amp;value=---%0Auid%3A%20ADLXWrapper.ChillDto%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ADLXWrapper.BoostDto">
+        <article data-uid="ADLXWrapper.ChillDto">
 
 
 
-  <h1 id="ADLXWrapper_BoostDto" data-uid="ADLXWrapper.BoostDto" class="text-break">
-Struct BoostDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L899"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ADLXWrapper_ChillDto" data-uid="ADLXWrapper.ChillDto" class="text-break">
+Struct ChillDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1208"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Struct BoostDto  <a class="header-action link-secondary" title="View source" hre
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly struct BoostDto</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly struct ChillDto</code></pre>
   </div>
 
 
@@ -142,11 +142,11 @@ Struct BoostDto  <a class="header-action link-secondary" title="View source" hre
 </h2>
 
 
-  <a id="ADLXWrapper_BoostDto__ctor_" data-uid="ADLXWrapper.BoostDto.#ctor*"></a>
+  <a id="ADLXWrapper_ChillDto__ctor_" data-uid="ADLXWrapper.ChillDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_BoostDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_" data-uid="ADLXWrapper.BoostDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)">
-  BoostDto(bool, bool, bool, int, IntRangeDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L907"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ChillDto__ctor_System_Boolean_System_Boolean_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_" data-uid="ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)">
+  ChillDto(bool, bool, int, int, IntRangeDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1216"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct BoostDto  <a class="header-action link-secondary" title="View source" hre
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int minResolution, IntRangeDto resolutionRange)</code></pre>
+public ChillDto(bool isSupported, bool isEnabled, int minFps, int maxFps, IntRangeDto fpsRange)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -163,11 +163,11 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
     <dd></dd>
     <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
-    <dt><code>isMinResSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>minFps</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>minResolution</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>maxFps</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>resolutionRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dt><code>fpsRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
   </dl>
 
@@ -186,11 +186,42 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 </h2>
 
 
-  <a id="ADLXWrapper_BoostDto_IsEnabled_" data-uid="ADLXWrapper.BoostDto.IsEnabled*"></a>
+  <a id="ADLXWrapper_ChillDto_FpsRange_" data-uid="ADLXWrapper.ChillDto.FpsRange*"></a>
 
-  <h3 id="ADLXWrapper_BoostDto_IsEnabled" data-uid="ADLXWrapper.BoostDto.IsEnabled">
+  <h3 id="ADLXWrapper_ChillDto_FpsRange" data-uid="ADLXWrapper.ChillDto.FpsRange">
+  FpsRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto FpsRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ChillDto_IsEnabled_" data-uid="ADLXWrapper.ChillDto.IsEnabled*"></a>
+
+  <h3 id="ADLXWrapper_ChillDto_IsEnabled" data-uid="ADLXWrapper.ChillDto.IsEnabled">
   IsEnabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L902"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1211"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -217,42 +248,11 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 
 
 
-  <a id="ADLXWrapper_BoostDto_IsMinResSupported_" data-uid="ADLXWrapper.BoostDto.IsMinResSupported*"></a>
+  <a id="ADLXWrapper_ChillDto_IsSupported_" data-uid="ADLXWrapper.ChillDto.IsSupported*"></a>
 
-  <h3 id="ADLXWrapper_BoostDto_IsMinResSupported" data-uid="ADLXWrapper.BoostDto.IsMinResSupported">
-  IsMinResSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L903"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsMinResSupported { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ADLXWrapper_BoostDto_IsSupported_" data-uid="ADLXWrapper.BoostDto.IsSupported*"></a>
-
-  <h3 id="ADLXWrapper_BoostDto_IsSupported" data-uid="ADLXWrapper.BoostDto.IsSupported">
+  <h3 id="ADLXWrapper_ChillDto_IsSupported" data-uid="ADLXWrapper.ChillDto.IsSupported">
   IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L901"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1210"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -279,18 +279,18 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 
 
 
-  <a id="ADLXWrapper_BoostDto_MinResolution_" data-uid="ADLXWrapper.BoostDto.MinResolution*"></a>
+  <a id="ADLXWrapper_ChillDto_MaxFps_" data-uid="ADLXWrapper.ChillDto.MaxFps*"></a>
 
-  <h3 id="ADLXWrapper_BoostDto_MinResolution" data-uid="ADLXWrapper.BoostDto.MinResolution">
-  MinResolution
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L904"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ChillDto_MaxFps" data-uid="ADLXWrapper.ChillDto.MaxFps">
+  MaxFps
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1213"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int MinResolution { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int MaxFps { get; init; }</code></pre>
   </div>
 
 
@@ -310,18 +310,18 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 
 
 
-  <a id="ADLXWrapper_BoostDto_ResolutionRange_" data-uid="ADLXWrapper.BoostDto.ResolutionRange*"></a>
+  <a id="ADLXWrapper_ChillDto_MinFps_" data-uid="ADLXWrapper.ChillDto.MinFps*"></a>
 
-  <h3 id="ADLXWrapper_BoostDto_ResolutionRange" data-uid="ADLXWrapper.BoostDto.ResolutionRange">
-  ResolutionRange
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L905"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ChillDto_MinFps" data-uid="ADLXWrapper.ChillDto.MinFps">
+  MinFps
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1212"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IntRangeDto ResolutionRange { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int MinFps { get; init; }</code></pre>
   </div>
 
 
@@ -330,7 +330,7 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -345,7 +345,7 @@ public BoostDto(bool isSupported, bool isEnabled, bool isMinResSupported, int mi
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L899" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1208" class="edit-link">Edit this page</a>
         </div>
 
 

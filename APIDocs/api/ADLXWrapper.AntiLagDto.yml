@@ -5,9 +5,10 @@ items:
   id: AntiLagDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)
+  - ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})
   - ADLXWrapper.AntiLagDto.IsEnabled
   - ADLXWrapper.AntiLagDto.IsSupported
+  - ADLXWrapper.AntiLagDto.Level
   langs:
   - csharp
   - vb
@@ -22,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiLagDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 653
+    startLine: 853
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +55,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 655
+    startLine: 855
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +84,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 656
+    startLine: 856
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -94,16 +95,52 @@ items:
       type: System.Boolean
     content.vb: Public Property IsEnabled As Boolean
   overload: ADLXWrapper.AntiLagDto.IsEnabled*
-- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)
-  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)
-  id: '#ctor(System.Boolean,System.Boolean)'
+- uid: ADLXWrapper.AntiLagDto.Level
+  commentId: P:ADLXWrapper.AntiLagDto.Level
+  id: Level
   parent: ADLXWrapper.AntiLagDto
   langs:
   - csharp
   - vb
-  name: AntiLagDto(bool, bool)
-  nameWithType: AntiLagDto.AntiLagDto(bool, bool)
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool)
+  name: Level
+  nameWithType: AntiLagDto.Level
+  fullName: ADLXWrapper.AntiLagDto.Level
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Level
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 862
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: >-
+    Anti-Lag mode: <xref href="ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAG" data-throw-if-not-resolved="false"></xref> (classic) or
+
+    <xref href="ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAGNEXT" data-throw-if-not-resolved="false"></xref> (Anti-Lag+).
+
+    Null when <xref href="ADLXWrapper.IADLX3DAntiLag1" data-throw-if-not-resolved="false"></xref> is not available.
+  example: []
+  syntax:
+    content: public ADLX_ANTILAG_STATE? Level { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE}
+    content.vb: Public Property Level As ADLX_ANTILAG_STATE?
+  overload: ADLXWrapper.AntiLagDto.Level*
+- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})
+  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})
+  id: '#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})'
+  parent: ADLXWrapper.AntiLagDto
+  langs:
+  - csharp
+  - vb
+  name: AntiLagDto(bool, bool, ADLX_ANTILAG_STATE?)
+  nameWithType: AntiLagDto.AntiLagDto(bool, bool, ADLX_ANTILAG_STATE?)
+  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool, ADLXWrapper.ADLX_ANTILAG_STATE?)
   type: Constructor
   source:
     remote:
@@ -112,7 +149,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 658
+    startLine: 864
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -120,24 +157,26 @@ items:
     content: >-
       [JsonConstructor]
 
-      public AntiLagDto(bool isSupported, bool isEnabled)
+      public AntiLagDto(bool isSupported, bool isEnabled, ADLX_ANTILAG_STATE? level)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: isEnabled
       type: System.Boolean
+    - id: level
+      type: System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE}
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean)
+      Public Sub New(isSupported As Boolean, isEnabled As Boolean, level As ADLX_ANTILAG_STATE?)
   overload: ADLXWrapper.AntiLagDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: AntiLagDto.New(Boolean, Boolean)
-  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean)
-  name.vb: New(Boolean, Boolean)
+  nameWithType.vb: AntiLagDto.New(Boolean, Boolean, ADLX_ANTILAG_STATE?)
+  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean, ADLXWrapper.ADLX_ANTILAG_STATE?)
+  name.vb: New(Boolean, Boolean, ADLX_ANTILAG_STATE?)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -385,9 +424,79 @@ references:
   name: IsEnabled
   nameWithType: AntiLagDto.IsEnabled
   fullName: ADLXWrapper.AntiLagDto.IsEnabled
+- uid: ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAG
+  commentId: F:ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAG
+  href: ADLXWrapper.ADLX_ANTILAG_STATE.html#ADLXWrapper_ADLX_ANTILAG_STATE_ANTILAG
+  name: ANTILAG
+  nameWithType: ADLX_ANTILAG_STATE.ANTILAG
+  fullName: ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAG
+- uid: ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAGNEXT
+  commentId: F:ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAGNEXT
+  href: ADLXWrapper.ADLX_ANTILAG_STATE.html#ADLXWrapper_ADLX_ANTILAG_STATE_ANTILAGNEXT
+  name: ANTILAGNEXT
+  nameWithType: ADLX_ANTILAG_STATE.ANTILAGNEXT
+  fullName: ADLXWrapper.ADLX_ANTILAG_STATE.ANTILAGNEXT
+- uid: ADLXWrapper.IADLX3DAntiLag1
+  commentId: T:ADLXWrapper.IADLX3DAntiLag1
+  href: ADLXWrapper.IADLX3DAntiLag1.html
+  name: IADLX3DAntiLag1
+  nameWithType: IADLX3DAntiLag1
+  fullName: ADLXWrapper.IADLX3DAntiLag1
+- uid: ADLXWrapper.AntiLagDto.Level*
+  commentId: Overload:ADLXWrapper.AntiLagDto.Level
+  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_Level
+  name: Level
+  nameWithType: AntiLagDto.Level
+  fullName: ADLXWrapper.AntiLagDto.Level
+- uid: System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE}
+  commentId: T:System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ADLX_ANTILAG_STATE.html
+  name: ADLX_ANTILAG_STATE?
+  nameWithType: ADLX_ANTILAG_STATE?
+  fullName: ADLXWrapper.ADLX_ANTILAG_STATE?
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_ANTILAG_STATE
+    name: ADLX_ANTILAG_STATE
+    href: ADLXWrapper.ADLX_ANTILAG_STATE.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_ANTILAG_STATE
+    name: ADLX_ANTILAG_STATE
+    href: ADLXWrapper.ADLX_ANTILAG_STATE.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ADLXWrapper.AntiLagDto.#ctor*
   commentId: Overload:ADLXWrapper.AntiLagDto.#ctor
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_
+  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Nullable_ADLXWrapper_ADLX_ANTILAG_STATE__
   name: AntiLagDto
   nameWithType: AntiLagDto.AntiLagDto
   fullName: ADLXWrapper.AntiLagDto.AntiLagDto

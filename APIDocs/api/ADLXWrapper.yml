@@ -87,6 +87,7 @@ items:
   - ADLXWrapper.AntiLagDto
   - ADLXWrapper.AutoTuningDto
   - ADLXWrapper.BoostDto
+  - ADLXWrapper.ChillDto
   - ADLXWrapper.ComPtr`1
   - ADLXWrapper.ConnectivityExperienceDto
   - ADLXWrapper.CustomColorDto
@@ -273,12 +274,14 @@ items:
   - ADLXWrapper.IADLXSystemMetricsSupport1
   - ADLXWrapper.IADLXVideoSuperResolution
   - ADLXWrapper.IADLXVideoUpscale
+  - ADLXWrapper.ImageSharpenDesktopDto
   - ADLXWrapper.IntRangeDto
   - ADLXWrapper.LuidDto
   - ADLXWrapper.ManualFanTuningDto
   - ADLXWrapper.ManualGfxTuningDto
   - ADLXWrapper.ManualPowerTuningDto
   - ADLXWrapper.ManualVramTuningDto
+  - ADLXWrapper.MorphologicalAntiAliasingDto
   - ADLXWrapper.MultimediaListenerHandle
   - ADLXWrapper.MultimediaListenerHandle.MultimediaChangedCallback
   - ADLXWrapper.PerformanceMonitoringSettingsDto
@@ -396,6 +399,27 @@ references:
   name: RadeonSuperResolutionDto
   nameWithType: RadeonSuperResolutionDto
   fullName: ADLXWrapper.RadeonSuperResolutionDto
+- uid: ADLXWrapper.ChillDto
+  commentId: T:ADLXWrapper.ChillDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.ChillDto.html
+  name: ChillDto
+  nameWithType: ChillDto
+  fullName: ADLXWrapper.ChillDto
+- uid: ADLXWrapper.MorphologicalAntiAliasingDto
+  commentId: T:ADLXWrapper.MorphologicalAntiAliasingDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.MorphologicalAntiAliasingDto.html
+  name: MorphologicalAntiAliasingDto
+  nameWithType: MorphologicalAntiAliasingDto
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto
+- uid: ADLXWrapper.ImageSharpenDesktopDto
+  commentId: T:ADLXWrapper.ImageSharpenDesktopDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.ImageSharpenDesktopDto.html
+  name: ImageSharpenDesktopDto
+  nameWithType: ImageSharpenDesktopDto
+  fullName: ADLXWrapper.ImageSharpenDesktopDto
 - uid: ADLXWrapper.ThreeDSettingsListenerHandle
   commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle
   parent: ADLXWrapper

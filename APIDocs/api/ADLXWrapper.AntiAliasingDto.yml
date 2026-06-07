@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasingDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 871
+    startLine: 1092
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 873
+    startLine: 1094
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 874
+    startLine: 1095
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 876
+    startLine: 1097
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

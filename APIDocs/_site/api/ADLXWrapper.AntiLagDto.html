@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_AntiLagDto" data-uid="ADLXWrapper.AntiLagDto" class="text-break">
-Struct AntiLagDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L654"><i class="bi bi-code-slash"></i></a>
+Struct AntiLagDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L854"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,9 +144,9 @@ Struct AntiLagDto  <a class="header-action link-secondary" title="View source" h
 
   <a id="ADLXWrapper_AntiLagDto__ctor_" data-uid="ADLXWrapper.AntiLagDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_" data-uid="ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean)">
-  AntiLagDto(bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L659"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Nullable_ADLXWrapper_ADLX_ANTILAG_STATE__" data-uid="ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Nullable{ADLXWrapper.ADLX_ANTILAG_STATE})">
+  AntiLagDto(bool, bool, ADLX_ANTILAG_STATE?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L865"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct AntiLagDto  <a class="header-action link-secondary" title="View source" h
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public AntiLagDto(bool isSupported, bool isEnabled)</code></pre>
+public AntiLagDto(bool isSupported, bool isEnabled, ADLX_ANTILAG_STATE? level)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -162,6 +162,8 @@ public AntiLagDto(bool isSupported, bool isEnabled)</code></pre>
     <dt><code>isSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
     <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>level</code> <a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html">ADLX_ANTILAG_STATE</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -184,7 +186,7 @@ public AntiLagDto(bool isSupported, bool isEnabled)</code></pre>
 
   <h3 id="ADLXWrapper_AntiLagDto_IsEnabled" data-uid="ADLXWrapper.AntiLagDto.IsEnabled">
   IsEnabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L657"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L857"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -215,7 +217,7 @@ public AntiLagDto(bool isSupported, bool isEnabled)</code></pre>
 
   <h3 id="ADLXWrapper_AntiLagDto_IsSupported" data-uid="ADLXWrapper.AntiLagDto.IsSupported">
   IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L656"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L856"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,11 +244,45 @@ public AntiLagDto(bool isSupported, bool isEnabled)</code></pre>
 
 
 
+  <a id="ADLXWrapper_AntiLagDto_Level_" data-uid="ADLXWrapper.AntiLagDto.Level*"></a>
+
+  <h3 id="ADLXWrapper_AntiLagDto_Level" data-uid="ADLXWrapper.AntiLagDto.Level">
+  Level
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L863"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Anti-Lag mode: <a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html#ADLXWrapper_ADLX_ANTILAG_STATE_ANTILAG">ANTILAG</a> (classic) or
+<a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html#ADLXWrapper_ADLX_ANTILAG_STATE_ANTILAGNEXT">ANTILAGNEXT</a> (Anti-Lag+).
+Null when <a class="xref" href="ADLXWrapper.IADLX3DAntiLag1.html">IADLX3DAntiLag1</a> is not available.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_ANTILAG_STATE? Level { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html">ADLX_ANTILAG_STATE</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L654" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L854" class="edit-link">Edit this page</a>
         </div>
 
 

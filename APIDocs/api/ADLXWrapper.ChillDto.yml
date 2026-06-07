@@ -1,36 +1,37 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.FrameRateTargetControlDto
-  commentId: T:ADLXWrapper.FrameRateTargetControlDto
-  id: FrameRateTargetControlDto
+- uid: ADLXWrapper.ChillDto
+  commentId: T:ADLXWrapper.ChillDto
+  id: ChillDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  - ADLXWrapper.FrameRateTargetControlDto.Fps
-  - ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  - ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  - ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  - ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)
+  - ADLXWrapper.ChillDto.FpsRange
+  - ADLXWrapper.ChillDto.IsEnabled
+  - ADLXWrapper.ChillDto.IsSupported
+  - ADLXWrapper.ChillDto.MaxFps
+  - ADLXWrapper.ChillDto.MinFps
   langs:
   - csharp
   - vb
-  name: FrameRateTargetControlDto
-  nameWithType: FrameRateTargetControlDto
-  fullName: ADLXWrapper.FrameRateTargetControlDto
+  name: ChillDto
+  nameWithType: ChillDto
+  fullName: ADLXWrapper.ChillDto
   type: Struct
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
       branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: FrameRateTargetControlDto
+    id: ChillDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1047
+    startLine: 1207
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public readonly struct FrameRateTargetControlDto
-    content.vb: Public Structure FrameRateTargetControlDto
+    content: public readonly struct ChillDto
+    content.vb: Public Structure ChillDto
   inheritedMembers:
   - System.ValueType.Equals(System.Object)
   - System.ValueType.GetHashCode
@@ -38,16 +39,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsSupported
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.IsSupported
+- uid: ADLXWrapper.ChillDto.IsSupported
+  commentId: P:ADLXWrapper.ChillDto.IsSupported
   id: IsSupported
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper.ChillDto
   langs:
   - csharp
   - vb
   name: IsSupported
-  nameWithType: FrameRateTargetControlDto.IsSupported
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  nameWithType: ChillDto.IsSupported
+  fullName: ADLXWrapper.ChillDto.IsSupported
   type: Property
   source:
     remote:
@@ -56,7 +57,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1049
+    startLine: 1209
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,17 +67,17 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Property IsSupported As Boolean
-  overload: ADLXWrapper.FrameRateTargetControlDto.IsSupported*
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.IsEnabled
+  overload: ADLXWrapper.ChillDto.IsSupported*
+- uid: ADLXWrapper.ChillDto.IsEnabled
+  commentId: P:ADLXWrapper.ChillDto.IsEnabled
   id: IsEnabled
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper.ChillDto
   langs:
   - csharp
   - vb
   name: IsEnabled
-  nameWithType: FrameRateTargetControlDto.IsEnabled
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
+  nameWithType: ChillDto.IsEnabled
+  fullName: ADLXWrapper.ChillDto.IsEnabled
   type: Property
   source:
     remote:
@@ -85,7 +86,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1050
+    startLine: 1210
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,46 +96,75 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Property IsEnabled As Boolean
-  overload: ADLXWrapper.FrameRateTargetControlDto.IsEnabled*
-- uid: ADLXWrapper.FrameRateTargetControlDto.Fps
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.Fps
-  id: Fps
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  overload: ADLXWrapper.ChillDto.IsEnabled*
+- uid: ADLXWrapper.ChillDto.MinFps
+  commentId: P:ADLXWrapper.ChillDto.MinFps
+  id: MinFps
+  parent: ADLXWrapper.ChillDto
   langs:
   - csharp
   - vb
-  name: Fps
-  nameWithType: FrameRateTargetControlDto.Fps
-  fullName: ADLXWrapper.FrameRateTargetControlDto.Fps
+  name: MinFps
+  nameWithType: ChillDto.MinFps
+  fullName: ADLXWrapper.ChillDto.MinFps
   type: Property
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
       branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Fps
+    id: MinFps
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1051
+    startLine: 1211
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int Fps { get; init; }
+    content: public int MinFps { get; init; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public Property Fps As Integer
-  overload: ADLXWrapper.FrameRateTargetControlDto.Fps*
-- uid: ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.FpsRange
+    content.vb: Public Property MinFps As Integer
+  overload: ADLXWrapper.ChillDto.MinFps*
+- uid: ADLXWrapper.ChillDto.MaxFps
+  commentId: P:ADLXWrapper.ChillDto.MaxFps
+  id: MaxFps
+  parent: ADLXWrapper.ChillDto
+  langs:
+  - csharp
+  - vb
+  name: MaxFps
+  nameWithType: ChillDto.MaxFps
+  fullName: ADLXWrapper.ChillDto.MaxFps
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxFps
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 1212
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MaxFps { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxFps As Integer
+  overload: ADLXWrapper.ChillDto.MaxFps*
+- uid: ADLXWrapper.ChillDto.FpsRange
+  commentId: P:ADLXWrapper.ChillDto.FpsRange
   id: FpsRange
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper.ChillDto
   langs:
   - csharp
   - vb
   name: FpsRange
-  nameWithType: FrameRateTargetControlDto.FpsRange
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FpsRange
+  nameWithType: ChillDto.FpsRange
+  fullName: ADLXWrapper.ChillDto.FpsRange
   type: Property
   source:
     remote:
@@ -143,7 +173,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FpsRange
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1052
+    startLine: 1213
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -153,17 +183,17 @@ items:
     return:
       type: ADLXWrapper.IntRangeDto
     content.vb: Public Property FpsRange As IntRangeDto
-  overload: ADLXWrapper.FrameRateTargetControlDto.FpsRange*
-- uid: ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  commentId: M:ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  id: '#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)'
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  overload: ADLXWrapper.ChillDto.FpsRange*
+- uid: ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)
+  commentId: M:ADLXWrapper.ChillDto.#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)
+  id: '#ctor(System.Boolean,System.Boolean,System.Int32,System.Int32,ADLXWrapper.IntRangeDto)'
+  parent: ADLXWrapper.ChillDto
   langs:
   - csharp
   - vb
-  name: FrameRateTargetControlDto(bool, bool, int, IntRangeDto)
-  nameWithType: FrameRateTargetControlDto.FrameRateTargetControlDto(bool, bool, int, IntRangeDto)
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FrameRateTargetControlDto(bool, bool, int, ADLXWrapper.IntRangeDto)
+  name: ChillDto(bool, bool, int, int, IntRangeDto)
+  nameWithType: ChillDto.ChillDto(bool, bool, int, int, IntRangeDto)
+  fullName: ADLXWrapper.ChillDto.ChillDto(bool, bool, int, int, ADLXWrapper.IntRangeDto)
   type: Constructor
   source:
     remote:
@@ -172,7 +202,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1054
+    startLine: 1215
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -180,28 +210,30 @@ items:
     content: >-
       [JsonConstructor]
 
-      public FrameRateTargetControlDto(bool isSupported, bool isEnabled, int fps, IntRangeDto fpsRange)
+      public ChillDto(bool isSupported, bool isEnabled, int minFps, int maxFps, IntRangeDto fpsRange)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: isEnabled
       type: System.Boolean
-    - id: fps
+    - id: minFps
+      type: System.Int32
+    - id: maxFps
       type: System.Int32
     - id: fpsRange
       type: ADLXWrapper.IntRangeDto
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean, fps As Integer, fpsRange As IntRangeDto)
-  overload: ADLXWrapper.FrameRateTargetControlDto.#ctor*
+      Public Sub New(isSupported As Boolean, isEnabled As Boolean, minFps As Integer, maxFps As Integer, fpsRange As IntRangeDto)
+  overload: ADLXWrapper.ChillDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: FrameRateTargetControlDto.New(Boolean, Boolean, Integer, IntRangeDto)
-  fullName.vb: ADLXWrapper.FrameRateTargetControlDto.New(Boolean, Boolean, Integer, ADLXWrapper.IntRangeDto)
-  name.vb: New(Boolean, Boolean, Integer, IntRangeDto)
+  nameWithType.vb: ChillDto.New(Boolean, Boolean, Integer, Integer, IntRangeDto)
+  fullName.vb: ADLXWrapper.ChillDto.New(Boolean, Boolean, Integer, Integer, ADLXWrapper.IntRangeDto)
+  name.vb: New(Boolean, Boolean, Integer, Integer, IntRangeDto)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -426,12 +458,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsSupported*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.IsSupported
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_IsSupported
+- uid: ADLXWrapper.ChillDto.IsSupported*
+  commentId: Overload:ADLXWrapper.ChillDto.IsSupported
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsSupported
   name: IsSupported
-  nameWithType: FrameRateTargetControlDto.IsSupported
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  nameWithType: ChillDto.IsSupported
+  fullName: ADLXWrapper.ChillDto.IsSupported
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -443,18 +475,18 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsEnabled*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_IsEnabled
+- uid: ADLXWrapper.ChillDto.IsEnabled*
+  commentId: Overload:ADLXWrapper.ChillDto.IsEnabled
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_IsEnabled
   name: IsEnabled
-  nameWithType: FrameRateTargetControlDto.IsEnabled
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-- uid: ADLXWrapper.FrameRateTargetControlDto.Fps*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.Fps
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_Fps
-  name: Fps
-  nameWithType: FrameRateTargetControlDto.Fps
-  fullName: ADLXWrapper.FrameRateTargetControlDto.Fps
+  nameWithType: ChillDto.IsEnabled
+  fullName: ADLXWrapper.ChillDto.IsEnabled
+- uid: ADLXWrapper.ChillDto.MinFps*
+  commentId: Overload:ADLXWrapper.ChillDto.MinFps
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MinFps
+  name: MinFps
+  nameWithType: ChillDto.MinFps
+  fullName: ADLXWrapper.ChillDto.MinFps
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -466,12 +498,18 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ADLXWrapper.FrameRateTargetControlDto.FpsRange*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_FpsRange
+- uid: ADLXWrapper.ChillDto.MaxFps*
+  commentId: Overload:ADLXWrapper.ChillDto.MaxFps
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_MaxFps
+  name: MaxFps
+  nameWithType: ChillDto.MaxFps
+  fullName: ADLXWrapper.ChillDto.MaxFps
+- uid: ADLXWrapper.ChillDto.FpsRange*
+  commentId: Overload:ADLXWrapper.ChillDto.FpsRange
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto_FpsRange
   name: FpsRange
-  nameWithType: FrameRateTargetControlDto.FpsRange
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FpsRange
+  nameWithType: ChillDto.FpsRange
+  fullName: ADLXWrapper.ChillDto.FpsRange
 - uid: ADLXWrapper.IntRangeDto
   commentId: T:ADLXWrapper.IntRangeDto
   parent: ADLXWrapper
@@ -479,12 +517,12 @@ references:
   name: IntRangeDto
   nameWithType: IntRangeDto
   fullName: ADLXWrapper.IntRangeDto
-- uid: ADLXWrapper.FrameRateTargetControlDto.#ctor*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.#ctor
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto__ctor_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_
-  name: FrameRateTargetControlDto
-  nameWithType: FrameRateTargetControlDto.FrameRateTargetControlDto
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FrameRateTargetControlDto
-  nameWithType.vb: FrameRateTargetControlDto.New
-  fullName.vb: ADLXWrapper.FrameRateTargetControlDto.New
+- uid: ADLXWrapper.ChillDto.#ctor*
+  commentId: Overload:ADLXWrapper.ChillDto.#ctor
+  href: ADLXWrapper.ChillDto.html#ADLXWrapper_ChillDto__ctor_System_Boolean_System_Boolean_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_
+  name: ChillDto
+  nameWithType: ChillDto.ChillDto
+  fullName: ADLXWrapper.ChillDto.ChillDto
+  nameWithType.vb: ChillDto.New
+  fullName.vb: ADLXWrapper.ChillDto.New
   name.vb: New

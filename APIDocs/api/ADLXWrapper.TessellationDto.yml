@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TessellationDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 919
+    startLine: 1140
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -55,7 +55,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 921
+    startLine: 1142
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -84,7 +84,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 922
+    startLine: 1143
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -113,7 +113,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Level
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 923
+    startLine: 1144
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 925
+    startLine: 1146
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

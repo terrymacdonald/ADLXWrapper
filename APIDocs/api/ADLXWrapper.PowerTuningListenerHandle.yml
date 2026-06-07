@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerTuningListenerHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 651
+    startLine: 659
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -73,7 +73,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 672
+    startLine: 680
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -104,7 +104,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 678
+    startLine: 686
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -132,7 +132,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 680
+    startLine: 688
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -164,7 +164,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 689
+    startLine: 697
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

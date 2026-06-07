@@ -1356,6 +1356,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ChillDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ChillDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ChillDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ComPtr-1.yml",
       "output": {
         ".html": {
@@ -4212,6 +4226,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ImageSharpenDesktopDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ImageSharpenDesktopDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ImageSharpenDesktopDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IntRangeDto.yml",
       "output": {
         ".html": {
@@ -4348,6 +4376,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ManualVramTuningInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.MorphologicalAntiAliasingDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.MorphologicalAntiAliasingDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.MorphologicalAntiAliasingDto",
       "Summary": null
     },
     {

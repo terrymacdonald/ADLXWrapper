@@ -5,9 +5,16 @@ items:
   id: ManualVramTuningDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState})
+  - ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState},System.Boolean,ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION},System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  - ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  - ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
   - ADLXWrapper.ManualVramTuningDto.IsSupported
+  - ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+  - ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
+  - ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+  - ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
   - ADLXWrapper.ManualVramTuningDto.States
+  - ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
   langs:
   - csharp
   - vb
@@ -22,7 +29,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualVramTuningDto
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 697
+    startLine: 794
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +61,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 699
+    startLine: 796
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +90,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: States
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 700
+    startLine: 797
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -94,16 +101,219 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState}
     content.vb: Public Property States As IReadOnlyList(Of VramState)
   overload: ADLXWrapper.ManualVramTuningDto.States*
-- uid: ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState})
-  commentId: M:ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState})
-  id: '#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState})'
+- uid: ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
+  commentId: P:ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
+  id: IsMemoryTimingSupported
   parent: ADLXWrapper.ManualVramTuningDto
   langs:
   - csharp
   - vb
-  name: ManualVramTuningDto(bool, IReadOnlyList<VramState>)
-  nameWithType: ManualVramTuningDto.ManualVramTuningDto(bool, IReadOnlyList<VramState>)
-  fullName: ADLXWrapper.ManualVramTuningDto.ManualVramTuningDto(bool, System.Collections.Generic.IReadOnlyList<ADLXWrapper.VramState>)
+  name: IsMemoryTimingSupported
+  nameWithType: ManualVramTuningDto.IsMemoryTimingSupported
+  fullName: ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsMemoryTimingSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 799
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsMemoryTimingSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsMemoryTimingSupported As Boolean
+  overload: ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported*
+- uid: ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
+  commentId: P:ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
+  id: MemoryTimingDescription
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MemoryTimingDescription
+  nameWithType: ManualVramTuningDto.MemoryTimingDescription
+  fullName: ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MemoryTimingDescription
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 800
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_MEMORYTIMING_DESCRIPTION MemoryTimingDescription { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+    content.vb: Public Property MemoryTimingDescription As ADLX_MEMORYTIMING_DESCRIPTION
+  overload: ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription*
+- uid: ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  commentId: P:ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  id: SupportedMemoryTimingDescriptions
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: SupportedMemoryTimingDescriptions
+  nameWithType: ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  fullName: ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SupportedMemoryTimingDescriptions
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 801
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION> SupportedMemoryTimingDescriptions { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION}
+    content.vb: Public Property SupportedMemoryTimingDescriptions As IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION)
+  overload: ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions*
+- uid: ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  commentId: P:ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  id: IsMaxVRAMFrequencySupported
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: IsMaxVRAMFrequencySupported
+  nameWithType: ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  fullName: ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsMaxVRAMFrequencySupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 803
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsMaxVRAMFrequencySupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsMaxVRAMFrequencySupported As Boolean
+  overload: ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported*
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+  commentId: P:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+  id: MaxVRAMFrequencyRange
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MaxVRAMFrequencyRange
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequencyRange
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxVRAMFrequencyRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 804
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto MaxVRAMFrequencyRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property MaxVRAMFrequencyRange As IntRangeDto
+  overload: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange*
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+  commentId: P:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+  id: MaxVRAMFrequency
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MaxVRAMFrequency
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequency
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxVRAMFrequency
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 805
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MaxVRAMFrequency { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxVRAMFrequency As Integer
+  overload: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency*
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
+  commentId: P:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
+  id: MaxVRAMFrequencyDefault
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MaxVRAMFrequencyDefault
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequencyDefault
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxVRAMFrequencyDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 806
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MaxVRAMFrequencyDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxVRAMFrequencyDefault As Integer
+  overload: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault*
+- uid: ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState},System.Boolean,ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION},System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState},System.Boolean,ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION},System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  id: '#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState},System.Boolean,ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION},System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)'
+  parent: ADLXWrapper.ManualVramTuningDto
+  langs:
+  - csharp
+  - vb
+  name: ManualVramTuningDto(bool, IReadOnlyList<VramState>, bool, ADLX_MEMORYTIMING_DESCRIPTION, IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION>, bool, IntRangeDto, int, int)
+  nameWithType: ManualVramTuningDto.ManualVramTuningDto(bool, IReadOnlyList<VramState>, bool, ADLX_MEMORYTIMING_DESCRIPTION, IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION>, bool, IntRangeDto, int, int)
+  fullName: ADLXWrapper.ManualVramTuningDto.ManualVramTuningDto(bool, System.Collections.Generic.IReadOnlyList<ADLXWrapper.VramState>, bool, ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION, System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION>, bool, ADLXWrapper.IntRangeDto, int, int)
   type: Constructor
   source:
     remote:
@@ -112,7 +322,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 702
+    startLine: 808
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -120,24 +330,38 @@ items:
     content: >-
       [JsonConstructor]
 
-      public ManualVramTuningDto(bool isSupported, IReadOnlyList<VramState> states)
+      public ManualVramTuningDto(bool isSupported, IReadOnlyList<VramState> states, bool isMemoryTimingSupported, ADLX_MEMORYTIMING_DESCRIPTION memoryTimingDescription, IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION> supportedMemoryTimingDescriptions, bool isMaxVRAMFrequencySupported, IntRangeDto maxVRAMFrequencyRange, int maxVRAMFrequency, int maxVRAMFrequencyDefault)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: states
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState}
+    - id: isMemoryTimingSupported
+      type: System.Boolean
+    - id: memoryTimingDescription
+      type: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+    - id: supportedMemoryTimingDescriptions
+      type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION}
+    - id: isMaxVRAMFrequencySupported
+      type: System.Boolean
+    - id: maxVRAMFrequencyRange
+      type: ADLXWrapper.IntRangeDto
+    - id: maxVRAMFrequency
+      type: System.Int32
+    - id: maxVRAMFrequencyDefault
+      type: System.Int32
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, states As IReadOnlyList(Of VramState))
+      Public Sub New(isSupported As Boolean, states As IReadOnlyList(Of VramState), isMemoryTimingSupported As Boolean, memoryTimingDescription As ADLX_MEMORYTIMING_DESCRIPTION, supportedMemoryTimingDescriptions As IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION), isMaxVRAMFrequencySupported As Boolean, maxVRAMFrequencyRange As IntRangeDto, maxVRAMFrequency As Integer, maxVRAMFrequencyDefault As Integer)
   overload: ADLXWrapper.ManualVramTuningDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: ManualVramTuningDto.New(Boolean, IReadOnlyList(Of VramState))
-  fullName.vb: ADLXWrapper.ManualVramTuningDto.New(Boolean, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.VramState))
-  name.vb: New(Boolean, IReadOnlyList(Of VramState))
+  nameWithType.vb: ManualVramTuningDto.New(Boolean, IReadOnlyList(Of VramState), Boolean, ADLX_MEMORYTIMING_DESCRIPTION, IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION), Boolean, IntRangeDto, Integer, Integer)
+  fullName.vb: ADLXWrapper.ManualVramTuningDto.New(Boolean, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.VramState), Boolean, ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION), Boolean, ADLXWrapper.IntRangeDto, Integer, Integer)
+  name.vb: New(Boolean, IReadOnlyList(Of VramState), Boolean, ADLX_MEMORYTIMING_DESCRIPTION, IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION), Boolean, IntRangeDto, Integer, Integer)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -483,9 +707,109 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_IsMemoryTimingSupported
+  name: IsMemoryTimingSupported
+  nameWithType: ManualVramTuningDto.IsMemoryTimingSupported
+  fullName: ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported
+- uid: ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_MemoryTimingDescription
+  name: MemoryTimingDescription
+  nameWithType: ManualVramTuningDto.MemoryTimingDescription
+  fullName: ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription
+- uid: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+  commentId: T:ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html
+  name: ADLX_MEMORYTIMING_DESCRIPTION
+  nameWithType: ADLX_MEMORYTIMING_DESCRIPTION
+  fullName: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+- uid: ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_SupportedMemoryTimingDescriptions
+  name: SupportedMemoryTimingDescriptions
+  nameWithType: ManualVramTuningDto.SupportedMemoryTimingDescriptions
+  fullName: ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions
+- uid: System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION}
+  commentId: T:System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION>
+  nameWithType: IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION>
+  fullName: System.Collections.Generic.IReadOnlyList<ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION>
+  nameWithType.vb: IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION)
+  name.vb: IReadOnlyList(Of ADLX_MEMORYTIMING_DESCRIPTION)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+    name: ADLX_MEMORYTIMING_DESCRIPTION
+    href: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION
+    name: ADLX_MEMORYTIMING_DESCRIPTION
+    href: ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html
+  - name: )
+- uid: ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_IsMaxVRAMFrequencySupported
+  name: IsMaxVRAMFrequencySupported
+  nameWithType: ManualVramTuningDto.IsMaxVRAMFrequencySupported
+  fullName: ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyRange
+  name: MaxVRAMFrequencyRange
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequencyRange
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequency
+  name: MaxVRAMFrequency
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequency
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault*
+  commentId: Overload:ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyDefault
+  name: MaxVRAMFrequencyDefault
+  nameWithType: ManualVramTuningDto.MaxVRAMFrequencyDefault
+  fullName: ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault
 - uid: ADLXWrapper.ManualVramTuningDto.#ctor*
   commentId: Overload:ADLXWrapper.ManualVramTuningDto.#ctor
-  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto__ctor_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_VramState__
+  href: ADLXWrapper.ManualVramTuningDto.html#ADLXWrapper_ManualVramTuningDto__ctor_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_VramState__System_Boolean_ADLXWrapper_ADLX_MEMORYTIMING_DESCRIPTION_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLX_MEMORYTIMING_DESCRIPTION__System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_
   name: ManualVramTuningDto
   nameWithType: ManualVramTuningDto.ManualVramTuningDto
   fullName: ADLXWrapper.ManualVramTuningDto.ManualVramTuningDto

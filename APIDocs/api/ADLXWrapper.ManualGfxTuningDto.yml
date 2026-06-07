@@ -5,11 +5,17 @@ items:
   id: ManualGfxTuningDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
+  - ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32)
   - ADLXWrapper.ManualGfxTuningDto.IsSupported
   - ADLXWrapper.ManualGfxTuningDto.MaxFrequency
+  - ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
+  - ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
   - ADLXWrapper.ManualGfxTuningDto.MinFrequency
+  - ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
+  - ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
   - ADLXWrapper.ManualGfxTuningDto.Voltage
+  - ADLXWrapper.ManualGfxTuningDto.VoltageDefault
+  - ADLXWrapper.ManualGfxTuningDto.VoltageRange
   langs:
   - csharp
   - vb
@@ -24,7 +30,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ManualGfxTuningDto
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 739
+    startLine: 912
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +62,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 741
+    startLine: 914
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,17 +91,75 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinFrequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 742
+    startLine: 915
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int? MinFrequency { get; init; }
+    content: public int MinFrequency { get; init; }
     parameters: []
     return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property MinFrequency As Integer?
+      type: System.Int32
+    content.vb: Public Property MinFrequency As Integer
   overload: ADLXWrapper.ManualGfxTuningDto.MinFrequency*
+- uid: ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
+  id: MinFrequencyRange
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinFrequencyRange
+  nameWithType: ManualGfxTuningDto.MinFrequencyRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinFrequencyRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 916
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto MinFrequencyRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property MinFrequencyRange As IntRangeDto
+  overload: ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange*
+- uid: ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
+  id: MinFrequencyDefault
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinFrequencyDefault
+  nameWithType: ManualGfxTuningDto.MinFrequencyDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinFrequencyDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 917
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinFrequencyDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinFrequencyDefault As Integer
+  overload: ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault*
 - uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequency
   commentId: P:ADLXWrapper.ManualGfxTuningDto.MaxFrequency
   id: MaxFrequency
@@ -114,17 +178,75 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaxFrequency
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 743
+    startLine: 918
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int? MaxFrequency { get; init; }
+    content: public int MaxFrequency { get; init; }
     parameters: []
     return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property MaxFrequency As Integer?
+      type: System.Int32
+    content.vb: Public Property MaxFrequency As Integer
   overload: ADLXWrapper.ManualGfxTuningDto.MaxFrequency*
+- uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
+  id: MaxFrequencyRange
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MaxFrequencyRange
+  nameWithType: ManualGfxTuningDto.MaxFrequencyRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxFrequencyRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 919
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto MaxFrequencyRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property MaxFrequencyRange As IntRangeDto
+  overload: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange*
+- uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
+  id: MaxFrequencyDefault
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MaxFrequencyDefault
+  nameWithType: ManualGfxTuningDto.MaxFrequencyDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MaxFrequencyDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 920
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MaxFrequencyDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxFrequencyDefault As Integer
+  overload: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault*
 - uid: ADLXWrapper.ManualGfxTuningDto.Voltage
   commentId: P:ADLXWrapper.ManualGfxTuningDto.Voltage
   id: Voltage
@@ -143,27 +265,85 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Voltage
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 744
+    startLine: 921
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public int? Voltage { get; init; }
+    content: public int Voltage { get; init; }
     parameters: []
     return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property Voltage As Integer?
+      type: System.Int32
+    content.vb: Public Property Voltage As Integer
   overload: ADLXWrapper.ManualGfxTuningDto.Voltage*
-- uid: ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
-  commentId: M:ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})
-  id: '#ctor(System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})'
+- uid: ADLXWrapper.ManualGfxTuningDto.VoltageRange
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.VoltageRange
+  id: VoltageRange
   parent: ADLXWrapper.ManualGfxTuningDto
   langs:
   - csharp
   - vb
-  name: ManualGfxTuningDto(bool, int?, int?, int?)
-  nameWithType: ManualGfxTuningDto.ManualGfxTuningDto(bool, int?, int?, int?)
-  fullName: ADLXWrapper.ManualGfxTuningDto.ManualGfxTuningDto(bool, int?, int?, int?)
+  name: VoltageRange
+  nameWithType: ManualGfxTuningDto.VoltageRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.VoltageRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VoltageRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 922
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto VoltageRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property VoltageRange As IntRangeDto
+  overload: ADLXWrapper.ManualGfxTuningDto.VoltageRange*
+- uid: ADLXWrapper.ManualGfxTuningDto.VoltageDefault
+  commentId: P:ADLXWrapper.ManualGfxTuningDto.VoltageDefault
+  id: VoltageDefault
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: VoltageDefault
+  nameWithType: ManualGfxTuningDto.VoltageDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.VoltageDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VoltageDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 923
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int VoltageDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property VoltageDefault As Integer
+  overload: ADLXWrapper.ManualGfxTuningDto.VoltageDefault*
+- uid: ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32)
+  commentId: M:ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32)
+  id: '#ctor(System.Boolean,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32)'
+  parent: ADLXWrapper.ManualGfxTuningDto
+  langs:
+  - csharp
+  - vb
+  name: ManualGfxTuningDto(bool, int, IntRangeDto, int, int, IntRangeDto, int, int, IntRangeDto, int)
+  nameWithType: ManualGfxTuningDto.ManualGfxTuningDto(bool, int, IntRangeDto, int, int, IntRangeDto, int, int, IntRangeDto, int)
+  fullName: ADLXWrapper.ManualGfxTuningDto.ManualGfxTuningDto(bool, int, ADLXWrapper.IntRangeDto, int, int, ADLXWrapper.IntRangeDto, int, int, ADLXWrapper.IntRangeDto, int)
   type: Constructor
   source:
     remote:
@@ -172,7 +352,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 746
+    startLine: 925
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -180,28 +360,40 @@ items:
     content: >-
       [JsonConstructor]
 
-      public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency, int? voltage)
+      public ManualGfxTuningDto(bool isSupported, int minFrequency, IntRangeDto minFrequencyRange, int minFrequencyDefault, int maxFrequency, IntRangeDto maxFrequencyRange, int maxFrequencyDefault, int voltage, IntRangeDto voltageRange, int voltageDefault)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: minFrequency
-      type: System.Nullable{System.Int32}
+      type: System.Int32
+    - id: minFrequencyRange
+      type: ADLXWrapper.IntRangeDto
+    - id: minFrequencyDefault
+      type: System.Int32
     - id: maxFrequency
-      type: System.Nullable{System.Int32}
+      type: System.Int32
+    - id: maxFrequencyRange
+      type: ADLXWrapper.IntRangeDto
+    - id: maxFrequencyDefault
+      type: System.Int32
     - id: voltage
-      type: System.Nullable{System.Int32}
+      type: System.Int32
+    - id: voltageRange
+      type: ADLXWrapper.IntRangeDto
+    - id: voltageDefault
+      type: System.Int32
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, minFrequency As Integer?, maxFrequency As Integer?, voltage As Integer?)
+      Public Sub New(isSupported As Boolean, minFrequency As Integer, minFrequencyRange As IntRangeDto, minFrequencyDefault As Integer, maxFrequency As Integer, maxFrequencyRange As IntRangeDto, maxFrequencyDefault As Integer, voltage As Integer, voltageRange As IntRangeDto, voltageDefault As Integer)
   overload: ADLXWrapper.ManualGfxTuningDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: ManualGfxTuningDto.New(Boolean, Integer?, Integer?, Integer?)
-  fullName.vb: ADLXWrapper.ManualGfxTuningDto.New(Boolean, Integer?, Integer?, Integer?)
-  name.vb: New(Boolean, Integer?, Integer?, Integer?)
+  nameWithType.vb: ManualGfxTuningDto.New(Boolean, Integer, IntRangeDto, Integer, Integer, IntRangeDto, Integer, Integer, IntRangeDto, Integer)
+  fullName.vb: ADLXWrapper.ManualGfxTuningDto.New(Boolean, Integer, ADLXWrapper.IntRangeDto, Integer, Integer, ADLXWrapper.IntRangeDto, Integer, Integer, ADLXWrapper.IntRangeDto, Integer)
+  name.vb: New(Boolean, Integer, IntRangeDto, Integer, Integer, IntRangeDto, Integer, Integer, IntRangeDto, Integer)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -449,72 +641,75 @@ references:
   name: MinFrequency
   nameWithType: ManualGfxTuningDto.MinFrequency
   fullName: ADLXWrapper.ManualGfxTuningDto.MinFrequency
-- uid: System.Nullable{System.Int32}
-  commentId: T:System.Nullable{System.Int32}
+- uid: System.Int32
+  commentId: T:System.Int32
   parent: System
-  definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int?
-  nameWithType: int?
-  fullName: int?
-  nameWithType.vb: Integer?
-  fullName.vb: Integer?
-  name.vb: Integer?
-  spec.csharp:
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: '?'
-  spec.vb:
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: '?'
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_MinFrequencyRange
+  name: MinFrequencyRange
+  nameWithType: ManualGfxTuningDto.MinFrequencyRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_MinFrequencyDefault
+  name: MinFrequencyDefault
+  nameWithType: ManualGfxTuningDto.MinFrequencyDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault
 - uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequency*
   commentId: Overload:ADLXWrapper.ManualGfxTuningDto.MaxFrequency
   href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_MaxFrequency
   name: MaxFrequency
   nameWithType: ManualGfxTuningDto.MaxFrequency
   fullName: ADLXWrapper.ManualGfxTuningDto.MaxFrequency
+- uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_MaxFrequencyRange
+  name: MaxFrequencyRange
+  nameWithType: ManualGfxTuningDto.MaxFrequencyRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange
+- uid: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_MaxFrequencyDefault
+  name: MaxFrequencyDefault
+  nameWithType: ManualGfxTuningDto.MaxFrequencyDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault
 - uid: ADLXWrapper.ManualGfxTuningDto.Voltage*
   commentId: Overload:ADLXWrapper.ManualGfxTuningDto.Voltage
   href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_Voltage
   name: Voltage
   nameWithType: ManualGfxTuningDto.Voltage
   fullName: ADLXWrapper.ManualGfxTuningDto.Voltage
+- uid: ADLXWrapper.ManualGfxTuningDto.VoltageRange*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.VoltageRange
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_VoltageRange
+  name: VoltageRange
+  nameWithType: ManualGfxTuningDto.VoltageRange
+  fullName: ADLXWrapper.ManualGfxTuningDto.VoltageRange
+- uid: ADLXWrapper.ManualGfxTuningDto.VoltageDefault*
+  commentId: Overload:ADLXWrapper.ManualGfxTuningDto.VoltageDefault
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto_VoltageDefault
+  name: VoltageDefault
+  nameWithType: ManualGfxTuningDto.VoltageDefault
+  fullName: ADLXWrapper.ManualGfxTuningDto.VoltageDefault
 - uid: ADLXWrapper.ManualGfxTuningDto.#ctor*
   commentId: Overload:ADLXWrapper.ManualGfxTuningDto.#ctor
-  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto__ctor_System_Boolean_System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__
+  href: ADLXWrapper.ManualGfxTuningDto.html#ADLXWrapper_ManualGfxTuningDto__ctor_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_
   name: ManualGfxTuningDto
   nameWithType: ManualGfxTuningDto.ManualGfxTuningDto
   fullName: ADLXWrapper.ManualGfxTuningDto.ManualGfxTuningDto

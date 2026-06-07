@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_ManualGfxTuningDto" data-uid="ADLXWrapper.ManualGfxTuningDto" class="text-break">
-Struct ManualGfxTuningDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L740"><i class="bi bi-code-slash"></i></a>
+Struct ManualGfxTuningDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L913"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,9 +144,9 @@ Struct ManualGfxTuningDto  <a class="header-action link-secondary" title="View s
 
   <a id="ADLXWrapper_ManualGfxTuningDto__ctor_" data-uid="ADLXWrapper.ManualGfxTuningDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_ManualGfxTuningDto__ctor_System_Boolean_System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__" data-uid="ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
-  ManualGfxTuningDto(bool, int?, int?, int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L747"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ManualGfxTuningDto__ctor_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_ADLXWrapper_IntRangeDto_System_Int32_" data-uid="ADLXWrapper.ManualGfxTuningDto.#ctor(System.Boolean,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,ADLXWrapper.IntRangeDto,System.Int32)">
+  ManualGfxTuningDto(bool, int, IntRangeDto, int, int, IntRangeDto, int, int, IntRangeDto, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L926"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,18 +154,30 @@ Struct ManualGfxTuningDto  <a class="header-action link-secondary" title="View s
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency, int? voltage)</code></pre>
+public ManualGfxTuningDto(bool isSupported, int minFrequency, IntRangeDto minFrequencyRange, int minFrequencyDefault, int maxFrequency, IntRangeDto maxFrequencyRange, int maxFrequencyDefault, int voltage, IntRangeDto voltageRange, int voltageDefault)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>isSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
-    <dt><code>minFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><code>minFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>maxFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><code>minFrequencyRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
-    <dt><code>voltage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><code>minFrequencyDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxFrequencyRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>maxFrequencyDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>voltage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>voltageRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>voltageDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -188,7 +200,7 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h3 id="ADLXWrapper_ManualGfxTuningDto_IsSupported" data-uid="ADLXWrapper.ManualGfxTuningDto.IsSupported">
   IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L742"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L915"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -219,14 +231,14 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h3 id="ADLXWrapper_ManualGfxTuningDto_MaxFrequency" data-uid="ADLXWrapper.ManualGfxTuningDto.MaxFrequency">
   MaxFrequency
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L744"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L919"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MaxFrequency { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int MaxFrequency { get; init; }</code></pre>
   </div>
 
 
@@ -235,7 +247,69 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_MaxFrequencyDefault_" data-uid="ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_MaxFrequencyDefault" data-uid="ADLXWrapper.ManualGfxTuningDto.MaxFrequencyDefault">
+  MaxFrequencyDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L921"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxFrequencyDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_MaxFrequencyRange_" data-uid="ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_MaxFrequencyRange" data-uid="ADLXWrapper.ManualGfxTuningDto.MaxFrequencyRange">
+  MaxFrequencyRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L920"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto MaxFrequencyRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
   </dl>
 
@@ -250,14 +324,14 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h3 id="ADLXWrapper_ManualGfxTuningDto_MinFrequency" data-uid="ADLXWrapper.ManualGfxTuningDto.MinFrequency">
   MinFrequency
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L743"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L916"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? MinFrequency { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int MinFrequency { get; init; }</code></pre>
   </div>
 
 
@@ -266,7 +340,69 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_MinFrequencyDefault_" data-uid="ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_MinFrequencyDefault" data-uid="ADLXWrapper.ManualGfxTuningDto.MinFrequencyDefault">
+  MinFrequencyDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L918"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinFrequencyDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_MinFrequencyRange_" data-uid="ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_MinFrequencyRange" data-uid="ADLXWrapper.ManualGfxTuningDto.MinFrequencyRange">
+  MinFrequencyRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L917"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto MinFrequencyRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
   </dl>
 
@@ -281,14 +417,14 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h3 id="ADLXWrapper_ManualGfxTuningDto_Voltage" data-uid="ADLXWrapper.ManualGfxTuningDto.Voltage">
   Voltage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L745"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L922"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? Voltage { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int Voltage { get; init; }</code></pre>
   </div>
 
 
@@ -297,7 +433,69 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_VoltageDefault_" data-uid="ADLXWrapper.ManualGfxTuningDto.VoltageDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_VoltageDefault" data-uid="ADLXWrapper.ManualGfxTuningDto.VoltageDefault">
+  VoltageDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L924"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VoltageDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualGfxTuningDto_VoltageRange_" data-uid="ADLXWrapper.ManualGfxTuningDto.VoltageRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualGfxTuningDto_VoltageRange" data-uid="ADLXWrapper.ManualGfxTuningDto.VoltageRange">
+  VoltageRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L923"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto VoltageRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
     <dd></dd>
   </dl>
 
@@ -312,7 +510,7 @@ public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L740" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L913" class="edit-link">Edit this page</a>
         </div>
 
 

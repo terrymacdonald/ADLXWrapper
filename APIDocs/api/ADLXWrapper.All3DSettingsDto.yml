@@ -5,15 +5,18 @@ items:
   id: All3DSettingsDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
+  - ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})
   - ADLXWrapper.All3DSettingsDto.AnisotropicFiltering
   - ADLXWrapper.All3DSettingsDto.AntiAliasing
   - ADLXWrapper.All3DSettingsDto.AntiLag
   - ADLXWrapper.All3DSettingsDto.Boost
+  - ADLXWrapper.All3DSettingsDto.Chill
   - ADLXWrapper.All3DSettingsDto.EnhancedSync
   - ADLXWrapper.All3DSettingsDto.FluidMotionFrames
   - ADLXWrapper.All3DSettingsDto.FrameRateTargetControl
+  - ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
   - ADLXWrapper.All3DSettingsDto.ImageSharpening
+  - ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
   - ADLXWrapper.All3DSettingsDto.RadeonSuperResolution
   - ADLXWrapper.All3DSettingsDto.Tessellation
   - ADLXWrapper.All3DSettingsDto.WaitForVerticalRefresh
@@ -31,7 +34,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: All3DSettingsDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 588
+    startLine: 762
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -65,7 +68,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiLag
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 590
+    startLine: 764
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -94,7 +97,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Boost
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 591
+    startLine: 765
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,7 +126,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpening
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 592
+    startLine: 766
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -152,7 +155,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSync
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 593
+    startLine: 767
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -181,7 +184,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WaitForVerticalRefresh
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 594
+    startLine: 768
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -210,7 +213,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FrameRateTargetControl
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 595
+    startLine: 769
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -239,7 +242,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 596
+    startLine: 770
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -268,7 +271,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFiltering
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 597
+    startLine: 771
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -297,7 +300,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Tessellation
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 598
+    startLine: 772
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -326,7 +329,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 599
+    startLine: 773
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -355,7 +358,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 600
+    startLine: 774
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -366,16 +369,103 @@ items:
       type: System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
     content.vb: Public Property RadeonSuperResolution As RadeonSuperResolutionDto?
   overload: ADLXWrapper.All3DSettingsDto.RadeonSuperResolution*
-- uid: ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
-  commentId: M:ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})
-  id: '#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto})'
+- uid: ADLXWrapper.All3DSettingsDto.Chill
+  commentId: P:ADLXWrapper.All3DSettingsDto.Chill
+  id: Chill
   parent: ADLXWrapper.All3DSettingsDto
   langs:
   - csharp
   - vb
-  name: All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  nameWithType: All3DSettingsDto.All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
+  name: Chill
+  nameWithType: All3DSettingsDto.Chill
+  fullName: ADLXWrapper.All3DSettingsDto.Chill
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Chill
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 775
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ChillDto? Chill { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ChillDto}
+    content.vb: Public Property Chill As ChillDto?
+  overload: ADLXWrapper.All3DSettingsDto.Chill*
+- uid: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  commentId: P:ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  id: MorphologicalAntiAliasing
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: MorphologicalAntiAliasing
+  nameWithType: All3DSettingsDto.MorphologicalAntiAliasing
+  fullName: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MorphologicalAntiAliasing
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 776
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public MorphologicalAntiAliasingDto? MorphologicalAntiAliasing { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto}
+    content.vb: Public Property MorphologicalAntiAliasing As MorphologicalAntiAliasingDto?
+  overload: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing*
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  commentId: P:ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  id: ImageSharpenDesktop
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: ImageSharpenDesktop
+  nameWithType: All3DSettingsDto.ImageSharpenDesktop
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ImageSharpenDesktop
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 777
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ImageSharpenDesktopDto? ImageSharpenDesktop { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{ADLXWrapper.ImageSharpenDesktopDto}
+    content.vb: Public Property ImageSharpenDesktop As ImageSharpenDesktopDto?
+  overload: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop*
+- uid: ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})
+  commentId: M:ADLXWrapper.All3DSettingsDto.#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})
+  id: '#ctor(System.Nullable{ADLXWrapper.AntiLagDto},System.Nullable{ADLXWrapper.BoostDto},System.Nullable{ADLXWrapper.RadeonImageSharpeningDto},System.Nullable{ADLXWrapper.EnhancedSyncDto},System.Nullable{ADLXWrapper.WaitForVerticalRefreshDto},System.Nullable{ADLXWrapper.FrameRateTargetControlDto},System.Nullable{ADLXWrapper.AntiAliasingDto},System.Nullable{ADLXWrapper.AnisotropicFilteringDto},System.Nullable{ADLXWrapper.TessellationDto},System.Nullable{ADLXWrapper.FluidMotionFramesDto},System.Nullable{ADLXWrapper.RadeonSuperResolutionDto},System.Nullable{ADLXWrapper.ChillDto},System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto},System.Nullable{ADLXWrapper.ImageSharpenDesktopDto})'
+  parent: ADLXWrapper.All3DSettingsDto
+  langs:
+  - csharp
+  - vb
+  name: All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ChillDto?, MorphologicalAntiAliasingDto?, ImageSharpenDesktopDto?)
+  nameWithType: All3DSettingsDto.All3DSettingsDto(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ChillDto?, MorphologicalAntiAliasingDto?, ImageSharpenDesktopDto?)
+  fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?, ADLXWrapper.ChillDto?, ADLXWrapper.MorphologicalAntiAliasingDto?, ADLXWrapper.ImageSharpenDesktopDto?)
   type: Constructor
   source:
     remote:
@@ -384,7 +474,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 602
+    startLine: 779
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -392,7 +482,7 @@ items:
     content: >-
       [JsonConstructor]
 
-      public All3DSettingsDto(AntiLagDto? antiLag, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution)
+      public All3DSettingsDto(AntiLagDto? antiLag, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution, ChillDto? chill, MorphologicalAntiAliasingDto? morphologicalAntiAliasing, ImageSharpenDesktopDto? imageSharpenDesktop)
     parameters:
     - id: antiLag
       type: System.Nullable{ADLXWrapper.AntiLagDto}
@@ -416,18 +506,24 @@ items:
       type: System.Nullable{ADLXWrapper.FluidMotionFramesDto}
     - id: radeonSuperResolution
       type: System.Nullable{ADLXWrapper.RadeonSuperResolutionDto}
+    - id: chill
+      type: System.Nullable{ADLXWrapper.ChillDto}
+    - id: morphologicalAntiAliasing
+      type: System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto}
+    - id: imageSharpenDesktop
+      type: System.Nullable{ADLXWrapper.ImageSharpenDesktopDto}
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(antiLag As AntiLagDto?, boost As BoostDto?, imageSharpening As RadeonImageSharpeningDto?, enhancedSync As EnhancedSyncDto?, waitForVerticalRefresh As WaitForVerticalRefreshDto?, frameRateTargetControl As FrameRateTargetControlDto?, antiAliasing As AntiAliasingDto?, anisotropicFiltering As AnisotropicFilteringDto?, tessellation As TessellationDto?, fluidMotionFrames As FluidMotionFramesDto?, radeonSuperResolution As RadeonSuperResolutionDto?)
+      Public Sub New(antiLag As AntiLagDto?, boost As BoostDto?, imageSharpening As RadeonImageSharpeningDto?, enhancedSync As EnhancedSyncDto?, waitForVerticalRefresh As WaitForVerticalRefreshDto?, frameRateTargetControl As FrameRateTargetControlDto?, antiAliasing As AntiAliasingDto?, anisotropicFiltering As AnisotropicFilteringDto?, tessellation As TessellationDto?, fluidMotionFrames As FluidMotionFramesDto?, radeonSuperResolution As RadeonSuperResolutionDto?, chill As ChillDto?, morphologicalAntiAliasing As MorphologicalAntiAliasingDto?, imageSharpenDesktop As ImageSharpenDesktopDto?)
   overload: ADLXWrapper.All3DSettingsDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: All3DSettingsDto.New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
-  fullName.vb: ADLXWrapper.All3DSettingsDto.New(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?)
-  name.vb: New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?)
+  nameWithType.vb: All3DSettingsDto.New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ChillDto?, MorphologicalAntiAliasingDto?, ImageSharpenDesktopDto?)
+  fullName.vb: ADLXWrapper.All3DSettingsDto.New(ADLXWrapper.AntiLagDto?, ADLXWrapper.BoostDto?, ADLXWrapper.RadeonImageSharpeningDto?, ADLXWrapper.EnhancedSyncDto?, ADLXWrapper.WaitForVerticalRefreshDto?, ADLXWrapper.FrameRateTargetControlDto?, ADLXWrapper.AntiAliasingDto?, ADLXWrapper.AnisotropicFilteringDto?, ADLXWrapper.TessellationDto?, ADLXWrapper.FluidMotionFramesDto?, ADLXWrapper.RadeonSuperResolutionDto?, ADLXWrapper.ChillDto?, ADLXWrapper.MorphologicalAntiAliasingDto?, ADLXWrapper.ImageSharpenDesktopDto?)
+  name.vb: New(AntiLagDto?, BoostDto?, RadeonImageSharpeningDto?, EnhancedSyncDto?, WaitForVerticalRefreshDto?, FrameRateTargetControlDto?, AntiAliasingDto?, AnisotropicFilteringDto?, TessellationDto?, FluidMotionFramesDto?, RadeonSuperResolutionDto?, ChillDto?, MorphologicalAntiAliasingDto?, ImageSharpenDesktopDto?)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -944,9 +1040,81 @@ references:
     name: RadeonSuperResolutionDto
     href: ADLXWrapper.RadeonSuperResolutionDto.html
   - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.Chill*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.Chill
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_Chill
+  name: Chill
+  nameWithType: All3DSettingsDto.Chill
+  fullName: ADLXWrapper.All3DSettingsDto.Chill
+- uid: System.Nullable{ADLXWrapper.ChillDto}
+  commentId: T:System.Nullable{ADLXWrapper.ChillDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ChillDto.html
+  name: ChillDto?
+  nameWithType: ChillDto?
+  fullName: ADLXWrapper.ChillDto?
+  spec.csharp:
+  - uid: ADLXWrapper.ChillDto
+    name: ChillDto
+    href: ADLXWrapper.ChillDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ChillDto
+    name: ChillDto
+    href: ADLXWrapper.ChillDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_MorphologicalAntiAliasing
+  name: MorphologicalAntiAliasing
+  nameWithType: All3DSettingsDto.MorphologicalAntiAliasing
+  fullName: ADLXWrapper.All3DSettingsDto.MorphologicalAntiAliasing
+- uid: System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto}
+  commentId: T:System.Nullable{ADLXWrapper.MorphologicalAntiAliasingDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.MorphologicalAntiAliasingDto.html
+  name: MorphologicalAntiAliasingDto?
+  nameWithType: MorphologicalAntiAliasingDto?
+  fullName: ADLXWrapper.MorphologicalAntiAliasingDto?
+  spec.csharp:
+  - uid: ADLXWrapper.MorphologicalAntiAliasingDto
+    name: MorphologicalAntiAliasingDto
+    href: ADLXWrapper.MorphologicalAntiAliasingDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.MorphologicalAntiAliasingDto
+    name: MorphologicalAntiAliasingDto
+    href: ADLXWrapper.MorphologicalAntiAliasingDto.html
+  - name: '?'
+- uid: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop*
+  commentId: Overload:ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto_ImageSharpenDesktop
+  name: ImageSharpenDesktop
+  nameWithType: All3DSettingsDto.ImageSharpenDesktop
+  fullName: ADLXWrapper.All3DSettingsDto.ImageSharpenDesktop
+- uid: System.Nullable{ADLXWrapper.ImageSharpenDesktopDto}
+  commentId: T:System.Nullable{ADLXWrapper.ImageSharpenDesktopDto}
+  parent: System
+  definition: System.Nullable`1
+  href: ADLXWrapper.ImageSharpenDesktopDto.html
+  name: ImageSharpenDesktopDto?
+  nameWithType: ImageSharpenDesktopDto?
+  fullName: ADLXWrapper.ImageSharpenDesktopDto?
+  spec.csharp:
+  - uid: ADLXWrapper.ImageSharpenDesktopDto
+    name: ImageSharpenDesktopDto
+    href: ADLXWrapper.ImageSharpenDesktopDto.html
+  - name: '?'
+  spec.vb:
+  - uid: ADLXWrapper.ImageSharpenDesktopDto
+    name: ImageSharpenDesktopDto
+    href: ADLXWrapper.ImageSharpenDesktopDto.html
+  - name: '?'
 - uid: ADLXWrapper.All3DSettingsDto.#ctor*
   commentId: Overload:ADLXWrapper.All3DSettingsDto.#ctor
-  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_System_Nullable_ADLXWrapper_AntiLagDto__System_Nullable_ADLXWrapper_BoostDto__System_Nullable_ADLXWrapper_RadeonImageSharpeningDto__System_Nullable_ADLXWrapper_EnhancedSyncDto__System_Nullable_ADLXWrapper_WaitForVerticalRefreshDto__System_Nullable_ADLXWrapper_FrameRateTargetControlDto__System_Nullable_ADLXWrapper_AntiAliasingDto__System_Nullable_ADLXWrapper_AnisotropicFilteringDto__System_Nullable_ADLXWrapper_TessellationDto__System_Nullable_ADLXWrapper_FluidMotionFramesDto__System_Nullable_ADLXWrapper_RadeonSuperResolutionDto__
+  href: ADLXWrapper.All3DSettingsDto.html#ADLXWrapper_All3DSettingsDto__ctor_System_Nullable_ADLXWrapper_AntiLagDto__System_Nullable_ADLXWrapper_BoostDto__System_Nullable_ADLXWrapper_RadeonImageSharpeningDto__System_Nullable_ADLXWrapper_EnhancedSyncDto__System_Nullable_ADLXWrapper_WaitForVerticalRefreshDto__System_Nullable_ADLXWrapper_FrameRateTargetControlDto__System_Nullable_ADLXWrapper_AntiAliasingDto__System_Nullable_ADLXWrapper_AnisotropicFilteringDto__System_Nullable_ADLXWrapper_TessellationDto__System_Nullable_ADLXWrapper_FluidMotionFramesDto__System_Nullable_ADLXWrapper_RadeonSuperResolutionDto__System_Nullable_ADLXWrapper_ChillDto__System_Nullable_ADLXWrapper_MorphologicalAntiAliasingDto__System_Nullable_ADLXWrapper_ImageSharpenDesktopDto__
   name: All3DSettingsDto
   nameWithType: All3DSettingsDto.All3DSettingsDto
   fullName: ADLXWrapper.All3DSettingsDto.All3DSettingsDto

@@ -23,7 +23,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuTuningListenerHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 837
+    startLine: 1050
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Create
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 858
+    startLine: 1071
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetListener
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 864
+    startLine: 1077
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -129,7 +129,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ReleaseHandle
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 866
+    startLine: 1079
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -161,7 +161,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsInvalid
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 875
+    startLine: 1088
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

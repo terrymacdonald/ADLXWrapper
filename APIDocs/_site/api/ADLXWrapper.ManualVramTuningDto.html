@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_ManualVramTuningDto" data-uid="ADLXWrapper.ManualVramTuningDto" class="text-break">
-Struct ManualVramTuningDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L698"><i class="bi bi-code-slash"></i></a>
+Struct ManualVramTuningDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L795"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -144,9 +144,9 @@ Struct ManualVramTuningDto  <a class="header-action link-secondary" title="View 
 
   <a id="ADLXWrapper_ManualVramTuningDto__ctor_" data-uid="ADLXWrapper.ManualVramTuningDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_ManualVramTuningDto__ctor_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_VramState__" data-uid="ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState})">
-  ManualVramTuningDto(bool, IReadOnlyList&lt;VramState&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L703"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_ManualVramTuningDto__ctor_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_VramState__System_Boolean_ADLXWrapper_ADLX_MEMORYTIMING_DESCRIPTION_System_Collections_Generic_IReadOnlyList_ADLXWrapper_ADLX_MEMORYTIMING_DESCRIPTION__System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_" data-uid="ADLXWrapper.ManualVramTuningDto.#ctor(System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.VramState},System.Boolean,ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION,System.Collections.Generic.IReadOnlyList{ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION},System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)">
+  ManualVramTuningDto(bool, IReadOnlyList&lt;VramState&gt;, bool, ADLX_MEMORYTIMING_DESCRIPTION, IReadOnlyList&lt;ADLX_MEMORYTIMING_DESCRIPTION&gt;, bool, IntRangeDto, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L809"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -154,7 +154,7 @@ Struct ManualVramTuningDto  <a class="header-action link-secondary" title="View 
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConstructor]
-public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; states)</code></pre>
+public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; states, bool isMemoryTimingSupported, ADLX_MEMORYTIMING_DESCRIPTION memoryTimingDescription, IReadOnlyList&lt;ADLX_MEMORYTIMING_DESCRIPTION&gt; supportedMemoryTimingDescriptions, bool isMaxVRAMFrequencySupported, IntRangeDto maxVRAMFrequencyRange, int maxVRAMFrequency, int maxVRAMFrequencyDefault)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -162,6 +162,20 @@ public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; stat
     <dt><code>isSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
     <dt><code>states</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.VramState.html">VramState</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>isMemoryTimingSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>memoryTimingDescription</code> <a class="xref" href="ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html">ADLX_MEMORYTIMING_DESCRIPTION</a></dt>
+    <dd></dd>
+    <dt><code>supportedMemoryTimingDescriptions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html">ADLX_MEMORYTIMING_DESCRIPTION</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>isMaxVRAMFrequencySupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>maxVRAMFrequencyRange</code> <a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+    <dt><code>maxVRAMFrequency</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>maxVRAMFrequencyDefault</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -180,11 +194,73 @@ public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; stat
 </h2>
 
 
+  <a id="ADLXWrapper_ManualVramTuningDto_IsMaxVRAMFrequencySupported_" data-uid="ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_IsMaxVRAMFrequencySupported" data-uid="ADLXWrapper.ManualVramTuningDto.IsMaxVRAMFrequencySupported">
+  IsMaxVRAMFrequencySupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L804"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMaxVRAMFrequencySupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualVramTuningDto_IsMemoryTimingSupported_" data-uid="ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_IsMemoryTimingSupported" data-uid="ADLXWrapper.ManualVramTuningDto.IsMemoryTimingSupported">
+  IsMemoryTimingSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L800"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMemoryTimingSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ManualVramTuningDto_IsSupported_" data-uid="ADLXWrapper.ManualVramTuningDto.IsSupported*"></a>
 
   <h3 id="ADLXWrapper_ManualVramTuningDto_IsSupported" data-uid="ADLXWrapper.ManualVramTuningDto.IsSupported">
   IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L700"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L797"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -211,11 +287,135 @@ public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; stat
 
 
 
+  <a id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequency_" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequency" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequency">
+  MaxVRAMFrequency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L806"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxVRAMFrequency { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyDefault_" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyDefault" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyDefault">
+  MaxVRAMFrequencyDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L807"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxVRAMFrequencyDefault { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyRange_" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_MaxVRAMFrequencyRange" data-uid="ADLXWrapper.ManualVramTuningDto.MaxVRAMFrequencyRange">
+  MaxVRAMFrequencyRange
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L805"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IntRangeDto MaxVRAMFrequencyRange { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.IntRangeDto.html">IntRangeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ManualVramTuningDto_MemoryTimingDescription_" data-uid="ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_MemoryTimingDescription" data-uid="ADLXWrapper.ManualVramTuningDto.MemoryTimingDescription">
+  MemoryTimingDescription
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L801"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_MEMORYTIMING_DESCRIPTION MemoryTimingDescription { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html">ADLX_MEMORYTIMING_DESCRIPTION</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ManualVramTuningDto_States_" data-uid="ADLXWrapper.ManualVramTuningDto.States*"></a>
 
   <h3 id="ADLXWrapper_ManualVramTuningDto_States" data-uid="ADLXWrapper.ManualVramTuningDto.States">
   States
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L701"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L798"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,11 +442,42 @@ public ManualVramTuningDto(bool isSupported, IReadOnlyList&lt;VramState&gt; stat
 
 
 
+  <a id="ADLXWrapper_ManualVramTuningDto_SupportedMemoryTimingDescriptions_" data-uid="ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions*"></a>
+
+  <h3 id="ADLXWrapper_ManualVramTuningDto_SupportedMemoryTimingDescriptions" data-uid="ADLXWrapper.ManualVramTuningDto.SupportedMemoryTimingDescriptions">
+  SupportedMemoryTimingDescriptions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L802"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ADLX_MEMORYTIMING_DESCRIPTION&gt; SupportedMemoryTimingDescriptions { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="ADLXWrapper.ADLX_MEMORYTIMING_DESCRIPTION.html">ADLX_MEMORYTIMING_DESCRIPTION</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L698" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-reduced-exceptions/ADLXWrapper/ADLXGPUTuningServicesHelper.cs/#L795" class="edit-link">Edit this page</a>
         </div>
 
 

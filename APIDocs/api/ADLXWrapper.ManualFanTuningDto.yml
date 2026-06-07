@@ -5,10 +5,24 @@ items:
   id: ManualFanTuningDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint})
+  - ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint},ADLXWrapper.IntRangeDto,ADLXWrapper.IntRangeDto,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
   - ADLXWrapper.ManualFanTuningDto.FanPoints
+  - ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+  - ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
   - ADLXWrapper.ManualFanTuningDto.IsSupported
+  - ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
   - ADLXWrapper.ManualFanTuningDto.IsZeroRPMSupported
+  - ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+  - ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+  - ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+  - ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+  - ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+  - ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+  - ADLXWrapper.ManualFanTuningDto.SpeedRange
+  - ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+  - ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
+  - ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+  - ADLXWrapper.ManualFanTuningDto.TemperatureRange
   - ADLXWrapper.ManualFanTuningDto.ZeroRPMEnabled
   langs:
   - csharp
@@ -154,16 +168,426 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint}
     content.vb: Public Property FanPoints As IReadOnlyList(Of FanPoint)
   overload: ADLXWrapper.ManualFanTuningDto.FanPoints*
-- uid: ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint})
-  commentId: M:ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint})
-  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint})'
+- uid: ADLXWrapper.ManualFanTuningDto.SpeedRange
+  commentId: P:ADLXWrapper.ManualFanTuningDto.SpeedRange
+  id: SpeedRange
   parent: ADLXWrapper.ManualFanTuningDto
   langs:
   - csharp
   - vb
-  name: ManualFanTuningDto(bool, bool, bool, IReadOnlyList<FanPoint>)
-  nameWithType: ManualFanTuningDto.ManualFanTuningDto(bool, bool, bool, IReadOnlyList<FanPoint>)
-  fullName: ADLXWrapper.ManualFanTuningDto.ManualFanTuningDto(bool, bool, bool, System.Collections.Generic.IReadOnlyList<ADLXWrapper.FanPoint>)
+  name: SpeedRange
+  nameWithType: ManualFanTuningDto.SpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.SpeedRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SpeedRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 650
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Valid speed range for fan curve points (percent).
+  example: []
+  syntax:
+    content: public IntRangeDto SpeedRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property SpeedRange As IntRangeDto
+  overload: ADLXWrapper.ManualFanTuningDto.SpeedRange*
+- uid: ADLXWrapper.ManualFanTuningDto.TemperatureRange
+  commentId: P:ADLXWrapper.ManualFanTuningDto.TemperatureRange
+  id: TemperatureRange
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TemperatureRange
+  nameWithType: ManualFanTuningDto.TemperatureRange
+  fullName: ADLXWrapper.ManualFanTuningDto.TemperatureRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TemperatureRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 652
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Valid temperature range for fan curve points (degrees Celsius).
+  example: []
+  syntax:
+    content: public IntRangeDto TemperatureRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property TemperatureRange As IntRangeDto
+  overload: ADLXWrapper.ManualFanTuningDto.TemperatureRange*
+- uid: ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+  commentId: P:ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+  id: IsMinAcousticLimitSupported
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: IsMinAcousticLimitSupported
+  nameWithType: ManualFanTuningDto.IsMinAcousticLimitSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsMinAcousticLimitSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 654
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsMinAcousticLimitSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsMinAcousticLimitSupported As Boolean
+  overload: ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported*
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+  id: MinAcousticLimitRange
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinAcousticLimitRange
+  nameWithType: ManualFanTuningDto.MinAcousticLimitRange
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinAcousticLimitRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 655
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto MinAcousticLimitRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property MinAcousticLimitRange As IntRangeDto
+  overload: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange*
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+  id: MinAcousticLimit
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinAcousticLimit
+  nameWithType: ManualFanTuningDto.MinAcousticLimit
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinAcousticLimit
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 656
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinAcousticLimit { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinAcousticLimit As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.MinAcousticLimit*
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+  id: MinAcousticLimitDefault
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinAcousticLimitDefault
+  nameWithType: ManualFanTuningDto.MinAcousticLimitDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinAcousticLimitDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 657
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinAcousticLimitDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinAcousticLimitDefault As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault*
+- uid: ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
+  commentId: P:ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
+  id: IsMinFanSpeedSupported
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: IsMinFanSpeedSupported
+  nameWithType: ManualFanTuningDto.IsMinFanSpeedSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsMinFanSpeedSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 658
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsMinFanSpeedSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsMinFanSpeedSupported As Boolean
+  overload: ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported*
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+  id: MinFanSpeedRange
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinFanSpeedRange
+  nameWithType: ManualFanTuningDto.MinFanSpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinFanSpeedRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 659
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto MinFanSpeedRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property MinFanSpeedRange As IntRangeDto
+  overload: ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange*
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+  id: MinFanSpeed
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinFanSpeed
+  nameWithType: ManualFanTuningDto.MinFanSpeed
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinFanSpeed
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 660
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinFanSpeed { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinFanSpeed As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.MinFanSpeed*
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+  commentId: P:ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+  id: MinFanSpeedDefault
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: MinFanSpeedDefault
+  nameWithType: ManualFanTuningDto.MinFanSpeedDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MinFanSpeedDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 661
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int MinFanSpeedDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinFanSpeedDefault As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault*
+- uid: ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
+  commentId: P:ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
+  id: IsTargetFanSpeedSupported
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: IsTargetFanSpeedSupported
+  nameWithType: ManualFanTuningDto.IsTargetFanSpeedSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsTargetFanSpeedSupported
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 662
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool IsTargetFanSpeedSupported { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsTargetFanSpeedSupported As Boolean
+  overload: ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported*
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+  commentId: P:ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+  id: TargetFanSpeedRange
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TargetFanSpeedRange
+  nameWithType: ManualFanTuningDto.TargetFanSpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TargetFanSpeedRange
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 663
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public IntRangeDto TargetFanSpeedRange { get; init; }
+    parameters: []
+    return:
+      type: ADLXWrapper.IntRangeDto
+    content.vb: Public Property TargetFanSpeedRange As IntRangeDto
+  overload: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange*
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+  commentId: P:ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+  id: TargetFanSpeed
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TargetFanSpeed
+  nameWithType: ManualFanTuningDto.TargetFanSpeed
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TargetFanSpeed
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 664
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TargetFanSpeed { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TargetFanSpeed As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.TargetFanSpeed*
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
+  commentId: P:ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
+  id: TargetFanSpeedDefault
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: TargetFanSpeedDefault
+  nameWithType: ManualFanTuningDto.TargetFanSpeedDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TargetFanSpeedDefault
+    path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
+    startLine: 665
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TargetFanSpeedDefault { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TargetFanSpeedDefault As Integer
+  overload: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault*
+- uid: ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint},ADLXWrapper.IntRangeDto,ADLXWrapper.IntRangeDto,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ManualFanTuningDto.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint},ADLXWrapper.IntRangeDto,ADLXWrapper.IntRangeDto,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint},ADLXWrapper.IntRangeDto,ADLXWrapper.IntRangeDto,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)'
+  parent: ADLXWrapper.ManualFanTuningDto
+  langs:
+  - csharp
+  - vb
+  name: ManualFanTuningDto(bool, bool, bool, IReadOnlyList<FanPoint>, IntRangeDto, IntRangeDto, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int)
+  nameWithType: ManualFanTuningDto.ManualFanTuningDto(bool, bool, bool, IReadOnlyList<FanPoint>, IntRangeDto, IntRangeDto, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int, bool, IntRangeDto, int, int)
+  fullName: ADLXWrapper.ManualFanTuningDto.ManualFanTuningDto(bool, bool, bool, System.Collections.Generic.IReadOnlyList<ADLXWrapper.FanPoint>, ADLXWrapper.IntRangeDto, ADLXWrapper.IntRangeDto, bool, ADLXWrapper.IntRangeDto, int, int, bool, ADLXWrapper.IntRangeDto, int, int, bool, ADLXWrapper.IntRangeDto, int, int)
   type: Constructor
   source:
     remote:
@@ -172,7 +596,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGPUTuningServicesHelper.cs
-    startLine: 650
+    startLine: 667
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -180,7 +604,7 @@ items:
     content: >-
       [JsonConstructor]
 
-      public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<FanPoint> fanPoints)
+      public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<FanPoint> fanPoints, IntRangeDto speedRange, IntRangeDto temperatureRange, bool isMinAcousticLimitSupported, IntRangeDto minAcousticLimitRange, int minAcousticLimit, int minAcousticLimitDefault, bool isMinFanSpeedSupported, IntRangeDto minFanSpeedRange, int minFanSpeed, int minFanSpeedDefault, bool isTargetFanSpeedSupported, IntRangeDto targetFanSpeedRange, int targetFanSpeed, int targetFanSpeedDefault)
     parameters:
     - id: isSupported
       type: System.Boolean
@@ -190,18 +614,46 @@ items:
       type: System.Boolean
     - id: fanPoints
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.FanPoint}
+    - id: speedRange
+      type: ADLXWrapper.IntRangeDto
+    - id: temperatureRange
+      type: ADLXWrapper.IntRangeDto
+    - id: isMinAcousticLimitSupported
+      type: System.Boolean
+    - id: minAcousticLimitRange
+      type: ADLXWrapper.IntRangeDto
+    - id: minAcousticLimit
+      type: System.Int32
+    - id: minAcousticLimitDefault
+      type: System.Int32
+    - id: isMinFanSpeedSupported
+      type: System.Boolean
+    - id: minFanSpeedRange
+      type: ADLXWrapper.IntRangeDto
+    - id: minFanSpeed
+      type: System.Int32
+    - id: minFanSpeedDefault
+      type: System.Int32
+    - id: isTargetFanSpeedSupported
+      type: System.Boolean
+    - id: targetFanSpeedRange
+      type: ADLXWrapper.IntRangeDto
+    - id: targetFanSpeed
+      type: System.Int32
+    - id: targetFanSpeedDefault
+      type: System.Int32
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, isZeroRPMSupported As Boolean, zeroRPMEnabled As Boolean, fanPoints As IReadOnlyList(Of FanPoint))
+      Public Sub New(isSupported As Boolean, isZeroRPMSupported As Boolean, zeroRPMEnabled As Boolean, fanPoints As IReadOnlyList(Of FanPoint), speedRange As IntRangeDto, temperatureRange As IntRangeDto, isMinAcousticLimitSupported As Boolean, minAcousticLimitRange As IntRangeDto, minAcousticLimit As Integer, minAcousticLimitDefault As Integer, isMinFanSpeedSupported As Boolean, minFanSpeedRange As IntRangeDto, minFanSpeed As Integer, minFanSpeedDefault As Integer, isTargetFanSpeedSupported As Boolean, targetFanSpeedRange As IntRangeDto, targetFanSpeed As Integer, targetFanSpeedDefault As Integer)
   overload: ADLXWrapper.ManualFanTuningDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: ManualFanTuningDto.New(Boolean, Boolean, Boolean, IReadOnlyList(Of FanPoint))
-  fullName.vb: ADLXWrapper.ManualFanTuningDto.New(Boolean, Boolean, Boolean, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.FanPoint))
-  name.vb: New(Boolean, Boolean, Boolean, IReadOnlyList(Of FanPoint))
+  nameWithType.vb: ManualFanTuningDto.New(Boolean, Boolean, Boolean, IReadOnlyList(Of FanPoint), IntRangeDto, IntRangeDto, Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer)
+  fullName.vb: ADLXWrapper.ManualFanTuningDto.New(Boolean, Boolean, Boolean, System.Collections.Generic.IReadOnlyList(Of ADLXWrapper.FanPoint), ADLXWrapper.IntRangeDto, ADLXWrapper.IntRangeDto, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer)
+  name.vb: New(Boolean, Boolean, Boolean, IReadOnlyList(Of FanPoint), IntRangeDto, IntRangeDto, Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -559,9 +1011,111 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ADLXWrapper.ManualFanTuningDto.SpeedRange*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.SpeedRange
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_SpeedRange
+  name: SpeedRange
+  nameWithType: ManualFanTuningDto.SpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.SpeedRange
+- uid: ADLXWrapper.IntRangeDto
+  commentId: T:ADLXWrapper.IntRangeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.IntRangeDto.html
+  name: IntRangeDto
+  nameWithType: IntRangeDto
+  fullName: ADLXWrapper.IntRangeDto
+- uid: ADLXWrapper.ManualFanTuningDto.TemperatureRange*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.TemperatureRange
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_TemperatureRange
+  name: TemperatureRange
+  nameWithType: ManualFanTuningDto.TemperatureRange
+  fullName: ADLXWrapper.ManualFanTuningDto.TemperatureRange
+- uid: ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_IsMinAcousticLimitSupported
+  name: IsMinAcousticLimitSupported
+  nameWithType: ManualFanTuningDto.IsMinAcousticLimitSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsMinAcousticLimitSupported
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinAcousticLimitRange
+  name: MinAcousticLimitRange
+  nameWithType: ManualFanTuningDto.MinAcousticLimitRange
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitRange
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimit*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinAcousticLimit
+  name: MinAcousticLimit
+  nameWithType: ManualFanTuningDto.MinAcousticLimit
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimit
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinAcousticLimitDefault
+  name: MinAcousticLimitDefault
+  nameWithType: ManualFanTuningDto.MinAcousticLimitDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.MinAcousticLimitDefault
+- uid: ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_IsMinFanSpeedSupported
+  name: IsMinFanSpeedSupported
+  nameWithType: ManualFanTuningDto.IsMinFanSpeedSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsMinFanSpeedSupported
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinFanSpeedRange
+  name: MinFanSpeedRange
+  nameWithType: ManualFanTuningDto.MinFanSpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeedRange
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeed*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinFanSpeed
+  name: MinFanSpeed
+  nameWithType: ManualFanTuningDto.MinFanSpeed
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeed
+- uid: ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_MinFanSpeedDefault
+  name: MinFanSpeedDefault
+  nameWithType: ManualFanTuningDto.MinFanSpeedDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.MinFanSpeedDefault
+- uid: ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_IsTargetFanSpeedSupported
+  name: IsTargetFanSpeedSupported
+  nameWithType: ManualFanTuningDto.IsTargetFanSpeedSupported
+  fullName: ADLXWrapper.ManualFanTuningDto.IsTargetFanSpeedSupported
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_TargetFanSpeedRange
+  name: TargetFanSpeedRange
+  nameWithType: ManualFanTuningDto.TargetFanSpeedRange
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedRange
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeed*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_TargetFanSpeed
+  name: TargetFanSpeed
+  nameWithType: ManualFanTuningDto.TargetFanSpeed
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeed
+- uid: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault*
+  commentId: Overload:ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto_TargetFanSpeedDefault
+  name: TargetFanSpeedDefault
+  nameWithType: ManualFanTuningDto.TargetFanSpeedDefault
+  fullName: ADLXWrapper.ManualFanTuningDto.TargetFanSpeedDefault
 - uid: ADLXWrapper.ManualFanTuningDto.#ctor*
   commentId: Overload:ADLXWrapper.ManualFanTuningDto.#ctor
-  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_FanPoint__
+  href: ADLXWrapper.ManualFanTuningDto.html#ADLXWrapper_ManualFanTuningDto__ctor_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_IReadOnlyList_ADLXWrapper_FanPoint__ADLXWrapper_IntRangeDto_ADLXWrapper_IntRangeDto_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_
   name: ManualFanTuningDto
   nameWithType: ManualFanTuningDto.ManualFanTuningDto
   fullName: ADLXWrapper.ManualFanTuningDto.ManualFanTuningDto

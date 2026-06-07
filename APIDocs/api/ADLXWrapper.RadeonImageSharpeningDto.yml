@@ -24,7 +24,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RadeonImageSharpeningDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 726
+    startLine: 947
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -56,7 +56,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 728
+    startLine: 949
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -85,7 +85,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 729
+    startLine: 950
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Sharpness
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 730
+    startLine: 951
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -143,7 +143,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SharpnessRange
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 731
+    startLine: 952
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -172,7 +172,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 733
+    startLine: 954
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

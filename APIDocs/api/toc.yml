@@ -253,6 +253,9 @@ items:
   - uid: ADLXWrapper.BoostDto
     name: BoostDto
     type: Struct
+  - uid: ADLXWrapper.ChillDto
+    name: ChillDto
+    type: Struct
   - uid: ADLXWrapper.ComPtr`1
     name: ComPtr<T>
     type: Struct
@@ -811,6 +814,9 @@ items:
   - uid: ADLXWrapper.IADLXVideoUpscale
     name: IADLXVideoUpscale
     type: Struct
+  - uid: ADLXWrapper.ImageSharpenDesktopDto
+    name: ImageSharpenDesktopDto
+    type: Struct
   - uid: ADLXWrapper.IntRangeDto
     name: IntRangeDto
     type: Struct
@@ -828,6 +834,9 @@ items:
     type: Struct
   - uid: ADLXWrapper.ManualVramTuningDto
     name: ManualVramTuningDto
+    type: Struct
+  - uid: ADLXWrapper.MorphologicalAntiAliasingDto
+    name: MorphologicalAntiAliasingDto
     type: Struct
   - uid: ADLXWrapper.MultimediaListenerHandle
     name: MultimediaListenerHandle

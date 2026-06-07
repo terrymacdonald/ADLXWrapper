@@ -5,7 +5,8 @@ items:
   id: ManualPowerTuningDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  - ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  - ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
   - ADLXWrapper.ManualPowerTuningDto.PowerLimitRange
   - ADLXWrapper.ManualPowerTuningDto.PowerLimitSupported
   - ADLXWrapper.ManualPowerTuningDto.PowerLimitValue
@@ -130,6 +131,35 @@ items:
       type: System.Int32
     content.vb: Public Property PowerLimitValue As Integer
   overload: ADLXWrapper.ManualPowerTuningDto.PowerLimitValue*
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
+  commentId: P:ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
+  id: PowerLimitDefaultValue
+  parent: ADLXWrapper.ManualPowerTuningDto
+  langs:
+  - csharp
+  - vb
+  name: PowerLimitDefaultValue
+  nameWithType: ManualPowerTuningDto.PowerLimitDefaultValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+      branch: feature-reduced-exceptions
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerLimitDefaultValue
+    path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
+    startLine: 594
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int PowerLimitDefaultValue { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PowerLimitDefaultValue As Integer
+  overload: ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue*
 - uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
   commentId: P:ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
   id: TdcLimitSupported
@@ -148,7 +178,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitSupported
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 594
+    startLine: 595
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -177,7 +207,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitRange
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 595
+    startLine: 596
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -206,7 +236,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 596
+    startLine: 597
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -235,7 +265,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TdcLimitDefaultValue
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 597
+    startLine: 598
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -246,16 +276,16 @@ items:
       type: System.Int32
     content.vb: Public Property TdcLimitDefaultValue As Integer
   overload: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue*
-- uid: ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
-  commentId: M:ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
-  id: '#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)'
+- uid: ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  commentId: M:ADLXWrapper.ManualPowerTuningDto.#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)
+  id: '#ctor(System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32,System.Boolean,ADLXWrapper.IntRangeDto,System.Int32,System.Int32)'
   parent: ADLXWrapper.ManualPowerTuningDto
   langs:
   - csharp
   - vb
-  name: ManualPowerTuningDto(bool, IntRangeDto, int, bool, IntRangeDto, int, int)
-  nameWithType: ManualPowerTuningDto.ManualPowerTuningDto(bool, IntRangeDto, int, bool, IntRangeDto, int, int)
-  fullName: ADLXWrapper.ManualPowerTuningDto.ManualPowerTuningDto(bool, ADLXWrapper.IntRangeDto, int, bool, ADLXWrapper.IntRangeDto, int, int)
+  name: ManualPowerTuningDto(bool, IntRangeDto, int, int, bool, IntRangeDto, int, int)
+  nameWithType: ManualPowerTuningDto.ManualPowerTuningDto(bool, IntRangeDto, int, int, bool, IntRangeDto, int, int)
+  fullName: ADLXWrapper.ManualPowerTuningDto.ManualPowerTuningDto(bool, ADLXWrapper.IntRangeDto, int, int, bool, ADLXWrapper.IntRangeDto, int, int)
   type: Constructor
   source:
     remote:
@@ -264,7 +294,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPowerTuningServicesHelper.cs
-    startLine: 599
+    startLine: 600
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -272,13 +302,15 @@ items:
     content: >-
       [JsonConstructor]
 
-      public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
+      public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, int powerLimitDefaultValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
     parameters:
     - id: powerLimitSupported
       type: System.Boolean
     - id: powerLimitRange
       type: ADLXWrapper.IntRangeDto
     - id: powerLimitValue
+      type: System.Int32
+    - id: powerLimitDefaultValue
       type: System.Int32
     - id: tdcLimitSupported
       type: System.Boolean
@@ -291,15 +323,15 @@ items:
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(powerLimitSupported As Boolean, powerLimitRange As IntRangeDto, powerLimitValue As Integer, tdcLimitSupported As Boolean, tdcLimitRange As IntRangeDto, tdcLimitValue As Integer, tdcLimitDefaultValue As Integer)
+      Public Sub New(powerLimitSupported As Boolean, powerLimitRange As IntRangeDto, powerLimitValue As Integer, powerLimitDefaultValue As Integer, tdcLimitSupported As Boolean, tdcLimitRange As IntRangeDto, tdcLimitValue As Integer, tdcLimitDefaultValue As Integer)
   overload: ADLXWrapper.ManualPowerTuningDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: ManualPowerTuningDto.New(Boolean, IntRangeDto, Integer, Boolean, IntRangeDto, Integer, Integer)
-  fullName.vb: ADLXWrapper.ManualPowerTuningDto.New(Boolean, ADLXWrapper.IntRangeDto, Integer, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer)
-  name.vb: New(Boolean, IntRangeDto, Integer, Boolean, IntRangeDto, Integer, Integer)
+  nameWithType.vb: ManualPowerTuningDto.New(Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer)
+  fullName.vb: ADLXWrapper.ManualPowerTuningDto.New(Boolean, ADLXWrapper.IntRangeDto, Integer, Integer, Boolean, ADLXWrapper.IntRangeDto, Integer, Integer)
+  name.vb: New(Boolean, IntRangeDto, Integer, Integer, Boolean, IntRangeDto, Integer, Integer)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -571,6 +603,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue*
+  commentId: Overload:ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_PowerLimitDefaultValue
+  name: PowerLimitDefaultValue
+  nameWithType: ManualPowerTuningDto.PowerLimitDefaultValue
+  fullName: ADLXWrapper.ManualPowerTuningDto.PowerLimitDefaultValue
 - uid: ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported*
   commentId: Overload:ADLXWrapper.ManualPowerTuningDto.TdcLimitSupported
   href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto_TdcLimitSupported
@@ -597,7 +635,7 @@ references:
   fullName: ADLXWrapper.ManualPowerTuningDto.TdcLimitDefaultValue
 - uid: ADLXWrapper.ManualPowerTuningDto.#ctor*
   commentId: Overload:ADLXWrapper.ManualPowerTuningDto.#ctor
-  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto__ctor_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_
+  href: ADLXWrapper.ManualPowerTuningDto.html#ADLXWrapper_ManualPowerTuningDto__ctor_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_System_Boolean_ADLXWrapper_IntRangeDto_System_Int32_System_Int32_
   name: ManualPowerTuningDto
   nameWithType: ManualPowerTuningDto.ManualPowerTuningDto
   fullName: ADLXWrapper.ManualPowerTuningDto.ManualPowerTuningDto

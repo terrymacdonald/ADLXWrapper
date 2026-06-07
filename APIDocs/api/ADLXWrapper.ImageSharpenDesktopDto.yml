@@ -1,36 +1,34 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.FrameRateTargetControlDto
-  commentId: T:ADLXWrapper.FrameRateTargetControlDto
-  id: FrameRateTargetControlDto
+- uid: ADLXWrapper.ImageSharpenDesktopDto
+  commentId: T:ADLXWrapper.ImageSharpenDesktopDto
+  id: ImageSharpenDesktopDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  - ADLXWrapper.FrameRateTargetControlDto.Fps
-  - ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  - ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  - ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  - ADLXWrapper.ImageSharpenDesktopDto.#ctor(System.Boolean,System.Boolean)
+  - ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  - ADLXWrapper.ImageSharpenDesktopDto.IsSupported
   langs:
   - csharp
   - vb
-  name: FrameRateTargetControlDto
-  nameWithType: FrameRateTargetControlDto
-  fullName: ADLXWrapper.FrameRateTargetControlDto
+  name: ImageSharpenDesktopDto
+  nameWithType: ImageSharpenDesktopDto
+  fullName: ADLXWrapper.ImageSharpenDesktopDto
   type: Struct
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
       branch: feature-reduced-exceptions
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: FrameRateTargetControlDto
+    id: ImageSharpenDesktopDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1047
+    startLine: 1283
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public readonly struct FrameRateTargetControlDto
-    content.vb: Public Structure FrameRateTargetControlDto
+    content: public readonly struct ImageSharpenDesktopDto
+    content.vb: Public Structure ImageSharpenDesktopDto
   inheritedMembers:
   - System.ValueType.Equals(System.Object)
   - System.ValueType.GetHashCode
@@ -38,16 +36,16 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsSupported
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.IsSupported
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  commentId: P:ADLXWrapper.ImageSharpenDesktopDto.IsSupported
   id: IsSupported
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper.ImageSharpenDesktopDto
   langs:
   - csharp
   - vb
   name: IsSupported
-  nameWithType: FrameRateTargetControlDto.IsSupported
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  nameWithType: ImageSharpenDesktopDto.IsSupported
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
   type: Property
   source:
     remote:
@@ -56,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1049
+    startLine: 1285
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -66,17 +64,17 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Property IsSupported As Boolean
-  overload: ADLXWrapper.FrameRateTargetControlDto.IsSupported*
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.IsEnabled
+  overload: ADLXWrapper.ImageSharpenDesktopDto.IsSupported*
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  commentId: P:ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
   id: IsEnabled
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper.ImageSharpenDesktopDto
   langs:
   - csharp
   - vb
   name: IsEnabled
-  nameWithType: FrameRateTargetControlDto.IsEnabled
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
+  nameWithType: ImageSharpenDesktopDto.IsEnabled
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
   type: Property
   source:
     remote:
@@ -85,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1050
+    startLine: 1286
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -95,75 +93,17 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Property IsEnabled As Boolean
-  overload: ADLXWrapper.FrameRateTargetControlDto.IsEnabled*
-- uid: ADLXWrapper.FrameRateTargetControlDto.Fps
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.Fps
-  id: Fps
-  parent: ADLXWrapper.FrameRateTargetControlDto
+  overload: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled*
+- uid: ADLXWrapper.ImageSharpenDesktopDto.#ctor(System.Boolean,System.Boolean)
+  commentId: M:ADLXWrapper.ImageSharpenDesktopDto.#ctor(System.Boolean,System.Boolean)
+  id: '#ctor(System.Boolean,System.Boolean)'
+  parent: ADLXWrapper.ImageSharpenDesktopDto
   langs:
   - csharp
   - vb
-  name: Fps
-  nameWithType: FrameRateTargetControlDto.Fps
-  fullName: ADLXWrapper.FrameRateTargetControlDto.Fps
-  type: Property
-  source:
-    remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-reduced-exceptions
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Fps
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1051
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public int Fps { get; init; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Fps As Integer
-  overload: ADLXWrapper.FrameRateTargetControlDto.Fps*
-- uid: ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  commentId: P:ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  id: FpsRange
-  parent: ADLXWrapper.FrameRateTargetControlDto
-  langs:
-  - csharp
-  - vb
-  name: FpsRange
-  nameWithType: FrameRateTargetControlDto.FpsRange
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  type: Property
-  source:
-    remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-reduced-exceptions
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: FpsRange
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1052
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public IntRangeDto FpsRange { get; init; }
-    parameters: []
-    return:
-      type: ADLXWrapper.IntRangeDto
-    content.vb: Public Property FpsRange As IntRangeDto
-  overload: ADLXWrapper.FrameRateTargetControlDto.FpsRange*
-- uid: ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  commentId: M:ADLXWrapper.FrameRateTargetControlDto.#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)
-  id: '#ctor(System.Boolean,System.Boolean,System.Int32,ADLXWrapper.IntRangeDto)'
-  parent: ADLXWrapper.FrameRateTargetControlDto
-  langs:
-  - csharp
-  - vb
-  name: FrameRateTargetControlDto(bool, bool, int, IntRangeDto)
-  nameWithType: FrameRateTargetControlDto.FrameRateTargetControlDto(bool, bool, int, IntRangeDto)
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FrameRateTargetControlDto(bool, bool, int, ADLXWrapper.IntRangeDto)
+  name: ImageSharpenDesktopDto(bool, bool)
+  nameWithType: ImageSharpenDesktopDto.ImageSharpenDesktopDto(bool, bool)
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.ImageSharpenDesktopDto(bool, bool)
   type: Constructor
   source:
     remote:
@@ -172,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1054
+    startLine: 1288
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -180,28 +120,24 @@ items:
     content: >-
       [JsonConstructor]
 
-      public FrameRateTargetControlDto(bool isSupported, bool isEnabled, int fps, IntRangeDto fpsRange)
+      public ImageSharpenDesktopDto(bool isSupported, bool isEnabled)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: isEnabled
       type: System.Boolean
-    - id: fps
-      type: System.Int32
-    - id: fpsRange
-      type: ADLXWrapper.IntRangeDto
     content.vb: >-
       <JsonConstructor>
 
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean, fps As Integer, fpsRange As IntRangeDto)
-  overload: ADLXWrapper.FrameRateTargetControlDto.#ctor*
+      Public Sub New(isSupported As Boolean, isEnabled As Boolean)
+  overload: ADLXWrapper.ImageSharpenDesktopDto.#ctor*
   attributes:
   - type: Newtonsoft.Json.JsonConstructorAttribute
     ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
     arguments: []
-  nameWithType.vb: FrameRateTargetControlDto.New(Boolean, Boolean, Integer, IntRangeDto)
-  fullName.vb: ADLXWrapper.FrameRateTargetControlDto.New(Boolean, Boolean, Integer, ADLXWrapper.IntRangeDto)
-  name.vb: New(Boolean, Boolean, Integer, IntRangeDto)
+  nameWithType.vb: ImageSharpenDesktopDto.New(Boolean, Boolean)
+  fullName.vb: ADLXWrapper.ImageSharpenDesktopDto.New(Boolean, Boolean)
+  name.vb: New(Boolean, Boolean)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -426,12 +362,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsSupported*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.IsSupported
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_IsSupported
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsSupported*
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.IsSupported
+  href: ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsSupported
   name: IsSupported
-  nameWithType: FrameRateTargetControlDto.IsSupported
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsSupported
+  nameWithType: ImageSharpenDesktopDto.IsSupported
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsSupported
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -443,48 +379,18 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.FrameRateTargetControlDto.IsEnabled*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_IsEnabled
+- uid: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled*
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+  href: ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto_IsEnabled
   name: IsEnabled
-  nameWithType: FrameRateTargetControlDto.IsEnabled
-  fullName: ADLXWrapper.FrameRateTargetControlDto.IsEnabled
-- uid: ADLXWrapper.FrameRateTargetControlDto.Fps*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.Fps
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_Fps
-  name: Fps
-  nameWithType: FrameRateTargetControlDto.Fps
-  fullName: ADLXWrapper.FrameRateTargetControlDto.Fps
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: ADLXWrapper.FrameRateTargetControlDto.FpsRange*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.FpsRange
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto_FpsRange
-  name: FpsRange
-  nameWithType: FrameRateTargetControlDto.FpsRange
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FpsRange
-- uid: ADLXWrapper.IntRangeDto
-  commentId: T:ADLXWrapper.IntRangeDto
-  parent: ADLXWrapper
-  href: ADLXWrapper.IntRangeDto.html
-  name: IntRangeDto
-  nameWithType: IntRangeDto
-  fullName: ADLXWrapper.IntRangeDto
-- uid: ADLXWrapper.FrameRateTargetControlDto.#ctor*
-  commentId: Overload:ADLXWrapper.FrameRateTargetControlDto.#ctor
-  href: ADLXWrapper.FrameRateTargetControlDto.html#ADLXWrapper_FrameRateTargetControlDto__ctor_System_Boolean_System_Boolean_System_Int32_ADLXWrapper_IntRangeDto_
-  name: FrameRateTargetControlDto
-  nameWithType: FrameRateTargetControlDto.FrameRateTargetControlDto
-  fullName: ADLXWrapper.FrameRateTargetControlDto.FrameRateTargetControlDto
-  nameWithType.vb: FrameRateTargetControlDto.New
-  fullName.vb: ADLXWrapper.FrameRateTargetControlDto.New
+  nameWithType: ImageSharpenDesktopDto.IsEnabled
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.IsEnabled
+- uid: ADLXWrapper.ImageSharpenDesktopDto.#ctor*
+  commentId: Overload:ADLXWrapper.ImageSharpenDesktopDto.#ctor
+  href: ADLXWrapper.ImageSharpenDesktopDto.html#ADLXWrapper_ImageSharpenDesktopDto__ctor_System_Boolean_System_Boolean_
+  name: ImageSharpenDesktopDto
+  nameWithType: ImageSharpenDesktopDto.ImageSharpenDesktopDto
+  fullName: ADLXWrapper.ImageSharpenDesktopDto.ImageSharpenDesktopDto
+  nameWithType.vb: ImageSharpenDesktopDto.New
+  fullName.vb: ADLXWrapper.ImageSharpenDesktopDto.New
   name.vb: New
