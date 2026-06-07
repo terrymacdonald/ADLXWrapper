@@ -59,7 +59,10 @@ public class ADLX3DSettingsServicesFacadeTests
             info.FrameRateTargetControl.HasValue ||
             info.AntiAliasing.HasValue ||
             info.AnisotropicFiltering.HasValue ||
-            info.Tessellation.HasValue,
+            info.Tessellation.HasValue ||
+            info.Chill.HasValue ||
+            info.MorphologicalAntiAliasing.HasValue ||
+            info.ImageSharpenDesktop.HasValue,
             "No 3D settings information returned.");
 
         if (info.AntiLag is { } antiLag && antiLag.IsSupported)
@@ -229,5 +232,36 @@ public class ADLX3DSettingsServicesFacadeTests
 
         Skip.If(!info.IsSupported, "Radeon Super Resolution reported unsupported.");
         Assert.True(info.SharpnessRange.MinValue <= info.Sharpness && info.Sharpness <= info.SharpnessRange.MaxValue);
+    }
+
+    [SkippableFact]
+    public void Three_d_chill_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var info = GetAll3DSettingsOrSkip(helper);
+
+        Skip.If(!info.Chill.HasValue || !info.Chill.Value.IsSupported, "Chill not supported on this GPU.");
+        var chill = info.Chill!.Value;
+        Assert.True(chill.FpsRange.MinValue <= chill.MinFps && chill.MinFps <= chill.MaxFps && chill.MaxFps <= chill.FpsRange.MaxValue);
+    }
+
+    [SkippableFact]
+    public void Three_d_morphological_anti_aliasing_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var info = GetAll3DSettingsOrSkip(helper);
+
+        Skip.If(!info.MorphologicalAntiAliasing.HasValue || !info.MorphologicalAntiAliasing.Value.IsSupported, "Morphological Anti-Aliasing not supported on this GPU.");
+        Assert.IsType<bool>(info.MorphologicalAntiAliasing!.Value.IsEnabled);
+    }
+
+    [SkippableFact]
+    public void Three_d_image_sharpen_desktop_facade()
+    {
+        using var helper = Get3DHelperOrSkip();
+        var info = GetAll3DSettingsOrSkip(helper);
+
+        Skip.If(!info.ImageSharpenDesktop.HasValue || !info.ImageSharpenDesktop.Value.IsSupported, "Image Sharpen Desktop not supported on this GPU/driver.");
+        Assert.IsType<bool>(info.ImageSharpenDesktop!.Value.IsEnabled);
     }
 }
