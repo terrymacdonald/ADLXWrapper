@@ -346,6 +346,49 @@ namespace ADLXWrapper
             return info.IsSupported;
         }
 
+        /// <summary>Returns true when Reset Shader Cache is supported for the GPU with the specified unique id.</summary>
+        public bool IsResetShaderCacheSupported(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu =>
+            {
+                var gpu = (IADLXGPU*)ptrGpu;
+                IADLX3DResetShaderCache* p;
+                if (GetHighestServices()->GetResetShaderCache(gpu, &p) != ADLX_RESULT.ADLX_OK || p == null) return false;
+                using var c = new ComPtr<IADLX3DResetShaderCache>(p);
+                bool supported = false;
+                c.Get()->IsSupported(&supported);
+                return supported;
+            });
+        }
+
+        /// <summary>Resets the shader cache for the GPU with the specified unique id. Does nothing if not supported.</summary>
+        public void ResetShaderCache(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu =>
+            {
+                var gpu = (IADLXGPU*)ptrGpu;
+                IADLX3DResetShaderCache* p;
+                if (GetHighestServices()->GetResetShaderCache(gpu, &p) != ADLX_RESULT.ADLX_OK || p == null) return false;
+                using var c = new ComPtr<IADLX3DResetShaderCache>(p);
+                bool supported = false;
+                c.Get()->IsSupported(&supported);
+                if (supported) c.Get()->ResetShaderCache();
+                return supported;
+            });
+        }
+
+        /// <summary>Tries to reset the shader cache for the GPU with the specified unique id. Returns false if not supported.</summary>
+        public bool TryResetShaderCache(int gpuUniqueId)
+        {
+            if (!IsResetShaderCacheSupported(gpuUniqueId)) return false;
+            ResetShaderCache(gpuUniqueId);
+            return true;
+        }
+
         /// <summary>Gets Fluid Motion Frames state for the GPU with the specified unique id.</summary>
         public FluidMotionFramesDto GetFluidMotionFrames(int gpuUniqueId)
         {
@@ -442,7 +485,15 @@ namespace ADLXWrapper
             if (services->GetAntiLag(gpu, &p) == ADLX_RESULT.ADLX_OK)
             {
                 using var c = new ComPtr<IADLX3DAntiLag>(p);
-                if (info.IsSupported) c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+                if (info.IsSupported)
+                {
+                    c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+                    if (info.Level.HasValue && ADLXUtils.TryQueryInterface((IntPtr)c.Get(), nameof(IADLX3DAntiLag1), out var p1))
+                    {
+                        using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1);
+                        al1.Get()->SetLevel(info.Level.Value);
+                    }
+                }
             }
         }
 
@@ -804,12 +855,19 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
+        /// <summary>
+        /// Anti-Lag mode: <see cref="ADLX_ANTILAG_STATE.ANTILAG"/> (classic) or
+        /// <see cref="ADLX_ANTILAG_STATE.ANTILAGNEXT"/> (Anti-Lag+).
+        /// Null when <see cref="IADLX3DAntiLag1"/> is not available.
+        /// </summary>
+        public ADLX_ANTILAG_STATE? Level { get; init; }
 
         [JsonConstructor]
-        public AntiLagDto(bool isSupported, bool isEnabled)
+        public AntiLagDto(bool isSupported, bool isEnabled, ADLX_ANTILAG_STATE? level)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
+            Level = level;
         }
 
         internal unsafe AntiLagDto(IADLX3DAntiLag* antiLag)
@@ -821,6 +879,20 @@ namespace ADLXWrapper
             bool enabled = false;
             if (IsSupported) antiLag->IsEnabled(&enabled);
             IsEnabled = enabled;
+
+            if (IsSupported && ADLXUtils.TryQueryInterface((IntPtr)antiLag, nameof(IADLX3DAntiLag1), out var p1))
+            {
+                using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1);
+                ADLX_ANTILAG_STATE state = default;
+                if (al1.Get()->GetLevel(&state) == ADLX_RESULT.ADLX_OK)
+                    Level = state;
+                else
+                    Level = null;
+            }
+            else
+            {
+                Level = null;
+            }
         }
     }
 

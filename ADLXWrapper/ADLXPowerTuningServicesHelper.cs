@@ -592,17 +592,19 @@ namespace ADLXWrapper
         public bool PowerLimitSupported { get; init; }
         public IntRangeDto PowerLimitRange { get; init; }
         public int PowerLimitValue { get; init; }
+        public int PowerLimitDefaultValue { get; init; }
         public bool TdcLimitSupported { get; init; }
         public IntRangeDto TdcLimitRange { get; init; }
         public int TdcLimitValue { get; init; }
         public int TdcLimitDefaultValue { get; init; }
 
         [JsonConstructor]
-        public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
+        public ManualPowerTuningDto(bool powerLimitSupported, IntRangeDto powerLimitRange, int powerLimitValue, int powerLimitDefaultValue, bool tdcLimitSupported, IntRangeDto tdcLimitRange, int tdcLimitValue, int tdcLimitDefaultValue)
         {
             PowerLimitSupported = powerLimitSupported;
             PowerLimitRange = powerLimitRange;
             PowerLimitValue = powerLimitValue;
+            PowerLimitDefaultValue = powerLimitDefaultValue;
             TdcLimitSupported = tdcLimitSupported;
             TdcLimitRange = tdcLimitRange;
             TdcLimitValue = tdcLimitValue;
@@ -622,6 +624,11 @@ namespace ADLXWrapper
             if (ADLXUtils.TryQueryInterface((IntPtr)manualPower, nameof(IADLXManualPowerTuning1), out var pManualPower1))
             {
                 using var manualPower1 = new ComPtr<IADLXManualPowerTuning1>((IADLXManualPowerTuning1*)pManualPower1);
+
+                int powerDefault = 0;
+                manualPower1.Get()->GetPowerLimitDefault(&powerDefault);
+                PowerLimitDefaultValue = powerDefault;
+
                 bool tdcSupported = false;
                 manualPower1.Get()->IsSupportedTDCLimit(&tdcSupported);
                 TdcLimitSupported = tdcSupported;
@@ -637,6 +644,7 @@ namespace ADLXWrapper
             }
             else
             {
+                PowerLimitDefaultValue = 0;
                 TdcLimitSupported = false;
                 TdcLimitRange = default;
                 TdcLimitValue = 0;

@@ -647,14 +647,45 @@ namespace ADLXWrapper
         public bool IsZeroRPMSupported { get; init; }
         public bool ZeroRPMEnabled { get; init; }
         public IReadOnlyList<FanPoint> FanPoints { get; init; }
+        /// <summary>Valid speed range for fan curve points (percent).</summary>
+        public IntRangeDto SpeedRange { get; init; }
+        /// <summary>Valid temperature range for fan curve points (degrees Celsius).</summary>
+        public IntRangeDto TemperatureRange { get; init; }
+        // v1 optional fields
+        public bool IsMinAcousticLimitSupported { get; init; }
+        public IntRangeDto MinAcousticLimitRange { get; init; }
+        public int MinAcousticLimit { get; init; }
+        public int MinAcousticLimitDefault { get; init; }
+        public bool IsMinFanSpeedSupported { get; init; }
+        public IntRangeDto MinFanSpeedRange { get; init; }
+        public int MinFanSpeed { get; init; }
+        public int MinFanSpeedDefault { get; init; }
+        public bool IsTargetFanSpeedSupported { get; init; }
+        public IntRangeDto TargetFanSpeedRange { get; init; }
+        public int TargetFanSpeed { get; init; }
+        public int TargetFanSpeedDefault { get; init; }
 
         [JsonConstructor]
-        public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<FanPoint> fanPoints)
+        public ManualFanTuningDto(bool isSupported, bool isZeroRPMSupported, bool zeroRPMEnabled, IReadOnlyList<FanPoint> fanPoints, IntRangeDto speedRange, IntRangeDto temperatureRange, bool isMinAcousticLimitSupported, IntRangeDto minAcousticLimitRange, int minAcousticLimit, int minAcousticLimitDefault, bool isMinFanSpeedSupported, IntRangeDto minFanSpeedRange, int minFanSpeed, int minFanSpeedDefault, bool isTargetFanSpeedSupported, IntRangeDto targetFanSpeedRange, int targetFanSpeed, int targetFanSpeedDefault)
         {
             IsSupported = isSupported;
             IsZeroRPMSupported = isZeroRPMSupported;
             ZeroRPMEnabled = zeroRPMEnabled;
             FanPoints = fanPoints;
+            SpeedRange = speedRange;
+            TemperatureRange = temperatureRange;
+            IsMinAcousticLimitSupported = isMinAcousticLimitSupported;
+            MinAcousticLimitRange = minAcousticLimitRange;
+            MinAcousticLimit = minAcousticLimit;
+            MinAcousticLimitDefault = minAcousticLimitDefault;
+            IsMinFanSpeedSupported = isMinFanSpeedSupported;
+            MinFanSpeedRange = minFanSpeedRange;
+            MinFanSpeed = minFanSpeed;
+            MinFanSpeedDefault = minFanSpeedDefault;
+            IsTargetFanSpeedSupported = isTargetFanSpeedSupported;
+            TargetFanSpeedRange = targetFanSpeedRange;
+            TargetFanSpeed = targetFanSpeed;
+            TargetFanSpeedDefault = targetFanSpeedDefault;
         }
 
         internal unsafe ManualFanTuningDto(IADLXManualFanTuning* fanTuning)
@@ -666,6 +697,12 @@ namespace ADLXWrapper
             bool enabled = false;
             if (IsZeroRPMSupported) fanTuning->GetZeroRPMState(&enabled);
             ZeroRPMEnabled = enabled;
+
+            // Base fan curve ranges
+            ADLX_IntRange speedRange = default, tempRange = default;
+            fanTuning->GetFanTuningRanges(&speedRange, &tempRange);
+            SpeedRange = IntRangeDto.FromNative(speedRange);
+            TemperatureRange = IntRangeDto.FromNative(tempRange);
 
             var points = new List<FanPoint>();
             IADLXManualFanTuningStateList* statesPtr;
@@ -686,6 +723,66 @@ namespace ADLXWrapper
             }
             FanPoints = points;
             IsSupported = FanPoints.Count > 0 || IsZeroRPMSupported;
+
+            // v1 optional fields
+            if (ADLXUtils.TryQueryInterface((IntPtr)fanTuning, nameof(IADLXManualFanTuning1), out var p1))
+            {
+                using var fan1 = new ComPtr<IADLXManualFanTuning1>((IADLXManualFanTuning1*)p1);
+
+                bool acousticSupported = false;
+                fan1.Get()->IsSupportedMinAcousticLimit(&acousticSupported);
+                IsMinAcousticLimitSupported = acousticSupported;
+                if (acousticSupported)
+                {
+                    ADLX_IntRange acousticRange = default;
+                    int acousticVal = 0, acousticDefault = 0;
+                    fan1.Get()->GetMinAcousticLimitRange(&acousticRange);
+                    fan1.Get()->GetMinAcousticLimit(&acousticVal);
+                    fan1.Get()->GetMinAcousticLimitDefault(&acousticDefault);
+                    MinAcousticLimitRange = IntRangeDto.FromNative(acousticRange);
+                    MinAcousticLimit = acousticVal;
+                    MinAcousticLimitDefault = acousticDefault;
+                }
+                else { MinAcousticLimitRange = default; MinAcousticLimit = 0; MinAcousticLimitDefault = 0; }
+
+                bool minSpeedSupported = false;
+                fan1.Get()->IsSupportedMinFanSpeed(&minSpeedSupported);
+                IsMinFanSpeedSupported = minSpeedSupported;
+                if (minSpeedSupported)
+                {
+                    ADLX_IntRange minSpeedRange = default;
+                    int minSpeedVal = 0, minSpeedDefault = 0;
+                    fan1.Get()->GetMinFanSpeedRange(&minSpeedRange);
+                    fan1.Get()->GetMinFanSpeed(&minSpeedVal);
+                    fan1.Get()->GetMinFanSpeedDefault(&minSpeedDefault);
+                    MinFanSpeedRange = IntRangeDto.FromNative(minSpeedRange);
+                    MinFanSpeed = minSpeedVal;
+                    MinFanSpeedDefault = minSpeedDefault;
+                }
+                else { MinFanSpeedRange = default; MinFanSpeed = 0; MinFanSpeedDefault = 0; }
+
+                bool targetSupported = false;
+                fan1.Get()->IsSupportedTargetFanSpeed(&targetSupported);
+                IsTargetFanSpeedSupported = targetSupported;
+                if (targetSupported)
+                {
+                    ADLX_IntRange targetRange = default;
+                    int targetVal = 0, targetDefault = 0;
+                    fan1.Get()->GetTargetFanSpeedRange(&targetRange);
+                    fan1.Get()->GetTargetFanSpeed(&targetVal);
+                    fan1.Get()->GetTargetFanSpeedDefault(&targetDefault);
+                    TargetFanSpeedRange = IntRangeDto.FromNative(targetRange);
+                    TargetFanSpeed = targetVal;
+                    TargetFanSpeedDefault = targetDefault;
+                }
+                else { TargetFanSpeedRange = default; TargetFanSpeed = 0; TargetFanSpeedDefault = 0; }
+            }
+            else
+            {
+                IsMinAcousticLimitSupported = false; MinAcousticLimitRange = default; MinAcousticLimit = 0; MinAcousticLimitDefault = 0;
+                IsMinFanSpeedSupported = false; MinFanSpeedRange = default; MinFanSpeed = 0; MinFanSpeedDefault = 0;
+                IsTargetFanSpeedSupported = false; TargetFanSpeedRange = default; TargetFanSpeed = 0; TargetFanSpeedDefault = 0;
+            }
         }
     }
 
@@ -699,16 +796,33 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public IReadOnlyList<VramState> States { get; init; }
+        // v1: memory timing (available on IADLXManualVRAMTuning1)
+        public bool IsMemoryTimingSupported { get; init; }
+        public ADLX_MEMORYTIMING_DESCRIPTION MemoryTimingDescription { get; init; }
+        public IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION> SupportedMemoryTimingDescriptions { get; init; }
+        // v2: max VRAM frequency
+        public bool IsMaxVRAMFrequencySupported { get; init; }
+        public IntRangeDto MaxVRAMFrequencyRange { get; init; }
+        public int MaxVRAMFrequency { get; init; }
+        public int MaxVRAMFrequencyDefault { get; init; }
 
         [JsonConstructor]
-        public ManualVramTuningDto(bool isSupported, IReadOnlyList<VramState> states)
+        public ManualVramTuningDto(bool isSupported, IReadOnlyList<VramState> states, bool isMemoryTimingSupported, ADLX_MEMORYTIMING_DESCRIPTION memoryTimingDescription, IReadOnlyList<ADLX_MEMORYTIMING_DESCRIPTION> supportedMemoryTimingDescriptions, bool isMaxVRAMFrequencySupported, IntRangeDto maxVRAMFrequencyRange, int maxVRAMFrequency, int maxVRAMFrequencyDefault)
         {
             IsSupported = isSupported;
             States = states;
+            IsMemoryTimingSupported = isMemoryTimingSupported;
+            MemoryTimingDescription = memoryTimingDescription;
+            SupportedMemoryTimingDescriptions = supportedMemoryTimingDescriptions;
+            IsMaxVRAMFrequencySupported = isMaxVRAMFrequencySupported;
+            MaxVRAMFrequencyRange = maxVRAMFrequencyRange;
+            MaxVRAMFrequency = maxVRAMFrequency;
+            MaxVRAMFrequencyDefault = maxVRAMFrequencyDefault;
         }
 
         internal unsafe ManualVramTuningDto(IADLXManualVRAMTuning1* vramTuning)
         {
+            // Frequency/voltage states
             var states = new List<VramState>();
             IADLXManualTuningStateList* stateListPtr;
             vramTuning->GetVRAMTuningStates(&stateListPtr);
@@ -727,7 +841,66 @@ namespace ADLXWrapper
                 }
             }
             States = states;
-            IsSupported = States.Count > 0;
+
+            // Memory timing (available on IADLXManualVRAMTuning1 directly)
+            {
+                ADLX_MEMORYTIMING_DESCRIPTION currentTiming = default;
+                var timingResult = vramTuning->GetMemoryTimingDescription(&currentTiming);
+                IsMemoryTimingSupported = timingResult == ADLX_RESULT.ADLX_OK;
+                MemoryTimingDescription = IsMemoryTimingSupported ? currentTiming : default;
+
+                // Supported list requires v2
+                var supportedTimings = new List<ADLX_MEMORYTIMING_DESCRIPTION>();
+                if (ADLXUtils.TryQueryInterface((IntPtr)vramTuning, nameof(IADLXManualVRAMTuning2), out var p2Raw))
+                {
+                    using var vram2 = new ComPtr<IADLXManualVRAMTuning2>((IADLXManualVRAMTuning2*)p2Raw);
+                    IADLXMemoryTimingDescriptionList* descListPtr;
+                    if (vram2.Get()->GetSupportedMemoryTimingDescriptionList(&descListPtr) == ADLX_RESULT.ADLX_OK && descListPtr != null)
+                    {
+                        using var descList = new ComPtr<IADLXMemoryTimingDescriptionList>(descListPtr);
+                        for (uint i = 0; i < descList.Get()->Size(); i++)
+                        {
+                            IADLXMemoryTimingDescription* descPtr;
+                            if (descList.Get()->At(i, &descPtr) == ADLX_RESULT.ADLX_OK && descPtr != null)
+                            {
+                                using var desc = new ComPtr<IADLXMemoryTimingDescription>(descPtr);
+                                ADLX_MEMORYTIMING_DESCRIPTION d = default;
+                                if (desc.Get()->GetDescription(&d) == ADLX_RESULT.ADLX_OK)
+                                    supportedTimings.Add(d);
+                            }
+                        }
+                    }
+
+                    // Max VRAM frequency (v2)
+                    ADLX_IntRange maxFreqRange = default;
+                    int maxFreqVal = 0;
+                    var rangeResult = vram2.Get()->GetMaxVRAMFrequencyRange(&maxFreqRange);
+                    var valResult = vram2.Get()->GetMaxVRAMFrequency(&maxFreqVal);
+                    IsMaxVRAMFrequencySupported = rangeResult == ADLX_RESULT.ADLX_OK && valResult == ADLX_RESULT.ADLX_OK;
+                    MaxVRAMFrequencyRange = IntRangeDto.FromNative(maxFreqRange);
+                    MaxVRAMFrequency = maxFreqVal;
+
+                    // Default from v2_1
+                    if (ADLXUtils.TryQueryInterface((IntPtr)vram2.Get(), nameof(IADLXManualVRAMTuning2_1), out var p21Raw))
+                    {
+                        using var vram21 = new ComPtr<IADLXManualVRAMTuning2_1>((IADLXManualVRAMTuning2_1*)p21Raw);
+                        int maxFreqDefault = 0;
+                        vram21.Get()->GetMaxVRAMFrequencyDefault(&maxFreqDefault);
+                        MaxVRAMFrequencyDefault = maxFreqDefault;
+                    }
+                    else { MaxVRAMFrequencyDefault = 0; }
+                }
+                else
+                {
+                    IsMaxVRAMFrequencySupported = false;
+                    MaxVRAMFrequencyRange = default;
+                    MaxVRAMFrequency = 0;
+                    MaxVRAMFrequencyDefault = 0;
+                }
+                SupportedMemoryTimingDescriptions = supportedTimings;
+            }
+
+            IsSupported = States.Count > 0 || IsMemoryTimingSupported || IsMaxVRAMFrequencySupported;
         }
     }
 
@@ -740,17 +913,29 @@ namespace ADLXWrapper
     public readonly struct ManualGfxTuningDto
     {
         public bool IsSupported { get; init; }
-        public int? MinFrequency { get; init; }
-        public int? MaxFrequency { get; init; }
-        public int? Voltage { get; init; }
+        public int MinFrequency { get; init; }
+        public IntRangeDto MinFrequencyRange { get; init; }
+        public int MinFrequencyDefault { get; init; }
+        public int MaxFrequency { get; init; }
+        public IntRangeDto MaxFrequencyRange { get; init; }
+        public int MaxFrequencyDefault { get; init; }
+        public int Voltage { get; init; }
+        public IntRangeDto VoltageRange { get; init; }
+        public int VoltageDefault { get; init; }
 
         [JsonConstructor]
-        public ManualGfxTuningDto(bool isSupported, int? minFrequency, int? maxFrequency, int? voltage)
+        public ManualGfxTuningDto(bool isSupported, int minFrequency, IntRangeDto minFrequencyRange, int minFrequencyDefault, int maxFrequency, IntRangeDto maxFrequencyRange, int maxFrequencyDefault, int voltage, IntRangeDto voltageRange, int voltageDefault)
         {
             IsSupported = isSupported;
             MinFrequency = minFrequency;
+            MinFrequencyRange = minFrequencyRange;
+            MinFrequencyDefault = minFrequencyDefault;
             MaxFrequency = maxFrequency;
+            MaxFrequencyRange = maxFrequencyRange;
+            MaxFrequencyDefault = maxFrequencyDefault;
             Voltage = voltage;
+            VoltageRange = voltageRange;
+            VoltageDefault = voltageDefault;
         }
 
         internal unsafe ManualGfxTuningDto(IADLXManualGraphicsTuning2* gfxTuning)
@@ -762,6 +947,34 @@ namespace ADLXWrapper
             MinFrequency = minFreq;
             MaxFrequency = maxFreq;
             Voltage = volt;
+
+            ADLX_IntRange minFreqRange = default, maxFreqRange = default, voltRange = default;
+            gfxTuning->GetGPUMinFrequencyRange(&minFreqRange);
+            gfxTuning->GetGPUMaxFrequencyRange(&maxFreqRange);
+            gfxTuning->GetGPUVoltageRange(&voltRange);
+            MinFrequencyRange = IntRangeDto.FromNative(minFreqRange);
+            MaxFrequencyRange = IntRangeDto.FromNative(maxFreqRange);
+            VoltageRange = IntRangeDto.FromNative(voltRange);
+
+            // Default values from v2_1
+            if (ADLXUtils.TryQueryInterface((IntPtr)gfxTuning, nameof(IADLXManualGraphicsTuning2_1), out var p21))
+            {
+                using var gfx21 = new ComPtr<IADLXManualGraphicsTuning2_1>((IADLXManualGraphicsTuning2_1*)p21);
+                int minDefault = 0, maxDefault = 0, voltDefault = 0;
+                gfx21.Get()->GetGPUMinFrequencyDefault(&minDefault);
+                gfx21.Get()->GetGPUMaxFrequencyDefault(&maxDefault);
+                gfx21.Get()->GetGPUVoltageDefault(&voltDefault);
+                MinFrequencyDefault = minDefault;
+                MaxFrequencyDefault = maxDefault;
+                VoltageDefault = voltDefault;
+            }
+            else
+            {
+                MinFrequencyDefault = 0;
+                MaxFrequencyDefault = 0;
+                VoltageDefault = 0;
+            }
+
             IsSupported = true;
         }
     }
