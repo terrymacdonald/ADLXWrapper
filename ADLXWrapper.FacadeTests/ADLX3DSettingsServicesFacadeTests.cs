@@ -56,63 +56,93 @@ public class ADLX3DSettingsServicesFacadeTests
         var info = GetAll3DSettingsOrSkip(helper);
 
         Assert.True(
-            info.AntiLag.HasValue ||
-            info.Boost.HasValue ||
-            info.ImageSharpening.HasValue ||
-            info.EnhancedSync.HasValue ||
-            info.WaitForVerticalRefresh.HasValue ||
-            info.FrameRateTargetControl.HasValue ||
-            info.AntiAliasing.HasValue ||
-            info.AnisotropicFiltering.HasValue ||
-            info.Tessellation.HasValue,
+            info.AntiLag.IsSupported ||
+            info.Chill.IsSupported ||
+            info.Boost.IsSupported ||
+            info.ImageSharpening.IsSupported ||
+            info.EnhancedSync.IsSupported ||
+            info.WaitForVerticalRefresh.IsSupported ||
+            info.FrameRateTargetControl.IsSupported ||
+            info.AntiAliasing.IsSupported ||
+            info.MorphologicalAntiAliasing.IsSupported ||
+            info.AnisotropicFiltering.IsSupported ||
+            info.Tessellation.IsSupported ||
+            info.FluidMotionFrames.IsSupported ||
+            info.RadeonSuperResolution.IsSupported ||
+            info.ImageSharpenDesktop.IsSupported,
             "No 3D settings information returned.");
 
-        if (info.AntiLag is { } antiLag && antiLag.IsSupported)
+        if (info.AntiLag.IsSupported)
         {
-            Assert.IsType<bool>(antiLag.IsEnabled);
+            Assert.IsType<bool>(info.AntiLag.IsEnabled);
         }
 
-        if (info.Boost is { } boost && boost.IsSupported)
+        if (info.Chill.IsSupported)
         {
-            Assert.True(boost.ResolutionRange.MinValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.MaxValue);
+            Assert.True(info.Chill.FPSRange.MinValue <= info.Chill.MinFPS && info.Chill.MinFPS <= info.Chill.FPSRange.MaxValue);
+            Assert.True(info.Chill.FPSRange.MinValue <= info.Chill.MaxFPS && info.Chill.MaxFPS <= info.Chill.FPSRange.MaxValue);
         }
 
-        if (info.ImageSharpening is { } sharpening && sharpening.IsSupported)
+        if (info.Boost.IsSupported)
         {
-            Assert.True(sharpening.SharpnessRange.MinValue <= sharpening.Sharpness && sharpening.Sharpness <= sharpening.SharpnessRange.MaxValue);
+            Assert.True(info.Boost.ResolutionRange.MinValue <= info.Boost.MinResolution && info.Boost.MinResolution <= info.Boost.ResolutionRange.MaxValue);
         }
 
-        if (info.EnhancedSync is { } enhancedSync && enhancedSync.IsSupported)
+        if (info.ImageSharpening.IsSupported)
         {
-            Assert.IsType<bool>(enhancedSync.IsEnabled);
+            Assert.True(info.ImageSharpening.SharpnessRange.MinValue <= info.ImageSharpening.Sharpness && info.ImageSharpening.Sharpness <= info.ImageSharpening.SharpnessRange.MaxValue);
         }
 
-        if (info.WaitForVerticalRefresh is { } vsync && vsync.IsSupported)
+        if (info.EnhancedSync.IsSupported)
         {
-            Assert.True(Enum.IsDefined(typeof(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE), vsync.Mode));
+            Assert.IsType<bool>(info.EnhancedSync.IsEnabled);
         }
 
-        if (info.FrameRateTargetControl is { } frtc && frtc.IsSupported)
+        if (info.WaitForVerticalRefresh.IsSupported)
         {
-            Assert.True(frtc.FpsRange.MinValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.MaxValue);
+            Assert.True(Enum.IsDefined(typeof(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE), info.WaitForVerticalRefresh.Mode));
         }
 
-        if (info.AntiAliasing is { } aa && aa.IsSupported)
+        if (info.FrameRateTargetControl.IsSupported)
         {
-            Assert.True(Enum.IsDefined(typeof(ADLX_ANTI_ALIASING_MODE), aa.Mode));
+            Assert.True(info.FrameRateTargetControl.FpsRange.MinValue <= info.FrameRateTargetControl.Fps && info.FrameRateTargetControl.Fps <= info.FrameRateTargetControl.FpsRange.MaxValue);
         }
 
-        if (info.AnisotropicFiltering is { } af && af.IsSupported)
+        if (info.AntiAliasing.IsSupported)
         {
-            Assert.True(Enum.IsDefined(typeof(ADLX_ANISOTROPIC_FILTERING_LEVEL), af.Level));
+            Assert.True(Enum.IsDefined(typeof(ADLX_ANTI_ALIASING_MODE), info.AntiAliasing.Mode));
         }
 
-        if (info.Tessellation is { } tess && tess.IsSupported)
+        if (info.MorphologicalAntiAliasing.IsSupported)
         {
-            Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_MODE), tess.Mode));
-            Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_LEVEL), tess.Level));
+            Assert.IsType<bool>(info.MorphologicalAntiAliasing.IsEnabled);
         }
 
+        if (info.AnisotropicFiltering.IsSupported)
+        {
+            Assert.True(Enum.IsDefined(typeof(ADLX_ANISOTROPIC_FILTERING_LEVEL), info.AnisotropicFiltering.Level));
+        }
+
+        if (info.Tessellation.IsSupported)
+        {
+            Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_MODE), info.Tessellation.Mode));
+            Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_LEVEL), info.Tessellation.Level));
+        }
+
+        if (info.FluidMotionFrames.IsSupported)
+        {
+            Assert.IsType<bool>(info.FluidMotionFrames.IsEnabled);
+        }
+
+        if (info.RadeonSuperResolution.IsSupported)
+        {
+            Assert.True(info.RadeonSuperResolution.SharpnessRange.MinValue <= info.RadeonSuperResolution.Sharpness && info.RadeonSuperResolution.Sharpness <= info.RadeonSuperResolution.SharpnessRange.MaxValue);
+        }
+
+        if (info.ImageSharpenDesktop.IsSupported)
+        {
+            Assert.IsType<bool>(info.ImageSharpenDesktop.IsEnabled);
+        }
     }
 
     [SkippableFact]
@@ -121,8 +151,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.AntiLag.HasValue || !info.AntiLag.Value.IsSupported, "Anti-Lag not supported on this GPU.");
-        var antiLag = info.AntiLag!.Value;
+        Skip.If(!info.AntiLag.IsSupported, "Anti-Lag not supported on this GPU.");
+        var antiLag = info.AntiLag;
         Assert.IsType<bool>(antiLag.IsEnabled);
         // Level is nullable — null means driver does not support IADLX3DAntiLag1; either value is valid.
         _ = antiLag.Level; // property must be accessible (may be null on older drivers)
@@ -134,8 +164,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.Boost.HasValue || !info.Boost.Value.IsSupported, "Boost not supported on this GPU.");
-        var boost = info.Boost!.Value;
+        Skip.If(!info.Boost.IsSupported, "Boost not supported on this GPU.");
+        var boost = info.Boost;
         Assert.True(boost.ResolutionRange.MinValue <= boost.MinResolution && boost.MinResolution <= boost.ResolutionRange.MaxValue);
     }
 
@@ -145,8 +175,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.ImageSharpening.HasValue || !info.ImageSharpening.Value.IsSupported, "Image sharpening not supported on this GPU.");
-        var ris = info.ImageSharpening!.Value;
+        Skip.If(!info.ImageSharpening.IsSupported, "Image sharpening not supported on this GPU.");
+        var ris = info.ImageSharpening;
         Assert.True(ris.SharpnessRange.MinValue <= ris.Sharpness && ris.Sharpness <= ris.SharpnessRange.MaxValue);
     }
 
@@ -156,8 +186,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.EnhancedSync.HasValue || !info.EnhancedSync.Value.IsSupported, "Enhanced Sync not supported on this GPU.");
-        Assert.IsType<bool>(info.EnhancedSync!.Value.IsEnabled);
+        Skip.If(!info.EnhancedSync.IsSupported, "Enhanced Sync not supported on this GPU.");
+        Assert.IsType<bool>(info.EnhancedSync.IsEnabled);
     }
 
     [SkippableFact]
@@ -166,8 +196,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.WaitForVerticalRefresh.HasValue || !info.WaitForVerticalRefresh.Value.IsSupported, "Wait for Vertical Refresh not supported on this GPU.");
-        Assert.True(Enum.IsDefined(typeof(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE), info.WaitForVerticalRefresh!.Value.Mode));
+        Skip.If(!info.WaitForVerticalRefresh.IsSupported, "Wait for Vertical Refresh not supported on this GPU.");
+        Assert.True(Enum.IsDefined(typeof(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE), info.WaitForVerticalRefresh.Mode));
     }
 
     [SkippableFact]
@@ -176,8 +206,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.FrameRateTargetControl.HasValue || !info.FrameRateTargetControl.Value.IsSupported, "Frame Rate Target Control not supported on this GPU.");
-        var frtc = info.FrameRateTargetControl!.Value;
+        Skip.If(!info.FrameRateTargetControl.IsSupported, "Frame Rate Target Control not supported on this GPU.");
+        var frtc = info.FrameRateTargetControl;
         Assert.True(frtc.FpsRange.MinValue <= frtc.Fps && frtc.Fps <= frtc.FpsRange.MaxValue);
     }
 
@@ -187,8 +217,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.AntiAliasing.HasValue || !info.AntiAliasing.Value.IsSupported, "Anti-Aliasing not supported on this GPU.");
-        Assert.True(Enum.IsDefined(typeof(ADLX_ANTI_ALIASING_MODE), info.AntiAliasing!.Value.Mode));
+        Skip.If(!info.AntiAliasing.IsSupported, "Anti-Aliasing not supported on this GPU.");
+        Assert.True(Enum.IsDefined(typeof(ADLX_ANTI_ALIASING_MODE), info.AntiAliasing.Mode));
     }
 
     [SkippableFact]
@@ -197,8 +227,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.AnisotropicFiltering.HasValue || !info.AnisotropicFiltering.Value.IsSupported, "Anisotropic Filtering not supported on this GPU.");
-        Assert.True(Enum.IsDefined(typeof(ADLX_ANISOTROPIC_FILTERING_LEVEL), info.AnisotropicFiltering!.Value.Level));
+        Skip.If(!info.AnisotropicFiltering.IsSupported, "Anisotropic Filtering not supported on this GPU.");
+        Assert.True(Enum.IsDefined(typeof(ADLX_ANISOTROPIC_FILTERING_LEVEL), info.AnisotropicFiltering.Level));
     }
 
     [SkippableFact]
@@ -207,8 +237,8 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.Tessellation.HasValue || !info.Tessellation.Value.IsSupported, "Tessellation not supported on this GPU.");
-        var tess = info.Tessellation!.Value;
+        Skip.If(!info.Tessellation.IsSupported, "Tessellation not supported on this GPU.");
+        var tess = info.Tessellation;
         Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_MODE), tess.Mode));
         Assert.True(Enum.IsDefined(typeof(ADLX_TESSELLATION_LEVEL), tess.Level));
     }
@@ -280,9 +310,9 @@ public class ADLX3DSettingsServicesFacadeTests
         using var helper = Get3DHelperOrSkip();
         var info = GetAll3DSettingsOrSkip(helper);
 
-        Skip.If(!info.MorphologicalAntiAliasing.HasValue || !info.MorphologicalAntiAliasing.Value.IsSupported,
+        Skip.If(!info.MorphologicalAntiAliasing.IsSupported,
             "Morphological Anti-Aliasing not supported on this GPU.");
-        Assert.IsType<bool>(info.MorphologicalAntiAliasing!.Value.IsEnabled);
+        Assert.IsType<bool>(info.MorphologicalAntiAliasing.IsEnabled);
     }
 
     [SkippableFact]

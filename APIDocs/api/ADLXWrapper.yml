@@ -334,6 +334,7 @@ references:
   fullName: ADLXWrapper.All3DSettingsDto
 - uid: ADLXWrapper.AntiLagDto
   commentId: T:ADLXWrapper.AntiLagDto
+  parent: ADLXWrapper
   href: ADLXWrapper.AntiLagDto.html
   name: AntiLagDto
   nameWithType: AntiLagDto
@@ -361,48 +362,56 @@ references:
   fullName: ADLXWrapper.ImageSharpenDesktopDto
 - uid: ADLXWrapper.BoostDto
   commentId: T:ADLXWrapper.BoostDto
+  parent: ADLXWrapper
   href: ADLXWrapper.BoostDto.html
   name: BoostDto
   nameWithType: BoostDto
   fullName: ADLXWrapper.BoostDto
 - uid: ADLXWrapper.RadeonImageSharpeningDto
   commentId: T:ADLXWrapper.RadeonImageSharpeningDto
+  parent: ADLXWrapper
   href: ADLXWrapper.RadeonImageSharpeningDto.html
   name: RadeonImageSharpeningDto
   nameWithType: RadeonImageSharpeningDto
   fullName: ADLXWrapper.RadeonImageSharpeningDto
 - uid: ADLXWrapper.EnhancedSyncDto
   commentId: T:ADLXWrapper.EnhancedSyncDto
+  parent: ADLXWrapper
   href: ADLXWrapper.EnhancedSyncDto.html
   name: EnhancedSyncDto
   nameWithType: EnhancedSyncDto
   fullName: ADLXWrapper.EnhancedSyncDto
 - uid: ADLXWrapper.WaitForVerticalRefreshDto
   commentId: T:ADLXWrapper.WaitForVerticalRefreshDto
+  parent: ADLXWrapper
   href: ADLXWrapper.WaitForVerticalRefreshDto.html
   name: WaitForVerticalRefreshDto
   nameWithType: WaitForVerticalRefreshDto
   fullName: ADLXWrapper.WaitForVerticalRefreshDto
 - uid: ADLXWrapper.FrameRateTargetControlDto
   commentId: T:ADLXWrapper.FrameRateTargetControlDto
+  parent: ADLXWrapper
   href: ADLXWrapper.FrameRateTargetControlDto.html
   name: FrameRateTargetControlDto
   nameWithType: FrameRateTargetControlDto
   fullName: ADLXWrapper.FrameRateTargetControlDto
 - uid: ADLXWrapper.AntiAliasingDto
   commentId: T:ADLXWrapper.AntiAliasingDto
+  parent: ADLXWrapper
   href: ADLXWrapper.AntiAliasingDto.html
   name: AntiAliasingDto
   nameWithType: AntiAliasingDto
   fullName: ADLXWrapper.AntiAliasingDto
 - uid: ADLXWrapper.AnisotropicFilteringDto
   commentId: T:ADLXWrapper.AnisotropicFilteringDto
+  parent: ADLXWrapper
   href: ADLXWrapper.AnisotropicFilteringDto.html
   name: AnisotropicFilteringDto
   nameWithType: AnisotropicFilteringDto
   fullName: ADLXWrapper.AnisotropicFilteringDto
 - uid: ADLXWrapper.TessellationDto
   commentId: T:ADLXWrapper.TessellationDto
+  parent: ADLXWrapper
   href: ADLXWrapper.TessellationDto.html
   name: TessellationDto
   nameWithType: TessellationDto

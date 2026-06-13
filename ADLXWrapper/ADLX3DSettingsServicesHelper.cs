@@ -146,58 +146,58 @@ namespace ADLXWrapper
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             var services = GetHighestServices();
 
-            AntiLagDto? antiLag = null;
+            AntiLagDto antiLag = default;
             IADLX3DAntiLag* pAntiLag;
             if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); antiLag = new AntiLagDto(c.Get()); }
 
-            ChillDto? chill = null;
+            ChillDto chill = default;
             IADLX3DChill* pChill;
             if (services->GetChill(gpu, &pChill) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DChill>(pChill); chill = new ChillDto(c.Get()); }
 
-            BoostDto? boost = null;
+            BoostDto boost = default;
             IADLX3DBoost* pBoost;
             if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); boost = new BoostDto(c.Get()); }
 
-            RadeonImageSharpeningDto? sharpening = null;
+            RadeonImageSharpeningDto sharpening = default;
             IADLX3DImageSharpening* pRis;
             if (services->GetImageSharpening(gpu, &pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); sharpening = new RadeonImageSharpeningDto(c.Get()); }
 
-            EnhancedSyncDto? enhancedSync = null;
+            EnhancedSyncDto enhancedSync = default;
             IADLX3DEnhancedSync* pEs;
             if (services->GetEnhancedSync(gpu, &pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); enhancedSync = new EnhancedSyncDto(c.Get()); }
 
-            WaitForVerticalRefreshDto? vsync = null;
+            WaitForVerticalRefreshDto vsync = default;
             IADLX3DWaitForVerticalRefresh* pVsync;
             if (services->GetWaitForVerticalRefresh(gpu, &pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); vsync = new WaitForVerticalRefreshDto(c.Get()); }
 
-            FrameRateTargetControlDto? frtc = null;
+            FrameRateTargetControlDto frtc = default;
             IADLX3DFrameRateTargetControl* pFrtc;
             if (services->GetFrameRateTargetControl(gpu, &pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); frtc = new FrameRateTargetControlDto(c.Get()); }
 
-            AntiAliasingDto? aa = null;
+            AntiAliasingDto aa = default;
             IADLX3DAntiAliasing* pAa;
             if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); aa = new AntiAliasingDto(c.Get()); }
 
-            MorphologicalAntiAliasingDto? morphAa = null;
+            MorphologicalAntiAliasingDto morphAa = default;
             IADLX3DMorphologicalAntiAliasing* pMorphAa;
             if (services->GetMorphologicalAntiAliasing(gpu, &pMorphAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa); morphAa = new MorphologicalAntiAliasingDto(c.Get()); }
 
-            AnisotropicFilteringDto? af = null;
+            AnisotropicFilteringDto af = default;
             IADLX3DAnisotropicFiltering* pAf;
             if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); af = new AnisotropicFilteringDto(c.Get()); }
 
-            TessellationDto? tess = null;
+            TessellationDto tess = default;
             IADLX3DTessellation* pTess;
             if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); tess = new TessellationDto(c.Get()); }
 
-            ImageSharpenDesktopDto? imageSharpenDesktop = null;
+            ImageSharpenDesktopDto imageSharpenDesktop = default;
             if (_services2.HasValue)
             {
                 IADLX3DImageSharpenDesktop* pIsd;
                 if (_services2.Value.Get()->GetImageSharpenDesktop(gpu, &pIsd) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpenDesktop>(pIsd); imageSharpenDesktop = new ImageSharpenDesktopDto(c.Get()); }
             }
 
-            return new All3DSettingsDto(antiLag, chill, boost, sharpening, enhancedSync, vsync, frtc, aa, morphAa, af, tess, null, null, imageSharpenDesktop);
+            return new All3DSettingsDto(antiLag, chill, boost, sharpening, enhancedSync, vsync, frtc, aa, morphAa, af, tess, default, default, imageSharpenDesktop);
         }
 
         /// <summary>
@@ -231,18 +231,18 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             if (gpu == null) throw new ArgumentNullException(nameof(gpu));
             var services = GetHighestServices();
-            if (info.AntiLag.HasValue) ApplyAntiLag(services, gpu, info.AntiLag.Value);
-            if (info.Chill.HasValue) ApplyChill(services, gpu, info.Chill.Value);
-            if (info.Boost.HasValue) ApplyBoost(services, gpu, info.Boost.Value);
-            if (info.ImageSharpening.HasValue) ApplyRadeonImageSharpening(services, gpu, info.ImageSharpening.Value);
-            if (info.EnhancedSync.HasValue) ApplyEnhancedSync(services, gpu, info.EnhancedSync.Value);
-            if (info.WaitForVerticalRefresh.HasValue) ApplyWaitForVerticalRefresh(services, gpu, info.WaitForVerticalRefresh.Value);
-            if (info.FrameRateTargetControl.HasValue) ApplyFrameRateTargetControl(services, gpu, info.FrameRateTargetControl.Value);
-            if (info.AntiAliasing.HasValue) ApplyAntiAliasing(services, gpu, info.AntiAliasing.Value);
-            if (info.MorphologicalAntiAliasing.HasValue) ApplyMorphologicalAntiAliasing(services, gpu, info.MorphologicalAntiAliasing.Value);
-            if (info.AnisotropicFiltering.HasValue) ApplyAnisotropicFiltering(services, gpu, info.AnisotropicFiltering.Value);
-            if (info.Tessellation.HasValue) ApplyTessellation(services, gpu, info.Tessellation.Value);
-            if (info.ImageSharpenDesktop.HasValue && _services2.HasValue) ApplyImageSharpenDesktop(_services2.Value.Get(), gpu, info.ImageSharpenDesktop.Value);
+            if (info.AntiLag.IsSupported) ApplyAntiLag(services, gpu, info.AntiLag);
+            if (info.Chill.IsSupported) ApplyChill(services, gpu, info.Chill);
+            if (info.Boost.IsSupported) ApplyBoost(services, gpu, info.Boost);
+            if (info.ImageSharpening.IsSupported) ApplyRadeonImageSharpening(services, gpu, info.ImageSharpening);
+            if (info.EnhancedSync.IsSupported) ApplyEnhancedSync(services, gpu, info.EnhancedSync);
+            if (info.WaitForVerticalRefresh.IsSupported) ApplyWaitForVerticalRefresh(services, gpu, info.WaitForVerticalRefresh);
+            if (info.FrameRateTargetControl.IsSupported) ApplyFrameRateTargetControl(services, gpu, info.FrameRateTargetControl);
+            if (info.AntiAliasing.IsSupported) ApplyAntiAliasing(services, gpu, info.AntiAliasing);
+            if (info.MorphologicalAntiAliasing.IsSupported) ApplyMorphologicalAntiAliasing(services, gpu, info.MorphologicalAntiAliasing);
+            if (info.AnisotropicFiltering.IsSupported) ApplyAnisotropicFiltering(services, gpu, info.AnisotropicFiltering);
+            if (info.Tessellation.IsSupported) ApplyTessellation(services, gpu, info.Tessellation);
+            if (info.ImageSharpenDesktop.IsSupported && _services2.HasValue) ApplyImageSharpenDesktop(_services2.Value.Get(), gpu, info.ImageSharpenDesktop);
         }
 
         /// <summary>
@@ -828,23 +828,23 @@ namespace ADLXWrapper
     /// </summary>
     public readonly struct All3DSettingsDto
     {
-        public AntiLagDto? AntiLag { get; init; }
-        public ChillDto? Chill { get; init; }
-        public BoostDto? Boost { get; init; }
-        public RadeonImageSharpeningDto? ImageSharpening { get; init; }
-        public EnhancedSyncDto? EnhancedSync { get; init; }
-        public WaitForVerticalRefreshDto? WaitForVerticalRefresh { get; init; }
-        public FrameRateTargetControlDto? FrameRateTargetControl { get; init; }
-        public AntiAliasingDto? AntiAliasing { get; init; }
-        public MorphologicalAntiAliasingDto? MorphologicalAntiAliasing { get; init; }
-        public AnisotropicFilteringDto? AnisotropicFiltering { get; init; }
-        public TessellationDto? Tessellation { get; init; }
-        public FluidMotionFramesDto? FluidMotionFrames { get; init; }
-        public RadeonSuperResolutionDto? RadeonSuperResolution { get; init; }
-        public ImageSharpenDesktopDto? ImageSharpenDesktop { get; init; }
+        public AntiLagDto AntiLag { get; init; }
+        public ChillDto Chill { get; init; }
+        public BoostDto Boost { get; init; }
+        public RadeonImageSharpeningDto ImageSharpening { get; init; }
+        public EnhancedSyncDto EnhancedSync { get; init; }
+        public WaitForVerticalRefreshDto WaitForVerticalRefresh { get; init; }
+        public FrameRateTargetControlDto FrameRateTargetControl { get; init; }
+        public AntiAliasingDto AntiAliasing { get; init; }
+        public MorphologicalAntiAliasingDto MorphologicalAntiAliasing { get; init; }
+        public AnisotropicFilteringDto AnisotropicFiltering { get; init; }
+        public TessellationDto Tessellation { get; init; }
+        public FluidMotionFramesDto FluidMotionFrames { get; init; }
+        public RadeonSuperResolutionDto RadeonSuperResolution { get; init; }
+        public ImageSharpenDesktopDto ImageSharpenDesktop { get; init; }
 
         [JsonConstructor]
-        public All3DSettingsDto(AntiLagDto? antiLag, ChillDto? chill, BoostDto? boost, RadeonImageSharpeningDto? imageSharpening, EnhancedSyncDto? enhancedSync, WaitForVerticalRefreshDto? waitForVerticalRefresh, FrameRateTargetControlDto? frameRateTargetControl, AntiAliasingDto? antiAliasing, MorphologicalAntiAliasingDto? morphologicalAntiAliasing, AnisotropicFilteringDto? anisotropicFiltering, TessellationDto? tessellation, FluidMotionFramesDto? fluidMotionFrames, RadeonSuperResolutionDto? radeonSuperResolution, ImageSharpenDesktopDto? imageSharpenDesktop = null)
+        public All3DSettingsDto(AntiLagDto antiLag, ChillDto chill, BoostDto boost, RadeonImageSharpeningDto imageSharpening, EnhancedSyncDto enhancedSync, WaitForVerticalRefreshDto waitForVerticalRefresh, FrameRateTargetControlDto frameRateTargetControl, AntiAliasingDto antiAliasing, MorphologicalAntiAliasingDto morphologicalAntiAliasing, AnisotropicFilteringDto anisotropicFiltering, TessellationDto tessellation, FluidMotionFramesDto fluidMotionFrames, RadeonSuperResolutionDto radeonSuperResolution, ImageSharpenDesktopDto imageSharpenDesktop = default)
         {
             AntiLag = antiLag;
             Chill = chill;
@@ -865,42 +865,42 @@ namespace ADLXWrapper
         internal unsafe All3DSettingsDto(IADLX3DSettingsServices* services, IADLXGPU* gpu)
         {
             IADLX3DAntiLag* pAntiLag;
-            if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagDto(c.Get()); } else { AntiLag = null; }
+            if (services->GetAntiLag(gpu, &pAntiLag) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiLag>(pAntiLag); AntiLag = new AntiLagDto(c.Get()); } else { AntiLag = default; }
 
             IADLX3DChill* pChill;
-            if (services->GetChill(gpu, &pChill) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DChill>(pChill); Chill = new ChillDto(c.Get()); } else { Chill = null; }
+            if (services->GetChill(gpu, &pChill) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DChill>(pChill); Chill = new ChillDto(c.Get()); } else { Chill = default; }
 
             IADLX3DBoost* pBoost;
-            if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostDto(c.Get()); } else { Boost = null; }
+            if (services->GetBoost(gpu, &pBoost) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DBoost>(pBoost); Boost = new BoostDto(c.Get()); } else { Boost = default; }
 
             IADLX3DImageSharpening* pRis;
-            if (services->GetImageSharpening(gpu, &pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningDto(c.Get()); } else { ImageSharpening = null; }
+            if (services->GetImageSharpening(gpu, &pRis) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DImageSharpening>(pRis); ImageSharpening = new RadeonImageSharpeningDto(c.Get()); } else { ImageSharpening = default; }
 
             IADLX3DEnhancedSync* pEs;
-            if (services->GetEnhancedSync(gpu, &pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); EnhancedSync = new EnhancedSyncDto(c.Get()); } else { EnhancedSync = null; }
+            if (services->GetEnhancedSync(gpu, &pEs) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DEnhancedSync>(pEs); EnhancedSync = new EnhancedSyncDto(c.Get()); } else { EnhancedSync = default; }
 
             IADLX3DWaitForVerticalRefresh* pVsync;
-            if (services->GetWaitForVerticalRefresh(gpu, &pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); WaitForVerticalRefresh = new WaitForVerticalRefreshDto(c.Get()); } else { WaitForVerticalRefresh = null; }
+            if (services->GetWaitForVerticalRefresh(gpu, &pVsync) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DWaitForVerticalRefresh>(pVsync); WaitForVerticalRefresh = new WaitForVerticalRefreshDto(c.Get()); } else { WaitForVerticalRefresh = default; }
 
             IADLX3DFrameRateTargetControl* pFrtc;
-            if (services->GetFrameRateTargetControl(gpu, &pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); FrameRateTargetControl = new FrameRateTargetControlDto(c.Get()); } else { FrameRateTargetControl = null; }
+            if (services->GetFrameRateTargetControl(gpu, &pFrtc) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DFrameRateTargetControl>(pFrtc); FrameRateTargetControl = new FrameRateTargetControlDto(c.Get()); } else { FrameRateTargetControl = default; }
 
             IADLX3DAntiAliasing* pAa;
-            if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); AntiAliasing = new AntiAliasingDto(c.Get()); } else { AntiAliasing = null; }
+            if (services->GetAntiAliasing(gpu, &pAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAntiAliasing>(pAa); AntiAliasing = new AntiAliasingDto(c.Get()); } else { AntiAliasing = default; }
 
             IADLX3DMorphologicalAntiAliasing* pMorphAa;
-            if (services->GetMorphologicalAntiAliasing(gpu, &pMorphAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa); MorphologicalAntiAliasing = new MorphologicalAntiAliasingDto(c.Get()); } else { MorphologicalAntiAliasing = null; }
+            if (services->GetMorphologicalAntiAliasing(gpu, &pMorphAa) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DMorphologicalAntiAliasing>(pMorphAa); MorphologicalAntiAliasing = new MorphologicalAntiAliasingDto(c.Get()); } else { MorphologicalAntiAliasing = default; }
 
             IADLX3DAnisotropicFiltering* pAf;
-            if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); AnisotropicFiltering = new AnisotropicFilteringDto(c.Get()); } else { AnisotropicFiltering = null; }
+            if (services->GetAnisotropicFiltering(gpu, &pAf) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DAnisotropicFiltering>(pAf); AnisotropicFiltering = new AnisotropicFilteringDto(c.Get()); } else { AnisotropicFiltering = default; }
 
             IADLX3DTessellation* pTess;
-            if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationDto(c.Get()); } else { Tessellation = null; }
+            if (services->GetTessellation(gpu, &pTess) == ADLX_RESULT.ADLX_OK) { using var c = new ComPtr<IADLX3DTessellation>(pTess); Tessellation = new TessellationDto(c.Get()); } else { Tessellation = default; }
 
-            // FMF/RSR/ImageSharpenDesktop not available without helper context; leave null in this constructor.
-            FluidMotionFrames = null;
-            RadeonSuperResolution = null;
-            ImageSharpenDesktop = null;
+            // FMF/RSR/ImageSharpenDesktop not available without helper context; leave as default in this constructor.
+            FluidMotionFrames = default;
+            RadeonSuperResolution = default;
+            ImageSharpenDesktop = default;
         }
     }
 
