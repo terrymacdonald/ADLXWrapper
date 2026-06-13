@@ -485,10 +485,10 @@ namespace ADLXWrapper
                 if (info.IsSupported)
                 {
                     c.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
-                    if (info.Level.HasValue && ADLXUtils.TryQueryInterface((IntPtr)c.Get(), nameof(IADLX3DAntiLag1), out var p1Ptr))
+                    if (info.HasLevel && ADLXUtils.TryQueryInterface((IntPtr)c.Get(), nameof(IADLX3DAntiLag1), out var p1Ptr))
                     {
                         using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1Ptr);
-                        al1.Get()->SetLevel(info.Level.Value);
+                        al1.Get()->SetLevel(info.Level);
                     }
                 }
             }
@@ -908,13 +908,15 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
-        public ADLX_ANTILAG_STATE? Level { get; init; }
+        public bool HasLevel { get; init; }
+        public ADLX_ANTILAG_STATE Level { get; init; }
 
         [JsonConstructor]
-        public AntiLagDto(bool isSupported, bool isEnabled, ADLX_ANTILAG_STATE? level = null)
+        public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_STATE level = default)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
+            HasLevel = hasLevel;
             Level = level;
         }
 
@@ -925,16 +927,21 @@ namespace ADLXWrapper
             IsSupported = supported;
 
             bool enabled = false;
-            if (IsSupported) antiLag->IsEnabled(&enabled);
+            if (IsSupported) 
+                antiLag->IsEnabled(&enabled);
             IsEnabled = enabled;
 
-            Level = null;
+            HasLevel = false;
+            Level = default;
             if (ADLXUtils.TryQueryInterface((IntPtr)antiLag, nameof(IADLX3DAntiLag1), out var p1Ptr))
             {
                 using var al1 = new ComPtr<IADLX3DAntiLag1>((IADLX3DAntiLag1*)p1Ptr);
                 ADLX_ANTILAG_STATE level = default;
                 if (al1.Get()->GetLevel(&level) == ADLX_RESULT.ADLX_OK)
+                {
+                    HasLevel = true;
                     Level = level;
+                }
             }
         }
     }
