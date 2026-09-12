@@ -41,7 +41,7 @@ public unsafe partial struct IADLXEyefinityDesktop
     }
 
     /// <include file='IADLXEyefinityDesktop.xml' path='doc/member[@name="IADLXEyefinityDesktop.DisplayOrientation"]/*' />
-    public ADLX_RESULT DisplayOrientation([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, ADLX_ORIENTATION* displayOrientation)
+    public ADLX_RESULT DisplayOrientation([NativeTypeName("adlx_uint")] uint row, [NativeTypeName("adlx_uint")] uint col, [NativeTypeName("adlx::ADLX_ORIENTATION *")] ADLX_ORIENTATION* displayOrientation)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXEyefinityDesktop*, uint, uint, ADLX_ORIENTATION*, ADLX_RESULT>)(lpVtbl[5]))((IADLXEyefinityDesktop*)Unsafe.AsPointer(ref this), row, col, displayOrientation);
     }

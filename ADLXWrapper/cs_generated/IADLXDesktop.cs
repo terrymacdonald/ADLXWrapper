@@ -29,7 +29,7 @@ public unsafe partial struct IADLXDesktop
     }
 
     /// <include file='IADLXDesktop.xml' path='doc/member[@name="IADLXDesktop.Orientation"]/*' />
-    public ADLX_RESULT Orientation(ADLX_ORIENTATION* orientation)
+    public ADLX_RESULT Orientation([NativeTypeName("adlx::ADLX_ORIENTATION *")] ADLX_ORIENTATION* orientation)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDesktop*, ADLX_ORIENTATION*, ADLX_RESULT>)(lpVtbl[3]))((IADLXDesktop*)Unsafe.AsPointer(ref this), orientation);
     }
@@ -47,7 +47,7 @@ public unsafe partial struct IADLXDesktop
     }
 
     /// <include file='IADLXDesktop.xml' path='doc/member[@name="IADLXDesktop.Type"]/*' />
-    public ADLX_RESULT Type(ADLX_DESKTOP_TYPE* desktopType)
+    public ADLX_RESULT Type([NativeTypeName("adlx::ADLX_DESKTOP_TYPE *")] ADLX_DESKTOP_TYPE* desktopType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDesktop*, ADLX_DESKTOP_TYPE*, ADLX_RESULT>)(lpVtbl[6]))((IADLXDesktop*)Unsafe.AsPointer(ref this), desktopType);
     }

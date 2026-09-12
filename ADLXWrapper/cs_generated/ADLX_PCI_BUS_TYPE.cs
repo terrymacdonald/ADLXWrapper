@@ -23,4 +23,7 @@ public enum ADLX_PCI_BUS_TYPE
 
     /// <include file='ADLX_PCI_BUS_TYPE.xml' path='doc/member[@name="ADLX_PCI_BUS_TYPE.PCIE_4_0"]/*' />
     PCIE_4_0,
+
+    /// <include file='ADLX_PCI_BUS_TYPE.xml' path='doc/member[@name="ADLX_PCI_BUS_TYPE.PCIE_5_0"]/*' />
+    PCIE_5_0,
 }

@@ -47,7 +47,7 @@ public unsafe partial struct IADLXApplication
     }
 
     /// <include file='IADLXApplication.xml' path='doc/member[@name="IADLXApplication.GPUDependencyType"]/*' />
-    public ADLX_RESULT GPUDependencyType(ADLX_APP_GPU_DEPENDENCY* gpuDependency)
+    public ADLX_RESULT GPUDependencyType([NativeTypeName("adlx::ADLX_APP_GPU_DEPENDENCY *")] ADLX_APP_GPU_DEPENDENCY* gpuDependency)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXApplication*, ADLX_APP_GPU_DEPENDENCY*, ADLX_RESULT>)(lpVtbl[6]))((IADLXApplication*)Unsafe.AsPointer(ref this), gpuDependency);
     }

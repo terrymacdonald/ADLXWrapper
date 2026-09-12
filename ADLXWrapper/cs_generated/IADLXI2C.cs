@@ -35,25 +35,25 @@ public unsafe partial struct IADLXI2C
     }
 
     /// <include file='IADLXI2C.xml' path='doc/member[@name="IADLXI2C.IsSupported"]/*' />
-    public ADLX_RESULT IsSupported(ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_bool *")] bool* isSupported)
+    public ADLX_RESULT IsSupported([NativeTypeName("adlx::ADLX_I2C_LINE")] ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_bool *")] bool* isSupported)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXI2C*, ADLX_I2C_LINE, int, bool*, ADLX_RESULT>)(lpVtbl[4]))((IADLXI2C*)Unsafe.AsPointer(ref this), line, address, isSupported);
     }
 
     /// <include file='IADLXI2C.xml' path='doc/member[@name="IADLXI2C.Read"]/*' />
-    public ADLX_RESULT Read(ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
+    public ADLX_RESULT Read([NativeTypeName("adlx::ADLX_I2C_LINE")] ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXI2C*, ADLX_I2C_LINE, int, int, int, int, byte*, ADLX_RESULT>)(lpVtbl[5]))((IADLXI2C*)Unsafe.AsPointer(ref this), line, speed, address, offset, dataSize, data);
     }
 
     /// <include file='IADLXI2C.xml' path='doc/member[@name="IADLXI2C.RepeatedStartRead"]/*' />
-    public ADLX_RESULT RepeatedStartRead(ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
+    public ADLX_RESULT RepeatedStartRead([NativeTypeName("adlx::ADLX_I2C_LINE")] ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXI2C*, ADLX_I2C_LINE, int, int, int, int, byte*, ADLX_RESULT>)(lpVtbl[6]))((IADLXI2C*)Unsafe.AsPointer(ref this), line, speed, address, offset, dataSize, data);
     }
 
     /// <include file='IADLXI2C.xml' path='doc/member[@name="IADLXI2C.Write"]/*' />
-    public ADLX_RESULT Write(ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
+    public ADLX_RESULT Write([NativeTypeName("adlx::ADLX_I2C_LINE")] ADLX_I2C_LINE line, [NativeTypeName("adlx_int")] int speed, [NativeTypeName("adlx_int")] int address, [NativeTypeName("adlx_int")] int offset, [NativeTypeName("adlx_int")] int dataSize, [NativeTypeName("adlx_byte *")] byte* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXI2C*, ADLX_I2C_LINE, int, int, int, int, byte*, ADLX_RESULT>)(lpVtbl[7]))((IADLXI2C*)Unsafe.AsPointer(ref this), line, speed, address, offset, dataSize, data);
     }

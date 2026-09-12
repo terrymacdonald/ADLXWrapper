@@ -35,13 +35,13 @@ public unsafe partial struct IADLXGPU
     }
 
     /// <include file='IADLXGPU.xml' path='doc/member[@name="IADLXGPU.ASICFamilyType"]/*' />
-    public readonly ADLX_RESULT ASICFamilyType(ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
+    public readonly ADLX_RESULT ASICFamilyType([NativeTypeName("adlx::ADLX_ASIC_FAMILY_TYPE *")] ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU*, ADLX_ASIC_FAMILY_TYPE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPU*)Unsafe.AsPointer(in this), asicFamilyType);
     }
 
     /// <include file='IADLXGPU.xml' path='doc/member[@name="IADLXGPU.Type"]/*' />
-    public readonly ADLX_RESULT Type(ADLX_GPU_TYPE* gpuType)
+    public readonly ADLX_RESULT Type([NativeTypeName("adlx::ADLX_GPU_TYPE *")] ADLX_GPU_TYPE* gpuType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU*, ADLX_GPU_TYPE*, ADLX_RESULT>)(lpVtbl[5]))((IADLXGPU*)Unsafe.AsPointer(in this), gpuType);
     }

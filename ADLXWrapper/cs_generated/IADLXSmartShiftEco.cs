@@ -53,7 +53,7 @@ public unsafe partial struct IADLXSmartShiftEco
     }
 
     /// <include file='IADLXSmartShiftEco.xml' path='doc/member[@name="IADLXSmartShiftEco.GetInactiveReason"]/*' />
-    public ADLX_RESULT GetInactiveReason(ADLX_SMARTSHIFT_ECO_INACTIVE_REASON* reason)
+    public ADLX_RESULT GetInactiveReason([NativeTypeName("adlx::ADLX_SMARTSHIFT_ECO_INACTIVE_REASON *")] ADLX_SMARTSHIFT_ECO_INACTIVE_REASON* reason)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXSmartShiftEco*, ADLX_SMARTSHIFT_ECO_INACTIVE_REASON*, ADLX_RESULT>)(lpVtbl[7]))((IADLXSmartShiftEco*)Unsafe.AsPointer(ref this), reason);
     }

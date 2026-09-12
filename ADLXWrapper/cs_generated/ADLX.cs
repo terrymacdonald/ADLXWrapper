@@ -31,17 +31,17 @@ public static unsafe partial class ADLX
     [NativeTypeName("#define ADLX_VER_MAJOR 1")]
     public const int ADLX_VER_MAJOR = 1;
 
-    [NativeTypeName("#define ADLX_VER_MINOR 4")]
-    public const int ADLX_VER_MINOR = 4;
+    [NativeTypeName("#define ADLX_VER_MINOR 5")]
+    public const int ADLX_VER_MINOR = 5;
 
     [NativeTypeName("#define ADLX_VER_RELEASE 0")]
     public const int ADLX_VER_RELEASE = 0;
 
-    [NativeTypeName("#define ADLX_VER_BUILD_NUM 110")]
-    public const int ADLX_VER_BUILD_NUM = 110;
+    [NativeTypeName("#define ADLX_VER_BUILD_NUM 124")]
+    public const int ADLX_VER_BUILD_NUM = 124;
 
     [NativeTypeName("#define ADLX_FULL_VERSION ADLX_MAKE_FULL_VER(ADLX_VER_MAJOR, ADLX_VER_MINOR, ADLX_VER_RELEASE, ADLX_VER_BUILD_NUM)")]
-    public const ulong ADLX_FULL_VERSION = (((ulong)(1) << 48) | ((ulong)(4) << 32) | ((ulong)(0) << 16) | (ulong)(110));
+    public const ulong ADLX_FULL_VERSION = (((ulong)(1) << 48) | ((ulong)(5) << 32) | ((ulong)(0) << 16) | (ulong)(124));
 
     [NativeTypeName("#define ADLX_VERSION_STR ADLX_VER_MAJOR")]
     public const int ADLX_VERSION_STR = 1;
@@ -69,6 +69,12 @@ public static unsafe partial class ADLX
 
     [NativeTypeName("#define ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME \"ADLXInitializeWithIncompatibleDriver\"")]
     public static ReadOnlySpan<byte> ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME => "ADLXInitializeWithIncompatibleDriver"u8;
+
+    [NativeTypeName("#define ADLX_INIT2_FUNCTION_NAME \"ADLXInitialize2\"")]
+    public static ReadOnlySpan<byte> ADLX_INIT2_FUNCTION_NAME => "ADLXInitialize2"u8;
+
+    [NativeTypeName("#define ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME \"ADLXInitializeWithIncompatibleDriver2\"")]
+    public static ReadOnlySpan<byte> ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME => "ADLXInitializeWithIncompatibleDriver2"u8;
 
     [NativeTypeName("#define ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME \"ADLXInitializeWithCallerAdl\"")]
     public static ReadOnlySpan<byte> ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME => "ADLXInitializeWithCallerAdl"u8;

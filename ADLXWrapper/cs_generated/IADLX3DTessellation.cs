@@ -35,25 +35,25 @@ public unsafe partial struct IADLX3DTessellation
     }
 
     /// <include file='IADLX3DTessellation.xml' path='doc/member[@name="IADLX3DTessellation.GetMode"]/*' />
-    public ADLX_RESULT GetMode(ADLX_TESSELLATION_MODE* currentMode)
+    public ADLX_RESULT GetMode([NativeTypeName("adlx::ADLX_TESSELLATION_MODE *")] ADLX_TESSELLATION_MODE* currentMode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_MODE*, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), currentMode);
     }
 
     /// <include file='IADLX3DTessellation.xml' path='doc/member[@name="IADLX3DTessellation.GetLevel"]/*' />
-    public ADLX_RESULT GetLevel(ADLX_TESSELLATION_LEVEL* currentLevel)
+    public ADLX_RESULT GetLevel([NativeTypeName("adlx::ADLX_TESSELLATION_LEVEL *")] ADLX_TESSELLATION_LEVEL* currentLevel)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_LEVEL*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), currentLevel);
     }
 
     /// <include file='IADLX3DTessellation.xml' path='doc/member[@name="IADLX3DTessellation.SetMode"]/*' />
-    public ADLX_RESULT SetMode(ADLX_TESSELLATION_MODE mode)
+    public ADLX_RESULT SetMode([NativeTypeName("adlx::ADLX_TESSELLATION_MODE")] ADLX_TESSELLATION_MODE mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_MODE, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IADLX3DTessellation.xml' path='doc/member[@name="IADLX3DTessellation.SetLevel"]/*' />
-    public ADLX_RESULT SetLevel(ADLX_TESSELLATION_LEVEL level)
+    public ADLX_RESULT SetLevel([NativeTypeName("adlx::ADLX_TESSELLATION_LEVEL")] ADLX_TESSELLATION_LEVEL level)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DTessellation*, ADLX_TESSELLATION_LEVEL, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DTessellation*)Unsafe.AsPointer(ref this), level);
     }

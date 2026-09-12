@@ -29,6 +29,7 @@ public unsafe partial struct IADLXDisplaySettingsChangedEvent
     }
 
     /// <inheritdoc cref="IADLXChangedEvent.GetOrigin" />
+    [return: NativeTypeName("adlx::ADLX_SYNC_ORIGIN")]
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplaySettingsChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXDisplaySettingsChangedEvent*)Unsafe.AsPointer(ref this));

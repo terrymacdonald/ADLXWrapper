@@ -35,13 +35,13 @@ public unsafe partial struct IADLXGPU1
     }
 
     /// <inheritdoc cref="IADLXGPU.ASICFamilyType" />
-    public readonly ADLX_RESULT ASICFamilyType(ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
+    public readonly ADLX_RESULT ASICFamilyType([NativeTypeName("adlx::ADLX_ASIC_FAMILY_TYPE *")] ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU1*, ADLX_ASIC_FAMILY_TYPE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXGPU1*)Unsafe.AsPointer(in this), asicFamilyType);
     }
 
     /// <inheritdoc cref="IADLXGPU.Type" />
-    public readonly ADLX_RESULT Type(ADLX_GPU_TYPE* gpuType)
+    public readonly ADLX_RESULT Type([NativeTypeName("adlx::ADLX_GPU_TYPE *")] ADLX_GPU_TYPE* gpuType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU1*, ADLX_GPU_TYPE*, ADLX_RESULT>)(lpVtbl[5]))((IADLXGPU1*)Unsafe.AsPointer(in this), gpuType);
     }
@@ -125,7 +125,7 @@ public unsafe partial struct IADLXGPU1
     }
 
     /// <include file='IADLXGPU1.xml' path='doc/member[@name="IADLXGPU1.PCIBusType"]/*' />
-    public readonly ADLX_RESULT PCIBusType(ADLX_PCI_BUS_TYPE* busType)
+    public readonly ADLX_RESULT PCIBusType([NativeTypeName("adlx::ADLX_PCI_BUS_TYPE *")] ADLX_PCI_BUS_TYPE* busType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU1*, ADLX_PCI_BUS_TYPE*, ADLX_RESULT>)(lpVtbl[19]))((IADLXGPU1*)Unsafe.AsPointer(in this), busType);
     }
@@ -137,7 +137,7 @@ public unsafe partial struct IADLXGPU1
     }
 
     /// <include file='IADLXGPU1.xml' path='doc/member[@name="IADLXGPU1.MultiGPUMode"]/*' />
-    public ADLX_RESULT MultiGPUMode(ADLX_MGPU_MODE* mode)
+    public ADLX_RESULT MultiGPUMode([NativeTypeName("adlx::ADLX_MGPU_MODE *")] ADLX_MGPU_MODE* mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXGPU1*, ADLX_MGPU_MODE*, ADLX_RESULT>)(lpVtbl[21]))((IADLXGPU1*)Unsafe.AsPointer(ref this), mode);
     }

@@ -29,6 +29,7 @@ public unsafe partial struct IADLXChangedEvent
     }
 
     /// <include file='IADLXChangedEvent.xml' path='doc/member[@name="IADLXChangedEvent.GetOrigin"]/*' />
+    [return: NativeTypeName("adlx::ADLX_SYNC_ORIGIN")]
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
         return ((delegate* unmanaged[Stdcall]<IADLXChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXChangedEvent*)Unsafe.AsPointer(ref this));

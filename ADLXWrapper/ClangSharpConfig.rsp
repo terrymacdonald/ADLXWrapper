@@ -9,6 +9,7 @@ BuildADLX.h
 # This is needed as the BuildADLX.h file includes them via relative paths. Make sure any new header files added to the ADLX SDK are also added here.
 --traverse
 ../ADLX/SDK/Include/ADLX.h
+
 --traverse 
 ../ADLX/SDK/Include/ADLXDefines.h
 
@@ -26,6 +27,9 @@ BuildADLX.h
 
 --traverse 
 ../ADLX/SDK/Include/I3DSettings2.h
+
+--traverse
+../ADLX/SDK/Include/I3DSettings3.h
 
 --traverse 
 ../ADLX/SDK/Include/IApplications.h
@@ -126,6 +130,10 @@ BuildADLX.h
 --traverse 
 ../ADLX/SDK/Include/ISystem2.h
 
+--traverse
+../ADLX/SDK/Include/ISystem3.h
+
+
 #--file-directory
 #./
 
@@ -139,10 +147,10 @@ cs_generated
 --output-mode
 CSharp
 
---libraryPath
+--library-path
 amdadlx64
 
---methodClassName
+--method-class-name
 ADLX
 
 --language
@@ -179,16 +187,32 @@ ADLX_DECLARE_ITEM_IID
 --remap
 adlx::IADLXInterfacePtr_T=IntPtr   # or a small C# holder type if you prefer
 
+--generate
+helper-types
+
+--generate
+doc-includes
+
+--generate
+macro-bindings
+
+--generate
+file-scoped-namespaces
+
+--generate
+funcs-with-body=false
+
+--generate
+tests-xunit
+
+--log
+visited-files
+
+--log
+potential-typedef-remappings
+
 --config
-latest-codegen
-generate-helper-types
-generate-doc-includes
-log-visited-files
-#log-exclusions
-log-potential-typedef-remappings
-windows-types 
-multi-file
-generate-macro-bindings
-generate-file-scoped-namespaces
-exclude-funcs-with-body
-generate-tests-xunit
+codegen=latest
+types=windows
+file=multi
+

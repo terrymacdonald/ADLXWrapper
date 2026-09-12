@@ -41,7 +41,7 @@ public unsafe partial struct IADLX3DAnisotropicFiltering
     }
 
     /// <include file='IADLX3DAnisotropicFiltering.xml' path='doc/member[@name="IADLX3DAnisotropicFiltering.GetLevel"]/*' />
-    public ADLX_RESULT GetLevel(ADLX_ANISOTROPIC_FILTERING_LEVEL* currentLevel)
+    public ADLX_RESULT GetLevel([NativeTypeName("adlx::ADLX_ANISOTROPIC_FILTERING_LEVEL *")] ADLX_ANISOTROPIC_FILTERING_LEVEL* currentLevel)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAnisotropicFiltering*, ADLX_ANISOTROPIC_FILTERING_LEVEL*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DAnisotropicFiltering*)Unsafe.AsPointer(ref this), currentLevel);
     }
@@ -53,7 +53,7 @@ public unsafe partial struct IADLX3DAnisotropicFiltering
     }
 
     /// <include file='IADLX3DAnisotropicFiltering.xml' path='doc/member[@name="IADLX3DAnisotropicFiltering.SetLevel"]/*' />
-    public ADLX_RESULT SetLevel(ADLX_ANISOTROPIC_FILTERING_LEVEL level)
+    public ADLX_RESULT SetLevel([NativeTypeName("adlx::ADLX_ANISOTROPIC_FILTERING_LEVEL")] ADLX_ANISOTROPIC_FILTERING_LEVEL level)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAnisotropicFiltering*, ADLX_ANISOTROPIC_FILTERING_LEVEL, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DAnisotropicFiltering*)Unsafe.AsPointer(ref this), level);
     }

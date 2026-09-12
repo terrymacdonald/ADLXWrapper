@@ -29,6 +29,7 @@ public unsafe partial struct IADLXPowerTuningChangedEvent
     }
 
     /// <inheritdoc cref="IADLXChangedEvent.GetOrigin" />
+    [return: NativeTypeName("adlx::ADLX_SYNC_ORIGIN")]
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
         return ((delegate* unmanaged[Stdcall]<IADLXPowerTuningChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXPowerTuningChangedEvent*)Unsafe.AsPointer(ref this));

@@ -47,13 +47,13 @@ public unsafe partial struct IADLX3DAntiLag1
     }
 
     /// <include file='IADLX3DAntiLag1.xml' path='doc/member[@name="IADLX3DAntiLag1.GetLevel"]/*' />
-    public ADLX_RESULT GetLevel(ADLX_ANTILAG_STATE* level)
+    public ADLX_RESULT GetLevel([NativeTypeName("adlx::ADLX_ANTILAG_STATE *")] ADLX_ANTILAG_STATE* level)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag1*, ADLX_ANTILAG_STATE*, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DAntiLag1*)Unsafe.AsPointer(ref this), level);
     }
 
     /// <include file='IADLX3DAntiLag1.xml' path='doc/member[@name="IADLX3DAntiLag1.SetLevel"]/*' />
-    public ADLX_RESULT SetLevel(ADLX_ANTILAG_STATE level)
+    public ADLX_RESULT SetLevel([NativeTypeName("adlx::ADLX_ANTILAG_STATE")] ADLX_ANTILAG_STATE level)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiLag1*, ADLX_ANTILAG_STATE, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DAntiLag1*)Unsafe.AsPointer(ref this), level);
     }

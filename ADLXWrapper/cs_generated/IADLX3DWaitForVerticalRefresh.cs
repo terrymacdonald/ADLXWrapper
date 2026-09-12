@@ -41,13 +41,13 @@ public unsafe partial struct IADLX3DWaitForVerticalRefresh
     }
 
     /// <include file='IADLX3DWaitForVerticalRefresh.xml' path='doc/member[@name="IADLX3DWaitForVerticalRefresh.GetMode"]/*' />
-    public ADLX_RESULT GetMode(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE* currentMode)
+    public ADLX_RESULT GetMode([NativeTypeName("adlx::ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE *")] ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE* currentMode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DWaitForVerticalRefresh*, ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DWaitForVerticalRefresh*)Unsafe.AsPointer(ref this), currentMode);
     }
 
     /// <include file='IADLX3DWaitForVerticalRefresh.xml' path='doc/member[@name="IADLX3DWaitForVerticalRefresh.SetMode"]/*' />
-    public ADLX_RESULT SetMode(ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode)
+    public ADLX_RESULT SetMode([NativeTypeName("adlx::ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE")] ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DWaitForVerticalRefresh*, ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DWaitForVerticalRefresh*)Unsafe.AsPointer(ref this), mode);
     }

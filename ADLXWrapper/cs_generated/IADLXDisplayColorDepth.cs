@@ -35,19 +35,19 @@ public unsafe partial struct IADLXDisplayColorDepth
     }
 
     /// <include file='IADLXDisplayColorDepth.xml' path='doc/member[@name="IADLXDisplayColorDepth.GetValue"]/*' />
-    public ADLX_RESULT GetValue(ADLX_COLOR_DEPTH* currentColorDepth)
+    public ADLX_RESULT GetValue([NativeTypeName("adlx::ADLX_COLOR_DEPTH *")] ADLX_COLOR_DEPTH* currentColorDepth)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayColorDepth*, ADLX_COLOR_DEPTH*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayColorDepth*)Unsafe.AsPointer(ref this), currentColorDepth);
     }
 
     /// <include file='IADLXDisplayColorDepth.xml' path='doc/member[@name="IADLXDisplayColorDepth.SetValue"]/*' />
-    public ADLX_RESULT SetValue(ADLX_COLOR_DEPTH colorDepth)
+    public ADLX_RESULT SetValue([NativeTypeName("adlx::ADLX_COLOR_DEPTH")] ADLX_COLOR_DEPTH colorDepth)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayColorDepth*, ADLX_COLOR_DEPTH, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayColorDepth*)Unsafe.AsPointer(ref this), colorDepth);
     }
 
     /// <include file='IADLXDisplayColorDepth.xml' path='doc/member[@name="IADLXDisplayColorDepth.IsSupportedColorDepth"]/*' />
-    public ADLX_RESULT IsSupportedColorDepth(ADLX_COLOR_DEPTH colorDepth, [NativeTypeName("adlx_bool *")] bool* supported)
+    public ADLX_RESULT IsSupportedColorDepth([NativeTypeName("adlx::ADLX_COLOR_DEPTH")] ADLX_COLOR_DEPTH colorDepth, [NativeTypeName("adlx_bool *")] bool* supported)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayColorDepth*, ADLX_COLOR_DEPTH, bool*, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayColorDepth*)Unsafe.AsPointer(ref this), colorDepth, supported);
     }

@@ -29,7 +29,7 @@ public unsafe partial struct IADLXMemoryTimingDescription
     }
 
     /// <include file='IADLXMemoryTimingDescription.xml' path='doc/member[@name="IADLXMemoryTimingDescription.GetDescription"]/*' />
-    public ADLX_RESULT GetDescription(ADLX_MEMORYTIMING_DESCRIPTION* description)
+    public ADLX_RESULT GetDescription([NativeTypeName("adlx::ADLX_MEMORYTIMING_DESCRIPTION *")] ADLX_MEMORYTIMING_DESCRIPTION* description)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXMemoryTimingDescription*, ADLX_MEMORYTIMING_DESCRIPTION*, ADLX_RESULT>)(lpVtbl[3]))((IADLXMemoryTimingDescription*)Unsafe.AsPointer(ref this), description);
     }

@@ -35,37 +35,37 @@ public unsafe partial struct IADLX3DAntiAliasing
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.GetMode"]/*' />
-    public ADLX_RESULT GetMode(ADLX_ANTI_ALIASING_MODE* currentMode)
+    public ADLX_RESULT GetMode([NativeTypeName("adlx::ADLX_ANTI_ALIASING_MODE *")] ADLX_ANTI_ALIASING_MODE* currentMode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_MODE*, ADLX_RESULT>)(lpVtbl[4]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), currentMode);
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.GetLevel"]/*' />
-    public ADLX_RESULT GetLevel(ADLX_ANTI_ALIASING_LEVEL* currentLevel)
+    public ADLX_RESULT GetLevel([NativeTypeName("adlx::ADLX_ANTI_ALIASING_LEVEL *")] ADLX_ANTI_ALIASING_LEVEL* currentLevel)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_LEVEL*, ADLX_RESULT>)(lpVtbl[5]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), currentLevel);
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.GetMethod"]/*' />
-    public ADLX_RESULT GetMethod(ADLX_ANTI_ALIASING_METHOD* currentMethod)
+    public ADLX_RESULT GetMethod([NativeTypeName("adlx::ADLX_ANTI_ALIASING_METHOD *")] ADLX_ANTI_ALIASING_METHOD* currentMethod)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_METHOD*, ADLX_RESULT>)(lpVtbl[6]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), currentMethod);
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.SetMode"]/*' />
-    public ADLX_RESULT SetMode(ADLX_ANTI_ALIASING_MODE mode)
+    public ADLX_RESULT SetMode([NativeTypeName("adlx::ADLX_ANTI_ALIASING_MODE")] ADLX_ANTI_ALIASING_MODE mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_MODE, ADLX_RESULT>)(lpVtbl[7]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.SetLevel"]/*' />
-    public ADLX_RESULT SetLevel(ADLX_ANTI_ALIASING_LEVEL level)
+    public ADLX_RESULT SetLevel([NativeTypeName("adlx::ADLX_ANTI_ALIASING_LEVEL")] ADLX_ANTI_ALIASING_LEVEL level)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_LEVEL, ADLX_RESULT>)(lpVtbl[8]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), level);
     }
 
     /// <include file='IADLX3DAntiAliasing.xml' path='doc/member[@name="IADLX3DAntiAliasing.SetMethod"]/*' />
-    public ADLX_RESULT SetMethod(ADLX_ANTI_ALIASING_METHOD method)
+    public ADLX_RESULT SetMethod([NativeTypeName("adlx::ADLX_ANTI_ALIASING_METHOD")] ADLX_ANTI_ALIASING_METHOD method)
     {
         return ((delegate* unmanaged[Stdcall]<IADLX3DAntiAliasing*, ADLX_ANTI_ALIASING_METHOD, ADLX_RESULT>)(lpVtbl[9]))((IADLX3DAntiAliasing*)Unsafe.AsPointer(ref this), method);
     }

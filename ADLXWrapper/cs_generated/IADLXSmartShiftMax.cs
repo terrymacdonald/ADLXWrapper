@@ -35,13 +35,13 @@ public unsafe partial struct IADLXSmartShiftMax
     }
 
     /// <include file='IADLXSmartShiftMax.xml' path='doc/member[@name="IADLXSmartShiftMax.GetBiasMode"]/*' />
-    public ADLX_RESULT GetBiasMode(ADLX_SSM_BIAS_MODE* mode)
+    public ADLX_RESULT GetBiasMode([NativeTypeName("adlx::ADLX_SSM_BIAS_MODE *")] ADLX_SSM_BIAS_MODE* mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXSmartShiftMax*)Unsafe.AsPointer(ref this), mode);
     }
 
     /// <include file='IADLXSmartShiftMax.xml' path='doc/member[@name="IADLXSmartShiftMax.SetBiasMode"]/*' />
-    public ADLX_RESULT SetBiasMode(ADLX_SSM_BIAS_MODE mode)
+    public ADLX_RESULT SetBiasMode([NativeTypeName("adlx::ADLX_SSM_BIAS_MODE")] ADLX_SSM_BIAS_MODE mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXSmartShiftMax*, ADLX_SSM_BIAS_MODE, ADLX_RESULT>)(lpVtbl[5]))((IADLXSmartShiftMax*)Unsafe.AsPointer(ref this), mode);
     }

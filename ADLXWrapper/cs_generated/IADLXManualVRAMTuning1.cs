@@ -41,13 +41,13 @@ public unsafe partial struct IADLXManualVRAMTuning1
     }
 
     /// <include file='IADLXManualVRAMTuning1.xml' path='doc/member[@name="IADLXManualVRAMTuning1.GetMemoryTimingDescription"]/*' />
-    public ADLX_RESULT GetMemoryTimingDescription(ADLX_MEMORYTIMING_DESCRIPTION* description)
+    public ADLX_RESULT GetMemoryTimingDescription([NativeTypeName("adlx::ADLX_MEMORYTIMING_DESCRIPTION *")] ADLX_MEMORYTIMING_DESCRIPTION* description)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXManualVRAMTuning1*, ADLX_MEMORYTIMING_DESCRIPTION*, ADLX_RESULT>)(lpVtbl[5]))((IADLXManualVRAMTuning1*)Unsafe.AsPointer(ref this), description);
     }
 
     /// <include file='IADLXManualVRAMTuning1.xml' path='doc/member[@name="IADLXManualVRAMTuning1.SetMemoryTimingDescription"]/*' />
-    public ADLX_RESULT SetMemoryTimingDescription(ADLX_MEMORYTIMING_DESCRIPTION description)
+    public ADLX_RESULT SetMemoryTimingDescription([NativeTypeName("adlx::ADLX_MEMORYTIMING_DESCRIPTION")] ADLX_MEMORYTIMING_DESCRIPTION description)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXManualVRAMTuning1*, ADLX_MEMORYTIMING_DESCRIPTION, ADLX_RESULT>)(lpVtbl[6]))((IADLXManualVRAMTuning1*)Unsafe.AsPointer(ref this), description);
     }

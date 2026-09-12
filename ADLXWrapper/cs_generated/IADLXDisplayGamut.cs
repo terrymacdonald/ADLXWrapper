@@ -179,19 +179,19 @@ public unsafe partial struct IADLXDisplayGamut
     }
 
     /// <include file='IADLXDisplayGamut.xml' path='doc/member[@name="IADLXDisplayGamut.SetGamut"]/*' />
-    public ADLX_RESULT SetGamut(ADLX_WHITE_POINT predefinedWhitePoint, ADLX_GamutColorSpace customGamut)
+    public ADLX_RESULT SetGamut([NativeTypeName("adlx::ADLX_WHITE_POINT")] ADLX_WHITE_POINT predefinedWhitePoint, ADLX_GamutColorSpace customGamut)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayGamut*, ADLX_WHITE_POINT, ADLX_GamutColorSpace, ADLX_RESULT>)(lpVtbl[28]))((IADLXDisplayGamut*)Unsafe.AsPointer(ref this), predefinedWhitePoint, customGamut);
     }
 
     /// <include file='IADLXDisplayGamut.xml' path='doc/member[@name="IADLXDisplayGamut.SetGamut"]/*' />
-    public ADLX_RESULT SetGamut(ADLX_RGB customWhitePoint, ADLX_GAMUT_SPACE predefinedGamutSpace)
+    public ADLX_RESULT SetGamut(ADLX_RGB customWhitePoint, [NativeTypeName("adlx::ADLX_GAMUT_SPACE")] ADLX_GAMUT_SPACE predefinedGamutSpace)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayGamut*, ADLX_RGB, ADLX_GAMUT_SPACE, ADLX_RESULT>)(lpVtbl[29]))((IADLXDisplayGamut*)Unsafe.AsPointer(ref this), customWhitePoint, predefinedGamutSpace);
     }
 
     /// <include file='IADLXDisplayGamut.xml' path='doc/member[@name="IADLXDisplayGamut.SetGamut"]/*' />
-    public ADLX_RESULT SetGamut(ADLX_WHITE_POINT predefinedWhitePoint, ADLX_GAMUT_SPACE predefinedGamutSpace)
+    public ADLX_RESULT SetGamut([NativeTypeName("adlx::ADLX_WHITE_POINT")] ADLX_WHITE_POINT predefinedWhitePoint, [NativeTypeName("adlx::ADLX_GAMUT_SPACE")] ADLX_GAMUT_SPACE predefinedGamutSpace)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayGamut*, ADLX_WHITE_POINT, ADLX_GAMUT_SPACE, ADLX_RESULT>)(lpVtbl[30]))((IADLXDisplayGamut*)Unsafe.AsPointer(ref this), predefinedWhitePoint, predefinedGamutSpace);
     }

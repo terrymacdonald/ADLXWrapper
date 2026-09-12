@@ -35,19 +35,19 @@ public unsafe partial struct IADLXDisplayPixelFormat
     }
 
     /// <include file='IADLXDisplayPixelFormat.xml' path='doc/member[@name="IADLXDisplayPixelFormat.GetValue"]/*' />
-    public ADLX_RESULT GetValue(ADLX_PIXEL_FORMAT* pixelFormat)
+    public ADLX_RESULT GetValue([NativeTypeName("adlx::ADLX_PIXEL_FORMAT *")] ADLX_PIXEL_FORMAT* pixelFormat)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayPixelFormat*, ADLX_PIXEL_FORMAT*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayPixelFormat*)Unsafe.AsPointer(ref this), pixelFormat);
     }
 
     /// <include file='IADLXDisplayPixelFormat.xml' path='doc/member[@name="IADLXDisplayPixelFormat.SetValue"]/*' />
-    public ADLX_RESULT SetValue(ADLX_PIXEL_FORMAT pixelFormat)
+    public ADLX_RESULT SetValue([NativeTypeName("adlx::ADLX_PIXEL_FORMAT")] ADLX_PIXEL_FORMAT pixelFormat)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayPixelFormat*, ADLX_PIXEL_FORMAT, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayPixelFormat*)Unsafe.AsPointer(ref this), pixelFormat);
     }
 
     /// <include file='IADLXDisplayPixelFormat.xml' path='doc/member[@name="IADLXDisplayPixelFormat.IsSupportedPixelFormat"]/*' />
-    public ADLX_RESULT IsSupportedPixelFormat(ADLX_PIXEL_FORMAT pixelFormat, [NativeTypeName("adlx_bool *")] bool* supportd)
+    public ADLX_RESULT IsSupportedPixelFormat([NativeTypeName("adlx::ADLX_PIXEL_FORMAT")] ADLX_PIXEL_FORMAT pixelFormat, [NativeTypeName("adlx_bool *")] bool* supportd)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayPixelFormat*, ADLX_PIXEL_FORMAT, bool*, ADLX_RESULT>)(lpVtbl[6]))((IADLXDisplayPixelFormat*)Unsafe.AsPointer(ref this), pixelFormat, supportd);
     }

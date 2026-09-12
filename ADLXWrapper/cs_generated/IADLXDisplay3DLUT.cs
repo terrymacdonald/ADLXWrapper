@@ -107,37 +107,37 @@ public unsafe partial struct IADLXDisplay3DLUT
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.GetSDRUser3DLUT"]/*' />
-    public ADLX_RESULT GetSDRUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
+    public ADLX_RESULT GetSDRUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION *")] ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE *")] ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION*, ADLX_3DLUT_COLORSPACE*, int*, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[16]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.SetSDRUser3DLUT"]/*' />
-    public ADLX_RESULT SetSDRUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
+    public ADLX_RESULT SetSDRUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION")] ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE")] ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION, ADLX_3DLUT_COLORSPACE, int, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[17]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.GetHDRUser3DLUT"]/*' />
-    public ADLX_RESULT GetHDRUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
+    public ADLX_RESULT GetHDRUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION *")] ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE *")] ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION*, ADLX_3DLUT_COLORSPACE*, int*, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[18]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.SetHDRUser3DLUT"]/*' />
-    public ADLX_RESULT SetHDRUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
+    public ADLX_RESULT SetHDRUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION")] ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE")] ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION, ADLX_3DLUT_COLORSPACE, int, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[19]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.GetAllUser3DLUT"]/*' />
-    public ADLX_RESULT GetAllUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
+    public ADLX_RESULT GetAllUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION *")] ADLX_3DLUT_TRANSFER_FUNCTION* transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE *")] ADLX_3DLUT_COLORSPACE* colorSpace, [NativeTypeName("adlx_int *")] int* pointsNumber, ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION*, ADLX_3DLUT_COLORSPACE*, int*, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[20]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }
 
     /// <include file='IADLXDisplay3DLUT.xml' path='doc/member[@name="IADLXDisplay3DLUT.SetAllUser3DLUT"]/*' />
-    public ADLX_RESULT SetAllUser3DLUT(ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
+    public ADLX_RESULT SetAllUser3DLUT([NativeTypeName("adlx::ADLX_3DLUT_TRANSFER_FUNCTION")] ADLX_3DLUT_TRANSFER_FUNCTION transferFunction, [NativeTypeName("adlx::ADLX_3DLUT_COLORSPACE")] ADLX_3DLUT_COLORSPACE colorSpace, [NativeTypeName("adlx_int")] int pointsNumber, [NativeTypeName("const ADLX_3DLUT_Data *")] ADLX_3DLUT_Data* data)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay3DLUT*, ADLX_3DLUT_TRANSFER_FUNCTION, ADLX_3DLUT_COLORSPACE, int, ADLX_3DLUT_Data*, ADLX_RESULT>)(lpVtbl[21]))((IADLXDisplay3DLUT*)Unsafe.AsPointer(ref this), transferFunction, colorSpace, pointsNumber, data);
     }

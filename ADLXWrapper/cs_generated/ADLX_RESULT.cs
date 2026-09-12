@@ -56,4 +56,7 @@ public enum ADLX_RESULT
 
     /// <include file='ADLX_RESULT.xml' path='doc/member[@name="ADLX_RESULT.ADLX_NOT_ACTIVE"]/*' />
     ADLX_NOT_ACTIVE,
+
+    /// <include file='ADLX_RESULT.xml' path='doc/member[@name="ADLX_RESULT.ADLX_RESET_NEEDED"]/*' />
+    ADLX_RESET_NEEDED,
 }

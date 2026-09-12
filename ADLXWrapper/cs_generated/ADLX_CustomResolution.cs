@@ -16,9 +16,11 @@ public partial struct ADLX_CustomResolution
     public int refreshRate;
 
     /// <include file='ADLX_CustomResolution.xml' path='doc/member[@name="ADLX_CustomResolution.presentation"]/*' />
+    [NativeTypeName("adlx::ADLX_DISPLAY_SCAN_TYPE")]
     public ADLX_DISPLAY_SCAN_TYPE presentation;
 
     /// <include file='ADLX_CustomResolution.xml' path='doc/member[@name="ADLX_CustomResolution.timingStandard"]/*' />
+    [NativeTypeName("adlx::ADLX_TIMING_STANDARD")]
     public ADLX_TIMING_STANDARD timingStandard;
 
     /// <include file='ADLX_CustomResolution.xml' path='doc/member[@name="ADLX_CustomResolution.GPixelClock"]/*' />

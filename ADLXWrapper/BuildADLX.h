@@ -12,6 +12,7 @@
 #include "../ADLX/SDK/Include/I3DSettings.h"
 #include "../ADLX/SDK/Include/I3DSettings1.h"
 #include "../ADLX/SDK/Include/I3DSettings2.h"
+#include "../ADLX/SDK/Include/I3DSettings3.h"
 #include "../ADLX/SDK/Include/IApplications.h"
 #include "../ADLX/SDK/Include/IChangedEvent.h"
 #include "../ADLX/SDK/Include/ICollections.h"
@@ -45,3 +46,4 @@
 #include "../ADLX/SDK/Include/ISystem.h"
 #include "../ADLX/SDK/Include/ISystem1.h"
 #include "../ADLX/SDK/Include/ISystem2.h"
+#include "../ADLX/SDK/Include/ISystem3.h"

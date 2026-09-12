@@ -35,13 +35,13 @@ public unsafe partial struct IADLXDisplayScalingMode
     }
 
     /// <include file='IADLXDisplayScalingMode.xml' path='doc/member[@name="IADLXDisplayScalingMode.GetMode"]/*' />
-    public ADLX_RESULT GetMode(ADLX_SCALE_MODE* currentMode)
+    public ADLX_RESULT GetMode([NativeTypeName("adlx::ADLX_SCALE_MODE *")] ADLX_SCALE_MODE* currentMode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayScalingMode*, ADLX_SCALE_MODE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplayScalingMode*)Unsafe.AsPointer(ref this), currentMode);
     }
 
     /// <include file='IADLXDisplayScalingMode.xml' path='doc/member[@name="IADLXDisplayScalingMode.SetMode"]/*' />
-    public ADLX_RESULT SetMode(ADLX_SCALE_MODE mode)
+    public ADLX_RESULT SetMode([NativeTypeName("adlx::ADLX_SCALE_MODE")] ADLX_SCALE_MODE mode)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayScalingMode*, ADLX_SCALE_MODE, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplayScalingMode*)Unsafe.AsPointer(ref this), mode);
     }

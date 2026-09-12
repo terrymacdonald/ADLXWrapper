@@ -35,13 +35,13 @@ public unsafe partial struct IADLXDisplay
     }
 
     /// <include file='IADLXDisplay.xml' path='doc/member[@name="IADLXDisplay.DisplayType"]/*' />
-    public readonly ADLX_RESULT DisplayType(ADLX_DISPLAY_TYPE* displayType)
+    public readonly ADLX_RESULT DisplayType([NativeTypeName("adlx::ADLX_DISPLAY_TYPE *")] ADLX_DISPLAY_TYPE* displayType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_TYPE*, ADLX_RESULT>)(lpVtbl[4]))((IADLXDisplay*)Unsafe.AsPointer(in this), displayType);
     }
 
     /// <include file='IADLXDisplay.xml' path='doc/member[@name="IADLXDisplay.ConnectorType"]/*' />
-    public readonly ADLX_RESULT ConnectorType(ADLX_DISPLAY_CONNECTOR_TYPE* connectType)
+    public readonly ADLX_RESULT ConnectorType([NativeTypeName("adlx::ADLX_DISPLAY_CONNECTOR_TYPE *")] ADLX_DISPLAY_CONNECTOR_TYPE* connectType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_CONNECTOR_TYPE*, ADLX_RESULT>)(lpVtbl[5]))((IADLXDisplay*)Unsafe.AsPointer(in this), connectType);
     }
@@ -77,7 +77,7 @@ public unsafe partial struct IADLXDisplay
     }
 
     /// <include file='IADLXDisplay.xml' path='doc/member[@name="IADLXDisplay.ScanType"]/*' />
-    public readonly ADLX_RESULT ScanType(ADLX_DISPLAY_SCAN_TYPE* scanType)
+    public readonly ADLX_RESULT ScanType([NativeTypeName("adlx::ADLX_DISPLAY_SCAN_TYPE *")] ADLX_DISPLAY_SCAN_TYPE* scanType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplay*, ADLX_DISPLAY_SCAN_TYPE*, ADLX_RESULT>)(lpVtbl[11]))((IADLXDisplay*)Unsafe.AsPointer(in this), scanType);
     }

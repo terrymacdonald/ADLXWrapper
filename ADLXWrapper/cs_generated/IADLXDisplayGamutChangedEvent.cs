@@ -29,6 +29,7 @@ public unsafe partial struct IADLXDisplayGamutChangedEvent
     }
 
     /// <inheritdoc cref="IADLXChangedEvent.GetOrigin" />
+    [return: NativeTypeName("adlx::ADLX_SYNC_ORIGIN")]
     public ADLX_SYNC_ORIGIN GetOrigin()
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayGamutChangedEvent*, ADLX_SYNC_ORIGIN>)(lpVtbl[3]))((IADLXDisplayGamutChangedEvent*)Unsafe.AsPointer(ref this));

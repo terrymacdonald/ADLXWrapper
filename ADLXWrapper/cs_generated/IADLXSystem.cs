@@ -8,7 +8,7 @@ public unsafe partial struct IADLXSystem
     public void** lpVtbl;
 
     /// <include file='IADLXSystem.xml' path='doc/member[@name="IADLXSystem.HybridGraphicsType"]/*' />
-    public ADLX_RESULT HybridGraphicsType(ADLX_HG_TYPE* hgType)
+    public ADLX_RESULT HybridGraphicsType([NativeTypeName("adlx::ADLX_HG_TYPE *")] ADLX_HG_TYPE* hgType)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXSystem*, ADLX_HG_TYPE*, ADLX_RESULT>)(lpVtbl[0]))((IADLXSystem*)Unsafe.AsPointer(ref this), hgType);
     }
@@ -44,7 +44,7 @@ public unsafe partial struct IADLXSystem
     }
 
     /// <include file='IADLXSystem.xml' path='doc/member[@name="IADLXSystem.EnableLog"]/*' />
-    public ADLX_RESULT EnableLog(ADLX_LOG_DESTINATION mode, ADLX_LOG_SEVERITY severity, [NativeTypeName("adlx::IADLXLog *")] IADLXLog* pLogger, [NativeTypeName("const wchar_t *")] ushort* fileName)
+    public ADLX_RESULT EnableLog([NativeTypeName("adlx::ADLX_LOG_DESTINATION")] ADLX_LOG_DESTINATION mode, [NativeTypeName("adlx::ADLX_LOG_SEVERITY")] ADLX_LOG_SEVERITY severity, [NativeTypeName("adlx::IADLXLog *")] IADLXLog* pLogger, [NativeTypeName("const wchar_t *")] ushort* fileName)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXSystem*, ADLX_LOG_DESTINATION, ADLX_LOG_SEVERITY, IADLXLog*, ushort*, ADLX_RESULT>)(lpVtbl[6]))((IADLXSystem*)Unsafe.AsPointer(ref this), mode, severity, pLogger, fileName);
     }

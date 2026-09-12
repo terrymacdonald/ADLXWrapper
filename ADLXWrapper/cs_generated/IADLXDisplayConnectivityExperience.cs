@@ -53,7 +53,7 @@ public unsafe partial struct IADLXDisplayConnectivityExperience
     }
 
     /// <include file='IADLXDisplayConnectivityExperience.xml' path='doc/member[@name="IADLXDisplayConnectivityExperience.GetDPLinkRate"]/*' />
-    public ADLX_RESULT GetDPLinkRate(ADLX_DP_LINK_RATE* linkRate)
+    public ADLX_RESULT GetDPLinkRate([NativeTypeName("adlx::ADLX_DP_LINK_RATE *")] ADLX_DP_LINK_RATE* linkRate)
     {
         return ((delegate* unmanaged[Stdcall]<IADLXDisplayConnectivityExperience*, ADLX_DP_LINK_RATE*, ADLX_RESULT>)(lpVtbl[7]))((IADLXDisplayConnectivityExperience*)Unsafe.AsPointer(ref this), linkRate);
     }
