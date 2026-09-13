@@ -13,6 +13,7 @@ namespace ADLXWrapper
         private ComPtr<IADLX3DSettingsServices> _services;
         private ComPtr<IADLX3DSettingsServices1>? _services1;
         private ComPtr<IADLX3DSettingsServices2>? _services2;
+        private ComPtr<IADLX3DSettingsServices3>? _services3;
         private ComPtr<IADLX3DSettingsChangedHandling>? _changedHandling;
         private readonly IADLXSystem* _system;
         private bool _disposed;
@@ -401,6 +402,66 @@ namespace ADLXWrapper
             catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
         }
 
+        /// <summary>Gets FidelityFX Super Resolution state for the GPU with the specified unique id.</summary>
+        public FidelityFXSuperResolutionDto GetFidelityFXSuperResolution(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetFidelityFXSuperResolution((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get FidelityFX Super Resolution state for the specified GPU.</summary>
+        public bool TryGetFidelityFXSuperResolution(int gpuUniqueId, out FidelityFXSuperResolutionDto info)
+        {
+            try { info = GetFidelityFXSuperResolution(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies FidelityFX Super Resolution state to the specified GPU.</summary>
+        public void ApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyFidelityFXSuperResolution((IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply FidelityFX Super Resolution state to the specified GPU.</summary>
+        public bool TryApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)
+        {
+            try { ApplyFidelityFXSuperResolution(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
+        /// <summary>Gets FidelityFX Frame Generation Upgrade state for the GPU with the specified unique id.</summary>
+        public FidelityFXFrameGenUpgradeDto GetFidelityFXFrameGenUpgrade(int gpuUniqueId)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            return WithGpuByUniqueId(gpuUniqueId, ptrGpu => GetFidelityFXFrameGenUpgrade((IADLXGPU*)ptrGpu));
+        }
+
+        /// <summary>Tries to get FidelityFX Frame Generation Upgrade state for the specified GPU.</summary>
+        public bool TryGetFidelityFXFrameGenUpgrade(int gpuUniqueId, out FidelityFXFrameGenUpgradeDto info)
+        {
+            try { info = GetFidelityFXFrameGenUpgrade(gpuUniqueId); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { info = default; return false; }
+        }
+
+        /// <summary>Applies FidelityFX Frame Generation Upgrade state to the specified GPU.</summary>
+        public void ApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            WithGpuByUniqueId(gpuUniqueId, ptrGpu => { ApplyFidelityFXFrameGenUpgrade((IADLXGPU*)ptrGpu, info); return 0; });
+        }
+
+        /// <summary>Tries to apply FidelityFX Frame Generation Upgrade state to the specified GPU.</summary>
+        public bool TryApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)
+        {
+            try { ApplyFidelityFXFrameGenUpgrade(gpuUniqueId, info); return true; }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED) { return false; }
+        }
+
         private T WithGpuByUniqueId<T>(int gpuUniqueId, Func<IntPtr, T> action)
         {
             if (_system == null) throw new InvalidOperationException("System not available for GPU lookup by unique id. Ensure this helper was obtained via ADLXSystemServicesHelper.");
@@ -430,6 +491,7 @@ namespace ADLXWrapper
         {
             if (_disposed) return;
             _changedHandling?.Dispose();
+            _services3?.Dispose();
             _services2?.Dispose();
             _services1?.Dispose();
             _services.Dispose();
@@ -455,6 +517,12 @@ namespace ADLXWrapper
         {
             if (services == null) return;
 
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices3), out var p3))
+            {
+                _services3 = new ComPtr<IADLX3DSettingsServices3>((IADLX3DSettingsServices3*)p3);
+                return;
+            }
+
             if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
             {
                 _services2 = new ComPtr<IADLX3DSettingsServices2>((IADLX3DSettingsServices2*)p2);
@@ -469,6 +537,8 @@ namespace ADLXWrapper
 
         private IADLX3DSettingsServices* GetHighestServices()
         {
+            if (_services3.HasValue)
+                return (IADLX3DSettingsServices*)_services3.Value.Get();
             if (_services2.HasValue)
                 return (IADLX3DSettingsServices*)_services2.Value.Get();
             if (_services1.HasValue)
@@ -700,12 +770,17 @@ namespace ADLXWrapper
 
             ADLX_RESULT result;
             IADLX3DAMDFluidMotionFrames* fmf = null;
-            // Prefer v2, then v1. If neither is present, treat as unsupported.
+            // Prefer v3, then v2 and v1. If none is present, treat as unsupported.
+            IADLX3DSettingsServices3* s3 = null;
             IADLX3DSettingsServices2* s2 = null;
             IADLX3DSettingsServices1* s1 = null;
             var services = GetHighestServices();
 
-            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
+            if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices3), out var p3))
+            {
+                s3 = (IADLX3DSettingsServices3*)p3;
+            }
+            else if (ADLXUtils.TryQueryInterface((IntPtr)services, nameof(IADLX3DSettingsServices2), out var p2))
             {
                 s2 = (IADLX3DSettingsServices2*)p2;
             }
@@ -719,7 +794,12 @@ namespace ADLXWrapper
             }
 
             IADLX3DAMDFluidMotionFrames* local = null;
-            if (s2 != null)
+            if (s3 != null)
+            {
+                using var s3Owner = new ComPtr<IADLX3DSettingsServices3>(s3);
+                result = s3Owner.Get()->GetAMDFluidMotionFrames(&local);
+            }
+            else if (s2 != null)
             {
                 using var s2Owner = new ComPtr<IADLX3DSettingsServices2>(s2);
                 result = s2Owner.Get()->GetAMDFluidMotionFrames(&local);
@@ -748,7 +828,36 @@ namespace ADLXWrapper
             if (enabledResult != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(enabledResult, "Failed to query AMD Fluid Motion Frames state");
 
-            return new FluidMotionFramesDto(true, enabled);
+            if (!ADLXUtils.TryQueryInterface((IntPtr)fmfPtr.Get(), nameof(IADLX3DAMDFluidMotionFrames1), out var fmf1Ptr))
+                return new FluidMotionFramesDto(true, enabled);
+
+            using var fmf1 = new ComPtr<IADLX3DAMDFluidMotionFrames1>((IADLX3DAMDFluidMotionFrames1*)fmf1Ptr);
+            bool algorithmSupported = false;
+            var algorithmSupportResult = fmf1.Get()->IsSupportedAlgorithm(&algorithmSupported);
+            if (algorithmSupportResult != ADLX_RESULT.ADLX_OK && algorithmSupportResult != ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                throw new ADLXException(algorithmSupportResult, "Failed to query AMD Fluid Motion Frames algorithm support");
+
+            ADLX_AFMF_ALGORITHM algorithm = default;
+            ADLX_AFMF_SEARCH_MODE_TYPE searchMode = default;
+            ADLX_AFMF_PERFORMANCE_MODE_TYPE performanceMode = default;
+            ADLX_AFMF_FAST_MOTION_RESP fastMotionResponse = default;
+            if (algorithmSupported)
+            {
+                var algorithmResult = fmf1.Get()->GetAlgorithm(&algorithm);
+                if (algorithmResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(algorithmResult, "Failed to query AMD Fluid Motion Frames algorithm");
+                var searchModeResult = fmf1.Get()->GetSearchMode(&searchMode);
+                if (searchModeResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(searchModeResult, "Failed to query AMD Fluid Motion Frames search mode");
+                var performanceModeResult = fmf1.Get()->GetPerformanceMode(&performanceMode);
+                if (performanceModeResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(performanceModeResult, "Failed to query AMD Fluid Motion Frames performance mode");
+                var fastMotionResponseResult = fmf1.Get()->GetFastMotionResponse(&fastMotionResponse);
+                if (fastMotionResponseResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(fastMotionResponseResult, "Failed to query AMD Fluid Motion Frames fast motion response");
+            }
+
+            return new FluidMotionFramesDto(true, enabled, algorithmSupported, algorithm, searchMode, performanceMode, fastMotionResponse);
         }
 
         internal bool TryGetFluidMotionFrames(IADLXGPU* gpu, out FluidMotionFramesDto info)
@@ -763,6 +872,93 @@ namespace ADLXWrapper
                 info = default;
                 return false;
             }
+        }
+
+        private FidelityFXSuperResolutionDto GetFidelityFXSuperResolution(IADLXGPU* gpu)
+        {
+            var feature = GetFidelityFXSuperResolutionInterface(gpu);
+            using var featurePtr = new ComPtr<IADLX3DFidelityFXSuperResolution>(feature);
+            bool supported = false;
+            var supportResult = featurePtr.Get()->IsSupported(&supported);
+            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Super Resolution is not supported by this GPU");
+            if (supportResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(supportResult, "Failed to query FidelityFX Super Resolution support");
+            bool enabled = false;
+            var enabledResult = featurePtr.Get()->IsEnabled(&enabled);
+            if (enabledResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(enabledResult, "Failed to query FidelityFX Super Resolution state");
+            return new FidelityFXSuperResolutionDto(true, enabled);
+        }
+
+        private void ApplyFidelityFXSuperResolution(IADLXGPU* gpu, FidelityFXSuperResolutionDto info)
+        {
+            if (!info.IsSupported) return;
+            var feature = GetFidelityFXSuperResolutionInterface(gpu);
+            using var featurePtr = new ComPtr<IADLX3DFidelityFXSuperResolution>(feature);
+            var result = featurePtr.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to set FidelityFX Super Resolution state");
+        }
+
+        private IADLX3DFidelityFXSuperResolution* GetFidelityFXSuperResolutionInterface(IADLXGPU* gpu)
+        {
+            if (!_services3.HasValue)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Super Resolution requires IADLX3DSettingsServices3");
+            IADLX3DFidelityFXSuperResolution* feature = null;
+            var result = _services3.Value.Get()->GetFidelityFXSuperResolution(gpu, &feature);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || feature == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Super Resolution is not supported by this GPU");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get FidelityFX Super Resolution interface");
+            return feature;
+        }
+
+        private FidelityFXFrameGenUpgradeDto GetFidelityFXFrameGenUpgrade(IADLXGPU* gpu)
+        {
+            var feature = GetFidelityFXFrameGenUpgradeInterface(gpu);
+            using var featurePtr = new ComPtr<IADLX3DFidelityFXFrameGenUpgrade>(feature);
+            bool supported = false;
+            var supportResult = featurePtr.Get()->IsSupported(&supported);
+            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Frame Generation Upgrade is not supported by this GPU");
+            if (supportResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(supportResult, "Failed to query FidelityFX Frame Generation Upgrade support");
+            bool enabled = false;
+            var enabledResult = featurePtr.Get()->IsEnabled(&enabled);
+            if (enabledResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(enabledResult, "Failed to query FidelityFX Frame Generation Upgrade state");
+            ADLX_FFX_FRAME_GEN_RATIO ratio = default;
+            var ratioResult = featurePtr.Get()->GetRatio(&ratio);
+            if (ratioResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(ratioResult, "Failed to query FidelityFX Frame Generation Upgrade ratio");
+            return new FidelityFXFrameGenUpgradeDto(true, enabled, ratio);
+        }
+
+        private void ApplyFidelityFXFrameGenUpgrade(IADLXGPU* gpu, FidelityFXFrameGenUpgradeDto info)
+        {
+            if (!info.IsSupported) return;
+            var feature = GetFidelityFXFrameGenUpgradeInterface(gpu);
+            using var featurePtr = new ComPtr<IADLX3DFidelityFXFrameGenUpgrade>(feature);
+            var ratioResult = featurePtr.Get()->SetRatio(info.Ratio);
+            if (ratioResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(ratioResult, "Failed to set FidelityFX Frame Generation Upgrade ratio");
+            var enabledResult = featurePtr.Get()->SetEnabled(info.IsEnabled ? (byte)1 : (byte)0);
+            if (enabledResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(enabledResult, "Failed to set FidelityFX Frame Generation Upgrade state");
+        }
+
+        private IADLX3DFidelityFXFrameGenUpgrade* GetFidelityFXFrameGenUpgradeInterface(IADLXGPU* gpu)
+        {
+            if (!_services3.HasValue)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Frame Generation Upgrade requires IADLX3DSettingsServices3");
+            IADLX3DFidelityFXFrameGenUpgrade* feature = null;
+            var result = _services3.Value.Get()->GetFidelityFXFrameGenUpgrade(gpu, &feature);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || feature == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "FidelityFX Frame Generation Upgrade is not supported by this GPU");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get FidelityFX Frame Generation Upgrade interface");
+            return feature;
         }
 
         public RadeonSuperResolutionDto GetRadeonSuperResolution()
@@ -1329,12 +1525,29 @@ namespace ADLXWrapper
     {
         public bool IsSupported { get; init; }
         public bool IsEnabled { get; init; }
+        public bool IsAlgorithmSupported { get; init; }
+        public ADLX_AFMF_ALGORITHM Algorithm { get; init; }
+        public ADLX_AFMF_SEARCH_MODE_TYPE SearchMode { get; init; }
+        public ADLX_AFMF_PERFORMANCE_MODE_TYPE PerformanceMode { get; init; }
+        public ADLX_AFMF_FAST_MOTION_RESP FastMotionResponse { get; init; }
 
         [JsonConstructor]
         public FluidMotionFramesDto(bool isSupported, bool isEnabled)
         {
             IsSupported = isSupported;
             IsEnabled = isEnabled;
+        }
+
+        [JsonConstructor]
+        public FluidMotionFramesDto(bool isSupported, bool isEnabled, bool isAlgorithmSupported, ADLX_AFMF_ALGORITHM algorithm, ADLX_AFMF_SEARCH_MODE_TYPE searchMode, ADLX_AFMF_PERFORMANCE_MODE_TYPE performanceMode, ADLX_AFMF_FAST_MOTION_RESP fastMotionResponse)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+            IsAlgorithmSupported = isAlgorithmSupported;
+            Algorithm = algorithm;
+            SearchMode = searchMode;
+            PerformanceMode = performanceMode;
+            FastMotionResponse = fastMotionResponse;
         }
     }
 
@@ -1352,6 +1565,34 @@ namespace ADLXWrapper
             IsEnabled = isEnabled;
             Sharpness = sharpness;
             SharpnessRange = sharpnessRange;
+        }
+    }
+
+    public readonly struct FidelityFXSuperResolutionDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+
+        [JsonConstructor]
+        public FidelityFXSuperResolutionDto(bool isSupported, bool isEnabled)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+        }
+    }
+
+    public readonly struct FidelityFXFrameGenUpgradeDto
+    {
+        public bool IsSupported { get; init; }
+        public bool IsEnabled { get; init; }
+        public ADLX_FFX_FRAME_GEN_RATIO Ratio { get; init; }
+
+        [JsonConstructor]
+        public FidelityFXFrameGenUpgradeDto(bool isSupported, bool isEnabled, ADLX_FFX_FRAME_GEN_RATIO ratio)
+        {
+            IsSupported = isSupported;
+            IsEnabled = isEnabled;
+            Ratio = ratio;
         }
     }
 

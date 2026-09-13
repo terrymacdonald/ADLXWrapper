@@ -85,6 +85,25 @@ public unsafe class ADLXSystemServicesNativeTests
     }
 
     [SkippableFact]
+    public void System3_get_variable_graphics_memory_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        if (!TryGetSystem3(out var system3, out var skipReason))
+        {
+            Skip.If(true, skipReason);
+        }
+
+        IADLXVariableGraphicsMemory* variableGraphicsMemory = null;
+        var result = system3->GetVariableGraphicsMemory(&variableGraphicsMemory);
+        Skip.If(result == ADLX_RESULT.ADLX_NOT_SUPPORTED, "Variable Graphics Memory is not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, result);
+
+        using var variableGraphicsMemoryPtr = new ComPtr<IADLXVariableGraphicsMemory>(variableGraphicsMemory);
+        Assert.NotEqual<IntPtr>(IntPtr.Zero, (IntPtr)variableGraphicsMemory);
+    }
+
+    [SkippableFact]
     public void System2_get_gpu_apps_list_changed_handling_native()
     {
         SkipIfNoAdlxSupport();
@@ -229,6 +248,34 @@ public unsafe class ADLXSystemServicesNativeTests
     }
 
     [SkippableFact]
+    public void Gpu3_extended_information_native()
+    {
+        SkipIfNoAdlxSupport();
+
+        IADLXGPUList* gpuList = null;
+        var listResult = _session.System->GetGPUs(&gpuList);
+        Skip.If(listResult == ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU enumeration not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, listResult);
+        using var gpuListPtr = new ComPtr<IADLXGPUList>(gpuList);
+        Skip.If(gpuList->Size() == 0, "No GPUs returned by ADLX.");
+
+        IADLXGPU* gpu = null;
+        Assert.Equal(ADLX_RESULT.ADLX_OK, gpuList->At(0, &gpu));
+        using var gpuPtr = new ComPtr<IADLXGPU>(gpu);
+        IADLXGPU3* gpu3 = null;
+        var queryResult = QueryInterface((IADLXInterface*)gpu, nameof(IADLXGPU3), (void**)&gpu3);
+        Skip.If(queryResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || queryResult == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE, "IADLXGPU3 is not supported on this hardware/driver.");
+        Assert.Equal(ADLX_RESULT.ADLX_OK, queryResult);
+        using var gpu3Ptr = new ComPtr<IADLXGPU3>(gpu3);
+
+        uint visibleVram = 0;
+        Assert.Equal(ADLX_RESULT.ADLX_OK, gpu3->VisibleVRAM(&visibleVram));
+        bool stressTestSupported = false;
+        var stressTestResult = gpu3->IsSupportedStressTest(&stressTestSupported);
+        Assert.True(stressTestResult == ADLX_RESULT.ADLX_OK || stressTestResult == ADLX_RESULT.ADLX_NOT_SUPPORTED);
+    }
+
+    [SkippableFact]
     public void System_hybrid_graphics_type_native()
     {
         SkipIfNoAdlxSupport();
@@ -352,5 +399,48 @@ public unsafe class ADLXSystemServicesNativeTests
         }
 
         throw new ADLXException(result, "QueryInterface for IADLXSystem2 failed.");
+    }
+
+    private unsafe bool TryGetSystem3(out IADLXSystem3* system3, out string skipReason)
+    {
+        system3 = null;
+        skipReason = string.Empty;
+
+        if (ADLXUtils.TryQueryInterface((IntPtr)_session.System, nameof(IADLXSystem3), out var ifacePtr) && ifacePtr != IntPtr.Zero)
+        {
+            system3 = (IADLXSystem3*)ifacePtr;
+            return true;
+        }
+
+        void* queried = null;
+        var iidTerminated = nameof(IADLXSystem3) + "\0";
+        ADLX_RESULT result;
+        fixed (char* iidChars = iidTerminated)
+        {
+            result = _session.System->QueryInterface((ushort*)iidChars, &queried);
+        }
+
+        if (result == ADLX_RESULT.ADLX_OK && queried != null)
+        {
+            system3 = (IADLXSystem3*)queried;
+            return true;
+        }
+
+        if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || result == ADLX_RESULT.ADLX_UNKNOWN_INTERFACE)
+        {
+            skipReason = $"IADLXSystem3 not supported on this hardware/driver: {result}.";
+            return false;
+        }
+
+        throw new ADLXException(result, "QueryInterface for IADLXSystem3 failed.");
+    }
+
+    private static unsafe ADLX_RESULT QueryInterface(IADLXInterface* iface, string name, void** obj)
+    {
+        var terminated = name + "\0";
+        fixed (char* chars = terminated)
+        {
+            return iface->QueryInterface((ushort*)chars, obj);
+        }
     }
 }

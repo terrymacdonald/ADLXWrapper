@@ -9,6 +9,7 @@ namespace ADLXWrapper
     public sealed unsafe class ADLXGPU : IDisposable
     {
         private ComPtr<IADLXGPU> _gpu;
+        private ComPtr<IADLXGPU3>? _gpu3;
         private ComPtr<IADLXDisplayServices>? _displayServices;
         private ComPtr<IADLXDesktopServices>? _desktopServices;
         private readonly GpuDto _identity;
@@ -95,6 +96,50 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead(); return _identity.Luid; } }
 
         /// <summary>
+        /// Gets extended GPU architecture and VRAM information available through IADLXGPU3.
+        /// </summary>
+        /// <exception cref="ADLXException">If IADLXGPU3 is unsupported or data retrieval fails.</exception>
+        public Gpu3InfoDto GetGpu3Info()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            var gpu3 = GetGpu3();
+
+            sbyte* microArchitecture = null;
+            EnsureSuccess(gpu3->MicroArchitecture(&microArchitecture), "Failed to query GPU microarchitecture");
+            uint highestVramBandwidth = 0;
+            EnsureSuccess(gpu3->HighestVRAMBandwidth(&highestVramBandwidth), "Failed to query GPU highest VRAM bandwidth");
+            uint invisibleVram = 0;
+            EnsureSuccess(gpu3->InvisibleVRAM(&invisibleVram), "Failed to query GPU invisible VRAM");
+            uint visibleVram = 0;
+            EnsureSuccess(gpu3->VisibleVRAM(&visibleVram), "Failed to query GPU visible VRAM");
+            uint vramVendorRevId = 0;
+            EnsureSuccess(gpu3->VRAMVendorRevId(&vramVendorRevId), "Failed to query GPU VRAM vendor revision id");
+            uint vramBandwidth = 0;
+            EnsureSuccess(gpu3->VRAMBandwidth(&vramBandwidth), "Failed to query GPU VRAM bandwidth");
+            uint vramBitRate = 0;
+            EnsureSuccess(gpu3->VRAMBitRate(&vramBitRate), "Failed to query GPU VRAM bit rate");
+
+            return new Gpu3InfoDto(ADLXUtils.MarshalString(&microArchitecture), highestVramBandwidth, invisibleVram, visibleVram, vramVendorRevId, vramBandwidth, vramBitRate);
+        }
+
+        /// <summary>
+        /// Returns whether this GPU supports the ADLX GPU stress test feature.
+        /// </summary>
+        public bool IsStressTestSupported()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            var gpu3 = GetGpu3();
+            bool supported = false;
+            var result = gpu3->IsSupportedStressTest(&supported);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                return false;
+            EnsureSuccess(result, "Failed to query GPU stress test support");
+            return supported;
+        }
+
+        /// <summary>
         /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
         /// </summary>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()
@@ -176,6 +221,7 @@ namespace ADLXWrapper
             if (_disposed) return;
             _desktopServices?.Dispose();
             _displayServices?.Dispose();
+            _gpu3?.Dispose();
             _gpu.Dispose();
             _disposed = true;
         }
@@ -194,6 +240,47 @@ namespace ADLXWrapper
                 throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Desktop services were not provided for this GPU instance");
             IADLXDisplayServices* displayServices = _displayServices.HasValue ? _displayServices.Value.Get() : null;
             return new ADLXDesktopServicesHelper(_desktopServices.Value.Get(), displayServices);
+        }
+
+        private IADLXGPU3* GetGpu3()
+        {
+            if (_gpu3.HasValue)
+                return _gpu3.Value.Get();
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_gpu.Get(), nameof(IADLXGPU3), out var gpu3) || gpu3 == IntPtr.Zero)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "IADLXGPU3 is not supported by this GPU");
+            _gpu3 = new ComPtr<IADLXGPU3>((IADLXGPU3*)gpu3);
+            return _gpu3.Value.Get();
+        }
+
+        private static void EnsureSuccess(ADLX_RESULT result, string message)
+        {
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, message);
+        }
+    }
+
+    /// <summary>
+    /// Extended read-only GPU information provided by IADLXGPU3.
+    /// </summary>
+    public readonly struct Gpu3InfoDto
+    {
+        public string MicroArchitecture { get; init; }
+        public uint HighestVRAMBandwidth { get; init; }
+        public uint InvisibleVRAM { get; init; }
+        public uint VisibleVRAM { get; init; }
+        public uint VRAMVendorRevId { get; init; }
+        public uint VRAMBandwidth { get; init; }
+        public uint VRAMBitRate { get; init; }
+
+        public Gpu3InfoDto(string microArchitecture, uint highestVramBandwidth, uint invisibleVram, uint visibleVram, uint vramVendorRevId, uint vramBandwidth, uint vramBitRate)
+        {
+            MicroArchitecture = microArchitecture;
+            HighestVRAMBandwidth = highestVramBandwidth;
+            InvisibleVRAM = invisibleVram;
+            VisibleVRAM = visibleVram;
+            VRAMVendorRevId = vramVendorRevId;
+            VRAMBandwidth = vramBandwidth;
+            VRAMBitRate = vramBitRate;
         }
     }
 }

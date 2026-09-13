@@ -42,6 +42,14 @@ public unsafe class ADLX3DSettingsServicesNativeTests
     }
 
     [SkippableFact]
+    public void Three_d_services_query_interface_v3_native()
+    {
+        SkipIfNoAdlxSupport();
+        using var servicesPtr = Get3DServicesComPtrOrSkip(out var services);
+        QueryInterfaceOrSkip((IADLXInterface*)services, nameof(IADLX3DSettingsServices3));
+    }
+
+    [SkippableFact]
     public void Anti_lag_all_gpus_native()
     {
         SkipIfNoAdlxSupport();

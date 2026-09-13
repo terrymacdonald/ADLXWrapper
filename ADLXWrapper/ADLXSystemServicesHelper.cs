@@ -12,6 +12,7 @@ namespace ADLXWrapper
         private readonly IADLXSystem* _system;
         private ComPtr<IADLXSystem1>? _system1;
         private ComPtr<IADLXSystem2>? _system2;
+        private ComPtr<IADLXSystem3>? _system3;
         private ComPtr<IADLXDisplayServices>? _displayServices;
         private ComPtr<IADLXDesktopServices>? _desktopServices;
         private ComPtr<IADLX3DSettingsServices>? _threeDSettingsServices;
@@ -36,7 +37,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// Returns the most capable available system interface (IADLXSystem2, then 1, else base).
+        /// Returns the most capable available system interface (IADLXSystem3, then 2, then 1, else base).
         /// Caller must not Release the returned pointer.
         /// </summary>
         /// <returns>Native system interface pointer owned by this helper.</returns>
@@ -46,6 +47,11 @@ namespace ADLXWrapper
             ThrowIfDisposed();
 
             // Prefer the most capable interface available.
+            if (TryGetSystem3(out var system3) && system3 != null)
+            {
+                return (IADLXSystem*)system3;
+            }
+
             if (TryGetSystem2(out var system2) && system2 != null)
             {
                 return (IADLXSystem*)system2;
@@ -241,6 +247,26 @@ namespace ADLXWrapper
             ThrowIfDisposed();
             var services = Get3DSettingsServicesNative();
             return new ADLX3DSettingsServicesHelper(services, addRef: true, system: _system);
+        }
+
+        /// <summary>
+        /// Creates a managed helper for Variable Graphics Memory options.
+        /// </summary>
+        /// <exception cref="ADLXException">If Variable Graphics Memory is unsupported or unavailable.</exception>
+        /// <exception cref="ObjectDisposedException">If the helper has been disposed.</exception>
+        public ADLXVariableGraphicsMemoryHelper GetVariableGraphicsMemory()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            var system3 = GetSystem3();
+            IADLXVariableGraphicsMemory* variableGraphicsMemory = null;
+            var result = system3->GetVariableGraphicsMemory(&variableGraphicsMemory);
+            if (result == ADLX_RESULT.ADLX_NOT_SUPPORTED || variableGraphicsMemory == null)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "Variable Graphics Memory is not supported by this ADLX system");
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to get Variable Graphics Memory");
+
+            return new ADLXVariableGraphicsMemoryHelper(variableGraphicsMemory);
         }
 
         /// <summary>
@@ -881,6 +907,7 @@ namespace ADLXWrapper
             _threeDSettingsServices?.Dispose();
             _desktopServices?.Dispose();
             _displayServices?.Dispose();
+            _system3?.Dispose();
             _system2?.Dispose();
             _system1?.Dispose();
             _disposed = true;
@@ -1103,6 +1130,37 @@ namespace ADLXWrapper
             }
 
             system2 = null;
+            return false;
+        }
+
+        private IADLXSystem3* GetSystem3()
+        {
+            if (_system3.HasValue)
+                return _system3.Value.Get();
+
+            if (!ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem3), out var pSystem3))
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "IADLXSystem3 is not supported by this ADLX system");
+
+            _system3 = new ComPtr<IADLXSystem3>((IADLXSystem3*)pSystem3);
+            return _system3.Value.Get();
+        }
+
+        private bool TryGetSystem3(out IADLXSystem3* system3)
+        {
+            if (_system3.HasValue)
+            {
+                system3 = _system3.Value.Get();
+                return system3 != null;
+            }
+
+            if (ADLXUtils.TryQueryInterface((IntPtr)_system, nameof(IADLXSystem3), out var pSystem3))
+            {
+                _system3 = new ComPtr<IADLXSystem3>((IADLXSystem3*)pSystem3);
+                system3 = _system3.Value.Get();
+                return true;
+            }
+
+            system3 = null;
             return false;
         }
     }
