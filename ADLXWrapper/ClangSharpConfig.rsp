@@ -14,10 +14,11 @@ BuildADLX.h
 ../ADLX/SDK/Include/ADLXDefines.h
 
 --traverse
-../ADLX/SDK/Include/ADLXStructures.h
+../ADLX/SDK/Include/ADLXVersion.h
 
 --traverse
-../ADLX/SDK/Include/ADLXVersion.h
+../ADLX/SDK/Include/ADLXStructures.h
+
 
 --traverse 
 ../ADLX/SDK/Include/I3DSettings.h
