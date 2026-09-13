@@ -140,6 +140,54 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Starts a GPU stress test for the requested duration in seconds.
+        /// The returned operation must remain undisposed until it completes.
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">If <paramref name="durationSeconds"/> is zero.</exception>
+        /// <exception cref="ADLXException">If stress testing is unsupported or ADLX cannot start it.</exception>
+        public ADLXGpuStressTest StartStressTest(uint durationSeconds)
+        {
+            ThrowIfDisposed();
+            if (durationSeconds == 0)
+                throw new ArgumentOutOfRangeException(nameof(durationSeconds), "Stress test duration must be greater than zero.");
+
+            using var _sync = ADLXSync.EnterRead();
+            var gpu3 = GetGpu3();
+            bool supported = false;
+            var supportResult = gpu3->IsSupportedStressTest(&supported);
+            if (supportResult == ADLX_RESULT.ADLX_NOT_SUPPORTED || !supported)
+                throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "GPU stress testing is not supported by this GPU");
+            EnsureSuccess(supportResult, "Failed to query GPU stress test support");
+
+            var operation = new ADLXGpuStressTest(gpu3, UniqueId, durationSeconds);
+            var startResult = gpu3->StartStressTest(operation.GetListener(), durationSeconds);
+            if (startResult != ADLX_RESULT.ADLX_OK)
+            {
+                operation.ReleaseAfterStartFailure();
+                throw new ADLXException(startResult, "Failed to start GPU stress test");
+            }
+
+            return operation;
+        }
+
+        /// <summary>
+        /// Tries to start a GPU stress test without throwing when the feature is unsupported.
+        /// </summary>
+        public bool TryStartStressTest(uint durationSeconds, out ADLXGpuStressTest? operation)
+        {
+            try
+            {
+                operation = StartStressTest(durationSeconds);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                operation = null;
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Enumerates managed displays driven by this GPU. Callers must dispose each display.
         /// </summary>
         public IReadOnlyList<ADLXDisplay> EnumerateDisplaysForGPU()

@@ -149,6 +149,46 @@ public class ADLXSystemServicesFacadeTests
     }
 
     [SkippableFact]
+    public async System.Threading.Tasks.Task Gpu_stress_test_facade()
+    {
+        SkipIfUnavailable();
+        Skip.If(Environment.GetEnvironmentVariable("ADLXWRAPPER_RUN_STRESS_TESTS") != "1", "Set ADLXWRAPPER_RUN_STRESS_TESTS=1 to run GPU stress tests.");
+
+        var gpus = _fixture.System!.EnumerateADLXGPUs();
+        try
+        {
+            ADLXGPU? gpu = null;
+            foreach (var candidate in gpus)
+            {
+                try
+                {
+                    if (candidate.IsStressTestSupported())
+                    {
+                        gpu = candidate;
+                        break;
+                    }
+                }
+                catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+                {
+                }
+            }
+            Skip.If(gpu == null, "GPU stress testing is not supported on this hardware/driver.");
+
+            const uint durationSeconds = 10;
+            var operation = gpu.StartStressTest(durationSeconds);
+            var result = await operation.Completion.WaitAsync(TimeSpan.FromSeconds(durationSeconds + 30));
+            Assert.Equal(gpu.UniqueId, result.GpuUniqueId);
+            Assert.Equal(durationSeconds, result.RequestedDurationSeconds);
+            operation.Dispose();
+        }
+        finally
+        {
+            foreach (var gpu in gpus)
+                gpu.Dispose();
+        }
+    }
+
+    [SkippableFact]
     public void System_gpu_identity_deep_facade()
     {
         SkipIfUnavailable();

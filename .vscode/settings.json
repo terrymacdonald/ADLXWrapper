@@ -3,5 +3,8 @@
         "ipowertuning1.h": "c"
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "disable"
+    "dotnet.defaultSolution": "disable",
+    "chat.tools.terminal.autoApprove": {
+        "dotnet build": true
+    }
 }
