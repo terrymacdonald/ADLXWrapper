@@ -27,7 +27,7 @@ Facades remove all pointer and memory management and expose strongly-typed helpe
 ./test_adlx.ps1
 dotnet test ADLXWrapper.FacadeTests/ADLXWrapper.FacadeTests.csproj --verbosity normal
 ```
-4) Explore samples: `dotnet run --project Samples/DisplaySample/DisplaySample.csproj` (menus show both Facade and Native flows).
+4) Explore samples: `dotnet run --project Samples/DisplaySample/DisplaySample.csproj` (most samples show both Facade and Native flows). Run `dotnet run --project Samples/StressTestSample/StressTestSample.csproj` for the GPU stress test sample; it requires an interactive `START` confirmation before loading a GPU.
 
 ## Facade quick start
 ```csharp
@@ -59,6 +59,9 @@ foreach (var gpu in sys.EnumerateGPUs())
 }
 ```
 More in `ADLXWrapper/README.md` (per-feature examples: Display, Desktop, GPU identity, Perf, 3D settings, Tuning, Power, Color, Multimedia).
+
+## GPU stress test
+`Samples/StressTestSample` demonstrates the facade stress-test API. The operation must remain alive until `Completion` resolves and can only be disposed after completion. The sample requires a literal `START` confirmation because the operation deliberately loads the selected GPU.
 
 ## DTO naming
 All data objects returned by the Facade layer follow the `*Dto` suffix convention (e.g. `GpuDto`, `DisplayDto`, `GammaDto`, `GpuMetricsSnapshotDto`). DTOs are `readonly struct`s with `init` properties and `[JsonConstructor]` support for round-trip JSON serialisation.

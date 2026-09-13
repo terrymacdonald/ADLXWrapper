@@ -69,6 +69,26 @@ using (gpu)
     Console.WriteLine($"{gpu.Name} PCIe Gen {gpu.PciBusLaneWidth}, External={gpu.IsExternal}");
 ```
 
+## GPU stress test
+GPU stress testing is optional and intentionally loads the selected GPU. Check support first, then retain the returned operation until ADLX reports completion. `Dispose()` throws while the test is still running.
+```csharp
+var gpu = sys.EnumerateADLXGPUs().First();
+try
+{
+    if (!gpu.IsStressTestSupported())
+        return;
+
+    var operation = gpu.StartStressTest(durationSeconds: 60);
+    GpuStressTestResultDto result = await operation.Completion;
+    operation.Dispose();
+    Console.WriteLine($"GPU stress test {(result.Succeeded ? "passed" : "failed")}");
+}
+finally
+{
+    gpu.Dispose();
+}
+```
+
 ## GPU-specific helpers — using `gpuUniqueId`
 All helpers that operate on a specific GPU take an `int gpuUniqueId` (from `GpuDto.UniqueId` or `ADLXGPU.UniqueId`). No pointers or handles are passed by callers.
 ```csharp
@@ -158,13 +178,14 @@ if (mm.TryGetVideoSuperResolution(gpuId, out VideoSuperResolutionDto vsr) && vsr
 Browse `APIDocs/_site/index.html` for the full public surface, including DTOs and helper methods.
 
 ## Samples
-Each sample is a console menu with both Facade and Native flows:
+Each sample is a console application. Most offer both Facade and Native flows:
 - `Samples/DisplaySample`
 - `Samples/DesktopSample`
 - `Samples/DisplayColorSample`
 - `Samples/PerfMonitoringSample`
 - `Samples/MultimediaSample`
 - `Samples/PowerTuningSample`
+- `Samples/StressTestSample` (Facade; requires interactive `START` confirmation)
 
 Run with `dotnet run --project Samples/<SampleName>/<SampleName>.csproj`.
 
