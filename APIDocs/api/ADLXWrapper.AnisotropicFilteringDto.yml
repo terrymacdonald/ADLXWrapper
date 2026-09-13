@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFilteringDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1266
+    startLine: 1462
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1268
+    startLine: 1464
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Level
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1269
+    startLine: 1465
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1271
+    startLine: 1467
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Struct AntiLagDto | ADLXWrapper </title>
+      <title>Struct GpuStressTestResultDto | ADLXWrapper </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Struct AntiLagDto | ADLXWrapper ">
+      <meta name="title" content="Struct GpuStressTestResultDto | ADLXWrapper ">
       
-      
+      <meta name="description" content="Pointer-free result of a completed ADLX GPU stress test.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-2026-09-13-update-1.5/apiSpec/new?filename=ADLXWrapper_AntiLagDto.md&amp;value=---%0Auid%3A%20ADLXWrapper.AntiLagDto%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/terrymacdonald/ADLXWrapper/new/feature-2026-09-13-update-1.5/apiSpec/new?filename=ADLXWrapper_GpuStressTestResultDto.md&amp;value=---%0Auid%3A%20ADLXWrapper.GpuStressTestResultDto%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,12 +84,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ADLXWrapper.AntiLagDto">
+        <article data-uid="ADLXWrapper.GpuStressTestResultDto">
 
 
 
-  <h1 id="ADLXWrapper_AntiLagDto" data-uid="ADLXWrapper.AntiLagDto" class="text-break">
-Struct AntiLagDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1103"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ADLXWrapper_GpuStressTestResultDto" data-uid="ADLXWrapper.GpuStressTestResultDto" class="text-break">
+Struct GpuStressTestResultDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,11 +97,12 @@ Struct AntiLagDto  <a class="header-action link-secondary" title="View source" h
   <dl><dt>Assembly</dt><dd>ADLXWrapper.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Pointer-free result of a completed ADLX GPU stress test.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly struct AntiLagDto</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly struct GpuStressTestResultDto</code></pre>
   </div>
 
 
@@ -142,30 +143,29 @@ Struct AntiLagDto  <a class="header-action link-secondary" title="View source" h
 </h2>
 
 
-  <a id="ADLXWrapper_AntiLagDto__ctor_" data-uid="ADLXWrapper.AntiLagDto.#ctor*"></a>
+  <a id="ADLXWrapper_GpuStressTestResultDto__ctor_" data-uid="ADLXWrapper.GpuStressTestResultDto.#ctor*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_ADLX_ANTILAG_STATE_" data-uid="ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)">
-  AntiLagDto(bool, bool, bool, ADLX_ANTILAG_STATE)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1110"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuStressTestResultDto__ctor_System_Int32_System_Boolean_System_UInt32_System_DateTimeOffset_" data-uid="ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)">
+  GpuStressTestResultDto(int, bool, uint, DateTimeOffset)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConstructor]
-public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_STATE level = ADLX_ANTILAG_STATE.ANTILAG)</code></pre>
+    <pre><code class="lang-csharp hljs">public GpuStressTestResultDto(int gpuUniqueId, bool succeeded, uint requestedDurationSeconds, DateTimeOffset completedAt)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>isSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
-    <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>succeeded</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
-    <dt><code>hasLevel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>requestedDurationSeconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
     <dd></dd>
-    <dt><code>level</code> <a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html">ADLX_ANTILAG_STATE</a></dt>
+    <dt><code>completedAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
     <dd></dd>
   </dl>
 
@@ -184,18 +184,18 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 </h2>
 
 
-  <a id="ADLXWrapper_AntiLagDto_HasLevel_" data-uid="ADLXWrapper.AntiLagDto.HasLevel*"></a>
+  <a id="ADLXWrapper_GpuStressTestResultDto_CompletedAt_" data-uid="ADLXWrapper.GpuStressTestResultDto.CompletedAt*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto_HasLevel" data-uid="ADLXWrapper.AntiLagDto.HasLevel">
-  HasLevel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1107"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuStressTestResultDto_CompletedAt" data-uid="ADLXWrapper.GpuStressTestResultDto.CompletedAt">
+  CompletedAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L98"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HasLevel { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTimeOffset CompletedAt { get; init; }</code></pre>
   </div>
 
 
@@ -204,7 +204,7 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
     <dd></dd>
   </dl>
 
@@ -215,18 +215,18 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
 
 
-  <a id="ADLXWrapper_AntiLagDto_IsEnabled_" data-uid="ADLXWrapper.AntiLagDto.IsEnabled*"></a>
+  <a id="ADLXWrapper_GpuStressTestResultDto_GpuUniqueId_" data-uid="ADLXWrapper.GpuStressTestResultDto.GpuUniqueId*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto_IsEnabled" data-uid="ADLXWrapper.AntiLagDto.IsEnabled">
-  IsEnabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1106"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuStressTestResultDto_GpuUniqueId" data-uid="ADLXWrapper.GpuStressTestResultDto.GpuUniqueId">
+  GpuUniqueId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsEnabled { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int GpuUniqueId { get; init; }</code></pre>
   </div>
 
 
@@ -235,7 +235,7 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
   </dl>
 
@@ -246,18 +246,18 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
 
 
-  <a id="ADLXWrapper_AntiLagDto_IsSupported_" data-uid="ADLXWrapper.AntiLagDto.IsSupported*"></a>
+  <a id="ADLXWrapper_GpuStressTestResultDto_RequestedDurationSeconds_" data-uid="ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto_IsSupported" data-uid="ADLXWrapper.AntiLagDto.IsSupported">
-  IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1105"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuStressTestResultDto_RequestedDurationSeconds" data-uid="ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds">
+  RequestedDurationSeconds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsSupported { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public uint RequestedDurationSeconds { get; init; }</code></pre>
   </div>
 
 
@@ -266,7 +266,7 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
     <dd></dd>
   </dl>
 
@@ -277,18 +277,18 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
 
 
-  <a id="ADLXWrapper_AntiLagDto_Level_" data-uid="ADLXWrapper.AntiLagDto.Level*"></a>
+  <a id="ADLXWrapper_GpuStressTestResultDto_Succeeded_" data-uid="ADLXWrapper.GpuStressTestResultDto.Succeeded*"></a>
 
-  <h3 id="ADLXWrapper_AntiLagDto_Level" data-uid="ADLXWrapper.AntiLagDto.Level">
-  Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1108"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ADLXWrapper_GpuStressTestResultDto_Succeeded" data-uid="ADLXWrapper.GpuStressTestResultDto.Succeeded">
+  Succeeded
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ADLX_ANTILAG_STATE Level { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Succeeded { get; init; }</code></pre>
   </div>
 
 
@@ -297,7 +297,7 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ADLXWrapper.ADLX_ANTILAG_STATE.html">ADLX_ANTILAG_STATE</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -312,7 +312,7 @@ public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1103" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLXGpuStressTest.cs/#L93" class="edit-link">Edit this page</a>
         </div>
 
 

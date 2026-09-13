@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpenDesktopDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1024
+    startLine: 1220
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1026
+    startLine: 1222
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1027
+    startLine: 1223
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1029
+    startLine: 1225
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

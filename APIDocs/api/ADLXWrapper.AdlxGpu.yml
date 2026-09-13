@@ -22,9 +22,11 @@ items:
   - ADLXWrapper.ADLXGPU.EnumerateDesktopsForGPU
   - ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   - ADLXWrapper.ADLXGPU.GPUType
+  - ADLXWrapper.ADLXGPU.GetGpu3Info
   - ADLXWrapper.ADLXGPU.HasDesktops
   - ADLXWrapper.ADLXGPU.Identity
   - ADLXWrapper.ADLXGPU.IsExternal
+  - ADLXWrapper.ADLXGPU.IsStressTestSupported
   - ADLXWrapper.ADLXGPU.Luid
   - ADLXWrapper.ADLXGPU.MultiGpuMode
   - ADLXWrapper.ADLXGPU.Name
@@ -35,9 +37,11 @@ items:
   - ADLXWrapper.ADLXGPU.RemoveDesktopListEventListener(ADLXWrapper.DesktopListListenerHandle,System.Boolean)
   - ADLXWrapper.ADLXGPU.RemoveDisplayListEventListener(ADLXWrapper.DisplayListListenerHandle,System.Boolean)
   - ADLXWrapper.ADLXGPU.RevisionId
+  - ADLXWrapper.ADLXGPU.StartStressTest(System.UInt32)
   - ADLXWrapper.ADLXGPU.SubSystemId
   - ADLXWrapper.ADLXGPU.SubSystemVendorId
   - ADLXWrapper.ADLXGPU.TotalVRAM
+  - ADLXWrapper.ADLXGPU.TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
   - ADLXWrapper.ADLXGPU.UniqueId
   - ADLXWrapper.ADLXGPU.VRAMType
   - ADLXWrapper.ADLXGPU.VendorId
@@ -93,7 +97,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -134,7 +138,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -163,7 +167,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -192,7 +196,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -221,7 +225,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 45
+    startLine: 46
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -250,7 +254,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -279,7 +283,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 49
+    startLine: 50
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -308,7 +312,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 51
+    startLine: 52
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -337,7 +341,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 53
+    startLine: 54
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -366,7 +370,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -395,7 +399,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -424,7 +428,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -453,7 +457,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPUType
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 61
+    startLine: 62
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -482,7 +486,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AsicFamilyType
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -511,7 +515,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusType
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -540,7 +544,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PciBusLaneWidth
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 67
+    startLine: 68
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -569,7 +573,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGpuMode
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 69
+    startLine: 70
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -598,7 +602,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -627,7 +631,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 73
+    startLine: 74
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -656,7 +660,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 75
+    startLine: 76
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -685,7 +689,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 77
+    startLine: 78
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -714,7 +718,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -743,7 +747,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 81
+    startLine: 82
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -772,7 +776,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -801,7 +805,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareEdition
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -830,7 +834,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareReleaseYear
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 87
+    startLine: 88
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -859,7 +863,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareReleaseMonth
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 89
+    startLine: 90
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -888,7 +892,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareReleaseDay
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 91
+    startLine: 92
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -917,7 +921,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Luid
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 93
+    startLine: 94
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -928,6 +932,154 @@ items:
       type: ADLXWrapper.LuidDto
     content.vb: Public ReadOnly Property Luid As LuidDto
   overload: ADLXWrapper.ADLXGPU.Luid*
+- uid: ADLXWrapper.ADLXGPU.GetGpu3Info
+  commentId: M:ADLXWrapper.ADLXGPU.GetGpu3Info
+  id: GetGpu3Info
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: GetGpu3Info()
+  nameWithType: ADLXGPU.GetGpu3Info()
+  fullName: ADLXWrapper.ADLXGPU.GetGpu3Info()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGpu3Info
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 101
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets extended GPU architecture and VRAM information available through IADLXGPU3.
+  example: []
+  syntax:
+    content: public Gpu3InfoDto GetGpu3Info()
+    return:
+      type: ADLXWrapper.Gpu3InfoDto
+    content.vb: Public Function GetGpu3Info() As Gpu3InfoDto
+  overload: ADLXWrapper.ADLXGPU.GetGpu3Info*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If IADLXGPU3 is unsupported or data retrieval fails.
+- uid: ADLXWrapper.ADLXGPU.IsStressTestSupported
+  commentId: M:ADLXWrapper.ADLXGPU.IsStressTestSupported
+  id: IsStressTestSupported
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: IsStressTestSupported()
+  nameWithType: ADLXGPU.IsStressTestSupported()
+  fullName: ADLXWrapper.ADLXGPU.IsStressTestSupported()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsStressTestSupported
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 128
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Returns whether this GPU supports the ADLX GPU stress test feature.
+  example: []
+  syntax:
+    content: public bool IsStressTestSupported()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsStressTestSupported() As Boolean
+  overload: ADLXWrapper.ADLXGPU.IsStressTestSupported*
+- uid: ADLXWrapper.ADLXGPU.StartStressTest(System.UInt32)
+  commentId: M:ADLXWrapper.ADLXGPU.StartStressTest(System.UInt32)
+  id: StartStressTest(System.UInt32)
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: StartStressTest(uint)
+  nameWithType: ADLXGPU.StartStressTest(uint)
+  fullName: ADLXWrapper.ADLXGPU.StartStressTest(uint)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: StartStressTest
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 147
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: >-
+    Starts a GPU stress test for the requested duration in seconds.
+
+    The returned operation must remain undisposed until it completes.
+  example: []
+  syntax:
+    content: public ADLXGpuStressTest StartStressTest(uint durationSeconds)
+    parameters:
+    - id: durationSeconds
+      type: System.UInt32
+    return:
+      type: ADLXWrapper.ADLXGpuStressTest
+    content.vb: Public Function StartStressTest(durationSeconds As UInteger) As ADLXGpuStressTest
+  overload: ADLXWrapper.ADLXGPU.StartStressTest*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: If <code class="paramref">durationSeconds</code> is zero.
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If stress testing is unsupported or ADLX cannot start it.
+  nameWithType.vb: ADLXGPU.StartStressTest(UInteger)
+  fullName.vb: ADLXWrapper.ADLXGPU.StartStressTest(UInteger)
+  name.vb: StartStressTest(UInteger)
+- uid: ADLXWrapper.ADLXGPU.TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
+  commentId: M:ADLXWrapper.ADLXGPU.TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
+  id: TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
+  parent: ADLXWrapper.ADLXGPU
+  langs:
+  - csharp
+  - vb
+  name: TryStartStressTest(uint, out ADLXGpuStressTest?)
+  nameWithType: ADLXGPU.TryStartStressTest(uint, out ADLXGpuStressTest?)
+  fullName: ADLXWrapper.ADLXGPU.TryStartStressTest(uint, out ADLXWrapper.ADLXGpuStressTest?)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryStartStressTest
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 175
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to start a GPU stress test without throwing when the feature is unsupported.
+  example: []
+  syntax:
+    content: public bool TryStartStressTest(uint durationSeconds, out ADLXGpuStressTest? operation)
+    parameters:
+    - id: durationSeconds
+      type: System.UInt32
+    - id: operation
+      type: ADLXWrapper.ADLXGpuStressTest
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryStartStressTest(durationSeconds As UInteger, operation As ADLXGpuStressTest) As Boolean
+  overload: ADLXWrapper.ADLXGPU.TryStartStressTest*
+  nameWithType.vb: ADLXGPU.TryStartStressTest(UInteger, ADLXGpuStressTest)
+  fullName.vb: ADLXWrapper.ADLXGPU.TryStartStressTest(UInteger, ADLXWrapper.ADLXGpuStressTest)
+  name.vb: TryStartStressTest(UInteger, ADLXGpuStressTest)
 - uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   commentId: M:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   id: EnumerateDisplaysForGPU
@@ -946,7 +1098,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 99
+    startLine: 192
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -976,7 +1128,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDesktopsForGPU
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 110
+    startLine: 203
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1006,7 +1158,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 121
+    startLine: 214
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1039,7 +1191,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 134
+    startLine: 227
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1077,7 +1229,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 146
+    startLine: 239
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1110,7 +1262,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 159
+    startLine: 252
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1148,7 +1300,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxGpu.cs
-    startLine: 173
+    startLine: 266
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1699,6 +1851,57 @@ references:
   name: LuidDto
   nameWithType: LuidDto
   fullName: ADLXWrapper.LuidDto
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
+- uid: ADLXWrapper.ADLXGPU.GetGpu3Info*
+  commentId: Overload:ADLXWrapper.ADLXGPU.GetGpu3Info
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_GetGpu3Info
+  name: GetGpu3Info
+  nameWithType: ADLXGPU.GetGpu3Info
+  fullName: ADLXWrapper.ADLXGPU.GetGpu3Info
+- uid: ADLXWrapper.Gpu3InfoDto
+  commentId: T:ADLXWrapper.Gpu3InfoDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.Gpu3InfoDto.html
+  name: Gpu3InfoDto
+  nameWithType: Gpu3InfoDto
+  fullName: ADLXWrapper.Gpu3InfoDto
+- uid: ADLXWrapper.ADLXGPU.IsStressTestSupported*
+  commentId: Overload:ADLXWrapper.ADLXGPU.IsStressTestSupported
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_IsStressTestSupported
+  name: IsStressTestSupported
+  nameWithType: ADLXGPU.IsStressTestSupported
+  fullName: ADLXWrapper.ADLXGPU.IsStressTestSupported
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: ADLXWrapper.ADLXGPU.StartStressTest*
+  commentId: Overload:ADLXWrapper.ADLXGPU.StartStressTest
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_StartStressTest_System_UInt32_
+  name: StartStressTest
+  nameWithType: ADLXGPU.StartStressTest
+  fullName: ADLXWrapper.ADLXGPU.StartStressTest
+- uid: ADLXWrapper.ADLXGpuStressTest
+  commentId: T:ADLXWrapper.ADLXGpuStressTest
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXGpuStressTest.html
+  name: ADLXGpuStressTest
+  nameWithType: ADLXGpuStressTest
+  fullName: ADLXWrapper.ADLXGpuStressTest
+- uid: ADLXWrapper.ADLXGPU.TryStartStressTest*
+  commentId: Overload:ADLXWrapper.ADLXGPU.TryStartStressTest
+  href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_TryStartStressTest_System_UInt32_ADLXWrapper_ADLXGpuStressTest__
+  name: TryStartStressTest
+  nameWithType: ADLXGPU.TryStartStressTest
+  fullName: ADLXWrapper.ADLXGPU.TryStartStressTest
 - uid: ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU*
   commentId: Overload:ADLXWrapper.ADLXGPU.EnumerateDisplaysForGPU
   href: ADLXWrapper.ADLXGPU.html#ADLXWrapper_ADLXGPU_EnumerateDisplaysForGPU

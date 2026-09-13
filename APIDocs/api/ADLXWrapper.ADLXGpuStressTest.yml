@@ -1,0 +1,622 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLXGpuStressTest
+  commentId: T:ADLXWrapper.ADLXGpuStressTest
+  id: ADLXGpuStressTest
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLXGpuStressTest.Completion
+  - ADLXWrapper.ADLXGpuStressTest.Dispose
+  - ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  - ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  - ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  langs:
+  - csharp
+  - vb
+  name: ADLXGpuStressTest
+  nameWithType: ADLXGpuStressTest
+  fullName: ADLXWrapper.ADLXGpuStressTest
+  type: Class
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLXGpuStressTest
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Represents a running ADLX GPU stress test and its one-shot completion callback.
+  example: []
+  syntax:
+    content: 'public sealed class ADLXGpuStressTest : IDisposable'
+    content.vb: Public NotInheritable Class ADLXGpuStressTest Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.ADLXGpuStressTest
+  langs:
+  - csharp
+  - vb
+  name: GpuUniqueId
+  nameWithType: ADLXGpuStressTest.GpuUniqueId
+  fullName: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GpuUniqueId
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 29
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: The GPU unique identifier supplied when the stress test started.
+  example: []
+  syntax:
+    content: public int GpuUniqueId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property GpuUniqueId As Integer
+  overload: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId*
+- uid: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  id: DurationSeconds
+  parent: ADLXWrapper.ADLXGpuStressTest
+  langs:
+  - csharp
+  - vb
+  name: DurationSeconds
+  nameWithType: ADLXGpuStressTest.DurationSeconds
+  fullName: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DurationSeconds
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 32
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: The requested stress-test duration in seconds.
+  example: []
+  syntax:
+    content: public uint DurationSeconds { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property DurationSeconds As UInteger
+  overload: ADLXWrapper.ADLXGpuStressTest.DurationSeconds*
+- uid: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  id: IsCompleted
+  parent: ADLXWrapper.ADLXGpuStressTest
+  langs:
+  - csharp
+  - vb
+  name: IsCompleted
+  nameWithType: ADLXGpuStressTest.IsCompleted
+  fullName: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsCompleted
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 35
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets whether ADLX has reported stress-test completion.
+  example: []
+  syntax:
+    content: public bool IsCompleted { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsCompleted As Boolean
+  overload: ADLXWrapper.ADLXGpuStressTest.IsCompleted*
+- uid: ADLXWrapper.ADLXGpuStressTest.Completion
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.Completion
+  id: Completion
+  parent: ADLXWrapper.ADLXGpuStressTest
+  langs:
+  - csharp
+  - vb
+  name: Completion
+  nameWithType: ADLXGpuStressTest.Completion
+  fullName: ADLXWrapper.ADLXGpuStressTest.Completion
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Completion
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 38
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Completes when ADLX reports the final stress-test result.
+  example: []
+  syntax:
+    content: public Task<GpuStressTestResultDto> Completion { get; }
+    parameters: []
+    return:
+      type: System.Threading.Tasks.Task{ADLXWrapper.GpuStressTestResultDto}
+    content.vb: Public ReadOnly Property Completion As Task(Of GpuStressTestResultDto)
+  overload: ADLXWrapper.ADLXGpuStressTest.Completion*
+- uid: ADLXWrapper.ADLXGpuStressTest.Dispose
+  commentId: M:ADLXWrapper.ADLXGpuStressTest.Dispose
+  id: Dispose
+  parent: ADLXWrapper.ADLXGpuStressTest
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ADLXGpuStressTest.Dispose()
+  fullName: ADLXWrapper.ADLXGpuStressTest.Dispose()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Dispose
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 53
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Releases operation resources after completion.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: ADLXWrapper.ADLXGpuStressTest.Dispose*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: If the stress test is still running.
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  href: ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: ADLXGpuStressTest.GpuUniqueId
+  fullName: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.ADLXGpuStressTest.DurationSeconds*
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  href: ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_DurationSeconds
+  name: DurationSeconds
+  nameWithType: ADLXGpuStressTest.DurationSeconds
+  fullName: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.ADLXGpuStressTest.IsCompleted*
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  href: ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_IsCompleted
+  name: IsCompleted
+  nameWithType: ADLXGpuStressTest.IsCompleted
+  fullName: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ADLXWrapper.ADLXGpuStressTest.Completion*
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.Completion
+  href: ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Completion
+  name: Completion
+  nameWithType: ADLXGpuStressTest.Completion
+  fullName: ADLXWrapper.ADLXGpuStressTest.Completion
+- uid: System.Threading.Tasks.Task{ADLXWrapper.GpuStressTestResultDto}
+  commentId: T:System.Threading.Tasks.Task{ADLXWrapper.GpuStressTestResultDto}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GpuStressTestResultDto>
+  nameWithType: Task<GpuStressTestResultDto>
+  fullName: System.Threading.Tasks.Task<ADLXWrapper.GpuStressTestResultDto>
+  nameWithType.vb: Task(Of GpuStressTestResultDto)
+  fullName.vb: System.Threading.Tasks.Task(Of ADLXWrapper.GpuStressTestResultDto)
+  name.vb: Task(Of GpuStressTestResultDto)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: ADLXWrapper.GpuStressTestResultDto
+    name: GpuStressTestResultDto
+    href: ADLXWrapper.GpuStressTestResultDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ADLXWrapper.GpuStressTestResultDto
+    name: GpuStressTestResultDto
+    href: ADLXWrapper.GpuStressTestResultDto.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: ADLXWrapper.ADLXGpuStressTest.Dispose*
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.Dispose
+  href: ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Dispose
+  name: Dispose
+  nameWithType: ADLXGpuStressTest.Dispose
+  fullName: ADLXWrapper.ADLXGpuStressTest.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

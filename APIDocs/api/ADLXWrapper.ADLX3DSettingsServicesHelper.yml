@@ -9,12 +9,16 @@ items:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)
@@ -22,10 +26,14 @@ items:
   - ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(System.Int32,ADLXWrapper.FluidMotionFramesDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)
   - ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)
@@ -82,7 +90,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -123,7 +131,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Add3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 108
+    startLine: 109
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -165,7 +173,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Remove3DSettingsEventListener
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 126
+    startLine: 127
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -199,7 +207,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 268
+    startLine: 269
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -235,7 +243,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 276
+    startLine: 277
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -273,7 +281,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 283
+    startLine: 284
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -309,7 +317,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyAll3DSettings
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 291
+    startLine: 292
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -347,7 +355,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetChill
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 298
+    startLine: 299
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -383,7 +391,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetChill
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 306
+    startLine: 307
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -421,7 +429,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyChill
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 313
+    startLine: 314
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -457,7 +465,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyChill
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 321
+    startLine: 322
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -495,7 +503,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMorphologicalAntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 328
+    startLine: 329
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -531,7 +539,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetMorphologicalAntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 336
+    startLine: 337
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -569,7 +577,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyMorphologicalAntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 343
+    startLine: 344
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -605,7 +613,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyMorphologicalAntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 351
+    startLine: 352
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -643,7 +651,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetImageSharpenDesktop
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 358
+    startLine: 359
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -679,7 +687,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetImageSharpenDesktop
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 366
+    startLine: 367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -717,7 +725,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyImageSharpenDesktop
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 373
+    startLine: 374
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -753,7 +761,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyImageSharpenDesktop
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 382
+    startLine: 383
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -791,7 +799,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 389
+    startLine: 390
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -827,7 +835,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetFluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 397
+    startLine: 398
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -847,6 +855,302 @@ items:
   nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(Integer, FluidMotionFramesDto)
   fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(Integer, ADLXWrapper.FluidMotionFramesDto)
   name.vb: TryGetFluidMotionFrames(Integer, FluidMotionFramesDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)
+  id: GetFidelityFXSuperResolution(System.Int32)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetFidelityFXSuperResolution(int)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(int)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFidelityFXSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 405
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets FidelityFX Super Resolution state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public FidelityFXSuperResolutionDto GetFidelityFXSuperResolution(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.FidelityFXSuperResolutionDto
+    content.vb: Public Function GetFidelityFXSuperResolution(gpuUniqueId As Integer) As FidelityFXSuperResolutionDto
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(Integer)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(Integer)
+  name.vb: GetFidelityFXSuperResolution(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
+  id: TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetFidelityFXSuperResolution(int, out FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(int, out FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(int, out ADLXWrapper.FidelityFXSuperResolutionDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetFidelityFXSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 413
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get FidelityFX Super Resolution state for the specified GPU.
+  example: []
+  syntax:
+    content: public bool TryGetFidelityFXSuperResolution(int gpuUniqueId, out FidelityFXSuperResolutionDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXSuperResolutionDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetFidelityFXSuperResolution(gpuUniqueId As Integer, info As FidelityFXSuperResolutionDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  name.vb: TryGetFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  id: ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: ApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(int, ADLXWrapper.FidelityFXSuperResolutionDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyFidelityFXSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 420
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies FidelityFX Super Resolution state to the specified GPU.
+  example: []
+  syntax:
+    content: public void ApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXSuperResolutionDto
+    content.vb: Public Sub ApplyFidelityFXSuperResolution(gpuUniqueId As Integer, info As FidelityFXSuperResolutionDto)
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  name.vb: ApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  id: TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(int, ADLXWrapper.FidelityFXSuperResolutionDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyFidelityFXSuperResolution
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 428
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply FidelityFX Super Resolution state to the specified GPU.
+  example: []
+  syntax:
+    content: public bool TryApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXSuperResolutionDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyFidelityFXSuperResolution(gpuUniqueId As Integer, info As FidelityFXSuperResolutionDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  name.vb: TryApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)
+  id: GetFidelityFXFrameGenUpgrade(System.Int32)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: GetFidelityFXFrameGenUpgrade(int)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(int)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFidelityFXFrameGenUpgrade
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 435
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets FidelityFX Frame Generation Upgrade state for the GPU with the specified unique id.
+  example: []
+  syntax:
+    content: public FidelityFXFrameGenUpgradeDto GetFidelityFXFrameGenUpgrade(int gpuUniqueId)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    return:
+      type: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+    content.vb: Public Function GetFidelityFXFrameGenUpgrade(gpuUniqueId As Integer) As FidelityFXFrameGenUpgradeDto
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(Integer)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(Integer)
+  name.vb: GetFidelityFXFrameGenUpgrade(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  id: TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryGetFidelityFXFrameGenUpgrade(int, out FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(int, out FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(int, out ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryGetFidelityFXFrameGenUpgrade
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 443
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to get FidelityFX Frame Generation Upgrade state for the specified GPU.
+  example: []
+  syntax:
+    content: public bool TryGetFidelityFXFrameGenUpgrade(int gpuUniqueId, out FidelityFXFrameGenUpgradeDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetFidelityFXFrameGenUpgrade(gpuUniqueId As Integer, info As FidelityFXFrameGenUpgradeDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name.vb: TryGetFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  id: ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: ApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(int, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyFidelityFXFrameGenUpgrade
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 450
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Applies FidelityFX Frame Generation Upgrade state to the specified GPU.
+  example: []
+  syntax:
+    content: public void ApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+    content.vb: Public Sub ApplyFidelityFXFrameGenUpgrade(gpuUniqueId As Integer, info As FidelityFXFrameGenUpgradeDto)
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name.vb: ApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  id: TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  parent: ADLXWrapper.ADLX3DSettingsServicesHelper
+  langs:
+  - csharp
+  - vb
+  name: TryApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(int, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyFidelityFXFrameGenUpgrade
+    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+    startLine: 458
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Tries to apply FidelityFX Frame Generation Upgrade state to the specified GPU.
+  example: []
+  syntax:
+    content: public bool TryApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)
+    parameters:
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: info
+      type: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyFidelityFXFrameGenUpgrade(gpuUniqueId As Integer, info As FidelityFXFrameGenUpgradeDto) As Boolean
+  overload: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade*
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name.vb: TryApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   id: Dispose
@@ -865,7 +1169,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 428
+    startLine: 489
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -895,7 +1199,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 445
+    startLine: 507
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -924,7 +1228,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 767
+    startLine: 963
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -952,7 +1256,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetRadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 805
+    startLine: 1001
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1457,6 +1761,68 @@ references:
   name: TryGetFluidMotionFrames
   nameWithType: ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXSuperResolution_System_Int32_
+  name: GetFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto
+  commentId: T:ADLXWrapper.FidelityFXSuperResolutionDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.FidelityFXSuperResolutionDto.html
+  name: FidelityFXSuperResolutionDto
+  nameWithType: FidelityFXSuperResolutionDto
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto__
+  name: TryGetFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_
+  name: ApplyFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_
+  name: TryApplyFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXFrameGenUpgrade_System_Int32_
+  name: GetFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  commentId: T:ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.FidelityFXFrameGenUpgradeDto.html
+  name: FidelityFXFrameGenUpgradeDto
+  nameWithType: FidelityFXFrameGenUpgradeDto
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto__
+  name: TryGetFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_
+  name: ApplyFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade*
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
+  href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_
+  name: TryApplyFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose*
   commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose
   href: ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_Dispose

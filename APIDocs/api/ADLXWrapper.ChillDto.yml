@@ -25,7 +25,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ChillDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 948
+    startLine: 1144
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -57,7 +57,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 950
+    startLine: 1146
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -86,7 +86,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 951
+    startLine: 1147
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -115,7 +115,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MinFPS
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 952
+    startLine: 1148
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -144,7 +144,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MaxFPS
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 953
+    startLine: 1149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -173,7 +173,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FPSRange
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 954
+    startLine: 1150
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -202,7 +202,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 956
+    startLine: 1152
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

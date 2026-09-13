@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WaitForVerticalRefreshDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1166
+    startLine: 1362
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1168
+    startLine: 1364
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1169
+    startLine: 1365
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1171
+    startLine: 1367
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

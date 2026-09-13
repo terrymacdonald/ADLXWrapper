@@ -110,6 +110,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXGpuStressTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXGpuStressTest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXGpuStressTest",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.ADLXGpuStressTest.yml\" sourcestartlinenumber=\"1\">Represents a running ADLX GPU stress test and its one-shot completion callback.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ADLXHardwareDetection.yml",
       "output": {
         ".html": {
@@ -373,6 +387,20 @@
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLXUtils",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLXVariableGraphicsMemoryHelper",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.yml\" sourcestartlinenumber=\"1\">Pointer-safe wrapper for ADLX Variable Graphics Memory options.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1902,6 +1930,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.FidelityFXFrameGenUpgradeDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.FidelityFXSuperResolutionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.FidelityFXSuperResolutionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.FidelityFXSuperResolutionDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.FluidMotionFramesDto.yml",
       "output": {
         ".html": {
@@ -2042,6 +2098,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.Gpu3InfoDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.Gpu3InfoDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.Gpu3InfoDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.Gpu3InfoDto.yml\" sourcestartlinenumber=\"1\">Extended read-only GPU information provided by IADLXGPU3.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.GpuDto.yml",
       "output": {
         ".html": {
@@ -2151,6 +2221,20 @@
       "IsMRef": true,
       "Title": "ADLXWrapper.GpuMetricsSupportInfo",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.GpuStressTestResultDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.GpuStressTestResultDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.GpuStressTestResultDto",
+      "Summary": "<p sourcefile=\"api/ADLXWrapper.GpuStressTestResultDto.yml\" sourcestartlinenumber=\"1\">Pointer-free result of a completed ADLX GPU stress test.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5160,6 +5244,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.VariBrightMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.VariableGraphicsMemoryOptionDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.VariableGraphicsMemoryOptionDto",
       "Summary": null
     },
     {

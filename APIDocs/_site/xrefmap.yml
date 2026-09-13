@@ -378,6 +378,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill
   nameWithType: ADLX3DSettingsServicesHelper.ApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name: ApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name.vb: ApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(int, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade*
+  name: ApplyFidelityFXFrameGenUpgrade
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXFrameGenUpgrade_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  name: ApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  name.vb: ApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(int, ADLXWrapper.FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution*
+  name: ApplyFidelityFXSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
   name: ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
@@ -471,6 +503,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill
   nameWithType: ADLX3DSettingsServicesHelper.GetChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)
+  name: GetFidelityFXFrameGenUpgrade(int)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXFrameGenUpgrade_System_Int32_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)
+  name.vb: GetFidelityFXFrameGenUpgrade(Integer)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(int)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(Integer)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(int)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade*
+  name: GetFidelityFXFrameGenUpgrade
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXFrameGenUpgrade_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)
+  name: GetFidelityFXSuperResolution(int)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXSuperResolution_System_Int32_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)
+  name.vb: GetFidelityFXSuperResolution(Integer)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(int)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(Integer)
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(int)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(Integer)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution*
+  name: GetFidelityFXSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)
   name: GetFluidMotionFrames(int)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_System_Int32_
@@ -580,6 +644,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill
   nameWithType: ADLX3DSettingsServicesHelper.TryApplyChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name: TryApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  name.vb: TryApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(int, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade*
+  name: TryApplyFidelityFXFrameGenUpgrade
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXFrameGenUpgrade_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  name: TryApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)
+  name.vb: TryApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(int, ADLXWrapper.FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution*
+  name: TryApplyFidelityFXSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)
   name: TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_
@@ -644,6 +740,38 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill
   nameWithType: ADLX3DSettingsServicesHelper.TryGetChill
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  name: TryGetFidelityFXFrameGenUpgrade(int, out FidelityFXFrameGenUpgradeDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)
+  name.vb: TryGetFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(int, out ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(Integer, ADLXWrapper.FidelityFXFrameGenUpgradeDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(int, out FidelityFXFrameGenUpgradeDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(Integer, FidelityFXFrameGenUpgradeDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade*
+  name: TryGetFidelityFXFrameGenUpgrade
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXFrameGenUpgrade_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
+  name: TryGetFidelityFXSuperResolution(int, out FidelityFXSuperResolutionDto)
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto__
+  commentId: M:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)
+  name.vb: TryGetFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(int, out ADLXWrapper.FidelityFXSuperResolutionDto)
+  fullName.vb: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(Integer, ADLXWrapper.FidelityFXSuperResolutionDto)
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(int, out FidelityFXSuperResolutionDto)
+  nameWithType.vb: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(Integer, FidelityFXSuperResolutionDto)
+- uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution*
+  name: TryGetFidelityFXSuperResolution
+  href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXSuperResolution_
+  commentId: Overload:ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
+  nameWithType: ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution
 - uid: ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(System.Int32,ADLXWrapper.FluidMotionFramesDto@)
   name: TryGetFluidMotionFrames(int, out FluidMotionFramesDto)
   href: api/ADLXWrapper.ADLX3DSettingsServicesHelper.html#ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_System_Int32_ADLXWrapper_FluidMotionFramesDto__
@@ -3277,6 +3405,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.GPUType
   nameWithType: ADLXGPU.GPUType
+- uid: ADLXWrapper.ADLXGPU.GetGpu3Info
+  name: GetGpu3Info()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_GetGpu3Info
+  commentId: M:ADLXWrapper.ADLXGPU.GetGpu3Info
+  fullName: ADLXWrapper.ADLXGPU.GetGpu3Info()
+  nameWithType: ADLXGPU.GetGpu3Info()
+- uid: ADLXWrapper.ADLXGPU.GetGpu3Info*
+  name: GetGpu3Info
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_GetGpu3Info_
+  commentId: Overload:ADLXWrapper.ADLXGPU.GetGpu3Info
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.GetGpu3Info
+  nameWithType: ADLXGPU.GetGpu3Info
 - uid: ADLXWrapper.ADLXGPU.HasDesktops
   name: HasDesktops
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_HasDesktops
@@ -3316,6 +3457,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.IsExternal
   nameWithType: ADLXGPU.IsExternal
+- uid: ADLXWrapper.ADLXGPU.IsStressTestSupported
+  name: IsStressTestSupported()
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_IsStressTestSupported
+  commentId: M:ADLXWrapper.ADLXGPU.IsStressTestSupported
+  fullName: ADLXWrapper.ADLXGPU.IsStressTestSupported()
+  nameWithType: ADLXGPU.IsStressTestSupported()
+- uid: ADLXWrapper.ADLXGPU.IsStressTestSupported*
+  name: IsStressTestSupported
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_IsStressTestSupported_
+  commentId: Overload:ADLXWrapper.ADLXGPU.IsStressTestSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.IsStressTestSupported
+  nameWithType: ADLXGPU.IsStressTestSupported
 - uid: ADLXWrapper.ADLXGPU.Luid
   name: Luid
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_Luid
@@ -3452,6 +3606,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.RevisionId
   nameWithType: ADLXGPU.RevisionId
+- uid: ADLXWrapper.ADLXGPU.StartStressTest(System.UInt32)
+  name: StartStressTest(uint)
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_StartStressTest_System_UInt32_
+  commentId: M:ADLXWrapper.ADLXGPU.StartStressTest(System.UInt32)
+  name.vb: StartStressTest(UInteger)
+  fullName: ADLXWrapper.ADLXGPU.StartStressTest(uint)
+  fullName.vb: ADLXWrapper.ADLXGPU.StartStressTest(UInteger)
+  nameWithType: ADLXGPU.StartStressTest(uint)
+  nameWithType.vb: ADLXGPU.StartStressTest(UInteger)
+- uid: ADLXWrapper.ADLXGPU.StartStressTest*
+  name: StartStressTest
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_StartStressTest_
+  commentId: Overload:ADLXWrapper.ADLXGPU.StartStressTest
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.StartStressTest
+  nameWithType: ADLXGPU.StartStressTest
 - uid: ADLXWrapper.ADLXGPU.SubSystemId
   name: SubSystemId
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_SubSystemId
@@ -3491,6 +3661,22 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPU.TotalVRAM
   nameWithType: ADLXGPU.TotalVRAM
+- uid: ADLXWrapper.ADLXGPU.TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
+  name: TryStartStressTest(uint, out ADLXGpuStressTest?)
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_TryStartStressTest_System_UInt32_ADLXWrapper_ADLXGpuStressTest__
+  commentId: M:ADLXWrapper.ADLXGPU.TryStartStressTest(System.UInt32,ADLXWrapper.ADLXGpuStressTest@)
+  name.vb: TryStartStressTest(UInteger, ADLXGpuStressTest)
+  fullName: ADLXWrapper.ADLXGPU.TryStartStressTest(uint, out ADLXWrapper.ADLXGpuStressTest?)
+  fullName.vb: ADLXWrapper.ADLXGPU.TryStartStressTest(UInteger, ADLXWrapper.ADLXGpuStressTest)
+  nameWithType: ADLXGPU.TryStartStressTest(uint, out ADLXGpuStressTest?)
+  nameWithType.vb: ADLXGPU.TryStartStressTest(UInteger, ADLXGpuStressTest)
+- uid: ADLXWrapper.ADLXGPU.TryStartStressTest*
+  name: TryStartStressTest
+  href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_TryStartStressTest_
+  commentId: Overload:ADLXWrapper.ADLXGPU.TryStartStressTest
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGPU.TryStartStressTest
+  nameWithType: ADLXGPU.TryStartStressTest
 - uid: ADLXWrapper.ADLXGPU.UniqueId
   name: UniqueId
   href: api/ADLXWrapper.AdlxGpu.html#ADLXWrapper_ADLXGPU_UniqueId
@@ -3981,6 +4167,77 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
   nameWithType: ADLXGPUTuningServicesHelper.TryIsPresetTuningSupported
+- uid: ADLXWrapper.ADLXGpuStressTest
+  name: ADLXGpuStressTest
+  href: api/ADLXWrapper.ADLXGpuStressTest.html
+  commentId: T:ADLXWrapper.ADLXGpuStressTest
+  fullName: ADLXWrapper.ADLXGpuStressTest
+  nameWithType: ADLXGpuStressTest
+- uid: ADLXWrapper.ADLXGpuStressTest.Completion
+  name: Completion
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Completion
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.Completion
+  fullName: ADLXWrapper.ADLXGpuStressTest.Completion
+  nameWithType: ADLXGpuStressTest.Completion
+- uid: ADLXWrapper.ADLXGpuStressTest.Completion*
+  name: Completion
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Completion_
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.Completion
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGpuStressTest.Completion
+  nameWithType: ADLXGpuStressTest.Completion
+- uid: ADLXWrapper.ADLXGpuStressTest.Dispose
+  name: Dispose()
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Dispose
+  commentId: M:ADLXWrapper.ADLXGpuStressTest.Dispose
+  fullName: ADLXWrapper.ADLXGpuStressTest.Dispose()
+  nameWithType: ADLXGpuStressTest.Dispose()
+- uid: ADLXWrapper.ADLXGpuStressTest.Dispose*
+  name: Dispose
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_Dispose_
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.Dispose
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGpuStressTest.Dispose
+  nameWithType: ADLXGpuStressTest.Dispose
+- uid: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  name: DurationSeconds
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_DurationSeconds
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  fullName: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  nameWithType: ADLXGpuStressTest.DurationSeconds
+- uid: ADLXWrapper.ADLXGpuStressTest.DurationSeconds*
+  name: DurationSeconds
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_DurationSeconds_
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGpuStressTest.DurationSeconds
+  nameWithType: ADLXGpuStressTest.DurationSeconds
+- uid: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  name: GpuUniqueId
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_GpuUniqueId
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  fullName: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  nameWithType: ADLXGpuStressTest.GpuUniqueId
+- uid: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId*
+  name: GpuUniqueId
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_GpuUniqueId_
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGpuStressTest.GpuUniqueId
+  nameWithType: ADLXGpuStressTest.GpuUniqueId
+- uid: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  name: IsCompleted
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_IsCompleted
+  commentId: P:ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  fullName: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  nameWithType: ADLXGpuStressTest.IsCompleted
+- uid: ADLXWrapper.ADLXGpuStressTest.IsCompleted*
+  name: IsCompleted
+  href: api/ADLXWrapper.ADLXGpuStressTest.html#ADLXWrapper_ADLXGpuStressTest_IsCompleted_
+  commentId: Overload:ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXGpuStressTest.IsCompleted
+  nameWithType: ADLXGpuStressTest.IsCompleted
 - uid: ADLXWrapper.ADLXHardwareDetection
   name: ADLXHardwareDetection
   href: api/ADLXWrapper.ADLXHardwareDetection.html
@@ -5819,6 +6076,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXSystemServicesHelper.GetPowerTuningServices
   nameWithType: ADLXSystemServicesHelper.GetPowerTuningServices
+- uid: ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory
+  name: GetVariableGraphicsMemory()
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetVariableGraphicsMemory
+  commentId: M:ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory()
+  nameWithType: ADLXSystemServicesHelper.GetVariableGraphicsMemory()
+- uid: ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory*
+  name: GetVariableGraphicsMemory
+  href: api/ADLXWrapper.ADLXSystemServicesHelper.html#ADLXWrapper_ADLXSystemServicesHelper_GetVariableGraphicsMemory_
+  commentId: Overload:ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXSystemServicesHelper.GetVariableGraphicsMemory
+  nameWithType: ADLXSystemServicesHelper.GetVariableGraphicsMemory
 - uid: ADLXWrapper.ADLXUtils
   name: ADLXUtils
   href: api/ADLXWrapper.ADLXUtils.html
@@ -6033,6 +6303,77 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXUtils.TryQueryInterface
   nameWithType: ADLXUtils.TryQueryInterface
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+  name: ADLXVariableGraphicsMemoryHelper
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html
+  commentId: T:ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+  nameWithType: ADLXVariableGraphicsMemoryHelper
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose
+  name: Dispose()
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_Dispose
+  commentId: M:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose()
+  nameWithType: ADLXVariableGraphicsMemoryHelper.Dispose()
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose*
+  name: Dispose
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_Dispose_
+  commentId: Overload:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.Dispose
+  nameWithType: ADLXVariableGraphicsMemoryHelper.Dispose
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions
+  name: GetAvailableOptions()
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetAvailableOptions
+  commentId: M:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions()
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetAvailableOptions()
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions*
+  name: GetAvailableOptions
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetAvailableOptions_
+  commentId: Overload:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetAvailableOptions
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetAvailableOptions
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption
+  name: GetDefaultOption()
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetDefaultOption
+  commentId: M:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption()
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetDefaultOption()
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption*
+  name: GetDefaultOption
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetDefaultOption_
+  commentId: Overload:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetDefaultOption
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetDefaultOption
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption
+  name: GetOption()
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetOption
+  commentId: M:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption()
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetOption()
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption*
+  name: GetOption
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_GetOption_
+  commentId: Overload:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.GetOption
+  nameWithType: ADLXVariableGraphicsMemoryHelper.GetOption
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported
+  name: IsSupported()
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_IsSupported
+  commentId: M:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported()
+  nameWithType: ADLXVariableGraphicsMemoryHelper.IsSupported()
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html#ADLXWrapper_ADLXVariableGraphicsMemoryHelper_IsSupported_
+  commentId: Overload:ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.IsSupported
+  nameWithType: ADLXVariableGraphicsMemoryHelper.IsSupported
 - uid: ADLXWrapper.ADLX_3DLUT_COLORSPACE
   name: ADLX_3DLUT_COLORSPACE
   href: api/ADLXWrapper.ADLX_3DLUT_COLORSPACE.html
@@ -11291,6 +11632,121 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.FanPoint.Temperature
   nameWithType: FanPoint.Temperature
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  name: FidelityFXFrameGenUpgradeDto
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html
+  commentId: T:ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  nameWithType: FidelityFXFrameGenUpgradeDto
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.#ctor(System.Boolean,System.Boolean,ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO)
+  name: FidelityFXFrameGenUpgradeDto(bool, bool, ADLX_FFX_FRAME_GEN_RATIO)
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto__ctor_System_Boolean_System_Boolean_ADLXWrapper_ADLX_FFX_FRAME_GEN_RATIO_
+  commentId: M:ADLXWrapper.FidelityFXFrameGenUpgradeDto.#ctor(System.Boolean,System.Boolean,ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO)
+  name.vb: New(Boolean, Boolean, ADLX_FFX_FRAME_GEN_RATIO)
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.FidelityFXFrameGenUpgradeDto(bool, bool, ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO)
+  fullName.vb: ADLXWrapper.FidelityFXFrameGenUpgradeDto.New(Boolean, Boolean, ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO)
+  nameWithType: FidelityFXFrameGenUpgradeDto.FidelityFXFrameGenUpgradeDto(bool, bool, ADLX_FFX_FRAME_GEN_RATIO)
+  nameWithType.vb: FidelityFXFrameGenUpgradeDto.New(Boolean, Boolean, ADLX_FFX_FRAME_GEN_RATIO)
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.#ctor*
+  name: FidelityFXFrameGenUpgradeDto
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto__ctor_
+  commentId: Overload:ADLXWrapper.FidelityFXFrameGenUpgradeDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.FidelityFXFrameGenUpgradeDto
+  fullName.vb: ADLXWrapper.FidelityFXFrameGenUpgradeDto.New
+  nameWithType: FidelityFXFrameGenUpgradeDto.FidelityFXFrameGenUpgradeDto
+  nameWithType.vb: FidelityFXFrameGenUpgradeDto.New
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_IsEnabled
+  commentId: P:ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled
+  nameWithType: FidelityFXFrameGenUpgradeDto.IsEnabled
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsEnabled
+  nameWithType: FidelityFXFrameGenUpgradeDto.IsEnabled
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_IsSupported
+  commentId: P:ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported
+  nameWithType: FidelityFXFrameGenUpgradeDto.IsSupported
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_IsSupported_
+  commentId: Overload:ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.IsSupported
+  nameWithType: FidelityFXFrameGenUpgradeDto.IsSupported
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio
+  name: Ratio
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_Ratio
+  commentId: P:ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio
+  nameWithType: FidelityFXFrameGenUpgradeDto.Ratio
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio*
+  name: Ratio
+  href: api/ADLXWrapper.FidelityFXFrameGenUpgradeDto.html#ADLXWrapper_FidelityFXFrameGenUpgradeDto_Ratio_
+  commentId: Overload:ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio
+  isSpec: "True"
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto.Ratio
+  nameWithType: FidelityFXFrameGenUpgradeDto.Ratio
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto
+  name: FidelityFXSuperResolutionDto
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html
+  commentId: T:ADLXWrapper.FidelityFXSuperResolutionDto
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto
+  nameWithType: FidelityFXSuperResolutionDto
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.#ctor(System.Boolean,System.Boolean)
+  name: FidelityFXSuperResolutionDto(bool, bool)
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto__ctor_System_Boolean_System_Boolean_
+  commentId: M:ADLXWrapper.FidelityFXSuperResolutionDto.#ctor(System.Boolean,System.Boolean)
+  name.vb: New(Boolean, Boolean)
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.FidelityFXSuperResolutionDto(bool, bool)
+  fullName.vb: ADLXWrapper.FidelityFXSuperResolutionDto.New(Boolean, Boolean)
+  nameWithType: FidelityFXSuperResolutionDto.FidelityFXSuperResolutionDto(bool, bool)
+  nameWithType.vb: FidelityFXSuperResolutionDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.#ctor*
+  name: FidelityFXSuperResolutionDto
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto__ctor_
+  commentId: Overload:ADLXWrapper.FidelityFXSuperResolutionDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.FidelityFXSuperResolutionDto
+  fullName.vb: ADLXWrapper.FidelityFXSuperResolutionDto.New
+  nameWithType: FidelityFXSuperResolutionDto.FidelityFXSuperResolutionDto
+  nameWithType.vb: FidelityFXSuperResolutionDto.New
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled
+  name: IsEnabled
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto_IsEnabled
+  commentId: P:ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled
+  nameWithType: FidelityFXSuperResolutionDto.IsEnabled
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled*
+  name: IsEnabled
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto_IsEnabled_
+  commentId: Overload:ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled
+  isSpec: "True"
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.IsEnabled
+  nameWithType: FidelityFXSuperResolutionDto.IsEnabled
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported
+  name: IsSupported
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto_IsSupported
+  commentId: P:ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported
+  nameWithType: FidelityFXSuperResolutionDto.IsSupported
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported*
+  name: IsSupported
+  href: api/ADLXWrapper.FidelityFXSuperResolutionDto.html#ADLXWrapper_FidelityFXSuperResolutionDto_IsSupported_
+  commentId: Overload:ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto.IsSupported
+  nameWithType: FidelityFXSuperResolutionDto.IsSupported
 - uid: ADLXWrapper.FluidMotionFramesDto
   name: FluidMotionFramesDto
   href: api/ADLXWrapper.FluidMotionFramesDto.html
@@ -11306,6 +11762,15 @@ references:
   fullName.vb: ADLXWrapper.FluidMotionFramesDto.New(Boolean, Boolean)
   nameWithType: FluidMotionFramesDto.FluidMotionFramesDto(bool, bool)
   nameWithType.vb: FluidMotionFramesDto.New(Boolean, Boolean)
+- uid: ADLXWrapper.FluidMotionFramesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_AFMF_ALGORITHM,ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE,ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE,ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  name: FluidMotionFramesDto(bool, bool, bool, ADLX_AFMF_ALGORITHM, ADLX_AFMF_SEARCH_MODE_TYPE, ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLX_AFMF_FAST_MOTION_RESP)
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto__ctor_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_ADLX_AFMF_ALGORITHM_ADLXWrapper_ADLX_AFMF_SEARCH_MODE_TYPE_ADLXWrapper_ADLX_AFMF_PERFORMANCE_MODE_TYPE_ADLXWrapper_ADLX_AFMF_FAST_MOTION_RESP_
+  commentId: M:ADLXWrapper.FluidMotionFramesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_AFMF_ALGORITHM,ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE,ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE,ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  name.vb: New(Boolean, Boolean, Boolean, ADLX_AFMF_ALGORITHM, ADLX_AFMF_SEARCH_MODE_TYPE, ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLX_AFMF_FAST_MOTION_RESP)
+  fullName: ADLXWrapper.FluidMotionFramesDto.FluidMotionFramesDto(bool, bool, bool, ADLXWrapper.ADLX_AFMF_ALGORITHM, ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE, ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  fullName.vb: ADLXWrapper.FluidMotionFramesDto.New(Boolean, Boolean, Boolean, ADLXWrapper.ADLX_AFMF_ALGORITHM, ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE, ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  nameWithType: FluidMotionFramesDto.FluidMotionFramesDto(bool, bool, bool, ADLX_AFMF_ALGORITHM, ADLX_AFMF_SEARCH_MODE_TYPE, ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLX_AFMF_FAST_MOTION_RESP)
+  nameWithType.vb: FluidMotionFramesDto.New(Boolean, Boolean, Boolean, ADLX_AFMF_ALGORITHM, ADLX_AFMF_SEARCH_MODE_TYPE, ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLX_AFMF_FAST_MOTION_RESP)
 - uid: ADLXWrapper.FluidMotionFramesDto.#ctor*
   name: FluidMotionFramesDto
   href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto__ctor_
@@ -11316,6 +11781,45 @@ references:
   fullName.vb: ADLXWrapper.FluidMotionFramesDto.New
   nameWithType: FluidMotionFramesDto.FluidMotionFramesDto
   nameWithType.vb: FluidMotionFramesDto.New
+- uid: ADLXWrapper.FluidMotionFramesDto.Algorithm
+  name: Algorithm
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_Algorithm
+  commentId: P:ADLXWrapper.FluidMotionFramesDto.Algorithm
+  fullName: ADLXWrapper.FluidMotionFramesDto.Algorithm
+  nameWithType: FluidMotionFramesDto.Algorithm
+- uid: ADLXWrapper.FluidMotionFramesDto.Algorithm*
+  name: Algorithm
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_Algorithm_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesDto.Algorithm
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesDto.Algorithm
+  nameWithType: FluidMotionFramesDto.Algorithm
+- uid: ADLXWrapper.FluidMotionFramesDto.FastMotionResponse
+  name: FastMotionResponse
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_FastMotionResponse
+  commentId: P:ADLXWrapper.FluidMotionFramesDto.FastMotionResponse
+  fullName: ADLXWrapper.FluidMotionFramesDto.FastMotionResponse
+  nameWithType: FluidMotionFramesDto.FastMotionResponse
+- uid: ADLXWrapper.FluidMotionFramesDto.FastMotionResponse*
+  name: FastMotionResponse
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_FastMotionResponse_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesDto.FastMotionResponse
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesDto.FastMotionResponse
+  nameWithType: FluidMotionFramesDto.FastMotionResponse
+- uid: ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported
+  name: IsAlgorithmSupported
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_IsAlgorithmSupported
+  commentId: P:ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported
+  fullName: ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported
+  nameWithType: FluidMotionFramesDto.IsAlgorithmSupported
+- uid: ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported*
+  name: IsAlgorithmSupported
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_IsAlgorithmSupported_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported
+  nameWithType: FluidMotionFramesDto.IsAlgorithmSupported
 - uid: ADLXWrapper.FluidMotionFramesDto.IsEnabled
   name: IsEnabled
   href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_IsEnabled
@@ -11342,6 +11846,32 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.FluidMotionFramesDto.IsSupported
   nameWithType: FluidMotionFramesDto.IsSupported
+- uid: ADLXWrapper.FluidMotionFramesDto.PerformanceMode
+  name: PerformanceMode
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_PerformanceMode
+  commentId: P:ADLXWrapper.FluidMotionFramesDto.PerformanceMode
+  fullName: ADLXWrapper.FluidMotionFramesDto.PerformanceMode
+  nameWithType: FluidMotionFramesDto.PerformanceMode
+- uid: ADLXWrapper.FluidMotionFramesDto.PerformanceMode*
+  name: PerformanceMode
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_PerformanceMode_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesDto.PerformanceMode
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesDto.PerformanceMode
+  nameWithType: FluidMotionFramesDto.PerformanceMode
+- uid: ADLXWrapper.FluidMotionFramesDto.SearchMode
+  name: SearchMode
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_SearchMode
+  commentId: P:ADLXWrapper.FluidMotionFramesDto.SearchMode
+  fullName: ADLXWrapper.FluidMotionFramesDto.SearchMode
+  nameWithType: FluidMotionFramesDto.SearchMode
+- uid: ADLXWrapper.FluidMotionFramesDto.SearchMode*
+  name: SearchMode
+  href: api/ADLXWrapper.FluidMotionFramesDto.html#ADLXWrapper_FluidMotionFramesDto_SearchMode_
+  commentId: Overload:ADLXWrapper.FluidMotionFramesDto.SearchMode
+  isSpec: "True"
+  fullName: ADLXWrapper.FluidMotionFramesDto.SearchMode
+  nameWithType: FluidMotionFramesDto.SearchMode
 - uid: ADLXWrapper.FluidMotionFramesInfo
   name: FluidMotionFramesInfo
   href: api/ADLXWrapper.FluidMotionFramesInfo.html
@@ -12477,6 +13007,122 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GamutInfo.WhitePoint
   nameWithType: GamutInfo.WhitePoint
+- uid: ADLXWrapper.Gpu3InfoDto
+  name: Gpu3InfoDto
+  href: api/ADLXWrapper.Gpu3InfoDto.html
+  commentId: T:ADLXWrapper.Gpu3InfoDto
+  fullName: ADLXWrapper.Gpu3InfoDto
+  nameWithType: Gpu3InfoDto
+- uid: ADLXWrapper.Gpu3InfoDto.#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)
+  name: Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto__ctor_System_String_System_UInt32_System_UInt32_System_UInt32_System_UInt32_System_UInt32_System_UInt32_
+  commentId: M:ADLXWrapper.Gpu3InfoDto.#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)
+  name.vb: New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+  fullName: ADLXWrapper.Gpu3InfoDto.Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  fullName.vb: ADLXWrapper.Gpu3InfoDto.New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+  nameWithType: Gpu3InfoDto.Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  nameWithType.vb: Gpu3InfoDto.New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+- uid: ADLXWrapper.Gpu3InfoDto.#ctor*
+  name: Gpu3InfoDto
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto__ctor_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.Gpu3InfoDto.Gpu3InfoDto
+  fullName.vb: ADLXWrapper.Gpu3InfoDto.New
+  nameWithType: Gpu3InfoDto.Gpu3InfoDto
+  nameWithType.vb: Gpu3InfoDto.New
+- uid: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  name: HighestVRAMBandwidth
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_HighestVRAMBandwidth
+  commentId: P:ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  nameWithType: Gpu3InfoDto.HighestVRAMBandwidth
+- uid: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth*
+  name: HighestVRAMBandwidth
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_HighestVRAMBandwidth_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  nameWithType: Gpu3InfoDto.HighestVRAMBandwidth
+- uid: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  name: InvisibleVRAM
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_InvisibleVRAM
+  commentId: P:ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  nameWithType: Gpu3InfoDto.InvisibleVRAM
+- uid: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM*
+  name: InvisibleVRAM
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_InvisibleVRAM_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  nameWithType: Gpu3InfoDto.InvisibleVRAM
+- uid: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  name: MicroArchitecture
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_MicroArchitecture
+  commentId: P:ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  fullName: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  nameWithType: Gpu3InfoDto.MicroArchitecture
+- uid: ADLXWrapper.Gpu3InfoDto.MicroArchitecture*
+  name: MicroArchitecture
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_MicroArchitecture_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  nameWithType: Gpu3InfoDto.MicroArchitecture
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  name: VRAMBandwidth
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBandwidth
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  nameWithType: Gpu3InfoDto.VRAMBandwidth
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth*
+  name: VRAMBandwidth
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBandwidth_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  nameWithType: Gpu3InfoDto.VRAMBandwidth
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  name: VRAMBitRate
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBitRate
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  nameWithType: Gpu3InfoDto.VRAMBitRate
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBitRate*
+  name: VRAMBitRate
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBitRate_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  nameWithType: Gpu3InfoDto.VRAMBitRate
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  name: VRAMVendorRevId
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMVendorRevId
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  nameWithType: Gpu3InfoDto.VRAMVendorRevId
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId*
+  name: VRAMVendorRevId
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMVendorRevId_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  nameWithType: Gpu3InfoDto.VRAMVendorRevId
+- uid: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  name: VisibleVRAM
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VisibleVRAM
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  nameWithType: Gpu3InfoDto.VisibleVRAM
+- uid: ADLXWrapper.Gpu3InfoDto.VisibleVRAM*
+  name: VisibleVRAM
+  href: api/ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VisibleVRAM_
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  isSpec: "True"
+  fullName: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  nameWithType: Gpu3InfoDto.VisibleVRAM
 - uid: ADLXWrapper.GpuDto
   name: GpuDto
   href: api/ADLXWrapper.GpuDto.html
@@ -14055,6 +14701,83 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.GpuMetricsSupportInfo.VoltageSupported
   nameWithType: GpuMetricsSupportInfo.VoltageSupported
+- uid: ADLXWrapper.GpuStressTestResultDto
+  name: GpuStressTestResultDto
+  href: api/ADLXWrapper.GpuStressTestResultDto.html
+  commentId: T:ADLXWrapper.GpuStressTestResultDto
+  fullName: ADLXWrapper.GpuStressTestResultDto
+  nameWithType: GpuStressTestResultDto
+- uid: ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)
+  name: GpuStressTestResultDto(int, bool, uint, DateTimeOffset)
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto__ctor_System_Int32_System_Boolean_System_UInt32_System_DateTimeOffset_
+  commentId: M:ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)
+  name.vb: New(Integer, Boolean, UInteger, DateTimeOffset)
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuStressTestResultDto(int, bool, uint, System.DateTimeOffset)
+  fullName.vb: ADLXWrapper.GpuStressTestResultDto.New(Integer, Boolean, UInteger, System.DateTimeOffset)
+  nameWithType: GpuStressTestResultDto.GpuStressTestResultDto(int, bool, uint, DateTimeOffset)
+  nameWithType.vb: GpuStressTestResultDto.New(Integer, Boolean, UInteger, DateTimeOffset)
+- uid: ADLXWrapper.GpuStressTestResultDto.#ctor*
+  name: GpuStressTestResultDto
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto__ctor_
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuStressTestResultDto
+  fullName.vb: ADLXWrapper.GpuStressTestResultDto.New
+  nameWithType: GpuStressTestResultDto.GpuStressTestResultDto
+  nameWithType.vb: GpuStressTestResultDto.New
+- uid: ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  name: CompletedAt
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_CompletedAt
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  fullName: ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  nameWithType: GpuStressTestResultDto.CompletedAt
+- uid: ADLXWrapper.GpuStressTestResultDto.CompletedAt*
+  name: CompletedAt
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_CompletedAt_
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  nameWithType: GpuStressTestResultDto.CompletedAt
+- uid: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  name: GpuUniqueId
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_GpuUniqueId
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  nameWithType: GpuStressTestResultDto.GpuUniqueId
+- uid: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId*
+  name: GpuUniqueId
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_GpuUniqueId_
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  nameWithType: GpuStressTestResultDto.GpuUniqueId
+- uid: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  name: RequestedDurationSeconds
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_RequestedDurationSeconds
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  fullName: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  nameWithType: GpuStressTestResultDto.RequestedDurationSeconds
+- uid: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds*
+  name: RequestedDurationSeconds
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_RequestedDurationSeconds_
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  nameWithType: GpuStressTestResultDto.RequestedDurationSeconds
+- uid: ADLXWrapper.GpuStressTestResultDto.Succeeded
+  name: Succeeded
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_Succeeded
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.Succeeded
+  fullName: ADLXWrapper.GpuStressTestResultDto.Succeeded
+  nameWithType: GpuStressTestResultDto.Succeeded
+- uid: ADLXWrapper.GpuStressTestResultDto.Succeeded*
+  name: Succeeded
+  href: api/ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_Succeeded_
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.Succeeded
+  isSpec: "True"
+  fullName: ADLXWrapper.GpuStressTestResultDto.Succeeded
+  nameWithType: GpuStressTestResultDto.Succeeded
 - uid: ADLXWrapper.GpuTuningCapabilitiesDto
   name: GpuTuningCapabilitiesDto
   href: api/ADLXWrapper.GpuTuningCapabilitiesDto.html
@@ -45989,6 +46712,83 @@ references:
   commentId: F:ADLXWrapper.VariBrightMode.Unknown
   fullName: ADLXWrapper.VariBrightMode.Unknown
   nameWithType: VariBrightMode.Unknown
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto
+  name: VariableGraphicsMemoryOptionDto
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html
+  commentId: T:ADLXWrapper.VariableGraphicsMemoryOptionDto
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto
+  nameWithType: VariableGraphicsMemoryOptionDto
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)
+  name: VariableGraphicsMemoryOptionDto(string, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto__ctor_System_String_ADLXWrapper_ADLX_VARIABLE_GRAPHICS_MEMORY_MODE_System_Double_System_Double_
+  commentId: M:ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)
+  name.vb: New(String, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto(string, ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
+  fullName.vb: ADLXWrapper.VariableGraphicsMemoryOptionDto.New(String, ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
+  nameWithType: VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto(string, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
+  nameWithType.vb: VariableGraphicsMemoryOptionDto.New(String, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor*
+  name: VariableGraphicsMemoryOptionDto
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto__ctor_
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto
+  fullName.vb: ADLXWrapper.VariableGraphicsMemoryOptionDto.New
+  nameWithType: VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto
+  nameWithType.vb: VariableGraphicsMemoryOptionDto.New
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  name: MemoryCarvedGb
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryCarvedGb
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb*
+  name: MemoryCarvedGb
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryCarvedGb_
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  isSpec: "True"
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  name: MemoryRemainingGb
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryRemainingGb
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb*
+  name: MemoryRemainingGb
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryRemainingGb_
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  isSpec: "True"
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  name: Mode
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Mode
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  nameWithType: VariableGraphicsMemoryOptionDto.Mode
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode*
+  name: Mode
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Mode_
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  isSpec: "True"
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  nameWithType: VariableGraphicsMemoryOptionDto.Mode
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  name: Name
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Name
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  nameWithType: VariableGraphicsMemoryOptionDto.Name
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name*
+  name: Name
+  href: api/ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Name_
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  isSpec: "True"
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  nameWithType: VariableGraphicsMemoryOptionDto.Name
 - uid: ADLXWrapper.VideoSuperResolutionDto
   name: VideoSuperResolutionDto
   href: api/ADLXWrapper.VideoSuperResolutionDto.html

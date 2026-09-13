@@ -22,7 +22,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSyncDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1142
+    startLine: 1338
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -54,7 +54,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1144
+    startLine: 1340
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1145
+    startLine: 1341
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -112,7 +112,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1147
+    startLine: 1343
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

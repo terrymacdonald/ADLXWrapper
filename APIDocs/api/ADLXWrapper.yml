@@ -14,6 +14,7 @@ items:
   - ADLXWrapper.ADLXException
   - ADLXWrapper.ADLXGPU
   - ADLXWrapper.ADLXGPUTuningServicesHelper
+  - ADLXWrapper.ADLXGpuStressTest
   - ADLXWrapper.ADLXHardwareDetection
   - ADLXWrapper.ADLXInterfaceHandle
   - ADLXWrapper.ADLXListHelpers
@@ -28,6 +29,7 @@ items:
   - ADLXWrapper.ADLXPowerTuningServicesHelper
   - ADLXWrapper.ADLXSystemServicesHelper
   - ADLXWrapper.ADLXUtils
+  - ADLXWrapper.ADLXVariableGraphicsMemoryHelper
   - ADLXWrapper.ADLX_3DLUT_COLORSPACE
   - ADLXWrapper.ADLX_3DLUT_Data
   - ADLXWrapper.ADLX_3DLUT_Data._data_e__FixedBuffer
@@ -117,16 +119,20 @@ items:
   - ADLXWrapper.EnhancedSyncDto
   - ADLXWrapper.EyefinityDesktopDto
   - ADLXWrapper.FanPoint
+  - ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  - ADLXWrapper.FidelityFXSuperResolutionDto
   - ADLXWrapper.FluidMotionFramesDto
   - ADLXWrapper.FrameRateTargetControlDto
   - ADLXWrapper.GammaDto
   - ADLXWrapper.GammaRampDto
   - ADLXWrapper.GamutColorSpaceDto
   - ADLXWrapper.GamutDto
+  - ADLXWrapper.Gpu3InfoDto
   - ADLXWrapper.GpuDto
   - ADLXWrapper.GpuMetricsEntryDto
   - ADLXWrapper.GpuMetricsSnapshotDto
   - ADLXWrapper.GpuMetricsSupportDto
+  - ADLXWrapper.GpuStressTestResultDto
   - ADLXWrapper.GpuTuningCapabilitiesDto
   - ADLXWrapper.GpuTuningListenerHandle
   - ADLXWrapper.GpuTuningListenerHandle.GpuTuningChangedCallback
@@ -326,6 +332,7 @@ items:
   - ADLXWrapper.ThreeDSettingsListenerHandle
   - ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback
   - ADLXWrapper.VariBrightMode
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto
   - ADLXWrapper.VideoSuperResolutionDto
   - ADLXWrapper.VideoUpscaleDto
   - ADLXWrapper.VramState
@@ -452,6 +459,20 @@ references:
   name: RadeonSuperResolutionDto
   nameWithType: RadeonSuperResolutionDto
   fullName: ADLXWrapper.RadeonSuperResolutionDto
+- uid: ADLXWrapper.FidelityFXSuperResolutionDto
+  commentId: T:ADLXWrapper.FidelityFXSuperResolutionDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.FidelityFXSuperResolutionDto.html
+  name: FidelityFXSuperResolutionDto
+  nameWithType: FidelityFXSuperResolutionDto
+  fullName: ADLXWrapper.FidelityFXSuperResolutionDto
+- uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  commentId: T:ADLXWrapper.FidelityFXFrameGenUpgradeDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.FidelityFXFrameGenUpgradeDto.html
+  name: FidelityFXFrameGenUpgradeDto
+  nameWithType: FidelityFXFrameGenUpgradeDto
+  fullName: ADLXWrapper.FidelityFXFrameGenUpgradeDto
 - uid: ADLXWrapper.ThreeDSettingsListenerHandle
   commentId: T:ADLXWrapper.ThreeDSettingsListenerHandle
   parent: ADLXWrapper
@@ -834,6 +855,26 @@ references:
   name: ADLXGPU
   nameWithType: ADLXGPU
   fullName: ADLXWrapper.ADLXGPU
+- uid: ADLXWrapper.Gpu3InfoDto
+  commentId: T:ADLXWrapper.Gpu3InfoDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.Gpu3InfoDto.html
+  name: Gpu3InfoDto
+  nameWithType: Gpu3InfoDto
+  fullName: ADLXWrapper.Gpu3InfoDto
+- uid: ADLXWrapper.ADLXGpuStressTest
+  commentId: T:ADLXWrapper.ADLXGpuStressTest
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXGpuStressTest.html
+  name: ADLXGpuStressTest
+  nameWithType: ADLXGpuStressTest
+  fullName: ADLXWrapper.ADLXGpuStressTest
+- uid: ADLXWrapper.GpuStressTestResultDto
+  commentId: T:ADLXWrapper.GpuStressTestResultDto
+  href: ADLXWrapper.GpuStressTestResultDto.html
+  name: GpuStressTestResultDto
+  nameWithType: GpuStressTestResultDto
+  fullName: ADLXWrapper.GpuStressTestResultDto
 - uid: ADLXWrapper.ADLXGPUTuningServicesHelper
   commentId: T:ADLXWrapper.ADLXGPUTuningServicesHelper
   parent: ADLXWrapper
@@ -1288,6 +1329,20 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+  commentId: T:ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLXVariableGraphicsMemoryHelper.html
+  name: ADLXVariableGraphicsMemoryHelper
+  nameWithType: ADLXVariableGraphicsMemoryHelper
+  fullName: ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto
+  commentId: T:ADLXWrapper.VariableGraphicsMemoryOptionDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html
+  name: VariableGraphicsMemoryOptionDto
+  nameWithType: VariableGraphicsMemoryOptionDto
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto
 - uid: ADLXWrapper.ADLX_3DLUT_COLORSPACE
   commentId: T:ADLXWrapper.ADLX_3DLUT_COLORSPACE
   parent: ADLXWrapper

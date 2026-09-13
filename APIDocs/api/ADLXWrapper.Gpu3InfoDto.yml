@@ -1,0 +1,589 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.Gpu3InfoDto
+  commentId: T:ADLXWrapper.Gpu3InfoDto
+  id: Gpu3InfoDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.Gpu3InfoDto.#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)
+  - ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  - ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  - ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  - ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  - ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  - ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  - ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  langs:
+  - csharp
+  - vb
+  name: Gpu3InfoDto
+  nameWithType: Gpu3InfoDto
+  fullName: ADLXWrapper.Gpu3InfoDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Gpu3InfoDto
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 312
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Extended read-only GPU information provided by IADLXGPU3.
+  example: []
+  syntax:
+    content: public readonly struct Gpu3InfoDto
+    content.vb: Public Structure Gpu3InfoDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  commentId: P:ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  id: MicroArchitecture
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: MicroArchitecture
+  nameWithType: Gpu3InfoDto.MicroArchitecture
+  fullName: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MicroArchitecture
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 314
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public string MicroArchitecture { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MicroArchitecture As String
+  overload: ADLXWrapper.Gpu3InfoDto.MicroArchitecture*
+- uid: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  commentId: P:ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  id: HighestVRAMBandwidth
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: HighestVRAMBandwidth
+  nameWithType: Gpu3InfoDto.HighestVRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HighestVRAMBandwidth
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 315
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint HighestVRAMBandwidth { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property HighestVRAMBandwidth As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth*
+- uid: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  commentId: P:ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  id: InvisibleVRAM
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: InvisibleVRAM
+  nameWithType: Gpu3InfoDto.InvisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: InvisibleVRAM
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 316
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint InvisibleVRAM { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property InvisibleVRAM As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM*
+- uid: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  id: VisibleVRAM
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: VisibleVRAM
+  nameWithType: Gpu3InfoDto.VisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VisibleVRAM
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 317
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint VisibleVRAM { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property VisibleVRAM As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.VisibleVRAM*
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  id: VRAMVendorRevId
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: VRAMVendorRevId
+  nameWithType: Gpu3InfoDto.VRAMVendorRevId
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMVendorRevId
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 318
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint VRAMVendorRevId { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property VRAMVendorRevId As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId*
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  id: VRAMBandwidth
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: VRAMBandwidth
+  nameWithType: Gpu3InfoDto.VRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMBandwidth
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 319
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint VRAMBandwidth { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property VRAMBandwidth As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth*
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  commentId: P:ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  id: VRAMBitRate
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: VRAMBitRate
+  nameWithType: Gpu3InfoDto.VRAMBitRate
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMBitRate
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 320
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint VRAMBitRate { get; init; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public Property VRAMBitRate As UInteger
+  overload: ADLXWrapper.Gpu3InfoDto.VRAMBitRate*
+- uid: ADLXWrapper.Gpu3InfoDto.#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)
+  commentId: M:ADLXWrapper.Gpu3InfoDto.#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)
+  id: '#ctor(System.String,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.UInt32)'
+  parent: ADLXWrapper.Gpu3InfoDto
+  langs:
+  - csharp
+  - vb
+  name: Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  nameWithType: Gpu3InfoDto.Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  fullName: ADLXWrapper.Gpu3InfoDto.Gpu3InfoDto(string, uint, uint, uint, uint, uint, uint)
+  type: Constructor
+  source:
+    remote:
+      path: ADLXWrapper/AdlxGpu.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: .ctor
+    path: ../ADLXWrapper/AdlxGpu.cs
+    startLine: 322
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public Gpu3InfoDto(string microArchitecture, uint highestVramBandwidth, uint invisibleVram, uint visibleVram, uint vramVendorRevId, uint vramBandwidth, uint vramBitRate)
+    parameters:
+    - id: microArchitecture
+      type: System.String
+    - id: highestVramBandwidth
+      type: System.UInt32
+    - id: invisibleVram
+      type: System.UInt32
+    - id: visibleVram
+      type: System.UInt32
+    - id: vramVendorRevId
+      type: System.UInt32
+    - id: vramBandwidth
+      type: System.UInt32
+    - id: vramBitRate
+      type: System.UInt32
+    content.vb: Public Sub New(microArchitecture As String, highestVramBandwidth As UInteger, invisibleVram As UInteger, visibleVram As UInteger, vramVendorRevId As UInteger, vramBandwidth As UInteger, vramBitRate As UInteger)
+  overload: ADLXWrapper.Gpu3InfoDto.#ctor*
+  nameWithType.vb: Gpu3InfoDto.New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+  fullName.vb: ADLXWrapper.Gpu3InfoDto.New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+  name.vb: New(String, UInteger, UInteger, UInteger, UInteger, UInteger, UInteger)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.Gpu3InfoDto.MicroArchitecture*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_MicroArchitecture
+  name: MicroArchitecture
+  nameWithType: Gpu3InfoDto.MicroArchitecture
+  fullName: ADLXWrapper.Gpu3InfoDto.MicroArchitecture
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_HighestVRAMBandwidth
+  name: HighestVRAMBandwidth
+  nameWithType: Gpu3InfoDto.HighestVRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.HighestVRAMBandwidth
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_InvisibleVRAM
+  name: InvisibleVRAM
+  nameWithType: Gpu3InfoDto.InvisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.InvisibleVRAM
+- uid: ADLXWrapper.Gpu3InfoDto.VisibleVRAM*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VisibleVRAM
+  name: VisibleVRAM
+  nameWithType: Gpu3InfoDto.VisibleVRAM
+  fullName: ADLXWrapper.Gpu3InfoDto.VisibleVRAM
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMVendorRevId
+  name: VRAMVendorRevId
+  nameWithType: Gpu3InfoDto.VRAMVendorRevId
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMVendorRevId
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBandwidth
+  name: VRAMBandwidth
+  nameWithType: Gpu3InfoDto.VRAMBandwidth
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBandwidth
+- uid: ADLXWrapper.Gpu3InfoDto.VRAMBitRate*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto_VRAMBitRate
+  name: VRAMBitRate
+  nameWithType: Gpu3InfoDto.VRAMBitRate
+  fullName: ADLXWrapper.Gpu3InfoDto.VRAMBitRate
+- uid: ADLXWrapper.Gpu3InfoDto.#ctor*
+  commentId: Overload:ADLXWrapper.Gpu3InfoDto.#ctor
+  href: ADLXWrapper.Gpu3InfoDto.html#ADLXWrapper_Gpu3InfoDto__ctor_System_String_System_UInt32_System_UInt32_System_UInt32_System_UInt32_System_UInt32_System_UInt32_
+  name: Gpu3InfoDto
+  nameWithType: Gpu3InfoDto.Gpu3InfoDto
+  fullName: ADLXWrapper.Gpu3InfoDto.Gpu3InfoDto
+  nameWithType.vb: Gpu3InfoDto.New
+  fullName.vb: ADLXWrapper.Gpu3InfoDto.New
+  name.vb: New

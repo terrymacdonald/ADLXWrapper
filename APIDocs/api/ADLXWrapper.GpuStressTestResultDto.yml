@@ -1,36 +1,38 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.AntiLagDto
-  commentId: T:ADLXWrapper.AntiLagDto
-  id: AntiLagDto
+- uid: ADLXWrapper.GpuStressTestResultDto
+  commentId: T:ADLXWrapper.GpuStressTestResultDto
+  id: GpuStressTestResultDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  - ADLXWrapper.AntiLagDto.HasLevel
-  - ADLXWrapper.AntiLagDto.IsEnabled
-  - ADLXWrapper.AntiLagDto.IsSupported
-  - ADLXWrapper.AntiLagDto.Level
+  - ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)
+  - ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  - ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  - ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  - ADLXWrapper.GpuStressTestResultDto.Succeeded
   langs:
   - csharp
   - vb
-  name: AntiLagDto
-  nameWithType: AntiLagDto
-  fullName: ADLXWrapper.AntiLagDto
+  name: GpuStressTestResultDto
+  nameWithType: GpuStressTestResultDto
+  fullName: ADLXWrapper.GpuStressTestResultDto
   type: Struct
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXGpuStressTest.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: AntiLagDto
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1102
+    id: GpuStressTestResultDto
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 92
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
+  summary: Pointer-free result of a completed ADLX GPU stress test.
+  example: []
   syntax:
-    content: public readonly struct AntiLagDto
-    content.vb: Public Structure AntiLagDto
+    content: public readonly struct GpuStressTestResultDto
+    content.vb: Public Structure GpuStressTestResultDto
   inheritedMembers:
   - System.ValueType.Equals(System.Object)
   - System.ValueType.GetHashCode
@@ -38,170 +40,160 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: ADLXWrapper.AntiLagDto.IsSupported
-  commentId: P:ADLXWrapper.AntiLagDto.IsSupported
-  id: IsSupported
-  parent: ADLXWrapper.AntiLagDto
+- uid: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  id: GpuUniqueId
+  parent: ADLXWrapper.GpuStressTestResultDto
   langs:
   - csharp
   - vb
-  name: IsSupported
-  nameWithType: AntiLagDto.IsSupported
-  fullName: ADLXWrapper.AntiLagDto.IsSupported
+  name: GpuUniqueId
+  nameWithType: GpuStressTestResultDto.GpuUniqueId
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXGpuStressTest.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: IsSupported
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1104
+    id: GpuUniqueId
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 94
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool IsSupported { get; init; }
+    content: public int GpuUniqueId { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property GpuUniqueId As Integer
+  overload: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId*
+- uid: ADLXWrapper.GpuStressTestResultDto.Succeeded
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.Succeeded
+  id: Succeeded
+  parent: ADLXWrapper.GpuStressTestResultDto
+  langs:
+  - csharp
+  - vb
+  name: Succeeded
+  nameWithType: GpuStressTestResultDto.Succeeded
+  fullName: ADLXWrapper.GpuStressTestResultDto.Succeeded
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/ADLXGpuStressTest.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Succeeded
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 95
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool Succeeded { get; init; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property IsSupported As Boolean
-  overload: ADLXWrapper.AntiLagDto.IsSupported*
-- uid: ADLXWrapper.AntiLagDto.IsEnabled
-  commentId: P:ADLXWrapper.AntiLagDto.IsEnabled
-  id: IsEnabled
-  parent: ADLXWrapper.AntiLagDto
+    content.vb: Public Property Succeeded As Boolean
+  overload: ADLXWrapper.GpuStressTestResultDto.Succeeded*
+- uid: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  id: RequestedDurationSeconds
+  parent: ADLXWrapper.GpuStressTestResultDto
   langs:
   - csharp
   - vb
-  name: IsEnabled
-  nameWithType: AntiLagDto.IsEnabled
-  fullName: ADLXWrapper.AntiLagDto.IsEnabled
+  name: RequestedDurationSeconds
+  nameWithType: GpuStressTestResultDto.RequestedDurationSeconds
+  fullName: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXGpuStressTest.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: IsEnabled
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1105
+    id: RequestedDurationSeconds
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 96
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool IsEnabled { get; init; }
+    content: public uint RequestedDurationSeconds { get; init; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property IsEnabled As Boolean
-  overload: ADLXWrapper.AntiLagDto.IsEnabled*
-- uid: ADLXWrapper.AntiLagDto.HasLevel
-  commentId: P:ADLXWrapper.AntiLagDto.HasLevel
-  id: HasLevel
-  parent: ADLXWrapper.AntiLagDto
+      type: System.UInt32
+    content.vb: Public Property RequestedDurationSeconds As UInteger
+  overload: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds*
+- uid: ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  commentId: P:ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  id: CompletedAt
+  parent: ADLXWrapper.GpuStressTestResultDto
   langs:
   - csharp
   - vb
-  name: HasLevel
-  nameWithType: AntiLagDto.HasLevel
-  fullName: ADLXWrapper.AntiLagDto.HasLevel
+  name: CompletedAt
+  nameWithType: GpuStressTestResultDto.CompletedAt
+  fullName: ADLXWrapper.GpuStressTestResultDto.CompletedAt
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXGpuStressTest.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: HasLevel
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1106
+    id: CompletedAt
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 97
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool HasLevel { get; init; }
+    content: public DateTimeOffset CompletedAt { get; init; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property HasLevel As Boolean
-  overload: ADLXWrapper.AntiLagDto.HasLevel*
-- uid: ADLXWrapper.AntiLagDto.Level
-  commentId: P:ADLXWrapper.AntiLagDto.Level
-  id: Level
-  parent: ADLXWrapper.AntiLagDto
+      type: System.DateTimeOffset
+    content.vb: Public Property CompletedAt As DateTimeOffset
+  overload: ADLXWrapper.GpuStressTestResultDto.CompletedAt*
+- uid: ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)
+  commentId: M:ADLXWrapper.GpuStressTestResultDto.#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)
+  id: '#ctor(System.Int32,System.Boolean,System.UInt32,System.DateTimeOffset)'
+  parent: ADLXWrapper.GpuStressTestResultDto
   langs:
   - csharp
   - vb
-  name: Level
-  nameWithType: AntiLagDto.Level
-  fullName: ADLXWrapper.AntiLagDto.Level
-  type: Property
-  source:
-    remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
-      repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Level
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1107
-  assemblies:
-  - ADLXWrapper
-  namespace: ADLXWrapper
-  syntax:
-    content: public ADLX_ANTILAG_STATE Level { get; init; }
-    parameters: []
-    return:
-      type: ADLXWrapper.ADLX_ANTILAG_STATE
-    content.vb: Public Property Level As ADLX_ANTILAG_STATE
-  overload: ADLXWrapper.AntiLagDto.Level*
-- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)'
-  parent: ADLXWrapper.AntiLagDto
-  langs:
-  - csharp
-  - vb
-  name: AntiLagDto(bool, bool, bool, ADLX_ANTILAG_STATE)
-  nameWithType: AntiLagDto.AntiLagDto(bool, bool, bool, ADLX_ANTILAG_STATE)
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool, bool, ADLXWrapper.ADLX_ANTILAG_STATE)
+  name: GpuStressTestResultDto(int, bool, uint, DateTimeOffset)
+  nameWithType: GpuStressTestResultDto.GpuStressTestResultDto(int, bool, uint, DateTimeOffset)
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuStressTestResultDto(int, bool, uint, System.DateTimeOffset)
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXGpuStressTest.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1109
+    path: ../ADLXWrapper/ADLXGpuStressTest.cs
+    startLine: 99
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: >-
-      [JsonConstructor]
-
-      public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_STATE level = ADLX_ANTILAG_STATE.ANTILAG)
+    content: public GpuStressTestResultDto(int gpuUniqueId, bool succeeded, uint requestedDurationSeconds, DateTimeOffset completedAt)
     parameters:
-    - id: isSupported
+    - id: gpuUniqueId
+      type: System.Int32
+    - id: succeeded
       type: System.Boolean
-    - id: isEnabled
-      type: System.Boolean
-    - id: hasLevel
-      type: System.Boolean
-    - id: level
-      type: ADLXWrapper.ADLX_ANTILAG_STATE
-    content.vb: >-
-      <JsonConstructor>
-
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean, hasLevel As Boolean, level As ADLX_ANTILAG_STATE = ADLX_ANTILAG_STATE.ANTILAG)
-  overload: ADLXWrapper.AntiLagDto.#ctor*
-  attributes:
-  - type: Newtonsoft.Json.JsonConstructorAttribute
-    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
-    arguments: []
-  nameWithType.vb: AntiLagDto.New(Boolean, Boolean, Boolean, ADLX_ANTILAG_STATE)
-  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean, Boolean, ADLXWrapper.ADLX_ANTILAG_STATE)
-  name.vb: New(Boolean, Boolean, Boolean, ADLX_ANTILAG_STATE)
+    - id: requestedDurationSeconds
+      type: System.UInt32
+    - id: completedAt
+      type: System.DateTimeOffset
+    content.vb: Public Sub New(gpuUniqueId As Integer, succeeded As Boolean, requestedDurationSeconds As UInteger, completedAt As DateTimeOffset)
+  overload: ADLXWrapper.GpuStressTestResultDto.#ctor*
+  nameWithType.vb: GpuStressTestResultDto.New(Integer, Boolean, UInteger, DateTimeOffset)
+  fullName.vb: ADLXWrapper.GpuStressTestResultDto.New(Integer, Boolean, UInteger, System.DateTimeOffset)
+  name.vb: New(Integer, Boolean, UInteger, DateTimeOffset)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -426,12 +418,29 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ADLXWrapper.AntiLagDto.IsSupported*
-  commentId: Overload:ADLXWrapper.AntiLagDto.IsSupported
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_IsSupported
-  name: IsSupported
-  nameWithType: AntiLagDto.IsSupported
-  fullName: ADLXWrapper.AntiLagDto.IsSupported
+- uid: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId*
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+  href: ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_GpuUniqueId
+  name: GpuUniqueId
+  nameWithType: GpuStressTestResultDto.GpuUniqueId
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuUniqueId
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.GpuStressTestResultDto.Succeeded*
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.Succeeded
+  href: ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_Succeeded
+  name: Succeeded
+  nameWithType: GpuStressTestResultDto.Succeeded
+  fullName: ADLXWrapper.GpuStressTestResultDto.Succeeded
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -443,37 +452,43 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ADLXWrapper.AntiLagDto.IsEnabled*
-  commentId: Overload:ADLXWrapper.AntiLagDto.IsEnabled
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_IsEnabled
-  name: IsEnabled
-  nameWithType: AntiLagDto.IsEnabled
-  fullName: ADLXWrapper.AntiLagDto.IsEnabled
-- uid: ADLXWrapper.AntiLagDto.HasLevel*
-  commentId: Overload:ADLXWrapper.AntiLagDto.HasLevel
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_HasLevel
-  name: HasLevel
-  nameWithType: AntiLagDto.HasLevel
-  fullName: ADLXWrapper.AntiLagDto.HasLevel
-- uid: ADLXWrapper.AntiLagDto.Level*
-  commentId: Overload:ADLXWrapper.AntiLagDto.Level
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_Level
-  name: Level
-  nameWithType: AntiLagDto.Level
-  fullName: ADLXWrapper.AntiLagDto.Level
-- uid: ADLXWrapper.ADLX_ANTILAG_STATE
-  commentId: T:ADLXWrapper.ADLX_ANTILAG_STATE
-  parent: ADLXWrapper
-  href: ADLXWrapper.ADLX_ANTILAG_STATE.html
-  name: ADLX_ANTILAG_STATE
-  nameWithType: ADLX_ANTILAG_STATE
-  fullName: ADLXWrapper.ADLX_ANTILAG_STATE
-- uid: ADLXWrapper.AntiLagDto.#ctor*
-  commentId: Overload:ADLXWrapper.AntiLagDto.#ctor
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_ADLX_ANTILAG_STATE_
-  name: AntiLagDto
-  nameWithType: AntiLagDto.AntiLagDto
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto
-  nameWithType.vb: AntiLagDto.New
-  fullName.vb: ADLXWrapper.AntiLagDto.New
+- uid: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds*
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+  href: ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_RequestedDurationSeconds
+  name: RequestedDurationSeconds
+  nameWithType: GpuStressTestResultDto.RequestedDurationSeconds
+  fullName: ADLXWrapper.GpuStressTestResultDto.RequestedDurationSeconds
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.GpuStressTestResultDto.CompletedAt*
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.CompletedAt
+  href: ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto_CompletedAt
+  name: CompletedAt
+  nameWithType: GpuStressTestResultDto.CompletedAt
+  fullName: ADLXWrapper.GpuStressTestResultDto.CompletedAt
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: ADLXWrapper.GpuStressTestResultDto.#ctor*
+  commentId: Overload:ADLXWrapper.GpuStressTestResultDto.#ctor
+  href: ADLXWrapper.GpuStressTestResultDto.html#ADLXWrapper_GpuStressTestResultDto__ctor_System_Int32_System_Boolean_System_UInt32_System_DateTimeOffset_
+  name: GpuStressTestResultDto
+  nameWithType: GpuStressTestResultDto.GpuStressTestResultDto
+  fullName: ADLXWrapper.GpuStressTestResultDto.GpuStressTestResultDto
+  nameWithType.vb: GpuStressTestResultDto.New
+  fullName.vb: ADLXWrapper.GpuStressTestResultDto.New
   name.vb: New

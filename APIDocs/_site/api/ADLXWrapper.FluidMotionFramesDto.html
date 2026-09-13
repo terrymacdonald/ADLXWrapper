@@ -89,7 +89,7 @@
 
 
   <h1 id="ADLXWrapper_FluidMotionFramesDto" data-uid="ADLXWrapper.FluidMotionFramesDto" class="text-break">
-Struct FluidMotionFramesDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1328"><i class="bi bi-code-slash"></i></a>
+Struct FluidMotionFramesDto  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1524"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -146,7 +146,7 @@ Struct FluidMotionFramesDto  <a class="header-action link-secondary" title="View
 
   <h3 id="ADLXWrapper_FluidMotionFramesDto__ctor_System_Boolean_System_Boolean_" data-uid="ADLXWrapper.FluidMotionFramesDto.#ctor(System.Boolean,System.Boolean)">
   FluidMotionFramesDto(bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1333"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1534"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -176,15 +176,152 @@ public FluidMotionFramesDto(bool isSupported, bool isEnabled)</code></pre>
 
 
 
+  <a id="ADLXWrapper_FluidMotionFramesDto__ctor_" data-uid="ADLXWrapper.FluidMotionFramesDto.#ctor*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto__ctor_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_ADLX_AFMF_ALGORITHM_ADLXWrapper_ADLX_AFMF_SEARCH_MODE_TYPE_ADLXWrapper_ADLX_AFMF_PERFORMANCE_MODE_TYPE_ADLXWrapper_ADLX_AFMF_FAST_MOTION_RESP_" data-uid="ADLXWrapper.FluidMotionFramesDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_AFMF_ALGORITHM,ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE,ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE,ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)">
+  FluidMotionFramesDto(bool, bool, bool, ADLX_AFMF_ALGORITHM, ADLX_AFMF_SEARCH_MODE_TYPE, ADLX_AFMF_PERFORMANCE_MODE_TYPE, ADLX_AFMF_FAST_MOTION_RESP)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1541"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConstructor]
+public FluidMotionFramesDto(bool isSupported, bool isEnabled, bool isAlgorithmSupported, ADLX_AFMF_ALGORITHM algorithm, ADLX_AFMF_SEARCH_MODE_TYPE searchMode, ADLX_AFMF_PERFORMANCE_MODE_TYPE performanceMode, ADLX_AFMF_FAST_MOTION_RESP fastMotionResponse)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>isSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>isEnabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>isAlgorithmSupported</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>algorithm</code> <a class="xref" href="ADLXWrapper.ADLX_AFMF_ALGORITHM.html">ADLX_AFMF_ALGORITHM</a></dt>
+    <dd></dd>
+    <dt><code>searchMode</code> <a class="xref" href="ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html">ADLX_AFMF_SEARCH_MODE_TYPE</a></dt>
+    <dd></dd>
+    <dt><code>performanceMode</code> <a class="xref" href="ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a></dt>
+    <dd></dd>
+    <dt><code>fastMotionResponse</code> <a class="xref" href="ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html">ADLX_AFMF_FAST_MOTION_RESP</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
+
+
+  <a id="ADLXWrapper_FluidMotionFramesDto_Algorithm_" data-uid="ADLXWrapper.FluidMotionFramesDto.Algorithm*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto_Algorithm" data-uid="ADLXWrapper.FluidMotionFramesDto.Algorithm">
+  Algorithm
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1529"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_AFMF_ALGORITHM Algorithm { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_AFMF_ALGORITHM.html">ADLX_AFMF_ALGORITHM</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_FluidMotionFramesDto_FastMotionResponse_" data-uid="ADLXWrapper.FluidMotionFramesDto.FastMotionResponse*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto_FastMotionResponse" data-uid="ADLXWrapper.FluidMotionFramesDto.FastMotionResponse">
+  FastMotionResponse
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_AFMF_FAST_MOTION_RESP FastMotionResponse { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html">ADLX_AFMF_FAST_MOTION_RESP</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_FluidMotionFramesDto_IsAlgorithmSupported_" data-uid="ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto_IsAlgorithmSupported" data-uid="ADLXWrapper.FluidMotionFramesDto.IsAlgorithmSupported">
+  IsAlgorithmSupported
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAlgorithmSupported { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
 
 
   <a id="ADLXWrapper_FluidMotionFramesDto_IsEnabled_" data-uid="ADLXWrapper.FluidMotionFramesDto.IsEnabled*"></a>
 
   <h3 id="ADLXWrapper_FluidMotionFramesDto_IsEnabled" data-uid="ADLXWrapper.FluidMotionFramesDto.IsEnabled">
   IsEnabled
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1331"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1527"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -215,7 +352,7 @@ public FluidMotionFramesDto(bool isSupported, bool isEnabled)</code></pre>
 
   <h3 id="ADLXWrapper_FluidMotionFramesDto_IsSupported" data-uid="ADLXWrapper.FluidMotionFramesDto.IsSupported">
   IsSupported
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1330"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1526"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -242,11 +379,73 @@ public FluidMotionFramesDto(bool isSupported, bool isEnabled)</code></pre>
 
 
 
+  <a id="ADLXWrapper_FluidMotionFramesDto_PerformanceMode_" data-uid="ADLXWrapper.FluidMotionFramesDto.PerformanceMode*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto_PerformanceMode" data-uid="ADLXWrapper.FluidMotionFramesDto.PerformanceMode">
+  PerformanceMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1531"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_AFMF_PERFORMANCE_MODE_TYPE PerformanceMode { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html">ADLX_AFMF_PERFORMANCE_MODE_TYPE</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_FluidMotionFramesDto_SearchMode_" data-uid="ADLXWrapper.FluidMotionFramesDto.SearchMode*"></a>
+
+  <h3 id="ADLXWrapper_FluidMotionFramesDto_SearchMode" data-uid="ADLXWrapper.FluidMotionFramesDto.SearchMode">
+  SearchMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1530"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ADLX_AFMF_SEARCH_MODE_TYPE SearchMode { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html">ADLX_AFMF_SEARCH_MODE_TYPE</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1328" class="edit-link">Edit this page</a>
+          <a href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1524" class="edit-link">Edit this page</a>
         </div>
 
 

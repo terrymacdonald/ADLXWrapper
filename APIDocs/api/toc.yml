@@ -34,6 +34,9 @@ items:
   - uid: ADLXWrapper.ADLXGPUTuningServicesHelper
     name: ADLXGPUTuningServicesHelper
     type: Class
+  - uid: ADLXWrapper.ADLXGpuStressTest
+    name: ADLXGpuStressTest
+    type: Class
   - uid: ADLXWrapper.ADLXHardwareDetection
     name: ADLXHardwareDetection
     type: Class
@@ -75,6 +78,9 @@ items:
     type: Class
   - uid: ADLXWrapper.ADLXUtils
     name: ADLXUtils
+    type: Class
+  - uid: ADLXWrapper.ADLXVariableGraphicsMemoryHelper
+    name: ADLXVariableGraphicsMemoryHelper
     type: Class
   - uid: ADLXWrapper.ADLX_3DLUT_COLORSPACE
     name: ADLX_3DLUT_COLORSPACE
@@ -343,6 +349,12 @@ items:
   - uid: ADLXWrapper.FanPoint
     name: FanPoint
     type: Struct
+  - uid: ADLXWrapper.FidelityFXFrameGenUpgradeDto
+    name: FidelityFXFrameGenUpgradeDto
+    type: Struct
+  - uid: ADLXWrapper.FidelityFXSuperResolutionDto
+    name: FidelityFXSuperResolutionDto
+    type: Struct
   - uid: ADLXWrapper.FluidMotionFramesDto
     name: FluidMotionFramesDto
     type: Struct
@@ -361,6 +373,9 @@ items:
   - uid: ADLXWrapper.GamutDto
     name: GamutDto
     type: Struct
+  - uid: ADLXWrapper.Gpu3InfoDto
+    name: Gpu3InfoDto
+    type: Struct
   - uid: ADLXWrapper.GpuDto
     name: GpuDto
     type: Struct
@@ -372,6 +387,9 @@ items:
     type: Struct
   - uid: ADLXWrapper.GpuMetricsSupportDto
     name: GpuMetricsSupportDto
+    type: Struct
+  - uid: ADLXWrapper.GpuStressTestResultDto
+    name: GpuStressTestResultDto
     type: Struct
   - uid: ADLXWrapper.GpuTuningCapabilitiesDto
     name: GpuTuningCapabilitiesDto
@@ -970,6 +988,9 @@ items:
   - uid: ADLXWrapper.VariBrightMode
     name: VariBrightMode
     type: Enum
+  - uid: ADLXWrapper.VariableGraphicsMemoryOptionDto
+    name: VariableGraphicsMemoryOptionDto
+    type: Struct
   - uid: ADLXWrapper.VideoSuperResolutionDto
     name: VideoSuperResolutionDto
     type: Struct

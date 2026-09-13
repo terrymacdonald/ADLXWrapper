@@ -160,7 +160,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper__ctor_ADLXWrapper_IADLX3DSettingsServices__System_Boolean_ADLXWrapper_IADLXSystem__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.#ctor(ADLXWrapper.IADLX3DSettingsServices*,System.Boolean,ADLXWrapper.IADLXSystem*)">
   ADLX3DSettingsServicesHelper(IADLX3DSettingsServices*, bool, IADLXSystem*)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a 3D settings helper from the native services interface, upgrading to v1/v2 when available.</p>
@@ -203,7 +203,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Add3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_ThreeDSettingsChangedCallback_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Add3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle.ThreeDSettingsChangedCallback)">
   Add3DSettingsEventListener(ThreeDSettingsChangedCallback)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a 3D settings change listener.</p>
@@ -251,7 +251,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyAll3DSettings_System_Int32_ADLXWrapper_All3DSettingsDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)">
   ApplyAll3DSettings(int, All3DSettingsDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L285"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies all 3D settings to the GPU with the specified unique id.</p>
@@ -285,7 +285,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyChill_System_Int32_ADLXWrapper_ChillDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyChill(System.Int32,ADLXWrapper.ChillDto)">
   ApplyChill(int, ChillDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L315"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies Chill settings to the GPU with the specified unique id.</p>
@@ -315,11 +315,79 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXFrameGenUpgrade_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)">
+  ApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L451"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies FidelityFX Frame Generation Upgrade state to the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXFrameGenUpgradeDto.html">FidelityFXFrameGenUpgradeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXSuperResolution_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)">
+  ApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L421"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Applies FidelityFX Super Resolution state to the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXSuperResolutionDto.html">FidelityFXSuperResolutionDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop*"></a>
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)">
   ApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L374"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L375"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies ImageSharpenDesktop settings to the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.</p>
@@ -353,7 +421,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_ApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.ApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)">
   ApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L344"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L345"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies MorphologicalAntiAliasing settings to the GPU with the specified unique id.</p>
@@ -387,7 +455,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Dispose" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Dispose">
   Dispose()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L490"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
@@ -414,7 +482,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Finalize" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Finalize">
   ~ADLX3DSettingsServicesHelper()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L446"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L508"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -440,7 +508,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetAll3DSettings_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetAll3DSettings(System.Int32)">
   GetAll3DSettings(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L270"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets all 3D settings for the GPU with the specified unique id.</p>
@@ -477,7 +545,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetChill_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetChill(System.Int32)">
   GetChill(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L299"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L300"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets Chill state for the GPU with the specified unique id.</p>
@@ -510,11 +578,85 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXFrameGenUpgrade_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXFrameGenUpgrade_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXFrameGenUpgrade(System.Int32)">
+  GetFidelityFXFrameGenUpgrade(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L436"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets FidelityFX Frame Generation Upgrade state for the GPU with the specified unique id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FidelityFXFrameGenUpgradeDto GetFidelityFXFrameGenUpgrade(int gpuUniqueId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.FidelityFXFrameGenUpgradeDto.html">FidelityFXFrameGenUpgradeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXSuperResolution_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFidelityFXSuperResolution_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFidelityFXSuperResolution(System.Int32)">
+  GetFidelityFXSuperResolution(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L406"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets FidelityFX Super Resolution state for the GPU with the specified unique id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FidelityFXSuperResolutionDto GetFidelityFXSuperResolution(int gpuUniqueId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ADLXWrapper.FidelityFXSuperResolutionDto.html">FidelityFXSuperResolutionDto</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames*"></a>
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetFluidMotionFrames_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetFluidMotionFrames(System.Int32)">
   GetFluidMotionFrames(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L390"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L391"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets Fluid Motion Frames state for the GPU with the specified unique id.</p>
@@ -551,7 +693,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetImageSharpenDesktop_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetImageSharpenDesktop(System.Int32)">
   GetImageSharpenDesktop(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L359"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L360"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets ImageSharpenDesktop state for the GPU with the specified unique id. Requires driver support for IADLX3DSettingsServices2.</p>
@@ -588,7 +730,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetMorphologicalAntiAliasing_System_Int32_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetMorphologicalAntiAliasing(System.Int32)">
   GetMorphologicalAntiAliasing(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L330"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets MorphologicalAntiAliasing state for the GPU with the specified unique id.</p>
@@ -625,7 +767,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_GetRadeonSuperResolution" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.GetRadeonSuperResolution">
   GetRadeonSuperResolution()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L768"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L964"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -656,7 +798,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_Remove3DSettingsEventListener_ADLXWrapper_ThreeDSettingsListenerHandle_System_Boolean_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.Remove3DSettingsEventListener(ADLXWrapper.ThreeDSettingsListenerHandle,System.Boolean)">
   Remove3DSettingsEventListener(ThreeDSettingsListenerHandle, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -689,7 +831,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyAll3DSettings_System_Int32_ADLXWrapper_All3DSettingsDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto)">
   TryApplyAll3DSettings(int, All3DSettingsDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L293"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to apply all 3D settings to the GPU with the specified unique id.</p>
@@ -728,7 +870,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyChill_System_Int32_ADLXWrapper_ChillDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyChill(System.Int32,ADLXWrapper.ChillDto)">
   TryApplyChill(int, ChillDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L323"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to apply Chill settings to the GPU with the specified unique id.</p>
@@ -763,11 +905,89 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXFrameGenUpgrade_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto)">
+  TryApplyFidelityFXFrameGenUpgrade(int, FidelityFXFrameGenUpgradeDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L459"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply FidelityFX Frame Generation Upgrade state to the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyFidelityFXFrameGenUpgrade(int gpuUniqueId, FidelityFXFrameGenUpgradeDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXFrameGenUpgradeDto.html">FidelityFXFrameGenUpgradeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXSuperResolution_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto)">
+  TryApplyFidelityFXSuperResolution(int, FidelityFXSuperResolutionDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to apply FidelityFX Super Resolution state to the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryApplyFidelityFXSuperResolution(int gpuUniqueId, FidelityFXSuperResolutionDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXSuperResolutionDto.html">FidelityFXSuperResolutionDto</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop*"></a>
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto)">
   TryApplyImageSharpenDesktop(int, ImageSharpenDesktopDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L383"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L384"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to apply ImageSharpenDesktop settings to the GPU with the specified unique id.</p>
@@ -806,7 +1026,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryApplyMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryApplyMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto)">
   TryApplyMorphologicalAntiAliasing(int, MorphologicalAntiAliasingDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L353"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to apply MorphologicalAntiAliasing settings to the GPU with the specified unique id.</p>
@@ -845,7 +1065,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetAll3DSettings_System_Int32_ADLXWrapper_All3DSettingsDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetAll3DSettings(System.Int32,ADLXWrapper.All3DSettingsDto@)">
   TryGetAll3DSettings(int, out All3DSettingsDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L278"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get all 3D settings for the GPU with the specified unique id.</p>
@@ -884,7 +1104,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetChill_System_Int32_ADLXWrapper_ChillDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetChill(System.Int32,ADLXWrapper.ChillDto@)">
   TryGetChill(int, out ChillDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L308"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get Chill state for the GPU with the specified unique id.</p>
@@ -919,11 +1139,89 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
 
 
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXFrameGenUpgrade_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXFrameGenUpgrade_System_Int32_ADLXWrapper_FidelityFXFrameGenUpgradeDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXFrameGenUpgrade(System.Int32,ADLXWrapper.FidelityFXFrameGenUpgradeDto@)">
+  TryGetFidelityFXFrameGenUpgrade(int, out FidelityFXFrameGenUpgradeDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L444"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get FidelityFX Frame Generation Upgrade state for the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetFidelityFXFrameGenUpgrade(int gpuUniqueId, out FidelityFXFrameGenUpgradeDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXFrameGenUpgradeDto.html">FidelityFXFrameGenUpgradeDto</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXSuperResolution_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution*"></a>
+
+  <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFidelityFXSuperResolution_System_Int32_ADLXWrapper_FidelityFXSuperResolutionDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFidelityFXSuperResolution(System.Int32,ADLXWrapper.FidelityFXSuperResolutionDto@)">
+  TryGetFidelityFXSuperResolution(int, out FidelityFXSuperResolutionDto)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tries to get FidelityFX Super Resolution state for the specified GPU.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetFidelityFXSuperResolution(int gpuUniqueId, out FidelityFXSuperResolutionDto info)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gpuUniqueId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>info</code> <a class="xref" href="ADLXWrapper.FidelityFXSuperResolutionDto.html">FidelityFXSuperResolutionDto</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames*"></a>
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetFluidMotionFrames_System_Int32_ADLXWrapper_FluidMotionFramesDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetFluidMotionFrames(System.Int32,ADLXWrapper.FluidMotionFramesDto@)">
   TryGetFluidMotionFrames(int, out FluidMotionFramesDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L398"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L399"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get Fluid Motion Frames state for the GPU with the specified unique id.</p>
@@ -962,7 +1260,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetImageSharpenDesktop_System_Int32_ADLXWrapper_ImageSharpenDesktopDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetImageSharpenDesktop(System.Int32,ADLXWrapper.ImageSharpenDesktopDto@)">
   TryGetImageSharpenDesktop(int, out ImageSharpenDesktopDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L368"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get ImageSharpenDesktop state for the GPU with the specified unique id.</p>
@@ -1001,7 +1299,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetMorphologicalAntiAliasing_System_Int32_ADLXWrapper_MorphologicalAntiAliasingDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetMorphologicalAntiAliasing(System.Int32,ADLXWrapper.MorphologicalAntiAliasingDto@)">
   TryGetMorphologicalAntiAliasing(int, out MorphologicalAntiAliasingDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L337"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L338"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Tries to get MorphologicalAntiAliasing state for the GPU with the specified unique id.</p>
@@ -1040,7 +1338,7 @@ Class ADLX3DSettingsServicesHelper  <a class="header-action link-secondary" titl
 
   <h3 id="ADLXWrapper_ADLX3DSettingsServicesHelper_TryGetRadeonSuperResolution_ADLXWrapper_RadeonSuperResolutionDto__" data-uid="ADLXWrapper.ADLX3DSettingsServicesHelper.TryGetRadeonSuperResolution(ADLXWrapper.RadeonSuperResolutionDto@)">
   TryGetRadeonSuperResolution(out RadeonSuperResolutionDto)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L806"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/terrymacdonald/ADLXWrapper/blob/feature-2026-09-13-update-1.5/ADLXWrapper/ADLX3DSettingsServicesHelper.cs/#L1002"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

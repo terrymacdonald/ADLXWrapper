@@ -1,36 +1,36 @@
 ### YamlMime:ManagedReference
 items:
-- uid: ADLXWrapper.AntiLagDto
-  commentId: T:ADLXWrapper.AntiLagDto
-  id: AntiLagDto
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto
+  commentId: T:ADLXWrapper.VariableGraphicsMemoryOptionDto
+  id: VariableGraphicsMemoryOptionDto
   parent: ADLXWrapper
   children:
-  - ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  - ADLXWrapper.AntiLagDto.HasLevel
-  - ADLXWrapper.AntiLagDto.IsEnabled
-  - ADLXWrapper.AntiLagDto.IsSupported
-  - ADLXWrapper.AntiLagDto.Level
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  - ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
   langs:
   - csharp
   - vb
-  name: AntiLagDto
-  nameWithType: AntiLagDto
-  fullName: ADLXWrapper.AntiLagDto
+  name: VariableGraphicsMemoryOptionDto
+  nameWithType: VariableGraphicsMemoryOptionDto
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto
   type: Struct
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: AntiLagDto
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1102
+    id: VariableGraphicsMemoryOptionDto
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 112
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public readonly struct AntiLagDto
-    content.vb: Public Structure AntiLagDto
+    content: public readonly struct VariableGraphicsMemoryOptionDto
+    content.vb: Public Structure VariableGraphicsMemoryOptionDto
   inheritedMembers:
   - System.ValueType.Equals(System.Object)
   - System.ValueType.GetHashCode
@@ -38,170 +38,160 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
-- uid: ADLXWrapper.AntiLagDto.IsSupported
-  commentId: P:ADLXWrapper.AntiLagDto.IsSupported
-  id: IsSupported
-  parent: ADLXWrapper.AntiLagDto
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  id: Name
+  parent: ADLXWrapper.VariableGraphicsMemoryOptionDto
   langs:
   - csharp
   - vb
-  name: IsSupported
-  nameWithType: AntiLagDto.IsSupported
-  fullName: ADLXWrapper.AntiLagDto.IsSupported
+  name: Name
+  nameWithType: VariableGraphicsMemoryOptionDto.Name
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: IsSupported
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1104
+    id: Name
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool IsSupported { get; init; }
+    content: public string Name { get; init; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property IsSupported As Boolean
-  overload: ADLXWrapper.AntiLagDto.IsSupported*
-- uid: ADLXWrapper.AntiLagDto.IsEnabled
-  commentId: P:ADLXWrapper.AntiLagDto.IsEnabled
-  id: IsEnabled
-  parent: ADLXWrapper.AntiLagDto
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name*
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  id: Mode
+  parent: ADLXWrapper.VariableGraphicsMemoryOptionDto
   langs:
   - csharp
   - vb
-  name: IsEnabled
-  nameWithType: AntiLagDto.IsEnabled
-  fullName: ADLXWrapper.AntiLagDto.IsEnabled
+  name: Mode
+  nameWithType: VariableGraphicsMemoryOptionDto.Mode
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: IsEnabled
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1105
+    id: Mode
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 115
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool IsEnabled { get; init; }
+    content: public ADLX_VARIABLE_GRAPHICS_MEMORY_MODE Mode { get; init; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property IsEnabled As Boolean
-  overload: ADLXWrapper.AntiLagDto.IsEnabled*
-- uid: ADLXWrapper.AntiLagDto.HasLevel
-  commentId: P:ADLXWrapper.AntiLagDto.HasLevel
-  id: HasLevel
-  parent: ADLXWrapper.AntiLagDto
+      type: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    content.vb: Public Property Mode As ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+  overload: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode*
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  id: MemoryCarvedGb
+  parent: ADLXWrapper.VariableGraphicsMemoryOptionDto
   langs:
   - csharp
   - vb
-  name: HasLevel
-  nameWithType: AntiLagDto.HasLevel
-  fullName: ADLXWrapper.AntiLagDto.HasLevel
+  name: MemoryCarvedGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: HasLevel
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1106
+    id: MemoryCarvedGb
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 116
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public bool HasLevel { get; init; }
+    content: public double MemoryCarvedGb { get; init; }
     parameters: []
     return:
-      type: System.Boolean
-    content.vb: Public Property HasLevel As Boolean
-  overload: ADLXWrapper.AntiLagDto.HasLevel*
-- uid: ADLXWrapper.AntiLagDto.Level
-  commentId: P:ADLXWrapper.AntiLagDto.Level
-  id: Level
-  parent: ADLXWrapper.AntiLagDto
+      type: System.Double
+    content.vb: Public Property MemoryCarvedGb As Double
+  overload: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb*
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  commentId: P:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  id: MemoryRemainingGb
+  parent: ADLXWrapper.VariableGraphicsMemoryOptionDto
   langs:
   - csharp
   - vb
-  name: Level
-  nameWithType: AntiLagDto.Level
-  fullName: ADLXWrapper.AntiLagDto.Level
+  name: MemoryRemainingGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
   type: Property
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
-    id: Level
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1107
+    id: MemoryRemainingGb
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 117
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public ADLX_ANTILAG_STATE Level { get; init; }
+    content: public double MemoryRemainingGb { get; init; }
     parameters: []
     return:
-      type: ADLXWrapper.ADLX_ANTILAG_STATE
-    content.vb: Public Property Level As ADLX_ANTILAG_STATE
-  overload: ADLXWrapper.AntiLagDto.Level*
-- uid: ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  commentId: M:ADLXWrapper.AntiLagDto.#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)
-  id: '#ctor(System.Boolean,System.Boolean,System.Boolean,ADLXWrapper.ADLX_ANTILAG_STATE)'
-  parent: ADLXWrapper.AntiLagDto
+      type: System.Double
+    content.vb: Public Property MemoryRemainingGb As Double
+  overload: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb*
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)
+  commentId: M:ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)
+  id: '#ctor(System.String,ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE,System.Double,System.Double)'
+  parent: ADLXWrapper.VariableGraphicsMemoryOptionDto
   langs:
   - csharp
   - vb
-  name: AntiLagDto(bool, bool, bool, ADLX_ANTILAG_STATE)
-  nameWithType: AntiLagDto.AntiLagDto(bool, bool, bool, ADLX_ANTILAG_STATE)
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto(bool, bool, bool, ADLXWrapper.ADLX_ANTILAG_STATE)
+  name: VariableGraphicsMemoryOptionDto(string, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
+  nameWithType: VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto(string, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto(string, ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, double, double)
   type: Constructor
   source:
     remote:
-      path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
+      path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
       branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
-    path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1109
+    path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
+    startLine: 119
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: >-
-      [JsonConstructor]
-
-      public AntiLagDto(bool isSupported, bool isEnabled, bool hasLevel, ADLX_ANTILAG_STATE level = ADLX_ANTILAG_STATE.ANTILAG)
+    content: public VariableGraphicsMemoryOptionDto(string name, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE mode, double memoryCarvedGb, double memoryRemainingGb)
     parameters:
-    - id: isSupported
-      type: System.Boolean
-    - id: isEnabled
-      type: System.Boolean
-    - id: hasLevel
-      type: System.Boolean
-    - id: level
-      type: ADLXWrapper.ADLX_ANTILAG_STATE
-    content.vb: >-
-      <JsonConstructor>
-
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean, hasLevel As Boolean, level As ADLX_ANTILAG_STATE = ADLX_ANTILAG_STATE.ANTILAG)
-  overload: ADLXWrapper.AntiLagDto.#ctor*
-  attributes:
-  - type: Newtonsoft.Json.JsonConstructorAttribute
-    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
-    arguments: []
-  nameWithType.vb: AntiLagDto.New(Boolean, Boolean, Boolean, ADLX_ANTILAG_STATE)
-  fullName.vb: ADLXWrapper.AntiLagDto.New(Boolean, Boolean, Boolean, ADLXWrapper.ADLX_ANTILAG_STATE)
-  name.vb: New(Boolean, Boolean, Boolean, ADLX_ANTILAG_STATE)
+    - id: name
+      type: System.String
+    - id: mode
+      type: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    - id: memoryCarvedGb
+      type: System.Double
+    - id: memoryRemainingGb
+      type: System.Double
+    content.vb: Public Sub New(name As String, mode As ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, memoryCarvedGb As Double, memoryRemainingGb As Double)
+  overload: ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor*
+  nameWithType.vb: VariableGraphicsMemoryOptionDto.New(String, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
+  fullName.vb: ADLXWrapper.VariableGraphicsMemoryOptionDto.New(String, ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
+  name.vb: New(String, ADLX_VARIABLE_GRAPHICS_MEMORY_MODE, Double, Double)
 references:
 - uid: ADLXWrapper
   commentId: N:ADLXWrapper
@@ -426,54 +416,65 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ADLXWrapper.AntiLagDto.IsSupported*
-  commentId: Overload:ADLXWrapper.AntiLagDto.IsSupported
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_IsSupported
-  name: IsSupported
-  nameWithType: AntiLagDto.IsSupported
-  fullName: ADLXWrapper.AntiLagDto.IsSupported
-- uid: System.Boolean
-  commentId: T:System.Boolean
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name*
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Name
+  name: Name
+  nameWithType: VariableGraphicsMemoryOptionDto.Name
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Name
+- uid: System.String
+  commentId: T:System.String
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: ADLXWrapper.AntiLagDto.IsEnabled*
-  commentId: Overload:ADLXWrapper.AntiLagDto.IsEnabled
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_IsEnabled
-  name: IsEnabled
-  nameWithType: AntiLagDto.IsEnabled
-  fullName: ADLXWrapper.AntiLagDto.IsEnabled
-- uid: ADLXWrapper.AntiLagDto.HasLevel*
-  commentId: Overload:ADLXWrapper.AntiLagDto.HasLevel
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_HasLevel
-  name: HasLevel
-  nameWithType: AntiLagDto.HasLevel
-  fullName: ADLXWrapper.AntiLagDto.HasLevel
-- uid: ADLXWrapper.AntiLagDto.Level*
-  commentId: Overload:ADLXWrapper.AntiLagDto.Level
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto_Level
-  name: Level
-  nameWithType: AntiLagDto.Level
-  fullName: ADLXWrapper.AntiLagDto.Level
-- uid: ADLXWrapper.ADLX_ANTILAG_STATE
-  commentId: T:ADLXWrapper.ADLX_ANTILAG_STATE
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode*
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_Mode
+  name: Mode
+  nameWithType: VariableGraphicsMemoryOptionDto.Mode
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.Mode
+- uid: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+  commentId: T:ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
   parent: ADLXWrapper
-  href: ADLXWrapper.ADLX_ANTILAG_STATE.html
-  name: ADLX_ANTILAG_STATE
-  nameWithType: ADLX_ANTILAG_STATE
-  fullName: ADLXWrapper.ADLX_ANTILAG_STATE
-- uid: ADLXWrapper.AntiLagDto.#ctor*
-  commentId: Overload:ADLXWrapper.AntiLagDto.#ctor
-  href: ADLXWrapper.AntiLagDto.html#ADLXWrapper_AntiLagDto__ctor_System_Boolean_System_Boolean_System_Boolean_ADLXWrapper_ADLX_ANTILAG_STATE_
-  name: AntiLagDto
-  nameWithType: AntiLagDto.AntiLagDto
-  fullName: ADLXWrapper.AntiLagDto.AntiLagDto
-  nameWithType.vb: AntiLagDto.New
-  fullName.vb: ADLXWrapper.AntiLagDto.New
+  href: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.html
+  name: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+  nameWithType: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+  fullName: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb*
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryCarvedGb
+  name: MemoryCarvedGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryCarvedGb
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb*
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto_MemoryRemainingGb
+  name: MemoryRemainingGb
+  nameWithType: VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.MemoryRemainingGb
+- uid: ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor*
+  commentId: Overload:ADLXWrapper.VariableGraphicsMemoryOptionDto.#ctor
+  href: ADLXWrapper.VariableGraphicsMemoryOptionDto.html#ADLXWrapper_VariableGraphicsMemoryOptionDto__ctor_System_String_ADLXWrapper_ADLX_VARIABLE_GRAPHICS_MEMORY_MODE_System_Double_System_Double_
+  name: VariableGraphicsMemoryOptionDto
+  nameWithType: VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto
+  fullName: ADLXWrapper.VariableGraphicsMemoryOptionDto.VariableGraphicsMemoryOptionDto
+  nameWithType.vb: VariableGraphicsMemoryOptionDto.New
+  fullName.vb: ADLXWrapper.VariableGraphicsMemoryOptionDto.New
   name.vb: New
