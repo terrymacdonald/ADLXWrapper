@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  commentId: T:ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  id: ADLX_AFMF_FAST_MOTION_RESP
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_BLENDED_FRAMES
+  - ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_REPEAT_FRAMES
+  langs:
+  - csharp
+  - vb
+  name: ADLX_AFMF_FAST_MOTION_RESP
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_AFMF_FAST_MOTION_RESP
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+    startLine: 3
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public enum ADLX_AFMF_FAST_MOTION_RESP
+    content.vb: Public Enum ADLX_AFMF_FAST_MOTION_RESP
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_REPEAT_FRAMES
+  commentId: F:ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_REPEAT_FRAMES
+  id: AFMF_RESP_REPEAT_FRAMES
+  parent: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  langs:
+  - csharp
+  - vb
+  name: AFMF_RESP_REPEAT_FRAMES
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_REPEAT_FRAMES
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_REPEAT_FRAMES
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_RESP_REPEAT_FRAMES
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+    startLine: 6
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_RESP_REPEAT_FRAMES = 0
+    return:
+      type: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_BLENDED_FRAMES
+  commentId: F:ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_BLENDED_FRAMES
+  id: AFMF_RESP_BLENDED_FRAMES
+  parent: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  langs:
+  - csharp
+  - vb
+  name: AFMF_RESP_BLENDED_FRAMES
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_BLENDED_FRAMES
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.AFMF_RESP_BLENDED_FRAMES
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_RESP_BLENDED_FRAMES
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_RESP_BLENDED_FRAMES = 1
+    return:
+      type: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  commentId: T:ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html
+  name: ADLX_AFMF_FAST_MOTION_RESP
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP

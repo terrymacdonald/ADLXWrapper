@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXPerformanceMonitoringServicesHelper
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -124,7 +124,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentSystemMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -162,7 +162,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentAllMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -200,7 +200,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateSystemMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -236,7 +236,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -272,7 +272,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateAllMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -310,7 +310,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingIntervalRange
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -338,7 +338,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -366,7 +366,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -398,7 +398,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetSamplingInterval
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -432,7 +432,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -460,7 +460,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -488,7 +488,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -520,7 +520,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetMaxPerformanceMetricsHistorySize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -554,7 +554,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -580,7 +580,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryClearPerformanceMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -608,7 +608,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -634,7 +634,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStartPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -662,7 +662,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -688,7 +688,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryStopPerformanceMetricsTracking
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -716,7 +716,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -744,7 +744,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyPerformanceMonitoringSettings
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -773,7 +773,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGpuMetricsSupport
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -809,7 +809,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetGpuMetricsSupport
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -847,7 +847,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCurrentGpuMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -883,7 +883,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryGetCurrentGpuMetrics
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -921,7 +921,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateGpuMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -961,7 +961,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryEnumerateGpuMetricsHistory
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -1003,7 +1003,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
@@ -1033,7 +1033,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXPerformanceMonitoringServicesHelper.cs

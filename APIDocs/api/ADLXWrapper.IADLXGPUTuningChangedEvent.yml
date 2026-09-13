@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUTuningChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -87,7 +87,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -116,7 +116,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -145,7 +145,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -182,7 +182,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
@@ -211,11 +211,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -243,11 +243,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsAutomaticTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -272,11 +272,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPresetTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -301,11 +301,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualGPUCLKTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -330,11 +330,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualVRAMTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -359,11 +359,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualFanTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -388,11 +388,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsManualPowerTuningChanged
     path: ../ADLXWrapper/cs_generated/IADLXGPUTuningChangedEvent.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

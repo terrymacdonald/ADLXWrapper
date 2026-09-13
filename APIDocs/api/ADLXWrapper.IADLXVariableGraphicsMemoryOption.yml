@@ -1,0 +1,691 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  commentId: T:ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  id: IADLXVariableGraphicsMemoryOption
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved(System.Double*)
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining(System.Double*)
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode(ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name(System.SByte**)
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface(System.UInt16*,System.Void**)
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release
+  - ADLXWrapper.IADLXVariableGraphicsMemoryOption.lpVtbl
+  langs:
+  - csharp
+  - vb
+  name: IADLXVariableGraphicsMemoryOption
+  nameWithType: IADLXVariableGraphicsMemoryOption
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IADLXVariableGraphicsMemoryOption
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public struct IADLXVariableGraphicsMemoryOption
+    content.vb: Public Structure IADLXVariableGraphicsMemoryOption
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.lpVtbl
+  commentId: F:ADLXWrapper.IADLXVariableGraphicsMemoryOption.lpVtbl
+  id: lpVtbl
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: lpVtbl
+  nameWithType: IADLXVariableGraphicsMemoryOption.lpVtbl
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.lpVtbl
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: lpVtbl
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void** lpVtbl
+    return:
+      type: System.Void**
+    content.vb: Public lpVtbl As Void**
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire
+  id: Acquire
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: Acquire()
+  nameWithType: IADLXVariableGraphicsMemoryOption.Acquire()
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Acquire
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Acquire()
+    return:
+      type: System.Int32
+    content.vb: Public Function Acquire() As Integer
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire*
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release
+  id: Release
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: IADLXVariableGraphicsMemoryOption.Release()
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Release
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+    content.vb: Public Function Release() As Integer
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release*
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface(System.UInt16*,System.Void**)
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface(System.UInt16*,System.Void**)
+  id: QueryInterface(System.UInt16*,System.Void**)
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: QueryInterface(ushort*, void**)
+  nameWithType: IADLXVariableGraphicsMemoryOption.QueryInterface(ushort*, void**)
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface(ushort*, void**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: QueryInterface
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 25
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
+    parameters:
+    - id: interfaceId
+      type: System.UInt16*
+    - id: ppInterface
+      type: System.Void**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function QueryInterface(interfaceId As UShort*, ppInterface As Void**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface*
+  nameWithType.vb: IADLXVariableGraphicsMemoryOption.QueryInterface(UShort*, Void**)
+  fullName.vb: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface(UShort*, Void**)
+  name.vb: QueryInterface(UShort*, Void**)
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name(System.SByte**)
+  id: Name(System.SByte**)
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: Name(sbyte**)
+  nameWithType: IADLXVariableGraphicsMemoryOption.Name(sbyte**)
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Name
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT Name(sbyte** optionName)
+    parameters:
+    - id: optionName
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function Name(optionName As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name*
+  nameWithType.vb: IADLXVariableGraphicsMemoryOption.Name(SByte**)
+  fullName.vb: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name(SByte**)
+  name.vb: Name(SByte**)
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode(ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode(ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  id: Mode(ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: Mode(ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  nameWithType: IADLXVariableGraphicsMemoryOption.Mode(ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode(ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Mode
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT Mode(ADLX_VARIABLE_GRAPHICS_MEMORY_MODE* mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function Mode(mode As ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode*
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved(System.Double*)
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved(System.Double*)
+  id: MemoryCarved(System.Double*)
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: MemoryCarved(double*)
+  nameWithType: IADLXVariableGraphicsMemoryOption.MemoryCarved(double*)
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MemoryCarved
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT MemoryCarved(double* memoryCarvedGb)
+    parameters:
+    - id: memoryCarvedGb
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function MemoryCarved(memoryCarvedGb As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved*
+  nameWithType.vb: IADLXVariableGraphicsMemoryOption.MemoryCarved(Double*)
+  fullName.vb: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved(Double*)
+  name.vb: MemoryCarved(Double*)
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining(System.Double*)
+  commentId: M:ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining(System.Double*)
+  id: MemoryRemaining(System.Double*)
+  parent: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+  langs:
+  - csharp
+  - vb
+  name: MemoryRemaining(double*)
+  nameWithType: IADLXVariableGraphicsMemoryOption.MemoryRemaining(double*)
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MemoryRemaining
+    path: ../ADLXWrapper/cs_generated/IADLXVariableGraphicsMemoryOption.cs
+    startLine: 49
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT MemoryRemaining(double* memoryRemainingGb)
+    parameters:
+    - id: memoryRemainingGb
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function MemoryRemaining(memoryRemainingGb As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining*
+  nameWithType.vb: IADLXVariableGraphicsMemoryOption.MemoryRemaining(Double*)
+  fullName.vb: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining(Double*)
+  name.vb: MemoryRemaining(Double*)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Void**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void**
+  nameWithType: void**
+  fullName: void**
+  nameWithType.vb: Void**
+  fullName.vb: Void**
+  name.vb: Void**
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_Acquire
+  name: Acquire
+  nameWithType: IADLXVariableGraphicsMemoryOption.Acquire
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Acquire
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_Release
+  name: Release
+  nameWithType: IADLXVariableGraphicsMemoryOption.Release
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Release
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_QueryInterface_System_UInt16__System_Void___
+  name: QueryInterface
+  nameWithType: IADLXVariableGraphicsMemoryOption.QueryInterface
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.QueryInterface
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_Name_System_SByte___
+  name: Name
+  nameWithType: IADLXVariableGraphicsMemoryOption.Name
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Name
+- uid: System.SByte**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  name: sbyte**
+  nameWithType: sbyte**
+  fullName: sbyte**
+  nameWithType.vb: SByte**
+  fullName.vb: SByte**
+  name.vb: SByte**
+  spec.csharp:
+  - uid: System.SByte
+    name: sbyte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.SByte
+    name: SByte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_Mode_ADLXWrapper_ADLX_VARIABLE_GRAPHICS_MEMORY_MODE__
+  name: Mode
+  nameWithType: IADLXVariableGraphicsMemoryOption.Mode
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.Mode
+- uid: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.html
+  name: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*
+  nameWithType: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*
+  fullName: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    name: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    href: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    name: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    href: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_MemoryCarved_System_Double__
+  name: MemoryCarved
+  nameWithType: IADLXVariableGraphicsMemoryOption.MemoryCarved
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryCarved
+- uid: System.Double*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double*
+  nameWithType: double*
+  fullName: double*
+  nameWithType.vb: Double*
+  fullName.vb: Double*
+  name.vb: Double*
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '*'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '*'
+- uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining*
+  commentId: Overload:ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining
+  href: ADLXWrapper.IADLXVariableGraphicsMemoryOption.html#ADLXWrapper_IADLXVariableGraphicsMemoryOption_MemoryRemaining_System_Double__
+  name: MemoryRemaining
+  nameWithType: IADLXVariableGraphicsMemoryOption.MemoryRemaining
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemoryOption.MemoryRemaining

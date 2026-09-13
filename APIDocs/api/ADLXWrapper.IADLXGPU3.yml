@@ -1,0 +1,2397 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IADLXGPU3
+  commentId: T:ADLXWrapper.IADLXGPU3
+  id: IADLXGPU3
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IADLXGPU3.AMDSoftwareEdition(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate(System.UInt32*,System.UInt32*,System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.AMDSoftwareVersion(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.ASICFamilyType(ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*)
+  - ADLXWrapper.IADLXGPU3.AbortPowerOff
+  - ADLXWrapper.IADLXGPU3.Acquire
+  - ADLXWrapper.IADLXGPU3.BIOSInfo(System.SByte**,System.SByte**,System.SByte**)
+  - ADLXWrapper.IADLXGPU3.DeviceId(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.DriverPath(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.DriverVersion(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.GetApplications(ADLXWrapper.IADLXApplicationList**)
+  - ADLXWrapper.IADLXGPU3.HasDesktops(System.Boolean*)
+  - ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.InvisibleVRAM(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.IsExternal(System.Boolean*)
+  - ADLXWrapper.IADLXGPU3.IsPowerOff(System.Boolean*)
+  - ADLXWrapper.IADLXGPU3.IsSupportedApplicationList(System.Boolean*)
+  - ADLXWrapper.IADLXGPU3.IsSupportedStressTest(System.Boolean*)
+  - ADLXWrapper.IADLXGPU3.LUID(ADLXWrapper.ADLX_LUID*)
+  - ADLXWrapper.IADLXGPU3.MicroArchitecture(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.MultiGPUMode(ADLXWrapper.ADLX_MGPU_MODE*)
+  - ADLXWrapper.IADLXGPU3.Name(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.PCIBusLaneWidth(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.PCIBusType(ADLXWrapper.ADLX_PCI_BUS_TYPE*)
+  - ADLXWrapper.IADLXGPU3.PNPString(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.PowerOn
+  - ADLXWrapper.IADLXGPU3.ProductName(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.QueryInterface(System.UInt16*,System.Void**)
+  - ADLXWrapper.IADLXGPU3.Release
+  - ADLXWrapper.IADLXGPU3.RevisionId(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*,System.Int32)
+  - ADLXWrapper.IADLXGPU3.StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*,System.UInt32)
+  - ADLXWrapper.IADLXGPU3.SubSystemId(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.SubSystemVendorId(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.TotalVRAM(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.Type(ADLXWrapper.ADLX_GPU_TYPE*)
+  - ADLXWrapper.IADLXGPU3.UniqueId(System.Int32*)
+  - ADLXWrapper.IADLXGPU3.VRAMBandwidth(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.VRAMBitRate(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.VRAMType(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.VRAMVendorRevId(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.VendorId(System.SByte**)
+  - ADLXWrapper.IADLXGPU3.VisibleVRAM(System.UInt32*)
+  - ADLXWrapper.IADLXGPU3.lpVtbl
+  langs:
+  - csharp
+  - vb
+  name: IADLXGPU3
+  nameWithType: IADLXGPU3
+  fullName: ADLXWrapper.IADLXGPU3
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IADLXGPU3
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public struct IADLXGPU3
+    content.vb: Public Structure IADLXGPU3
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IADLXGPU3.lpVtbl
+  commentId: F:ADLXWrapper.IADLXGPU3.lpVtbl
+  id: lpVtbl
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: lpVtbl
+  nameWithType: IADLXGPU3.lpVtbl
+  fullName: ADLXWrapper.IADLXGPU3.lpVtbl
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: lpVtbl
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void** lpVtbl
+    return:
+      type: System.Void**
+    content.vb: Public lpVtbl As Void**
+- uid: ADLXWrapper.IADLXGPU3.Acquire
+  commentId: M:ADLXWrapper.IADLXGPU3.Acquire
+  id: Acquire
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: Acquire()
+  nameWithType: IADLXGPU3.Acquire()
+  fullName: ADLXWrapper.IADLXGPU3.Acquire()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Acquire
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Acquire()
+    return:
+      type: System.Int32
+    content.vb: Public Function Acquire() As Integer
+  overload: ADLXWrapper.IADLXGPU3.Acquire*
+- uid: ADLXWrapper.IADLXGPU3.Release
+  commentId: M:ADLXWrapper.IADLXGPU3.Release
+  id: Release
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: IADLXGPU3.Release()
+  fullName: ADLXWrapper.IADLXGPU3.Release()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Release
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+    content.vb: Public Function Release() As Integer
+  overload: ADLXWrapper.IADLXGPU3.Release*
+- uid: ADLXWrapper.IADLXGPU3.QueryInterface(System.UInt16*,System.Void**)
+  commentId: M:ADLXWrapper.IADLXGPU3.QueryInterface(System.UInt16*,System.Void**)
+  id: QueryInterface(System.UInt16*,System.Void**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: QueryInterface(ushort*, void**)
+  nameWithType: IADLXGPU3.QueryInterface(ushort*, void**)
+  fullName: ADLXWrapper.IADLXGPU3.QueryInterface(ushort*, void**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: QueryInterface
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 25
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
+    parameters:
+    - id: interfaceId
+      type: System.UInt16*
+    - id: ppInterface
+      type: System.Void**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function QueryInterface(interfaceId As UShort*, ppInterface As Void**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.QueryInterface*
+  nameWithType.vb: IADLXGPU3.QueryInterface(UShort*, Void**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.QueryInterface(UShort*, Void**)
+  name.vb: QueryInterface(UShort*, Void**)
+- uid: ADLXWrapper.IADLXGPU3.VendorId(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.VendorId(System.SByte**)
+  id: VendorId(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VendorId(sbyte**)
+  nameWithType: IADLXGPU3.VendorId(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.VendorId(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VendorId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VendorId(sbyte** vendorId)
+    parameters:
+    - id: vendorId
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VendorId(vendorId As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VendorId*
+  nameWithType.vb: IADLXGPU3.VendorId(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VendorId(SByte**)
+  name.vb: VendorId(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.ASICFamilyType(ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*)
+  commentId: M:ADLXWrapper.IADLXGPU3.ASICFamilyType(ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*)
+  id: ASICFamilyType(ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: ASICFamilyType(ADLX_ASIC_FAMILY_TYPE*)
+  nameWithType: IADLXGPU3.ASICFamilyType(ADLX_ASIC_FAMILY_TYPE*)
+  fullName: ADLXWrapper.IADLXGPU3.ASICFamilyType(ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ASICFamilyType
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT ASICFamilyType(ADLX_ASIC_FAMILY_TYPE* asicFamilyType)
+    parameters:
+    - id: asicFamilyType
+      type: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function ASICFamilyType(asicFamilyType As ADLX_ASIC_FAMILY_TYPE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.ASICFamilyType*
+- uid: ADLXWrapper.IADLXGPU3.Type(ADLXWrapper.ADLX_GPU_TYPE*)
+  commentId: M:ADLXWrapper.IADLXGPU3.Type(ADLXWrapper.ADLX_GPU_TYPE*)
+  id: Type(ADLXWrapper.ADLX_GPU_TYPE*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: Type(ADLX_GPU_TYPE*)
+  nameWithType: IADLXGPU3.Type(ADLX_GPU_TYPE*)
+  fullName: ADLXWrapper.IADLXGPU3.Type(ADLXWrapper.ADLX_GPU_TYPE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Type
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT Type(ADLX_GPU_TYPE* gpuType)
+    parameters:
+    - id: gpuType
+      type: ADLXWrapper.ADLX_GPU_TYPE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function Type(gpuType As ADLX_GPU_TYPE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.Type*
+- uid: ADLXWrapper.IADLXGPU3.IsExternal(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLXGPU3.IsExternal(System.Boolean*)
+  id: IsExternal(System.Boolean*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: IsExternal(bool*)
+  nameWithType: IADLXGPU3.IsExternal(bool*)
+  fullName: ADLXWrapper.IADLXGPU3.IsExternal(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsExternal
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 49
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT IsExternal(bool* isExternal)
+    parameters:
+    - id: isExternal
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsExternal(isExternal As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.IsExternal*
+  nameWithType.vb: IADLXGPU3.IsExternal(Boolean*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.IsExternal(Boolean*)
+  name.vb: IsExternal(Boolean*)
+- uid: ADLXWrapper.IADLXGPU3.Name(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.Name(System.SByte**)
+  id: Name(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: Name(sbyte**)
+  nameWithType: IADLXGPU3.Name(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.Name(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Name
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 55
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT Name(sbyte** name)
+    parameters:
+    - id: name
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function Name(name As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.Name*
+  nameWithType.vb: IADLXGPU3.Name(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.Name(SByte**)
+  name.vb: Name(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.DriverPath(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.DriverPath(System.SByte**)
+  id: DriverPath(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: DriverPath(sbyte**)
+  nameWithType: IADLXGPU3.DriverPath(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.DriverPath(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DriverPath
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 61
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT DriverPath(sbyte** driverPath)
+    parameters:
+    - id: driverPath
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function DriverPath(driverPath As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.DriverPath*
+  nameWithType.vb: IADLXGPU3.DriverPath(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.DriverPath(SByte**)
+  name.vb: DriverPath(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.PNPString(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.PNPString(System.SByte**)
+  id: PNPString(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: PNPString(sbyte**)
+  nameWithType: IADLXGPU3.PNPString(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.PNPString(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PNPString
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 67
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT PNPString(sbyte** pnpString)
+    parameters:
+    - id: pnpString
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function PNPString(pnpString As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.PNPString*
+  nameWithType.vb: IADLXGPU3.PNPString(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.PNPString(SByte**)
+  name.vb: PNPString(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.HasDesktops(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLXGPU3.HasDesktops(System.Boolean*)
+  id: HasDesktops(System.Boolean*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: HasDesktops(bool*)
+  nameWithType: IADLXGPU3.HasDesktops(bool*)
+  fullName: ADLXWrapper.IADLXGPU3.HasDesktops(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HasDesktops
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 73
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT HasDesktops(bool* hasDesktops)
+    parameters:
+    - id: hasDesktops
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function HasDesktops(hasDesktops As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.HasDesktops*
+  nameWithType.vb: IADLXGPU3.HasDesktops(Boolean*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.HasDesktops(Boolean*)
+  name.vb: HasDesktops(Boolean*)
+- uid: ADLXWrapper.IADLXGPU3.TotalVRAM(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.TotalVRAM(System.UInt32*)
+  id: TotalVRAM(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: TotalVRAM(uint*)
+  nameWithType: IADLXGPU3.TotalVRAM(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.TotalVRAM(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TotalVRAM
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 79
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT TotalVRAM(uint* vramMB)
+    parameters:
+    - id: vramMB
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function TotalVRAM(vramMB As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.TotalVRAM*
+  nameWithType.vb: IADLXGPU3.TotalVRAM(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.TotalVRAM(UInteger*)
+  name.vb: TotalVRAM(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.VRAMType(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.VRAMType(System.SByte**)
+  id: VRAMType(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VRAMType(sbyte**)
+  nameWithType: IADLXGPU3.VRAMType(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.VRAMType(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMType
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 85
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VRAMType(sbyte** type)
+    parameters:
+    - id: type
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VRAMType(type As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VRAMType*
+  nameWithType.vb: IADLXGPU3.VRAMType(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VRAMType(SByte**)
+  name.vb: VRAMType(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.BIOSInfo(System.SByte**,System.SByte**,System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.BIOSInfo(System.SByte**,System.SByte**,System.SByte**)
+  id: BIOSInfo(System.SByte**,System.SByte**,System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: BIOSInfo(sbyte**, sbyte**, sbyte**)
+  nameWithType: IADLXGPU3.BIOSInfo(sbyte**, sbyte**, sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.BIOSInfo(sbyte**, sbyte**, sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: BIOSInfo
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 91
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT BIOSInfo(sbyte** partNumber, sbyte** version, sbyte** date)
+    parameters:
+    - id: partNumber
+      type: System.SByte**
+    - id: version
+      type: System.SByte**
+    - id: date
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function BIOSInfo(partNumber As SByte**, version As SByte**, [date] As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.BIOSInfo*
+  nameWithType.vb: IADLXGPU3.BIOSInfo(SByte**, SByte**, SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.BIOSInfo(SByte**, SByte**, SByte**)
+  name.vb: BIOSInfo(SByte**, SByte**, SByte**)
+- uid: ADLXWrapper.IADLXGPU3.DeviceId(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.DeviceId(System.SByte**)
+  id: DeviceId(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: DeviceId(sbyte**)
+  nameWithType: IADLXGPU3.DeviceId(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.DeviceId(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DeviceId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 97
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT DeviceId(sbyte** deviceId)
+    parameters:
+    - id: deviceId
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function DeviceId(deviceId As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.DeviceId*
+  nameWithType.vb: IADLXGPU3.DeviceId(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.DeviceId(SByte**)
+  name.vb: DeviceId(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.RevisionId(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.RevisionId(System.SByte**)
+  id: RevisionId(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: RevisionId(sbyte**)
+  nameWithType: IADLXGPU3.RevisionId(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.RevisionId(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: RevisionId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 103
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT RevisionId(sbyte** revisionId)
+    parameters:
+    - id: revisionId
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function RevisionId(revisionId As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.RevisionId*
+  nameWithType.vb: IADLXGPU3.RevisionId(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.RevisionId(SByte**)
+  name.vb: RevisionId(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.SubSystemId(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.SubSystemId(System.SByte**)
+  id: SubSystemId(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: SubSystemId(sbyte**)
+  nameWithType: IADLXGPU3.SubSystemId(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.SubSystemId(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SubSystemId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 109
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SubSystemId(sbyte** subSystemId)
+    parameters:
+    - id: subSystemId
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SubSystemId(subSystemId As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.SubSystemId*
+  nameWithType.vb: IADLXGPU3.SubSystemId(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.SubSystemId(SByte**)
+  name.vb: SubSystemId(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.SubSystemVendorId(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.SubSystemVendorId(System.SByte**)
+  id: SubSystemVendorId(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: SubSystemVendorId(sbyte**)
+  nameWithType: IADLXGPU3.SubSystemVendorId(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.SubSystemVendorId(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SubSystemVendorId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 115
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SubSystemVendorId(sbyte** subSystemVendorId)
+    parameters:
+    - id: subSystemVendorId
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SubSystemVendorId(subSystemVendorId As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.SubSystemVendorId*
+  nameWithType.vb: IADLXGPU3.SubSystemVendorId(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.SubSystemVendorId(SByte**)
+  name.vb: SubSystemVendorId(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.UniqueId(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.UniqueId(System.Int32*)
+  id: UniqueId(System.Int32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: UniqueId(int*)
+  nameWithType: IADLXGPU3.UniqueId(int*)
+  fullName: ADLXWrapper.IADLXGPU3.UniqueId(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: UniqueId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 121
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT UniqueId(int* uniqueId)
+    parameters:
+    - id: uniqueId
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function UniqueId(uniqueId As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.UniqueId*
+  nameWithType.vb: IADLXGPU3.UniqueId(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.UniqueId(Integer*)
+  name.vb: UniqueId(Integer*)
+- uid: ADLXWrapper.IADLXGPU3.PCIBusType(ADLXWrapper.ADLX_PCI_BUS_TYPE*)
+  commentId: M:ADLXWrapper.IADLXGPU3.PCIBusType(ADLXWrapper.ADLX_PCI_BUS_TYPE*)
+  id: PCIBusType(ADLXWrapper.ADLX_PCI_BUS_TYPE*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: PCIBusType(ADLX_PCI_BUS_TYPE*)
+  nameWithType: IADLXGPU3.PCIBusType(ADLX_PCI_BUS_TYPE*)
+  fullName: ADLXWrapper.IADLXGPU3.PCIBusType(ADLXWrapper.ADLX_PCI_BUS_TYPE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PCIBusType
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 127
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT PCIBusType(ADLX_PCI_BUS_TYPE* busType)
+    parameters:
+    - id: busType
+      type: ADLXWrapper.ADLX_PCI_BUS_TYPE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function PCIBusType(busType As ADLX_PCI_BUS_TYPE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.PCIBusType*
+- uid: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.PCIBusLaneWidth(System.UInt32*)
+  id: PCIBusLaneWidth(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: PCIBusLaneWidth(uint*)
+  nameWithType: IADLXGPU3.PCIBusLaneWidth(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PCIBusLaneWidth
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 133
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT PCIBusLaneWidth(uint* laneWidth)
+    parameters:
+    - id: laneWidth
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function PCIBusLaneWidth(laneWidth As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth*
+  nameWithType.vb: IADLXGPU3.PCIBusLaneWidth(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth(UInteger*)
+  name.vb: PCIBusLaneWidth(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.MultiGPUMode(ADLXWrapper.ADLX_MGPU_MODE*)
+  commentId: M:ADLXWrapper.IADLXGPU3.MultiGPUMode(ADLXWrapper.ADLX_MGPU_MODE*)
+  id: MultiGPUMode(ADLXWrapper.ADLX_MGPU_MODE*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: MultiGPUMode(ADLX_MGPU_MODE*)
+  nameWithType: IADLXGPU3.MultiGPUMode(ADLX_MGPU_MODE*)
+  fullName: ADLXWrapper.IADLXGPU3.MultiGPUMode(ADLXWrapper.ADLX_MGPU_MODE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MultiGPUMode
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 139
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT MultiGPUMode(ADLX_MGPU_MODE* mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_MGPU_MODE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function MultiGPUMode(mode As ADLX_MGPU_MODE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.MultiGPUMode*
+- uid: ADLXWrapper.IADLXGPU3.ProductName(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.ProductName(System.SByte**)
+  id: ProductName(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: ProductName(sbyte**)
+  nameWithType: IADLXGPU3.ProductName(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.ProductName(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ProductName
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 145
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public readonly ADLX_RESULT ProductName(sbyte** productName)
+    parameters:
+    - id: productName
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function ProductName(productName As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.ProductName*
+  nameWithType.vb: IADLXGPU3.ProductName(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.ProductName(SByte**)
+  name.vb: ProductName(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.IsPowerOff(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLXGPU3.IsPowerOff(System.Boolean*)
+  id: IsPowerOff(System.Boolean*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: IsPowerOff(bool*)
+  nameWithType: IADLXGPU3.IsPowerOff(bool*)
+  fullName: ADLXWrapper.IADLXGPU3.IsPowerOff(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsPowerOff
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 151
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsPowerOff(bool* state)
+    parameters:
+    - id: state
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsPowerOff(state As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.IsPowerOff*
+  nameWithType.vb: IADLXGPU3.IsPowerOff(Boolean*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.IsPowerOff(Boolean*)
+  name.vb: IsPowerOff(Boolean*)
+- uid: ADLXWrapper.IADLXGPU3.PowerOn
+  commentId: M:ADLXWrapper.IADLXGPU3.PowerOn
+  id: PowerOn
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: PowerOn()
+  nameWithType: IADLXGPU3.PowerOn()
+  fullName: ADLXWrapper.IADLXGPU3.PowerOn()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: PowerOn
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 157
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT PowerOn()
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function PowerOn() As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.PowerOn*
+- uid: ADLXWrapper.IADLXGPU3.StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*,System.Int32)
+  commentId: M:ADLXWrapper.IADLXGPU3.StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*,System.Int32)
+  id: StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*,System.Int32)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: StartPowerOff(IADLXGPUConnectChangedListener*, int)
+  nameWithType: IADLXGPU3.StartPowerOff(IADLXGPUConnectChangedListener*, int)
+  fullName: ADLXWrapper.IADLXGPU3.StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*, int)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: StartPowerOff
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 163
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT StartPowerOff(IADLXGPUConnectChangedListener* pGPUConnectChangedListener, int timeout)
+    parameters:
+    - id: pGPUConnectChangedListener
+      type: ADLXWrapper.IADLXGPUConnectChangedListener*
+    - id: timeout
+      type: System.Int32
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function StartPowerOff(pGPUConnectChangedListener As IADLXGPUConnectChangedListener*, timeout As Integer) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.StartPowerOff*
+  nameWithType.vb: IADLXGPU3.StartPowerOff(IADLXGPUConnectChangedListener*, Integer)
+  fullName.vb: ADLXWrapper.IADLXGPU3.StartPowerOff(ADLXWrapper.IADLXGPUConnectChangedListener*, Integer)
+  name.vb: StartPowerOff(IADLXGPUConnectChangedListener*, Integer)
+- uid: ADLXWrapper.IADLXGPU3.AbortPowerOff
+  commentId: M:ADLXWrapper.IADLXGPU3.AbortPowerOff
+  id: AbortPowerOff
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: AbortPowerOff()
+  nameWithType: IADLXGPU3.AbortPowerOff()
+  fullName: ADLXWrapper.IADLXGPU3.AbortPowerOff()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AbortPowerOff
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 169
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT AbortPowerOff()
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function AbortPowerOff() As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.AbortPowerOff*
+- uid: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLXGPU3.IsSupportedApplicationList(System.Boolean*)
+  id: IsSupportedApplicationList(System.Boolean*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: IsSupportedApplicationList(bool*)
+  nameWithType: IADLXGPU3.IsSupportedApplicationList(bool*)
+  fullName: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSupportedApplicationList
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 175
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsSupportedApplicationList(bool* supported)
+    parameters:
+    - id: supported
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsSupportedApplicationList(supported As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList*
+  nameWithType.vb: IADLXGPU3.IsSupportedApplicationList(Boolean*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList(Boolean*)
+  name.vb: IsSupportedApplicationList(Boolean*)
+- uid: ADLXWrapper.IADLXGPU3.GetApplications(ADLXWrapper.IADLXApplicationList**)
+  commentId: M:ADLXWrapper.IADLXGPU3.GetApplications(ADLXWrapper.IADLXApplicationList**)
+  id: GetApplications(ADLXWrapper.IADLXApplicationList**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: GetApplications(IADLXApplicationList**)
+  nameWithType: IADLXGPU3.GetApplications(IADLXApplicationList**)
+  fullName: ADLXWrapper.IADLXGPU3.GetApplications(ADLXWrapper.IADLXApplicationList**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetApplications
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 181
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetApplications(IADLXApplicationList** ppApplications)
+    parameters:
+    - id: ppApplications
+      type: ADLXWrapper.IADLXApplicationList**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetApplications(ppApplications As IADLXApplicationList**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.GetApplications*
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate(System.UInt32*,System.UInt32*,System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate(System.UInt32*,System.UInt32*,System.UInt32*)
+  id: AMDSoftwareReleaseDate(System.UInt32*,System.UInt32*,System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareReleaseDate(uint*, uint*, uint*)
+  nameWithType: IADLXGPU3.AMDSoftwareReleaseDate(uint*, uint*, uint*)
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate(uint*, uint*, uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareReleaseDate
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 187
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT AMDSoftwareReleaseDate(uint* year, uint* month, uint* day)
+    parameters:
+    - id: year
+      type: System.UInt32*
+    - id: month
+      type: System.UInt32*
+    - id: day
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function AMDSoftwareReleaseDate(year As UInteger*, month As UInteger*, day As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate*
+  nameWithType.vb: IADLXGPU3.AMDSoftwareReleaseDate(UInteger*, UInteger*, UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate(UInteger*, UInteger*, UInteger*)
+  name.vb: AMDSoftwareReleaseDate(UInteger*, UInteger*, UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.AMDSoftwareEdition(System.SByte**)
+  id: AMDSoftwareEdition(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareEdition(sbyte**)
+  nameWithType: IADLXGPU3.AMDSoftwareEdition(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareEdition
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 193
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT AMDSoftwareEdition(sbyte** edition)
+    parameters:
+    - id: edition
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function AMDSoftwareEdition(edition As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition*
+  nameWithType.vb: IADLXGPU3.AMDSoftwareEdition(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition(SByte**)
+  name.vb: AMDSoftwareEdition(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.AMDSoftwareVersion(System.SByte**)
+  id: AMDSoftwareVersion(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: AMDSoftwareVersion(sbyte**)
+  nameWithType: IADLXGPU3.AMDSoftwareVersion(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDSoftwareVersion
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 199
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT AMDSoftwareVersion(sbyte** version)
+    parameters:
+    - id: version
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function AMDSoftwareVersion(version As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion*
+  nameWithType.vb: IADLXGPU3.AMDSoftwareVersion(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion(SByte**)
+  name.vb: AMDSoftwareVersion(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.DriverVersion(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.DriverVersion(System.SByte**)
+  id: DriverVersion(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: DriverVersion(sbyte**)
+  nameWithType: IADLXGPU3.DriverVersion(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.DriverVersion(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DriverVersion
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 205
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT DriverVersion(sbyte** version)
+    parameters:
+    - id: version
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function DriverVersion(version As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.DriverVersion*
+  nameWithType.vb: IADLXGPU3.DriverVersion(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.DriverVersion(SByte**)
+  name.vb: DriverVersion(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion(System.SByte**)
+  id: AMDWindowsDriverVersion(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: AMDWindowsDriverVersion(sbyte**)
+  nameWithType: IADLXGPU3.AMDWindowsDriverVersion(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AMDWindowsDriverVersion
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 211
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT AMDWindowsDriverVersion(sbyte** version)
+    parameters:
+    - id: version
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function AMDWindowsDriverVersion(version As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion*
+  nameWithType.vb: IADLXGPU3.AMDWindowsDriverVersion(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion(SByte**)
+  name.vb: AMDWindowsDriverVersion(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.LUID(ADLXWrapper.ADLX_LUID*)
+  commentId: M:ADLXWrapper.IADLXGPU3.LUID(ADLXWrapper.ADLX_LUID*)
+  id: LUID(ADLXWrapper.ADLX_LUID*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: LUID(ADLX_LUID*)
+  nameWithType: IADLXGPU3.LUID(ADLX_LUID*)
+  fullName: ADLXWrapper.IADLXGPU3.LUID(ADLXWrapper.ADLX_LUID*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: LUID
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 217
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT LUID(ADLX_LUID* luid)
+    parameters:
+    - id: luid
+      type: ADLXWrapper.ADLX_LUID*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function LUID(luid As ADLX_LUID*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.LUID*
+- uid: ADLXWrapper.IADLXGPU3.MicroArchitecture(System.SByte**)
+  commentId: M:ADLXWrapper.IADLXGPU3.MicroArchitecture(System.SByte**)
+  id: MicroArchitecture(System.SByte**)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: MicroArchitecture(sbyte**)
+  nameWithType: IADLXGPU3.MicroArchitecture(sbyte**)
+  fullName: ADLXWrapper.IADLXGPU3.MicroArchitecture(sbyte**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: MicroArchitecture
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 223
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT MicroArchitecture(sbyte** microArchitecture)
+    parameters:
+    - id: microArchitecture
+      type: System.SByte**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function MicroArchitecture(microArchitecture As SByte**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.MicroArchitecture*
+  nameWithType.vb: IADLXGPU3.MicroArchitecture(SByte**)
+  fullName.vb: ADLXWrapper.IADLXGPU3.MicroArchitecture(SByte**)
+  name.vb: MicroArchitecture(SByte**)
+- uid: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth(System.UInt32*)
+  id: HighestVRAMBandwidth(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: HighestVRAMBandwidth(uint*)
+  nameWithType: IADLXGPU3.HighestVRAMBandwidth(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: HighestVRAMBandwidth
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 229
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT HighestVRAMBandwidth(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function HighestVRAMBandwidth(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth*
+  nameWithType.vb: IADLXGPU3.HighestVRAMBandwidth(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth(UInteger*)
+  name.vb: HighestVRAMBandwidth(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.InvisibleVRAM(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.InvisibleVRAM(System.UInt32*)
+  id: InvisibleVRAM(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: InvisibleVRAM(uint*)
+  nameWithType: IADLXGPU3.InvisibleVRAM(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.InvisibleVRAM(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: InvisibleVRAM
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 235
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT InvisibleVRAM(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function InvisibleVRAM(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.InvisibleVRAM*
+  nameWithType.vb: IADLXGPU3.InvisibleVRAM(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.InvisibleVRAM(UInteger*)
+  name.vb: InvisibleVRAM(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.VisibleVRAM(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.VisibleVRAM(System.UInt32*)
+  id: VisibleVRAM(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VisibleVRAM(uint*)
+  nameWithType: IADLXGPU3.VisibleVRAM(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.VisibleVRAM(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VisibleVRAM
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 241
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VisibleVRAM(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VisibleVRAM(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VisibleVRAM*
+  nameWithType.vb: IADLXGPU3.VisibleVRAM(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VisibleVRAM(UInteger*)
+  name.vb: VisibleVRAM(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.VRAMVendorRevId(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.VRAMVendorRevId(System.UInt32*)
+  id: VRAMVendorRevId(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VRAMVendorRevId(uint*)
+  nameWithType: IADLXGPU3.VRAMVendorRevId(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.VRAMVendorRevId(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMVendorRevId
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 247
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VRAMVendorRevId(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VRAMVendorRevId(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VRAMVendorRevId*
+  nameWithType.vb: IADLXGPU3.VRAMVendorRevId(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VRAMVendorRevId(UInteger*)
+  name.vb: VRAMVendorRevId(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.VRAMBandwidth(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.VRAMBandwidth(System.UInt32*)
+  id: VRAMBandwidth(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VRAMBandwidth(uint*)
+  nameWithType: IADLXGPU3.VRAMBandwidth(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.VRAMBandwidth(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMBandwidth
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 253
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VRAMBandwidth(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VRAMBandwidth(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VRAMBandwidth*
+  nameWithType.vb: IADLXGPU3.VRAMBandwidth(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VRAMBandwidth(UInteger*)
+  name.vb: VRAMBandwidth(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.VRAMBitRate(System.UInt32*)
+  commentId: M:ADLXWrapper.IADLXGPU3.VRAMBitRate(System.UInt32*)
+  id: VRAMBitRate(System.UInt32*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: VRAMBitRate(uint*)
+  nameWithType: IADLXGPU3.VRAMBitRate(uint*)
+  fullName: ADLXWrapper.IADLXGPU3.VRAMBitRate(uint*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: VRAMBitRate
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 259
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT VRAMBitRate(uint* data)
+    parameters:
+    - id: data
+      type: System.UInt32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function VRAMBitRate(data As UInteger*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.VRAMBitRate*
+  nameWithType.vb: IADLXGPU3.VRAMBitRate(UInteger*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.VRAMBitRate(UInteger*)
+  name.vb: VRAMBitRate(UInteger*)
+- uid: ADLXWrapper.IADLXGPU3.IsSupportedStressTest(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLXGPU3.IsSupportedStressTest(System.Boolean*)
+  id: IsSupportedStressTest(System.Boolean*)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: IsSupportedStressTest(bool*)
+  nameWithType: IADLXGPU3.IsSupportedStressTest(bool*)
+  fullName: ADLXWrapper.IADLXGPU3.IsSupportedStressTest(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSupportedStressTest
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 265
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsSupportedStressTest(bool* supported)
+    parameters:
+    - id: supported
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsSupportedStressTest(supported As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.IsSupportedStressTest*
+  nameWithType.vb: IADLXGPU3.IsSupportedStressTest(Boolean*)
+  fullName.vb: ADLXWrapper.IADLXGPU3.IsSupportedStressTest(Boolean*)
+  name.vb: IsSupportedStressTest(Boolean*)
+- uid: ADLXWrapper.IADLXGPU3.StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*,System.UInt32)
+  commentId: M:ADLXWrapper.IADLXGPU3.StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*,System.UInt32)
+  id: StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*,System.UInt32)
+  parent: ADLXWrapper.IADLXGPU3
+  langs:
+  - csharp
+  - vb
+  name: StartStressTest(IADLXGPUStressTestFinishedListener*, uint)
+  nameWithType: IADLXGPU3.StartStressTest(IADLXGPUStressTestFinishedListener*, uint)
+  fullName: ADLXWrapper.IADLXGPU3.StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*, uint)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPU3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: StartStressTest
+    path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
+    startLine: 271
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT StartStressTest(IADLXGPUStressTestFinishedListener* pGPUStressTestFinishedListener, uint duration)
+    parameters:
+    - id: pGPUStressTestFinishedListener
+      type: ADLXWrapper.IADLXGPUStressTestFinishedListener*
+    - id: duration
+      type: System.UInt32
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function StartStressTest(pGPUStressTestFinishedListener As IADLXGPUStressTestFinishedListener*, duration As UInteger) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPU3.StartStressTest*
+  nameWithType.vb: IADLXGPU3.StartStressTest(IADLXGPUStressTestFinishedListener*, UInteger)
+  fullName.vb: ADLXWrapper.IADLXGPU3.StartStressTest(ADLXWrapper.IADLXGPUStressTestFinishedListener*, UInteger)
+  name.vb: StartStressTest(IADLXGPUStressTestFinishedListener*, UInteger)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Void**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void**
+  nameWithType: void**
+  fullName: void**
+  nameWithType.vb: Void**
+  fullName.vb: Void**
+  name.vb: Void**
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.Acquire*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.Acquire
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_Acquire
+  name: Acquire
+  nameWithType: IADLXGPU3.Acquire
+  fullName: ADLXWrapper.IADLXGPU3.Acquire
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IADLXGPU3.Release*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.Release
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_Release
+  name: Release
+  nameWithType: IADLXGPU3.Release
+  fullName: ADLXWrapper.IADLXGPU3.Release
+- uid: ADLXWrapper.IADLXGPU3.QueryInterface*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.QueryInterface
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_QueryInterface_System_UInt16__System_Void___
+  name: QueryInterface
+  nameWithType: IADLXGPU3.QueryInterface
+  fullName: ADLXWrapper.IADLXGPU3.QueryInterface
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: ADLXWrapper.IADLXGPU3.VendorId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VendorId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VendorId_System_SByte___
+  name: VendorId
+  nameWithType: IADLXGPU3.VendorId
+  fullName: ADLXWrapper.IADLXGPU3.VendorId
+- uid: System.SByte**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  name: sbyte**
+  nameWithType: sbyte**
+  fullName: sbyte**
+  nameWithType.vb: SByte**
+  fullName.vb: SByte**
+  name.vb: SByte**
+  spec.csharp:
+  - uid: System.SByte
+    name: sbyte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.SByte
+    name: SByte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.sbyte
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.ASICFamilyType*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.ASICFamilyType
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_ASICFamilyType_ADLXWrapper_ADLX_ASIC_FAMILY_TYPE__
+  name: ASICFamilyType
+  nameWithType: IADLXGPU3.ASICFamilyType
+  fullName: ADLXWrapper.IADLXGPU3.ASICFamilyType
+- uid: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE.html
+  name: ADLX_ASIC_FAMILY_TYPE*
+  nameWithType: ADLX_ASIC_FAMILY_TYPE*
+  fullName: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE
+    name: ADLX_ASIC_FAMILY_TYPE
+    href: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE
+    name: ADLX_ASIC_FAMILY_TYPE
+    href: ADLXWrapper.ADLX_ASIC_FAMILY_TYPE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.Type*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.Type
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_Type_ADLXWrapper_ADLX_GPU_TYPE__
+  name: Type
+  nameWithType: IADLXGPU3.Type
+  fullName: ADLXWrapper.IADLXGPU3.Type
+- uid: ADLXWrapper.ADLX_GPU_TYPE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_GPU_TYPE.html
+  name: ADLX_GPU_TYPE*
+  nameWithType: ADLX_GPU_TYPE*
+  fullName: ADLXWrapper.ADLX_GPU_TYPE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_GPU_TYPE
+    name: ADLX_GPU_TYPE
+    href: ADLXWrapper.ADLX_GPU_TYPE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_GPU_TYPE
+    name: ADLX_GPU_TYPE
+    href: ADLXWrapper.ADLX_GPU_TYPE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.IsExternal*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.IsExternal
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_IsExternal_System_Boolean__
+  name: IsExternal
+  nameWithType: IADLXGPU3.IsExternal
+  fullName: ADLXWrapper.IADLXGPU3.IsExternal
+- uid: System.Boolean*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool*
+  nameWithType: bool*
+  fullName: bool*
+  nameWithType.vb: Boolean*
+  fullName.vb: Boolean*
+  name.vb: Boolean*
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '*'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.Name*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.Name
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_Name_System_SByte___
+  name: Name
+  nameWithType: IADLXGPU3.Name
+  fullName: ADLXWrapper.IADLXGPU3.Name
+- uid: ADLXWrapper.IADLXGPU3.DriverPath*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.DriverPath
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_DriverPath_System_SByte___
+  name: DriverPath
+  nameWithType: IADLXGPU3.DriverPath
+  fullName: ADLXWrapper.IADLXGPU3.DriverPath
+- uid: ADLXWrapper.IADLXGPU3.PNPString*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.PNPString
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_PNPString_System_SByte___
+  name: PNPString
+  nameWithType: IADLXGPU3.PNPString
+  fullName: ADLXWrapper.IADLXGPU3.PNPString
+- uid: ADLXWrapper.IADLXGPU3.HasDesktops*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.HasDesktops
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_HasDesktops_System_Boolean__
+  name: HasDesktops
+  nameWithType: IADLXGPU3.HasDesktops
+  fullName: ADLXWrapper.IADLXGPU3.HasDesktops
+- uid: ADLXWrapper.IADLXGPU3.TotalVRAM*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.TotalVRAM
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_TotalVRAM_System_UInt32__
+  name: TotalVRAM
+  nameWithType: IADLXGPU3.TotalVRAM
+  fullName: ADLXWrapper.IADLXGPU3.TotalVRAM
+- uid: System.UInt32*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint*
+  nameWithType: uint*
+  fullName: uint*
+  nameWithType.vb: UInteger*
+  fullName.vb: UInteger*
+  name.vb: UInteger*
+  spec.csharp:
+  - uid: System.UInt32
+    name: uint
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt32
+    name: UInteger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint32
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.VRAMType*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VRAMType
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VRAMType_System_SByte___
+  name: VRAMType
+  nameWithType: IADLXGPU3.VRAMType
+  fullName: ADLXWrapper.IADLXGPU3.VRAMType
+- uid: ADLXWrapper.IADLXGPU3.BIOSInfo*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.BIOSInfo
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_BIOSInfo_System_SByte___System_SByte___System_SByte___
+  name: BIOSInfo
+  nameWithType: IADLXGPU3.BIOSInfo
+  fullName: ADLXWrapper.IADLXGPU3.BIOSInfo
+- uid: ADLXWrapper.IADLXGPU3.DeviceId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.DeviceId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_DeviceId_System_SByte___
+  name: DeviceId
+  nameWithType: IADLXGPU3.DeviceId
+  fullName: ADLXWrapper.IADLXGPU3.DeviceId
+- uid: ADLXWrapper.IADLXGPU3.RevisionId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.RevisionId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_RevisionId_System_SByte___
+  name: RevisionId
+  nameWithType: IADLXGPU3.RevisionId
+  fullName: ADLXWrapper.IADLXGPU3.RevisionId
+- uid: ADLXWrapper.IADLXGPU3.SubSystemId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.SubSystemId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_SubSystemId_System_SByte___
+  name: SubSystemId
+  nameWithType: IADLXGPU3.SubSystemId
+  fullName: ADLXWrapper.IADLXGPU3.SubSystemId
+- uid: ADLXWrapper.IADLXGPU3.SubSystemVendorId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.SubSystemVendorId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_SubSystemVendorId_System_SByte___
+  name: SubSystemVendorId
+  nameWithType: IADLXGPU3.SubSystemVendorId
+  fullName: ADLXWrapper.IADLXGPU3.SubSystemVendorId
+- uid: ADLXWrapper.IADLXGPU3.UniqueId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.UniqueId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_UniqueId_System_Int32__
+  name: UniqueId
+  nameWithType: IADLXGPU3.UniqueId
+  fullName: ADLXWrapper.IADLXGPU3.UniqueId
+- uid: System.Int32*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int*
+  nameWithType: int*
+  fullName: int*
+  nameWithType.vb: Integer*
+  fullName.vb: Integer*
+  name.vb: Integer*
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '*'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.PCIBusType*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.PCIBusType
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_PCIBusType_ADLXWrapper_ADLX_PCI_BUS_TYPE__
+  name: PCIBusType
+  nameWithType: IADLXGPU3.PCIBusType
+  fullName: ADLXWrapper.IADLXGPU3.PCIBusType
+- uid: ADLXWrapper.ADLX_PCI_BUS_TYPE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_PCI_BUS_TYPE.html
+  name: ADLX_PCI_BUS_TYPE*
+  nameWithType: ADLX_PCI_BUS_TYPE*
+  fullName: ADLXWrapper.ADLX_PCI_BUS_TYPE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_PCI_BUS_TYPE
+    name: ADLX_PCI_BUS_TYPE
+    href: ADLXWrapper.ADLX_PCI_BUS_TYPE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_PCI_BUS_TYPE
+    name: ADLX_PCI_BUS_TYPE
+    href: ADLXWrapper.ADLX_PCI_BUS_TYPE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.PCIBusLaneWidth
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_PCIBusLaneWidth_System_UInt32__
+  name: PCIBusLaneWidth
+  nameWithType: IADLXGPU3.PCIBusLaneWidth
+  fullName: ADLXWrapper.IADLXGPU3.PCIBusLaneWidth
+- uid: ADLXWrapper.IADLXGPU3.MultiGPUMode*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.MultiGPUMode
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_MultiGPUMode_ADLXWrapper_ADLX_MGPU_MODE__
+  name: MultiGPUMode
+  nameWithType: IADLXGPU3.MultiGPUMode
+  fullName: ADLXWrapper.IADLXGPU3.MultiGPUMode
+- uid: ADLXWrapper.ADLX_MGPU_MODE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_MGPU_MODE.html
+  name: ADLX_MGPU_MODE*
+  nameWithType: ADLX_MGPU_MODE*
+  fullName: ADLXWrapper.ADLX_MGPU_MODE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_MGPU_MODE
+    name: ADLX_MGPU_MODE
+    href: ADLXWrapper.ADLX_MGPU_MODE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_MGPU_MODE
+    name: ADLX_MGPU_MODE
+    href: ADLXWrapper.ADLX_MGPU_MODE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.ProductName*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.ProductName
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_ProductName_System_SByte___
+  name: ProductName
+  nameWithType: IADLXGPU3.ProductName
+  fullName: ADLXWrapper.IADLXGPU3.ProductName
+- uid: ADLXWrapper.IADLXGPU3.IsPowerOff*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.IsPowerOff
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_IsPowerOff_System_Boolean__
+  name: IsPowerOff
+  nameWithType: IADLXGPU3.IsPowerOff
+  fullName: ADLXWrapper.IADLXGPU3.IsPowerOff
+- uid: ADLXWrapper.IADLXGPU3.PowerOn*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.PowerOn
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_PowerOn
+  name: PowerOn
+  nameWithType: IADLXGPU3.PowerOn
+  fullName: ADLXWrapper.IADLXGPU3.PowerOn
+- uid: ADLXWrapper.IADLXGPU3.StartPowerOff*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.StartPowerOff
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_StartPowerOff_ADLXWrapper_IADLXGPUConnectChangedListener__System_Int32_
+  name: StartPowerOff
+  nameWithType: IADLXGPU3.StartPowerOff
+  fullName: ADLXWrapper.IADLXGPU3.StartPowerOff
+- uid: ADLXWrapper.IADLXGPUConnectChangedListener*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPUConnectChangedListener.html
+  name: IADLXGPUConnectChangedListener*
+  nameWithType: IADLXGPUConnectChangedListener*
+  fullName: ADLXWrapper.IADLXGPUConnectChangedListener*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUConnectChangedListener
+    name: IADLXGPUConnectChangedListener
+    href: ADLXWrapper.IADLXGPUConnectChangedListener.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUConnectChangedListener
+    name: IADLXGPUConnectChangedListener
+    href: ADLXWrapper.IADLXGPUConnectChangedListener.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.AbortPowerOff*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.AbortPowerOff
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_AbortPowerOff
+  name: AbortPowerOff
+  nameWithType: IADLXGPU3.AbortPowerOff
+  fullName: ADLXWrapper.IADLXGPU3.AbortPowerOff
+- uid: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.IsSupportedApplicationList
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_IsSupportedApplicationList_System_Boolean__
+  name: IsSupportedApplicationList
+  nameWithType: IADLXGPU3.IsSupportedApplicationList
+  fullName: ADLXWrapper.IADLXGPU3.IsSupportedApplicationList
+- uid: ADLXWrapper.IADLXGPU3.GetApplications*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.GetApplications
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_GetApplications_ADLXWrapper_IADLXApplicationList___
+  name: GetApplications
+  nameWithType: IADLXGPU3.GetApplications
+  fullName: ADLXWrapper.IADLXGPU3.GetApplications
+- uid: ADLXWrapper.IADLXApplicationList**
+  isExternal: true
+  href: ADLXWrapper.IADLXApplicationList.html
+  name: IADLXApplicationList**
+  nameWithType: IADLXApplicationList**
+  fullName: ADLXWrapper.IADLXApplicationList**
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXApplicationList
+    name: IADLXApplicationList
+    href: ADLXWrapper.IADLXApplicationList.html
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXApplicationList
+    name: IADLXApplicationList
+    href: ADLXWrapper.IADLXApplicationList.html
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_AMDSoftwareReleaseDate_System_UInt32__System_UInt32__System_UInt32__
+  name: AMDSoftwareReleaseDate
+  nameWithType: IADLXGPU3.AMDSoftwareReleaseDate
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareReleaseDate
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.AMDSoftwareEdition
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_AMDSoftwareEdition_System_SByte___
+  name: AMDSoftwareEdition
+  nameWithType: IADLXGPU3.AMDSoftwareEdition
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareEdition
+- uid: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.AMDSoftwareVersion
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_AMDSoftwareVersion_System_SByte___
+  name: AMDSoftwareVersion
+  nameWithType: IADLXGPU3.AMDSoftwareVersion
+  fullName: ADLXWrapper.IADLXGPU3.AMDSoftwareVersion
+- uid: ADLXWrapper.IADLXGPU3.DriverVersion*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.DriverVersion
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_DriverVersion_System_SByte___
+  name: DriverVersion
+  nameWithType: IADLXGPU3.DriverVersion
+  fullName: ADLXWrapper.IADLXGPU3.DriverVersion
+- uid: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_AMDWindowsDriverVersion_System_SByte___
+  name: AMDWindowsDriverVersion
+  nameWithType: IADLXGPU3.AMDWindowsDriverVersion
+  fullName: ADLXWrapper.IADLXGPU3.AMDWindowsDriverVersion
+- uid: ADLXWrapper.IADLXGPU3.LUID*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.LUID
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_LUID_ADLXWrapper_ADLX_LUID__
+  name: LUID
+  nameWithType: IADLXGPU3.LUID
+  fullName: ADLXWrapper.IADLXGPU3.LUID
+- uid: ADLXWrapper.ADLX_LUID*
+  isExternal: true
+  href: ADLXWrapper.ADLX_LUID.html
+  name: ADLX_LUID*
+  nameWithType: ADLX_LUID*
+  fullName: ADLXWrapper.ADLX_LUID*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_LUID
+    name: ADLX_LUID
+    href: ADLXWrapper.ADLX_LUID.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_LUID
+    name: ADLX_LUID
+    href: ADLXWrapper.ADLX_LUID.html
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPU3.MicroArchitecture*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.MicroArchitecture
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_MicroArchitecture_System_SByte___
+  name: MicroArchitecture
+  nameWithType: IADLXGPU3.MicroArchitecture
+  fullName: ADLXWrapper.IADLXGPU3.MicroArchitecture
+- uid: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_HighestVRAMBandwidth_System_UInt32__
+  name: HighestVRAMBandwidth
+  nameWithType: IADLXGPU3.HighestVRAMBandwidth
+  fullName: ADLXWrapper.IADLXGPU3.HighestVRAMBandwidth
+- uid: ADLXWrapper.IADLXGPU3.InvisibleVRAM*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.InvisibleVRAM
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_InvisibleVRAM_System_UInt32__
+  name: InvisibleVRAM
+  nameWithType: IADLXGPU3.InvisibleVRAM
+  fullName: ADLXWrapper.IADLXGPU3.InvisibleVRAM
+- uid: ADLXWrapper.IADLXGPU3.VisibleVRAM*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VisibleVRAM
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VisibleVRAM_System_UInt32__
+  name: VisibleVRAM
+  nameWithType: IADLXGPU3.VisibleVRAM
+  fullName: ADLXWrapper.IADLXGPU3.VisibleVRAM
+- uid: ADLXWrapper.IADLXGPU3.VRAMVendorRevId*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VRAMVendorRevId
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VRAMVendorRevId_System_UInt32__
+  name: VRAMVendorRevId
+  nameWithType: IADLXGPU3.VRAMVendorRevId
+  fullName: ADLXWrapper.IADLXGPU3.VRAMVendorRevId
+- uid: ADLXWrapper.IADLXGPU3.VRAMBandwidth*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VRAMBandwidth
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VRAMBandwidth_System_UInt32__
+  name: VRAMBandwidth
+  nameWithType: IADLXGPU3.VRAMBandwidth
+  fullName: ADLXWrapper.IADLXGPU3.VRAMBandwidth
+- uid: ADLXWrapper.IADLXGPU3.VRAMBitRate*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.VRAMBitRate
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_VRAMBitRate_System_UInt32__
+  name: VRAMBitRate
+  nameWithType: IADLXGPU3.VRAMBitRate
+  fullName: ADLXWrapper.IADLXGPU3.VRAMBitRate
+- uid: ADLXWrapper.IADLXGPU3.IsSupportedStressTest*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.IsSupportedStressTest
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_IsSupportedStressTest_System_Boolean__
+  name: IsSupportedStressTest
+  nameWithType: IADLXGPU3.IsSupportedStressTest
+  fullName: ADLXWrapper.IADLXGPU3.IsSupportedStressTest
+- uid: ADLXWrapper.IADLXGPU3.StartStressTest*
+  commentId: Overload:ADLXWrapper.IADLXGPU3.StartStressTest
+  href: ADLXWrapper.IADLXGPU3.html#ADLXWrapper_IADLXGPU3_StartStressTest_ADLXWrapper_IADLXGPUStressTestFinishedListener__System_UInt32_
+  name: StartStressTest
+  nameWithType: IADLXGPU3.StartStressTest
+  fullName: ADLXWrapper.IADLXGPU3.StartStressTest
+- uid: ADLXWrapper.IADLXGPUStressTestFinishedListener*
+  isExternal: true
+  href: ADLXWrapper.IADLXGPUStressTestFinishedListener.html
+  name: IADLXGPUStressTestFinishedListener*
+  nameWithType: IADLXGPUStressTestFinishedListener*
+  fullName: ADLXWrapper.IADLXGPUStressTestFinishedListener*
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUStressTestFinishedListener
+    name: IADLXGPUStressTestFinishedListener
+    href: ADLXWrapper.IADLXGPUStressTestFinishedListener.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUStressTestFinishedListener
+    name: IADLXGPUStressTestFinishedListener
+    href: ADLXWrapper.IADLXGPUStressTestFinishedListener.html
+  - name: '*'
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger

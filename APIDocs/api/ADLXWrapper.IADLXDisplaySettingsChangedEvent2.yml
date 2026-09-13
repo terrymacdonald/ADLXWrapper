@@ -38,7 +38,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplaySettingsChangedEvent2
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -71,7 +71,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -193,7 +193,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
@@ -222,11 +222,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplay
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -254,11 +254,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsFreeSyncChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -283,11 +283,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsVSRChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -312,11 +312,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGPUScalingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -341,11 +341,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsScalingModeChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -370,11 +370,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsIntegerScalingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 71
+    startLine: 72
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -399,11 +399,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsColorDepthChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 78
+    startLine: 79
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -428,11 +428,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPixelFormatChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 85
+    startLine: 86
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -457,11 +457,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsHDCPChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 92
+    startLine: 93
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -486,11 +486,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorHueChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 99
+    startLine: 100
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -515,11 +515,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorSaturationChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 106
+    startLine: 107
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -544,11 +544,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorBrightnessChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 113
+    startLine: 114
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -573,11 +573,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorTemperatureChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 120
+    startLine: 121
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -602,11 +602,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomColorContrastChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 127
+    startLine: 128
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -631,11 +631,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCustomResolutionChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 134
+    startLine: 135
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -660,11 +660,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsVariBrightChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 141
+    startLine: 142
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -689,11 +689,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDisplayBlankingChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 148
+    startLine: 149
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -718,11 +718,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDisplayConnectivityExperienceChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplaySettingsChangedEvent2.cs
-    startLine: 155
+    startLine: 156
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

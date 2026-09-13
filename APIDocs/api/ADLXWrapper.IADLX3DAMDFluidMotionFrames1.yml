@@ -1,0 +1,1070 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  commentId: T:ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  id: IADLX3DAMDFluidMotionFrames1
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled(System.Boolean*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported(System.Boolean*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(System.Boolean*)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface(System.UInt16*,System.Void**)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled(System.Byte)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE)
+  - ADLXWrapper.IADLX3DAMDFluidMotionFrames1.lpVtbl
+  langs:
+  - csharp
+  - vb
+  name: IADLX3DAMDFluidMotionFrames1
+  nameWithType: IADLX3DAMDFluidMotionFrames1
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IADLX3DAMDFluidMotionFrames1
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public struct IADLX3DAMDFluidMotionFrames1
+    content.vb: Public Structure IADLX3DAMDFluidMotionFrames1
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.lpVtbl
+  commentId: F:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.lpVtbl
+  id: lpVtbl
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: lpVtbl
+  nameWithType: IADLX3DAMDFluidMotionFrames1.lpVtbl
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.lpVtbl
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: lpVtbl
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void** lpVtbl
+    return:
+      type: System.Void**
+    content.vb: Public lpVtbl As Void**
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire
+  id: Acquire
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: Acquire()
+  nameWithType: IADLX3DAMDFluidMotionFrames1.Acquire()
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Acquire
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Acquire()
+    return:
+      type: System.Int32
+    content.vb: Public Function Acquire() As Integer
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release
+  id: Release
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: IADLX3DAMDFluidMotionFrames1.Release()
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Release
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+    content.vb: Public Function Release() As Integer
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface(System.UInt16*,System.Void**)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface(System.UInt16*,System.Void**)
+  id: QueryInterface(System.UInt16*,System.Void**)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: QueryInterface(ushort*, void**)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.QueryInterface(ushort*, void**)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface(ushort*, void**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: QueryInterface
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 25
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
+    parameters:
+    - id: interfaceId
+      type: System.UInt16*
+    - id: ppInterface
+      type: System.Void**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function QueryInterface(interfaceId As UShort*, ppInterface As Void**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface*
+  nameWithType.vb: IADLX3DAMDFluidMotionFrames1.QueryInterface(UShort*, Void**)
+  fullName.vb: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface(UShort*, Void**)
+  name.vb: QueryInterface(UShort*, Void**)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported(System.Boolean*)
+  id: IsSupported(System.Boolean*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: IsSupported(bool*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsSupported(bool*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSupported
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsSupported(bool* supported)
+    parameters:
+    - id: supported
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsSupported(supported As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported*
+  nameWithType.vb: IADLX3DAMDFluidMotionFrames1.IsSupported(Boolean*)
+  fullName.vb: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported(Boolean*)
+  name.vb: IsSupported(Boolean*)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled(System.Boolean*)
+  id: IsEnabled(System.Boolean*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: IsEnabled(bool*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsEnabled(bool*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsEnabled
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsEnabled(bool* enabled)
+    parameters:
+    - id: enabled
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsEnabled(enabled As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled*
+  nameWithType.vb: IADLX3DAMDFluidMotionFrames1.IsEnabled(Boolean*)
+  fullName.vb: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled(Boolean*)
+  name.vb: IsEnabled(Boolean*)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled(System.Byte)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled(System.Byte)
+  id: SetEnabled(System.Byte)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: SetEnabled(byte)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetEnabled(byte)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled(byte)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetEnabled
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SetEnabled(byte enable)
+    parameters:
+    - id: enable
+      type: System.Byte
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SetEnabled(enable As Byte) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled*
+  nameWithType.vb: IADLX3DAMDFluidMotionFrames1.SetEnabled(Byte)
+  fullName.vb: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled(Byte)
+  name.vb: SetEnabled(Byte)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(System.Boolean*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(System.Boolean*)
+  id: IsSupportedAlgorithm(System.Boolean*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: IsSupportedAlgorithm(bool*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(bool*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(bool*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IsSupportedAlgorithm
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 49
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT IsSupportedAlgorithm(bool* supported)
+    parameters:
+    - id: supported
+      type: System.Boolean*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function IsSupportedAlgorithm(supported As Boolean*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm*
+  nameWithType.vb: IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(Boolean*)
+  fullName.vb: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm(Boolean*)
+  name.vb: IsSupportedAlgorithm(Boolean*)
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM*)
+  id: GetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: GetAlgorithm(ADLX_AFMF_ALGORITHM*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetAlgorithm(ADLX_AFMF_ALGORITHM*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetAlgorithm
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 55
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetAlgorithm(ADLX_AFMF_ALGORITHM* algorithm)
+    parameters:
+    - id: algorithm
+      type: ADLXWrapper.ADLX_AFMF_ALGORITHM*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetAlgorithm(algorithm As ADLX_AFMF_ALGORITHM*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM)
+  id: SetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: SetAlgorithm(ADLX_AFMF_ALGORITHM)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetAlgorithm(ADLX_AFMF_ALGORITHM)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm(ADLXWrapper.ADLX_AFMF_ALGORITHM)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetAlgorithm
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 61
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SetAlgorithm(ADLX_AFMF_ALGORITHM algorithm)
+    parameters:
+    - id: algorithm
+      type: ADLXWrapper.ADLX_AFMF_ALGORITHM
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SetAlgorithm(algorithm As ADLX_AFMF_ALGORITHM) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*)
+  id: GetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: GetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetSearchMode
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 67
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE* mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetSearchMode(mode As ADLX_AFMF_SEARCH_MODE_TYPE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE)
+  id: SetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: SetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode(ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetSearchMode
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 73
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SetSearchMode(ADLX_AFMF_SEARCH_MODE_TYPE mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SetSearchMode(mode As ADLX_AFMF_SEARCH_MODE_TYPE) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  id: GetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: GetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPerformanceMode
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 79
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE* mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetPerformanceMode(mode As ADLX_AFMF_PERFORMANCE_MODE_TYPE*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  id: SetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: SetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode(ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetPerformanceMode
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 85
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SetPerformanceMode(ADLX_AFMF_PERFORMANCE_MODE_TYPE mode)
+    parameters:
+    - id: mode
+      type: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SetPerformanceMode(mode As ADLX_AFMF_PERFORMANCE_MODE_TYPE) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*)
+  id: GetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: GetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP*)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP*)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetFastMotionResponse
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 91
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP* response)
+    parameters:
+    - id: response
+      type: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetFastMotionResponse(response As ADLX_AFMF_FAST_MOTION_RESP*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse*
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  commentId: M:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  id: SetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  parent: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+  langs:
+  - csharp
+  - vb
+  name: SetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP)
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP)
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse(ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: SetFastMotionResponse
+    path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
+    startLine: 97
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT SetFastMotionResponse(ADLX_AFMF_FAST_MOTION_RESP response)
+    parameters:
+    - id: response
+      type: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function SetFastMotionResponse(response As ADLX_AFMF_FAST_MOTION_RESP) As ADLX_RESULT
+  overload: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse*
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Void**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void**
+  nameWithType: void**
+  fullName: void**
+  nameWithType.vb: Void**
+  fullName.vb: Void**
+  name.vb: Void**
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_Acquire
+  name: Acquire
+  nameWithType: IADLX3DAMDFluidMotionFrames1.Acquire
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Acquire
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_Release
+  name: Release
+  nameWithType: IADLX3DAMDFluidMotionFrames1.Release
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.Release
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_QueryInterface_System_UInt16__System_Void___
+  name: QueryInterface
+  nameWithType: IADLX3DAMDFluidMotionFrames1.QueryInterface
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.QueryInterface
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_IsSupported_System_Boolean__
+  name: IsSupported
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsSupported
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupported
+- uid: System.Boolean*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool*
+  nameWithType: bool*
+  fullName: bool*
+  nameWithType.vb: Boolean*
+  fullName.vb: Boolean*
+  name.vb: Boolean*
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '*'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_IsEnabled_System_Boolean__
+  name: IsEnabled
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsEnabled
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsEnabled
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_SetEnabled_System_Byte_
+  name: SetEnabled
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetEnabled
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetEnabled
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte
+  nameWithType: byte
+  fullName: byte
+  nameWithType.vb: Byte
+  fullName.vb: Byte
+  name.vb: Byte
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_IsSupportedAlgorithm_System_Boolean__
+  name: IsSupportedAlgorithm
+  nameWithType: IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.IsSupportedAlgorithm
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_GetAlgorithm_ADLXWrapper_ADLX_AFMF_ALGORITHM__
+  name: GetAlgorithm
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetAlgorithm
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetAlgorithm
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM*
+  isExternal: true
+  href: ADLXWrapper.ADLX_AFMF_ALGORITHM.html
+  name: ADLX_AFMF_ALGORITHM*
+  nameWithType: ADLX_AFMF_ALGORITHM*
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+    name: ADLX_AFMF_ALGORITHM
+    href: ADLXWrapper.ADLX_AFMF_ALGORITHM.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+    name: ADLX_AFMF_ALGORITHM
+    href: ADLXWrapper.ADLX_AFMF_ALGORITHM.html
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_SetAlgorithm_ADLXWrapper_ADLX_AFMF_ALGORITHM_
+  name: SetAlgorithm
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetAlgorithm
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetAlgorithm
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  commentId: T:ADLXWrapper.ADLX_AFMF_ALGORITHM
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_ALGORITHM.html
+  name: ADLX_AFMF_ALGORITHM
+  nameWithType: ADLX_AFMF_ALGORITHM
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_GetSearchMode_ADLXWrapper_ADLX_AFMF_SEARCH_MODE_TYPE__
+  name: GetSearchMode
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetSearchMode
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetSearchMode
+- uid: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html
+  name: ADLX_AFMF_SEARCH_MODE_TYPE*
+  nameWithType: ADLX_AFMF_SEARCH_MODE_TYPE*
+  fullName: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+    name: ADLX_AFMF_SEARCH_MODE_TYPE
+    href: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+    name: ADLX_AFMF_SEARCH_MODE_TYPE
+    href: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_SetSearchMode_ADLXWrapper_ADLX_AFMF_SEARCH_MODE_TYPE_
+  name: SetSearchMode
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetSearchMode
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetSearchMode
+- uid: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+  commentId: T:ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html
+  name: ADLX_AFMF_SEARCH_MODE_TYPE
+  nameWithType: ADLX_AFMF_SEARCH_MODE_TYPE
+  fullName: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_GetPerformanceMode_ADLXWrapper_ADLX_AFMF_PERFORMANCE_MODE_TYPE__
+  name: GetPerformanceMode
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetPerformanceMode
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetPerformanceMode
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*
+  isExternal: true
+  href: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html
+  name: ADLX_AFMF_PERFORMANCE_MODE_TYPE*
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE*
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    href: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    href: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_SetPerformanceMode_ADLXWrapper_ADLX_AFMF_PERFORMANCE_MODE_TYPE_
+  name: SetPerformanceMode
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetPerformanceMode
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetPerformanceMode
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  commentId: T:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html
+  name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_GetFastMotionResponse_ADLXWrapper_ADLX_AFMF_FAST_MOTION_RESP__
+  name: GetFastMotionResponse
+  nameWithType: IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.GetFastMotionResponse
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*
+  isExternal: true
+  href: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html
+  name: ADLX_AFMF_FAST_MOTION_RESP*
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP*
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP*
+  spec.csharp:
+  - uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+    name: ADLX_AFMF_FAST_MOTION_RESP
+    href: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+    name: ADLX_AFMF_FAST_MOTION_RESP
+    href: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html
+  - name: '*'
+- uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse*
+  commentId: Overload:ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse
+  href: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html#ADLXWrapper_IADLX3DAMDFluidMotionFrames1_SetFastMotionResponse_ADLXWrapper_ADLX_AFMF_FAST_MOTION_RESP_
+  name: SetFastMotionResponse
+  nameWithType: IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse
+  fullName: ADLXWrapper.IADLX3DAMDFluidMotionFrames1.SetFastMotionResponse
+- uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  commentId: T:ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html
+  name: ADLX_AFMF_FAST_MOTION_RESP
+  nameWithType: ADLX_AFMF_FAST_MOTION_RESP
+  fullName: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP

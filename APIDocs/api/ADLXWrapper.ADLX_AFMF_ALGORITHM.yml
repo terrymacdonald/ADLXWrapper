@@ -1,0 +1,127 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  commentId: T:ADLXWrapper.ADLX_AFMF_ALGORITHM
+  id: ADLX_AFMF_ALGORITHM
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_AUTO
+  - ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_ENHANCED
+  - ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_STANDARD
+  langs:
+  - csharp
+  - vb
+  name: ADLX_AFMF_ALGORITHM
+  nameWithType: ADLX_AFMF_ALGORITHM
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_AFMF_ALGORITHM
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+    startLine: 3
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public enum ADLX_AFMF_ALGORITHM
+    content.vb: Public Enum ADLX_AFMF_ALGORITHM
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_AUTO
+  commentId: F:ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_AUTO
+  id: AFMF_ALGORITHM_AUTO
+  parent: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  langs:
+  - csharp
+  - vb
+  name: AFMF_ALGORITHM_AUTO
+  nameWithType: ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_AUTO
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_AUTO
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_ALGORITHM_AUTO
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+    startLine: 6
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_ALGORITHM_AUTO = 0
+    return:
+      type: ADLXWrapper.ADLX_AFMF_ALGORITHM
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_ENHANCED
+  commentId: F:ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_ENHANCED
+  id: AFMF_ALGORITHM_ENHANCED
+  parent: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  langs:
+  - csharp
+  - vb
+  name: AFMF_ALGORITHM_ENHANCED
+  nameWithType: ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_ENHANCED
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_ENHANCED
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_ALGORITHM_ENHANCED
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_ALGORITHM_ENHANCED = 1
+    return:
+      type: ADLXWrapper.ADLX_AFMF_ALGORITHM
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_STANDARD
+  commentId: F:ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_STANDARD
+  id: AFMF_ALGORITHM_STANDARD
+  parent: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  langs:
+  - csharp
+  - vb
+  name: AFMF_ALGORITHM_STANDARD
+  nameWithType: ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_STANDARD
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM.AFMF_ALGORITHM_STANDARD
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_ALGORITHM_STANDARD
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_ALGORITHM.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_ALGORITHM_STANDARD = 2
+    return:
+      type: ADLXWrapper.ADLX_AFMF_ALGORITHM
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+  commentId: T:ADLXWrapper.ADLX_AFMF_ALGORITHM
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_ALGORITHM.html
+  name: ADLX_AFMF_ALGORITHM
+  nameWithType: ADLX_AFMF_ALGORITHM
+  fullName: ADLXWrapper.ADLX_AFMF_ALGORITHM

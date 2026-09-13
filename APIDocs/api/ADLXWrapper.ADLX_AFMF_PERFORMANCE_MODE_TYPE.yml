@@ -1,0 +1,127 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  commentId: T:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  id: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_AUTO
+  - ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_PERFORMANCE
+  - ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_QUALITY
+  langs:
+  - csharp
+  - vb
+  name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+    startLine: 3
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public enum ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    content.vb: Public Enum ADLX_AFMF_PERFORMANCE_MODE_TYPE
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_AUTO
+  commentId: F:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_AUTO
+  id: AFMF_PERFORMANCE_MODE_AUTO
+  parent: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  langs:
+  - csharp
+  - vb
+  name: AFMF_PERFORMANCE_MODE_AUTO
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_AUTO
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_AUTO
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_PERFORMANCE_MODE_AUTO
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+    startLine: 6
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_PERFORMANCE_MODE_AUTO = 0
+    return:
+      type: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_QUALITY
+  commentId: F:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_QUALITY
+  id: AFMF_PERFORMANCE_MODE_QUALITY
+  parent: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  langs:
+  - csharp
+  - vb
+  name: AFMF_PERFORMANCE_MODE_QUALITY
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_QUALITY
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_QUALITY
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_PERFORMANCE_MODE_QUALITY
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_PERFORMANCE_MODE_QUALITY = 1
+    return:
+      type: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_PERFORMANCE
+  commentId: F:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_PERFORMANCE
+  id: AFMF_PERFORMANCE_MODE_PERFORMANCE
+  parent: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  langs:
+  - csharp
+  - vb
+  name: AFMF_PERFORMANCE_MODE_PERFORMANCE
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_PERFORMANCE
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.AFMF_PERFORMANCE_MODE_PERFORMANCE
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: AFMF_PERFORMANCE_MODE_PERFORMANCE
+    path: ../ADLXWrapper/cs_generated/ADLX_AFMF_PERFORMANCE_MODE_TYPE.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: AFMF_PERFORMANCE_MODE_PERFORMANCE = 2
+    return:
+      type: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  commentId: T:ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html
+  name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  nameWithType: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+  fullName: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE

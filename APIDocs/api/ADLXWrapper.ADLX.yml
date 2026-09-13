@@ -10,6 +10,8 @@ items:
   - ADLXWrapper.ADLX.ADLX_DLL_NAMEW
   - ADLXWrapper.ADLX.ADLX_FAILED(ADLXWrapper.ADLX_RESULT)
   - ADLXWrapper.ADLX.ADLX_FULL_VERSION
+  - ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+  - ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
   - ADLXWrapper.ADLX.ADLX_INIT_FUNCTION_NAME
   - ADLXWrapper.ADLX.ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
   - ADLXWrapper.ADLX.ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
@@ -39,7 +41,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -74,7 +76,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SUCCEEDED
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -105,7 +107,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FAILED
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -136,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_MAKE_FULL_VER
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -313,7 +315,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MAJOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -340,7 +342,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MINOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -349,10 +351,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public const int ADLX_VER_MINOR = 4
+    content: public const int ADLX_VER_MINOR = 5
     return:
       type: System.Int32
-    content.vb: Public Const ADLX_VER_MINOR As Integer = 4
+    content.vb: Public Const ADLX_VER_MINOR As Integer = 5
 - uid: ADLXWrapper.ADLX.ADLX_VER_RELEASE
   commentId: F:ADLXWrapper.ADLX.ADLX_VER_RELEASE
   id: ADLX_VER_RELEASE
@@ -367,7 +369,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_RELEASE
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -394,7 +396,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_BUILD_NUM
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -403,10 +405,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public const int ADLX_VER_BUILD_NUM = 110
+    content: public const int ADLX_VER_BUILD_NUM = 124
     return:
       type: System.Int32
-    content.vb: Public Const ADLX_VER_BUILD_NUM As Integer = 110
+    content.vb: Public Const ADLX_VER_BUILD_NUM As Integer = 124
 - uid: ADLXWrapper.ADLX.ADLX_FULL_VERSION
   commentId: F:ADLXWrapper.ADLX.ADLX_FULL_VERSION
   id: ADLX_FULL_VERSION
@@ -421,7 +423,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FULL_VERSION
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -430,10 +432,10 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: public const ulong ADLX_FULL_VERSION = 281492156579950
+    content: public const ulong ADLX_FULL_VERSION = 281496451547260
     return:
       type: System.UInt64
-    content.vb: Public Const ADLX_FULL_VERSION As ULong = 281492156579950
+    content.vb: Public Const ADLX_FULL_VERSION As ULong = 281496451547260
 - uid: ADLXWrapper.ADLX.ADLX_VERSION_STR
   commentId: F:ADLXWrapper.ADLX.ADLX_VERSION_STR
   id: ADLX_VERSION_STR
@@ -448,7 +450,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VERSION_STR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -475,7 +477,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MAX_USER_3DLUT_NUM_POINTS
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -502,7 +504,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEW
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -529,7 +531,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEA
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -558,7 +560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -587,7 +589,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_FULL_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -616,7 +618,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -645,7 +647,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -674,7 +676,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -689,6 +691,64 @@ items:
       type: System.ReadOnlySpan{System.Byte}
     content.vb: Public Shared ReadOnly Property ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME As ReadOnlySpan(Of Byte)
   overload: ADLXWrapper.ADLX.ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME*
+- uid: ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+  commentId: P:ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+  id: ADLX_INIT2_FUNCTION_NAME
+  parent: ADLXWrapper.ADLX
+  langs:
+  - csharp
+  - vb
+  name: ADLX_INIT2_FUNCTION_NAME
+  nameWithType: ADLX.ADLX_INIT2_FUNCTION_NAME
+  fullName: ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_INIT2_FUNCTION_NAME
+    path: ../ADLXWrapper/cs_generated/ADLX.cs
+    startLine: 72
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static ReadOnlySpan<byte> ADLX_INIT2_FUNCTION_NAME { get; }
+    parameters: []
+    return:
+      type: System.ReadOnlySpan{System.Byte}
+    content.vb: Public Shared ReadOnly Property ADLX_INIT2_FUNCTION_NAME As ReadOnlySpan(Of Byte)
+  overload: ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME*
+- uid: ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  commentId: P:ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  id: ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  parent: ADLXWrapper.ADLX
+  langs:
+  - csharp
+  - vb
+  name: ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  nameWithType: ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  fullName: ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+    path: ../ADLXWrapper/cs_generated/ADLX.cs
+    startLine: 75
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public static ReadOnlySpan<byte> ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME { get; }
+    parameters: []
+    return:
+      type: System.ReadOnlySpan{System.Byte}
+    content.vb: Public Shared ReadOnly Property ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME As ReadOnlySpan(Of Byte)
+  overload: ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME*
 - uid: ADLXWrapper.ADLX.ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
   commentId: P:ADLXWrapper.ADLX.ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
   id: ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
@@ -703,11 +763,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 72
+    startLine: 78
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -732,11 +792,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TERMINATE_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
-    startLine: 75
+    startLine: 81
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1268,6 +1328,18 @@ references:
   name: ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
   nameWithType: ADLX.ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
   fullName: ADLXWrapper.ADLX.ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+- uid: ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME*
+  commentId: Overload:ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+  href: ADLXWrapper.ADLX.html#ADLXWrapper_ADLX_ADLX_INIT2_FUNCTION_NAME
+  name: ADLX_INIT2_FUNCTION_NAME
+  nameWithType: ADLX.ADLX_INIT2_FUNCTION_NAME
+  fullName: ADLXWrapper.ADLX.ADLX_INIT2_FUNCTION_NAME
+- uid: ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME*
+  commentId: Overload:ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  href: ADLXWrapper.ADLX.html#ADLXWrapper_ADLX_ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  name: ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  nameWithType: ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
+  fullName: ADLXWrapper.ADLX.ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
 - uid: ADLXWrapper.ADLX.ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME*
   commentId: Overload:ADLXWrapper.ADLX.ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
   href: ADLXWrapper.ADLX.html#ADLXWrapper_ADLX_ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME

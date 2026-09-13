@@ -1,0 +1,99 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  commentId: T:ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  id: ADLX_FFX_FRAME_GEN_RATIO
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_2X
+  - ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_UNKNOWN
+  langs:
+  - csharp
+  - vb
+  name: ADLX_FFX_FRAME_GEN_RATIO
+  nameWithType: ADLX_FFX_FRAME_GEN_RATIO
+  fullName: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_FFX_FRAME_GEN_RATIO
+    path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+    startLine: 3
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public enum ADLX_FFX_FRAME_GEN_RATIO
+    content.vb: Public Enum ADLX_FFX_FRAME_GEN_RATIO
+- uid: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_UNKNOWN
+  commentId: F:ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_UNKNOWN
+  id: FFX_FRAME_GEN_UNKNOWN
+  parent: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  langs:
+  - csharp
+  - vb
+  name: FFX_FRAME_GEN_UNKNOWN
+  nameWithType: ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_UNKNOWN
+  fullName: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_UNKNOWN
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FFX_FRAME_GEN_UNKNOWN
+    path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+    startLine: 6
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: FFX_FRAME_GEN_UNKNOWN = 0
+    return:
+      type: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+- uid: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_2X
+  commentId: F:ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_2X
+  id: FFX_FRAME_GEN_2X
+  parent: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  langs:
+  - csharp
+  - vb
+  name: FFX_FRAME_GEN_2X
+  nameWithType: ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_2X
+  fullName: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.FFX_FRAME_GEN_2X
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: FFX_FRAME_GEN_2X
+    path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: FFX_FRAME_GEN_2X = 1
+    return:
+      type: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  commentId: T:ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.html
+  name: ADLX_FFX_FRAME_GEN_RATIO
+  nameWithType: ADLX_FFX_FRAME_GEN_RATIO
+  fullName: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO

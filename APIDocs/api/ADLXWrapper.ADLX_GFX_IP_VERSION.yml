@@ -1,0 +1,379 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION
+  commentId: T:ADLXWrapper.ADLX_GFX_IP_VERSION
+  id: ADLX_GFX_IP_VERSION
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_1
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_2
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_3
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_11_0
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_12_0
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_4
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_5
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_6
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_7
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_8
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_9
+  - ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_UNKNOWN
+  langs:
+  - csharp
+  - vb
+  name: ADLX_GFX_IP_VERSION
+  nameWithType: ADLX_GFX_IP_VERSION
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION
+  type: Enum
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ADLX_GFX_IP_VERSION
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 3
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public enum ADLX_GFX_IP_VERSION
+    content.vb: Public Enum ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_UNKNOWN
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_UNKNOWN
+  id: GFX_IP_VERSION_UNKNOWN
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_UNKNOWN
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_UNKNOWN
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_UNKNOWN
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_UNKNOWN
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 6
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_UNKNOWN = 0
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_4
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_4
+  id: GFX_IP_VERSION_4
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_4
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_4
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_4
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_4
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 9
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_4 = 1
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_5
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_5
+  id: GFX_IP_VERSION_5
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_5
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_5
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_5
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_5
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 12
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_5 = 2
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_6
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_6
+  id: GFX_IP_VERSION_6
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_6
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_6
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_6
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_6
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 15
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_6 = 3
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_7
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_7
+  id: GFX_IP_VERSION_7
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_7
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_7
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_7
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_7
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_7 = 4
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_8
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_8
+  id: GFX_IP_VERSION_8
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_8
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_8
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_8
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_8
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 21
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_8 = 5
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_9
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_9
+  id: GFX_IP_VERSION_9
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_9
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_9
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_9
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_9
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 24
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_9 = 6
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_1
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_1
+  id: GFX_IP_VERSION_10_1
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_10_1
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_1
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_1
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_10_1
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 27
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_10_1 = 7
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_2
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_2
+  id: GFX_IP_VERSION_10_2
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_10_2
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_2
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_2
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_10_2
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 30
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_10_2 = 8
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_3
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_3
+  id: GFX_IP_VERSION_10_3
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_10_3
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_3
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_10_3
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_10_3
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 33
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_10_3 = 9
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_11_0
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_11_0
+  id: GFX_IP_VERSION_11_0
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_11_0
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_11_0
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_11_0
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_11_0
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 36
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_11_0 = 10
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_12_0
+  commentId: F:ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_12_0
+  id: GFX_IP_VERSION_12_0
+  parent: ADLXWrapper.ADLX_GFX_IP_VERSION
+  langs:
+  - csharp
+  - vb
+  name: GFX_IP_VERSION_12_0
+  nameWithType: ADLX_GFX_IP_VERSION.GFX_IP_VERSION_12_0
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION.GFX_IP_VERSION_12_0
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GFX_IP_VERSION_12_0
+    path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
+    startLine: 39
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: GFX_IP_VERSION_12_0 = 11
+    return:
+      type: ADLXWrapper.ADLX_GFX_IP_VERSION
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: ADLXWrapper.ADLX_GFX_IP_VERSION
+  commentId: T:ADLXWrapper.ADLX_GFX_IP_VERSION
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_GFX_IP_VERSION.html
+  name: ADLX_GFX_IP_VERSION
+  nameWithType: ADLX_GFX_IP_VERSION
+  fullName: ADLXWrapper.ADLX_GFX_IP_VERSION

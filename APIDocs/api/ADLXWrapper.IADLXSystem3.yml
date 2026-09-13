@@ -1,0 +1,694 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IADLXSystem3
+  commentId: T:ADLXWrapper.IADLXSystem3
+  id: IADLXSystem3
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IADLXSystem3.Acquire
+  - ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling(ADLXWrapper.IADLXGPUAppsListChangedHandling**)
+  - ADLXWrapper.IADLXSystem3.GetMultimediaServices(ADLXWrapper.IADLXMultimediaServices**)
+  - ADLXWrapper.IADLXSystem3.GetPowerTuningServices(ADLXWrapper.IADLXPowerTuningServices**)
+  - ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory(ADLXWrapper.IADLXVariableGraphicsMemory**)
+  - ADLXWrapper.IADLXSystem3.QueryInterface(System.UInt16*,System.Void**)
+  - ADLXWrapper.IADLXSystem3.Release
+  - ADLXWrapper.IADLXSystem3.lpVtbl
+  langs:
+  - csharp
+  - vb
+  name: IADLXSystem3
+  nameWithType: IADLXSystem3
+  fullName: ADLXWrapper.IADLXSystem3
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IADLXSystem3
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public struct IADLXSystem3
+    content.vb: Public Structure IADLXSystem3
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IADLXSystem3.lpVtbl
+  commentId: F:ADLXWrapper.IADLXSystem3.lpVtbl
+  id: lpVtbl
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: lpVtbl
+  nameWithType: IADLXSystem3.lpVtbl
+  fullName: ADLXWrapper.IADLXSystem3.lpVtbl
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: lpVtbl
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void** lpVtbl
+    return:
+      type: System.Void**
+    content.vb: Public lpVtbl As Void**
+- uid: ADLXWrapper.IADLXSystem3.Acquire
+  commentId: M:ADLXWrapper.IADLXSystem3.Acquire
+  id: Acquire
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: Acquire()
+  nameWithType: IADLXSystem3.Acquire()
+  fullName: ADLXWrapper.IADLXSystem3.Acquire()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Acquire
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Acquire()
+    return:
+      type: System.Int32
+    content.vb: Public Function Acquire() As Integer
+  overload: ADLXWrapper.IADLXSystem3.Acquire*
+- uid: ADLXWrapper.IADLXSystem3.Release
+  commentId: M:ADLXWrapper.IADLXSystem3.Release
+  id: Release
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: IADLXSystem3.Release()
+  fullName: ADLXWrapper.IADLXSystem3.Release()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Release
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+    content.vb: Public Function Release() As Integer
+  overload: ADLXWrapper.IADLXSystem3.Release*
+- uid: ADLXWrapper.IADLXSystem3.QueryInterface(System.UInt16*,System.Void**)
+  commentId: M:ADLXWrapper.IADLXSystem3.QueryInterface(System.UInt16*,System.Void**)
+  id: QueryInterface(System.UInt16*,System.Void**)
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: QueryInterface(ushort*, void**)
+  nameWithType: IADLXSystem3.QueryInterface(ushort*, void**)
+  fullName: ADLXWrapper.IADLXSystem3.QueryInterface(ushort*, void**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: QueryInterface
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 25
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
+    parameters:
+    - id: interfaceId
+      type: System.UInt16*
+    - id: ppInterface
+      type: System.Void**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function QueryInterface(interfaceId As UShort*, ppInterface As Void**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXSystem3.QueryInterface*
+  nameWithType.vb: IADLXSystem3.QueryInterface(UShort*, Void**)
+  fullName.vb: ADLXWrapper.IADLXSystem3.QueryInterface(UShort*, Void**)
+  name.vb: QueryInterface(UShort*, Void**)
+- uid: ADLXWrapper.IADLXSystem3.GetPowerTuningServices(ADLXWrapper.IADLXPowerTuningServices**)
+  commentId: M:ADLXWrapper.IADLXSystem3.GetPowerTuningServices(ADLXWrapper.IADLXPowerTuningServices**)
+  id: GetPowerTuningServices(ADLXWrapper.IADLXPowerTuningServices**)
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: GetPowerTuningServices(IADLXPowerTuningServices**)
+  nameWithType: IADLXSystem3.GetPowerTuningServices(IADLXPowerTuningServices**)
+  fullName: ADLXWrapper.IADLXSystem3.GetPowerTuningServices(ADLXWrapper.IADLXPowerTuningServices**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetPowerTuningServices
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetPowerTuningServices(IADLXPowerTuningServices** ppPowerTuningServices)
+    parameters:
+    - id: ppPowerTuningServices
+      type: ADLXWrapper.IADLXPowerTuningServices**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetPowerTuningServices(ppPowerTuningServices As IADLXPowerTuningServices**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXSystem3.GetPowerTuningServices*
+- uid: ADLXWrapper.IADLXSystem3.GetMultimediaServices(ADLXWrapper.IADLXMultimediaServices**)
+  commentId: M:ADLXWrapper.IADLXSystem3.GetMultimediaServices(ADLXWrapper.IADLXMultimediaServices**)
+  id: GetMultimediaServices(ADLXWrapper.IADLXMultimediaServices**)
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: GetMultimediaServices(IADLXMultimediaServices**)
+  nameWithType: IADLXSystem3.GetMultimediaServices(IADLXMultimediaServices**)
+  fullName: ADLXWrapper.IADLXSystem3.GetMultimediaServices(ADLXWrapper.IADLXMultimediaServices**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetMultimediaServices
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetMultimediaServices(IADLXMultimediaServices** ppMultiMediaServices)
+    parameters:
+    - id: ppMultiMediaServices
+      type: ADLXWrapper.IADLXMultimediaServices**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetMultimediaServices(ppMultiMediaServices As IADLXMultimediaServices**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXSystem3.GetMultimediaServices*
+- uid: ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling(ADLXWrapper.IADLXGPUAppsListChangedHandling**)
+  commentId: M:ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling(ADLXWrapper.IADLXGPUAppsListChangedHandling**)
+  id: GetGPUAppsListChangedHandling(ADLXWrapper.IADLXGPUAppsListChangedHandling**)
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: GetGPUAppsListChangedHandling(IADLXGPUAppsListChangedHandling**)
+  nameWithType: IADLXSystem3.GetGPUAppsListChangedHandling(IADLXGPUAppsListChangedHandling**)
+  fullName: ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling(ADLXWrapper.IADLXGPUAppsListChangedHandling**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetGPUAppsListChangedHandling
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetGPUAppsListChangedHandling(IADLXGPUAppsListChangedHandling** ppGPUAppsListChangedHandling)
+    parameters:
+    - id: ppGPUAppsListChangedHandling
+      type: ADLXWrapper.IADLXGPUAppsListChangedHandling**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetGPUAppsListChangedHandling(ppGPUAppsListChangedHandling As IADLXGPUAppsListChangedHandling**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling*
+- uid: ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory(ADLXWrapper.IADLXVariableGraphicsMemory**)
+  commentId: M:ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory(ADLXWrapper.IADLXVariableGraphicsMemory**)
+  id: GetVariableGraphicsMemory(ADLXWrapper.IADLXVariableGraphicsMemory**)
+  parent: ADLXWrapper.IADLXSystem3
+  langs:
+  - csharp
+  - vb
+  name: GetVariableGraphicsMemory(IADLXVariableGraphicsMemory**)
+  nameWithType: IADLXSystem3.GetVariableGraphicsMemory(IADLXVariableGraphicsMemory**)
+  fullName: ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory(ADLXWrapper.IADLXVariableGraphicsMemory**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXSystem3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetVariableGraphicsMemory
+    path: ../ADLXWrapper/cs_generated/IADLXSystem3.cs
+    startLine: 49
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GetVariableGraphicsMemory(IADLXVariableGraphicsMemory** ppVariableGraphicsMemory)
+    parameters:
+    - id: ppVariableGraphicsMemory
+      type: ADLXWrapper.IADLXVariableGraphicsMemory**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GetVariableGraphicsMemory(ppVariableGraphicsMemory As IADLXVariableGraphicsMemory**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory*
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Void**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void**
+  nameWithType: void**
+  fullName: void**
+  nameWithType.vb: Void**
+  fullName.vb: Void**
+  name.vb: Void**
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXSystem3.Acquire*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.Acquire
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_Acquire
+  name: Acquire
+  nameWithType: IADLXSystem3.Acquire
+  fullName: ADLXWrapper.IADLXSystem3.Acquire
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IADLXSystem3.Release*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.Release
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_Release
+  name: Release
+  nameWithType: IADLXSystem3.Release
+  fullName: ADLXWrapper.IADLXSystem3.Release
+- uid: ADLXWrapper.IADLXSystem3.QueryInterface*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.QueryInterface
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_QueryInterface_System_UInt16__System_Void___
+  name: QueryInterface
+  nameWithType: IADLXSystem3.QueryInterface
+  fullName: ADLXWrapper.IADLXSystem3.QueryInterface
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: ADLXWrapper.IADLXSystem3.GetPowerTuningServices*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.GetPowerTuningServices
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_GetPowerTuningServices_ADLXWrapper_IADLXPowerTuningServices___
+  name: GetPowerTuningServices
+  nameWithType: IADLXSystem3.GetPowerTuningServices
+  fullName: ADLXWrapper.IADLXSystem3.GetPowerTuningServices
+- uid: ADLXWrapper.IADLXPowerTuningServices**
+  isExternal: true
+  href: ADLXWrapper.IADLXPowerTuningServices.html
+  name: IADLXPowerTuningServices**
+  nameWithType: IADLXPowerTuningServices**
+  fullName: ADLXWrapper.IADLXPowerTuningServices**
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXPowerTuningServices
+    name: IADLXPowerTuningServices
+    href: ADLXWrapper.IADLXPowerTuningServices.html
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXPowerTuningServices
+    name: IADLXPowerTuningServices
+    href: ADLXWrapper.IADLXPowerTuningServices.html
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXSystem3.GetMultimediaServices*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.GetMultimediaServices
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_GetMultimediaServices_ADLXWrapper_IADLXMultimediaServices___
+  name: GetMultimediaServices
+  nameWithType: IADLXSystem3.GetMultimediaServices
+  fullName: ADLXWrapper.IADLXSystem3.GetMultimediaServices
+- uid: ADLXWrapper.IADLXMultimediaServices**
+  isExternal: true
+  href: ADLXWrapper.IADLXMultimediaServices.html
+  name: IADLXMultimediaServices**
+  nameWithType: IADLXMultimediaServices**
+  fullName: ADLXWrapper.IADLXMultimediaServices**
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXMultimediaServices
+    name: IADLXMultimediaServices
+    href: ADLXWrapper.IADLXMultimediaServices.html
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXMultimediaServices
+    name: IADLXMultimediaServices
+    href: ADLXWrapper.IADLXMultimediaServices.html
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_GetGPUAppsListChangedHandling_ADLXWrapper_IADLXGPUAppsListChangedHandling___
+  name: GetGPUAppsListChangedHandling
+  nameWithType: IADLXSystem3.GetGPUAppsListChangedHandling
+  fullName: ADLXWrapper.IADLXSystem3.GetGPUAppsListChangedHandling
+- uid: ADLXWrapper.IADLXGPUAppsListChangedHandling**
+  isExternal: true
+  href: ADLXWrapper.IADLXGPUAppsListChangedHandling.html
+  name: IADLXGPUAppsListChangedHandling**
+  nameWithType: IADLXGPUAppsListChangedHandling**
+  fullName: ADLXWrapper.IADLXGPUAppsListChangedHandling**
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXGPUAppsListChangedHandling
+    name: IADLXGPUAppsListChangedHandling
+    href: ADLXWrapper.IADLXGPUAppsListChangedHandling.html
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXGPUAppsListChangedHandling
+    name: IADLXGPUAppsListChangedHandling
+    href: ADLXWrapper.IADLXGPUAppsListChangedHandling.html
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory*
+  commentId: Overload:ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory
+  href: ADLXWrapper.IADLXSystem3.html#ADLXWrapper_IADLXSystem3_GetVariableGraphicsMemory_ADLXWrapper_IADLXVariableGraphicsMemory___
+  name: GetVariableGraphicsMemory
+  nameWithType: IADLXSystem3.GetVariableGraphicsMemory
+  fullName: ADLXWrapper.IADLXSystem3.GetVariableGraphicsMemory
+- uid: ADLXWrapper.IADLXVariableGraphicsMemory**
+  isExternal: true
+  href: ADLXWrapper.IADLXVariableGraphicsMemory.html
+  name: IADLXVariableGraphicsMemory**
+  nameWithType: IADLXVariableGraphicsMemory**
+  fullName: ADLXWrapper.IADLXVariableGraphicsMemory**
+  spec.csharp:
+  - uid: ADLXWrapper.IADLXVariableGraphicsMemory
+    name: IADLXVariableGraphicsMemory
+    href: ADLXWrapper.IADLXVariableGraphicsMemory.html
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: ADLXWrapper.IADLXVariableGraphicsMemory
+    name: IADLXVariableGraphicsMemory
+    href: ADLXWrapper.IADLXVariableGraphicsMemory.html
+  - name: '*'
+  - name: '*'

@@ -88,6 +88,18 @@ items:
   - uid: ADLXWrapper.ADLX_3DLUT_TRANSFER_FUNCTION
     name: ADLX_3DLUT_TRANSFER_FUNCTION
     type: Enum
+  - uid: ADLXWrapper.ADLX_AFMF_ALGORITHM
+    name: ADLX_AFMF_ALGORITHM
+    type: Enum
+  - uid: ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP
+    name: ADLX_AFMF_FAST_MOTION_RESP
+    type: Enum
+  - uid: ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    name: ADLX_AFMF_PERFORMANCE_MODE_TYPE
+    type: Enum
+  - uid: ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE
+    name: ADLX_AFMF_SEARCH_MODE_TYPE
+    type: Enum
   - uid: ADLXWrapper.ADLX_ANISOTROPIC_FILTERING_LEVEL
     name: ADLX_ANISOTROPIC_FILTERING_LEVEL
     type: Enum
@@ -136,11 +148,17 @@ items:
   - uid: ADLXWrapper.ADLX_DP_LINK_RATE
     name: ADLX_DP_LINK_RATE
     type: Enum
+  - uid: ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO
+    name: ADLX_FFX_FRAME_GEN_RATIO
+    type: Enum
   - uid: ADLXWrapper.ADLX_GAMMA_TYPE
     name: ADLX_GAMMA_TYPE
     type: Enum
   - uid: ADLXWrapper.ADLX_GAMUT_SPACE
     name: ADLX_GAMUT_SPACE
+    type: Enum
+  - uid: ADLXWrapper.ADLX_GFX_IP_VERSION
+    name: ADLX_GFX_IP_VERSION
     type: Enum
   - uid: ADLXWrapper.ADLX_GPU_TYPE
     name: ADLX_GPU_TYPE
@@ -226,6 +244,9 @@ items:
   - uid: ADLXWrapper.ADLX_UINT16_RGB
     name: ADLX_UINT16_RGB
     type: Struct
+  - uid: ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    name: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
+    type: Enum
   - uid: ADLXWrapper.ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
     name: ADLX_WAIT_FOR_VERTICAL_REFRESH_MODE
     type: Enum
@@ -367,6 +388,9 @@ items:
   - uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames
     name: IADLX3DAMDFluidMotionFrames
     type: Struct
+  - uid: ADLXWrapper.IADLX3DAMDFluidMotionFrames1
+    name: IADLX3DAMDFluidMotionFrames1
+    type: Struct
   - uid: ADLXWrapper.IADLX3DAnisotropicFiltering
     name: IADLX3DAnisotropicFiltering
     type: Struct
@@ -387,6 +411,18 @@ items:
     type: Struct
   - uid: ADLXWrapper.IADLX3DEnhancedSync
     name: IADLX3DEnhancedSync
+    type: Struct
+  - uid: ADLXWrapper.IADLX3DFidelityFXFrameGenUpgrade
+    name: IADLX3DFidelityFXFrameGenUpgrade
+    type: Struct
+  - uid: ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOption
+    name: IADLX3DFidelityFXFrameGenUpgradeRatioOption
+    type: Struct
+  - uid: ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOptionList
+    name: IADLX3DFidelityFXFrameGenUpgradeRatioOptionList
+    type: Struct
+  - uid: ADLXWrapper.IADLX3DFidelityFXSuperResolution
+    name: IADLX3DFidelityFXSuperResolution
     type: Struct
   - uid: ADLXWrapper.IADLX3DFrameRateTargetControl
     name: IADLX3DFrameRateTargetControl
@@ -415,6 +451,9 @@ items:
   - uid: ADLXWrapper.IADLX3DSettingsChangedEvent2
     name: IADLX3DSettingsChangedEvent2
     type: Struct
+  - uid: ADLXWrapper.IADLX3DSettingsChangedEvent3
+    name: IADLX3DSettingsChangedEvent3
+    type: Struct
   - uid: ADLXWrapper.IADLX3DSettingsChangedHandling
     name: IADLX3DSettingsChangedHandling
     type: Struct
@@ -429,6 +468,9 @@ items:
     type: Struct
   - uid: ADLXWrapper.IADLX3DSettingsServices2
     name: IADLX3DSettingsServices2
+    type: Struct
+  - uid: ADLXWrapper.IADLX3DSettingsServices3
+    name: IADLX3DSettingsServices3
     type: Struct
   - uid: ADLXWrapper.IADLX3DTessellation
     name: IADLX3DTessellation
@@ -607,6 +649,9 @@ items:
   - uid: ADLXWrapper.IADLXGPU2List
     name: IADLXGPU2List
     type: Struct
+  - uid: ADLXWrapper.IADLXGPU3
+    name: IADLXGPU3
+    type: Struct
   - uid: ADLXWrapper.IADLXGPUAppsListChangedHandling
     name: IADLXGPUAppsListChangedHandling
     type: Struct
@@ -640,6 +685,9 @@ items:
   - uid: ADLXWrapper.IADLXGPUMetrics2
     name: IADLXGPUMetrics2
     type: Struct
+  - uid: ADLXWrapper.IADLXGPUMetrics3
+    name: IADLXGPUMetrics3
+    type: Struct
   - uid: ADLXWrapper.IADLXGPUMetricsList
     name: IADLXGPUMetricsList
     type: Struct
@@ -652,8 +700,14 @@ items:
   - uid: ADLXWrapper.IADLXGPUMetricsSupport2
     name: IADLXGPUMetricsSupport2
     type: Struct
+  - uid: ADLXWrapper.IADLXGPUMetricsSupport3
+    name: IADLXGPUMetricsSupport3
+    type: Struct
   - uid: ADLXWrapper.IADLXGPUPresetTuning
     name: IADLXGPUPresetTuning
+    type: Struct
+  - uid: ADLXWrapper.IADLXGPUStressTestFinishedListener
+    name: IADLXGPUStressTestFinishedListener
     type: Struct
   - uid: ADLXWrapper.IADLXGPUTuningChangedEvent
     name: IADLXGPUTuningChangedEvent
@@ -793,6 +847,9 @@ items:
   - uid: ADLXWrapper.IADLXSystem2
     name: IADLXSystem2
     type: Struct
+  - uid: ADLXWrapper.IADLXSystem3
+    name: IADLXSystem3
+    type: Struct
   - uid: ADLXWrapper.IADLXSystemMetrics
     name: IADLXSystemMetrics
     type: Struct
@@ -807,6 +864,15 @@ items:
     type: Struct
   - uid: ADLXWrapper.IADLXSystemMetricsSupport1
     name: IADLXSystemMetricsSupport1
+    type: Struct
+  - uid: ADLXWrapper.IADLXVariableGraphicsMemory
+    name: IADLXVariableGraphicsMemory
+    type: Struct
+  - uid: ADLXWrapper.IADLXVariableGraphicsMemoryOption
+    name: IADLXVariableGraphicsMemoryOption
+    type: Struct
+  - uid: ADLXWrapper.IADLXVariableGraphicsMemoryOptionList
+    name: IADLXVariableGraphicsMemoryOptionList
     type: Struct
   - uid: ADLXWrapper.IADLXVideoSuperResolution
     name: IADLXVideoSuperResolution

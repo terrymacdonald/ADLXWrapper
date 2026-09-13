@@ -1,5 +1,5 @@
 {
-  "source_base_path": "D:/visual-studio-projects/ADLXWrapper/APIDocs",
+  "source_base_path": "C:/vs-code/ADLXWrapper/APIDocs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -432,6 +432,62 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_AFMF_ALGORITHM.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_AFMF_ALGORITHM.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_AFMF_ALGORITHM",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_AFMF_FAST_MOTION_RESP",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_AFMF_PERFORMANCE_MODE_TYPE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_AFMF_SEARCH_MODE_TYPE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ADLX_ANISOTROPIC_FILTERING_LEVEL.yml",
       "output": {
         ".html": {
@@ -656,6 +712,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_FFX_FRAME_GEN_RATIO",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.ADLX_GAMMA_TYPE.yml",
       "output": {
         ".html": {
@@ -680,6 +750,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLX_GAMUT_SPACE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_GFX_IP_VERSION.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_GFX_IP_VERSION.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_GFX_IP_VERSION",
       "Summary": null
     },
     {
@@ -1072,6 +1156,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.ADLX_UINT16_RGB",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.ADLX_VARIABLE_GRAPHICS_MEMORY_MODE",
       "Summary": null
     },
     {
@@ -2140,6 +2238,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DAMDFluidMotionFrames1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DAMDFluidMotionFrames1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DAMDFluidMotionFrames1",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLX3DAnisotropicFiltering.yml",
       "output": {
         ".html": {
@@ -2234,6 +2346,62 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.IADLX3DEnhancedSync",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgrade.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgrade.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DFidelityFXFrameGenUpgrade",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOption.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOption",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOptionList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOptionList.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DFidelityFXFrameGenUpgradeRatioOptionList",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DFidelityFXSuperResolution.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DFidelityFXSuperResolution.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DFidelityFXSuperResolution",
       "Summary": null
     },
     {
@@ -2364,6 +2532,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DSettingsChangedEvent3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DSettingsChangedEvent3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DSettingsChangedEvent3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLX3DSettingsChangedHandling.yml",
       "output": {
         ".html": {
@@ -2430,6 +2612,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.IADLX3DSettingsServices2",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLX3DSettingsServices3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLX3DSettingsServices3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLX3DSettingsServices3",
       "Summary": null
     },
     {
@@ -3260,6 +3456,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXGPU3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXGPU3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXGPU3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLXGPUAppsListChangedHandling.yml",
       "output": {
         ".html": {
@@ -3414,6 +3624,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXGPUMetrics3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXGPUMetrics3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXGPUMetrics3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLXGPUMetricsList.yml",
       "output": {
         ".html": {
@@ -3470,6 +3694,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXGPUMetricsSupport3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXGPUMetricsSupport3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXGPUMetricsSupport3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLXGPUPresetTuning.yml",
       "output": {
         ".html": {
@@ -3480,6 +3718,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.IADLXGPUPresetTuning",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXGPUStressTestFinishedListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXGPUStressTestFinishedListener.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXGPUStressTestFinishedListener",
       "Summary": null
     },
     {
@@ -4128,6 +4380,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXSystem3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXSystem3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXSystem3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ADLXWrapper.IADLXSystemMetrics.yml",
       "output": {
         ".html": {
@@ -4194,6 +4460,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ADLXWrapper.IADLXSystemMetricsSupport1",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXVariableGraphicsMemory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemoryOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemoryOption.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXVariableGraphicsMemoryOption",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemoryOptionList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ADLXWrapper.IADLXVariableGraphicsMemoryOptionList.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ADLXWrapper.IADLXVariableGraphicsMemoryOptionList",
       "Summary": null
     },
     {

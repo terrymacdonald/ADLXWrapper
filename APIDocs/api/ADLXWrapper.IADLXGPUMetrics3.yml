@@ -1,0 +1,1243 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.IADLXGPUMetrics3
+  commentId: T:ADLXWrapper.IADLXGPUMetrics3
+  id: IADLXGPUMetrics3
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.IADLXGPUMetrics3.Acquire
+  - ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUPower(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUTemperature(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUUsage(System.Double*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUVRAM(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.GPUVoltage(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.NPUFrequency(System.Int32*)
+  - ADLXWrapper.IADLXGPUMetrics3.QueryInterface(System.UInt16*,System.Void**)
+  - ADLXWrapper.IADLXGPUMetrics3.Release
+  - ADLXWrapper.IADLXGPUMetrics3.TimeStamp(System.Int64*)
+  - ADLXWrapper.IADLXGPUMetrics3.lpVtbl
+  langs:
+  - csharp
+  - vb
+  name: IADLXGPUMetrics3
+  nameWithType: IADLXGPUMetrics3
+  fullName: ADLXWrapper.IADLXGPUMetrics3
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: IADLXGPUMetrics3
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 5
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public struct IADLXGPUMetrics3
+    content.vb: Public Structure IADLXGPUMetrics3
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.IADLXGPUMetrics3.lpVtbl
+  commentId: F:ADLXWrapper.IADLXGPUMetrics3.lpVtbl
+  id: lpVtbl
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: lpVtbl
+  nameWithType: IADLXGPUMetrics3.lpVtbl
+  fullName: ADLXWrapper.IADLXGPUMetrics3.lpVtbl
+  type: Field
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: lpVtbl
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 8
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void** lpVtbl
+    return:
+      type: System.Void**
+    content.vb: Public lpVtbl As Void**
+- uid: ADLXWrapper.IADLXGPUMetrics3.Acquire
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.Acquire
+  id: Acquire
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: Acquire()
+  nameWithType: IADLXGPUMetrics3.Acquire()
+  fullName: ADLXWrapper.IADLXGPUMetrics3.Acquire()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Acquire
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 11
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Acquire()
+    return:
+      type: System.Int32
+    content.vb: Public Function Acquire() As Integer
+  overload: ADLXWrapper.IADLXGPUMetrics3.Acquire*
+- uid: ADLXWrapper.IADLXGPUMetrics3.Release
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.Release
+  id: Release
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: Release()
+  nameWithType: IADLXGPUMetrics3.Release()
+  fullName: ADLXWrapper.IADLXGPUMetrics3.Release()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Release
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 18
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public int Release()
+    return:
+      type: System.Int32
+    content.vb: Public Function Release() As Integer
+  overload: ADLXWrapper.IADLXGPUMetrics3.Release*
+- uid: ADLXWrapper.IADLXGPUMetrics3.QueryInterface(System.UInt16*,System.Void**)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.QueryInterface(System.UInt16*,System.Void**)
+  id: QueryInterface(System.UInt16*,System.Void**)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: QueryInterface(ushort*, void**)
+  nameWithType: IADLXGPUMetrics3.QueryInterface(ushort*, void**)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.QueryInterface(ushort*, void**)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: QueryInterface
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 25
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT QueryInterface(ushort* interfaceId, void** ppInterface)
+    parameters:
+    - id: interfaceId
+      type: System.UInt16*
+    - id: ppInterface
+      type: System.Void**
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function QueryInterface(interfaceId As UShort*, ppInterface As Void**) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.QueryInterface*
+  nameWithType.vb: IADLXGPUMetrics3.QueryInterface(UShort*, Void**)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.QueryInterface(UShort*, Void**)
+  name.vb: QueryInterface(UShort*, Void**)
+- uid: ADLXWrapper.IADLXGPUMetrics3.TimeStamp(System.Int64*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.TimeStamp(System.Int64*)
+  id: TimeStamp(System.Int64*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: TimeStamp(long*)
+  nameWithType: IADLXGPUMetrics3.TimeStamp(long*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.TimeStamp(long*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TimeStamp
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 31
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT TimeStamp(long* ms)
+    parameters:
+    - id: ms
+      type: System.Int64*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function TimeStamp(ms As Long*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.TimeStamp*
+  nameWithType.vb: IADLXGPUMetrics3.TimeStamp(Long*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.TimeStamp(Long*)
+  name.vb: TimeStamp(Long*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUUsage(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUUsage(System.Double*)
+  id: GPUUsage(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUUsage(double*)
+  nameWithType: IADLXGPUMetrics3.GPUUsage(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUUsage(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUUsage
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 37
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUUsage(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUUsage(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUUsage*
+  nameWithType.vb: IADLXGPUMetrics3.GPUUsage(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUUsage(Double*)
+  name.vb: GPUUsage(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed(System.Int32*)
+  id: GPUClockSpeed(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUClockSpeed(int*)
+  nameWithType: IADLXGPUMetrics3.GPUClockSpeed(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUClockSpeed
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 43
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUClockSpeed(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUClockSpeed(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed*
+  nameWithType.vb: IADLXGPUMetrics3.GPUClockSpeed(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed(Integer*)
+  name.vb: GPUClockSpeed(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed(System.Int32*)
+  id: GPUVRAMClockSpeed(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUVRAMClockSpeed(int*)
+  nameWithType: IADLXGPUMetrics3.GPUVRAMClockSpeed(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUVRAMClockSpeed
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 49
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUVRAMClockSpeed(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUVRAMClockSpeed(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed*
+  nameWithType.vb: IADLXGPUMetrics3.GPUVRAMClockSpeed(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed(Integer*)
+  name.vb: GPUVRAMClockSpeed(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUTemperature(System.Double*)
+  id: GPUTemperature(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUTemperature(double*)
+  nameWithType: IADLXGPUMetrics3.GPUTemperature(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUTemperature
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 55
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUTemperature(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUTemperature(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature*
+  nameWithType.vb: IADLXGPUMetrics3.GPUTemperature(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature(Double*)
+  name.vb: GPUTemperature(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature(System.Double*)
+  id: GPUHotspotTemperature(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUHotspotTemperature(double*)
+  nameWithType: IADLXGPUMetrics3.GPUHotspotTemperature(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUHotspotTemperature
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 61
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUHotspotTemperature(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUHotspotTemperature(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature*
+  nameWithType.vb: IADLXGPUMetrics3.GPUHotspotTemperature(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature(Double*)
+  name.vb: GPUHotspotTemperature(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUPower(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUPower(System.Double*)
+  id: GPUPower(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUPower(double*)
+  nameWithType: IADLXGPUMetrics3.GPUPower(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUPower(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUPower
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 67
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUPower(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUPower(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUPower*
+  nameWithType.vb: IADLXGPUMetrics3.GPUPower(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUPower(Double*)
+  name.vb: GPUPower(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower(System.Double*)
+  id: GPUTotalBoardPower(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUTotalBoardPower(double*)
+  nameWithType: IADLXGPUMetrics3.GPUTotalBoardPower(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUTotalBoardPower
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 73
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUTotalBoardPower(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUTotalBoardPower(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower*
+  nameWithType.vb: IADLXGPUMetrics3.GPUTotalBoardPower(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower(Double*)
+  name.vb: GPUTotalBoardPower(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed(System.Int32*)
+  id: GPUFanSpeed(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUFanSpeed(int*)
+  nameWithType: IADLXGPUMetrics3.GPUFanSpeed(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUFanSpeed
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 79
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUFanSpeed(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUFanSpeed(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed*
+  nameWithType.vb: IADLXGPUMetrics3.GPUFanSpeed(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed(Integer*)
+  name.vb: GPUFanSpeed(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUVRAM(System.Int32*)
+  id: GPUVRAM(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUVRAM(int*)
+  nameWithType: IADLXGPUMetrics3.GPUVRAM(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUVRAM
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 85
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUVRAM(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUVRAM(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM*
+  nameWithType.vb: IADLXGPUMetrics3.GPUVRAM(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM(Integer*)
+  name.vb: GPUVRAM(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUVoltage(System.Int32*)
+  id: GPUVoltage(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUVoltage(int*)
+  nameWithType: IADLXGPUMetrics3.GPUVoltage(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUVoltage
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 91
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUVoltage(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUVoltage(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage*
+  nameWithType.vb: IADLXGPUMetrics3.GPUVoltage(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage(Integer*)
+  name.vb: GPUVoltage(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature(System.Double*)
+  id: GPUIntakeTemperature(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUIntakeTemperature(double*)
+  nameWithType: IADLXGPUMetrics3.GPUIntakeTemperature(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUIntakeTemperature
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 97
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUIntakeTemperature(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUIntakeTemperature(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature*
+  nameWithType.vb: IADLXGPUMetrics3.GPUIntakeTemperature(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature(Double*)
+  name.vb: GPUIntakeTemperature(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature(System.Double*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature(System.Double*)
+  id: GPUMemoryTemperature(System.Double*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUMemoryTemperature(double*)
+  nameWithType: IADLXGPUMetrics3.GPUMemoryTemperature(double*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature(double*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUMemoryTemperature
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 103
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUMemoryTemperature(double* data)
+    parameters:
+    - id: data
+      type: System.Double*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUMemoryTemperature(data As Double*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature*
+  nameWithType.vb: IADLXGPUMetrics3.GPUMemoryTemperature(Double*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature(Double*)
+  name.vb: GPUMemoryTemperature(Double*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.NPUFrequency(System.Int32*)
+  id: NPUFrequency(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: NPUFrequency(int*)
+  nameWithType: IADLXGPUMetrics3.NPUFrequency(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUFrequency
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 109
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT NPUFrequency(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function NPUFrequency(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency*
+  nameWithType.vb: IADLXGPUMetrics3.NPUFrequency(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency(Integer*)
+  name.vb: NPUFrequency(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel(System.Int32*)
+  id: NPUActivityLevel(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: NPUActivityLevel(int*)
+  nameWithType: IADLXGPUMetrics3.NPUActivityLevel(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: NPUActivityLevel
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 115
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT NPUActivityLevel(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function NPUActivityLevel(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel*
+  nameWithType.vb: IADLXGPUMetrics3.NPUActivityLevel(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel(Integer*)
+  name.vb: NPUActivityLevel(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory(System.Int32*)
+  id: GPUSharedMemory(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUSharedMemory(int*)
+  nameWithType: IADLXGPUMetrics3.GPUSharedMemory(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUSharedMemory
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 121
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUSharedMemory(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUSharedMemory(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory*
+  nameWithType.vb: IADLXGPUMetrics3.GPUSharedMemory(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory(Integer*)
+  name.vb: GPUSharedMemory(Integer*)
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty(System.Int32*)
+  commentId: M:ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty(System.Int32*)
+  id: GPUFanDuty(System.Int32*)
+  parent: ADLXWrapper.IADLXGPUMetrics3
+  langs:
+  - csharp
+  - vb
+  name: GPUFanDuty(int*)
+  nameWithType: IADLXGPUMetrics3.GPUFanDuty(int*)
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty(int*)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+      branch: feature-2026-09-13-update-1.5
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GPUFanDuty
+    path: ../ADLXWrapper/cs_generated/IADLXGPUMetrics3.cs
+    startLine: 127
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  example: []
+  syntax:
+    content: public ADLX_RESULT GPUFanDuty(int* data)
+    parameters:
+    - id: data
+      type: System.Int32*
+    return:
+      type: ADLXWrapper.ADLX_RESULT
+    content.vb: Public Function GPUFanDuty(data As Integer*) As ADLX_RESULT
+  overload: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty*
+  nameWithType.vb: IADLXGPUMetrics3.GPUFanDuty(Integer*)
+  fullName.vb: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty(Integer*)
+  name.vb: GPUFanDuty(Integer*)
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Void**
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.void
+  name: void**
+  nameWithType: void**
+  fullName: void**
+  nameWithType.vb: Void**
+  fullName.vb: Void**
+  name.vb: Void**
+  spec.csharp:
+  - uid: System.Void
+    name: void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+  spec.vb:
+  - uid: System.Void
+    name: Void
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.void
+  - name: '*'
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPUMetrics3.Acquire*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.Acquire
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_Acquire
+  name: Acquire
+  nameWithType: IADLXGPUMetrics3.Acquire
+  fullName: ADLXWrapper.IADLXGPUMetrics3.Acquire
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.IADLXGPUMetrics3.Release*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.Release
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_Release
+  name: Release
+  nameWithType: IADLXGPUMetrics3.Release
+  fullName: ADLXWrapper.IADLXGPUMetrics3.Release
+- uid: ADLXWrapper.IADLXGPUMetrics3.QueryInterface*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.QueryInterface
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_QueryInterface_System_UInt16__System_Void___
+  name: QueryInterface
+  nameWithType: IADLXGPUMetrics3.QueryInterface
+  fullName: ADLXWrapper.IADLXGPUMetrics3.QueryInterface
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: ADLXWrapper.ADLX_RESULT
+  commentId: T:ADLXWrapper.ADLX_RESULT
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_RESULT.html
+  name: ADLX_RESULT
+  nameWithType: ADLX_RESULT
+  fullName: ADLXWrapper.ADLX_RESULT
+- uid: ADLXWrapper.IADLXGPUMetrics3.TimeStamp*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.TimeStamp
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_TimeStamp_System_Int64__
+  name: TimeStamp
+  nameWithType: IADLXGPUMetrics3.TimeStamp
+  fullName: ADLXWrapper.IADLXGPUMetrics3.TimeStamp
+- uid: System.Int64*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long*
+  nameWithType: long*
+  fullName: long*
+  nameWithType.vb: Long*
+  fullName.vb: Long*
+  name.vb: Long*
+  spec.csharp:
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '*'
+  spec.vb:
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUUsage*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUUsage
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUUsage_System_Double__
+  name: GPUUsage
+  nameWithType: IADLXGPUMetrics3.GPUUsage
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUUsage
+- uid: System.Double*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double*
+  nameWithType: double*
+  fullName: double*
+  nameWithType.vb: Double*
+  fullName.vb: Double*
+  name.vb: Double*
+  spec.csharp:
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '*'
+  spec.vb:
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUClockSpeed_System_Int32__
+  name: GPUClockSpeed
+  nameWithType: IADLXGPUMetrics3.GPUClockSpeed
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUClockSpeed
+- uid: System.Int32*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int*
+  nameWithType: int*
+  fullName: int*
+  nameWithType.vb: Integer*
+  fullName.vb: Integer*
+  name.vb: Integer*
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '*'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '*'
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUVRAMClockSpeed_System_Int32__
+  name: GPUVRAMClockSpeed
+  nameWithType: IADLXGPUMetrics3.GPUVRAMClockSpeed
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVRAMClockSpeed
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUTemperature
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUTemperature_System_Double__
+  name: GPUTemperature
+  nameWithType: IADLXGPUMetrics3.GPUTemperature
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUTemperature
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUHotspotTemperature_System_Double__
+  name: GPUHotspotTemperature
+  nameWithType: IADLXGPUMetrics3.GPUHotspotTemperature
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUHotspotTemperature
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUPower*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUPower
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUPower_System_Double__
+  name: GPUPower
+  nameWithType: IADLXGPUMetrics3.GPUPower
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUPower
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUTotalBoardPower_System_Double__
+  name: GPUTotalBoardPower
+  nameWithType: IADLXGPUMetrics3.GPUTotalBoardPower
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUTotalBoardPower
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUFanSpeed_System_Int32__
+  name: GPUFanSpeed
+  nameWithType: IADLXGPUMetrics3.GPUFanSpeed
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUFanSpeed
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUVRAM
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUVRAM_System_Int32__
+  name: GPUVRAM
+  nameWithType: IADLXGPUMetrics3.GPUVRAM
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVRAM
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUVoltage
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUVoltage_System_Int32__
+  name: GPUVoltage
+  nameWithType: IADLXGPUMetrics3.GPUVoltage
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUVoltage
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUIntakeTemperature_System_Double__
+  name: GPUIntakeTemperature
+  nameWithType: IADLXGPUMetrics3.GPUIntakeTemperature
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUIntakeTemperature
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUMemoryTemperature_System_Double__
+  name: GPUMemoryTemperature
+  nameWithType: IADLXGPUMetrics3.GPUMemoryTemperature
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUMemoryTemperature
+- uid: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.NPUFrequency
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_NPUFrequency_System_Int32__
+  name: NPUFrequency
+  nameWithType: IADLXGPUMetrics3.NPUFrequency
+  fullName: ADLXWrapper.IADLXGPUMetrics3.NPUFrequency
+- uid: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_NPUActivityLevel_System_Int32__
+  name: NPUActivityLevel
+  nameWithType: IADLXGPUMetrics3.NPUActivityLevel
+  fullName: ADLXWrapper.IADLXGPUMetrics3.NPUActivityLevel
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUSharedMemory_System_Int32__
+  name: GPUSharedMemory
+  nameWithType: IADLXGPUMetrics3.GPUSharedMemory
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUSharedMemory
+- uid: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty*
+  commentId: Overload:ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty
+  href: ADLXWrapper.IADLXGPUMetrics3.html#ADLXWrapper_IADLXGPUMetrics3_GPUFanDuty_System_Int32__
+  name: GPUFanDuty
+  nameWithType: IADLXGPUMetrics3.GPUFanDuty
+  fullName: ADLXWrapper.IADLXGPUMetrics3.GPUFanDuty

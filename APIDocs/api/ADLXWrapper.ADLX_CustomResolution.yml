@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_CustomResolution
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -55,7 +55,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resWidth
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: resHeight
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: refreshRate
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
@@ -139,11 +139,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: presentation
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -167,11 +167,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: timingStandard
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -195,11 +195,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GPixelClock
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -223,11 +223,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: detailedTiming
     path: ../ADLXWrapper/cs_generated/ADLX_CustomResolution.cs
-    startLine: 28
+    startLine: 30
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

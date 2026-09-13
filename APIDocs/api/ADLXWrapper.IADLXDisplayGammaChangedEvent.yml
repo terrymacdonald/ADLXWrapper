@@ -25,7 +25,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXDisplayGammaChangedEvent
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -114,7 +114,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -143,7 +143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetOrigin
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
@@ -209,11 +209,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplay
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -241,11 +241,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGammaRampChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -270,11 +270,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGammaCoefficientChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -299,11 +299,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsReGammaChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -328,11 +328,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-      branch: develop
+      branch: feature-2026-09-13-update-1.5
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsDeGammaChanged
     path: ../ADLXWrapper/cs_generated/IADLXDisplayGammaChangedEvent.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
