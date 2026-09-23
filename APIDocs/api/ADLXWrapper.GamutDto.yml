@@ -32,7 +32,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GamutDto
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsWhitePointSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsGamutSupported
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent5000K
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -151,7 +151,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent6500K
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent7500K
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent9300K
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -238,7 +238,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCustomWhitePoint
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -267,7 +267,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent709
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent601
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -325,7 +325,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentAdobe
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCieRgb
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -383,7 +383,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrent2020
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsCurrentCustomColorSpace
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -441,7 +441,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CurrentGamutSpace
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -470,7 +470,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WhitePoint
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -499,7 +499,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasWhitePoint
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
@@ -528,7 +528,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDisplayServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs

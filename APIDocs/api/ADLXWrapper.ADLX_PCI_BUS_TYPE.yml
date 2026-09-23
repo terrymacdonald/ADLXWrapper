@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_PCI_BUS_TYPE
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -49,7 +49,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UNDEFINED
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -76,7 +76,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCI
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -103,7 +103,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AGP
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -130,7 +130,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -157,7 +157,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_2_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -184,7 +184,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_3_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -211,7 +211,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_4_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
@@ -238,7 +238,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIE_5_0
     path: ../ADLXWrapper/cs_generated/ADLX_PCI_BUS_TYPE.cs

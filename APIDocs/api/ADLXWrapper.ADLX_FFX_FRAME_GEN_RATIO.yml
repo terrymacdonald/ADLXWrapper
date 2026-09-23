@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FFX_FRAME_GEN_RATIO
     path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FFX_FRAME_GEN_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FFX_FRAME_GEN_2X
     path: ../ADLXWrapper/cs_generated/ADLX_FFX_FRAME_GEN_RATIO.cs

@@ -41,7 +41,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -76,7 +76,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_SUCCEEDED
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FAILED
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -138,7 +138,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXMacros.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_MAKE_FULL_VER
     path: ../ADLXWrapper/ADLXMacros.cs
@@ -315,7 +315,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MAJOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -342,7 +342,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_MINOR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -369,7 +369,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_RELEASE
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -396,7 +396,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VER_BUILD_NUM
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -423,7 +423,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_FULL_VERSION
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -450,7 +450,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VERSION_STR
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -477,7 +477,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MAX_USER_3DLUT_NUM_POINTS
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -504,7 +504,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEW
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -531,7 +531,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAMEA
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -560,7 +560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_DLL_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -589,7 +589,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_FULL_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -618,7 +618,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_QUERY_VERSION_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -647,7 +647,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -676,7 +676,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -705,7 +705,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT2_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -734,7 +734,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT2_WITH_INCOMPATIBLE_DRIVER_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -763,7 +763,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_INIT_WITH_CALLER_ADL_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs
@@ -792,7 +792,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_TERMINATE_FUNCTION_NAME
     path: ../ADLXWrapper/cs_generated/ADLX.cs

@@ -60,7 +60,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPU3
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -178,7 +178,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -215,7 +215,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ASICFamilyType
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -282,7 +282,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -314,7 +314,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsExternal
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -349,7 +349,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -384,7 +384,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverPath
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -419,7 +419,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PNPString
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -454,7 +454,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HasDesktops
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -489,7 +489,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TotalVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -524,7 +524,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMType
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -559,7 +559,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: BIOSInfo
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -598,7 +598,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DeviceId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -633,7 +633,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RevisionId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -668,7 +668,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -703,7 +703,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SubSystemVendorId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -738,7 +738,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: UniqueId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -773,7 +773,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusType
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -805,7 +805,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PCIBusLaneWidth
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -840,7 +840,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MultiGPUMode
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -872,7 +872,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ProductName
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -907,7 +907,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -942,7 +942,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: PowerOn
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -971,7 +971,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1008,7 +1008,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AbortPowerOff
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1037,7 +1037,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedApplicationList
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1072,7 +1072,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetApplications
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1104,7 +1104,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareReleaseDate
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1143,7 +1143,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareEdition
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1178,7 +1178,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDSoftwareVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1213,7 +1213,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: DriverVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1248,7 +1248,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AMDWindowsDriverVersion
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1283,7 +1283,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: LUID
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1315,7 +1315,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MicroArchitecture
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1350,7 +1350,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HighestVRAMBandwidth
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1385,7 +1385,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InvisibleVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1420,7 +1420,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VisibleVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1455,7 +1455,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMVendorRevId
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1490,7 +1490,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMBandwidth
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1525,7 +1525,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMBitRate
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1560,7 +1560,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedStressTest
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs
@@ -1595,7 +1595,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPU3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: StartStressTest
     path: ../ADLXWrapper/cs_generated/IADLXGPU3.cs

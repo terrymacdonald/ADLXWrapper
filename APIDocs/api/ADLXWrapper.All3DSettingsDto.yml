@@ -30,7 +30,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: All3DSettingsDto
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiLag
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -93,7 +93,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Chill
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -122,7 +122,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Boost
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -151,7 +151,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpening
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -180,7 +180,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnhancedSync
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -209,7 +209,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: WaitForVerticalRefresh
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -238,7 +238,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FrameRateTargetControl
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -267,7 +267,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MorphologicalAntiAliasing
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -325,7 +325,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AnisotropicFiltering
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -354,7 +354,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Tessellation
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -383,7 +383,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: FluidMotionFrames
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -412,7 +412,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RadeonSuperResolution
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -441,7 +441,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ImageSharpenDesktop
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
@@ -470,7 +470,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs

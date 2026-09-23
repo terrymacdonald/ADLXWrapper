@@ -16,11 +16,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EyefinityDesktopDto
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 711
+    startLine: 719
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -48,11 +48,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsValid
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 713
+    startLine: 721
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

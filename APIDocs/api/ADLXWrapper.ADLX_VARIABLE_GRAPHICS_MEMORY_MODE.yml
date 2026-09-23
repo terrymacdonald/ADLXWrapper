@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_VARIABLE_GRAPHICS_MEMORY_MODE
     path: ../ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VARIABLE_GRAPHICS_MEMORY_MODE_AUTO
     path: ../ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VARIABLE_GRAPHICS_MEMORY_MODE_CUSTOM
     path: ../ADLXWrapper/cs_generated/ADLX_VARIABLE_GRAPHICS_MEMORY_MODE.cs

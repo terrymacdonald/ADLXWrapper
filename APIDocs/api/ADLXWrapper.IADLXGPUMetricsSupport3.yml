@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLXGPUMetricsSupport3
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -84,7 +84,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -140,7 +140,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -169,7 +169,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -206,7 +206,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUUsage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -241,7 +241,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -276,7 +276,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVRAMClockSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -311,7 +311,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -346,7 +346,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUHotspotTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -381,7 +381,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -416,7 +416,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUTotalBoardPower
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -451,7 +451,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUFanSpeed
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -486,7 +486,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVRAM
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -521,7 +521,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUVoltage
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -556,7 +556,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUUsageRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -593,7 +593,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUClockSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -630,7 +630,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMClockSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -667,7 +667,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -704,7 +704,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUHotspotTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -741,7 +741,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUPowerRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -778,7 +778,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUFanSpeedRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -815,7 +815,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVRAMRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -852,7 +852,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUVoltageRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -889,7 +889,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUTotalBoardPowerRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -926,7 +926,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUIntakeTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -963,7 +963,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUIntakeTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -998,7 +998,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUMemoryTemperature
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1033,7 +1033,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUMemoryTemperatureRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1070,7 +1070,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedNPUFrequency
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1105,7 +1105,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNPUFrequencyRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1142,7 +1142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedNPUActivityLevel
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1177,7 +1177,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetNPUActivityLevelRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1214,7 +1214,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUSharedMemory
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1249,7 +1249,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUSharedMemoryRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1286,7 +1286,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedGPUFanDuty
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
@@ -1321,7 +1321,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPUFanDutyRange
     path: ../ADLXWrapper/cs_generated/IADLXGPUMetricsSupport3.cs

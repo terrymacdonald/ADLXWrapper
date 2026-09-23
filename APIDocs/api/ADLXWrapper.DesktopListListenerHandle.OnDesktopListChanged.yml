@@ -15,11 +15,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXDesktopServicesHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: OnDesktopListChanged
     path: ../ADLXWrapper/ADLXDesktopServicesHelper.cs
-    startLine: 723
+    startLine: 731
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VariableGraphicsMemoryOptionDto
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Name
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
@@ -81,7 +81,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Mode
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
@@ -110,7 +110,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MemoryCarvedGb
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MemoryRemainingGb
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
@@ -168,7 +168,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXVariableGraphicsMemoryHelper.cs

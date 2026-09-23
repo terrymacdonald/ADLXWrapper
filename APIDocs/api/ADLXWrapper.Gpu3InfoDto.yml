@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Gpu3InfoDto
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -57,7 +57,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: MicroArchitecture
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: HighestVRAMBandwidth
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -115,7 +115,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: InvisibleVRAM
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -144,7 +144,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VisibleVRAM
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -173,7 +173,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMVendorRevId
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -202,7 +202,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMBandwidth
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -231,7 +231,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: VRAMBitRate
     path: ../ADLXWrapper/AdlxGpu.cs
@@ -260,7 +260,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxGpu.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxGpu.cs

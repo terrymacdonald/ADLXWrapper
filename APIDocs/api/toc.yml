@@ -346,6 +346,12 @@ items:
   - uid: ADLXWrapper.EyefinityDesktopDto
     name: EyefinityDesktopDto
     type: Struct
+  - uid: ADLXWrapper.EyefinityGridCellDto
+    name: EyefinityGridCellDto
+    type: Struct
+  - uid: ADLXWrapper.EyefinityTopologyDto
+    name: EyefinityTopologyDto
+    type: Struct
   - uid: ADLXWrapper.FanPoint
     name: FanPoint
     type: Struct

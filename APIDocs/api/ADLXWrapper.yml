@@ -118,6 +118,8 @@ items:
   - ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged
   - ADLXWrapper.EnhancedSyncDto
   - ADLXWrapper.EyefinityDesktopDto
+  - ADLXWrapper.EyefinityGridCellDto
+  - ADLXWrapper.EyefinityTopologyDto
   - ADLXWrapper.FanPoint
   - ADLXWrapper.FidelityFXFrameGenUpgradeDto
   - ADLXWrapper.FidelityFXSuperResolutionDto
@@ -523,6 +525,19 @@ references:
   name: ADLXDesktop
   nameWithType: ADLXDesktop
   fullName: ADLXWrapper.ADLXDesktop
+- uid: ADLXWrapper.EyefinityTopologyDto
+  commentId: T:ADLXWrapper.EyefinityTopologyDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.EyefinityTopologyDto.html
+  name: EyefinityTopologyDto
+  nameWithType: EyefinityTopologyDto
+  fullName: ADLXWrapper.EyefinityTopologyDto
+- uid: ADLXWrapper.EyefinityGridCellDto
+  commentId: T:ADLXWrapper.EyefinityGridCellDto
+  href: ADLXWrapper.EyefinityGridCellDto.html
+  name: EyefinityGridCellDto
+  nameWithType: EyefinityGridCellDto
+  fullName: ADLXWrapper.EyefinityGridCellDto
 - uid: ADLXWrapper.ADLXDesktopServicesHelper
   commentId: T:ADLXWrapper.ADLXDesktopServicesHelper
   parent: ADLXWrapper

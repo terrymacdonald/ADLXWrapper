@@ -1,0 +1,589 @@
+### YamlMime:ManagedReference
+items:
+- uid: ADLXWrapper.EyefinityGridCellDto
+  commentId: T:ADLXWrapper.EyefinityGridCellDto
+  id: EyefinityGridCellDto
+  parent: ADLXWrapper
+  children:
+  - ADLXWrapper.EyefinityGridCellDto.Column
+  - ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+  - ADLXWrapper.EyefinityGridCellDto.Height
+  - ADLXWrapper.EyefinityGridCellDto.Orientation
+  - ADLXWrapper.EyefinityGridCellDto.Row
+  - ADLXWrapper.EyefinityGridCellDto.TopLeftX
+  - ADLXWrapper.EyefinityGridCellDto.TopLeftY
+  - ADLXWrapper.EyefinityGridCellDto.Width
+  langs:
+  - csharp
+  - vb
+  name: EyefinityGridCellDto
+  nameWithType: EyefinityGridCellDto
+  fullName: ADLXWrapper.EyefinityGridCellDto
+  type: Struct
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: EyefinityGridCellDto
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 300
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Describes one display cell in an ADLX Eyefinity desktop.
+  example: []
+  syntax:
+    content: public readonly struct EyefinityGridCellDto
+    content.vb: Public Structure EyefinityGridCellDto
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: ADLXWrapper.EyefinityGridCellDto.Row
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.Row
+  id: Row
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: Row
+  nameWithType: EyefinityGridCellDto.Row
+  fullName: ADLXWrapper.EyefinityGridCellDto.Row
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Row
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 302
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint Row { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property Row As UInteger
+  overload: ADLXWrapper.EyefinityGridCellDto.Row*
+- uid: ADLXWrapper.EyefinityGridCellDto.Column
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.Column
+  id: Column
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: Column
+  nameWithType: EyefinityGridCellDto.Column
+  fullName: ADLXWrapper.EyefinityGridCellDto.Column
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Column
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 303
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public uint Column { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property Column As UInteger
+  overload: ADLXWrapper.EyefinityGridCellDto.Column*
+- uid: ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+  id: DisplayUniqueId
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: DisplayUniqueId
+  nameWithType: EyefinityGridCellDto.DisplayUniqueId
+  fullName: ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: DisplayUniqueId
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 304
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ulong DisplayUniqueId { get; }
+    parameters: []
+    return:
+      type: System.UInt64
+    content.vb: Public ReadOnly Property DisplayUniqueId As ULong
+  overload: ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId*
+- uid: ADLXWrapper.EyefinityGridCellDto.Orientation
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.Orientation
+  id: Orientation
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: Orientation
+  nameWithType: EyefinityGridCellDto.Orientation
+  fullName: ADLXWrapper.EyefinityGridCellDto.Orientation
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Orientation
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 305
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public ADLX_ORIENTATION Orientation { get; }
+    parameters: []
+    return:
+      type: ADLXWrapper.ADLX_ORIENTATION
+    content.vb: Public ReadOnly Property Orientation As ADLX_ORIENTATION
+  overload: ADLXWrapper.EyefinityGridCellDto.Orientation*
+- uid: ADLXWrapper.EyefinityGridCellDto.Width
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.Width
+  id: Width
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: EyefinityGridCellDto.Width
+  fullName: ADLXWrapper.EyefinityGridCellDto.Width
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Width
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 306
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Width As Integer
+  overload: ADLXWrapper.EyefinityGridCellDto.Width*
+- uid: ADLXWrapper.EyefinityGridCellDto.Height
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.Height
+  id: Height
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: EyefinityGridCellDto.Height
+  fullName: ADLXWrapper.EyefinityGridCellDto.Height
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: Height
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 307
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: ADLXWrapper.EyefinityGridCellDto.Height*
+- uid: ADLXWrapper.EyefinityGridCellDto.TopLeftX
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.TopLeftX
+  id: TopLeftX
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: TopLeftX
+  nameWithType: EyefinityGridCellDto.TopLeftX
+  fullName: ADLXWrapper.EyefinityGridCellDto.TopLeftX
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TopLeftX
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 308
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TopLeftX { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property TopLeftX As Integer
+  overload: ADLXWrapper.EyefinityGridCellDto.TopLeftX*
+- uid: ADLXWrapper.EyefinityGridCellDto.TopLeftY
+  commentId: P:ADLXWrapper.EyefinityGridCellDto.TopLeftY
+  id: TopLeftY
+  parent: ADLXWrapper.EyefinityGridCellDto
+  langs:
+  - csharp
+  - vb
+  name: TopLeftY
+  nameWithType: EyefinityGridCellDto.TopLeftY
+  fullName: ADLXWrapper.EyefinityGridCellDto.TopLeftY
+  type: Property
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TopLeftY
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 309
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public int TopLeftY { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property TopLeftY As Integer
+  overload: ADLXWrapper.EyefinityGridCellDto.TopLeftY*
+references:
+- uid: ADLXWrapper
+  commentId: N:ADLXWrapper
+  href: ADLXWrapper.html
+  name: ADLXWrapper
+  nameWithType: ADLXWrapper
+  fullName: ADLXWrapper
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ADLXWrapper.EyefinityGridCellDto.Row*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.Row
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_Row
+  name: Row
+  nameWithType: EyefinityGridCellDto.Row
+  fullName: ADLXWrapper.EyefinityGridCellDto.Row
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: ADLXWrapper.EyefinityGridCellDto.Column*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.Column
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_Column
+  name: Column
+  nameWithType: EyefinityGridCellDto.Column
+  fullName: ADLXWrapper.EyefinityGridCellDto.Column
+- uid: ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_DisplayUniqueId
+  name: DisplayUniqueId
+  nameWithType: EyefinityGridCellDto.DisplayUniqueId
+  fullName: ADLXWrapper.EyefinityGridCellDto.DisplayUniqueId
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: ADLXWrapper.EyefinityGridCellDto.Orientation*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.Orientation
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_Orientation
+  name: Orientation
+  nameWithType: EyefinityGridCellDto.Orientation
+  fullName: ADLXWrapper.EyefinityGridCellDto.Orientation
+- uid: ADLXWrapper.ADLX_ORIENTATION
+  commentId: T:ADLXWrapper.ADLX_ORIENTATION
+  parent: ADLXWrapper
+  href: ADLXWrapper.ADLX_ORIENTATION.html
+  name: ADLX_ORIENTATION
+  nameWithType: ADLX_ORIENTATION
+  fullName: ADLXWrapper.ADLX_ORIENTATION
+- uid: ADLXWrapper.EyefinityGridCellDto.Width*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.Width
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_Width
+  name: Width
+  nameWithType: EyefinityGridCellDto.Width
+  fullName: ADLXWrapper.EyefinityGridCellDto.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ADLXWrapper.EyefinityGridCellDto.Height*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.Height
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_Height
+  name: Height
+  nameWithType: EyefinityGridCellDto.Height
+  fullName: ADLXWrapper.EyefinityGridCellDto.Height
+- uid: ADLXWrapper.EyefinityGridCellDto.TopLeftX*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.TopLeftX
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_TopLeftX
+  name: TopLeftX
+  nameWithType: EyefinityGridCellDto.TopLeftX
+  fullName: ADLXWrapper.EyefinityGridCellDto.TopLeftX
+- uid: ADLXWrapper.EyefinityGridCellDto.TopLeftY*
+  commentId: Overload:ADLXWrapper.EyefinityGridCellDto.TopLeftY
+  href: ADLXWrapper.EyefinityGridCellDto.html#ADLXWrapper_EyefinityGridCellDto_TopLeftY
+  name: TopLeftY
+  nameWithType: EyefinityGridCellDto.TopLeftY
+  fullName: ADLXWrapper.EyefinityGridCellDto.TopLeftY

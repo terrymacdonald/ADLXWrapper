@@ -20,7 +20,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuStressTestResultDto
     path: ../ADLXWrapper/ADLXGpuStressTest.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GpuUniqueId
     path: ../ADLXWrapper/ADLXGpuStressTest.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Succeeded
     path: ../ADLXWrapper/ADLXGpuStressTest.cs
@@ -112,7 +112,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RequestedDurationSeconds
     path: ../ADLXWrapper/ADLXGpuStressTest.cs
@@ -141,7 +141,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: CompletedAt
     path: ../ADLXWrapper/ADLXGpuStressTest.cs
@@ -170,7 +170,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/ADLXGpuStressTest.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLXGpuStressTest.cs

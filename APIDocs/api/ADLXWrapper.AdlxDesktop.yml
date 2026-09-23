@@ -13,6 +13,7 @@ items:
   - ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
   - ADLXWrapper.ADLXDesktop.GetDesktopDto
   - ADLXWrapper.ADLXDesktop.GetEyefinityGridSize
+  - ADLXWrapper.ADLXDesktop.GetEyefinityTopology
   - ADLXWrapper.ADLXDesktop.GetGPU
   - ADLXWrapper.ADLXDesktop.Height
   - ADLXWrapper.ADLXDesktop.Identity
@@ -33,7 +34,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLXDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -71,7 +72,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -112,7 +113,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Type
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -141,7 +142,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Width
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -170,7 +171,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Height
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -199,7 +200,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftX
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -228,7 +229,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TopLeftY
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -257,7 +258,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Orientation
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -286,7 +287,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEyefinity
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -315,7 +316,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Identity
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -344,7 +345,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplayDtosForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -374,7 +375,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateDisplaysForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -404,7 +405,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDesktopListEventListener
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -437,7 +438,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDesktopListEventListener
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -471,7 +472,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDto
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -499,7 +500,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetEyefinityGridSize
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -529,7 +530,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: EnumerateEyefinityDisplayDtosForDesktop
     path: ../ADLXWrapper/AdlxDesktop.cs
@@ -545,6 +546,44 @@ items:
       type: System.Collections.Generic.IReadOnlyList{ADLXWrapper.DisplayDto}
     content.vb: Public Function EnumerateEyefinityDisplayDtosForDesktop() As IReadOnlyList(Of DisplayDto)
   overload: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop*
+- uid: ADLXWrapper.ADLXDesktop.GetEyefinityTopology
+  commentId: M:ADLXWrapper.ADLXDesktop.GetEyefinityTopology
+  id: GetEyefinityTopology
+  parent: ADLXWrapper.ADLXDesktop
+  langs:
+  - csharp
+  - vb
+  name: GetEyefinityTopology()
+  nameWithType: ADLXDesktop.GetEyefinityTopology()
+  fullName: ADLXWrapper.ADLXDesktop.GetEyefinityTopology()
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDesktop.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: GetEyefinityTopology
+    path: ../ADLXWrapper/AdlxDesktop.cs
+    startLine: 154
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  summary: Gets the complete read-only topology of this Eyefinity desktop.
+  example: []
+  syntax:
+    content: public EyefinityTopologyDto GetEyefinityTopology()
+    return:
+      type: ADLXWrapper.EyefinityTopologyDto
+      description: Desktop geometry and every display cell in the Eyefinity grid.
+    content.vb: Public Function GetEyefinityTopology() As EyefinityTopologyDto
+  overload: ADLXWrapper.ADLXDesktop.GetEyefinityTopology*
+  exceptions:
+  - type: ADLXWrapper.ADLXException
+    commentId: T:ADLXWrapper.ADLXException
+    description: If this is not an Eyefinity desktop or the topology cannot be read.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: If disposed.
 - uid: ADLXWrapper.ADLXDesktop.GetGPU
   commentId: M:ADLXWrapper.ADLXDesktop.GetGPU
   id: GetGPU
@@ -559,11 +598,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 151
+    startLine: 209
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -589,11 +628,11 @@ items:
   source:
     remote:
       path: ADLXWrapper/AdlxDesktop.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxDesktop.cs
-    startLine: 202
+    startLine: 260
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1260,6 +1299,32 @@ references:
   name: EnumerateEyefinityDisplayDtosForDesktop
   nameWithType: ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
   fullName: ADLXWrapper.ADLXDesktop.EnumerateEyefinityDisplayDtosForDesktop
+- uid: ADLXWrapper.ADLXException
+  commentId: T:ADLXWrapper.ADLXException
+  href: ADLXWrapper.ADLXException.html
+  name: ADLXException
+  nameWithType: ADLXException
+  fullName: ADLXWrapper.ADLXException
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.objectdisposedexception
+  name: ObjectDisposedException
+  nameWithType: ObjectDisposedException
+  fullName: System.ObjectDisposedException
+- uid: ADLXWrapper.ADLXDesktop.GetEyefinityTopology*
+  commentId: Overload:ADLXWrapper.ADLXDesktop.GetEyefinityTopology
+  href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetEyefinityTopology
+  name: GetEyefinityTopology
+  nameWithType: ADLXDesktop.GetEyefinityTopology
+  fullName: ADLXWrapper.ADLXDesktop.GetEyefinityTopology
+- uid: ADLXWrapper.EyefinityTopologyDto
+  commentId: T:ADLXWrapper.EyefinityTopologyDto
+  parent: ADLXWrapper
+  href: ADLXWrapper.EyefinityTopologyDto.html
+  name: EyefinityTopologyDto
+  nameWithType: EyefinityTopologyDto
+  fullName: ADLXWrapper.EyefinityTopologyDto
 - uid: ADLXWrapper.ADLXDesktop.GetGPU*
   commentId: Overload:ADLXWrapper.ADLXDesktop.GetGPU
   href: ADLXWrapper.ADLXDesktop.html#ADLXWrapper_ADLXDesktop_GetGPU

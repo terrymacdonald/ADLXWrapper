@@ -27,7 +27,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_GFX_IP_VERSION
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_UNKNOWN
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -80,7 +80,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_4
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -107,7 +107,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_5
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -134,7 +134,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_6
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -161,7 +161,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_7
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -188,7 +188,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_8
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -215,7 +215,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_9
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -242,7 +242,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_10_1
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -269,7 +269,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_10_2
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -296,7 +296,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_10_3
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -323,7 +323,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_11_0
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
@@ -350,7 +350,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GFX_IP_VERSION_12_0
     path: ../ADLXWrapper/cs_generated/ADLX_GFX_IP_VERSION.cs

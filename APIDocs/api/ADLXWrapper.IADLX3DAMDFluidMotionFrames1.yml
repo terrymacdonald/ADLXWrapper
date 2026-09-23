@@ -31,7 +31,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IADLX3DAMDFluidMotionFrames1
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -64,7 +64,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: lpVtbl
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -91,7 +91,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Acquire
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -120,7 +120,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Release
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -149,7 +149,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: QueryInterface
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -186,7 +186,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupported
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -221,7 +221,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -256,7 +256,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetEnabled
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -291,7 +291,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: IsSupportedAlgorithm
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -326,7 +326,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetAlgorithm
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -358,7 +358,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetAlgorithm
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -390,7 +390,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetSearchMode
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -422,7 +422,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetSearchMode
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -454,7 +454,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetPerformanceMode
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -486,7 +486,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetPerformanceMode
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -518,7 +518,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFastMotionResponse
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
@@ -550,7 +550,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFastMotionResponse
     path: ../ADLXWrapper/cs_generated/IADLX3DAMDFluidMotionFrames1.cs

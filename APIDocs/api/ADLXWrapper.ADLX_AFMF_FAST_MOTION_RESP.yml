@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ADLX_AFMF_FAST_MOTION_RESP
     path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
@@ -43,7 +43,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AFMF_RESP_REPEAT_FRAMES
     path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
-      branch: feature-2026-09-13-update-1.5
+      branch: develop
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AFMF_RESP_BLENDED_FRAMES
     path: ../ADLXWrapper/cs_generated/ADLX_AFMF_FAST_MOTION_RESP.cs
