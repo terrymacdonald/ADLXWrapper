@@ -147,6 +147,64 @@ namespace ADLXWrapper
         }
 
         /// <summary>
+        /// Gets the complete read-only topology of this Eyefinity desktop.
+        /// </summary>
+        /// <returns>Desktop geometry and every display cell in the Eyefinity grid.</returns>
+        /// <exception cref="ADLXException">If this is not an Eyefinity desktop or the topology cannot be read.</exception>
+        /// <exception cref="ObjectDisposedException">If disposed.</exception>
+        public EyefinityTopologyDto GetEyefinityTopology()
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            using var eyefinity = GetEyefinityDesktop();
+
+            uint rows = 0;
+            uint columns = 0;
+            var gridResult = eyefinity.Get()->GridSize(&rows, &columns);
+            if (gridResult != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(gridResult, "Failed to query Eyefinity grid size");
+
+            var cells = new List<EyefinityGridCellDto>(checked((int)(rows * columns)));
+            for (uint row = 0; row < rows; row++)
+            {
+                for (uint column = 0; column < columns; column++)
+                {
+                    IADLXDisplay* display = null;
+                    var displayResult = eyefinity.Get()->GetDisplay(row, column, &display);
+                    if (displayResult != ADLX_RESULT.ADLX_OK || display == null)
+                    {
+                        if (display != null)
+                            ADLXUtils.ReleaseInterface((IntPtr)display);
+                        throw new ADLXException(displayResult, $"Failed to get Eyefinity display at {row},{column}");
+                    }
+
+                    using var displayPtr = new ComPtr<IADLXDisplay>(display);
+                    var displayInfo = new DisplayDto(displayPtr.Get());
+
+                    ADLX_ORIENTATION orientation = default;
+                    var orientationResult = eyefinity.Get()->DisplayOrientation(row, column, &orientation);
+                    if (orientationResult != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(orientationResult, $"Failed to get Eyefinity display orientation at {row},{column}");
+
+                    int width = 0;
+                    int height = 0;
+                    var sizeResult = eyefinity.Get()->DisplaySize(row, column, &width, &height);
+                    if (sizeResult != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(sizeResult, $"Failed to get Eyefinity display size at {row},{column}");
+
+                    ADLX_Point topLeft = default;
+                    var topLeftResult = eyefinity.Get()->DisplayTopLeft(row, column, &topLeft);
+                    if (topLeftResult != ADLX_RESULT.ADLX_OK)
+                        throw new ADLXException(topLeftResult, $"Failed to get Eyefinity display position at {row},{column}");
+
+                    cells.Add(new EyefinityGridCellDto(row, column, displayInfo.UniqueId, orientation, width, height, topLeft.x, topLeft.y));
+                }
+            }
+
+            return new EyefinityTopologyDto(rows, columns, _identity.Orientation, _identity.Width, _identity.Height, _identity.TopLeftX, _identity.TopLeftY, cells);
+        }
+
+        /// <summary>
         /// GPU that drives this desktop (first GPU owning any display on the desktop).
         /// </summary>
         public ADLXGPU GetGPU()
@@ -207,6 +265,60 @@ namespace ADLXWrapper
             _desktop.Dispose();
             _desktopServices.Dispose();
             _disposed = true;
+        }
+    }
+
+    /// <summary>
+    /// Describes an active ADLX Eyefinity desktop and its display grid.
+    /// </summary>
+    public readonly struct EyefinityTopologyDto
+    {
+        public uint Rows { get; }
+        public uint Columns { get; }
+        public ADLX_ORIENTATION Orientation { get; }
+        public int Width { get; }
+        public int Height { get; }
+        public int TopLeftX { get; }
+        public int TopLeftY { get; }
+        public IReadOnlyList<EyefinityGridCellDto> Grid { get; }
+
+        internal EyefinityTopologyDto(uint rows, uint columns, ADLX_ORIENTATION orientation, int width, int height, int topLeftX, int topLeftY, IReadOnlyList<EyefinityGridCellDto> grid)
+        {
+            Rows = rows;
+            Columns = columns;
+            Orientation = orientation;
+            Width = width;
+            Height = height;
+            TopLeftX = topLeftX;
+            TopLeftY = topLeftY;
+            Grid = grid;
+        }
+    }
+
+    /// <summary>
+    /// Describes one display cell in an ADLX Eyefinity desktop.
+    /// </summary>
+    public readonly struct EyefinityGridCellDto
+    {
+        public uint Row { get; }
+        public uint Column { get; }
+        public ulong DisplayUniqueId { get; }
+        public ADLX_ORIENTATION Orientation { get; }
+        public int Width { get; }
+        public int Height { get; }
+        public int TopLeftX { get; }
+        public int TopLeftY { get; }
+
+        internal EyefinityGridCellDto(uint row, uint column, ulong displayUniqueId, ADLX_ORIENTATION orientation, int width, int height, int topLeftX, int topLeftY)
+        {
+            Row = row;
+            Column = column;
+            DisplayUniqueId = displayUniqueId;
+            Orientation = orientation;
+            Width = width;
+            Height = height;
+            TopLeftX = topLeftX;
+            TopLeftY = topLeftY;
         }
     }
 }

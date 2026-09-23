@@ -104,6 +104,35 @@ public class ADLXDesktopServicesFacadeTests
     }
 
     [SkippableFact]
+    public void Eyefinity_topology_facade()
+    {
+        var desktops = GetDesktopsOrSkip();
+        try
+        {
+            var eyefinityDesktop = desktops.FirstOrDefault(desktop => desktop.IsEyefinity);
+            Skip.If(eyefinityDesktop == null, "No Eyefinity desktop is currently configured.");
+            var topology = eyefinityDesktop.GetEyefinityTopology();
+
+            Assert.True(topology.Rows > 0);
+            Assert.True(topology.Columns > 0);
+            Assert.True(topology.Width > 0);
+            Assert.True(topology.Height > 0);
+            Assert.Equal(topology.Rows * topology.Columns, (uint)topology.Grid.Count);
+            Assert.All(topology.Grid, cell =>
+            {
+                Assert.True(cell.Width > 0);
+                Assert.True(cell.Height > 0);
+                Assert.NotEqual(0UL, cell.DisplayUniqueId);
+            });
+        }
+        finally
+        {
+            foreach (var desktop in desktops)
+                desktop.Dispose();
+        }
+    }
+
+    [SkippableFact]
     public void Desktop_gpu_resolution_facade()
     {
         var desktops = GetDesktopsOrSkip();

@@ -705,7 +705,15 @@ namespace ADLXWrapper
 
         internal unsafe SimpleEyefinityDto(IADLXSimpleEyefinity* p)
         {
-            IsSupported = p != null;
+            if (p == null)
+                throw new ArgumentNullException(nameof(p));
+
+            bool supported = false;
+            var result = p->IsSupported(&supported);
+            if (result != ADLX_RESULT.ADLX_OK)
+                throw new ADLXException(result, "Failed to query Simple Eyefinity support");
+
+            IsSupported = supported;
         }
     }
 
