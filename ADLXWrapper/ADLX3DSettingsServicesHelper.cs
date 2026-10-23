@@ -1531,7 +1531,6 @@ namespace ADLXWrapper
         public ADLX_AFMF_PERFORMANCE_MODE_TYPE PerformanceMode { get; init; }
         public ADLX_AFMF_FAST_MOTION_RESP FastMotionResponse { get; init; }
 
-        [JsonConstructor]
         public FluidMotionFramesDto(bool isSupported, bool isEnabled)
         {
             IsSupported = isSupported;
@@ -1651,4 +1650,3 @@ namespace ADLXWrapper
         }
     }
 }
-

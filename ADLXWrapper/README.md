@@ -44,6 +44,15 @@ using (display)
 }
 ```
 
+### Restoring saved SCE/3DLUT presets
+To restore a captured SCE/3DLUT preset, pass the saved `ThreeDLUTDto` to
+`display.ApplyThreeDLut(saved)` or `display.TryApplyThreeDLut(saved)`. The `Try`
+variant returns `false` for `ADLX_NOT_SUPPORTED`; other driver errors throw.
+`ReapplyThreeDLut()` continues to reapply the current state, not a saved profile.
+`HasDynamicContrast` indicates that a contrast value was readable; it does not
+mean the dynamic-contrast preset is active. Disabled and vivid-gaming presets
+take precedence over an inactive contrast value.
+
 ## Desktop services
 Enumerate desktops and their attached displays, Eyefinity groups, rotation, etc.
 ```csharp

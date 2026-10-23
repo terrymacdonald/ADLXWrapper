@@ -1235,7 +1235,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1148
+    startLine: 1166
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1266,7 +1266,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1179
+    startLine: 1197
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1297,7 +1297,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1210
+    startLine: 1228
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1328,7 +1328,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetCustomResolutionListNative
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1248
+    startLine: 1266
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1359,7 +1359,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1262
+    startLine: 1280
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1390,7 +1390,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyCustomResolution
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 1269
+    startLine: 1287
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1423,7 +1423,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Finalize
     path: ../ADLXWrapper/ADLXDisplayServicesHelper.cs
-    startLine: 2331
+    startLine: 2348
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

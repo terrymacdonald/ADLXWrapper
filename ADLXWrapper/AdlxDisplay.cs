@@ -473,7 +473,7 @@ namespace ADLXWrapper
         }
 
         /// <summary>
-        /// 3DLUT info and reapply.
+        /// 3DLUT info, saved-state application, and current-state reapply.
         /// </summary>
         public ThreeDLUTDto GetThreeDLut()
         {
@@ -496,6 +496,22 @@ namespace ADLXWrapper
             using var _sync = ADLXSync.EnterRead();
             using var helper = CreateDisplayServicesHelper();
             helper.ReapplyThreeDLut(_display.Get());
+        }
+
+        public void ApplyThreeDLut(ThreeDLUTDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            using var helper = CreateDisplayServicesHelper();
+            helper.ApplyThreeDLut(_display.Get(), info);
+        }
+
+        public bool TryApplyThreeDLut(ThreeDLUTDto info)
+        {
+            ThrowIfDisposed();
+            using var _sync = ADLXSync.EnterRead();
+            using var helper = CreateDisplayServicesHelper();
+            return helper.TryApplyThreeDLut(_display.Get(), info);
         }
 
         public bool TryReapplyThreeDLut()
@@ -853,4 +869,3 @@ namespace ADLXWrapper
         }
     }
 }
-

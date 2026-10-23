@@ -268,24 +268,14 @@ items:
   - ADLXWrapper
   namespace: ADLXWrapper
   syntax:
-    content: >-
-      [JsonConstructor]
-
-      public FluidMotionFramesDto(bool isSupported, bool isEnabled)
+    content: public FluidMotionFramesDto(bool isSupported, bool isEnabled)
     parameters:
     - id: isSupported
       type: System.Boolean
     - id: isEnabled
       type: System.Boolean
-    content.vb: >-
-      <JsonConstructor>
-
-      Public Sub New(isSupported As Boolean, isEnabled As Boolean)
+    content.vb: Public Sub New(isSupported As Boolean, isEnabled As Boolean)
   overload: ADLXWrapper.FluidMotionFramesDto.#ctor*
-  attributes:
-  - type: Newtonsoft.Json.JsonConstructorAttribute
-    ctor: Newtonsoft.Json.JsonConstructorAttribute.#ctor
-    arguments: []
   nameWithType.vb: FluidMotionFramesDto.New(Boolean, Boolean)
   fullName.vb: ADLXWrapper.FluidMotionFramesDto.New(Boolean, Boolean)
   name.vb: New(Boolean, Boolean)
@@ -307,7 +297,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: .ctor
     path: ../ADLXWrapper/ADLX3DSettingsServicesHelper.cs
-    startLine: 1540
+    startLine: 1539
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper

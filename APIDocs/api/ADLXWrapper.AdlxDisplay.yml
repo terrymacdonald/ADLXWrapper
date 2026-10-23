@@ -13,6 +13,7 @@ items:
   - ADLXWrapper.ADLXDisplay.AddDisplaySettingsEventListener(ADLXWrapper.DisplaySettingsListenerHandle.OnDisplaySettingsChanged)
   - ADLXWrapper.ADLXDisplay.ApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   - ADLXWrapper.ADLXDisplay.ApplyCustomColor(ADLXWrapper.CustomColorDto)
+  - ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
   - ADLXWrapper.ADLXDisplay.ConnectorType
   - ADLXWrapper.ADLXDisplay.Dispose
   - ADLXWrapper.ADLXDisplay.Edid
@@ -68,6 +69,7 @@ items:
   - ADLXWrapper.ADLXDisplay.SetVirtualSuperResolution(System.Boolean)
   - ADLXWrapper.ADLXDisplay.TryApplyConnectivityExperience(ADLXWrapper.ConnectivityExperienceDto)
   - ADLXWrapper.ADLXDisplay.TryApplyCustomColor(ADLXWrapper.CustomColorDto)
+  - ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
   - ADLXWrapper.ADLXDisplay.TryReapplyGamma
   - ADLXWrapper.ADLXDisplay.TryReapplyGamut
   - ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
@@ -1705,7 +1707,7 @@ items:
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
-  summary: 3DLUT info and reapply.
+  summary: 3DLUT info, saved-state application, and current-state reapply.
   example: []
   syntax:
     content: public ThreeDLUTDto GetThreeDLut()
@@ -1739,6 +1741,66 @@ items:
     content: public void ReapplyThreeDLut()
     content.vb: Public Sub ReapplyThreeDLut()
   overload: ADLXWrapper.ADLXDisplay.ReapplyThreeDLut*
+- uid: ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  id: ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  parent: ADLXWrapper.ADLXDisplay
+  langs:
+  - csharp
+  - vb
+  name: ApplyThreeDLut(ThreeDLUTDto)
+  nameWithType: ADLXDisplay.ApplyThreeDLut(ThreeDLUTDto)
+  fullName: ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: ApplyThreeDLut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 500
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public void ApplyThreeDLut(ThreeDLUTDto info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.ThreeDLUTDto
+    content.vb: Public Sub ApplyThreeDLut(info As ThreeDLUTDto)
+  overload: ADLXWrapper.ADLXDisplay.ApplyThreeDLut*
+- uid: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  id: TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  parent: ADLXWrapper.ADLXDisplay
+  langs:
+  - csharp
+  - vb
+  name: TryApplyThreeDLut(ThreeDLUTDto)
+  nameWithType: ADLXDisplay.TryApplyThreeDLut(ThreeDLUTDto)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  type: Method
+  source:
+    remote:
+      path: ADLXWrapper/AdlxDisplay.cs
+      branch: develop
+      repo: https://github.com/terrymacdonald/ADLXWrapper.git
+    id: TryApplyThreeDLut
+    path: ../ADLXWrapper/AdlxDisplay.cs
+    startLine: 508
+  assemblies:
+  - ADLXWrapper
+  namespace: ADLXWrapper
+  syntax:
+    content: public bool TryApplyThreeDLut(ThreeDLUTDto info)
+    parameters:
+    - id: info
+      type: ADLXWrapper.ThreeDLUTDto
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryApplyThreeDLut(info As ThreeDLUTDto) As Boolean
+  overload: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut*
 - uid: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
   commentId: M:ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
   id: TryReapplyThreeDLut
@@ -1757,7 +1819,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryReapplyThreeDLut
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 500
+    startLine: 516
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1785,7 +1847,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 511
+    startLine: 527
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1815,7 +1877,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: ApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 526
+    startLine: 542
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1844,7 +1906,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TryApplyConnectivityExperience
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 534
+    startLine: 550
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1875,7 +1937,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDisplayBlankingState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 545
+    startLine: 561
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1905,7 +1967,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 560
+    startLine: 576
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1937,7 +1999,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDisplayBlanked
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 568
+    startLine: 584
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -1971,7 +2033,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetFreeSyncColorAccuracyState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 579
+    startLine: 595
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2001,7 +2063,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 594
+    startLine: 610
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2033,7 +2095,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetFreeSyncColorAccuracy
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 602
+    startLine: 618
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2067,7 +2129,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDynamicRefreshRateControlState
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 613
+    startLine: 629
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2097,7 +2159,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: SetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 628
+    startLine: 644
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2129,7 +2191,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: TrySetDynamicRefreshRateControl
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 636
+    startLine: 652
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2163,7 +2225,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 647
+    startLine: 663
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2196,7 +2258,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplaySettingsEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 655
+    startLine: 671
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2230,7 +2292,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 667
+    startLine: 683
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2263,7 +2325,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGammaEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 675
+    startLine: 691
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2297,7 +2359,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 687
+    startLine: 703
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2330,7 +2392,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayGamutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 695
+    startLine: 711
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2364,7 +2426,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 707
+    startLine: 723
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2397,7 +2459,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplay3dLutEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 715
+    startLine: 731
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2431,7 +2493,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: AddDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 727
+    startLine: 743
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2464,7 +2526,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: RemoveDisplayListEventListener
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 735
+    startLine: 751
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2498,7 +2560,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetGPU
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 747
+    startLine: 763
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2528,7 +2590,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktop
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 765
+    startLine: 781
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2558,7 +2620,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: GetDesktopDto
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 827
+    startLine: 843
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -2588,7 +2650,7 @@ items:
       repo: https://github.com/terrymacdonald/ADLXWrapper.git
     id: Dispose
     path: ../ADLXWrapper/AdlxDisplay.cs
-    startLine: 838
+    startLine: 854
   assemblies:
   - ADLXWrapper
   namespace: ADLXWrapper
@@ -3788,6 +3850,18 @@ references:
   name: ReapplyThreeDLut
   nameWithType: ADLXDisplay.ReapplyThreeDLut
   fullName: ADLXWrapper.ADLXDisplay.ReapplyThreeDLut
+- uid: ADLXWrapper.ADLXDisplay.ApplyThreeDLut*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyThreeDLut
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_ApplyThreeDLut_ADLXWrapper_ThreeDLUTDto_
+  name: ApplyThreeDLut
+  nameWithType: ADLXDisplay.ApplyThreeDLut
+  fullName: ADLXWrapper.ADLXDisplay.ApplyThreeDLut
+- uid: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut*
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyThreeDLut
+  href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyThreeDLut_ADLXWrapper_ThreeDLUTDto_
+  name: TryApplyThreeDLut
+  nameWithType: ADLXDisplay.TryApplyThreeDLut
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut
 - uid: ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut*
   commentId: Overload:ADLXWrapper.ADLXDisplay.TryReapplyThreeDLut
   href: ADLXWrapper.ADLXDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyThreeDLut

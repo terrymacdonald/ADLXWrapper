@@ -1085,6 +1085,11 @@ namespace ADLXWrapper
 
         internal void ReapplyThreeDLut(IADLXDisplay* display)
         {
+            ApplyThreeDLut(display, GetThreeDLut(display));
+        }
+
+        internal void ApplyThreeDLut(IADLXDisplay* display, ThreeDLUTDto info)
+        {
             ThrowIfDisposed();
             using var _sync = ADLXSync.EnterRead();
             IADLXDisplay3DLUT* pLut;
@@ -1094,7 +1099,20 @@ namespace ADLXWrapper
             if (result != ADLX_RESULT.ADLX_OK)
                 throw new ADLXException(result, "Failed to get 3DLUT interface");
             using var lut = new ComPtr<IADLXDisplay3DLUT>(pLut);
-            DisplaySettingsOps.Reapply3DLUT(lut.Get());
+            DisplaySettingsOps.Apply3DLUT(lut.Get(), info);
+        }
+
+        internal bool TryApplyThreeDLut(IADLXDisplay* display, ThreeDLUTDto info)
+        {
+            try
+            {
+                ApplyThreeDLut(display, info);
+                return true;
+            }
+            catch (ADLXException ex) when (ex.Result == ADLX_RESULT.ADLX_NOT_SUPPORTED)
+            {
+                return false;
+            }
         }
 
         internal bool TryReapplyThreeDLut(IADLXDisplay* display)
@@ -1447,29 +1465,28 @@ namespace ADLXWrapper
                 if (p3dLut == null) throw new ArgumentNullException(nameof(p3dLut));
                 if (info.IsSceSupported == false && info.IsSceVividGamingSupported == false && info.IsSceDynamicContrastSupported == false) return;
 
-                if (info.IsSceSupported || info.IsSceVividGamingSupported)
+                ADLX_RESULT sceResult;
+                if (info.IsCurrentSceDisabled && info.IsSceSupported)
                 {
-                    ADLX_RESULT sceResult = ADLX_RESULT.ADLX_OK;
-                    if (info.IsCurrentSceVividGaming && info.IsSceVividGamingSupported)
-                    {
-                        sceResult = p3dLut->SetSCEVividGaming();
-                    }
-                    else
-                    {
-                        sceResult = p3dLut->SetSCEDisabled();
-                    }
-
-                    if (sceResult != ADLX_RESULT.ADLX_OK && sceResult != ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                        throw new ADLXException(sceResult, "Failed to apply SCE state");
+                    sceResult = p3dLut->SetSCEDisabled();
                 }
-
-                if (info.IsSceDynamicContrastSupported && info.HasDynamicContrast)
+                else if (info.IsCurrentSceVividGaming && info.IsSceVividGamingSupported)
+                {
+                    sceResult = p3dLut->SetSCEVividGaming();
+                }
+                else if (!info.IsCurrentSceDisabled && !info.IsCurrentSceVividGaming &&
+                         info.IsSceDynamicContrastSupported && info.HasDynamicContrast)
                 {
                     int clamped = Math.Clamp(info.CurrentDynamicContrast, info.DynamicContrastRange.MinValue, info.DynamicContrastRange.MaxValue);
-                    var r = p3dLut->SetSCEDynamicContrast(clamped);
-                    if (r != ADLX_RESULT.ADLX_OK && r != ADLX_RESULT.ADLX_NOT_SUPPORTED)
-                        throw new ADLXException(r, "Failed to apply SCE dynamic contrast");
+                    sceResult = p3dLut->SetSCEDynamicContrast(clamped);
                 }
+                else
+                {
+                    throw new ADLXException(ADLX_RESULT.ADLX_NOT_SUPPORTED, "The saved SCE preset cannot be applied with the available 3DLUT settings");
+                }
+
+                if (sceResult != ADLX_RESULT.ADLX_OK)
+                    throw new ADLXException(sceResult, "Failed to apply SCE state");
             }
 
             /// <summary>

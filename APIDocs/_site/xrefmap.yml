@@ -1545,6 +1545,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.ApplyCustomColor
   nameWithType: ADLXDisplay.ApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  name: ApplyThreeDLut(ThreeDLUTDto)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ApplyThreeDLut_ADLXWrapper_ThreeDLUTDto_
+  commentId: M:ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  fullName: ADLXWrapper.ADLXDisplay.ApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  nameWithType: ADLXDisplay.ApplyThreeDLut(ThreeDLUTDto)
+- uid: ADLXWrapper.ADLXDisplay.ApplyThreeDLut*
+  name: ApplyThreeDLut
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ApplyThreeDLut_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.ApplyThreeDLut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.ApplyThreeDLut
+  nameWithType: ADLXDisplay.ApplyThreeDLut
 - uid: ADLXWrapper.ADLXDisplay.ConnectorType
   name: ConnectorType
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_ConnectorType
@@ -2302,6 +2315,19 @@ references:
   isSpec: "True"
   fullName: ADLXWrapper.ADLXDisplay.TryApplyCustomColor
   nameWithType: ADLXDisplay.TryApplyCustomColor
+- uid: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  name: TryApplyThreeDLut(ThreeDLUTDto)
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyThreeDLut_ADLXWrapper_ThreeDLUTDto_
+  commentId: M:ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut(ADLXWrapper.ThreeDLUTDto)
+  nameWithType: ADLXDisplay.TryApplyThreeDLut(ThreeDLUTDto)
+- uid: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut*
+  name: TryApplyThreeDLut
+  href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryApplyThreeDLut_
+  commentId: Overload:ADLXWrapper.ADLXDisplay.TryApplyThreeDLut
+  isSpec: "True"
+  fullName: ADLXWrapper.ADLXDisplay.TryApplyThreeDLut
+  nameWithType: ADLXDisplay.TryApplyThreeDLut
 - uid: ADLXWrapper.ADLXDisplay.TryReapplyGamma
   name: TryReapplyGamma()
   href: api/ADLXWrapper.AdlxDisplay.html#ADLXWrapper_ADLXDisplay_TryReapplyGamma
